@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/DialogsActivity$35;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/RLottieImageView;
 .source "DialogsActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
 
 # annotations
@@ -22,405 +19,142 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 6595
+    .line 6790
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bottomPanelTranslationYChanged(F)V
+.method public setAnimation(III)V
     .locals 0
 
-    return-void
-.end method
+    .line 6796
+    invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-.method public didPressAttachButton()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic didPressedSmartBotsButton()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$didPressedSmartBotsButton(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic getContentViewHeight()I
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getContentViewHeight(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public synthetic getSendAsPeers()Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getSendAsPeers(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic hasForwardingMessages()Z
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$hasForwardingMessages(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public synthetic hasScheduledMessages()Z
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$hasScheduledMessages(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public synthetic measureKeyboardHeight()I
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$measureKeyboardHeight(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public needChangeVideoPreviewState(IF)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public needSendTyping()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public needShowMediaBanHint()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public needStartRecordAudio(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic needStartRecordVideo(IZI)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$needStartRecordVideo(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;IZI)V
-
-    return-void
-.end method
-
-.method public needStartRecordVideo(IZIZ)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAttachButtonHidden()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAttachButtonShow()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onAudioVideoInterfaceUpdated()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic onContextMenuClose()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$onContextMenuClose(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic onContextMenuOpen()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$onContextMenuOpen(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic onEditTextScroll()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$onEditTextScroll(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public onMessageEditEnd(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onMessageSend(Ljava/lang/CharSequence;ZILjava/lang/String;)V
-    .locals 7
-
-    .line 6599
+    .line 6797
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$30500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object p2
 
     if-eqz p2, :cond_2
 
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 6798
+    sget p2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+    if-eq p1, p2, :cond_1
 
-    move-result-object p2
+    sget p2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse_camera:I
 
-    invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    goto :goto_1
-
-    .line 6602
-    :cond_0
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 p2, 0x0
-
-    move p3, p2
-
-    .line 6603
-    :goto_0
-    iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
-
-    move-result p4
-
-    if-ge p3, p4, :cond_1
-
-    .line 6604
-    iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
-
-    move-result-object p4
-
-    invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ljava/lang/Long;
-
-    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1, p2}, Lorg/telegram/messenger/MessagesStorage$TopicKey;->of(JI)Lorg/telegram/messenger/MessagesStorage$TopicKey;
-
-    move-result-object p4
-
-    invoke-virtual {v2, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 p3, p3, 0x1
+    if-ne p1, p2, :cond_0
 
     goto :goto_0
 
-    .line 6606
+    .line 6803
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
+
+    goto :goto_1
+
+    .line 6799
     :cond_1
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+    :goto_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$30500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
 
-    move-result-object v0
+    move-result p1
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+    if-nez p1, :cond_2
 
-    const/4 v4, 0x0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    const/4 v5, 0x0
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$11700(Lorg/telegram/ui/DialogsActivity;)I
 
-    const/4 v6, 0x0
+    move-result p1
 
-    move-object v3, p1
+    if-nez p1, :cond_2
 
-    invoke-interface/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;->didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29700(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    const/4 p2, 0x1
+
+    const-string p3, "storyhint"
+
+    invoke-interface {p1, p3, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    iget-boolean p2, p1, Lorg/telegram/ui/DialogsActivity;->storiesEnabled:Z
+
+    if-eqz p2, :cond_2
+
+    .line 6800
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->show()Lorg/telegram/ui/Stories/recorder/HintView2;
 
     :cond_2
     :goto_1
     return-void
 .end method
 
-.method public onPreAudioVideoRecord()V
+.method public setImageResource(I)V
     .locals 0
 
-    return-void
-.end method
+    .line 6810
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-.method public onSendLongClick()V
-    .locals 0
+    .line 6811
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    return-void
-.end method
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-.method public onStickersExpandedChange()V
-    .locals 0
+    move-result-object p1
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method public onStickersTab(Z)V
-    .locals 0
+    .line 6812
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    return-void
-.end method
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-.method public onSwitchRecordMode(Z)V
-    .locals 0
+    move-result-object p1
 
-    return-void
-.end method
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-.method public onTextChanged(Ljava/lang/CharSequence;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onTextSelectionChanged(II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onTextSpansChanged(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic onTopViewFullyShown()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$onTopViewFullyShown(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic onTrendingStickersShowed(Z)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$onTrendingStickersShowed(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;Z)V
-
-    return-void
-.end method
-
-.method public onUpdateSlowModeButton(Landroid/view/View;ZLjava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onWindowSizeChanged(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic openReaction()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$openReaction(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic openScheduledMessages()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$openScheduledMessages(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic prepareMessageSending()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$prepareMessageSending(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic scrollToSendingMessage()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$scrollToSendingMessage(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
-
-    return-void
-.end method
-
-.method public synthetic sendEditedSticker(Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;ZILjava/lang/String;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$sendEditedSticker(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;ZILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public synthetic sendGif(IJLjava/lang/String;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$sendGif(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;IJLjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public synthetic showGifsViewer(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Ljava/util/ArrayList;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$showGifsViewer(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Ljava/util/ArrayList;I)V
-
+    :cond_0
     return-void
 .end method

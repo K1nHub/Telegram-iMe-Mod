@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41181
+    .line 41927
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_chatParticipants;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 41186
+    .line 41932
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -37,7 +37,7 @@
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->chat_id:J
 
-    .line 41187
+    .line 41933
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -52,7 +52,7 @@
 
     return-void
 
-    .line 41190
+    .line 41936
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -76,7 +76,7 @@
 
     throw p1
 
-    .line 41194
+    .line 41940
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -85,7 +85,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 41196
+    .line 41942
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -98,7 +98,7 @@
 
     return-void
 
-    .line 41200
+    .line 41946
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 41202
+    .line 41948
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -122,12 +122,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 41206
+    .line 41952
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatParticipants_layer131;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41207
+    .line 41953
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->chat_id:J
 
     long-to-int v0, v0
@@ -136,17 +136,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 41208
+    .line 41954
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41209
+    .line 41955
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 41210
+    .line 41956
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -154,7 +154,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 41212
+    .line 41958
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -169,7 +169,7 @@
 
     goto :goto_0
 
-    .line 41214
+    .line 41960
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->version:I
 

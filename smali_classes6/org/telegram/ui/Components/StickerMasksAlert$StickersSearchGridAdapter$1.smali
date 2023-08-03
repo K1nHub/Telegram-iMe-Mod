@@ -76,7 +76,7 @@
     iput-boolean v1, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->cleared:Z
 
     .line 1705
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -85,7 +85,7 @@
     .line 1706
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -94,7 +94,7 @@
     .line 1707
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
     .line 1708
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
     .line 1709
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -127,7 +127,7 @@
     .line 1756
     iget-object p4, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {p4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
+    invoke-static {p4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5900(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
 
     move-result p4
 
@@ -187,7 +187,7 @@
     .line 1765
     iget-object v3, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v3}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -200,7 +200,7 @@
     .line 1766
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -209,7 +209,7 @@
     .line 1767
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -236,7 +236,7 @@
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6100(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
 
     move-result p1
 
@@ -263,7 +263,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -282,7 +282,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->access$6000(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->access$6100(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
 
     move-result-object p1
 
@@ -293,7 +293,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6102(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6202(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;I)I
 
     .line 1825
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickers;
@@ -361,13 +361,13 @@
     .line 1839
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {p2}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object p2
 
     iget-object p4, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {p4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {p4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object p4
 
@@ -378,7 +378,7 @@
     .line 1841
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -470,7 +470,7 @@
     .line 1714
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -491,7 +491,7 @@
     iput-boolean v1, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->cleared:Z
 
     .line 1718
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5804(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5904(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)I
 
     move-result v0
 
@@ -510,7 +510,7 @@
 
     iget-object v4, v4, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v4}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v4
 
@@ -525,7 +525,7 @@
     .line 1723
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -542,7 +542,7 @@
     .line 1724
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -756,13 +756,13 @@
     :cond_7
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v5
 
     iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -771,7 +771,7 @@
     .line 1746
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -789,7 +789,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -809,7 +809,7 @@
 
     iget-object v6, v6, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5900(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$6000(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
 
     move-result-object v6
 
@@ -824,7 +824,7 @@
 
     iget-object v6, v6, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v6
 
@@ -840,14 +840,14 @@
 
     iget-object v6, v6, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v6, v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5902(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v6, v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$6002(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
 
     .line 1755
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v5
 
@@ -859,13 +859,13 @@
 
     iget-object v5, v5, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5900(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$6000(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
 
     move-result-object v7
 
     iget-object v5, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -885,7 +885,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v0
 
@@ -931,7 +931,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v9}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -963,7 +963,7 @@
     .line 1787
     iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -972,7 +972,7 @@
     .line 1788
     iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v6
 
@@ -994,7 +994,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v9}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -1026,7 +1026,7 @@
     .line 1793
     iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -1035,7 +1035,7 @@
     .line 1794
     iget-object v6, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v6}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v6
 
@@ -1055,7 +1055,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v0
 
@@ -1091,7 +1091,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -1123,7 +1123,7 @@
     .line 1804
     iget-object v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v8
 
@@ -1132,7 +1132,7 @@
     .line 1805
     iget-object v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v8
 
@@ -1154,7 +1154,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -1186,7 +1186,7 @@
     .line 1810
     iget-object v7, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v7}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v7}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v7
 
@@ -1195,7 +1195,7 @@
     .line 1811
     iget-object v7, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v7}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v7}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5600(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v7
 
@@ -1213,7 +1213,7 @@
     :cond_14
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1232,7 +1232,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->access$6000(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
+    invoke-static {v1}, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->access$6100(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
 
     move-result-object v1
 
@@ -1246,7 +1246,7 @@
     .line 1819
     iget-object v4, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5700(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
+    invoke-static {v4}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5800(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1262,7 +1262,7 @@
 
     iget-object v5, v4, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v5
 
@@ -1278,7 +1278,7 @@
 
     move-result v1
 
-    invoke-static {v4, v1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6102(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;I)I
+    invoke-static {v4, v1}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$6202(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;I)I
 
     :cond_15
     if-eqz v0, :cond_16
@@ -1286,7 +1286,7 @@
     .line 1851
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5400(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5500(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1298,7 +1298,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->access$5300(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;)Ljava/util/HashMap;
 
     move-result-object v0
 

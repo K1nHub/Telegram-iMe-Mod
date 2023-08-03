@@ -862,7 +862,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     i4 = i8;
                 }
             } else {
-                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m707id() || type > FieldType.SINT64_LIST_PACKED.m707id()) ? 0 : this.buffer[i5 + 2] & i3;
+                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m725id() || type > FieldType.SINT64_LIST_PACKED.m725id()) ? 0 : this.buffer[i5 + 2] & i3;
                 i2 = 0;
             }
             long offset = offset(typeAndOffsetAt);
@@ -1382,7 +1382,7 @@ public final class MessageSchema<T> implements Schema<T> {
             int type = type(typeAndOffsetAt);
             int numberAt = numberAt(i2);
             long offset = offset(typeAndOffsetAt);
-            int i3 = (type < FieldType.DOUBLE_LIST_PACKED.m707id() || type > FieldType.SINT64_LIST_PACKED.m707id()) ? 0 : this.buffer[i2 + 2] & 1048575;
+            int i3 = (type < FieldType.DOUBLE_LIST_PACKED.m725id() || type > FieldType.SINT64_LIST_PACKED.m725id()) ? 0 : this.buffer[i2 + 2] & 1048575;
             switch (type) {
                 case 0:
                     if (isFieldPresent(t, i2)) {

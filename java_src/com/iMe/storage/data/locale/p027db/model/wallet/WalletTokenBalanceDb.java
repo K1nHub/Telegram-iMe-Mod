@@ -1,6 +1,7 @@
 package com.iMe.storage.data.locale.p027db.model.wallet;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTokenBalanceDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.wallet.WalletTokenBalanceDb */
@@ -37,13 +38,13 @@ public final class WalletTokenBalanceDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m706m = ((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.tgUserId) * 31) + Double.doubleToLongBits(this.total)) * 31) + Double.doubleToLongBits(this.totalInFiatValue)) * 31) + this.totalInFiatSymbol.hashCode()) * 31) + this.totalInFiatTicker.hashCode()) * 31) + Double.doubleToLongBits(this.rateToFiatValue)) * 31) + this.rateToFiatSymbol.hashCode()) * 31) + this.rateToFiatTicker.hashCode()) * 31) + Double.doubleToLongBits(this.ratePercentageChange24h)) * 31) + this.address.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.decimals) * 31) + this.ticker.hashCode()) * 31;
+        int m724m = ((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.tgUserId) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.totalInFiatValue)) * 31) + this.totalInFiatSymbol.hashCode()) * 31) + this.totalInFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.rateToFiatValue)) * 31) + this.rateToFiatSymbol.hashCode()) * 31) + this.rateToFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.ratePercentageChange24h)) * 31) + this.address.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.decimals) * 31) + this.ticker.hashCode()) * 31;
         boolean z = this.isCoin;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((m706m + i) * 31) + this.name.hashCode()) * 31) + this.website.hashCode();
+        return ((((m724m + i) * 31) + this.name.hashCode()) * 31) + this.website.hashCode();
     }
 
     public String toString() {

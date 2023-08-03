@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_deleteScheduledMessages extends TLObject {
     public static int constructor = 1504586518;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1598id = new ArrayList<>();
+    public ArrayList<Integer> f1606id = new ArrayList<>();
     public TLRPC$InputPeer peer;
 
     public static TLRPC$TL_messages_deleteScheduledMessages TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -38,7 +38,7 @@ public class TLRPC$TL_messages_deleteScheduledMessages extends TLObject {
         }
         int readInt322 = abstractSerializedData.readInt32(z);
         for (int i = 0; i < readInt322; i++) {
-            this.f1598id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
+            this.f1606id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
         }
     }
 
@@ -47,10 +47,10 @@ public class TLRPC$TL_messages_deleteScheduledMessages extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         this.peer.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1598id.size();
+        int size = this.f1606id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1598id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1606id.get(i).intValue());
         }
     }
 }

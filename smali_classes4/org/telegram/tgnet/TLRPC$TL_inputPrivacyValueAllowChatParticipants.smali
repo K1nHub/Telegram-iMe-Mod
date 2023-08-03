@@ -29,10 +29,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 30185
+    .line 30784
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$InputPrivacyRule;-><init>()V
 
-    .line 30188
+    .line 30787
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 5
 
-    .line 30191
+    .line 30790
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -62,7 +62,7 @@
 
     return-void
 
-    .line 30194
+    .line 30793
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -86,7 +86,7 @@
 
     throw p1
 
-    .line 30198
+    .line 30797
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -95,7 +95,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 30200
+    .line 30799
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
@@ -119,24 +119,24 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 30205
+    .line 30804
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 30206
+    .line 30805
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30207
+    .line 30806
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 30208
+    .line 30807
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -144,7 +144,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 30210
+    .line 30809
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

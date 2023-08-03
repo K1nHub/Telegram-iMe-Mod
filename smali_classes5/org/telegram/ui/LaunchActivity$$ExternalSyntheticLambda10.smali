@@ -73,7 +73,7 @@
 
     move v9, p2
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$47IKK-wfE_Cjh1rdkmJ6iZqzraE(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Long;Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$YajWnmkwQyMMY1FYXch7gpjzJGA(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Long;Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

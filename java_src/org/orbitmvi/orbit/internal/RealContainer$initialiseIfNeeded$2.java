@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2", m83f = "RealContainer.kt", m82l = {98}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2", m101f = "RealContainer.kt", m100l = {98}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -153,7 +153,7 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RealContainer.kt */
-    @DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m83f = "RealContainer.kt", m82l = {99}, m81m = "invokeSuspend")
+    @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m101f = "RealContainer.kt", m100l = {99}, m99m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1 */
     /* loaded from: classes4.dex */
     public static final class C33061 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

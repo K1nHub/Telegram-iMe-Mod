@@ -38,15 +38,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;Landroid/content/Context;)V
     .locals 0
 
-    .line 491
+    .line 496
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    .line 492
+    .line 497
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 495
+    .line 500
     iput-boolean p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
     return-void
@@ -55,7 +55,7 @@
 .method private synthetic lambda$onMeasure$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 526
+    .line 531
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -68,7 +68,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->snapToTopOffset:F
 
-    .line 527
+    .line 532
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->setTranslationY(F)V
 
     return-void
@@ -77,7 +77,7 @@
 .method private updateLightStatusBar(Z)V
     .locals 6
 
-    .line 632
+    .line 638
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->statusBarOpen:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
@@ -90,13 +90,13 @@
 
     return-void
 
-    .line 635
+    .line 641
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2400(Lorg/telegram/ui/Components/UsersAlertBase;I)I
 
     move-result v0
 
@@ -121,13 +121,13 @@
     :cond_1
     move v0, v3
 
-    .line 636
+    .line 642
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2200(Lorg/telegram/ui/Components/UsersAlertBase;I)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2500(Lorg/telegram/ui/Components/UsersAlertBase;I)I
 
     move-result v4
 
@@ -150,7 +150,7 @@
     :cond_2
     move v2, v3
 
-    .line 637
+    .line 643
     :goto_1
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -169,7 +169,7 @@
     :cond_3
     move v0, v2
 
-    .line 638
+    .line 644
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
@@ -187,10 +187,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 643
+    .line 649
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 644
+    .line 650
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v0
@@ -207,10 +207,10 @@
 
     invoke-virtual {p1, v3, v0, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 645
+    .line 651
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 646
+    .line 652
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -219,15 +219,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 14
 
-    .line 586
+    .line 591
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 587
+    .line 592
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget v1, v0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$600(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$800(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v0
 
@@ -241,12 +241,12 @@
 
     add-int/2addr v1, v0
 
-    .line 588
+    .line 593
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget v2, v0, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$700(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$900(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v0
 
@@ -260,7 +260,7 @@
 
     sub-int/2addr v2, v0
 
-    .line 589
+    .line 594
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -275,13 +275,13 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$800(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1000(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v3
 
     add-int/2addr v0, v3
 
-    .line 592
+    .line 597
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v4, 0x0
@@ -294,7 +294,7 @@
 
     if-lt v3, v7, :cond_2
 
-    .line 593
+    .line 598
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v2, v3
@@ -303,10 +303,10 @@
 
     sub-int/2addr v0, v3
 
-    .line 597
+    .line 602
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$900(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1100(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v3
 
@@ -336,10 +336,10 @@
 
     sub-int/2addr v7, v2
 
-    .line 598
+    .line 603
     iget-object v8, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1000(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v8}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1200(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v8
 
@@ -367,7 +367,7 @@
 
     int-to-float v3, v3
 
-    .line 601
+    .line 606
     sget v7, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float v7, v7
@@ -385,11 +385,11 @@
     :cond_0
     move v3, v5
 
-    .line 603
+    .line 608
     :goto_0
     iget-object v7, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v7}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1100(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v7}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1300(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v7
 
@@ -415,10 +415,10 @@
 
     sub-int/2addr v8, v2
 
-    .line 604
+    .line 609
     iget-object v9, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1200(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v9}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1400(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v9
 
@@ -450,7 +450,7 @@
 
     move v3, v5
 
-    .line 608
+    .line 613
     :goto_1
     iget-object v8, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
@@ -462,38 +462,47 @@
 
     invoke-virtual {v8, v4, v2, v9, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 609
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
+    .line 616
+    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1500(Lorg/telegram/ui/Components/UsersAlertBase;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
     cmpl-float v0, v3, v5
 
     if-eqz v0, :cond_3
 
-    .line 612
+    .line 618
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1300(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1600(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v5
 
     invoke-virtual {v0, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 613
+    .line 619
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1800(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
 
     move-result-object v0
 
     iget-object v5, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1400(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1700(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v5
 
@@ -501,7 +510,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1500(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v8}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1800(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v8
 
@@ -515,7 +524,7 @@
 
     iget-object v10, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v10}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1600(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1900(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v10
 
@@ -525,7 +534,7 @@
 
     iget-object v10, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v10}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1700(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2000(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v10
 
@@ -543,10 +552,10 @@
 
     invoke-virtual {v0, v5, v8, v9, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 614
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1800(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
 
     move-result-object v0
 
@@ -575,15 +584,15 @@
     :cond_3
     const/16 v0, 0x24
 
-    .line 617
+    .line 623
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 618
+    .line 624
     iget-object v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1800(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
+    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
 
     move-result-object v2
 
@@ -621,7 +630,7 @@
 
     invoke-virtual {v2, v3, v5, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 619
+    .line 625
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
@@ -634,10 +643,10 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 620
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1800(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/graphics/RectF;
 
     move-result-object v0
 
@@ -657,23 +666,24 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    if-lez v7, :cond_4
+    :cond_4
+    if-lez v7, :cond_5
 
-    .line 623
+    .line 629
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1300(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1600(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 624
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$1900(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2200(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v0
 
@@ -697,7 +707,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2000(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2300(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v1
 
@@ -721,20 +731,20 @@
 
     invoke-virtual/range {v8 .. v13}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 626
-    :cond_4
+    .line 632
+    :cond_5
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     div-int/2addr v0, v6
 
-    if-le v7, v0, :cond_5
+    if-le v7, v0, :cond_6
 
     const/4 v4, 0x1
 
-    :cond_5
+    :cond_6
     invoke-direct {p0, v4}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->updateLightStatusBar(Z)V
 
-    .line 627
+    .line 633
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -743,7 +753,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 564
+    .line 569
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -764,14 +774,14 @@
 
     if-gez v0, :cond_0
 
-    .line 565
+    .line 570
     invoke-virtual {v1}, Lorg/telegram/ui/Components/UsersAlertBase;->dismiss()V
 
     const/4 p1, 0x1
 
     return p1
 
-    .line 568
+    .line 573
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -783,10 +793,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 558
+    .line 563
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 559
+    .line 564
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->updateLayout()V
@@ -797,12 +807,12 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 505
+    .line 510
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 507
+    .line 512
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -813,13 +823,13 @@
 
     if-lt v0, v3, :cond_0
 
-    .line 508
+    .line 513
     iput-boolean v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
-    .line 509
+    .line 514
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$300(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/UsersAlertBase;->access$500(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v0
 
@@ -827,16 +837,16 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/UsersAlertBase;->access$400(Lorg/telegram/ui/Components/UsersAlertBase;)I
+    invoke-static {v4}, Lorg/telegram/ui/Components/UsersAlertBase;->access$600(Lorg/telegram/ui/Components/UsersAlertBase;)I
 
     move-result v4
 
     invoke-virtual {p0, v0, v3, v4, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 510
+    .line 515
     iput-boolean v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
-    .line 512
+    .line 517
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
@@ -844,28 +854,28 @@
 
     sub-int v0, p2, v0
 
-    .line 514
+    .line 519
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$500(Lorg/telegram/ui/Components/UsersAlertBase;)Z
+    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$700(Lorg/telegram/ui/Components/UsersAlertBase;)Z
 
     move-result v3
 
-    const/16 v4, 0x8
-
     if-eqz v3, :cond_3
 
-    .line 515
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/16 v0, 0x8
+
+    .line 520
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 516
+    .line 521
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setAllowNestedScroll(Z)V
 
-    .line 517
+    .line 522
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget v3, v3, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
@@ -874,21 +884,21 @@
 
     int-to-float v3, v3
 
-    .line 518
+    .line 523
     iput v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->snapToTopOffset:F
 
-    .line 519
+    .line 524
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->setTranslationY(F)V
 
-    .line 520
+    .line 525
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v3, :cond_1
 
-    .line 521
+    .line 526
     invoke-virtual {v3}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 522
+    .line 527
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v3}, Landroid/animation/ValueAnimator;->cancel()V
@@ -898,7 +908,7 @@
 
     new-array v3, v3, [F
 
-    .line 524
+    .line 529
     iget v4, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->snapToTopOffset:F
 
     aput v4, v3, v2
@@ -913,28 +923,28 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 525
+    .line 530
     new-instance v4, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 529
+    .line 534
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v4, 0xfa
 
     invoke-virtual {v3, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 530
+    .line 535
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v4, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 531
+    .line 536
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v4, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$1;
@@ -943,46 +953,40 @@
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 540
+    .line 545
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v3}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 541
+    .line 546
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v3, :cond_4
 
-    .line 542
+    .line 547
     iget v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->snapToTopOffset:F
 
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->setTranslationY(F)V
 
     goto :goto_0
 
-    .line 545
+    .line 550
     :cond_3
-    div-int/lit8 v3, v0, 0x5
+    iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    mul-int/lit8 v3, v3, 0x3
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/UsersAlertBase;->measurePadding(I)I
 
-    sub-int/2addr v0, v3
+    move-result v0
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 546
+    .line 551
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setAllowNestedScroll(Z)V
 
-    .line 548
+    .line 553
     :cond_4
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
@@ -995,23 +999,23 @@
 
     if-eq v3, v0, :cond_5
 
-    .line 549
+    .line 554
     iput-boolean v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
-    .line 550
+    .line 555
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v2, v0, v2, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 551
+    .line 556
     iput-boolean v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
     :cond_5
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 553
+    .line 558
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -1024,7 +1028,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 573
+    .line 578
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -1053,14 +1057,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 578
+    .line 583
     iget-boolean v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 581
+    .line 586
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
@@ -1070,10 +1074,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 499
+    .line 504
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 500
+    .line 505
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

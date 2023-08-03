@@ -871,20 +871,8 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("topicsBarAtBottom");
         }
 
-        public static final String isAutoUpdateTopicsCatalogEnabled() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("autoUpdateTopicsCatalogEnabled");
-        }
-
-        public static final String selectedAutoUpdateTopicsCatalogInterval() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("autoUpdateTopicsCatalogInterval");
-        }
-
         public static final String isNoTopicFirstEnabled() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("noTopicFirst");
-        }
-
-        public static final String lastAutoUpdateTopicsCatalogTime() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("lastAutoUpdateTopicsCatalogTime");
         }
 
         public static final String isRecentChatsEnabled() {
@@ -915,6 +903,22 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("selectedDrawStatusTypes");
         }
 
+        public static final String isStoriesEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesEnabled");
+        }
+
+        public static final String isStoriesBarEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesBarEnabled");
+        }
+
+        public static final String isStoriesAvatarsEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesAvatarsEnabled");
+        }
+
+        public static final String isStoriesProfileAvatarEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesProfileAvatarEnabled");
+        }
+
         /* compiled from: TelegramPreferenceKeys.kt */
         /* loaded from: classes3.dex */
         public static final class Default {
@@ -939,10 +943,6 @@ public final class TelegramPreferenceKeys {
             }
 
             public static final boolean isAutoBackupEnabled() {
-                return false;
-            }
-
-            public static final boolean isAutoUpdateTopicsCatalogEnabled() {
                 return false;
             }
 
@@ -1050,6 +1050,22 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
+            public static final boolean isStoriesAvatarsEnabled() {
+                return true;
+            }
+
+            public static final boolean isStoriesBarEnabled() {
+                return true;
+            }
+
+            public static final boolean isStoriesEnabled() {
+                return true;
+            }
+
+            public static final boolean isStoriesProfileAvatarEnabled() {
+                return true;
+            }
+
             public static final boolean isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled() {
                 return true;
             }
@@ -1067,10 +1083,6 @@ public final class TelegramPreferenceKeys {
             }
 
             public static final long lastAutoBackupTime() {
-                return 0L;
-            }
-
-            public static final long lastAutoUpdateTopicsCatalogTime() {
                 return 0L;
             }
 
@@ -1143,7 +1155,7 @@ public final class TelegramPreferenceKeys {
 
             public static final Set<String> selectedAllChatsTabFabs() {
                 Set<String> mutableSetOf;
-                mutableSetOf = SetsKt__SetsKt.mutableSetOf(FilterFab.CREATE_CHAT.name());
+                mutableSetOf = SetsKt__SetsKt.mutableSetOf(FilterFab.CREATE_STORY.name());
                 return mutableSetOf;
             }
 
@@ -1175,10 +1187,6 @@ public final class TelegramPreferenceKeys {
 
             public static final SentMessageFont selectedSentMessageFont() {
                 return SentMessageFont.REGULAR;
-            }
-
-            public static final Interval selectedAutoUpdateTopicsCatalogInterval() {
-                return Interval.EVERY_WEEK;
             }
 
             public static final Set<String> selectedRecentChatsDialogTypes() {

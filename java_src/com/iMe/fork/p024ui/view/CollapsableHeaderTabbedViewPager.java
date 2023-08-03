@@ -48,7 +48,7 @@ public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         setDelegate(delegate);
         ForkViewCollapsableHeaderPagerBinding forkViewCollapsableHeaderPagerBinding = this.binding;
-        forkViewCollapsableHeaderPagerBinding.toolbar.getLayoutParams().height = AndroidUtilities.m54dp(44);
+        forkViewCollapsableHeaderPagerBinding.toolbar.getLayoutParams().height = AndroidUtilities.m72dp(44);
         forkViewCollapsableHeaderPagerBinding.frameTabsContainer.addView(getTabsView(), LayoutHelper.createFrame(-1, 44));
         View scrollableHeaderView = delegate.getScrollableHeaderView();
         if (scrollableHeaderView != null) {

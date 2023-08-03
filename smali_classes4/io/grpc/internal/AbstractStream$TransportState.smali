@@ -302,7 +302,7 @@
     :try_start_0
     iget-boolean v1, p0, Lio/grpc/internal/AbstractStream$TransportState;->allocated:Z
 
-    const-string v2, "onStreamAllocated was not called, but it seems the stream is active"
+    const-string/jumbo v2, "onStreamAllocated was not called, but it seems the stream is active"
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

@@ -22,7 +22,7 @@ public final class CeaUtil {
             int readNon255TerminatedValue2 = readNon255TerminatedValue(parsableByteArray);
             int position = parsableByteArray.getPosition() + readNon255TerminatedValue2;
             if (readNon255TerminatedValue2 == -1 || readNon255TerminatedValue2 > parsableByteArray.bytesLeft()) {
-                Log.m796w(TAG, "Skipping remainder of malformed SEI NAL unit.");
+                Log.m814w(TAG, "Skipping remainder of malformed SEI NAL unit.");
                 position = parsableByteArray.limit();
             } else if (readNon255TerminatedValue == 4 && readNon255TerminatedValue2 >= 8) {
                 int readUnsignedByte = parsableByteArray.readUnsignedByte();

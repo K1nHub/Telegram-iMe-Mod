@@ -2497,7 +2497,7 @@
 
     move-result v14
 
-    invoke-virtual {v12, v14}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v12, v14}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 309
     iget-object v12, v0, Lorg/telegram/ui/ProxySettingsActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -181,7 +181,7 @@ public final class H263Reader implements ElementaryStreamReader {
             int readBits2 = parsableBitArray.readBits(8);
             int readBits3 = parsableBitArray.readBits(8);
             if (readBits3 == 0) {
-                Log.m796w(TAG, "Invalid aspect ratio");
+                Log.m814w(TAG, "Invalid aspect ratio");
             } else {
                 f = readBits2 / readBits3;
             }
@@ -190,7 +190,7 @@ public final class H263Reader implements ElementaryStreamReader {
             if (readBits < fArr.length) {
                 f = fArr[readBits];
             } else {
-                Log.m796w(TAG, "Invalid aspect ratio");
+                Log.m814w(TAG, "Invalid aspect ratio");
             }
         }
         if (parsableBitArray.readBit()) {
@@ -211,14 +211,14 @@ public final class H263Reader implements ElementaryStreamReader {
             }
         }
         if (parsableBitArray.readBits(2) != 0) {
-            Log.m796w(TAG, "Unhandled video object layer shape");
+            Log.m814w(TAG, "Unhandled video object layer shape");
         }
         parsableBitArray.skipBit();
         int readBits4 = parsableBitArray.readBits(16);
         parsableBitArray.skipBit();
         if (parsableBitArray.readBit()) {
             if (readBits4 == 0) {
-                Log.m796w(TAG, "Invalid vop_increment_time_resolution");
+                Log.m814w(TAG, "Invalid vop_increment_time_resolution");
             } else {
                 int i2 = 0;
                 for (int i3 = readBits4 - 1; i3 > 0; i3 >>= 1) {
@@ -285,20 +285,20 @@ public final class H263Reader implements ElementaryStreamReader {
                                 return true;
                             }
                         } else if ((i & PsExtractor.VIDEO_STREAM_MASK) != 32) {
-                            Log.m796w(H263Reader.TAG, "Unexpected start code value");
+                            Log.m814w(H263Reader.TAG, "Unexpected start code value");
                             reset();
                         } else {
                             this.volStartPosition = this.length;
                             this.state = 4;
                         }
                     } else if (i > 31) {
-                        Log.m796w(H263Reader.TAG, "Unexpected start code value");
+                        Log.m814w(H263Reader.TAG, "Unexpected start code value");
                         reset();
                     } else {
                         this.state = 3;
                     }
                 } else if (i != H263Reader.START_CODE_VALUE_VISUAL_OBJECT) {
-                    Log.m796w(H263Reader.TAG, "Unexpected start code value");
+                    Log.m814w(H263Reader.TAG, "Unexpected start code value");
                     reset();
                 } else {
                     this.state = 2;

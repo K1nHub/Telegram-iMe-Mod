@@ -2,44 +2,80 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
+.field public final synthetic f$1:[Z
+
+.field public final synthetic f$2:Ljava/lang/String;
+
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:[Ljava/lang/String;
+
+.field public final synthetic f$5:Ljava/lang/String;
+
+.field public final synthetic f$6:F
+
+.field public final synthetic f$7:F
+
+.field public final synthetic f$8:Landroid/view/View;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;[ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$0:Lorg/telegram/ui/ProfileActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$1:[Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$2:Ljava/lang/String;
+
+    iput p4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$4:[Ljava/lang/String;
+
+    iput-object p6, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$5:Ljava/lang/String;
+
+    iput p7, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$6:F
+
+    iput p8, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$7:F
+
+    iput-object p9, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$8:Landroid/view/View;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    check-cast p1, Ljava/util/HashSet;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$1:[Z
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$bgv9xcLpnoCVtRG7E3_MSAwTSS4(Lorg/telegram/ui/ProfileActivity;Ljava/util/HashSet;)V
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$2:Ljava/lang/String;
+
+    iget v3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$3:I
+
+    iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$4:[Ljava/lang/String;
+
+    iget-object v5, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$5:Ljava/lang/String;
+
+    iget v6, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$6:F
+
+    iget v7, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$7:F
+
+    iget-object v8, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$8:Landroid/view/View;
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$uKFQx4zNeA3AKs2ZRYACsPzB0y4(Lorg/telegram/ui/ProfileActivity;[ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
 
     return-void
-.end method
-
-.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
 .end method

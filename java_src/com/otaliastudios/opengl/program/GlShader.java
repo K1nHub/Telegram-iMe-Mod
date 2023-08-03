@@ -12,14 +12,14 @@ public final class GlShader {
     private static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final int f467id;
+    private final int f470id;
 
     public GlShader(int i, int i2) {
-        this.f467id = i2;
+        this.f470id = i2;
     }
 
     public final int getId() {
-        return this.f467id;
+        return this.f470id;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -29,7 +29,7 @@ public final class GlShader {
     }
 
     public final void release() {
-        GLES20.glDeleteShader(UInt.m1605constructorimpl(this.f467id));
+        GLES20.glDeleteShader(UInt.m1624constructorimpl(this.f470id));
     }
 
     /* compiled from: GlShader.kt */
@@ -44,17 +44,17 @@ public final class GlShader {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final int compile(int i, String str) {
-            int m1605constructorimpl = UInt.m1605constructorimpl(GLES20.glCreateShader(UInt.m1605constructorimpl(i)));
+            int m1624constructorimpl = UInt.m1624constructorimpl(GLES20.glCreateShader(UInt.m1624constructorimpl(i)));
             Egloo.checkGlError(Intrinsics.stringPlus("glCreateShader type=", Integer.valueOf(i)));
-            GLES20.glShaderSource(m1605constructorimpl, str);
-            GLES20.glCompileShader(m1605constructorimpl);
+            GLES20.glShaderSource(m1624constructorimpl, str);
+            GLES20.glCompileShader(m1624constructorimpl);
             int[] iArr = new int[1];
-            GLES20.glGetShaderiv(m1605constructorimpl, GlKt.getGL_COMPILE_STATUS(), iArr, 0);
+            GLES20.glGetShaderiv(m1624constructorimpl, GlKt.getGL_COMPILE_STATUS(), iArr, 0);
             if (iArr[0] != 0) {
-                return m1605constructorimpl;
+                return m1624constructorimpl;
             }
-            String str2 = "Could not compile shader " + i + ": '" + ((Object) GLES20.glGetShaderInfoLog(m1605constructorimpl)) + "' source: " + str;
-            GLES20.glDeleteShader(m1605constructorimpl);
+            String str2 = "Could not compile shader " + i + ": '" + ((Object) GLES20.glGetShaderInfoLog(m1624constructorimpl)) + "' source: " + str;
+            GLES20.glDeleteShader(m1624constructorimpl);
             throw new RuntimeException(str2);
         }
     }

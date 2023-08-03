@@ -378,7 +378,7 @@ class HlsChunkSource {
     static List<HlsMediaPlaylist.SegmentBase> getSegmentBaseList(HlsMediaPlaylist hlsMediaPlaylist, long j, int i) {
         int i2 = (int) (j - hlsMediaPlaylist.mediaSequence);
         if (i2 < 0 || hlsMediaPlaylist.segments.size() < i2) {
-            return ImmutableList.m744of();
+            return ImmutableList.m762of();
         }
         ArrayList arrayList = new ArrayList();
         if (i2 < hlsMediaPlaylist.segments.size()) {

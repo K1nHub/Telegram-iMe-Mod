@@ -12,11 +12,11 @@
 
 .field protected cameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-.field protected cameraId:I
+.field public cameraId:I
 
 .field captureRequestBuilder:Landroid/hardware/camera2/CaptureRequest$Builder;
 
-.field protected final frontCamera:I
+.field public final frontCamera:I
 
 .field protected pictureSizes:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;

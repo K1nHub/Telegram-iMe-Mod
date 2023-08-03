@@ -1446,7 +1446,7 @@
     move v0, v3
 
     :goto_0
-    const-string v1, "per-message decompressor already set"
+    const-string/jumbo v1, "per-message decompressor already set"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

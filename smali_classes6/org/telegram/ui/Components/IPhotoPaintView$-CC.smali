@@ -30,3 +30,9 @@
 
     throw v0
 .end method
+
+.method public static $default$setOffsetTranslationX(Lorg/telegram/ui/Components/IPhotoPaintView;F)V
+    .locals 0
+
+    return-void
+.end method

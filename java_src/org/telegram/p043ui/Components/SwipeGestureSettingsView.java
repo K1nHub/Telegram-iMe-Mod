@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.controller.FiltersController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
@@ -56,12 +56,12 @@ public class SwipeGestureSettingsView extends FrameLayout {
         this.icons = new RLottieDrawable[6];
         this.iconViews = new RLottieImageView[2];
         this.colorProgress = 1.0f;
-        strArr[0] = LocaleController.getString("SwipeSettingsPin", C3417R.string.SwipeSettingsPin);
-        this.strings[1] = LocaleController.getString("SwipeSettingsRead", C3417R.string.SwipeSettingsRead);
-        this.strings[2] = LocaleController.getString("SwipeSettingsArchive", C3417R.string.SwipeSettingsArchive);
-        this.strings[3] = LocaleController.getString("SwipeSettingsMute", C3417R.string.SwipeSettingsMute);
-        this.strings[4] = LocaleController.getString("SwipeSettingsDelete", C3417R.string.SwipeSettingsDelete);
-        this.strings[5] = LocaleController.getString("SwipeSettingsFolders", C3417R.string.SwipeSettingsFolders);
+        strArr[0] = LocaleController.getString("SwipeSettingsPin", C3419R.string.SwipeSettingsPin);
+        this.strings[1] = LocaleController.getString("SwipeSettingsRead", C3419R.string.SwipeSettingsRead);
+        this.strings[2] = LocaleController.getString("SwipeSettingsArchive", C3419R.string.SwipeSettingsArchive);
+        this.strings[3] = LocaleController.getString("SwipeSettingsMute", C3419R.string.SwipeSettingsMute);
+        this.strings[4] = LocaleController.getString("SwipeSettingsDelete", C3419R.string.SwipeSettingsDelete);
+        this.strings[5] = LocaleController.getString("SwipeSettingsFolders", C3419R.string.SwipeSettingsFolders);
         int[] iArr = this.backgroundKeys;
         int i2 = Theme.key_chats_archiveBackground;
         iArr[0] = i2;
@@ -71,23 +71,23 @@ public class SwipeGestureSettingsView extends FrameLayout {
         iArr[4] = Theme.key_dialogSwipeRemove;
         iArr[5] = Theme.key_chats_archivePinBackground;
         this.outlinePaint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(1));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m72dp(1));
         this.linePaint.setStyle(Paint.Style.STROKE);
         this.linePaint.setStrokeCap(Paint.Cap.ROUND);
-        this.linePaint.setStrokeWidth(AndroidUtilities.m54dp(5));
+        this.linePaint.setStrokeWidth(AndroidUtilities.m72dp(5));
         this.pickerDividersPaint.setStyle(Paint.Style.STROKE);
         this.pickerDividersPaint.setStrokeCap(Paint.Cap.ROUND);
-        this.pickerDividersPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.pickerDividersPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         NumberPicker numberPicker = new NumberPicker(context, 13) { // from class: org.telegram.ui.Components.SwipeGestureSettingsView.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.NumberPicker, android.widget.LinearLayout, android.view.View
             public void onDraw(Canvas canvas) {
                 super.onDraw(canvas);
-                float m54dp = AndroidUtilities.m54dp(31);
+                float m72dp = AndroidUtilities.m72dp(31);
                 SwipeGestureSettingsView.this.pickerDividersPaint.setColor(Theme.getColor(Theme.key_radioBackgroundChecked));
-                canvas.drawLine(AndroidUtilities.m54dp(2), m54dp, getMeasuredWidth() - AndroidUtilities.m54dp(2), m54dp, SwipeGestureSettingsView.this.pickerDividersPaint);
-                float measuredHeight = getMeasuredHeight() - AndroidUtilities.m54dp(31);
-                canvas.drawLine(AndroidUtilities.m54dp(2), measuredHeight, getMeasuredWidth() - AndroidUtilities.m54dp(2), measuredHeight, SwipeGestureSettingsView.this.pickerDividersPaint);
+                canvas.drawLine(AndroidUtilities.m72dp(2), m72dp, getMeasuredWidth() - AndroidUtilities.m72dp(2), m72dp, SwipeGestureSettingsView.this.pickerDividersPaint);
+                float measuredHeight = getMeasuredHeight() - AndroidUtilities.m72dp(31);
+                canvas.drawLine(AndroidUtilities.m72dp(2), measuredHeight, getMeasuredWidth() - AndroidUtilities.m72dp(2), measuredHeight, SwipeGestureSettingsView.this.pickerDividersPaint);
             }
         };
         this.picker = numberPicker;
@@ -186,7 +186,7 @@ public class SwipeGestureSettingsView extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(102), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(102), 1073741824));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x00b4  */
@@ -210,20 +210,20 @@ public class SwipeGestureSettingsView extends FrameLayout {
         RLottieDrawable[] rLottieDrawableArr = this.icons;
         if (rLottieDrawableArr[i] == null) {
             if (i == 1) {
-                i2 = C3417R.raw.swipe_read;
+                i2 = C3419R.raw.swipe_read;
             } else if (i == 2) {
-                i2 = C3417R.raw.chats_archive;
+                i2 = C3419R.raw.chats_archive;
             } else if (i == 3) {
-                i2 = C3417R.raw.swipe_mute;
+                i2 = C3419R.raw.swipe_mute;
             } else if (i == 4) {
-                i2 = C3417R.raw.swipe_delete;
+                i2 = C3419R.raw.swipe_delete;
             } else if (i != 5) {
-                i2 = C3417R.raw.swipe_pin;
+                i2 = C3419R.raw.swipe_pin;
             } else {
-                i2 = C3417R.raw.swipe_disabled;
+                i2 = C3419R.raw.swipe_disabled;
             }
             int i3 = i2;
-            rLottieDrawableArr[i] = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
+            rLottieDrawableArr[i] = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(28), true, null);
             updateIconColor(i);
         }
         return this.icons[i];

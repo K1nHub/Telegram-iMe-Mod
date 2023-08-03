@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.binancepay;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: OutputConvertToken.kt */
 /* loaded from: classes3.dex */
@@ -51,7 +52,7 @@ public final class OutputConvertToken {
     }
 
     public int hashCode() {
-        return (((this.tokenInfo.hashCode() * 31) + Double.doubleToLongBits(this.minLimit)) * 31) + Double.doubleToLongBits(this.maxLimit);
+        return (((this.tokenInfo.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.minLimit)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.maxLimit);
     }
 
     public String toString() {

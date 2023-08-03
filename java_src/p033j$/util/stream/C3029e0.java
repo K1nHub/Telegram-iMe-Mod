@@ -14,15 +14,15 @@ final class C3029e0 extends AbstractC3053i0 implements InterfaceC3062j3 {
 
     @Override // p033j$.util.function.InterfaceC2839y
     public Object get() {
-        if (this.f1047a) {
-            return C2842i.m532d(((Double) this.f1048b).doubleValue());
+        if (this.f1050a) {
+            return C2842i.m550d(((Double) this.f1051b).doubleValue());
         }
         return null;
     }
 
     @Override // p033j$.util.function.InterfaceC2820f
     /* renamed from: j */
-    public InterfaceC2820f mo87j(InterfaceC2820f interfaceC2820f) {
+    public InterfaceC2820f mo105j(InterfaceC2820f interfaceC2820f) {
         Objects.requireNonNull(interfaceC2820f);
         return new C2819e(this, interfaceC2820f);
     }

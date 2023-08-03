@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/EdgeEffectCompat$Api21Impl;,
-        Landroidx/core/widget/EdgeEffectCompat$Api31Impl;
+        Landroidx/core/widget/EdgeEffectCompat$Api31Impl;,
+        Landroidx/core/widget/EdgeEffectCompat$Api21Impl;
     }
 .end annotation
 

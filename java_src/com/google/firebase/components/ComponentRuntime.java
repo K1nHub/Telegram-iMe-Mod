@@ -21,7 +21,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 /* loaded from: classes3.dex */
 public class ComponentRuntime extends AbstractComponentContainer implements ComponentLoader {
-    private static final Provider<Set<Object>> EMPTY_PROVIDER = ComponentRuntime$$ExternalSyntheticLambda2.INSTANCE;
+    private static final Provider<Set<Object>> EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
+        @Override // com.google.firebase.inject.Provider
+        public final Object get() {
+            return Collections.emptySet();
+        }
+    };
     private final Map<Component<?>, Provider<?>> components;
     private final AtomicReference<Boolean> eagerComponentsInitializedWith;
     private final EventBus eventBus;
@@ -51,8 +56,8 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         EventBus eventBus = new EventBus(executor);
         this.eventBus = eventBus;
         ArrayList arrayList = new ArrayList();
-        arrayList.add(Component.m730of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
-        arrayList.add(Component.m730of(this, ComponentLoader.class, new Class[0]));
+        arrayList.add(Component.m748of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
+        arrayList.add(Component.m748of(this, ComponentLoader.class, new Class[0]));
         for (Component<?> component : collection) {
             if (component != null) {
                 arrayList.add(component);
@@ -211,7 +216,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         if (provider instanceof OptionalProvider) {
             return (OptionalProvider) provider;
         }
-        return OptionalProvider.m729of(provider);
+        return OptionalProvider.m747of(provider);
     }
 
     @Override // com.google.firebase.components.ComponentContainer

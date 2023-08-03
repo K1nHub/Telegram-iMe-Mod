@@ -129,15 +129,15 @@ public class LoadingDrawable extends Drawable {
 
     public void setRadiiDp(float f) {
         if (this.usePath != null) {
-            this.paint.setPathEffect(new CornerPathEffect(AndroidUtilities.m55dp(f)));
-            this.strokePaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m55dp(f)));
+            this.paint.setPathEffect(new CornerPathEffect(AndroidUtilities.m73dp(f)));
+            this.strokePaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m73dp(f)));
             return;
         }
         setRadiiDp(f, f, f, f);
     }
 
     public void setRadiiDp(float f, float f2, float f3, float f4) {
-        setRadii(AndroidUtilities.m55dp(f), AndroidUtilities.m55dp(f2), AndroidUtilities.m55dp(f3), AndroidUtilities.m55dp(f4));
+        setRadii(AndroidUtilities.m73dp(f), AndroidUtilities.m73dp(f2), AndroidUtilities.m73dp(f3), AndroidUtilities.m73dp(f4));
     }
 
     public void setRadii(float f, float f2, float f3, float f4) {
@@ -181,6 +181,7 @@ public class LoadingDrawable extends Drawable {
 
     public void setBounds(RectF rectF) {
         super.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        this.lastBounds = null;
     }
 
     public void reset() {

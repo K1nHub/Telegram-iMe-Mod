@@ -26,19 +26,19 @@
 .method public constructor <init>(Lorg/telegram/ui/FilteredSearchView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1143
+    .line 1161
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;-><init>()V
 
-    .line 1106
+    .line 1124
     new-instance p1, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter$1;-><init>(Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;)V
 
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->sharedLinkCellDelegate:Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;
 
-    .line 1144
+    .line 1162
     iput-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -49,7 +49,7 @@
 .method public getCountForSection(I)I
     .locals 3
 
-    .line 1170
+    .line 1188
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sections:Ljava/util/ArrayList;
@@ -62,7 +62,7 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 1171
+    .line 1189
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v2, v0, Lorg/telegram/ui/FilteredSearchView;->sectionArrays:Ljava/util/HashMap;
@@ -107,7 +107,7 @@
 .method public getItemViewType(II)I
     .locals 1
 
-    .line 1260
+    .line 1278
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sections:Ljava/util/ArrayList;
@@ -150,12 +150,12 @@
 
     const/4 p1, 0x0
 
-    .line 1276
+    .line 1294
     aput p1, p3, p1
 
     const/4 p2, 0x1
 
-    .line 1277
+    .line 1295
     aput p1, p3, p2
 
     return-void
@@ -164,7 +164,7 @@
 .method public getSectionCount()I
     .locals 3
 
-    .line 1159
+    .line 1177
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -179,7 +179,7 @@
 
     return v1
 
-    .line 1162
+    .line 1180
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
@@ -201,7 +201,7 @@
 
     return v1
 
-    .line 1165
+    .line 1183
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
@@ -246,14 +246,14 @@
 
     if-nez p2, :cond_0
 
-    .line 1179
+    .line 1197
     new-instance p2, Lorg/telegram/ui/Cells/GraySectionCell;
 
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 1180
+    .line 1198
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_graySection:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -271,12 +271,12 @@
 
     const/4 p1, 0x0
 
-    .line 1183
+    .line 1201
     invoke-virtual {p2, p1}, Landroid/view/View;->setAlpha(F)V
 
     return-object p2
 
-    .line 1186
+    .line 1204
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
@@ -290,10 +290,10 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1187
+    .line 1205
     invoke-virtual {p2, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1188
+    .line 1206
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sections:Ljava/util/ArrayList;
@@ -304,7 +304,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    .line 1189
+    .line 1207
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sectionArrays:Ljava/util/HashMap;
@@ -317,14 +317,14 @@
 
     const/4 v0, 0x0
 
-    .line 1190
+    .line 1208
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 1191
+    .line 1209
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/ui/Cells/GraySectionCell;
@@ -339,7 +339,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     :cond_2
     return-object p2
@@ -356,7 +356,7 @@
 .method public onBindViewHolder(IILandroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 6
 
-    .line 1222
+    .line 1240
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -365,7 +365,7 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 1223
+    .line 1241
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sections:Ljava/util/ArrayList;
@@ -376,7 +376,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1224
+    .line 1242
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v1, v1, Lorg/telegram/ui/FilteredSearchView;->sectionArrays:Ljava/util/HashMap;
@@ -387,7 +387,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 1225
+    .line 1243
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
@@ -407,20 +407,20 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 1235
+    .line 1253
     :cond_1
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p3, Lorg/telegram/ui/Cells/SharedLinkCell;
 
-    .line 1236
+    .line 1254
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 1237
+    .line 1255
     invoke-virtual {p3}, Lorg/telegram/ui/Cells/SharedLinkCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v4
@@ -448,7 +448,7 @@
     :cond_2
     move v4, v2
 
-    .line 1238
+    .line 1256
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -484,7 +484,7 @@
     :cond_4
     invoke-virtual {p3, v1, v2}, Lorg/telegram/ui/Cells/SharedLinkCell;->setLink(Lorg/telegram/messenger/MessageObject;Z)V
 
-    .line 1239
+    .line 1257
     invoke-virtual {p3}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object p1
@@ -497,7 +497,7 @@
 
     goto :goto_1
 
-    .line 1227
+    .line 1245
     :cond_5
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -505,7 +505,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 1228
+    .line 1246
     iget-object p2, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p2, Lorg/telegram/ui/Cells/GraySectionCell;
@@ -520,7 +520,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     :cond_6
     :goto_1
@@ -536,7 +536,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 1210
+    .line 1228
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->mContext:Landroid/content/Context;
@@ -545,15 +545,15 @@
 
     const/4 v0, 0x5
 
-    .line 1211
+    .line 1229
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 1212
+    .line 1230
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
     goto :goto_0
 
-    .line 1205
+    .line 1223
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/SharedLinkCell;
 
@@ -561,14 +561,14 @@
 
     invoke-direct {p2, v0, p1}, Lorg/telegram/ui/Cells/SharedLinkCell;-><init>(Landroid/content/Context;I)V
 
-    .line 1206
+    .line 1224
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedLinksAdapter;->sharedLinkCellDelegate:Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/SharedLinkCell;->setDelegate(Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;)V
 
     goto :goto_0
 
-    .line 1202
+    .line 1220
     :cond_1
     new-instance p2, Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -576,7 +576,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 1216
+    .line 1234
     :goto_0
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -588,7 +588,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1217
+    .line 1235
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

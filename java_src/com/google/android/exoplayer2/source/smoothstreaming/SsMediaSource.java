@@ -131,17 +131,17 @@ public final class SsMediaSource extends BaseMediaSource implements Loader.Callb
         }
 
         public SsMediaSource createMediaSource(SsManifest ssManifest, MediaItem mediaItem) {
-            List<StreamKey> m744of;
+            List<StreamKey> m762of;
             SsManifest ssManifest2 = ssManifest;
             Assertions.checkArgument(!ssManifest2.isLive);
             MediaItem.LocalConfiguration localConfiguration = mediaItem.localConfiguration;
             if (localConfiguration != null) {
-                m744of = localConfiguration.streamKeys;
+                m762of = localConfiguration.streamKeys;
             } else {
-                m744of = ImmutableList.m744of();
+                m762of = ImmutableList.m762of();
             }
-            if (!m744of.isEmpty()) {
-                ssManifest2 = ssManifest2.copy(m744of);
+            if (!m762of.isEmpty()) {
+                ssManifest2 = ssManifest2.copy(m762of);
             }
             SsManifest ssManifest3 = ssManifest2;
             MediaItem build = mediaItem.buildUpon().setMimeType(MimeTypes.APPLICATION_SS).setUri(mediaItem.localConfiguration != null ? mediaItem.localConfiguration.uri : Uri.EMPTY).build();

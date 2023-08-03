@@ -170,6 +170,8 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     public final Object getResult() {
         Job job;
+        Throwable recoverFromStackFrame;
+        Throwable recoverFromStackFrame2;
         Object coroutine_suspended;
         boolean isReusable = isReusable();
         if (trySuspend()) {
@@ -189,14 +191,16 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
             Throwable th = ((CompletedExceptionally) state$kotlinx_coroutines_core).cause;
             if (DebugKt.getRECOVER_STACK_TRACES()) {
-                throw StackTraceRecoveryKt.access$recoverFromStackFrame(th, this);
+                recoverFromStackFrame2 = StackTraceRecoveryKt.recoverFromStackFrame(th, this);
+                throw recoverFromStackFrame2;
             }
             throw th;
         } else if (DispatchedTaskKt.isCancellableMode(this.resumeMode) && (job = (Job) getContext().get(Job.Key)) != null && !job.isActive()) {
             CancellationException cancellationException = job.getCancellationException();
             cancelCompletedResult$kotlinx_coroutines_core(state$kotlinx_coroutines_core, cancellationException);
             if (DebugKt.getRECOVER_STACK_TRACES()) {
-                throw StackTraceRecoveryKt.access$recoverFromStackFrame(cancellationException, this);
+                recoverFromStackFrame = StackTraceRecoveryKt.recoverFromStackFrame(cancellationException, this);
+                throw recoverFromStackFrame;
             }
             throw cancellationException;
         } else {
@@ -398,10 +402,15 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     @Override // kotlinx.coroutines.DispatchedTask
     public Throwable getExceptionalResult$kotlinx_coroutines_core(Object obj) {
+        Throwable recoverFromStackFrame;
         Throwable exceptionalResult$kotlinx_coroutines_core = super.getExceptionalResult$kotlinx_coroutines_core(obj);
         if (exceptionalResult$kotlinx_coroutines_core != null) {
             Continuation<T> continuation = this.delegate;
-            return (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) ? StackTraceRecoveryKt.access$recoverFromStackFrame(exceptionalResult$kotlinx_coroutines_core, (CoroutineStackFrame) continuation) : exceptionalResult$kotlinx_coroutines_core;
+            if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
+                recoverFromStackFrame = StackTraceRecoveryKt.recoverFromStackFrame(exceptionalResult$kotlinx_coroutines_core, (CoroutineStackFrame) continuation);
+                return recoverFromStackFrame;
+            }
+            return exceptionalResult$kotlinx_coroutines_core;
         }
         return null;
     }

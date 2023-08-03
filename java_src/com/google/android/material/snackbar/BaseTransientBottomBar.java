@@ -37,7 +37,6 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$attr;
 import com.google.android.material.R$dimen;
@@ -207,7 +206,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
             @Override // androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
-                accessibilityNodeInfoCompat.addAction(ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES);
+                accessibilityNodeInfoCompat.addAction(1048576);
                 accessibilityNodeInfoCompat.setDismissable(true);
             }
 

@@ -24,7 +24,7 @@
 .method private constructor <init>(Lorg/telegram/ui/CachedMediaLayout;)V
     .locals 0
 
-    .line 935
+    .line 965
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$BasePlaceProvider;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/CachedMediaLayout$1;)V
     .locals 0
 
-    .line 935
+    .line 965
     invoke-direct {p0, p1}, Lorg/telegram/ui/CachedMediaLayout$BasePlaceProvider;-><init>(Lorg/telegram/ui/CachedMediaLayout;)V
 
     return-void
@@ -46,7 +46,7 @@
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
     .locals 0
 
-    .line 945
+    .line 975
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$BasePlaceProvider;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/CachedMediaLayout;->access$1000(Lorg/telegram/ui/CachedMediaLayout;I)Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
@@ -59,46 +59,46 @@
 
     new-array p2, p2, [I
 
-    .line 948
+    .line 978
     invoke-virtual {p1, p2}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 949
+    .line 979
     new-instance p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p3}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
     const/4 p4, 0x0
 
-    .line 950
+    .line 980
     aget p4, p2, p4
 
     iput p4, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p4, 0x1
 
-    .line 951
+    .line 981
     aget p2, p2, p4
 
     iput p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 952
+    .line 982
     iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$BasePlaceProvider;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 953
+    .line 983
     iget-object p2, p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 954
+    .line 984
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p2
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 955
+    .line 985
     invoke-virtual {p1}, Landroid/view/View;->getScaleX()F
 
     move-result p1
@@ -116,7 +116,7 @@
 .method public setRecyclerListView(Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 940
+    .line 970
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$BasePlaceProvider;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-void

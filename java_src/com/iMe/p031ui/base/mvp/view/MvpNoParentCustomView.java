@@ -3,6 +3,7 @@ package com.iMe.p031ui.base.mvp.view;
 import com.iMe.p031ui.base.mvp.view.ICustomMvpView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
@@ -38,7 +39,17 @@ public abstract class MvpNoParentCustomView implements ICustomMvpView<MvpNoParen
 
     public MvpNoParentCustomView() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(new MvpNoParentCustomView$mMvpDelegate$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<MvpDelegate<MvpNoParentCustomView>>() { // from class: com.iMe.ui.base.mvp.view.MvpNoParentCustomView$mMvpDelegate$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final MvpDelegate<MvpNoParentCustomView> invoke() {
+                return new MvpDelegate<>(MvpNoParentCustomView.this);
+            }
+        });
         this.mMvpDelegate$delegate = lazy;
     }
 

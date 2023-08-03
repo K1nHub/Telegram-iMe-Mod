@@ -32,11 +32,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -44,7 +45,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.GroupCreateSectionCell;
@@ -107,38 +108,38 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             int childCount = getChildCount();
             int size = View.MeasureSpec.getSize(i);
             int i6 = 32;
-            int m54dp = size - AndroidUtilities.m54dp(32);
-            int m54dp2 = AndroidUtilities.m54dp(12);
-            int m54dp3 = AndroidUtilities.m54dp(12);
+            int m72dp = size - AndroidUtilities.m72dp(32);
+            int m72dp2 = AndroidUtilities.m72dp(12);
+            int m72dp3 = AndroidUtilities.m72dp(12);
             int i7 = 0;
             int i8 = 0;
             int i9 = 0;
             while (i7 < childCount) {
                 View childAt = getChildAt(i7);
                 if (childAt instanceof GroupCreateSpan) {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(i6), 1073741824));
-                    if (childAt == this.removingSpan || childAt.getMeasuredWidth() + i8 <= m54dp) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(i6), 1073741824));
+                    if (childAt == this.removingSpan || childAt.getMeasuredWidth() + i8 <= m72dp) {
                         i3 = 12;
                     } else {
                         i3 = 12;
-                        m54dp2 += childAt.getMeasuredHeight() + AndroidUtilities.m54dp(12);
+                        m72dp2 += childAt.getMeasuredHeight() + AndroidUtilities.m72dp(12);
                         i8 = 0;
                     }
-                    if (childAt.getMeasuredWidth() + i9 > m54dp) {
-                        m54dp3 += childAt.getMeasuredHeight() + AndroidUtilities.m54dp(i3);
+                    if (childAt.getMeasuredWidth() + i9 > m72dp) {
+                        m72dp3 += childAt.getMeasuredHeight() + AndroidUtilities.m72dp(i3);
                         i4 = 16;
                         i9 = 0;
                     } else {
                         i4 = 16;
                     }
-                    int m54dp4 = AndroidUtilities.m54dp(i4) + i8;
+                    int m72dp4 = AndroidUtilities.m72dp(i4) + i8;
                     if (!this.animationStarted) {
                         View view = this.removingSpan;
                         if (childAt == view) {
-                            childAt.setTranslationX(AndroidUtilities.m54dp(i4) + i9);
-                            childAt.setTranslationY(m54dp3);
+                            childAt.setTranslationX(AndroidUtilities.m72dp(i4) + i9);
+                            childAt.setTranslationY(m72dp3);
                         } else if (view != null) {
-                            float f = m54dp4;
+                            float f = m72dp4;
                             if (childAt.getTranslationX() != f) {
                                 i5 = 1;
                                 c = 0;
@@ -147,7 +148,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                                 i5 = 1;
                                 c = 0;
                             }
-                            float f2 = m54dp2;
+                            float f2 = m72dp2;
                             if (childAt.getTranslationY() != f2) {
                                 ArrayList<Animator> arrayList = this.animators;
                                 float[] fArr = new float[i5];
@@ -155,46 +156,46 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                                 arrayList.add(ObjectAnimator.ofFloat(childAt, "translationY", fArr));
                             }
                         } else {
-                            childAt.setTranslationX(m54dp4);
-                            childAt.setTranslationY(m54dp2);
+                            childAt.setTranslationX(m72dp4);
+                            childAt.setTranslationY(m72dp2);
                         }
                     }
                     if (childAt != this.removingSpan) {
-                        i8 += childAt.getMeasuredWidth() + AndroidUtilities.m54dp(9);
+                        i8 += childAt.getMeasuredWidth() + AndroidUtilities.m72dp(9);
                     }
-                    i9 += childAt.getMeasuredWidth() + AndroidUtilities.m54dp(9);
+                    i9 += childAt.getMeasuredWidth() + AndroidUtilities.m72dp(9);
                 }
                 i7++;
                 i6 = 32;
             }
             if (AndroidUtilities.isTablet()) {
-                min = AndroidUtilities.m54dp(366) / 3;
+                min = AndroidUtilities.m72dp(366) / 3;
             } else {
                 Point point = AndroidUtilities.displaySize;
-                min = (Math.min(point.x, point.y) - AndroidUtilities.m54dp(164)) / 3;
+                min = (Math.min(point.x, point.y) - AndroidUtilities.m72dp(164)) / 3;
             }
-            if (m54dp - i8 < min) {
-                m54dp2 += AndroidUtilities.m54dp(44);
+            if (m72dp - i8 < min) {
+                m72dp2 += AndroidUtilities.m72dp(44);
                 i8 = 0;
             }
-            if (m54dp - i9 < min) {
-                m54dp3 += AndroidUtilities.m54dp(44);
+            if (m72dp - i9 < min) {
+                m72dp3 += AndroidUtilities.m72dp(44);
             }
-            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(m54dp - i8, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
+            InviteContactsActivity.this.editText.measure(View.MeasureSpec.makeMeasureSpec(m72dp - i8, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(32), 1073741824));
             if (!this.animationStarted) {
-                int m54dp5 = m54dp3 + AndroidUtilities.m54dp(44);
-                int m54dp6 = i8 + AndroidUtilities.m54dp(16);
-                InviteContactsActivity.this.fieldY = m54dp2;
+                int m72dp5 = m72dp3 + AndroidUtilities.m72dp(44);
+                int m72dp6 = i8 + AndroidUtilities.m72dp(16);
+                InviteContactsActivity.this.fieldY = m72dp2;
                 if (this.currentAnimation == null) {
-                    InviteContactsActivity.this.containerHeight = m54dp5;
-                    InviteContactsActivity.this.editText.setTranslationX(m54dp6);
+                    InviteContactsActivity.this.containerHeight = m72dp5;
+                    InviteContactsActivity.this.editText.setTranslationX(m72dp6);
                     InviteContactsActivity.this.editText.setTranslationY(InviteContactsActivity.this.fieldY);
                 } else {
-                    int m54dp7 = m54dp2 + AndroidUtilities.m54dp(44);
-                    if (InviteContactsActivity.this.containerHeight != m54dp7) {
-                        this.animators.add(ObjectAnimator.ofInt(InviteContactsActivity.this, "containerHeight", m54dp7));
+                    int m72dp7 = m72dp2 + AndroidUtilities.m72dp(44);
+                    if (InviteContactsActivity.this.containerHeight != m72dp7) {
+                        this.animators.add(ObjectAnimator.ofInt(InviteContactsActivity.this, "containerHeight", m72dp7));
                     }
-                    float f3 = m54dp6;
+                    float f3 = m72dp6;
                     if (InviteContactsActivity.this.editText.getTranslationX() != f3) {
                         this.animators.add(ObjectAnimator.ofFloat(InviteContactsActivity.this.editText, "translationX", f3));
                     }
@@ -333,11 +334,11 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.allSpans.clear();
         this.selectedContacts.clear();
         this.currentDeletingSpan = null;
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3417R.string.InviteFriends));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3419R.string.InviteFriends));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     InviteContactsActivity.this.finishFragment();
@@ -347,28 +348,28 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         ViewGroup viewGroup = new ViewGroup(context) { // from class: org.telegram.ui.InviteContactsActivity.2
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
-                int m54dp;
+                int m72dp;
                 int size = View.MeasureSpec.getSize(i);
                 int size2 = View.MeasureSpec.getSize(i2);
                 setMeasuredDimension(size, size2);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    m54dp = AndroidUtilities.m54dp(144);
+                    m72dp = AndroidUtilities.m72dp(144);
                 } else {
-                    m54dp = AndroidUtilities.m54dp(56);
+                    m72dp = AndroidUtilities.m72dp(56);
                 }
-                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
-                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+                InviteContactsActivity.this.infoTextView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
+                InviteContactsActivity.this.counterView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
                 int measuredHeight = InviteContactsActivity.this.infoTextView.getVisibility() == 0 ? InviteContactsActivity.this.infoTextView.getMeasuredHeight() : InviteContactsActivity.this.counterView.getMeasuredHeight();
-                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+                InviteContactsActivity.this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
                 InviteContactsActivity.this.listView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - measuredHeight, 1073741824));
-                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - AndroidUtilities.m54dp(72), 1073741824));
+                InviteContactsActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - InviteContactsActivity.this.scrollView.getMeasuredHeight()) - AndroidUtilities.m72dp(72), 1073741824));
             }
 
             @Override // android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 InviteContactsActivity.this.scrollView.layout(0, 0, InviteContactsActivity.this.scrollView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight());
                 InviteContactsActivity.this.listView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight(), InviteContactsActivity.this.listView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.listView.getMeasuredHeight());
-                InviteContactsActivity.this.emptyView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight() + AndroidUtilities.m54dp(72), InviteContactsActivity.this.emptyView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.emptyView.getMeasuredHeight());
+                InviteContactsActivity.this.emptyView.layout(0, InviteContactsActivity.this.scrollView.getMeasuredHeight() + AndroidUtilities.m72dp(72), InviteContactsActivity.this.emptyView.getMeasuredWidth(), InviteContactsActivity.this.scrollView.getMeasuredHeight() + InviteContactsActivity.this.emptyView.getMeasuredHeight());
                 int i5 = i4 - i2;
                 int measuredHeight = i5 - InviteContactsActivity.this.infoTextView.getMeasuredHeight();
                 InviteContactsActivity.this.infoTextView.layout(0, measuredHeight, InviteContactsActivity.this.infoTextView.getMeasuredWidth(), InviteContactsActivity.this.infoTextView.getMeasuredHeight() + measuredHeight);
@@ -395,8 +396,8 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     return false;
                 }
                 rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top += InviteContactsActivity.this.fieldY + AndroidUtilities.m54dp(20);
-                rect.bottom += InviteContactsActivity.this.fieldY + AndroidUtilities.m54dp(50);
+                rect.top += InviteContactsActivity.this.fieldY + AndroidUtilities.m72dp(20);
+                rect.bottom += InviteContactsActivity.this.fieldY + AndroidUtilities.m72dp(50);
                 return super.requestChildRectangleOnScreen(view, rect, z);
             }
         };
@@ -437,7 +438,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.editText.setImeOptions(268435462);
         this.editText.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         this.spansContainer.addView(this.editText);
-        this.editText.setHintText(LocaleController.getString("SearchFriends", C3417R.string.SearchFriends));
+        this.editText.setHintText(LocaleController.getString("SearchFriends", C3419R.string.SearchFriends));
         this.editText.setCustomSelectionActionModeCallback(new ActionMode.Callback(this) { // from class: org.telegram.ui.InviteContactsActivity.5
             @Override // android.view.ActionMode.Callback
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
@@ -492,7 +493,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteContactsActivity.this.adapter.searchDialogs(InviteContactsActivity.this.editText.getText().toString());
                     InviteContactsActivity.this.listView.setFastScrollVisible(false);
                     InviteContactsActivity.this.listView.setVerticalScrollBarEnabled(true);
-                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3417R.string.NoResult));
+                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3419R.string.NoResult));
                     return;
                 }
                 InviteContactsActivity.this.closeSearch();
@@ -504,7 +505,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         } else {
             this.emptyView.showTextView();
         }
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3417R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3419R.string.NoContacts));
         viewGroup2.addView(this.emptyView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         RecyclerListView recyclerListView = new RecyclerListView(context);
@@ -544,10 +545,10 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         int i2 = Theme.key_contacts_inviteText;
         textView2.setTextColor(Theme.getColor(i2));
         this.infoTextView.setGravity(17);
-        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3417R.string.InviteFriendsHelp));
+        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3419R.string.InviteFriendsHelp));
         this.infoTextView.setTextSize(1, 13.0f);
         this.infoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.infoTextView.setPadding(AndroidUtilities.m54dp(17), AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(17), AndroidUtilities.m54dp(9));
+        this.infoTextView.setPadding(AndroidUtilities.m72dp(17), AndroidUtilities.m72dp(9), AndroidUtilities.m72dp(17), AndroidUtilities.m72dp(9));
         viewGroup2.addView(this.infoTextView, LayoutHelper.createFrame(-1, -2, 83));
         FrameLayout frameLayout = new FrameLayout(context);
         this.counterView = frameLayout;
@@ -569,17 +570,17 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.counterTextView.setTextSize(1, 14.0f);
         this.counterTextView.setTextColor(Theme.getColor(i));
         this.counterTextView.setGravity(17);
-        this.counterTextView.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(10), Theme.getColor(i2)));
-        this.counterTextView.setMinWidth(AndroidUtilities.m54dp(20));
-        this.counterTextView.setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(1));
+        this.counterTextView.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m72dp(10), Theme.getColor(i2)));
+        this.counterTextView.setMinWidth(AndroidUtilities.m72dp(20));
+        this.counterTextView.setPadding(AndroidUtilities.m72dp(6), 0, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(1));
         linearLayout.addView(this.counterTextView, LayoutHelper.createLinear(-2, 20, 16, 0, 0, 10, 0));
         TextView textView4 = new TextView(context);
         this.textView = textView4;
         textView4.setTextSize(1, 14.0f);
         this.textView.setTextColor(Theme.getColor(i2));
         this.textView.setGravity(17);
-        this.textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(8));
-        this.textView.setText(LocaleController.getString("InviteToTelegram", C3417R.string.InviteToTelegram).toUpperCase());
+        this.textView.setCompoundDrawablePadding(AndroidUtilities.m72dp(8));
+        this.textView.setText(LocaleController.getString("InviteToTelegram", C3419R.string.InviteToTelegram).toUpperCase());
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 16));
         updateHint();
@@ -599,7 +600,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 intent.putExtra("android.intent.extra.TEXT", inviteText);
                 getParentActivity().startActivityForResult(Intent.createChooser(intent, inviteText), 500);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         } else if ((view instanceof InviteUserCell) && (contact = (inviteUserCell = (InviteUserCell) view).getContact()) != null) {
             boolean containsKey = this.selectedContacts.containsKey(contact.key);
@@ -641,7 +642,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             intent.putExtra("sms_body", ContactsController.getInstance(this.currentAccount).getInviteText(i));
             getParentActivity().startActivityForResult(intent, 500);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         finishFragment();
     }
@@ -709,13 +710,20 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.adapter.searchDialogs(null);
         this.listView.setFastScrollVisible(true);
         this.listView.setVerticalScrollBarEnabled(false);
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3417R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3419R.string.NoContacts));
     }
 
     private void fetchContacts() {
         ArrayList<ContactsController.Contact> arrayList = new ArrayList<>(ContactsController.getInstance(this.currentAccount).phoneBookContacts);
         this.phoneBookContacts = arrayList;
-        Collections.sort(arrayList, InviteContactsActivity$$ExternalSyntheticLambda1.INSTANCE);
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda1
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$fetchContacts$2;
+                lambda$fetchContacts$2 = InviteContactsActivity.lambda$fetchContacts$2((ContactsController.Contact) obj, (ContactsController.Contact) obj2);
+                return lambda$fetchContacts$2;
+            }
+        });
         EmptyTextProgressView emptyTextProgressView = this.emptyView;
         if (emptyTextProgressView != null) {
             emptyTextProgressView.showTextView();
@@ -775,7 +783,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             FrameLayout frameLayout;
             if (i == 1) {
                 InviteTextCell inviteTextCell = new InviteTextCell(this.context);
-                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3417R.string.ShareTelegram), C3417R.C3419drawable.share);
+                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3419R.string.ShareTelegram), C3419R.C3421drawable.share);
                 frameLayout = inviteTextCell;
             } else {
                 frameLayout = new InviteUserCell(this.context, true);
@@ -822,7 +830,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     timer.cancel();
                 }
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
             if (str == null) {
                 this.searchResult.clear();
@@ -832,16 +840,16 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             }
             Timer timer2 = new Timer();
             this.searchTimer = timer2;
-            timer2.schedule(new C59201(str), 200L, 300L);
+            timer2.schedule(new C59821(str), 200L, 300L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.InviteContactsActivity$InviteAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C59201 extends TimerTask {
+        public class C59821 extends TimerTask {
             final /* synthetic */ String val$query;
 
-            C59201(String str) {
+            C59821(String str) {
                 this.val$query = str;
             }
 
@@ -851,13 +859,13 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteAdapter.this.searchTimer.cancel();
                     InviteAdapter.this.searchTimer = null;
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 final String str = this.val$query;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C59201.this.lambda$run$1(str);
+                        InviteContactsActivity.InviteAdapter.C59821.this.lambda$run$1(str);
                     }
                 });
             }
@@ -867,7 +875,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C59201.this.lambda$run$0(str);
+                        InviteContactsActivity.InviteAdapter.C59821.this.lambda$run$0(str);
                     }
                 });
             }
@@ -996,7 +1004,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     org.telegram.p043ui.InviteContactsActivity.InviteAdapter.access$2600(r3, r1, r2)
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.InviteContactsActivity.InviteAdapter.C59201.lambda$run$0(java.lang.String):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.InviteContactsActivity.InviteAdapter.C59821.lambda$run$0(java.lang.String):void");
             }
         }
 
@@ -1046,10 +1054,10 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
         arrayList.add(new ThemeDescription(view, i, null, null, null, null, i2));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i3 = ThemeDescription.FLAG_BACKGROUND;
         int i4 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3484ActionBar, i3, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(c3485ActionBar, i3, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

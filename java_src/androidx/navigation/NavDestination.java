@@ -19,6 +19,7 @@ import kotlin.Unit;
 import kotlin.collections.ArrayDeque;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
@@ -34,7 +35,7 @@ public class NavDestination {
     private final List<NavDeepLink> deepLinks;
 
     /* renamed from: id */
-    private int f48id;
+    private int f50id;
     private String idName;
     private CharSequence label;
     private final String navigatorName;
@@ -151,7 +152,7 @@ public class NavDestination {
         int i = androidx.navigation.common.R$styleable.Navigator_android_id;
         if (obtainAttributes.hasValue(i)) {
             setId(obtainAttributes.getResourceId(i, 0));
-            this.idName = Companion.getDisplayName(context, this.f48id);
+            this.idName = Companion.getDisplayName(context, this.f50id);
         }
         this.label = obtainAttributes.getText(androidx.navigation.common.R$styleable.Navigator_android_label);
         Unit unit = Unit.INSTANCE;
@@ -159,11 +160,11 @@ public class NavDestination {
     }
 
     public final int getId() {
-        return this.f48id;
+        return this.f50id;
     }
 
     public final void setId(int i) {
-        this.f48id = i;
+        this.f50id = i;
         this.idName = null;
     }
 
@@ -200,7 +201,7 @@ public class NavDestination {
 
     public String getDisplayName() {
         String str = this.idName;
-        return str == null ? String.valueOf(this.f48id) : str;
+        return str == null ? String.valueOf(this.f50id) : str;
     }
 
     public final void addDeepLink(String uriPattern) {
@@ -279,12 +280,12 @@ public class NavDestination {
             if ((navDestination != null ? navDestination.parent : null) != null) {
                 NavGraph navGraph3 = navDestination.parent;
                 Intrinsics.checkNotNull(navGraph3);
-                if (navGraph3.findNode(navGraph.f48id) == navGraph) {
+                if (navGraph3.findNode(navGraph.f50id) == navGraph) {
                     arrayDeque.addFirst(navGraph);
                     break;
                 }
             }
-            if (navGraph2 == null || navGraph2.getStartDestinationId() != navGraph.f48id) {
+            if (navGraph2 == null || navGraph2.getStartDestinationId() != navGraph.f50id) {
                 arrayDeque.addFirst(navGraph);
             }
             if (Intrinsics.areEqual(navGraph2, navDestination) || navGraph2 == null) {
@@ -295,7 +296,7 @@ public class NavDestination {
         List<NavDestination> list = CollectionsKt.toList(arrayDeque);
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (NavDestination navDestination2 : list) {
-            arrayList.add(Integer.valueOf(navDestination2.f48id));
+            arrayList.add(Integer.valueOf(navDestination2.f50id));
         }
         return CollectionsKt.toIntArray(arrayList);
     }
@@ -361,7 +362,7 @@ public class NavDestination {
         String str = this.idName;
         if (str == null) {
             sb.append("0x");
-            sb.append(Integer.toHexString(this.f48id));
+            sb.append(Integer.toHexString(this.f50id));
         } else {
             sb.append(str);
         }
@@ -397,7 +398,7 @@ public class NavDestination {
 
     public int hashCode() {
         Set<String> keySet;
-        int i = this.f48id * 31;
+        int i = this.f50id * 31;
         String str = this.route;
         int hashCode = i + (str != null ? str.hashCode() : 0);
         for (NavDeepLink navDeepLink : this.deepLinks) {
@@ -469,7 +470,13 @@ public class NavDestination {
 
         public final Sequence<NavDestination> getHierarchy(NavDestination navDestination) {
             Intrinsics.checkNotNullParameter(navDestination, "<this>");
-            return SequencesKt.generateSequence(navDestination, NavDestination$Companion$hierarchy$1.INSTANCE);
+            return SequencesKt.generateSequence(navDestination, new Function1<NavDestination, NavDestination>() { // from class: androidx.navigation.NavDestination$Companion$hierarchy$1
+                @Override // kotlin.jvm.functions.Function1
+                public final NavDestination invoke(NavDestination it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return it.getParent();
+                }
+            });
         }
     }
 

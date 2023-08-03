@@ -44,7 +44,12 @@ public class LocationSharingService extends Service implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onCreate$1() {
         this.handler.postDelayed(this.runnable, 1000L);
-        Utilities.stageQueue.postRunnable(LocationSharingService$$ExternalSyntheticLambda2.INSTANCE);
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.LocationSharingService$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                LocationSharingService.lambda$onCreate$0();
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -113,17 +118,17 @@ public class LocationSharingService extends Service implements NotificationCente
             int i = sharingLocationInfo.messageObject.currentAccount;
             if (DialogObject.isUserDialog(dialogId)) {
                 formatPluralString = UserObject.getFirstName(MessagesController.getInstance(i).getUser(Long.valueOf(dialogId)));
-                string = LocaleController.getString("AttachLiveLocationIsSharing", C3417R.string.AttachLiveLocationIsSharing);
+                string = LocaleController.getString("AttachLiveLocationIsSharing", C3419R.string.AttachLiveLocationIsSharing);
             } else {
                 TLRPC$Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-dialogId));
                 formatPluralString = chat != null ? chat.title : "";
-                string = LocaleController.getString("AttachLiveLocationIsSharingChat", C3417R.string.AttachLiveLocationIsSharingChat);
+                string = LocaleController.getString("AttachLiveLocationIsSharingChat", C3419R.string.AttachLiveLocationIsSharingChat);
             }
         } else {
             formatPluralString = LocaleController.formatPluralString("Chats", infos.size(), new Object[0]);
-            string = LocaleController.getString("AttachLiveLocationIsSharingChats", C3417R.string.AttachLiveLocationIsSharingChats);
+            string = LocaleController.getString("AttachLiveLocationIsSharingChats", C3419R.string.AttachLiveLocationIsSharingChats);
         }
-        String format = String.format(string, LocaleController.getString("AttachLiveLocation", C3417R.string.AttachLiveLocation), formatPluralString);
+        String format = String.format(string, LocaleController.getString("AttachLiveLocation", C3419R.string.AttachLiveLocation), formatPluralString);
         this.builder.setTicker(format);
         this.builder.setContentText(format);
         if (z) {
@@ -145,17 +150,17 @@ public class LocationSharingService extends Service implements NotificationCente
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(ApplicationLoader.applicationContext);
                 this.builder = builder;
                 builder.setWhen(System.currentTimeMillis());
-                this.builder.setSmallIcon(C3417R.C3419drawable.live_loc);
+                this.builder.setSmallIcon(C3419R.C3421drawable.live_loc);
                 this.builder.setContentIntent(activity);
                 NotificationsController.checkOtherNotificationsChannel();
                 this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-                this.builder.setContentTitle(LocaleController.getString("AppName", C3417R.string.AppName));
-                this.builder.addAction(0, LocaleController.getString("StopLiveLocation", C3417R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, StopLiveLocationReceiver.class), 167772160));
+                this.builder.setContentTitle(LocaleController.getString("AppName", C3419R.string.AppName));
+                this.builder.addAction(0, LocaleController.getString("StopLiveLocation", C3419R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, StopLiveLocationReceiver.class), 167772160));
             }
             updateNotification(false);
             startForeground(6, this.builder.build());
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
         return 2;
     }

@@ -22,14 +22,14 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 584
+    .line 582
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x8
 
     new-array v0, v0, [F
 
-    .line 582
+    .line 580
     iput-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->coords:[F
 
     return-void
@@ -40,7 +40,7 @@
 .method applyMatrix(Landroid/graphics/Matrix;)V
     .locals 1
 
-    .line 599
+    .line 597
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->coords:[F
 
     invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
@@ -51,7 +51,7 @@
 .method getRect(Landroid/graphics/RectF;)V
     .locals 5
 
-    .line 603
+    .line 601
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->coords:[F
 
     const/4 v1, 0x0
@@ -78,7 +78,7 @@
 .method setRect(Landroid/graphics/RectF;)V
     .locals 5
 
-    .line 588
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropRectangle;->coords:[F
 
     iget v1, p1, Landroid/graphics/RectF;->left:F
@@ -87,14 +87,14 @@
 
     aput v1, v0, v2
 
-    .line 589
+    .line 587
     iget v2, p1, Landroid/graphics/RectF;->top:F
 
     const/4 v3, 0x1
 
     aput v2, v0, v3
 
-    .line 590
+    .line 588
     iget v3, p1, Landroid/graphics/RectF;->right:F
 
     const/4 v4, 0x2
@@ -103,15 +103,15 @@
 
     const/4 v4, 0x3
 
-    .line 591
+    .line 589
     aput v2, v0, v4
 
     const/4 v2, 0x4
 
-    .line 592
+    .line 590
     aput v3, v0, v2
 
-    .line 593
+    .line 591
     iget p1, p1, Landroid/graphics/RectF;->bottom:F
 
     const/4 v2, 0x5
@@ -120,12 +120,12 @@
 
     const/4 v2, 0x6
 
-    .line 594
+    .line 592
     aput v1, v0, v2
 
     const/4 v1, 0x7
 
-    .line 595
+    .line 593
     aput p1, v0, v1
 
     return-void

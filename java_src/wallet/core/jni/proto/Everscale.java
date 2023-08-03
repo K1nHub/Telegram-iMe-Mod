@@ -13,10 +13,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Everscale {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         SigningInput.ActionOneofCase getActionOneofCase();
 
@@ -33,7 +33,7 @@ public final class Everscale {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -46,7 +46,7 @@ public final class Everscale {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         Transfer.AccountStateOneofCase getAccountStateOneofCase();
 
@@ -83,7 +83,7 @@ public final class Everscale {
     private Everscale() {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum MessageBehavior implements Internal.EnumLite {
         SimpleTransfer(0),
         SendAllBalance(1),
@@ -130,7 +130,7 @@ public final class Everscale {
             return MessageBehaviorVerifier.INSTANCE;
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         private static final class MessageBehaviorVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new MessageBehaviorVerifier();
 
@@ -148,7 +148,7 @@ public final class Everscale {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         public static final int BEHAVIOR_FIELD_NUMBER = 2;
@@ -169,7 +169,7 @@ public final class Everscale {
         private Transfer() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum AccountStateOneofCase {
             ENCODED_CONTRACT_DATA(6),
             ACCOUNTSTATEONEOF_NOT_SET(0);
@@ -402,9 +402,9 @@ public final class Everscale {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C69511 c69511) {
+            /* synthetic */ Builder(C72101 c72101) {
                 this();
             }
 
@@ -566,7 +566,7 @@ public final class Everscale {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69511.f1882xa1df5c61[method.ordinal()]) {
+            switch (C72101.f1938xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -612,47 +612,47 @@ public final class Everscale {
     }
 
     /* renamed from: wallet.core.jni.proto.Everscale$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C69511 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72101 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1882xa1df5c61;
+        static final /* synthetic */ int[] f1938xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1882xa1df5c61 = iArr;
+            f1938xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1882xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1938xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         private static volatile Parser<SigningInput> PARSER = null;
@@ -665,7 +665,7 @@ public final class Everscale {
         private SigningInput() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum ActionOneofCase {
             TRANSFER(1),
             ACTIONONEOF_NOT_SET(0);
@@ -818,9 +818,9 @@ public final class Everscale {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C69511 c69511) {
+            /* synthetic */ Builder(C72101 c72101) {
                 this();
             }
 
@@ -893,7 +893,7 @@ public final class Everscale {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69511.f1882xa1df5c61[method.ordinal()]) {
+            switch (C72101.f1938xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -938,7 +938,7 @@ public final class Everscale {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -1031,9 +1031,9 @@ public final class Everscale {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C69511 c69511) {
+            /* synthetic */ Builder(C72101 c72101) {
                 this();
             }
 
@@ -1072,7 +1072,7 @@ public final class Everscale {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69511.f1882xa1df5c61[method.ordinal()]) {
+            switch (C72101.f1938xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

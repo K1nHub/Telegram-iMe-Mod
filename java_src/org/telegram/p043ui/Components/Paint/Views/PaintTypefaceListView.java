@@ -9,12 +9,13 @@ import androidx.core.util.Consumer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.Components.Paint.PaintTypeface;
 import org.telegram.p043ui.Components.Paint.Views.PaintTextOptionsView;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTypefaceListView */
 /* loaded from: classes6.dex */
-public class PaintTypefaceListView extends RecyclerListView {
+public class PaintTypefaceListView extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private Path mask;
     private Consumer<Path> maskProvider;
 
@@ -46,13 +47,40 @@ public class PaintTypefaceListView extends RecyclerListView {
                 return PaintTypeface.get().size();
             }
         });
-        setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
+        setPadding(0, AndroidUtilities.m72dp(8), 0, AndroidUtilities.m72dp(8));
+        setClipToPadding(false);
+    }
+
+    @Override // org.telegram.p043ui.Components.RecyclerListView
+    public Integer getSelectorColor(int i) {
+        return 285212671;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.customTypefacesLoaded) {
+            getAdapter().notifyDataSetChanged();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((Math.min(PaintTypeface.get().size(), 6) * AndroidUtilities.m54dp(48)) + AndroidUtilities.m54dp(16), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((Math.min(PaintTypeface.get().size(), 6) * AndroidUtilities.m72dp(48)) + AndroidUtilities.m72dp(16), 1073741824));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View

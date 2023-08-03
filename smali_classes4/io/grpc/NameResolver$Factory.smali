@@ -72,7 +72,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "params-default-port"
+    const-string/jumbo v0, "params-default-port"
 
     .line 145
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;
@@ -81,7 +81,7 @@
 
     sput-object v0, Lio/grpc/NameResolver$Factory;->PARAMS_DEFAULT_PORT:Lio/grpc/Attributes$Key;
 
-    const-string v0, "params-proxy-detector"
+    const-string/jumbo v0, "params-proxy-detector"
 
     .line 157
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;
@@ -90,7 +90,7 @@
 
     sput-object v0, Lio/grpc/NameResolver$Factory;->PARAMS_PROXY_DETECTOR:Lio/grpc/Attributes$Key;
 
-    const-string v0, "params-sync-context"
+    const-string/jumbo v0, "params-sync-context"
 
     .line 161
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;
@@ -99,7 +99,7 @@
 
     sput-object v0, Lio/grpc/NameResolver$Factory;->PARAMS_SYNC_CONTEXT:Lio/grpc/Attributes$Key;
 
-    const-string v0, "params-parser"
+    const-string/jumbo v0, "params-parser"
 
     .line 165
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;

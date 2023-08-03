@@ -5,12 +5,14 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import android.view.TextureView;
 import org.telegram.p043ui.Components.FilterGLThread;
+import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* renamed from: org.telegram.ui.Components.VideoEditTextureView */
 /* loaded from: classes6.dex */
 public class VideoEditTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     private VideoPlayer currentVideoPlayer;
     private VideoEditTextureViewDelegate delegate;
     private FilterGLThread eglThread;
+    public StoryEntry.HDRInfo hdrInfo;
     private int videoHeight;
     private int videoWidth;
     private Rect viewRect;
@@ -23,6 +25,14 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    public void setHDRInfo(StoryEntry.HDRInfo hDRInfo) {
+        this.hdrInfo = hDRInfo;
+        FilterGLThread filterGLThread = this.eglThread;
+        if (filterGLThread != null) {
+            filterGLThread.updateHDRInfo(hDRInfo);
+        }
     }
 
     public VideoEditTextureView(Context context, VideoPlayer videoPlayer) {
@@ -73,7 +83,7 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
             public final void onVideoSurfaceCreated(SurfaceTexture surfaceTexture2) {
                 VideoEditTextureView.this.lambda$onSurfaceTextureAvailable$0(surfaceTexture2);
             }
-        });
+        }, this.hdrInfo);
         this.eglThread = filterGLThread;
         int i4 = this.videoWidth;
         if (i4 != 0 && (i3 = this.videoHeight) != 0) {
@@ -139,17 +149,17 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
 
     public void setViewRect(float f, float f2, float f3, float f4) {
         Rect rect = this.viewRect;
-        rect.f1816x = f;
-        rect.f1817y = f2;
+        rect.f1838x = f;
+        rect.f1839y = f2;
         rect.width = f3;
         rect.height = f4;
     }
 
     public boolean containsPoint(float f, float f2) {
         Rect rect = this.viewRect;
-        float f3 = rect.f1816x;
+        float f3 = rect.f1838x;
         if (f >= f3 && f <= f3 + rect.width) {
-            float f4 = rect.f1817y;
+            float f4 = rect.f1839y;
             if (f2 >= f4 && f2 <= f4 + rect.height) {
                 return true;
             }

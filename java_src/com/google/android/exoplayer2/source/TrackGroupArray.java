@@ -15,7 +15,14 @@ public final class TrackGroupArray implements Bundleable {
     private final ImmutableList<TrackGroup> trackGroups;
     public static final TrackGroupArray EMPTY = new TrackGroupArray(new TrackGroup[0]);
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);
-    public static final Bundleable.Creator<TrackGroupArray> CREATOR = TrackGroupArray$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<TrackGroupArray> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.source.TrackGroupArray$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            TrackGroupArray lambda$static$0;
+            lambda$static$0 = TrackGroupArray.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     public TrackGroupArray(TrackGroup... trackGroupArr) {
         this.trackGroups = ImmutableList.copyOf(trackGroupArr);
@@ -79,7 +86,7 @@ public final class TrackGroupArray implements Bundleable {
             int i2 = i + 1;
             for (int i3 = i2; i3 < this.trackGroups.size(); i3++) {
                 if (this.trackGroups.get(i).equals(this.trackGroups.get(i3))) {
-                    Log.m799e(TAG, "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
+                    Log.m817e(TAG, "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
                 }
             }
             i = i2;

@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSwitchableItem.kt */
 /* renamed from: com.iMe.ui.drawer.DrawerSwitchableItem */
@@ -89,35 +88,35 @@ public enum DrawerSwitchableItem {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3417R.string.drawer_wallet_item_title);
+                String internalString = LocaleController.getInternalString(C3419R.string.drawer_wallet_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…drawer_wallet_item_title)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3417R.string.drawer_catalog_item_title);
+                String internalString2 = LocaleController.getInternalString(C3419R.string.drawer_catalog_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…rawer_catalog_item_title)");
                 return internalString2;
             case 3:
-                String string = LocaleController.getString("AttachMusic", C3417R.string.AttachMusic);
+                String string = LocaleController.getString("AttachMusic", C3419R.string.AttachMusic);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
                 return string;
             case 4:
-                String string2 = LocaleController.getString("Contacts", C3417R.string.Contacts);
+                String string2 = LocaleController.getString("Contacts", C3419R.string.Contacts);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Contacts\", R.string.Contacts)");
                 return string2;
             case 5:
-                String string3 = LocaleController.getString("Calls", C3417R.string.Calls);
+                String string3 = LocaleController.getString("Calls", C3419R.string.Calls);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Calls\", R.string.Calls)");
                 return string3;
             case 6:
-                String string4 = LocaleController.getString("PeopleNearby", C3417R.string.PeopleNearby);
+                String string4 = LocaleController.getString("PeopleNearby", C3419R.string.PeopleNearby);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"PeopleNearby\", R.string.PeopleNearby)");
                 return string4;
             case 7:
-                String string5 = LocaleController.getString("SavedMessages", C3417R.string.SavedMessages);
+                String string5 = LocaleController.getString("SavedMessages", C3419R.string.SavedMessages);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"SavedMessages\", R.string.SavedMessages)");
                 return string5;
             case 8:
-                String internalString3 = LocaleController.getInternalString(C3417R.string.cloud_albums_toolbar_title);
+                String internalString3 = LocaleController.getInternalString(C3419R.string.cloud_albums_toolbar_title);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…oud_albums_toolbar_title)");
                 return internalString3;
             default:
@@ -129,6 +128,23 @@ public enum DrawerSwitchableItem {
     /* renamed from: com.iMe.ui.drawer.DrawerSwitchableItem$Companion */
     /* loaded from: classes3.dex */
     public static final class Companion {
+
+        /* compiled from: DrawerSwitchableItem.kt */
+        /* renamed from: com.iMe.ui.drawer.DrawerSwitchableItem$Companion$WhenMappings */
+        /* loaded from: classes3.dex */
+        public /* synthetic */ class WhenMappings {
+            public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+            static {
+                int[] iArr = new int[DrawerSwitchableItem.values().length];
+                try {
+                    iArr[DrawerSwitchableItem.PEOPLE_NEARBY.ordinal()] = 1;
+                } catch (NoSuchFieldError unused) {
+                }
+                $EnumSwitchMapping$0 = iArr;
+            }
+        }
+
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
@@ -150,10 +166,8 @@ public enum DrawerSwitchableItem {
         public final List<DrawerSwitchableItem> getSupportedItems() {
             DrawerSwitchableItem[] values = DrawerSwitchableItem.values();
             ArrayList arrayList = new ArrayList();
-            int length = values.length;
-            for (int i = 0; i < length; i++) {
-                DrawerSwitchableItem drawerSwitchableItem = values[i];
-                if (drawerSwitchableItem == DrawerSwitchableItem.PEOPLE_NEARBY ? AndroidUtilities.hasSystemFeature("android.hardware.location.gps") : true) {
+            for (DrawerSwitchableItem drawerSwitchableItem : values) {
+                if (WhenMappings.$EnumSwitchMapping$0[drawerSwitchableItem.ordinal()] == 1 ? ApplicationLoader.applicationContext.getPackageManager().hasSystemFeature("android.hardware.location.gps") : true) {
                     arrayList.add(drawerSwitchableItem);
                 }
             }
@@ -161,12 +175,10 @@ public enum DrawerSwitchableItem {
         }
 
         public final Set<String> getDefaultItems() {
-            int collectionSizeOrDefault;
             Set<String> set;
-            List<DrawerSwitchableItem> supportedItems = getSupportedItems();
-            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(supportedItems, 10);
-            ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-            for (DrawerSwitchableItem drawerSwitchableItem : supportedItems) {
+            DrawerSwitchableItem[] values = DrawerSwitchableItem.values();
+            ArrayList arrayList = new ArrayList(values.length);
+            for (DrawerSwitchableItem drawerSwitchableItem : values) {
                 arrayList.add(drawerSwitchableItem.name());
             }
             set = CollectionsKt___CollectionsKt.toSet(arrayList);

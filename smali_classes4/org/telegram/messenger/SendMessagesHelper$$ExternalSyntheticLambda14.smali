@@ -16,6 +16,8 @@
 
 .field public final synthetic f$12:Ljava/lang/String;
 
+.field public final synthetic f$13:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_document;
 
 .field public final synthetic f$3:Ljava/lang/String;
@@ -34,7 +36,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,13 +67,15 @@
 
     iput-object p14, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda14;->f$12:Ljava/lang/String;
 
+    iput-object p15, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda14;->f$13:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 14
+    .locals 15
 
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/MessageObject;
 
@@ -99,7 +103,9 @@
 
     iget-object v13, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda14;->f$12:Ljava/lang/String;
 
-    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$5P5HI6K-FQo9TrVgQRYymf08ZZo(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
+    iget-object v14, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda14;->f$13:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
+    invoke-static/range {v0 .. v14}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$ASwU7G5OQmerGArBVJApjuv_TYU(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
 
     return-void
 .end method

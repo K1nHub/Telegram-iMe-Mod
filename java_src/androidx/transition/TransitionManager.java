@@ -128,9 +128,9 @@ public class TransitionManager {
         if (transition == null) {
             transition = sDefaultTransition;
         }
-        Transition mo884clone = transition.mo884clone();
-        sceneChangeSetup(viewGroup, mo884clone);
+        Transition mo902clone = transition.mo902clone();
+        sceneChangeSetup(viewGroup, mo902clone);
         Scene.setCurrentScene(viewGroup, null);
-        sceneChangeRunTransition(viewGroup, mo884clone);
+        sceneChangeRunTransition(viewGroup, mo902clone);
     }
 }

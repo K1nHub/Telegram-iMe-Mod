@@ -99,7 +99,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 45
+    .line 46
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -114,7 +114,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 33
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -123,7 +123,7 @@
 .method private static getReactedText(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     .locals 2
 
-    .line 1229
+    .line 1281
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -653,7 +653,7 @@
 
     return-object p0
 
-    .line 1279
+    .line 1331
     :pswitch_0
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactText:I
 
@@ -665,7 +665,7 @@
 
     return-object p0
 
-    .line 1315
+    .line 1367
     :pswitch_1
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactQuiz:I
 
@@ -677,7 +677,7 @@
 
     return-object p0
 
-    .line 1312
+    .line 1364
     :pswitch_2
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactPoll:I
 
@@ -689,7 +689,7 @@
 
     return-object p0
 
-    .line 1318
+    .line 1370
     :pswitch_3
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactGame:I
 
@@ -701,7 +701,7 @@
 
     return-object p0
 
-    .line 1276
+    .line 1328
     :pswitch_4
     sget p0, Lorg/telegram/messenger/R$string;->PushReactGif:I
 
@@ -713,7 +713,7 @@
 
     return-object p0
 
-    .line 1258
+    .line 1310
     :pswitch_5
     sget p0, Lorg/telegram/messenger/R$string;->PushReactGeo:I
 
@@ -725,7 +725,7 @@
 
     return-object p0
 
-    .line 1246
+    .line 1298
     :pswitch_6
     sget p0, Lorg/telegram/messenger/R$string;->PushReactDoc:I
 
@@ -737,7 +737,7 @@
 
     return-object p0
 
-    .line 1240
+    .line 1292
     :pswitch_7
     sget p0, Lorg/telegram/messenger/R$string;->PushReactVideo:I
 
@@ -749,7 +749,7 @@
 
     return-object p0
 
-    .line 1243
+    .line 1295
     :pswitch_8
     sget p0, Lorg/telegram/messenger/R$string;->PushReactRound:I
 
@@ -761,7 +761,7 @@
 
     return-object p0
 
-    .line 1237
+    .line 1289
     :pswitch_9
     sget p0, Lorg/telegram/messenger/R$string;->PushReactPhoto:I
 
@@ -773,7 +773,7 @@
 
     return-object p0
 
-    .line 1252
+    .line 1304
     :pswitch_a
     sget p0, Lorg/telegram/messenger/R$string;->PushReactAudio:I
 
@@ -785,7 +785,7 @@
 
     return-object p0
 
-    .line 1309
+    .line 1361
     :pswitch_b
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactGeoLive:I
 
@@ -797,7 +797,7 @@
 
     return-object p0
 
-    .line 1288
+    .line 1340
     :pswitch_c
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactVideo:I
 
@@ -809,7 +809,7 @@
 
     return-object p0
 
-    .line 1291
+    .line 1343
     :pswitch_d
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactRound:I
 
@@ -821,7 +821,7 @@
 
     return-object p0
 
-    .line 1285
+    .line 1337
     :pswitch_e
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactPhoto:I
 
@@ -833,7 +833,7 @@
 
     return-object p0
 
-    .line 1300
+    .line 1352
     :pswitch_f
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactAudio:I
 
@@ -845,7 +845,7 @@
 
     return-object p0
 
-    .line 1249
+    .line 1301
     :pswitch_10
     sget p0, Lorg/telegram/messenger/R$string;->PushReactSticker:I
 
@@ -857,7 +857,7 @@
 
     return-object p0
 
-    .line 1324
+    .line 1376
     :pswitch_11
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactGif:I
 
@@ -869,7 +869,7 @@
 
     return-object p0
 
-    .line 1306
+    .line 1358
     :pswitch_12
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactGeo:I
 
@@ -881,7 +881,7 @@
 
     return-object p0
 
-    .line 1294
+    .line 1346
     :pswitch_13
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactDoc:I
 
@@ -893,7 +893,7 @@
 
     return-object p0
 
-    .line 1273
+    .line 1325
     :pswitch_14
     sget p0, Lorg/telegram/messenger/R$string;->PushReactInvoice:I
 
@@ -905,7 +905,7 @@
 
     return-object p0
 
-    .line 1231
+    .line 1283
     :pswitch_15
     sget p0, Lorg/telegram/messenger/R$string;->PushReactText:I
 
@@ -917,7 +917,7 @@
 
     return-object p0
 
-    .line 1267
+    .line 1319
     :pswitch_16
     sget p0, Lorg/telegram/messenger/R$string;->PushReactQuiz:I
 
@@ -929,7 +929,7 @@
 
     return-object p0
 
-    .line 1264
+    .line 1316
     :pswitch_17
     sget p0, Lorg/telegram/messenger/R$string;->PushReactPoll:I
 
@@ -941,7 +941,7 @@
 
     return-object p0
 
-    .line 1270
+    .line 1322
     :pswitch_18
     sget p0, Lorg/telegram/messenger/R$string;->PushReactGame:I
 
@@ -953,7 +953,7 @@
 
     return-object p0
 
-    .line 1297
+    .line 1349
     :pswitch_19
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactSticker:I
 
@@ -965,7 +965,7 @@
 
     return-object p0
 
-    .line 1255
+    .line 1307
     :pswitch_1a
     sget p0, Lorg/telegram/messenger/R$string;->PushReactContect:I
 
@@ -977,7 +977,7 @@
 
     return-object p0
 
-    .line 1321
+    .line 1373
     :pswitch_1b
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactInvoice:I
 
@@ -989,7 +989,7 @@
 
     return-object p0
 
-    .line 1234
+    .line 1286
     :pswitch_1c
     sget p0, Lorg/telegram/messenger/R$string;->PushReactNoText:I
 
@@ -1001,7 +1001,7 @@
 
     return-object p0
 
-    .line 1282
+    .line 1334
     :pswitch_1d
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactNotext:I
 
@@ -1013,7 +1013,7 @@
 
     return-object p0
 
-    .line 1261
+    .line 1313
     :pswitch_1e
     sget p0, Lorg/telegram/messenger/R$string;->PushReactGeoLocation:I
 
@@ -1025,7 +1025,7 @@
 
     return-object p0
 
-    .line 1303
+    .line 1355
     :pswitch_1f
     sget p0, Lorg/telegram/messenger/R$string;->PushChatReactContact:I
 
@@ -1115,7 +1115,7 @@
 .method private static synthetic lambda$processRemoteMessage$4(ILorg/telegram/tgnet/TLRPC$TL_updates;)V
     .locals 1
 
-    .line 258
+    .line 259
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -1130,7 +1130,7 @@
 .method private static synthetic lambda$processRemoteMessage$5(I)V
     .locals 4
 
-    .line 265
+    .line 266
     invoke-static {p0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -1145,14 +1145,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 266
+    .line 267
     invoke-static {p0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->clearConfig()V
 
-    .line 267
+    .line 268
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -1168,7 +1168,7 @@
 .method private static synthetic lambda$processRemoteMessage$6(I)V
     .locals 0
 
-    .line 274
+    .line 275
     invoke-static {p0}, Lorg/telegram/messenger/LocationController;->getInstance(I)Lorg/telegram/messenger/LocationController;
 
     move-result-object p0
@@ -1179,183 +1179,185 @@
 .end method
 
 .method private static synthetic lambda$processRemoteMessage$7(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;J)V
-    .locals 53
+    .locals 58
 
     move-object/from16 v1, p1
 
-    const-string v2, "REACT_"
+    const-string v2, "STORY_NOTEXT"
 
-    .line 118
-    const-class v3, Lcom/iMe/manager/notifications/PushNotificationsManager;
-
-    invoke-static {v3}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/iMe/manager/notifications/PushNotificationsManager;
-
-    move-object/from16 v4, p0
+    const-string v3, "REACT_"
 
     .line 119
-    invoke-virtual {v3, v4}, Lcom/iMe/manager/notifications/PushNotificationsManager;->handlePushNotification(Ljava/util/Map;)Z
+    const-class v4, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
-    move-result v3
+    invoke-static {v4}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_0
+    move-result-object v4
+
+    check-cast v4, Lcom/iMe/manager/notifications/PushNotificationsManager;
+
+    move-object/from16 v5, p0
 
     .line 120
+    invoke-virtual {v4, v5}, Lcom/iMe/manager/notifications/PushNotificationsManager;->handlePushNotification(Ljava/util/Map;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 121
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
 
-    .line 124
-    :cond_0
-    sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v3, :cond_1
-
     .line 125
-    new-instance v3, Ljava/lang/StringBuilder;
+    :cond_0
+    sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v4, :cond_1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, " START PROCESSING"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    :cond_1
-    const/16 v4, 0x8
-
-    move-object/from16 v6, p2
-
-    .line 131
-    :try_start_0
-    invoke-static {v6, v4}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v6
-
-    .line 132
-    new-instance v7, Lorg/telegram/tgnet/NativeByteBuffer;
-
-    array-length v8, v6
-
-    invoke-direct {v7, v8}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
-
-    .line 133
-    invoke-virtual {v7, v6}, Lorg/telegram/tgnet/NativeByteBuffer;->writeBytes([B)V
-
-    const/4 v8, 0x0
-
-    .line 134
-    invoke-virtual {v7, v8}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
-
-    .line 136
-    sget-object v9, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
-
-    if-nez v9, :cond_2
-
-    new-array v9, v4, [B
-
-    .line 137
-    sput-object v9, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
-
-    .line 138
-    sget-object v9, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
-
-    invoke-static {v9}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
-
-    move-result-object v9
-
-    .line 139
-    array-length v10, v9
-
-    sub-int/2addr v10, v4
-
-    sget-object v11, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
-
-    invoke-static {v9, v10, v11, v8, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_2
-    new-array v9, v4, [B
-
-    const/4 v10, 0x1
-
-    .line 142
-    invoke-virtual {v7, v9, v10}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
-
-    .line 143
-    sget-object v11, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
-
-    invoke-static {v11, v9}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result v11
-
-    const/4 v12, 0x3
-
-    const/4 v13, 0x2
-
-    if-nez v11, :cond_4
-
-    .line 144
-    invoke-static {}, Lorg/telegram/messenger/PushListenerController;->onDecryptError()V
-
-    .line 145
-    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v2, :cond_3
-
-    .line 146
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
-
+    .line 126
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " DECRYPT ERROR 2 k1=%s k2=%s, key=%s"
+    const-string v5, " START PROCESSING"
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v4
+
+    invoke-static {v4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    :cond_1
+    const/16 v5, 0x8
+
+    move-object/from16 v7, p2
+
+    .line 132
+    :try_start_0
+    invoke-static {v7, v5}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v7
+
+    .line 133
+    new-instance v8, Lorg/telegram/tgnet/NativeByteBuffer;
+
+    array-length v9, v7
+
+    invoke-direct {v8, v9}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
+
+    .line 134
+    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->writeBytes([B)V
+
+    const/4 v9, 0x0
+
+    .line 135
+    invoke-virtual {v8, v9}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
+
+    .line 137
+    sget-object v10, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
+
+    if-nez v10, :cond_2
+
+    new-array v10, v5, [B
+
+    .line 138
+    sput-object v10, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
+
+    .line 139
+    sget-object v10, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
+
+    invoke-static {v10}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
+
+    move-result-object v10
+
+    .line 140
+    array-length v11, v10
+
+    sub-int/2addr v11, v5
+
+    sget-object v12, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
+
+    invoke-static {v10, v11, v12, v9, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_2
+    new-array v10, v5, [B
+
+    const/4 v11, 0x1
+
+    .line 143
+    invoke-virtual {v8, v10, v11}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
+
+    .line 144
+    sget-object v12, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
+
+    invoke-static {v12, v10}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v12
+
+    const/4 v13, 0x3
+
+    const/4 v14, 0x2
+
+    if-nez v12, :cond_4
+
+    .line 145
+    invoke-static {}, Lorg/telegram/messenger/PushListenerController;->onDecryptError()V
+
+    .line 146
+    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v2, :cond_3
+
+    .line 147
+    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " DECRYPT ERROR 2 k1=%s k2=%s, key=%s"
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     move-result-object v1
 
-    new-array v4, v12, [Ljava/lang/Object;
+    new-array v3, v13, [Ljava/lang/Object;
 
-    sget-object v6, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
+    sget-object v5, Lorg/telegram/messenger/SharedConfig;->pushAuthKeyId:[B
 
-    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v4, v8
+    aput-object v5, v3, v9
 
-    invoke-static {v9}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
+    invoke-static {v10}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v4, v10
+    aput-object v5, v3, v11
 
-    sget-object v6, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
+    sget-object v5, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
 
-    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v4, v13
+    aput-object v5, v3, v14
 
-    invoke-static {v2, v1, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v1, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1365,78 +1367,80 @@
     return-void
 
     :cond_4
-    const/16 v9, 0x10
+    const/16 v10, 0x10
 
-    new-array v9, v9, [B
+    new-array v10, v10, [B
 
-    .line 152
-    invoke-virtual {v7, v9, v10}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
-
-    .line 154
-    sget-object v11, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
-
-    invoke-static {v11, v9, v10, v13}, Lorg/telegram/messenger/MessageKeyData;->generateMessageKeyData([B[BZI)Lorg/telegram/messenger/MessageKeyData;
-
-    move-result-object v11
+    .line 153
+    invoke-virtual {v8, v10, v11}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
 
     .line 155
-    iget-object v14, v7, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+    sget-object v12, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
 
-    iget-object v15, v11, Lorg/telegram/messenger/MessageKeyData;->aesKey:[B
+    invoke-static {v12, v10, v11, v14}, Lorg/telegram/messenger/MessageKeyData;->generateMessageKeyData([B[BZI)Lorg/telegram/messenger/MessageKeyData;
 
-    iget-object v11, v11, Lorg/telegram/messenger/MessageKeyData;->aesIv:[B
+    move-result-object v12
 
-    const/16 v17, 0x0
+    .line 156
+    iget-object v15, v8, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+
+    iget-object v6, v12, Lorg/telegram/messenger/MessageKeyData;->aesKey:[B
+
+    iget-object v12, v12, Lorg/telegram/messenger/MessageKeyData;->aesIv:[B
 
     const/16 v18, 0x0
 
-    const/16 v19, 0x18
+    const/16 v19, 0x0
 
-    array-length v6, v6
+    const/16 v20, 0x18
 
-    add-int/lit8 v20, v6, -0x18
+    array-length v7, v7
 
-    move-object/from16 v16, v11
+    add-int/lit8 v21, v7, -0x18
 
-    invoke-static/range {v14 .. v20}, Lorg/telegram/messenger/Utilities;->aesIgeEncryption(Ljava/nio/ByteBuffer;[B[BZZII)V
+    move-object/from16 v16, v6
 
-    .line 157
-    sget-object v21, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
+    move-object/from16 v17, v12
 
-    const/16 v22, 0x60
+    invoke-static/range {v15 .. v21}, Lorg/telegram/messenger/Utilities;->aesIgeEncryption(Ljava/nio/ByteBuffer;[B[BZZII)V
 
-    const/16 v23, 0x20
+    .line 158
+    sget-object v22, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
 
-    iget-object v6, v7, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+    const/16 v23, 0x60
 
-    const/16 v25, 0x18
+    const/16 v24, 0x20
+
+    iget-object v6, v8, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+
+    const/16 v26, 0x18
 
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->limit()I
 
-    move-result v26
+    move-result v27
 
-    move-object/from16 v24, v6
+    move-object/from16 v25, v6
 
-    invoke-static/range {v21 .. v26}, Lorg/telegram/messenger/Utilities;->computeSHA256([BIILjava/nio/ByteBuffer;II)[B
+    invoke-static/range {v22 .. v27}, Lorg/telegram/messenger/Utilities;->computeSHA256([BIILjava/nio/ByteBuffer;II)[B
 
     move-result-object v6
 
-    .line 158
-    invoke-static {v9, v8, v6, v4}, Lorg/telegram/messenger/Utilities;->arraysEquals([BI[BI)Z
+    .line 159
+    invoke-static {v10, v9, v6, v5}, Lorg/telegram/messenger/Utilities;->arraysEquals([BI[BI)Z
 
     move-result v6
 
     if-nez v6, :cond_6
 
-    .line 159
+    .line 160
     invoke-static {}, Lorg/telegram/messenger/PushListenerController;->onDecryptError()V
 
-    .line 160
+    .line 161
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_5
 
-    .line 161
+    .line 162
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1451,15 +1455,15 @@
 
     move-result-object v1
 
-    new-array v2, v10, [Ljava/lang/Object;
+    new-array v2, v11, [Ljava/lang/Object;
 
-    sget-object v4, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
+    sget-object v3, Lorg/telegram/messenger/SharedConfig;->pushAuthKey:[B
 
-    invoke-static {v4}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->bytesToHex([B)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v2, v8
+    aput-object v3, v2, v9
 
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1470,49 +1474,49 @@
     :cond_5
     return-void
 
-    .line 166
+    .line 167
     :cond_6
-    invoke-virtual {v7, v10}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
+    invoke-virtual {v8, v11}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v6
 
-    .line 167
+    .line 168
     new-array v6, v6, [B
 
-    .line 168
-    invoke-virtual {v7, v6, v10}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
-
     .line 169
+    invoke-virtual {v8, v6, v11}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
+
+    .line 170
     new-instance v7, Ljava/lang/String;
 
     invoke-direct {v7, v6}, Ljava/lang/String;-><init>([B)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_10
+    .catchall {:try_start_0 .. :try_end_0} :catchall_11
 
-    .line 170
+    .line 171
     :try_start_1
     new-instance v6, Lorg/json/JSONObject;
 
     invoke-direct {v6, v7}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    const-string v9, "loc_key"
-
-    .line 172
-    invoke-virtual {v6, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v9
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_f
-
-    if-eqz v9, :cond_7
-
-    :try_start_2
-    const-string v9, "loc_key"
+    const-string v8, "loc_key"
 
     .line 173
-    invoke-virtual {v6, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v6, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result-object v9
+    move-result v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_10
+
+    if-eqz v8, :cond_7
+
+    :try_start_2
+    const-string v8, "loc_key"
+
+    .line 174
+    invoke-virtual {v6, v8}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -1521,37 +1525,37 @@
     :catchall_0
     move-exception v0
 
-    goto/16 :goto_3f
+    goto/16 :goto_5f
 
     :cond_7
     :try_start_3
-    const-string v9, ""
+    const-string v8, ""
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_f
+    .catchall {:try_start_3 .. :try_end_3} :catchall_10
 
     :goto_0
     :try_start_4
-    const-string v11, "custom"
-
-    .line 181
-    invoke-virtual {v6, v11}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v11
+    const-string v10, "custom"
 
     .line 182
-    instance-of v11, v11, Lorg/json/JSONObject;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_e
+    invoke-virtual {v6, v10}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
 
-    if-eqz v11, :cond_8
-
-    :try_start_5
-    const-string v11, "custom"
+    move-result-object v10
 
     .line 183
-    invoke-virtual {v6, v11}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    instance-of v10, v10, Lorg/json/JSONObject;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_f
 
-    move-result-object v11
+    if-eqz v10, :cond_8
+
+    :try_start_5
+    const-string v10, "custom"
+
+    .line 184
+    invoke-virtual {v6, v10}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v10
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
@@ -1560,195 +1564,195 @@
     :catchall_1
     move-exception v0
 
-    move-object v1, v0
+    goto/16 :goto_5e
 
-    move-object v5, v9
-
-    goto/16 :goto_3e
-
-    .line 185
+    .line 186
     :cond_8
     :try_start_6
-    new-instance v11, Lorg/json/JSONObject;
+    new-instance v10, Lorg/json/JSONObject;
 
-    invoke-direct {v11}, Lorg/json/JSONObject;-><init>()V
+    invoke-direct {v10}, Lorg/json/JSONObject;-><init>()V
 
     :goto_1
-    const-string/jumbo v14, "user_id"
-
-    .line 189
-    invoke-virtual {v6, v14}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v14
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_e
-
-    if-eqz v14, :cond_9
-
-    :try_start_7
-    const-string/jumbo v14, "user_id"
+    const-string/jumbo v12, "user_id"
 
     .line 190
-    invoke-virtual {v6, v14}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v6, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result-object v14
+    move-result v12
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_f
+
+    if-eqz v12, :cond_9
+
+    :try_start_7
+    const-string/jumbo v12, "user_id"
+
+    .line 191
+    invoke-virtual {v6, v12}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
 
     goto :goto_2
 
     :cond_9
-    const/4 v14, 0x0
+    const/4 v12, 0x0
 
     :goto_2
-    if-nez v14, :cond_a
+    if-nez v12, :cond_a
 
-    .line 196
-    sget v14, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    .line 197
+    sget v12, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v14}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v12}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v14
+    move-result-object v12
 
-    invoke-virtual {v14}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    invoke-virtual {v12}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
-    move-result-wide v14
+    move-result-wide v15
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
+    :goto_3
+    move-wide v4, v15
+
     goto :goto_4
 
-    .line 198
+    .line 199
     :cond_a
     :try_start_8
-    instance-of v15, v14, Ljava/lang/Long;
+    instance-of v15, v12, Ljava/lang/Long;
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_e
+    .catchall {:try_start_8 .. :try_end_8} :catchall_f
 
     if-eqz v15, :cond_b
 
-    .line 199
+    .line 200
     :try_start_9
-    check-cast v14, Ljava/lang/Long;
+    check-cast v12, Ljava/lang/Long;
 
-    invoke-virtual {v14}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v12}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v14
+    move-result-wide v15
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    goto :goto_4
+    goto :goto_3
 
-    .line 200
+    .line 201
     :cond_b
     :try_start_a
-    instance-of v15, v14, Ljava/lang/Integer;
+    instance-of v15, v12, Ljava/lang/Integer;
     :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_e
+    .catchall {:try_start_a .. :try_end_a} :catchall_f
 
     if-eqz v15, :cond_c
 
-    .line 201
+    .line 202
     :try_start_b
-    check-cast v14, Ljava/lang/Integer;
+    check-cast v12, Ljava/lang/Integer;
 
-    invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
 
-    move-result v14
+    move-result v12
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_1
 
-    :goto_3
-    int-to-long v14, v14
+    int-to-long v4, v12
 
     goto :goto_4
 
-    .line 202
+    .line 203
     :cond_c
     :try_start_c
-    instance-of v15, v14, Ljava/lang/String;
+    instance-of v4, v12, Ljava/lang/String;
     :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_e
+    .catchall {:try_start_c .. :try_end_c} :catchall_f
 
-    if-eqz v15, :cond_d
+    if-eqz v4, :cond_d
 
-    .line 203
+    .line 204
     :try_start_d
-    check-cast v14, Ljava/lang/String;
+    check-cast v12, Ljava/lang/String;
 
-    invoke-static {v14}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    invoke-static {v12}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
-    move-result-object v14
+    move-result-object v4
 
-    invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    move-result v14
+    move-result v4
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_1
 
-    goto :goto_3
+    int-to-long v4, v4
 
-    .line 205
+    goto :goto_4
+
+    .line 206
     :cond_d
     :try_start_e
-    sget v14, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v14}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
-
-    move-result-wide v14
-
-    .line 208
-    :goto_4
-    sget v16, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-    :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_e
-
-    move v4, v8
-
-    :goto_5
-    const/4 v5, 0x5
-
-    if-ge v4, v5, :cond_f
-
-    .line 211
-    :try_start_f
     invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    invoke-virtual {v4}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+
+    move-result-wide v4
+
+    .line 209
+    :goto_4
+    sget v12, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_f
+
+    move v15, v9
+
+    :goto_5
+    const/4 v9, 0x5
+
+    if-ge v15, v9, :cond_f
+
+    .line 212
+    :try_start_f
+    invoke-static {v15}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
     move-result-wide v18
 
-    cmp-long v5, v18, v14
+    cmp-long v9, v18, v4
 
-    if-nez v5, :cond_e
+    if-nez v9, :cond_e
 
-    move v5, v10
+    move v4, v11
+
+    move v12, v15
 
     goto :goto_6
 
     :cond_e
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v15, v15, 0x1
 
     goto :goto_5
 
     :cond_f
-    move v5, v8
-
-    move/from16 v4, v16
+    const/4 v4, 0x0
 
     :goto_6
-    if-nez v5, :cond_11
+    if-nez v4, :cond_11
 
-    .line 218
+    .line 219
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_10
 
-    .line 219
+    .line 220
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1765,7 +1769,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 221
+    .line 222
     :cond_10
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -1775,28 +1779,28 @@
 
     return-void
 
-    .line 225
+    .line 226
     :cond_11
     :try_start_10
-    invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v12}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lorg/telegram/messenger/UserConfig;->isClientActivated()Z
+    invoke-virtual {v4}, Lorg/telegram/messenger/UserConfig;->isClientActivated()Z
 
-    move-result v5
+    move-result v4
     :try_end_10
-    .catchall {:try_start_10 .. :try_end_10} :catchall_d
+    .catchall {:try_start_10 .. :try_end_10} :catchall_e
 
-    if-nez v5, :cond_13
+    if-nez v4, :cond_13
 
-    .line 226
+    .line 227
     :try_start_11
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_12
 
-    .line 227
+    .line 228
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1813,7 +1817,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 229
+    .line 230
     :cond_12
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -1826,398 +1830,425 @@
     :catchall_2
     move-exception v0
 
-    :goto_7
     move-object v1, v0
 
-    move-object v5, v9
+    move v6, v12
 
-    goto/16 :goto_3d
+    goto/16 :goto_5d
 
-    .line 232
+    .line 233
     :cond_13
     :try_start_12
-    invoke-virtual {v9}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v8}, Ljava/lang/String;->hashCode()I
 
-    move-result v5
+    move-result v4
     :try_end_12
-    .catchall {:try_start_12 .. :try_end_12} :catchall_d
+    .catchall {:try_start_12 .. :try_end_12} :catchall_e
 
-    sparse-switch v5, :sswitch_data_0
+    sparse-switch v4, :sswitch_data_0
 
-    goto :goto_8
+    goto :goto_7
 
     :sswitch_0
     :try_start_13
-    const-string v5, "GEO_LIVE_PENDING"
+    const-string v4, "GEO_LIVE_PENDING"
 
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_14
+    if-eqz v4, :cond_14
 
-    move v5, v12
+    move v4, v13
 
-    goto :goto_9
+    goto :goto_8
 
     :sswitch_1
-    const-string v5, "MESSAGE_ANNOUNCEMENT"
+    const-string v4, "MESSAGE_ANNOUNCEMENT"
 
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_14
+    if-eqz v4, :cond_14
 
-    move v5, v10
+    move v4, v11
 
-    goto :goto_9
+    goto :goto_8
 
     :sswitch_2
-    const-string v5, "DC_UPDATE"
+    const-string v4, "DC_UPDATE"
 
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_14
+    if-eqz v4, :cond_14
 
-    move v5, v8
+    const/4 v4, 0x0
 
-    goto :goto_9
+    goto :goto_8
 
     :sswitch_3
-    const-string v5, "SESSION_REVOKE"
+    const-string v4, "SESSION_REVOKE"
 
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_2
 
-    if-eqz v5, :cond_14
+    if-eqz v4, :cond_14
 
-    move v5, v13
+    move v4, v14
+
+    goto :goto_8
+
+    :cond_14
+    :goto_7
+    const/4 v4, -0x1
+
+    :goto_8
+    if-eqz v4, :cond_84
+
+    if-eq v4, v11, :cond_83
+
+    if-eq v4, v14, :cond_82
+
+    if-eq v4, v13, :cond_81
+
+    :try_start_14
+    const-string v4, "channel_id"
+
+    .line 288
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+    :try_end_14
+    .catchall {:try_start_14 .. :try_end_14} :catchall_b
+
+    if-eqz v4, :cond_15
+
+    :try_start_15
+    const-string v4, "channel_id"
+
+    move-object v15, v6
+
+    .line 289
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v5
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_2
+
+    neg-long v13, v5
+
+    move-wide/from16 v56, v5
+
+    move-wide v4, v13
+
+    move-wide/from16 v13, v56
 
     goto :goto_9
 
-    :cond_14
-    :goto_8
-    const/4 v5, -0x1
+    :cond_15
+    move-object v15, v6
+
+    const-wide/16 v4, 0x0
+
+    const-wide/16 v13, 0x0
 
     :goto_9
-    if-eqz v5, :cond_77
+    :try_start_16
+    const-string v6, "from_id"
 
-    if-eq v5, v10, :cond_76
+    .line 294
+    invoke-virtual {v10, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    if-eq v5, v13, :cond_75
+    move-result v6
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_b
 
-    if-eq v5, v12, :cond_74
+    if-eqz v6, :cond_16
 
-    :try_start_14
-    const-string v5, "channel_id"
+    :try_start_17
+    const-string v4, "from_id"
 
-    .line 287
-    invoke-virtual {v11, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 295
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
 
-    move-result v5
-    :try_end_14
-    .catchall {:try_start_14 .. :try_end_14} :catchall_a
+    move-result-wide v4
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_2
 
-    if-eqz v5, :cond_15
-
-    :try_start_15
-    const-string v5, "channel_id"
-
-    .line 288
-    invoke-virtual {v11, v5}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v12
-    :try_end_15
-    .catchall {:try_start_15 .. :try_end_15} :catchall_3
-
-    move/from16 v28, v4
-
-    neg-long v3, v12
+    move-wide/from16 v28, v4
 
     goto :goto_a
+
+    :cond_16
+    const-wide/16 v28, 0x0
+
+    :goto_a
+    :try_start_18
+    const-string v6, "chat_id"
+
+    .line 300
+    invoke-virtual {v10, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v6
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_b
+
+    if-eqz v6, :cond_17
+
+    :try_start_19
+    const-string v4, "chat_id"
+
+    .line 301
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v4
+    :try_end_19
+    .catchall {:try_start_19 .. :try_end_19} :catchall_3
+
+    move v6, v12
+
+    neg-long v11, v4
+
+    move-wide/from16 v56, v4
+
+    move-wide v4, v11
+
+    move-wide/from16 v11, v56
+
+    goto :goto_c
 
     :catchall_3
     move-exception v0
 
-    move/from16 v28, v4
+    move v6, v12
 
-    goto :goto_7
+    :goto_b
+    move-object v1, v0
 
-    :cond_15
-    move/from16 v28, v4
+    goto/16 :goto_5d
 
-    const-wide/16 v3, 0x0
+    :cond_17
+    move v6, v12
 
-    const-wide/16 v12, 0x0
+    const-wide/16 v11, 0x0
 
-    :goto_a
-    :try_start_16
-    const-string v5, "from_id"
+    :goto_c
+    :try_start_1a
+    const-string/jumbo v9, "topic_id"
 
-    .line 293
-    invoke-virtual {v11, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 306
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v5
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_9
+    move-result v9
+    :try_end_1a
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_a
 
-    if-eqz v5, :cond_16
+    if-eqz v9, :cond_18
 
-    :try_start_17
-    const-string v3, "from_id"
+    :try_start_1b
+    const-string/jumbo v9, "topic_id"
 
-    .line 294
-    invoke-virtual {v11, v3}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    .line 307
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result-wide v3
-    :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_4
+    move-result v9
+    :try_end_1b
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_4
 
-    move-wide/from16 v29, v3
+    move-wide/from16 v22, v4
 
-    goto :goto_b
+    goto :goto_d
 
     :catchall_4
     move-exception v0
 
-    move-object v1, v0
+    goto :goto_b
 
-    move-object v5, v9
+    :cond_18
+    move-wide/from16 v22, v4
 
-    goto/16 :goto_39
+    const/4 v9, 0x0
 
-    :cond_16
-    const-wide/16 v29, 0x0
+    .line 309
+    :goto_d
+    :try_start_1c
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :goto_b
-    :try_start_18
-    const-string v5, "chat_id"
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 299
-    invoke-virtual {v11, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    const-string/jumbo v5, "recived push notification {"
 
-    move-result v5
-    :try_end_18
-    .catchall {:try_start_18 .. :try_end_18} :catchall_9
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v5, :cond_17
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :try_start_19
-    const-string v3, "chat_id"
+    const-string/jumbo v5, "} chatId "
 
-    .line 300
-    invoke-virtual {v11, v3}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-wide v3
-    :try_end_19
-    .catchall {:try_start_19 .. :try_end_19} :catchall_5
+    invoke-virtual {v4, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-object v5, v9
+    const-string v5, " custom topicId "
 
-    neg-long v8, v3
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_c
+    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    const-string v4, "encryption_id"
+
+    .line 310
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+    :try_end_1c
+    .catchall {:try_start_1c .. :try_end_1c} :catchall_a
+
+    if-eqz v4, :cond_19
+
+    :try_start_1d
+    const-string v4, "encryption_id"
+
+    .line 311
+    invoke-virtual {v10, v4}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    int-to-long v4, v4
+
+    invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
+
+    move-result-wide v4
+    :try_end_1d
+    .catchall {:try_start_1d .. :try_end_1d} :catchall_4
+
+    move-object/from16 v30, v7
+
+    goto :goto_e
+
+    :cond_19
+    move-object/from16 v30, v7
+
+    move-wide/from16 v4, v22
+
+    :goto_e
+    :try_start_1e
+    const-string/jumbo v7, "schedule"
+
+    .line 313
+    invoke-virtual {v10, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v7
+    :try_end_1e
+    .catchall {:try_start_1e .. :try_end_1e} :catchall_9
+
+    if-eqz v7, :cond_1a
+
+    :try_start_1f
+    const-string/jumbo v7, "schedule"
+
+    .line 314
+    invoke-virtual {v10, v7}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v7
+
+    move-object/from16 v22, v15
+
+    const/4 v15, 0x1
+
+    if-ne v7, v15, :cond_1b
+
+    const/4 v7, 0x1
+
+    goto :goto_f
 
     :catchall_5
     move-exception v0
 
-    goto/16 :goto_37
-
-    :cond_17
-    move-object v5, v9
-
-    move-wide v8, v3
-
-    const-wide/16 v3, 0x0
-
-    :goto_c
-    :try_start_1a
-    const-string/jumbo v14, "topic_id"
-
-    .line 305
-    invoke-virtual {v11, v14}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v14
-    :try_end_1a
-    .catchall {:try_start_1a .. :try_end_1a} :catchall_8
-
-    if-eqz v14, :cond_18
-
-    :try_start_1b
-    const-string/jumbo v14, "topic_id"
-
-    .line 306
-    invoke-virtual {v11, v14}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v14
-    :try_end_1b
-    .catchall {:try_start_1b .. :try_end_1b} :catchall_6
-
-    goto :goto_d
-
-    :catchall_6
-    move-exception v0
-
-    goto/16 :goto_38
-
-    :cond_18
-    const/4 v14, 0x0
-
-    .line 308
-    :goto_d
-    :try_start_1c
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "recived push notification chatId "
-
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v10, " custom topicId "
-
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v10}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    const-string v10, "encryption_id"
-
-    .line 309
-    invoke-virtual {v11, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v10
-    :try_end_1c
-    .catchall {:try_start_1c .. :try_end_1c} :catchall_8
-
-    if-eqz v10, :cond_19
-
-    :try_start_1d
-    const-string v8, "encryption_id"
-
-    .line 310
-    invoke-virtual {v11, v8}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v8
-
-    int-to-long v8, v8
-
-    invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
-
-    move-result-wide v8
-    :try_end_1d
-    .catchall {:try_start_1d .. :try_end_1d} :catchall_6
-
-    :cond_19
-    :try_start_1e
-    const-string/jumbo v10, "schedule"
-
-    .line 312
-    invoke-virtual {v11, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v10
-    :try_end_1e
-    .catchall {:try_start_1e .. :try_end_1e} :catchall_8
-
-    if-eqz v10, :cond_1a
-
-    :try_start_1f
-    const-string/jumbo v10, "schedule"
-
-    .line 313
-    invoke-virtual {v11, v10}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v10
-
-    const/4 v15, 0x1
-
-    if-ne v10, v15, :cond_1a
-
-    const/4 v10, 0x1
-
-    goto :goto_e
+    goto/16 :goto_59
 
     :cond_1a
-    const/4 v10, 0x0
+    move-object/from16 v22, v15
 
-    :goto_e
-    const-wide/16 v18, 0x0
+    :cond_1b
+    const/4 v7, 0x0
 
-    cmp-long v15, v8, v18
+    :goto_f
+    const-wide/16 v19, 0x0
 
-    if-nez v15, :cond_1b
+    cmp-long v15, v4, v19
+
+    if-nez v15, :cond_1c
 
     const-string v15, "ENCRYPTED_MESSAGE"
 
-    .line 317
-    invoke-virtual {v15, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 318
+    invoke-virtual {v15, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
 
-    if-eqz v15, :cond_1b
+    if-eqz v15, :cond_1c
 
-    .line 318
-    sget-wide v8, Lorg/telegram/messenger/NotificationsController;->globalSecretChatId:J
+    .line 319
+    sget-wide v4, Lorg/telegram/messenger/NotificationsController;->globalSecretChatId:J
     :try_end_1f
-    .catchall {:try_start_1f .. :try_end_1f} :catchall_6
+    .catchall {:try_start_1f .. :try_end_1f} :catchall_5
 
-    :cond_1b
-    const-wide/16 v18, 0x0
+    :cond_1c
+    const-wide/16 v19, 0x0
 
-    cmp-long v15, v8, v18
+    cmp-long v15, v4, v19
 
-    if-eqz v15, :cond_71
+    if-eqz v15, :cond_7e
 
-    move-object/from16 v31, v7
+    move/from16 v23, v7
 
     :try_start_20
     const-string v7, "READ_HISTORY"
 
-    .line 322
-    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 323
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
     :try_end_20
-    .catchall {:try_start_20 .. :try_end_20} :catchall_7
+    .catchall {:try_start_20 .. :try_end_20} :catchall_9
 
-    move/from16 v20, v10
+    move/from16 v24, v15
 
-    const-string v10, " for dialogId = "
+    const-string v15, " for dialogId = "
 
-    if-eqz v7, :cond_1f
+    if-eqz v7, :cond_20
 
     :try_start_21
     const-string v2, "max_id"
 
-    .line 323
-    invoke-virtual {v11, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    .line 324
+    invoke-virtual {v10, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 324
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
     .line 325
-    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    new-instance v3, Ljava/util/ArrayList;
 
-    if-eqz v7, :cond_1c
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     .line 326
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v7, :cond_1d
+
+    .line 327
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -2230,9 +2261,9 @@
 
     invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2240,85 +2271,83 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_1c
-    const-wide/16 v7, 0x0
+    :cond_1d
+    const-wide/16 v4, 0x0
 
-    cmp-long v1, v12, v7
+    cmp-long v1, v13, v4
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1e
 
-    .line 329
+    .line 330
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;-><init>()V
 
-    .line 330
-    iput-wide v12, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;->channel_id:J
-
     .line 331
+    iput-wide v13, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;->channel_id:J
+
+    .line 332
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;->max_id:I
 
     const/4 v2, 0x0
 
-    .line 332
+    .line 333
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;->still_unread_count:I
 
-    .line 333
-    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 334
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_10
+    goto :goto_11
 
-    .line 335
-    :cond_1d
+    .line 336
+    :cond_1e
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;-><init>()V
 
-    move-wide/from16 v7, v29
+    move-wide/from16 v4, v28
 
     const-wide/16 v9, 0x0
 
-    cmp-long v9, v7, v9
+    cmp-long v7, v4, v9
 
-    if-eqz v9, :cond_1e
-
-    .line 337
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
-
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
-
-    iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    if-eqz v7, :cond_1f
 
     .line 338
-    iput-wide v7, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
-    goto :goto_f
-
-    .line 340
-    :cond_1e
-    new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
-
-    invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
+    invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 341
-    iput-wide v3, v7, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+    .line 339
+    iput-wide v4, v7, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 343
-    :goto_f
-    iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;->max_id:I
+    goto :goto_10
+
+    .line 341
+    :cond_1f
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
+
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
+
+    iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 342
+    iput-wide v11, v4, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
     .line 344
-    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 346
     :goto_10
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;->max_id:I
 
-    move-result-object v20
+    .line 345
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/16 v22, 0x0
+    .line 347
+    :goto_11
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v21
 
     const/16 v23, 0x0
 
@@ -2326,108 +2355,179 @@
 
     const/16 v25, 0x0
 
-    move-object/from16 v21, v6
+    const/16 v26, 0x0
 
-    invoke-virtual/range {v20 .. v25}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
+    move-object/from16 v22, v3
 
-    goto/16 :goto_35
+    invoke-virtual/range {v21 .. v26}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
+    :try_end_21
+    .catchall {:try_start_21 .. :try_end_21} :catchall_5
 
-    :cond_1f
-    move-wide/from16 v32, v29
+    goto/16 :goto_56
 
-    const-string v7, "MESSAGE_DELETED"
+    :cond_20
+    move-wide/from16 v31, v28
 
-    .line 347
-    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_start_22
+    const-string v7, "READ_STORIES"
+
+    .line 348
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
-    :try_end_21
-    .catchall {:try_start_21 .. :try_end_21} :catchall_7
-
-    move-wide/from16 v21, v3
-
-    const-string v3, ","
-
-    const-string v4, "messages"
+    :try_end_22
+    .catchall {:try_start_22 .. :try_end_22} :catchall_9
 
     if-eqz v7, :cond_21
 
-    .line 348
-    :try_start_22
-    invoke-virtual {v11, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
+    :try_start_23
+    const-string v1, "max_id"
 
     .line 349
-    invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result-object v2
+    move-result v1
 
     .line 350
-    new-instance v4, Landroidx/collection/LongSparseArray;
-
-    invoke-direct {v4}, Landroidx/collection/LongSparseArray;-><init>()V
-
-    .line 351
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v7, 0x0
-
-    .line 352
-    :goto_11
-    array-length v11, v2
-
-    if-ge v7, v11, :cond_20
-
-    .line 353
-    aget-object v11, v2, v7
-
-    invoke-static {v11}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v11
-
-    invoke-virtual {v6, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_11
-
-    :cond_20
-    neg-long v14, v12
-
-    .line 355
-    invoke-virtual {v4, v14, v15, v6}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
-
-    .line 356
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v2
 
-    const/4 v7, 0x0
+    invoke-virtual {v2, v4, v5, v1}, Lorg/telegram/messenger/NotificationsController;->processReadStories(JI)V
+    :try_end_23
+    .catchall {:try_start_23 .. :try_end_23} :catchall_5
 
-    invoke-virtual {v2, v4, v7}, Lorg/telegram/messenger/NotificationsController;->removeDeletedMessagesFromNotifications(Landroidx/collection/LongSparseArray;Z)V
+    goto/16 :goto_56
+
+    :cond_21
+    :try_start_24
+    const-string v7, "STORY_DELETED"
+
+    .line 351
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+    :try_end_24
+    .catchall {:try_start_24 .. :try_end_24} :catchall_9
+
+    move-wide/from16 v25, v11
+
+    const-string/jumbo v11, "story_id"
+
+    if-eqz v7, :cond_22
+
+    .line 352
+    :try_start_25
+    invoke-virtual {v10, v11}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 353
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4, v5, v1}, Lorg/telegram/messenger/NotificationsController;->processDeleteStory(JI)V
+    :try_end_25
+    .catchall {:try_start_25 .. :try_end_25} :catchall_5
+
+    goto/16 :goto_56
+
+    :cond_22
+    :try_start_26
+    const-string v7, "MESSAGE_DELETED"
+
+    .line 354
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+    :try_end_26
+    .catchall {:try_start_26 .. :try_end_26} :catchall_9
+
+    const-string v12, ","
+
+    move-object/from16 v27, v11
+
+    const-string v11, "messages"
+
+    if-eqz v7, :cond_24
+
+    .line 355
+    :try_start_27
+    invoke-virtual {v10, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 356
+    invoke-virtual {v2, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 357
+    new-instance v3, Landroidx/collection/LongSparseArray;
+
+    invoke-direct {v3}, Landroidx/collection/LongSparseArray;-><init>()V
 
     .line 358
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    new-instance v7, Ljava/util/ArrayList;
 
-    move-result-object v18
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    move-wide/from16 v19, v8
-
-    move-object/from16 v21, v6
-
-    move-wide/from16 v22, v12
-
-    invoke-virtual/range {v18 .. v23}, Lorg/telegram/messenger/MessagesController;->deleteMessagesByPush(JLjava/util/ArrayList;J)V
+    const/4 v9, 0x0
 
     .line 359
-    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    :goto_12
+    array-length v10, v2
 
-    if-eqz v2, :cond_72
+    if-ge v9, v10, :cond_23
 
     .line 360
+    aget-object v10, v2, v9
+
+    invoke-static {v10}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_12
+
+    :cond_23
+    neg-long v9, v13
+
+    .line 362
+    invoke-virtual {v3, v9, v10, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    .line 363
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
+
+    move-result-object v2
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v2, v3, v9}, Lorg/telegram/messenger/NotificationsController;->removeDeletedMessagesFromNotifications(Landroidx/collection/LongSparseArray;Z)V
+
+    .line 365
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v21
+
+    move-wide/from16 v22, v4
+
+    move-object/from16 v24, v7
+
+    move-wide/from16 v25, v13
+
+    invoke-virtual/range {v21 .. v26}, Lorg/telegram/messenger/MessagesController;->deleteMessagesByPush(JLjava/util/ArrayList;J)V
+
+    .line 366
+    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v2, :cond_7e
+
+    .line 367
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2438,17 +2538,17 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v1, " mids = "
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v6}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+    invoke-static {v12, v7}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2459,111 +2559,119 @@
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_27
+    .catchall {:try_start_27 .. :try_end_27} :catchall_5
 
-    goto/16 :goto_35
+    goto/16 :goto_56
 
-    :cond_21
+    :cond_24
+    :try_start_28
     const-string v7, "READ_REACTION"
 
-    .line 362
-    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 369
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
+    :try_end_28
+    .catchall {:try_start_28 .. :try_end_28} :catchall_9
 
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_26
 
-    .line 363
-    invoke-virtual {v11, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 364
-    invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 370
+    :try_start_29
+    invoke-virtual {v10, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 365
-    new-instance v4, Landroidx/collection/LongSparseArray;
+    .line 371
+    invoke-virtual {v2, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-direct {v4}, Landroidx/collection/LongSparseArray;-><init>()V
+    move-result-object v2
 
-    .line 366
-    new-instance v6, Ljava/util/ArrayList;
+    .line 372
+    new-instance v3, Landroidx/collection/LongSparseArray;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    .line 367
-    new-instance v7, Landroid/util/SparseBooleanArray;
+    .line 373
+    new-instance v7, Ljava/util/ArrayList;
 
-    invoke-direct {v7}, Landroid/util/SparseBooleanArray;-><init>()V
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+
+    .line 374
+    new-instance v10, Landroid/util/SparseBooleanArray;
+
+    invoke-direct {v10}, Landroid/util/SparseBooleanArray;-><init>()V
+
+    move-object/from16 v28, v12
 
     const/4 v11, 0x0
 
-    .line 368
-    :goto_12
-    array-length v15, v2
+    .line 375
+    :goto_13
+    array-length v12, v2
 
-    if-ge v11, v15, :cond_22
+    if-ge v11, v12, :cond_25
 
-    .line 369
-    aget-object v15, v2, v11
+    .line 376
+    aget-object v12, v2, v11
 
-    invoke-static {v15}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    invoke-static {v12}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
-    move-result-object v15
+    move-result-object v12
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
 
-    move-result v15
+    move-result v12
 
     move-object/from16 p0, v2
 
-    .line 370
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 377
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const/4 v2, 0x0
 
-    .line 371
-    invoke-virtual {v7, v15, v2}, Landroid/util/SparseBooleanArray;->put(IZ)V
+    .line 378
+    invoke-virtual {v10, v12, v2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
     add-int/lit8 v11, v11, 0x1
 
     move-object/from16 v2, p0
 
-    goto :goto_12
+    goto :goto_13
 
-    :cond_22
-    neg-long v11, v12
+    :cond_25
+    neg-long v11, v13
 
-    .line 373
-    invoke-virtual {v4, v11, v12, v6}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    .line 380
+    invoke-virtual {v3, v11, v12, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 374
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
+    .line 381
+    invoke-static {v6}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v2
 
     const/4 v11, 0x1
 
-    invoke-virtual {v2, v4, v11}, Lorg/telegram/messenger/NotificationsController;->removeDeletedMessagesFromNotifications(Landroidx/collection/LongSparseArray;Z)V
+    invoke-virtual {v2, v3, v11}, Lorg/telegram/messenger/NotificationsController;->removeDeletedMessagesFromNotifications(Landroidx/collection/LongSparseArray;Z)V
 
-    .line 376
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    .line 383
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v8, v9, v14, v7}, Lorg/telegram/messenger/MessagesController;->checkUnreadReactions(JILandroid/util/SparseBooleanArray;)V
+    invoke-virtual {v2, v4, v5, v9, v10}, Lorg/telegram/messenger/MessagesController;->checkUnreadReactions(JILandroid/util/SparseBooleanArray;)V
 
-    .line 377
+    .line 384
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v2, :cond_72
+    if-eqz v2, :cond_7e
 
-    .line 378
+    .line 385
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2574,17 +2682,19 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v1, " mids = "
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v6}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+    move-object/from16 v1, v28
+
+    invoke-static {v1, v7}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2595,6658 +2705,7856 @@
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_29
+    .catchall {:try_start_29 .. :try_end_29} :catchall_5
 
-    goto/16 :goto_35
+    goto/16 :goto_56
 
-    .line 380
-    :cond_23
-    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_72
-
-    const-string v3, "msg_id"
-
-    .line 382
-    invoke-virtual {v11, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_24
-
-    const-string v3, "msg_id"
-
-    .line 383
-    invoke-virtual {v11, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    goto :goto_13
-
-    :cond_24
-    const/4 v3, 0x0
-
-    :goto_13
-    const-string/jumbo v7, "random_id"
-
-    .line 389
-    invoke-virtual {v11, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 387
+    :cond_26
+    :try_start_2a
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_25
+    if-nez v7, :cond_7e
 
-    const-string/jumbo v7, "random_id"
+    const-string v7, "msg_id"
+
+    .line 389
+    invoke-virtual {v10, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v7
+    :try_end_2a
+    .catchall {:try_start_2a .. :try_end_2a} :catchall_9
+
+    if-eqz v7, :cond_27
+
+    :try_start_2b
+    const-string v7, "msg_id"
 
     .line 390
-    invoke-virtual {v11, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v7}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result-object v7
-
-    invoke-static {v7}, Lorg/telegram/messenger/Utilities;->parseLong(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v23
-
-    move/from16 v29, v14
-
-    move v7, v15
-
-    move-wide/from16 v14, v23
+    move-result v7
+    :try_end_2b
+    .catchall {:try_start_2b .. :try_end_2b} :catchall_5
 
     goto :goto_14
 
-    :cond_25
-    move/from16 v29, v14
-
-    move v7, v15
-
-    const-wide/16 v14, 0x0
-
-    :goto_14
-    if-eqz v3, :cond_28
-
-    move-object/from16 v23, v4
-
-    .line 397
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v4
-
-    iget-object v4, v4, Lorg/telegram/messenger/MessagesController;->dialogs_read_inbox_max:Lj$/util/concurrent/ConcurrentHashMap;
-
-    move/from16 v24, v7
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v4, v7}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Integer;
-
-    if-nez v4, :cond_26
-
-    .line 399
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
-
-    move-result-object v4
-
+    :cond_27
     const/4 v7, 0x0
 
-    invoke-virtual {v4, v7, v8, v9}, Lorg/telegram/messenger/MessagesStorage;->getDialogReadMax(ZJ)I
+    :goto_14
+    :try_start_2c
+    const-string/jumbo v12, "random_id"
 
-    move-result v4
+    .line 396
+    invoke-virtual {v10, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v12
+    :try_end_2c
+    .catchall {:try_start_2c .. :try_end_2c} :catchall_9
 
-    move-result-object v4
+    if-eqz v12, :cond_28
 
-    .line 400
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    :try_start_2d
+    const-string/jumbo v12, "random_id"
 
-    move-result-object v7
+    .line 397
+    invoke-virtual {v10, v12}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object v7, v7, Lorg/telegram/messenger/MessagesController;->dialogs_read_inbox_max:Lj$/util/concurrent/ConcurrentHashMap;
+    move-result-object v12
 
-    move-object/from16 v25, v10
+    invoke-static {v12}, Lorg/telegram/messenger/Utilities;->parseLong(Ljava/lang/String;)Ljava/lang/Long;
 
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v12
 
-    move-result-object v10
+    invoke-virtual {v12}, Ljava/lang/Long;->longValue()J
 
-    invoke-virtual {v7, v10, v4}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-wide v28
+
+    move-wide/from16 v56, v28
+
+    move-object/from16 v28, v11
+
+    move-wide/from16 v11, v56
 
     goto :goto_15
 
-    :cond_26
-    move-object/from16 v25, v10
-
-    .line 402
-    :goto_15
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    if-le v3, v4, :cond_27
-
-    :goto_16
-    const/4 v4, 0x1
-
-    goto :goto_17
-
-    :cond_27
-    const/4 v4, 0x0
-
-    goto :goto_17
-
     :cond_28
-    move-object/from16 v23, v4
+    move-object/from16 v28, v11
 
-    move/from16 v24, v7
+    const-wide/16 v11, 0x0
 
-    move-object/from16 v25, v10
+    :goto_15
+    if-eqz v7, :cond_2b
 
-    const-wide/16 v18, 0x0
+    move/from16 v29, v9
 
-    cmp-long v4, v14, v18
+    .line 404
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    if-eqz v4, :cond_27
+    move-result-object v9
+
+    iget-object v9, v9, Lorg/telegram/messenger/MessagesController;->dialogs_read_inbox_max:Lj$/util/concurrent/ConcurrentHashMap;
+
+    move-object/from16 v33, v15
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v15
+
+    invoke-virtual {v9, v15}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/Integer;
+
+    if-nez v9, :cond_29
 
     .line 406
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-virtual {v4, v14, v15}, Lorg/telegram/messenger/MessagesStorage;->checkMessageByRandomId(J)Z
+    const/4 v15, 0x0
 
-    move-result v4
+    invoke-virtual {v9, v15, v4, v5}, Lorg/telegram/messenger/MessagesStorage;->getDialogReadMax(ZJ)I
 
-    if-nez v4, :cond_27
+    move-result v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    .line 407
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v15
+
+    iget-object v15, v15, Lorg/telegram/messenger/MessagesController;->dialogs_read_inbox_max:Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v15, v1, v9}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 409
+    :cond_29
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    if-le v7, v1, :cond_2a
+
+    :goto_16
+    const/4 v1, 0x1
+
+    goto :goto_17
+
+    :cond_2a
+    const/4 v1, 0x0
+
+    goto :goto_17
+
+    :cond_2b
+    move/from16 v29, v9
+
+    move-object/from16 v33, v15
+
+    const-wide/16 v19, 0x0
+
+    cmp-long v1, v11, v19
+
+    if-eqz v1, :cond_2a
+
+    .line 413
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v11, v12}, Lorg/telegram/messenger/MessagesStorage;->checkMessageByRandomId(J)Z
+
+    move-result v1
+    :try_end_2d
+    .catchall {:try_start_2d .. :try_end_2d} :catchall_5
+
+    if-nez v1, :cond_2a
 
     goto :goto_16
 
-    .line 411
-    :goto_17
-    invoke-virtual {v5, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-    :try_end_22
-    .catchall {:try_start_22 .. :try_end_22} :catchall_7
-
-    const-string v10, "CHAT_REACT_"
-
-    if-nez v7, :cond_29
-
-    :try_start_23
-    invoke-virtual {v5, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2a
-
-    :cond_29
-    const/4 v4, 0x1
-
-    :cond_2a
-    if-eqz v4, :cond_72
-
-    const-string v4, "chat_from_id"
-
-    move-object v7, v2
-
-    move/from16 v30, v3
-
-    move-wide/from16 v26, v14
-
-    const-wide/16 v14, 0x0
-
-    .line 416
-    invoke-virtual {v11, v4, v14, v15}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
-
-    move-result-wide v2
-
-    const-string v4, "chat_from_broadcast_id"
-
-    move-wide/from16 v34, v12
-
-    .line 417
-    invoke-virtual {v11, v4, v14, v15}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
-
-    move-result-wide v12
-
-    const-string v4, "chat_from_group_id"
-
     .line 418
-    invoke-virtual {v11, v4, v14, v15}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+    :goto_17
+    :try_start_2e
+    invoke-virtual {v8, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result-wide v36
+    move-result v9
+    :try_end_2e
+    .catchall {:try_start_2e .. :try_end_2e} :catchall_9
 
-    cmp-long v4, v2, v14
+    const-string v15, "CHAT_REACT_"
 
-    if-nez v4, :cond_2c
+    if-nez v9, :cond_2c
 
-    cmp-long v38, v36, v14
+    :try_start_2f
+    invoke-virtual {v8, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    if-eqz v38, :cond_2b
+    move-result v9
+    :try_end_2f
+    .catchall {:try_start_2f .. :try_end_2f} :catchall_5
+
+    if-eqz v9, :cond_2d
+
+    :cond_2c
+    const/4 v1, 0x1
+
+    .line 423
+    :cond_2d
+    :try_start_30
+    invoke-virtual {v8, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+    :try_end_30
+    .catchall {:try_start_30 .. :try_end_30} :catchall_9
+
+    move/from16 v34, v1
+
+    const-string v1, "STORY_HIDDEN_AUTHOR"
+
+    if-nez v9, :cond_2f
+
+    :try_start_31
+    invoke-virtual {v8, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+    :try_end_31
+    .catchall {:try_start_31 .. :try_end_31} :catchall_5
+
+    if-eqz v9, :cond_2e
 
     goto :goto_18
 
-    :cond_2b
-    const/4 v14, 0x0
+    :cond_2e
+    move/from16 v27, v34
 
-    goto :goto_19
-
-    :cond_2c
-    :goto_18
-    const/4 v14, 0x1
-
-    :goto_19
-    const-string v15, "mention"
-
-    .line 421
-    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v15
-
-    if-eqz v15, :cond_2d
-
-    const-string v15, "mention"
-
-    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v15
-
-    if-eqz v15, :cond_2d
-
-    const/16 v38, 0x1
+    const/4 v9, -0x1
 
     goto :goto_1a
 
-    :cond_2d
-    const/16 v38, 0x0
+    :cond_2f
+    :goto_18
+    move-object/from16 v9, v27
 
-    :goto_1a
-    const-string/jumbo v15, "silent"
+    .line 424
+    :try_start_32
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 422
-    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v27
+    :try_end_32
+    .catchall {:try_start_32 .. :try_end_32} :catchall_9
 
-    move-result v15
-
-    if-eqz v15, :cond_2e
-
-    const-string/jumbo v15, "silent"
-
-    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v15
-
-    if-eqz v15, :cond_2e
-
-    const/16 v39, 0x1
-
-    goto :goto_1b
-
-    :cond_2e
-    const/16 v39, 0x0
-
-    :goto_1b
-    const-string v15, "loc_args"
+    if-eqz v27, :cond_30
 
     .line 425
-    invoke-virtual {v6, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    :try_start_33
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v15
+    move-result v9
+    :try_end_33
+    .catchall {:try_start_33 .. :try_end_33} :catchall_5
 
-    if-eqz v15, :cond_2f
-
-    const-string v15, "loc_args"
-
-    .line 426
-    invoke-virtual {v6, v15}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v6
-
-    .line 427
-    invoke-virtual {v6}, Lorg/json/JSONArray;->length()I
-
-    move-result v15
-
-    move-wide/from16 v40, v2
-
-    new-array v2, v15, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    :goto_1c
-    if-ge v3, v15, :cond_30
-
-    .line 429
-    invoke-virtual {v6, v3}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v42
-
-    aput-object v42, v2, v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1c
-
-    :cond_2f
-    move-wide/from16 v40, v2
-
-    const/4 v2, 0x0
+    goto :goto_19
 
     :cond_30
-    const/4 v3, 0x0
+    const/4 v9, -0x1
 
-    .line 436
-    aget-object v6, v2, v3
+    :goto_19
+    if-ltz v9, :cond_31
 
-    const-string v3, "edit_date"
+    const/16 v27, 0x1
 
-    .line 442
-    invoke-virtual {v11, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v3
-
-    const-string v11, "CHAT_"
-
-    .line 443
-    invoke-virtual {v5, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_33
-
-    .line 444
-    invoke-static {v8, v9}, Lorg/telegram/messenger/UserObject;->isReplyUser(J)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_31
-
-    .line 445
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, " @ "
-
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v6, 0x1
-
-    aget-object v15, v2, v6
-
-    invoke-virtual {v11, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_1f
+    goto :goto_1a
 
     :cond_31
-    const-wide/16 v18, 0x0
+    const/16 v27, 0x0
 
-    cmp-long v11, v34, v18
+    :goto_1a
+    if-eqz v27, :cond_7e
 
-    if-eqz v11, :cond_32
+    move/from16 v27, v7
 
-    const/4 v11, 0x1
+    :try_start_34
+    const-string v7, "chat_from_id"
+    :try_end_34
+    .catchall {:try_start_34 .. :try_end_34} :catchall_9
 
-    goto :goto_1d
+    move/from16 v36, v6
+
+    move-wide/from16 v34, v11
+
+    const-wide/16 v11, 0x0
+
+    .line 431
+    :try_start_35
+    invoke-virtual {v10, v7, v11, v12}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+
+    move-result-wide v6
+
+    move/from16 v37, v9
+
+    const-string v9, "chat_from_broadcast_id"
+
+    move-object/from16 v39, v1
+
+    move-object/from16 v38, v2
+
+    .line 432
+    invoke-virtual {v10, v9, v11, v12}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    const-string v9, "chat_from_group_id"
+
+    .line 433
+    invoke-virtual {v10, v9, v11, v12}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+
+    move-result-wide v40
+
+    cmp-long v42, v6, v11
+
+    if-nez v42, :cond_33
+
+    cmp-long v9, v40, v11
+
+    if-eqz v9, :cond_32
+
+    goto :goto_1b
 
     :cond_32
     const/4 v11, 0x0
 
-    :goto_1d
-    const/4 v15, 0x1
-
-    .line 449
-    aget-object v42, v2, v15
-
-    const/4 v15, 0x0
-
-    const/16 v43, 0x0
-
-    move/from16 v52, v11
-
-    move-object v11, v6
-
-    move-object/from16 v6, v42
-
-    move/from16 v42, v52
-
-    goto :goto_21
+    goto :goto_1c
 
     :cond_33
-    const-string v11, "PINNED_"
-
-    .line 451
-    invoke-virtual {v5, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_35
-
-    const-wide/16 v18, 0x0
-
-    cmp-long v11, v34, v18
-
-    if-eqz v11, :cond_34
-
+    :goto_1b
     const/4 v11, 0x1
 
-    goto :goto_1e
+    :goto_1c
+    const-string v9, "mention"
+
+    .line 436
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v9
+    :try_end_35
+    .catchall {:try_start_35 .. :try_end_35} :catchall_7
+
+    if-eqz v9, :cond_34
+
+    :try_start_36
+    const-string v9, "mention"
+
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v9
+    :try_end_36
+    .catchall {:try_start_36 .. :try_end_36} :catchall_6
+
+    if-eqz v9, :cond_34
+
+    const/4 v12, 0x1
+
+    goto :goto_1d
+
+    :catchall_6
+    move-exception v0
+
+    goto/16 :goto_55
 
     :cond_34
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    :goto_1e
-    move/from16 v42, v11
+    :goto_1d
+    :try_start_37
+    const-string/jumbo v9, "silent"
 
-    const/4 v11, 0x0
+    .line 437
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    const/4 v15, 0x0
+    move-result v9
+    :try_end_37
+    .catchall {:try_start_37 .. :try_end_37} :catchall_7
+
+    if-eqz v9, :cond_35
+
+    :try_start_38
+    const-string/jumbo v9, "silent"
+
+    invoke-virtual {v10, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v9
+    :try_end_38
+    .catchall {:try_start_38 .. :try_end_38} :catchall_6
+
+    if-eqz v9, :cond_35
 
     const/16 v43, 0x1
 
-    goto :goto_21
+    goto :goto_1e
 
     :cond_35
-    const-string v11, "CHANNEL_"
+    const/16 v43, 0x0
 
-    .line 454
-    invoke-virtual {v5, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    :goto_1e
+    :try_start_39
+    const-string v9, "loc_args"
 
-    move-result v11
+    move/from16 v44, v12
 
-    if-eqz v11, :cond_36
+    move-object/from16 v12, v22
 
-    const/4 v11, 0x0
+    .line 440
+    invoke-virtual {v12, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    const/4 v15, 0x1
+    move-result v9
+    :try_end_39
+    .catchall {:try_start_39 .. :try_end_39} :catchall_7
+
+    if-eqz v9, :cond_36
+
+    :try_start_3a
+    const-string v9, "loc_args"
+
+    .line 441
+    invoke-virtual {v12, v9}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v9
+
+    .line 442
+    invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
+
+    move-result v12
+
+    move-wide/from16 v45, v6
+
+    new-array v6, v12, [Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    :goto_1f
+    if-ge v7, v12, :cond_37
+
+    .line 444
+    invoke-virtual {v9, v7}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v22
+
+    aput-object v22, v6, v7
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_1f
+
+    :cond_36
+    move-wide/from16 v45, v6
+
+    const/4 v6, 0x0
+
+    :cond_37
+    if-eqz v6, :cond_39
+
+    .line 451
+    array-length v7, v6
+
+    if-gtz v7, :cond_38
 
     goto :goto_20
 
-    :cond_36
-    :goto_1f
-    const/4 v11, 0x0
+    :cond_38
+    const/4 v7, 0x0
 
-    const/4 v15, 0x0
+    aget-object v9, v6, v7
+    :try_end_3a
+    .catchall {:try_start_3a .. :try_end_3a} :catchall_6
 
+    goto :goto_21
+
+    :cond_39
     :goto_20
-    const/16 v42, 0x0
+    const/4 v9, 0x0
 
-    const/16 v43, 0x0
+    :goto_21
+    :try_start_3b
+    const-string v7, "edit_date"
+
+    .line 457
+    invoke-virtual {v10, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v7
+
+    const-string v10, "CHAT_"
 
     .line 458
-    :goto_21
-    sget-boolean v44, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    invoke-virtual {v8, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    if-eqz v44, :cond_37
+    move-result v10
+    :try_end_3b
+    .catchall {:try_start_3b .. :try_end_3b} :catchall_7
 
-    move-object/from16 v44, v6
+    if-eqz v10, :cond_3c
+
+    if-eqz v6, :cond_3c
+
+    :try_start_3c
+    array-length v10, v6
+
+    if-lez v10, :cond_3c
 
     .line 459
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Lorg/telegram/messenger/UserObject;->isReplyUser(J)Z
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v10
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v10, :cond_3a
 
-    const-string v1, " received message notification "
+    .line 460
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, v25
+    const-string v9, " @ "
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const/4 v9, 0x1
 
-    const-string v1, " mid = "
+    aget-object v12, v6, v9
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v1, v30
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    goto :goto_22
-
-    :cond_37
-    move-object/from16 v44, v6
-
-    move/from16 v1, v30
-
-    .line 461
-    :goto_22
-    invoke-virtual {v5, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_63
-
-    invoke-virtual {v5, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_38
-
-    goto/16 :goto_2a
-
-    .line 464
-    :cond_38
-    invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
-
-    move-result v6
-
-    sparse-switch v6, :sswitch_data_1
-
-    goto/16 :goto_24
-
-    :sswitch_4
-    const-string v6, "CHAT_MESSAGE_GEOLIVE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3f
-
-    goto/16 :goto_23
-
-    :sswitch_5
-    const-string v6, "CHANNEL_MESSAGE_PHOTOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2e
-
-    goto/16 :goto_23
-
-    :sswitch_6
-    const-string v6, "CHANNEL_MESSAGE_NOTEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1f
-
-    goto/16 :goto_23
-
-    :sswitch_7
-    const-string v6, "CHANNEL_MESSAGE_PLAYLIST"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x30
-
-    goto/16 :goto_23
-
-    :sswitch_8
-    const-string v6, "PINNED_CONTACT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x61
-
-    goto/16 :goto_23
-
-    :sswitch_9
-    const-string v6, "CHAT_PHOTO_EDITED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x47
-
-    goto/16 :goto_23
-
-    :sswitch_a
-    const-string v6, "LOCKED_MESSAGE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6f
-
-    goto/16 :goto_23
-
-    :sswitch_b
-    const-string v6, "CHAT_MESSAGE_PLAYLIST"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x56
-
-    goto/16 :goto_23
-
-    :sswitch_c
-    const-string v6, "CHANNEL_MESSAGES"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x32
-
-    goto/16 :goto_23
-
-    :sswitch_d
-    const-string v6, "MESSAGE_INVOICE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x18
-
-    goto/16 :goto_23
-
-    :sswitch_e
-    const-string v6, "CHAT_MESSAGE_VIDEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x36
-
-    goto/16 :goto_23
-
-    :sswitch_f
-    const-string v6, "CHAT_MESSAGE_ROUND"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x37
-
-    goto/16 :goto_23
-
-    :sswitch_10
-    const-string v6, "CHAT_MESSAGE_PHOTO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x35
-
-    goto/16 :goto_23
-
-    :sswitch_11
-    const-string v6, "CHAT_MESSAGE_AUDIO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3a
-
-    goto/16 :goto_23
-
-    :sswitch_12
-    const-string v6, "MESSAGE_PLAYLIST"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1c
-
-    goto/16 :goto_23
-
-    :sswitch_13
-    const-string v6, "MESSAGE_VIDEOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1b
-
-    goto/16 :goto_23
-
-    :sswitch_14
-    const-string v6, "PHONE_CALL_MISSED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x74
-
-    goto/16 :goto_23
-
-    :sswitch_15
-    const-string v6, "MESSAGE_PHOTOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1a
-
-    goto/16 :goto_23
-
-    :sswitch_16
-    const-string v6, "CHAT_MESSAGE_VIDEOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x55
-
-    goto/16 :goto_23
-
-    :sswitch_17
-    const-string v6, "MESSAGE_NOTEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/4 v6, 0x5
-
-    goto/16 :goto_23
-
-    :sswitch_18
-    const-string v6, "MESSAGE_GIF"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x14
-
-    goto/16 :goto_23
-
-    :sswitch_19
-    const-string v6, "MESSAGE_GEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x12
-
-    goto/16 :goto_23
-
-    :sswitch_1a
-    const-string v6, "MESSAGE_DOC"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xc
-
-    goto/16 :goto_23
-
-    :sswitch_1b
-    const-string v6, "CHAT_MESSAGE_GAME_SCORE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x42
-
-    goto/16 :goto_23
-
-    :sswitch_1c
-    const-string v6, "CHANNEL_MESSAGE_GEOLIVE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2a
-
-    goto/16 :goto_23
-
-    :sswitch_1d
-    const-string v6, "CHAT_MESSAGE_PHOTOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x54
-
-    goto/16 :goto_23
-
-    :sswitch_1e
-    const-string v6, "CHAT_MESSAGE_NOTEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x34
-
-    goto/16 :goto_23
-
-    :sswitch_1f
-    const-string v6, "CHAT_TITLE_EDITED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x46
-
-    goto/16 :goto_23
-
-    :sswitch_20
-    const-string v6, "PINNED_NOTEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5a
-
-    goto/16 :goto_23
-
-    :sswitch_21
-    const-string v6, "MESSAGE_TEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    move-object/from16 p0, v10
-
-    const/4 v6, 0x3
-
-    goto/16 :goto_25
-
-    :sswitch_22
-    const-string v6, "MESSAGE_QUIZ"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x10
-
-    goto/16 :goto_23
-
-    :sswitch_23
-    const-string v6, "MESSAGE_POLL"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x11
-
-    goto/16 :goto_23
-
-    :sswitch_24
-    const-string v6, "MESSAGE_GAME"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x15
-
-    goto/16 :goto_23
-
-    :sswitch_25
-    const-string v6, "MESSAGE_FWDS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x19
-
-    goto/16 :goto_23
-
-    :sswitch_26
-    const-string v6, "MESSAGE_DOCS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1d
-
-    goto/16 :goto_23
-
-    :sswitch_27
-    const-string v6, "CHAT_MESSAGE_TEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x33
-
-    goto/16 :goto_23
-
-    :sswitch_28
-    const-string v6, "CHAT_MESSAGE_QUIZ"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3c
-
-    goto/16 :goto_23
-
-    :sswitch_29
-    const-string v6, "CHAT_MESSAGE_POLL"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3d
-
-    goto/16 :goto_23
-
-    :sswitch_2a
-    const-string v6, "CHAT_MESSAGE_GAME"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x41
-
-    goto/16 :goto_23
-
-    :sswitch_2b
-    const-string v6, "CHAT_MESSAGE_FWDS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x53
-
-    goto/16 :goto_23
-
-    :sswitch_2c
-    const-string v6, "CHAT_MESSAGE_DOCS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x57
-
-    goto/16 :goto_23
-
-    :sswitch_2d
-    const-string v6, "CHANNEL_MESSAGE_GAME_SCORE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x17
-
-    goto/16 :goto_23
-
-    :sswitch_2e
-    const-string v6, "PINNED_GEOLIVE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x65
-
-    goto/16 :goto_23
-
-    :sswitch_2f
-    const-string v6, "MESSAGE_CONTACT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xf
-
-    goto/16 :goto_23
-
-    :sswitch_30
-    const-string v6, "PINNED_VIDEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5c
-
-    goto/16 :goto_23
-
-    :sswitch_31
-    const-string v6, "PINNED_ROUND"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5d
-
-    goto/16 :goto_23
-
-    :sswitch_32
-    const-string v6, "PINNED_PHOTO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5b
-
-    goto/16 :goto_23
-
-    :sswitch_33
-    const-string v6, "PINNED_AUDIO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x60
-
-    goto/16 :goto_23
-
-    :sswitch_34
-    const-string v6, "MESSAGE_PHOTO_SECRET"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/4 v6, 0x7
-
-    goto/16 :goto_23
-
-    :sswitch_35
-    const-string v6, "CHAT_VOICECHAT_INVITE_YOU"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4c
-
-    goto/16 :goto_23
-
-    :sswitch_36
-    const-string v6, "CHANNEL_MESSAGE_VIDEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x21
-
-    goto/16 :goto_23
-
-    :sswitch_37
-    const-string v6, "CHANNEL_MESSAGE_ROUND"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x22
-
-    goto/16 :goto_23
-
-    :sswitch_38
-    const-string v6, "CHANNEL_MESSAGE_PHOTO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x20
-
-    goto/16 :goto_23
-
-    :sswitch_39
-    const-string v6, "CHAT_VOICECHAT_END"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4b
-
-    goto/16 :goto_23
-
-    :sswitch_3a
-    const-string v6, "CHANNEL_MESSAGE_AUDIO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x25
-
-    goto/16 :goto_23
-
-    :sswitch_3b
-    const-string v6, "CHAT_MESSAGE_STICKER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x39
-
-    goto/16 :goto_23
-
-    :sswitch_3c
-    const-string v6, "MESSAGES"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x1e
-
-    goto/16 :goto_23
-
-    :sswitch_3d
-    const-string v6, "CHAT_MESSAGE_GIF"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x40
-
-    goto/16 :goto_23
-
-    :sswitch_3e
-    const-string v6, "CHAT_MESSAGE_GEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3e
-
-    goto/16 :goto_23
-
-    :sswitch_3f
-    const-string v6, "CHAT_MESSAGE_DOC"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x38
-
-    goto/16 :goto_23
-
-    :sswitch_40
-    const-string v6, "CHAT_VOICECHAT_INVITE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4a
-
-    goto/16 :goto_23
-
-    :sswitch_41
-    const-string v6, "CHAT_LEFT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4f
-
-    goto/16 :goto_23
-
-    :sswitch_42
-    const-string v6, "CHAT_ADD_YOU"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x45
-
-    goto/16 :goto_23
-
-    :sswitch_43
-    const-string v6, "REACT_TEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6b
-
-    goto/16 :goto_23
-
-    :sswitch_44
-    const-string v6, "CHAT_DELETE_MEMBER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4d
-
-    goto/16 :goto_23
-
-    :sswitch_45
-    const-string v6, "MESSAGE_SCREENSHOT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xa
-
-    goto/16 :goto_23
-
-    :sswitch_46
-    const-string v6, "AUTH_REGION"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6e
-
-    goto/16 :goto_23
-
-    :sswitch_47
-    const-string v6, "CONTACT_JOINED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6c
-
-    goto/16 :goto_23
-
-    :sswitch_48
-    const-string v6, "CHAT_MESSAGE_INVOICE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x43
-
-    goto/16 :goto_23
-
-    :sswitch_49
-    const-string v6, "ENCRYPTION_REQUEST"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x70
-
-    goto/16 :goto_23
-
-    :sswitch_4a
-    const-string v6, "MESSAGE_GEOLIVE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x13
-
-    goto/16 :goto_23
-
-    :sswitch_4b
-    const-string v6, "MESSAGE_SAME_WALLPAPER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    move-object/from16 p0, v10
-
-    const/4 v6, 0x0
-
-    goto/16 :goto_25
-
-    :sswitch_4c
-    const-string v6, "CHAT_DELETE_YOU"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x4e
-
-    goto/16 :goto_23
-
-    :sswitch_4d
-    const-string v6, "AUTH_UNKNOWN"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6d
-
-    goto/16 :goto_23
-
-    :sswitch_4e
-    const-string v6, "MESSAGE_WALLPAPER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    move-object/from16 p0, v10
-
-    const/4 v6, 0x1
-
-    goto/16 :goto_25
-
-    :sswitch_4f
-    const-string v6, "PINNED_GIF"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x69
-
-    goto/16 :goto_23
-
-    :sswitch_50
-    const-string v6, "PINNED_GEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x64
-
-    goto/16 :goto_23
-
-    :sswitch_51
-    const-string v6, "PINNED_DOC"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5e
-
-    goto/16 :goto_23
-
-    :sswitch_52
-    const-string v6, "PINNED_GAME_SCORE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x67
-
-    goto/16 :goto_23
-
-    :sswitch_53
-    const-string v6, "CHANNEL_MESSAGE_STICKER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x24
-
-    goto/16 :goto_23
-
-    :sswitch_54
-    const-string v6, "PHONE_CALL_REQUEST"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x72
-
-    goto/16 :goto_23
-
-    :sswitch_55
-    const-string v6, "PINNED_STICKER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x5f
-
-    goto/16 :goto_23
-
-    :sswitch_56
-    const-string v6, "PINNED_TEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x59
-
-    goto/16 :goto_23
-
-    :sswitch_57
-    const-string v6, "PINNED_QUIZ"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x62
-
-    goto/16 :goto_23
-
-    :sswitch_58
-    const-string v6, "PINNED_POLL"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x63
-
-    goto/16 :goto_23
-
-    :sswitch_59
-    const-string v6, "PINNED_GAME"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x66
-
-    goto/16 :goto_23
-
-    :sswitch_5a
-    const-string v6, "CHAT_MESSAGE_CONTACT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x3b
-
-    goto/16 :goto_23
-
-    :sswitch_5b
-    const-string v6, "MESSAGE_VIDEO_SECRET"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x9
-
-    goto/16 :goto_23
-
-    :sswitch_5c
-    const-string v6, "CHANNEL_MESSAGE_TEXT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/4 v6, 0x4
-
-    goto/16 :goto_23
-
-    :sswitch_5d
-    const-string v6, "CHANNEL_MESSAGE_QUIZ"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x27
-
-    goto/16 :goto_23
-
-    :sswitch_5e
-    const-string v6, "CHANNEL_MESSAGE_POLL"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x28
-
-    goto/16 :goto_23
-
-    :sswitch_5f
-    const-string v6, "CHANNEL_MESSAGE_GAME"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2c
-
-    goto/16 :goto_23
-
-    :sswitch_60
-    const-string v6, "CHANNEL_MESSAGE_FWDS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2d
-
-    goto/16 :goto_23
-
-    :sswitch_61
-    const-string v6, "CHANNEL_MESSAGE_DOCS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x31
-
-    goto/16 :goto_23
-
-    :sswitch_62
-    const-string v6, "PINNED_INVOICE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x68
-
-    goto/16 :goto_23
-
-    :sswitch_63
-    const-string v6, "CHAT_RETURNED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x50
-
-    goto/16 :goto_23
-
-    :sswitch_64
-    const-string v6, "ENCRYPTED_MESSAGE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x6a
-
-    goto/16 :goto_23
-
-    :sswitch_65
-    const-string v6, "ENCRYPTION_ACCEPT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x71
-
-    goto/16 :goto_23
-
-    :sswitch_66
-    const-string v6, "MESSAGE_VIDEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    move-object/from16 p0, v10
-
-    const/16 v6, 0x8
-
-    goto/16 :goto_25
-
-    :sswitch_67
-    const-string v6, "MESSAGE_ROUND"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xb
-
-    goto/16 :goto_23
-
-    :sswitch_68
-    const-string v6, "MESSAGE_PHOTO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/4 v6, 0x6
-
-    goto/16 :goto_23
-
-    :sswitch_69
-    const-string v6, "MESSAGE_MUTED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x73
-
-    goto/16 :goto_23
-
-    :sswitch_6a
-    const-string v6, "MESSAGE_AUDIO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xe
-
-    goto/16 :goto_23
-
-    :sswitch_6b
-    const-string v6, "MESSAGE_RECURRING_PAY"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    move-object/from16 p0, v10
-
-    const/4 v6, 0x2
-
-    goto/16 :goto_25
-
-    :sswitch_6c
-    const-string v6, "CHAT_MESSAGES"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x58
-
-    goto/16 :goto_23
-
-    :sswitch_6d
-    const-string v6, "CHAT_VOICECHAT_START"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x49
-
-    goto/16 :goto_23
-
-    :sswitch_6e
-    const-string v6, "CHAT_REQ_JOINED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x52
-
-    goto/16 :goto_23
-
-    :sswitch_6f
-    const-string v6, "CHAT_JOINED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x51
-
-    goto :goto_23
-
-    :sswitch_70
-    const-string v6, "CHAT_ADD_MEMBER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x48
-
-    goto :goto_23
-
-    :sswitch_71
-    const-string v6, "CHANNEL_MESSAGE_GIF"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2b
-
-    goto :goto_23
-
-    :sswitch_72
-    const-string v6, "CHANNEL_MESSAGE_GEO"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x29
-
-    goto :goto_23
-
-    :sswitch_73
-    const-string v6, "CHANNEL_MESSAGE_DOC"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x23
-
-    goto :goto_23
-
-    :sswitch_74
-    const-string v6, "CHANNEL_MESSAGE_VIDEOS"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x2f
-
-    goto :goto_23
-
-    :sswitch_75
-    const-string v6, "MESSAGE_STICKER"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0xd
-
-    goto :goto_23
-
-    :sswitch_76
-    const-string v6, "CHAT_CREATED"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x44
-
-    goto :goto_23
-
-    :sswitch_77
-    const-string v6, "CHANNEL_MESSAGE_CONTACT"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x26
-
-    goto :goto_23
-
-    :sswitch_78
-    const-string v6, "MESSAGE_GAME_SCORE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-    :try_end_23
-    .catchall {:try_start_23 .. :try_end_23} :catchall_7
-
-    if-eqz v6, :cond_39
-
-    const/16 v6, 0x16
-
-    :goto_23
-    move-object/from16 p0, v10
+    move-result-object v9
 
     goto :goto_25
 
-    :cond_39
+    :cond_3a
+    const-wide/16 v19, 0x0
+
+    cmp-long v10, v13, v19
+
+    if-eqz v10, :cond_3b
+
+    const/4 v10, 0x1
+
+    goto :goto_22
+
+    :cond_3b
+    const/4 v10, 0x0
+
+    :goto_22
+    const/4 v12, 0x1
+
+    .line 464
+    aget-object v22, v6, v12
+    :try_end_3c
+    .catchall {:try_start_3c .. :try_end_3c} :catchall_6
+
+    move-object v12, v9
+
+    move/from16 v48, v10
+
+    const/4 v10, 0x0
+
+    goto :goto_24
+
+    :cond_3c
+    :try_start_3d
+    const-string v10, "PINNED_"
+
+    .line 466
+    invoke-virtual {v8, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_3e
+
+    const-wide/16 v19, 0x0
+
+    cmp-long v10, v13, v19
+
+    if-eqz v10, :cond_3d
+
+    const/4 v10, 0x1
+
+    goto :goto_23
+
+    :cond_3d
+    const/4 v10, 0x0
+
+    :goto_23
+    move-object/from16 v22, v9
+
+    move/from16 v48, v10
+
+    const/4 v10, 0x1
+
+    const/4 v12, 0x0
+
     :goto_24
-    move-object/from16 p0, v10
+    const/16 v47, 0x0
 
-    const/4 v6, -0x1
+    goto :goto_27
 
+    :cond_3e
+    const-string v10, "CHANNEL_"
+
+    .line 469
+    invoke-virtual {v8, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_3f
+
+    move-object/from16 v22, v9
+
+    const/4 v10, 0x0
+
+    const/4 v12, 0x0
+
+    const/16 v47, 0x1
+
+    goto :goto_26
+
+    :cond_3f
     :goto_25
-    const-string v10, "Files"
+    move-object/from16 v22, v9
 
-    move-object/from16 v30, v7
+    const/4 v10, 0x0
 
-    const-string v7, "MusicFiles"
+    const/4 v12, 0x0
 
-    move/from16 v45, v3
+    const/16 v47, 0x0
 
-    const-string v3, "Videos"
+    :goto_26
+    const/16 v48, 0x0
 
-    move/from16 v25, v15
+    .line 474
+    :goto_27
+    invoke-virtual {v8, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    const-string v15, "Photos"
+    move-result v9
+    :try_end_3d
+    .catchall {:try_start_3d .. :try_end_3d} :catchall_7
 
-    move-object/from16 v46, v11
+    if-nez v9, :cond_6d
 
-    const-string v11, " "
+    :try_start_3e
+    invoke-virtual {v8, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move/from16 v47, v4
+    move-result v9
 
-    const-string v4, "NotificationGroupFew"
+    if-eqz v9, :cond_40
 
-    move-wide/from16 v48, v12
+    goto/16 :goto_46
 
-    const-string v12, "NotificationMessageFew"
+    .line 477
+    :cond_40
+    invoke-virtual {v8}, Ljava/lang/String;->hashCode()I
 
-    const-string v13, "ChannelMessageFew"
+    move-result v9
 
-    move-wide/from16 v50, v8
+    sparse-switch v9, :sswitch_data_1
 
-    const-string v8, "AttachSticker"
+    :cond_41
+    move-wide/from16 v49, v4
 
-    packed-switch v6, :pswitch_data_0
+    move-object/from16 v4, v38
 
-    .line 1135
-    :try_start_24
-    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    move-object/from16 v9, v39
+
+    goto/16 :goto_2b
+
+    :sswitch_4
+    const-string v9, "CHAT_MESSAGE_GEOLIVE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x45
+
+    goto/16 :goto_28
+
+    :sswitch_5
+    const-string v9, "CHANNEL_MESSAGE_PHOTOS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x33
+
+    goto/16 :goto_28
+
+    :sswitch_6
+    const-string v9, "CHANNEL_MESSAGE_NOTEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x23
+
+    goto/16 :goto_28
+
+    :sswitch_7
+    const-string v9, "CHANNEL_MESSAGE_PLAYLIST"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x35
+
+    goto/16 :goto_28
+
+    :sswitch_8
+    const-string v9, "PINNED_CONTACT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x67
+
+    goto/16 :goto_28
+
+    :sswitch_9
+    const-string v9, "CHAT_PHOTO_EDITED"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x4d
+
+    goto/16 :goto_28
+
+    :sswitch_a
+    const-string v9, "LOCKED_MESSAGE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x75
+
+    goto/16 :goto_28
+
+    :sswitch_b
+    const-string v9, "CHAT_MESSAGE_PLAYLIST"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x5c
+
+    goto/16 :goto_28
+
+    :sswitch_c
+    const-string v9, "CHANNEL_MESSAGES"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x37
+
+    goto/16 :goto_28
+
+    :sswitch_d
+    const-string v9, "MESSAGE_INVOICE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x1c
+
+    goto/16 :goto_28
+
+    :sswitch_e
+    const-string v9, "CHAT_MESSAGE_VIDEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3c
+
+    goto/16 :goto_28
+
+    :sswitch_f
+    const-string v9, "CHAT_MESSAGE_STORY"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3a
+
+    goto/16 :goto_28
+
+    :sswitch_10
+    const-string v9, "CHAT_MESSAGE_ROUND"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3d
+
+    goto/16 :goto_28
+
+    :sswitch_11
+    const-string v9, "CHAT_MESSAGE_PHOTO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3b
+
+    goto/16 :goto_28
+
+    :sswitch_12
+    const-string v9, "CHAT_MESSAGE_AUDIO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x40
+
+    goto/16 :goto_28
+
+    :sswitch_13
+    const-string v9, "MESSAGE_PLAYLIST"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x20
+
+    goto/16 :goto_28
+
+    :sswitch_14
+    const-string v9, "MESSAGE_VIDEOS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x1f
+
+    goto/16 :goto_28
+
+    :sswitch_15
+    const-string v9, "PHONE_CALL_MISSED"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x7a
+
+    goto/16 :goto_28
+
+    :sswitch_16
+    const-string v9, "MESSAGE_PHOTOS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x1e
+
+    goto/16 :goto_28
+
+    :sswitch_17
+    const-string v9, "CHAT_MESSAGE_VIDEOS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x5b
+
+    goto/16 :goto_28
+
+    :sswitch_18
+    const-string v9, "MESSAGE_NOTEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/4 v9, 0x7
+
+    goto/16 :goto_28
+
+    :sswitch_19
+    const-string v9, "MESSAGE_GIF"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x18
+
+    goto/16 :goto_28
+
+    :sswitch_1a
+    const-string v9, "MESSAGE_GEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x16
+
+    goto/16 :goto_28
+
+    :sswitch_1b
+    const-string v9, "MESSAGE_DOC"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x10
+
+    goto/16 :goto_28
+
+    :sswitch_1c
+    const-string v9, "CHAT_MESSAGE_GAME_SCORE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x48
+
+    goto/16 :goto_28
+
+    :sswitch_1d
+    const-string v9, "CHANNEL_MESSAGE_GEOLIVE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x2f
+
+    goto/16 :goto_28
+
+    :sswitch_1e
+    const-string v9, "CHAT_MESSAGE_PHOTOS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x5a
+
+    goto/16 :goto_28
+
+    :sswitch_1f
+    const-string v9, "CHAT_MESSAGE_NOTEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x39
+
+    goto/16 :goto_28
+
+    :sswitch_20
+    const-string v9, "CHAT_TITLE_EDITED"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x4c
+
+    goto/16 :goto_28
+
+    :sswitch_21
+    const-string v9, "PINNED_NOTEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x60
+
+    goto/16 :goto_28
+
+    :sswitch_22
+    const-string v9, "MESSAGE_TEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/4 v9, 0x5
+
+    goto/16 :goto_28
+
+    :sswitch_23
+    const-string v9, "MESSAGE_QUIZ"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x14
+
+    goto/16 :goto_28
+
+    :sswitch_24
+    const-string v9, "MESSAGE_POLL"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x15
+
+    goto/16 :goto_28
+
+    :sswitch_25
+    const-string v9, "MESSAGE_GAME"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x19
+
+    goto/16 :goto_28
+
+    :sswitch_26
+    const-string v9, "MESSAGE_FWDS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x1d
+
+    goto/16 :goto_28
+
+    :sswitch_27
+    const-string v9, "MESSAGE_DOCS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x21
+
+    goto/16 :goto_28
+
+    :sswitch_28
+    const-string v9, "MESSAGE_STORY_MENTION"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x9
+
+    goto/16 :goto_28
+
+    :sswitch_29
+    const-string v9, "CHAT_MESSAGE_TEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x38
+
+    goto/16 :goto_28
+
+    :sswitch_2a
+    const-string v9, "CHAT_MESSAGE_QUIZ"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x42
+
+    goto/16 :goto_28
+
+    :sswitch_2b
+    const-string v9, "CHAT_MESSAGE_POLL"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x43
+
+    goto/16 :goto_28
+
+    :sswitch_2c
+    const-string v9, "CHAT_MESSAGE_GAME"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x47
+
+    goto/16 :goto_28
+
+    :sswitch_2d
+    const-string v9, "CHAT_MESSAGE_FWDS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x59
+
+    goto/16 :goto_28
+
+    :sswitch_2e
+    const-string v9, "CHAT_MESSAGE_DOCS"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x5d
+
+    goto/16 :goto_28
+
+    :sswitch_2f
+    const-string v9, "CHANNEL_MESSAGE_GAME_SCORE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x1b
+
+    goto/16 :goto_28
+
+    :sswitch_30
+    const-string v9, "PINNED_GEOLIVE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x6b
+
+    goto/16 :goto_28
+
+    :sswitch_31
+    const-string v9, "MESSAGE_CONTACT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x13
+
+    goto/16 :goto_28
+
+    :sswitch_32
+    const-string v9, "PINNED_VIDEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x62
+
+    goto/16 :goto_28
+
+    :sswitch_33
+    const-string v9, "PINNED_ROUND"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x63
+
+    goto/16 :goto_28
+
+    :sswitch_34
+    const-string v9, "PINNED_PHOTO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x61
+
+    goto/16 :goto_28
+
+    :sswitch_35
+    const-string v9, "PINNED_AUDIO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x66
+
+    goto/16 :goto_28
+
+    :sswitch_36
+    const-string v9, "MESSAGE_PHOTO_SECRET"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0xb
+
+    goto/16 :goto_28
+
+    :sswitch_37
+    const-string v9, "CHAT_VOICECHAT_INVITE_YOU"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x52
+
+    goto/16 :goto_28
+
+    :sswitch_38
+    const-string v9, "CHANNEL_MESSAGE_VIDEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x26
+
+    goto/16 :goto_28
+
+    :sswitch_39
+    const-string v9, "CHANNEL_MESSAGE_STORY"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x24
+
+    goto/16 :goto_28
+
+    :sswitch_3a
+    const-string v9, "CHANNEL_MESSAGE_ROUND"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x27
+
+    goto/16 :goto_28
+
+    :sswitch_3b
+    const-string v9, "CHANNEL_MESSAGE_PHOTO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x25
+
+    goto/16 :goto_28
+
+    :sswitch_3c
+    const-string v9, "CHAT_VOICECHAT_END"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x51
+
+    goto/16 :goto_28
+
+    :sswitch_3d
+    const-string v9, "CHANNEL_MESSAGE_AUDIO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x2a
+
+    goto/16 :goto_28
+
+    :sswitch_3e
+    const-string v9, "CHAT_MESSAGE_STICKER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3f
+
+    goto/16 :goto_28
+
+    :sswitch_3f
+    const-string v9, "MESSAGES"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x22
+
+    goto/16 :goto_28
+
+    :sswitch_40
+    const-string v9, "CHAT_MESSAGE_GIF"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x46
+
+    goto/16 :goto_28
+
+    :sswitch_41
+    const-string v9, "CHAT_MESSAGE_GEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x44
+
+    goto/16 :goto_28
+
+    :sswitch_42
+    const-string v9, "CHAT_MESSAGE_DOC"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x3e
+
+    goto/16 :goto_28
+
+    :sswitch_43
+    const-string v9, "CHAT_VOICECHAT_INVITE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x50
+
+    goto/16 :goto_28
+
+    :sswitch_44
+    const-string v9, "CHAT_LEFT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x55
+
+    goto/16 :goto_28
+
+    :sswitch_45
+    const-string v9, "CHAT_ADD_YOU"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x4b
+
+    goto/16 :goto_28
+
+    :sswitch_46
+    const-string v9, "REACT_TEXT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x71
+
+    goto/16 :goto_28
+
+    :sswitch_47
+    const-string v9, "CHAT_DELETE_MEMBER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x53
+
+    goto/16 :goto_28
+
+    :sswitch_48
+    const-string v9, "MESSAGE_SCREENSHOT"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0xe
+
+    goto/16 :goto_28
+
+    :sswitch_49
+    const-string v9, "AUTH_REGION"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x74
+
+    goto/16 :goto_28
+
+    :sswitch_4a
+    const-string v9, "CONTACT_JOINED"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x72
+
+    goto/16 :goto_28
+
+    :sswitch_4b
+    const-string v9, "CHAT_MESSAGE_INVOICE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x49
+
+    goto/16 :goto_28
+
+    :sswitch_4c
+    const-string v9, "ENCRYPTION_REQUEST"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x76
+
+    goto/16 :goto_28
+
+    :sswitch_4d
+    const-string v9, "MESSAGE_GEOLIVE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x17
+
+    goto/16 :goto_28
+
+    :sswitch_4e
+    const-string v9, "MESSAGE_SAME_WALLPAPER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    move-wide/from16 v49, v4
+
+    move-object/from16 v4, v38
+
+    const/4 v5, 0x2
+
+    goto/16 :goto_2c
+
+    :sswitch_4f
+    const-string v9, "CHAT_DELETE_YOU"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x54
+
+    goto/16 :goto_28
+
+    :sswitch_50
+    const-string v9, "AUTH_UNKNOWN"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x73
+
+    goto :goto_28
+
+    :sswitch_51
+    const-string v9, "MESSAGE_WALLPAPER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    move-wide/from16 v49, v4
+
+    move-object/from16 v4, v38
+
+    const/4 v5, 0x3
+
+    goto/16 :goto_2c
+
+    :sswitch_52
+    const-string v9, "PINNED_GIF"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x6f
+
+    goto :goto_28
+
+    :sswitch_53
+    const-string v9, "PINNED_GEO"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x6a
+
+    goto :goto_28
+
+    :sswitch_54
+    const-string v9, "PINNED_DOC"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x64
+
+    goto :goto_28
+
+    :sswitch_55
+    const-string v9, "PINNED_GAME_SCORE"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x6d
+
+    goto :goto_28
+
+    :sswitch_56
+    const-string v9, "CHANNEL_MESSAGE_STICKER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x29
+
+    goto :goto_28
+
+    :sswitch_57
+    const-string v9, "PHONE_CALL_REQUEST"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x78
+
+    goto :goto_28
+
+    :sswitch_58
+    const-string v9, "PINNED_STICKER"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_41
+
+    const/16 v9, 0x65
+
+    :goto_28
+    move-wide/from16 v49, v4
+
+    move v5, v9
+
+    goto/16 :goto_2a
+
+    :sswitch_59
+    move-object/from16 v9, v39
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v16
+
+    move-wide/from16 v49, v4
+
+    if-eqz v16, :cond_42
+
+    move-object/from16 v39, v9
+
+    move-object/from16 v4, v38
+
+    const/4 v5, 0x1
+
+    goto/16 :goto_2c
+
+    :sswitch_5a
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "PINNED_TEXT"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x5f
 
     goto/16 :goto_29
 
+    :sswitch_5b
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "PINNED_QUIZ"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x68
+
+    goto/16 :goto_29
+
+    :sswitch_5c
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "PINNED_POLL"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x69
+
+    goto/16 :goto_29
+
+    :sswitch_5d
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "PINNED_GAME"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x6c
+
+    goto/16 :goto_29
+
+    :sswitch_5e
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_MESSAGE_CONTACT"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x41
+
+    goto/16 :goto_29
+
+    :sswitch_5f
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_VIDEO_SECRET"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0xd
+
+    goto/16 :goto_29
+
+    :sswitch_60
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_TEXT"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/4 v5, 0x6
+
+    goto/16 :goto_29
+
+    :sswitch_61
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_QUIZ"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x2c
+
+    goto/16 :goto_29
+
+    :sswitch_62
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_POLL"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x2d
+
+    goto/16 :goto_29
+
+    :sswitch_63
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_GAME"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x31
+
+    goto/16 :goto_29
+
+    :sswitch_64
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_FWDS"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x32
+
+    goto/16 :goto_29
+
+    :sswitch_65
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_DOCS"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x36
+
+    goto/16 :goto_29
+
+    :sswitch_66
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "PINNED_INVOICE"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x6e
+
+    goto/16 :goto_29
+
+    :sswitch_67
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_RETURNED"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x56
+
+    goto/16 :goto_29
+
+    :sswitch_68
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "ENCRYPTED_MESSAGE"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x70
+
+    goto/16 :goto_29
+
+    :sswitch_69
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "ENCRYPTION_ACCEPT"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x77
+
+    goto/16 :goto_29
+
+    :sswitch_6a
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_VIDEO"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0xc
+
+    goto/16 :goto_29
+
+    :sswitch_6b
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_STORY"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    move-object/from16 v39, v9
+
+    move-object/from16 v4, v38
+
+    const/16 v5, 0x8
+
+    goto/16 :goto_2c
+
+    :sswitch_6c
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_ROUND"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0xf
+
+    goto/16 :goto_29
+
+    :sswitch_6d
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_PHOTO"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0xa
+
+    goto/16 :goto_29
+
+    :sswitch_6e
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_MUTED"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x79
+
+    goto/16 :goto_29
+
+    :sswitch_6f
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_AUDIO"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x12
+
+    goto/16 :goto_29
+
+    :sswitch_70
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_RECURRING_PAY"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/4 v5, 0x4
+
+    goto/16 :goto_29
+
+    :sswitch_71
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_MESSAGES"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x5e
+
+    goto/16 :goto_29
+
+    :sswitch_72
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_VOICECHAT_START"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x4f
+
+    goto/16 :goto_29
+
+    :sswitch_73
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_REQ_JOINED"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x58
+
+    goto/16 :goto_29
+
+    :sswitch_74
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_JOINED"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x57
+
+    goto/16 :goto_29
+
+    :sswitch_75
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_ADD_MEMBER"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x4e
+
+    goto/16 :goto_29
+
+    :sswitch_76
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_GIF"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x30
+
+    goto/16 :goto_29
+
+    :sswitch_77
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_GEO"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x2e
+
+    goto :goto_29
+
+    :sswitch_78
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_DOC"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x28
+
+    goto :goto_29
+
+    :sswitch_79
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_VIDEOS"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x34
+
+    goto :goto_29
+
+    :sswitch_7a
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_STICKER"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x11
+
+    goto :goto_29
+
+    :sswitch_7b
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHAT_CREATED"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x4a
+
+    goto :goto_29
+
+    :sswitch_7c
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "CHANNEL_MESSAGE_CONTACT"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x2b
+
+    goto :goto_29
+
+    :sswitch_7d
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    const-string v4, "MESSAGE_GAME_SCORE"
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_42
+
+    const/16 v5, 0x1a
+
+    :goto_29
+    move-object/from16 v39, v9
+
+    :goto_2a
+    move-object/from16 v4, v38
+
+    goto :goto_2c
+
+    :cond_42
+    move-object/from16 v4, v38
+
+    goto :goto_2b
+
+    :sswitch_7e
+    move-wide/from16 v49, v4
+
+    move-object/from16 v9, v39
+
+    move-object/from16 v4, v38
+
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+    :try_end_3e
+    .catchall {:try_start_3e .. :try_end_3e} :catchall_6
+
+    if-eqz v5, :cond_43
+
+    move-object/from16 v39, v9
+
+    const/4 v5, 0x0
+
+    goto :goto_2c
+
+    :cond_43
+    :goto_2b
+    move-object/from16 v39, v9
+
+    const/4 v5, -0x1
+
+    :goto_2c
+    const-string v9, "Photos"
+
+    move-object/from16 v38, v4
+
+    const-string v4, " "
+
+    move-object/from16 v16, v15
+
+    const-string v15, "NotificationGroupFew"
+
+    move-object/from16 v51, v3
+
+    const-string v3, "NotificationMessageFew"
+
+    move/from16 v52, v7
+
+    const-string v7, "ChannelMessageFew"
+
+    move-object/from16 v53, v12
+
+    const-string v12, "AttachSticker"
+
+    packed-switch v5, :pswitch_data_0
+
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 1180
+    :try_start_3f
+    sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    goto/16 :goto_44
+
     :pswitch_0
-    const-string v2, "YouHaveNewMessage"
+    move/from16 v7, v29
 
-    .line 1113
-    sget v3, Lorg/telegram/messenger/R$string;->YouHaveNewMessage:I
+    move/from16 v15, v43
 
-    invoke-static {v2, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    move-wide/from16 v54, v49
 
-    move-result-object v2
+    goto/16 :goto_45
 
-    const-string v3, "SecretChatName"
+    :pswitch_1
+    const-string v3, "YouHaveNewMessage"
 
-    .line 1114
-    sget v4, Lorg/telegram/messenger/R$string;->SecretChatName:I
+    .line 1158
+    sget v4, Lorg/telegram/messenger/R$string;->YouHaveNewMessage:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v44, v3
+    const-string v4, "SecretChatName"
 
-    goto/16 :goto_26
+    .line 1159
+    sget v5, Lorg/telegram/messenger/R$string;->SecretChatName:I
 
-    :pswitch_1
-    if-lez v24, :cond_3a
+    invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    move-object/from16 v21, v3
+
+    move-object/from16 v22, v4
+
+    move/from16 v3, v27
+
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    goto/16 :goto_3e
+
+    :pswitch_2
+    if-lez v24, :cond_44
 
     const-string v3, "NotificationActionPinnedGifUser"
 
-    .line 1102
+    .line 1147
     sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGifUser:I
 
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_3a
-    if-eqz v14, :cond_3b
-
-    const-string v3, "NotificationActionPinnedGif"
-
-    .line 1105
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGif:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     const/4 v7, 0x0
 
-    aget-object v8, v2, v7
+    aget-object v9, v6, v7
 
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_3b
-    const-string v3, "NotificationActionPinnedGifChannel"
-
-    .line 1107
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGifChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_2
-    if-lez v24, :cond_3c
-
-    const-string v3, "NotificationActionPinnedInvoiceUser"
-
-    .line 1090
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoiceUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
+    aput-object v9, v5, v7
 
     const/4 v7, 0x1
 
-    aget-object v2, v2, v7
+    aget-object v6, v6, v7
 
-    aput-object v2, v6, v7
+    aput-object v6, v5, v7
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    goto/16 :goto_2b
+    move-object/from16 v21, v3
 
-    :cond_3c
-    if-eqz v14, :cond_3d
+    move/from16 v3, v27
 
-    const-string v3, "NotificationActionPinnedInvoice"
+    move/from16 v7, v29
 
-    .line 1093
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoice:I
+    move/from16 v15, v43
 
-    const/4 v6, 0x2
+    move-wide/from16 v54, v49
 
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_3d
-    const-string v3, "NotificationActionPinnedInvoiceChannel"
-
-    .line 1095
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoiceChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_3
-    if-lez v24, :cond_3e
-
-    const-string v3, "NotificationActionPinnedGameScoreUser"
-
-    .line 1078
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScoreUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_3e
-    if-eqz v14, :cond_3f
-
-    const-string v3, "NotificationActionPinnedGameScore"
-
-    .line 1081
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScore:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_3f
-    const-string v3, "NotificationActionPinnedGameScoreChannel"
-
-    .line 1083
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScoreChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_4
-    if-lez v24, :cond_40
-
-    const-string v3, "NotificationActionPinnedGameUser"
-
-    .line 1066
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_40
-    if-eqz v14, :cond_41
-
-    const-string v3, "NotificationActionPinnedGame"
-
-    .line 1069
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGame:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_41
-    const-string v3, "NotificationActionPinnedGameChannel"
-
-    .line 1071
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_5
-    if-lez v24, :cond_42
-
-    const-string v3, "NotificationActionPinnedGeoLiveUser"
-
-    .line 1054
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLiveUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_42
-    if-eqz v14, :cond_43
-
-    const-string v3, "NotificationActionPinnedGeoLive"
-
-    .line 1057
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLive:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_43
-    const-string v3, "NotificationActionPinnedGeoLiveChannel"
-
-    .line 1059
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLiveChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_6
-    if-lez v24, :cond_44
-
-    const-string v3, "NotificationActionPinnedGeoUser"
-
-    .line 1042
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
+    goto/16 :goto_48
 
     :cond_44
-    if-eqz v14, :cond_45
+    move/from16 v3, v29
 
-    const-string v3, "NotificationActionPinnedGeo"
+    move-object/from16 v4, v39
 
-    .line 1045
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeo:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x2
+    if-eqz v11, :cond_45
 
-    new-array v6, v6, [Ljava/lang/Object;
+    const-string v5, "NotificationActionPinnedGif"
 
-    const/4 v7, 0x0
+    .line 1150
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGif:I
 
-    aget-object v8, v2, v7
+    const/4 v9, 0x2
 
-    aput-object v8, v6, v7
+    new-array v9, v9, [Ljava/lang/Object;
 
-    const/4 v7, 0x1
+    const/4 v12, 0x0
 
-    aget-object v2, v2, v7
+    aget-object v15, v6, v12
 
-    aput-object v2, v6, v7
+    aput-object v15, v9, v12
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v12, 0x1
 
-    move-result-object v2
+    aget-object v6, v6, v12
 
-    goto/16 :goto_2b
+    aput-object v6, v9, v12
 
-    :cond_45
-    const-string v3, "NotificationActionPinnedGeoChannel"
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 1047
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_7
-    if-lez v24, :cond_46
-
-    const-string v3, "NotificationActionPinnedPollUser"
-
-    .line 1030
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPollUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_46
-    if-eqz v14, :cond_47
-
-    const-string v3, "NotificationActionPinnedPoll2"
-
-    .line 1033
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPoll2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    const/4 v9, 0x1
-
-    aput-object v8, v6, v9
-
-    aget-object v2, v2, v9
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_47
-    const-string v3, "NotificationActionPinnedPollChannel2"
-
-    .line 1035
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPollChannel2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_8
-    if-lez v24, :cond_48
-
-    const-string v3, "NotificationActionPinnedQuizUser"
-
-    .line 1018
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuizUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_48
-    if-eqz v14, :cond_49
-
-    const-string v3, "NotificationActionPinnedQuiz2"
-
-    .line 1021
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuiz2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    const/4 v9, 0x1
-
-    aput-object v8, v6, v9
-
-    aget-object v2, v2, v9
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_49
-    const-string v3, "NotificationActionPinnedQuizChannel2"
-
-    .line 1023
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuizChannel2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_9
-    if-lez v24, :cond_4a
-
-    const-string v3, "NotificationActionPinnedContactUser"
-
-    .line 1006
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContactUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4a
-    if-eqz v14, :cond_4b
-
-    const-string v3, "NotificationActionPinnedContact2"
-
-    .line 1009
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContact2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    const/4 v9, 0x1
-
-    aput-object v8, v6, v9
-
-    aget-object v2, v2, v9
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4b
-    const-string v3, "NotificationActionPinnedContactChannel2"
-
-    .line 1011
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContactChannel2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_a
-    if-lez v24, :cond_4c
-
-    const-string v3, "NotificationActionPinnedVoiceUser"
-
-    .line 994
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoiceUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4c
-    if-eqz v14, :cond_4d
-
-    const-string v3, "NotificationActionPinnedVoice"
-
-    .line 997
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoice:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4d
-    const-string v3, "NotificationActionPinnedVoiceChannel"
-
-    .line 999
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoiceChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_b
-    if-lez v24, :cond_4f
-
-    .line 970
-    array-length v3, v2
-
-    const/4 v4, 0x1
-
-    if-le v3, v4, :cond_4e
-
-    aget-object v3, v2, v4
-
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_4e
-
-    const-string v3, "NotificationActionPinnedStickerEmojiUser"
-
-    .line 971
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmojiUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4e
-    const-string v3, "NotificationActionPinnedStickerUser"
-
-    .line 973
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerUser:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_4f
-    if-eqz v14, :cond_51
-
-    .line 977
-    array-length v3, v2
-
-    const/4 v4, 0x2
-
-    if-le v3, v4, :cond_50
-
-    aget-object v3, v2, v4
-
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_50
-
-    const-string v3, "NotificationActionPinnedStickerEmoji"
-
-    .line 978
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmoji:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    const/4 v9, 0x1
-
-    aput-object v8, v6, v9
-
-    aget-object v2, v2, v9
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_50
-    const-string v3, "NotificationActionPinnedSticker"
-
-    .line 980
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedSticker:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    .line 983
-    :cond_51
-    array-length v3, v2
-
-    const/4 v4, 0x1
-
-    if-le v3, v4, :cond_52
-
-    aget-object v3, v2, v4
-
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_52
-
-    const-string v3, "NotificationActionPinnedStickerEmojiChannel"
-
-    .line 984
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmojiChannel:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_52
-    const-string v3, "NotificationActionPinnedStickerChannel"
-
-    .line 986
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_c
-    if-lez v24, :cond_53
-
-    const-string v3, "NotificationActionPinnedFileUser"
-
-    .line 958
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFileUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_53
-    if-eqz v14, :cond_54
-
-    const-string v3, "NotificationActionPinnedFile"
-
-    .line 961
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFile:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_54
-    const-string v3, "NotificationActionPinnedFileChannel"
-
-    .line 963
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFileChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_d
-    if-lez v24, :cond_55
-
-    const-string v3, "NotificationActionPinnedRoundUser"
-
-    .line 946
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRoundUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_55
-    if-eqz v14, :cond_56
-
-    const-string v3, "NotificationActionPinnedRound"
-
-    .line 949
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRound:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_56
-    const-string v3, "NotificationActionPinnedRoundChannel"
-
-    .line 951
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRoundChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_e
-    if-lez v24, :cond_57
-
-    const-string v3, "NotificationActionPinnedVideoUser"
-
-    .line 934
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideoUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_57
-    if-eqz v14, :cond_58
-
-    const-string v3, "NotificationActionPinnedVideo"
-
-    .line 937
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideo:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_58
-    const-string v3, "NotificationActionPinnedVideoChannel"
-
-    .line 939
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideoChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_f
-    if-lez v24, :cond_59
-
-    const-string v3, "NotificationActionPinnedPhotoUser"
-
-    .line 922
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhotoUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_59
-    if-eqz v14, :cond_5a
-
-    const-string v3, "NotificationActionPinnedPhoto"
-
-    .line 925
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhoto:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_5a
-    const-string v3, "NotificationActionPinnedPhotoChannel"
-
-    .line 927
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhotoChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_10
-    if-lez v24, :cond_5b
-
-    const-string v3, "NotificationActionPinnedNoTextUser"
-
-    .line 910
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoTextUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_5b
-    if-eqz v14, :cond_5c
-
-    const-string v3, "NotificationActionPinnedNoText"
-
-    .line 913
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoText:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_5c
-    const-string v3, "NotificationActionPinnedNoTextChannel"
-
-    .line 915
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoTextChannel:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_11
-    if-lez v24, :cond_5d
-
-    const-string v3, "NotificationActionPinnedTextUser"
-
-    .line 898
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedTextUser:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_5d
-    if-eqz v14, :cond_5e
-
-    const-string v3, "NotificationActionPinnedText"
-
-    .line 901
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedText:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :cond_5e
-    const-string v3, "NotificationActionPinnedTextChannel"
-
-    .line 903
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationActionPinnedTextChannel:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_12
-    const-string v3, "NotificationGroupAlbum"
-
-    .line 892
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupAlbum:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 887
-    :pswitch_13
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v8, 0x0
-
-    new-array v9, v8, [Ljava/lang/Object;
-
-    invoke-static {v10, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v7
-
-    invoke-static {v4, v3, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 882
-    :pswitch_14
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
-
-    aget-object v9, v2, v8
-
-    aput-object v9, v6, v8
-
-    const/4 v8, 0x1
-
-    aget-object v9, v2, v8
-
-    aput-object v9, v6, v8
-
-    const/4 v8, 0x2
-
-    aget-object v2, v2, v8
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v9, 0x0
-
-    new-array v10, v9, [Ljava/lang/Object;
-
-    invoke-static {v7, v2, v10}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v8
-
-    invoke-static {v4, v3, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 877
-    :pswitch_15
-    sget v6, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
-
-    const/4 v7, 0x3
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
-
-    aget-object v9, v2, v8
-
-    aput-object v9, v7, v8
-
-    const/4 v8, 0x1
-
-    aget-object v9, v2, v8
-
-    aput-object v9, v7, v8
-
-    const/4 v8, 0x2
-
-    aget-object v2, v2, v8
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v9, 0x0
-
-    new-array v10, v9, [Ljava/lang/Object;
-
-    invoke-static {v3, v2, v10}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v7, v8
-
-    invoke-static {v4, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 872
-    :pswitch_16
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v8, 0x0
-
-    new-array v9, v8, [Ljava/lang/Object;
-
-    invoke-static {v15, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v7
-
-    invoke-static {v4, v3, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    :pswitch_17
-    const-string v3, "NotificationGroupForwardedFew"
-
-    .line 867
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupForwardedFew:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v8, 0x0
-
-    new-array v9, v8, [Ljava/lang/Object;
-
-    move-object/from16 v8, v23
-
-    invoke-static {v8, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    :pswitch_18
-    const-string v3, "UserAcceptedToGroupPushWithGroup"
-
-    .line 863
-    sget v4, Lorg/telegram/messenger/R$string;->UserAcceptedToGroupPushWithGroup:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_19
-    const-string v3, "NotificationGroupAddSelfMega"
-
-    .line 859
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupAddSelfMega:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1a
-    const-string v3, "NotificationGroupAddSelf"
-
-    .line 855
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupAddSelf:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1b
-    const-string v3, "NotificationGroupLeftMember"
-
-    .line 851
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupLeftMember:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1c
-    const-string v3, "NotificationGroupKickYou"
-
-    .line 847
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupKickYou:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1d
-    const-string v3, "NotificationGroupKickMember"
-
-    .line 843
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupKickMember:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1e
-    const-string v3, "NotificationGroupInvitedYouToCall"
-
-    .line 839
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupInvitedYouToCall:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_1f
-    const-string v3, "NotificationGroupEndedCall"
-
-    .line 835
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupEndedCall:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_20
-    const-string v3, "NotificationGroupInvitedToCall"
-
-    .line 831
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupInvitedToCall:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_21
-    const-string v3, "NotificationGroupCreatedCall"
-
-    .line 827
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupCreatedCall:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_22
-    const-string v3, "NotificationGroupAddMember"
-
-    .line 823
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationGroupAddMember:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_23
-    const-string v3, "NotificationEditedGroupPhoto"
-
-    .line 819
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationEditedGroupPhoto:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_24
-    const-string v3, "NotificationEditedGroupName"
-
-    .line 815
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationEditedGroupName:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_25
-    const-string v3, "NotificationInvitedToGroup"
-
-    .line 811
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationInvitedToGroup:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_26
-    const-string v3, "NotificationMessageGroupInvoice"
-
-    .line 805
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupInvoice:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "PaymentInvoice"
-
-    .line 806
-    sget v4, Lorg/telegram/messenger/R$string;->PaymentInvoice:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_27
-    const-string v3, "NotificationMessageGroupGameScored"
-
-    .line 801
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGameScored:I
-
-    const/4 v6, 0x4
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x3
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_2b
-
-    :pswitch_28
-    const-string v3, "NotificationMessageGroupGame"
-
-    .line 796
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGame:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachGame"
-
-    .line 797
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGame:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_29
-    const-string v3, "NotificationMessageGroupGif"
-
-    .line 791
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGif:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachGif"
-
-    .line 792
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2a
-    const-string v3, "NotificationMessageGroupLiveLocation"
-
-    .line 786
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupLiveLocation:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachLiveLocation"
-
-    .line 787
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2b
-    const-string v3, "NotificationMessageGroupMap"
-
-    .line 781
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupMap:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachLocation"
-
-    .line 782
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2c
-    const-string v3, "NotificationMessageGroupPoll2"
-
-    .line 776
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupPoll2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "Poll"
-
-    .line 777
-    sget v4, Lorg/telegram/messenger/R$string;->Poll:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2d
-    const-string v3, "NotificationMessageGroupQuiz2"
-
-    .line 771
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupQuiz2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "PollQuiz"
-
-    .line 772
-    sget v4, Lorg/telegram/messenger/R$string;->PollQuiz:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2e
-    const-string v3, "NotificationMessageGroupContact2"
-
-    .line 766
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupContact2:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachContact"
-
-    .line 767
-    sget v4, Lorg/telegram/messenger/R$string;->AttachContact:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_2f
-    const-string v3, "NotificationMessageGroupAudio"
-
-    .line 761
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupAudio:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachAudio"
-
-    .line 762
-    sget v4, Lorg/telegram/messenger/R$string;->AttachAudio:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    .line 751
-    :pswitch_30
-    array-length v3, v2
-
-    const/4 v4, 0x2
-
-    if-le v3, v4, :cond_5f
-
-    aget-object v3, v2, v4
-
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5f
-
-    const-string v3, "NotificationMessageGroupStickerEmoji"
-
-    .line 752
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupStickerEmoji:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 753
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v2, v2, v7
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v2, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_27
-
-    :cond_5f
-    const-string v3, "NotificationMessageGroupSticker"
-
-    .line 755
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupSticker:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 756
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v2, v2, v7
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v2, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_27
-
-    :pswitch_31
-    const-string v3, "NotificationMessageGroupDocument"
-
-    .line 746
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupDocument:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachDocument"
-
-    .line 747
-    sget v4, Lorg/telegram/messenger/R$string;->AttachDocument:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_32
-    const-string v3, "NotificationMessageGroupRound"
-
-    .line 741
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupRound:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachRound"
-
-    .line 742
-    sget v4, Lorg/telegram/messenger/R$string;->AttachRound:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_33
-    const-string v3, "NotificationMessageGroupVideo"
-
-    .line 736
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupVideo:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachVideo"
-
-    .line 737
-    sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_34
-    const-string v3, "NotificationMessageGroupPhoto"
-
-    .line 731
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupPhoto:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachPhoto"
-
-    .line 732
-    sget v4, Lorg/telegram/messenger/R$string;->AttachPhoto:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_35
-    const-string v3, "NotificationMessageGroupNoText"
-
-    .line 726
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupNoText:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "Message"
-
-    .line 727
-    sget v4, Lorg/telegram/messenger/R$string;->Message:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_36
-    const-string v3, "NotificationMessageGroupText"
-
-    .line 721
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupText:I
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x2
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 722
-    aget-object v2, v2, v7
-
-    goto/16 :goto_27
-
-    :pswitch_37
-    const-string v3, "ChannelMessageAlbum"
-
-    .line 716
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageAlbum:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 711
-    :pswitch_38
-    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v7, v2, v6
-
-    aput-object v7, v4, v6
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    new-array v8, v6, [Ljava/lang/Object;
-
-    invoke-static {v10, v2, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v4, v7
-
-    invoke-static {v13, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 706
-    :pswitch_39
-    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v8, v2, v6
-
-    aput-object v8, v4, v6
-
-    const/4 v8, 0x1
-
-    aget-object v2, v2, v8
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    new-array v9, v6, [Ljava/lang/Object;
-
-    invoke-static {v7, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v4, v8
-
-    invoke-static {v13, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 701
-    :pswitch_3a
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v8, 0x1
-
-    aget-object v2, v2, v8
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    new-array v9, v7, [Ljava/lang/Object;
-
-    invoke-static {v3, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v8
-
-    invoke-static {v13, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 696
-    :pswitch_3b
-    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v7, v2, v6
-
-    aput-object v7, v4, v6
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    new-array v8, v6, [Ljava/lang/Object;
-
-    invoke-static {v15, v2, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v4, v7
-
-    invoke-static {v13, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    .line 691
-    :pswitch_3c
-    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v7, v2, v6
-
-    aput-object v7, v4, v6
-
-    const-string v7, "ForwardedMessageCount"
-
-    const/4 v8, 0x1
-
-    aget-object v2, v2, v8
-
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    new-array v8, v6, [Ljava/lang/Object;
-
-    invoke-static {v7, v2, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v6, 0x1
-
-    aput-object v2, v4, v6
-
-    invoke-static {v13, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_26
-
-    :pswitch_3d
-    const-string v3, "NotificationMessageGame"
-
-    .line 686
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGame:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachGame"
-
-    .line 687
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGame:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_3e
-    const-string v3, "ChannelMessageGIF"
-
-    .line 681
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageGIF:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachGif"
-
-    .line 682
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_3f
-    const-string v3, "ChannelMessageLiveLocation"
-
-    .line 676
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageLiveLocation:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachLiveLocation"
-
-    .line 677
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_40
-    const-string v3, "ChannelMessageMap"
-
-    .line 671
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageMap:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachLocation"
-
-    .line 672
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_41
-    const-string v3, "ChannelMessagePoll2"
-
-    .line 666
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessagePoll2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "Poll"
-
-    .line 667
-    sget v4, Lorg/telegram/messenger/R$string;->Poll:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_42
-    const-string v3, "ChannelMessageQuiz2"
-
-    .line 661
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageQuiz2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "QuizPoll"
-
-    .line 662
-    sget v4, Lorg/telegram/messenger/R$string;->QuizPoll:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_43
-    const-string v3, "ChannelMessageContact2"
-
-    .line 656
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageContact2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachContact"
-
-    .line 657
-    sget v4, Lorg/telegram/messenger/R$string;->AttachContact:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_44
-    const-string v3, "ChannelMessageAudio"
-
-    .line 651
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageAudio:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachAudio"
-
-    .line 652
-    sget v4, Lorg/telegram/messenger/R$string;->AttachAudio:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    .line 641
-    :pswitch_45
-    array-length v3, v2
-
-    const/4 v4, 0x1
-
-    if-le v3, v4, :cond_60
-
-    aget-object v3, v2, v4
-
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_60
-
-    const-string v3, "ChannelMessageStickerEmoji"
-
-    .line 642
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageStickerEmoji:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v9, v2, v7
-
-    aput-object v9, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 643
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v2, v2, v7
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v2, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_27
-
-    :cond_60
-    const-string v3, "ChannelMessageSticker"
-
-    .line 645
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageSticker:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 646
-    sget v3, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_46
-    const-string v3, "ChannelMessageDocument"
-
-    .line 636
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageDocument:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachDocument"
-
-    .line 637
-    sget v4, Lorg/telegram/messenger/R$string;->AttachDocument:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_47
-    const-string v3, "ChannelMessageRound"
-
-    .line 631
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageRound:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachRound"
-
-    .line 632
-    sget v4, Lorg/telegram/messenger/R$string;->AttachRound:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_48
-    const-string v3, "ChannelMessageVideo"
-
-    .line 626
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageVideo:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachVideo"
-
-    .line 627
-    sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_49
-    const-string v3, "ChannelMessagePhoto"
-
-    .line 621
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessagePhoto:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "AttachPhoto"
-
-    .line 622
-    sget v4, Lorg/telegram/messenger/R$string;->AttachPhoto:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_4a
-    const-string v3, "ChannelMessageNoText"
-
-    .line 616
-    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageNoText:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "Message"
-
-    .line 617
-    sget v4, Lorg/telegram/messenger/R$string;->Message:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_4b
-    const-string v3, "NotificationMessageAlbum"
-
-    .line 611
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageAlbum:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    :goto_26
-    const/16 v17, 0x0
-
-    const/16 v24, 0x1
+    move-result-object v5
 
     goto/16 :goto_2d
 
-    .line 606
-    :pswitch_4c
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+    :cond_45
+    const-string v5, "NotificationActionPinnedGifChannel"
 
-    const/4 v4, 0x2
+    .line 1152
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGifChannel:I
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :pswitch_3
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_46
+
+    const-string v5, "NotificationActionPinnedInvoiceUser"
+
+    .line 1135
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoiceUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_46
+    if-eqz v11, :cond_47
+
+    const-string v5, "NotificationActionPinnedInvoice"
+
+    .line 1138
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoice:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_47
+    const-string v5, "NotificationActionPinnedInvoiceChannel"
+
+    .line 1140
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedInvoiceChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :pswitch_4
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_48
+
+    const-string v5, "NotificationActionPinnedGameScoreUser"
+
+    .line 1123
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScoreUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_48
+    if-eqz v11, :cond_49
+
+    const-string v5, "NotificationActionPinnedGameScore"
+
+    .line 1126
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScore:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_49
+    const-string v5, "NotificationActionPinnedGameScoreChannel"
+
+    .line 1128
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameScoreChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :pswitch_5
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_4a
+
+    const-string v5, "NotificationActionPinnedGameUser"
+
+    .line 1111
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_4a
+    if-eqz v11, :cond_4b
+
+    const-string v5, "NotificationActionPinnedGame"
+
+    .line 1114
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGame:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_4b
+    const-string v5, "NotificationActionPinnedGameChannel"
+
+    .line 1116
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGameChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :pswitch_6
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_4c
+
+    const-string v5, "NotificationActionPinnedGeoLiveUser"
+
+    .line 1099
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLiveUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2d
+
+    :cond_4c
+    if-eqz v11, :cond_4d
+
+    const-string v5, "NotificationActionPinnedGeoLive"
+
+    .line 1102
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLive:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :cond_4d
+    const-string v5, "NotificationActionPinnedGeoLiveChannel"
+
+    .line 1104
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoLiveChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :pswitch_7
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_4e
+
+    const-string v5, "NotificationActionPinnedGeoUser"
+
+    .line 1087
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :cond_4e
+    if-eqz v11, :cond_4f
+
+    const-string v5, "NotificationActionPinnedGeo"
+
+    .line 1090
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeo:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :cond_4f
+    const-string v5, "NotificationActionPinnedGeoChannel"
+
+    .line 1092
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedGeoChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    :goto_2d
+    move-object/from16 v39, v4
+
+    move-object/from16 v21, v5
+
+    move v15, v7
+
+    move-wide/from16 v54, v49
+
+    goto/16 :goto_2f
+
+    :pswitch_8
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    if-lez v24, :cond_50
+
+    const-string v5, "NotificationActionPinnedPollUser"
+
+    .line 1075
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPollUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :cond_50
+    if-eqz v11, :cond_51
+
+    const-string v5, "NotificationActionPinnedPoll2"
+
+    .line 1078
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPoll2:I
+
+    const/4 v12, 0x3
+
+    new-array v12, v12, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v12, v15
+
+    const/4 v9, 0x2
+
+    aget-object v15, v6, v9
+
+    const/16 v18, 0x1
+
+    aput-object v15, v12, v18
+
+    aget-object v6, v6, v18
+
+    aput-object v6, v12, v9
+
+    invoke-static {v5, v11, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :cond_51
+    const-string v5, "NotificationActionPinnedPollChannel2"
+
+    .line 1080
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPollChannel2:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2d
+
+    :pswitch_9
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_52
+
+    const-string v5, "NotificationActionPinnedQuizUser"
+
+    .line 1063
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuizUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_52
+    if-eqz v11, :cond_53
+
+    const-string v11, "NotificationActionPinnedQuiz2"
+
+    .line 1066
+    sget v12, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuiz2:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v5, v15
+
+    const/4 v9, 0x2
+
+    aget-object v15, v6, v9
+
+    const/16 v18, 0x1
+
+    aput-object v15, v5, v18
+
+    aget-object v6, v6, v18
+
+    aput-object v6, v5, v9
+
+    invoke-static {v11, v12, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_53
+    const-string v5, "NotificationActionPinnedQuizChannel2"
+
+    .line 1068
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedQuizChannel2:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_a
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_54
+
+    const-string v5, "NotificationActionPinnedContactUser"
+
+    .line 1051
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContactUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_54
+    if-eqz v11, :cond_55
+
+    const-string v11, "NotificationActionPinnedContact2"
+
+    .line 1054
+    sget v12, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContact2:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v5, v15
+
+    const/4 v9, 0x2
+
+    aget-object v15, v6, v9
+
+    const/16 v18, 0x1
+
+    aput-object v15, v5, v18
+
+    aget-object v6, v6, v18
+
+    aput-object v6, v5, v9
+
+    invoke-static {v11, v12, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_55
+    const-string v5, "NotificationActionPinnedContactChannel2"
+
+    .line 1056
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedContactChannel2:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_b
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_56
+
+    const-string v5, "NotificationActionPinnedVoiceUser"
+
+    .line 1039
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoiceUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_56
+    if-eqz v11, :cond_57
+
+    const-string v5, "NotificationActionPinnedVoice"
+
+    .line 1042
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoice:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_57
+    const-string v5, "NotificationActionPinnedVoiceChannel"
+
+    .line 1044
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVoiceChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_c
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_59
+
+    .line 1015
+    array-length v5, v6
+
+    const/4 v11, 0x1
+
+    if-le v5, v11, :cond_58
+
+    aget-object v5, v6, v11
+
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_58
+
+    const-string v5, "NotificationActionPinnedStickerEmojiUser"
+
+    .line 1016
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmojiUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_58
+    const-string v5, "NotificationActionPinnedStickerUser"
+
+    .line 1018
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerUser:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_59
+    if-eqz v11, :cond_5b
+
+    .line 1022
+    array-length v11, v6
+
+    const/4 v9, 0x2
+
+    if-le v11, v9, :cond_5a
+
+    aget-object v11, v6, v9
+
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_5a
+
+    const-string v11, "NotificationActionPinnedStickerEmoji"
+
+    .line 1023
+    sget v12, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmoji:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v5, v15
+
+    const/4 v9, 0x2
+
+    aget-object v15, v6, v9
+
+    const/16 v18, 0x1
+
+    aput-object v15, v5, v18
+
+    aget-object v6, v6, v18
+
+    aput-object v6, v5, v9
+
+    invoke-static {v11, v12, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_5a
+    const-string v5, "NotificationActionPinnedSticker"
+
+    .line 1025
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedSticker:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    .line 1028
+    :cond_5b
+    array-length v5, v6
+
+    const/4 v11, 0x1
+
+    if-le v5, v11, :cond_5c
+
+    aget-object v5, v6, v11
+
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_5c
+
+    const-string v5, "NotificationActionPinnedStickerEmojiChannel"
+
+    .line 1029
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerEmojiChannel:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_5c
+    const-string v5, "NotificationActionPinnedStickerChannel"
+
+    .line 1031
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedStickerChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_d
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_5d
+
+    const-string v5, "NotificationActionPinnedFileUser"
+
+    .line 1003
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFileUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_5d
+    if-eqz v11, :cond_5e
+
+    const-string v5, "NotificationActionPinnedFile"
+
+    .line 1006
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFile:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_5e
+    const-string v5, "NotificationActionPinnedFileChannel"
+
+    .line 1008
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedFileChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_e
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_5f
+
+    const-string v5, "NotificationActionPinnedRoundUser"
+
+    .line 991
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRoundUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_5f
+    if-eqz v11, :cond_60
+
+    const-string v5, "NotificationActionPinnedRound"
+
+    .line 994
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRound:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_60
+    const-string v5, "NotificationActionPinnedRoundChannel"
+
+    .line 996
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedRoundChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_f
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_61
+
+    const-string v5, "NotificationActionPinnedVideoUser"
+
+    .line 979
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideoUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_61
+    if-eqz v11, :cond_62
+
+    const-string v5, "NotificationActionPinnedVideo"
+
+    .line 982
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideo:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_62
+    const-string v5, "NotificationActionPinnedVideoChannel"
+
+    .line 984
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedVideoChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :pswitch_10
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_63
+
+    const-string v5, "NotificationActionPinnedPhotoUser"
+
+    .line 967
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhotoUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_2e
+
+    :cond_63
+    if-eqz v11, :cond_64
+
+    const-string v5, "NotificationActionPinnedPhoto"
+
+    .line 970
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhoto:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :cond_64
+    const-string v5, "NotificationActionPinnedPhotoChannel"
+
+    .line 972
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedPhotoChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :pswitch_11
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_65
+
+    const-string v5, "NotificationActionPinnedNoTextUser"
+
+    .line 955
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoTextUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :cond_65
+    if-eqz v11, :cond_66
+
+    const-string v5, "NotificationActionPinnedNoText"
+
+    .line 958
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoText:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :cond_66
+    const-string v5, "NotificationActionPinnedNoTextChannel"
+
+    .line 960
+    sget v9, Lorg/telegram/messenger/R$string;->NotificationActionPinnedNoTextChannel:I
+
+    const/4 v11, 0x1
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v12, v11
+
+    invoke-static {v5, v9, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    :goto_2e
+    move-object/from16 v39, v4
+
+    move-object/from16 v21, v5
+
+    move v15, v7
+
+    :goto_2f
+    const/4 v6, 0x0
+
+    const/16 v24, 0x0
+
+    goto/16 :goto_30
+
+    :pswitch_12
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    if-lez v24, :cond_67
+
+    const-string v5, "NotificationActionPinnedTextUser"
+
+    .line 943
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedTextUser:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :cond_67
+    if-eqz v11, :cond_68
+
+    const-string v11, "NotificationActionPinnedText"
+
+    .line 946
+    sget v12, Lorg/telegram/messenger/R$string;->NotificationActionPinnedText:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v5, v15
+
+    const/4 v15, 0x1
+
+    aget-object v18, v6, v15
+
+    aput-object v18, v5, v15
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v11, v12, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :cond_68
+    const-string v5, "NotificationActionPinnedTextChannel"
+
+    .line 948
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationActionPinnedTextChannel:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2e
+
+    :pswitch_13
+    move/from16 v3, v29
+
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v5, "NotificationGroupAlbum"
+
+    .line 937
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupAlbum:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v9, v12
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    aput-object v6, v9, v12
+
+    invoke-static {v5, v11, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object/from16 v39, v4
+
+    move-object/from16 v21, v5
+
+    move v15, v7
 
     const/4 v6, 0x0
 
-    aget-object v7, v2, v6
+    const/16 v24, 0x1
 
-    aput-object v7, v4, v6
+    :goto_30
+    move v7, v3
 
-    const/4 v7, 0x1
+    :goto_31
+    move/from16 v3, v27
 
-    aget-object v2, v2, v7
+    goto/16 :goto_4a
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    :pswitch_14
+    move/from16 v3, v29
 
-    move-result-object v2
+    move-object/from16 v4, v39
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    move/from16 v7, v43
 
-    move-result v2
+    move-wide/from16 v54, v49
 
-    new-array v8, v6, [Ljava/lang/Object;
+    .line 932
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
 
-    invoke-static {v10, v2, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v5, 0x3
 
-    move-result-object v2
+    new-array v5, v5, [Ljava/lang/Object;
 
-    aput-object v2, v4, v7
+    const/4 v12, 0x0
 
-    invoke-static {v12, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    aget-object v17, v6, v12
 
-    move-result-object v2
+    aput-object v17, v5, v12
 
-    goto :goto_26
+    const/4 v12, 0x1
 
-    .line 601
-    :pswitch_4d
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+    aget-object v18, v6, v12
 
-    const/4 v4, 0x2
+    aput-object v18, v5, v12
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const-string v12, "Files"
 
-    const/4 v6, 0x0
+    const/4 v9, 0x2
 
-    aget-object v8, v2, v6
+    aget-object v6, v6, v9
 
-    aput-object v8, v4, v6
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
-    const/4 v8, 0x1
+    move-result-object v6
 
-    aget-object v2, v2, v8
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    move-result v6
 
-    move-result-object v2
+    move/from16 v29, v3
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    const/4 v9, 0x0
 
-    move-result v2
+    new-array v3, v9, [Ljava/lang/Object;
 
-    new-array v9, v6, [Ljava/lang/Object;
+    invoke-static {v12, v6, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v7, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v4, v8
-
-    invoke-static {v12, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_26
-
-    .line 596
-    :pswitch_4e
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+    move-result-object v3
 
     const/4 v6, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
+    aput-object v3, v5, v6
 
-    const/4 v7, 0x0
+    invoke-static {v15, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    aget-object v8, v2, v7
+    move-result-object v3
 
-    aput-object v8, v6, v7
+    goto/16 :goto_32
 
-    const/4 v8, 0x1
+    :pswitch_15
+    move-object/from16 v4, v39
 
-    aget-object v2, v2, v8
+    move/from16 v7, v43
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    move-wide/from16 v54, v49
 
-    move-result-object v2
+    .line 927
+    sget v3, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    const/4 v5, 0x3
 
-    move-result v2
+    new-array v5, v5, [Ljava/lang/Object;
 
-    new-array v9, v7, [Ljava/lang/Object;
+    const/4 v11, 0x0
 
-    invoke-static {v3, v2, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    aget-object v12, v6, v11
 
-    move-result-object v2
+    aput-object v12, v5, v11
 
-    aput-object v2, v6, v8
+    const/4 v11, 0x1
 
-    invoke-static {v12, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    aget-object v12, v6, v11
 
-    move-result-object v2
+    aput-object v12, v5, v11
 
-    goto :goto_26
+    const-string v11, "MusicFiles"
 
-    .line 591
-    :pswitch_4f
-    sget v3, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+    const/4 v9, 0x2
 
-    const/4 v4, 0x2
+    aget-object v6, v6, v9
 
-    new-array v4, v4, [Ljava/lang/Object;
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
-    const/4 v6, 0x0
+    move-result-object v6
 
-    aget-object v7, v2, v6
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    aput-object v7, v4, v6
+    move-result v6
 
-    const/4 v7, 0x1
+    const/4 v12, 0x0
 
-    aget-object v2, v2, v7
+    new-array v9, v12, [Ljava/lang/Object;
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    invoke-static {v11, v6, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    const/4 v9, 0x2
 
-    move-result v2
+    aput-object v6, v5, v9
 
-    new-array v8, v6, [Ljava/lang/Object;
+    invoke-static {v15, v3, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v15, v2, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v2
+    goto/16 :goto_32
 
-    aput-object v2, v4, v7
+    :pswitch_16
+    move-object/from16 v4, v39
 
-    invoke-static {v12, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    move/from16 v7, v43
 
-    move-result-object v2
+    move-wide/from16 v54, v49
 
-    goto/16 :goto_26
+    .line 922
+    sget v3, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
 
-    :pswitch_50
-    move-object/from16 v8, v23
+    const/4 v5, 0x3
 
-    const-string v3, "NotificationMessageForwardFew"
+    new-array v5, v5, [Ljava/lang/Object;
 
-    .line 586
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageForwardFew:I
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v5, v11
+
+    const/4 v11, 0x1
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v5, v11
+
+    const-string v11, "Videos"
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    const/4 v12, 0x0
+
+    new-array v9, v12, [Ljava/lang/Object;
+
+    invoke-static {v11, v6, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x2
+
+    aput-object v6, v5, v9
+
+    invoke-static {v15, v3, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_32
+
+    :pswitch_17
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    .line 917
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupFew:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v17, v6, v12
+
+    aput-object v17, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v18, v6, v12
+
+    aput-object v18, v5, v12
+
+    const/4 v3, 0x2
+
+    aget-object v6, v6, v3
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    const/4 v12, 0x0
+
+    new-array v3, v12, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
 
     const/4 v6, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
+    aput-object v3, v5, v6
 
-    const/4 v7, 0x0
+    invoke-static {v15, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    aget-object v9, v2, v7
+    move-result-object v3
 
-    aput-object v9, v6, v7
+    goto :goto_32
 
-    const/4 v9, 0x1
+    :pswitch_18
+    move-object/from16 v4, v39
 
-    aget-object v2, v2, v9
+    move/from16 v7, v43
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+    move-wide/from16 v54, v49
 
-    move-result-object v2
+    const-string v3, "NotificationGroupForwardedFew"
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    .line 912
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupForwardedFew:I
 
-    move-result v2
+    const/4 v5, 0x3
 
-    new-array v10, v7, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    invoke-static {v8, v2, v10}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v12, 0x0
 
-    move-result-object v2
+    aget-object v15, v6, v12
 
-    aput-object v2, v6, v9
+    aput-object v15, v5, v12
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v12, 0x1
 
-    move-result-object v2
+    aget-object v15, v6, v12
 
-    goto/16 :goto_26
+    aput-object v15, v5, v12
 
-    :pswitch_51
-    const-string v3, "NotificationMessageInvoice"
+    const/4 v9, 0x2
 
-    .line 581
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageInvoice:I
+    aget-object v6, v6, v9
 
-    const/4 v6, 0x2
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
-    new-array v6, v6, [Ljava/lang/Object;
+    move-result-object v6
 
-    const/4 v7, 0x0
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    aget-object v8, v2, v7
+    move-result v6
 
-    aput-object v8, v6, v7
+    const/4 v12, 0x0
 
-    const/4 v7, 0x1
+    new-array v15, v12, [Ljava/lang/Object;
 
-    aget-object v2, v2, v7
+    move-object/from16 v12, v28
 
-    aput-object v2, v6, v7
+    invoke-static {v12, v6, v15}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v2
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_32
+    move-object/from16 v21, v3
+
+    move-object/from16 v39, v4
+
+    move v15, v7
+
+    goto/16 :goto_3d
+
+    :pswitch_19
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "UserAcceptedToGroupPushWithGroup"
+
+    .line 908
+    sget v5, Lorg/telegram/messenger/R$string;->UserAcceptedToGroupPushWithGroup:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1a
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupAddSelfMega"
+
+    .line 904
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupAddSelfMega:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1b
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupAddSelf"
+
+    .line 900
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupAddSelf:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1c
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupLeftMember"
+
+    .line 896
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupLeftMember:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1d
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupKickYou"
+
+    .line 892
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupKickYou:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1e
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupKickMember"
+
+    .line 888
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupKickMember:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_1f
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupInvitedYouToCall"
+
+    .line 884
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupInvitedYouToCall:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_20
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupEndedCall"
+
+    .line 880
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupEndedCall:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_21
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupInvitedToCall"
+
+    .line 876
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupInvitedToCall:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_22
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupCreatedCall"
+
+    .line 872
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupCreatedCall:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_33
+
+    :pswitch_23
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationGroupAddMember"
+
+    .line 868
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupAddMember:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_33
+
+    :pswitch_24
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationEditedGroupPhoto"
+
+    .line 864
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationEditedGroupPhoto:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_33
+
+    :pswitch_25
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationEditedGroupName"
+
+    .line 860
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationEditedGroupName:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_33
+
+    :pswitch_26
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationInvitedToGroup"
+
+    .line 856
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationInvitedToGroup:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_33
+    move-object/from16 v21, v3
+
+    move-object/from16 v39, v4
+
+    move v15, v7
+
+    move/from16 v3, v27
+
+    move/from16 v7, v29
+
+    goto/16 :goto_48
+
+    :pswitch_27
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupInvoice"
+
+    .line 850
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupInvoice:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "PaymentInvoice"
 
-    .line 582
-    sget v4, Lorg/telegram/messenger/R$string;->PaymentInvoice:I
+    .line 851
+    sget v5, Lorg/telegram/messenger/R$string;->PaymentInvoice:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_52
-    const-string v3, "NotificationMessageGameScored"
+    :pswitch_28
+    move-object/from16 v4, v39
 
-    .line 577
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGameScored:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x3
+    move-wide/from16 v54, v49
 
-    new-array v6, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupGameScored"
 
-    const/4 v7, 0x0
+    .line 846
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGameScored:I
 
-    aget-object v8, v2, v7
+    const/4 v12, 0x4
 
-    aput-object v8, v6, v7
+    new-array v12, v12, [Ljava/lang/Object;
 
-    const/4 v7, 0x1
+    const/4 v15, 0x0
 
-    aget-object v8, v2, v7
+    aget-object v17, v6, v15
 
-    aput-object v8, v6, v7
+    aput-object v17, v12, v15
 
-    const/4 v7, 0x2
+    const/4 v15, 0x1
 
-    aget-object v2, v2, v7
+    aget-object v18, v6, v15
 
-    aput-object v2, v6, v7
+    aput-object v18, v12, v15
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v9, 0x2
 
-    move-result-object v2
+    aget-object v15, v6, v9
 
-    goto/16 :goto_2b
+    aput-object v15, v12, v9
 
-    :pswitch_53
-    const-string v3, "NotificationMessageGame"
+    const/4 v5, 0x3
 
-    .line 571
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGame:I
+    aget-object v6, v6, v5
 
-    const/4 v6, 0x2
+    aput-object v6, v12, v5
 
-    new-array v6, v6, [Ljava/lang/Object;
+    invoke-static {v3, v11, v12}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v7, 0x0
+    move-result-object v3
 
-    aget-object v8, v2, v7
+    goto :goto_33
 
-    aput-object v8, v6, v7
+    :pswitch_29
+    move-object/from16 v4, v39
 
-    const/4 v7, 0x1
+    move/from16 v7, v43
 
-    aget-object v2, v2, v7
+    move-wide/from16 v54, v49
 
-    aput-object v2, v6, v7
+    const-string v3, "NotificationMessageGroupGame"
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 841
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGame:I
 
-    move-result-object v2
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachGame"
 
-    .line 572
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGame:I
+    .line 842
+    sget v5, Lorg/telegram/messenger/R$string;->AttachGame:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_54
-    const-string v3, "NotificationMessageGif"
+    :pswitch_2a
+    move-object/from16 v4, v39
 
-    .line 566
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGif:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x1
+    move-wide/from16 v54, v49
 
-    new-array v7, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupGif"
 
-    const/4 v6, 0x0
+    .line 836
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageGroupGif:I
 
-    aget-object v2, v2, v6
+    const/4 v9, 0x2
 
-    aput-object v2, v7, v6
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v11, 0x0
 
-    move-result-object v2
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachGif"
 
-    .line 567
-    sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
+    .line 837
+    sget v5, Lorg/telegram/messenger/R$string;->AttachGif:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_55
-    const-string v3, "NotificationMessageLiveLocation"
+    :pswitch_2b
+    move-object/from16 v4, v39
 
-    .line 561
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageLiveLocation:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x1
+    move-wide/from16 v54, v49
 
-    new-array v7, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupLiveLocation"
 
-    const/4 v6, 0x0
+    .line 831
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageGroupLiveLocation:I
 
-    aget-object v2, v2, v6
+    const/4 v9, 0x2
 
-    aput-object v2, v7, v6
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v11, 0x0
 
-    move-result-object v2
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachLiveLocation"
 
-    .line 562
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
+    .line 832
+    sget v5, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_56
-    const-string v3, "NotificationMessageMap"
+    :pswitch_2c
+    move-object/from16 v4, v39
 
-    .line 556
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageMap:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x1
+    move-wide/from16 v54, v49
 
-    new-array v7, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupMap"
 
-    const/4 v6, 0x0
+    .line 826
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageGroupMap:I
 
-    aget-object v2, v2, v6
+    const/4 v9, 0x2
 
-    aput-object v2, v7, v6
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v11, 0x0
 
-    move-result-object v2
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachLocation"
 
-    .line 557
-    sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
+    .line 827
+    sget v5, Lorg/telegram/messenger/R$string;->AttachLocation:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_57
-    const-string v3, "NotificationMessagePoll2"
+    :pswitch_2d
+    move-object/from16 v4, v39
 
-    .line 551
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessagePoll2:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x2
+    move-wide/from16 v54, v49
 
-    new-array v6, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupPoll2"
 
-    const/4 v7, 0x0
+    .line 821
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupPoll2:I
 
-    aget-object v8, v2, v7
+    const/4 v5, 0x3
 
-    aput-object v8, v6, v7
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v7, 0x1
+    const/4 v12, 0x0
 
-    aget-object v2, v2, v7
+    aget-object v15, v6, v12
 
-    aput-object v2, v6, v7
+    aput-object v15, v5, v12
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v12, 0x1
 
-    move-result-object v2
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "Poll"
 
-    .line 552
-    sget v4, Lorg/telegram/messenger/R$string;->Poll:I
+    .line 822
+    sget v5, Lorg/telegram/messenger/R$string;->Poll:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto/16 :goto_28
-
-    :pswitch_58
-    const-string v3, "NotificationMessageQuiz2"
-
-    .line 546
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageQuiz2:I
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aget-object v8, v2, v7
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x1
-
-    aget-object v2, v2, v7
-
-    aput-object v2, v6, v7
-
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "QuizPoll"
-
-    .line 547
-    sget v4, Lorg/telegram/messenger/R$string;->QuizPoll:I
-
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_34
 
-    :pswitch_59
-    const-string v3, "NotificationMessageContact2"
+    :pswitch_2e
+    move-object/from16 v4, v39
 
-    .line 541
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageContact2:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x2
+    move-wide/from16 v54, v49
 
-    new-array v6, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupQuiz2"
 
-    const/4 v7, 0x0
+    .line 816
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupQuiz2:I
 
-    aget-object v8, v2, v7
+    const/4 v5, 0x3
 
-    aput-object v8, v6, v7
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v7, 0x1
+    const/4 v12, 0x0
 
-    aget-object v2, v2, v7
+    aget-object v15, v6, v12
 
-    aput-object v2, v6, v7
+    aput-object v15, v5, v12
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v12, 0x1
 
-    move-result-object v2
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "PollQuiz"
+
+    .line 817
+    sget v5, Lorg/telegram/messenger/R$string;->PollQuiz:I
+
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_34
+
+    :pswitch_2f
+    move-object/from16 v4, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupContact2"
+
+    .line 811
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationMessageGroupContact2:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachContact"
 
-    .line 542
-    sget v4, Lorg/telegram/messenger/R$string;->AttachContact:I
+    .line 812
+    sget v5, Lorg/telegram/messenger/R$string;->AttachContact:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto :goto_34
 
-    :pswitch_5a
-    const-string v3, "NotificationMessageAudio"
+    :pswitch_30
+    move-object/from16 v4, v39
 
-    .line 536
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageAudio:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x1
+    move-wide/from16 v54, v49
 
-    new-array v7, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupAudio"
 
-    const/4 v6, 0x0
+    .line 806
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageGroupAudio:I
 
-    aget-object v2, v2, v6
+    const/4 v9, 0x2
 
-    aput-object v2, v7, v6
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v11, 0x0
 
-    move-result-object v2
+    aget-object v12, v6, v11
+
+    aput-object v12, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    aput-object v6, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachAudio"
 
-    .line 537
-    sget v4, Lorg/telegram/messenger/R$string;->AttachAudio:I
+    .line 807
+    sget v5, Lorg/telegram/messenger/R$string;->AttachAudio:I
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    :goto_34
+    move-object/from16 v39, v4
 
-    .line 526
-    :pswitch_5b
-    array-length v3, v2
+    move-object/from16 v21, v6
 
-    const/4 v4, 0x1
+    move v15, v7
 
-    if-le v3, v4, :cond_61
+    goto/16 :goto_3a
 
-    aget-object v3, v2, v4
+    :pswitch_31
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    .line 796
+    array-length v3, v6
+
+    const/4 v9, 0x2
+
+    if-le v3, v9, :cond_69
+
+    aget-object v3, v6, v9
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_61
+    if-nez v3, :cond_69
 
-    const-string v3, "NotificationMessageStickerEmoji"
+    const-string v3, "NotificationMessageGroupStickerEmoji"
 
-    .line 527
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageStickerEmoji:I
+    .line 797
+    sget v15, Lorg/telegram/messenger/R$string;->NotificationMessageGroupStickerEmoji:I
 
-    const/4 v6, 0x2
+    const/4 v5, 0x3
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    const/16 v17, 0x0
 
-    aget-object v9, v2, v7
+    aget-object v18, v6, v17
 
-    aput-object v9, v6, v7
+    aput-object v18, v5, v17
 
-    const/4 v7, 0x1
+    const/16 v18, 0x1
 
-    aget-object v9, v2, v7
+    aget-object v21, v6, v18
 
-    aput-object v9, v6, v7
+    aput-object v21, v5, v18
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v9, 0x2
 
-    move-result-object v3
+    aget-object v18, v6, v9
 
-    .line 528
-    new-instance v4, Ljava/lang/StringBuilder;
+    aput-object v18, v5, v9
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v2, v2, v7
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v2, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto/16 :goto_27
-
-    :cond_61
-    const-string v3, "NotificationMessageSticker"
-
-    .line 530
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageSticker:I
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aget-object v2, v2, v6
-
-    aput-object v2, v7, v6
-
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 531
-    sget v3, Lorg/telegram/messenger/R$string;->AttachSticker:I
-
-    invoke-static {v8, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v15, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    .line 798
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    :pswitch_5c
-    const-string v3, "NotificationMessageDocument"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 521
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageDocument:I
+    aget-object v6, v6, v9
 
-    const/4 v6, 0x1
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v7, v6, [Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x0
+    sget v4, Lorg/telegram/messenger/R$string;->AttachSticker:I
 
-    aget-object v2, v2, v6
+    invoke-static {v12, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    aput-object v2, v7, v6
+    move-result-object v4
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    goto/16 :goto_36
+
+    :cond_69
+    const-string v3, "NotificationMessageGroupSticker"
+
+    .line 800
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageGroupSticker:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    aget-object v17, v6, v15
+
+    aput-object v17, v9, v15
+
+    const/4 v15, 0x1
+
+    aget-object v18, v6, v15
+
+    aput-object v18, v9, v15
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 801
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    aget-object v6, v6, v15
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v4, Lorg/telegram/messenger/R$string;->AttachSticker:I
+
+    invoke-static {v12, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    goto/16 :goto_36
+
+    :pswitch_32
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupDocument"
+
+    .line 791
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupDocument:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachDocument"
 
-    .line 522
+    .line 792
     sget v4, Lorg/telegram/messenger/R$string;->AttachDocument:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_35
 
-    :pswitch_5d
-    const-string v3, "NotificationMessageRound"
+    :pswitch_33
+    move-object/from16 v11, v39
 
-    .line 516
-    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageRound:I
+    move/from16 v7, v43
 
-    const/4 v6, 0x1
+    move-wide/from16 v54, v49
 
-    new-array v7, v6, [Ljava/lang/Object;
+    const-string v3, "NotificationMessageGroupRound"
 
-    const/4 v6, 0x0
+    .line 786
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupRound:I
 
-    aget-object v2, v2, v6
+    const/4 v5, 0x2
 
-    aput-object v2, v7, v6
+    new-array v5, v5, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v9, 0x0
 
-    move-result-object v2
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
 
     const-string v3, "AttachRound"
 
-    .line 517
+    .line 787
     sget v4, Lorg/telegram/messenger/R$string;->AttachRound:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto :goto_35
+
+    :pswitch_34
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupVideo"
+
+    .line 781
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupVideo:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachVideo"
+
+    .line 782
+    sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_35
+
+    :pswitch_35
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupPhoto"
+
+    .line 776
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupPhoto:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachPhoto"
+
+    .line 777
+    sget v4, Lorg/telegram/messenger/R$string;->AttachPhoto:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_35
+
+    :pswitch_36
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationChatStory"
+
+    .line 771
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationChatStory:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Story"
+
+    .line 772
+    sget v4, Lorg/telegram/messenger/R$string;->Story:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_35
+    move-object/from16 v21, v6
+
+    move v15, v7
+
+    goto/16 :goto_39
+
+    :pswitch_37
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupNoText"
+
+    .line 766
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupNoText:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Message"
+
+    .line 767
+    sget v4, Lorg/telegram/messenger/R$string;->Message:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_35
+
+    :pswitch_38
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGroupText"
+
+    .line 761
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGroupText:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v9, 0x2
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 762
+    aget-object v6, v6, v9
+
+    :goto_36
+    move-object/from16 v21, v3
+
+    move v15, v7
+
+    :goto_37
+    move-object/from16 v39, v11
+
+    move/from16 v3, v27
+
+    move/from16 v7, v29
+
+    goto/16 :goto_49
+
+    :pswitch_39
+    move-object/from16 v11, v39
+
+    move/from16 v7, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageAlbum"
+
+    .line 756
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageAlbum:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v21, v3
+
+    move v15, v7
+
+    goto/16 :goto_3c
+
+    :pswitch_3a
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 751
+    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v9, v6, v5
+
+    aput-object v9, v4, v5
+
+    const-string v9, "Files"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    aput-object v5, v4, v6
+
+    invoke-static {v7, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3b
+
+    :pswitch_3b
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 746
+    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v9, v6, v5
+
+    aput-object v9, v4, v5
+
+    const-string v9, "MusicFiles"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    aput-object v5, v4, v6
+
+    invoke-static {v7, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3b
+
+    :pswitch_3c
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 741
+    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v9, v6, v5
+
+    aput-object v9, v4, v5
+
+    const-string v9, "Videos"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    aput-object v5, v4, v6
+
+    invoke-static {v7, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3b
+
+    :pswitch_3d
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 736
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v12, v6, v5
+
+    aput-object v12, v3, v5
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    aput-object v5, v3, v6
+
+    invoke-static {v7, v4, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3b
+
+    :pswitch_3e
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 731
+    sget v3, Lorg/telegram/messenger/R$string;->ChannelMessageFew:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v9, v6, v5
+
+    aput-object v9, v4, v5
+
+    const-string v9, "ForwardedMessageCount"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v5, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    aput-object v5, v4, v6
+
+    invoke-static {v7, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3b
+
+    :pswitch_3f
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGame"
+
+    .line 726
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGame:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachGame"
+
+    .line 727
+    sget v4, Lorg/telegram/messenger/R$string;->AttachGame:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_40
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageGIF"
+
+    .line 721
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageGIF:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachGif"
+
+    .line 722
+    sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_41
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageLiveLocation"
+
+    .line 716
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageLiveLocation:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachLiveLocation"
+
+    .line 717
+    sget v4, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_42
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageMap"
+
+    .line 711
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageMap:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachLocation"
+
+    .line 712
+    sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_43
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessagePoll2"
+
+    .line 706
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessagePoll2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aget-object v9, v6, v7
+
+    aput-object v9, v5, v7
+
+    const/4 v7, 0x1
+
+    aget-object v6, v6, v7
+
+    aput-object v6, v5, v7
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Poll"
+
+    .line 707
+    sget v4, Lorg/telegram/messenger/R$string;->Poll:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_44
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageQuiz2"
+
+    .line 701
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageQuiz2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aget-object v9, v6, v7
+
+    aput-object v9, v5, v7
+
+    const/4 v7, 0x1
+
+    aget-object v6, v6, v7
+
+    aput-object v6, v5, v7
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "QuizPoll"
+
+    .line 702
+    sget v4, Lorg/telegram/messenger/R$string;->QuizPoll:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_45
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageContact2"
+
+    .line 696
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageContact2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aget-object v9, v6, v7
+
+    aput-object v9, v5, v7
+
+    const/4 v7, 0x1
+
+    aget-object v6, v6, v7
+
+    aput-object v6, v5, v7
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachContact"
+
+    .line 697
+    sget v4, Lorg/telegram/messenger/R$string;->AttachContact:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_46
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageAudio"
+
+    .line 691
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageAudio:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachAudio"
+
+    .line 692
+    sget v4, Lorg/telegram/messenger/R$string;->AttachAudio:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_47
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 681
+    array-length v3, v6
+
+    const/4 v5, 0x1
+
+    if-le v3, v5, :cond_6a
+
+    aget-object v3, v6, v5
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6a
+
+    const-string v3, "ChannelMessageStickerEmoji"
+
+    .line 682
+    sget v5, Lorg/telegram/messenger/R$string;->ChannelMessageStickerEmoji:I
+
+    const/4 v7, 0x2
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v17, v6, v9
+
+    aput-object v17, v7, v9
+
+    const/4 v9, 0x1
+
+    aget-object v18, v6, v9
+
+    aput-object v18, v7, v9
+
+    invoke-static {v3, v5, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 683
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    aget-object v6, v6, v9
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v4, Lorg/telegram/messenger/R$string;->AttachSticker:I
+
+    invoke-static {v12, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    move-object/from16 v21, v3
+
+    goto/16 :goto_37
+
+    :cond_6a
+    const-string v3, "ChannelMessageSticker"
+
+    .line 685
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageSticker:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 686
+    sget v3, Lorg/telegram/messenger/R$string;->AttachSticker:I
+
+    invoke-static {v12, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_48
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageDocument"
+
+    .line 676
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageDocument:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachDocument"
+
+    .line 677
+    sget v4, Lorg/telegram/messenger/R$string;->AttachDocument:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_49
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageRound"
+
+    .line 671
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageRound:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachRound"
+
+    .line 672
+    sget v4, Lorg/telegram/messenger/R$string;->AttachRound:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_38
+
+    :pswitch_4a
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageVideo"
+
+    .line 666
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageVideo:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachVideo"
+
+    .line 667
+    sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_38
+
+    :pswitch_4b
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessagePhoto"
+
+    .line 661
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessagePhoto:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachPhoto"
+
+    .line 662
+    sget v4, Lorg/telegram/messenger/R$string;->AttachPhoto:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_38
+
+    :pswitch_4c
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationChannelStory"
+
+    .line 656
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationChannelStory:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Story"
+
+    .line 657
+    sget v4, Lorg/telegram/messenger/R$string;->Story:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_38
+
+    :pswitch_4d
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "ChannelMessageNoText"
+
+    .line 651
+    sget v4, Lorg/telegram/messenger/R$string;->ChannelMessageNoText:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Message"
+
+    .line 652
+    sget v4, Lorg/telegram/messenger/R$string;->Message:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_38
+    move-object/from16 v21, v6
+
+    :goto_39
+    move-object/from16 v39, v11
+
+    :goto_3a
+    move/from16 v7, v29
+
+    goto/16 :goto_42
+
+    :pswitch_4e
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageAlbum"
+
+    .line 646
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageAlbum:I
+
+    const/4 v5, 0x1
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v7, v5
+
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_3b
+    move-object/from16 v21, v3
+
+    :goto_3c
+    move-object/from16 v39, v11
+
+    :goto_3d
+    move/from16 v3, v27
+
+    move/from16 v7, v29
+
+    :goto_3e
+    const/4 v6, 0x0
+
+    const/16 v24, 0x1
+
+    goto/16 :goto_4a
+
+    :pswitch_4f
+    move/from16 v7, v29
+
+    move-object/from16 v11, v39
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 641
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v12, v6, v9
+
+    aput-object v12, v5, v9
+
+    const-string v12, "Files"
+
+    const/16 v18, 0x1
+
+    aget-object v6, v6, v18
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    move-object/from16 v39, v11
+
+    new-array v11, v9, [Ljava/lang/Object;
+
+    invoke-static {v12, v6, v11}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v5, v18
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3f
+
+    :pswitch_50
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 636
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const-string v11, "MusicFiles"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v9, [Ljava/lang/Object;
+
+    invoke-static {v11, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x1
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_3f
+
+    :pswitch_51
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 631
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const-string v11, "Videos"
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v9, [Ljava/lang/Object;
+
+    invoke-static {v11, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x1
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_3f
+
+    :pswitch_52
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 626
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageFew:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v4, v11
+
+    const/4 v12, 0x1
+
+    aget-object v6, v6, v12
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v12, v11, [Ljava/lang/Object;
+
+    invoke-static {v9, v6, v12}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x1
+
+    aput-object v6, v4, v9
+
+    invoke-static {v3, v5, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_3f
+
+    :pswitch_53
+    move-object/from16 v12, v28
+
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageForwardFew"
+
+    .line 621
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageForwardFew:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v11, 0x1
+
+    aget-object v6, v6, v11
+
+    invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    new-array v11, v9, [Ljava/lang/Object;
+
+    invoke-static {v12, v6, v11}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x1
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_3f
+    move-object/from16 v21, v3
+
+    move/from16 v3, v27
+
+    goto/16 :goto_3e
+
+    :pswitch_54
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageInvoice"
+
+    .line 616
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageInvoice:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "PaymentInvoice"
+
+    .line 617
+    sget v4, Lorg/telegram/messenger/R$string;->PaymentInvoice:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_55
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGameScored"
+
+    .line 612
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGameScored:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v5, v11
+
+    const/4 v11, 0x1
+
+    aget-object v12, v6, v11
+
+    aput-object v12, v5, v11
+
+    const/4 v9, 0x2
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_47
+
+    :pswitch_56
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGame"
+
+    .line 606
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGame:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachGame"
+
+    .line 607
+    sget v4, Lorg/telegram/messenger/R$string;->AttachGame:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_57
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageGif"
+
+    .line 601
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageGif:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachGif"
+
+    .line 602
+    sget v4, Lorg/telegram/messenger/R$string;->AttachGif:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_58
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageLiveLocation"
+
+    .line 596
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageLiveLocation:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachLiveLocation"
+
+    .line 597
+    sget v4, Lorg/telegram/messenger/R$string;->AttachLiveLocation:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_59
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageMap"
+
+    .line 591
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageMap:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachLocation"
+
+    .line 592
+    sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_5a
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessagePoll2"
+
+    .line 586
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessagePoll2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Poll"
+
+    .line 587
+    sget v4, Lorg/telegram/messenger/R$string;->Poll:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_5b
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageQuiz2"
+
+    .line 581
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageQuiz2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "QuizPoll"
+
+    .line 582
+    sget v4, Lorg/telegram/messenger/R$string;->QuizPoll:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_5c
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageContact2"
+
+    .line 576
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageContact2:I
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aget-object v11, v6, v9
+
+    aput-object v11, v5, v9
+
+    const/4 v9, 0x1
+
+    aget-object v6, v6, v9
+
+    aput-object v6, v5, v9
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachContact"
+
+    .line 577
+    sget v4, Lorg/telegram/messenger/R$string;->AttachContact:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_5d
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageAudio"
+
+    .line 571
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageAudio:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachAudio"
+
+    .line 572
+    sget v4, Lorg/telegram/messenger/R$string;->AttachAudio:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
 
     :pswitch_5e
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    .line 561
+    array-length v3, v6
+
+    const/4 v5, 0x1
+
+    if-le v3, v5, :cond_6b
+
+    aget-object v3, v6, v5
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6b
+
+    const-string v3, "NotificationMessageStickerEmoji"
+
+    .line 562
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationMessageStickerEmoji:I
+
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aget-object v17, v6, v11
+
+    aput-object v17, v9, v11
+
+    const/4 v11, 0x1
+
+    aget-object v18, v6, v11
+
+    aput-object v18, v9, v11
+
+    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 563
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    aget-object v6, v6, v11
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v4, Lorg/telegram/messenger/R$string;->AttachSticker:I
+
+    invoke-static {v12, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    goto/16 :goto_40
+
+    :cond_6b
+    const-string v3, "NotificationMessageSticker"
+
+    .line 565
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageSticker:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 566
+    sget v3, Lorg/telegram/messenger/R$string;->AttachSticker:I
+
+    invoke-static {v12, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_5f
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageDocument"
+
+    .line 556
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageDocument:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachDocument"
+
+    .line 557
+    sget v4, Lorg/telegram/messenger/R$string;->AttachDocument:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_60
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationMessageRound"
+
+    .line 551
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageRound:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "AttachRound"
+
+    .line 552
+    sget v4, Lorg/telegram/messenger/R$string;->AttachRound:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_61
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "ActionTakeScreenshoot"
 
-    .line 512
+    .line 547
     sget v4, Lorg/telegram/messenger/R$string;->ActionTakeScreenshoot:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -9255,845 +10563,1134 @@
 
     const-string/jumbo v4, "un1"
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    invoke-virtual {v3, v4, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v3, v4, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    goto/16 :goto_2b
+    goto/16 :goto_47
 
-    :pswitch_5f
+    :pswitch_62
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageSDVideo"
 
-    .line 507
+    .line 542
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageSDVideo:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "AttachDestructingVideo"
 
-    .line 508
+    .line 543
     sget v4, Lorg/telegram/messenger/R$string;->AttachDestructingVideo:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_41
 
-    :pswitch_60
+    :pswitch_63
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageVideo"
 
-    .line 502
+    .line 537
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageVideo:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "AttachVideo"
 
-    .line 503
+    .line 538
     sget v4, Lorg/telegram/messenger/R$string;->AttachVideo:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_41
 
-    :pswitch_61
+    :pswitch_64
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageSDPhoto"
 
-    .line 497
+    .line 532
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageSDPhoto:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "AttachDestructingPhoto"
 
-    .line 498
+    .line 533
     sget v4, Lorg/telegram/messenger/R$string;->AttachDestructingPhoto:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_41
 
-    :pswitch_62
+    :pswitch_65
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessagePhoto"
 
-    .line 492
+    .line 527
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessagePhoto:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "AttachPhoto"
 
-    .line 493
+    .line 528
     sget v4, Lorg/telegram/messenger/R$string;->AttachPhoto:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_28
+    goto/16 :goto_41
 
-    :pswitch_63
+    :pswitch_66
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "StoryNotificationMention"
+
+    .line 522
+    sget v4, Lorg/telegram/messenger/R$string;->StoryNotificationMention:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_47
+
+    :pswitch_67
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
+    const-string v3, "NotificationStory"
+
+    .line 517
+    sget v4, Lorg/telegram/messenger/R$string;->NotificationStory:I
+
+    const/4 v5, 0x1
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aget-object v6, v6, v5
+
+    aput-object v6, v9, v5
+
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v3, "Story"
+
+    .line 518
+    sget v4, Lorg/telegram/messenger/R$string;->Story:I
+
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_41
+
+    :pswitch_68
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageNoText"
 
-    .line 487
+    .line 512
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageNoText:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "Message"
 
-    .line 488
+    .line 513
     sget v4, Lorg/telegram/messenger/R$string;->Message:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto :goto_28
+    goto/16 :goto_41
 
-    :pswitch_64
+    :pswitch_69
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageText"
 
-    .line 482
+    .line 507
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageText:I
 
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    aget-object v8, v2, v7
+    aget-object v11, v6, v9
 
-    aput-object v8, v6, v7
+    aput-object v11, v5, v9
 
-    const/4 v7, 0x1
+    const/4 v9, 0x1
 
-    aget-object v8, v2, v7
+    aget-object v11, v6, v9
 
-    aput-object v8, v6, v7
+    aput-object v11, v5, v9
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 483
-    aget-object v2, v2, v7
+    .line 508
+    aget-object v6, v6, v9
 
-    :goto_27
-    move-object/from16 v17, v2
+    :goto_40
+    move-object/from16 v21, v3
 
-    move-object v2, v3
+    move/from16 v3, v27
 
-    goto/16 :goto_2c
+    goto/16 :goto_49
 
-    :pswitch_65
+    :pswitch_6a
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "NotificationMessageRecurringPay"
 
-    .line 476
+    .line 501
     sget v4, Lorg/telegram/messenger/R$string;->NotificationMessageRecurringPay:I
 
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    aget-object v8, v2, v7
+    aget-object v11, v6, v9
 
-    aput-object v8, v6, v7
+    aput-object v11, v5, v9
 
-    const/4 v7, 0x1
+    const/4 v9, 0x1
 
-    aget-object v2, v2, v7
+    aget-object v6, v6, v9
 
-    aput-object v2, v6, v7
+    aput-object v6, v5, v9
 
-    invoke-static {v3, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "PaymentInvoice"
 
-    .line 477
+    .line 502
     sget v4, Lorg/telegram/messenger/R$string;->PaymentInvoice:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto :goto_28
+    goto :goto_41
 
-    :pswitch_66
+    :pswitch_6b
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "ActionSetWallpaperForThisChat"
 
-    .line 471
+    .line 496
     sget v4, Lorg/telegram/messenger/R$string;->ActionSetWallpaperForThisChat:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "WallpaperNotification"
 
-    .line 472
+    .line 497
     sget v4, Lorg/telegram/messenger/R$string;->WallpaperNotification:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto :goto_28
+    goto :goto_41
 
-    :pswitch_67
+    :pswitch_6c
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    move-wide/from16 v54, v49
+
     const-string v3, "ActionSetSameWallpaperForThisChat"
 
-    .line 466
+    .line 491
     sget v4, Lorg/telegram/messenger/R$string;->ActionSetSameWallpaperForThisChat:I
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v7, v6, [Ljava/lang/Object;
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v6, v6, v5
 
-    aput-object v2, v7, v6
+    aput-object v6, v9, v5
 
-    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     const-string v3, "WallpaperSameNotification"
 
-    .line 467
+    .line 492
     sget v4, Lorg/telegram/messenger/R$string;->WallpaperSameNotification:I
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    :goto_28
-    move-object/from16 v17, v3
+    :goto_41
+    move-object/from16 v21, v6
 
-    goto :goto_2c
-
-    :goto_29
-    if-eqz v2, :cond_62
-
-    .line 1136
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "unhandled loc_key = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->w(Ljava/lang/String;)V
-
-    :cond_62
-    :pswitch_68
-    const/4 v2, 0x0
-
-    goto :goto_2b
-
-    :cond_63
-    :goto_2a
-    move/from16 v45, v3
-
-    move/from16 v47, v4
-
-    move-object/from16 v30, v7
-
-    move-wide/from16 v50, v8
-
-    move-object/from16 p0, v10
-
-    move-object/from16 v46, v11
-
-    move-wide/from16 v48, v12
-
-    move/from16 v25, v15
-
-    .line 462
-    invoke-static {v5, v2}, Lorg/telegram/messenger/PushListenerController;->getReactedText(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    :goto_2b
-    const/16 v17, 0x0
-
-    :goto_2c
+    :goto_42
     const/16 v24, 0x0
 
-    :goto_2d
-    if-eqz v2, :cond_72
+    move-object v6, v3
 
-    .line 1143
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_message;
+    goto/16 :goto_31
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
+    :pswitch_6d
+    move/from16 v7, v29
 
-    .line 1144
-    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->id:I
+    move/from16 v15, v43
 
-    move-wide/from16 v6, v26
+    move-wide/from16 v54, v49
 
-    .line 1145
-    iput-wide v6, v3, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
+    const-string v3, "StoryNotificationHidden"
 
-    if-eqz v17, :cond_64
+    const/4 v4, 0x0
 
-    move-object/from16 v1, v17
+    new-array v5, v4, [Ljava/lang/Object;
 
-    goto :goto_2e
+    const/4 v4, 0x1
 
-    :cond_64
-    move-object v1, v2
+    .line 485
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 1146
-    :goto_2e
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
+    move-result-object v3
 
-    const-wide/16 v6, 0x3e8
+    goto :goto_43
 
-    .line 1147
-    div-long v6, p3, v6
+    :pswitch_6e
+    move/from16 v7, v29
 
-    long-to-int v1, v6
+    move/from16 v15, v43
 
-    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    move-wide/from16 v54, v49
 
-    if-eqz v43, :cond_65
+    const-string v3, "StoryNotificationSingle"
 
-    .line 1149
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;
+    .line 479
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;-><init>()V
+    move-result-object v3
 
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
+    :goto_43
+    move-object/from16 v21, v3
 
-    :cond_65
-    if-eqz v42, :cond_66
+    move/from16 v3, v37
 
-    .line 1152
-    iget v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    goto :goto_48
 
-    const/high16 v4, -0x80000000
+    :goto_44
+    if-eqz v3, :cond_6c
 
-    or-int/2addr v1, v4
+    .line 1181
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_66
-    move-wide/from16 v8, v50
+    const-string/jumbo v4, "unhandled loc_key = "
 
-    .line 1154
-    iput-wide v8, v3, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-wide/16 v6, 0x0
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    cmp-long v1, v34, v6
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v1, :cond_67
+    move-result-object v3
 
-    .line 1156
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    move-wide/from16 v12, v34
-
-    .line 1157
-    iput-wide v12, v1, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
-
-    move-wide/from16 v14, v21
-
-    goto :goto_2f
-
-    :cond_67
-    const-wide/16 v6, 0x0
-
-    cmp-long v1, v21, v6
-
-    if-eqz v1, :cond_68
-
-    .line 1159
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    move-wide/from16 v14, v21
-
-    .line 1160
-    iput-wide v14, v1, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
-
-    goto :goto_2f
-
-    :cond_68
-    move-wide/from16 v14, v21
-
-    .line 1162
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    move-wide/from16 v6, v32
-
-    .line 1163
-    iput-wide v6, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    .line 1165
-    :goto_2f
-    iget v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
-
-    or-int/lit16 v1, v1, 0x100
-
-    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v1, v36, v6
-
-    if-eqz v1, :cond_69
-
-    .line 1167
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    .line 1168
-    iput-wide v14, v1, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
-
-    goto :goto_30
-
-    :cond_69
-    const-wide/16 v6, 0x0
-
-    cmp-long v1, v48, v6
-
-    if-eqz v1, :cond_6a
-
-    .line 1170
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    move-wide/from16 v6, v48
-
-    .line 1171
-    iput-wide v6, v1, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
-
-    goto :goto_30
-
-    :cond_6a
-    if-eqz v47, :cond_6b
-
-    .line 1173
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    move-wide/from16 v6, v40
-
-    .line 1174
-    iput-wide v6, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    goto :goto_30
-
-    .line 1176
-    :cond_6b
-    iget-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    :goto_30
-    if-nez v38, :cond_6d
-
-    if-eqz v43, :cond_6c
-
-    goto :goto_31
+    invoke-static {v3}, Lorg/telegram/messenger/FileLog;->w(Ljava/lang/String;)V
+    :try_end_3f
+    .catchall {:try_start_3f .. :try_end_3f} :catchall_6
 
     :cond_6c
-    const/4 v1, 0x0
+    :goto_45
+    move/from16 v3, v27
 
-    goto :goto_32
+    const/4 v6, 0x0
+
+    const/16 v21, 0x0
+
+    goto :goto_49
 
     :cond_6d
-    :goto_31
+    :goto_46
+    move-object/from16 v51, v3
+
+    move-wide/from16 v54, v4
+
+    move/from16 v52, v7
+
+    move-object/from16 v53, v12
+
+    move-object/from16 v16, v15
+
+    move/from16 v7, v29
+
+    move/from16 v15, v43
+
+    .line 475
+    :try_start_40
+    invoke-static {v8, v6}, Lorg/telegram/messenger/PushListenerController;->getReactedText(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_47
+    move-object/from16 v21, v3
+
+    move/from16 v3, v27
+
+    :goto_48
+    const/4 v6, 0x0
+
+    :goto_49
+    const/16 v24, 0x0
+
+    .line 1188
+    :goto_4a
+    sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    :try_end_40
+    .catchall {:try_start_40 .. :try_end_40} :catchall_7
+
+    if-eqz v4, :cond_6e
+
+    .line 1189
+    :try_start_41
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v5, p1
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, " received message notification "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v5, v33
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-wide/from16 v11, v54
+
+    invoke-virtual {v4, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v5, " mid = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+    :try_end_41
+    .catchall {:try_start_41 .. :try_end_41} :catchall_6
+
+    goto :goto_4b
+
+    :cond_6e
+    move-wide/from16 v11, v54
+
+    :goto_4b
+    if-eqz v21, :cond_7f
+
+    .line 1192
+    :try_start_42
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_message;
+
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
+
+    .line 1193
+    iput v3, v4, Lorg/telegram/tgnet/TLRPC$Message;->id:I
+    :try_end_42
+    .catchall {:try_start_42 .. :try_end_42} :catchall_7
+
+    move-object v3, v8
+
+    move-wide/from16 v8, v34
+
+    .line 1194
+    :try_start_43
+    iput-wide v8, v4, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
+
+    if-eqz v6, :cond_6f
+
+    goto :goto_4c
+
+    :cond_6f
+    move-object/from16 v6, v21
+
+    .line 1195
+    :goto_4c
+    iput-object v6, v4, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
+
+    const-wide/16 v5, 0x3e8
+
+    .line 1196
+    div-long v5, p3, v5
+
+    long-to-int v5, v5
+
+    iput v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+
+    if-eqz v10, :cond_70
+
+    .line 1198
+    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;
+
+    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;-><init>()V
+
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
+
+    :cond_70
+    if-eqz v48, :cond_71
+
+    .line 1201
+    iget v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+
+    const/high16 v6, -0x80000000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+
+    .line 1203
+    :cond_71
+    iput-wide v11, v4, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v8, v13, v5
+
+    if-eqz v8, :cond_72
+
+    .line 1205
+    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
+
+    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;-><init>()V
+
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 1206
+    iput-wide v13, v5, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+
+    move-wide/from16 v8, v25
+
+    goto :goto_4d
+
+    :cond_72
+    const-wide/16 v5, 0x0
+
+    cmp-long v8, v25, v5
+
+    if-eqz v8, :cond_73
+
+    .line 1208
+    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
+
+    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
+
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    move-wide/from16 v8, v25
+
+    .line 1209
+    iput-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+
+    goto :goto_4d
+
+    :cond_73
+    move-wide/from16 v8, v25
+
+    .line 1211
+    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+
+    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    move-wide/from16 v11, v31
+
+    .line 1212
+    iput-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    .line 1214
+    :goto_4d
+    iget v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+
+    or-int/lit16 v5, v5, 0x100
+
+    iput v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v11, v40, v5
+
+    if-eqz v11, :cond_74
+
+    .line 1216
+    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
+
+    iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 1217
+    iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+
+    goto :goto_4e
+
+    :cond_74
+    const-wide/16 v5, 0x0
+
+    cmp-long v5, v1, v5
+
+    if-eqz v5, :cond_75
+
+    .line 1219
+    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
+
+    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;-><init>()V
+
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 1220
+    iput-wide v1, v5, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+
+    goto :goto_4e
+
+    :cond_75
+    if-eqz v42, :cond_76
+
+    .line 1222
+    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+
+    iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    move-wide/from16 v5, v45
+
+    .line 1223
+    iput-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    goto :goto_4e
+
+    .line 1225
+    :cond_76
+    iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    :goto_4e
+    if-nez v44, :cond_78
+
+    if-eqz v10, :cond_77
+
+    goto :goto_4f
+
+    :cond_77
+    const/4 v1, 0x0
+
+    goto :goto_50
+
+    :cond_78
+    :goto_4f
     const/4 v1, 0x1
 
-    .line 1178
-    :goto_32
-    iput-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->mentioned:Z
+    .line 1227
+    :goto_50
+    iput-boolean v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->mentioned:Z
 
-    move/from16 v1, v39
+    .line 1228
+    iput-boolean v15, v4, Lorg/telegram/tgnet/TLRPC$Message;->silent:Z
 
-    .line 1179
-    iput-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->silent:Z
+    move/from16 v1, v23
 
-    move/from16 v10, v20
+    .line 1229
+    iput-boolean v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_scheduled:Z
 
-    .line 1180
-    iput-boolean v10, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_scheduled:Z
-
-    .line 1182
+    .line 1231
     new-instance v1, Lorg/telegram/messenger/MessageObject;
 
     move-object/from16 v18, v1
 
-    move/from16 v19, v28
+    move/from16 v19, v36
 
-    move-object/from16 v20, v3
+    move-object/from16 v20, v4
 
-    move-object/from16 v21, v2
+    move-object/from16 v23, v53
 
-    move-object/from16 v22, v44
+    move/from16 v25, v47
 
-    move-object/from16 v23, v46
+    move/from16 v26, v48
 
-    move/from16 v26, v42
-
-    move/from16 v27, v45
+    move/from16 v27, v52
 
     invoke-direct/range {v18 .. v27}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZ)V
 
-    if-eqz v29, :cond_6e
+    if-eqz v7, :cond_79
 
-    .line 1184
+    .line 1233
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
 
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
-    .line 1185
+    .line 1234
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
+    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    iput-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->forum_topic:Z
+    iput-boolean v4, v2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->forum_topic:Z
 
-    move/from16 v14, v29
+    .line 1235
+    iput v7, v2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_to_top_id:I
 
-    .line 1186
-    iput v14, v2, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_top_id:I
+    :cond_79
+    move-object/from16 v2, v51
 
-    :cond_6e
-    move-object/from16 v2, v30
-
-    .line 1188
-    invoke-virtual {v5, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 1237
+    invoke-virtual {v3, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_70
+    if-nez v2, :cond_7b
 
-    move-object/from16 v2, p0
+    move-object/from16 v2, v16
 
-    invoke-virtual {v5, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_6f
+    if-eqz v2, :cond_7a
 
-    goto :goto_33
+    goto :goto_51
 
-    :cond_6f
+    :cond_7a
     const/4 v2, 0x0
 
-    goto :goto_34
+    goto :goto_52
 
-    :cond_70
-    :goto_33
+    :cond_7b
+    :goto_51
     const/4 v2, 0x1
 
-    :goto_34
+    :goto_52
     iput-boolean v2, v1, Lorg/telegram/messenger/MessageObject;->isReactionPush:Z
 
-    .line 1189
+    move-object/from16 v2, v38
+
+    .line 1238
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7d
+
+    move-object/from16 v2, v39
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7c
+
+    goto :goto_53
+
+    :cond_7c
+    const/4 v4, 0x0
+
+    goto :goto_54
+
+    :cond_7d
+    move-object/from16 v2, v39
+
+    :goto_53
+    const/4 v4, 0x1
+
+    :goto_54
+    iput-boolean v4, v1, Lorg/telegram/messenger/MessageObject;->isStoryPush:Z
+
+    const-string v4, "MESSAGE_STORY_MENTION"
+
+    .line 1239
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    iput-boolean v4, v1, Lorg/telegram/messenger/MessageObject;->isStoryMentionPush:Z
+
+    .line 1240
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    iput-boolean v2, v1, Lorg/telegram/messenger/MessageObject;->isStoryPushHidden:Z
+
+    .line 1241
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1190
+    .line 1242
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1192
-    invoke-static/range {v28 .. v28}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
+    .line 1244
+    invoke-static/range {v36 .. v36}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v1
 
-    sget-object v3, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
+    sget-object v4, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    invoke-virtual {v1, v2, v4, v4, v3}, Lorg/telegram/messenger/NotificationsController;->processNewMessages(Ljava/util/ArrayList;ZZLjava/util/concurrent/CountDownLatch;)V
+    invoke-virtual {v1, v2, v5, v5, v4}, Lorg/telegram/messenger/NotificationsController;->processNewMessages(Ljava/util/ArrayList;ZZLjava/util/concurrent/CountDownLatch;)V
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    goto :goto_36
+    goto :goto_57
 
     :catchall_7
     move-exception v0
 
+    move-object v3, v8
+
+    :goto_55
     move-object v1, v0
 
-    move/from16 v4, v28
+    goto :goto_58
 
-    goto/16 :goto_3b
+    :cond_7e
+    :goto_56
+    move/from16 v36, v6
 
-    :cond_71
-    move-object/from16 v31, v7
+    :cond_7f
+    move-object v3, v8
 
-    :cond_72
-    :goto_35
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    :goto_36
-    if-eqz v8, :cond_73
+    :goto_57
+    if-eqz v9, :cond_80
 
-    .line 1198
+    .line 1250
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1201
-    :cond_73
-    invoke-static/range {v28 .. v28}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
+    .line 1253
+    :cond_80
+    invoke-static/range {v36 .. v36}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
 
-    .line 1202
-    invoke-static/range {v28 .. v28}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    .line 1254
+    invoke-static/range {v36 .. v36}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/tgnet/ConnectionsManager;->resumeNetworkMaybe()V
-    :try_end_24
-    .catchall {:try_start_24 .. :try_end_24} :catchall_7
+    :try_end_43
+    .catchall {:try_start_43 .. :try_end_43} :catchall_8
 
-    goto/16 :goto_42
+    goto/16 :goto_63
 
     :catchall_8
     move-exception v0
 
-    move-object/from16 v31, v7
+    move-object v1, v0
 
-    goto :goto_38
+    move-object v8, v3
+
+    :goto_58
+    move-object/from16 v7, v30
+
+    goto :goto_5a
 
     :catchall_9
     move-exception v0
 
-    move-object/from16 v31, v7
+    move/from16 v36, v6
 
-    :goto_37
-    move-object v5, v9
+    move-object v3, v8
 
-    :goto_38
+    :goto_59
     move-object v1, v0
 
-    :goto_39
-    move/from16 v4, v28
-
-    goto/16 :goto_3d
+    goto/16 :goto_5c
 
     :catchall_a
     move-exception v0
 
-    move/from16 v28, v4
+    move/from16 v36, v6
 
-    goto/16 :goto_3c
+    move-object/from16 v30, v7
 
-    :cond_74
-    move/from16 v28, v4
+    move-object v3, v8
 
-    move-object/from16 v31, v7
-
-    move-object v5, v9
-
-    .line 274
-    :try_start_25
-    sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
-
-    new-instance v2, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda0;
-    :try_end_25
-    .catchall {:try_start_25 .. :try_end_25} :catchall_b
-
-    move/from16 v4, v28
-
-    :try_start_26
-    invoke-direct {v2, v4}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda0;-><init>(I)V
-
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
-
-    .line 275
-    sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    return-void
+    goto/16 :goto_b
 
     :catchall_b
     move-exception v0
 
-    move/from16 v4, v28
+    move-object/from16 v30, v7
 
-    goto/16 :goto_3a
+    move-object v3, v8
 
-    :cond_75
-    move-object/from16 v31, v7
+    move/from16 v36, v12
 
-    move-object v5, v9
+    move-object v1, v0
 
-    .line 264
-    new-instance v1, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda1;
+    :goto_5a
+    move/from16 v6, v36
 
-    invoke-direct {v1, v4}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda1;-><init>(I)V
+    goto/16 :goto_5d
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    :cond_81
+    move-object/from16 v30, v7
 
-    .line 270
+    move-object v3, v8
+
+    move/from16 v36, v12
+
+    .line 275
+    :try_start_44
+    sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v2, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda0;
+    :try_end_44
+    .catchall {:try_start_44 .. :try_end_44} :catchall_c
+
+    move/from16 v15, v36
+
+    :try_start_45
+    invoke-direct {v2, v15}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda0;-><init>(I)V
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    .line 276
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
 
-    :cond_76
-    move-object/from16 v31, v7
+    :catchall_c
+    move-exception v0
 
-    move-object v5, v9
+    move/from16 v15, v36
 
-    .line 249
+    goto/16 :goto_5b
+
+    :cond_82
+    move-object/from16 v30, v7
+
+    move-object v3, v8
+
+    move v15, v12
+
+    .line 265
+    new-instance v1, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, v15}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda1;-><init>(I)V
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 271
+    sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    return-void
+
+    :cond_83
+    move-object/from16 v30, v7
+
+    move-object v3, v8
+
+    move v15, v12
+
+    move-object v12, v6
+
+    .line 250
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;-><init>()V
 
     const/4 v2, 0x0
 
-    .line 250
+    .line 251
     iput-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->popup:Z
 
     const/4 v2, 0x2
 
-    .line 251
+    .line 252
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->flags:I
 
-    const-wide/16 v2, 0x3e8
+    const-wide/16 v4, 0x3e8
 
-    .line 252
-    div-long v2, p3, v2
+    .line 253
+    div-long v4, p3, v4
 
-    long-to-int v2, v2
+    long-to-int v2, v4
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->inbox_date:I
 
     const-string v2, "message"
 
-    .line 253
-    invoke-virtual {v6, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 254
+    invoke-virtual {v12, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -10101,229 +11698,237 @@
 
     const-string v2, "announcement"
 
-    .line 254
+    .line 255
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->type:Ljava/lang/String;
 
-    .line 255
+    .line 256
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 256
+    .line 257
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_updates;-><init>()V
 
-    .line 257
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
     .line 258
-    sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    new-instance v3, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda3;
-
-    invoke-direct {v3, v4, v2}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda3;-><init>(ILorg/telegram/tgnet/TLRPC$TL_updates;)V
-
-    invoke-virtual {v1, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 259
-    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v4, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda3;
+
+    invoke-direct {v4, v15, v2}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda3;-><init>(ILorg/telegram/tgnet/TLRPC$TL_updates;)V
+
+    invoke-virtual {v1, v4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    .line 260
+    invoke-static {v15}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/tgnet/ConnectionsManager;->resumeNetworkMaybe()V
 
-    .line 260
+    .line 261
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
 
-    :cond_77
-    move-object/from16 v31, v7
+    :cond_84
+    move-object/from16 v30, v7
 
-    move-object v5, v9
+    move-object v3, v8
+
+    move v15, v12
 
     const-string v1, "dc"
 
-    .line 234
-    invoke-virtual {v11, v1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    .line 235
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
     const-string v2, "addr"
 
-    .line 235
-    invoke-virtual {v11, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, ":"
-
     .line 236
-    invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v10, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v4, ":"
 
     .line 237
-    array-length v3, v2
+    invoke-virtual {v2, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    const/4 v6, 0x2
-
-    if-eq v3, v6, :cond_78
+    move-result-object v2
 
     .line 238
+    array-length v4, v2
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_85
+
+    .line 239
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
 
-    :cond_78
-    const/4 v3, 0x0
-
-    .line 241
-    aget-object v3, v2, v3
-
-    const/4 v6, 0x1
+    :cond_85
+    const/4 v4, 0x0
 
     .line 242
-    aget-object v2, v2, v6
+    aget-object v4, v2, v4
+
+    const/4 v5, 0x1
+
+    .line 243
+    aget-object v2, v2, v5
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 243
-    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1, v3, v2}, Lorg/telegram/tgnet/ConnectionsManager;->applyDatacenterAddress(ILjava/lang/String;I)V
-
     .line 244
-    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {v15}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1, v4, v2}, Lorg/telegram/tgnet/ConnectionsManager;->applyDatacenterAddress(ILjava/lang/String;I)V
+
+    .line 245
+    invoke-static {v15}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/tgnet/ConnectionsManager;->resumeNetworkMaybe()V
 
-    .line 245
+    .line 246
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-    :try_end_26
-    .catchall {:try_start_26 .. :try_end_26} :catchall_c
+    :try_end_45
+    .catchall {:try_start_45 .. :try_end_45} :catchall_d
 
     return-void
-
-    :catchall_c
-    move-exception v0
-
-    :goto_3a
-    move-object v1, v0
-
-    :goto_3b
-    move-object/from16 v7, v31
-
-    goto :goto_3d
 
     :catchall_d
     move-exception v0
 
-    :goto_3c
-    move-object/from16 v31, v7
-
-    move-object v5, v9
-
+    :goto_5b
     move-object v1, v0
 
-    :goto_3d
-    const/4 v2, -0x1
+    move-object v8, v3
 
-    goto :goto_40
+    move v6, v15
+
+    :goto_5c
+    move-object/from16 v7, v30
+
+    goto :goto_5d
 
     :catchall_e
     move-exception v0
 
-    move-object/from16 v31, v7
+    move-object/from16 v30, v7
 
-    move-object v5, v9
+    move-object v3, v8
+
+    move v15, v12
 
     move-object v1, v0
 
-    :goto_3e
+    move v6, v15
+
+    :goto_5d
     const/4 v2, -0x1
 
-    const/4 v4, -0x1
-
-    goto :goto_40
+    goto :goto_61
 
     :catchall_f
     move-exception v0
 
-    move-object/from16 v31, v7
+    move-object/from16 v30, v7
 
-    :goto_3f
+    move-object v3, v8
+
+    :goto_5e
     move-object v1, v0
 
     const/4 v2, -0x1
 
-    const/4 v4, -0x1
+    const/4 v6, -0x1
 
-    const/4 v5, 0x0
-
-    goto :goto_40
+    goto :goto_61
 
     :catchall_10
+    move-exception v0
+
+    move-object/from16 v30, v7
+
+    :goto_5f
+    move-object v1, v0
+
+    const/4 v2, -0x1
+
+    const/4 v6, -0x1
+
+    goto :goto_60
+
+    :catchall_11
     move-exception v0
 
     move-object v1, v0
 
     const/4 v2, -0x1
 
-    const/4 v4, -0x1
-
-    const/4 v5, 0x0
+    const/4 v6, -0x1
 
     const/4 v7, 0x0
 
-    :goto_40
-    if-eq v4, v2, :cond_79
+    :goto_60
+    const/4 v8, 0x0
 
-    .line 1205
-    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
+    :goto_61
+    if-eq v6, v2, :cond_86
 
-    .line 1206
-    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    .line 1257
+    invoke-static {v6}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
+
+    .line 1258
+    invoke-static {v6}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/telegram/tgnet/ConnectionsManager;->resumeNetworkMaybe()V
 
-    .line 1207
+    .line 1259
     sget-object v2, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    goto :goto_41
+    goto :goto_62
 
-    .line 1209
-    :cond_79
+    .line 1261
+    :cond_86
     invoke-static {}, Lorg/telegram/messenger/PushListenerController;->onDecryptError()V
 
-    .line 1211
-    :goto_41
+    .line 1263
+    :goto_62
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v2, :cond_7a
+    if-eqz v2, :cond_87
 
-    .line 1212
+    .line 1264
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10332,7 +11937,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v3, " json "
 
@@ -10346,11 +11951,11 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1214
-    :cond_7a
+    .line 1266
+    :cond_87
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_42
+    :goto_63
     return-void
 
     :sswitch_data_0
@@ -10363,112 +11968,118 @@
 
     :sswitch_data_1
     .sparse-switch
-        -0x7d2c2cc3 -> :sswitch_78
-        -0x7ca9bbb4 -> :sswitch_77
-        -0x7a6b9b1f -> :sswitch_76
-        -0x79940f3b -> :sswitch_75
-        -0x7897de74 -> :sswitch_74
-        -0x75fd5c9c -> :sswitch_73
-        -0x75fd5283 -> :sswitch_72
-        -0x75fd5210 -> :sswitch_71
-        -0x755ca0a1 -> :sswitch_70
-        -0x740845f0 -> :sswitch_6f
-        -0x665baa8f -> :sswitch_6e
-        -0x6225bbba -> :sswitch_6d
-        -0x5b1425ad -> :sswitch_6c
-        -0x59d54652 -> :sswitch_6b
-        -0x590636a2 -> :sswitch_6a
-        -0x585ce10d -> :sswitch_69
-        -0x58389446 -> :sswitch_68
-        -0x581920ea -> :sswitch_67
-        -0x57e3bdfd -> :sswitch_66
-        -0x575cbebc -> :sswitch_65
-        -0x51f367b4 -> :sswitch_64
-        -0x51d5692a -> :sswitch_63
-        -0x4b5ada5a -> :sswitch_62
-        -0x49ae3691 -> :sswitch_61
-        -0x49ad2fac -> :sswitch_60
-        -0x49ad0cda -> :sswitch_5f
-        -0x49a8c10d -> :sswitch_5e
-        -0x49a83677 -> :sswitch_5d
-        -0x49a7139f -> :sswitch_5c
-        -0x4768bb94 -> :sswitch_5b
-        -0x4302c33f -> :sswitch_5a
-        -0x40ade407 -> :sswitch_59
-        -0x40a9983a -> :sswitch_58
-        -0x40a90da4 -> :sswitch_57
-        -0x40a7eacc -> :sswitch_56
-        -0x30dc144a -> :sswitch_55
-        -0x2e05f321 -> :sswitch_54
-        -0x260bd697 -> :sswitch_53
-        -0x2330d954 -> :sswitch_52
-        -0x231e6bcf -> :sswitch_51
-        -0x231e61b6 -> :sswitch_50
-        -0x231e6143 -> :sswitch_4f
-        -0x1b1ed076 -> :sswitch_4e
-        -0x1a3c736d -> :sswitch_4d
-        -0x189a094e -> :sswitch_4c
-        -0xe733f5f -> :sswitch_4b
-        -0xd9ee8bb -> :sswitch_4a
-        -0xcbb124d -> :sswitch_49
-        -0x6e3a432 -> :sswitch_48
-        -0x6b67798 -> :sswitch_47
-        -0x677ea95 -> :sswitch_46
-        -0x6696b42 -> :sswitch_45
-        -0x26a80f9 -> :sswitch_44
-        0x31f180d -> :sswitch_43
-        0x3e3b55a -> :sswitch_42
-        0x8681c8e -> :sswitch_41
-        0xc12ab85 -> :sswitch_40
-        0x127a1e59 -> :sswitch_3f
-        0x127a2872 -> :sswitch_3e
-        0x127a28e5 -> :sswitch_3d
-        0x131af14c -> :sswitch_3c
-        0x139b21de -> :sswitch_3b
-        0x13bfdb02 -> :sswitch_3a
-        0x1468b5bf -> :sswitch_39
-        0x148d7d5e -> :sswitch_38
-        0x14acf0ba -> :sswitch_37
-        0x14e253a7 -> :sswitch_36
-        0x2443e845 -> :sswitch_35
-        0x24b30ed5 -> :sswitch_34
-        0x2aa5cc8f -> :sswitch_33
-        0x2b736eeb -> :sswitch_32
-        0x2b92e247 -> :sswitch_31
-        0x2bc84534 -> :sswitch_30
-        0x2fce0ba8 -> :sswitch_2f
-        0x3b191236 -> :sswitch_2e
-        0x3c0b2819 -> :sswitch_2d
-        0x3cc9ad1a -> :sswitch_2c
-        0x3ccab3ff -> :sswitch_2b
-        0x3ccad6d1 -> :sswitch_2a
-        0x3ccf229e -> :sswitch_29
-        0x3ccfad34 -> :sswitch_28
-        0x3cd0d00c -> :sswitch_27
-        0x3f329f93 -> :sswitch_26
-        0x3f33a678 -> :sswitch_25
-        0x3f33c94a -> :sswitch_24
-        0x3f381517 -> :sswitch_23
-        0x3f389fad -> :sswitch_22
-        0x3f39c285 -> :sswitch_21
-        0x3ff570b5 -> :sswitch_20
-        0x40428597 -> :sswitch_1f
-        0x422ad58d -> :sswitch_1e
-        0x452fd3a0 -> :sswitch_1d
-        0x45e94fe9 -> :sswitch_1c
-        0x49965f84 -> :sswitch_1b
-        0x4c5c78c0 -> :sswitch_1a
-        0x4c5c82d9 -> :sswitch_19
-        0x4c5c834c -> :sswitch_18
-        0x4e210dc6 -> :sswitch_17
-        0x4f75c677 -> :sswitch_16
-        0x51260bd9 -> :sswitch_15
-        0x594dba2b -> :sswitch_14
-        0x5b6bfeb0 -> :sswitch_13
-        0x5bcc8b2a -> :sswitch_12
-        0x5c446cb7 -> :sswitch_11
-        0x5d120f13 -> :sswitch_10
-        0x5d31826f -> :sswitch_f
+        -0x7d742ee8 -> :sswitch_7e
+        -0x7d2c2cc3 -> :sswitch_7d
+        -0x7ca9bbb4 -> :sswitch_7c
+        -0x7a6b9b1f -> :sswitch_7b
+        -0x79940f3b -> :sswitch_7a
+        -0x7897de74 -> :sswitch_79
+        -0x75fd5c9c -> :sswitch_78
+        -0x75fd5283 -> :sswitch_77
+        -0x75fd5210 -> :sswitch_76
+        -0x755ca0a1 -> :sswitch_75
+        -0x740845f0 -> :sswitch_74
+        -0x665baa8f -> :sswitch_73
+        -0x6225bbba -> :sswitch_72
+        -0x5b1425ad -> :sswitch_71
+        -0x59d54652 -> :sswitch_70
+        -0x590636a2 -> :sswitch_6f
+        -0x585ce10d -> :sswitch_6e
+        -0x58389446 -> :sswitch_6d
+        -0x581920ea -> :sswitch_6c
+        -0x5808d983 -> :sswitch_6b
+        -0x57e3bdfd -> :sswitch_6a
+        -0x575cbebc -> :sswitch_69
+        -0x51f367b4 -> :sswitch_68
+        -0x51d5692a -> :sswitch_67
+        -0x4b5ada5a -> :sswitch_66
+        -0x49ae3691 -> :sswitch_65
+        -0x49ad2fac -> :sswitch_64
+        -0x49ad0cda -> :sswitch_63
+        -0x49a8c10d -> :sswitch_62
+        -0x49a83677 -> :sswitch_61
+        -0x49a7139f -> :sswitch_60
+        -0x4768bb94 -> :sswitch_5f
+        -0x4302c33f -> :sswitch_5e
+        -0x40ade407 -> :sswitch_5d
+        -0x40a9983a -> :sswitch_5c
+        -0x40a90da4 -> :sswitch_5b
+        -0x40a7eacc -> :sswitch_5a
+        -0x3528982a -> :sswitch_59
+        -0x30dc144a -> :sswitch_58
+        -0x2e05f321 -> :sswitch_57
+        -0x260bd697 -> :sswitch_56
+        -0x2330d954 -> :sswitch_55
+        -0x231e6bcf -> :sswitch_54
+        -0x231e61b6 -> :sswitch_53
+        -0x231e6143 -> :sswitch_52
+        -0x1b1ed076 -> :sswitch_51
+        -0x1a3c736d -> :sswitch_50
+        -0x189a094e -> :sswitch_4f
+        -0xe733f5f -> :sswitch_4e
+        -0xd9ee8bb -> :sswitch_4d
+        -0xcbb124d -> :sswitch_4c
+        -0x6e3a432 -> :sswitch_4b
+        -0x6b67798 -> :sswitch_4a
+        -0x677ea95 -> :sswitch_49
+        -0x6696b42 -> :sswitch_48
+        -0x26a80f9 -> :sswitch_47
+        0x31f180d -> :sswitch_46
+        0x3e3b55a -> :sswitch_45
+        0x8681c8e -> :sswitch_44
+        0xc12ab85 -> :sswitch_43
+        0x127a1e59 -> :sswitch_42
+        0x127a2872 -> :sswitch_41
+        0x127a28e5 -> :sswitch_40
+        0x131af14c -> :sswitch_3f
+        0x139b21de -> :sswitch_3e
+        0x13bfdb02 -> :sswitch_3d
+        0x1468b5bf -> :sswitch_3c
+        0x148d7d5e -> :sswitch_3b
+        0x14acf0ba -> :sswitch_3a
+        0x14bd3821 -> :sswitch_39
+        0x14e253a7 -> :sswitch_38
+        0x2443e845 -> :sswitch_37
+        0x24b30ed5 -> :sswitch_36
+        0x2aa5cc8f -> :sswitch_35
+        0x2b736eeb -> :sswitch_34
+        0x2b92e247 -> :sswitch_33
+        0x2bc84534 -> :sswitch_32
+        0x2fce0ba8 -> :sswitch_31
+        0x3b191236 -> :sswitch_30
+        0x3c0b2819 -> :sswitch_2f
+        0x3cc9ad1a -> :sswitch_2e
+        0x3ccab3ff -> :sswitch_2d
+        0x3ccad6d1 -> :sswitch_2c
+        0x3ccf229e -> :sswitch_2b
+        0x3ccfad34 -> :sswitch_2a
+        0x3cd0d00c -> :sswitch_29
+        0x3edbaa08 -> :sswitch_28
+        0x3f329f93 -> :sswitch_27
+        0x3f33a678 -> :sswitch_26
+        0x3f33c94a -> :sswitch_25
+        0x3f381517 -> :sswitch_24
+        0x3f389fad -> :sswitch_23
+        0x3f39c285 -> :sswitch_22
+        0x3ff570b5 -> :sswitch_21
+        0x40428597 -> :sswitch_20
+        0x422ad58d -> :sswitch_1f
+        0x452fd3a0 -> :sswitch_1e
+        0x45e94fe9 -> :sswitch_1d
+        0x49965f84 -> :sswitch_1c
+        0x4c5c78c0 -> :sswitch_1b
+        0x4c5c82d9 -> :sswitch_1a
+        0x4c5c834c -> :sswitch_19
+        0x4e210dc6 -> :sswitch_18
+        0x4f75c677 -> :sswitch_17
+        0x51260bd9 -> :sswitch_16
+        0x594dba2b -> :sswitch_15
+        0x5b6bfeb0 -> :sswitch_14
+        0x5bcc8b2a -> :sswitch_13
+        0x5c446cb7 -> :sswitch_12
+        0x5d120f13 -> :sswitch_11
+        0x5d31826f -> :sswitch_10
+        0x5d41c9d6 -> :sswitch_f
         0x5d66e55c -> :sswitch_e
         0x6bed2ab5 -> :sswitch_d
         0x6c316928 -> :sswitch_c
@@ -10484,10 +12095,17 @@
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_6e
+        :pswitch_6d
+        :pswitch_6c
+        :pswitch_6b
+        :pswitch_6a
+        :pswitch_69
+        :pswitch_69
+        :pswitch_68
         :pswitch_67
         :pswitch_66
         :pswitch_65
-        :pswitch_64
         :pswitch_64
         :pswitch_63
         :pswitch_62
@@ -10504,9 +12122,9 @@
         :pswitch_57
         :pswitch_56
         :pswitch_55
+        :pswitch_55
         :pswitch_54
         :pswitch_53
-        :pswitch_52
         :pswitch_52
         :pswitch_51
         :pswitch_50
@@ -10552,7 +12170,7 @@
         :pswitch_28
         :pswitch_27
         :pswitch_26
-        :pswitch_25
+        :pswitch_26
         :pswitch_25
         :pswitch_24
         :pswitch_23
@@ -10591,28 +12209,27 @@
         :pswitch_2
         :pswitch_1
         :pswitch_0
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static synthetic lambda$processRemoteMessage$8(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;J)V
     .locals 8
 
-    .line 109
+    .line 110
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 110
+    .line 111
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10629,16 +12246,16 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 112
+    .line 113
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->postInitApplication()V
 
-    .line 113
+    .line 114
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 114
+    .line 115
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10655,7 +12272,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 116
+    .line 117
     :cond_1
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -10685,10 +12302,10 @@
 
     const/4 p0, 0x1
 
-    .line 91
+    .line 92
     sput-boolean p0, Lorg/telegram/messenger/SharedConfig;->pushStatSent:Z
 
-    .line 92
+    .line 93
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
     :cond_0
@@ -10698,7 +12315,7 @@
 .method private static synthetic lambda$sendRegistrationToServer$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 89
+    .line 90
     new-instance p0, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda7;
 
     invoke-direct {p0, p1}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -10711,7 +12328,7 @@
 .method private static synthetic lambda$sendRegistrationToServer$2(IILjava/lang/String;)V
     .locals 0
 
-    .line 96
+    .line 97
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -10724,10 +12341,10 @@
 .method private static synthetic lambda$sendRegistrationToServer$3(Ljava/lang/String;I)V
     .locals 11
 
-    .line 50
+    .line 51
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->checkKoinInit()V
 
-    .line 51
+    .line 52
     const-class v0, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -10736,10 +12353,10 @@
 
     check-cast v0, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
-    .line 52
+    .line 53
     invoke-virtual {v0, p0}, Lcom/iMe/manager/notifications/PushNotificationsManager;->sendPushToken(Ljava/lang/String;)V
 
-    .line 54
+    .line 55
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->pushStringStatus:Ljava/lang/String;
 
     invoke-static {p0, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->setRegId(Ljava/lang/String;ILjava/lang/String;)V
@@ -10748,7 +12365,7 @@
 
     return-void
 
-    .line 59
+    .line 60
     :cond_0
     sget-wide v0, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeStart:J
 
@@ -10778,7 +12395,7 @@
 
     if-nez v0, :cond_2
 
-    .line 61
+    .line 62
     :cond_1
     sput-boolean v1, Lorg/telegram/messenger/SharedConfig;->pushStatSent:Z
 
@@ -10789,11 +12406,11 @@
     :cond_2
     move v0, v1
 
-    .line 63
+    .line 64
     :goto_0
     sput-object p0, Lorg/telegram/messenger/SharedConfig;->pushString:Ljava/lang/String;
 
-    .line 64
+    .line 65
     sput p1, Lorg/telegram/messenger/SharedConfig;->pushType:I
 
     move v4, v1
@@ -10803,18 +12420,18 @@
 
     if-ge v4, v5, :cond_6
 
-    .line 66
+    .line 67
     invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v5
 
-    .line 67
+    .line 68
     iput-boolean v1, v5, Lorg/telegram/messenger/UserConfig;->registeredForPush:Z
 
-    .line 68
+    .line 69
     invoke-virtual {v5, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 69
+    .line 70
     invoke-virtual {v5}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
     move-result-wide v5
@@ -10836,25 +12453,25 @@
     :cond_3
     const-string v0, "hcm"
 
-    .line 73
+    .line 74
     :goto_2
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;-><init>()V
 
-    .line 74
+    .line 75
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 75
+    .line 76
     sget-wide v7, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeStart:J
 
     long-to-double v7, v7
 
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->time:D
 
-    .line 76
+    .line 77
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -10871,34 +12488,34 @@
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 77
+    .line 78
     iput-wide v2, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->peer:J
 
-    .line 78
+    .line 79
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;-><init>()V
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 79
+    .line 80
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 81
+    .line 82
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;-><init>()V
 
-    .line 82
+    .line 83
     sget-wide v7, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeEnd:J
 
     long-to-double v7, v7
 
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->time:D
 
-    .line 83
+    .line 84
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -10915,7 +12532,7 @@
 
     iput-object v0, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->type:Ljava/lang/String;
 
-    .line 84
+    .line 85
     sget-wide v7, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeEnd:J
 
     sget-wide v9, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeStart:J
@@ -10924,19 +12541,19 @@
 
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->peer:J
 
-    .line 85
+    .line 86
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;-><init>()V
 
     iput-object v0, v6, Lorg/telegram/tgnet/TLRPC$TL_inputAppEvent;->data:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
-    .line 86
+    .line 87
     iget-object v0, v5, Lorg/telegram/tgnet/TLRPC$TL_help_saveAppLog;->events:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 89
+    .line 90
     invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
@@ -10947,7 +12564,7 @@
 
     move v0, v1
 
-    .line 96
+    .line 97
     :cond_4
     new-instance v5, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda2;
 
@@ -10974,7 +12591,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1332
+    .line 1384
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -10985,10 +12602,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1333
+    .line 1385
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
 
-    .line 1334
+    .line 1386
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -11000,7 +12617,7 @@
 
     goto :goto_0
 
-    .line 1337
+    .line 1389
     :cond_1
     sget-object v0, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -11034,13 +12651,13 @@
     :cond_0
     const-string p0, "HCM"
 
-    .line 104
+    .line 105
     :goto_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 105
+    .line 106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11057,13 +12674,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 107
+    .line 108
     :cond_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
 
-    .line 108
+    .line 109
     new-instance v8, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda5;
 
     move-object v0, v8
@@ -11080,7 +12697,7 @@
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1219
+    .line 1271
     :try_start_0
     sget-object p1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -11088,13 +12705,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1223
+    .line 1275
     :catchall_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_2
 
-    .line 1224
+    .line 1276
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11130,7 +12747,7 @@
 .method public static sendRegistrationToServer(ILjava/lang/String;)V
     .locals 2
 
-    .line 48
+    .line 49
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda4;

@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -48,12 +48,12 @@ public class ReactionTabHolderView extends FrameLayout {
         this.bgPaint = new Paint(1);
         new Path();
         this.rect = new RectF();
-        this.radius = AndroidUtilities.m54dp(32);
+        this.radius = AndroidUtilities.m72dp(32);
         View view = new View(context);
         this.overlaySelectorView = view;
         addView(view, LayoutHelper.createFrame(-1, -1));
         this.iconView = new ImageView(context);
-        Drawable mutate = ContextCompat.getDrawable(context, C3417R.C3419drawable.msg_reactions_filled).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3419R.C3421drawable.msg_reactions_filled).mutate();
         this.drawable = mutate;
         this.iconView.setImageDrawable(mutate);
         addView(this.iconView, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388627, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
@@ -67,7 +67,7 @@ public class ReactionTabHolderView extends FrameLayout {
         this.counterView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         addView(this.counterView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 40.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
         this.outlinePaint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(1));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m72dp(1));
         setWillNotDraw(false);
         setOutlineProgress(this.outlineProgress);
     }

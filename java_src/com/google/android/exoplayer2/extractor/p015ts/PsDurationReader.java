@@ -9,10 +9,9 @@ import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import com.google.android.exoplayer2.util.Util;
 import java.io.IOException;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* renamed from: com.google.android.exoplayer2.extractor.ts.PsDurationReader */
 /* loaded from: classes.dex */
-public final class PsDurationReader {
+final class PsDurationReader {
     private static final String TAG = "PsDurationReader";
     private static final int TIMESTAMP_SEARCH_BYTES = 20000;
     private boolean isDurationRead;
@@ -49,7 +48,7 @@ public final class PsDurationReader {
         long adjustTsTimestamp = this.scrTimestampAdjuster.adjustTsTimestamp(this.lastScrValue) - this.scrTimestampAdjuster.adjustTsTimestamp(j);
         this.durationUs = adjustTsTimestamp;
         if (adjustTsTimestamp < 0) {
-            Log.m796w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
+            Log.m814w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
             this.durationUs = C0480C.TIME_UNSET;
         }
         return finishReadDuration(extractorInput);

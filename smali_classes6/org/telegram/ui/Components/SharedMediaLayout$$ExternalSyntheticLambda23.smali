@@ -2,44 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
+.field public final synthetic f$1:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda23;->f$1:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 7
+.method public final onItemClick(Landroid/view/View;I)Z
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    move-object v1, p1
+    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda23;->f$1:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$fntjKTThZL8OyGvSis6TbVj3Hy8(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$nIzKbTynqyljYPYsZhoreewkxBQ(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Landroid/view/View;I)Z
 
     move-result p1
 

@@ -1076,13 +1076,13 @@
 
     sget v2, Lorg/telegram/messenger/NotificationCenter;->needCheckSystemBarColors:I
 
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     .line 295
     :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished()V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished(Z)V
 
     return-void
 
@@ -1815,7 +1815,7 @@
     return v1
 .end method
 
-.method public openAnimationFinished()V
+.method public openAnimationFinished(Z)V
     .locals 0
 
     return-void
@@ -1990,7 +1990,7 @@
     invoke-virtual {p0}, Lorg/telegram/ui/RightSlidingDialogContainer;->updateOpenAnimationProgress()V
 
     .line 106
-    invoke-virtual {p0}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished()V
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished(Z)V
 
     return-void
 

@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:J
+.field public final synthetic f$2:I
 
-.field public final synthetic f$3:Ljava/lang/Runnable;
+.field public final synthetic f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;JLjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:J
+    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:I
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Ljava/lang/Runnable;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
     return-void
 .end method
@@ -35,17 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:J
+    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:I
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Ljava/lang/Runnable;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PucRjiHaVjfD3EKu4nO-niLC2q4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;JLjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$vAnpF7LT-bVQ2fEFi-dEsoT3Vn4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
 
     return-void
 .end method

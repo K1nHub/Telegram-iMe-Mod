@@ -18,14 +18,14 @@ final class zzfl extends zzfj {
         Object unmodifiableList;
         List list = (List) zzhn.zzf(obj, j);
         if (list instanceof zzfg) {
-            unmodifiableList = ((zzfg) list).mo761a_();
+            unmodifiableList = ((zzfg) list).mo779a_();
         } else if (zza.isAssignableFrom(list.getClass())) {
             return;
         } else {
             if ((list instanceof zzgi) && (list instanceof zzew)) {
                 zzew zzewVar = (zzew) list;
                 if (zzewVar.zza()) {
-                    zzewVar.mo762b_();
+                    zzewVar.mo780b_();
                     return;
                 }
                 return;

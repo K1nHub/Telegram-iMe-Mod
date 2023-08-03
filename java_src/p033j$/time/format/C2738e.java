@@ -4,17 +4,17 @@ package p033j$.time.format;
 final class C2738e implements InterfaceC2740g {
 
     /* renamed from: a */
-    private final char f576a;
+    private final char f579a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2738e(char c) {
-        this.f576a = c;
+        this.f579a = c;
     }
 
     public String toString() {
-        if (this.f576a == '\'') {
+        if (this.f579a == '\'') {
             return "''";
         }
-        return "'" + this.f576a + "'";
+        return "'" + this.f579a + "'";
     }
 }

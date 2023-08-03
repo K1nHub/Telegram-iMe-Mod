@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SelectAnimatedEmojiDialog.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->setPressed(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,39 +22,28 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)V
     .locals 0
 
-    .line 2603
+    .line 2785
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public invalidate()V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2606
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
+    .line 2788
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    .line 2789
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
+    iput-object v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2607
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
-
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
-
-    :cond_0
     return-void
 .end method

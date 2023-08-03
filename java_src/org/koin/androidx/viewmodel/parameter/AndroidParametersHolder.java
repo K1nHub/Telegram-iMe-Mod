@@ -46,15 +46,41 @@ public final class AndroidParametersHolder extends ParametersHolder {
     }
 
     @Override // org.koin.core.parameter.ParametersHolder
-    public <T> T elementAt(int i, KClass<?> clazz) {
+    public <T> T elementAt(final int i, final KClass<?> clazz) {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
-        return (T) createSavedStateHandleOrElse(clazz, new AndroidParametersHolder$elementAt$1(this, i, clazz));
+        return (T) createSavedStateHandleOrElse(clazz, new Function0<T>() { // from class: org.koin.androidx.viewmodel.parameter.AndroidParametersHolder$elementAt$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final T invoke() {
+                Object elementAt;
+                elementAt = super/*org.koin.core.parameter.ParametersHolder*/.elementAt(i, clazz);
+                return (T) elementAt;
+            }
+        });
     }
 
     @Override // org.koin.core.parameter.ParametersHolder
-    public <T> T getOrNull(KClass<?> clazz) {
+    public <T> T getOrNull(final KClass<?> clazz) {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
-        return (T) createSavedStateHandleOrElse(clazz, new AndroidParametersHolder$getOrNull$1(this, clazz));
+        return (T) createSavedStateHandleOrElse(clazz, new Function0<T>() { // from class: org.koin.androidx.viewmodel.parameter.AndroidParametersHolder$getOrNull$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final T invoke() {
+                Object orNull;
+                orNull = super/*org.koin.core.parameter.ParametersHolder*/.getOrNull(clazz);
+                return (T) orNull;
+            }
+        });
     }
 
     private final <T> T createSavedStateHandleOrElse(KClass<?> kClass, Function0<? extends T> function0) {

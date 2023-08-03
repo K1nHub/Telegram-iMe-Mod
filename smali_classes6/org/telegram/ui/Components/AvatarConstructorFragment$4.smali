@@ -567,20 +567,6 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->findClickableView(Landroid/view/ViewGroup;FF)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     const/4 p1, 0x0
 
     return p1

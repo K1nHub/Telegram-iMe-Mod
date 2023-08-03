@@ -2697,7 +2697,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v0, v1, p1, v3, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {v0, v1, p1, v3, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 1671
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->lastSearchImageString:Ljava/lang/String;
@@ -5010,7 +5010,7 @@
 
     move-result v4
 
-    invoke-virtual {v1, v4}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 601
     iget v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I

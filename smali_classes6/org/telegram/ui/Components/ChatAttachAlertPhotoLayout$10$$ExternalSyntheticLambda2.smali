@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final run(Ljava/lang/Object;)V
     .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10;
@@ -39,7 +39,9 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10$$ExternalSyntheticLambda2;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10;->$r8$lambda$PGlkiI7Dw8iyE52VL7PMk2NH09Y(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10;Ljava/io/File;Z)V
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10;->$r8$lambda$EA1GFUY7uj9gwTJWEoBX_um4HZI(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10;Ljava/io/File;ZLjava/lang/Integer;)V
 
     return-void
 .end method

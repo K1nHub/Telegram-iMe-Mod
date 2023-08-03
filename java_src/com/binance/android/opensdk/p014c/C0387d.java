@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class C0387d {
     /* renamed from: a */
-    private static final Signature m814a(PackageInfo packageInfo) {
+    private static final Signature m832a(PackageInfo packageInfo) {
         SigningInfo signingInfo = packageInfo.signingInfo;
         Signature[] apkContentsSigners = signingInfo.hasMultipleSigners() ? signingInfo.getApkContentsSigners() : signingInfo.getSigningCertificateHistory();
         Intrinsics.checkExpressionValueIsNotNull(apkContentsSigners, "if (hasMultipleSigners()…tificateHistory\n        }");
@@ -20,21 +20,21 @@ public final class C0387d {
     }
 
     /* renamed from: a */
-    public static final String m816a(Context context) {
+    public static final String m834a(Context context) {
         Intrinsics.checkParameterIsNotNull(context, "context");
         String packageName = context.getPackageName();
         Intrinsics.checkExpressionValueIsNotNull(packageName, "context.packageName");
-        return m815a(context, packageName);
+        return m833a(context, packageName);
     }
 
     /* renamed from: a */
-    private static final String m815a(Context context, String str) {
+    private static final String m833a(Context context, String str) {
         Signature signature;
         try {
             if (Build.VERSION.SDK_INT >= 28) {
                 PackageInfo packageInfo = context.getPackageManager().getPackageInfo(str, C0480C.BUFFER_FLAG_FIRST_SAMPLE);
                 Intrinsics.checkExpressionValueIsNotNull(packageInfo, "context.packageManager.g…FICATES\n                )");
-                signature = m814a(packageInfo);
+                signature = m832a(packageInfo);
             } else {
                 signature = context.getPackageManager().getPackageInfo(str, 64).signatures[0];
             }
@@ -43,7 +43,7 @@ public final class C0387d {
             }
             byte[] byteArray = signature.toByteArray();
             Intrinsics.checkExpressionValueIsNotNull(byteArray, "signature.toByteArray()");
-            return C0386c.m817a(byteArray);
+            return C0386c.m835a(byteArray);
         } catch (Exception e) {
             e.printStackTrace();
             return "";

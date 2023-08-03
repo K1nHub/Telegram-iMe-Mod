@@ -6,22 +6,22 @@ import p033j$.util.function.ToIntFunction;
 public final /* synthetic */ class C3172C0 implements ToIntFunction {
 
     /* renamed from: a */
-    final /* synthetic */ java.util.function.ToIntFunction f1216a;
+    final /* synthetic */ java.util.function.ToIntFunction f1219a;
 
     private /* synthetic */ C3172C0(java.util.function.ToIntFunction toIntFunction) {
-        this.f1216a = toIntFunction;
+        this.f1219a = toIntFunction;
     }
 
     /* renamed from: a */
-    public static /* synthetic */ ToIntFunction m227a(java.util.function.ToIntFunction toIntFunction) {
+    public static /* synthetic */ ToIntFunction m245a(java.util.function.ToIntFunction toIntFunction) {
         if (toIntFunction == null) {
             return null;
         }
-        return toIntFunction instanceof C3174D0 ? ((C3174D0) toIntFunction).f1218a : new C3172C0(toIntFunction);
+        return toIntFunction instanceof C3174D0 ? ((C3174D0) toIntFunction).f1221a : new C3172C0(toIntFunction);
     }
 
     @Override // p033j$.util.function.ToIntFunction
     public /* synthetic */ int applyAsInt(Object obj) {
-        return this.f1216a.applyAsInt(obj);
+        return this.f1219a.applyAsInt(obj);
     }
 }

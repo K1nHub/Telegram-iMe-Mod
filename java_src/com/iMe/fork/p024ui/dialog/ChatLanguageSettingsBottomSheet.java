@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.fork.p024ui.dialog.ChatLanguageSettingsBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.fork.utils.Callbacks$Callback2;
 import com.iMe.model.translation.TranslationLanguageUiModel;
@@ -21,9 +22,10 @@ import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -72,7 +74,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ChatLanguageSettingsBottomSheet(ChatActivity parentFragment, List<TranslationLanguageUiModel> textTranslateLanguages, DialogTranslationSettings translationSettings, Callbacks$Callback2<DialogTranslationSettings, Boolean> translationSettingsDelegate) {
+    public ChatLanguageSettingsBottomSheet(ChatActivity parentFragment, List<TranslationLanguageUiModel> textTranslateLanguages, final DialogTranslationSettings translationSettings, Callbacks$Callback2<DialogTranslationSettings, Boolean> translationSettingsDelegate) {
         super(parentFragment.getParentActivity(), false);
         Lazy lazy;
         Lazy lazy2;
@@ -86,15 +88,77 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         this.parentFragment = parentFragment;
         this.textTranslateLanguages = textTranslateLanguages;
         this.translationSettingsDelegate = translationSettingsDelegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new ChatLanguageSettingsBottomSheet$newSettings$2(translationSettings));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<DialogTranslationSettings>() { // from class: com.iMe.fork.ui.dialog.ChatLanguageSettingsBottomSheet$newSettings$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final DialogTranslationSettings invoke() {
+                DialogTranslationSettings copy;
+                copy = r0.copy((r20 & 1) != 0 ? r0.isInTextTranslateEnabled : false, (r20 & 2) != 0 ? r0.inTextTranslateLangCode : null, (r20 & 4) != 0 ? r0.isOutTextTranslateEnabled : false, (r20 & 8) != 0 ? r0.outTextTranslateLangCode : null, (r20 & 16) != 0 ? r0.dialogId : 0L, (r20 & 32) != 0 ? r0.isEnabled : false, (r20 & 64) != 0 ? r0.incomingTargetLanguageCode : null, (r20 & 128) != 0 ? DialogTranslationSettings.this.outgoingTargetLanguageCode : null);
+                return copy;
+            }
+        });
         this.newSettings$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new ChatLanguageSettingsBottomSheet$rootView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.ChatLanguageSettingsBottomSheet$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initRootView;
+                initRootView = ChatLanguageSettingsBottomSheet.this.initRootView();
+                return initRootView;
+            }
+        });
         this.rootView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ChatLanguageSettingsBottomSheet$listView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.dialog.ChatLanguageSettingsBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = ChatLanguageSettingsBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new ChatLanguageSettingsBottomSheet$listAdapter$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.dialog.ChatLanguageSettingsBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ChatLanguageSettingsBottomSheet.ListAdapter invoke() {
+                return new ChatLanguageSettingsBottomSheet.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new ChatLanguageSettingsBottomSheet$bottomButtonsContainer$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.dialog.ChatLanguageSettingsBottomSheet$bottomButtonsContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initBottomButtonsContainer;
+                initBottomButtonsContainer = ChatLanguageSettingsBottomSheet.this.initBottomButtonsContainer();
+                return initBottomButtonsContainer;
+            }
+        });
         this.bottomButtonsContainer$delegate = lazy5;
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
@@ -194,8 +258,8 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initBottomButtonsContainer() {
         FrameLayout frameLayout = new FrameLayout(getContext());
-        int m54dp = AndroidUtilities.m54dp(8);
-        frameLayout.setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(8);
+        frameLayout.setPadding(m72dp, m72dp, m72dp, m72dp);
         frameLayout.addView(createBottomButton(true), LayoutHelper.createFrame(-2, 36, 8388611));
         frameLayout.addView(createBottomButton(false), LayoutHelper.createFrame(-2, 36, 8388613));
         return frameLayout;
@@ -208,12 +272,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            String string = LocaleController.getString("Cancel", C3417R.string.Cancel);
+            String string = LocaleController.getString("Cancel", C3419R.string.Cancel);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
             upperCase = string.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         } else {
-            String string2 = LocaleController.getString("Save", C3417R.string.Save);
+            String string2 = LocaleController.getString("Save", C3419R.string.Save);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
             upperCase = string2.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -243,7 +307,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         List mutableList;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.textTranslateLanguages);
         if (i != this.textOut) {
-            String internalString = LocaleController.getInternalString(C3417R.string.language_settings_app_language);
+            String internalString = LocaleController.getInternalString(C3419R.string.language_settings_app_language);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ge_settings_app_language)");
             mutableList.add(0, new TranslationLanguageUiModel(null, internalString));
         }
@@ -347,19 +411,19 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3417R.string.language_settings_text_messages));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3419R.string.language_settings_text_messages));
                 return;
             }
             boolean z = false;
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3417R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3419R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (view instanceof NotificationsCheckCell)) {
                 String langCode = ChatLanguageSettingsBottomSheet.this.getLangCode(i);
-                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3417R.string.language_settings_in_text_translate : C3417R.string.language_settings_out_text_translate);
+                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3419R.string.language_settings_in_text_translate : C3419R.string.language_settings_out_text_translate);
                 if (langCode == null) {
-                    formatStringInternal = LocaleController.getInternalString(C3417R.string.language_settings_app_language);
+                    formatStringInternal = LocaleController.getInternalString(C3419R.string.language_settings_app_language);
                 } else {
-                    int i2 = C3417R.string.language_settings_selected_language;
+                    int i2 = C3419R.string.language_settings_selected_language;
                     Object[] objArr = new Object[1];
                     Iterator<T> it = ChatLanguageSettingsBottomSheet.this.getTextTranslateLanguages().iterator();
                     while (true) {

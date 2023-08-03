@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
-    .locals 4
+    .locals 5
 
     const-string v0, "$this$single"
 
@@ -72,70 +72,67 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 33
-    check-cast p2, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
+    .line 32
+    new-instance p2, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     .line 133
-    const-class v1, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
+    const-class v0, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    .line 34
-    check-cast v1, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;
+    const-class v2, Lcom/iMe/storage/domain/storage/PreferenceHelper;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v2
 
-    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 35
-    check-cast v2, Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;
+    check-cast v2, Lcom/iMe/storage/domain/storage/PreferenceHelper;
 
     .line 133
-    const-class v3, Lcom/iMe/storage/domain/storage/PreferenceHelper;
+    const-class v3, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v3
 
-    invoke-virtual {p1, v3, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v3, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    .line 133
+    const-class v4, Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;
+
+    invoke-static {v4}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v4, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 36
-    check-cast p1, Lcom/iMe/storage/domain/storage/PreferenceHelper;
+    check-cast p1, Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;
 
     .line 32
-    new-instance v0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
+    invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;-><init>(Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;Lcom/iMe/storage/domain/storage/PreferenceHelper;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;)V
 
-    invoke-direct {v0, p1, v2, v1, p2}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;-><init>(Lcom/iMe/storage/domain/storage/PreferenceHelper;Lcom/iMe/storage/domain/repository/wallet/WalletSessionRepository;Lcom/iMe/storage/domain/repository/wallet/WalletRepository;Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;)V
-
-    return-object v0
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

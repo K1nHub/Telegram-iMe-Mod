@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$104;)V
     .locals 0
 
-    .line 23945
+    .line 24012
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 23958
+    .line 24025
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 23959
+    .line 24026
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -76,7 +76,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 23948
+    .line 24015
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -101,7 +101,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 23949
+    .line 24016
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -114,7 +114,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 23950
+    .line 24017
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -123,14 +123,14 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$45302(Lorg/telegram/ui/ChatActivity;F)F
 
-    .line 23951
+    .line 24018
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$10700(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 23952
+    .line 24019
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$104$1;->this$1:Lorg/telegram/ui/ChatActivity$104;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$104;->this$0:Lorg/telegram/ui/ChatActivity;

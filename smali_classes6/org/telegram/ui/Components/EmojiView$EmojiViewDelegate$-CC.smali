@@ -78,6 +78,14 @@
     return v0
 .end method
 
+.method public static $default$isStoryReply(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public static $default$isUserSelf(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)Z
     .locals 1
 

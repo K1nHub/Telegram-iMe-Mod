@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.fork.enums.FilterActivityType;
+import com.iMe.fork.p024ui.dialog.SelectIconBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback2;
 import com.iMe.storage.data.repository.topics.Topic;
 import com.iMe.storage.domain.model.filters.FilterIcon;
@@ -23,10 +24,11 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.ArraysKt___ArraysKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -105,15 +107,64 @@ public final class SelectIconBottomSheet extends BottomSheet {
         this.currentFilterIcon = filterIcon;
         this.currentTopicIcon = topic;
         this.selectIconDelegate = selectIconDelegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$icons$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends Enum<?>>>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$icons$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends Enum<?>> invoke() {
+                List<? extends Enum<?>> initIcons;
+                initIcons = SelectIconBottomSheet.this.initIcons();
+                return initIcons;
+            }
+        });
         this.icons$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$rootView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initRootView;
+                initRootView = SelectIconBottomSheet.this.initRootView();
+                return initRootView;
+            }
+        });
         this.rootView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$listView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = SelectIconBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$deleteButton$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ReportAlert.BottomSheetCell>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$deleteButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ReportAlert.BottomSheetCell invoke() {
+                ReportAlert.BottomSheetCell initDeleteButton;
+                initDeleteButton = SelectIconBottomSheet.this.initDeleteButton();
+                return initDeleteButton;
+            }
+        });
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3417R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3419R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -175,7 +226,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ReportAlert.BottomSheetCell initDeleteButton() {
-        ReportAlert.BottomSheetCell bottomSheetCell = new ReportAlert.BottomSheetCell(getContext());
+        ReportAlert.BottomSheetCell bottomSheetCell = new ReportAlert.BottomSheetCell(getContext(), null);
         bottomSheetCell.setBackground(null);
         bottomSheetCell.getBackgroundPublic().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -183,7 +234,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3417R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3419R.string.Delete));
         return bottomSheetCell;
     }
 
@@ -289,11 +340,49 @@ public final class SelectIconBottomSheet extends BottomSheet {
             Lazy lazy3;
             Intrinsics.checkNotNullParameter(context, "context");
             this.this$0 = selectIconBottomSheet;
-            lazy = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$circleView$2(this));
+            lazy = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$IconView$circleView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final View invoke() {
+                    View initCircleView;
+                    initCircleView = SelectIconBottomSheet.IconView.this.initCircleView();
+                    return initCircleView;
+                }
+            });
             this.circleView$delegate = lazy;
-            lazy2 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$imageView$2(this));
+            lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$IconView$imageView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final ImageView invoke() {
+                    ImageView initImageView;
+                    initImageView = SelectIconBottomSheet.IconView.this.initImageView();
+                    return initImageView;
+                }
+            });
             this.imageView$delegate = lazy2;
-            lazy3 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$IconView$checkBox$2(this));
+            lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<CheckBox2>() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$IconView$checkBox$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public final CheckBox2 invoke() {
+                    CheckBox2 initCheckBox;
+                    initCheckBox = SelectIconBottomSheet.IconView.this.initCheckBox();
+                    return initCheckBox;
+                }
+            });
             this.checkBox$delegate = lazy3;
             addView(getCircleView(), LayoutHelper.createFrame(-1, -1, 17, 3, 3, 3, 3));
             addView(getImageView(), LayoutHelper.createFrame(selectIconBottomSheet.getType().getIconSize(), selectIconBottomSheet.getType().getIconSize(), 17));
@@ -318,7 +407,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             if (z) {
                 gradientDrawable = new GradientDrawable();
                 gradientDrawable.setShape(1);
-                gradientDrawable.setStroke(AndroidUtilities.m55dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
+                gradientDrawable.setStroke(AndroidUtilities.m73dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
             } else {
                 gradientDrawable = null;
             }

@@ -14,10 +14,10 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
-/* JADX INFO: Access modifiers changed from: package-private */
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 /* loaded from: classes.dex */
-public final class zzu implements ObjectEncoderContext {
+final class zzu implements ObjectEncoderContext {
     private static final Charset zza = Charset.forName("UTF-8");
     private static final FieldDescriptor zzb;
     private static final FieldDescriptor zzc;
@@ -37,7 +37,12 @@ public final class zzu implements ObjectEncoderContext {
         zzo zzoVar2 = new zzo();
         zzoVar2.zza(2);
         zzc = builder2.withProperty(zzoVar2.zzb()).build();
-        zzd = zzt.zza;
+        zzd = new ObjectEncoder() { // from class: com.google.android.gms.internal.firebase_messaging.zzt
+            @Override // com.google.firebase.encoders.ObjectEncoder
+            public final void encode(Object obj, Object obj2) {
+                zzu.zzg((Map.Entry) obj, (ObjectEncoderContext) obj2);
+            }
+        };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -112,18 +117,18 @@ public final class zzu implements ObjectEncoderContext {
 
     private final void zzn(int i) throws IOException {
         while ((i & (-128)) != 0) {
-            this.zze.write((i & 127) | 128);
+            this.zze.write((i & MessagesStorage.LAST_DB_VERSION) | 128);
             i >>>= 7;
         }
-        this.zze.write(i & 127);
+        this.zze.write(i & MessagesStorage.LAST_DB_VERSION);
     }
 
     private final void zzo(long j) throws IOException {
         while (((-128) & j) != 0) {
-            this.zze.write((((int) j) & 127) | 128);
+            this.zze.write((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
             j >>>= 7;
         }
-        this.zze.write(((int) j) & 127);
+        this.zze.write(((int) j) & MessagesStorage.LAST_DB_VERSION);
     }
 
     public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) throws IOException {
@@ -290,7 +295,7 @@ public final class zzu implements ObjectEncoderContext {
     }
 
     public final ObjectEncoderContext nested(String str) throws IOException {
-        return nested(FieldDescriptor.m718of(str));
+        return nested(FieldDescriptor.m736of(str));
     }
 
     @Override // com.google.firebase.encoders.ObjectEncoderContext
@@ -318,27 +323,27 @@ public final class zzu implements ObjectEncoderContext {
     }
 
     public final ObjectEncoderContext add(String str, double d) throws IOException {
-        zza(FieldDescriptor.m718of(str), d, true);
+        zza(FieldDescriptor.m736of(str), d, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, int i) throws IOException {
-        zzd(FieldDescriptor.m718of(str), i, true);
+        zzd(FieldDescriptor.m736of(str), i, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, long j) throws IOException {
-        zze(FieldDescriptor.m718of(str), j, true);
+        zze(FieldDescriptor.m736of(str), j, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, Object obj) throws IOException {
-        zzc(FieldDescriptor.m718of(str), obj, true);
+        zzc(FieldDescriptor.m736of(str), obj, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, boolean z) throws IOException {
-        zzd(FieldDescriptor.m718of(str), z ? 1 : 0, true);
+        zzd(FieldDescriptor.m736of(str), z ? 1 : 0, true);
         return this;
     }
 }

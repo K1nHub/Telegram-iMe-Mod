@@ -3,9 +3,10 @@ package org.orbitmvi.orbit.internal;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.flow.StateFlow;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: StateFlowExtensions.kt */
 /* loaded from: classes4.dex */
-public final class StateFlowExtensionsKt$onSubscribe$1 implements StateFlow<T> {
+public final class StateFlowExtensionsKt$onSubscribe$1<T> implements StateFlow<T> {
     final /* synthetic */ Function0<Unit> $block;
     final /* synthetic */ StateFlow<T> $this_onSubscribe;
 
@@ -16,7 +17,6 @@ public final class StateFlowExtensionsKt$onSubscribe$1 implements StateFlow<T> {
         this.$block = function0;
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [T, java.lang.Object] */
     @Override // kotlinx.coroutines.flow.StateFlow
     public T getValue() {
         return this.$this_onSubscribe.getValue();

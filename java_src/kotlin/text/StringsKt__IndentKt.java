@@ -133,8 +133,26 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
         return sb;
     }
 
-    private static final Function1<String, String> getIndentFunction$StringsKt__IndentKt(String str) {
-        return str.length() == 0 ? StringsKt__IndentKt$getIndentFunction$1.INSTANCE : new StringsKt__IndentKt$getIndentFunction$2(str);
+    private static final Function1<String, String> getIndentFunction$StringsKt__IndentKt(final String str) {
+        return str.length() == 0 ? new Function1<String, String>() { // from class: kotlin.text.StringsKt__IndentKt$getIndentFunction$1
+            @Override // kotlin.jvm.functions.Function1
+            public final String invoke(String line) {
+                Intrinsics.checkNotNullParameter(line, "line");
+                return line;
+            }
+        } : new Function1<String, String>() { // from class: kotlin.text.StringsKt__IndentKt$getIndentFunction$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final String invoke(String line) {
+                Intrinsics.checkNotNullParameter(line, "line");
+                return str + line;
+            }
+        };
     }
 
     private static final int indentWidth$StringsKt__IndentKt(String str) {

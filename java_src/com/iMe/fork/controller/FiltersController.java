@@ -21,7 +21,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -36,12 +35,18 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.collections.SetsKt__SetsJVMKt;
 import kotlin.collections.SetsKt__SetsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessagesController;
@@ -77,7 +82,27 @@ public final class FiltersController extends BaseController implements KoinCompo
     public FiltersController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new FiltersController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<FiltersDao>() { // from class: com.iMe.fork.controller.FiltersController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.storage.data.locale.db.dao.main.FiltersDao] */
+            @Override // kotlin.jvm.functions.Function0
+            public final FiltersDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(FiltersDao.class), qualifier, function0);
+            }
+        });
         this.filtersDao$delegate = lazy;
         this.isFoldersHidden = TelegramPreferenceKeys.User.Default.isFoldersHidden();
         this.isFoldersFirstEnabled = TelegramPreferenceKeys.User.Default.isFoldersFirstEnabled();
@@ -284,7 +309,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1455id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1458id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -408,7 +433,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m85to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m103to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -466,8 +491,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m85to = TuplesKt.m85to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1455id).name(), TuplesKt.m85to(arrayList, arrayList2));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1458id).name(), TuplesKt.m103to(arrayList, arrayList2));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -550,14 +575,26 @@ public final class FiltersController extends BaseController implements KoinCompo
             return (FiltersController) tmp0.invoke(obj);
         }
 
-        public final FiltersController getInstance(int i) {
+        public final FiltersController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = FiltersController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final FiltersController$Companion$getInstance$1 filtersController$Companion$getInstance$1 = new FiltersController$Companion$getInstance$1(i);
+            final Function1<Integer, FiltersController> function1 = new Function1<Integer, FiltersController>() { // from class: com.iMe.fork.controller.FiltersController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final FiltersController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new FiltersController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.FiltersController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -569,7 +606,7 @@ public final class FiltersController extends BaseController implements KoinCompo
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

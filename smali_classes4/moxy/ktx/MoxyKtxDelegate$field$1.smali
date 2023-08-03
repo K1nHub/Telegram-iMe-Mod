@@ -65,7 +65,7 @@
         }
     .end annotation
 
-    const-string p1, "presenter"
+    const-string/jumbo p1, "presenter"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

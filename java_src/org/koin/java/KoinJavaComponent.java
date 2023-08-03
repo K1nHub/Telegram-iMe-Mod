@@ -38,10 +38,22 @@ public final class KoinJavaComponent {
         return inject(cls, qualifier, function0);
     }
 
-    public static final <T> Lazy<T> inject(Class<?> clazz, Qualifier qualifier, Function0<? extends ParametersHolder> function0) {
+    public static final <T> Lazy<T> inject(final Class<?> clazz, final Qualifier qualifier, final Function0<? extends ParametersHolder> function0) {
         Lazy<T> lazy;
         Intrinsics.checkNotNullParameter(clazz, "clazz");
-        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.SYNCHRONIZED, new KoinJavaComponent$inject$1(clazz, qualifier, function0));
+        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<T>() { // from class: org.koin.java.KoinJavaComponent$inject$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final T invoke() {
+                return (T) KoinJavaComponent.get(clazz, qualifier, function0);
+            }
+        });
         return lazy;
     }
 

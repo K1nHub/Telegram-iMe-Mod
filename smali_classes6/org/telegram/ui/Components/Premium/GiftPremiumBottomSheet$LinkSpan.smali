@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)V
     .locals 0
 
-    .line 460
+    .line 485
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$LinkSpan;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;)V
     .locals 0
 
-    .line 460
+    .line 485
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$LinkSpan;-><init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 464
+    .line 489
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$LinkSpan;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -59,10 +59,10 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 465
+    .line 490
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$LinkSpan;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->dismiss()V
 
     return-void
 .end method
@@ -70,12 +70,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 470
+    .line 495
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 471
+    .line 496
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

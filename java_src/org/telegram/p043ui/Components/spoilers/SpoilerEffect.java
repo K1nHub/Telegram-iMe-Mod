@@ -110,15 +110,22 @@ public class SpoilerEffect extends Drawable {
         this.rippleProgress = -1.0f;
         this.spaces = new ArrayList();
         this.mAlpha = 255;
-        this.rippleInterpolator = SpoilerEffect$$ExternalSyntheticLambda0.INSTANCE;
+        this.rippleInterpolator = new TimeInterpolator() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect$$ExternalSyntheticLambda0
+            @Override // android.animation.TimeInterpolator
+            public final float getInterpolation(float f) {
+                float lambda$new$0;
+                lambda$new$0 = SpoilerEffect.lambda$new$0(f);
+                return lambda$new$0;
+            }
+        };
         for (int i = 0; i < ALPHAS.length; i++) {
             this.particlePaints[i] = new Paint();
             if (i == 0) {
-                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m55dp(1.4f));
+                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m73dp(1.4f));
                 this.particlePaints[i].setStyle(Paint.Style.STROKE);
                 this.particlePaints[i].setStrokeCap(Paint.Cap.ROUND);
             } else {
-                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m55dp(1.2f));
+                this.particlePaints[i].setStrokeWidth(AndroidUtilities.m73dp(1.2f));
                 this.particlePaints[i].setStyle(Paint.Style.STROKE);
                 this.particlePaints[i].setStrokeCap(Paint.Cap.ROUND);
             }
@@ -137,7 +144,7 @@ public class SpoilerEffect extends Drawable {
     }
 
     public void updateMaxParticles() {
-        int width = getBounds().width() / AndroidUtilities.m54dp(6);
+        int width = getBounds().width() / AndroidUtilities.m72dp(6);
         int i = PARTICLES_PER_CHARACTER;
         setMaxParticlesCount(MathUtils.clamp(width * i, i, MAX_PARTICLES_PER_ENTITY));
     }
@@ -238,7 +245,7 @@ public class SpoilerEffect extends Drawable {
         Iterator<Particle> it = this.particles.iterator();
         while (it.hasNext()) {
             Particle next = it.next();
-            if (!getBounds().contains((int) next.f1844x, (int) next.f1845y)) {
+            if (!getBounds().contains((int) next.f1867x, (int) next.f1868y)) {
                 it.remove();
             }
             if (this.particlesPool.size() < this.maxParticles) {
@@ -269,7 +276,7 @@ public class SpoilerEffect extends Drawable {
                 Particle particle2 = this.particles.get(i8);
                 float f2 = min;
                 particle2.currentTime = Math.min(particle2.currentTime + f2, particle2.lifeTime);
-                if (particle2.currentTime >= particle2.lifeTime || isOutOfBounds(i2, i3, i4, i5, particle2.f1844x, particle2.f1845y)) {
+                if (particle2.currentTime >= particle2.lifeTime || isOutOfBounds(i2, i3, i4, i5, particle2.f1867x, particle2.f1868y)) {
                     if (this.particlesPool.size() < this.maxParticles) {
                         this.particlesPool.push(particle2);
                     }
@@ -280,8 +287,8 @@ public class SpoilerEffect extends Drawable {
                     Particle.access$516(particle2, particle2.vecX * f3);
                     Particle.access$616(particle2, particle2.vecY * f3);
                     int i9 = particle2.alpha;
-                    this.particlePoints[i9][this.renderCount[i9] * 2] = particle2.f1844x;
-                    this.particlePoints[i9][(this.renderCount[i9] * 2) + 1] = particle2.f1845y;
+                    this.particlePoints[i9][this.renderCount[i9] * 2] = particle2.f1867x;
+                    this.particlePoints[i9][(this.renderCount[i9] * 2) + 1] = particle2.f1868y;
                     int[] iArr = this.renderCount;
                     iArr[i9] = iArr[i9] + 1;
                 }
@@ -311,7 +318,7 @@ public class SpoilerEffect extends Drawable {
                         particle = pop;
                         i = size2;
                         f = f6;
-                        if (isOutOfBounds(i2, i3, i4, i5, pop.f1844x, pop.f1845y) && i14 < 4) {
+                        if (isOutOfBounds(i2, i3, i4, i5, pop.f1867x, pop.f1868y) && i14 < 4) {
                             f6 = f;
                             pop = particle;
                             i13 = i14;
@@ -327,8 +334,8 @@ public class SpoilerEffect extends Drawable {
                     particle.alpha = Utilities.fastRandom.nextInt(ALPHAS.length);
                     this.particles.add(particle);
                     int i15 = particle.alpha;
-                    this.particlePoints[i15][this.renderCount[i15] * 2] = particle.f1844x;
-                    this.particlePoints[i15][(this.renderCount[i15] * 2) + 1] = particle.f1845y;
+                    this.particlePoints[i15][this.renderCount[i15] * 2] = particle.f1867x;
+                    this.particlePoints[i15][(this.renderCount[i15] * 2) + 1] = particle.f1868y;
                     int[] iArr2 = this.renderCount;
                     iArr2[i15] = iArr2[i15] + 1;
                     i11++;
@@ -343,10 +350,10 @@ public class SpoilerEffect extends Drawable {
                 for (int i18 = 0; i18 < this.particles.size(); i18++) {
                     Particle particle3 = this.particles.get(i18);
                     RectF rectF = this.visibleRect;
-                    if ((rectF == null || rectF.contains(particle3.f1844x, particle3.f1845y)) && (particle3.alpha == length || !this.enableAlpha)) {
+                    if ((rectF == null || rectF.contains(particle3.f1867x, particle3.f1868y)) && (particle3.alpha == length || !this.enableAlpha)) {
                         int i19 = (i18 - i17) * 2;
-                        this.particlePoints[length][i19] = particle3.f1844x;
-                        this.particlePoints[length][i19 + 1] = particle3.f1845y;
+                        this.particlePoints[length][i19] = particle3.f1867x;
+                        this.particlePoints[length][i19 + 1] = particle3.f1868y;
                         i16 += 2;
                     } else {
                         i17++;
@@ -380,7 +387,7 @@ public class SpoilerEffect extends Drawable {
     }
 
     private boolean isOutOfBounds(int i, int i2, int i3, int i4, float f, float f2) {
-        if (f < i || f > i3 || f2 < i2 + AndroidUtilities.m55dp(2.5f) || f2 > i4 - AndroidUtilities.m55dp(2.5f)) {
+        if (f < i || f > i3 || f2 < i2 + AndroidUtilities.m73dp(2.5f) || f2 > i4 - AndroidUtilities.m73dp(2.5f)) {
             return true;
         }
         for (int i5 = 0; i5 < this.spaces.size(); i5++) {
@@ -392,8 +399,8 @@ public class SpoilerEffect extends Drawable {
     }
 
     private void generateRandomLocation(Particle particle, int i) {
-        particle.f1844x = getBounds().left + (Utilities.fastRandom.nextFloat() * getBounds().width());
-        particle.f1845y = getBounds().top + (Utilities.fastRandom.nextFloat() * getBounds().height());
+        particle.f1867x = getBounds().left + (Utilities.fastRandom.nextFloat() * getBounds().width());
+        particle.f1868y = getBounds().top + (Utilities.fastRandom.nextFloat() * getBounds().height());
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -549,8 +556,8 @@ public class SpoilerEffect extends Drawable {
 
     public static void clipOutCanvas(Canvas canvas, List<SpoilerEffect> list) {
         tempPath.rewind();
-        for (SpoilerEffect spoilerEffect : list) {
-            Rect bounds = spoilerEffect.getBounds();
+        for (int i = 0; i < list.size(); i++) {
+            Rect bounds = list.get(i).getBounds();
             tempPath.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
         }
         canvas.clipPath(tempPath, Region.Op.DIFFERENCE);
@@ -694,23 +701,23 @@ public class SpoilerEffect extends Drawable {
         private float velocity;
 
         /* renamed from: x */
-        private float f1844x;
+        private float f1867x;
 
         /* renamed from: y */
-        private float f1845y;
+        private float f1868y;
 
         private Particle() {
         }
 
         static /* synthetic */ float access$516(Particle particle, float f) {
-            float f2 = particle.f1844x + f;
-            particle.f1844x = f2;
+            float f2 = particle.f1867x + f;
+            particle.f1867x = f2;
             return f2;
         }
 
         static /* synthetic */ float access$616(Particle particle, float f) {
-            float f2 = particle.f1845y + f;
-            particle.f1845y = f2;
+            float f2 = particle.f1868y + f;
+            particle.f1868y = f2;
             return f2;
         }
     }

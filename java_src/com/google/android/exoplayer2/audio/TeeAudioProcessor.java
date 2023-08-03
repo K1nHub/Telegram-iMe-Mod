@@ -89,7 +89,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
             try {
                 reset();
             } catch (IOException e) {
-                Log.m799e(TAG, "Error resetting", e);
+                Log.m817e(TAG, "Error resetting", e);
             }
             this.sampleRateHz = i;
             this.channelCount = i2;
@@ -102,7 +102,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
                 maybePrepareFile();
                 writeBuffer(byteBuffer);
             } catch (IOException e) {
-                Log.m799e(TAG, "Error writing data", e);
+                Log.m817e(TAG, "Error writing data", e);
             }
         }
 
@@ -160,7 +160,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
                 randomAccessFile.seek(40L);
                 randomAccessFile.write(this.scratchBuffer, 0, 4);
             } catch (IOException e) {
-                Log.m795w(TAG, "Error updating file size", e);
+                Log.m813w(TAG, "Error updating file size", e);
             }
             try {
                 randomAccessFile.close();

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;)V
     .locals 0
 
-    .line 656
+    .line 655
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->this$1:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
@@ -33,7 +33,7 @@
 .method static synthetic access$1502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;Lorg/telegram/ui/ActionBar/INavigationLayout;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 656
+    .line 655
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p1
@@ -42,7 +42,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 656
+    .line 655
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -51,7 +51,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 656
+    .line 655
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -60,7 +60,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 656
+    .line 655
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -69,7 +69,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 656
+    .line 655
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -80,7 +80,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 664
+    .line 663
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->this$1:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
@@ -95,7 +95,7 @@
 .method public getCurrentAccount()I
     .locals 1
 
-    .line 659
+    .line 658
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return v0
@@ -104,28 +104,28 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 2
 
-    .line 669
+    .line 668
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 670
+    .line 669
     :goto_0
     instance-of v1, v0, Landroid/content/ContextWrapper;
 
     if-eqz v1, :cond_1
 
-    .line 671
+    .line 670
     instance-of v1, v0, Landroid/app/Activity;
 
     if-eqz v1, :cond_0
 
-    .line 672
+    .line 671
     check-cast v0, Landroid/app/Activity;
 
     return-object v0
 
-    .line 674
+    .line 673
     :cond_0
     check-cast v0, Landroid/content/ContextWrapper;
 
@@ -144,7 +144,7 @@
 .method public getVisibleDialog()Landroid/app/Dialog;
     .locals 2
 
-    .line 681
+    .line 680
     new-instance v0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->this$1:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;

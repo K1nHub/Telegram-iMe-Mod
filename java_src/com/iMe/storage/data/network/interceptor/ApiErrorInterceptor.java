@@ -17,12 +17,18 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import timber.log.Timber;
 /* compiled from: ApiErrorInterceptor.kt */
@@ -91,13 +97,93 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
         this.telegramGateway = telegramGateway;
         this.rxEventBus = rxEventBus;
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ApiErrorInterceptor$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<AuthManager>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.auth.AuthManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final AuthManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(AuthManager.class), qualifier, function0);
+            }
+        });
         this.authManager$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ApiErrorInterceptor$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinancePayManager>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.binancepay.BinancePayManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinancePayManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayManager.class), qualifier, function0);
+            }
+        });
         this.binancePayManager$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ApiErrorInterceptor$special$$inlined$inject$default$3(this, null, null));
+        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinanceInternalRepository>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$3
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinanceInternalRepository invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), qualifier, function0);
+            }
+        });
         this.binanceInternalRepository$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ApiErrorInterceptor$special$$inlined$inject$default$4(this, null, null));
+        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletSessionInteractor>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$4
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.interactor.wallet.WalletSessionInteractor, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSessionInteractor invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), qualifier, function0);
+            }
+        });
         this.walletSessionInteractor$delegate = lazy4;
     }
 

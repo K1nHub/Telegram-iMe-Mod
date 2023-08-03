@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 /* loaded from: classes4.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
-    protected CameraInfo cameraInfo;
+    public CameraInfo cameraInfo;
     private String currentFlashMode;
     private int currentOrientation;
     private float currentZoom;
@@ -39,9 +39,15 @@ public class CameraSession {
     private int lastOrientation = -1;
     private int lastDisplayOrientation = -1;
     private boolean flipFront = true;
+    protected ArrayList<String> availableFlashModes = new ArrayList<>();
     private int infoCameraId = -1;
     Camera.CameraInfo info = new Camera.CameraInfo();
-    private Camera.AutoFocusCallback autoFocusCallback = CameraSession$$ExternalSyntheticLambda0.INSTANCE;
+    private Camera.AutoFocusCallback autoFocusCallback = new Camera.AutoFocusCallback() { // from class: org.telegram.messenger.camera.CameraSession$$ExternalSyntheticLambda0
+        @Override // android.hardware.Camera.AutoFocusCallback
+        public final void onAutoFocus(boolean z, Camera camera) {
+            CameraSession.lambda$new$0(z, camera);
+        }
+    };
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$0(boolean z, Camera camera) {
@@ -109,7 +115,7 @@ public class CameraSession {
     }
 
     public void checkFlashMode(String str) {
-        if (CameraController.getInstance().availableFlashModes.contains(this.currentFlashMode)) {
+        if (this.availableFlashModes.contains(this.currentFlashMode)) {
             return;
         }
         this.currentFlashMode = str;
@@ -128,7 +134,7 @@ public class CameraSession {
             this.currentFlashMode = z ? "torch" : "off";
             configurePhotoCamera();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -137,7 +143,7 @@ public class CameraSession {
     }
 
     public String getNextFlashMode() {
-        ArrayList<String> arrayList = CameraController.getInstance().availableFlashModes;
+        ArrayList<String> arrayList = this.availableFlashModes;
         for (int i = 0; i < arrayList.size(); i++) {
             if (arrayList.get(i).equals(this.currentFlashMode)) {
                 if (i < arrayList.size() - 1) {
@@ -188,17 +194,17 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
                 if (parameters != null) {
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m52d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
+                        FileLog.m70d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
                     }
                     parameters.setPreviewSize(this.previewSize.getWidth(), this.previewSize.getHeight());
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m52d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
+                        FileLog.m70d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
                     }
                     parameters.setPictureSize(this.pictureSize.getWidth(), this.pictureSize.getHeight());
                     parameters.setPictureFormat(this.pictureFormat);
@@ -243,7 +249,7 @@ public class CameraSession {
             }
             return true;
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
             return false;
         }
     }
@@ -343,7 +349,7 @@ public class CameraSession {
             return
         L7f:
             r0 = move-exception
-            org.telegram.messenger.FileLog.m49e(r0)
+            org.telegram.messenger.FileLog.m67e(r0)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraSession.updateRotation():void");
@@ -359,7 +365,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
@@ -416,11 +422,10 @@ public class CameraSession {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public void focusToRect(Rect rect, Rect rect2) {
         try {
             Camera camera = this.cameraInfo.camera;
@@ -430,7 +435,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 if (parameters != null) {
                     parameters.setFocusMode(TtmlNode.TEXT_EMPHASIS_AUTO);
@@ -446,12 +451,12 @@ public class CameraSession {
                         camera.setParameters(parameters);
                         camera.autoFocus(this.autoFocusCallback);
                     } catch (Exception e2) {
-                        FileLog.m49e(e2);
+                        FileLog.m67e(e2);
                     }
                 }
             }
         } catch (Exception e3) {
-            FileLog.m49e(e3);
+            FileLog.m67e(e3);
         }
     }
 
@@ -504,7 +509,6 @@ public class CameraSession {
         this.isVideo = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public void stopVideoRecording() {
         this.isVideo = false;
         this.useTorch = false;
@@ -545,7 +549,7 @@ public class CameraSession {
             updateCameraInfo();
             return getDisplayOrientation(this.info, true);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return 0;
         }
     }

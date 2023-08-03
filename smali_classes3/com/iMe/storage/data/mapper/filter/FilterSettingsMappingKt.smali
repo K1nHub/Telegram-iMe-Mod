@@ -92,7 +92,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
 
     move-result-object v1
 

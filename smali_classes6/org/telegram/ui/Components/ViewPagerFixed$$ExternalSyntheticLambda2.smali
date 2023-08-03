@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Interpolator;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getInterpolation(F)F
-    .locals 0
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->$r8$lambda$mWct406_sj9__iff3gN92HXHIkk(F)F
+    iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    move-result p1
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->$r8$lambda$sn0KLSQkVL4ywvSR95juFtR7p90(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/animation/ValueAnimator;)V
 
-    return p1
+    return-void
 .end method

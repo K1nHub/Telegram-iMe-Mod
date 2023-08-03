@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.topics.TopicView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemCatalogChannelBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -30,7 +30,7 @@ public final class ForkRecycleItemCatalogChannelBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemCatalogChannelBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_catalog_channel, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_catalog_channel, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -38,29 +38,29 @@ public final class ForkRecycleItemCatalogChannelBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemCatalogChannelBinding bind(View view) {
-        int i = C3417R.C3420id.card_channel;
+        int i = C3419R.C3422id.card_channel;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
-            i = C3417R.C3420id.constraint_info;
+            i = C3419R.C3422id.constraint_info;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
                 FrameLayout frameLayout = (FrameLayout) view;
-                i = C3417R.C3420id.image_avatar;
+                i = C3419R.C3422id.image_avatar;
                 AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView != null) {
-                    i = C3417R.C3420id.image_verified;
+                    i = C3419R.C3422id.image_verified;
                     AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView2 != null) {
-                        i = C3417R.C3420id.text_name;
+                        i = C3419R.C3422id.text_name;
                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView != null) {
-                            i = C3417R.C3420id.text_status;
+                            i = C3419R.C3422id.text_status;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
-                                i = C3417R.C3420id.text_subscribers_count;
+                                i = C3419R.C3422id.text_subscribers_count;
                                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView3 != null) {
-                                    i = C3417R.C3420id.topic;
+                                    i = C3419R.C3422id.topic;
                                     TopicView topicView = (TopicView) ViewBindings.findChildViewById(view, i);
                                     if (topicView != null) {
                                         return new ForkRecycleItemCatalogChannelBinding(frameLayout, cardView, constraintLayout, frameLayout, appCompatImageView, appCompatImageView2, appCompatTextView, appCompatTextView2, appCompatTextView3, topicView);

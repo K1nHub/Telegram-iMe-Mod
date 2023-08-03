@@ -3,6 +3,7 @@ package androidx.navigation;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -15,6 +16,7 @@ import androidx.navigation.Navigator;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -37,7 +39,16 @@ public class ActivityNavigator extends Navigator<Destination> {
         Object obj;
         Intrinsics.checkNotNullParameter(context, "context");
         this.context = context;
-        generateSequence = SequencesKt__SequencesKt.generateSequence(context, ActivityNavigator$hostActivity$1.INSTANCE);
+        generateSequence = SequencesKt__SequencesKt.generateSequence(context, new Function1<Context, Context>() { // from class: androidx.navigation.ActivityNavigator$hostActivity$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Context invoke(Context it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                if (it instanceof ContextWrapper) {
+                    return ((ContextWrapper) it).getBaseContext();
+                }
+                return null;
+            }
+        });
         Iterator it = generateSequence.iterator();
         while (true) {
             if (!it.hasNext()) {

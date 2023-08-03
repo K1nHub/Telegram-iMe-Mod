@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImplKt;
 import kotlinx.coroutines.DisposableHandle;
@@ -41,7 +42,7 @@ public final class MutexImpl implements Mutex {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final java.lang.Object lockSuspend(java.lang.Object r7, kotlin.coroutines.Continuation<? super kotlin.Unit> r8) {
+    private final java.lang.Object lockSuspend(final java.lang.Object r7, kotlin.coroutines.Continuation<? super kotlin.Unit> r8) {
         /*
             r6 = this;
             kotlin.coroutines.Continuation r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.intercepted(r8)
@@ -76,7 +77,7 @@ public final class MutexImpl implements Mutex {
             if (r2 == 0) goto Ld
             kotlin.Unit r1 = kotlin.Unit.INSTANCE
             kotlinx.coroutines.sync.MutexImpl$lockSuspend$2$1$1 r2 = new kotlinx.coroutines.sync.MutexImpl$lockSuspend$2$1$1
-            r2.<init>(r6, r7)
+            r2.<init>()
             r0.resume(r1, r2)
             goto L71
         L4a:
@@ -186,7 +187,7 @@ public final class MutexImpl implements Mutex {
 
         @Override // kotlinx.coroutines.DisposableHandle
         public final void dispose() {
-            mo1630remove();
+            mo1649remove();
         }
     }
 
@@ -204,7 +205,30 @@ public final class MutexImpl implements Mutex {
 
         @Override // kotlinx.coroutines.sync.MutexImpl.LockWaiter
         public boolean tryResumeLockWaiter() {
-            return take() && this.cont.tryResume(Unit.INSTANCE, null, new MutexImpl$LockCont$tryResumeLockWaiter$1(MutexImpl.this, this)) != null;
+            if (take()) {
+                CancellableContinuation<Unit> cancellableContinuation = this.cont;
+                Unit unit = Unit.INSTANCE;
+                final MutexImpl mutexImpl = MutexImpl.this;
+                return cancellableContinuation.tryResume(unit, null, new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.sync.MutexImpl$LockCont$tryResumeLockWaiter$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                        invoke2(th);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(Throwable th) {
+                        MutexImpl.this.unlock(this.owner);
+                    }
+                }) != null;
+            }
+            return false;
         }
 
         @Override // kotlinx.coroutines.sync.MutexImpl.LockWaiter

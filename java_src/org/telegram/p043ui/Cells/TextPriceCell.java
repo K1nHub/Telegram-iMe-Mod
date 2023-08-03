@@ -13,13 +13,11 @@ import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.TextPriceCell */
 /* loaded from: classes5.dex */
 public class TextPriceCell extends FrameLayout {
-    private Theme.ResourcesProvider resourcesProvider;
     private TextView textView;
     private TextView valueTextView;
 
-    public TextPriceCell(Context context, Theme.ResourcesProvider resourcesProvider) {
+    public TextPriceCell(Context context) {
         super(context);
-        this.resourcesProvider = resourcesProvider;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.textView = textView;
@@ -44,10 +42,10 @@ public class TextPriceCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(40));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(34);
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(40));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m72dp(34);
         this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth / 2, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m54dp(8), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m72dp(8), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
     }
 
     public void setTextColor(int i) {
@@ -69,15 +67,15 @@ public class TextPriceCell extends FrameLayout {
         if (z) {
             int i = Theme.key_windowBackgroundWhiteBlackText;
             setTag(Integer.valueOf(i));
-            this.textView.setTextColor(Theme.getColor(i, this.resourcesProvider));
-            this.valueTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+            this.textView.setTextColor(Theme.getColor(i));
+            this.valueTextView.setTextColor(Theme.getColor(i));
             this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.valueTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         } else {
             int i2 = Theme.key_windowBackgroundWhiteGrayText2;
             setTag(Integer.valueOf(i2));
-            this.textView.setTextColor(Theme.getColor(i2, this.resourcesProvider));
-            this.valueTextView.setTextColor(Theme.getColor(i2, this.resourcesProvider));
+            this.textView.setTextColor(Theme.getColor(i2));
+            this.valueTextView.setTextColor(Theme.getColor(i2));
             this.textView.setTypeface(Typeface.DEFAULT);
             this.valueTextView.setTypeface(Typeface.DEFAULT);
         }

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$18;
-.super Landroidx/recyclerview/widget/GridLayoutManager;
+.super Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,115 +19,141 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2376
+    .line 2293
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
-    .locals 0
+.method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
+    .locals 2
 
-    .line 2390
-    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 2391
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
+    .line 2296
+    invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
-    const/4 p3, 0x1
+    .line 2298
+    iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$1600(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object p3
+
+    iget-object p4, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p4}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
+
+    move-result-object p4
+
+    const/4 v0, 0x0
+
+    if-ne p3, p4, :cond_0
+
+    iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
+
+    move-result-object p3
+
+    invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$4100(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)I
+
+    move-result p3
 
     if-ne p2, p3, :cond_0
 
-    .line 2392
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    .line 2299
+    invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    const/4 p3, 0x0
+    return-void
 
-    invoke-static {p2, p3}, Lorg/telegram/ui/Components/EmojiView;->access$702(Lorg/telegram/ui/Components/EmojiView;Z)Z
-
-    .line 2393
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$800(Lorg/telegram/ui/Components/EmojiView;)V
-
-    .line 2395
     :cond_0
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    if-nez p2, :cond_2
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;
+    .line 2303
+    iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    move-result-object p2
+    invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
 
-    if-nez p2, :cond_1
+    move-result-object p3
 
-    .line 2396
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$9600(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4600(Lorg/telegram/ui/Components/EmojiView;)V
+    move-result p3
 
-    .line 2398
-    :cond_1
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->doSomeAction()V
-
-    return p1
-.end method
-
-.method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
-    .locals 1
-
-    .line 2380
-    :try_start_0
-    new-instance p2, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const/4 v0, 0x2
-
-    invoke-direct {p2, p1, v0}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
-
-    .line 2381
-    invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
-
-    .line 2382
-    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    if-nez p3, :cond_1
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
+    .line 2309
+    :cond_1
+    invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2384
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    goto :goto_2
 
+    .line 2304
+    :cond_2
     :goto_0
+    iput v0, p1, Landroid/graphics/Rect;->left:I
+
+    .line 2305
+    iput v0, p1, Landroid/graphics/Rect;->bottom:I
+
+    const/4 p3, 0x2
+
+    .line 2306
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p4
+
+    iput p4, p1, Landroid/graphics/Rect;->top:I
+
+    .line 2307
+    iget-object p4, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p4}, Lorg/telegram/ui/Components/EmojiView;->access$4000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
+
+    move-result-object p4
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$18;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->access$9600(Lorg/telegram/ui/Components/EmojiView$GifAdapter;)Z
+
+    move-result v1
+
+    sub-int/2addr p2, v1
+
+    invoke-virtual {p4, p2}, Lorg/telegram/ui/Components/ExtendedGridLayoutManager;->isLastInRow(I)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    :goto_1
+    iput v0, p1, Landroid/graphics/Rect;->right:I
+
+    :goto_2
     return-void
 .end method

@@ -133,19 +133,19 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
         public final String address;
 
         /* renamed from: id */
-        public final String f453id;
+        public final String f456id;
         public final boolean isContactSelected;
 
         OnRecipientSelectedCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f453id = str;
+            this.f456id = str;
             this.address = str2;
             this.isContactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendRecipientView walletSendRecipientView) {
-            walletSendRecipientView.onRecipientSelected(this.f453id, this.address, this.isContactSelected);
+            walletSendRecipientView.onRecipientSelected(this.f456id, this.address, this.isContactSelected);
         }
     }
 

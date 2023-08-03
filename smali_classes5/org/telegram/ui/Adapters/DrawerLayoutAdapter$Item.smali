@@ -28,14 +28,14 @@
 .method public constructor <init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
     .locals 1
 
-    .line 635
+    .line 640
     invoke-virtual {p3}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->title()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(ILjava/lang/String;I)V
 
-    .line 636
+    .line 641
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     return-void
@@ -44,16 +44,16 @@
 .method public constructor <init>(ILjava/lang/String;I)V
     .locals 0
 
-    .line 645
+    .line 650
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 646
+    .line 651
     iput p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->icon:I
 
-    .line 647
+    .line 652
     iput p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 
-    .line 648
+    .line 653
     iput-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->text:Ljava/lang/String;
 
     return-void
@@ -64,7 +64,7 @@
 .method public bind(Lorg/telegram/ui/Cells/DrawerActionCell;)V
     .locals 4
 
-    .line 652
+    .line 657
     iget v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->text:Ljava/lang/String;

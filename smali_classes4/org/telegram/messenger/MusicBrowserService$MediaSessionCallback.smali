@@ -585,11 +585,11 @@
 
     long-to-float p1, p1
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result p2
+    move-result-wide v2
 
-    int-to-float p2, p2
+    double-to-float p2, v2
 
     div-float/2addr p1, p2
 

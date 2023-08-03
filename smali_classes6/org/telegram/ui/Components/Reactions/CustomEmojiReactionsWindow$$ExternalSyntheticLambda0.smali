@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->$r8$lambda$y5tQg-mPkePbw43ob4_Z-xJlbtI(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->$r8$lambda$7V6OrWZnW44N7OsDyAfNUCiH36I(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

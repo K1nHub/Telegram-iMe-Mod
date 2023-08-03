@@ -14,6 +14,7 @@ import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsFragment;
 import com.iMe.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
 import com.iMe.p031ui.wallet.settings.appearance.WalletAppearanceSettingsFragment;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -22,6 +23,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -29,6 +31,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentWalletSettingsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -49,13 +56,77 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
 
     public WalletSettingsFragment() {
         Lazy lazy;
-        WalletSettingsFragment$presenter$2 walletSettingsFragment$presenter$2 = new WalletSettingsFragment$presenter$2(this);
+        Function0<WalletSettingsPresenter> function0 = new Function0<WalletSettingsPresenter>() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSettingsPresenter invoke() {
+                Lazy lazy2;
+                final WalletSettingsFragment walletSettingsFragment = WalletSettingsFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletSettingsPresenter>() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.settings.WalletSettingsPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletSettingsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSettingsPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletSettingsPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        new MoxyKtxDelegate(mvpDelegate, WalletSettingsPresenter.class.getName() + ".presenter", walletSettingsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletSettingsFragment$special$$inlined$inject$default$1(this, null, null));
+        new MoxyKtxDelegate(mvpDelegate, WalletSettingsPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletSettingsRecycleAdapter>() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.settings.adapter.WalletSettingsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSettingsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSettingsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.settingsRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletSettingsFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletSettingsBinding>() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletSettingsBinding invoke() {
+                return ForkFragmentWalletSettingsBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletSettingsFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     private final WalletSettingsRecycleAdapter getSettingsRecycleAdapter() {

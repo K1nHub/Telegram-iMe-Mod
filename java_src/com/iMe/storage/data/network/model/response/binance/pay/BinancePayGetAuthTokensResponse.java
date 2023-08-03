@@ -73,7 +73,7 @@ public final class BinancePayGetAuthTokensResponse {
     }
 
     public int hashCode() {
-        return (((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + this.scope.hashCode()) * 31) + this.tokenType.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.expiresIn);
+        return (((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + this.scope.hashCode()) * 31) + this.tokenType.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.expiresIn);
     }
 
     public String toString() {

@@ -20,10 +20,10 @@ import p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a;
 public final class BinancePayActivity extends AppCompatActivity {
 
     /* renamed from: b */
-    public static final C0375a f56b = new C0375a();
+    public static final C0375a f58b = new C0375a();
 
     /* renamed from: a */
-    public final BinancePay f57a = BinancePayFactory.Companion.getBinancePay(this);
+    public final BinancePay f59a = BinancePayFactory.Companion.getBinancePay(this);
 
     /* renamed from: com.binance.android.binancepay.internal.activity.BinancePayActivity$a */
     /* loaded from: classes.dex */
@@ -31,7 +31,7 @@ public final class BinancePayActivity extends AppCompatActivity {
     }
 
     /* renamed from: a */
-    public final void m839a() {
+    public final void m857a() {
         Locale local = Locale.getDefault();
         Intrinsics.checkExpressionValueIsNotNull(local, "local");
         String language = local.getLanguage();
@@ -48,12 +48,12 @@ public final class BinancePayActivity extends AppCompatActivity {
         super.onActivityResult(i, i2, intent);
         if (i == 20010) {
             if (i2 == -1) {
-                BinancePayListener binancePayListener = this.f57a.getBinancePayListener();
+                BinancePayListener binancePayListener = this.f59a.getBinancePayListener();
                 if (binancePayListener != null) {
                     binancePayListener.onSuccess();
                 }
             } else {
-                BinancePayListener binancePayListener2 = this.f57a.getBinancePayListener();
+                BinancePayListener binancePayListener2 = this.f59a.getBinancePayListener();
                 if (binancePayListener2 != null) {
                     binancePayListener2.onCancel();
                 }
@@ -68,7 +68,7 @@ public final class BinancePayActivity extends AppCompatActivity {
         super.onCreate(bundle);
         int i = Intrinsics.areEqual(getIntent().getStringExtra("extra_key_api_type"), "c2c") ? 2 : 1;
         Intrinsics.checkParameterIsNotNull(this, "context");
-        if (C0000a.m849a(this, "com.binance.dev")) {
+        if (C0000a.m867a(this, "com.binance.dev")) {
             Intrinsics.checkParameterIsNotNull(this, "context");
             float f = BitmapDescriptorFactory.HUE_RED;
             try {

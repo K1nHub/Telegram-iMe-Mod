@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Charts.BaseChartView;
@@ -64,12 +64,12 @@ public class ChartHeaderView extends FrameLayout {
         addView(this.datesTmp, LayoutHelper.createFrame(-2, -2, 8388629, 16, 0, 16, 0));
         this.datesTmp.setVisibility(8);
         this.back.setVisibility(8);
-        this.back.setText(LocaleController.getString("ZoomOut", C3417R.string.ZoomOut));
-        Drawable drawable = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.msg_zoomout_stats);
+        this.back.setText(LocaleController.getString("ZoomOut", C3419R.string.ZoomOut));
+        Drawable drawable = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.msg_zoomout_stats);
         this.zoomIcon = drawable;
         this.back.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
-        this.back.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
-        this.back.setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(4));
+        this.back.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
+        this.back.setPadding(AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(4));
         this.back.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(Theme.key_featuredStickers_removeButtonText)));
         this.datesTmp.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Charts.view_data.ChartHeaderView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
@@ -131,7 +131,7 @@ public class ChartHeaderView extends FrameLayout {
             this.back.setScaleX(0.3f);
             this.back.setScaleY(0.3f);
             this.back.setPivotX(BitmapDescriptorFactory.HUE_RED);
-            this.back.setPivotY(AndroidUtilities.m54dp(40));
+            this.back.setPivotY(AndroidUtilities.m72dp(40));
             this.back.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
             this.title.setAlpha(1.0f);
             this.title.setTranslationX(BitmapDescriptorFactory.HUE_RED);
@@ -165,7 +165,7 @@ public class ChartHeaderView extends FrameLayout {
             this.back.setTranslationY(BitmapDescriptorFactory.HUE_RED);
             this.back.setScaleX(1.0f);
             this.back.setScaleY(1.0f);
-            this.back.setPivotY(AndroidUtilities.m54dp(40));
+            this.back.setPivotY(AndroidUtilities.m72dp(40));
             this.back.animate().alpha(BitmapDescriptorFactory.HUE_RED).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
             return;
         }

@@ -582,7 +582,7 @@
 
     move-result-object v0
 
-    const-string v2, "primitiveFqNames.values"
+    const-string/jumbo v2, "primitiveFqNames.values"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

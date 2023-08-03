@@ -18,13 +18,13 @@
 
 .field public final synthetic f$5:Ljava/lang/String;
 
-.field public final synthetic f$6:Ljava/lang/Runnable;
+.field public final synthetic f$6:Lorg/telegram/messenger/Utilities$Callback;
 
 .field public final synthetic f$7:[Z
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/io/File;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog;[ZLjava/lang/String;Ljava/lang/Runnable;[Z)V
+.method public synthetic constructor <init>(ILjava/io/File;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog;[ZLjava/lang/String;Lorg/telegram/messenger/Utilities$Callback;[Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
     iput-object p6, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$5:Ljava/lang/String;
 
-    iput-object p7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$6:Ljava/lang/Runnable;
+    iput-object p7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$6:Lorg/telegram/messenger/Utilities$Callback;
 
     iput-object p8, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$7:[Z
 
@@ -65,11 +65,11 @@
 
     iget-object v5, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$5:Ljava/lang/String;
 
-    iget-object v6, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$6:Ljava/lang/Runnable;
+    iget-object v6, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$6:Lorg/telegram/messenger/Utilities$Callback;
 
     iget-object v7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda5;->f$7:[Z
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->$r8$lambda$DVstJGPEclGbKXkuKm7T1QWFw4o(ILjava/io/File;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog;[ZLjava/lang/String;Ljava/lang/Runnable;[Z)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->$r8$lambda$hDnLjgzt-PJTTvU8BIx7aIaxge0(ILjava/io/File;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog;[ZLjava/lang/String;Lorg/telegram/messenger/Utilities$Callback;[Z)V
 
     return-void
 .end method

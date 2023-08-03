@@ -13,10 +13,10 @@ public class Extensions implements Model {
     private MetadataExtension metadata;
 
     /* renamed from: net  reason: collision with root package name */
-    private NetExtension f1934net;
+    private NetExtension f1990net;
 
     /* renamed from: os */
-    private OsExtension f465os;
+    private OsExtension f468os;
     private ProtocolExtension protocol;
     private SdkExtension sdk;
     private UserExtension user;
@@ -54,11 +54,11 @@ public class Extensions implements Model {
     }
 
     public OsExtension getOs() {
-        return this.f465os;
+        return this.f468os;
     }
 
     public void setOs(OsExtension os) {
-        this.f465os = os;
+        this.f468os = os;
     }
 
     public AppExtension getApp() {
@@ -70,11 +70,11 @@ public class Extensions implements Model {
     }
 
     public NetExtension getNet() {
-        return this.f1934net;
+        return this.f1990net;
     }
 
     public void setNet(NetExtension net2) {
-        this.f1934net = net2;
+        this.f1990net = net2;
     }
 
     public SdkExtension getSdk() {
@@ -207,12 +207,12 @@ public class Extensions implements Model {
                 if (userExtension == null ? extensions.user == null : userExtension.equals(extensions.user)) {
                     DeviceExtension deviceExtension = this.device;
                     if (deviceExtension == null ? extensions.device == null : deviceExtension.equals(extensions.device)) {
-                        OsExtension osExtension = this.f465os;
-                        if (osExtension == null ? extensions.f465os == null : osExtension.equals(extensions.f465os)) {
+                        OsExtension osExtension = this.f468os;
+                        if (osExtension == null ? extensions.f468os == null : osExtension.equals(extensions.f468os)) {
                             AppExtension appExtension = this.app;
                             if (appExtension == null ? extensions.app == null : appExtension.equals(extensions.app)) {
-                                NetExtension netExtension = this.f1934net;
-                                if (netExtension == null ? extensions.f1934net == null : netExtension.equals(extensions.f1934net)) {
+                                NetExtension netExtension = this.f1990net;
+                                if (netExtension == null ? extensions.f1990net == null : netExtension.equals(extensions.f1990net)) {
                                     SdkExtension sdkExtension = this.sdk;
                                     if (sdkExtension == null ? extensions.sdk == null : sdkExtension.equals(extensions.sdk)) {
                                         LocExtension locExtension = this.loc;
@@ -245,11 +245,11 @@ public class Extensions implements Model {
         int hashCode3 = (hashCode2 + (userExtension != null ? userExtension.hashCode() : 0)) * 31;
         DeviceExtension deviceExtension = this.device;
         int hashCode4 = (hashCode3 + (deviceExtension != null ? deviceExtension.hashCode() : 0)) * 31;
-        OsExtension osExtension = this.f465os;
+        OsExtension osExtension = this.f468os;
         int hashCode5 = (hashCode4 + (osExtension != null ? osExtension.hashCode() : 0)) * 31;
         AppExtension appExtension = this.app;
         int hashCode6 = (hashCode5 + (appExtension != null ? appExtension.hashCode() : 0)) * 31;
-        NetExtension netExtension = this.f1934net;
+        NetExtension netExtension = this.f1990net;
         int hashCode7 = (hashCode6 + (netExtension != null ? netExtension.hashCode() : 0)) * 31;
         SdkExtension sdkExtension = this.sdk;
         int hashCode8 = (hashCode7 + (sdkExtension != null ? sdkExtension.hashCode() : 0)) * 31;

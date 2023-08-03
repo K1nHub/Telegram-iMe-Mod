@@ -8,33 +8,33 @@ import p033j$.util.function.InterfaceC2831q;
 final class C3057i4 extends AbstractC3063j4 implements InterfaceC2831q {
 
     /* renamed from: c */
-    final long[] f1052c;
+    final long[] f1055c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C3057i4(int i) {
-        this.f1052c = new long[i];
+        this.f1055c = new long[i];
     }
 
     @Override // p033j$.util.function.InterfaceC2831q
     public void accept(long j) {
-        long[] jArr = this.f1052c;
-        int i = this.f1057b;
-        this.f1057b = i + 1;
+        long[] jArr = this.f1055c;
+        int i = this.f1060b;
+        this.f1060b = i + 1;
         jArr[i] = j;
     }
 
     @Override // p033j$.util.stream.AbstractC3063j4
     /* renamed from: b */
-    public void mo385b(Object obj, long j) {
+    public void mo403b(Object obj, long j) {
         InterfaceC2831q interfaceC2831q = (InterfaceC2831q) obj;
         for (int i = 0; i < j; i++) {
-            interfaceC2831q.accept(this.f1052c[i]);
+            interfaceC2831q.accept(this.f1055c[i]);
         }
     }
 
     @Override // p033j$.util.function.InterfaceC2831q
     /* renamed from: f */
-    public InterfaceC2831q mo140f(InterfaceC2831q interfaceC2831q) {
+    public InterfaceC2831q mo158f(InterfaceC2831q interfaceC2831q) {
         Objects.requireNonNull(interfaceC2831q);
         return new C2830p(this, interfaceC2831q);
     }

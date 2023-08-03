@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->$r8$lambda$XLAQsAjZ9AxaWvlzrqOTDGVplF4(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->$r8$lambda$rxHCTUBaMib9Fa46MN_MuBfn9Js(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

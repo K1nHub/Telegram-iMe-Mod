@@ -13,7 +13,14 @@ public final class PlaybackParameters implements Bundleable {
     public static final PlaybackParameters DEFAULT = new PlaybackParameters(1.0f);
     private static final String FIELD_SPEED = Util.intToStringMaxRadix(0);
     private static final String FIELD_PITCH = Util.intToStringMaxRadix(1);
-    public static final Bundleable.Creator<PlaybackParameters> CREATOR = PlaybackParameters$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<PlaybackParameters> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.PlaybackParameters$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            PlaybackParameters lambda$static$0;
+            lambda$static$0 = PlaybackParameters.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     public PlaybackParameters(float f) {
         this(f, 1.0f);

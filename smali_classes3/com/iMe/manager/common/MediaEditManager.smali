@@ -536,7 +536,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2, p1, v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {p2, p1, v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 255
     sget p1, Lorg/telegram/messenger/R$string;->custom_avatar_success:I

@@ -32,7 +32,7 @@
 .method constructor <init>(Landroid/view/View;Landroid/text/Layout;Ljava/util/Stack;Ljava/util/List;II)V
     .locals 0
 
-    .line 600
+    .line 599
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;->val$v:Landroid/view/View;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;->val$textLayout:Landroid/text/Layout;
@@ -55,7 +55,7 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 10
 
-    .line 603
+    .line 602
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;->val$textLayout:Landroid/text/Layout;

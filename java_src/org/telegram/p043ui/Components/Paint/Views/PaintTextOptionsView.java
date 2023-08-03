@@ -6,18 +6,20 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -26,17 +28,22 @@ import org.telegram.p043ui.Components.RLottieDrawable;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView */
 /* loaded from: classes6.dex */
-public class PaintTextOptionsView extends LinearLayout {
+public class PaintTextOptionsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final List<AlignFramePair> ALIGN_PAIRS = Arrays.asList(new AlignFramePair(0, 1, 20, 0), new AlignFramePair(0, 2, 20, 40), new AlignFramePair(1, 0, 0, 20), new AlignFramePair(1, 2, 60, 40), new AlignFramePair(2, 0, 40, 20), new AlignFramePair(2, 1, 40, 60));
     private RLottieImageView alignView;
     private View colorClickableView;
     private int currentAlign;
     private Delegate delegate;
     private ChatActivityEnterViewAnimatedIconView emojiButton;
+    private String lastTypefaceKey;
     private int outlineType;
     private ImageView outlineView;
+    private int plusIcon;
     private ImageView plusView;
     private TypefaceCell typefaceCell;
+
+    /* renamed from: x */
+    private int f1779x;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$Delegate */
     /* loaded from: classes6.dex */
@@ -58,8 +65,6 @@ public class PaintTextOptionsView extends LinearLayout {
     public PaintTextOptionsView(Context context) {
         super(context);
         this.currentAlign = 0;
-        setOrientation(0);
-        setGravity(16);
         setWillNotDraw(false);
         View view = new View(context);
         this.colorClickableView = view;
@@ -69,10 +74,10 @@ public class PaintTextOptionsView extends LinearLayout {
                 PaintTextOptionsView.this.lambda$new$0(view2);
             }
         });
-        addView(this.colorClickableView, LayoutHelper.createLinear(24, -1, 48, 0, 0, 16, 0));
+        addView(this.colorClickableView, LayoutHelper.createFrame(24, 24, 48, 0, 0, 16, 0));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.alignView = rLottieImageView;
-        rLottieImageView.setAnimation(C3417R.raw.photo_text_allign, 24, 24);
+        rLottieImageView.setAnimation(C3419R.raw.photo_text_allign, 24, 24);
         RLottieDrawable animatedDrawable = this.alignView.getAnimatedDrawable();
         animatedDrawable.setPlayInDirectionOfCustomEndFrame(true);
         animatedDrawable.setCustomEndFrame(20);
@@ -84,22 +89,22 @@ public class PaintTextOptionsView extends LinearLayout {
                 PaintTextOptionsView.this.lambda$new$1(view2);
             }
         });
-        this.alignView.setPadding(AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2));
-        addView(this.alignView, LayoutHelper.createLinear(28, 28, 16, 0, 0, 16, 0));
+        this.alignView.setPadding(AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2));
+        addView(this.alignView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.outlineView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.msg_text_outlined);
-        this.outlineView.setPadding(AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1));
+        imageView.setImageResource(C3419R.C3421drawable.msg_text_outlined);
+        this.outlineView.setPadding(AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1));
         this.outlineView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 PaintTextOptionsView.this.lambda$new$2(view2);
             }
         });
-        addView(this.outlineView, LayoutHelper.createLinear(28, 28, 16, 0, 0, 16, 0));
+        addView(this.outlineView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView2 = new ImageView(context);
         this.plusView = imageView2;
-        imageView2.setImageResource(C3417R.C3419drawable.msg_add);
+        imageView2.setImageResource(C3419R.C3421drawable.msg_add);
         this.plusView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.plusView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.plusView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda0
@@ -108,9 +113,8 @@ public class PaintTextOptionsView extends LinearLayout {
                 PaintTextOptionsView.this.lambda$new$3(view2);
             }
         });
-        this.plusView.setPadding(AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2));
-        addView(this.plusView, LayoutHelper.createLinear(28, 28, 16, 0, 0, 16, 0));
-        addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f));
+        this.plusView.setPadding(AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2));
+        addView(this.plusView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         TypefaceCell typefaceCell = new TypefaceCell(context);
         this.typefaceCell = typefaceCell;
         typefaceCell.setCurrent(true);
@@ -120,7 +124,7 @@ public class PaintTextOptionsView extends LinearLayout {
                 PaintTextOptionsView.this.lambda$new$4(view2);
             }
         });
-        addView(this.typefaceCell, LayoutHelper.createLinear(-2, -2));
+        addView(this.typefaceCell, LayoutHelper.createLinear(-2, -2, BitmapDescriptorFactory.HUE_RED, 21));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -148,6 +152,45 @@ public class PaintTextOptionsView extends LinearLayout {
         this.delegate.onTypefaceButtonClicked();
     }
 
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        this.f1779x = getPaddingLeft();
+        layoutChild(this.colorClickableView);
+        layoutChild(this.alignView);
+        layoutChild(this.outlineView);
+        layoutChild(this.plusView);
+        this.typefaceCell.layout((getMeasuredWidth() - getPaddingRight()) - this.typefaceCell.getMeasuredWidth(), (getMeasuredHeight() - this.typefaceCell.getMeasuredHeight()) / 2, getMeasuredWidth() - getPaddingRight(), (getMeasuredHeight() + this.typefaceCell.getMeasuredHeight()) / 2);
+    }
+
+    private void layoutChild(View view) {
+        if (view.getVisibility() != 8) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
+            int i = this.f1779x + layoutParams.leftMargin;
+            this.f1779x = i;
+            view.layout(i, (getMeasuredHeight() - layoutParams.height) / 2, this.f1779x + layoutParams.width, (getMeasuredHeight() + layoutParams.height) / 2);
+            this.f1779x += layoutParams.width + layoutParams.rightMargin;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
+        for (int i3 = 0; i3 < getChildCount(); i3++) {
+            View childAt = getChildAt(i3);
+            TypefaceCell typefaceCell = this.typefaceCell;
+            if (childAt == typefaceCell) {
+                typefaceCell.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(size2, Integer.MIN_VALUE));
+            } else {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, 1073741824), View.MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824));
+                paddingLeft -= (childAt.getMeasuredWidth() + layoutParams.leftMargin) + layoutParams.rightMargin;
+            }
+        }
+        setMeasuredDimension(size, size2);
+    }
+
     public TypefaceCell getTypefaceCell() {
         return this.typefaceCell;
     }
@@ -157,14 +200,18 @@ public class PaintTextOptionsView extends LinearLayout {
     }
 
     public void getTypefaceCellBounds(RectF rectF) {
-        rectF.set(this.typefaceCell.getLeft() + AndroidUtilities.m54dp(8), this.typefaceCell.getTop(), this.typefaceCell.getRight() + AndroidUtilities.m54dp(8), this.typefaceCell.getBottom());
+        rectF.set(this.typefaceCell.getLeft() + AndroidUtilities.m72dp(8), this.typefaceCell.getTop(), this.typefaceCell.getRight() + AndroidUtilities.m72dp(8), this.typefaceCell.getBottom());
     }
 
     public void animatePlusToIcon(int i) {
         if (i == 0) {
-            i = C3417R.C3419drawable.msg_add;
+            i = C3419R.C3421drawable.msg_add;
         }
-        AndroidUtilities.updateImageViewImageAnimated(this.plusView, i);
+        if (this.plusIcon != i) {
+            ImageView imageView = this.plusView;
+            this.plusIcon = i;
+            AndroidUtilities.updateImageViewImageAnimated(imageView, i);
+        }
     }
 
     public ChatActivityEnterViewAnimatedIconView getEmojiButton() {
@@ -182,11 +229,13 @@ public class PaintTextOptionsView extends LinearLayout {
         }
         this.outlineType = i;
         if (i == 1) {
-            i2 = C3417R.C3419drawable.msg_text_regular;
-        } else if (i != 2) {
-            i2 = C3417R.C3419drawable.msg_text_outlined;
+            i2 = C3419R.C3421drawable.msg_photo_text_framed2;
+        } else if (i == 2) {
+            i2 = C3419R.C3421drawable.msg_photo_text_framed3;
+        } else if (i != 3) {
+            i2 = C3419R.C3421drawable.msg_photo_text_framed;
         } else {
-            i2 = C3417R.C3419drawable.msg_text_framed;
+            i2 = C3419R.C3421drawable.msg_photo_text_regular;
         }
         if (z) {
             AndroidUtilities.updateImageViewImageAnimated(this.outlineView, i2);
@@ -195,28 +244,15 @@ public class PaintTextOptionsView extends LinearLayout {
         }
     }
 
-    /* renamed from: setTypeface */
-    public void lambda$setTypeface$5(final String str) {
+    public void setTypeface(String str) {
+        this.lastTypefaceKey = str;
         if (this.typefaceCell == null) {
             return;
         }
-        for (PaintTypeface paintTypeface : PaintTypeface.BUILT_IN_FONTS) {
+        for (PaintTypeface paintTypeface : PaintTypeface.get()) {
             if (paintTypeface.getKey().equals(str)) {
                 this.typefaceCell.bind(paintTypeface);
                 return;
-            }
-        }
-        if (PaintTypeface.fetched(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                PaintTextOptionsView.this.lambda$setTypeface$5(str);
-            }
-        })) {
-            for (PaintTypeface paintTypeface2 : PaintTypeface.get()) {
-                if (paintTypeface2.getKey().equals(str)) {
-                    this.typefaceCell.bind(paintTypeface2);
-                    return;
-                }
             }
         }
     }
@@ -288,17 +324,22 @@ public class PaintTextOptionsView extends LinearLayout {
             setTextColor(-1);
             setTextSize(1, 14.0f);
             setCurrent(false);
+            setEllipsize(TextUtils.TruncateAt.END);
+            setSingleLine();
         }
 
         @Override // android.widget.TextView, android.view.View
         protected void onDraw(Canvas canvas) {
+            canvas.save();
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(-1));
             super.onDraw(canvas);
+            canvas.restore();
             if (this.isCurrent) {
-                int height = (getHeight() - AndroidUtilities.m54dp(16)) / 2;
+                int height = (getHeight() - AndroidUtilities.m72dp(16)) / 2;
                 if (LocaleController.isRTL) {
-                    this.expandDrawable.setBounds(AndroidUtilities.m54dp(12), height, AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(16) + height);
+                    this.expandDrawable.setBounds(AndroidUtilities.m72dp(7), height, AndroidUtilities.m72dp(23), AndroidUtilities.m72dp(16) + height);
                 } else {
-                    this.expandDrawable.setBounds(getWidth() - AndroidUtilities.m54dp(28), height, getWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(16) + height);
+                    this.expandDrawable.setBounds(getWidth() - AndroidUtilities.m72dp(23), height, getWidth() - AndroidUtilities.m72dp(7), AndroidUtilities.m72dp(16) + height);
                 }
                 this.expandDrawable.draw(canvas);
             }
@@ -307,16 +348,16 @@ public class PaintTextOptionsView extends LinearLayout {
         public void setCurrent(boolean z) {
             this.isCurrent = z;
             if (z) {
-                setPadding(AndroidUtilities.m54dp(LocaleController.isRTL ? 38 : 14), AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(LocaleController.isRTL ? 14 : 38), AndroidUtilities.m54dp(6));
-                setBackground(Theme.AdaptiveRipple.rect(1090519039, AndroidUtilities.m54dp(32)));
+                setPadding(AndroidUtilities.m72dp(LocaleController.isRTL ? 27 : 12), AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(LocaleController.isRTL ? 12 : 27), AndroidUtilities.m72dp(6));
+                setBackground(Theme.AdaptiveRipple.rect(1090519039, AndroidUtilities.m72dp(32)));
             } else {
-                setPadding(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(14));
+                setPadding(AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(14));
                 setBackground(Theme.AdaptiveRipple.rect(-14145495));
             }
             if (this.isCurrent && this.expandDrawable == null) {
-                Drawable drawable = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.photo_expand);
+                Drawable drawable = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.photo_expand);
                 this.expandDrawable = drawable;
-                drawable.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             }
             invalidate();
         }
@@ -342,5 +383,27 @@ public class PaintTextOptionsView extends LinearLayout {
             this.fromFrame = i3;
             this.toFrame = i4;
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        String str;
+        if (i != NotificationCenter.customTypefacesLoaded || (str = this.lastTypefaceKey) == null) {
+            return;
+        }
+        setTypeface(str);
+        this.lastTypefaceKey = null;
     }
 }

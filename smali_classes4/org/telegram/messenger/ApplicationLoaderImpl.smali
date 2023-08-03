@@ -11,7 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30
+    .line 36
     invoke-direct {p0}, Lorg/telegram/messenger/ApplicationLoader;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
 .method private clearPostponeStatus()V
     .locals 3
 
-    .line 52
+    .line 58
     const-class v0, Lcom/microsoft/appcenter/distribute/DistributeConstants;
 
     :try_start_0
@@ -32,22 +32,22 @@
 
     const/4 v2, 0x1
 
-    .line 53
+    .line 59
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 54
+    .line 60
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 56
+    .line 62
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/microsoft/appcenter/utils/storage/SharedPreferencesManager;->initialize(Landroid/content/Context;)V
 
-    .line 57
+    .line 63
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 .method protected checkForUpdatesInternal()V
     .locals 2
 
-    .line 232
+    .line 250
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -80,10 +80,10 @@
 
     sput-wide v0, Lorg/telegram/messenger/ApplicationLoaderImpl;->lastUpdateCheckTime:J
 
-    .line 233
+    .line 251
     invoke-direct {p0}, Lorg/telegram/messenger/ApplicationLoaderImpl;->clearPostponeStatus()V
 
-    .line 234
+    .line 252
     invoke-static {}, Lcom/microsoft/appcenter/distribute/Distribute;->checkForUpdate()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -93,10 +93,16 @@
     :catchall_0
     move-exception v0
 
-    .line 237
+    .line 255
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
+    return-void
+.end method
+
+.method protected logDualCameraInternal(ZZ)V
+    .locals 0
+
     return-void
 .end method
 
@@ -111,7 +117,7 @@
 .method protected onGetVersionCode()I
     .locals 1
 
-    const v0, 0xeaa55
+    const v0, 0xecea9
 
     return v0
 .end method
@@ -119,7 +125,7 @@
 .method protected onGetVersionName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "9.6.11"
+    const-string v0, "9.7.4"
 
     return-object v0
 .end method
@@ -129,30 +135,30 @@
 
     const/4 v0, 0x1
 
-    .line 79
+    .line 85
     :try_start_0
     invoke-static {v0}, Lcom/microsoft/appcenter/distribute/Distribute;->setEnabledForDebuggableBuild(Z)V
 
     const-string v1, "94aaaf72-ec99-4ca3-97fc-c3c9f46b1cb7"
 
-    .line 81
+    .line 87
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 85
+    .line 91
     invoke-static {}, Lcom/microsoft/appcenter/distribute/Distribute;->disableAutomaticCheckForUpdate()V
 
-    .line 86
+    .line 92
     new-instance v2, Lorg/telegram/messenger/ApplicationLoaderImpl$1;
 
     invoke-direct {v2, p0}, Lorg/telegram/messenger/ApplicationLoaderImpl$1;-><init>(Lorg/telegram/messenger/ApplicationLoaderImpl;)V
 
     invoke-static {v2}, Lcom/microsoft/appcenter/distribute/Distribute;->setListener(Lcom/microsoft/appcenter/distribute/DistributeListener;)V
 
-    .line 209
+    .line 215
     invoke-virtual {p1}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object p1
@@ -167,7 +173,7 @@
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/AppCenter;->start(Landroid/app/Application;Ljava/lang/String;[Ljava/lang/Class;)V
 
-    .line 217
+    .line 235
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -194,7 +200,7 @@
 
     goto :goto_0
 
-    .line 82
+    .line 88
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -209,7 +215,7 @@
     :catchall_0
     move-exception p1
 
-    .line 220
+    .line 238
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

@@ -79,8 +79,8 @@ public final class GlideOptions extends RequestOptions {
 
     @Override // com.bumptech.glide.request.BaseRequestOptions
     /* renamed from: clone  reason: avoid collision after fix types in other method */
-    public RequestOptions mo885clone() {
-        return (GlideOptions) super.mo885clone();
+    public RequestOptions mo903clone() {
+        return (GlideOptions) super.mo903clone();
     }
 
     @Override // com.bumptech.glide.request.BaseRequestOptions

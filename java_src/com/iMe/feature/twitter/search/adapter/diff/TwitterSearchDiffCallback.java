@@ -17,7 +17,7 @@ public final class TwitterSearchDiffCallback extends DiffUtil.ItemCallback<BaseN
             return Intrinsics.areEqual(((GlobalStateItem) oldItem).getState(), ((GlobalStateItem) newItem).getState());
         }
         if ((oldItem instanceof TwitterUserItem) && (newItem instanceof TwitterUserItem)) {
-            if (((TwitterUserItem) oldItem).getUser().f1656id == ((TwitterUserItem) newItem).getUser().f1656id) {
+            if (((TwitterUserItem) oldItem).getUser().f1675id == ((TwitterUserItem) newItem).getUser().f1675id) {
                 return true;
             }
         } else if ((oldItem instanceof TwitterInviteItem) && (newItem instanceof TwitterInviteItem)) {

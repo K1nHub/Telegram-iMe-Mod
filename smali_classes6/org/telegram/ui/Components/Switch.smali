@@ -72,8 +72,6 @@
 
 .field private ripplePaint:Landroid/graphics/Paint;
 
-.field private semHaptics:Z
-
 .field private thumbCheckedColorKey:I
 
 .field private thumbColorKey:I
@@ -155,11 +153,6 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Switch;->pressedState:[I
 
-    const/4 p3, 0x0
-
-    .line 564
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/Switch;->semHaptics:Z
-
     .line 114
     iput-object p2, p0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -213,6 +206,8 @@
     invoke-virtual {p0, p3}, Landroid/view/View;->setHapticFeedbackEnabled(Z)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -278,19 +273,9 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->iconAnimator:Landroid/animation/ObjectAnimator;
 
+    const-wide/16 v0, 0xc8
+
     .line 263
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->semHaptics:Z
-
-    if-eqz v0, :cond_1
-
-    const-wide/16 v0, 0x96
-
-    goto :goto_1
-
-    :cond_1
-    const-wide/16 v0, 0xfa
-
-    :goto_1
     invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     .line 264
@@ -340,19 +325,9 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->checkAnimator:Landroid/animation/ObjectAnimator;
 
+    const-wide/16 v0, 0xc8
+
     .line 251
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->semHaptics:Z
-
-    if-eqz v0, :cond_1
-
-    const-wide/16 v0, 0x96
-
-    goto :goto_1
-
-    :cond_1
-    const-wide/16 v0, 0xfa
-
-    :goto_1
     invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     .line 252
@@ -412,93 +387,6 @@
     return-void
 .end method
 
-.method private vibrateChecked(Z)V
-    .locals 9
-
-    .line 568
-    :try_start_0
-    invoke-virtual {p0}, Landroid/view/View;->isHapticFeedbackEnabled()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x1c
-
-    if-lt p1, v0, :cond_0
-
-    .line 569
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getVibrator()Landroid/os/Vibrator;
-
-    move-result-object p1
-
-    const/4 v0, 0x4
-
-    new-array v1, v0, [J
-
-    const-wide/16 v2, 0x4b
-
-    const/4 v4, 0x0
-
-    aput-wide v2, v1, v4
-
-    const-wide/16 v2, 0xa
-
-    const/4 v5, 0x1
-
-    aput-wide v2, v1, v5
-
-    const-wide/16 v6, 0x5
-
-    const/4 v8, 0x2
-
-    aput-wide v6, v1, v8
-
-    const/4 v6, 0x3
-
-    aput-wide v2, v1, v6
-
-    new-array v0, v0, [I
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v4
-
-    const/16 v2, 0x14
-
-    aput v2, v0, v5
-
-    const/16 v3, 0x6e
-
-    aput v3, v0, v8
-
-    aput v2, v0, v6
-
-    const/4 v2, -0x1
-
-    .line 570
-    invoke-static {v1, v0, v2}, Landroid/os/VibrationEffect;->createWaveform([J[II)Landroid/os/VibrationEffect;
-
-    move-result-object v0
-
-    .line 571
-    invoke-virtual {p1}, Landroid/os/Vibrator;->cancel()V
-
-    .line 572
-    invoke-virtual {p1, v0}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
-
-    .line 573
-    iput-boolean v5, p0, Lorg/telegram/ui/Components/Switch;->semHaptics:Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :cond_0
-    return-void
-.end method
-
 
 # virtual methods
 .method public getIconProgress()F
@@ -526,7 +414,7 @@
 .method public hasIcon()Z
     .locals 1
 
-    .line 335
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/Components/Switch;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -545,7 +433,7 @@
 .method public isChecked()Z
     .locals 1
 
-    .line 339
+    .line 338
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->isChecked:Z
 
     return v0
@@ -586,7 +474,7 @@
 
     move-object/from16 v1, p1
 
-    .line 386
+    .line 385
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getVisibility()I
 
     move-result v2
@@ -598,17 +486,17 @@
     :cond_0
     const/16 v2, 0x1f
 
-    .line 390
+    .line 389
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     const/16 v3, 0x14
 
-    .line 391
+    .line 390
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 392
+    .line 391
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -619,7 +507,7 @@
 
     div-int/2addr v3, v4
 
-    .line 393
+    .line 392
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
@@ -640,7 +528,7 @@
 
     const/4 v7, 0x7
 
-    .line 394
+    .line 393
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -663,7 +551,7 @@
 
     add-int/2addr v8, v9
 
-    .line 395
+    .line 394
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v9
@@ -681,7 +569,7 @@
 
     if-ne v11, v15, :cond_1
 
-    .line 416
+    .line 415
     iget v13, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     if-nez v13, :cond_1
@@ -697,7 +585,7 @@
 
     goto :goto_1
 
-    .line 419
+    .line 418
     :cond_2
     iget-object v13, v0, Lorg/telegram/ui/Components/Switch;->overlayCanvas:[Landroid/graphics/Canvas;
 
@@ -706,21 +594,21 @@
     :goto_1
     if-ne v11, v15, :cond_3
 
-    .line 422
+    .line 421
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     aget-object v7, v7, v10
 
     invoke-virtual {v7, v10}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 423
+    .line 422
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->paint:Landroid/graphics/Paint;
 
     const/high16 v10, -0x1000000
 
     invoke-virtual {v7, v10}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 424
+    .line 423
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskCanvas:Landroid/graphics/Canvas;
 
     const/16 v20, 0x0
@@ -755,7 +643,7 @@
 
     invoke-virtual/range {v19 .. v24}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 425
+    .line 424
     iget-object v6, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskCanvas:Landroid/graphics/Canvas;
 
     iget v7, v0, Lorg/telegram/ui/Components/Switch;->overlayCx:F
@@ -780,7 +668,7 @@
 
     invoke-virtual {v6, v7, v10, v14, v12}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 427
+    .line 426
     :cond_3
     iget v6, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
@@ -806,13 +694,13 @@
 
     goto :goto_2
 
-    .line 432
+    .line 431
     :cond_7
     iget v6, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
     move/from16 v16, v6
 
-    .line 435
+    .line 434
     :goto_3
     iget v6, v0, Lorg/telegram/ui/Components/Switch;->trackColorKey:I
 
@@ -822,7 +710,7 @@
 
     move-result v6
 
-    .line 436
+    .line 435
     iget v7, v0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:I
 
     iget-object v10, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -833,7 +721,7 @@
 
     if-nez v11, :cond_a
 
-    .line 437
+    .line 436
     iget-object v10, v0, Lorg/telegram/ui/Components/Switch;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v10, :cond_a
@@ -854,7 +742,7 @@
     :goto_4
     if-eq v12, v14, :cond_a
 
-    .line 438
+    .line 437
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
     iget-boolean v14, v0, Lorg/telegram/ui/Components/Switch;->isChecked:Z
@@ -877,43 +765,43 @@
 
     invoke-virtual {v10, v12}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 441
+    .line 440
     :cond_a
     invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v4
 
-    .line 442
+    .line 441
     invoke-static {v7}, Landroid/graphics/Color;->red(I)I
 
     move-result v10
 
-    .line 443
+    .line 442
     invoke-static {v6}, Landroid/graphics/Color;->green(I)I
 
     move-result v12
 
-    .line 444
+    .line 443
     invoke-static {v7}, Landroid/graphics/Color;->green(I)I
 
     move-result v14
 
-    .line 445
+    .line 444
     invoke-static {v6}, Landroid/graphics/Color;->blue(I)I
 
     move-result v15
 
-    .line 446
+    .line 445
     invoke-static {v7}, Landroid/graphics/Color;->blue(I)I
 
     move-result v22
 
-    .line 447
+    .line 446
     invoke-static {v6}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v6
 
-    .line 448
+    .line 447
     invoke-static {v7}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v7
@@ -988,17 +876,17 @@
 
     or-int/2addr v1, v4
 
-    .line 455
+    .line 454
     iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 456
+    .line 455
     iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->paint2:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 458
+    .line 457
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->rectF:Landroid/graphics/RectF;
 
     int-to-float v4, v3
@@ -1017,7 +905,7 @@
 
     invoke-virtual {v1, v4, v5, v6, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 459
+    .line 458
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->rectF:Landroid/graphics/RectF;
 
     const/high16 v4, 0x40e00000    # 7.0f
@@ -1040,7 +928,7 @@
 
     const/high16 v6, 0x41200000    # 10.0f
 
-    .line 460
+    .line 459
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -1051,14 +939,14 @@
 
     if-nez v11, :cond_b
 
-    .line 462
+    .line 461
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->rippleDrawable:Landroid/graphics/drawable/RippleDrawable;
 
     if-eqz v1, :cond_b
 
     const/16 v4, 0x12
 
-    .line 463
+    .line 462
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -1085,7 +973,7 @@
 
     invoke-virtual {v1, v6, v10, v12, v4}, Landroid/graphics/drawable/RippleDrawable;->setBounds(IIII)V
 
-    .line 464
+    .line 463
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->rippleDrawable:Landroid/graphics/drawable/RippleDrawable;
 
     invoke-virtual {v1, v13}, Landroid/graphics/drawable/RippleDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -1097,7 +985,7 @@
 
     if-ne v11, v1, :cond_c
 
-    .line 466
+    .line 465
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskBitmap:Landroid/graphics/Bitmap;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskPaint:Landroid/graphics/Paint;
@@ -1125,14 +1013,14 @@
     :cond_d
     const/4 v6, 0x0
 
-    .line 469
+    .line 468
     iget v1, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_e
 
-    .line 470
+    .line 469
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     const/4 v3, 0x0
@@ -1160,7 +1048,7 @@
 
     if-ne v1, v4, :cond_f
 
-    .line 474
+    .line 473
     iget v5, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     if-nez v5, :cond_f
@@ -1184,7 +1072,7 @@
 
     goto :goto_9
 
-    .line 477
+    .line 476
     :cond_10
     iget-object v5, v0, Lorg/telegram/ui/Components/Switch;->overlayCanvas:[Landroid/graphics/Canvas;
 
@@ -1193,7 +1081,7 @@
     :goto_9
     if-ne v1, v4, :cond_11
 
-    .line 480
+    .line 479
     iget-object v6, v0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     aget-object v6, v6, v4
@@ -1207,7 +1095,7 @@
     :cond_11
     const/4 v7, 0x0
 
-    .line 482
+    .line 481
     :goto_a
     iget v6, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
@@ -1235,11 +1123,11 @@
 
     goto :goto_b
 
-    .line 487
+    .line 486
     :cond_15
     iget v6, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
-    .line 490
+    .line 489
     :goto_c
     iget v4, v0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:I
 
@@ -1249,7 +1137,7 @@
 
     move-result v4
 
-    .line 491
+    .line 490
     iget v10, v0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:I
 
     iget-object v11, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1258,42 +1146,42 @@
 
     move-result v10
 
-    .line 492
+    .line 491
     invoke-static {v4}, Landroid/graphics/Color;->red(I)I
 
     move-result v11
 
-    .line 493
+    .line 492
     invoke-static {v10}, Landroid/graphics/Color;->red(I)I
 
     move-result v12
 
-    .line 494
+    .line 493
     invoke-static {v4}, Landroid/graphics/Color;->green(I)I
 
     move-result v13
 
-    .line 495
+    .line 494
     invoke-static {v10}, Landroid/graphics/Color;->green(I)I
 
     move-result v14
 
-    .line 496
+    .line 495
     invoke-static {v4}, Landroid/graphics/Color;->blue(I)I
 
     move-result v15
 
-    .line 497
+    .line 496
     invoke-static {v10}, Landroid/graphics/Color;->blue(I)I
 
     move-result v18
 
-    .line 498
+    .line 497
     invoke-static {v4}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v4
 
-    .line 499
+    .line 498
     invoke-static {v10}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v10
@@ -1346,7 +1234,7 @@
 
     float-to-int v4, v13
 
-    .line 505
+    .line 504
     iget-object v6, v0, Lorg/telegram/ui/Components/Switch;->paint:Landroid/graphics/Paint;
 
     and-int/lit16 v4, v4, 0xff
@@ -1377,7 +1265,7 @@
 
     int-to-float v6, v9
 
-    .line 507
+    .line 506
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1390,12 +1278,12 @@
 
     if-nez v1, :cond_1a
 
-    .line 510
+    .line 509
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v7, :cond_16
 
-    .line 511
+    .line 510
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v4
@@ -1438,14 +1326,14 @@
 
     invoke-virtual {v7, v4, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 512
+    .line 511
     iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto/16 :goto_e
 
-    .line 513
+    .line 512
     :cond_16
     iget v7, v0, Lorg/telegram/ui/Components/Switch;->drawIconType:I
 
@@ -1455,7 +1343,7 @@
 
     const v7, 0x412ccccd    # 10.8f
 
-    .line 514
+    .line 513
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v7
@@ -1482,7 +1370,7 @@
 
     const/high16 v4, 0x41080000    # 8.5f
 
-    .line 515
+    .line 514
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v4
@@ -1509,7 +1397,7 @@
 
     const v4, 0x40933333    # 4.6f
 
-    .line 516
+    .line 515
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4
@@ -1520,7 +1408,7 @@
 
     const/high16 v6, 0x41180000    # 9.5f
 
-    .line 517
+    .line 516
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -1533,14 +1421,14 @@
 
     const/4 v7, 0x2
 
-    .line 518
+    .line 517
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     add-int/2addr v10, v4
 
-    .line 519
+    .line 518
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -1549,7 +1437,7 @@
 
     const/high16 v7, 0x40f00000    # 7.5f
 
-    .line 521
+    .line 520
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v12
@@ -1560,7 +1448,7 @@
 
     const v13, 0x40accccd    # 5.4f
 
-    .line 522
+    .line 521
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v13
@@ -1571,14 +1459,14 @@
 
     const/4 v14, 0x7
 
-    .line 523
+    .line 522
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
 
     add-int/2addr v15, v12
 
-    .line 524
+    .line 523
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v19
@@ -1591,7 +1479,7 @@
 
     int-to-float v4, v4
 
-    .line 526
+    .line 525
     iget v12, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
     mul-float/2addr v4, v12
@@ -1644,14 +1532,14 @@
 
     int-to-float v14, v10
 
-    .line 530
+    .line 529
     iget-object v15, v0, Lorg/telegram/ui/Components/Switch;->paint2:Landroid/graphics/Paint;
 
     move-object v10, v5
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 532
+    .line 531
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
@@ -1662,7 +1550,7 @@
 
     const/high16 v4, 0x41480000    # 12.5f
 
-    .line 533
+    .line 532
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4
@@ -1673,14 +1561,14 @@
 
     const/16 v17, 0x7
 
-    .line 534
+    .line 533
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     add-int/2addr v6, v2
 
-    .line 535
+    .line 534
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1695,7 +1583,7 @@
 
     int-to-float v14, v7
 
-    .line 536
+    .line 535
     iget-object v15, v0, Lorg/telegram/ui/Components/Switch;->paint2:Landroid/graphics/Paint;
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
@@ -1715,7 +1603,7 @@
 
     if-eq v7, v2, :cond_19
 
-    .line 537
+    .line 536
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->iconAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v7, :cond_18
@@ -1727,7 +1615,7 @@
 
     goto :goto_f
 
-    .line 538
+    .line 537
     :cond_19
     :goto_d
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->paint2:Landroid/graphics/Paint;
@@ -1748,7 +1636,7 @@
 
     const/4 v7, 0x5
 
-    .line 539
+    .line 538
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1769,12 +1657,12 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 540
+    .line 539
     invoke-virtual {v5}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v7, -0x3d4c0000    # -90.0f
 
-    .line 541
+    .line 540
     iget v10, v0, Lorg/telegram/ui/Components/Switch;->iconProgress:F
 
     mul-float/2addr v10, v7
@@ -1783,7 +1671,7 @@
 
     const/4 v7, 0x4
 
-    .line 542
+    .line 541
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1800,7 +1688,7 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 543
+    .line 542
     invoke-virtual {v5}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_f
@@ -1819,7 +1707,7 @@
     :goto_10
     if-ne v1, v4, :cond_1b
 
-    .line 547
+    .line 546
     iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskBitmap:Landroid/graphics/Bitmap;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/Switch;->overlayMaskPaint:Landroid/graphics/Paint;
@@ -1845,12 +1733,12 @@
     :cond_1c
     const/4 v7, 0x0
 
-    .line 550
+    .line 549
     iget v1, v0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     if-eqz v1, :cond_1d
 
-    .line 551
+    .line 550
     iget-object v1, v0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     const/4 v2, 0x1
@@ -1868,20 +1756,20 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 557
+    .line 556
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Switch"
 
-    .line 558
+    .line 557
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 559
+    .line 558
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 560
+    .line 559
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->isChecked:Z
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
@@ -1908,14 +1796,11 @@
     if-eqz p3, :cond_0
 
     .line 297
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Switch;->vibrateChecked(Z)V
-
-    .line 298
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Switch;->animateToCheckedState(Z)V
 
     goto :goto_1
 
-    .line 300
+    .line 299
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/Switch;->cancelCheckAnimator()V
 
@@ -1928,20 +1813,20 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 301
+    .line 300
     :goto_0
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Switch;->setProgress(F)V
 
-    .line 303
+    .line 302
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Switch;->onCheckedChangeListener:Lorg/telegram/ui/Components/Switch$OnCheckedChangeListener;
 
     if-eqz v0, :cond_2
 
-    .line 304
+    .line 303
     invoke-interface {v0, p0, p1}, Lorg/telegram/ui/Components/Switch$OnCheckedChangeListener;->onCheckedChanged(Lorg/telegram/ui/Components/Switch;Z)V
 
-    .line 307
+    .line 306
     :cond_2
     invoke-virtual {p0, p2, p3}, Lorg/telegram/ui/Components/Switch;->setDrawIconType(IZ)V
 
@@ -1989,15 +1874,15 @@
 .method public setDrawIconType(IZ)V
     .locals 1
 
-    .line 323
+    .line 322
     iget v0, p0, Lorg/telegram/ui/Components/Switch;->drawIconType:I
 
     if-eq v0, p1, :cond_3
 
-    .line 324
+    .line 323
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->drawIconType:I
 
-    .line 325
+    .line 324
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->attachedToWindow:Z
 
     if-eqz v0, :cond_1
@@ -2013,13 +1898,13 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 326
+    .line 325
     :goto_0
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Switch;->animateIcon(Z)V
 
     goto :goto_2
 
-    .line 328
+    .line 327
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Switch;->cancelIconAnimator()V
 
@@ -2032,7 +1917,7 @@
     :cond_2
     const/4 p1, 0x0
 
-    .line 329
+    .line 328
     :goto_1
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Switch;->setIconProgress(F)V
 
@@ -2270,7 +2155,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 312
+    .line 311
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2287,7 +2172,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 314
+    .line 313
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Switch;->isChecked:Z
@@ -2321,10 +2206,10 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 317
+    .line 316
     iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 319
+    .line 318
     :cond_2
     :goto_1
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -2368,14 +2253,14 @@
 .method public setOverrideColor(I)V
     .locals 6
 
-    .line 343
+    .line 342
     iget v0, p0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 346
+    .line 345
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
@@ -2386,12 +2271,12 @@
     :try_start_0
     new-array v1, v0, [Landroid/graphics/Bitmap;
 
-    .line 348
+    .line 347
     iput-object v1, p0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     new-array v1, v0, [Landroid/graphics/Canvas;
 
-    .line 349
+    .line 348
     iput-object v1, p0, Lorg/telegram/ui/Components/Switch;->overlayCanvas:[Landroid/graphics/Canvas;
 
     const/4 v1, 0x0
@@ -2399,7 +2284,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 351
+    .line 350
     iget-object v2, p0, Lorg/telegram/ui/Components/Switch;->overlayBitmap:[Landroid/graphics/Bitmap;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -2418,7 +2303,7 @@
 
     aput-object v3, v2, v1
 
-    .line 352
+    .line 351
     iget-object v2, p0, Lorg/telegram/ui/Components/Switch;->overlayCanvas:[Landroid/graphics/Canvas;
 
     new-instance v3, Landroid/graphics/Canvas;
@@ -2435,7 +2320,7 @@
 
     goto :goto_0
 
-    .line 354
+    .line 353
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2453,7 +2338,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Switch;->overlayMaskBitmap:Landroid/graphics/Bitmap;
 
-    .line 355
+    .line 354
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Switch;->overlayMaskBitmap:Landroid/graphics/Bitmap;
@@ -2462,7 +2347,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Switch;->overlayMaskCanvas:Landroid/graphics/Canvas;
 
-    .line 357
+    .line 356
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -2471,7 +2356,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Switch;->overlayEraserPaint:Landroid/graphics/Paint;
 
-    .line 358
+    .line 357
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -2480,14 +2365,14 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 360
+    .line 359
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Switch;->overlayMaskPaint:Landroid/graphics/Paint;
 
-    .line 361
+    .line 360
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -2496,7 +2381,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 362
+    .line 361
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Switch;->bitmapsCreated:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2506,7 +2391,7 @@
     :catchall_0
     return-void
 
-    .line 367
+    .line 366
     :cond_2
     :goto_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Switch;->bitmapsCreated:Z
@@ -2515,22 +2400,22 @@
 
     return-void
 
-    .line 370
+    .line 369
     :cond_3
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->overrideColorProgress:I
 
     const/4 p1, 0x0
 
-    .line 371
+    .line 370
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->overlayCx:F
 
-    .line 372
+    .line 371
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->overlayCy:F
 
-    .line 373
+    .line 372
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->overlayRad:F
 
-    .line 374
+    .line 373
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -2539,16 +2424,16 @@
 .method public setOverrideColorProgress(FFF)V
     .locals 0
 
-    .line 378
+    .line 377
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->overlayCx:F
 
-    .line 379
+    .line 378
     iput p2, p0, Lorg/telegram/ui/Components/Switch;->overlayCy:F
 
-    .line 380
+    .line 379
     iput p3, p0, Lorg/telegram/ui/Components/Switch;->overlayRad:F
 
-    .line 381
+    .line 380
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

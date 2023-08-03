@@ -41,7 +41,7 @@ public class TopicSearchCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     public void setTopic(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
@@ -67,11 +67,11 @@ public class TopicSearchCell extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.drawDivider) {
-            int m54dp = AndroidUtilities.m54dp(56);
+            int m72dp = AndroidUtilities.m72dp(56);
             if (LocaleController.isRTL) {
-                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - m54dp, getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - m72dp, getMeasuredHeight() - 1, Theme.dividerPaint);
             } else {
-                canvas.drawLine(m54dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(m72dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
     }

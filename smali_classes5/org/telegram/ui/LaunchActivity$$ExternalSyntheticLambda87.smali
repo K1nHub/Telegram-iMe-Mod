@@ -5,27 +5,25 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+.field public final synthetic f$2:Ljava/io/File;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/io/File;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$2:Ljava/io/File;
 
     return-void
 .end method
@@ -33,9 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 3
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$a5D6K7A9RyJ0dh8GIbB0sSc9gZk()V
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda87;->f$2:Ljava/io/File;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$rNqzjI9WXBH-qAL-2KFSUaG-Isc(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/io/File;)V
 
     return-void
 .end method

@@ -12,6 +12,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.LazyThreadSafetyMode;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseItemProvider.kt */
 /* loaded from: classes.dex */
@@ -73,9 +74,19 @@ public abstract class BaseItemProvider<T> {
         Lazy lazy;
         Lazy lazy2;
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.NONE;
-        lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, BaseItemProvider$clickViewIds$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<ArrayList<Integer>>() { // from class: com.chad.library.adapter.base.provider.BaseItemProvider$clickViewIds$2
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<Integer> invoke() {
+                return new ArrayList<>();
+            }
+        });
         this.clickViewIds$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, BaseItemProvider$longClickViewIds$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<ArrayList<Integer>>() { // from class: com.chad.library.adapter.base.provider.BaseItemProvider$longClickViewIds$2
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<Integer> invoke() {
+                return new ArrayList<>();
+            }
+        });
         this.longClickViewIds$delegate = lazy2;
     }
 

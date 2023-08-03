@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes3.dex */
 public abstract class CodedInputStream {
     private static volatile int defaultRecursionLimit = 100;
@@ -158,14 +159,14 @@ public abstract class CodedInputStream {
         if ((i & 128) == 0) {
             return i;
         }
-        int i2 = i & 127;
+        int i2 = i & MessagesStorage.LAST_DB_VERSION;
         int i3 = 7;
         while (i3 < 32) {
             int read = inputStream.read();
             if (read == -1) {
                 throw InvalidProtocolBufferException.truncatedMessage();
             }
-            i2 |= (read & 127) << i3;
+            i2 |= (read & MessagesStorage.LAST_DB_VERSION) << i3;
             if ((read & 128) == 0) {
                 return i2;
             }

@@ -13,16 +13,16 @@ class LMSSignature implements Encodable {
     private final LMSigParameters parameter;
 
     /* renamed from: q */
-    private final int f1402q;
+    private final int f1405q;
 
     /* renamed from: y */
-    private final byte[][] f1403y;
+    private final byte[][] f1406y;
 
     public LMSSignature(int i, LMOtsSignature lMOtsSignature, LMSigParameters lMSigParameters, byte[][] bArr) {
-        this.f1402q = i;
+        this.f1405q = i;
         this.otsSignature = lMOtsSignature;
         this.parameter = lMSigParameters;
-        this.f1403y = bArr;
+        this.f1406y = bArr;
     }
 
     public static LMSSignature getInstance(Object obj) throws IOException {
@@ -76,14 +76,14 @@ class LMSSignature implements Encodable {
             return false;
         }
         LMSSignature lMSSignature = (LMSSignature) obj;
-        if (this.f1402q != lMSSignature.f1402q) {
+        if (this.f1405q != lMSSignature.f1405q) {
             return false;
         }
         LMOtsSignature lMOtsSignature = this.otsSignature;
         if (lMOtsSignature == null ? lMSSignature.otsSignature == null : lMOtsSignature.equals(lMSSignature.otsSignature)) {
             LMSigParameters lMSigParameters = this.parameter;
             if (lMSigParameters == null ? lMSSignature.parameter == null : lMSigParameters.equals(lMSSignature.parameter)) {
-                return Arrays.deepEquals(this.f1403y, lMSSignature.f1403y);
+                return Arrays.deepEquals(this.f1406y, lMSSignature.f1406y);
             }
             return false;
         }
@@ -92,14 +92,14 @@ class LMSSignature implements Encodable {
 
     @Override // org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(this.f1402q).bytes(this.otsSignature.getEncoded()).u32str(this.parameter.getType()).bytes(this.f1403y).build();
+        return Composer.compose().u32str(this.f1405q).bytes(this.otsSignature.getEncoded()).u32str(this.parameter.getType()).bytes(this.f1406y).build();
     }
 
     public int hashCode() {
-        int i = this.f1402q * 31;
+        int i = this.f1405q * 31;
         LMOtsSignature lMOtsSignature = this.otsSignature;
         int hashCode = (i + (lMOtsSignature != null ? lMOtsSignature.hashCode() : 0)) * 31;
         LMSigParameters lMSigParameters = this.parameter;
-        return ((hashCode + (lMSigParameters != null ? lMSigParameters.hashCode() : 0)) * 31) + Arrays.deepHashCode(this.f1403y);
+        return ((hashCode + (lMSigParameters != null ? lMSigParameters.hashCode() : 0)) * 31) + Arrays.deepHashCode(this.f1406y);
     }
 }

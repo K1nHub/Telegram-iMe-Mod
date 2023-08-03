@@ -13,6 +13,7 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
@@ -21,11 +22,14 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
 import java.util.List;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletCreateManager.kt */
 /* loaded from: classes3.dex */
 public final class WalletCreateManager {
@@ -112,7 +116,7 @@ public final class WalletCreateManager {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         final List<WalletCreationType> availableWalletCreationTypes = getAvailableWalletCreationTypes();
         WalletCreateManagerView viewState = getViewState();
-        String string = this.resourceManager.getString(C3417R.string.wallet_dashboard_create_start_dialog_title);
+        String string = this.resourceManager.getString(C3419R.string.wallet_dashboard_create_start_dialog_title);
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableWalletCreationTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (WalletCreationType walletCreationType : availableWalletCreationTypes) {
@@ -146,24 +150,128 @@ public final class WalletCreateManager {
         return WalletCreationType.Initial.Companion.getValuesOrdered();
     }
 
-    public void runWithCryptoInformationCheck(Callbacks$Callback endAction) {
+    public void runWithCryptoInformationCheck(final Callbacks$Callback endAction) {
         Intrinsics.checkNotNullParameter(endAction, "endAction");
         if (getLinkedWalletAddress() != null) {
             endAction.invoke();
             return;
         }
-        Observable<Result<String>> observeOn = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1608xd7d1f05(this, endAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1609xd7d1f06(getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null);
+        final WalletCreateManagerView viewState = getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$runWithCryptoInformationCheck$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1307invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1307invoke(Result<? extends String> it) {
+                WalletCreateManagerView viewState2;
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    WalletCreateManager.this.setLinkedWalletAddress((String) ((Result.Success) result).getData());
+                    endAction.invoke();
+                } else if (result instanceof Result.Error) {
+                    viewState2 = WalletCreateManager.this.getViewState();
+                    resourceManager = WalletCreateManager.this.resourceManager;
+                    viewState2.showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$runWithCryptoInformationCheck$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         com.iMe.storage.data.utils.extentions.RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void activateBib39BasedWallet() {
-        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) getViewState(), false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1606x5bee52ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1607x5bee52ae(this.viewState))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) getViewState(), false);
+        final WalletCreateManagerView walletCreateManagerView = this.viewState;
+        Intrinsics.checkNotNullExpressionValue(withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Wallet>, Unit>() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$activateBib39BasedWallet$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
+                m1306invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1306invoke(Result<? extends Wallet> it) {
+                WalletCreateManagerView viewState;
+                ResourceManager resourceManager;
+                RxEventBus rxEventBus;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Wallet> result = it;
+                if (result instanceof Result.Success) {
+                    rxEventBus = WalletCreateManager.this.rxEventBus;
+                    rxEventBus.publish(DomainRxEvents.WalletCreated.INSTANCE);
+                } else if (result instanceof Result.Error) {
+                    viewState = WalletCreateManager.this.getViewState();
+                    resourceManager = WalletCreateManager.this.resourceManager;
+                    viewState.showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$activateBib39BasedWallet$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,6 +284,6 @@ public final class WalletCreateManager {
     }
 
     private final DialogModel getActivationConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3417R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_ok));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3419R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.common_ok));
     }
 }

@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public animateStoriesView:Z
+
 .field private animationSupportDialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
 .field private animationSupportListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -35,7 +37,9 @@
 
 .field private layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-.field private listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+.field public listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+
+.field public pageAdditionalOffset:I
 
 .field private progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -44,6 +48,8 @@
 .field private recyclerItemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
 .field private scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
+
+.field public scroller:Lorg/telegram/ui/RecyclerListViewScroller;
 
 .field private selectedType:I
 
@@ -68,13 +74,13 @@
 .method public constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1682
+    .line 1660
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 1683
+    .line 1661
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1691
+    .line 1669
     new-instance p1, Lorg/telegram/ui/DialogsActivity$ViewPage$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/DialogsActivity$ViewPage$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DialogsActivity$ViewPage;)V
@@ -87,7 +93,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
     .locals 0
 
-    .line 1662
+    .line 1636
     iget p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->selectedType:I
 
     return p0
@@ -96,25 +102,25 @@
 .method static synthetic access$002(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
     .locals 0
 
-    .line 1662
+    .line 1636
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->selectedType:I
 
     return p1
 .end method
 
-.method static synthetic access$14600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Z
+.method static synthetic access$14400(Lorg/telegram/ui/DialogsActivity$ViewPage;)Z
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-boolean p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->isLocked:Z
 
     return p0
 .end method
 
-.method static synthetic access$14602(Lorg/telegram/ui/DialogsActivity$ViewPage;Z)Z
+.method static synthetic access$14402(Lorg/telegram/ui/DialogsActivity$ViewPage;Z)Z
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->isLocked:Z
 
     return p1
@@ -123,7 +129,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Adapters/DialogsAdapter;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     return-object p0
@@ -132,169 +138,133 @@
 .method static synthetic access$1502(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Adapters/DialogsAdapter;)Lorg/telegram/ui/Adapters/DialogsAdapter;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     return-object p1
 .end method
 
-.method static synthetic access$15500(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+.method static synthetic access$15500(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
     .locals 0
 
-    .line 1662
-    iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
-
-    return-object p0
-.end method
-
-.method static synthetic access$15502(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
-    .locals 0
-
-    .line 1662
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
-
-    return-object p1
-.end method
-
-.method static synthetic access$15800(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/PullForegroundDrawable;
-    .locals 0
-
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->pullForegroundDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     return-object p0
 .end method
 
-.method static synthetic access$15802(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/PullForegroundDrawable;)Lorg/telegram/ui/Components/PullForegroundDrawable;
+.method static synthetic access$15502(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/PullForegroundDrawable;)Lorg/telegram/ui/Components/PullForegroundDrawable;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->pullForegroundDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     return-object p1
 .end method
 
-.method static synthetic access$16300(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
+.method static synthetic access$16000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     return-object p0
 .end method
 
-.method static synthetic access$16302(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroidx/recyclerview/widget/LinearLayoutManager;)Landroidx/recyclerview/widget/LinearLayoutManager;
+.method static synthetic access$16002(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroidx/recyclerview/widget/LinearLayoutManager;)Landroidx/recyclerview/widget/LinearLayoutManager;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     return-object p1
 .end method
 
-.method static synthetic access$16400(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/ItemTouchHelper;
+.method static synthetic access$16100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/ItemTouchHelper;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->itemTouchhelper:Landroidx/recyclerview/widget/ItemTouchHelper;
 
     return-object p0
 .end method
 
-.method static synthetic access$16402(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroidx/recyclerview/widget/ItemTouchHelper;)Landroidx/recyclerview/widget/ItemTouchHelper;
+.method static synthetic access$16102(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroidx/recyclerview/widget/ItemTouchHelper;)Landroidx/recyclerview/widget/ItemTouchHelper;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->itemTouchhelper:Landroidx/recyclerview/widget/ItemTouchHelper;
 
     return-object p1
 .end method
 
-.method static synthetic access$16500(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
+.method static synthetic access$16200(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
     .locals 0
 
-    .line 1662
-    iget p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
-
-    return p0
-.end method
-
-.method static synthetic access$16502(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
-    .locals 0
-
-    .line 1662
-    iput p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
-
-    return p1
-.end method
-
-.method static synthetic access$16600(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
-    .locals 0
-
-    .line 1662
+    .line 1636
     iget p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->archivePullViewState:I
 
     return p0
 .end method
 
-.method static synthetic access$16602(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
+.method static synthetic access$16202(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
     .locals 0
 
-    .line 1662
+    .line 1636
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->archivePullViewState:I
 
     return p1
 .end method
 
-.method static synthetic access$17000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/FlickerLoadingView;
+.method static synthetic access$16700(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/FlickerLoadingView;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-object p0
 .end method
 
-.method static synthetic access$17002(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/FlickerLoadingView;)Lorg/telegram/ui/Components/FlickerLoadingView;
+.method static synthetic access$16702(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/FlickerLoadingView;)Lorg/telegram/ui/Components/FlickerLoadingView;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-object p1
 .end method
 
-.method static synthetic access$17600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$SwipeController;
+.method static synthetic access$17100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$SwipeController;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->swipeController:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
     return-object p0
 .end method
 
-.method static synthetic access$17602(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/DialogsActivity$SwipeController;)Lorg/telegram/ui/DialogsActivity$SwipeController;
+.method static synthetic access$17102(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/DialogsActivity$SwipeController;)Lorg/telegram/ui/DialogsActivity$SwipeController;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->swipeController:Lorg/telegram/ui/DialogsActivity$SwipeController;
 
     return-object p1
 .end method
 
-.method static synthetic access$19300(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
+.method static synthetic access$18900(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsItemAnimator:Lorg/telegram/ui/Components/DialogsItemAnimator;
 
     return-object p0
 .end method
 
-.method static synthetic access$19302(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/DialogsItemAnimator;)Lorg/telegram/ui/Components/DialogsItemAnimator;
+.method static synthetic access$18902(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/DialogsItemAnimator;)Lorg/telegram/ui/Components/DialogsItemAnimator;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsItemAnimator:Lorg/telegram/ui/Components/DialogsItemAnimator;
 
     return-object p1
@@ -303,7 +273,7 @@
 .method static synthetic access$27200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->recyclerItemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     return-object p0
@@ -312,132 +282,155 @@
 .method static synthetic access$27202(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;)Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->recyclerItemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     return-object p1
 .end method
 
-.method static synthetic access$28402(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
+.method static synthetic access$28602(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
     .locals 0
 
-    .line 1662
+    .line 1636
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->lastItemsCount:I
 
     return p1
 .end method
 
-.method static synthetic access$28600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
+.method static synthetic access$28800(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     return-object p0
 .end method
 
-.method static synthetic access$28602(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
+.method static synthetic access$28802(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     return-object p1
 .end method
 
-.method static synthetic access$32000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
+.method static synthetic access$33500(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->animationSupportListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
 .end method
 
-.method static synthetic access$32002(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerListView;)Lorg/telegram/ui/Components/RecyclerListView;
+.method static synthetic access$33502(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Components/RecyclerListView;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->animationSupportListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p1
 .end method
 
-.method static synthetic access$32100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Adapters/DialogsAdapter;
+.method static synthetic access$33600(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Adapters/DialogsAdapter;
     .locals 0
 
-    .line 1662
+    .line 1636
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->animationSupportDialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     return-object p0
 .end method
 
-.method static synthetic access$32102(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Adapters/DialogsAdapter;)Lorg/telegram/ui/Adapters/DialogsAdapter;
+.method static synthetic access$33602(Lorg/telegram/ui/DialogsActivity$ViewPage;Lorg/telegram/ui/Adapters/DialogsAdapter;)Lorg/telegram/ui/Adapters/DialogsAdapter;
     .locals 0
 
-    .line 1662
+    .line 1636
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->animationSupportDialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     return-object p1
 .end method
 
+.method static synthetic access$7600(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
+    .locals 0
+
+    .line 1636
+    iget p0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
+
+    return p0
+.end method
+
+.method static synthetic access$7602(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
+    .locals 0
+
+    .line 1636
+    iput p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
+
+    return p1
+.end method
+
 .method private synthetic lambda$new$0()V
-    .locals 6
+    .locals 8
 
-    .line 1692
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
+    .line 1670
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$3800(Lorg/telegram/ui/DialogsActivity;)F
 
-    iget v2, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
+    move-result v0
 
-    const/4 v3, 0x1
+    .line 1671
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    const/4 v4, 0x0
+    iget-boolean v2, v1, Lorg/telegram/ui/DialogsActivity;->hasStories:Z
 
-    if-nez v2, :cond_0
+    .line 1676
+    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsAdapter:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
-    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$3800(Lorg/telegram/ui/DialogsActivity;)Z
+    iget v5, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
 
-    move-result v2
+    const/4 v6, 0x0
 
-    if-eqz v2, :cond_0
+    const/4 v7, 0x1
 
-    iget v2, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->archivePullViewState:I
+    if-nez v5, :cond_0
+
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$3900(Lorg/telegram/ui/DialogsActivity;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->archivePullViewState:I
 
     const/4 v5, 0x2
 
-    if-ne v2, v5, :cond_0
+    if-ne v1, v5, :cond_0
 
-    move v2, v3
+    move v1, v7
 
     goto :goto_0
 
     :cond_0
-    move v2, v4
+    move v1, v6
 
     :goto_0
-    iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
+    invoke-virtual {v3, v4, v1, v0, v2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->updateList(Lorg/telegram/ui/Components/RecyclerListView;ZFZ)V
 
-    invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$3900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 1677
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    move-result-object v5
+    invoke-static {v0, v7}, Lorg/telegram/ui/DialogsActivity;->access$4002(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getTranslationY()F
-
-    move-result v5
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/telegram/ui/Adapters/DialogsAdapter;->updateList(Lorg/telegram/ui/Components/RecyclerListView;ZF)V
-
-    .line 1693
+    .line 1678
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
-    iput-boolean v3, v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->updateDialogsOnNextDraw:Z
+    iput-boolean v7, v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->updateDialogsOnNextDraw:Z
 
-    .line 1694
-    iput-boolean v4, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updating:Z
+    .line 1679
+    iput-boolean v6, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updating:Z
 
     return-void
 .end method
@@ -447,7 +440,7 @@
 .method public isDefaultDialogType()Z
     .locals 2
 
-    .line 1687
+    .line 1665
     iget v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsType:I
 
     if-eqz v0, :cond_1
@@ -475,10 +468,53 @@
     return v0
 .end method
 
+.method protected onMeasure(II)V
+    .locals 2
+
+    .line 1684
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 1685
+    iget-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->animateStoriesView:Z
+
+    if-eqz v1, :cond_0
+
+    const/16 v1, 0x55
+
+    .line 1686
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    neg-int v1, v1
+
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 1688
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 1690
+    :goto_0
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+
+    return-void
+.end method
+
 .method public updateList(Z)V
     .locals 2
 
-    .line 1698
+    .line 1694
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)Z
@@ -492,26 +528,26 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 1702
+    .line 1698
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateListRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1703
+    .line 1699
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsItemAnimator:Lorg/telegram/ui/Components/DialogsItemAnimator;
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 1704
+    .line 1700
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateListRunnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 
-    .line 1707
+    .line 1703
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updating:Z
 
@@ -522,10 +558,10 @@
     :cond_2
     const/4 p1, 0x1
 
-    .line 1710
+    .line 1706
     iput-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updating:Z
 
-    .line 1711
+    .line 1707
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->dialogsItemAnimator:Lorg/telegram/ui/Components/DialogsItemAnimator;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/DialogsItemAnimator;->isRunning()Z
@@ -534,14 +570,14 @@
 
     if-nez p1, :cond_3
 
-    .line 1712
+    .line 1708
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 1714
+    .line 1710
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateListRunnable:Ljava/lang/Runnable;
 

@@ -128,7 +128,51 @@ public final class BeanDefinition<T> {
             r9 = 0
             r10 = 0
             r11 = 0
-            org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1 r12 = org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.INSTANCE
+            org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1 r12 = new kotlin.jvm.functions.Function1<kotlin.reflect.KClass<?>, java.lang.CharSequence>() { // from class: org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1
+                static {
+                    /*
+                        org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1 r0 = new org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1
+                        r0.<init>()
+                        
+                        // error: 0x0005: SPUT  (r0 I:org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1) org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.INSTANCE org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.<clinit>():void");
+                }
+
+                {
+                    /*
+                        r1 = this;
+                        r0 = 1
+                        r1.<init>(r0)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.<init>():void");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final java.lang.CharSequence invoke(kotlin.reflect.KClass<?> r2) {
+                    /*
+                        r1 = this;
+                        java.lang.String r0 = "it"
+                        kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, r0)
+                        java.lang.String r2 = org.koin.ext.KClassExtKt.getFullName(r2)
+                        return r2
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.invoke(kotlin.reflect.KClass):java.lang.CharSequence");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ java.lang.CharSequence invoke(kotlin.reflect.KClass<?> r1) {
+                    /*
+                        r0 = this;
+                        kotlin.reflect.KClass r1 = (kotlin.reflect.KClass) r1
+                        java.lang.CharSequence r1 = r0.invoke(r1)
+                        return r1
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: org.koin.core.definition.BeanDefinition$toString$defOtherTypes$typesAsString$1.invoke(java.lang.Object):java.lang.Object");
+                }
+            }
             r13 = 30
             r14 = 0
             java.lang.String r7 = ","

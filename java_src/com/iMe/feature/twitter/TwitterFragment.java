@@ -29,6 +29,7 @@ import com.iMe.p031ui.popupMenu.PopupMenuExtKt;
 import com.iMe.storage.domain.model.twitter.MediaInfoDomain;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogUtils;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -37,9 +38,11 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -47,15 +50,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentTwitterBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.PhotoViewer;
@@ -90,16 +99,114 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         Intrinsics.checkNotNullParameter(socialNetwork, "socialNetwork");
         this.telegramProfileId = j;
         this.socialNetwork = socialNetwork;
-        TwitterFragment$presenter$2 twitterFragment$presenter$2 = new TwitterFragment$presenter$2(this);
+        Function0<TwitterPresenter> function0 = new Function0<TwitterPresenter>() { // from class: com.iMe.feature.twitter.TwitterFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TwitterPresenter invoke() {
+                Lazy lazy3;
+                final TwitterFragment twitterFragment = TwitterFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.feature.twitter.TwitterFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        long j2;
+                        SocialNetwork socialNetwork2;
+                        j2 = TwitterFragment.this.telegramProfileId;
+                        socialNetwork2 = TwitterFragment.this.socialNetwork;
+                        return ParametersHolderKt.parametersOf(Long.valueOf(j2), socialNetwork2);
+                    }
+                };
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<TwitterPresenter>() { // from class: com.iMe.feature.twitter.TwitterFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.feature.twitter.TwitterPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final TwitterPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(TwitterPresenter.class), qualifier, function03);
+                    }
+                });
+                return (TwitterPresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TwitterPresenter.class.getName() + ".presenter", twitterFragment$presenter$2);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TwitterPresenter.class.getName() + ".presenter", function0);
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new TwitterFragment$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.twitter.TwitterFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new TwitterFragment$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<TweetsRecycleAdapter>() { // from class: com.iMe.feature.twitter.TwitterFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.feature.twitter.adapter.TweetsRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final TweetsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(TweetsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.tweetsRecycleAdapter$delegate = lazy2;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new TwitterFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentTwitterBinding>() { // from class: com.iMe.feature.twitter.TwitterFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentTwitterBinding invoke() {
+                return ForkFragmentTwitterBinding.inflate(BaseFragmentExtKt.getLayoutInflater(TwitterFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -236,18 +343,18 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.twitter_title));
-        ActionBarMenuItem addItem = c3484ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3417R.C3419drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3417R.C3419drawable.fork_drawer_social_twitter, getResourceManager().getString(C3417R.string.twitter_open_in_twitter));
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.twitter_title));
+        ActionBarMenuItem addItem = c3485ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3419R.C3421drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3419R.C3421drawable.fork_drawer_social_twitter, getResourceManager().getString(C3419R.string.twitter_open_in_twitter));
         if (this.socialNetwork.getHasEditAccess()) {
-            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3417R.C3419drawable.fork_ic_recycler_22, getResourceManager().getString(C3417R.string.social_reset_menu_item));
+            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3419R.C3421drawable.fork_ic_recycler_22, getResourceManager().getString(C3419R.string.social_reset_menu_item));
         }
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TwitterPresenter presenter;
                 TwitterPresenter presenter2;
@@ -322,9 +429,9 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof TweetItem) {
             int id = view.getId();
-            if (id == C3417R.C3420id.image_share) {
+            if (id == C3419R.C3422id.image_share) {
                 this$0.getPresenter().onShareClick((TweetItem) baseNode);
-            } else if (id == C3417R.C3420id.image_menu) {
+            } else if (id == C3419R.C3422id.image_menu) {
                 this$0.showItemMenu(view, (TweetItem) baseNode);
             }
         }
@@ -336,9 +443,26 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         this$0.getPresenter().reload();
     }
 
-    private final void showItemMenu(View view, TweetItem tweetItem) {
+    private final void showItemMenu(View view, final TweetItem tweetItem) {
         List listOf;
-        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3417R.string.common_translate), C3417R.C3419drawable.msg_premium_translate, 0, 0, new TwitterFragment$showItemMenu$menuItems$1(this, tweetItem), 12, null));
+        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3419R.string.common_translate), C3419R.C3421drawable.msg_premium_translate, 0, 0, new Function0<Unit>() { // from class: com.iMe.feature.twitter.TwitterFragment$showItemMenu$menuItems$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                TwitterFragment.this.showTranslationDialog(tweetItem);
+            }
+        }, 12, null));
         PopupMenuExtKt.showPopupMenu(view, listOf);
     }
 

@@ -16,7 +16,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Pair;
 import kotlin.TuplesKt;
@@ -152,8 +151,8 @@ public final class MultiPanelController extends BaseController {
                 arrayList.add(BackupMappingKt.mapToBackup(multiPanelButtonState));
             }
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-            Pair m85to = TuplesKt.m85to(name, mutableList);
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(name, mutableList);
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -195,8 +194,8 @@ public final class MultiPanelController extends BaseController {
                     }
                 }
                 mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList2);
-                Pair m85to = TuplesKt.m85to(mapNameToEnum, mutableList);
-                linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+                Pair m103to = TuplesKt.m103to(mapNameToEnum, mutableList);
+                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.buttonStates = mutableMap;
@@ -311,14 +310,26 @@ public final class MultiPanelController extends BaseController {
             return (MultiPanelController) tmp0.invoke(obj);
         }
 
-        public final MultiPanelController getInstance(int i) {
+        public final MultiPanelController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = MultiPanelController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final MultiPanelController$Companion$getInstance$1 multiPanelController$Companion$getInstance$1 = new MultiPanelController$Companion$getInstance$1(i);
+            final Function1<Integer, MultiPanelController> function1 = new Function1<Integer, MultiPanelController>() { // from class: com.iMe.fork.controller.MultiPanelController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final MultiPanelController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new MultiPanelController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.MultiPanelController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -330,7 +341,7 @@ public final class MultiPanelController extends BaseController {
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

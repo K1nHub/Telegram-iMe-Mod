@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$22;
-.super Ljava/lang/Object;
+.super Landroid/widget/ImageView;
 .source "ChatActivityEnterView.java"
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$26(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createExpandStickersButton()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,69 +14,41 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-.field final synthetic val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
-
-
 # direct methods
-.method public static synthetic $r8$lambda$wEX8Vtu0fKk_uUpcZxlMj95ZeZI(Lorg/telegram/ui/Components/ChatActivityEnterView$22;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
-    .locals 0
-
-    .line 3527
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
-    .locals 0
-
-    .line 3531
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
-
-    .line 3532
-    iget-object p1, p2, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    const/4 p2, 0x1
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SimpleAvatarView;->setHideAvatar(Z)V
+    .line 3352
+    invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDraw()V
-    .locals 3
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    .line 3530
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+    .line 3355
+    invoke-virtual {p0}, Landroid/widget/ImageView;->getAlpha()F
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+    move-result v0
 
-    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$22$$ExternalSyntheticLambda0;
+    const/4 v1, 0x0
 
-    invoke-direct {v2, p0, v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$22$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$22;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    cmpg-float v0, v0, v1
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    if-gtz v0, :cond_0
 
-    return-void
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 3358
+    :cond_0
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
 .end method

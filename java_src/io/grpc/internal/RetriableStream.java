@@ -71,8 +71,8 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        GRPC_PREVIOUS_RPC_ATTEMPTS = Metadata.Key.m685of("grpc-previous-rpc-attempts", asciiMarshaller);
-        GRPC_RETRY_PUSHBACK_MS = Metadata.Key.m685of("grpc-retry-pushback-ms", asciiMarshaller);
+        GRPC_PREVIOUS_RPC_ATTEMPTS = Metadata.Key.m703of("grpc-previous-rpc-attempts", asciiMarshaller);
+        GRPC_RETRY_PUSHBACK_MS = Metadata.Key.m703of("grpc-retry-pushback-ms", asciiMarshaller);
         CANCELLED_BECAUSE_COMMITTED = Status.CANCELLED.withDescription("Stream thrown away because RetriableStream committed");
         random = new Random();
     }

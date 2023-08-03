@@ -21,11 +21,15 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;JILorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 7
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;JILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 9
 
-    .line 7762
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
+    move-object v8, p0
+
+    move-object v0, p1
+
+    .line 7788
+    iput-object v0, v8, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     move-object v0, p0
 
@@ -37,14 +41,16 @@
 
     move-object v5, p6
 
-    move-object v6, p7
+    move-object/from16 v6, p7
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/MentionsContainerView;-><init>(Landroid/content/Context;JILorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    move-object/from16 v7, p8
 
-    const/4 p1, 0x1
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/MentionsContainerView;-><init>(Landroid/content/Context;JILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 7813
-    iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$30;->wasAtTop:Z
+    const/4 v0, 0x1
+
+    .line 7839
+    iput-boolean v0, v8, Lorg/telegram/ui/ChatActivity$30;->wasAtTop:Z
 
     return-void
 .end method
@@ -54,7 +60,7 @@
 .method protected canOpen()Z
     .locals 2
 
-    .line 7766
+    .line 7792
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$25200(Lorg/telegram/ui/ChatActivity;)Landroid/widget/FrameLayout;
@@ -101,7 +107,7 @@
 .method protected onClose()V
     .locals 1
 
-    .line 7789
+    .line 7815
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$25400(Lorg/telegram/ui/ChatActivity;)V
@@ -112,7 +118,7 @@
 .method protected onContextClick(Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
     .locals 11
 
-    .line 7802
+    .line 7828
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -127,7 +133,7 @@
 
     goto :goto_2
 
-    .line 7805
+    .line 7831
     :cond_0
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->type:Ljava/lang/String;
 
@@ -151,7 +157,7 @@
 
     goto :goto_0
 
-    .line 7809
+    .line 7835
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -171,14 +177,14 @@
 
     goto :goto_2
 
-    .line 7806
+    .line 7832
     :cond_2
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->getInlineResultWidthAndHeight(Lorg/telegram/tgnet/TLRPC$BotInlineResult;)[I
 
     move-result-object v0
 
-    .line 7807
+    .line 7833
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x0
@@ -229,14 +235,14 @@
 .method protected onContextSearch(Z)V
     .locals 2
 
-    .line 7794
+    .line 7820
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz v0, :cond_0
 
-    .line 7795
+    .line 7821
     invoke-virtual {p0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     move-result-object v1
@@ -247,7 +253,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setCaption(Ljava/lang/String;)V
 
-    .line 7796
+    .line 7822
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -261,7 +267,7 @@
 .method protected onOpen()V
     .locals 5
 
-    .line 7771
+    .line 7797
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$9000(Lorg/telegram/ui/ChatActivity;)Z
@@ -296,7 +302,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 7772
+    .line 7798
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -314,7 +320,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 7773
+    .line 7799
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -323,14 +329,14 @@
 
     const-string v2, "secretbot"
 
-    .line 7774
+    .line 7800
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 7775
+    .line 7801
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -345,7 +351,7 @@
 
     invoke-direct {v1, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 7776
+    .line 7802
     sget v3, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v4, "AppName"
@@ -356,7 +362,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7777
+    .line 7803
     sget v3, Lorg/telegram/messenger/R$string;->SecretChatContextBotAlert:I
 
     const-string v4, "SecretChatContextBotAlert"
@@ -367,7 +373,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7778
+    .line 7804
     sget v3, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v4, "OK"
@@ -380,7 +386,7 @@
 
     invoke-virtual {v1, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7779
+    .line 7805
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -389,7 +395,7 @@
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 7780
+    .line 7806
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -402,7 +408,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 7784
+    .line 7810
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -414,12 +420,12 @@
 .method protected onScrolled(ZZ)V
     .locals 2
 
-    .line 7816
+    .line 7842
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$30;->wasAtTop:Z
 
     if-eq p2, p1, :cond_0
 
-    .line 7817
+    .line 7843
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$30;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$6600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/SuggestEmojiView;
@@ -432,7 +438,7 @@
 
     invoke-static {p2, p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZZ)V
 
-    .line 7818
+    .line 7844
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$30;->wasAtTop:Z
 
     :cond_0

@@ -14,9 +14,11 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -46,12 +48,24 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(items, "items");
         this.items = items;
-        lazy = LazyKt__LazyJVMKt.lazy(MessageMoreActionsView$gapItemHeight$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.view.MessageMoreActionsView$gapItemHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(8));
+            }
+        });
         this.gapItemHeight$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(MessageMoreActionsView$optionItemHeight$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.view.MessageMoreActionsView$optionItemHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(48));
+            }
+        });
         this.optionItemHeight$delegate = lazy2;
         setTextAndIcon(title, i);
-        setRightIcon(C3417R.C3419drawable.msg_arrowright);
+        setRightIcon(C3419R.C3421drawable.msg_arrowright);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

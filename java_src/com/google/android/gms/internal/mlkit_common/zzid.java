@@ -4,9 +4,10 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 /* loaded from: classes.dex */
-public class zzid extends AbstractSet<Map.Entry<K, V>> {
+public class zzid<K, V> extends AbstractSet<Map.Entry<K, V>> {
     private final /* synthetic */ zzhs zza;
 
     private zzid(zzhs zzhsVar) {
@@ -49,6 +50,7 @@ public class zzid extends AbstractSet<Map.Entry<K, V>> {
         this.zza.clear();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public /* synthetic */ boolean add(Object obj) {
         Map.Entry entry = (Map.Entry) obj;

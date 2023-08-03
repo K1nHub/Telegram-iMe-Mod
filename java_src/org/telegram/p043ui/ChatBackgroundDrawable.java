@@ -62,7 +62,7 @@ public class ChatBackgroundDrawable extends Drawable {
                 if (str.equals(chatBackgroundDrawable.wallpaper.uploadingImage) && ((tLRPC$WallPaperSettings2 = tLRPC$WallPaper.settings) == null || chatBackgroundDrawable.wallpaper.settings == null || tLRPC$WallPaperSettings2.intensity <= 0 || chatBackgroundDrawable.themeIsDark == z)) {
                     return chatBackgroundDrawable;
                 }
-            } else if (tLRPC$WallPaper.f1664id == chatBackgroundDrawable.wallpaper.f1664id && TextUtils.equals(hash(tLRPC$WallPaper.settings), hash(chatBackgroundDrawable.wallpaper.settings)) && (tLRPC$WallPaper.document == null || tLRPC$WallPaper.pattern || (tLRPC$WallPaperSettings = tLRPC$WallPaper.settings) == null || tLRPC$WallPaperSettings.intensity <= 0 || chatBackgroundDrawable.themeIsDark == z)) {
+            } else if (tLRPC$WallPaper.f1683id == chatBackgroundDrawable.wallpaper.f1683id && TextUtils.equals(hash(tLRPC$WallPaper.settings), hash(chatBackgroundDrawable.wallpaper.settings)) && (tLRPC$WallPaper.document == null || tLRPC$WallPaper.pattern || (tLRPC$WallPaperSettings = tLRPC$WallPaper.settings) == null || tLRPC$WallPaperSettings.intensity <= 0 || chatBackgroundDrawable.themeIsDark == z)) {
                 return chatBackgroundDrawable;
             }
         }
@@ -104,7 +104,7 @@ public class ChatBackgroundDrawable extends Drawable {
             this.motionBackgroundDrawable = motionBackgroundDrawable;
             TLRPC$WallPaperSettings tLRPC$WallPaperSettings3 = tLRPC$WallPaper.settings;
             motionBackgroundDrawable.setColors(tLRPC$WallPaperSettings3.background_color, tLRPC$WallPaperSettings3.second_background_color, tLRPC$WallPaperSettings3.third_background_color, tLRPC$WallPaperSettings3.fourth_background_color);
-            EmojiThemes.loadWallpaperImage(tLRPC$WallPaper.f1664id, tLRPC$WallPaper, new ResultCallback() { // from class: org.telegram.ui.ChatBackgroundDrawable$$ExternalSyntheticLambda0
+            EmojiThemes.loadWallpaperImage(tLRPC$WallPaper.f1683id, tLRPC$WallPaper, new ResultCallback() { // from class: org.telegram.ui.ChatBackgroundDrawable$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.ResultCallback
                 public final void onComplete(Object obj) {
                     ChatBackgroundDrawable.this.lambda$new$0(tLRPC$WallPaper, (Pair) obj);
@@ -126,7 +126,7 @@ public class ChatBackgroundDrawable extends Drawable {
         } else {
             str = ((int) (min / AndroidUtilities.density)) + "_" + ((int) (max / AndroidUtilities.density)) + "_wallpaper";
         }
-        String str2 = (str + tLRPC$WallPaper.f1664id) + hash(tLRPC$WallPaper.settings);
+        String str2 = (str + tLRPC$WallPaper.f1683id) + hash(tLRPC$WallPaper.settings);
         Drawable createThumb = createThumb(tLRPC$WallPaper);
         String str3 = tLRPC$WallPaper.uploadingImage;
         if (str3 != null) {

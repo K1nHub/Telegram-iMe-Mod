@@ -30,6 +30,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoPreference.kt */
 /* loaded from: classes3.dex */
@@ -55,9 +56,39 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         Intrinsics.checkNotNullParameter(gson, "gson");
         this.gson = gson;
         this.tempOneActionGuid = "";
-        this.walletPublicAddresses = new PreferenceBlockchainMappedData<>(gson, getMPref(), new CryptoPreference$walletPublicAddresses$1(this));
-        this.walletSeeds = new PreferenceBlockchainMappedData<>(gson, getMPref(), new CryptoPreference$walletSeeds$1(this));
-        this.walletCreationDates = new PreferenceBlockchainMappedData<>(gson, getMPref(), new CryptoPreference$walletCreationDates$1(this));
+        this.walletPublicAddresses = new PreferenceBlockchainMappedData<>(gson, getMPref(), new Function0<String>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$walletPublicAddresses$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                return CryptoPreferenceHelper.CC.withGuid$default(CryptoPreference.this, "wallet_public_address", null, 2, null);
+            }
+        });
+        this.walletSeeds = new PreferenceBlockchainMappedData<>(gson, getMPref(), new Function0<String>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$walletSeeds$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                return CryptoPreferenceHelper.CC.withGuid$default(CryptoPreference.this, "wallet_seed", null, 2, null);
+            }
+        });
+        this.walletCreationDates = new PreferenceBlockchainMappedData<>(gson, getMPref(), new Function0<String>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$walletCreationDates$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                return CryptoPreferenceHelper.CC.withGuid$default(CryptoPreference.this, "wallets_creation_dates", null, 2, null);
+            }
+        });
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper

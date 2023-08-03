@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
 import org.bouncycastle.util.Arrays;
+import org.telegram.messenger.MessagesStorage;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class ASN1ObjectIdentifier extends ASN1Primitive {
@@ -60,7 +61,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
         for (int i = 0; i != bArr.length; i++) {
             int i2 = bArr[i] & 255;
             if (j <= 72057594037927808L) {
-                long j2 = j + (i2 & 127);
+                long j2 = j + (i2 & MessagesStorage.LAST_DB_VERSION);
                 if ((i2 & 128) == 0) {
                     if (z) {
                         if (j2 < 40) {
@@ -81,7 +82,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
                     j = j2 << 7;
                 }
             } else {
-                BigInteger or = (bigInteger == null ? BigInteger.valueOf(j) : bigInteger).or(BigInteger.valueOf(i2 & 127));
+                BigInteger or = (bigInteger == null ? BigInteger.valueOf(j) : bigInteger).or(BigInteger.valueOf(i2 & MessagesStorage.LAST_DB_VERSION));
                 if ((i2 & 128) == 0) {
                     if (z) {
                         stringBuffer.append('2');
@@ -226,11 +227,11 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
     private void writeField(ByteArrayOutputStream byteArrayOutputStream, long j) {
         byte[] bArr = new byte[9];
         int i = 8;
-        bArr[8] = (byte) (((int) j) & 127);
+        bArr[8] = (byte) (((int) j) & MessagesStorage.LAST_DB_VERSION);
         while (j >= 128) {
             j >>= 7;
             i--;
-            bArr[i] = (byte) ((((int) j) & 127) | 128);
+            bArr[i] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
         }
         byteArrayOutputStream.write(bArr, i, 9 - i);
     }
@@ -244,7 +245,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
         byte[] bArr = new byte[bitLength];
         int i = bitLength - 1;
         for (int i2 = i; i2 >= 0; i2--) {
-            bArr[i2] = (byte) ((bigInteger.intValue() & 127) | 128);
+            bArr[i2] = (byte) ((bigInteger.intValue() & MessagesStorage.LAST_DB_VERSION) | 128);
             bigInteger = bigInteger.shiftRight(7);
         }
         bArr[i] = (byte) (bArr[i] & Byte.MAX_VALUE);
@@ -307,7 +308,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
     }
 
     /* renamed from: on */
-    public boolean m70on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+    public boolean m88on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         String id = getId();
         String id2 = aSN1ObjectIdentifier.getId();
         return id.length() > id2.length() && id.charAt(id2.length()) == '.' && id.startsWith(id2);

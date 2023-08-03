@@ -5,27 +5,21 @@
 .implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/MentionsContainerView;
+
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/MentionsContainerView;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/MentionsContainerView;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;->f$1:Z
 
     return-void
 .end method
@@ -33,9 +27,21 @@
 
 # virtual methods
 .method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 0
+    .locals 6
 
-    invoke-static {p1, p2, p3, p4}, Lorg/telegram/ui/Components/MentionsContainerView;->$r8$lambda$iP-uwJHuzdpLqv3KEA5oiF1J5qY(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/MentionsContainerView;
+
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/MentionsContainerView$$ExternalSyntheticLambda1;->f$1:Z
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/MentionsContainerView;->$r8$lambda$7Pjs5Vv4maAmZvpMkpfQNA6n3ew(Lorg/telegram/ui/Components/MentionsContainerView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method

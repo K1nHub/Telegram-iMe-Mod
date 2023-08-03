@@ -13,46 +13,46 @@ final class C3061j2 extends AbstractC3067k2 {
 
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public boolean mo113b(Consumer consumer) {
-        InterfaceC2859A1 m381a;
-        if (m379h()) {
-            boolean mo113b = this.f1066d.mo113b(consumer);
-            if (!mo113b) {
-                if (this.f1065c == null && (m381a = m381a(this.f1067e)) != null) {
-                    InterfaceC2853s spliterator = m381a.spliterator();
-                    this.f1066d = spliterator;
-                    return spliterator.mo113b(consumer);
+    public boolean mo131b(Consumer consumer) {
+        InterfaceC2859A1 m399a;
+        if (m397h()) {
+            boolean mo131b = this.f1069d.mo131b(consumer);
+            if (!mo131b) {
+                if (this.f1068c == null && (m399a = m399a(this.f1070e)) != null) {
+                    InterfaceC2853s spliterator = m399a.spliterator();
+                    this.f1069d = spliterator;
+                    return spliterator.mo131b(consumer);
                 }
-                this.f1063a = null;
+                this.f1066a = null;
             }
-            return mo113b;
+            return mo131b;
         }
         return false;
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public void forEachRemaining(Consumer consumer) {
-        if (this.f1063a == null) {
+        if (this.f1066a == null) {
             return;
         }
-        if (this.f1066d != null) {
+        if (this.f1069d != null) {
             do {
-            } while (mo113b(consumer));
+            } while (mo131b(consumer));
             return;
         }
-        InterfaceC2853s interfaceC2853s = this.f1065c;
+        InterfaceC2853s interfaceC2853s = this.f1068c;
         if (interfaceC2853s != null) {
             interfaceC2853s.forEachRemaining(consumer);
             return;
         }
-        Deque m380f = m380f();
+        Deque m398f = m398f();
         while (true) {
-            InterfaceC2859A1 m381a = m381a(m380f);
-            if (m381a == null) {
-                this.f1063a = null;
+            InterfaceC2859A1 m399a = m399a(m398f);
+            if (m399a == null) {
+                this.f1066a = null;
                 return;
             }
-            m381a.forEach(consumer);
+            m399a.forEach(consumer);
         }
     }
 }

@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6037
+    .line 6186
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 6061
+    .line 6213
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyForwards;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 6049
+    .line 6198
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyChatInvite;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 6052
+    .line 6201
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAddedByPhone;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 6058
+    .line 6210
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneCall;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 6046
+    .line 6195
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneP2P;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 6055
+    .line 6204
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyVoiceMessages;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 6064
+    .line 6216
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneNumber;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 6043
+    .line 6192
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyStatusTimestamp;
 
@@ -86,8 +86,16 @@
 
     goto :goto_0
 
-    .line 6067
+    .line 6207
     :sswitch_8
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAbout;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAbout;-><init>()V
+
+    goto :goto_0
+
+    .line 6219
+    :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyProfilePhoto;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyProfilePhoto;-><init>()V
@@ -99,7 +107,7 @@
 
     goto :goto_1
 
-    .line 6071
+    .line 6223
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -129,7 +137,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 6074
+    .line 6226
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -139,7 +147,8 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x69eae013 -> :sswitch_8
+        -0x69eae013 -> :sswitch_9
+        -0x5b79489f -> :sswitch_8
         -0x43d154d0 -> :sswitch_7
         -0x2e651b93 -> :sswitch_6
         0x697f414 -> :sswitch_5

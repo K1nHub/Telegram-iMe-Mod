@@ -68,7 +68,7 @@ public final class BotVoteInfo {
     }
 
     public int hashCode() {
-        return (((((this.userId.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.created)) * 31) + this.name.hashCode()) * 31) + this.rating.hashCode();
+        return (((((this.userId.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.created)) * 31) + this.name.hashCode()) * 31) + this.rating.hashCode();
     }
 
     public String toString() {

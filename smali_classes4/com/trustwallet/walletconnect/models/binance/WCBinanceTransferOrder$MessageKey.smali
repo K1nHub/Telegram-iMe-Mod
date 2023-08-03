@@ -80,7 +80,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "outputs"
+    const-string/jumbo v3, "outputs"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTransferOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

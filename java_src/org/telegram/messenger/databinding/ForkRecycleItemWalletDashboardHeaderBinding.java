@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDashboardHeaderBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -26,7 +26,7 @@ public final class ForkRecycleItemWalletDashboardHeaderBinding implements ViewBi
     }
 
     public static ForkRecycleItemWalletDashboardHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_dashboard_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_dashboard_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,7 +35,7 @@ public final class ForkRecycleItemWalletDashboardHeaderBinding implements ViewBi
 
     public static ForkRecycleItemWalletDashboardHeaderBinding bind(View view) {
         FrameLayout frameLayout = (FrameLayout) view;
-        int i = C3417R.C3420id.text_wallet_header;
+        int i = C3419R.C3422id.text_wallet_header;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
             return new ForkRecycleItemWalletDashboardHeaderBinding(frameLayout, frameLayout, appCompatTextView);

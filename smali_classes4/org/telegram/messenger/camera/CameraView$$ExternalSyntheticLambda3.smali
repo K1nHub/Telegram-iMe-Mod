@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/messenger/camera/CameraView;
 
-    invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->$r8$lambda$nunhqfsSS6qF9FJwhBp0OBQUmeM(Lorg/telegram/messenger/camera/CameraView;)V
+    invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->$r8$lambda$MDuaWQzZGflrMqZicYjONBoE0Dw(Lorg/telegram/messenger/camera/CameraView;)V
 
     return-void
 .end method

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 38414
+    .line 39112
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PhoneConnection;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 38418
+    .line 39116
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -46,39 +46,39 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 38419
+    .line 39117
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->tcp:Z
 
-    .line 38420
+    .line 39118
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->id:J
 
-    .line 38421
+    .line 39119
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ip:Ljava/lang/String;
 
-    .line 38422
+    .line 39120
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ipv6:Ljava/lang/String;
 
-    .line 38423
+    .line 39121
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->port:I
 
-    .line 38424
+    .line 39122
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -91,12 +91,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 38428
+    .line 39126
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_phoneConnection;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38429
+    .line 39127
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->tcp:Z
 
     if-eqz v0, :cond_0
@@ -115,30 +115,30 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->flags:I
 
-    .line 38430
+    .line 39128
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38431
+    .line 39129
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 38432
+    .line 39130
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ip:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 38433
+    .line 39131
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ipv6:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 38434
+    .line 39132
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->port:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38435
+    .line 39133
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->peer_tag:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

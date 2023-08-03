@@ -30,7 +30,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /* loaded from: classes.dex */
 public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Loader.Callback<ParsingLoadable<HlsPlaylist>> {
     public static final double DEFAULT_PLAYLIST_STUCK_TARGET_DURATION_COEFFICIENT = 3.5d;
-    public static final HlsPlaylistTracker.Factory FACTORY = DefaultHlsPlaylistTracker$$ExternalSyntheticLambda0.INSTANCE;
+    public static final HlsPlaylistTracker.Factory FACTORY = new HlsPlaylistTracker.Factory() { // from class: com.google.android.exoplayer2.source.hls.playlist.DefaultHlsPlaylistTracker$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.source.hls.playlist.HlsPlaylistTracker.Factory
+        public final HlsPlaylistTracker createTracker(HlsDataSourceFactory hlsDataSourceFactory, LoadErrorHandlingPolicy loadErrorHandlingPolicy, HlsPlaylistParserFactory hlsPlaylistParserFactory) {
+            return new DefaultHlsPlaylistTracker(hlsDataSourceFactory, loadErrorHandlingPolicy, hlsPlaylistParserFactory);
+        }
+    };
     private final HlsDataSourceFactory dataSourceFactory;
     private MediaSourceEventListener.EventDispatcher eventDispatcher;
     private Loader initialPlaylistLoader;

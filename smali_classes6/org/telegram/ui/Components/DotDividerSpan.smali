@@ -8,6 +8,8 @@
 
 .field p:Landroid/graphics/Paint;
 
+.field private size:I
+
 .field topPadding:I
 
 
@@ -27,6 +29,11 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/DotDividerSpan;->p:Landroid/graphics/Paint;
 
+    const/4 v0, 0x3
+
+    .line 17
+    iput v0, p0, Lorg/telegram/ui/Components/DotDividerSpan;->size:I
+
     return-void
 .end method
 
@@ -35,7 +42,7 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 25
+    .line 26
     iget p2, p0, Lorg/telegram/ui/Components/DotDividerSpan;->color:I
 
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
@@ -44,7 +51,7 @@
 
     if-eq p2, p3, :cond_0
 
-    .line 26
+    .line 27
     iget-object p2, p0, Lorg/telegram/ui/Components/DotDividerSpan;->p:Landroid/graphics/Paint;
 
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
@@ -53,10 +60,12 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setColor(I)V
 
+    .line 29
     :cond_0
-    const/high16 p2, 0x40400000    # 3.0f
+    iget p2, p0, Lorg/telegram/ui/Components/DotDividerSpan;->size:I
 
-    .line 28
+    int-to-float p2, p2
+
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p2
@@ -65,22 +74,31 @@
 
     div-float/2addr p2, p3
 
+    const/high16 p4, 0x40400000    # 3.0f
+
+    .line 30
+    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+
+    move-result p4
+
+    div-float/2addr p4, p3
+
     add-float/2addr p5, p2
 
     sub-int/2addr p8, p6
 
-    .line 29
+    .line 31
     div-int/lit8 p8, p8, 0x2
 
-    iget p3, p0, Lorg/telegram/ui/Components/DotDividerSpan;->topPadding:I
+    iget p2, p0, Lorg/telegram/ui/Components/DotDividerSpan;->topPadding:I
 
-    add-int/2addr p8, p3
+    add-int/2addr p8, p2
 
-    int-to-float p3, p8
+    int-to-float p2, p8
 
-    iget-object p4, p0, Lorg/telegram/ui/Components/DotDividerSpan;->p:Landroid/graphics/Paint;
+    iget-object p3, p0, Lorg/telegram/ui/Components/DotDividerSpan;->p:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, p5, p3, p2, p4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, p5, p2, p4, p3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     return-void
 .end method
@@ -88,9 +106,9 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    const/4 p1, 0x3
+    .line 21
+    iget p1, p0, Lorg/telegram/ui/Components/DotDividerSpan;->size:I
 
-    .line 20
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -98,10 +116,19 @@
     return p1
 .end method
 
+.method public setSize(I)V
+    .locals 0
+
+    .line 39
+    iput p1, p0, Lorg/telegram/ui/Components/DotDividerSpan;->size:I
+
+    return-void
+.end method
+
 .method public setTopPadding(I)V
     .locals 0
 
-    .line 33
+    .line 35
     iput p1, p0, Lorg/telegram/ui/Components/DotDividerSpan;->topPadding:I
 
     return-void

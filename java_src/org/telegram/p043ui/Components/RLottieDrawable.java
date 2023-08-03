@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DispatchQueuePool;
 import org.telegram.messenger.DispatchQueuePoolBackground;
@@ -128,13 +128,13 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     public class LottieMetadata {
 
         /* renamed from: fr */
-        float f1809fr;
+        float f1831fr;
 
         /* renamed from: ip */
-        float f1810ip;
+        float f1832ip;
 
         /* renamed from: op */
-        float f1811op;
+        float f1833op;
     }
 
     public static native long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3);
@@ -145,6 +145,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     public static native void destroy(long j);
 
     public static native int getFrame(long j, int i, Bitmap bitmap, int i2, int i3, int i4, boolean z);
+
+    public static native long getFramesCount(String str, String str2);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static native void replaceColors(long j, int[] iArr);
@@ -163,8 +165,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$3 */
     /* loaded from: classes6.dex */
-    public class RunnableC51223 implements Runnable {
-        RunnableC51223() {
+    public class RunnableC51573 implements Runnable {
+        RunnableC51573() {
         }
 
         @Override // java.lang.Runnable
@@ -188,7 +190,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RLottieDrawable.RunnableC51223.this.lambda$run$0();
+                        RLottieDrawable.RunnableC51573.this.lambda$run$0();
                     }
                 };
                 rLottieDrawable3.cacheGenerateTask = runnable;
@@ -358,7 +360,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC51223();
+        this.uiRunnableGenerateCache = new RunnableC51573();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -388,7 +390,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 RLottieDrawable rLottieDrawable2 = RLottieDrawable.this;
                                 rLottieDrawable2.backgroundBitmap = Bitmap.createBitmap(rLottieDrawable2.width, rLottieDrawable2.height, Bitmap.Config.ARGB_8888);
                             } catch (Throwable th) {
-                                FileLog.m49e(th);
+                                FileLog.m67e(th);
                             }
                         }
                         if (RLottieDrawable.this.backgroundBitmap != null) {
@@ -426,7 +428,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     try {
                                         frame = bitmapsCache.getFrame(rLottieDrawable5.currentFrame / i5, rLottieDrawable5.backgroundBitmap);
                                     } catch (Exception e) {
-                                        FileLog.m49e(e);
+                                        FileLog.m67e(e);
                                         frame = 0;
                                     }
                                 } else {
@@ -548,7 +550,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                 }
                             } catch (Exception e2) {
-                                FileLog.m49e(e2);
+                                FileLog.m67e(e2);
                             }
                         }
                         RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnable);
@@ -602,6 +604,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             iArr2 = iArr3;
             this.nativePtr = create(file.getAbsolutePath(), null, i, i2, iArr3, this.precache, iArr, this.shouldLimitFps, i3);
             if (this.nativePtr == 0) {
+                FileLog.m70d("RLottieDrawable nativePtr == 0 " + file.getAbsolutePath() + " remove file");
                 file.delete();
             }
             if (this.shouldLimitFps && iArr2[1] < 60) {
@@ -652,7 +655,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC51223();
+        this.uiRunnableGenerateCache = new RunnableC51573();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -682,7 +685,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 RLottieDrawable rLottieDrawable2 = RLottieDrawable.this;
                                 rLottieDrawable2.backgroundBitmap = Bitmap.createBitmap(rLottieDrawable2.width, rLottieDrawable2.height, Bitmap.Config.ARGB_8888);
                             } catch (Throwable th) {
-                                FileLog.m49e(th);
+                                FileLog.m67e(th);
                             }
                         }
                         if (RLottieDrawable.this.backgroundBitmap != null) {
@@ -720,7 +723,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     try {
                                         frame = bitmapsCache.getFrame(rLottieDrawable5.currentFrame / i5, rLottieDrawable5.backgroundBitmap);
                                     } catch (Exception e) {
-                                        FileLog.m49e(e);
+                                        FileLog.m67e(e);
                                         frame = 0;
                                     }
                                 } else {
@@ -842,7 +845,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                 }
                             } catch (Exception e2) {
-                                FileLog.m49e(e2);
+                                FileLog.m67e(e2);
                             }
                         }
                         RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnable);
@@ -894,6 +897,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             iArr2 = iArr3;
             this.nativePtr = create(file.getAbsolutePath(), str, i, i2, iArr3, this.precache, iArr, this.shouldLimitFps, i3);
             if (this.nativePtr == 0) {
+                FileLog.m70d("RLottieDrawable nativePtr == 0 " + file.getAbsolutePath() + " remove file");
                 file.delete();
             }
             if (this.shouldLimitFps && iArr2[1] < 60) {
@@ -919,10 +923,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 } catch (Exception unused) {
                 }
             }
-            iArr[0] = (int) (lottieMetadata.f1811op - lottieMetadata.f1810ip);
-            iArr[1] = (int) lottieMetadata.f1809fr;
+            iArr[0] = (int) (lottieMetadata.f1833op - lottieMetadata.f1832ip);
+            iArr[1] = (int) lottieMetadata.f1831fr;
         } catch (Exception e) {
-            FileLog.m48e((Throwable) e, false);
+            FileLog.m66e((Throwable) e, false);
             String absolutePath = file.getAbsolutePath();
             int i = this.width;
             int i2 = this.height;
@@ -978,7 +982,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC51223();
+        this.uiRunnableGenerateCache = new RunnableC51573();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -1008,7 +1012,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 RLottieDrawable rLottieDrawable2 = RLottieDrawable.this;
                                 rLottieDrawable2.backgroundBitmap = Bitmap.createBitmap(rLottieDrawable2.width, rLottieDrawable2.height, Bitmap.Config.ARGB_8888);
                             } catch (Throwable th) {
-                                FileLog.m49e(th);
+                                FileLog.m67e(th);
                             }
                         }
                         if (RLottieDrawable.this.backgroundBitmap != null) {
@@ -1046,7 +1050,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     try {
                                         frame = bitmapsCache.getFrame(rLottieDrawable5.currentFrame / i5, rLottieDrawable5.backgroundBitmap);
                                     } catch (Exception e) {
-                                        FileLog.m49e(e);
+                                        FileLog.m67e(e);
                                         frame = 0;
                                     }
                                 } else {
@@ -1168,7 +1172,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                 }
                             } catch (Exception e2) {
-                                FileLog.m49e(e2);
+                                FileLog.m67e(e2);
                             }
                         }
                         RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnable);
@@ -1192,10 +1196,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.height = i2;
         this.isDice = 1;
         if ("🎲".equals(str)) {
-            readRes = readRes(null, C3417R.raw.diceloop);
+            readRes = readRes(null, C3419R.raw.diceloop);
             this.diceSwitchFramesCount = 60;
         } else {
-            readRes = "🎯".equals(str) ? readRes(null, C3417R.raw.dartloop) : null;
+            readRes = "🎯".equals(str) ? readRes(null, C3419R.raw.dartloop) : null;
         }
         getPaint().setFlags(2);
         if (TextUtils.isEmpty(readRes)) {
@@ -1366,7 +1370,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC51223();
+        this.uiRunnableGenerateCache = new RunnableC51573();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -1396,7 +1400,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 RLottieDrawable rLottieDrawable2 = RLottieDrawable.this;
                                 rLottieDrawable2.backgroundBitmap = Bitmap.createBitmap(rLottieDrawable2.width, rLottieDrawable2.height, Bitmap.Config.ARGB_8888);
                             } catch (Throwable th) {
-                                FileLog.m49e(th);
+                                FileLog.m67e(th);
                             }
                         }
                         if (RLottieDrawable.this.backgroundBitmap != null) {
@@ -1434,7 +1438,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     try {
                                         frame = bitmapsCache.getFrame(rLottieDrawable5.currentFrame / i5, rLottieDrawable5.backgroundBitmap);
                                     } catch (Exception e) {
-                                        FileLog.m49e(e);
+                                        FileLog.m67e(e);
                                         frame = 0;
                                     }
                                 } else {
@@ -1556,7 +1560,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                 }
                             } catch (Exception e2) {
-                                FileLog.m49e(e2);
+                                FileLog.m67e(e2);
                             }
                         }
                         RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnable);
@@ -1589,6 +1593,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         if (z) {
             setAllowDecodeSingleFrame(true);
         }
+    }
+
+    public void multiplySpeed(float f) {
+        this.timeBetweenFrames = (int) (this.timeBetweenFrames * (1.0f / f));
     }
 
     public static String readRes(File file, int i) {
@@ -1940,7 +1948,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 try {
                     this.frameWaitSync.await();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 this.frameWaitSync = null;
             }
@@ -2071,7 +2079,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 this.scaleX = rectF.width() / this.width;
                 this.scaleY = rectF.height() / this.height;
                 this.applyTransformation = false;
-                if (Math.abs(rectF.width() - this.width) >= AndroidUtilities.m54dp(1) || Math.abs(rectF.height() - this.height) >= AndroidUtilities.m54dp(1)) {
+                if (Math.abs(rectF.width() - this.width) >= AndroidUtilities.m72dp(1) || Math.abs(rectF.height() - this.height) >= AndroidUtilities.m72dp(1)) {
                     z2 = true;
                 }
                 this.needScale = z2;
@@ -2082,7 +2090,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         } else {
             float width = rectF.width() / this.width;
             float height = rectF.height() / this.height;
-            if (Math.abs(rectF.width() - this.width) >= AndroidUtilities.m54dp(1) || Math.abs(rectF.height() - this.height) >= AndroidUtilities.m54dp(1)) {
+            if (Math.abs(rectF.width() - this.width) >= AndroidUtilities.m72dp(1) || Math.abs(rectF.height() - this.height) >= AndroidUtilities.m72dp(1)) {
                 z2 = true;
             }
             f = width;

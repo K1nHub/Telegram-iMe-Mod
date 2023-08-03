@@ -39,7 +39,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2991
+    .line 3029
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;
     .locals 1
 
-    .line 3006
+    .line 3044
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -59,7 +59,7 @@
 
     return-object p0
 
-    .line 3008
+    .line 3046
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -85,13 +85,13 @@
 
     throw p0
 
-    .line 3013
+    .line 3051
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;-><init>()V
 
-    .line 3014
+    .line 3052
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -102,7 +102,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 3019
+    .line 3057
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -124,7 +124,7 @@
     :cond_0
     move v1, v2
 
-    .line 3020
+    .line 3058
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->view_messages:Z
 
@@ -139,7 +139,7 @@
     :cond_1
     move v1, v2
 
-    .line 3021
+    .line 3059
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_messages:Z
 
@@ -154,7 +154,7 @@
     :cond_2
     move v1, v2
 
-    .line 3022
+    .line 3060
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_media:Z
 
@@ -169,7 +169,7 @@
     :cond_3
     move v1, v2
 
-    .line 3023
+    .line 3061
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_stickers:Z
 
@@ -184,7 +184,7 @@
     :cond_4
     move v1, v2
 
-    .line 3024
+    .line 3062
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_gifs:Z
 
@@ -199,7 +199,7 @@
     :cond_5
     move v1, v2
 
-    .line 3025
+    .line 3063
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_games:Z
 
@@ -214,7 +214,7 @@
     :cond_6
     move v1, v2
 
-    .line 3026
+    .line 3064
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_inline:Z
 
@@ -224,11 +224,11 @@
 
     move v2, v3
 
-    .line 3027
+    .line 3065
     :cond_7
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->embed_links:Z
 
-    .line 3028
+    .line 3066
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -241,12 +241,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 3032
+    .line 3070
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3033
+    .line 3071
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->view_messages:Z
 
     if-eqz v0, :cond_0
@@ -265,7 +265,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3034
+    .line 3072
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_messages:Z
 
     if-eqz v1, :cond_1
@@ -280,7 +280,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3035
+    .line 3073
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_media:Z
 
     if-eqz v1, :cond_2
@@ -295,7 +295,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3036
+    .line 3074
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_stickers:Z
 
     if-eqz v1, :cond_3
@@ -310,7 +310,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3037
+    .line 3075
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_gifs:Z
 
     if-eqz v1, :cond_4
@@ -325,7 +325,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3038
+    .line 3076
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_games:Z
 
     if-eqz v1, :cond_5
@@ -340,7 +340,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3039
+    .line 3077
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->send_inline:Z
 
     if-eqz v1, :cond_6
@@ -355,7 +355,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3040
+    .line 3078
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->embed_links:Z
 
     if-eqz v1, :cond_7
@@ -370,10 +370,10 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->flags:I
 
-    .line 3041
+    .line 3079
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3042
+    .line 3080
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelBannedRights_layer92;->until_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

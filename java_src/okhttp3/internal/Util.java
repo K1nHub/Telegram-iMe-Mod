@@ -57,12 +57,13 @@ import okio.ByteString;
 import okio.Options;
 import okio.Sink;
 import okio.Source;
+import org.telegram.messenger.MessagesStorage;
 import p033j$.util.DesugarTimeZone;
 /* compiled from: Util.kt */
 /* loaded from: classes4.dex */
 public final class Util {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    public static final Headers EMPTY_HEADERS = Headers.Companion.m75of(new String[0]);
+    public static final Headers EMPTY_HEADERS = Headers.Companion.m93of(new String[0]);
     public static final ResponseBody EMPTY_RESPONSE;
     private static final Options UNICODE_BOMS;
     public static final TimeZone UTC;
@@ -105,7 +106,7 @@ public final class Util {
         RequestBody.Companion.create$default(RequestBody.Companion, bArr, (MediaType) null, 0, 0, 7, (Object) null);
         Options.Companion companion = Options.Companion;
         ByteString.Companion companion2 = ByteString.Companion;
-        UNICODE_BOMS = companion.m71of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
+        UNICODE_BOMS = companion.m89of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
         TimeZone timeZone = DesugarTimeZone.getTimeZone("GMT");
         Intrinsics.checkNotNull(timeZone);
         UTC = timeZone;
@@ -320,7 +321,7 @@ public final class Util {
         int length = indexOfControlOrNonAscii.length();
         for (int i = 0; i < length; i++) {
             char charAt = indexOfControlOrNonAscii.charAt(i);
-            if (Intrinsics.compare(charAt, 31) <= 0 || Intrinsics.compare(charAt, 127) >= 0) {
+            if (Intrinsics.compare(charAt, 31) <= 0 || Intrinsics.compare(charAt, MessagesStorage.LAST_DB_VERSION) >= 0) {
                 return i;
             }
         }

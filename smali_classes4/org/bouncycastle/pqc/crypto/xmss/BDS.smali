@@ -838,7 +838,7 @@
 .method private initialize([B[BLorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress;)V
     .locals 10
 
-    const-string v0, "otsHashAddress == null"
+    const-string/jumbo v0, "otsHashAddress == null"
 
     invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1431,7 +1431,7 @@
 .method private nextAuthenticationPath([B[BLorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress;)V
     .locals 11
 
-    const-string v0, "otsHashAddress == null"
+    const-string/jumbo v0, "otsHashAddress == null"
 
     invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

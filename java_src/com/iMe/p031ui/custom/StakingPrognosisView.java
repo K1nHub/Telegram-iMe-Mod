@@ -17,12 +17,18 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentStakingPrognosisBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.StatisticActivity;
@@ -53,7 +59,27 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new StakingPrognosisView$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.StakingPrognosisView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resourceManager$delegate = lazy;
         ForkContentStakingPrognosisBinding inflate = ForkContentStakingPrognosisBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -139,14 +165,14 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
     private final void setupView() {
         setupColors();
         ForkContentStakingPrognosisBinding forkContentStakingPrognosisBinding = this.binding;
-        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3417R.string.staking_calculator_statistics));
-        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3417R.string.staking_calculator_mode));
-        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3417R.string.staking_calculator_income_profit));
-        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3417R.string.staking_calculator_deposit_title));
-        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3417R.string.staking_calculator_deposit_description));
+        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3419R.string.staking_calculator_statistics));
+        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3419R.string.staking_calculator_mode));
+        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3419R.string.staking_calculator_income_profit));
+        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3419R.string.staking_calculator_deposit_title));
+        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3419R.string.staking_calculator_deposit_description));
         BigActionButton bigActionButton = forkContentStakingPrognosisBinding.buttonDeposit;
         bigActionButton.setForcedCustomHeight(36);
-        bigActionButton.setText(getResourceManager().getString(C3417R.string.wallet_operation_deposit));
+        bigActionButton.setText(getResourceManager().getString(C3419R.string.wallet_operation_deposit));
         addView(this.binding.getRoot());
     }
 }

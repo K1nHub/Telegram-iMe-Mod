@@ -5,18 +5,18 @@ public class TLRPC$TL_inputWallPaper extends TLRPC$InputWallPaper {
     public long access_hash;
 
     /* renamed from: id */
-    public long f1588id;
+    public long f1596id;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1588id = abstractSerializedData.readInt64(z);
+        this.f1596id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1588id);
+        abstractSerializedData.writeInt64(this.f1596id);
         abstractSerializedData.writeInt64(this.access_hash);
     }
 }

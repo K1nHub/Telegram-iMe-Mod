@@ -29,14 +29,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)V
     .locals 0
 
-    .line 83
+    .line 114
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 85
+    .line 116
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->beforeCursorPosition:I
 
     return-void
@@ -47,7 +47,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 1
 
-    .line 100
+    .line 131
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -56,7 +56,7 @@
 
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->removeTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 102
+    .line 133
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -71,7 +71,7 @@
 
     if-le p1, v0, :cond_0
 
-    .line 103
+    .line 134
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -82,7 +82,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 104
+    .line 135
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -93,8 +93,13 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 107
+    .line 138
     :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)V
+
+    .line 140
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -109,14 +114,14 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 89
+    .line 120
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->text:Ljava/lang/String;
 
-    .line 90
+    .line 121
     iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->beforeCursorPosition:I
 
     return-void

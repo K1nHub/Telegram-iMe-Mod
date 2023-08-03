@@ -137,7 +137,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
                 TraceUtil.endSection();
                 this.decoderCounters.ensureUpdated();
             } catch (DecoderException e) {
-                Log.m799e(TAG, "Video codec error", e);
+                Log.m817e(TAG, "Video codec error", e);
                 this.eventDispatcher.videoCodecError(e);
                 throw createRendererException(e, this.inputFormat, 4003);
             }
@@ -440,7 +440,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
             this.eventDispatcher.decoderInitialized(this.decoder.getName(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
             this.decoderCounters.decoderInitCount++;
         } catch (DecoderException e) {
-            Log.m799e(TAG, "Video codec error", e);
+            Log.m817e(TAG, "Video codec error", e);
             this.eventDispatcher.videoCodecError(e);
             throw createRendererException(e, this.inputFormat, 4001);
         } catch (OutOfMemoryError e2) {

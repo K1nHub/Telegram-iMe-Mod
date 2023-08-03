@@ -28,10 +28,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 2744
+    .line 2769
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2745
+    .line 2770
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialog;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_dialog;-><init>()V

@@ -1,5 +1,6 @@
 package com.iMe.p031ui.catalog.details;
 
+import android.net.Uri;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.manager.TelegramApi;
 import com.iMe.model.catalog.CampaignItem;
@@ -13,14 +14,16 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
+import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
+import timber.log.Timber;
 /* compiled from: ChannelDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsPresenter */
@@ -51,12 +54,25 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
         if (str == null) {
             return;
         }
-        Observable<TLRPC$Chat> observeOn = telegramApi.getChatInfoByUsername(str).observeOn(this.schedulersProvider.mo698ui());
+        Observable<TLRPC$Chat> observeOn = telegramApi.getChatInfoByUsername(str).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi.getChatInfoB…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
         Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final ChannelDetailsPresenter$onSubscribeClick$1 channelDetailsPresenter$onSubscribeClick$1 = new ChannelDetailsPresenter$onSubscribeClick$1(this);
+        final Function1<TLRPC$Chat, ObservableSource<? extends Boolean>> function1 = new Function1<TLRPC$Chat, ObservableSource<? extends Boolean>>() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Boolean> invoke(TLRPC$Chat it) {
+                Observable subscriptionStatusChangeObservable;
+                Intrinsics.checkNotNullParameter(it, "it");
+                subscriptionStatusChangeObservable = ChannelDetailsPresenter.this.getSubscriptionStatusChangeObservable(it);
+                return subscriptionStatusChangeObservable;
+            }
+        };
         Observable flatMap = withLoadingDialog$default.flatMap(new Function() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -66,7 +82,57 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "fun onSubscribeClick() {…     .autoDispose()\n    }");
-        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2008x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2009x14036c9c(null)));
+        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Boolean, Unit>() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
+                m1349invoke(bool);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1349invoke(Boolean it) {
+                CampaignItem campaignItem;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Boolean bool = it;
+                if (!bool.booleanValue()) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("https://t.me/");
+                    campaignItem = ChannelDetailsPresenter.this.campaign;
+                    sb.append(campaignItem.getShortname());
+                    Uri parse = Uri.parse(sb.toString());
+                    Intrinsics.checkNotNullExpressionValue(parse, "parse(Constants.Telegram…INT + campaign.shortname)");
+                    ((ChannelDetailsView) ChannelDetailsPresenter.this.getViewState()).onSubscribedToChannel(parse);
+                }
+                ((ChannelDetailsView) ChannelDetailsPresenter.this.getViewState()).setupSubscribeButton(bool.booleanValue());
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -96,13 +162,13 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3417R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3419R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
         ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }
 
     public final void createChannelQr() {
-        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1515id);
+        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1518id);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -120,13 +186,25 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     /* JADX INFO: Access modifiers changed from: private */
     public final Observable<Boolean> getSubscriptionStatusChangeObservable(TLRPC$Chat tLRPC$Chat) {
         Observable<TLRPC$Chat> unsubscribeFromChannel;
-        boolean canSubscribe = canSubscribe(tLRPC$Chat);
+        final boolean canSubscribe = canSubscribe(tLRPC$Chat);
         if (canSubscribe) {
             unsubscribeFromChannel = this.telegramApi.subscribeToChannel(tLRPC$Chat);
         } else {
             unsubscribeFromChannel = this.telegramApi.unsubscribeFromChannel(tLRPC$Chat);
         }
-        final ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1 channelDetailsPresenter$getSubscriptionStatusChangeObservable$1 = new ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1(canSubscribe);
+        final Function1<TLRPC$Chat, Boolean> function1 = new Function1<TLRPC$Chat, Boolean>() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(TLRPC$Chat it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf(!canSubscribe);
+            }
+        };
         Observable map = unsubscribeFromChannel.map(new Function() { // from class: com.iMe.ui.catalog.details.ChannelDetailsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

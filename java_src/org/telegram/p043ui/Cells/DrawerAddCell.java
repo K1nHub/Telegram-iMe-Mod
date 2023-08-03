@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -28,21 +28,21 @@ public class DrawerAddCell extends FrameLayout {
         this.textView.setMaxLines(1);
         this.textView.setSingleLine(true);
         this.textView.setGravity(19);
-        this.textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(29));
+        this.textView.setCompoundDrawablePadding(AndroidUtilities.m72dp(29));
         addView(this.textView, LayoutHelper.createFrame(-1, -1, 51, 19, 0, 16, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
-        this.textView.setText(LocaleController.getString("AddAccount", C3417R.string.AddAccount));
-        Drawable drawable = getResources().getDrawable(C3417R.C3419drawable.msg_add);
+        this.textView.setText(LocaleController.getString("AddAccount", C3419R.string.AddAccount));
+        Drawable drawable = getResources().getDrawable(C3419R.C3421drawable.msg_add);
         if (drawable != null) {
             drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
         }

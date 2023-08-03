@@ -12,6 +12,7 @@ import com.iMe.storage.data.network.model.response.kikliko.GifResponse;
 import java.io.File;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.Utilities;
@@ -32,9 +33,35 @@ public final class KiklikoGifView extends FrameLayout {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new KiklikoGifView$gifView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.KiklikoGifView$gifView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initGifView;
+                initGifView = KiklikoGifView.this.initGifView();
+                return initGifView;
+            }
+        });
         this.gifView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new KiklikoGifView$mutedIconView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.KiklikoGifView$mutedIconView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initMutedIconView;
+                initMutedIconView = KiklikoGifView.this.initMutedIconView();
+                return initMutedIconView;
+            }
+        });
         this.mutedIconView$delegate = lazy2;
         setBackgroundColor(Theme.getColor(Theme.key_chat_emojiSearchBackground));
         addView(getGifView(), LayoutHelper.createFrame(-1, -1));

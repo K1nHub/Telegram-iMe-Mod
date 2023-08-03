@@ -60,46 +60,46 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 12344
+    .line 12364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 12359
+    .line 12379
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mTargetPosition:I
 
     const/4 v0, 0x0
 
-    .line 12370
+    .line 12390
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mPreviousLayoutItemCount:I
 
-    .line 12376
+    .line 12396
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
 
     const/4 v1, 0x1
 
-    .line 12388
+    .line 12408
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mLayoutStep:I
 
-    .line 12394
+    .line 12414
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mItemCount:I
 
-    .line 12396
+    .line 12416
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mStructureChanged:Z
 
-    .line 12403
+    .line 12423
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mInPreLayout:Z
 
-    .line 12405
+    .line 12425
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mTrackOldChangeHolders:Z
 
-    .line 12407
+    .line 12427
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mIsMeasuring:Z
 
-    .line 12413
+    .line 12433
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mRunSimpleAnimations:Z
 
-    .line 12415
+    .line 12435
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return-void
@@ -110,7 +110,7 @@
 .method assertLayoutStep(I)V
     .locals 3
 
-    .line 12350
+    .line 12370
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mLayoutStep:I
 
     and-int/2addr v0, p1
@@ -119,7 +119,7 @@
 
     return-void
 
-    .line 12351
+    .line 12371
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -131,7 +131,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 12352
+    .line 12372
     invoke-static {p1}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -144,7 +144,7 @@
 
     iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mLayoutStep:I
 
-    .line 12353
+    .line 12373
     invoke-static {p1}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -163,12 +163,12 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 12593
+    .line 12613
     iget-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mInPreLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 12594
+    .line 12614
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mPreviousLayoutItemCount:I
 
     iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 12595
+    .line 12615
     :cond_0
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mItemCount:I
 
@@ -188,7 +188,7 @@
 .method public hasTargetScrollPosition()Z
     .locals 2
 
-    .line 12557
+    .line 12577
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mTargetPosition:I
 
     const/4 v1, -0x1
@@ -209,7 +209,7 @@
 .method public isPreLayout()Z
     .locals 1
 
-    .line 12472
+    .line 12492
     iget-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mInPreLayout:Z
 
     return v0
@@ -220,10 +220,10 @@
 
     const/4 v0, 0x1
 
-    .line 12441
+    .line 12461
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mLayoutStep:I
 
-    .line 12442
+    .line 12462
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
     move-result p1
@@ -232,13 +232,13 @@
 
     const/4 p1, 0x0
 
-    .line 12443
+    .line 12463
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mInPreLayout:Z
 
-    .line 12444
+    .line 12464
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mTrackOldChangeHolders:Z
 
-    .line 12445
+    .line 12465
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mIsMeasuring:Z
 
     return-void
@@ -247,7 +247,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 12622
+    .line 12642
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -346,7 +346,7 @@
 .method public willRunPredictiveAnimations()Z
     .locals 1
 
-    .line 12483
+    .line 12503
     iget-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$State;->mRunPredictiveAnimations:Z
 
     return v0

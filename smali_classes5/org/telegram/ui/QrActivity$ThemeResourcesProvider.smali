@@ -27,7 +27,7 @@
 .method private constructor <init>(Lorg/telegram/ui/QrActivity;)V
     .locals 0
 
-    .line 784
+    .line 779
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/QrActivity$1;)V
     .locals 0
 
-    .line 784
+    .line 779
     invoke-direct {p0, p1}, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;-><init>(Lorg/telegram/ui/QrActivity;)V
 
     return-void
@@ -54,18 +54,20 @@
     return-void
 .end method
 
-.method public contains(I)Z
-    .locals 0
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
 
-    const/4 p1, 0x0
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
-    return p1
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getColor(I)I
     .locals 1
 
-    .line 799
+    .line 789
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->colors:Landroid/util/SparseIntArray;
 
     if-eqz v0, :cond_0
@@ -138,7 +140,7 @@
 .method initColors(Lorg/telegram/ui/ActionBar/EmojiThemes;Z)V
     .locals 1
 
-    .line 794
+    .line 784
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeResourcesProvider;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity;->access$1600(Lorg/telegram/ui/QrActivity;)I

@@ -6,11 +6,12 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
@@ -43,20 +44,57 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(onPassed, "onPassed");
         this.fragment = fragment;
         this.onPassed = onPassed;
-        lazy = LazyKt__LazyJVMKt.lazy(new ClearOrDeleteCloudConfirmBottomSheet$rootLinear$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$rootLinear$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initRootLinear;
+                initRootLinear = ClearOrDeleteCloudConfirmBottomSheet.this.initRootLinear();
+                return initRootLinear;
+            }
+        });
         this.rootLinear$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new ClearOrDeleteCloudConfirmBottomSheet$inputEditText$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<EditTextBoldCursor>() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$inputEditText$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final EditTextBoldCursor invoke() {
+                EditTextBoldCursor initInputEditText;
+                initInputEditText = ClearOrDeleteCloudConfirmBottomSheet.this.initInputEditText();
+                return initInputEditText;
+            }
+        });
         this.inputEditText$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ClearOrDeleteCloudConfirmBottomSheet$doneButton$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<ReportAlert.BottomSheetCell>() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$doneButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ReportAlert.BottomSheetCell invoke() {
+                ReportAlert.BottomSheetCell initDoneButton;
+                initDoneButton = ClearOrDeleteCloudConfirmBottomSheet.this.initDoneButton();
+                return initDoneButton;
+            }
+        });
         this.doneButton$delegate = lazy3;
         if (fragment instanceof ChatActivity) {
             AndroidUtilities.requestAdjustNothing(((ChatActivity) fragment).getParentActivity(), ((ChatActivity) fragment).getClassGuid());
         }
         setApplyBottomPadding(false);
         if (z) {
-            setTitle(LocaleController.getString("ClearHistory", C3417R.string.ClearHistory), true);
+            setTitle(LocaleController.getString("ClearHistory", C3419R.string.ClearHistory), true);
         } else {
-            setTitle(LocaleController.getString("DeleteChatUser", C3417R.string.DeleteChatUser), true);
+            setTitle(LocaleController.getString("DeleteChatUser", C3419R.string.DeleteChatUser), true);
         }
         getRootLinear().addView(getInputEditText(), LayoutHelper.createLinear(-1, 36, 51, 21, 10, 21, 10));
         getRootLinear().addView(getDoneButton(), LayoutHelper.createFrame(-1, 50, 51));
@@ -99,14 +137,14 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
         editTextBoldCursor.setInputType(49152);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getInternalString(C3417R.string.cloud_clear_or_delete_captcha_alert_message));
+        editTextBoldCursor.setHint(LocaleController.getInternalString(C3419R.string.cloud_clear_or_delete_captcha_alert_message));
         ViewExtKt.singleLine(editTextBoldCursor);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         int i = Theme.key_windowBackgroundWhiteBlackText;
         editTextBoldCursor.setTextColor(Theme.getColor(i));
         editTextBoldCursor.setCursorColor(Theme.getColor(i));
-        editTextBoldCursor.setCursorSize(AndroidUtilities.m54dp(20));
+        editTextBoldCursor.setCursorSize(AndroidUtilities.m72dp(20));
         editTextBoldCursor.setCursorWidth(1.5f);
         ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -125,7 +163,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ReportAlert.BottomSheetCell initDoneButton() {
-        ReportAlert.BottomSheetCell bottomSheetCell = new ReportAlert.BottomSheetCell(getContext());
+        ReportAlert.BottomSheetCell bottomSheetCell = new ReportAlert.BottomSheetCell(getContext(), null);
         bottomSheetCell.setBackground(null);
         bottomSheetCell.getBackgroundPublic().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -133,7 +171,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
                 ClearOrDeleteCloudConfirmBottomSheet.initDoneButton$lambda$4$lambda$3(ClearOrDeleteCloudConfirmBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getInternalString(C3417R.string.cloud_clear_or_delete_captcha_alert_positive_button));
+        bottomSheetCell.setText(LocaleController.getInternalString(C3419R.string.cloud_clear_or_delete_captcha_alert_positive_button));
         return bottomSheetCell;
     }
 

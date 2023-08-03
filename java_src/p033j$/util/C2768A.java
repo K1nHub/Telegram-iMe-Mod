@@ -10,19 +10,19 @@ import p033j$.util.function.InterfaceC2820f;
 final class C2768A extends AbstractC2773E implements InterfaceC2853s.InterfaceC2854a {
     @Override // p033j$.util.InterfaceC2853s.InterfaceC2854a, p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public /* synthetic */ boolean mo113b(Consumer consumer) {
-        return AbstractC2780a.m601j(this, consumer);
+    public /* synthetic */ boolean mo131b(Consumer consumer) {
+        return AbstractC2780a.m619j(this, consumer);
     }
 
     @Override // p033j$.util.InterfaceC2853s.InterfaceC2854a
     /* renamed from: e */
-    public void mo132e(InterfaceC2820f interfaceC2820f) {
+    public void mo150e(InterfaceC2820f interfaceC2820f) {
         Objects.requireNonNull(interfaceC2820f);
     }
 
     @Override // p033j$.util.InterfaceC2853s.InterfaceC2854a, p033j$.util.InterfaceC2853s
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
-        AbstractC2780a.m609b(this, consumer);
+        AbstractC2780a.m627b(this, consumer);
     }
 
     @Override // p033j$.util.InterfaceC2853s
@@ -32,17 +32,17 @@ final class C2768A extends AbstractC2773E implements InterfaceC2853s.InterfaceC2
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ long getExactSizeIfKnown() {
-        return AbstractC2780a.m606e(this);
+        return AbstractC2780a.m624e(this);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 
     @Override // p033j$.util.InterfaceC2853s.InterfaceC2854a
     /* renamed from: k */
-    public boolean mo131k(InterfaceC2820f interfaceC2820f) {
+    public boolean mo149k(InterfaceC2820f interfaceC2820f) {
         Objects.requireNonNull(interfaceC2820f);
         return false;
     }

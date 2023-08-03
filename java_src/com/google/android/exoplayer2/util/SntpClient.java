@@ -8,6 +8,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class SntpClient {
     public static final String DEFAULT_NTP_HOST = "time.android.com";
@@ -36,6 +37,10 @@ public final class SntpClient {
         void onInitializationFailed(IOException iOException);
 
         void onInitialized();
+    }
+
+    static /* synthetic */ long access$400() throws IOException {
+        return loadNtpTimeOffsetMs();
     }
 
     private SntpClient() {
@@ -88,8 +93,7 @@ public final class SntpClient {
         loader.startLoading(new NtpTimeLoadable(), new NtpTimeCallback(initializationCallback), 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static long loadNtpTimeOffsetMs() throws IOException {
+    private static long loadNtpTimeOffsetMs() throws IOException {
         InetAddress byName = InetAddress.getByName(getNtpHost());
         DatagramSocket datagramSocket = new DatagramSocket();
         try {
@@ -160,16 +164,16 @@ public final class SntpClient {
         int i4 = bArr[i + 2];
         int i5 = bArr[i + 3];
         if ((i2 & 128) == 128) {
-            i2 = (i2 & 127) + 128;
+            i2 = (i2 & MessagesStorage.LAST_DB_VERSION) + 128;
         }
         if ((i3 & 128) == 128) {
-            i3 = (i3 & 127) + 128;
+            i3 = (i3 & MessagesStorage.LAST_DB_VERSION) + 128;
         }
         if ((i4 & 128) == 128) {
-            i4 = (i4 & 127) + 128;
+            i4 = (i4 & MessagesStorage.LAST_DB_VERSION) + 128;
         }
         if ((i5 & 128) == 128) {
-            i5 = (i5 & 127) + 128;
+            i5 = (i5 & MessagesStorage.LAST_DB_VERSION) + 128;
         }
         return (i2 << 24) + (i3 << 16) + (i4 << 8) + i5;
     }
@@ -205,9 +209,9 @@ public final class SntpClient {
                     if (SntpClient.isInitialized) {
                         return;
                     }
-                    long loadNtpTimeOffsetMs = SntpClient.loadNtpTimeOffsetMs();
+                    long access$400 = SntpClient.access$400();
                     synchronized (SntpClient.valueLock) {
-                        long unused = SntpClient.elapsedRealtimeOffsetMs = loadNtpTimeOffsetMs;
+                        long unused = SntpClient.elapsedRealtimeOffsetMs = access$400;
                         boolean unused2 = SntpClient.isInitialized = true;
                     }
                 }

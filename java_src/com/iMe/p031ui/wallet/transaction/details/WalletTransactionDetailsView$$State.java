@@ -278,16 +278,16 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
     public class OpenProfileScreenCommand extends ViewCommand<WalletTransactionDetailsView> {
 
         /* renamed from: id */
-        public final long f457id;
+        public final long f460id;
 
         OpenProfileScreenCommand(WalletTransactionDetailsView$$State walletTransactionDetailsView$$State, long j) {
             super("openProfileScreen", OneExecutionStateStrategy.class);
-            this.f457id = j;
+            this.f460id = j;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTransactionDetailsView walletTransactionDetailsView) {
-            walletTransactionDetailsView.openProfileScreen(this.f457id);
+            walletTransactionDetailsView.openProfileScreen(this.f460id);
         }
     }
 

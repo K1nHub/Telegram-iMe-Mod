@@ -82,7 +82,7 @@ public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
 
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfg
     /* renamed from: a_ */
-    public final zzfg mo761a_() {
+    public final zzfg mo779a_() {
         return zza() ? new zzhi(this) : this;
     }
 
@@ -177,7 +177,7 @@ public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
     static {
         zzfh zzfhVar = new zzfh();
         zza = zzfhVar;
-        zzfhVar.mo762b_();
+        zzfhVar.mo780b_();
         zzb = zzfhVar;
     }
 }

@@ -115,7 +115,7 @@ public abstract class ApproveArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            return (((((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
+            return (((((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
         }
 
         public String toString() {

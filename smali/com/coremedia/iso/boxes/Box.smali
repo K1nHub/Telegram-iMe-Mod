@@ -12,7 +12,13 @@
     .end annotation
 .end method
 
+.method public abstract getParent()Lcom/coremedia/iso/boxes/Container;
+.end method
+
 .method public abstract getSize()J
+.end method
+
+.method public abstract getType()Ljava/lang/String;
 .end method
 
 .method public abstract setParent(Lcom/coremedia/iso/boxes/Container;)V

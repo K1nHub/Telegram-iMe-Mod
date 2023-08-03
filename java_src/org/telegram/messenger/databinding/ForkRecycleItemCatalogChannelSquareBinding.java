@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemCatalogChannelSquareBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkRecycleItemCatalogChannelSquareBinding implements ViewBin
     }
 
     public static ForkRecycleItemCatalogChannelSquareBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_catalog_channel_square, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_catalog_channel_square, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,20 +36,20 @@ public final class ForkRecycleItemCatalogChannelSquareBinding implements ViewBin
     }
 
     public static ForkRecycleItemCatalogChannelSquareBinding bind(View view) {
-        int i = C3417R.C3420id.card_channel;
+        int i = C3419R.C3422id.card_channel;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;
-            i = C3417R.C3420id.image_avatar;
+            i = C3419R.C3422id.image_avatar;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3417R.C3420id.image_verified;
+                i = C3419R.C3422id.image_verified;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3417R.C3420id.text_name;
+                    i = C3419R.C3422id.text_name;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3417R.C3420id.text_subscribers_count;
+                        i = C3419R.C3422id.text_subscribers_count;
                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView2 != null) {
                             return new ForkRecycleItemCatalogChannelSquareBinding(frameLayout, cardView, frameLayout, appCompatImageView, appCompatImageView2, appCompatTextView, appCompatTextView2);

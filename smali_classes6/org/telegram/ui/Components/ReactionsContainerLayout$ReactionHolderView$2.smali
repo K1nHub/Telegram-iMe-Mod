@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;Landroid/content/Context;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 1284
+    .line 1385
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$dispatchDraw$0()V
     .locals 2
 
-    .line 1297
+    .line 1415
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -55,13 +55,24 @@
 
 
 # virtual methods
+.method protected createImageReciever()Lorg/telegram/messenger/ImageReceiver;
+    .locals 1
+
+    .line 1389
+    new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2$1;
+
+    invoke-direct {v0, p0, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2$1;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;Landroid/view/View;)V
+
+    return-object v0
+.end method
+
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 1288
+    .line 1403
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1289
+    .line 1404
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -76,7 +87,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1290
+    .line 1405
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -85,17 +96,17 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 1292
+    .line 1407
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-boolean v0, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->shouldSwitchToLoopView:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-boolean p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -103,7 +114,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -115,7 +126,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
@@ -127,7 +138,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
@@ -143,16 +154,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
-    .line 1293
+    .line 1408
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
 
-    .line 1294
+    .line 1409
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -165,34 +176,83 @@
 
     invoke-virtual {p1, v1, v1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 1295
+    .line 1410
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1296
+    .line 1411
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 1412
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    .line 1414
+    :cond_1
     new-instance p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1300
-    :cond_1
+    .line 1418
+    :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->invalidate()V
 
     return-void
 .end method
 
 .method public invalidate()V
-    .locals 1
+    .locals 3
 
-    .line 1305
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    .line 1423
+    iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grabIfWeakDevice([Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 1426
+    :cond_0
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1306
+    .line 1427
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -202,13 +262,66 @@
     return-void
 .end method
 
-.method public invalidate(Landroid/graphics/Rect;)V
-    .locals 0
+.method public invalidate(IIII)V
+    .locals 2
 
-    .line 1311
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    .line 1441
+    invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grabIfWeakDevice([Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 1444
+    :cond_0
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
+
+    return-void
+.end method
+
+.method public invalidate(Landroid/graphics/Rect;)V
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    .line 1432
+    iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grabIfWeakDevice([Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 1435
+    :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1312
+    .line 1436
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$2;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;

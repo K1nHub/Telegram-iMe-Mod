@@ -162,7 +162,7 @@
     :cond_0
     const/4 p1, 0x2
 
-    const-string v0, "p"
+    const-string/jumbo v0, "p"
 
     .line 57
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;

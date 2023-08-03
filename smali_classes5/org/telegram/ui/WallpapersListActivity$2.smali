@@ -437,7 +437,7 @@
 .end method
 
 .method private synthetic lambda$onItemClick$3(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 26
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -618,7 +618,7 @@
 
     check-cast v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v7, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v6, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
     .line 627
     new-instance v1, Landroid/os/Bundle;
@@ -631,26 +631,26 @@
     invoke-virtual {v1, v5, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 629
-    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+    invoke-static {v6, v7}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v5
 
     if-eqz v5, :cond_6
 
     .line 630
-    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
+    invoke-static {v6, v7}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
 
     move-result v5
 
-    const-string v6, "enc_id"
+    const-string v8, "enc_id"
 
-    invoke-virtual {v1, v6, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v8, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_3
 
     .line 632
     :cond_6
-    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
+    invoke-static {v6, v7}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v5
 
@@ -659,24 +659,24 @@
     const-string v5, "user_id"
 
     .line 633
-    invoke-virtual {v1, v5, v7, v8}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v1, v5, v6, v7}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_2
 
     .line 634
     :cond_7
-    invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
+    invoke-static {v6, v7}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
     move-result v5
 
     if-eqz v5, :cond_8
 
-    neg-long v5, v7
+    neg-long v8, v6
 
-    const-string v9, "chat_id"
+    const-string v5, "chat_id"
 
     .line 635
-    invoke-virtual {v1, v9, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v1, v5, v8, v9}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 637
     :cond_8
@@ -691,9 +691,9 @@
 
     move-result-object v5
 
-    move-object/from16 v6, p1
+    move-object/from16 v8, p1
 
-    invoke-virtual {v5, v1, v6}, Lorg/telegram/messenger/MessagesController;->checkCanOpenChat(Landroid/os/Bundle;Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-virtual {v5, v1, v8}, Lorg/telegram/messenger/MessagesController;->checkCanOpenChat(Landroid/os/Bundle;Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     move-result v5
 
@@ -714,11 +714,11 @@
 
     move-result-object v5
 
-    sget v6, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
+    sget v8, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v5, v6, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v5, v8, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     .line 643
     new-instance v4, Lorg/telegram/ui/ChatActivity;
@@ -739,27 +739,29 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
+
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v11, 0x1
 
-    const/4 v12, 0x1
+    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
     const/4 v14, 0x0
 
-    const/4 v15, 0x0
+    const/4 v15, 0x1
 
-    const/16 v16, 0x1
+    const/16 v16, 0x0
 
     const/16 v17, 0x0
 
@@ -767,15 +769,17 @@
 
     const/16 v19, 0x0
 
-    const/16 v20, 0x0
+    invoke-static/range {v5 .. v19}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    invoke-virtual/range {v5 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move-result-object v2
 
-    goto/16 :goto_7
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
+
+    goto/16 :goto_6
 
     :cond_a
     :goto_4
-    move-object/from16 v6, p1
+    move-object/from16 v8, p1
 
     .line 614
     iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
@@ -797,32 +801,32 @@
 
     check-cast v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v14, v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v5, v5, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
     if-eqz p3, :cond_b
 
     .line 618
-    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    iget-object v7, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$800(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v7}, Lorg/telegram/ui/WallpapersListActivity;->access$800(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v5
+    move-result v7
 
-    invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
+    invoke-static {v7}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v7
 
     invoke-interface/range {p3 .. p3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v8
-
-    const/4 v11, 0x0
+    move-result-object v9
 
     const/4 v12, 0x0
 
     const/4 v13, 0x0
 
-    const/4 v5, 0x1
+    const/4 v14, 0x0
+
+    const/4 v15, 0x1
 
     const/16 v16, 0x0
 
@@ -840,75 +844,52 @@
 
     const/16 v23, 0x0
 
-    move-wide v9, v14
+    move-wide v10, v5
 
-    move-wide/from16 v24, v14
+    invoke-static/range {v9 .. v23}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    move v14, v5
+    move-result-object v9
 
-    move-object/from16 v15, v16
-
-    move-object/from16 v16, v17
-
-    move-object/from16 v17, v18
-
-    move/from16 v18, v19
-
-    move/from16 v19, v20
-
-    move-object/from16 v20, v21
-
-    move/from16 v21, v22
-
-    move-object/from16 v22, v23
-
-    invoke-virtual/range {v7 .. v22}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
-
-    goto :goto_6
-
-    :cond_b
-    move-wide/from16 v24, v14
+    invoke-virtual {v7, v9}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     .line 620
-    :goto_6
+    :cond_b
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_c
+    if-nez v7, :cond_c
 
     .line 621
-    iget-object v5, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
+    iget-object v7, v0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/WallpapersListActivity;->access$900(Lorg/telegram/ui/WallpapersListActivity;)I
+    invoke-static {v7}, Lorg/telegram/ui/WallpapersListActivity;->access$900(Lorg/telegram/ui/WallpapersListActivity;)I
 
-    move-result v5
+    move-result v7
 
-    invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
+    invoke-static {v7}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v7
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
-
-    const/4 v11, 0x0
+    move-result-object v9
 
     const/4 v12, 0x0
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x1
+    const/4 v14, 0x0
 
-    const/4 v15, 0x0
+    const/4 v15, 0x1
 
     const/16 v16, 0x0
 
     const/16 v17, 0x0
 
-    const/16 v18, 0x1
+    const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    const/16 v19, 0x1
 
     const/16 v20, 0x0
 
@@ -916,9 +897,15 @@
 
     const/16 v22, 0x0
 
-    move-wide/from16 v9, v24
+    const/16 v23, 0x0
 
-    invoke-virtual/range {v7 .. v22}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move-wide v10, v5
+
+    invoke-static/range {v9 .. v23}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
+
+    move-result-object v5
+
+    invoke-virtual {v7, v5}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     :cond_c
     add-int/lit8 v4, v4, 0x1
@@ -929,7 +916,7 @@
     :cond_d
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
-    :goto_7
+    :goto_6
     return v3
 .end method
 

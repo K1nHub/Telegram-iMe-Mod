@@ -238,7 +238,7 @@
 
     iput-object v0, p0, Lio/grpc/internal/AbstractManagedChannelImplBuilder;->nameResolverFactory:Lio/grpc/NameResolver$Factory;
 
-    const-string v0, "pick_first"
+    const-string/jumbo v0, "pick_first"
 
     .line 124
     iput-object v0, p0, Lio/grpc/internal/AbstractManagedChannelImplBuilder;->defaultLbPolicy:Ljava/lang/String;

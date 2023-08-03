@@ -8,22 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/FilterGLThread;
 
-.field public final synthetic f$1:[Landroid/graphics/Bitmap;
+.field public final synthetic f$1:Z
 
-.field public final synthetic f$2:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/FilterGLThread;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$1:[Landroid/graphics/Bitmap;
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$1:Z
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$2:Ljava/util/concurrent/CountDownLatch;
+    iput-boolean p3, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$2:Z
+
+    iput-boolean p4, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$3:Z
 
     return-void
 .end method
@@ -31,15 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Components/FilterGLThread;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$1:[Landroid/graphics/Bitmap;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$1:Z
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$2:Ljava/util/concurrent/CountDownLatch;
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$qeR6hdqb-ByADPuAyRCWdnJC95g(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;->f$3:Z
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$m6G2aFWDAGDflTAIide-tg1YM_8(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
 
     return-void
 .end method

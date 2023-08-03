@@ -404,7 +404,7 @@
     goto :goto_7
 
     :cond_9
-    const-string v1, "private"
+    const-string/jumbo v1, "private"
 
     .line 365
     invoke-static {v1, v3, v6}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -418,7 +418,7 @@
     goto :goto_6
 
     :cond_a
-    const-string v1, "public"
+    const-string/jumbo v1, "public"
 
     .line 368
     invoke-static {v1, v3, v6}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -486,7 +486,7 @@
     :cond_e
     const/4 v1, -0x1
 
-    const-string v2, "only-if-cached"
+    const-string/jumbo v2, "only-if-cached"
 
     .line 380
     invoke-static {v2, v3, v6}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z

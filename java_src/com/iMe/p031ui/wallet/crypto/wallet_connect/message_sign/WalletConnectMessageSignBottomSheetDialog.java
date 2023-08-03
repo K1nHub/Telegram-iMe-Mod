@@ -17,13 +17,15 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectMessageSignBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -60,7 +62,7 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectMessageSignBottomSheetDialog(long r10, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p043ui.ActionBar.BaseFragment r15) {
+    public WalletConnectMessageSignBottomSheetDialog(final long r10, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, final com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, final com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p043ui.ActionBar.BaseFragment r15) {
         /*
             r9 = this;
             java.lang.String r0 = "sessionItem"
@@ -84,7 +86,7 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
             r6 = r12
             r7 = r13
             r8 = r14
-            r2.<init>(r3, r4, r6, r7, r8)
+            r2.<init>()
             moxy.ktx.MoxyKtxDelegate r10 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r11 = r9.getMvpDelegate()
             java.lang.String r12 = "mvpDelegate"
@@ -105,16 +107,16 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
             kotlin.LazyThreadSafetyMode r11 = r10.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$1 r12 = new com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$1
             r13 = 0
-            r12.<init>(r9, r13, r13)
+            r12.<init>()
             kotlin.Lazy r11 = kotlin.LazyKt.lazy(r11, r12)
             r9.walletFlowCoordinator$delegate = r11
             kotlin.LazyThreadSafetyMode r10 = r10.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$2 r11 = new com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$2
-            r11.<init>(r9, r13, r13)
+            r11.<init>()
             kotlin.Lazy r10 = kotlin.LazyKt.lazy(r10, r11)
             r9.resourceManager$delegate = r10
             com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$binding$2 r10 = new com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$binding$2
-            r10.<init>(r9)
+            r10.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r10 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r9, r13, r10, r1, r13)
             r9.binding$delegate = r10
             r10 = 0
@@ -157,8 +159,8 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
         binding.textMessage.setText(message);
-        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3417R.string.wallet_connect_transaction_from), true);
-        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3417R.string.wallet_connect_transaction_dapp), false);
+        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3419R.string.wallet_connect_transaction_from), true);
+        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3419R.string.wallet_connect_transaction_dapp), false);
     }
 
     @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
@@ -186,21 +188,55 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_connect_transaction_title));
-        binding.buttonProcess.setText(getResourceManager().getString(C3417R.string.wallet_connect_transaction_button_sign));
+        binding.textTitle.setText(getResourceManager().getString(C3419R.string.wallet_connect_transaction_title));
+        binding.buttonProcess.setText(getResourceManager().getString(C3419R.string.wallet_connect_transaction_button_sign));
         ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3419R.C3421drawable.ic_close_white);
     }
 
     private final void setupListeners() {
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
         BigActionButton buttonProcess = binding.buttonProcess;
         Intrinsics.checkNotNullExpressionValue(buttonProcess, "buttonProcess");
-        ViewExtKt.safeThrottledClick$default(buttonProcess, 0L, new WalletConnectMessageSignBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonProcess, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectMessageSignBottomSheetDialog.this.showSignConfirmationDialog();
+            }
+        }, 1, null);
         ActionBarMenuItem buttonClose = binding.buttonClose;
         Intrinsics.checkNotNullExpressionValue(buttonClose, "buttonClose");
-        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new WalletConnectMessageSignBottomSheetDialog$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectMessageSignBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

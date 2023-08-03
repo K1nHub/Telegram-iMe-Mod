@@ -7,7 +7,7 @@ public final class zzci {
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     /* loaded from: classes3.dex */
-    public static final class zza extends zzeo<zza, C7016zza> implements zzgb {
+    public static final class zza extends zzeo<zza, C7275zza> implements zzgb {
         private static final zzex<Integer, zzdd> zzd = new zzcj();
         private static final zza zze;
         private static volatile zzgj<zza> zzf;
@@ -19,12 +19,12 @@ public final class zzci {
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzci$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C7016zza extends zzeo.zzb<zza, C7016zza> implements zzgb {
-            private C7016zza() {
+        public static final class C7275zza extends zzeo.zzb<zza, C7275zza> implements zzgb {
+            private C7275zza() {
                 super(zza.zze);
             }
 
-            /* synthetic */ C7016zza(zzch zzchVar) {
+            /* synthetic */ C7275zza(zzch zzchVar) {
                 this();
             }
         }
@@ -38,7 +38,7 @@ public final class zzci {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7016zza(null);
+                    return new C7275zza(null);
                 case 3:
                     return zzeo.zza(zze, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001e", new Object[]{"zzc", zzdd.zzb()});
                 case 4:
@@ -78,7 +78,7 @@ public final class zzci {
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     /* loaded from: classes3.dex */
-    public static final class zzb extends zzeo<zzb, C7017zzb> implements zzgb {
+    public static final class zzb extends zzeo<zzb, C7276zzb> implements zzgb {
         private static final zzb zzj;
         private static volatile zzgj<zzb> zzk;
         private int zzc;
@@ -184,12 +184,12 @@ public final class zzci {
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzci$zzb$zzb  reason: collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C7017zzb extends zzeo.zzb<zzb, C7017zzb> implements zzgb {
-            private C7017zzb() {
+        public static final class C7276zzb extends zzeo.zzb<zzb, C7276zzb> implements zzgb {
+            private C7276zzb() {
                 super(zzb.zzj);
             }
 
-            /* synthetic */ C7017zzb(zzch zzchVar) {
+            /* synthetic */ C7276zzb(zzch zzchVar) {
                 this();
             }
         }
@@ -203,7 +203,7 @@ public final class zzci {
                 case 1:
                     return new zzb();
                 case 2:
-                    return new C7017zzb(null);
+                    return new C7276zzb(null);
                 case 3:
                     return zzeo.zza(zzj, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဌ\u0001\u0003ဌ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ခ\u0005", new Object[]{"zzc", "zzd", zzd.zzb(), "zze", zzc.zzb(), "zzf", zza.zzb(), "zzg", "zzh", "zzi"});
                 case 4:

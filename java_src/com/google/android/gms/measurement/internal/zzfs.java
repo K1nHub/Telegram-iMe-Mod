@@ -35,6 +35,12 @@ public final class zzfs extends zzgp {
         this.zzg = new zzfp(this, "Thread death: Uncaught exception on network thread");
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* bridge */ /* synthetic */ boolean zzr(zzfs zzfsVar) {
+        boolean z = zzfsVar.zzj;
+        return false;
+    }
+
     private final void zzt(zzfq<?> zzfqVar) {
         synchronized (this.zzh) {
             this.zzd.add(zzfqVar);

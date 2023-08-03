@@ -3,14 +3,17 @@ package org.telegram.messenger;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 /* loaded from: classes4.dex */
 public class DispatchQueue extends Thread {
+    private static final int THREAD_PRIORITY_DEFAULT = -1000;
     private static int indexPointer;
     private volatile Handler handler;
     public final int index;
     private long lastTaskTime;
+    private int priority;
     private CountDownLatch syncLatch;
 
     public void handleMessage(Message message) {
@@ -26,6 +29,21 @@ public class DispatchQueue extends Thread {
         int i = indexPointer;
         indexPointer = i + 1;
         this.index = i;
+        this.priority = -1000;
+        setName(str);
+        if (z) {
+            start();
+        }
+    }
+
+    public DispatchQueue(String str, boolean z, int i) {
+        this.handler = null;
+        this.syncLatch = new CountDownLatch(1);
+        int i2 = indexPointer;
+        indexPointer = i2 + 1;
+        this.index = i2;
+        this.priority = -1000;
+        this.priority = i;
         setName(str);
         if (z) {
             start();
@@ -49,7 +67,7 @@ public class DispatchQueue extends Thread {
             this.syncLatch.await();
             this.handler.removeCallbacks(runnable);
         } catch (Exception e) {
-            FileLog.m48e((Throwable) e, false);
+            FileLog.m66e((Throwable) e, false);
         }
     }
 
@@ -60,7 +78,7 @@ public class DispatchQueue extends Thread {
                 this.handler.removeCallbacks(runnable);
             }
         } catch (Exception e) {
-            FileLog.m48e((Throwable) e, false);
+            FileLog.m66e((Throwable) e, false);
         }
     }
 
@@ -73,7 +91,7 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
         } catch (Exception e) {
-            FileLog.m48e((Throwable) e, false);
+            FileLog.m66e((Throwable) e, false);
         }
         if (j <= 0) {
             return this.handler.post(runnable);
@@ -86,7 +104,7 @@ public class DispatchQueue extends Thread {
             this.syncLatch.await();
             this.handler.removeCallbacksAndMessages(null);
         } catch (Exception e) {
-            FileLog.m48e((Throwable) e, false);
+            FileLog.m66e((Throwable) e, false);
         }
     }
 
@@ -110,6 +128,10 @@ public class DispatchQueue extends Thread {
             }
         });
         this.syncLatch.countDown();
+        int i = this.priority;
+        if (i != -1000) {
+            Process.setThreadPriority(i);
+        }
         Looper.loop();
     }
 

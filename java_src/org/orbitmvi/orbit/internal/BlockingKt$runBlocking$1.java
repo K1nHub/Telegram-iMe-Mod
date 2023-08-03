@@ -9,10 +9,11 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Blocking.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.BlockingKt$runBlocking$1", m83f = "Blocking.kt", m82l = {21}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.BlockingKt$runBlocking$1", m101f = "Blocking.kt", m100l = {21}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-final class BlockingKt$runBlocking$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super T>, Object> {
+final class BlockingKt$runBlocking$1<T> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super T>, Object> {
     final /* synthetic */ Function1<Continuation<? super T>, Object> $block;
     int label;
 
@@ -30,6 +31,10 @@ final class BlockingKt$runBlocking$1 extends SuspendLambda implements Function2<
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(CoroutineScope coroutineScope, Object obj) {
+        return invoke(coroutineScope, (Continuation) ((Continuation) obj));
+    }
+
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super T> continuation) {
         return ((BlockingKt$runBlocking$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }

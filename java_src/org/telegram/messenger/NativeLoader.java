@@ -95,7 +95,7 @@ public class NativeLoader {
             boolean r2 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L20
             if (r2 == 0) goto L1b
             java.lang.String r2 = "loaded normal lib"
-            org.telegram.messenger.FileLog.m52d(r2)     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L20
+            org.telegram.messenger.FileLog.m70d(r2)     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L20
         L1b:
             monitor-exit(r0)
             return
@@ -104,7 +104,7 @@ public class NativeLoader {
             goto Lb2
         L20:
             r2 = move-exception
-            org.telegram.messenger.FileLog.m49e(r2)     // Catch: java.lang.Throwable -> L1d
+            org.telegram.messenger.FileLog.m67e(r2)     // Catch: java.lang.Throwable -> L1d
             java.lang.StringBuilder r3 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> L1d
             java.lang.String r4 = "129: "
             r3.append(r4)     // Catch: java.lang.Throwable -> L1d
@@ -125,7 +125,7 @@ public class NativeLoader {
             boolean r5 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L66
             if (r5 == 0) goto L5b
             java.lang.String r5 = "Load local lib"
-            org.telegram.messenger.FileLog.m52d(r5)     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L66
+            org.telegram.messenger.FileLog.m70d(r5)     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L66
         L5b:
             java.lang.String r5 = r4.getAbsolutePath()     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L66
             java.lang.System.load(r5)     // Catch: java.lang.Throwable -> L1d java.lang.Error -> L66
@@ -138,7 +138,7 @@ public class NativeLoader {
             r6.append(r5)     // Catch: java.lang.Throwable -> L1d
             java.lang.String r7 = "\n"
             r6.append(r7)     // Catch: java.lang.Throwable -> L1d
-            org.telegram.messenger.FileLog.m49e(r5)     // Catch: java.lang.Throwable -> L1d
+            org.telegram.messenger.FileLog.m67e(r5)     // Catch: java.lang.Throwable -> L1d
             r4.delete()     // Catch: java.lang.Throwable -> L1d
         L77:
             boolean r5 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1d
@@ -149,7 +149,7 @@ public class NativeLoader {
             r5.append(r6)     // Catch: java.lang.Throwable -> L1d
             r5.append(r2)     // Catch: java.lang.Throwable -> L1d
             java.lang.String r5 = r5.toString()     // Catch: java.lang.Throwable -> L1d
-            org.telegram.messenger.FileLog.m51e(r5)     // Catch: java.lang.Throwable -> L1d
+            org.telegram.messenger.FileLog.m69e(r5)     // Catch: java.lang.Throwable -> L1d
             java.lang.StringBuilder r5 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> L1d
             java.lang.StringBuilder r6 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L1d
             r6.<init>()     // Catch: java.lang.Throwable -> L1d
@@ -180,7 +180,7 @@ public class NativeLoader {
             goto Le0
         Lcd:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m49e(r8)     // Catch: java.lang.Throwable -> Le2
+            org.telegram.messenger.FileLog.m67e(r8)     // Catch: java.lang.Throwable -> Le2
             java.lang.StringBuilder r1 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> Le2
             java.lang.String r2 = "185: "
             r1.append(r2)     // Catch: java.lang.Throwable -> Le2
@@ -215,7 +215,7 @@ public class NativeLoader {
                         } else if (str3.equalsIgnoreCase("mips")) {
                             str = "mips";
                         } else if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m51e("Unsupported arch: " + str3);
+                            FileLog.m69e("Unsupported arch: " + str3);
                         }
                     }
                     str = "armeabi";
@@ -223,7 +223,7 @@ public class NativeLoader {
             }
             str2 = str;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         String property = System.getProperty("os.arch");
         return (property == null || !property.contains("686")) ? str2 : "x86";

@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 3153
+    .line 3215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +27,7 @@
 .method public static registerMediaMetricsListener(Landroid/content/Context;Lcom/google/android/exoplayer2/ExoPlayerImpl;Z)Lcom/google/android/exoplayer2/analytics/PlayerId;
     .locals 0
 
-    .line 3158
+    .line 3220
     invoke-static {p0}, Lcom/google/android/exoplayer2/analytics/MediaMetricsListener;->create(Landroid/content/Context;)Lcom/google/android/exoplayer2/analytics/MediaMetricsListener;
 
     move-result-object p0
@@ -38,10 +38,10 @@
 
     const-string p1, "MediaMetricsService unavailable."
 
-    .line 3160
+    .line 3222
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3161
+    .line 3223
     new-instance p0, Lcom/google/android/exoplayer2/analytics/PlayerId;
 
     sget-object p1, Landroid/media/metrics/LogSessionId;->LOG_SESSION_ID_NONE:Landroid/media/metrics/LogSessionId;
@@ -53,10 +53,10 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 3164
+    .line 3226
     invoke-virtual {p1, p0}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->addAnalyticsListener(Lcom/google/android/exoplayer2/analytics/AnalyticsListener;)V
 
-    .line 3166
+    .line 3228
     :cond_1
     new-instance p1, Lcom/google/android/exoplayer2/analytics/PlayerId;
 

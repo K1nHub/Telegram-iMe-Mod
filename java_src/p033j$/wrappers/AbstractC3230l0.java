@@ -6,5 +6,5 @@ import java.util.function.LongToDoubleFunction;
 public abstract /* synthetic */ class AbstractC3230l0 implements LongToDoubleFunction {
 
     /* renamed from: a */
-    final /* synthetic */ C3228k0 f1274a;
+    final /* synthetic */ C3228k0 f1277a;
 }

@@ -6,20 +6,20 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;,
-        Landroidx/core/view/WindowInsetsCompat$TypeImpl30;,
-        Landroidx/core/view/WindowInsetsCompat$Type;,
-        Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;,
-        Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;,
-        Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;,
-        Landroidx/core/view/WindowInsetsCompat$BuilderImpl;,
-        Landroidx/core/view/WindowInsetsCompat$Builder;,
         Landroidx/core/view/WindowInsetsCompat$Impl30;,
+        Landroidx/core/view/WindowInsetsCompat$Impl;,
         Landroidx/core/view/WindowInsetsCompat$Impl29;,
         Landroidx/core/view/WindowInsetsCompat$Impl28;,
         Landroidx/core/view/WindowInsetsCompat$Impl21;,
         Landroidx/core/view/WindowInsetsCompat$Impl20;,
-        Landroidx/core/view/WindowInsetsCompat$Impl;
+        Landroidx/core/view/WindowInsetsCompat$Type;,
+        Landroidx/core/view/WindowInsetsCompat$Builder;,
+        Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;,
+        Landroidx/core/view/WindowInsetsCompat$TypeImpl30;,
+        Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;,
+        Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;,
+        Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;,
+        Landroidx/core/view/WindowInsetsCompat$BuilderImpl;
     }
 .end annotation
 

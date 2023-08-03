@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$VuEaPnYkWXaI9fOzgG5INAat_yc(Landroid/view/View;)V
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$heO-UkFo6-QFES3q1a_OuOh2maQ(Landroid/view/View;)V
 
     return-void
 .end method

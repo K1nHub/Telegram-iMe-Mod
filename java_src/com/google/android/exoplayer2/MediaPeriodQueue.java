@@ -125,7 +125,7 @@ public final class MediaPeriodQueue {
             this.loading = null;
             MediaPeriodHolder mediaPeriodHolder2 = this.playing;
             this.oldFrontPeriodUid = mediaPeriodHolder2.uid;
-            this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder2.info.f186id.windowSequenceNumber;
+            this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder2.info.f188id.windowSequenceNumber;
         }
         this.playing = this.playing.getNext();
         notifyQueueUpdate();
@@ -159,7 +159,7 @@ public final class MediaPeriodQueue {
         }
         MediaPeriodHolder mediaPeriodHolder = (MediaPeriodHolder) Assertions.checkStateNotNull(this.playing);
         this.oldFrontPeriodUid = mediaPeriodHolder.uid;
-        this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder.info.f186id.windowSequenceNumber;
+        this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder.info.f188id.windowSequenceNumber;
         while (mediaPeriodHolder != null) {
             mediaPeriodHolder.release();
             mediaPeriodHolder = mediaPeriodHolder.getNext();
@@ -213,11 +213,11 @@ public final class MediaPeriodQueue {
             r0 = r18
             r1 = r19
             r2 = r20
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r3 = r2.f186id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r3 = r2.f188id
             boolean r12 = r0.isLastInPeriod(r3)
             boolean r13 = r0.isLastInWindow(r1, r3)
             boolean r14 = r0.isLastInTimeline(r1, r3, r12)
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r4 = r2.f186id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r4 = r2.f188id
             java.lang.Object r4 = r4.periodUid
             com.google.android.exoplayer2.Timeline$Period r5 = r0.period
             r1.getPeriodByUid(r4, r5)
@@ -342,10 +342,10 @@ public final class MediaPeriodQueue {
     private void notifyQueueUpdate() {
         final ImmutableList.Builder builder = ImmutableList.builder();
         for (MediaPeriodHolder mediaPeriodHolder = this.playing; mediaPeriodHolder != null; mediaPeriodHolder = mediaPeriodHolder.getNext()) {
-            builder.add((ImmutableList.Builder) mediaPeriodHolder.info.f186id);
+            builder.add((ImmutableList.Builder) mediaPeriodHolder.info.f188id);
         }
         MediaPeriodHolder mediaPeriodHolder2 = this.reading;
-        final MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodHolder2 == null ? null : mediaPeriodHolder2.info.f186id;
+        final MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodHolder2 == null ? null : mediaPeriodHolder2.info.f188id;
         this.analyticsCollectorHandler.post(new Runnable() { // from class: com.google.android.exoplayer2.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
@@ -368,13 +368,13 @@ public final class MediaPeriodQueue {
         }
         for (MediaPeriodHolder mediaPeriodHolder = this.playing; mediaPeriodHolder != null; mediaPeriodHolder = mediaPeriodHolder.getNext()) {
             if (mediaPeriodHolder.uid.equals(obj)) {
-                return mediaPeriodHolder.info.f186id.windowSequenceNumber;
+                return mediaPeriodHolder.info.f188id.windowSequenceNumber;
             }
         }
         for (MediaPeriodHolder mediaPeriodHolder2 = this.playing; mediaPeriodHolder2 != null; mediaPeriodHolder2 = mediaPeriodHolder2.getNext()) {
             int indexOfPeriod2 = timeline.getIndexOfPeriod(mediaPeriodHolder2.uid);
             if (indexOfPeriod2 != -1 && timeline.getPeriod(indexOfPeriod2, this.period).windowIndex == i) {
-                return mediaPeriodHolder2.info.f186id.windowSequenceNumber;
+                return mediaPeriodHolder2.info.f188id.windowSequenceNumber;
             }
         }
         long j = this.nextWindowSequenceNumber;
@@ -387,7 +387,7 @@ public final class MediaPeriodQueue {
     }
 
     private boolean canKeepMediaPeriodHolder(MediaPeriodInfo mediaPeriodInfo, MediaPeriodInfo mediaPeriodInfo2) {
-        return mediaPeriodInfo.startPositionUs == mediaPeriodInfo2.startPositionUs && mediaPeriodInfo.f186id.equals(mediaPeriodInfo2.f186id);
+        return mediaPeriodInfo.startPositionUs == mediaPeriodInfo2.startPositionUs && mediaPeriodInfo.f188id.equals(mediaPeriodInfo2.f188id);
     }
 
     private boolean updateForPlaybackModeChange(Timeline timeline) {

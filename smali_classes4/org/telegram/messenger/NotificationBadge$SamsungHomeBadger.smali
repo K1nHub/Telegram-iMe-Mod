@@ -67,7 +67,7 @@
 
     move-result-object p3
 
-    const-string v1, "package"
+    const-string/jumbo v1, "package"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -140,7 +140,7 @@
     :try_start_1
     sget-object v3, Lorg/telegram/messenger/NotificationBadge$SamsungHomeBadger;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    const-string v4, "package=?"
+    const-string/jumbo v4, "package=?"
 
     const/4 v9, 0x1
 

@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatApi25Impl;,
-        Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;,
-        Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+        Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;,
+        Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;
     }
 .end annotation
 

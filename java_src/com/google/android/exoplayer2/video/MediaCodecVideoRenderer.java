@@ -197,7 +197,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private static List<MediaCodecInfo> getDecoderInfos(Context context, MediaCodecSelector mediaCodecSelector, Format format, boolean z, boolean z2) throws MediaCodecUtil.DecoderQueryException {
         String str = format.sampleMimeType;
         if (str == null) {
-            return ImmutableList.m744of();
+            return ImmutableList.m762of();
         }
         List<MediaCodecInfo> decoderInfos = mediaCodecSelector.getDecoderInfos(str, z, z2);
         String alternativeCodecMimeType = MediaCodecUtil.getAlternativeCodecMimeType(format);
@@ -385,6 +385,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
                     try {
                         setOutputSurfaceV23(codec, placeholderSurface);
                     } catch (Throwable th) {
+                        th.printStackTrace();
                         throw new SurfaceNotValidException(th);
                     }
                 } else {
@@ -520,7 +521,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected void onCodecError(Exception exc) {
-        Log.m799e(TAG, "Video codec error", exc);
+        Log.m817e(TAG, "Video codec error", exc);
         this.eventDispatcher.videoCodecError(exc);
     }
 
@@ -987,13 +988,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             }
         }
         if (z) {
-            Log.m796w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
+            Log.m814w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
             Point codecMaxSize = getCodecMaxSize(mediaCodecInfo, format);
             if (codecMaxSize != null) {
                 i = Math.max(i, codecMaxSize.x);
                 i2 = Math.max(i2, codecMaxSize.y);
                 maxInputSize = Math.max(maxInputSize, getCodecMaxInputSize(mediaCodecInfo, format.buildUpon().setWidth(i).setHeight(i2).build()));
-                Log.m796w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
+                Log.m814w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
             }
         }
         return new CodecMaxValues(i, i2, maxInputSize);

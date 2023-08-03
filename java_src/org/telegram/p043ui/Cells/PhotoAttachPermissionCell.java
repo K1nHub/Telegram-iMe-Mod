@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -40,7 +40,7 @@ public class PhotoAttachPermissionCell extends FrameLayout {
         this.textView.setTextSize(1, 12.0f);
         this.textView.setGravity(17);
         addView(this.textView, LayoutHelper.createFrame(-2, -2, 17, 5, 13, 5, 0));
-        this.itemSize = AndroidUtilities.m54dp(80);
+        this.itemSize = AndroidUtilities.m72dp(80);
     }
 
     public void setItemSize(int i) {
@@ -49,23 +49,23 @@ public class PhotoAttachPermissionCell extends FrameLayout {
 
     public void setType(int i) {
         if (i == 0) {
-            this.imageView.setImageResource(C3417R.C3419drawable.permissions_camera1);
-            this.imageView2.setImageResource(C3417R.C3419drawable.permissions_camera2);
-            this.textView.setText(LocaleController.getString("CameraPermissionText", C3417R.string.CameraPermissionText));
+            this.imageView.setImageResource(C3419R.C3421drawable.permissions_camera1);
+            this.imageView2.setImageResource(C3419R.C3421drawable.permissions_camera2);
+            this.textView.setText(LocaleController.getString("CameraPermissionText", C3419R.string.CameraPermissionText));
             this.imageView.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 5, 0, 0, 27));
             this.imageView2.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 5, 0, 0, 27));
             return;
         }
-        this.imageView.setImageResource(C3417R.C3419drawable.permissions_gallery1);
-        this.imageView2.setImageResource(C3417R.C3419drawable.permissions_gallery2);
-        this.textView.setText(LocaleController.getString("GalleryPermissionText", C3417R.string.GalleryPermissionText));
+        this.imageView.setImageResource(C3419R.C3421drawable.permissions_gallery1);
+        this.imageView2.setImageResource(C3419R.C3421drawable.permissions_gallery2);
+        this.textView.setText(LocaleController.getString("GalleryPermissionText", C3419R.string.GalleryPermissionText));
         this.imageView.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 0, 0, 2, 27));
         this.imageView2.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 0, 0, 2, 27));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m72dp(5), 1073741824));
     }
 
     private int getThemedColor(int i) {

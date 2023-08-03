@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 /* loaded from: classes4.dex */
 public final class DecompressorRegistry {
-    static final Joiner ACCEPT_ENCODING_JOINER = Joiner.m748on(',');
+    static final Joiner ACCEPT_ENCODING_JOINER = Joiner.m766on(',');
     private static final DecompressorRegistry DEFAULT_INSTANCE = emptyInstance().with(new Codec.Gzip(), true).with(Codec.Identity.NONE, false);
     private final byte[] advertisedDecompressors;
     private final Map<String, DecompressorInfo> decompressors;

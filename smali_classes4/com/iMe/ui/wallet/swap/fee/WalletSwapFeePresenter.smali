@@ -544,7 +544,7 @@
 
     move-result-object v0
 
-    const-string v1, "private fun subscribeToC\u2026     .autoDispose()\n    }"
+    const-string/jumbo v1, "private fun subscribeToC\u2026     .autoDispose()\n    }"
 
     .line 91
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

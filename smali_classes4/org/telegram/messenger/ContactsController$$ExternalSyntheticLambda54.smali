@@ -2,46 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;->INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/messenger/ContactsController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
+    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$0tO4duj1atF5IHMwYT-md4Bm224(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$zAeHJ45ObaHyxskRPCq7NiImHcw(Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

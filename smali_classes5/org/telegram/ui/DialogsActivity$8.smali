@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/DialogsActivity$8;
-.super Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;
+.super Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;
 .source "DialogsActivity.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->updateStatus(Lorg/telegram/tgnet/TLRPC$User;Z)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/DialogsActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,49 +13,86 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lorg/telegram/ui/Components/AnimationProperties$FloatProperty<",
+        "Landroid/view/View;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/graphics/drawable/Drawable;II)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 4063
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;-><init>(Landroid/graphics/drawable/Drawable;II)V
+    .line 1970
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 2
+.method public get(Landroid/view/View;)Ljava/lang/Float;
+    .locals 0
 
-    .line 4066
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    .line 1979
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    const/4 v0, -0x2
+    iget p1, p1, Lorg/telegram/ui/DialogsActivity;->searchViewPagerTranslationY:F
 
-    .line 4067
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v0
+    move-result-object p1
 
-    int-to-float v0, v0
+    return-object p1
+.end method
 
-    const/4 v1, 0x1
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 1970
+    check-cast p1, Landroid/view/View;
 
-    move-result v1
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/DialogsActivity$8;->get(Landroid/view/View;)Ljava/lang/Float;
 
-    int-to-float v1, v1
+    move-result-object p1
 
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    return-object p1
+.end method
 
-    .line 4068
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->draw(Landroid/graphics/Canvas;)V
+.method public setValue(Landroid/view/View;F)V
+    .locals 1
 
-    .line 4069
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    .line 1973
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput p2, v0, Lorg/telegram/ui/DialogsActivity;->searchViewPagerTranslationY:F
+
+    .line 1974
+    iget v0, v0, Lorg/telegram/ui/DialogsActivity;->panTranslationY:F
+
+    add-float/2addr v0, p2
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
+
+    return-void
+.end method
+
+.method public bridge synthetic setValue(Ljava/lang/Object;F)V
+    .locals 0
+
+    .line 1970
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity$8;->setValue(Landroid/view/View;F)V
 
     return-void
 .end method

@@ -21,15 +21,15 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;IZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
+.method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     .line 490
-    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$parentFragment:Lorg/telegram/ui/ChatActivity;
+    iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;IZLjava/lang/String;)V
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;)V
 
     return-void
 .end method

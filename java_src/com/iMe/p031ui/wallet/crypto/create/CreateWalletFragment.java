@@ -40,6 +40,7 @@ import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.model.wallet.crypto.tutorial.TutorialType;
 import com.iMe.model.wallet.pin.CreatePinCodeScreenType;
 import com.iMe.model.wallet.pin.WalletPinScreenArgs;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.base.wallet_creation.WalletCreationBaseFragment;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.backup.SecretWordsActionButton;
@@ -53,6 +54,7 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.extentions.common.BaseFragmentExtKt;
+import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -67,6 +69,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -74,6 +78,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -88,8 +93,15 @@ import kotlin.text.StringsKt__StringsKt;
 import kotlin.text.StringsKt___StringsKt;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MrzRecognizer;
@@ -98,7 +110,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.BackDrawable;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -110,9 +122,10 @@ import org.telegram.p043ui.Components.RLottieImageView;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.Components.URLSpanNoUnderline;
 import org.telegram.p043ui.PasscodeActivity;
+import timber.log.Timber;
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreateWalletFragment extends WalletCreationBaseFragment implements CreateWalletView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "imageView", "getImageView()Lorg/telegram/ui/Components/RLottieImageView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "actionButton", "getActionButton()Lcom/iMe/ui/custom/ActionButton;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "titleTextView", "getTitleTextView()Landroid/widget/TextView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "descriptionText", "getDescriptionText()Landroid/widget/TextView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "descriptionText2", "getDescriptionText2()Landroid/widget/TextView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "actionBarBackground", "getActionBarBackground()Landroid/view/View;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "hintsAdapter", "getHintsAdapter()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "hintListView", "getHintListView()Lorg/telegram/ui/Components/RecyclerListView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "hintPopupWindow", "getHintPopupWindow()Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "hintPopupLayout", "getHintPopupLayout()Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "scrollView", "getScrollView()Landroid/widget/ScrollView;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "editTextContainer", "getEditTextContainer()Landroid/widget/LinearLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "leftColumn", "getLeftColumn()Landroid/widget/LinearLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "rightColumn", "getRightColumn()Landroid/widget/LinearLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "qrCodeBottomSheet", "getQrCodeBottomSheet()Lorg/telegram/ui/Components/QRCodeBottomSheet;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "buttonsLayout", "getButtonsLayout()Landroid/widget/LinearLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "columnsLayout", "getColumnsLayout()Landroid/widget/LinearLayout;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "buttonCopy", "getButtonCopy()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "buttonQR", "getButtonQR()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "buttonPaste", "getButtonPaste()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "buttonScanQR", "getButtonScanQR()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;", 0)), Reflection.property1(new PropertyReference1Impl(CreateWalletFragment.class, "clipboardManager", "getClipboardManager()Landroid/content/ClipboardManager;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -165,32 +178,351 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     public CreateWalletFragment(CreateWalletScreenType currentType) {
         Intrinsics.checkNotNullParameter(currentType, "currentType");
         this.currentType = currentType;
-        CreateWalletFragment$presenter$2 createWalletFragment$presenter$2 = new CreateWalletFragment$presenter$2(this);
+        Function0<CreateWalletPresenter> function0 = new Function0<CreateWalletPresenter>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateWalletPresenter invoke() {
+                Lazy lazy;
+                final CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(CreateWalletFragment.this.currentType);
+                    }
+                };
+                lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CreateWalletPresenter>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.create.CreateWalletPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CreateWalletPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CreateWalletPresenter.class), qualifier, function03);
+                    }
+                });
+                return (CreateWalletPresenter) lazy.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletPresenter.class.getName() + ".presenter", createWalletFragment$presenter$2);
-        this.imageView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$imageView$2(this), 1, (Object) null);
-        this.actionButton$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$actionButton$2(this), 1, (Object) null);
-        this.titleTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$titleTextView$2(this), 1, (Object) null);
-        this.descriptionText$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$descriptionText$2(this), 1, (Object) null);
-        this.descriptionText2$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$descriptionText2$2(this), 1, (Object) null);
-        this.actionBarBackground$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$actionBarBackground$2(this), 1, (Object) null);
-        this.hintsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$hintsAdapter$2(this), 1, (Object) null);
-        this.hintListView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$hintListView$2(this), 1, (Object) null);
-        this.hintPopupWindow$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$hintPopupWindow$2(this), 1, (Object) null);
-        this.hintPopupLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$hintPopupLayout$2(this), 1, (Object) null);
-        this.scrollView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$scrollView$2(this), 1, (Object) null);
-        this.editTextContainer$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$editTextContainer$2(this), 1, (Object) null);
-        this.leftColumn$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$leftColumn$2(this), 1, (Object) null);
-        this.rightColumn$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$rightColumn$2(this), 1, (Object) null);
-        this.qrCodeBottomSheet$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$qrCodeBottomSheet$2(this), 1, (Object) null);
-        this.buttonsLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$buttonsLayout$2(this), 1, (Object) null);
-        this.columnsLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$columnsLayout$2(this), 1, (Object) null);
-        this.buttonCopy$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$buttonCopy$2(this), 1, (Object) null);
-        this.buttonQR$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$buttonQR$2(this), 1, (Object) null);
-        this.buttonPaste$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$buttonPaste$2(this), 1, (Object) null);
-        this.buttonScanQR$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$buttonScanQR$2(this), 1, (Object) null);
-        this.clipboardManager$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletFragment$clipboardManager$2(this), 1, (Object) null);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletPresenter.class.getName() + ".presenter", function0);
+        this.imageView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RLottieImageView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$imageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RLottieImageView invoke() {
+                RLottieImageView createImageView;
+                createImageView = CreateWalletFragment.this.createImageView();
+                return createImageView;
+            }
+        }, 1, (Object) null);
+        this.actionButton$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ActionButton>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$actionButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ActionButton invoke() {
+                ActionButton createActionButton;
+                createActionButton = CreateWalletFragment.this.createActionButton();
+                return createActionButton;
+            }
+        }, 1, (Object) null);
+        this.titleTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<TextView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$titleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView createTitleTextView;
+                createTitleTextView = CreateWalletFragment.this.createTitleTextView();
+                return createTitleTextView;
+            }
+        }, 1, (Object) null);
+        this.descriptionText$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<TextView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$descriptionText$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView createDescriptionTextView;
+                createDescriptionTextView = CreateWalletFragment.this.createDescriptionTextView();
+                return createDescriptionTextView;
+            }
+        }, 1, (Object) null);
+        this.descriptionText2$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<TextView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$descriptionText2$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView createDescriptionTextView2;
+                createDescriptionTextView2 = CreateWalletFragment.this.createDescriptionTextView2();
+                return createDescriptionTextView2;
+            }
+        }, 1, (Object) null);
+        this.actionBarBackground$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<View>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$actionBarBackground$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View createActionBarBackground;
+                createActionBarBackground = CreateWalletFragment.this.createActionBarBackground();
+                return createActionBarBackground;
+            }
+        }, 1, (Object) null);
+        this.hintsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<HintsAdapter>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$hintsAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateWalletFragment.HintsAdapter invoke() {
+                return new CreateWalletFragment.HintsAdapter();
+            }
+        }, 1, (Object) null);
+        this.hintListView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$hintListView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView createHintListView;
+                createHintListView = CreateWalletFragment.this.createHintListView();
+                return createHintListView;
+            }
+        }, 1, (Object) null);
+        this.hintPopupWindow$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ActionBarPopupWindow>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$hintPopupWindow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ActionBarPopupWindow invoke() {
+                ActionBarPopupWindow createHintPopupWindow;
+                createHintPopupWindow = CreateWalletFragment.this.createHintPopupWindow();
+                return createHintPopupWindow;
+            }
+        }, 1, (Object) null);
+        this.hintPopupLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ActionBarPopupWindow.ActionBarPopupWindowLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$hintPopupLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ActionBarPopupWindow.ActionBarPopupWindowLayout invoke() {
+                ActionBarPopupWindow.ActionBarPopupWindowLayout createHintPopupLayout;
+                createHintPopupLayout = CreateWalletFragment.this.createHintPopupLayout();
+                return createHintPopupLayout;
+            }
+        }, 1, (Object) null);
+        this.scrollView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ScrollView>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$scrollView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ScrollView invoke() {
+                ScrollView createScrollView;
+                createScrollView = CreateWalletFragment.this.createScrollView();
+                return createScrollView;
+            }
+        }, 1, (Object) null);
+        this.editTextContainer$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<LinearLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$editTextContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout createVerticalLinearLayout;
+                createVerticalLinearLayout = CreateWalletFragment.this.createVerticalLinearLayout();
+                return createVerticalLinearLayout;
+            }
+        }, 1, (Object) null);
+        this.leftColumn$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<LinearLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$leftColumn$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout createVerticalLinearLayout;
+                createVerticalLinearLayout = CreateWalletFragment.this.createVerticalLinearLayout();
+                return createVerticalLinearLayout;
+            }
+        }, 1, (Object) null);
+        this.rightColumn$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<LinearLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$rightColumn$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout createVerticalLinearLayout;
+                createVerticalLinearLayout = CreateWalletFragment.this.createVerticalLinearLayout();
+                return createVerticalLinearLayout;
+            }
+        }, 1, (Object) null);
+        this.qrCodeBottomSheet$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<QRCodeBottomSheet>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$qrCodeBottomSheet$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final QRCodeBottomSheet invoke() {
+                QRCodeBottomSheet createQRCodeBottomSheet;
+                createQRCodeBottomSheet = CreateWalletFragment.this.createQRCodeBottomSheet();
+                return createQRCodeBottomSheet;
+            }
+        }, 1, (Object) null);
+        this.buttonsLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<LinearLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$buttonsLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                return new LinearLayout(CreateWalletFragment.this.getParentActivity());
+            }
+        }, 1, (Object) null);
+        this.columnsLayout$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<LinearLayout>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$columnsLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                return new LinearLayout(CreateWalletFragment.this.getParentActivity());
+            }
+        }, 1, (Object) null);
+        this.buttonCopy$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<SecretWordsActionButton>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$buttonCopy$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SecretWordsActionButton invoke() {
+                SecretWordsActionButton createCopyButton;
+                createCopyButton = CreateWalletFragment.this.createCopyButton();
+                return createCopyButton;
+            }
+        }, 1, (Object) null);
+        this.buttonQR$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<SecretWordsActionButton>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$buttonQR$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SecretWordsActionButton invoke() {
+                SecretWordsActionButton createQRButton;
+                createQRButton = CreateWalletFragment.this.createQRButton();
+                return createQRButton;
+            }
+        }, 1, (Object) null);
+        this.buttonPaste$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<SecretWordsActionButton>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$buttonPaste$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SecretWordsActionButton invoke() {
+                SecretWordsActionButton createPasteButton;
+                createPasteButton = CreateWalletFragment.this.createPasteButton();
+                return createPasteButton;
+            }
+        }, 1, (Object) null);
+        this.buttonScanQR$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<SecretWordsActionButton>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$buttonScanQR$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SecretWordsActionButton invoke() {
+                SecretWordsActionButton createScanQRButton;
+                createScanQRButton = CreateWalletFragment.this.createScanQRButton();
+                return createScanQRButton;
+            }
+        }, 1, (Object) null);
+        this.clipboardManager$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ClipboardManager>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$clipboardManager$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ClipboardManager invoke() {
+                Object systemService = CreateWalletFragment.this.getParentActivity().getSystemService("clipboard");
+                Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.content.ClipboardManager");
+                return (ClipboardManager) systemService;
+            }
+        }, 1, (Object) null);
         this.checkWordIndices = new ArrayList();
         this.editTexts = new ArrayList();
         this.wordsTextViews = new ArrayList();
@@ -530,14 +862,25 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
-    public void addNewWallet(Wallet wallet2, String password) {
+    public void addNewWallet(final Wallet wallet2, final String password) {
         Intrinsics.checkNotNullParameter(wallet2, "wallet");
         Intrinsics.checkNotNullParameter(password, "password");
         CreateWalletFragment createWalletFragment = this.fragmentToRemove;
         if (createWalletFragment != null) {
             createWalletFragment.removeSelfFromStack();
         }
-        presentFragment(CreateWalletTutorialFragment.Companion.newInstance(new TutorialType.WalletIntro(new CreateWalletFragment$addNewWallet$1(password, wallet2))));
+        presentFragment(CreateWalletTutorialFragment.Companion.newInstance(new TutorialType.WalletIntro(new Function0<BaseFragment>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$addNewWallet$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final BaseFragment invoke() {
+                return CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.SecretWords(password, null, wallet2, 2, null));
+            }
+        })));
         AndroidUtilities.runOnUIThread(new CreateWalletFragment$$ExternalSyntheticLambda2(this), 300L);
     }
 
@@ -559,19 +902,19 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         View view = this.fragmentView;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i3 = ThemeDescription.FLAG_AB_TITLECOLOR;
         int i4 = Theme.key_windowBackgroundWhiteBlackText;
         LinearLayout editTextContainer = getEditTextContainer();
         int i5 = Theme.key_windowBackgroundWhiteHintText;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, null, null, null, null, i2), new ThemeDescription(c3484ActionBar, i3, null, null, null, null, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarWhiteSelector), new ThemeDescription(getActionBarBackground(), 0, null, null, null, null, i2), new ThemeDescription(getHintListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_CURSORCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_IMAGECOLOR, new Class[]{NumericEditText.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText7), new ThemeDescription(editTextContainer, 0, null, null, null, null, i5), new ThemeDescription(getLeftColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getRightColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getLeftColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getRightColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getTitleTextView(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i4), new ThemeDescription(getDescriptionText(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText6), new ThemeDescription(getDescriptionText2(), ThemeDescription.FLAG_LINKCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlueText2), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_featuredStickers_buttonText), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, null, null, null, null, Theme.key_featuredStickers_addButton), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_featuredStickers_addButtonPressed));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, null, null, null, null, i2), new ThemeDescription(c3485ActionBar, i3, null, null, null, null, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarWhiteSelector), new ThemeDescription(getActionBarBackground(), 0, null, null, null, null, i2), new ThemeDescription(getHintListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_CURSORCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_IMAGECOLOR, new Class[]{NumericEditText.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText7), new ThemeDescription(editTextContainer, 0, null, null, null, null, i5), new ThemeDescription(getLeftColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getRightColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getLeftColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getRightColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getTitleTextView(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i4), new ThemeDescription(getDescriptionText(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText6), new ThemeDescription(getDescriptionText2(), ThemeDescription.FLAG_LINKCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlueText2), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_featuredStickers_buttonText), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, null, null, null, null, Theme.key_featuredStickers_addButton), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_featuredStickers_addButtonPressed));
         return arrayListOf;
     }
 
     private final ViewGroup createContainer() {
         CreateWalletScreenType createWalletScreenType = this.currentType;
         if (createWalletScreenType instanceof CreateWalletScreenType.Ready ? true : createWalletScreenType instanceof CreateWalletScreenType.TooBad) {
-            getActionButton().setMinWidth(AndroidUtilities.m54dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION));
+            getActionButton().setMinWidth(AndroidUtilities.m72dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION));
             if (this.currentType instanceof CreateWalletScreenType.TooBad) {
                 TextView descriptionText2 = getDescriptionText2();
                 descriptionText2.setTextSize(1, 14.0f);
@@ -581,7 +924,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ViewGroup viewGroup = new ViewGroup(parentActivity) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createContainer$2
                 @Override // android.view.View
                 protected void onMeasure(int i, int i2) {
-                    C3484ActionBar c3484ActionBar;
+                    C3485ActionBar c3485ActionBar;
                     RLottieImageView imageView;
                     TextView titleTextView;
                     TextView descriptionText;
@@ -592,8 +935,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                     TextView descriptionText23;
                     int size = View.MeasureSpec.getSize(i);
                     int size2 = View.MeasureSpec.getSize(i2);
-                    c3484ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+                    c3485ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
                     if (size > size2) {
                         imageView2 = CreateWalletFragment.this.getImageView();
                         float f = size;
@@ -605,7 +948,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                         descriptionText3.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         descriptionText23 = CreateWalletFragment.this.getDescriptionText2();
                         descriptionText23.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        CreateWalletFragment.this.getActionButton().measure(View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(42), 1073741824));
+                        CreateWalletFragment.this.getActionButton().measure(View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(42), 1073741824));
                     } else {
                         imageView = CreateWalletFragment.this.getImageView();
                         imageView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), 1073741824));
@@ -615,15 +958,15 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                         descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                         descriptionText22 = CreateWalletFragment.this.getDescriptionText2();
                         descriptionText22.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                        CreateWalletFragment.this.getActionButton().measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(42), 1073741824));
+                        CreateWalletFragment.this.getActionButton().measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(42), 1073741824));
                     }
                     setMeasuredDimension(size, size2);
                 }
 
                 @Override // android.view.ViewGroup, android.view.View
                 protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-                    C3484ActionBar c3484ActionBar;
-                    C3484ActionBar c3484ActionBar2;
+                    C3485ActionBar c3485ActionBar;
+                    C3485ActionBar c3485ActionBar2;
                     RLottieImageView imageView;
                     RLottieImageView imageView2;
                     RLottieImageView imageView3;
@@ -649,9 +992,9 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                     TextView descriptionText25;
                     TextView descriptionText26;
                     TextView descriptionText27;
-                    c3484ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar.layout(0, 0, i3, c3484ActionBar2.getMeasuredHeight());
+                    c3485ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar.layout(0, 0, i3, c3485ActionBar2.getMeasuredHeight());
                     int i5 = i3 - i;
                     int i6 = i4 - i2;
                     if (i3 > i4) {
@@ -716,7 +1059,14 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                     descriptionText22.layout(0, i16, measuredWidth7, descriptionText24.getMeasuredHeight() + i16);
                 }
             };
-            viewGroup.setOnTouchListener(CreateWalletFragment$$ExternalSyntheticLambda0.INSTANCE);
+            viewGroup.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnTouchListener
+                public final boolean onTouch(View view, MotionEvent motionEvent) {
+                    boolean createContainer$lambda$6$lambda$5;
+                    createContainer$lambda$6$lambda$5 = CreateWalletFragment.createContainer$lambda$6$lambda$5(view, motionEvent);
+                    return createContainer$lambda$6$lambda$5;
+                }
+            });
             viewGroup.addView(this.actionBar);
             viewGroup.addView(getImageView());
             viewGroup.addView(getTitleTextView());
@@ -726,7 +1076,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             return viewGroup;
         }
         if (createWalletScreenType instanceof CreateWalletScreenType.SecretWords ? true : createWalletScreenType instanceof CreateWalletScreenType.WordsCheck ? true : createWalletScreenType instanceof CreateWalletScreenType.Import) {
-            getActionButton().setMinWidth(AndroidUtilities.m54dp(220));
+            getActionButton().setMinWidth(AndroidUtilities.m72dp(220));
             TextView descriptionText = getDescriptionText();
             int i = Theme.key_windowBackgroundWhiteBlueText2;
             descriptionText.setLinkTextColor(getThemedColor(i));
@@ -739,18 +1089,18 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ViewGroup viewGroup2 = new ViewGroup(parentActivity2) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createContainer$5
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    C3484ActionBar c3484ActionBar;
+                    C3485ActionBar c3485ActionBar;
                     View actionBarBackground;
-                    C3484ActionBar c3484ActionBar2;
+                    C3485ActionBar c3485ActionBar2;
                     ScrollView scrollView;
                     int size = View.MeasureSpec.getSize(i2);
                     int size2 = View.MeasureSpec.getSize(i3);
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
-                    c3484ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar.measure(makeMeasureSpec, i3);
+                    c3485ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar.measure(makeMeasureSpec, i3);
                     actionBarBackground = CreateWalletFragment.this.getActionBarBackground();
-                    c3484ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    actionBarBackground.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(c3484ActionBar2.getMeasuredHeight() + AndroidUtilities.m54dp(3), 1073741824));
+                    c3485ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    actionBarBackground.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(c3485ActionBar2.getMeasuredHeight() + AndroidUtilities.m72dp(3), 1073741824));
                     scrollView = CreateWalletFragment.this.getScrollView();
                     scrollView.measure(makeMeasureSpec, i3);
                     setMeasuredDimension(size, size2);
@@ -758,20 +1108,20 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
                 @Override // android.view.ViewGroup, android.view.View
                 protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                    C3484ActionBar c3484ActionBar;
-                    C3484ActionBar c3484ActionBar2;
-                    C3484ActionBar c3484ActionBar3;
+                    C3485ActionBar c3485ActionBar;
+                    C3485ActionBar c3485ActionBar2;
+                    C3485ActionBar c3485ActionBar3;
                     View actionBarBackground;
                     View actionBarBackground2;
                     View actionBarBackground3;
                     ScrollView scrollView;
                     ScrollView scrollView2;
                     ScrollView scrollView3;
-                    c3484ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    int measuredWidth = c3484ActionBar2.getMeasuredWidth();
-                    c3484ActionBar3 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3484ActionBar.layout(0, 0, measuredWidth, c3484ActionBar3.getMeasuredHeight());
+                    c3485ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    int measuredWidth = c3485ActionBar2.getMeasuredWidth();
+                    c3485ActionBar3 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3485ActionBar.layout(0, 0, measuredWidth, c3485ActionBar3.getMeasuredHeight());
                     actionBarBackground = CreateWalletFragment.this.getActionBarBackground();
                     actionBarBackground2 = CreateWalletFragment.this.getActionBarBackground();
                     int measuredWidth2 = actionBarBackground2.getMeasuredWidth();
@@ -860,7 +1210,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                 INavigationLayout iNavigationLayout;
                 Intrinsics.checkNotNullParameter(canvas, "canvas");
                 this.paint.setColor(CreateWalletFragment.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                int measuredHeight = getMeasuredHeight() - AndroidUtilities.m54dp(3);
+                int measuredHeight = getMeasuredHeight() - AndroidUtilities.m72dp(3);
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), measuredHeight, this.paint);
                 iNavigationLayout = ((BaseFragment) CreateWalletFragment.this).parentLayout;
                 iNavigationLayout.drawHeaderShadow(canvas, measuredHeight);
@@ -915,7 +1265,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     public final ActionBarPopupWindow createHintPopupWindow() {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(getHintPopupLayout(), -2, -2);
         actionBarPopupWindow.setAnimationEnabled(false);
-        actionBarPopupWindow.setAnimationStyle(C3417R.style.PopupAnimation);
+        actionBarPopupWindow.setAnimationStyle(C3419R.style.PopupAnimation);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.setSoftInputMode(0);
@@ -928,7 +1278,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     public final RecyclerListView createHintListView() {
         RecyclerListView recyclerListView = new RecyclerListView(getParentActivity());
         recyclerListView.setAdapter(getHintsAdapter());
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(recyclerListView, AndroidUtilities.m54dp(9));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(recyclerListView, AndroidUtilities.m72dp(9));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(recyclerListView.getContext(), 0, false);
         this.hintLayoutManager = linearLayoutManager;
         recyclerListView.setLayoutManager(linearLayoutManager);
@@ -972,7 +1322,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         CreateWalletScreenType createWalletScreenType = this.currentType;
         Intrinsics.checkNotNull(createWalletScreenType, "null cannot be cast to non-null type com.iMe.model.wallet.crypto.create.CreateWalletScreenType.SecretWords");
         final String joinBySpace = StringExtKt.joinBySpace(((CreateWalletScreenType.SecretWords) createWalletScreenType).getSecretWords());
-        final String string = getResourceManager().getString(C3417R.string.wallet_backup_secret_words_qr_description);
+        final String string = getResourceManager().getString(C3419R.string.wallet_backup_secret_words_qr_description);
         return new QRCodeBottomSheet(parentActivity, joinBySpace, string) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createQRCodeBottomSheet$1
             @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public int getType() {
@@ -981,7 +1331,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
             @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public int getCustomQrCenterImageRes() {
-                return C3417R.C3419drawable.fork_ic_internal_logo;
+                return C3419R.C3421drawable.fork_ic_internal_logo;
             }
         };
     }
@@ -991,11 +1341,30 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        int i = C3417R.C3419drawable.msg_copy_filled;
-        String string = LocaleController.getString("Copy", C3417R.string.Copy);
+        int i = C3419R.C3421drawable.msg_copy_filled;
+        String string = LocaleController.getString("Copy", C3419R.string.Copy);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Copy\", R.string.Copy)");
         secretWordsActionButton.setupView(i, string);
-        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new CreateWalletFragment$createCopyButton$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createCopyButton$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                CreateWalletScreenType createWalletScreenType = CreateWalletFragment.this.currentType;
+                Intrinsics.checkNotNull(createWalletScreenType, "null cannot be cast to non-null type com.iMe.model.wallet.crypto.create.CreateWalletScreenType.SecretWords");
+                ContextExtKt.copyToClipboard$default(StringExtKt.joinBySpace(((CreateWalletScreenType.SecretWords) createWalletScreenType).getSecretWords()), null, 2, null);
+            }
+        }, 1, null);
         return secretWordsActionButton;
     }
 
@@ -1004,8 +1373,28 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        secretWordsActionButton.setupView(C3417R.C3419drawable.fork_ic_paste_24, getResourceManager().getString(C3417R.string.wallet_import_paste));
-        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new CreateWalletFragment$createPasteButton$1$1(this), 1, null);
+        secretWordsActionButton.setupView(C3419R.C3421drawable.fork_ic_paste_24, getResourceManager().getString(C3419R.string.wallet_import_paste));
+        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createPasteButton$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                String clipboardText;
+                Intrinsics.checkNotNullParameter(it, "it");
+                CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
+                clipboardText = createWalletFragment.getClipboardText();
+                createWalletFragment.pasteToEditText(clipboardText);
+            }
+        }, 1, null);
         return secretWordsActionButton;
     }
 
@@ -1014,11 +1403,34 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        int i = C3417R.C3419drawable.msg_qrcode;
-        String string = LocaleController.getString("GetQRCode", C3417R.string.GetQRCode);
+        int i = C3419R.C3421drawable.msg_qrcode;
+        String string = LocaleController.getString("GetQRCode", C3419R.string.GetQRCode);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"GetQRCode\", R.string.GetQRCode)");
         secretWordsActionButton.setupView(i, string);
-        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new CreateWalletFragment$createQRButton$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createQRButton$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                QRCodeBottomSheet qrCodeBottomSheet;
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullParameter(it, "it");
+                CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
+                qrCodeBottomSheet = createWalletFragment.getQrCodeBottomSheet();
+                resourceManager = CreateWalletFragment.this.getResourceManager();
+                qrCodeBottomSheet.setupWalletTypeBackup(resourceManager.getString(C3419R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3419R.string.Close));
+                createWalletFragment.showDialog(qrCodeBottomSheet);
+            }
+        }, 1, null);
         return secretWordsActionButton;
     }
 
@@ -1027,8 +1439,29 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        secretWordsActionButton.setupView(C3417R.C3419drawable.msg_qrcode, getResourceManager().getString(C3417R.string.wallet_backup_scan_qr));
-        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new CreateWalletFragment$createScanQRButton$1$1(this), 1, null);
+        secretWordsActionButton.setupView(C3419R.C3421drawable.msg_qrcode, getResourceManager().getString(C3419R.string.wallet_backup_scan_qr));
+        ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createScanQRButton$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                if (CreateWalletFragment.this.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
+                    CreateWalletFragment.this.openQRScan();
+                } else {
+                    CreateWalletFragment.this.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
+                }
+            }
+        }, 1, null);
         return secretWordsActionButton;
     }
 
@@ -1044,7 +1477,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         TextView textView = new TextView(getParentActivity());
         textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         textView.setGravity(1);
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m54dp(32));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m72dp(32));
         textView.setTextSize(1, 24.0f);
         return textView;
     }
@@ -1054,9 +1487,9 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         TextView textView = new TextView(getParentActivity());
         textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
         textView.setGravity(1);
-        textView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
+        textView.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
         textView.setTextSize(1, 15.0f);
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m54dp(32));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m72dp(32));
         return textView;
     }
 
@@ -1065,8 +1498,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         TextView textView = new TextView(getParentActivity());
         textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
         textView.setGravity(1);
-        textView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m54dp(32));
+        textView.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m72dp(32));
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         textView.setVisibility(8);
         return textView;
@@ -1077,12 +1510,12 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         ActionButton actionButton = new ActionButton(parentActivity, null, 0, 6, null);
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(actionButton, AndroidUtilities.m54dp(34));
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(actionButton, AndroidUtilities.m72dp(34));
         actionButton.setGravity(17);
         actionButton.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
         actionButton.setTextSize(1, 14.0f);
         ViewExtKt.withMediumTypeface(actionButton);
-        actionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
+        actionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
         ViewExtKt.safeThrottledClick$default(actionButton, 0L, new CreateWalletFragment$createActionButton$1$1(this), 1, null);
         return actionButton;
     }
@@ -1090,79 +1523,130 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     private final void setupViewsContents() {
         CreateWalletScreenType createWalletScreenType = this.currentType;
         if (createWalletScreenType instanceof CreateWalletScreenType.SecretWords) {
-            getImageView().setAnimation(C3417R.raw.fork_wallet_note, 112, 112);
-            this.actionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_backup_secret_words_title));
-            getTitleTextView().setText(getResourceManager().getString(C3417R.string.wallet_backup_secret_words));
-            getDescriptionText().setText(getResourceManager().getString(C3417R.string.wallet_backup_secret_words_info));
-            getActionButton().setText(getResourceManager().getString(C3417R.string.wallet_backup_done));
+            getImageView().setAnimation(C3419R.raw.fork_wallet_note, 112, 112);
+            this.actionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_backup_secret_words_title));
+            getTitleTextView().setText(getResourceManager().getString(C3419R.string.wallet_backup_secret_words));
+            getDescriptionText().setText(getResourceManager().getString(C3419R.string.wallet_backup_secret_words_info));
+            getActionButton().setText(getResourceManager().getString(C3419R.string.wallet_backup_done));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.WordsCheck) {
-            getImageView().setAnimation(C3417R.raw.wallet_science, 104, 104);
-            this.actionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_backup_test_time_title));
-            getTitleTextView().setText(getResourceManager().getString(C3417R.string.wallet_backup_test_time));
-            getDescriptionText().setText(AndroidUtilities.replaceTags(LocaleController.formatStringInternal(C3417R.string.wallet_backup_test_time_info, Integer.valueOf(this.checkWordIndices.get(0).intValue() + 1), Integer.valueOf(this.checkWordIndices.get(1).intValue() + 1), Integer.valueOf(this.checkWordIndices.get(2).intValue() + 1))));
-            getActionButton().setText(getResourceManager().getString(C3417R.string.wallet_backup_continue));
+            getImageView().setAnimation(C3419R.raw.wallet_science, 104, 104);
+            this.actionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_backup_test_time_title));
+            getTitleTextView().setText(getResourceManager().getString(C3419R.string.wallet_backup_test_time));
+            getDescriptionText().setText(AndroidUtilities.replaceTags(LocaleController.formatStringInternal(C3419R.string.wallet_backup_test_time_info, Integer.valueOf(this.checkWordIndices.get(0).intValue() + 1), Integer.valueOf(this.checkWordIndices.get(1).intValue() + 1), Integer.valueOf(this.checkWordIndices.get(2).intValue() + 1))));
+            getActionButton().setText(getResourceManager().getString(C3419R.string.wallet_backup_continue));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.Ready) {
-            getImageView().setAnimation(C3417R.raw.wallet_allset, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
-            getImageView().setPadding(AndroidUtilities.m54dp(27), 0, 0, 0);
-            getTitleTextView().setText(getResourceManager().getString(C3417R.string.wallet_backup_ready));
-            getDescriptionText().setText(getResourceManager().getString(C3417R.string.wallet_backup_ready_info));
-            getActionButton().setText(getResourceManager().getString(C3417R.string.wallet_backup_view));
+            getImageView().setAnimation(C3419R.raw.wallet_allset, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
+            getImageView().setPadding(AndroidUtilities.m72dp(27), 0, 0, 0);
+            getTitleTextView().setText(getResourceManager().getString(C3419R.string.wallet_backup_ready));
+            getDescriptionText().setText(getResourceManager().getString(C3419R.string.wallet_backup_ready_info));
+            getActionButton().setText(getResourceManager().getString(C3419R.string.wallet_backup_view));
         } else if (createWalletScreenType instanceof CreateWalletScreenType.Import) {
-            getImageView().setAnimation(C3417R.raw.fork_wallet_note, 112, 112);
-            C3484ActionBar c3484ActionBar = this.actionBar;
+            getImageView().setAnimation(C3419R.raw.fork_wallet_note, 112, 112);
+            C3485ActionBar c3485ActionBar = this.actionBar;
             ResourceManager resourceManager = getResourceManager();
-            int i = C3417R.string.wallet_import_secret_words;
-            c3484ActionBar.setTitle(resourceManager.getString(i));
+            int i = C3419R.string.wallet_import_secret_words;
+            c3485ActionBar.setTitle(resourceManager.getString(i));
             getTitleTextView().setText(getResourceManager().getString(i));
-            getDescriptionText().setText(getResourceManager().getString(C3417R.string.wallet_import_info));
-            getActionButton().setText(getResourceManager().getString(C3417R.string.wallet_backup_continue));
+            getDescriptionText().setText(getResourceManager().getString(C3419R.string.wallet_import_info));
+            getActionButton().setText(getResourceManager().getString(C3419R.string.wallet_backup_continue));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
             getDescriptionText2().setVisibility(0);
             TextView descriptionText2 = getDescriptionText2();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) createClickableText(C3417R.string.wallet_import_dont_have, new CreateWalletFragment$setupViewsContents$1$1(this)));
+            spannableStringBuilder.append((CharSequence) createClickableText(C3419R.string.wallet_import_dont_have, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
+                    CreateWalletFragment newInstance = CreateWalletFragment.Companion.newInstance(CreateWalletScreenType.TooBad.INSTANCE);
+                    newInstance.fragmentToRemove = CreateWalletFragment.this;
+                    createWalletFragment.presentFragment(newInstance);
+                }
+            }));
             if (getCryptoPreferenceHelper().getCurrentBlockchainType().isBip39PhraseBased()) {
-                StringsKt.append(spannableStringBuilder, "\n", "\n", createClickableText(C3417R.string.wallet_import_change_words_count, new CreateWalletFragment$setupViewsContents$1$2(this)));
+                StringsKt.append(spannableStringBuilder, "\n", "\n", createClickableText(C3419R.string.wallet_import_change_words_count, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$2
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public /* bridge */ /* synthetic */ Unit invoke() {
+                        invoke2();
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2() {
+                        CreateWalletFragment.this.getPresenter().onSelectWordsCountClick();
+                    }
+                }));
             }
             descriptionText2.setText(spannableStringBuilder);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.TooBad) {
             getImageView().setAutoRepeat(true);
-            getImageView().setAnimation(C3417R.raw.fork_wallet_too_bad, 120, 120);
-            getTitleTextView().setText(getResourceManager().getString(C3417R.string.wallet_import_too_bad));
-            getDescriptionText().setText(getResourceManager().getString(C3417R.string.wallet_import_too_bad_info));
-            getActionButton().setText(getResourceManager().getString(C3417R.string.wallet_import_too_bad_enter));
+            getImageView().setAnimation(C3419R.raw.fork_wallet_too_bad, 120, 120);
+            getTitleTextView().setText(getResourceManager().getString(C3419R.string.wallet_import_too_bad));
+            getDescriptionText().setText(getResourceManager().getString(C3419R.string.wallet_import_too_bad_info));
+            getActionButton().setText(getResourceManager().getString(C3419R.string.wallet_import_too_bad_enter));
             getDescriptionText2().setVisibility(0);
-            getDescriptionText2().setText(createClickableText(C3417R.string.wallet_import_too_bad_create, new CreateWalletFragment$setupViewsContents$2(this)));
+            getDescriptionText2().setText(createClickableText(C3419R.string.wallet_import_too_bad_create, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    CreateWalletFragment.this.getPresenter().onCreateNewEmptyWalletClick();
+                }
+            }));
         }
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         if (canGoBack()) {
-            c3484ActionBar.setBackButtonDrawable(new BackDrawable(false));
+            c3485ActionBar.setBackButtonDrawable(new BackDrawable(false));
         }
-        c3484ActionBar.setBackgroundColor(0);
+        c3485ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3484ActionBar.setTitleColor(getThemedColor(i));
-        c3484ActionBar.setItemsColor(getThemedColor(i), false);
-        c3484ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarWhiteSelector), false);
-        c3484ActionBar.setCastShadows(false);
-        c3484ActionBar.setOccupyStatusBar(false);
-        c3484ActionBar.setY(c3484ActionBar.getY() + AndroidUtilities.statusBarHeight);
-        c3484ActionBar.setExtraHeight(AndroidUtilities.statusBarHeight);
-        c3484ActionBar.setAddToContainer(false);
+        c3485ActionBar.setTitleColor(getThemedColor(i));
+        c3485ActionBar.setItemsColor(getThemedColor(i), false);
+        c3485ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarWhiteSelector), false);
+        c3485ActionBar.setCastShadows(false);
+        c3485ActionBar.setOccupyStatusBar(false);
+        c3485ActionBar.setY(c3485ActionBar.getY() + AndroidUtilities.statusBarHeight);
+        c3485ActionBar.setExtraHeight(AndroidUtilities.statusBarHeight);
+        c3485ActionBar.setAddToContainer(false);
         if (!AndroidUtilities.isTablet()) {
-            c3484ActionBar.showActionModeTop();
+            c3485ActionBar.showActionModeTop();
         }
         if (this.currentType instanceof CreateWalletScreenType.SecretWords) {
-            ActionBarMenuItem addItem = c3484ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3417R.C3419drawable.ic_ab_other);
-            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
-            addItem.addSubItem(IdFabric$Menu.PDF, C3417R.C3419drawable.fork_ic_pdf_24, getResourceManager().getString(C3417R.string.wallet_backup_secret_words_pdf));
+            ActionBarMenuItem addItem = c3485ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3419R.C3421drawable.ic_ab_other);
+            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
+            addItem.addSubItem(IdFabric$Menu.PDF, C3419R.C3421drawable.fork_ic_pdf_24, getResourceManager().getString(C3419R.string.wallet_backup_secret_words_pdf));
         }
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     CreateWalletFragment.this.finishFragment();
@@ -1175,9 +1659,51 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
     private final void setupEventListeners() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2134x1c919b66(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2135x1c919b67(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
+                m1435invoke(cryptoEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1435invoke(DomainRxEvents.CryptoEvent it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                DomainRxEvents.CryptoEvent cryptoEvent = it;
+                if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRecreateWalletByPassword.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletReset.INSTANCE)) {
+                    CreateWalletFragment.this.removeSelfFromStack();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         autoDispose(subscribe);
     }
@@ -1368,7 +1894,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$HintsAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class HintsAdapter extends RecyclerListView.SelectionAdapter {
         private final int[] location = new int[2];
         private List<String> searchResult;
@@ -1412,7 +1938,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                 return;
             }
             if (CreateWalletFragment.this.hintEditText != CreateWalletFragment.this.searchingHintEditText || !CreateWalletFragment.this.getHintPopupWindow().isShowing()) {
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE);
                 CreateWalletFragment.this.getHintPopupLayout().measure(makeMeasureSpec, makeMeasureSpec);
                 NumericEditText numericEditText = CreateWalletFragment.this.searchingHintEditText;
                 if (numericEditText != null) {
@@ -1422,7 +1948,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                 if (linearLayoutManager != null) {
                     linearLayoutManager.scrollToPositionWithOffset(0, Integer.MAX_VALUE);
                 }
-                CreateWalletFragment.this.getHintPopupWindow().showAtLocation(((BaseFragment) CreateWalletFragment.this).fragmentView, 51, this.location[0] - AndroidUtilities.m54dp(48), this.location[1] - AndroidUtilities.m54dp(64));
+                CreateWalletFragment.this.getHintPopupWindow().showAtLocation(((BaseFragment) CreateWalletFragment.this).fragmentView, 51, this.location[0] - AndroidUtilities.m72dp(48), this.location[1] - AndroidUtilities.m72dp(64));
             }
             CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
             createWalletFragment.hintEditText = createWalletFragment.searchingHintEditText;
@@ -1450,7 +1976,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             View view = holder.itemView;
             Intrinsics.checkNotNull(view, "null cannot be cast to non-null type android.widget.TextView");
             TextView textView = (TextView) view;
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m54dp(9));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(textView, AndroidUtilities.m72dp(9));
             textView.setText(this.searchResult.get(i));
         }
 
@@ -1463,7 +1989,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$NumericTextView */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class NumericTextView extends TextView {
         private String number;
         private int numberWidth;
@@ -1477,8 +2003,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             this.this$0 = createWalletFragment;
             TextPaint textPaint = new TextPaint(1);
             this.numericPaint = textPaint;
-            setPadding(AndroidUtilities.m54dp(31), 0, 0, 0);
-            textPaint.setTextSize(AndroidUtilities.m54dp(16));
+            setPadding(AndroidUtilities.m72dp(31), 0, 0, 0);
+            textPaint.setTextSize(AndroidUtilities.m72dp(16));
         }
 
         public final void setNumber(String value) {
@@ -1499,7 +2025,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             if (str != null) {
                 CreateWalletFragment createWalletFragment = this.this$0;
                 this.numericPaint.setColor(createWalletFragment.getThemedColor(Theme.key_windowBackgroundWhiteHintText));
-                canvas.drawText(str, createWalletFragment.maxNumberWidth - this.numberWidth, AndroidUtilities.m54dp(17), this.numericPaint);
+                canvas.drawText(str, createWalletFragment.maxNumberWidth - this.numberWidth, AndroidUtilities.m72dp(17), this.numericPaint);
             }
         }
     }
@@ -1507,7 +2033,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$NumericEditText */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class NumericEditText extends FrameLayout {
         private final ImageView deleteImageView;
         private final EditTextBoldCursor editText;
@@ -1525,12 +2051,12 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             TextPaint textPaint = new TextPaint(1);
             this.numericPaint = textPaint;
             setWillNotDraw(false);
-            textPaint.setTextSize(AndroidUtilities.m54dp(17));
+            textPaint.setTextSize(AndroidUtilities.m72dp(17));
             EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
             editTextBoldCursor.setTag(Integer.valueOf(i));
             editTextBoldCursor.setTextSize(1, 17.0f);
             editTextBoldCursor.setBackground(Theme.createEditTextDrawable(context, false));
-            editTextBoldCursor.setPadding(AndroidUtilities.m54dp(31), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(30), 0);
+            editTextBoldCursor.setPadding(AndroidUtilities.m72dp(31), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(30), 0);
             int i2 = Theme.key_windowBackgroundWhiteBlackText;
             editTextBoldCursor.setTextColor(createWalletFragment.getThemedColor(i2));
             editTextBoldCursor.setCursorColor(createWalletFragment.getThemedColor(i2));
@@ -1540,7 +2066,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             editTextBoldCursor.setSingleLine(true);
             editTextBoldCursor.setImeOptions((z ? 6 : 5) | 268435456);
             editTextBoldCursor.setInputType(180224);
-            editTextBoldCursor.setCursorSize(AndroidUtilities.m54dp(20));
+            editTextBoldCursor.setCursorSize(AndroidUtilities.m72dp(20));
             editTextBoldCursor.setGravity(3);
             editTextBoldCursor.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$NumericEditText$$ExternalSyntheticLambda2
                 @Override // android.widget.TextView.OnEditorActionListener
@@ -1618,13 +2144,13 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ImageView imageView = new ImageView(context);
             imageView.setFocusable(false);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3417R.C3419drawable.miniplayer_close);
+            imageView.setImageResource(C3419R.C3421drawable.miniplayer_close);
             imageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
             imageView.setScaleX(BitmapDescriptorFactory.HUE_RED);
             imageView.setScaleY(BitmapDescriptorFactory.HUE_RED);
             imageView.setRotation(45.0f);
             imageView.setColorFilter(new PorterDuffColorFilter(createWalletFragment.getThemedColor(Theme.key_windowBackgroundWhiteGrayText7), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("ClearButton", C3417R.string.ClearButton));
+            imageView.setContentDescription(LocaleController.getString("ClearButton", C3419R.string.ClearButton));
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$NumericEditText$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1722,7 +2248,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             if (str != null) {
                 CreateWalletFragment createWalletFragment = this.this$0;
                 this.numericPaint.setColor(createWalletFragment.getThemedColor(Theme.key_windowBackgroundWhiteHintText));
-                canvas.drawText(str, (createWalletFragment.maxEditNumberWidth - this.numberWidth) / 2.0f, AndroidUtilities.m54dp(20), this.numericPaint);
+                canvas.drawText(str, (createWalletFragment.maxEditNumberWidth - this.numberWidth) / 2.0f, AndroidUtilities.m72dp(20), this.numericPaint);
             }
         }
 
@@ -1745,7 +2271,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

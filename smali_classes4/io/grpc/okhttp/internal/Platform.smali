@@ -46,11 +46,11 @@
 
     const-string v0, "com.google.android.gms.org.conscrypt.OpenSSLProvider"
 
-    const-string v1, "org.conscrypt.OpenSSLProvider"
+    const-string/jumbo v1, "org.conscrypt.OpenSSLProvider"
 
     const-string v2, "com.android.org.conscrypt.OpenSSLProvider"
 
-    const-string v3, "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider"
+    const-string/jumbo v3, "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider"
 
     const-string v4, "com.google.android.libraries.stitch.sslguard.SslGuardProvider"
 
@@ -455,7 +455,7 @@
 
     :catch_2
     :try_start_4
-    const-string v2, "org.eclipse.jetty.alpn.ALPN"
+    const-string/jumbo v2, "org.eclipse.jetty.alpn.ALPN"
 
     .line 256
     invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -519,7 +519,7 @@
 
     move-result-object v9
 
-    const-string v2, "put"
+    const-string/jumbo v2, "put"
 
     const/4 v6, 0x2
 

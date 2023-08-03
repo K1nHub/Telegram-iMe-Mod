@@ -72,7 +72,7 @@ public class RenderView extends TextureView {
         this.bitmap = bitmap;
         this.painting = painting;
         painting.setRenderView(this);
-        setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC49211());
+        setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC49571());
         this.input = new Input(this);
         this.shapeInput = new ShapeInput(this, new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
@@ -103,12 +103,12 @@ public class RenderView extends TextureView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.RenderView$1 */
     /* loaded from: classes6.dex */
-    public class TextureView$SurfaceTextureListenerC49211 implements TextureView.SurfaceTextureListener {
+    public class TextureView$SurfaceTextureListenerC49571 implements TextureView.SurfaceTextureListener {
         @Override // android.view.TextureView.SurfaceTextureListener
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        TextureView$SurfaceTextureListenerC49211() {
+        TextureView$SurfaceTextureListenerC49571() {
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
@@ -122,7 +122,7 @@ public class RenderView extends TextureView {
             RenderView.this.post(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.TextureView$SurfaceTextureListenerC49211.this.lambda$onSurfaceTextureAvailable$0();
+                    RenderView.TextureView$SurfaceTextureListenerC49571.this.lambda$onSurfaceTextureAvailable$0();
                 }
             });
             if (RenderView.this.painting.isPaused()) {
@@ -148,7 +148,7 @@ public class RenderView extends TextureView {
             RenderView.this.internal.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.TextureView$SurfaceTextureListenerC49211.this.lambda$onSurfaceTextureSizeChanged$1();
+                    RenderView.TextureView$SurfaceTextureListenerC49571.this.lambda$onSurfaceTextureSizeChanged$1();
                 }
             });
         }
@@ -166,7 +166,7 @@ public class RenderView extends TextureView {
                 RenderView.this.painting.onPause(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RenderView.TextureView$SurfaceTextureListenerC49211.this.lambda$onSurfaceTextureDestroyed$2();
+                        RenderView.TextureView$SurfaceTextureListenerC49571.this.lambda$onSurfaceTextureDestroyed$2();
                     }
                 });
             }
@@ -387,7 +387,7 @@ public class RenderView extends TextureView {
 
         public CanvasInternal(SurfaceTexture surfaceTexture) {
             super("CanvasInternal");
-            this.drawRunnable = new RunnableC49231();
+            this.drawRunnable = new RunnableC49591();
             this.surfaceTexture = surfaceTexture;
         }
 
@@ -407,14 +407,14 @@ public class RenderView extends TextureView {
             this.eglDisplay = eglGetDisplay;
             if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("eglGetDisplay failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                    FileLog.m69e("eglGetDisplay failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                 }
                 finish();
                 return false;
             }
             if (!this.egl10.eglInitialize(eglGetDisplay, new int[2])) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("eglInitialize failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                    FileLog.m69e("eglInitialize failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                 }
                 finish();
                 return false;
@@ -423,7 +423,7 @@ public class RenderView extends TextureView {
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
             if (!this.egl10.eglChooseConfig(this.eglDisplay, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("eglChooseConfig failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                    FileLog.m69e("eglChooseConfig failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                 }
                 finish();
                 return false;
@@ -433,7 +433,7 @@ public class RenderView extends TextureView {
                 this.eglContext = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m51e("eglCreateContext failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                        FileLog.m69e("eglCreateContext failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                     }
                     finish();
                     return false;
@@ -444,13 +444,13 @@ public class RenderView extends TextureView {
                     this.eglSurface = eglCreateWindowSurface;
                     if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m51e("createWindowSurface failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                            FileLog.m69e("createWindowSurface failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                         }
                         finish();
                         return false;
                     } else if (!this.egl10.eglMakeCurrent(this.eglDisplay, eglCreateWindowSurface, eglCreateWindowSurface, this.eglContext)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m51e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                            FileLog.m69e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                         }
                         finish();
                         return false;
@@ -470,7 +470,7 @@ public class RenderView extends TextureView {
                 return false;
             } else {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("eglConfig not initialized");
+                    FileLog.m69e("eglConfig not initialized");
                 }
                 finish();
                 return false;
@@ -505,8 +505,8 @@ public class RenderView extends TextureView {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC49231 implements Runnable {
-            RunnableC49231() {
+        public class RunnableC49591 implements Runnable {
+            RunnableC49591() {
             }
 
             @Override // java.lang.Runnable
@@ -527,7 +527,7 @@ public class RenderView extends TextureView {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            RenderView.CanvasInternal.RunnableC49231.this.lambda$run$0();
+                            RenderView.CanvasInternal.RunnableC49591.this.lambda$run$0();
                         }
                     });
                 }
@@ -636,7 +636,7 @@ public class RenderView extends TextureView {
                     });
                     countDownLatch.await();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
                 return bitmapArr[0];
             }

@@ -24,13 +24,13 @@
 .method public constructor <init>(II)V
     .locals 0
 
-    .line 1028
+    .line 1052
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1029
+    .line 1053
     iput p1, p0, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;->frame:I
 
-    .line 1030
+    .line 1054
     iput p2, p0, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;->num:I
 
     return-void
@@ -41,7 +41,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
-    .line 1035
+    .line 1059
     instance-of v0, p1, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;
 
     const/4 v1, 0x0
@@ -50,11 +50,11 @@
 
     return v1
 
-    .line 1038
+    .line 1062
     :cond_0
     check-cast p1, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;
 
-    .line 1039
+    .line 1063
     iget v0, p0, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;->frame:I
 
     iget v2, p1, Lorg/telegram/messenger/MessagesController$DiceFrameSuccess;->frame:I

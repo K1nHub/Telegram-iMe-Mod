@@ -24,7 +24,7 @@
 
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
-    .line 48
+    .line 47
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 50
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -54,7 +54,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->access$setItemWidth$p(Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;I)V
 
-    .line 51
+    .line 50
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

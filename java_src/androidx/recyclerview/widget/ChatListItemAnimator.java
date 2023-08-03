@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -184,7 +185,14 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
                 ArrayList arrayList3 = new ArrayList();
                 arrayList3.addAll(this.mPendingAdditions);
                 this.mPendingAdditions.clear();
-                Collections.sort(arrayList3, ChatListItemAnimator$$ExternalSyntheticLambda7.INSTANCE);
+                Collections.sort(arrayList3, new Comparator() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda7
+                    @Override // java.util.Comparator
+                    public final int compare(Object obj, Object obj2) {
+                        int lambda$runAlphaEnterTransition$1;
+                        lambda$runAlphaEnterTransition$1 = ChatListItemAnimator.lambda$runAlphaEnterTransition$1((RecyclerView.ViewHolder) obj, (RecyclerView.ViewHolder) obj2);
+                        return lambda$runAlphaEnterTransition$1;
+                    }
+                });
                 Iterator it2 = arrayList3.iterator();
                 while (it2.hasNext()) {
                     animateAddImpl((RecyclerView.ViewHolder) it2.next());
@@ -346,7 +354,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateRemove(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("animate remove");
+            FileLog.m70d("animate remove");
         }
         boolean animateRemove = super.animateRemove(viewHolder, itemHolderInfo);
         if (animateRemove && itemHolderInfo != null) {
@@ -959,7 +967,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimations() {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("end animations");
+            FileLog.m70d("end animations");
         }
         Iterator<MessageObject.GroupedMessages> it = this.willChangedGroups.iterator();
         while (it.hasNext()) {
@@ -1040,7 +1048,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected boolean endChangeAnimationIfNecessary(DefaultItemAnimator.ChangeInfo changeInfo, RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("end change if necessary");
+            FileLog.m70d("end change if necessary");
         }
         Animator remove = this.animators.remove(viewHolder);
         if (remove != null) {
@@ -1134,7 +1142,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected void animateRemoveImpl(final RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("animate remove impl");
+            FileLog.m70d("animate remove impl");
         }
         final View view = viewHolder.itemView;
         this.mRemoveAnimations.add(viewHolder);

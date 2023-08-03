@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PipVideoOverlay;)V
     .locals 0
 
-    .line 367
+    .line 369
     iput-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$2;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 370
+    .line 372
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$2;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$200(Lorg/telegram/ui/Components/PipVideoOverlay;)V

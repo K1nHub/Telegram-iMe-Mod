@@ -6,7 +6,7 @@ public class TLRPC$TL_webPage extends TLRPC$WebPage {
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.flags = abstractSerializedData.readInt32(z);
-        this.f1665id = abstractSerializedData.readInt64(z);
+        this.f1684id = abstractSerializedData.readInt64(z);
         this.url = abstractSerializedData.readString(z);
         this.display_url = abstractSerializedData.readString(z);
         this.hash = abstractSerializedData.readInt32(z);
@@ -59,7 +59,7 @@ public class TLRPC$TL_webPage extends TLRPC$WebPage {
             }
             int readInt322 = abstractSerializedData.readInt32(z);
             for (int i = 0; i < readInt322; i++) {
-                TLRPC$TL_webPageAttributeTheme TLdeserialize = TLRPC$TL_webPageAttributeTheme.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+                TLRPC$WebPageAttribute TLdeserialize = TLRPC$WebPageAttribute.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
                 if (TLdeserialize == null) {
                     return;
                 }
@@ -72,7 +72,7 @@ public class TLRPC$TL_webPage extends TLRPC$WebPage {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
-        abstractSerializedData.writeInt64(this.f1665id);
+        abstractSerializedData.writeInt64(this.f1684id);
         abstractSerializedData.writeString(this.url);
         abstractSerializedData.writeString(this.display_url);
         abstractSerializedData.writeInt32(this.hash);

@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CreateWalletView$$State extends MvpViewState<CreateWalletView> implements CreateWalletView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -182,7 +182,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$UpdateLoadingStateCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class UpdateLoadingStateCommand extends ViewCommand<CreateWalletView> {
         public final boolean isLoading;
 
@@ -199,7 +199,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowWordsSuggestionsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowWordsSuggestionsCommand extends ViewCommand<CreateWalletView> {
         public final List<String> words;
 
@@ -216,7 +216,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$OnWordsCountSelectedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnWordsCountSelectedCommand extends ViewCommand<CreateWalletView> {
         public final int wordsCount;
 
@@ -233,7 +233,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$OnSuccessEnterSeedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSuccessEnterSeedCommand extends ViewCommand<CreateWalletView> {
         public final String password;
         public final String seed;
@@ -252,7 +252,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowSelectWordsCountDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowSelectWordsCountDialogCommand extends ViewCommand<CreateWalletView> {
         public final RadioCellsListDialogModel dialogModel;
 
@@ -269,49 +269,49 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$CreateNewWalletCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CreateNewWalletCommand extends ViewCommand<CreateWalletView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1928wallet;
+        public final Wallet f1984wallet;
 
         CreateNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
             super("createNewWallet", OneExecutionStateStrategy.class);
-            this.f1928wallet = wallet2;
+            this.f1984wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.createNewWallet(this.f1928wallet, this.password);
+            createWalletView.createNewWallet(this.f1984wallet, this.password);
         }
     }
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$AddNewWalletCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class AddNewWalletCommand extends ViewCommand<CreateWalletView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1927wallet;
+        public final Wallet f1983wallet;
 
         AddNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
             super("addNewWallet", OneExecutionStateStrategy.class);
-            this.f1927wallet = wallet2;
+            this.f1983wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.addNewWallet(this.f1927wallet, this.password);
+            createWalletView.addNewWallet(this.f1983wallet, this.password);
         }
     }
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$OnSuccessConfirmBackUpCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSuccessConfirmBackUpCommand extends ViewCommand<CreateWalletView> {
         OnSuccessConfirmBackUpCommand(CreateWalletView$$State createWalletView$$State) {
             super("onSuccessConfirmBackUp", OneExecutionStateStrategy.class);
@@ -325,7 +325,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$GenerateAndOpenPdfCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class GenerateAndOpenPdfCommand extends ViewCommand<CreateWalletView> {
         public final List<String> secretWords;
         public final String walletAddress;
@@ -344,7 +344,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletView> {
         public final String text;
 
@@ -361,7 +361,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -382,7 +382,7 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
 
     /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

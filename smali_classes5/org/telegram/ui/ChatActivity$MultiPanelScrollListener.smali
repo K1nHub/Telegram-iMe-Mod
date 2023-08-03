@@ -36,14 +36,14 @@
 .method private constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 2030
+    .line 2039
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     const/16 p1, 0x64
 
-    .line 2032
+    .line 2041
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -52,12 +52,12 @@
 
     const/4 p1, 0x0
 
-    .line 2033
+    .line 2042
     iput p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->scrolledDistance:I
 
     const/4 p1, 0x1
 
-    .line 2034
+    .line 2043
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->isVisible:Z
 
     return-void
@@ -66,7 +66,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ChatActivity$1;)V
     .locals 0
 
-    .line 2030
+    .line 2039
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;-><init>(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
@@ -75,7 +75,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;Z)V
     .locals 0
 
-    .line 2030
+    .line 2039
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->show(Z)V
 
     return-void
@@ -84,7 +84,7 @@
 .method private synthetic lambda$onScrollStateChanged$0(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
 
-    .line 2052
+    .line 2061
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -101,7 +101,7 @@
 
     const/4 p1, 0x1
 
-    .line 2053
+    .line 2062
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->show(Z)V
 
     :cond_0
@@ -111,7 +111,7 @@
 .method private show(Z)V
     .locals 2
 
-    .line 2060
+    .line 2069
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->isVisible:Z
 
     if-eq v0, p1, :cond_1
@@ -128,16 +128,16 @@
 
     goto :goto_0
 
-    .line 2063
+    .line 2072
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->isVisible:Z
 
     const/4 v0, 0x0
 
-    .line 2064
+    .line 2073
     iput v0, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->scrolledDistance:I
 
-    .line 2065
+    .line 2074
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x1
@@ -154,12 +154,12 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 2
 
-    .line 2049
+    .line 2058
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
     if-nez p2, :cond_0
 
-    .line 2051
+    .line 2060
     new-instance p2, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;Landroidx/recyclerview/widget/RecyclerView;)V
@@ -175,10 +175,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 2038
+    .line 2047
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 2039
+    .line 2048
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
@@ -203,7 +203,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2040
+    .line 2049
     iget p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->scrolledDistance:I
 
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
@@ -216,10 +216,10 @@
 
     const/4 p1, 0x0
 
-    .line 2041
+    .line 2050
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->show(Z)V
 
-    .line 2043
+    .line 2052
     :cond_0
     iget p1, p0, Lorg/telegram/ui/ChatActivity$MultiPanelScrollListener;->scrolledDistance:I
 

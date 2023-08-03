@@ -87,7 +87,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m1137clone() {
+    public FieldSet<T> m1154clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
             Map.Entry<T, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);

@@ -36,7 +36,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,331:1\n1549#2:332\n1620#2,3:333\n11#3:336\n18#4:337\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n*L\n199#1:332\n199#1:333,3\n200#1:336\n200#1:337\n*E\n"
+    value = "SMAP\nWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,323:1\n1549#2:324\n1620#2,3:325\n11#3:328\n18#4:329\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n*L\n191#1:324\n191#1:325,3\n192#1:328\n192#1:329\n*E\n"
 .end annotation
 
 
@@ -90,14 +90,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 195
+    .line 187
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 196
+    .line 188
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object p1
@@ -135,7 +135,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;
 
-    .line 199
+    .line 191
     invoke-static {v1}, Lcom/iMe/storage/data/mapper/wallet/WalletBalanceMappingKt;->mapToDomain(Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v1
@@ -169,7 +169,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 194
+    .line 186
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1;->invoke(Ljava/util/List;)Lio/reactivex/ObservableSource;

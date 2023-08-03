@@ -4,18 +4,6 @@
 
 
 # virtual methods
-.method public abstract activateWallet()Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;"
-        }
-    .end annotation
-.end method
-
 .method public abstract detachCustomToken(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -204,12 +192,12 @@
     .end annotation
 .end method
 
-.method public abstract sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+.method public abstract sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/Network;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",

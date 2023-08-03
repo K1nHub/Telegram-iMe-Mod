@@ -2,10 +2,12 @@ package com.iMe.p031ui.wallet.donations;
 
 import com.iMe.common.TelegramConstants;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.mapper.transaction.TransactionUiMappingKt;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.transaction.TransactionItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.iMe.storage.domain.interactor.crypto.donations.DonationsInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
@@ -24,11 +26,17 @@ import com.iMe.utils.helper.wallet.CryptoHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ManageLinksActivity;
+import timber.log.Timber;
 /* compiled from: WalletDonationsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsPresenter */
@@ -97,7 +105,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final String getCurrentDonationsAddress() {
         Result<String> result = this.addressInfoResultState;
         if ((result instanceof Result.Loading) || result == null) {
-            return this.resourceManager.getString(C3417R.string.common_progress_state_title);
+            return this.resourceManager.getString(C3419R.string.common_progress_state_title);
         }
         return this.currentDonationsAddress;
     }
@@ -138,16 +146,78 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
         this$0.saveDonationAddress(walletAddress);
     }
 
-    public final void linkAddress(String address) {
+    public final void linkAddress(final String address) {
         Intrinsics.checkNotNullParameter(address, "address");
         if ((address.length() > 0) && Intrinsics.areEqual(address, this.currentDonationsAddress)) {
-            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.channel_donations_the_same_address_error));
+            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.channel_donations_the_same_address_error));
         } else if (CryptoHelper.isWithEthereumPrefix(address)) {
             extractAddressForLink(address);
         } else {
-            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-            Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2252x3596b839(this, address)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2253x3596b83a(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+            Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                    m1482invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1482invoke(Result<? extends Boolean> it) {
+                    ResourceManager resourceManager;
+                    ResourceManager resourceManager2;
+                    DialogModel linkAddressDialogModel;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends Boolean> result = it;
+                    if (!(result instanceof Result.Success)) {
+                        if (result instanceof Result.Error) {
+                            resourceManager = WalletDonationsPresenter.this.resourceManager;
+                            ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                        }
+                    } else if (((Boolean) ((Result.Success) result).getData()).booleanValue()) {
+                        linkAddressDialogModel = WalletDonationsPresenter.this.getLinkAddressDialogModel(address, false);
+                        final WalletDonationsPresenter walletDonationsPresenter = WalletDonationsPresenter.this;
+                        final String str = address;
+                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showConfirmDialog(linkAddressDialogModel, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$1$1
+                            @Override // com.iMe.fork.utils.Callbacks$Callback
+                            public final void invoke() {
+                                WalletDonationsPresenter.this.saveDonationAddress(str);
+                            }
+                        });
+                    } else {
+                        resourceManager2 = WalletDonationsPresenter.this.resourceManager;
+                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showToast(resourceManager2.getString(C3419R.string.channel_donations_incorrect_address_error));
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView = BaseView.this;
+                    if (baseView != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView.showToast(message);
+                    }
+                }
+            })), "viewState: BaseView? = n…Error.invoke()\n        })");
         }
     }
 
@@ -165,9 +235,51 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void extractAddressForLink(String str) {
-        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2250x82948e4f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2251x82948e50(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$extractAddressForLink$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1481invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1481invoke(Result<? extends String> it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter.this.linkAddress((String) ((Result.Success) result).getData());
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$extractAddressForLink$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     private final boolean isDonationEnabled() {
@@ -184,47 +296,333 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadDonationAddress() {
-        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2254x23f668db(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2255x23f668dc((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1483invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1483invoke(Result<? extends String> it) {
+                String str;
+                ResourceManager resourceManager;
+                String str2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                WalletDonationsPresenter.this.addressInfoResultState = result;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter.this.currentDonationsAddress = (String) ((Result.Success) result).getData();
+                    str2 = WalletDonationsPresenter.this.currentDonationsAddress;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).onDonationsAddressLoaded(str2);
+                    WalletDonationsPresenter.this.loadWalletInformation();
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() != FirebaseFunctionsErrorHandler.CryptoErrorStatus.DONATIONS_NOT_CONFIGURED_YET) {
+                        resourceManager = WalletDonationsPresenter.this.resourceManager;
+                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                    }
+                    str = WalletDonationsPresenter.this.currentDonationsAddress;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).onDonationsAddressLoaded(str);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadDonationTransactions() {
-        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo698ui());
+        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2256x571632f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2257x571632f5((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends Transaction>>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationTransactions$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Transaction>> result) {
+                m1484invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1484invoke(Result<? extends List<? extends Transaction>> it) {
+                ResourceManager resourceManager;
+                int collectionSizeOrDefault;
+                List mutableList;
+                List<TransactionItem> list;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends Transaction>> result = it;
+                WalletDonationsPresenter.this.transactionsResultState = result;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter walletDonationsPresenter = WalletDonationsPresenter.this;
+                    Iterable<Transaction> iterable = (Iterable) ((Result.Success) result).getData();
+                    collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
+                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                    for (Transaction transaction : iterable) {
+                        arrayList.add(TransactionUiMappingKt.mapToUI(transaction));
+                    }
+                    mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
+                    walletDonationsPresenter.transactions = mutableList;
+                    list = WalletDonationsPresenter.this.transactions;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).onDonationsTransactionsLoaded(list);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletDonationsPresenter.this.resourceManager;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).updateScreenAfterLoad();
+                } else if (result instanceof Result.Loading) {
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).updateScreenAfterLoad();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationTransactions$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void disableDonation() {
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2248x93b9a39(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2249x93b9a3a((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$disableDonation$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1480invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1480invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                List list;
+                List<TransactionItem> list2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter.this.currentDonationsAddress = "";
+                    WalletDonationsPresenter.this.walletBalance = null;
+                    list = WalletDonationsPresenter.this.transactions;
+                    list.clear();
+                    list2 = WalletDonationsPresenter.this.transactions;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).onDonationsTransactionsLoaded(list2);
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).updateScreenAfterLoad();
+                    WalletDonationsPresenter.this.updateChatDonateAvailable();
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletDonationsPresenter.this.resourceManager;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$disableDonation$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void saveDonationAddress(String str) {
+    public final void saveDonationAddress(final String str) {
         Wallet.EVM evm = (Wallet.EVM) this.accessManager.getWallet(BlockchainType.EVM);
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2260x322e1e4(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2261x322e1e5((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$saveDonationAddress$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1486invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1486invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                String str2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter.this.currentDonationsAddress = str;
+                    str2 = WalletDonationsPresenter.this.currentDonationsAddress;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).onDonationsAddressLoaded(str2);
+                    WalletDonationsPresenter.this.loadWalletInformation();
+                    WalletDonationsPresenter.this.updateChatDonateAvailable();
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.CryptoErrorStatus.DONATIONS_ADDRESS_ALREADY_LINKED) {
+                        WalletDonationsPresenter.this.loadDonationAddress();
+                    }
+                    resourceManager = WalletDonationsPresenter.this.resourceManager;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$saveDonationAddress$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadDonationWalletBalance() {
-        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo698ui());
+        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2258x2935900a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2259x2935900b((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationWalletBalance$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
+                m1485invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1485invoke(Result<? extends TokenBalance> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends TokenBalance> result = it;
+                WalletDonationsPresenter.this.balanceResultState = result;
+                if (result instanceof Result.Success) {
+                    WalletDonationsPresenter.this.walletBalance = (TokenBalance) ((Result.Success) result).getData();
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletDonationsPresenter.this.resourceManager;
+                    ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+                ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).updateScreenAfterLoad();
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationWalletBalance$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -235,17 +633,17 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final DialogModel getUnlinkWalletAddressDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3417R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.channel_donations_unlink_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3419R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.channel_donations_unlink_address_dialog_positive_button));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getLinkAddressDialogModel(String str, boolean z) {
         int i;
         if (z) {
-            i = C3417R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
+            i = C3419R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
         } else {
-            i = C3417R.string.channel_donations_link_address_dialog_title;
+            i = C3419R.string.channel_donations_link_address_dialog_title;
         }
-        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3417R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.channel_donations_link_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3419R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.channel_donations_link_address_dialog_positive_button));
     }
 }

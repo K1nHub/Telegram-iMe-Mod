@@ -4,12 +4,21 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,17 +26,26 @@ import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CanvasButton;
 import org.telegram.p043ui.Components.CheckBoxBase;
+import org.telegram.p043ui.Components.CombinedDrawable;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.FlickerLoadingView;
 import org.telegram.p043ui.Components.spoilers.SpoilerEffect;
+import org.telegram.tgnet.TLRPC$Document;
+import org.telegram.tgnet.TLRPC$PhotoSize;
+import org.telegram.tgnet.TLRPC$StoryItem;
+import org.telegram.tgnet.TLRPC$TL_messageMediaPhoto;
+import org.telegram.tgnet.TLRPC$TL_messageMediaUnsupported;
 /* renamed from: org.telegram.ui.Cells.SharedPhotoVideoCell2 */
 /* loaded from: classes5.dex */
 public class SharedPhotoVideoCell2 extends View {
@@ -36,6 +54,7 @@ public class SharedPhotoVideoCell2 extends View {
     ValueAnimator animator;
     private boolean attached;
     public ImageReceiver blurImageReceiver;
+    private final RectF bounds;
     CanvasButton canvasButton;
     CheckBoxBase checkBoxBase;
     float checkBoxProgress;
@@ -47,10 +66,15 @@ public class SharedPhotoVideoCell2 extends View {
     int currentParentColumnsCount;
     boolean drawVideoIcon;
     FlickerLoadingView globalGradientView;
+    private Drawable gradientDrawable;
+    private boolean gradientDrawableLoading;
     float highlightProgress;
     float imageAlpha;
     public ImageReceiver imageReceiver;
     float imageScale;
+    public boolean isFirst;
+    public boolean isLast;
+    public boolean isStory;
     private SpoilerEffect mediaSpoilerEffect;
     private Path path;
     SharedResources sharedResources;
@@ -59,6 +83,7 @@ public class SharedPhotoVideoCell2 extends View {
     private float spoilerRevealProgress;
     private float spoilerRevealX;
     private float spoilerRevealY;
+    public int storyId;
     private int style;
     StaticLayout videoInfoLayot;
     String videoText;
@@ -77,6 +102,7 @@ public class SharedPhotoVideoCell2 extends View {
         this.path = new Path();
         this.mediaSpoilerEffect = new SpoilerEffect();
         this.style = 0;
+        this.bounds = new RectF();
         this.sharedResources = sharedResources;
         this.currentAccount = i;
         setChecked(false, false);
@@ -118,7 +144,7 @@ public class SharedPhotoVideoCell2 extends View {
             checkBoxBase.setColor(-1, Theme.key_sharedMedia_photoPlaceholder, Theme.key_checkboxCheck);
             this.checkBoxBase.setDrawUnchecked(true);
             this.checkBoxBase.setBackgroundType(0);
-            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24));
+            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(24));
             if (this.attached) {
                 this.checkBoxBase.onAttachedToWindow();
             }
@@ -133,19 +159,120 @@ public class SharedPhotoVideoCell2 extends View {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:88:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x025b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public void setMessageObject(org.telegram.messenger.MessageObject r18, int r19) {
-        /*
-            Method dump skipped, instructions count: 636
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.SharedPhotoVideoCell2.setMessageObject(org.telegram.messenger.MessageObject, int):void");
+    public void setMessageObject(MessageObject messageObject, int i) {
+        int i2 = this.currentParentColumnsCount;
+        this.currentParentColumnsCount = i;
+        MessageObject messageObject2 = this.currentMessageObject;
+        if (messageObject2 == null && messageObject == null) {
+            return;
+        }
+        if (messageObject2 == null || messageObject == null || messageObject2.getId() != messageObject.getId() || i2 != i) {
+            this.currentMessageObject = messageObject;
+            boolean z = true;
+            this.isStory = messageObject != null && messageObject.isStory();
+            if (messageObject == null) {
+                this.imageReceiver.onDetachedFromWindow();
+                this.blurImageReceiver.onDetachedFromWindow();
+                this.videoText = null;
+                this.videoInfoLayot = null;
+                this.showVideoLayout = false;
+                this.gradientDrawableLoading = false;
+                this.gradientDrawable = null;
+                return;
+            }
+            if (this.attached) {
+                this.imageReceiver.onAttachedToWindow();
+                this.blurImageReceiver.onAttachedToWindow();
+            }
+            String restrictionReason = MessagesController.getRestrictionReason(messageObject.messageOwner.restriction_reason);
+            String filterString = this.sharedResources.getFilterString((int) ((AndroidUtilities.displaySize.x / i) / AndroidUtilities.density));
+            int i3 = 320;
+            if (i <= 2) {
+                i3 = AndroidUtilities.getPhotoSize();
+            }
+            this.videoText = null;
+            this.videoInfoLayot = null;
+            this.showVideoLayout = false;
+            if (TextUtils.isEmpty(restrictionReason)) {
+                TLRPC$StoryItem tLRPC$StoryItem = messageObject.storyItem;
+                if (tLRPC$StoryItem != null && (tLRPC$StoryItem.media instanceof TLRPC$TL_messageMediaUnsupported)) {
+                    tLRPC$StoryItem.dialogId = messageObject.getDialogId();
+                    Drawable mutate = getContext().getResources().getDrawable(C3419R.C3421drawable.msg_emoji_recent).mutate();
+                    mutate.setColorFilter(new PorterDuffColorFilter(1090519039, PorterDuff.Mode.SRC_IN));
+                    this.imageReceiver.setImageBitmap(new CombinedDrawable(new ColorDrawable(-13421773), mutate));
+                } else if (messageObject.isVideo()) {
+                    this.showVideoLayout = true;
+                    if (i != 9) {
+                        this.videoText = AndroidUtilities.formatShortDuration((int) messageObject.getDuration());
+                    }
+                    ImageLocation imageLocation = messageObject.mediaThumb;
+                    if (imageLocation != null) {
+                        BitmapDrawable bitmapDrawable = messageObject.strippedThumb;
+                        if (bitmapDrawable != null) {
+                            this.imageReceiver.setImage(imageLocation, filterString, bitmapDrawable, null, messageObject, 0);
+                        } else {
+                            this.imageReceiver.setImage(imageLocation, filterString, messageObject.mediaSmallThumb, filterString + "_b", null, 0L, null, messageObject, 0);
+                        }
+                    } else {
+                        TLRPC$Document document = messageObject.getDocument();
+                        TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
+                        TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, i3, false, null, this.isStory);
+                        if (closestPhotoSizeWithSize == closestPhotoSizeWithSize2 && !this.isStory) {
+                            closestPhotoSizeWithSize2 = null;
+                        }
+                        if (closestPhotoSizeWithSize != null) {
+                            if (messageObject.strippedThumb != null) {
+                                this.imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), filterString, messageObject.strippedThumb, null, messageObject, 0);
+                            } else {
+                                this.imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), filterString, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), filterString + "_b", null, 0L, null, messageObject, 0);
+                            }
+                        }
+                    }
+                } else if ((MessageObject.getMedia(messageObject.messageOwner) instanceof TLRPC$TL_messageMediaPhoto) && MessageObject.getMedia(messageObject.messageOwner).photo != null && !messageObject.photoThumbs.isEmpty()) {
+                    if (messageObject.mediaExists || canAutoDownload(messageObject) || this.isStory) {
+                        ImageLocation imageLocation2 = messageObject.mediaThumb;
+                        if (imageLocation2 != null) {
+                            BitmapDrawable bitmapDrawable2 = messageObject.strippedThumb;
+                            if (bitmapDrawable2 != null) {
+                                this.imageReceiver.setImage(imageLocation2, filterString, bitmapDrawable2, null, messageObject, 0);
+                            } else {
+                                this.imageReceiver.setImage(imageLocation2, filterString, messageObject.mediaSmallThumb, filterString + "_b", null, 0L, null, messageObject, 0);
+                            }
+                        } else {
+                            TLRPC$PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50);
+                            TLRPC$PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, i3, false, closestPhotoSizeWithSize3, this.isStory);
+                            if (closestPhotoSizeWithSize4 == closestPhotoSizeWithSize3) {
+                                closestPhotoSizeWithSize3 = null;
+                            }
+                            if (messageObject.strippedThumb != null) {
+                                this.imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize4, messageObject.photoThumbsObject), filterString, null, null, messageObject.strippedThumb, closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0L, null, messageObject, messageObject.shouldEncryptPhotoOrVideo() ? 2 : 1);
+                            } else {
+                                this.imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize4, messageObject.photoThumbsObject), filterString, ImageLocation.getForObject(closestPhotoSizeWithSize3, messageObject.photoThumbsObject), filterString + "_b", closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0L, null, messageObject, messageObject.shouldEncryptPhotoOrVideo() ? 2 : 1);
+                            }
+                        }
+                    } else {
+                        BitmapDrawable bitmapDrawable3 = messageObject.strippedThumb;
+                        if (bitmapDrawable3 != null) {
+                            this.imageReceiver.setImage(null, null, null, null, bitmapDrawable3, 0L, null, messageObject, 0);
+                        } else {
+                            this.imageReceiver.setImage(null, null, ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50), messageObject.photoThumbsObject), "b", null, 0L, null, messageObject, 0);
+                        }
+                    }
+                }
+                z = false;
+            }
+            if (z) {
+                this.imageReceiver.setImageBitmap(ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.photo_placeholder_in));
+            }
+            if (this.blurImageReceiver.getBitmap() != null) {
+                this.blurImageReceiver.getBitmap().recycle();
+                this.blurImageReceiver.setImageBitmap((Bitmap) null);
+            }
+            if (this.imageReceiver.getBitmap() != null && this.currentMessageObject.hasMediaSpoilers() && !this.currentMessageObject.isMediaSpoilersRevealed) {
+                this.blurImageReceiver.setImageBitmap(Utilities.stackBlurBitmapMax(this.imageReceiver.getBitmap()));
+            }
+            invalidate();
+        }
     }
 
     private boolean canAutoDownload(MessageObject messageObject) {
@@ -167,27 +294,103 @@ public class SharedPhotoVideoCell2 extends View {
         this.drawVideoIcon = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0340  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0358  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0371  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x038a  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x023b  */
+    private float getPadding() {
+        float dpf2;
+        float dpf22;
+        float f;
+        if (this.crossfadeProgress != BitmapDescriptorFactory.HUE_RED) {
+            float f2 = this.crossfadeToColumnsCount;
+            if (f2 == 9.0f || this.currentParentColumnsCount == 9) {
+                if (f2 == 9.0f) {
+                    dpf2 = AndroidUtilities.dpf2(0.5f) * this.crossfadeProgress;
+                    dpf22 = AndroidUtilities.dpf2(1.0f);
+                    f = this.crossfadeProgress;
+                } else {
+                    dpf2 = AndroidUtilities.dpf2(1.0f) * this.crossfadeProgress;
+                    dpf22 = AndroidUtilities.dpf2(0.5f);
+                    f = this.crossfadeProgress;
+                }
+                return dpf2 + (dpf22 * (1.0f - f));
+            }
+        }
+        return this.currentParentColumnsCount == 9 ? AndroidUtilities.dpf2(0.5f) : AndroidUtilities.dpf2(1.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x02b1, code lost:
+        if (r1 != com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED) goto L75;
+     */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    protected void onDraw(android.graphics.Canvas r28) {
+    protected void onDraw(android.graphics.Canvas r20) {
         /*
-            Method dump skipped, instructions count: 943
+            Method dump skipped, instructions count: 792
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.SharedPhotoVideoCell2.onDraw(android.graphics.Canvas):void");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onDraw$2(int[] iArr) {
+        if (this.gradientDrawableLoading) {
+            this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, iArr);
+            invalidate();
+            this.gradientDrawableLoading = false;
+        }
+    }
+
+    public void drawDuration(Canvas canvas, RectF rectF, float f) {
+        int m72dp;
+        String str;
+        if (this.showVideoLayout) {
+            ImageReceiver imageReceiver = this.imageReceiver;
+            if (imageReceiver == null || imageReceiver.getVisible()) {
+                if (f < 1.0f) {
+                    f = (float) Math.pow(f, 8.0d);
+                }
+                canvas.save();
+                canvas.translate(rectF.left, rectF.top);
+                canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, rectF.width(), rectF.height());
+                int i = this.currentParentColumnsCount;
+                if (i != 9 && this.videoInfoLayot == null && (str = this.videoText) != null) {
+                    this.videoInfoLayot = new StaticLayout(this.videoText, this.sharedResources.textPaint, (int) Math.ceil(this.sharedResources.textPaint.measureText(str)), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                } else if ((i >= 9 || this.videoText == null) && this.videoInfoLayot != null) {
+                    this.videoInfoLayot = null;
+                }
+                if (this.videoInfoLayot == null) {
+                    m72dp = AndroidUtilities.m72dp(8);
+                } else {
+                    m72dp = AndroidUtilities.m72dp(4) + this.videoInfoLayot.getWidth() + AndroidUtilities.m72dp(4);
+                }
+                if (this.drawVideoIcon) {
+                    m72dp += AndroidUtilities.m72dp(10);
+                }
+                canvas.translate(AndroidUtilities.m72dp(5), ((AndroidUtilities.m72dp(1) + rectF.height()) - AndroidUtilities.m72dp(17)) - AndroidUtilities.m72dp(4));
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, m72dp, AndroidUtilities.m72dp(17));
+                int alpha = Theme.chat_timeBackgroundPaint.getAlpha();
+                Theme.chat_timeBackgroundPaint.setAlpha((int) (alpha * f));
+                canvas.drawRoundRect(rectF2, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), Theme.chat_timeBackgroundPaint);
+                Theme.chat_timeBackgroundPaint.setAlpha(alpha);
+                if (this.drawVideoIcon) {
+                    canvas.save();
+                    canvas.translate(this.videoInfoLayot == null ? AndroidUtilities.m72dp(5) : AndroidUtilities.m72dp(4), (AndroidUtilities.m72dp(17) - this.sharedResources.playDrawable.getIntrinsicHeight()) / 2.0f);
+                    this.sharedResources.playDrawable.setAlpha((int) (this.imageAlpha * 255.0f * f));
+                    this.sharedResources.playDrawable.draw(canvas);
+                    canvas.restore();
+                }
+                if (this.videoInfoLayot != null) {
+                    canvas.translate(AndroidUtilities.m72dp((this.drawVideoIcon ? 10 : 0) + 4), (AndroidUtilities.m72dp(17) - this.videoInfoLayot.getHeight()) / 2.0f);
+                    int alpha2 = this.sharedResources.textPaint.getAlpha();
+                    this.sharedResources.textPaint.setAlpha((int) (alpha2 * f));
+                    this.videoInfoLayot.draw(canvas);
+                    this.sharedResources.textPaint.setAlpha(alpha2);
+                }
+                canvas.restore();
+            }
+        }
     }
 
     public boolean canRevealSpoiler() {
@@ -204,7 +407,7 @@ public class SharedPhotoVideoCell2 extends View {
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SharedPhotoVideoCell2.this.lambda$startRevealMedia$2(valueAnimator);
+                SharedPhotoVideoCell2.this.lambda$startRevealMedia$3(valueAnimator);
             }
         });
         duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2.1
@@ -219,7 +422,7 @@ public class SharedPhotoVideoCell2 extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startRevealMedia$2(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$startRevealMedia$3(ValueAnimator valueAnimator) {
         this.spoilerRevealProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate();
     }
@@ -258,7 +461,13 @@ public class SharedPhotoVideoCell2 extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824));
+        int size = View.MeasureSpec.getSize(i);
+        boolean z = this.isStory;
+        int i3 = z ? (int) (size * 1.25f) : size;
+        if (z && this.currentParentColumnsCount == 1) {
+            i3 /= 2;
+        }
+        setMeasuredDimension(size, i3);
     }
 
     public int getMessageId() {
@@ -301,7 +510,7 @@ public class SharedPhotoVideoCell2 extends View {
         if (this.crossfadeView != null) {
             canvas.save();
             canvas.translate(getX(), getY());
-            this.crossfadeView.setImageScale(((getMeasuredWidth() - AndroidUtilities.m54dp(2)) * this.imageScale) / (this.crossfadeView.getMeasuredWidth() - AndroidUtilities.m54dp(2)), false);
+            this.crossfadeView.setImageScale(((getMeasuredWidth() - AndroidUtilities.m72dp(2)) * this.imageScale) / (this.crossfadeView.getMeasuredWidth() - AndroidUtilities.m72dp(2)), false);
             this.crossfadeView.draw(canvas);
             canvas.restore();
         }
@@ -322,7 +531,7 @@ public class SharedPhotoVideoCell2 extends View {
             checkBoxBase2.setColor(-1, Theme.key_sharedMedia_photoPlaceholder, Theme.key_checkboxCheck);
             this.checkBoxBase.setDrawUnchecked(false);
             this.checkBoxBase.setBackgroundType(1);
-            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24));
+            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(24));
             if (this.attached) {
                 this.checkBoxBase.onAttachedToWindow();
             }
@@ -373,6 +582,10 @@ public class SharedPhotoVideoCell2 extends View {
         }
     }
 
+    public int getStyle() {
+        return this.style;
+    }
+
     /* renamed from: org.telegram.ui.Cells.SharedPhotoVideoCell2$SharedResources */
     /* loaded from: classes5.dex */
     public static class SharedResources {
@@ -383,10 +596,10 @@ public class SharedPhotoVideoCell2 extends View {
         SparseArray<String> imageFilters = new SparseArray<>();
 
         public SharedResources(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this.textPaint.setTextSize(AndroidUtilities.m54dp(12));
+            this.textPaint.setTextSize(AndroidUtilities.m72dp(12));
             this.textPaint.setColor(-1);
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            Drawable drawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.play_mini_video);
+            Drawable drawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.play_mini_video);
             this.playDrawable = drawable;
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), this.playDrawable.getIntrinsicHeight());
             this.backgroundPaint.setColor(Theme.getColor(Theme.key_sharedMedia_photoPlaceholder, resourcesProvider));

@@ -59,7 +59,7 @@
 
     invoke-direct {v0, p0, v1}, Landroid/app/backup/SharedPreferencesBackupHelper;-><init>(Landroid/content/Context;[Ljava/lang/String;)V
 
-    const-string v1, "prefs"
+    const-string/jumbo v1, "prefs"
 
     .line 26
     invoke-virtual {p0, v1, v0}, Landroid/app/backup/BackupAgentHelper;->addHelper(Ljava/lang/String;Landroid/app/backup/BackupHelper;)V

@@ -22,7 +22,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 897
+    .line 901
     invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,10 +33,10 @@
 .method protected onAttachedToWindow()V
     .locals 4
 
-    .line 915
+    .line 919
     invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
 
-    .line 916
+    .line 920
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$TextViewEmojis;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 v1, 0x1
@@ -63,10 +63,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 921
+    .line 925
     invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
 
-    .line 922
+    .line 926
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$TextViewEmojis;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
@@ -77,10 +77,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 927
+    .line 931
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 928
+    .line 932
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v1
@@ -109,10 +109,10 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 909
+    .line 913
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    .line 910
+    .line 914
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$TextViewEmojis;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 p2, 0x1
@@ -139,10 +139,10 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 2
 
-    .line 903
+    .line 907
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    .line 904
+    .line 908
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$TextViewEmojis;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 p2, 0x1

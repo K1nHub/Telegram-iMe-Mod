@@ -14,16 +14,16 @@ public interface InterfaceC2853s {
     public interface InterfaceC2854a extends InterfaceC3160t {
         @Override // p033j$.util.InterfaceC2853s
         /* renamed from: b */
-        boolean mo113b(Consumer consumer);
+        boolean mo131b(Consumer consumer);
 
         /* renamed from: e */
-        void mo132e(InterfaceC2820f interfaceC2820f);
+        void mo150e(InterfaceC2820f interfaceC2820f);
 
         @Override // p033j$.util.InterfaceC2853s
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: k */
-        boolean mo131k(InterfaceC2820f interfaceC2820f);
+        boolean mo149k(InterfaceC2820f interfaceC2820f);
 
         @Override // p033j$.util.InterfaceC3160t, p033j$.util.InterfaceC2853s
         InterfaceC2854a trySplit();
@@ -34,16 +34,16 @@ public interface InterfaceC2853s {
     public interface InterfaceC2855b extends InterfaceC3160t {
         @Override // p033j$.util.InterfaceC2853s
         /* renamed from: b */
-        boolean mo113b(Consumer consumer);
+        boolean mo131b(Consumer consumer);
 
         /* renamed from: c */
-        void mo125c(InterfaceC2826l interfaceC2826l);
+        void mo143c(InterfaceC2826l interfaceC2826l);
 
         @Override // p033j$.util.InterfaceC2853s
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: g */
-        boolean mo124g(InterfaceC2826l interfaceC2826l);
+        boolean mo142g(InterfaceC2826l interfaceC2826l);
 
         @Override // p033j$.util.InterfaceC3160t, p033j$.util.InterfaceC2853s
         InterfaceC2855b trySplit();
@@ -54,23 +54,23 @@ public interface InterfaceC2853s {
     public interface InterfaceC2856c extends InterfaceC3160t {
         @Override // p033j$.util.InterfaceC2853s
         /* renamed from: b */
-        boolean mo113b(Consumer consumer);
+        boolean mo131b(Consumer consumer);
 
         /* renamed from: d */
-        void mo119d(InterfaceC2831q interfaceC2831q);
+        void mo137d(InterfaceC2831q interfaceC2831q);
 
         @Override // p033j$.util.InterfaceC2853s
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: i */
-        boolean mo118i(InterfaceC2831q interfaceC2831q);
+        boolean mo136i(InterfaceC2831q interfaceC2831q);
 
         @Override // p033j$.util.InterfaceC3160t, p033j$.util.InterfaceC2853s
         InterfaceC2856c trySplit();
     }
 
     /* renamed from: b */
-    boolean mo113b(Consumer consumer);
+    boolean mo131b(Consumer consumer);
 
     int characteristics();
 

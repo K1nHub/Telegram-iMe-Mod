@@ -33,7 +33,7 @@
     .line 938
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
-    const-string v0, "openBinanceSwapScreen"
+    const-string/jumbo v0, "openBinanceSwapScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

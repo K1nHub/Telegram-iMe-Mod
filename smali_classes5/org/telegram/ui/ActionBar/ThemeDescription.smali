@@ -1113,7 +1113,7 @@
     :cond_1a
     check-cast v8, Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {v8, p2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v8, p2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     goto/16 :goto_12
 

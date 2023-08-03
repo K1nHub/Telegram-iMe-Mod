@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 14
+    .line 18
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/FragmentPreviewMenu$openItem$2;->invoke()Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
     .locals 1
 
-    .line 14
+    .line 18
     iget-object v0, p0, Lcom/iMe/fork/ui/view/FragmentPreviewMenu$openItem$2;->this$0:Lcom/iMe/fork/ui/view/FragmentPreviewMenu;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;->access$initOpenItem(Lcom/iMe/fork/ui/view/FragmentPreviewMenu;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;

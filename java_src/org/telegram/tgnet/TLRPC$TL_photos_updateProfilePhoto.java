@@ -7,7 +7,7 @@ public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public TLRPC$InputPhoto f1641id;
+    public TLRPC$InputPhoto f1649id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -23,6 +23,6 @@ public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
         if ((this.flags & 2) != 0) {
             this.bot.serializeToStream(abstractSerializedData);
         }
-        this.f1641id.serializeToStream(abstractSerializedData);
+        this.f1649id.serializeToStream(abstractSerializedData);
     }
 }

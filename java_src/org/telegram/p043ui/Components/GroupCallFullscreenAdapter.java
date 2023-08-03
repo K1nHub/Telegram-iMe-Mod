@@ -128,7 +128,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
         }
         for (int i = 0; i < this.videoParticipants.size(); i++) {
             if (this.videoParticipants.get(i).equals(videoParticipant)) {
-                linearLayoutManager.scrollToPositionWithOffset(i, AndroidUtilities.m54dp(13));
+                linearLayoutManager.scrollToPositionWithOffset(i, AndroidUtilities.m72dp(13));
                 return;
             }
         }
@@ -170,17 +170,17 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             this.selectionPaint = new Paint(1);
             this.progress = 1.0f;
             this.textPaint = new TextPaint(1);
-            this.avatarWavesDrawable = new GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.m54dp(26), AndroidUtilities.m54dp(29));
-            this.avatarDrawable.setTextSize((int) (AndroidUtilities.m54dp(18) / 1.15f));
+            this.avatarWavesDrawable = new GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.m72dp(26), AndroidUtilities.m72dp(29));
+            this.avatarDrawable.setTextSize((int) (AndroidUtilities.m72dp(18) / 1.15f));
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarImageView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.m54dp(20));
+            backupImageView.setRoundRadius(AndroidUtilities.m72dp(20));
             addView(this.avatarImageView, LayoutHelper.createFrame(40, 40, 1, 0, 9, 0, 9));
             setWillNotDraw(false);
             this.backgroundPaint.setColor(Theme.getColor(Theme.key_voipgroup_listViewBackground));
             this.selectionPaint.setColor(Theme.getColor(Theme.key_voipgroup_speakingText));
             this.selectionPaint.setStyle(Paint.Style.STROKE);
-            this.selectionPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+            this.selectionPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
             this.textPaint.setColor(-1);
             RLottieImageView rLottieImageView = new RLottieImageView(context, GroupCallFullscreenAdapter.this) { // from class: org.telegram.ui.Components.GroupCallFullscreenAdapter.GroupCallUserCell.1
                 @Override // android.view.View
@@ -196,13 +196,13 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            this.textPaint.setTextSize(AndroidUtilities.m54dp(12));
+            this.textPaint.setTextSize(AndroidUtilities.m72dp(12));
             if (this.name != null) {
-                int min = (int) Math.min(AndroidUtilities.m54dp(46), this.textPaint.measureText(this.name));
+                int min = (int) Math.min(AndroidUtilities.m72dp(46), this.textPaint.measureText(this.name));
                 this.nameWidth = min;
                 this.drawingName = TextUtils.ellipsize(this.name, this.textPaint, min, TextUtils.TruncateAt.END).toString();
             }
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(80), 1073741824));
         }
 
         public void setParticipant(ChatObject.VideoParticipant videoParticipant, TLRPC$TL_groupCallParticipant tLRPC$TL_groupCallParticipant) {
@@ -274,10 +274,10 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             }
             float top = (this.avatarImageView.getTop() + (this.avatarImageView.getMeasuredHeight() / 2.0f)) - (getMeasuredHeight() / 2.0f);
             float f2 = 1.0f - f;
-            float m54dp = ((AndroidUtilities.m54dp(46) / AndroidUtilities.m54dp(40)) * f2) + (1.0f * f);
+            float m72dp = ((AndroidUtilities.m72dp(46) / AndroidUtilities.m72dp(40)) * f2) + (1.0f * f);
             this.avatarImageView.setTranslationY((-top) * f2);
-            this.avatarImageView.setScaleX(m54dp);
-            this.avatarImageView.setScaleY(m54dp);
+            this.avatarImageView.setScaleX(m72dp);
+            this.avatarImageView.setScaleY(m72dp);
             this.backgroundPaint.setAlpha((int) (f * 255.0f));
             invalidate();
             GroupCallMiniTextureView groupCallMiniTextureView2 = this.renderer;
@@ -297,16 +297,16 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 float measuredWidth = (getMeasuredWidth() / 2.0f) * (1.0f - this.progress);
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(measuredWidth, measuredWidth, getMeasuredWidth() - measuredWidth, getMeasuredHeight() - measuredWidth);
-                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(13), this.backgroundPaint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(13), AndroidUtilities.m72dp(13), this.backgroundPaint);
                 drawSelection(canvas);
             }
             float x = this.avatarImageView.getX() + (this.avatarImageView.getMeasuredWidth() / 2);
             float y = this.avatarImageView.getY() + (this.avatarImageView.getMeasuredHeight() / 2);
             this.avatarWavesDrawable.update();
             this.avatarWavesDrawable.draw(canvas, x, y, this);
-            float m54dp = AndroidUtilities.m54dp(46) / AndroidUtilities.m54dp(40);
+            float m72dp = AndroidUtilities.m72dp(46) / AndroidUtilities.m72dp(40);
             float f = this.progress;
-            float f2 = (m54dp * (1.0f - f)) + (f * 1.0f);
+            float f2 = (m72dp * (1.0f - f)) + (f * 1.0f);
             this.avatarImageView.setScaleX(this.avatarWavesDrawable.getAvatarScale() * f2);
             this.avatarImageView.setScaleY(this.avatarWavesDrawable.getAvatarScale() * f2);
             super.dispatchDraw(canvas);
@@ -380,9 +380,9 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 float r3 = r3 / r1
                 r2.inset(r0, r3)
                 r0 = 12
-                int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+                int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
                 float r1 = (float) r1
-                int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+                int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
                 float r0 = (float) r0
                 android.graphics.Paint r3 = r6.selectionPaint
                 r7.drawRoundRect(r2, r1, r0, r3)
@@ -474,12 +474,12 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
         public void drawOverlays(Canvas canvas) {
             if (this.drawingName != null) {
                 canvas.save();
-                int measuredWidth = ((getMeasuredWidth() - this.nameWidth) - AndroidUtilities.m54dp(24)) / 2;
+                int measuredWidth = ((getMeasuredWidth() - this.nameWidth) - AndroidUtilities.m72dp(24)) / 2;
                 this.textPaint.setAlpha((int) (this.progress * 255.0f * getAlpha()));
-                canvas.drawText(this.drawingName, AndroidUtilities.m54dp(22) + measuredWidth, AndroidUtilities.m54dp(69), this.textPaint);
+                canvas.drawText(this.drawingName, AndroidUtilities.m72dp(22) + measuredWidth, AndroidUtilities.m72dp(69), this.textPaint);
                 canvas.restore();
                 canvas.save();
-                canvas.translate(measuredWidth, AndroidUtilities.m54dp(53));
+                canvas.translate(measuredWidth, AndroidUtilities.m72dp(53));
                 if (this.muteButton.getDrawable() != null) {
                     this.muteButton.getDrawable().setAlpha((int) (this.progress * 255.0f * getAlpha()));
                     this.muteButton.draw(canvas);

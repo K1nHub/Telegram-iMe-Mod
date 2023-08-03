@@ -28,6 +28,8 @@
     .end annotation
 .end field
 
+.field private final exclusionStrategy:Lcom/google/gson/ExclusionStrategy;
+
 .field private final labelToSubtype:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -55,7 +57,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
+.method private constructor <init>(Ljava/lang/Class;Ljava/lang/String;Lcom/google/gson/ExclusionStrategy;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -63,21 +65,22 @@
             "Ljava/lang/Class<",
             "*>;",
             "Ljava/lang/String;",
+            "Lcom/google/gson/ExclusionStrategy;",
             ")V"
         }
     .end annotation
 
-    .line 118
+    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
+    .line 116
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->labelToSubtype:Ljava/util/Map;
 
-    .line 116
+    .line 117
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -88,25 +91,28 @@
 
     if-eqz p1, :cond_0
 
-    .line 122
+    .line 124
     iput-object p1, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->baseType:Ljava/lang/Class;
 
-    .line 123
+    .line 125
     iput-object p2, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->typeFieldName:Ljava/lang/String;
+
+    .line 126
+    iput-object p3, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->exclusionStrategy:Lcom/google/gson/ExclusionStrategy;
 
     return-void
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 120
+    .line 122
     throw p1
 .end method
 
 .method static synthetic access$000(Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;)Ljava/lang/String;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->typeFieldName:Ljava/lang/String;
 
     return-object p0
@@ -115,14 +121,14 @@
 .method static synthetic access$100(Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;)Ljava/lang/Class;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->baseType:Ljava/lang/Class;
 
     return-object p0
 .end method
 
 .method public static of(Ljava/lang/Class;)Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -135,17 +141,19 @@
         }
     .end annotation
 
-    .line 139
+    .line 142
     new-instance v0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
 
     const-string v1, "class"
 
-    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p0, v1, v2}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;-><init>(Ljava/lang/Class;Ljava/lang/String;Lcom/google/gson/ExclusionStrategy;)V
 
     return-object v0
 .end method
 
-.method public static of(Ljava/lang/Class;Ljava/lang/String;)Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
+.method public static of(Ljava/lang/Class;Ljava/lang/String;Lcom/google/gson/ExclusionStrategy;)Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -155,16 +163,17 @@
             "Ljava/lang/Class<",
             "TT;>;",
             "Ljava/lang/String;",
+            "Lcom/google/gson/ExclusionStrategy;",
             ")",
             "Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory<",
             "TT;>;"
         }
     .end annotation
 
-    .line 131
+    .line 134
     new-instance v0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;-><init>(Ljava/lang/Class;Ljava/lang/String;Lcom/google/gson/ExclusionStrategy;)V
 
     return-object v0
 .end method
@@ -186,17 +195,39 @@
         }
     .end annotation
 
-    .line 174
+    .line 177
+    iget-object v0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->exclusionStrategy:Lcom/google/gson/ExclusionStrategy;
+
+    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/gson/ExclusionStrategy;->shouldSkipClass(Ljava/lang/Class;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    .line 180
+    :cond_0
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 176
+    .line 182
     new-instance v5, Ljava/util/LinkedHashMap;
 
     invoke-direct {v5}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 181
+    .line 187
     const-class v0, Ljava/lang/Object;
 
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
@@ -207,14 +238,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 182
+    .line 188
     invoke-virtual {p1, p0, p2}, Lcom/google/gson/Gson;->getDelegateAdapter(Lcom/google/gson/TypeAdapterFactory;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
 
-    .line 183
+    .line 189
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object v1
@@ -225,15 +256,15 @@
 
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 184
+    .line 190
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object v1
 
     invoke-interface {v5, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 193
-    :cond_0
+    .line 199
+    :cond_1
     new-instance v6, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory$1;
 
     move-object v0, v6
@@ -246,7 +277,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory$1;-><init>(Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;Ljava/util/Map;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Ljava/util/Map;)V
 
-    .line 274
+    .line 280
     invoke-virtual {v6}, Lcom/google/gson/TypeAdapter;->nullSafe()Lcom/google/gson/TypeAdapter;
 
     move-result-object p1
@@ -266,7 +297,7 @@
         }
     .end annotation
 
-    .line 169
+    .line 172
     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
@@ -296,7 +327,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 153
+    .line 156
     iget-object v0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->subtypeToLabel:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -313,19 +344,19 @@
 
     if-nez v0, :cond_0
 
-    .line 156
+    .line 159
     iget-object v0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->labelToSubtype:Ljava/util/Map;
 
     invoke-interface {v0, p2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
+    .line 160
     iget-object v0, p0, Lorg/telegram/messenger/RuntimeClassNameTypeAdapterFactory;->subtypeToLabel:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
 
-    .line 154
+    .line 157
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -338,6 +369,6 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 151
+    .line 154
     throw p1
 .end method

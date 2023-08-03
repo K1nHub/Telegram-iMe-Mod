@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: CatalogUserChannelsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsPresenter */
@@ -30,7 +30,7 @@ public final class CatalogUserChannelsPresenter extends BasePresenter<CatalogUse
 
     private final void showItems() {
         List<BaseNode> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new CreateCampaignItem(C3417R.C3419drawable.fork_ic_add_account_40, C3417R.string.catalog_user_channels_create));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new CreateCampaignItem(C3419R.C3421drawable.fork_ic_add_account_40, C3419R.string.catalog_user_channels_create));
         ((CatalogUserChannelsView) getViewState()).showItems(mutableListOf);
     }
 }

@@ -78,7 +78,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
-    const-string v2, "phone"
+    const-string/jumbo v2, "phone"
 
     .line 83
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;

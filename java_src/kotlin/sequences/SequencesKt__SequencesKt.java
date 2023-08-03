@@ -1,6 +1,7 @@
 package kotlin.sequences;
 
 import java.util.Iterator;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,11 +24,22 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return sequence instanceof ConstrainedOnceSequence ? sequence : new ConstrainedOnceSequence(sequence);
     }
 
-    public static <T> Sequence<T> generateSequence(T t, Function1<? super T, ? extends T> nextFunction) {
+    public static <T> Sequence<T> generateSequence(final T t, Function1<? super T, ? extends T> nextFunction) {
         Intrinsics.checkNotNullParameter(nextFunction, "nextFunction");
         if (t == null) {
             return EmptySequence.INSTANCE;
         }
-        return new GeneratorSequence(new SequencesKt__SequencesKt$generateSequence$2(t), nextFunction);
+        return new GeneratorSequence(new Function0<T>() { // from class: kotlin.sequences.SequencesKt__SequencesKt$generateSequence$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final T invoke() {
+                return t;
+            }
+        }, nextFunction);
     }
 }

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/view/AccessibilityDelegateCompat$Api16Impl;,
-        Landroidx/core/view/AccessibilityDelegateCompat$AccessibilityDelegateAdapter;
+        Landroidx/core/view/AccessibilityDelegateCompat$AccessibilityDelegateAdapter;,
+        Landroidx/core/view/AccessibilityDelegateCompat$Api16Impl;
     }
 .end annotation
 

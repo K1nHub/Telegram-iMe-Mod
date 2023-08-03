@@ -15,4 +15,4 @@
 
 .field public static final account_level_zero:I = 0x7f060020
 
-.field public static final wallet_network_type_bep20:I = 0x7f060135
+.field public static final wallet_network_type_bep20:I = 0x7f060137

@@ -4,13 +4,13 @@ import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: TransactionsGroup.kt */
 /* loaded from: classes3.dex */
 public abstract class TransactionsGroup {
 
     /* renamed from: id */
-    private final int f360id;
+    private final int f363id;
     private final int nameResId;
 
     public /* synthetic */ TransactionsGroup(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -20,12 +20,12 @@ public abstract class TransactionsGroup {
     public abstract boolean checkTransaction(Transaction transaction);
 
     private TransactionsGroup(int i, int i2) {
-        this.f360id = i;
+        this.f363id = i;
         this.nameResId = i2;
     }
 
     public final int getId() {
-        return this.f360id;
+        return this.f363id;
     }
 
     public final int getNameResId() {
@@ -44,7 +44,7 @@ public abstract class TransactionsGroup {
         }
 
         private All() {
-            super(C3417R.C3420id.wallet_token_details_transactions_all, C3417R.string.wallet_token_details_transactions_all, null);
+            super(C3419R.C3422id.wallet_token_details_transactions_all, C3419R.string.wallet_token_details_transactions_all, null);
         }
     }
 
@@ -54,13 +54,13 @@ public abstract class TransactionsGroup {
         public static final Incoming INSTANCE = new Incoming();
 
         private Incoming() {
-            super(C3417R.C3420id.wallet_token_details_transactions_incoming, C3417R.string.wallet_token_details_transactions_incoming, null);
+            super(C3419R.C3422id.wallet_token_details_transactions_incoming, C3419R.string.wallet_token_details_transactions_incoming, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup
         public boolean checkTransaction(Transaction transaction) {
             Intrinsics.checkNotNullParameter(transaction, "transaction");
-            return transaction.getDirection() == TransactionDirection.f446IN && ((transaction instanceof Transaction.Transfer) || (transaction instanceof Transaction.Unsupported) || (transaction instanceof Transaction.Crypto.Transfer) || (transaction instanceof Transaction.Refund));
+            return transaction.getDirection() == TransactionDirection.f449IN && ((transaction instanceof Transaction.Transfer) || (transaction instanceof Transaction.Unsupported) || (transaction instanceof Transaction.Crypto.Transfer) || (transaction instanceof Transaction.Refund));
         }
     }
 
@@ -70,7 +70,7 @@ public abstract class TransactionsGroup {
         public static final Outgoing INSTANCE = new Outgoing();
 
         private Outgoing() {
-            super(C3417R.C3420id.wallet_token_details_transactions_outgoing, C3417R.string.wallet_token_details_transactions_outgoing, null);
+            super(C3419R.C3422id.wallet_token_details_transactions_outgoing, C3419R.string.wallet_token_details_transactions_outgoing, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup
@@ -86,7 +86,7 @@ public abstract class TransactionsGroup {
         public static final Swap INSTANCE = new Swap();
 
         private Swap() {
-            super(C3417R.C3420id.wallet_token_details_transactions_swap, C3417R.string.wallet_token_details_transactions_swap, null);
+            super(C3419R.C3422id.wallet_token_details_transactions_swap, C3419R.string.wallet_token_details_transactions_swap, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup

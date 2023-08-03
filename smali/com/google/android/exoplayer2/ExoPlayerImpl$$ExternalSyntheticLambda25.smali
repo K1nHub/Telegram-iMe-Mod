@@ -5,27 +5,17 @@
 .implements Lcom/google/android/exoplayer2/util/ListenerSet$Event;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;
+# instance fields
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;
-
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;->INSTANCE:Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;->f$0:Z
 
     return-void
 .end method
@@ -33,11 +23,13 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda25;->f$0:Z
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$mmvudecqiJgKISRfILg_QG9WU-M(Lcom/google/android/exoplayer2/Player$Listener;)V
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$KI01NQgkBscS_W9aEJjB4RBqq08(ZLcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

@@ -26,7 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 190
+    .line 244
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public getName()Ljava/lang/String;
     .locals 2
 
-    .line 196
+    .line 250
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->subfamily:Ljava/lang/String;
 
     const-string v1, "Regular"
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 199
+    .line 253
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -82,7 +82,7 @@
 
     return-object v0
 
-    .line 197
+    .line 251
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->family:Ljava/lang/String;

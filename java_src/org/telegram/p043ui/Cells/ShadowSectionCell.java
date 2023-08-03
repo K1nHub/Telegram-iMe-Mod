@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CombinedDrawable;
 /* renamed from: org.telegram.ui.Cells.ShadowSectionCell */
@@ -80,19 +80,19 @@ public class ShadowSectionCell extends View {
     private int getBackgroundResId() {
         boolean z = this.top;
         if (z && this.bottom) {
-            return C3417R.C3419drawable.greydivider;
+            return C3419R.C3421drawable.greydivider;
         }
         if (z) {
-            return C3417R.C3419drawable.greydivider_bottom;
+            return C3419R.C3421drawable.greydivider_bottom;
         }
         if (this.bottom) {
-            return C3417R.C3419drawable.greydivider_top;
+            return C3419R.C3421drawable.greydivider_top;
         }
-        return C3417R.C3419drawable.transparent;
+        return C3419R.C3421drawable.transparent;
     }
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.size), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.size), 1073741824));
     }
 }

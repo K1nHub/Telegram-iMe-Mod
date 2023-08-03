@@ -38,6 +38,8 @@
 
 .field private emojiViewVisible:Z
 
+.field public includeNavigationBar:Z
+
 .field private innerTextChange:I
 
 .field private isAnimatePopupClosing:Z
@@ -109,355 +111,613 @@
 
     move v5, p5
 
-    .line 110
+    .line 121
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/EditTextEmoji;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/BaseFragment;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/BaseFragment;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 9
+    .locals 20
 
-    .line 114
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    move-object/from16 v0, p0
 
-    const/4 v0, 0x1
+    move-object/from16 v1, p1
 
-    .line 59
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isPaused:Z
+    move-object/from16 v2, p2
 
-    .line 77
-    new-instance v1, Lorg/telegram/ui/Components/EditTextEmoji$1;
+    move/from16 v3, p4
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/EditTextEmoji$1;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
+    move-object/from16 v4, p6
 
-    iput-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
+    .line 125
+    invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 115
-    iput-boolean p5, p0, Lorg/telegram/ui/Components/EditTextEmoji;->allowAnimatedEmoji:Z
+    const/4 v5, 0x1
 
-    .line 116
-    iput-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .line 68
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->isPaused:Z
 
-    .line 117
-    iput p4, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
+    .line 88
+    new-instance v6, Lorg/telegram/ui/Components/EditTextEmoji$1;
 
-    .line 119
+    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/EditTextEmoji$1;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
+
+    iput-object v6, v0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
+
+    move/from16 v6, p5
+
+    .line 126
+    iput-boolean v6, v0, Lorg/telegram/ui/Components/EditTextEmoji;->allowAnimatedEmoji:Z
+
+    .line 127
+    iput-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 128
+    iput v3, v0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
+
+    .line 130
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object p5
+    move-result-object v6
 
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
+    sget v7, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
-    invoke-virtual {p5, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+    invoke-virtual {v6, v0, v7}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 120
-    iput-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    move-object/from16 v6, p3
 
-    .line 121
-    iput-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+    .line 131
+    iput-object v6, v0, Lorg/telegram/ui/Components/EditTextEmoji;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 122
-    invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setDelegate(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;)V
+    .line 132
+    iput-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 124
-    new-instance p2, Lorg/telegram/ui/Components/EditTextEmoji$2;
+    .line 133
+    invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setDelegate(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;)V
 
-    invoke-direct {p2, p0, p1, p6}, Lorg/telegram/ui/Components/EditTextEmoji$2;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 135
+    new-instance v2, Lorg/telegram/ui/Components/EditTextEmoji$2;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-direct {v2, v0, v1, v4, v3}, Lorg/telegram/ui/Components/EditTextEmoji$2;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
-    const/high16 p3, 0x41900000    # 18.0f
+    iput-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    .line 151
-    invoke-virtual {p2, v0, p3}, Landroid/widget/EditText;->setTextSize(IF)V
+    const/high16 v4, 0x41900000    # 18.0f
 
-    .line 152
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 179
+    invoke-virtual {v2, v5, v4}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const/high16 p3, 0x10000000
+    .line 180
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p3}, Landroid/widget/EditText;->setImeOptions(I)V
+    const/high16 v4, 0x10000000
 
-    .line 153
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v2, v4}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    invoke-virtual {p2}, Landroid/widget/EditText;->getInputType()I
+    .line 181
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    move-result p3
+    invoke-virtual {v2}, Landroid/widget/EditText;->getInputType()I
 
-    or-int/lit16 p3, p3, 0x4000
+    move-result v4
 
-    invoke-virtual {p2, p3}, Landroid/widget/EditText;->setInputType(I)V
+    or-int/lit16 v4, v4, 0x4000
 
-    .line 154
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v2, v4}, Landroid/widget/EditText;->setInputType(I)V
 
-    const/4 p3, 0x4
+    .line 182
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p3}, Landroid/widget/EditText;->setMaxLines(I)V
+    invoke-virtual {v2}, Landroid/widget/EditText;->isEnabled()Z
 
-    .line 155
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    move-result v4
 
-    invoke-virtual {p2}, Landroid/widget/EditText;->isEnabled()Z
+    invoke-virtual {v2, v4}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    move-result p3
+    .line 183
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p3}, Landroid/widget/EditText;->setFocusable(Z)V
+    const/16 v4, 0x14
 
-    .line 156
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/16 p3, 0x14
+    move-result v4
 
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    move-result p3
+    .line 184
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    const/high16 v4, 0x3fc00000    # 1.5f
 
-    .line 157
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    const/high16 p3, 0x3fc00000    # 1.5f
+    .line 185
+    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 158
-    iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+    move-result v6
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    move-result p5
+    const/4 v2, 0x5
 
-    invoke-virtual {p2, p5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    const/4 v6, 0x3
 
-    const/4 p2, 0x5
+    const v7, -0x73000001
 
-    const/4 p5, 0x3
+    const/4 v8, 0x2
 
-    const/4 p6, 0x0
+    const/16 v9, 0xb
 
-    const/16 v0, 0xb
+    const/4 v10, 0x0
 
-    const/4 v1, 0x0
+    const/4 v11, 0x4
 
-    if-nez p4, :cond_5
+    const/4 v12, 0x0
 
-    .line 160
-    iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    if-nez v3, :cond_5
 
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    .line 187
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    if-eqz v3, :cond_0
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    move v3, p2
+    .line 188
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v11, :cond_0
+
+    move v11, v2
 
     goto :goto_0
 
     :cond_0
-    move v3, p5
+    move v11, v6
 
     :goto_0
-    or-int/lit8 v3, v3, 0x10
+    or-int/lit8 v11, v11, 0x10
 
-    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 161
-    iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 189
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {v2, p6}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v10}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 162
-    iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 190
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    invoke-direct {v0, v10}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    move-result v2
+    move-result v10
 
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    move-result v3
+    move-result v11
 
-    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    invoke-direct {v0, v13}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+
+    move-result v13
+
+    invoke-virtual {v5, v10, v11, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+
+    .line 191
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-direct {v0, v10}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+
+    move-result v10
+
+    invoke-virtual {v5, v10}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 192
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v4
 
-    invoke-virtual {p6, v2, v3, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+    invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 163
-    iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 193
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    const/16 v10, 0x28
 
-    move-result v2
+    if-eqz v5, :cond_1
 
-    invoke-virtual {p6, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 164
-    iget-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
-
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
-
-    move-result p3
-
-    invoke-virtual {p6, p3}, Landroid/widget/EditText;->setTextColor(I)V
-
-    .line 165
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
-
-    sget-boolean p6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    const/16 v2, 0x28
-
-    if-eqz p6, :cond_1
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p6
+    move-result v5
 
     goto :goto_1
 
     :cond_1
-    move p6, v1
+    move v5, v12
 
     :goto_1
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v11, :cond_2
 
-    move v2, v1
+    move v10, v12
 
     goto :goto_2
 
     :cond_2
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v10
 
     :goto_2
-    const/16 v3, 0x8
+    const/16 v11, 0x8
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v11
 
-    invoke-virtual {p3, p6, v1, v2, v3}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v4, v5, v12, v10, v11}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 166
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 194
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const/4 v2, -0x1
+    const/4 v13, -0x1
 
-    const/4 v3, -0x2
+    const/4 v14, -0x2
 
-    const/16 v4, 0x13
+    const/16 v15, 0x13
 
-    sget-boolean p6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz p6, :cond_3
+    if-eqz v5, :cond_3
 
-    move v5, v0
+    move/from16 v16, v9
 
     goto :goto_3
 
     :cond_3
-    move v5, v1
+    move/from16 v16, v12
 
     :goto_3
-    const/4 v6, 0x1
+    const/16 v17, 0x1
 
-    if-eqz p6, :cond_4
+    if-eqz v5, :cond_4
 
-    move v7, v1
+    move/from16 v18, v12
 
     goto :goto_4
 
     :cond_4
-    move v7, v0
+    move/from16 v18, v9
 
     :goto_4
-    const/4 v8, 0x0
+    const/16 v19, 0x0
 
-    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object p6
+    move-result-object v5
 
-    invoke-virtual {p0, p3, p6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto/16 :goto_5
+
+    :cond_5
+    const/16 v4, 0x13
+
+    if-ne v3, v8, :cond_6
+
+    .line 196
+    iget-object v9, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setMaxLines(I)V
+
+    .line 197
+    iget-object v9, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v9, v4}, Landroid/widget/EditText;->setGravity(I)V
+
+    .line 198
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextCaption;->setAllowTextEntitiesIntersection(Z)V
+
+    .line 199
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v7}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 200
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const/4 v9, -0x1
+
+    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
+
+    .line 201
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+
+    .line 202
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v10}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 203
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v12}, Lorg/telegram/ui/Components/EditTextEffects;->setClipToPadding(Z)V
+
+    .line 204
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const/16 v10, 0x9
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    invoke-virtual {v4, v12, v11, v12, v10}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 205
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHandlesColor(I)V
+
+    .line 206
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const v9, 0x30ffffff
+
+    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setHighlightColor(I)V
+
+    .line 207
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const v9, -0xb95c15
+
+    invoke-virtual {v4, v9}, Landroid/widget/EditText;->setLinkTextColor(I)V
+
+    .line 208
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
+
+    .line 209
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const/4 v13, -0x1
+
+    const/4 v14, -0x1
+
+    const/16 v15, 0x13
+
+    const/16 v16, 0x28
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x18
+
+    const/16 v19, 0x0
+
+    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_5
 
-    .line 168
-    :cond_5
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    .line 211
+    :cond_6
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const/16 v2, 0x13
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    invoke-virtual {p3, v2}, Landroid/widget/EditText;->setGravity(I)V
+    .line 212
+    iget-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    .line 169
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v5, v4}, Landroid/widget/EditText;->setGravity(I)V
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
+    .line 213
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
 
-    move-result v2
+    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    invoke-virtual {p3, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
+    move-result v5
 
-    .line 170
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+    .line 214
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    move-result v2
+    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    invoke-virtual {p3, v2}, Landroid/widget/EditText;->setTextColor(I)V
+    move-result v5
 
-    .line 171
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    invoke-virtual {p3, p6}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    .line 215
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    .line 172
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v4, v10}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 216
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    move-result p6
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/16 v0, 0xc
+    move-result v5
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/16 v9, 0xc
 
-    move-result v0
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {p3, v1, p6, v1, v0}, Landroid/widget/EditText;->setPadding(IIII)V
+    move-result v9
 
-    .line 173
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {v4, v12, v5, v12, v9}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    const/4 v2, -0x1
+    .line 217
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    const/4 v3, -0x1
+    const/4 v13, -0x1
 
-    const/16 v4, 0x13
+    const/4 v14, -0x1
 
-    const/16 v5, 0x30
+    const/16 v15, 0x13
+
+    const/16 v16, 0x30
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 220
+    :goto_5
+    new-instance v4, Landroid/widget/ImageView;
+
+    invoke-direct {v4, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    iput-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+
+    .line 221
+    sget-object v5, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 222
+    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+
+    new-instance v5, Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    invoke-direct {v5, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;-><init>(Landroid/content/Context;)V
+
+    iput-object v5, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    if-nez v3, :cond_8
+
+    .line 224
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    new-instance v3, Landroid/graphics/PorterDuffColorFilter;
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
+
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+
+    move-result v4
+
+    sget-object v5, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v3, v4, v5}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 225
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    sget v3, Lorg/telegram/messenger/R$drawable;->smiles_tab_smiles:I
+
+    invoke-virtual {v1, v3, v12}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
+
+    .line 226
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+
+    const/16 v7, 0x30
+
+    const/16 v8, 0x30
+
+    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v3, :cond_7
+
+    move v2, v6
+
+    :cond_7
+    or-int/lit8 v9, v2, 0x10
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x7
+
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_6
+
+    :cond_8
+    if-ne v3, v8, :cond_9
+
+    .line 228
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v7, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 229
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    sget v2, Lorg/telegram/messenger/R$drawable;->input_smile:I
+
+    invoke-virtual {v1, v2, v12}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
+
+    .line 230
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+
+    const/16 v2, 0x28
+
+    const/16 v3, 0x28
+
+    const/16 v4, 0x53
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
@@ -467,168 +727,105 @@
 
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object p6
+    move-result-object v2
 
-    invoke-virtual {p0, p3, p6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 176
-    :goto_5
-    new-instance p3, Landroid/widget/ImageView;
-
-    invoke-direct {p3, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
-
-    .line 177
-    sget-object p6, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p3, p6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    .line 178
-    iget-object p3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
-
-    new-instance p6, Lorg/telegram/ui/Components/ReplaceableIconDrawable;
-
-    invoke-direct {p6, p1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;-><init>(Landroid/content/Context;)V
-
-    iput-object p6, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
-
-    invoke-virtual {p3, p6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 179
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
-
-    new-instance p3, Landroid/graphics/PorterDuffColorFilter;
-
-    sget p6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
-
-    invoke-direct {p0, p6}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
-
-    move-result p6
-
-    sget-object v0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {p3, p6, v0}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    if-nez p4, :cond_7
-
-    .line 181
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
-
-    sget p3, Lorg/telegram/messenger/R$drawable;->smiles_tab_smiles:I
-
-    invoke-virtual {p1, p3, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
-
-    .line 182
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
-
-    const/16 v0, 0x30
-
-    const/16 v1, 0x30
-
-    sget-boolean p3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz p3, :cond_6
-
-    move p2, p5
-
-    :cond_6
-    or-int/lit8 v2, p2, 0x10
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x7
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_6
 
-    .line 184
-    :cond_7
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+    .line 232
+    :cond_9
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
-    sget p2, Lorg/telegram/messenger/R$drawable;->input_smile:I
+    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    .line 185
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    const/16 v0, 0x30
+    move-result v3
 
-    const/16 v1, 0x30
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    const/16 v2, 0x53
+    invoke-direct {v2, v3, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    const/4 v4, 0x0
+    .line 233
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+
+    sget v2, Lorg/telegram/messenger/R$drawable;->input_smile:I
+
+    invoke-virtual {v1, v2, v12}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
+
+    .line 234
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+
+    const/16 v2, 0x30
+
+    const/16 v3, 0x30
+
+    const/16 v4, 0x53
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/4 v7, 0x0
 
-    move-result-object p2
+    const/4 v8, 0x0
 
-    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 187
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 236
     :goto_6
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 p2, 0x15
+    const/16 v2, 0x15
 
-    if-lt p1, p2, :cond_8
+    if-lt v1, v2, :cond_a
 
-    .line 188
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+    .line 237
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
-    move-result p2
+    move-result v2
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 190
-    :cond_8
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+    .line 239
+    :cond_a
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
-    new-instance p2, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda2;
+    new-instance v2, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
+    invoke-direct {v2, v0}, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 202
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
+    .line 251
+    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
-    sget p2, Lorg/telegram/messenger/R$string;->Emoji:I
+    sget v2, Lorg/telegram/messenger/R$string;->Emoji:I
 
-    const-string p3, "Emoji"
+    const-string v3, "Emoji"
 
-    invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -636,7 +833,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/EditTextEmoji;)Z
     .locals 0
 
-    .line 44
+    .line 53
     iget-boolean p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->destroyed:Z
 
     return p0
@@ -645,8 +842,17 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
     .locals 0
 
-    .line 44
+    .line 53
     iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 53
+    iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
 .end method
@@ -654,7 +860,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/EditTextEmoji;)Z
     .locals 0
 
-    .line 44
+    .line 53
     iget-boolean p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
     return p0
@@ -663,7 +869,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/EditTextEmoji;)Z
     .locals 0
 
-    .line 44
+    .line 53
     iget-boolean p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
     return p0
@@ -672,7 +878,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/EditTextEmoji;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 44
+    .line 53
     iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -681,7 +887,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/EditTextEmoji;Z)Z
     .locals 0
 
-    .line 44
+    .line 53
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isAnimatePopupClosing:Z
 
     return p1
@@ -690,43 +896,43 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EmojiView;
     .locals 0
 
-    .line 44
+    .line 53
     iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     return-object p0
 .end method
 
-.method static synthetic access$700(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
+.method static synthetic access$700(Lorg/telegram/ui/Components/EditTextEmoji;)I
     .locals 0
 
-    .line 44
+    .line 53
+    iget p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
+
+    return p0
+.end method
+
+.method static synthetic access$800(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    .locals 0
+
+    .line 53
     iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-object p0
 .end method
 
-.method static synthetic access$802(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+.method static synthetic access$902(Lorg/telegram/ui/Components/EditTextEmoji;I)I
     .locals 0
 
-    .line 44
+    .line 53
     iput p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->innerTextChange:I
 
     return p1
 .end method
 
-.method static synthetic access$900(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-    .locals 0
-
-    .line 44
-    iget-object p0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    return-object p0
-.end method
-
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 685
+    .line 783
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -739,7 +945,7 @@
 .method private synthetic lambda$hidePopup$1(ILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 341
+    .line 413
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -750,7 +956,7 @@
 
     move-result p2
 
-    .line 342
+    .line 414
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
@@ -759,7 +965,7 @@
 
     sub-float/2addr p2, p1
 
-    .line 343
+    .line 415
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/EditTextEmoji;->bottomPanelTranslationY(F)V
 
     return-void
@@ -768,7 +974,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 2
 
-    .line 191
+    .line 240
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->isEnabled()Z
@@ -789,7 +995,7 @@
 
     goto :goto_1
 
-    .line 194
+    .line 243
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->isPopupShowing()Z
 
@@ -799,10 +1005,10 @@
 
     const/4 p1, 0x1
 
-    .line 195
+    .line 244
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EditTextEmoji;->showPopup(I)V
 
-    .line 196
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -821,14 +1027,14 @@
     :goto_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->onOpen(Z)V
 
-    .line 197
+    .line 246
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
     goto :goto_1
 
-    .line 199
+    .line 248
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardInternal()V
 
@@ -840,7 +1046,7 @@
 .method private synthetic lambda$showPopup$2(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 438
+    .line 512
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -851,12 +1057,12 @@
 
     move-result p1
 
-    .line 439
+    .line 513
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
 
-    .line 440
+    .line 514
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EditTextEmoji;->bottomPanelTranslationY(F)V
 
     return-void
@@ -865,30 +1071,30 @@
 .method private onWindowSizeChanged()V
     .locals 2
 
-    .line 479
+    .line 554
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
 
-    .line 480
+    .line 555
     iget-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
     if-nez v1, :cond_0
 
-    .line 481
+    .line 556
     iget v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
     sub-int/2addr v0, v1
 
-    .line 483
+    .line 558
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->delegate:Lorg/telegram/ui/Components/EditTextEmoji$EditTextEmojiDelegate;
 
     if-eqz v1, :cond_1
 
-    .line 484
+    .line 559
     invoke-interface {v1, v0}, Lorg/telegram/ui/Components/EditTextEmoji$EditTextEmojiDelegate;->onWindowSizeChanged(I)V
 
     :cond_1
@@ -906,7 +1112,7 @@
 .method public closeKeyboard()V
     .locals 1
 
-    .line 373
+    .line 445
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
@@ -921,9 +1127,9 @@
 .end method
 
 .method protected createEmojiView()V
-    .locals 11
+    .locals 14
 
-    .line 493
+    .line 572
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_0
@@ -934,17 +1140,17 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 494
+    .line 573
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     const/4 v0, 0x0
 
-    .line 495
+    .line 574
     iput-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 497
+    .line 576
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -952,66 +1158,84 @@
 
     return-void
 
-    .line 500
+    .line 579
     :cond_1
-    new-instance v0, Lorg/telegram/ui/Components/EmojiView;
+    new-instance v0, Lorg/telegram/ui/Components/EditTextEmoji$5;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->allowAnimatedEmoji:Z
-
-    const/4 v4, 0x0
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/EditTextEmoji;->allowAnimatedEmoji:Z
 
     const/4 v5, 0x0
 
+    const/4 v6, 0x0
+
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v6
-
-    const/4 v7, 0x0
+    move-result-object v7
 
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
-    iget-object v10, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    const/4 v10, 0x0
+
+    iget v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
+
+    const/4 v2, 0x2
+
+    const/4 v13, 0x1
+
+    if-eq v1, v2, :cond_2
+
+    move v11, v13
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    move v11, v1
+
+    :goto_0
+    iget-object v12, p0, Lorg/telegram/ui/Components/EditTextEmoji;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v10}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    move-object v2, p0
+
+    invoke-direct/range {v1 .. v12}, Lorg/telegram/ui/Components/EditTextEmoji$5;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     const/16 v1, 0x8
 
-    .line 501
+    .line 588
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 502
+    .line 589
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 503
+    .line 590
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/EmojiView;->setForseMultiwindowLayout(Z)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setForseMultiwindowLayout(Z)V
-
-    .line 505
-    :cond_2
+    .line 592
+    :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    new-instance v1, Lorg/telegram/ui/Components/EditTextEmoji$5;
+    new-instance v1, Lorg/telegram/ui/Components/EditTextEmoji$6;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/EditTextEmoji$5;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/EditTextEmoji$6;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setDelegate(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)V
 
-    .line 618
+    .line 705
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
@@ -1024,51 +1248,66 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 216
+    .line 277
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_1
 
-    .line 217
+    .line 278
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz p1, :cond_0
 
-    .line 218
+    .line 279
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView;->invalidateViews()V
 
-    .line 220
+    .line 281
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     if-eqz p1, :cond_1
 
-    .line 221
+    .line 282
     invoke-virtual {p1}, Landroid/widget/EditText;->getCurrentTextColor()I
 
     move-result p1
 
-    .line 222
+    .line 283
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     const/4 p3, -0x1
 
-    invoke-virtual {p2, p3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 223
+    .line 284
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p2, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     :cond_1
+    return-void
+.end method
+
+.method protected drawEmojiBackground(Landroid/graphics/Canvas;Landroid/view/View;)V
+    .locals 0
+
     return-void
 .end method
 
 .method public getEditText()Lorg/telegram/ui/Components/EditTextCaption;
     .locals 1
 
-    .line 681
+    .line 775
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    return-object v0
+.end method
+
+.method public getEmojiButton()Landroid/view/View;
+    .locals 1
+
+    .line 779
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
     return-object v0
 .end method
@@ -1076,7 +1315,7 @@
 .method public getEmojiPadding()I
     .locals 1
 
-    .line 626
+    .line 716
     iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
     return v0
@@ -1085,16 +1324,53 @@
 .method public getEmojiView()Lorg/telegram/ui/Components/EmojiView;
     .locals 1
 
-    .line 252
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     return-object v0
 .end method
 
+.method public getKeyboardHeight()I
+    .locals 2
+
+    .line 720
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+
+    iget v1, v0, Landroid/graphics/Point;->x:I
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    if-le v1, v0, :cond_0
+
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
+
+    goto :goto_0
+
+    :cond_0
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
+
+    :goto_0
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->includeNavigationBar:Z
+
+    if-eqz v1, :cond_1
+
+    sget v1, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
 .method public getText()Landroid/text/Editable;
     .locals 1
 
-    .line 317
+    .line 385
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -1107,7 +1383,7 @@
 .method public hideEmojiView()V
     .locals 2
 
-    .line 245
+    .line 306
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiViewVisible:Z
 
     if-nez v0, :cond_0
@@ -1124,7 +1400,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 246
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
@@ -1132,7 +1408,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 248
+    .line 309
     iput v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
     return-void
@@ -1141,7 +1417,7 @@
 .method public hidePopup(Z)V
     .locals 3
 
-    .line 333
+    .line 401
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->isPopupShowing()Z
 
     move-result v0
@@ -1150,34 +1426,69 @@
 
     if-eqz v0, :cond_0
 
-    .line 334
+    .line 402
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->showPopup(I)V
 
     :cond_0
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
-    .line 337
+    .line 405
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
-    .line 338
+    .line 406
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p1
 
+    .line 407
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_1
+
+    .line 408
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getHeight()I
+
+    move-result v0
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getBottom()I
+
+    move-result v2
+
+    sub-int/2addr v0, v2
+
+    add-int/2addr p1, v0
+
+    :cond_1
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -1192,22 +1503,22 @@
 
     aput v1, v0, v2
 
-    .line 339
+    .line 411
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 340
+    .line 412
     new-instance v1, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;I)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 345
+    .line 417
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isAnimatePopupClosing:Z
 
-    .line 346
+    .line 418
     new-instance p1, Lorg/telegram/ui/Components/EditTextEmoji$3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EditTextEmoji$3;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
@@ -1216,24 +1527,24 @@
 
     const-wide/16 v1, 0xfa
 
-    .line 355
+    .line 427
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 356
+    .line 428
     sget-object p1, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 357
+    .line 429
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 359
-    :cond_1
+    .line 431
+    :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->hideEmojiView()V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 .end method
@@ -1241,7 +1552,7 @@
 .method public isAnimatePopupClosing()Z
     .locals 1
 
-    .line 98
+    .line 109
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isAnimatePopupClosing:Z
 
     return v0
@@ -1250,7 +1561,7 @@
 .method public isKeyboardVisible()Z
     .locals 1
 
-    .line 381
+    .line 453
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
     return v0
@@ -1259,7 +1570,7 @@
 .method public isPopupShowing()Z
     .locals 1
 
-    .line 377
+    .line 449
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiViewVisible:Z
 
     return v0
@@ -1268,7 +1579,7 @@
 .method public isPopupView(Landroid/view/View;)Z
     .locals 1
 
-    .line 622
+    .line 712
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-ne p1, v0, :cond_0
@@ -1287,7 +1598,7 @@
 .method public isPopupVisible()Z
     .locals 1
 
-    .line 90
+    .line 101
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_0
@@ -1312,7 +1623,7 @@
 .method public isWaitingForKeyboardOpen()Z
     .locals 1
 
-    .line 94
+    .line 105
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
     return v0
@@ -1321,7 +1632,7 @@
 .method public length()I
     .locals 1
 
-    .line 309
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->length()I
@@ -1336,10 +1647,10 @@
 
     const/4 v0, 0x1
 
-    .line 279
+    .line 341
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->destroyed:Z
 
-    .line 280
+    .line 342
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1348,15 +1659,15 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 281
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 344
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView;->onDestroy()V
 
-    .line 284
+    .line 346
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -1364,10 +1675,16 @@
 
     const/4 v1, 0x0
 
-    .line 285
+    .line 347
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setDelegate(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;)V
 
     :cond_1
+    return-void
+.end method
+
+.method protected onEmojiKeyboardUpdate()V
+    .locals 0
+
     return-void
 .end method
 
@@ -1382,10 +1699,10 @@
 
     const/4 v0, 0x1
 
-    .line 260
+    .line 321
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isPaused:Z
 
-    .line 261
+    .line 322
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->closeKeyboard()V
 
     return-void
@@ -1396,28 +1713,28 @@
 
     const/4 v0, 0x0
 
-    .line 265
+    .line 326
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isPaused:Z
 
-    .line 266
+    .line 327
     iget-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->showKeyboardOnResume:Z
 
     if-eqz v1, :cond_0
 
-    .line 267
+    .line 328
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->showKeyboardOnResume:Z
 
-    .line 268
+    .line 329
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 269
+    .line 330
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 270
+    .line 331
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
     if-nez v0, :cond_0
@@ -1438,15 +1755,18 @@
 
     const/4 v0, 0x1
 
-    .line 271
+    .line 332
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
-    .line 272
+    .line 333
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWaitingForKeyboard()V
+
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 273
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x64
@@ -1458,37 +1778,44 @@
 .end method
 
 .method public onSizeChanged(IZ)V
-    .locals 4
+    .locals 5
 
     const/16 v0, 0x32
 
-    .line 631
+    .line 725
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    if-le p1, v0, :cond_1
+    if-le p1, v0, :cond_2
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_2
+
+    :cond_0
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_1
 
-    .line 633
+    .line 727
     iput p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
 
-    .line 634
+    .line 728
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1509,11 +1836,11 @@
 
     goto :goto_0
 
-    .line 636
-    :cond_0
+    .line 730
+    :cond_1
     iput p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
 
-    .line 637
+    .line 731
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1532,105 +1859,10 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 641
-    :cond_1
+    .line 735
+    :cond_2
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->isPopupShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    if-eqz p2, :cond_2
-
-    .line 642
-    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
-
-    goto :goto_1
-
-    :cond_2
-    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
-
-    .line 644
-    :goto_1
-    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
-
-    .line 645
-    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
-
-    iget v3, v3, Landroid/graphics/Point;->x:I
-
-    if-ne v2, v3, :cond_3
-
-    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    if-eq v2, v0, :cond_4
-
-    .line 646
-    :cond_3
-    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    .line 647
-    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    .line 648
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 649
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
-
-    if-eqz v0, :cond_4
-
-    .line 650
-    iget v1, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    iput v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
-
-    .line 651
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->requestLayout()V
-
-    .line 652
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
-
-    .line 657
-    :cond_4
-    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue1:I
-
-    if-ne v0, p1, :cond_5
-
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue2:Z
-
-    if-ne v0, p2, :cond_5
-
-    .line 658
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
-
-    return-void
-
-    .line 661
-    :cond_5
-    iput p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue1:I
-
-    .line 662
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue2:Z
-
-    .line 664
-    iget-boolean p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
-
-    .line 665
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->isFocused()Z
 
     move-result v0
 
@@ -1638,77 +1870,192 @@
 
     if-eqz v0, :cond_6
 
-    if-lez p1, :cond_6
+    if-eqz p2, :cond_3
 
-    const/4 p1, 0x1
+    .line 736
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
+
+    goto :goto_1
+
+    :cond_3
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
+
+    :goto_1
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->includeNavigationBar:Z
+
+    if-eqz v2, :cond_4
+
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
 
     goto :goto_2
 
-    :cond_6
-    move p1, v1
+    :cond_4
+    move v2, v1
 
     :goto_2
+    add-int/2addr v0, v2
+
+    .line 738
+    iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 739
+    iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+
+    iget v4, v4, Landroid/graphics/Point;->x:I
+
+    if-ne v3, v4, :cond_5
+
+    iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    if-eq v3, v0, :cond_6
+
+    .line 740
+    :cond_5
+    iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 741
+    iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    .line 742
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 743
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+
+    if-eqz v0, :cond_6
+
+    .line 744
+    iget v2, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    iput v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
+
+    .line 745
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->requestLayout()V
+
+    .line 746
+    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
+
+    .line 751
+    :cond_6
+    iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue1:I
+
+    if-ne v0, p1, :cond_7
+
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue2:Z
+
+    if-ne v0, p2, :cond_7
+
+    .line 752
+    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
+
+    return-void
+
+    .line 755
+    :cond_7
+    iput p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue1:I
+
+    .line 756
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->lastSizeChangeValue2:Z
+
+    .line 758
+    iget-boolean p2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
+
+    .line 759
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->isFocused()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    if-lez p1, :cond_8
+
+    const/4 p1, 0x1
+
+    goto :goto_3
+
+    :cond_8
+    move p1, v1
+
+    :goto_3
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_9
 
-    .line 666
+    .line 760
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->isPopupShowing()Z
 
     move-result p1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_9
 
-    .line 667
+    .line 761
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->showPopup(I)V
 
-    .line 669
-    :cond_7
+    .line 763
+    :cond_9
     iget p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_a
 
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_a
 
-    if-eq p1, p2, :cond_8
+    if-eq p1, p2, :cond_a
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->isPopupShowing()Z
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_a
 
-    .line 670
+    .line 764
     iput v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
-    .line 671
+    .line 765
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 673
-    :cond_8
+    .line 767
+    :cond_a
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_b
 
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_b
 
-    .line 674
+    .line 768
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
-    .line 675
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 677
-    :cond_9
+    .line 771
+    :cond_b
     invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
+
+    return-void
+.end method
+
+.method protected onWaitingForKeyboard()V
+    .locals 0
 
     return-void
 .end method
@@ -1716,7 +2063,7 @@
 .method public openKeyboard()V
     .locals 1
 
-    .line 369
+    .line 441
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
@@ -1727,7 +2074,10 @@
 .method protected openKeyboardInternal()V
     .locals 3
 
-    .line 385
+    .line 457
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWaitingForKeyboard()V
+
+    .line 458
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
     if-nez v0, :cond_1
@@ -1750,29 +2100,29 @@
     :goto_1
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->showPopup(I)V
 
-    .line 386
+    .line 459
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 387
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 388
+    .line 461
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->isPaused:Z
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 389
+    .line 462
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->showKeyboardOnResume:Z
 
     goto :goto_2
 
-    .line 390
+    .line 463
     :cond_2
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
@@ -1792,15 +2142,15 @@
 
     if-nez v0, :cond_3
 
-    .line 391
+    .line 464
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->waitingForKeyboardOpen:Z
 
-    .line 392
+    .line 465
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 393
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x64
@@ -1815,7 +2165,7 @@
 .method public setAdjustPanLayoutHelper(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
     .locals 0
 
-    .line 102
+    .line 113
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->adjustPanLayoutHelper:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     return-void
@@ -1824,7 +2174,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/EditTextEmoji$EditTextEmojiDelegate;)V
     .locals 0
 
-    .line 256
+    .line 317
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->delegate:Lorg/telegram/ui/Components/EditTextEmoji$EditTextEmojiDelegate;
 
     return-void
@@ -1833,12 +2183,12 @@
 .method public setEnabled(Z)V
     .locals 5
 
-    .line 230
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 231
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
@@ -1859,7 +2209,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 233
+    .line 294
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -1900,7 +2250,7 @@
 
     goto :goto_3
 
-    .line 235
+    .line 296
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
@@ -1917,7 +2267,7 @@
 .method public setFilters([Landroid/text/InputFilter;)V
     .locals 1
 
-    .line 313
+    .line 381
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
@@ -1928,7 +2278,7 @@
 .method public setFocusable(Z)V
     .locals 1
 
-    .line 241
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setFocusable(Z)V
@@ -1939,7 +2289,7 @@
 .method public setHint(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 321
+    .line 389
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
@@ -1950,7 +2300,7 @@
 .method public setMaxLines(I)V
     .locals 1
 
-    .line 305
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setMaxLines(I)V
@@ -1961,7 +2311,7 @@
 .method public setSelection(I)V
     .locals 1
 
-    .line 329
+    .line 397
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
@@ -1972,19 +2322,61 @@
 .method public setSizeNotifierLayout(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 210
+    .line 271
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 211
+    .line 272
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setDelegate(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;)V
 
+    return-void
+.end method
+
+.method public setSuggestionsEnabled(Z)V
+    .locals 1
+
+    .line 255
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v0
+
+    if-nez p1, :cond_0
+
+    const/high16 p1, 0x80000
+
+    or-int/2addr p1, v0
+
+    goto :goto_0
+
+    :cond_0
+    const p1, -0x80001
+
+    and-int/2addr p1, v0
+
+    .line 261
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getInputType()I
+
+    move-result v0
+
+    if-eq v0, p1, :cond_1
+
+    .line 262
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0, p1}, Landroid/widget/EditText;->setInputType(I)V
+
+    :cond_1
     return-void
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 325
+    .line 393
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
@@ -1999,9 +2391,9 @@
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_8
+    if-ne p1, v1, :cond_9
 
-    .line 399
+    .line 472
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz p1, :cond_0
@@ -2019,22 +2411,25 @@
     :cond_0
     move p1, v0
 
-    .line 400
+    .line 473
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->createEmojiView()V
 
-    .line 402
+    .line 475
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 403
+    .line 476
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiViewVisible:Z
 
-    .line 404
+    .line 477
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onEmojiKeyboardUpdate()V
+
+    .line 478
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 406
+    .line 480
     iget v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
 
     const/16 v4, 0x96
@@ -2043,14 +2438,14 @@
 
     if-gtz v3, :cond_2
 
-    .line 407
+    .line 481
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 408
+    .line 482
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2059,7 +2454,7 @@
 
     goto :goto_1
 
-    .line 410
+    .line 484
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
@@ -2077,21 +2472,21 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
 
-    .line 413
+    .line 487
     :cond_2
     :goto_1
     iget v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
 
     if-gtz v3, :cond_4
 
-    .line 414
+    .line 488
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 415
+    .line 489
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2100,7 +2495,7 @@
 
     goto :goto_2
 
-    .line 417
+    .line 491
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
@@ -2118,7 +2513,7 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeightLand:I
 
-    .line 420
+    .line 494
     :cond_4
     :goto_2
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -2136,71 +2531,85 @@
     :cond_5
     iget v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardHeight:I
 
-    .line 422
     :goto_3
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/EditTextEmoji;->includeNavigationBar:Z
+
+    if-eqz v4, :cond_6
+
+    sget v4, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
+
+    goto :goto_4
+
+    :cond_6
+    move v4, v0
+
+    :goto_4
+    add-int/2addr v3, v4
+
+    .line 496
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 423
+    .line 497
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 424
+    .line 498
     invoke-virtual {v2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 425
+    .line 499
     sget-boolean v2, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_7
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v2
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_7
 
-    .line 426
+    .line 500
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 428
-    :cond_6
+    .line 502
+    :cond_7
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    .line 429
+    .line 503
     iput v3, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
-    .line 430
+    .line 504
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 431
+    .line 505
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->input_keyboard:I
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
 
-    .line 432
+    .line 506
     invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
 
-    .line 435
-    :cond_7
+    .line 509
+    :cond_8
     iget-boolean v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_f
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_f
 
     const/4 p1, 0x2
 
     new-array p1, p1, [F
 
-    .line 436
+    .line 510
     iget v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
     int-to-float v2, v2
@@ -2215,14 +2624,14 @@
 
     move-result-object p1
 
-    .line 437
+    .line 511
     new-instance v0, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEmoji$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 442
+    .line 516
     new-instance v0, Lorg/telegram/ui/Components/EditTextEmoji$4;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEmoji$4;-><init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
@@ -2231,104 +2640,109 @@
 
     const-wide/16 v0, 0xfa
 
-    .line 449
+    .line 523
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 450
+    .line 524
     sget-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 451
+    .line 525
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    goto :goto_5
+    goto :goto_6
 
-    .line 455
-    :cond_8
+    .line 529
+    :cond_9
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiButton:Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
-    .line 456
+    .line 530
     iget v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_a
 
-    .line 457
+    .line 531
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->smiles_tab_smiles:I
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 459
-    :cond_9
+    .line 533
+    :cond_a
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->input_smile:I
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(IZ)V
 
-    .line 462
-    :cond_a
-    :goto_4
+    .line 536
+    :cond_b
+    :goto_5
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    .line 463
+    .line 537
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiViewVisible:Z
 
-    .line 464
-    sget-boolean v2, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
+    .line 538
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onEmojiKeyboardUpdate()V
 
-    if-nez v2, :cond_b
+    .line 539
+    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
-    sget-boolean v2, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
+    if-nez v1, :cond_c
 
-    if-eqz v2, :cond_c
+    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
-    :cond_b
+    if-eqz v1, :cond_d
+
+    .line 540
+    :cond_c
+    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
+
     const/16 v2, 0x8
 
-    .line 465
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 468
-    :cond_c
+    .line 543
+    :cond_d
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_f
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_e
 
-    .line 470
+    .line 545
     iput v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiPadding:I
 
-    .line 472
-    :cond_d
+    .line 547
+    :cond_e
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 473
+    .line 548
     invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->onWindowSizeChanged()V
 
-    :cond_e
-    :goto_5
+    :cond_f
+    :goto_6
     return-void
 .end method
 
 .method public updateColors()V
     .locals 4
 
-    .line 290
+    .line 352
     iget v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->currentStyle:I
 
     if-nez v0, :cond_0
 
-    .line 291
+    .line 353
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
@@ -2339,7 +2753,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 292
+    .line 354
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -2350,19 +2764,57 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 293
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->getThemedColor(I)I
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     goto :goto_0
 
-    .line 295
     :cond_0
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_1
+
+    .line 357
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const v1, -0x73000001
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 358
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
+
+    .line 359
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+
+    .line 360
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHandlesColor(I)V
+
+    .line 361
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
+
+    const v1, 0x30ffffff
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHighlightColor(I)V
+
+    goto :goto_0
+
+    .line 363
+    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
@@ -2373,7 +2825,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 296
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->editText:Lorg/telegram/ui/Components/EditTextCaption;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -2382,9 +2834,9 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 298
+    .line 366
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
@@ -2402,14 +2854,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 299
+    .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 300
+    .line 368
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView;->updateColors()V
 
-    :cond_1
+    :cond_2
     return-void
 .end method

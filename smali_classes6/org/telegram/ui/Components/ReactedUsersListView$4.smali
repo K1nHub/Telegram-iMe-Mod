@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 185
+    .line 172
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$4;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public getAdditionalHeight()I
     .locals 2
 
-    .line 188
+    .line 175
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$4;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;

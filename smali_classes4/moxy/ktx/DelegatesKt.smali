@@ -89,7 +89,7 @@
 
     if-eqz p3, :cond_0
 
-    const-string p1, "presenter"
+    const-string/jumbo p1, "presenter"
 
     :cond_0
     const-string p3, "$this$moxyPresenter"

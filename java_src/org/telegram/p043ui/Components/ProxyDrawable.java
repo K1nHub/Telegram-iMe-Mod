@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ProxyDrawable */
 /* loaded from: classes6.dex */
@@ -48,10 +48,10 @@ public class ProxyDrawable extends Drawable {
     }
 
     public ProxyDrawable(Context context) {
-        this.emptyDrawable = context.getResources().getDrawable(C3417R.C3419drawable.msg2_proxy_off).mutate();
-        this.fullDrawable = context.getResources().getDrawable(C3417R.C3419drawable.msg2_proxy_on).mutate();
+        this.emptyDrawable = context.getResources().getDrawable(C3419R.C3421drawable.msg2_proxy_off);
+        this.fullDrawable = context.getResources().getDrawable(C3419R.C3421drawable.msg2_proxy_on);
         this.outerPaint.setStyle(Paint.Style.STROKE);
-        this.outerPaint.setStrokeWidth(AndroidUtilities.m55dp(1.66f));
+        this.outerPaint.setStrokeWidth(AndroidUtilities.m73dp(1.66f));
         this.outerPaint.setStrokeCap(Paint.Cap.ROUND);
         this.lastUpdateTime = SystemClock.elapsedRealtime();
     }
@@ -87,10 +87,10 @@ public class ProxyDrawable extends Drawable {
             this.radOffset = (int) (this.radOffset + (((float) (360 * j)) / 1000.0f));
             int width = getBounds().width();
             int height = getBounds().height();
-            int m54dp = AndroidUtilities.m54dp(4);
-            int i2 = (width / 2) - m54dp;
-            int i3 = (height / 2) - m54dp;
-            this.cicleRect.set(i2, i3, i2 + m54dp + m54dp, i3 + m54dp + m54dp);
+            int m72dp = AndroidUtilities.m72dp(4);
+            int i2 = (width / 2) - m72dp;
+            int i3 = (height / 2) - m72dp;
+            this.cicleRect.set(i2, i3, i2 + m72dp + m72dp, i3 + m72dp + m72dp);
             canvas.drawArc(this.cicleRect, this.radOffset - 90, 90.0f, false, this.outerPaint);
             invalidateSelf();
         }
@@ -143,11 +143,11 @@ public class ProxyDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 }

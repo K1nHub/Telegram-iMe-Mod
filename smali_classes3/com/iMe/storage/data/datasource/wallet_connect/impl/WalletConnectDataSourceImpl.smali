@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,62:1\n14#2:63\n11#3:64\n18#4:65\n*S KotlinDebug\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n*L\n29#1:63\n56#1:64\n56#1:65\n*E\n"
+    value = "SMAP\nWalletConnectDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,63:1\n14#2:64\n11#3:65\n18#4:66\n*S KotlinDebug\n*F\n+ 1 WalletConnectDataSourceImpl.kt\ncom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl\n*L\n30#1:64\n57#1:65\n57#1:66\n*E\n"
 .end annotation
 
 
@@ -36,16 +36,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 22
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 22
+    .line 23
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 23
+    .line 24
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->walletConnectApi:Lcom/iMe/storage/data/network/api/own/WalletConnectApi;
 
     return-void
@@ -54,7 +54,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 20
+    .line 21
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -63,7 +63,7 @@
 .method public static final synthetic access$getWalletConnectApi$p(Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/WalletConnectApi;
     .locals 0
 
-    .line 20
+    .line 21
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->walletConnectApi:Lcom/iMe/storage/data/network/api/own/WalletConnectApi;
 
     return-object p0
@@ -89,7 +89,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 30
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -132,12 +132,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 39
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;
 
     if-eqz v0, :cond_2
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
@@ -160,20 +160,20 @@
     :cond_1
     move-object v9, v0
 
-    .line 42
+    .line 43
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;
 
-    .line 43
+    .line 44
     invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
 
     move-result-object v0
 
-    .line 45
+    .line 46
     invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
 
     move-result-object v1
 
-    .line 46
+    .line 47
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getData()Ljava/lang/String;
 
     move-result-object v2
@@ -186,7 +186,7 @@
 
     move-result-object v1
 
-    .line 47
+    .line 48
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getAmount()Ljava/math/BigInteger;
 
     move-result-object v2
@@ -199,19 +199,19 @@
 
     move-result-object v1
 
-    .line 48
+    .line 49
     invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v1
 
     check-cast v1, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;
 
-    .line 44
+    .line 45
     invoke-virtual {v0, v1}, Lwallet/core/jni/proto/Ethereum$Transaction$Builder;->setContractGeneric(Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;)Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
 
     move-result-object v0
 
-    .line 50
+    .line 51
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v0
@@ -220,10 +220,10 @@
 
     check-cast v8, Lwallet/core/jni/proto/Ethereum$Transaction;
 
-    .line 52
+    .line 53
     sget-object v1, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;
 
-    .line 53
+    .line 54
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getChainId()J
 
     move-result-wide v2
@@ -236,7 +236,7 @@
 
     move-result-object v5
 
-    .line 54
+    .line 55
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransactionArgs;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -249,7 +249,7 @@
 
     invoke-static {v8, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 53
     invoke-virtual/range {v1 .. v9}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->sign(JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lwallet/core/jni/proto/Ethereum$Transaction;[B)Ljava/lang/String;
 
     move-result-object p1
@@ -272,7 +272,7 @@
 
     return-object p1
 
-    .line 38
+    .line 39
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -286,7 +286,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 20
+    .line 21
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/wallet_connect/impl/WalletConnectDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;

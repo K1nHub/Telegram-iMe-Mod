@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -61,7 +61,7 @@ public class ChatActivityMemberRequestsDelegate {
         if (this.root == null) {
             FrameLayout frameLayout = new FrameLayout(this.fragment.getParentActivity());
             this.root = frameLayout;
-            frameLayout.setBackgroundResource(C3417R.C3419drawable.blockpanel);
+            frameLayout.setBackgroundResource(C3419R.C3421drawable.blockpanel);
             this.root.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelBackground), PorterDuff.Mode.MULTIPLY));
             this.root.setVisibility(8);
             this.pendingRequestsEnterOffset = -getViewHeight();
@@ -82,7 +82,7 @@ public class ChatActivityMemberRequestsDelegate {
                 @Override // org.telegram.p043ui.Components.AvatarsImageView, android.view.View
                 public void onMeasure(int i, int i2) {
                     int i3 = this.avatarsDrawable.count;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(i3 == 0 ? 0 : ((i3 - 1) * 20) + 24), 1073741824), i2);
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(i3 == 0 ? 0 : ((i3 - 1) * 20) + 24), 1073741824), i2);
                 }
             };
             this.avatarsView = avatarsImageView;
@@ -100,11 +100,11 @@ public class ChatActivityMemberRequestsDelegate {
             ImageView imageView = new ImageView(this.fragment.getParentActivity());
             this.closeView = imageView;
             if (Build.VERSION.SDK_INT >= 21) {
-                imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor(Theme.key_inappPlayerClose) & 436207615, 1, AndroidUtilities.m54dp(14)));
+                imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor(Theme.key_inappPlayerClose) & 436207615, 1, AndroidUtilities.m72dp(14)));
             }
             this.closeView.setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelClose), PorterDuff.Mode.MULTIPLY));
-            this.closeView.setContentDescription(LocaleController.getString("Close", C3417R.string.Close));
-            this.closeView.setImageResource(C3417R.C3419drawable.miniplayer_close);
+            this.closeView.setContentDescription(LocaleController.getString("Close", C3419R.string.Close));
+            this.closeView.setImageResource(C3419R.C3421drawable.miniplayer_close);
             this.closeView.setScaleType(ImageView.ScaleType.CENTER);
             this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -128,7 +128,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getView$1(View view) {
-        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1515id, this.pendingRequestsCount);
+        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1518id, this.pendingRequestsCount);
         this.closePendingRequestsCount = this.pendingRequestsCount;
         animatePendingRequests(false, true);
     }
@@ -141,7 +141,7 @@ public class ChatActivityMemberRequestsDelegate {
     }
 
     public int getViewHeight() {
-        return AndroidUtilities.m54dp(40);
+        return AndroidUtilities.m72dp(40);
     }
 
     public float getViewEnterOffset() {
@@ -158,7 +158,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     private void showBottomSheet() {
         if (this.bottomSheet == null) {
-            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1515id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
+            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1518id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
                 @Override // org.telegram.p043ui.Components.UsersAlertBase, org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
                 public void dismiss() {
                     if (ChatActivityMemberRequestsDelegate.this.bottomSheet != null && !ChatActivityMemberRequestsDelegate.this.bottomSheet.isNeedRestoreDialog()) {
@@ -177,7 +177,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (i <= 0) {
             if (this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1515id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1518id, 0);
                 this.closePendingRequestsCount = 0;
             }
             animatePendingRequests(false, z);
@@ -207,7 +207,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (z) {
             if (this.closePendingRequestsCount == -1 && this.currentChat != null) {
-                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1515id);
+                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1518id);
             }
             int i = this.pendingRequestsCount;
             int i2 = this.closePendingRequestsCount;
@@ -215,7 +215,7 @@ public class ChatActivityMemberRequestsDelegate {
                 return;
             }
             if (i2 != 0 && this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1515id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1518id, 0);
             }
         }
         ValueAnimator valueAnimator = this.pendingRequestsAnimator;

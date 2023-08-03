@@ -24,26 +24,26 @@ public final class StackTraceRecoveryKt {
 
     static {
         Object obj;
-        Object m1601constructorimpl;
+        Object m1620constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m1601constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
+            obj = Result.m1620constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1601constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m1620constructorimpl(ResultKt.createFailure(th));
         }
-        baseContinuationImplClassName = (String) (Result.m1602exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
+        baseContinuationImplClassName = (String) (Result.m1621exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
         try {
             Result.Companion companion3 = Result.Companion;
-            m1601constructorimpl = Result.m1601constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
+            m1620constructorimpl = Result.m1620constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th2));
+            m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m1602exceptionOrNullimpl(m1601constructorimpl) != null) {
-            m1601constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (Result.m1621exceptionOrNullimpl(m1620constructorimpl) != null) {
+            m1620constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
-        stackTraceRecoveryClassName = (String) m1601constructorimpl;
+        stackTraceRecoveryClassName = (String) m1620constructorimpl;
     }
 
     public static final <E extends Throwable> E recoverStackTrace(E e) {
@@ -144,11 +144,11 @@ public final class StackTraceRecoveryKt {
                 }
             }
             if (z) {
-                return TuplesKt.m85to(cause, stackTrace);
+                return TuplesKt.m103to(cause, stackTrace);
             }
-            return TuplesKt.m85to(e, new StackTraceElement[0]);
+            return TuplesKt.m103to(e, new StackTraceElement[0]);
         }
-        return TuplesKt.m85to(e, new StackTraceElement[0]);
+        return TuplesKt.m103to(e, new StackTraceElement[0]);
     }
 
     public static final <E extends Throwable> E unwrapImpl(E e) {

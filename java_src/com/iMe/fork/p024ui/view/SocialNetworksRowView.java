@@ -97,7 +97,7 @@ public final class SocialNetworksRowView extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         super.onDraw(canvas);
-        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m54dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
+        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m72dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
     }
 
     /* compiled from: SocialNetworksRowView.kt */

@@ -356,7 +356,7 @@
     :try_start_0
     new-instance p3, Ljava/io/RandomAccessFile;
 
-    const-string p4, "r"
+    const-string/jumbo p4, "r"
 
     invoke-direct {p3, p2, p4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
     :try_end_0
@@ -1022,7 +1022,7 @@
 
     const-wide/16 v12, 0x0
 
-    const-string v14, "r"
+    const-string/jumbo v14, "r"
 
     const/4 v1, 0x0
 
@@ -1783,7 +1783,7 @@
 
     iget-object v5, p0, Lorg/telegram/messenger/utils/BitmapsCache;->file:Ljava/io/File;
 
-    const-string v6, "r"
+    const-string/jumbo v6, "r"
 
     invoke-direct {v4, v5, v6}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
     :try_end_0

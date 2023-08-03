@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/MentionsContainerView;-><init>(Landroid/content/Context;JILorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/MentionsContainerView;-><init>(Landroid/content/Context;JILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
-.field final synthetic val$chatActivity:Lorg/telegram/ui/ChatActivity;
+.field final synthetic val$baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/MentionsContainerView;Lorg/telegram/ui/ChatActivity;)V
+.method constructor <init>(Lorg/telegram/ui/Components/MentionsContainerView;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 175
+    .line 188
     iput-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
+    iput-object p2, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->val$baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +42,7 @@
 .method public needChangePanelVisibility(Z)V
     .locals 3
 
-    .line 186
+    .line 199
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getNeededLayoutManager()Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 187
+    .line 200
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->access$200(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -80,21 +80,21 @@
 
     if-lez v0, :cond_0
 
-    .line 188
+    .line 201
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/MentionsContainerView;->access$602(Lorg/telegram/ui/Components/MentionsContainerView;Z)Z
 
-    .line 189
+    .line 202
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/MentionsContainerView;->updateVisibility(Z)V
 
     return-void
 
-    .line 192
+    .line 205
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
@@ -113,7 +113,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 195
+    .line 208
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->canOpen()Z
@@ -127,7 +127,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 198
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->access$200(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -145,7 +145,7 @@
     :cond_3
     move v2, p1
 
-    .line 201
+    .line 214
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
@@ -157,7 +157,7 @@
 .method public onContextClick(Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
     .locals 1
 
-    .line 211
+    .line 224
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/MentionsContainerView;->onContextClick(Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
@@ -168,7 +168,7 @@
 .method public onContextSearch(Z)V
     .locals 1
 
-    .line 206
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/MentionsContainerView;->onContextSearch(Z)V
@@ -179,7 +179,7 @@
 .method public onItemCountUpdate(II)V
     .locals 2
 
-    .line 178
+    .line 191
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MentionsContainerView;->access$000(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;
@@ -206,7 +206,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 179
+    .line 192
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MentionsContainerView;->access$500(Lorg/telegram/ui/Components/MentionsContainerView;)Ljava/lang/Runnable;
@@ -215,16 +215,18 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 180
+    .line 193
     iget-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MentionsContainerView;->access$500(Lorg/telegram/ui/Components/MentionsContainerView;)Ljava/lang/Runnable;
 
     move-result-object p1
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
+    iget-object p2, p0, Lorg/telegram/ui/Components/MentionsContainerView$4;->val$baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-boolean p2, p2, Lorg/telegram/ui/ChatActivity;->fragmentOpened:Z
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentBeginToShow()Z
+
+    move-result p2
 
     if-eqz p2, :cond_0
 

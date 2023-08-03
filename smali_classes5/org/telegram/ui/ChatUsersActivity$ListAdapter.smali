@@ -1775,7 +1775,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 
@@ -1789,7 +1789,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 
@@ -1812,7 +1812,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 
@@ -1858,7 +1858,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 
@@ -1872,7 +1872,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 
@@ -1887,7 +1887,7 @@
     if-ne v2, v3, :cond_69
 
     .line 3405
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/String;)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/GraySectionCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_22
 

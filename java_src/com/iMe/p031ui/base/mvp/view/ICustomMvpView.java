@@ -20,7 +20,7 @@ public interface ICustomMvpView<T> extends MvpDelegateHolder, MvpView, KoinCompo
     void onDestroyMvpView();
 
     /* compiled from: ICustomMvpView.kt */
-    /* renamed from: com.iMe.ui.base.mvp.view.ICustomMvpView$-CC */
+    /* renamed from: com.iMe.ui.base.mvp.view.ICustomMvpView$-CC  reason: invalid class name */
     /* loaded from: classes.dex */
     public final /* synthetic */ class CC {
         public static MvpDelegate $default$getMvpDelegate(ICustomMvpView _this) {

@@ -16,16 +16,16 @@ import java.util.TreeMap;
 public class Configuration extends AbstractSafeParcelable implements Comparable<Configuration> {
     @KeepForSdk
     public static final Parcelable.Creator<Configuration> CREATOR = new zzc();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     private final int zzc;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     private final zzi[] zzd;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     private final String[] zze;
     private final Map<String, zzi> zzf = new TreeMap();
 
     @SafeParcelable.Constructor
-    public Configuration(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) zzi[] zziVarArr, @SafeParcelable.Param(m778id = 4) String[] strArr) {
+    public Configuration(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) zzi[] zziVarArr, @SafeParcelable.Param(m796id = 4) String[] strArr) {
         this.zzc = i;
         this.zzd = zziVarArr;
         for (zzi zziVar : zziVarArr) {

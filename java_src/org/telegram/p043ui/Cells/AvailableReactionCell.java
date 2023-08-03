@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -74,7 +74,7 @@ public class AvailableReactionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m54dp(58) + Theme.dividerPaint.getStrokeWidth()), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m72dp(58) + Theme.dividerPaint.getStrokeWidth()), 1073741824));
     }
 
     public void bind(TLRPC$TL_availableReaction tLRPC$TL_availableReaction, boolean z, int i) {
@@ -89,7 +89,7 @@ public class AvailableReactionCell extends FrameLayout {
         }
         this.locked = z2;
         if (z2) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.other_lockedfolders2);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.other_lockedfolders2);
             drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
             this.textView.setRightDrawable(drawable);
         } else {
@@ -129,13 +129,13 @@ public class AvailableReactionCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         canvas.drawColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         float strokeWidth = Theme.dividerPaint.getStrokeWidth();
-        int m54dp = AndroidUtilities.m54dp(81);
+        int m72dp = AndroidUtilities.m72dp(81);
         int i = 0;
         if (LocaleController.isRTL) {
-            i = m54dp;
-            m54dp = 0;
+            i = m72dp;
+            m72dp = 0;
         }
-        canvas.drawLine(getPaddingLeft() + m54dp, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - i, getHeight() - strokeWidth, Theme.dividerPaint);
+        canvas.drawLine(getPaddingLeft() + m72dp, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - i, getHeight() - strokeWidth, Theme.dividerPaint);
     }
 
     @Override // android.view.View

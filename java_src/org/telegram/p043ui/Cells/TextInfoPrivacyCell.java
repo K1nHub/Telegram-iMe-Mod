@@ -59,8 +59,9 @@ public class TextInfoPrivacyCell extends FrameLayout {
         LinkSpanDrawable.LinkCollector linkCollector = new LinkSpanDrawable.LinkCollector(this);
         this.links = linkCollector;
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, linkCollector, resourcesProvider) { // from class: org.telegram.ui.Cells.TextInfoPrivacyCell.1
+            /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView, android.view.View
-            protected void onDraw(Canvas canvas) {
+            public void onDraw(Canvas canvas) {
                 TextInfoPrivacyCell.this.onTextDraw();
                 super.onDraw(canvas);
                 TextInfoPrivacyCell.this.afterTextDraw();
@@ -69,7 +70,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
         this.textView = linksTextView;
         linksTextView.setTextSize(1, 14.0f);
         this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.textView.setPadding(0, AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(17));
+        this.textView.setPadding(0, AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(17));
         this.textView.setMovementMethod(LinkMovementMethod.getInstance());
         this.textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText4));
         this.textView.setLinkTextColor(getThemedColor(this.linkTextColorKey));
@@ -112,7 +113,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.fixedSize != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.fixedSize), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.fixedSize), 1073741824));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         }
@@ -136,9 +137,9 @@ public class TextInfoPrivacyCell extends FrameLayout {
         }
         this.text = charSequence;
         if (charSequence == null) {
-            this.textView.setPadding(0, AndroidUtilities.m54dp(2), 0, 0);
+            this.textView.setPadding(0, AndroidUtilities.m72dp(2), 0, 0);
         } else {
-            this.textView.setPadding(0, AndroidUtilities.m54dp(this.topPadding), 0, AndroidUtilities.m54dp(this.bottomPadding));
+            this.textView.setPadding(0, AndroidUtilities.m72dp(this.topPadding), 0, AndroidUtilities.m72dp(this.bottomPadding));
         }
         SpannableString spannableString = null;
         if (charSequence != null) {

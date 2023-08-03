@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 59449
+    .line 60339
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;
     .locals 1
 
-    .line 59457
+    .line 60347
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -45,7 +45,7 @@
 
     return-object p0
 
-    .line 59459
+    .line 60349
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -71,13 +71,13 @@
 
     throw p0
 
-    .line 59464
+    .line 60354
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;-><init>()V
 
-    .line 59465
+    .line 60355
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -88,21 +88,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 59470
+    .line 60360
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->channel:I
 
-    .line 59471
+    .line 60361
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->scale:I
 
-    .line 59472
+    .line 60362
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -115,22 +115,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 59476
+    .line 60366
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59477
+    .line 60367
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->channel:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59478
+    .line 60368
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->scale:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59479
+    .line 60369
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallStreamChannel;->last_timestamp_ms:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

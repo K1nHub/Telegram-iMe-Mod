@@ -44,17 +44,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 374
+    .line 402
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 378
+    .line 406
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
-    .line 379
+    .line 407
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -69,12 +69,12 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 383
+    .line 411
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 384
+    .line 412
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_0
@@ -82,7 +82,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 386
+    .line 414
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->shouldNotifyDataSetChanged:Z
 
     :goto_0
@@ -92,12 +92,12 @@
 .method public notifyItemChanged(I)V
     .locals 1
 
-    .line 432
+    .line 460
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 433
+    .line 461
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     :cond_0
@@ -107,17 +107,17 @@
 .method public notifyItemInserted(I)V
     .locals 1
 
-    .line 392
+    .line 420
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 393
+    .line 421
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
 
     goto :goto_0
 
-    .line 395
+    .line 423
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 396
+    .line 424
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
     const/4 v0, 0x1
@@ -145,12 +145,12 @@
 .method public notifyItemRangeChanged(II)V
     .locals 1
 
-    .line 439
+    .line 467
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 440
+    .line 468
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
     :cond_0
@@ -160,17 +160,17 @@
 .method public notifyItemRangeInserted(II)V
     .locals 1
 
-    .line 402
+    .line 430
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 403
+    .line 431
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
     goto :goto_0
 
-    .line 405
+    .line 433
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
@@ -180,7 +180,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 406
+    .line 434
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -196,17 +196,17 @@
 .method public notifyItemRangeRemoved(II)V
     .locals 1
 
-    .line 422
+    .line 450
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 423
+    .line 451
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
     goto :goto_0
 
-    .line 425
+    .line 453
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeRemoved:Ljava/util/ArrayList;
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 426
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeRemoved:Ljava/util/ArrayList;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -232,17 +232,17 @@
 .method public notifyItemRemoved(I)V
     .locals 1
 
-    .line 412
+    .line 440
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     if-nez v0, :cond_0
 
-    .line 413
+    .line 441
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
     goto :goto_0
 
-    .line 415
+    .line 443
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeRemoved:Ljava/util/ArrayList;
 
@@ -252,7 +252,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 416
+    .line 444
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeRemoved:Ljava/util/ArrayList;
 
     const/4 v0, 0x1
@@ -272,10 +272,10 @@
 
     const/4 v0, 0x0
 
-    .line 452
+    .line 480
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
-    .line 453
+    .line 481
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->shouldNotifyDataSetChanged:Z
 
     if-nez v0, :cond_0
@@ -296,7 +296,7 @@
 
     if-nez v0, :cond_1
 
-    .line 454
+    .line 482
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyDataSetChanged()V
 
@@ -309,20 +309,20 @@
 
     const/4 v0, 0x1
 
-    .line 445
+    .line 473
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->animationRunning:Z
 
     const/4 v0, 0x0
 
-    .line 446
+    .line 474
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->shouldNotifyDataSetChanged:Z
 
-    .line 447
+    .line 475
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeInserted:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 448
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->rangeRemoved:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V

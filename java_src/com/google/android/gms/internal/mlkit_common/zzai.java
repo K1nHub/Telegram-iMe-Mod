@@ -2,9 +2,10 @@ package com.google.android.gms.internal.mlkit_common;
 
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 /* loaded from: classes.dex */
-public final class zzai extends zzad<E> {
+public final class zzai<E> extends zzad<E> {
     private final transient int zza;
     private final transient int zzb;
     private final /* synthetic */ zzad zzc;

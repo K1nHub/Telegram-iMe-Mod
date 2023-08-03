@@ -14,7 +14,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
 
-    .line 644
+    .line 666
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -42,6 +42,22 @@
 
 .method public static $default$openAvatarsSearch(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V
     .locals 0
+
+    return-void
+.end method
+
+.method public static $default$sendAudio(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZI)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MessageObject;",
+            ">;",
+            "Ljava/lang/CharSequence;",
+            "ZI)V"
+        }
+    .end annotation
 
     return-void
 .end method

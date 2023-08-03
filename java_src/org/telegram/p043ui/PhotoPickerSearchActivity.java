@@ -25,12 +25,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
@@ -43,7 +43,14 @@ import org.telegram.p043ui.PhotoPickerActivity;
 /* renamed from: org.telegram.ui.PhotoPickerSearchActivity */
 /* loaded from: classes5.dex */
 public class PhotoPickerSearchActivity extends BaseFragment {
-    private static final Interpolator interpolator = PhotoPickerSearchActivity$$ExternalSyntheticLambda0.INSTANCE;
+    private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.PhotoPickerSearchActivity$$ExternalSyntheticLambda0
+        @Override // android.animation.TimeInterpolator
+        public final float getInterpolation(float f) {
+            float lambda$static$0;
+            lambda$static$0 = PhotoPickerSearchActivity.lambda$static$0(f);
+            return lambda$static$0;
+        }
+    };
     private boolean animatingForward;
     private boolean backAnimation;
     private EditTextEmoji commentTextView;
@@ -68,7 +75,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
     /* renamed from: org.telegram.ui.PhotoPickerSearchActivity$ViewPage */
     /* loaded from: classes5.dex */
     public static class ViewPage extends FrameLayout {
-        private C3484ActionBar actionBar;
+        private C3485ActionBar actionBar;
         private FrameLayout fragmentView;
         private RecyclerListView listView;
         private BaseFragment parentFragment;
@@ -88,23 +95,23 @@ public class PhotoPickerSearchActivity extends BaseFragment {
     public View createView(Context context) {
         View view;
         this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = Theme.key_dialogTextBlack;
-        c3484ActionBar.setTitleColor(Theme.getColor(i));
+        c3485ActionBar.setTitleColor(Theme.getColor(i));
         this.actionBar.setItemsColor(Theme.getColor(i), false);
-        C3484ActionBar c3484ActionBar2 = this.actionBar;
+        C3485ActionBar c3485ActionBar2 = this.actionBar;
         int i2 = Theme.key_dialogButtonSelector;
-        c3484ActionBar2.setItemsBackgroundColor(Theme.getColor(i2), false);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3485ActionBar2.setItemsBackgroundColor(Theme.getColor(i2), false);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
-        this.actionBar.setExtraHeight(AndroidUtilities.m54dp(44));
+        this.actionBar.setExtraHeight(AndroidUtilities.m72dp(44));
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setClipContent(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoPickerSearchActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoPickerSearchActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     PhotoPickerSearchActivity.this.finishFragment();
@@ -112,7 +119,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
             }
         });
         this.hasOwnBackground = true;
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.PhotoPickerSearchActivity.2
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3419R.C3421drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.PhotoPickerSearchActivity.2
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 PhotoPickerSearchActivity.this.imagesSearch.getActionBar().openSearchField("", false);
@@ -139,7 +146,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
             }
         });
         this.searchItem = actionBarMenuItemSearchListener;
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3417R.string.SearchImagesTitle));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3419R.string.SearchImagesTitle));
         EditTextBoldCursor searchField = this.searchItem.getSearchField();
         searchField.setTextColor(Theme.getColor(i));
         searchField.setCursorColor(Theme.getColor(i));
@@ -174,9 +181,9 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                 PhotoPickerSearchActivity.this.switchToCurrentSelectedMode(true);
                 PhotoPickerSearchActivity.this.animatingForward = z;
                 if (i4 == 0) {
-                    PhotoPickerSearchActivity.this.searchItem.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3417R.string.SearchImagesTitle));
+                    PhotoPickerSearchActivity.this.searchItem.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3419R.string.SearchImagesTitle));
                 } else {
-                    PhotoPickerSearchActivity.this.searchItem.setSearchFieldHint(LocaleController.getString("SearchGifsTitle", C3417R.string.SearchGifsTitle));
+                    PhotoPickerSearchActivity.this.searchItem.setSearchFieldHint(LocaleController.getString("SearchGifsTitle", C3419R.string.SearchGifsTitle));
                 }
             }
 
@@ -244,7 +251,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                 int size2 = View.MeasureSpec.getSize(i5);
                 setMeasuredDimension(size, size2);
                 measureChildWithMargins(((BaseFragment) PhotoPickerSearchActivity.this).actionBar, i4, 0, i5, 0);
-                if (AndroidUtilities.m54dp(20) >= 0) {
+                if (AndroidUtilities.m72dp(20) >= 0) {
                     if (!AndroidUtilities.isInMultiwindow) {
                         size2 -= PhotoPickerSearchActivity.this.commentTextView.getEmojiPadding();
                         i5 = View.MeasureSpec.makeMeasureSpec(size2, 1073741824);
@@ -258,7 +265,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                 this.globalIgnoreLayout = true;
                 for (int i6 = 0; i6 < PhotoPickerSearchActivity.this.viewPages.length; i6++) {
                     if (PhotoPickerSearchActivity.this.viewPages[i6] != null && PhotoPickerSearchActivity.this.viewPages[i6].listView != null) {
-                        PhotoPickerSearchActivity.this.viewPages[i6].listView.setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4) + measuredHeight, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4));
+                        PhotoPickerSearchActivity.this.viewPages[i6].listView.setPadding(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4) + measuredHeight, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4));
                     }
                 }
                 this.globalIgnoreLayout = false;
@@ -269,7 +276,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                         if (PhotoPickerSearchActivity.this.commentTextView != null && PhotoPickerSearchActivity.this.commentTextView.isPopupView(childAt)) {
                             if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
                                 if (AndroidUtilities.isTablet()) {
-                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m54dp(AndroidUtilities.isTablet() ? 200 : 320), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m72dp(AndroidUtilities.isTablet() ? 200 : 320), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
                                 } else {
                                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) + getPaddingTop(), 1073741824));
                                 }
@@ -299,7 +306,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                     Method dump skipped, instructions count: 219
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.PhotoPickerSearchActivity.C63034.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.PhotoPickerSearchActivity.C63664.onLayout(boolean, int, int, int, int):void");
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -461,8 +468,8 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                                     PhotoPickerSearchActivity.this.scrollSlidingTextTabStrip.selectTabWithId(PhotoPickerSearchActivity.this.viewPages[0].selectedType, 1.0f);
                                 }
                                 PhotoPickerSearchActivity.this.tabsAnimationInProgress = false;
-                                C63034.this.maybeStartTracking = false;
-                                C63034.this.startedTracking = false;
+                                C63664.this.maybeStartTracking = false;
+                                C63664.this.startedTracking = false;
                                 ((BaseFragment) PhotoPickerSearchActivity.this).actionBar.setEnabled(true);
                                 PhotoPickerSearchActivity.this.scrollSlidingTextTabStrip.setEnabled(true);
                             }
@@ -548,7 +555,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                     onScrollListener.onScrollStateChanged(recyclerView, i6);
                     if (i6 != 1) {
                         int i7 = (int) (-((BaseFragment) PhotoPickerSearchActivity.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3484ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3485ActionBar.getCurrentActionBarHeight();
                         if (i7 == 0 || i7 == currentActionBarHeight) {
                             return;
                         }
@@ -566,8 +573,8 @@ public class PhotoPickerSearchActivity extends BaseFragment {
                     if (recyclerView == PhotoPickerSearchActivity.this.viewPages[0].listView) {
                         float translationY = ((BaseFragment) PhotoPickerSearchActivity.this).actionBar.getTranslationY();
                         float f = translationY - i7;
-                        if (f < (-C3484ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3484ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3485ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3485ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
                             f = 0.0f;
                         }
@@ -725,10 +732,10 @@ public class PhotoPickerSearchActivity extends BaseFragment {
         if (scrollSlidingTextTabStrip == null) {
             return;
         }
-        scrollSlidingTextTabStrip.addTextTab(0, LocaleController.getString("ImagesTab2", C3417R.string.ImagesTab2));
-        this.scrollSlidingTextTabStrip.addTextTab(1, LocaleController.getString("GifsTab2", C3417R.string.GifsTab2));
+        scrollSlidingTextTabStrip.addTextTab(0, LocaleController.getString("ImagesTab2", C3419R.string.ImagesTab2));
+        this.scrollSlidingTextTabStrip.addTextTab(1, LocaleController.getString("GifsTab2", C3419R.string.GifsTab2));
         this.scrollSlidingTextTabStrip.setVisibility(0);
-        this.actionBar.setExtraHeight(AndroidUtilities.m54dp(44));
+        this.actionBar.setExtraHeight(AndroidUtilities.m72dp(44));
         int currentTabId = this.scrollSlidingTextTabStrip.getCurrentTabId();
         if (currentTabId >= 0) {
             this.viewPages[0].selectedType = currentTabId;
@@ -763,15 +770,15 @@ public class PhotoPickerSearchActivity extends BaseFragment {
         int i2 = Theme.key_dialogBackground;
         arrayList.add(new ThemeDescription(view, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i3 = ThemeDescription.FLAG_AB_ITEMSCOLOR;
         int i4 = Theme.key_dialogTextBlack;
-        arrayList.add(new ThemeDescription(c3484ActionBar, i3, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(c3485ActionBar, i3, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, i4));
-        C3484ActionBar c3484ActionBar2 = this.actionBar;
+        C3485ActionBar c3485ActionBar2 = this.actionBar;
         int i5 = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i6 = Theme.key_dialogButtonSelector;
-        arrayList.add(new ThemeDescription(c3484ActionBar2, i5, null, null, null, null, i6));
+        arrayList.add(new ThemeDescription(c3485ActionBar2, i5, null, null, null, null, i6));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, Theme.key_chat_messagePanelHint));
         arrayList.add(new ThemeDescription(this.searchItem.getSearchField(), ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, i4));

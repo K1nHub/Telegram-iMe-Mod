@@ -288,7 +288,7 @@
 
     if-ne v0, p0, :cond_0
 
-    const-string p0, "org.bouncycastle.asn1.allow_unsafe_integer"
+    const-string/jumbo p0, "org.bouncycastle.asn1.allow_unsafe_integer"
 
     invoke-static {p0}, Lorg/bouncycastle/util/Properties;->isOverrideSet(Ljava/lang/String;)Z
 

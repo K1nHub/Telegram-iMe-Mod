@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/Person$Api28Impl;,
+        Landroidx/core/app/Person$Builder;,
         Landroidx/core/app/Person$Api22Impl;,
-        Landroidx/core/app/Person$Builder;
+        Landroidx/core/app/Person$Api28Impl;
     }
 .end annotation
 

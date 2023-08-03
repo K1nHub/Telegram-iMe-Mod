@@ -217,7 +217,7 @@
 
     const-string v4, "java.util.List"
 
-    const-string v5, "pictureParameterSets"
+    const-string/jumbo v5, "pictureParameterSets"
 
     const-string v6, ""
 
@@ -829,7 +829,7 @@
 
     const-string v4, "int"
 
-    const-string v5, "profileCompatibility"
+    const-string/jumbo v5, "profileCompatibility"
 
     const-string v6, ""
 

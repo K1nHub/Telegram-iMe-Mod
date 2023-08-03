@@ -1,6 +1,5 @@
 package com.iMe.storage.data.network.api.own;
 
-import com.iMe.storage.data.network.model.request.wallet.ActivateWalletRequest;
 import com.iMe.storage.data.network.model.request.wallet.CustomTokensRequest;
 import com.iMe.storage.data.network.model.request.wallet.DisplayedTokensRequest;
 import com.iMe.storage.data.network.model.request.wallet.GetWalletTransactionsRequest;
@@ -26,9 +25,6 @@ import retrofit2.http.POST;
 /* compiled from: WalletApi.kt */
 /* loaded from: classes3.dex */
 public interface WalletApi {
-    @POST("firstWalletActivation")
-    Observable<ApiBaseResponse<Object>> activateWallet(@Body ActivateWalletRequest activateWalletRequest);
-
     @POST("detachCustomToken")
     Observable<ApiBaseResponse<Object>> detachCustomToken(@Body TokenCommonRequest tokenCommonRequest);
 

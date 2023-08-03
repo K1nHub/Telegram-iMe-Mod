@@ -34,9 +34,9 @@ public final class Changelog {
     }
 
     public int hashCode() {
-        int m706m = BotsDbModel$$ExternalSyntheticBackport0.m706m(this.currentDate) * 31;
+        int m724m = BotsDbModel$$ExternalSyntheticBackport0.m724m(this.currentDate) * 31;
         String str = this.ruChangelog;
-        int hashCode = (m706m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m724m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.enChangelog;
         int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.stickerPackName;

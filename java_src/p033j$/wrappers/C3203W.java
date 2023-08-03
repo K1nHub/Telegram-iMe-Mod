@@ -6,22 +6,22 @@ import java.util.function.IntToDoubleFunction;
 public final /* synthetic */ class C3203W {
 
     /* renamed from: a */
-    final /* synthetic */ IntToDoubleFunction f1247a;
+    final /* synthetic */ IntToDoubleFunction f1250a;
 
     private /* synthetic */ C3203W(IntToDoubleFunction intToDoubleFunction) {
-        this.f1247a = intToDoubleFunction;
+        this.f1250a = intToDoubleFunction;
     }
 
     /* renamed from: b */
-    public static /* synthetic */ C3203W m157b(IntToDoubleFunction intToDoubleFunction) {
+    public static /* synthetic */ C3203W m175b(IntToDoubleFunction intToDoubleFunction) {
         if (intToDoubleFunction == null) {
             return null;
         }
-        return intToDoubleFunction instanceof AbstractC3204X ? ((AbstractC3204X) intToDoubleFunction).f1248a : new C3203W(intToDoubleFunction);
+        return intToDoubleFunction instanceof AbstractC3204X ? ((AbstractC3204X) intToDoubleFunction).f1251a : new C3203W(intToDoubleFunction);
     }
 
     /* renamed from: a */
-    public double m158a(int i) {
-        return this.f1247a.applyAsDouble(i);
+    public double m176a(int i) {
+        return this.f1250a.applyAsDouble(i);
     }
 }

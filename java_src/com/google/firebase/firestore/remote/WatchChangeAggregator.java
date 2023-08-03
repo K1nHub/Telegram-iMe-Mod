@@ -58,7 +58,7 @@ public class WatchChangeAggregator {
         for (Integer num : getTargetIds(watchTargetChange)) {
             int intValue = num.intValue();
             TargetState ensureTargetState = ensureTargetState(intValue);
-            int i = C10371.f276x3bf9e295[watchTargetChange.getChangeType().ordinal()];
+            int i = C10371.f278x3bf9e295[watchTargetChange.getChangeType().ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     ensureTargetState.recordTargetResponse();
@@ -98,29 +98,29 @@ public class WatchChangeAggregator {
     public static /* synthetic */ class C10371 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$remote$WatchChange$WatchTargetChangeType */
-        static final /* synthetic */ int[] f276x3bf9e295;
+        static final /* synthetic */ int[] f278x3bf9e295;
 
         static {
             int[] iArr = new int[WatchChange.WatchTargetChangeType.values().length];
-            f276x3bf9e295 = iArr;
+            f278x3bf9e295 = iArr;
             try {
                 iArr[WatchChange.WatchTargetChangeType.NoChange.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f276x3bf9e295[WatchChange.WatchTargetChangeType.Added.ordinal()] = 2;
+                f278x3bf9e295[WatchChange.WatchTargetChangeType.Added.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f276x3bf9e295[WatchChange.WatchTargetChangeType.Removed.ordinal()] = 3;
+                f278x3bf9e295[WatchChange.WatchTargetChangeType.Removed.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f276x3bf9e295[WatchChange.WatchTargetChangeType.Current.ordinal()] = 4;
+                f278x3bf9e295[WatchChange.WatchTargetChangeType.Current.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f276x3bf9e295[WatchChange.WatchTargetChangeType.Reset.ordinal()] = 5;
+                f278x3bf9e295[WatchChange.WatchTargetChangeType.Reset.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
         }

@@ -12,7 +12,7 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -93,7 +93,7 @@ public final class StakingSafeWithdrawalView extends FrameLayout {
 
     private final void setupView() {
         setupColors();
-        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3417R.string.staking_withdraw_safe_withdrawal));
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3419R.string.staking_withdraw_safe_withdrawal));
         addView(this.binding.getRoot());
     }
 }

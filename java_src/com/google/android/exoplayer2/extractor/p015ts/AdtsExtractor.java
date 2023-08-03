@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
+import android.net.Uri;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ConstantBitrateSeekMap;
@@ -20,10 +21,25 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 /* renamed from: com.google.android.exoplayer2.extractor.ts.AdtsExtractor */
 /* loaded from: classes.dex */
 public final class AdtsExtractor implements Extractor {
-    public static final ExtractorsFactory FACTORY = AdtsExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.AdtsExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = AdtsExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING = 1;
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING_ALWAYS = 2;
     private static final int MAX_PACKET_SIZE = 2048;

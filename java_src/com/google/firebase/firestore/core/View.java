@@ -199,32 +199,32 @@ public class View {
     public static /* synthetic */ class C10141 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
-        static final /* synthetic */ int[] f251x33862af7;
+        static final /* synthetic */ int[] f253x33862af7;
 
         static {
             int[] iArr = new int[DocumentViewChange.Type.values().length];
-            f251x33862af7 = iArr;
+            f253x33862af7 = iArr;
             try {
                 iArr[DocumentViewChange.Type.ADDED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f251x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
+                f253x33862af7[DocumentViewChange.Type.MODIFIED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f251x33862af7[DocumentViewChange.Type.METADATA.ordinal()] = 3;
+                f253x33862af7[DocumentViewChange.Type.METADATA.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f251x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 4;
+                f253x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
         }
     }
 
     private static int changeTypeOrder(DocumentViewChange documentViewChange) {
-        int i = C10141.f251x33862af7[documentViewChange.getType().ordinal()];
+        int i = C10141.f253x33862af7[documentViewChange.getType().ordinal()];
         int i2 = 1;
         if (i != 1) {
             i2 = 2;

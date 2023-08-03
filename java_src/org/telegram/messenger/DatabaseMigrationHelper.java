@@ -182,7 +182,7 @@ public class DatabaseMigrationHelper {
                     byteBufferValue2.reuse();
                     if (TLdeserialize != null) {
                         TLRPC$TL_chatFull tLRPC$TL_chatFull = new TLRPC$TL_chatFull();
-                        tLRPC$TL_chatFull.f1516id = intValue2;
+                        tLRPC$TL_chatFull.f1519id = intValue2;
                         tLRPC$TL_chatFull.chat_photo = new TLRPC$TL_photoEmpty();
                         tLRPC$TL_chatFull.notify_settings = new TLRPC$TL_peerNotifySettingsEmpty_layer77();
                         tLRPC$TL_chatFull.exported_invite = null;
@@ -545,7 +545,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor8 = database.queryFinalized("SELECT mid, uid, send_state, date, data, ttl, replydata FROM scheduled_messages_v2 WHERE 1", new Object[0]);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 sQLiteCursor8 = null;
             }
             if (sQLiteCursor8 != null) {
@@ -598,7 +598,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor7 = database.queryFinalized("SELECT mid, uid, date, type, data FROM media_v2 WHERE 1", new Object[0]);
             } catch (Exception e2) {
-                FileLog.m49e(e2);
+                FileLog.m67e(e2);
                 sQLiteCursor7 = null;
             }
             if (sQLiteCursor7 != null) {
@@ -644,7 +644,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor3 = database.queryFinalized("SELECT r.random_id, r.mid, m.uid FROM randoms as r INNER JOIN messages as m ON r.mid = m.mid WHERE 1", new Object[0]);
             } catch (Exception e3) {
-                FileLog.m49e(e3);
+                FileLog.m67e(e3);
                 sQLiteCursor3 = null;
             }
             if (sQLiteCursor3 != null) {
@@ -668,7 +668,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor4 = database.queryFinalized("SELECT p.mid, m.uid, p.id FROM polls as p INNER JOIN messages as m ON p.mid = m.mid WHERE 1", new Object[0]);
             } catch (Exception e4) {
-                FileLog.m49e(e4);
+                FileLog.m67e(e4);
                 sQLiteCursor4 = null;
             }
             if (sQLiteCursor4 != null) {
@@ -692,7 +692,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor5 = database.queryFinalized("SELECT wp.id, wp.mid, m.uid FROM webpage_pending as wp INNER JOIN messages as m ON wp.mid = m.mid WHERE 1", new Object[0]);
             } catch (Exception e5) {
-                FileLog.m49e(e5);
+                FileLog.m67e(e5);
                 sQLiteCursor5 = null;
             }
             if (sQLiteCursor5 != null) {
@@ -716,7 +716,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor6 = database.queryFinalized("SELECT et.mid, m.uid, et.date, et.media FROM enc_tasks_v3 as et INNER JOIN messages as m ON et.mid = m.mid WHERE 1", new Object[0]);
             } catch (Exception e6) {
-                FileLog.m49e(e6);
+                FileLog.m67e(e6);
                 sQLiteCursor6 = null;
             }
             if (sQLiteCursor6 != null) {
@@ -763,7 +763,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor2 = database.queryFinalized("SELECT mid, uid, read_state, send_state, date, data, out, ttl, media, replydata, imp, mention, forwards, replies_data, thread_reply_id FROM messages WHERE 1", new Object[0]);
             } catch (Exception e7) {
-                FileLog.m49e(e7);
+                FileLog.m67e(e7);
                 sQLiteCursor2 = null;
             }
             if (sQLiteCursor2 != null) {
@@ -974,7 +974,7 @@ public class DatabaseMigrationHelper {
             try {
                 sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT mid, uid, date, type, data FROM media_v3 WHERE 1", new Object[0]);
             } catch (Exception e8) {
-                FileLog.m49e(e8);
+                FileLog.m67e(e8);
                 sQLiteCursor = null;
             }
             if (sQLiteCursor != null) {
@@ -1188,7 +1188,59 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);").stepThis().dispose();
             sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 117").stepThis().dispose();
-            return 117;
+            i6 = 117;
+        }
+        if (i6 == 116 || i6 == 117 || i6 == 118) {
+            sQLiteDatabase.executeFast("DROP TABLE IF EXISTS stories").stepThis().dispose();
+            sQLiteDatabase.executeFast("DROP TABLE IF EXISTS stories_counter").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, local_path TEXT, local_thumb_path TEXT, PRIMARY KEY (dialog_id, story_id));").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 119").stepThis().dispose();
+            messagesStorage.getMessagesController().getStoriesController().cleanup();
+            i6 = 119;
+        }
+        if (i6 == 119) {
+            sQLiteDatabase.executeFast("ALTER TABLE messages_v2 ADD COLUMN reply_to_story_id INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("ALTER TABLE messages_topics ADD COLUMN reply_to_story_id INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 120").stepThis().dispose();
+            i6 = 120;
+        }
+        if (i6 == 120) {
+            sQLiteDatabase.executeFast("CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, PRIMARY KEY(dialog_id, story_id));").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE TABLE archived_stories (story_id INTEGER PRIMARY KEY, data BLOB);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 121").stepThis().dispose();
+            i6 = 121;
+        }
+        if (i6 == 121) {
+            sQLiteDatabase.executeFast("CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 122").stepThis().dispose();
+            i6 = 122;
+        }
+        if (i6 == 122) {
+            sQLiteDatabase.executeFast("ALTER TABLE chat_settings_v2 ADD COLUMN participants_count INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 123").stepThis().dispose();
+            i6 = 123;
+        }
+        if (i6 == 123) {
+            sQLiteDatabase.executeFast("CREATE TABLE story_pushes (uid INTEGER PRIMARY KEY, minId INTEGER, maxId INTEGER, date INTEGER, localName TEXT);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 124").stepThis().dispose();
+            i6 = 124;
+        }
+        if (i6 == 124) {
+            sQLiteDatabase.executeFast("DROP TABLE IF EXISTS story_pushes;").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, PRIMARY KEY(uid, sid));").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 125").stepThis().dispose();
+            i6 = 125;
+        }
+        if (i6 == 125) {
+            sQLiteDatabase.executeFast("ALTER TABLE story_pushes ADD COLUMN flags INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 126").stepThis().dispose();
+            i6 = 126;
+        }
+        if (i6 == 126) {
+            sQLiteDatabase.executeFast("ALTER TABLE story_pushes ADD COLUMN expire_date INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 127").stepThis().dispose();
+            return MessagesStorage.LAST_DB_VERSION;
         }
         return i6;
     }
@@ -1214,7 +1266,7 @@ public class DatabaseMigrationHelper {
         long j = 0;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        FileLog.m52d("start recover database");
+        FileLog.m70d("start recover database");
         int i3 = 1;
         int i4 = 0;
         try {
@@ -1228,11 +1280,11 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("ATTACH DATABASE \"" + file.getAbsolutePath() + "\" AS old;").stepThis().dispose();
             intValue = sQLiteDatabase.executeInt("PRAGMA old.user_version", new Object[0]).intValue();
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
             z = false;
         }
-        if (intValue != 117) {
-            FileLog.m51e("can't restore database from version " + intValue);
+        if (intValue != 127) {
+            FileLog.m69e("can't restore database from version " + intValue);
             return false;
         }
         HashSet hashSet = new HashSet();
@@ -1322,7 +1374,7 @@ public class DatabaseMigrationHelper {
                 file5.delete();
                 file6.delete();
                 file7.delete();
-                FileLog.m52d("database recovered time " + (System.currentTimeMillis() - j));
+                FileLog.m70d("database recovered time " + (System.currentTimeMillis() - j));
                 return true;
             } catch (IOException e3) {
                 e3.printStackTrace();

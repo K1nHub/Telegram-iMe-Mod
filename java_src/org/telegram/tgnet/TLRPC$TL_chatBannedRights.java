@@ -1,6 +1,5 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_chatBannedRights extends TLObject {
@@ -119,7 +118,7 @@ public class TLRPC$TL_chatBannedRights extends TLObject {
         this.flags = i13;
         int i14 = z ? 524288 | i13 : (-524289) & i13;
         this.flags = i14;
-        int i15 = this.send_videos ? i14 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i14 & (-1048577);
+        int i15 = this.send_videos ? i14 | 1048576 : i14 & (-1048577);
         this.flags = i15;
         int i16 = this.send_roundvideos ? i15 | 2097152 : i15 & (-2097153);
         this.flags = i16;

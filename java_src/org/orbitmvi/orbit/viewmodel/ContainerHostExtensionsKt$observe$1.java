@@ -16,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope;
 import org.orbitmvi.orbit.ContainerHost;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ContainerHostExtensions.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1", m83f = "ContainerHostExtensions.kt", m82l = {50}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1", m101f = "ContainerHostExtensions.kt", m100l = {50}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ LifecycleOwner $lifecycleOwner;
@@ -71,7 +71,7 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ContainerHostExtensions.kt */
-    @DebugMetadata(m84c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1", m83f = "ContainerHostExtensions.kt", m82l = {}, m81m = "invokeSuspend")
+    @DebugMetadata(m102c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1", m101f = "ContainerHostExtensions.kt", m100l = {}, m99m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1 */
     /* loaded from: classes4.dex */
     public static final class C33091 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

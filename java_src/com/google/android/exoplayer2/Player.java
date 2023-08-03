@@ -7,6 +7,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.TextureView;
 import com.google.android.exoplayer2.Bundleable;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.metadata.Metadata;
 import com.google.android.exoplayer2.text.Cue;
@@ -719,7 +720,14 @@ public interface Player {
         private static final String FIELD_CONTENT_POSITION_MS = Util.intToStringMaxRadix(4);
         private static final String FIELD_AD_GROUP_INDEX = Util.intToStringMaxRadix(5);
         private static final String FIELD_AD_INDEX_IN_AD_GROUP = Util.intToStringMaxRadix(6);
-        public static final Bundleable.Creator<PositionInfo> CREATOR = Player$PositionInfo$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<PositionInfo> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Player$PositionInfo$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                Player.PositionInfo fromBundle;
+                fromBundle = Player.PositionInfo.fromBundle(bundle);
+                return fromBundle;
+            }
+        };
 
         @Deprecated
         public PositionInfo(Object obj, int i, Object obj2, int i2, long j, long j2, int i3, int i4) {
@@ -787,7 +795,14 @@ public interface Player {
         private final FlagSet flags;
         public static final Commands EMPTY = new Builder().build();
         private static final String FIELD_COMMANDS = Util.intToStringMaxRadix(0);
-        public static final Bundleable.Creator<Commands> CREATOR = Player$Commands$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<Commands> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Player$Commands$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                Player.Commands fromBundle;
+                fromBundle = Player.Commands.fromBundle(bundle);
+                return fromBundle;
+            }
+        };
 
         /* loaded from: classes.dex */
         public static final class Builder {

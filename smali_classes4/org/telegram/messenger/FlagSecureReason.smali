@@ -27,11 +27,11 @@
 # instance fields
 .field private attached:Z
 
-.field private condition:Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
+.field private final condition:Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
 
 .field private value:Z
 
-.field private window:Landroid/view/Window;
+.field private final window:Landroid/view/Window;
 
 
 # direct methods

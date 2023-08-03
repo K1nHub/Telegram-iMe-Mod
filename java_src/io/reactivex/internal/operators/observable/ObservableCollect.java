@@ -36,13 +36,13 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
         final Observer<? super U> downstream;
 
         /* renamed from: u */
-        final U f534u;
+        final U f537u;
         Disposable upstream;
 
         CollectObserver(Observer<? super U> observer, U u, BiConsumer<? super U, ? super T> biConsumer) {
             this.downstream = observer;
             this.collector = biConsumer;
-            this.f534u = u;
+            this.f537u = u;
         }
 
         @Override // io.reactivex.Observer
@@ -69,7 +69,7 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
                 return;
             }
             try {
-                this.collector.accept((U) this.f534u, t);
+                this.collector.accept((U) this.f537u, t);
             } catch (Throwable th) {
                 this.upstream.dispose();
                 onError(th);
@@ -92,7 +92,7 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
                 return;
             }
             this.done = true;
-            this.downstream.onNext((U) this.f534u);
+            this.downstream.onNext((U) this.f537u);
             this.downstream.onComplete();
         }
     }

@@ -34,7 +34,7 @@ public class LogFileManager {
             return;
         }
         if (!CommonUtils.getBooleanResourceValue(this.context, "com.crashlytics.CollectCustomLogs", true)) {
-            Logger.getLogger().m728d("Preferences requested no custom logs. Aborting log file creation.");
+            Logger.getLogger().m746d("Preferences requested no custom logs. Aborting log file creation.");
         } else {
             setLogFile(getWorkingFileForSession(str), 65536);
         }

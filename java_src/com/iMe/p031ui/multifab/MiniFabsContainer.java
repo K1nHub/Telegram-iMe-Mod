@@ -12,6 +12,7 @@ import android.view.ViewOutlineProvider;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.storage.domain.model.filters.FilterFab;
@@ -23,6 +24,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: MiniFabsContainer.kt */
 /* renamed from: com.iMe.ui.multifab.MiniFabsContainer */
 /* loaded from: classes3.dex */
@@ -51,8 +53,9 @@ public final class MiniFabsContainer extends LinearLayout {
         Intrinsics.checkNotNullParameter(fabs, "fabs");
         removeAllViews();
         for (FilterFab filterFab : fabs) {
-            addView(createFab(filterFab), LayoutHelper.createLinear(43, 43, 17, 0, 0, 0, 12));
+            addView(createFab(filterFab), LayoutHelper.createLinear(36, 36, 17, 0, 0, 0, 8));
         }
+        updateColors();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,39 +75,37 @@ public final class MiniFabsContainer extends LinearLayout {
         ViewExtKt.gone$default(this$0, false, 1, null);
     }
 
-    private final ImageView createFab(final FilterFab filterFab) {
-        ImageView imageView = new ImageView(getContext());
-        ViewExtKt.setScale(imageView, BitmapDescriptorFactory.HUE_RED);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(Theme.createSimpleSelectorCircleDrawable(43, Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
-        float m54dp = AndroidUtilities.m54dp(2);
+    private final RLottieImageView createFab(final FilterFab filterFab) {
+        RLottieImageView rLottieImageView = new RLottieImageView(getContext());
+        ViewExtKt.setScale(rLottieImageView, BitmapDescriptorFactory.HUE_RED);
+        rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
+        float m72dp = AndroidUtilities.m72dp(2);
         StateListAnimator stateListAnimator = new StateListAnimator();
         Property property = LinearLayout.TRANSLATION_Z;
-        float f = 2 * m54dp;
-        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(imageView, property, m54dp, f).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(imageView, property, f, m54dp).setDuration(200L));
-        imageView.setStateListAnimator(stateListAnimator);
-        imageView.setOutlineProvider(new ViewOutlineProvider() { // from class: com.iMe.ui.multifab.MiniFabsContainer$createFab$1$2
+        float f = 2 * m72dp;
+        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(rLottieImageView, property, m72dp, f).setDuration(200L));
+        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(rLottieImageView, property, f, m72dp).setDuration(200L));
+        rLottieImageView.setStateListAnimator(stateListAnimator);
+        rLottieImageView.setOutlineProvider(new ViewOutlineProvider() { // from class: com.iMe.ui.multifab.MiniFabsContainer$createFab$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view, Outline outline) {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(outline, "outline");
-                outline.setOval(0, 0, AndroidUtilities.m54dp(43), AndroidUtilities.m54dp(43));
+                outline.setOval(0, 0, AndroidUtilities.m72dp(36), AndroidUtilities.m72dp(36));
             }
         });
-        imageView.setImageResource(FilterFabExtKt.iconResId(filterFab, false));
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.multifab.MiniFabsContainer$$ExternalSyntheticLambda0
+        FilterFabExtKt.bindMini(filterFab, rLottieImageView);
+        rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.multifab.MiniFabsContainer$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MiniFabsContainer.createFab$lambda$7$lambda$6(MiniFabsContainer.this, filterFab, view);
+                MiniFabsContainer.createFab$lambda$8$lambda$7(MiniFabsContainer.this, filterFab, view);
             }
         });
-        return imageView;
+        return rLottieImageView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void createFab$lambda$7$lambda$6(MiniFabsContainer this$0, FilterFab type, View view) {
+    public static final void createFab$lambda$8$lambda$7(MiniFabsContainer this$0, FilterFab type, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(type, "$type");
         this$0.listener.invoke(type);
@@ -150,6 +151,21 @@ public final class MiniFabsContainer extends LinearLayout {
                     MiniFabsContainer.show$lambda$4$lambda$3(z, this);
                 }
             }).setDuration(200L).start();
+        }
+    }
+
+    public final void updateColors() {
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = getChildAt(i);
+            Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
+            if (childAt instanceof RLottieImageView) {
+                RLottieImageView rLottieImageView = (RLottieImageView) childAt;
+                int m72dp = AndroidUtilities.m72dp(36);
+                int i2 = Theme.key_windowBackgroundWhite;
+                rLottieImageView.setBackground(Theme.createSimpleSelectorCircleDrawable(m72dp, ColorUtils.blendARGB(Theme.getColor(i2), -1, 0.1f), Theme.blendOver(Theme.getColor(i2), Theme.getColor(Theme.key_listSelector))));
+                rLottieImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.SRC_IN));
+            }
         }
     }
 }

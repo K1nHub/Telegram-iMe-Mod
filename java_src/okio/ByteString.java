@@ -24,8 +24,8 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     /* renamed from: of */
-    public static final ByteString m74of(byte... bArr) {
-        return Companion.m73of(bArr);
+    public static final ByteString m92of(byte... bArr) {
+        return Companion.m91of(bArr);
     }
 
     public String utf8() {
@@ -178,7 +178,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             if ((i3 & 2) != 0) {
                 i2 = bArr.length;
             }
-            return companion.m72of(bArr, i, i2);
+            return companion.m90of(bArr, i, i2);
         }
 
         private Companion() {
@@ -197,7 +197,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m73of(byte... data) {
+        public final ByteString m91of(byte... data) {
             Intrinsics.checkNotNullParameter(data, "data");
             byte[] copyOf = Arrays.copyOf(data, data.length);
             Intrinsics.checkNotNullExpressionValue(copyOf, "java.util.Arrays.copyOf(this, size)");
@@ -205,7 +205,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m72of(byte[] toByteString, int i, int i2) {
+        public final ByteString m90of(byte[] toByteString, int i, int i2) {
             byte[] copyOfRange;
             Intrinsics.checkNotNullParameter(toByteString, "$this$toByteString");
             Util.checkOffsetAndCount(toByteString.length, i, i2);
@@ -271,16 +271,16 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         return hashCode;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002f, code lost:
         if (r0 < r1) goto L12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0033, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0034, code lost:
         return 1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:?, code lost:
         return -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0028, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0029, code lost:
         if (r7 < r8) goto L12;
      */
     @Override // java.lang.Comparable
@@ -298,31 +298,31 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             int r2 = java.lang.Math.min(r0, r1)
             r3 = 0
             r4 = r3
-        L13:
+        L14:
             r5 = -1
             r6 = 1
-            if (r4 >= r2) goto L2b
+            if (r4 >= r2) goto L2c
             byte r7 = r9.getByte(r4)
             r7 = r7 & 255(0xff, float:3.57E-43)
             byte r8 = r10.getByte(r4)
             r8 = r8 & 255(0xff, float:3.57E-43)
-            if (r7 != r8) goto L28
+            if (r7 != r8) goto L29
             int r4 = r4 + 1
-            goto L13
-        L28:
-            if (r7 >= r8) goto L32
-            goto L30
-        L2b:
-            if (r0 != r1) goto L2e
-            goto L33
-        L2e:
-            if (r0 >= r1) goto L32
-        L30:
+            goto L14
+        L29:
+            if (r7 >= r8) goto L33
+            goto L31
+        L2c:
+            if (r0 != r1) goto L2f
+            goto L34
+        L2f:
+            if (r0 >= r1) goto L33
+        L31:
             r3 = r5
-            goto L33
-        L32:
-            r3 = r6
+            goto L34
         L33:
+            r3 = r6
+        L34:
             return r3
         */
         throw new UnsupportedOperationException("Method not decompiled: okio.ByteString.compareTo(okio.ByteString):int");

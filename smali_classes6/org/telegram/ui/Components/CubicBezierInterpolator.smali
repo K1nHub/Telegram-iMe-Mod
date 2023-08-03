@@ -36,7 +36,7 @@
 .method static constructor <clinit>()V
     .locals 19
 
-    .line 8
+    .line 13
     new-instance v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide/high16 v1, 0x3fd0000000000000L    # 0.25
@@ -53,7 +53,7 @@
 
     sput-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 9
+    .line 14
     new-instance v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide/16 v11, 0x0
@@ -70,7 +70,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 10
+    .line 15
     new-instance v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide v2, 0x3fcd70a3d70a3d71L    # 0.23
@@ -87,7 +87,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 11
+    .line 16
     new-instance v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide v11, 0x3fdae147ae147ae1L    # 0.42
@@ -100,7 +100,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 12
+    .line 17
     new-instance v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide v2, 0x3fdae147ae147ae1L    # 0.42
@@ -115,7 +115,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    .line 13
+    .line 18
     new-instance v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const-wide v11, 0x3fd5c28f5c28f5c3L    # 0.34
@@ -130,6 +130,31 @@
 
     sput-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_BACK:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
+    .line 19
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_0
+
+    new-instance v0, Landroid/view/animation/PathInterpolator;
+
+    const-string v1, "M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"
+
+    invoke-static {v1}, Landroidx/core/graphics/PathParser;->createPathFromPathData(Ljava/lang/String;)Landroid/graphics/Path;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/view/animation/PathInterpolator;-><init>(Landroid/graphics/Path;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Landroid/view/animation/LinearInterpolator;
+
+    invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
+
+    :goto_0
     return-void
 .end method
 
@@ -144,7 +169,7 @@
 
     double-to-float p4, p7
 
-    .line 37
+    .line 42
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;-><init>(FFFF)V
 
     return-void
@@ -153,7 +178,7 @@
 .method public constructor <init>(FFFF)V
     .locals 1
 
-    .line 33
+    .line 38
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0, p1, p2}, Landroid/graphics/PointF;-><init>(FF)V
@@ -175,31 +200,31 @@
         }
     .end annotation
 
-    .line 21
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
+    .line 22
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->a:Landroid/graphics/PointF;
 
-    .line 18
+    .line 23
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->b:Landroid/graphics/PointF;
 
-    .line 19
+    .line 24
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->c:Landroid/graphics/PointF;
 
-    .line 22
+    .line 27
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
     const/4 v1, 0x0
@@ -214,7 +239,7 @@
 
     if-gtz v0, :cond_1
 
-    .line 25
+    .line 30
     iget v0, p2, Landroid/graphics/PointF;->x:F
 
     cmpg-float v1, v0, v1
@@ -225,15 +250,15 @@
 
     if-gtz v0, :cond_0
 
-    .line 28
+    .line 33
     iput-object p1, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->start:Landroid/graphics/PointF;
 
-    .line 29
+    .line 34
     iput-object p2, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->end:Landroid/graphics/PointF;
 
     return-void
 
-    .line 26
+    .line 31
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -243,7 +268,7 @@
 
     throw p1
 
-    .line 23
+    .line 28
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -257,7 +282,7 @@
 .method private getBezierCoordinateX(F)F
     .locals 6
 
-    .line 70
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->c:Landroid/graphics/PointF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->start:Landroid/graphics/PointF;
@@ -270,7 +295,7 @@
 
     iput v2, v0, Landroid/graphics/PointF;->x:F
 
-    .line 71
+    .line 76
     iget-object v4, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->b:Landroid/graphics/PointF;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->end:Landroid/graphics/PointF;
@@ -287,7 +312,7 @@
 
     iput v5, v4, Landroid/graphics/PointF;->x:F
 
-    .line 72
+    .line 77
     iget-object v1, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->a:Landroid/graphics/PointF;
 
     iget v2, v0, Landroid/graphics/PointF;->x:F
@@ -300,7 +325,7 @@
 
     iput v3, v1, Landroid/graphics/PointF;->x:F
 
-    .line 73
+    .line 78
     iget v0, v0, Landroid/graphics/PointF;->x:F
 
     iget v1, v4, Landroid/graphics/PointF;->x:F
@@ -321,7 +346,7 @@
 .method private getXDerivate(F)F
     .locals 4
 
-    .line 66
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->c:Landroid/graphics/PointF;
 
     iget v0, v0, Landroid/graphics/PointF;->x:F
@@ -358,7 +383,7 @@
 .method protected getBezierCoordinateY(F)F
     .locals 6
 
-    .line 46
+    .line 51
     iget-object v0, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->c:Landroid/graphics/PointF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->start:Landroid/graphics/PointF;
@@ -371,7 +396,7 @@
 
     iput v2, v0, Landroid/graphics/PointF;->y:F
 
-    .line 47
+    .line 52
     iget-object v4, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->b:Landroid/graphics/PointF;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->end:Landroid/graphics/PointF;
@@ -388,7 +413,7 @@
 
     iput v5, v4, Landroid/graphics/PointF;->y:F
 
-    .line 48
+    .line 53
     iget-object v1, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->a:Landroid/graphics/PointF;
 
     iget v2, v0, Landroid/graphics/PointF;->y:F
@@ -401,7 +426,7 @@
 
     iput v3, v1, Landroid/graphics/PointF;->y:F
 
-    .line 49
+    .line 54
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
     iget v1, v4, Landroid/graphics/PointF;->y:F
@@ -422,7 +447,7 @@
 .method public getInterpolation(F)F
     .locals 0
 
-    .line 42
+    .line 47
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getXForTime(F)F
 
     move-result p1
@@ -446,14 +471,14 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 56
+    .line 61
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getBezierCoordinateX(F)F
 
     move-result v2
 
     sub-float/2addr v2, p1
 
-    .line 57
+    .line 62
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -468,7 +493,7 @@
 
     goto :goto_1
 
-    .line 60
+    .line 65
     :cond_0
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getXDerivate(F)F
 

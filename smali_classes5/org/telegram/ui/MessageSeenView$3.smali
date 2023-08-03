@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/MessageSeenView;)V
     .locals 0
 
-    .line 315
+    .line 327
     iput-object p1, p0, Lorg/telegram/ui/MessageSeenView$3;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 337
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/MessageSeenView$3;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     iget-object v0, v0, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
@@ -58,12 +58,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 331
+    .line 343
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/MessageSeenView$UserCell;
 
-    .line 332
+    .line 344
     iget-object v0, p0, Lorg/telegram/ui/MessageSeenView$3;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     iget-object v0, v0, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
+    check-cast v0, Lorg/telegram/tgnet/TLObject;
 
     iget-object v1, p0, Lorg/telegram/ui/MessageSeenView$3;->this$0:Lorg/telegram/ui/MessageSeenView;
 
@@ -88,7 +88,7 @@
 
     move-result p2
 
-    invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/MessageSeenView$UserCell;->setUser(Lorg/telegram/tgnet/TLRPC$User;I)V
+    invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/MessageSeenView$UserCell;->setUser(Lorg/telegram/tgnet/TLObject;I)V
 
     return-void
 .end method
@@ -96,7 +96,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 324
+    .line 336
     new-instance p2, Lorg/telegram/ui/MessageSeenView$UserCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -105,7 +105,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/MessageSeenView$UserCell;-><init>(Landroid/content/Context;)V
 
-    .line 325
+    .line 337
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/16 v0, 0x32
@@ -120,7 +120,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 326
+    .line 338
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

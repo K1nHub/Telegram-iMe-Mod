@@ -19,7 +19,7 @@ public abstract class Transaction {
     private final TokenDetailed feeToken;
 
     /* renamed from: id */
-    private final String f432id;
+    private final String f435id;
     private final TransactionProcessingType processingType;
     private final Status status;
     private final TokenDetailed token;
@@ -30,7 +30,7 @@ public abstract class Transaction {
     }
 
     private Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenDetailed tokenDetailed, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenDetailed tokenDetailed2) {
-        this.f432id = str;
+        this.f435id = str;
         this.amount = bigDecimal;
         this.type = transactionType;
         this.direction = transactionDirection;
@@ -43,7 +43,7 @@ public abstract class Transaction {
     }
 
     public String getId() {
-        return this.f432id;
+        return this.f435id;
     }
 
     public BigDecimal getAmount() {
@@ -92,7 +92,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f445id;
+        private final String f448id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -173,7 +173,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f445id;
+            return this.f448id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -234,7 +234,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f445id = id;
+            this.f448id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -257,7 +257,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f444id;
+        private final String f447id;
         private final TransactionProcessingType processingType;
         private final String recipientUserId;
         private final Status status;
@@ -344,7 +344,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f444id;
+            return this.f447id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -410,7 +410,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(recipientUserId, "recipientUserId");
-            this.f444id = id;
+            this.f447id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -434,7 +434,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f441id;
+        private final String f444id;
         private final String invitedUserId;
         private final TransactionProcessingType processingType;
         private final Status status;
@@ -521,7 +521,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f441id;
+            return this.f444id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -587,7 +587,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(invitedUserId, "invitedUserId");
-            this.f441id = id;
+            this.f444id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -611,7 +611,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f440id;
+        private final String f443id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -692,7 +692,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f440id;
+            return this.f443id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -753,7 +753,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f440id = id;
+            this.f443id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -776,7 +776,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f439id;
+        private final String f442id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -857,7 +857,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f439id;
+            return this.f442id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -918,7 +918,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f439id = id;
+            this.f442id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -941,7 +941,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f443id;
+        private final String f446id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1022,7 +1022,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f443id;
+            return this.f446id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1083,7 +1083,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f443id = id;
+            this.f446id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1106,7 +1106,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f442id;
+        private final String f445id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1187,7 +1187,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f442id;
+            return this.f445id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1248,7 +1248,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f442id = id;
+            this.f445id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1271,7 +1271,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f433id;
+        private final String f436id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1280,7 +1280,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f433id;
+            return this.f436id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1346,7 +1346,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
-            this.f433id = id;
+            this.f436id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1373,7 +1373,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f435id;
+            private final String f438id;
             private final TransactionProcessingType processingType;
             private final String receiverAccountId;
             private final String recipientAddress;
@@ -1484,7 +1484,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f435id;
+                return this.f438id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1573,7 +1573,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
                 Intrinsics.checkNotNullParameter(senderAccountId, "senderAccountId");
                 Intrinsics.checkNotNullParameter(receiverAccountId, "receiverAccountId");
-                this.f435id = id;
+                this.f438id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1601,7 +1601,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f438id;
+            private final String f441id;
             private final String payloadMessage;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
@@ -1613,7 +1613,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f438id;
+                return this.f441id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1694,7 +1694,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                this.f438id = id;
+                this.f441id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1721,7 +1721,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f434id;
+            private final String f437id;
             private final TransactionProcessingType processingType;
             private final Status status;
             private final TokenDetailed token;
@@ -1808,7 +1808,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f434id;
+                return this.f437id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1875,7 +1875,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
                 Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                this.f434id = id;
+                this.f437id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1899,7 +1899,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f436id;
+            private final String f439id;
             private final String orderId;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
@@ -2016,7 +2016,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f436id;
+                return this.f439id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2108,7 +2108,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(orderId, "orderId");
                 Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
                 Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-                this.f436id = id;
+                this.f439id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -2137,7 +2137,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f437id;
+            private final String f440id;
             private final BigDecimal inputAmount;
             private final TokenDetailed inputToken;
             private final BigDecimal outputAmount;
@@ -2254,7 +2254,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f437id;
+                return this.f440id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2346,7 +2346,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(tradeType, "tradeType");
                 Intrinsics.checkNotNullParameter(inputAmount, "inputAmount");
                 Intrinsics.checkNotNullParameter(outputAmount, "outputAmount");
-                this.f437id = id;
+                this.f440id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;

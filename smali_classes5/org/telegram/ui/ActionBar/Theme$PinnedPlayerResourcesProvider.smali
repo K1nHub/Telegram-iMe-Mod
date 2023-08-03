@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 245
+    .line 246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,23 +37,25 @@
     return-void
 .end method
 
-.method public contains(I)Z
-    .locals 0
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
 
-    const/4 p1, 0x0
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
-    return p1
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getColor(I)I
     .locals 3
 
-    .line 251
+    .line 252
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
 
     if-eqz v0, :cond_2
 
-    .line 252
+    .line 253
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
@@ -66,7 +68,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 254
+    .line 255
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v2
@@ -77,7 +79,7 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 256
+    .line 257
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
@@ -89,7 +91,7 @@
     :cond_0
     if-ne v0, v1, :cond_1
 
-    .line 259
+    .line 260
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(I)I
 
     move-result p1
@@ -99,7 +101,7 @@
     :cond_1
     return v0
 
-    .line 264
+    .line 265
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 

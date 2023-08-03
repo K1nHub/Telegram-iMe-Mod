@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$F7uQaamwbyjNMKNXfWIpnxsPock(Landroid/view/View;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$QenSJ8-bLuu0X8qWqohXzloMjuI(Landroid/view/View;)V
 
     return-void
 .end method

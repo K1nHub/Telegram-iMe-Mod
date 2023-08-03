@@ -39,7 +39,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$MessageUserVote;",
+            "Lorg/telegram/tgnet/TLRPC$MessagePeerVote;",
             ">;"
         }
     .end annotation
@@ -50,35 +50,35 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;[B)V
     .locals 1
 
-    .line 117
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0xa
 
-    .line 115
+    .line 117
     iput v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsedCount:I
 
-    .line 118
+    .line 120
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->count:I
 
     iput v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
-    .line 119
+    .line 121
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->votes:Ljava/util/ArrayList;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
-    .line 120
+    .line 122
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->users:Ljava/util/ArrayList;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->users:Ljava/util/ArrayList;
 
-    .line 121
+    .line 123
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->next_offset:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->next_offset:Ljava/lang/String;
 
-    .line 122
+    .line 124
     iput-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
 
     return-void
@@ -89,7 +89,7 @@
 .method public getCollapsed()I
     .locals 2
 
-    .line 133
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -104,7 +104,7 @@
 
     return v0
 
-    .line 135
+    .line 137
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsed:Z
 
@@ -123,12 +123,12 @@
 .method public getCount()I
     .locals 2
 
-    .line 126
+    .line 128
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsed:Z
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 129
     iget v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsedCount:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
@@ -143,7 +143,7 @@
 
     return v0
 
-    .line 129
+    .line 131
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 

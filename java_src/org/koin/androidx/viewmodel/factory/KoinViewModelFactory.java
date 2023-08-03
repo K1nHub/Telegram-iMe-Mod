@@ -37,6 +37,17 @@ public final class KoinViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(Class<T> modelClass, CreationExtras extras) {
         Intrinsics.checkNotNullParameter(modelClass, "modelClass");
         Intrinsics.checkNotNullParameter(extras, "extras");
-        return (T) this.scope.get(this.kClass, this.qualifier, new KoinViewModelFactory$create$1(new AndroidParametersHolder(this.params, extras)));
+        final AndroidParametersHolder androidParametersHolder = new AndroidParametersHolder(this.params, extras);
+        return (T) this.scope.get(this.kClass, this.qualifier, new Function0<ParametersHolder>() { // from class: org.koin.androidx.viewmodel.factory.KoinViewModelFactory$create$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ParametersHolder invoke() {
+                return AndroidParametersHolder.this;
+            }
+        });
     }
 }

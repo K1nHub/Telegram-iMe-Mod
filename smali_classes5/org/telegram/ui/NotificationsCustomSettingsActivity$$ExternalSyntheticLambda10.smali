@@ -2,46 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
+.field public final synthetic f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+.field public final synthetic f$2:Landroid/view/View;
+
+.field public final synthetic f$3:I
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+    iput-object p3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$2:Landroid/view/View;
+
+    iput p4, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$3:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 7
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
-    move-object v1, p1
+    iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
 
-    move-object v2, p2
+    iget-object v2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$2:Landroid/view/View;
 
-    move-object v3, p3
+    iget v3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda10;->f$3:I
 
-    move v4, p4
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$eQS5-kHK9HjUe-Tv_3rTRTddY-w(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;I)V
 
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$0cME--JYrKjYL3PlYGxqNWR70P8(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

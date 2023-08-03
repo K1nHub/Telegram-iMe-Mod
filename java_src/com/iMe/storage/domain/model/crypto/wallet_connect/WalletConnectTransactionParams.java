@@ -76,7 +76,7 @@ public final class WalletConnectTransactionParams {
         GasPriceInfo gasPriceInfo = this.fastest;
         int hashCode = (((gasPriceInfo == null ? 0 : gasPriceInfo.hashCode()) * 31) + this.fast.hashCode()) * 31;
         GasPriceInfo gasPriceInfo2 = this.safeLow;
-        return ((((hashCode + (gasPriceInfo2 != null ? gasPriceInfo2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId);
+        return ((((hashCode + (gasPriceInfo2 != null ? gasPriceInfo2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
     }
 
     public String toString() {

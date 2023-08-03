@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/EmojiView$SearchField$2;
-.super Lorg/telegram/ui/Components/EditTextBoldCursor;
+.super Landroid/widget/FrameLayout;
 .source "EmojiView.java"
 
 
@@ -15,124 +15,199 @@
 
 
 # instance fields
-.field final synthetic this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+.field fadePaint:Landroid/graphics/Paint;
 
-.field final synthetic val$type:I
+.field final synthetic this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/content/Context;Lorg/telegram/ui/Components/EmojiView;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/content/Context;Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 1060
+    .line 1053
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    iput p4, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->val$type:I
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 11
 
-    .line 1063
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2200(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->isEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 1064
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-
-    .line 1066
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 1067
+    .line 1059
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;->isSearchOpened()Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1068
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    iget-object v1, v0, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2600(Lorg/telegram/ui/Components/EmojiView$SearchField;)F
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$2500(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/Components/EmojiView$SearchField;)V
+    move-result v0
 
-    .line 1070
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    cmpl-float v0, v0, v1
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
+    if-lez v0, :cond_1
 
-    move-result-object v0
+    .line 1060
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->fadePaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->val$type:I
+    const/16 v1, 0x12
 
-    const/4 v2, 0x1
+    if-nez v0, :cond_0
 
-    if-ne v1, v2, :cond_2
+    .line 1061
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->fadePaint:Landroid/graphics/Paint;
+
+    .line 1062
+    new-instance v10, Landroid/graphics/LinearGradient;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v5, v2
+
+    const/4 v6, 0x0
 
     const/4 v2, 0x2
 
-    :cond_2
-    invoke-interface {v0, v2}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;->onSearchOpenClose(I)V
+    new-array v7, v2, [I
+
+    fill-array-data v7, :array_0
+
+    new-array v8, v2, [F
+
+    fill-array-data v8, :array_1
+
+    sget-object v9, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    move-object v2, v10
+
+    invoke-direct/range {v2 .. v9}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 1063
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->fadePaint:Landroid/graphics/Paint;
+
+    new-instance v2, Landroid/graphics/PorterDuffXfermode;
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v3}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+
+    :cond_0
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    .line 1065
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v8, v0
+
+    const/16 v9, 0xff
+
+    const/16 v10, 0x1f
+
+    move-object v4, p1
+
+    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+
+    .line 1066
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    .line 1067
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->fadePaint:Landroid/graphics/Paint;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2600(Lorg/telegram/ui/Components/EmojiView$SearchField;)F
+
+    move-result v2
+
+    const/high16 v3, 0x437f0000    # 255.0f
+
+    mul-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    const/4 v4, 0x0
+
+    .line 1068
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->fadePaint:Landroid/graphics/Paint;
+
+    move-object v3, p1
+
+    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 1069
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    goto :goto_0
 
     .line 1071
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+    :cond_1
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2200(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+    :goto_0
+    return-void
 
-    move-result-object v0
+    nop
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+    :array_0
+    .array-data 4
+        -0x1
+        0x0
+    .end array-data
 
-    .line 1072
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$2;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2200(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
-
-    .line 1074
-    :cond_3
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method

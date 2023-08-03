@@ -8,9 +8,10 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class GeneratorSequence$iterator$1 implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
+public final class GeneratorSequence$iterator$1<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private T nextItem;
     private int nextState = -2;
     final /* synthetic */ GeneratorSequence<T> this$0;
@@ -30,22 +31,21 @@ public final class GeneratorSequence$iterator$1 implements Iterator<T>, KMappedM
         this.this$0 = generatorSequence;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private final void calcNext() {
         Function1 function1;
         T t;
         Function0 function0;
         if (this.nextState == -2) {
             function0 = ((GeneratorSequence) this.this$0).getInitialValue;
-            t = function0.invoke();
+            t = (T) function0.invoke();
         } else {
             function1 = ((GeneratorSequence) this.this$0).getNextValue;
             T t2 = this.nextItem;
             Intrinsics.checkNotNull(t2);
-            t = function1.invoke(t2);
+            t = (T) function1.invoke(t2);
         }
         this.nextItem = t;
-        this.nextState = t == 0 ? 0 : 1;
+        this.nextState = t == null ? 0 : 1;
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator

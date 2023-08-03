@@ -31,19 +31,19 @@ public final class ExceptionsConstructorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m1601constructorimpl;
+        Object m1620constructorimpl;
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1601constructorimpl = Result.m1601constructorimpl(((CopyableThrowable) e).createCopy());
+                m1620constructorimpl = Result.m1620constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
+                m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m1603isFailureimpl(m1601constructorimpl)) {
-                m1601constructorimpl = null;
+            if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+                m1620constructorimpl = null;
             }
-            return (E) m1601constructorimpl;
+            return (E) m1620constructorimpl;
         }
         return (E) ctorCache.get(e.getClass()).invoke(e);
     }
@@ -51,7 +51,12 @@ public final class ExceptionsConstructorKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final <E extends Throwable> Function1<Throwable, Throwable> createConstructor(Class<E> cls) {
         List<Constructor> sortedWith;
-        ExceptionsConstructorKt$createConstructor$nullResult$1 exceptionsConstructorKt$createConstructor$nullResult$1 = ExceptionsConstructorKt$createConstructor$nullResult$1.INSTANCE;
+        ExceptionsConstructorKt$createConstructor$nullResult$1 exceptionsConstructorKt$createConstructor$nullResult$1 = new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$nullResult$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Void invoke(Throwable th) {
+                return null;
+            }
+        };
         if (throwableFields != fieldsCountOrDefault(cls, 0)) {
             return exceptionsConstructorKt$createConstructor$nullResult$1;
         }
@@ -72,43 +77,151 @@ public final class ExceptionsConstructorKt {
         return exceptionsConstructorKt$createConstructor$nullResult$1;
     }
 
-    private static final Function1<Throwable, Throwable> createSafeConstructor(Constructor<?> constructor) {
+    private static final Function1<Throwable, Throwable> createSafeConstructor(final Constructor<?> constructor) {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
         int length = parameterTypes.length;
         if (length != 0) {
             if (length != 1) {
                 if (length == 2 && Intrinsics.areEqual(parameterTypes[0], String.class) && Intrinsics.areEqual(parameterTypes[1], Throwable.class)) {
-                    return new C3267x18164153(constructor);
+                    return new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createSafeConstructor$$inlined$safeCtor$1
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Throwable invoke(Throwable th) {
+                            Object m1620constructorimpl;
+                            Object newInstance;
+                            try {
+                                Result.Companion companion = Result.Companion;
+                                newInstance = constructor.newInstance(th.getMessage(), th);
+                            } catch (Throwable th2) {
+                                Result.Companion companion2 = Result.Companion;
+                                m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th2));
+                            }
+                            if (newInstance == null) {
+                                throw new NullPointerException("null cannot be cast to non-null type kotlin.Throwable");
+                            }
+                            m1620constructorimpl = Result.m1620constructorimpl((Throwable) newInstance);
+                            if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+                                m1620constructorimpl = null;
+                            }
+                            return (Throwable) m1620constructorimpl;
+                        }
+                    };
                 }
                 return null;
             }
             Class<?> cls = parameterTypes[0];
             if (Intrinsics.areEqual(cls, Throwable.class)) {
-                return new C3268x18164154(constructor);
+                return new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createSafeConstructor$$inlined$safeCtor$2
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Throwable invoke(Throwable th) {
+                        Object m1620constructorimpl;
+                        Object newInstance;
+                        try {
+                            Result.Companion companion = Result.Companion;
+                            newInstance = constructor.newInstance(th);
+                        } catch (Throwable th2) {
+                            Result.Companion companion2 = Result.Companion;
+                            m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th2));
+                        }
+                        if (newInstance == null) {
+                            throw new NullPointerException("null cannot be cast to non-null type kotlin.Throwable");
+                        }
+                        m1620constructorimpl = Result.m1620constructorimpl((Throwable) newInstance);
+                        if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+                            m1620constructorimpl = null;
+                        }
+                        return (Throwable) m1620constructorimpl;
+                    }
+                };
             }
             if (Intrinsics.areEqual(cls, String.class)) {
-                return new C3269x18164155(constructor);
+                return new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createSafeConstructor$$inlined$safeCtor$3
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Throwable invoke(Throwable th) {
+                        Object m1620constructorimpl;
+                        Object newInstance;
+                        try {
+                            Result.Companion companion = Result.Companion;
+                            newInstance = constructor.newInstance(th.getMessage());
+                        } catch (Throwable th2) {
+                            Result.Companion companion2 = Result.Companion;
+                            m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th2));
+                        }
+                        if (newInstance == null) {
+                            throw new NullPointerException("null cannot be cast to non-null type kotlin.Throwable");
+                        }
+                        Throwable th3 = (Throwable) newInstance;
+                        th3.initCause(th);
+                        m1620constructorimpl = Result.m1620constructorimpl(th3);
+                        if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+                            m1620constructorimpl = null;
+                        }
+                        return (Throwable) m1620constructorimpl;
+                    }
+                };
             }
             return null;
         }
-        return new C3270x18164156(constructor);
+        return new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createSafeConstructor$$inlined$safeCtor$4
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Throwable invoke(Throwable th) {
+                Object m1620constructorimpl;
+                Object newInstance;
+                try {
+                    Result.Companion companion = Result.Companion;
+                    newInstance = constructor.newInstance(new Object[0]);
+                } catch (Throwable th2) {
+                    Result.Companion companion2 = Result.Companion;
+                    m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th2));
+                }
+                if (newInstance == null) {
+                    throw new NullPointerException("null cannot be cast to non-null type kotlin.Throwable");
+                }
+                Throwable th3 = (Throwable) newInstance;
+                th3.initCause(th);
+                m1620constructorimpl = Result.m1620constructorimpl(th3);
+                if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+                    m1620constructorimpl = null;
+                }
+                return (Throwable) m1620constructorimpl;
+            }
+        };
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m1601constructorimpl;
+        Integer m1620constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m1601constructorimpl = Result.m1601constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m1620constructorimpl = Result.m1620constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
+            m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m1603isFailureimpl(m1601constructorimpl)) {
-            m1601constructorimpl = valueOf;
+        if (Result.m1622isFailureimpl(m1620constructorimpl)) {
+            m1620constructorimpl = valueOf;
         }
-        return ((Number) m1601constructorimpl).intValue();
+        return ((Number) m1620constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

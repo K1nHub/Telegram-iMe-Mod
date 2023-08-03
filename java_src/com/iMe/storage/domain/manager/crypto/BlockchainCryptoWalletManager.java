@@ -47,6 +47,7 @@ public abstract class BlockchainCryptoWalletManager {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     public final void rewriteWalletToNewGuid(String guid, String oldGuid, String mnemonic, String password, String address) {
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(oldGuid, "oldGuid");

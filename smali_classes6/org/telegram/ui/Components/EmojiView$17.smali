@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$17;
-.super Lorg/telegram/ui/Components/ListView/RecyclerListViewWithOverlayDraw;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,19 +15,21 @@
 
 
 # instance fields
-.field ignoreLayout:Z
+.field private ignoreLayout:Z
 
 .field final synthetic this$0:Lorg/telegram/ui/Components/EmojiView;
+
+.field private wasMeasured:Z
 
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2333
+    .line 2249
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ListView/RecyclerListViewWithOverlayDraw;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -37,22 +39,16 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 2339
+    .line 2256
     invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$1600(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v2
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v3
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -60,13 +56,15 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/RecyclerListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
+    const/4 v3, 0x0
+
     move-object v1, p1
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/ContentPreviewViewer;->onInterceptTouchEvent(Landroid/view/MotionEvent;Lorg/telegram/ui/Components/RecyclerListView;ILorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
 
     move-result v0
 
-    .line 2340
+    .line 2257
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -93,137 +91,123 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 2350
+    .line 2271
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9600(Lorg/telegram/ui/Components/EmojiView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9400(Lorg/telegram/ui/Components/EmojiView;)Z
 
     move-result v0
 
     const/4 v1, 0x1
 
+    const/4 v2, 0x0
+
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->getItemCount()I
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->getItemCount()I
 
     move-result v0
 
-    if-lez v0, :cond_0
+    if-le v0, v1, :cond_0
 
-    .line 2351
+    .line 2272
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$17;->ignoreLayout:Z
 
-    .line 2352
+    .line 2273
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9800(Lorg/telegram/ui/Components/EmojiView;)Landroidx/recyclerview/widget/GridLayoutManager;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$4000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
 
     move-result-object v0
 
-    const/4 v2, 0x0
-
     invoke-virtual {v0, v2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 2353
+    .line 2274
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$9602(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$3900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    .line 2354
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 2275
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v2}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->onPageScrolled(II)V
+
+    .line 2276
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$9402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+
+    .line 2277
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$17;->ignoreLayout:Z
 
-    .line 2356
+    .line 2279
     :cond_0
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 2357
+    .line 2280
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$5100(Lorg/telegram/ui/Components/EmojiView;Z)V
+    invoke-static {p1, v1, v2}, Lorg/telegram/ui/Components/EmojiView;->access$5200(Lorg/telegram/ui/Components/EmojiView;ZZ)V
 
     return-void
 .end method
 
-.method public onScrolled(II)V
-    .locals 1
+.method protected onMeasure(II)V
+    .locals 0
 
-    .line 2370
-    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
+    .line 2262
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->onMeasure(II)V
 
-    .line 2371
+    .line 2263
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->wasMeasured:Z
+
+    if-nez p1, :cond_0
+
+    .line 2264
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$9900(Lorg/telegram/ui/Components/EmojiView;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifAdapter;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->notifyDataSetChanged()V
 
-    .line 2372
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    const/4 p1, 0x1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$600(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$17;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object p2
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RecyclerListView;->canScrollVertically(I)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
-
-    move-result p2
-
-    goto :goto_0
+    .line 2265
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$17;->wasMeasured:Z
 
     :cond_0
-    const/4 p2, 0x0
-
-    :goto_0
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->setUnderlineHeight(I)V
-
-    :cond_1
     return-void
 .end method
 
 .method public requestLayout()V
     .locals 1
 
-    .line 2362
+    .line 2285
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$17;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2365
+    .line 2288
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
-
-    return-void
-.end method
-
-.method public setVisibility(I)V
-    .locals 0
-
-    .line 2345
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
     return-void
 .end method

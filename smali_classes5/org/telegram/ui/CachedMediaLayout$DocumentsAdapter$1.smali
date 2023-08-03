@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 729
+    .line 759
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter$1;->this$1:Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
@@ -37,14 +37,14 @@
 .method public onCheckBoxPressed()V
     .locals 4
 
-    .line 732
+    .line 762
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
-    .line 733
+    .line 763
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter$1;->this$1:Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/CachedMediaLayout$DocumentsAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;

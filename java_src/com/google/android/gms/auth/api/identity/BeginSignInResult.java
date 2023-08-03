@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class BeginSignInResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<BeginSignInResult> CREATOR = new zbb();
-    @SafeParcelable.Field(getter = "getPendingIntent", m779id = 1)
+    @SafeParcelable.Field(getter = "getPendingIntent", m797id = 1)
     private final PendingIntent zba;
 
     @SafeParcelable.Constructor
-    public BeginSignInResult(@SafeParcelable.Param(m778id = 1) PendingIntent pendingIntent) {
+    public BeginSignInResult(@SafeParcelable.Param(m796id = 1) PendingIntent pendingIntent) {
         this.zba = (PendingIntent) Preconditions.checkNotNull(pendingIntent);
     }
 

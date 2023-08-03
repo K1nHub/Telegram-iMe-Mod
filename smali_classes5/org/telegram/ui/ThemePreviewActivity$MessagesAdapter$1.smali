@@ -38,7 +38,7 @@
 .method public applyServiceShaderMatrix(IIFF)V
     .locals 1
 
-    .line 4911
+    .line 4906
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4912
+    .line 4907
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 4914
+    .line 4909
     :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$applyServiceShaderMatrix(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;IIFF)V
 
@@ -70,12 +70,14 @@
     return-void
 .end method
 
-.method public contains(I)Z
-    .locals 0
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
 
-    const/4 p1, 0x1
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
-    return p1
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getColor(I)I
@@ -118,14 +120,14 @@
 
     const-string v0, "drawableMsgOut"
 
-    .line 4891
+    .line 4886
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4892
+    .line 4887
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -137,14 +139,14 @@
     :cond_0
     const-string v0, "drawableMsgOutSelected"
 
-    .line 4894
+    .line 4889
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4895
+    .line 4890
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -156,14 +158,14 @@
     :cond_1
     const-string v0, "drawableMsgOutMedia"
 
-    .line 4897
+    .line 4892
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 4898
+    .line 4893
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -175,14 +177,14 @@
     :cond_2
     const-string v0, "drawableMsgOutMediaSelected"
 
-    .line 4900
+    .line 4895
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 4901
+    .line 4896
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -191,7 +193,7 @@
 
     return-object p1
 
-    .line 4903
+    .line 4898
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
@@ -203,7 +205,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 4904
+    .line 4899
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -218,7 +220,7 @@
 
     return-object p1
 
-    .line 4906
+    .line 4901
     :cond_4
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemeDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 

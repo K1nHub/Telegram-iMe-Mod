@@ -20,7 +20,7 @@ public final class RgbAdjustment implements RgbMatrix {
     @Override // com.google.android.exoplayer2.effect.RgbMatrix, com.google.android.exoplayer2.effect.GlEffect
     public /* synthetic */ SingleFrameGlTextureProcessor toGlTextureProcessor(Context context, boolean z) {
         SingleFrameGlTextureProcessor create;
-        create = MatrixTextureProcessor.create(context, ImmutableList.m744of(), ImmutableList.m743of(this), z);
+        create = MatrixTextureProcessor.create(context, ImmutableList.m762of(), ImmutableList.m761of(this), z);
         return create;
     }
 

@@ -34,7 +34,14 @@ import java.util.UUID;
 /* loaded from: classes.dex */
 public final class FrameworkMediaDrm implements ExoMediaDrm {
     private static final String CENC_SCHEME_MIME_TYPE = "cenc";
-    public static final ExoMediaDrm.Provider DEFAULT_PROVIDER = FrameworkMediaDrm$$ExternalSyntheticLambda3.INSTANCE;
+    public static final ExoMediaDrm.Provider DEFAULT_PROVIDER = new ExoMediaDrm.Provider() { // from class: com.google.android.exoplayer2.drm.FrameworkMediaDrm$$ExternalSyntheticLambda3
+        @Override // com.google.android.exoplayer2.drm.ExoMediaDrm.Provider
+        public final ExoMediaDrm acquireExoMediaDrm(UUID uuid) {
+            ExoMediaDrm lambda$static$0;
+            lambda$static$0 = FrameworkMediaDrm.lambda$static$0(uuid);
+            return lambda$static$0;
+        }
+    };
     private static final String MOCK_LA_URL = "<LA_URL>https://x</LA_URL>";
     private static final String MOCK_LA_URL_VALUE = "https://x";
     private static final String TAG = "FrameworkMediaDrm";
@@ -53,7 +60,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         try {
             return newInstance(uuid);
         } catch (UnsupportedDrmException unused) {
-            Log.m800e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
+            Log.m818e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
             return new DummyExoMediaDrm();
         }
     }
@@ -157,7 +164,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             try {
                 Api31.setLogSessionIdOnMediaDrmSession(this.mediaDrm, bArr, playerId);
             } catch (UnsupportedOperationException unused) {
-                Log.m796w(TAG, "setLogSessionId failed.");
+                Log.m814w(TAG, "setLogSessionId failed.");
             }
         }
     }
@@ -410,7 +417,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         short readLittleEndianShort = parsableByteArray.readLittleEndianShort();
         short readLittleEndianShort2 = parsableByteArray.readLittleEndianShort();
         if (readLittleEndianShort != 1 || readLittleEndianShort2 != 1) {
-            Log.m798i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
+            Log.m816i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
             return bArr;
         }
         short readLittleEndianShort3 = parsableByteArray.readLittleEndianShort();
@@ -420,7 +427,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             return bArr;
         }
         if (readString.indexOf("</DATA>") == -1) {
-            Log.m796w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
+            Log.m814w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
         }
         String str = readString.substring(0, indexOf) + MOCK_LA_URL + readString.substring(indexOf);
         int i = readLittleEndianInt + 52;

@@ -14,6 +14,7 @@ import com.google.android.exoplayer2.util.Util;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 final class DvbParser {
     private static final int DATA_TYPE_24_TABLE_DATA = 32;
@@ -150,7 +151,7 @@ final class DvbParser {
         int readBits3 = parsableBitArray.readBits(16);
         int bytePosition = parsableBitArray.getBytePosition() + readBits3;
         if (readBits3 * 8 > parsableBitArray.bitsLeft()) {
-            Log.m796w(TAG, "Data field length exceeds limit");
+            Log.m814w(TAG, "Data field length exceeds limit");
             parsableBitArray.skipBits(parsableBitArray.bitsLeft());
             return;
         }
@@ -175,32 +176,32 @@ final class DvbParser {
                 PageComposition pageComposition2 = subtitleService.pageComposition;
                 if (readBits2 == subtitleService.subtitlePageId && pageComposition2 != null) {
                     RegionComposition parseRegionComposition = parseRegionComposition(parsableBitArray, readBits3);
-                    if (pageComposition2.state == 0 && (regionComposition = subtitleService.regions.get(parseRegionComposition.f218id)) != null) {
+                    if (pageComposition2.state == 0 && (regionComposition = subtitleService.regions.get(parseRegionComposition.f220id)) != null) {
                         parseRegionComposition.mergeFrom(regionComposition);
                     }
-                    subtitleService.regions.put(parseRegionComposition.f218id, parseRegionComposition);
+                    subtitleService.regions.put(parseRegionComposition.f220id, parseRegionComposition);
                     break;
                 }
                 break;
             case 18:
                 if (readBits2 == subtitleService.subtitlePageId) {
                     ClutDefinition parseClutDefinition = parseClutDefinition(parsableBitArray, readBits3);
-                    subtitleService.cluts.put(parseClutDefinition.f216id, parseClutDefinition);
+                    subtitleService.cluts.put(parseClutDefinition.f218id, parseClutDefinition);
                     break;
                 } else if (readBits2 == subtitleService.ancillaryPageId) {
                     ClutDefinition parseClutDefinition2 = parseClutDefinition(parsableBitArray, readBits3);
-                    subtitleService.ancillaryCluts.put(parseClutDefinition2.f216id, parseClutDefinition2);
+                    subtitleService.ancillaryCluts.put(parseClutDefinition2.f218id, parseClutDefinition2);
                     break;
                 }
                 break;
             case 19:
                 if (readBits2 == subtitleService.subtitlePageId) {
                     ObjectData parseObjectData = parseObjectData(parsableBitArray);
-                    subtitleService.objects.put(parseObjectData.f217id, parseObjectData);
+                    subtitleService.objects.put(parseObjectData.f219id, parseObjectData);
                     break;
                 } else if (readBits2 == subtitleService.ancillaryPageId) {
                     ObjectData parseObjectData2 = parseObjectData(parsableBitArray);
-                    subtitleService.ancillaryObjects.put(parseObjectData2.f217id, parseObjectData2);
+                    subtitleService.ancillaryObjects.put(parseObjectData2.f219id, parseObjectData2);
                     break;
                 }
                 break;
@@ -391,7 +392,14 @@ final class DvbParser {
             if (i < 8) {
                 iArr[i] = getColor(255, (i & 1) != 0 ? 255 : 0, (i & 2) != 0 ? 255 : 0, (i & 4) != 0 ? 255 : 0);
             } else {
-                iArr[i] = getColor(255, (i & 1) != 0 ? 127 : 0, (i & 2) != 0 ? 127 : 0, (i & 4) == 0 ? 0 : 127);
+                int i2 = i & 1;
+                int i3 = MessagesStorage.LAST_DB_VERSION;
+                int i4 = i2 != 0 ? 127 : 0;
+                int i5 = (i & 2) != 0 ? 127 : 0;
+                if ((i & 4) == 0) {
+                    i3 = 0;
+                }
+                iArr[i] = getColor(255, i4, i5, i3);
             }
         }
         return iArr;
@@ -408,9 +416,9 @@ final class DvbParser {
                 if (i2 == 0) {
                     iArr[i] = getColor(255, ((i & 1) != 0 ? 85 : 0) + ((i & 16) != 0 ? 170 : 0), ((i & 2) != 0 ? 85 : 0) + ((i & 32) != 0 ? 170 : 0), ((i & 4) == 0 ? 0 : 85) + ((i & 64) == 0 ? 0 : 170));
                 } else if (i2 == 8) {
-                    iArr[i] = getColor(127, ((i & 1) != 0 ? 85 : 0) + ((i & 16) != 0 ? 170 : 0), ((i & 2) != 0 ? 85 : 0) + ((i & 32) != 0 ? 170 : 0), ((i & 4) == 0 ? 0 : 85) + ((i & 64) == 0 ? 0 : 170));
+                    iArr[i] = getColor(MessagesStorage.LAST_DB_VERSION, ((i & 1) != 0 ? 85 : 0) + ((i & 16) != 0 ? 170 : 0), ((i & 2) != 0 ? 85 : 0) + ((i & 32) != 0 ? 170 : 0), ((i & 4) == 0 ? 0 : 85) + ((i & 64) == 0 ? 0 : 170));
                 } else if (i2 == 128) {
-                    iArr[i] = getColor(255, ((i & 1) != 0 ? 43 : 0) + 127 + ((i & 16) != 0 ? 85 : 0), ((i & 2) != 0 ? 43 : 0) + 127 + ((i & 32) != 0 ? 85 : 0), ((i & 4) == 0 ? 0 : 43) + 127 + ((i & 64) == 0 ? 0 : 85));
+                    iArr[i] = getColor(255, ((i & 1) != 0 ? 43 : 0) + MessagesStorage.LAST_DB_VERSION + ((i & 16) != 0 ? 85 : 0), ((i & 2) != 0 ? 43 : 0) + MessagesStorage.LAST_DB_VERSION + ((i & 32) != 0 ? 85 : 0), ((i & 4) == 0 ? 0 : 43) + MessagesStorage.LAST_DB_VERSION + ((i & 64) == 0 ? 0 : 85));
                 } else if (i2 == 136) {
                     iArr[i] = getColor(255, ((i & 1) != 0 ? 43 : 0) + ((i & 16) != 0 ? 85 : 0), ((i & 2) != 0 ? 43 : 0) + ((i & 32) != 0 ? 85 : 0), ((i & 4) == 0 ? 0 : 43) + ((i & 64) == 0 ? 0 : 85));
                 }
@@ -762,7 +770,7 @@ final class DvbParser {
         public final int height;
 
         /* renamed from: id */
-        public final int f218id;
+        public final int f220id;
         public final int levelOfCompatibility;
         public final int pixelCode2Bit;
         public final int pixelCode4Bit;
@@ -771,7 +779,7 @@ final class DvbParser {
         public final int width;
 
         public RegionComposition(int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, SparseArray<RegionObject> sparseArray) {
-            this.f218id = i;
+            this.f220id = i;
             this.fillFlag = z;
             this.width = i2;
             this.height = i3;
@@ -820,10 +828,10 @@ final class DvbParser {
         public final int[] clutEntries8Bit;
 
         /* renamed from: id */
-        public final int f216id;
+        public final int f218id;
 
         public ClutDefinition(int i, int[] iArr, int[] iArr2, int[] iArr3) {
-            this.f216id = i;
+            this.f218id = i;
             this.clutEntries2Bit = iArr;
             this.clutEntries4Bit = iArr2;
             this.clutEntries8Bit = iArr3;
@@ -836,12 +844,12 @@ final class DvbParser {
         public final byte[] bottomFieldData;
 
         /* renamed from: id */
-        public final int f217id;
+        public final int f219id;
         public final boolean nonModifyingColorFlag;
         public final byte[] topFieldData;
 
         public ObjectData(int i, boolean z, byte[] bArr, byte[] bArr2) {
-            this.f217id = i;
+            this.f219id = i;
             this.nonModifyingColorFlag = z;
             this.topFieldData = bArr;
             this.bottomFieldData = bArr2;

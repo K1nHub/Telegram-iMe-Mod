@@ -348,7 +348,7 @@
 
     if-eqz p3, :cond_0
 
-    const/16 p2, 0xa
+    const/16 p2, 0xf
 
     .line 306
     :cond_0

@@ -36,7 +36,7 @@ public final class Format implements Bundleable {
     public final int height;
 
     /* renamed from: id */
-    public final String f182id;
+    public final String f184id;
     public final List<byte[]> initializationData;
     public final String label;
     public final String language;
@@ -89,7 +89,14 @@ public final class Format implements Bundleable {
     private static final String FIELD_CRYPTO_TYPE = Util.intToStringMaxRadix(29);
     private static final String FIELD_TILE_COUNT_HORIZONTAL = Util.intToStringMaxRadix(30);
     private static final String FIELD_TILE_COUNT_VERTICAL = Util.intToStringMaxRadix(31);
-    public static final Bundleable.Creator<Format> CREATOR = Format$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<Format> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Format$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            Format fromBundle;
+            fromBundle = Format.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     private static <T> T defaultIfNull(T t, T t2) {
         return t != null ? t : t2;
@@ -111,7 +118,7 @@ public final class Format implements Bundleable {
         private int height;
 
         /* renamed from: id */
-        private String f183id;
+        private String f185id;
         private List<byte[]> initializationData;
         private String label;
         private String language;
@@ -152,7 +159,7 @@ public final class Format implements Bundleable {
         }
 
         private Builder(Format format) {
-            this.f183id = format.f182id;
+            this.f185id = format.f184id;
             this.label = format.label;
             this.language = format.language;
             this.selectionFlags = format.selectionFlags;
@@ -187,12 +194,12 @@ public final class Format implements Bundleable {
         }
 
         public Builder setId(String str) {
-            this.f183id = str;
+            this.f185id = str;
             return this;
         }
 
         public Builder setId(int i) {
-            this.f183id = Integer.toString(i);
+            this.f185id = Integer.toString(i);
             return this;
         }
 
@@ -387,7 +394,7 @@ public final class Format implements Bundleable {
     }
 
     private Format(Builder builder) {
-        this.f182id = builder.f183id;
+        this.f184id = builder.f185id;
         this.label = builder.label;
         this.language = Util.normalizeLanguageCode(builder.language);
         this.selectionFlags = builder.selectionFlags;
@@ -460,7 +467,7 @@ public final class Format implements Bundleable {
             return this;
         }
         int trackType = MimeTypes.getTrackType(this.sampleMimeType);
-        String str2 = format.f182id;
+        String str2 = format.f184id;
         String str3 = format.label;
         if (str3 == null) {
             str3 = this.label;
@@ -542,12 +549,12 @@ public final class Format implements Bundleable {
     }
 
     public String toString() {
-        return "Format(" + this.f182id + ", " + this.label + ", " + this.containerMimeType + ", " + this.sampleMimeType + ", " + this.codecs + ", " + this.bitrate + ", " + this.language + ", [" + this.width + ", " + this.height + ", " + this.frameRate + "], [" + this.channelCount + ", " + this.sampleRate + "])";
+        return "Format(" + this.f184id + ", " + this.label + ", " + this.containerMimeType + ", " + this.sampleMimeType + ", " + this.codecs + ", " + this.bitrate + ", " + this.language + ", [" + this.width + ", " + this.height + ", " + this.frameRate + "], [" + this.channelCount + ", " + this.sampleRate + "])";
     }
 
     public int hashCode() {
         if (this.hashCode == 0) {
-            String str = this.f182id;
+            String str = this.f184id;
             int hashCode = (527 + (str == null ? 0 : str.hashCode())) * 31;
             String str2 = this.label;
             int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
@@ -576,7 +583,7 @@ public final class Format implements Bundleable {
         Format format = (Format) obj;
         int i2 = this.hashCode;
         if (i2 == 0 || (i = format.hashCode) == 0 || i2 == i) {
-            return this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Util.areEqual(this.f182id, format.f182id) && Util.areEqual(this.label, format.label) && Util.areEqual(this.codecs, format.codecs) && Util.areEqual(this.containerMimeType, format.containerMimeType) && Util.areEqual(this.sampleMimeType, format.sampleMimeType) && Util.areEqual(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Util.areEqual(this.metadata, format.metadata) && Util.areEqual(this.colorInfo, format.colorInfo) && Util.areEqual(this.drmInitData, format.drmInitData) && initializationDataEquals(format);
+            return this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Util.areEqual(this.f184id, format.f184id) && Util.areEqual(this.label, format.label) && Util.areEqual(this.codecs, format.codecs) && Util.areEqual(this.containerMimeType, format.containerMimeType) && Util.areEqual(this.sampleMimeType, format.sampleMimeType) && Util.areEqual(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Util.areEqual(this.metadata, format.metadata) && Util.areEqual(this.colorInfo, format.colorInfo) && Util.areEqual(this.drmInitData, format.drmInitData) && initializationDataEquals(format);
         }
         return false;
     }
@@ -599,7 +606,7 @@ public final class Format implements Bundleable {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("id=");
-        sb.append(format.f182id);
+        sb.append(format.f184id);
         sb.append(", mimeType=");
         sb.append(format.sampleMimeType);
         if (format.bitrate != -1) {
@@ -635,7 +642,7 @@ public final class Format implements Bundleable {
                 i++;
             }
             sb.append(", drm=[");
-            Joiner.m748on(',').appendTo(sb, linkedHashSet);
+            Joiner.m766on(',').appendTo(sb, linkedHashSet);
             sb.append(']');
         }
         if (format.width != -1 && format.height != -1) {
@@ -676,7 +683,7 @@ public final class Format implements Bundleable {
                 arrayList.add("forced");
             }
             sb.append(", selectionFlags=[");
-            Joiner.m748on(',').appendTo(sb, arrayList);
+            Joiner.m766on(',').appendTo(sb, arrayList);
             sb.append("]");
         }
         if (format.roleFlags != 0) {
@@ -727,7 +734,7 @@ public final class Format implements Bundleable {
                 arrayList2.add("trick-play");
             }
             sb.append(", roleFlags=[");
-            Joiner.m748on(',').appendTo(sb, arrayList2);
+            Joiner.m766on(',').appendTo(sb, arrayList2);
             sb.append("]");
         }
         return sb.toString();
@@ -740,7 +747,7 @@ public final class Format implements Bundleable {
 
     public Bundle toBundle(boolean z) {
         Bundle bundle = new Bundle();
-        bundle.putString(FIELD_ID, this.f182id);
+        bundle.putString(FIELD_ID, this.f184id);
         bundle.putString(FIELD_LABEL, this.label);
         bundle.putString(FIELD_LANGUAGE, this.language);
         bundle.putInt(FIELD_SELECTION_FLAGS, this.selectionFlags);
@@ -788,7 +795,7 @@ public final class Format implements Bundleable {
         BundleableUtil.ensureClassLoader(bundle);
         String string = bundle.getString(FIELD_ID);
         Format format = DEFAULT;
-        builder.setId((String) defaultIfNull(string, format.f182id)).setLabel((String) defaultIfNull(bundle.getString(FIELD_LABEL), format.label)).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setMetadata((Metadata) defaultIfNull((Metadata) bundle.getParcelable(FIELD_METADATA), format.metadata)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
+        builder.setId((String) defaultIfNull(string, format.f184id)).setLabel((String) defaultIfNull(bundle.getString(FIELD_LABEL), format.label)).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setMetadata((Metadata) defaultIfNull((Metadata) bundle.getParcelable(FIELD_METADATA), format.metadata)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
         ArrayList arrayList = new ArrayList();
         int i = 0;
         while (true) {

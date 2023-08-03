@@ -7,10 +7,10 @@ import kotlin.coroutines.Continuation;
 public final class ThrowingCollector implements FlowCollector<Object> {
 
     /* renamed from: e */
-    public final Throwable f1305e;
+    public final Throwable f1308e;
 
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(Object obj, Continuation<? super Unit> continuation) {
-        throw this.f1305e;
+        throw this.f1308e;
     }
 }

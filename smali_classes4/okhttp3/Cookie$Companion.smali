@@ -1099,7 +1099,7 @@
     goto :goto_4
 
     :cond_7
-    const-string v14, "path"
+    const-string/jumbo v14, "path"
 
     .line 429
     invoke-static {v9, v14, v4}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z

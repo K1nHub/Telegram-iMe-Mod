@@ -7,7 +7,6 @@ import kotlin.coroutines.ContinuationInterceptor;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Lambda;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.LimitedDispatcher;
 import kotlinx.coroutines.internal.LimitedDispatcherKt;
@@ -17,7 +16,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo1631dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo1650dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -44,27 +43,16 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
             this();
         }
 
-        /* compiled from: CoroutineDispatcher.kt */
-        /* renamed from: kotlinx.coroutines.CoroutineDispatcher$Key$1 */
-        /* loaded from: classes4.dex */
-        static final class C32631 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
-            public static final C32631 INSTANCE = new C32631();
-
-            C32631() {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final CoroutineDispatcher invoke(CoroutineContext.Element element) {
-                if (element instanceof CoroutineDispatcher) {
-                    return (CoroutineDispatcher) element;
-                }
-                return null;
-            }
-        }
-
         private Key() {
-            super(ContinuationInterceptor.Key, C32631.INSTANCE);
+            super(ContinuationInterceptor.Key, new Function1<CoroutineContext.Element, CoroutineDispatcher>() { // from class: kotlinx.coroutines.CoroutineDispatcher.Key.1
+                @Override // kotlin.jvm.functions.Function1
+                public final CoroutineDispatcher invoke(CoroutineContext.Element element) {
+                    if (element instanceof CoroutineDispatcher) {
+                        return (CoroutineDispatcher) element;
+                    }
+                    return null;
+                }
+            });
         }
     }
 

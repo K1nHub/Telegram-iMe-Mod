@@ -132,7 +132,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "originalRequest"
+    const-string/jumbo v0, "originalRequest"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1025,7 +1025,7 @@
 
     move-result-object v0
 
-    const-string v2, "permessage-deflate"
+    const-string/jumbo v2, "permessage-deflate"
 
     .line 162
     invoke-virtual {v0, v1, v2}, Lokhttp3/Request$Builder;->header(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
@@ -1676,7 +1676,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "payload"
+    const-string/jumbo v0, "payload"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1743,7 +1743,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "payload"
+    const-string/jumbo v0, "payload"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

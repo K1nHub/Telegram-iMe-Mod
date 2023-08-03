@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 49470
+    .line 50376
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_wallPaperNoFile;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 49475
+    .line 50381
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v3
 
-    .line 49476
+    .line 50382
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->isDefault:Z
 
@@ -63,7 +63,7 @@
     :cond_1
     move v2, v3
 
-    .line 49477
+    .line 50383
     :goto_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->dark:Z
 
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 49479
+    .line 50385
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -89,12 +89,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 49484
+    .line 50390
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaperNoFile_layer128;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 49485
+    .line 50391
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->isDefault:Z
 
     if-eqz v0, :cond_0
@@ -113,7 +113,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
-    .line 49486
+    .line 50392
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->dark:Z
 
     if-eqz v1, :cond_1
@@ -128,17 +128,17 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
-    .line 49487
+    .line 50393
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 49488
+    .line 50394
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_2
 
-    .line 49489
+    .line 50395
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

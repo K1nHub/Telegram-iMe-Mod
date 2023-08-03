@@ -4,8 +4,10 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
+import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RxExt.kt */
@@ -22,7 +24,24 @@ public final class RxExtKt {
     public static final <T> Observable<T> withLoadingDialog(Observable<T> observable, final BaseView viewState, final boolean z) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
         Intrinsics.checkNotNullParameter(viewState, "viewState");
-        final RxExtKt$withLoadingDialog$1 rxExtKt$withLoadingDialog$1 = new RxExtKt$withLoadingDialog$1(viewState, z);
+        final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.utils.extentions.rx.RxExtKt$withLoadingDialog$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Disposable disposable) {
+                invoke2(disposable);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Disposable disposable) {
+                BaseView.this.showLoadingDialog(true, z, disposable);
+            }
+        };
         Observable<T> doFinally = observable.doOnSubscribe(new Consumer() { // from class: com.iMe.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
@@ -58,7 +77,24 @@ public final class RxExtKt {
     public static final Completable withLoadingDialog(Completable completable, final BaseView viewState, final boolean z) {
         Intrinsics.checkNotNullParameter(completable, "<this>");
         Intrinsics.checkNotNullParameter(viewState, "viewState");
-        final RxExtKt$withLoadingDialog$5 rxExtKt$withLoadingDialog$5 = new RxExtKt$withLoadingDialog$5(viewState, z);
+        final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.utils.extentions.rx.RxExtKt$withLoadingDialog$5
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Disposable disposable) {
+                invoke2(disposable);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Disposable disposable) {
+                BaseView.this.showLoadingDialog(true, z, disposable);
+            }
+        };
         Completable doFinally = completable.doOnSubscribe(new Consumer() { // from class: com.iMe.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
@@ -87,7 +123,24 @@ public final class RxExtKt {
     public static final <T> Observable<T> withLoadingUpdate(Observable<T> observable, final Callbacks$Callback1<Boolean> loadingUpdateAction) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
         Intrinsics.checkNotNullParameter(loadingUpdateAction, "loadingUpdateAction");
-        final RxExtKt$withLoadingUpdate$1 rxExtKt$withLoadingUpdate$1 = new RxExtKt$withLoadingUpdate$1(loadingUpdateAction);
+        final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.utils.extentions.rx.RxExtKt$withLoadingUpdate$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Disposable disposable) {
+                invoke2(disposable);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Disposable disposable) {
+                loadingUpdateAction.invoke(Boolean.TRUE);
+            }
+        };
         Observable<T> doFinally = observable.doOnSubscribe(new Consumer() { // from class: com.iMe.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {

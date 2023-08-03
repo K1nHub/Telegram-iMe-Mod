@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.fork.p024ui.dialog.SelectLanguageBottomSheet;
 import com.iMe.fork.p024ui.view.EmptyView;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.translation.TranslationLanguageUiModel;
@@ -30,12 +31,13 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -95,17 +97,93 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         this.languages = languages;
         this.selectedLangCode = str;
         this.selectLanguageDelegate = selectLanguageDelegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$topShadow$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$topShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = SelectLanguageBottomSheet.this.initShadow(true);
+                return initShadow;
+            }
+        });
         this.topShadow$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$searchView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<SelectLanguageBottomSheet$initSearchView$1>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$searchView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectLanguageBottomSheet$initSearchView$1 invoke() {
+                SelectLanguageBottomSheet$initSearchView$1 initSearchView;
+                initSearchView = SelectLanguageBottomSheet.this.initSearchView();
+                return initSearchView;
+            }
+        });
         this.searchView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$listView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<SelectLanguageBottomSheet$initListView$1>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectLanguageBottomSheet$initListView$1 invoke() {
+                SelectLanguageBottomSheet$initListView$1 initListView;
+                initListView = SelectLanguageBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$listAdapter$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectLanguageBottomSheet.ListAdapter invoke() {
+                return new SelectLanguageBottomSheet.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$bottomShadow$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$bottomShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = SelectLanguageBottomSheet.this.initShadow(false);
+                return initShadow;
+            }
+        });
         this.bottomShadow$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new SelectLanguageBottomSheet$cancelButton$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$cancelButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initCancelButton;
+                initCancelButton = SelectLanguageBottomSheet.this.initCancelButton();
+                return initCancelButton;
+            }
+        });
         this.cancelButton$delegate = lazy6;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.filteredLanguages = emptyList;
@@ -186,7 +264,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
         };
-        r2.setHint(LocaleController.getInternalString(C3417R.string.translation_search_language));
+        r2.setHint(LocaleController.getInternalString(C3419R.string.translation_search_language));
         return r2;
     }
 
@@ -198,7 +276,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Cancel", C3417R.string.Cancel));
+        textView.setText(LocaleController.getString("Cancel", C3419R.string.Cancel));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -455,17 +533,17 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             SelectLanguageBottomSheet.this.ignoreLayout = true;
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
             SelectLanguageBottomSheet.this.ignoreLayout = false;
-            SelectLanguageBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(28);
+            SelectLanguageBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(28);
             if (!SelectLanguageBottomSheet.this.getCurrentItemsList().isEmpty()) {
-                ceil = ((int) Math.ceil(SelectLanguageBottomSheet.this.getCurrentItemsList().size())) * AndroidUtilities.m54dp(50);
+                ceil = ((int) Math.ceil(SelectLanguageBottomSheet.this.getCurrentItemsList().size())) * AndroidUtilities.m72dp(50);
             } else {
-                ceil = AndroidUtilities.m54dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                ceil = AndroidUtilities.m72dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
             }
-            int m54dp = AndroidUtilities.m54dp(110) + ceil + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int m72dp = AndroidUtilities.m72dp(110) + ceil + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
-            int i3 = ((double) m54dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m54dp < size) {
-                i3 -= size - m54dp;
+            int i3 = ((double) m72dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m72dp < size) {
+                i3 -= size - m72dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop;
@@ -475,8 +553,8 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet.this.getListView().setPadding(0, i3, 0, 0);
                 SelectLanguageBottomSheet.this.ignoreLayout = false;
             }
-            this.fullHeight = m54dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
+            this.fullHeight = m72dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m72dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -503,12 +581,12 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m54dp = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
-            int m54dp2 = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop;
+            int m72dp = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m72dp(6);
+            int m72dp2 = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m72dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(15) + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m54dp2 + i2;
-            int i4 = m54dp + i2;
+            int i3 = m72dp2 + i2;
+            int i4 = m72dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3;
@@ -532,13 +610,13 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             ((BottomSheet) SelectLanguageBottomSheet.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m72dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m54dp3 = AndroidUtilities.m54dp(36);
-            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            int m72dp3 = AndroidUtilities.m72dp(36);
+            this.rect.set((getMeasuredWidth() - m72dp3) / 2.0f, i4, (getMeasuredWidth() + m72dp3) / 2.0f, i4 + AndroidUtilities.m72dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int color = Theme.getColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(color) * 0.8f), (int) (Color.green(color) * 0.8f), (int) (Color.blue(color) * 0.8f)));
@@ -580,7 +658,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             if (i == IdFabric$ViewTypes.EMPTY_VIEW) {
                 Context context = SelectLanguageBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
-                String internalString = LocaleController.getInternalString(C3417R.string.translation_search_language_empty);
+                String internalString = LocaleController.getInternalString(C3419R.string.translation_search_language_empty);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…on_search_language_empty)");
                 textCellWithRightImage = new EmptyView(context, internalString);
                 textCellWithRightImage.setLayoutParams(LayoutHelper.createRecycler(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION));
@@ -606,7 +684,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet selectLanguageBottomSheet = SelectLanguageBottomSheet.this;
                 textCellWithRightImage.setText(((TranslationLanguageUiModel) selectLanguageBottomSheet.getCurrentItemsList().get(i)).getDisplayLanguage(), z);
                 textCellWithRightImage.setRightIconVisible(selectLanguageBottomSheet.isSelectedLanguagePosition(i));
-                textCellWithRightImage.setRightIcon(C3417R.C3419drawable.ic_ab_done, Theme.getColor(Theme.key_chats_actionBackground));
+                textCellWithRightImage.setRightIcon(C3419R.C3421drawable.ic_ab_done, Theme.getColor(Theme.key_chats_actionBackground));
             } else if (itemViewType == IdFabric$ViewTypes.EMPTY_VIEW) {
                 View view2 = holder.itemView;
                 Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.iMe.fork.ui.view.EmptyView");

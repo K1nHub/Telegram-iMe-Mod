@@ -2,9 +2,10 @@ package com.google.android.gms.internal.vision;
 
 import java.util.AbstractMap;
 import java.util.Map;
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-final class zzeu extends zzee<Map.Entry<K, V>> {
+final class zzeu<K, V> extends zzee<Map.Entry<K, V>> {
     private final /* synthetic */ zzer zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */

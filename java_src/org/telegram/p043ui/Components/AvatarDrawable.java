@@ -19,7 +19,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserObject;
@@ -89,7 +89,7 @@ public class AvatarDrawable extends Drawable {
         TextPaint textPaint = new TextPaint(1);
         this.namePaint = textPaint;
         textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.namePaint.setTextSize(AndroidUtilities.m54dp(18));
+        this.namePaint.setTextSize(AndroidUtilities.m72dp(18));
     }
 
     public AvatarDrawable(TLRPC$User tLRPC$User) {
@@ -103,7 +103,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$User tLRPC$User, boolean z) {
         this();
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1656id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1675id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -111,7 +111,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$Chat tLRPC$Chat, boolean z) {
         this();
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1515id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1518id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -145,7 +145,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$User tLRPC$User) {
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1656id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1675id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -237,7 +237,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$Chat tLRPC$Chat) {
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1515id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1518id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -277,7 +277,7 @@ public class AvatarDrawable extends Drawable {
         return this.needApplyColorAccent ? Theme.changeColorAccent(this.color2) : this.color2;
     }
 
-    private String takeFirstCharacter(String str) {
+    private static String takeFirstCharacter(String str) {
         ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(str);
         if (parseEmojis != null && !parseEmojis.isEmpty() && parseEmojis.get(0).start == 0) {
             return str.substring(0, parseEmojis.get(0).end);
@@ -297,13 +297,17 @@ public class AvatarDrawable extends Drawable {
             str = str2;
             str2 = null;
         }
-        this.stringBuilder.setLength(0);
+        getAvatarSymbols(str, str2, str3, this.stringBuilder);
+    }
+
+    public static void getAvatarSymbols(String str, String str2, String str3, StringBuilder sb) {
+        sb.setLength(0);
         if (str3 != null) {
-            this.stringBuilder.append(str3);
+            sb.append(str3);
             return;
         }
         if (str != null && str.length() > 0) {
-            this.stringBuilder.append(takeFirstCharacter(str));
+            sb.append(takeFirstCharacter(str));
         }
         if (str2 != null && str2.length() > 0) {
             int lastIndexOf = str2.lastIndexOf(32);
@@ -311,17 +315,17 @@ public class AvatarDrawable extends Drawable {
                 str2 = str2.substring(lastIndexOf + 1);
             }
             if (Build.VERSION.SDK_INT > 17) {
-                this.stringBuilder.append("\u200c");
+                sb.append("\u200c");
             }
-            this.stringBuilder.append(takeFirstCharacter(str2));
+            sb.append(takeFirstCharacter(str2));
         } else if (str != null && str.length() > 0) {
             for (int length = str.length() - 1; length >= 0; length--) {
                 if (str.charAt(length) == ' ' && length != str.length() - 1 && str.charAt(length + 1) != ' ') {
-                    int length2 = this.stringBuilder.length();
+                    int length2 = sb.length();
                     if (Build.VERSION.SDK_INT > 17) {
-                        this.stringBuilder.append("\u200c");
+                        sb.append("\u200c");
                     }
-                    this.stringBuilder.append(takeFirstCharacter(str.substring(length2)));
+                    sb.append(takeFirstCharacter(str.substring(length2)));
                     return;
                 }
             }
@@ -399,12 +403,12 @@ public class AvatarDrawable extends Drawable {
             canvas.restore();
         } else if (i2 != 0) {
             if (i2 == 101) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3417R.C3419drawable.fork_templates_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3419R.C3421drawable.fork_templates_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }
             } else if (i2 == 100) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3417R.C3419drawable.fork_filter_icon_lock_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3419R.C3421drawable.fork_filter_icon_lock_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }
@@ -412,7 +416,7 @@ public class AvatarDrawable extends Drawable {
                 drawable = Theme.avatarDrawables[0];
                 drawable.setBounds(0, 0, width, width);
             } else {
-                drawable = i2 == 4 ? Theme.avatarDrawables[2] : i2 == 5 ? Theme.avatarDrawables[3] : i2 == 6 ? Theme.avatarDrawables[4] : i2 == 7 ? Theme.avatarDrawables[5] : i2 == 8 ? Theme.avatarDrawables[6] : i2 == 9 ? Theme.avatarDrawables[7] : i2 == 10 ? Theme.avatarDrawables[8] : i2 == 3 ? Theme.avatarDrawables[10] : i2 == 12 ? Theme.avatarDrawables[11] : i2 == 14 ? Theme.avatarDrawables[12] : Theme.avatarDrawables[9];
+                drawable = i2 == 4 ? Theme.avatarDrawables[2] : i2 == 5 ? Theme.avatarDrawables[3] : i2 == 6 ? Theme.avatarDrawables[4] : i2 == 7 ? Theme.avatarDrawables[5] : i2 == 8 ? Theme.avatarDrawables[6] : i2 == 9 ? Theme.avatarDrawables[7] : i2 == 10 ? Theme.avatarDrawables[8] : i2 == 3 ? Theme.avatarDrawables[10] : i2 == 12 ? Theme.avatarDrawables[11] : i2 == 14 ? Theme.avatarDrawables[12] : i2 == 15 ? Theme.avatarDrawables[13] : Theme.avatarDrawables[9];
             }
             if (drawable != null) {
                 int intrinsicWidth2 = (int) (drawable.getIntrinsicWidth() * this.scaleSize);
@@ -435,10 +439,10 @@ public class AvatarDrawable extends Drawable {
                 if (drawableArr[1] != null) {
                     int intrinsicWidth3 = drawableArr[1].getIntrinsicWidth();
                     int intrinsicHeight3 = Theme.avatarDrawables[1].getIntrinsicHeight();
-                    if (intrinsicWidth3 > width - AndroidUtilities.m54dp(6) || intrinsicHeight3 > width - AndroidUtilities.m54dp(6)) {
-                        float m54dp = width / AndroidUtilities.m54dp(50);
-                        intrinsicWidth3 = (int) (intrinsicWidth3 * m54dp);
-                        intrinsicHeight3 = (int) (intrinsicHeight3 * m54dp);
+                    if (intrinsicWidth3 > width - AndroidUtilities.m72dp(6) || intrinsicHeight3 > width - AndroidUtilities.m72dp(6)) {
+                        float m72dp = width / AndroidUtilities.m72dp(50);
+                        intrinsicWidth3 = (int) (intrinsicWidth3 * m72dp);
+                        intrinsicHeight3 = (int) (intrinsicHeight3 * m72dp);
                     }
                     int i11 = (width - intrinsicWidth3) / 2;
                     int i12 = (width - intrinsicHeight3) / 2;
@@ -449,11 +453,11 @@ public class AvatarDrawable extends Drawable {
             if (this.invalidateTextLayout) {
                 this.invalidateTextLayout = false;
                 if (this.stringBuilder.length() > 0) {
-                    CharSequence replaceEmoji = Emoji.replaceEmoji(this.stringBuilder.toString().toUpperCase(), this.namePaint.getFontMetricsInt(), AndroidUtilities.m54dp(16), true);
+                    CharSequence replaceEmoji = Emoji.replaceEmoji(this.stringBuilder.toString().toUpperCase(), this.namePaint.getFontMetricsInt(), AndroidUtilities.m72dp(16), true);
                     StaticLayout staticLayout = this.textLayout;
                     if (staticLayout == null || !TextUtils.equals(replaceEmoji, staticLayout.getText())) {
                         try {
-                            StaticLayout staticLayout2 = new StaticLayout(replaceEmoji, this.namePaint, AndroidUtilities.m54dp(100), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                            StaticLayout staticLayout2 = new StaticLayout(replaceEmoji, this.namePaint, AndroidUtilities.m72dp(100), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                             this.textLayout = staticLayout2;
                             if (staticLayout2.getLineCount() > 0) {
                                 this.textLeft = this.textLayout.getLineLeft(0);
@@ -461,7 +465,7 @@ public class AvatarDrawable extends Drawable {
                                 this.textHeight = this.textLayout.getLineBottom(0);
                             }
                         } catch (Exception e) {
-                            FileLog.m49e(e);
+                            FileLog.m67e(e);
                         }
                     }
                 } else {
@@ -470,9 +474,9 @@ public class AvatarDrawable extends Drawable {
             }
             if (this.textLayout != null) {
                 float f5 = width;
-                float m54dp2 = f5 / AndroidUtilities.m54dp(50);
+                float m72dp2 = f5 / AndroidUtilities.m72dp(50);
                 float f6 = f5 / 2.0f;
-                canvas.scale(m54dp2, m54dp2, f6, f6);
+                canvas.scale(m72dp2, m72dp2, f6, f6);
                 canvas.translate(((f5 - this.textWidth) / 2.0f) - this.textLeft, (f5 - this.textHeight) / 2.0f);
                 this.textLayout.draw(canvas);
             }

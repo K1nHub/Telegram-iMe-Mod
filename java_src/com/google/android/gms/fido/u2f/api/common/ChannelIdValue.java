@@ -14,11 +14,11 @@ import org.json.JSONObject;
 @Deprecated
 /* loaded from: classes.dex */
 public class ChannelIdValue extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getTypeAsInt", m779id = 2, type = "int")
+    @SafeParcelable.Field(getter = "getTypeAsInt", m797id = 2, type = "int")
     private final ChannelIdValueType zza;
-    @SafeParcelable.Field(getter = "getStringValue", m779id = 3)
+    @SafeParcelable.Field(getter = "getStringValue", m797id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getObjectValueAsString", m779id = 4)
+    @SafeParcelable.Field(getter = "getObjectValueAsString", m797id = 4)
     private final String zzc;
     public static final Parcelable.Creator<ChannelIdValue> CREATOR = new zzb();
     public static final ChannelIdValue ABSENT = new ChannelIdValue();
@@ -153,7 +153,7 @@ public class ChannelIdValue extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ChannelIdValue(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2) {
+    public ChannelIdValue(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2) {
         try {
             this.zza = toChannelIdValueType(i);
             this.zzb = str;

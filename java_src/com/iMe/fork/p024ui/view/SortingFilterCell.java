@@ -15,6 +15,7 @@ import com.iMe.fork.models.SortingTabState;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -55,20 +56,115 @@ public final class SortingFilterCell extends LinearLayout {
         Lazy lazy6;
         Lazy lazy7;
         Intrinsics.checkNotNullParameter(context, "context");
-        this.onFabsClick = SortingFilterCell$$ExternalSyntheticLambda1.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$checkBox$2(this));
+        this.onFabsClick = new Runnable() { // from class: com.iMe.fork.ui.view.SortingFilterCell$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                SortingFilterCell.onFabsClick$lambda$0();
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<CheckBoxSquare>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$checkBox$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final CheckBoxSquare invoke() {
+                CheckBoxSquare initCheckBox;
+                initCheckBox = SortingFilterCell.this.initCheckBox();
+                return initCheckBox;
+            }
+        });
         this.checkBox$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$iconView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$iconView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initIconView;
+                initIconView = SortingFilterCell.this.initIconView();
+                return initIconView;
+            }
+        });
         this.iconView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$textView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTextView;
+                initTextView = SortingFilterCell.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$checkBoxLayout$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$checkBoxLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initCheckBoxLayout;
+                initCheckBoxLayout = SortingFilterCell.this.initCheckBoxLayout();
+                return initCheckBoxLayout;
+            }
+        });
         this.checkBoxLayout$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$verticalDivider$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$verticalDivider$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initVerticalDivider;
+                initVerticalDivider = SortingFilterCell.this.initVerticalDivider();
+                return initVerticalDivider;
+            }
+        });
         this.verticalDivider$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$fabsLayout$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$fabsLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initFabsLayout;
+                initFabsLayout = SortingFilterCell.this.initFabsLayout();
+                return initFabsLayout;
+            }
+        });
         this.fabsLayout$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new SortingFilterCell$fabsView$2(this));
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<FabsView>() { // from class: com.iMe.fork.ui.view.SortingFilterCell$fabsView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FabsView invoke() {
+                FabsView initFabsView;
+                initFabsView = SortingFilterCell.this.initFabsView();
+                return initFabsView;
+            }
+        });
         this.fabsView$delegate = lazy7;
         setGravity(16);
         addView(getCheckBoxLayout(), LayoutHelper.createLinear(0, -1, 1.0f));
@@ -157,7 +253,7 @@ public final class SortingFilterCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

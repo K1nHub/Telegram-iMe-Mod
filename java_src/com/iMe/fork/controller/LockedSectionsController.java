@@ -8,7 +8,6 @@ import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.enums.LockedSection;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Objects;
 import kotlin.TuplesKt;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.MapsKt__MapsKt;
@@ -33,7 +32,7 @@ public final class LockedSectionsController extends BaseController {
     public LockedSectionsController(int i) {
         super(i);
         Map<LockedSection, SectionPasscodeData> mutableMapOf;
-        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m85to(LockedSection.ARCHIVE, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)), TuplesKt.m85to(LockedSection.CLOUD, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
+        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m103to(LockedSection.ARCHIVE, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)), TuplesKt.m103to(LockedSection.CLOUD, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         this.sectionsPasscodeData = mutableMapOf;
     }
 
@@ -101,7 +100,7 @@ public final class LockedSectionsController extends BaseController {
         LockedSection[] values = LockedSection.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (LockedSection lockedSection : values) {
-            arrayList.add(TuplesKt.m85to(lockedSection, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
+            arrayList.add(TuplesKt.m103to(lockedSection, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -341,14 +340,26 @@ public final class LockedSectionsController extends BaseController {
             return (LockedSectionsController) tmp0.invoke(obj);
         }
 
-        public final LockedSectionsController getInstance(int i) {
+        public final LockedSectionsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = LockedSectionsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final LockedSectionsController$Companion$getInstance$1 lockedSectionsController$Companion$getInstance$1 = new LockedSectionsController$Companion$getInstance$1(i);
+            final Function1<Integer, LockedSectionsController> function1 = new Function1<Integer, LockedSectionsController>() { // from class: com.iMe.fork.controller.LockedSectionsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final LockedSectionsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new LockedSectionsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.LockedSectionsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -360,7 +371,7 @@ public final class LockedSectionsController extends BaseController {
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…r(accountIndex)\n        }");

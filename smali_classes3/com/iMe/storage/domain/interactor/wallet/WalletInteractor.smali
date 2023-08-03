@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,157:1\n48#2:158\n14#2:159\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n102#1:158\n118#1:159\n*E\n"
+    value = "SMAP\nWalletInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,148:1\n14#2:149\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n109#1:149\n*E\n"
 .end annotation
 
 
@@ -33,37 +33,19 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 25
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 29
+    .line 26
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 30
+    .line 27
     iput-object p3, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
-.end method
-
-.method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getWalletRepository$p(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
-
-    return-object p0
 .end method
 
 .method public static synthetic getTokenBalance$default(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;Lcom/iMe/storage/domain/model/wallet/token/Token;ZLjava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
@@ -80,14 +62,14 @@
 
     if-eqz p4, :cond_1
 
-    .line 114
+    .line 105
     iget-object p3, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p3}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
 
     move-result-object p3
 
-    .line 111
+    .line 102
     :cond_1
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getTokenBalance(Lcom/iMe/storage/domain/model/wallet/token/Token;ZLjava/lang/String;)Lio/reactivex/Observable;
 
@@ -103,7 +85,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 84
+    .line 81
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
@@ -125,14 +107,14 @@
 
     if-eqz p3, :cond_0
 
-    .line 98
+    .line 95
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 96
+    .line 93
     :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
 
@@ -188,7 +170,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 138
+    .line 129
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
@@ -210,7 +192,7 @@
 
     move-object p7, v2
 
-    .line 135
+    .line 126
     invoke-virtual/range {p2 .. p7}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getWalletTransactions(ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p0
@@ -238,15 +220,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 70
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 74
+    .line 71
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->detachCustomToken(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 75
+    .line 72
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -261,7 +243,7 @@
 
     move-result-object p1
 
-    .line 76
+    .line 73
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -304,15 +286,15 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 34
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 38
+    .line 35
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getCryptoTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 39
+    .line 36
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -327,7 +309,7 @@
 
     move-result-object p1
 
-    .line 40
+    .line 37
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -360,15 +342,15 @@
         }
     .end annotation
 
-    .line 49
+    .line 46
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 50
+    .line 47
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getCustomTokens(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 51
+    .line 48
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -383,7 +365,7 @@
 
     move-result-object p1
 
-    .line 52
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -421,15 +403,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 79
+    .line 76
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 80
+    .line 77
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getDisplayedTokens(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 81
+    .line 78
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -444,7 +426,7 @@
 
     move-result-object p1
 
-    .line 82
+    .line 79
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -475,15 +457,15 @@
         }
     .end annotation
 
-    .line 152
+    .line 143
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 153
+    .line 144
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getSupportedNetworks()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 154
+    .line 145
     sget-object v1, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v2, 0x0
@@ -498,7 +480,7 @@
 
     move-result-object v0
 
-    .line 155
+    .line 146
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -540,10 +522,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 107
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 117
+    .line 108
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -569,7 +551,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 113
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -584,7 +566,7 @@
 
     move-result-object p1
 
-    .line 123
+    .line 114
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -622,15 +604,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 44
+    .line 41
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getTokenInfo(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 45
+    .line 42
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -645,7 +627,7 @@
 
     move-result-object p1
 
-    .line 46
+    .line 43
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -681,15 +663,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 58
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 62
+    .line 59
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getTokenListsData(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 63
+    .line 60
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -704,7 +686,7 @@
 
     move-result-object p1
 
-    .line 64
+    .line 61
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -748,15 +730,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 130
+    .line 121
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 131
+    .line 122
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getTokensBalance(Ljava/util/List;ZLjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 132
+    .line 123
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -771,7 +753,7 @@
 
     move-result-object p1
 
-    .line 133
+    .line 124
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -808,15 +790,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 82
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 86
+    .line 83
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getTokensSettings(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 87
+    .line 84
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0
@@ -831,7 +813,7 @@
 
     move-result-object p1
 
-    .line 88
+    .line 85
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -850,7 +832,7 @@
 .end method
 
 .method public final getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
-    .locals 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -868,46 +850,20 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 100
+    .line 97
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 101
+    .line 98
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    new-array v2, v1, [Lcom/iMe/storage/data/network/model/error/IErrorStatus;
-
-    .line 102
-    sget-object v3, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ERR_MONEY_ACCOUNT_NOT_EXIST:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    .line 48
-    new-instance v3, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;
-
-    invoke-direct {v3, v2, p0, p1, p2}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;-><init>([Lcom/iMe/storage/data/network/model/error/IErrorStatus;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLjava/lang/String;)V
-
-    new-instance p1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {p1, v3}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "vararg errorStatus: IErr\u2026e.empty()\n        }\n    }"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 108
+    .line 99
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
+
+    const/4 v1, 0x1
 
     invoke-static {p2, v0, v1, v0}, Lcom/iMe/storage/domain/model/Result$Companion;->loading$default(Lcom/iMe/storage/domain/model/Result$Companion;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
@@ -917,7 +873,7 @@
 
     move-result-object p1
 
-    .line 109
+    .line 100
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -957,7 +913,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 140
+    .line 131
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
     move v2, p1
@@ -970,12 +926,12 @@
 
     move-object v6, p5
 
-    .line 141
+    .line 132
     invoke-interface/range {v1 .. v6}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->getWalletTransactionHistory(ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 142
+    .line 133
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -990,7 +946,7 @@
 
     move-result-object p1
 
-    .line 143
+    .line 134
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1037,15 +993,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 55
+    .line 52
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 56
+    .line 53
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->searchTokens(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 57
+    .line 54
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -1060,7 +1016,7 @@
 
     move-result-object p1
 
-    .line 58
+    .line 55
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1078,13 +1034,13 @@
     return-object p1
 .end method
 
-.method public final sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+.method public final sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/Network;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -1097,19 +1053,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "blockchainType"
+    const-string v0, "network"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 146
+    .line 137
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 147
-    invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    .line 138
+    invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/Network;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 148
+    .line 139
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -1124,7 +1080,7 @@
 
     move-result-object p1
 
-    .line 149
+    .line 140
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1160,15 +1116,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 64
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
-    .line 68
+    .line 65
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->setTokenVisibility(Lcom/iMe/storage/domain/model/wallet/token/Token;Z)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 69
+    .line 66
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -1183,7 +1139,7 @@
 
     move-result-object p1
 
-    .line 70
+    .line 67
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

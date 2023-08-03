@@ -17,10 +17,11 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
@@ -47,18 +48,55 @@ public final class TopicProfileCell extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TopicProfileCell(Context context, long j) {
+    public TopicProfileCell(final Context context, long j) {
         super(context);
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
         this.dialogId = j;
-        lazy = LazyKt__LazyJVMKt.lazy(new TopicProfileCell$topicView$2(context));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TopicView>() { // from class: com.iMe.ui.topics.TopicProfileCell$topicView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicView invoke() {
+                return new TopicView(context, null, 0, 0, 14, null);
+            }
+        });
         this.topicView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TopicProfileCell$selectTopicTextView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<SimpleTextView>() { // from class: com.iMe.ui.topics.TopicProfileCell$selectTopicTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final SimpleTextView invoke() {
+                SimpleTextView initSelectTopicTextView;
+                initSelectTopicTextView = TopicProfileCell.this.initSelectTopicTextView();
+                return initSelectTopicTextView;
+            }
+        });
         this.selectTopicTextView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TopicProfileCell$deleteImageView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.ui.topics.TopicProfileCell$deleteImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initDeleteImageView;
+                initDeleteImageView = TopicProfileCell.this.initDeleteImageView();
+                return initDeleteImageView;
+            }
+        });
         this.deleteImageView$delegate = lazy3;
         this.currentAccount = UserConfig.selectedAccount;
         addView(getTopicView(), LayoutHelper.createFrame(-2, -2, 19, 16, 0, 0, 0));
@@ -102,7 +140,7 @@ public final class TopicProfileCell extends FrameLayout {
         Property property = FrameLayout.TRANSLATION_X;
         float[] fArr = new float[1];
         float f = BitmapDescriptorFactory.HUE_RED;
-        fArr[0] = AndroidUtilities.m55dp(topicModel != null ? -48.0f : 0.0f);
+        fArr[0] = AndroidUtilities.m73dp(topicModel != null ? -48.0f : 0.0f);
         objectAnimatorArr[0] = ObjectAnimator.ofFloat(selectTopicTextView, property, fArr);
         SimpleTextView selectTopicTextView2 = getSelectTopicTextView();
         Property property2 = FrameLayout.ALPHA;
@@ -112,7 +150,7 @@ public final class TopicProfileCell extends FrameLayout {
         TopicView topicView = getTopicView();
         Property property3 = FrameLayout.TRANSLATION_X;
         float[] fArr3 = new float[1];
-        fArr3[0] = AndroidUtilities.m55dp(topicModel != null ? 0.0f : -48.0f);
+        fArr3[0] = AndroidUtilities.m73dp(topicModel != null ? 0.0f : -48.0f);
         objectAnimatorArr[2] = ObjectAnimator.ofFloat(topicView, property3, fArr3);
         TopicView topicView2 = getTopicView();
         Property property4 = FrameLayout.ALPHA;
@@ -143,13 +181,13 @@ public final class TopicProfileCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3417R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3419R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -158,7 +196,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3417R.C3419drawable.msg_add);
+        imageView.setImageResource(C3419R.C3421drawable.msg_add);
         return imageView;
     }
 

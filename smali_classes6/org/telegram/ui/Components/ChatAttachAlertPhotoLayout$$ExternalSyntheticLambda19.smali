@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AvatarConstructorFragment$Delegate;
+.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
 
 # instance fields
@@ -22,20 +22,22 @@
 
 
 # virtual methods
-.method public final onDone(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;JLorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)V
-    .locals 6
+.method public final didSelectDate(ZILjava/lang/String;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    move-object v1, p1
-
-    move-wide v2, p2
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$dTqv2nE_9tw40d0ZC2KTx_VH14g(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;JLorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$MMLTn2gHFHn84KzA9y8kP2X4gwA(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZILjava/lang/String;)V
 
     return-void
+.end method
+
+.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

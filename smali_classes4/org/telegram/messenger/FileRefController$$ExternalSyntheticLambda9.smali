@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileRefController;->$r8$lambda$f1WwAh63OxXByXLWPxRXPOH98pY(Lorg/telegram/tgnet/TLRPC$TL_theme;)V
+    invoke-static {v0}, Lorg/telegram/messenger/FileRefController;->$r8$lambda$iPqTlt8rcP-HPfOPfg7OKGhpGBE(Lorg/telegram/tgnet/TLRPC$TL_theme;)V
 
     return-void
 .end method

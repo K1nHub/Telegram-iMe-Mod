@@ -51,9 +51,9 @@
     iput p1, p0, Lorg/telegram/ui/Components/BackupImageView;->height:I
 
     .line 70
-    new-instance p1, Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->createImageReciever()Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-direct {p1, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
+    move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -101,7 +101,7 @@
 .method private checkCreateBlurredImage()V
     .locals 2
 
-    .line 114
+    .line 118
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->hasBlur:Z
 
     if-eqz v0, :cond_0
@@ -122,7 +122,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 115
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -131,14 +131,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 120
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 117
+    .line 121
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v0}, Lorg/telegram/messenger/Utilities;->stackBlurBitmapMax(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -147,7 +147,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 118
+    .line 122
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -173,7 +173,7 @@
 .method public animateToRoundRadius(I)V
     .locals 3
 
-    .line 367
+    .line 375
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getRoundRadius()[I
 
     move-result-object v0
@@ -184,12 +184,12 @@
 
     if-eq v0, p1, :cond_1
 
-    .line 368
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->roundRadiusAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 377
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -197,7 +197,7 @@
 
     new-array v0, v0, [I
 
-    .line 371
+    .line 379
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getRoundRadius()[I
 
     move-result-object v2
@@ -216,21 +216,21 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->roundRadiusAnimator:Landroid/animation/ValueAnimator;
 
-    .line 372
+    .line 380
     new-instance v0, Lorg/telegram/ui/Components/BackupImageView$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/BackupImageView$1;-><init>(Lorg/telegram/ui/Components/BackupImageView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 378
+    .line 386
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->roundRadiusAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xc8
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 379
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->roundRadiusAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -239,22 +239,33 @@
     return-void
 .end method
 
+.method protected createImageReciever()Lorg/telegram/messenger/ImageReceiver;
+    .locals 1
+
+    .line 80
+    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-direct {v0, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
+
+    return-object v0
+.end method
+
 .method public getAvatarDrawable()Lorg/telegram/ui/Components/AvatarDrawable;
     .locals 1
 
-    .line 284
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     if-nez v0, :cond_0
 
-    .line 285
+    .line 293
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    .line 287
+    .line 295
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -264,7 +275,7 @@
 .method public getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 
-    .line 274
+    .line 282
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     return-object v0
@@ -273,7 +284,7 @@
 .method public getRoundRadius()[I
     .locals 1
 
-    .line 266
+    .line 274
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
@@ -286,36 +297,36 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 305
+    .line 313
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
     const/4 v0, 0x1
 
-    .line 306
+    .line 314
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->attached:Z
 
-    .line 307
+    .line 315
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 308
+    .line 316
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v0, :cond_0
 
-    .line 309
+    .line 317
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 311
+    .line 319
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 312
+    .line 320
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
     :cond_1
@@ -325,36 +336,36 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 292
+    .line 300
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 293
+    .line 301
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->attached:Z
 
-    .line 294
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 295
+    .line 303
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v0, :cond_0
 
-    .line 296
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 298
+    .line 306
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 299
+    .line 307
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
     :cond_1
@@ -364,7 +375,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 318
+    .line 326
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
@@ -383,7 +394,7 @@
 
     return-void
 
-    .line 322
+    .line 330
     :cond_1
     iget v1, p0, Lorg/telegram/ui/Components/BackupImageView;->width:I
 
@@ -397,7 +408,7 @@
 
     if-eq v4, v2, :cond_3
 
-    .line 323
+    .line 331
     iget-boolean v2, p0, Lorg/telegram/ui/Components/BackupImageView;->drawFromStart:Z
 
     if-eqz v2, :cond_2
@@ -406,15 +417,15 @@
 
     int-to-float v2, v4
 
-    .line 324
+    .line 332
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 325
+    .line 333
     iget-boolean v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v1, :cond_4
 
-    .line 326
+    .line 334
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget v2, p0, Lorg/telegram/ui/Components/BackupImageView;->width:I
@@ -429,7 +440,7 @@
 
     goto :goto_1
 
-    .line 329
+    .line 337
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -463,12 +474,12 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 330
+    .line 338
     iget-boolean v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v1, :cond_4
 
-    .line 331
+    .line 339
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -505,7 +516,7 @@
 
     goto :goto_1
 
-    .line 335
+    .line 343
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -521,12 +532,12 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 336
+    .line 344
     iget-boolean v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v1, :cond_4
 
-    .line 337
+    .line 345
     iget-object v1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -543,17 +554,17 @@
 
     invoke-virtual {v1, v3, v3, v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 340
+    .line 348
     :cond_4
     :goto_1
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 341
+    .line 349
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v0, :cond_5
 
-    .line 342
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
@@ -565,12 +576,12 @@
 .method public onNewImageSet()V
     .locals 2
 
-    .line 104
+    .line 108
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->hasBlur:Z
 
     if-eqz v0, :cond_1
 
-    .line 105
+    .line 109
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -591,7 +602,7 @@
 
     if-nez v0, :cond_0
 
-    .line 106
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -600,7 +611,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 108
+    .line 112
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -608,7 +619,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 109
+    .line 113
     invoke-direct {p0}, Lorg/telegram/ui/Components/BackupImageView;->checkCreateBlurredImage()V
 
     :cond_1
@@ -618,14 +629,14 @@
 .method public setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
     .locals 2
 
-    .line 351
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 354
+    .line 362
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/BackupImageView;->attached:Z
 
@@ -633,24 +644,24 @@
 
     if-eqz v0, :cond_1
 
-    .line 355
+    .line 363
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
-    .line 357
+    .line 365
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    .line 358
+    .line 366
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->attached:Z
 
     if-eqz v0, :cond_2
 
     if-eqz p1, :cond_2
 
-    .line 359
+    .line 367
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
-    .line 361
+    .line 369
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -660,7 +671,7 @@
 .method public setAspectFit(Z)V
     .locals 1
 
-    .line 270
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
@@ -671,17 +682,17 @@
 .method public setBlurAllowed(Z)V
     .locals 1
 
-    .line 80
+    .line 84
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->attached:Z
 
     if-nez v0, :cond_1
 
-    .line 83
+    .line 87
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz p1, :cond_0
 
-    .line 85
+    .line 89
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -691,7 +702,7 @@
     :cond_0
     return-void
 
-    .line 81
+    .line 85
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -705,7 +716,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 347
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
@@ -716,12 +727,12 @@
 .method public setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
     .locals 1
 
-    .line 166
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
-    .line 167
+    .line 175
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -730,12 +741,12 @@
 .method public setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;Ljava/lang/Object;)V
     .locals 1
 
-    .line 171
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    .line 172
+    .line 180
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -746,14 +757,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 90
+    .line 94
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 91
+    .line 95
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -763,14 +774,14 @@
 
     throw p1
 
-    .line 93
+    .line 97
     :cond_1
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BackupImageView;->hasBlur:Z
 
     if-nez p1, :cond_3
 
-    .line 95
+    .line 99
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -791,7 +802,7 @@
 
     if-nez p1, :cond_2
 
-    .line 96
+    .line 100
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -800,7 +811,7 @@
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 98
+    .line 102
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -808,7 +819,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 100
+    .line 104
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/Components/BackupImageView;->checkCreateBlurredImage()V
 
@@ -818,7 +829,7 @@
 .method public setImage(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
     .locals 10
 
-    .line 189
+    .line 197
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForPath(Ljava/lang/String;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v1
@@ -849,7 +860,7 @@
 .method public setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 10
 
-    .line 193
+    .line 201
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForPath(Ljava/lang/String;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v1
@@ -902,7 +913,7 @@
 
     move-object v9, p5
 
-    .line 153
+    .line 157
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Ljava/lang/String;ILjava/lang/Object;)V
 
     return-void
@@ -931,7 +942,7 @@
 
     move-object v9, p4
 
-    .line 140
+    .line 144
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Ljava/lang/String;ILjava/lang/Object;)V
 
     return-void
@@ -960,7 +971,7 @@
 
     move-object v9, p5
 
-    .line 136
+    .line 140
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Ljava/lang/String;ILjava/lang/Object;)V
 
     return-void
@@ -989,7 +1000,7 @@
 
     move-object/from16 v9, p6
 
-    .line 185
+    .line 193
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Ljava/lang/String;ILjava/lang/Object;)V
 
     return-void
@@ -1002,7 +1013,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 198
+    .line 206
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     const/4 v2, 0x0
@@ -1020,7 +1031,7 @@
 
     move-object/from16 v8, p5
 
-    .line 200
+    .line 208
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1044,7 +1055,7 @@
 
     invoke-virtual/range {v3 .. v13}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 201
+    .line 209
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1055,7 +1066,7 @@
 
     move-object v0, p0
 
-    .line 144
+    .line 148
     iget-object v1, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -1082,7 +1093,7 @@
 
     invoke-virtual/range {v1 .. v13}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 145
+    .line 149
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1093,7 +1104,7 @@
 
     move-object v0, p0
 
-    .line 205
+    .line 213
     iget-object v1, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -1116,7 +1127,7 @@
 
     invoke-virtual/range {v1 .. v11}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 206
+    .line 214
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1125,7 +1136,7 @@
 .method public setImage(Lorg/telegram/messenger/SecureDocument;Ljava/lang/String;)V
     .locals 10
 
-    .line 132
+    .line 136
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForSecureDocument(Lorg/telegram/messenger/SecureDocument;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v1
@@ -1156,12 +1167,12 @@
 .method public setImageBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
 
-    .line 219
+    .line 227
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 220
+    .line 228
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1170,12 +1181,12 @@
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 241
+    .line 249
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 242
+    .line 250
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1190,7 +1201,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 178
+    .line 186
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v2, v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
@@ -1206,7 +1217,7 @@
 
     move-object v10, v1
 
-    .line 180
+    .line 188
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1234,7 +1245,7 @@
 
     invoke-virtual/range {v3 .. v15}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 181
+    .line 189
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1249,14 +1260,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 211
+    .line 219
     iget-object v2, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 213
+    .line 221
     :cond_0
     iget-object v3, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1286,7 +1297,7 @@
 
     invoke-virtual/range {v3 .. v15}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 215
+    .line 223
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
@@ -1296,7 +1307,7 @@
 .method public setImageResource(I)V
     .locals 1
 
-    .line 224
+    .line 232
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1305,15 +1316,15 @@
 
     move-result-object p1
 
-    .line 225
+    .line 233
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 226
+    .line 234
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 227
+    .line 235
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1322,7 +1333,7 @@
 .method public setImageResource(II)V
     .locals 2
 
-    .line 231
+    .line 239
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1333,7 +1344,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 233
+    .line 241
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -1342,16 +1353,16 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 235
+    .line 243
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2, p1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 236
+    .line 244
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 237
+    .line 245
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->onNewImageSet()V
 
     return-void
@@ -1360,7 +1371,7 @@
 .method public setLayerNum(I)V
     .locals 1
 
-    .line 246
+    .line 254
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
@@ -1371,7 +1382,7 @@
 .method public setOrientation(IIZ)V
     .locals 1
 
-    .line 128
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/messenger/ImageReceiver;->setOrientation(IIZ)V
@@ -1382,7 +1393,7 @@
 .method public setOrientation(IZ)V
     .locals 1
 
-    .line 124
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setOrientation(IZ)V
@@ -1393,35 +1404,10 @@
 .method public setRoundRadius(I)V
     .locals 1
 
-    .line 250
-    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
-
-    .line 251
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
-
-    if-eqz v0, :cond_0
-
-    .line 252
-    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
-
-    .line 254
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-.end method
-
-.method public setRoundRadius(IIII)V
-    .locals 1
-
     .line 258
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
+    invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     .line 259
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
@@ -1431,9 +1417,34 @@
     .line 260
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
+    invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     .line 262
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    return-void
+.end method
+
+.method public setRoundRadius(IIII)V
+    .locals 1
+
+    .line 266
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
+
+    .line 267
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurAllowed:Z
+
+    if-eqz v0, :cond_0
+
+    .line 268
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
+
+    .line 270
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -1443,13 +1454,13 @@
 .method public setSize(II)V
     .locals 0
 
-    .line 278
+    .line 286
     iput p1, p0, Lorg/telegram/ui/Components/BackupImageView;->width:I
 
-    .line 279
+    .line 287
     iput p2, p0, Lorg/telegram/ui/Components/BackupImageView;->height:I
 
-    .line 280
+    .line 288
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

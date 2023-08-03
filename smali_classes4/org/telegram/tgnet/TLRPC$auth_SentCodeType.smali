@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7254
+    .line 7415
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 7278
+    .line 7439
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeCall;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 7275
+    .line 7436
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeApp;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 7281
+    .line 7442
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 7299
+    .line 7460
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFirebaseSms;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 7296
+    .line 7457
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFragmentSms;
 
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 7293
+    .line 7454
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSms;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 7287
+    .line 7448
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFlashCall;
 
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 7284
+    .line 7445
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSetUpEmailRequired;
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 7290
+    .line 7451
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeMissedCall;
 
@@ -129,7 +129,7 @@
 
     goto :goto_1
 
-    .line 7303
+    .line 7464
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -159,7 +159,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 7306
+    .line 7467
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

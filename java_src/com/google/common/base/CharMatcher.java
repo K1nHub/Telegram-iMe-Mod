@@ -12,7 +12,7 @@ public abstract class CharMatcher implements Predicate<Character> {
     }
 
     /* renamed from: is */
-    public static CharMatcher m749is(char c) {
+    public static CharMatcher m767is(char c) {
         return new C0893Is(c);
     }
 

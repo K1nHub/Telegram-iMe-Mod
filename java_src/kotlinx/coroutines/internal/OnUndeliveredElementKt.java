@@ -35,7 +35,25 @@ public final class OnUndeliveredElementKt {
         }
     }
 
-    public static final <E> Function1<Throwable, Unit> bindCancellationFun(Function1<? super E, Unit> function1, E e, CoroutineContext coroutineContext) {
-        return new OnUndeliveredElementKt$bindCancellationFun$1(function1, e, coroutineContext);
+    public static final <E> Function1<Throwable, Unit> bindCancellationFun(final Function1<? super E, Unit> function1, final E e, final CoroutineContext coroutineContext) {
+        return new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.internal.OnUndeliveredElementKt$bindCancellationFun$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                OnUndeliveredElementKt.callUndeliveredElement(function1, e, coroutineContext);
+            }
+        };
     }
 }

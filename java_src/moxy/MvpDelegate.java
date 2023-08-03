@@ -10,7 +10,14 @@ import java.util.TreeSet;
 import moxy.presenter.PresenterField;
 /* loaded from: classes4.dex */
 public class MvpDelegate<Delegated> {
-    private static final Comparator<PresenterField> COMPARE_BY_TAGS = MvpDelegate$$ExternalSyntheticLambda0.INSTANCE;
+    private static final Comparator<PresenterField> COMPARE_BY_TAGS = new Comparator() { // from class: moxy.MvpDelegate$$ExternalSyntheticLambda0
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int lambda$static$0;
+            lambda$static$0 = MvpDelegate.lambda$static$0((PresenterField) obj, (PresenterField) obj2);
+            return lambda$static$0;
+        }
+    };
     private static final String KEY_TAG = "moxy.MvpDelegate.KEY_TAG";
     public static final String MOXY_DELEGATE_TAGS_KEY = "MoxyDelegateBundle";
     private Bundle bundle;

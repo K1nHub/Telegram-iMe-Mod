@@ -10,12 +10,14 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.SavedStateHandleSupport;
+import androidx.lifecycle.SavedStateViewModelFactory;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.MutableCreationExtras;
+import androidx.navigation.NavBackStackEntry;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateRegistryOwner;
@@ -23,6 +25,7 @@ import java.util.Set;
 import java.util.UUID;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NavBackStackEntry.kt */
@@ -36,7 +39,7 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
     private Lifecycle.State hostLifecycleState;
 
     /* renamed from: id */
-    private final String f46id;
+    private final String f48id;
     private LifecycleRegistry lifecycle;
     private Lifecycle.State maxLifecycle;
     private final Bundle savedState;
@@ -57,13 +60,50 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
         this.arguments = bundle;
         this.hostLifecycleState = state;
         this.viewModelStoreProvider = navViewModelStoreProvider;
-        this.f46id = str;
+        this.f48id = str;
         this.savedState = bundle2;
         this.lifecycle = new LifecycleRegistry(this);
         this.savedStateRegistryController = SavedStateRegistryController.Companion.create(this);
-        lazy = LazyKt__LazyJVMKt.lazy(new NavBackStackEntry$defaultFactory$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<SavedStateViewModelFactory>() { // from class: androidx.navigation.NavBackStackEntry$defaultFactory$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SavedStateViewModelFactory invoke() {
+                Context context2;
+                context2 = NavBackStackEntry.this.context;
+                Context applicationContext = context2 != null ? context2.getApplicationContext() : null;
+                Application application = applicationContext instanceof Application ? (Application) applicationContext : null;
+                NavBackStackEntry navBackStackEntry = NavBackStackEntry.this;
+                return new SavedStateViewModelFactory(application, navBackStackEntry, navBackStackEntry.getArguments());
+            }
+        });
         this.defaultFactory$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new NavBackStackEntry$savedStateHandle$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<SavedStateHandle>() { // from class: androidx.navigation.NavBackStackEntry$savedStateHandle$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SavedStateHandle invoke() {
+                boolean z;
+                LifecycleRegistry lifecycleRegistry;
+                z = NavBackStackEntry.this.savedStateRegistryAttached;
+                if (z) {
+                    lifecycleRegistry = NavBackStackEntry.this.lifecycle;
+                    if (!(lifecycleRegistry.getCurrentState() != Lifecycle.State.DESTROYED)) {
+                        throw new IllegalStateException("You cannot access the NavBackStackEntry's SavedStateHandle after the NavBackStackEntry is destroyed.".toString());
+                    }
+                    return ((NavBackStackEntry.SavedStateViewModel) new ViewModelProvider(NavBackStackEntry.this, new NavBackStackEntry.NavResultSavedStateFactory(NavBackStackEntry.this)).get(NavBackStackEntry.SavedStateViewModel.class)).getHandle();
+                }
+                throw new IllegalStateException("You cannot access the NavBackStackEntry's SavedStateHandle until it is added to the NavController's back stack (i.e., the Lifecycle of the NavBackStackEntry reaches the CREATED state).".toString());
+            }
+        });
         this.savedStateHandle$delegate = lazy2;
         this.maxLifecycle = Lifecycle.State.INITIALIZED;
     }
@@ -82,12 +122,12 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
     }
 
     public final String getId() {
-        return this.f46id;
+        return this.f48id;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public NavBackStackEntry(NavBackStackEntry entry, Bundle bundle) {
-        this(entry.context, entry.destination, bundle, entry.hostLifecycleState, entry.viewModelStoreProvider, entry.f46id, entry.savedState);
+        this(entry.context, entry.destination, bundle, entry.hostLifecycleState, entry.viewModelStoreProvider, entry.f48id, entry.savedState);
         Intrinsics.checkNotNullParameter(entry, "entry");
         this.hostLifecycleState = entry.hostLifecycleState;
         setMaxLifecycle(entry.maxLifecycle);
@@ -177,7 +217,7 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
         if (navViewModelStoreProvider == null) {
             throw new IllegalStateException("You must call setViewModelStore() on your NavHostController before accessing the ViewModelStore of a navigation graph.".toString());
         }
-        return navViewModelStoreProvider.getViewModelStore(this.f46id);
+        return navViewModelStoreProvider.getViewModelStore(this.f48id);
     }
 
     @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
@@ -222,9 +262,9 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
             if (r1 != 0) goto L9
             goto L83
         L9:
-            java.lang.String r1 = r6.f46id
+            java.lang.String r1 = r6.f48id
             androidx.navigation.NavBackStackEntry r7 = (androidx.navigation.NavBackStackEntry) r7
-            java.lang.String r2 = r7.f46id
+            java.lang.String r2 = r7.f48id
             boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r2)
             r2 = 1
             if (r1 == 0) goto L83
@@ -290,7 +330,7 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
 
     public int hashCode() {
         Set<String> keySet;
-        int hashCode = (this.f46id.hashCode() * 31) + this.destination.hashCode();
+        int hashCode = (this.f48id.hashCode() * 31) + this.destination.hashCode();
         Bundle bundle = this.arguments;
         if (bundle != null && (keySet = bundle.keySet()) != null) {
             for (String str : keySet) {

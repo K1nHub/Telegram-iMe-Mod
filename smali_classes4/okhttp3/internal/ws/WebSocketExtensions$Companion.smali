@@ -135,7 +135,7 @@
 
     add-int/2addr v2, v13
 
-    const-string v3, "permessage-deflate"
+    const-string/jumbo v3, "permessage-deflate"
 
     .line 121
     invoke-static {v12, v3, v13}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z

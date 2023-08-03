@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/JoinGroupAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/JoinGroupAlert;->$r8$lambda$f5gPtKP8iUi4tR0k4_Talg3gaQA(Lorg/telegram/ui/Components/JoinGroupAlert;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/JoinGroupAlert;->$r8$lambda$QGcgZZ7yTPeCBzUxxcUZfBmFFkw(Lorg/telegram/ui/Components/JoinGroupAlert;Landroid/view/View;)V
 
     return-void
 .end method

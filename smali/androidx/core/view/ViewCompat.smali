@@ -6,25 +6,25 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/view/ViewCompat$Api20Impl;,
-        Landroidx/core/view/ViewCompat$Api28Impl;,
-        Landroidx/core/view/ViewCompat$Api16Impl;,
-        Landroidx/core/view/ViewCompat$Api17Impl;,
-        Landroidx/core/view/ViewCompat$Api24Impl;,
-        Landroidx/core/view/ViewCompat$Api15Impl;,
-        Landroidx/core/view/ViewCompat$Api19Impl;,
-        Landroidx/core/view/ViewCompat$Api18Impl;,
-        Landroidx/core/view/ViewCompat$Api26Impl;,
-        Landroidx/core/view/ViewCompat$Api30Impl;,
         Landroidx/core/view/ViewCompat$Api29Impl;,
-        Landroidx/core/view/ViewCompat$Api23Impl;,
+        Landroidx/core/view/ViewCompat$Api26Impl;,
+        Landroidx/core/view/ViewCompat$Api16Impl;,
         Landroidx/core/view/ViewCompat$Api21Impl;,
+        Landroidx/core/view/ViewCompat$AccessibilityViewProperty;,
+        Landroidx/core/view/ViewCompat$Api17Impl;,
+        Landroidx/core/view/ViewCompat$Api28Impl;,
+        Landroidx/core/view/ViewCompat$Api19Impl;,
+        Landroidx/core/view/ViewCompat$Api24Impl;,
+        Landroidx/core/view/ViewCompat$Api20Impl;,
+        Landroidx/core/view/ViewCompat$Api23Impl;,
+        Landroidx/core/view/ViewCompat$Api30Impl;,
+        Landroidx/core/view/ViewCompat$Api31Impl;,
+        Landroidx/core/view/ViewCompat$Api18Impl;,
+        Landroidx/core/view/ViewCompat$Api15Impl;,
+        Landroidx/core/view/ViewCompat$OnUnhandledKeyEventListenerCompat;,
         Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;,
         Landroidx/core/view/ViewCompat$AccessibilityPaneVisibilityManager;,
-        Landroidx/core/view/ViewCompat$AccessibilityViewProperty;,
-        Landroidx/core/view/ViewCompat$OnUnhandledKeyEventListenerCompat;,
-        Landroidx/core/view/ViewCompat$OnReceiveContentListenerAdapter;,
-        Landroidx/core/view/ViewCompat$Api31Impl;
+        Landroidx/core/view/ViewCompat$OnReceiveContentListenerAdapter;
     }
 .end annotation
 

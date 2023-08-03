@@ -1605,7 +1605,7 @@
 .method public select(Lokio/Options;)I
     .locals 8
 
-    const-string v0, "options"
+    const-string/jumbo v0, "options"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

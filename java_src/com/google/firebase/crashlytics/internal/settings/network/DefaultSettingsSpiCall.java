@@ -49,12 +49,12 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
             Map<String, String> queryParamsFor = getQueryParamsFor(settingsRequest);
             HttpGetRequest applyHeadersTo = applyHeadersTo(createHttpGetRequest(queryParamsFor), settingsRequest);
             Logger logger = this.logger;
-            logger.m728d("Requesting settings from " + this.url);
+            logger.m746d("Requesting settings from " + this.url);
             Logger logger2 = this.logger;
-            logger2.m722v("Settings query params were: " + queryParamsFor);
+            logger2.m740v("Settings query params were: " + queryParamsFor);
             return handleResponse(applyHeadersTo.execute());
         } catch (IOException e) {
-            this.logger.m725e("Settings request failed.", e);
+            this.logger.m743e("Settings request failed.", e);
             return null;
         }
     }
@@ -62,12 +62,12 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
     JSONObject handleResponse(HttpResponse httpResponse) {
         int code = httpResponse.code();
         Logger logger = this.logger;
-        logger.m722v("Settings response code was: " + code);
+        logger.m740v("Settings response code was: " + code);
         if (requestWasSuccessful(code)) {
             return getJsonObjectFrom(httpResponse.body());
         }
         Logger logger2 = this.logger;
-        logger2.m726e("Settings request failed; (status: " + code + ") from " + this.url);
+        logger2.m744e("Settings request failed; (status: " + code + ") from " + this.url);
         return null;
     }
 
@@ -76,9 +76,9 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
             return new JSONObject(str);
         } catch (Exception e) {
             Logger logger = this.logger;
-            logger.m719w("Failed to parse settings JSON from " + this.url, e);
+            logger.m737w("Failed to parse settings JSON from " + this.url, e);
             Logger logger2 = this.logger;
-            logger2.m720w("Settings response " + str);
+            logger2.m738w("Settings response " + str);
             return null;
         }
     }

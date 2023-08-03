@@ -40,15 +40,15 @@
 
     move-object/from16 v1, p1
 
-    .line 149
+    .line 151
     iput-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     move-object/from16 v2, p2
 
-    .line 150
+    .line 152
     invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 152
+    .line 154
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_graySection:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 154
+    .line 156
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -72,10 +72,10 @@
 
     const/high16 v4, 0x41600000    # 14.0f
 
-    .line 155
+    .line 157
     invoke-virtual {v2, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 156
+    .line 158
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     const-string v5, "fonts/rmedium.ttf"
@@ -86,7 +86,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 157
+    .line 159
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_graySectionText:I
@@ -97,19 +97,19 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 158
+    .line 160
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 159
+    .line 161
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 160
+    .line 162
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -134,7 +134,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 162
+    .line 164
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -145,10 +145,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
-    .line 163
+    .line 165
     invoke-virtual {v2, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 164
+    .line 166
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -157,7 +157,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 165
+    .line 167
     iget-object v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -176,7 +176,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 167
+    .line 169
     new-instance v2, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell$1;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -189,7 +189,7 @@
 
     const/16 v1, 0xe
 
-    .line 186
+    .line 188
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 187
+    .line 189
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -207,7 +207,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 188
+    .line 190
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -224,7 +224,7 @@
     :goto_2
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 189
+    .line 191
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     new-instance v2, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell$$ExternalSyntheticLambda0;
@@ -233,7 +233,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 191
+    .line 193
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     const/4 v10, -0x2
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 192
+    .line 194
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     const/4 v9, -0x2
@@ -321,7 +321,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 193
+    .line 195
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v9, -0x2
@@ -357,7 +357,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 189
+    .line 191
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->onCollapseClick()V
 
     return-void
@@ -374,15 +374,15 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 208
+    .line 210
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 209
+    .line 211
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p1, :cond_0
 
-    .line 210
+    .line 212
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getLeft()I
@@ -397,7 +397,7 @@
 
     sub-int/2addr p1, p2
 
-    .line 211
+    .line 213
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->getTop()I
@@ -422,7 +422,7 @@
 
     goto :goto_0
 
-    .line 213
+    .line 215
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
@@ -430,7 +430,7 @@
 
     move-result p1
 
-    .line 214
+    .line 216
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->getTop()I
@@ -462,7 +462,7 @@
 
     const/16 p2, 0x20
 
-    .line 198
+    .line 200
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -473,7 +473,7 @@
 
     move-result v0
 
-    .line 199
+    .line 201
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     const/4 v5, 0x0
@@ -488,12 +488,12 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 200
+    .line 202
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual/range {v2 .. v7}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 201
+    .line 203
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
@@ -520,7 +520,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 203
+    .line 205
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -537,7 +537,7 @@
 .method public setText(Ljava/lang/String;IIIZ)V
     .locals 5
 
-    .line 223
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -566,7 +566,7 @@
 
     new-array v0, p1, [Ljava/lang/Object;
 
-    .line 224
+    .line 226
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -579,12 +579,12 @@
 
     move-result-object v0
 
-    .line 226
+    .line 228
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_0
 
-    .line 227
+    .line 229
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     new-array v2, p1, [Ljava/lang/Object;
@@ -605,7 +605,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 231
     :cond_0
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
@@ -625,7 +625,7 @@
 
     invoke-direct {v1, p2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 231
+    .line 233
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/TypefaceSpan;
 
@@ -649,14 +649,14 @@
 
     invoke-virtual {v1, p2, v2, v0, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 232
+    .line 234
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->middleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     if-nez p4, :cond_2
 
-    .line 234
+    .line 236
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$300(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/tgnet/TLRPC$Poll;
@@ -667,7 +667,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 235
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     new-array p2, v3, [Ljava/lang/Object;
@@ -682,7 +682,7 @@
 
     goto :goto_1
 
-    .line 237
+    .line 239
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
@@ -701,7 +701,7 @@
     :cond_2
     if-ne p4, p1, :cond_3
 
-    .line 240
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->PollExpand:I
@@ -716,7 +716,7 @@
 
     goto :goto_1
 
-    .line 242
+    .line 244
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->righTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 

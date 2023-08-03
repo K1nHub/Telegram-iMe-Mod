@@ -13,10 +13,14 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.activity.OnBackPressedDispatcherKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.ViewModelStoreOwner;
+import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.navigation.NavArgsLazy;
 import com.iMe.common.viewBinding.FragmentViewBindingDelegate;
 import com.iMe.feature.socialMedias.SocialNetwork;
@@ -38,15 +42,23 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
+import org.koin.android.ext.android.AndroidKoinScopeExtKt;
+import org.koin.androidx.viewmodel.GetViewModelKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkToolbarBinding;
 import org.telegram.messenger.databinding.ForkWebScreenBinding;
@@ -62,14 +74,84 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
     private final Lazy viewModel$delegate;
 
     public SocialWebScreen() {
-        super(C3417R.layout.fork_web_screen);
+        super(C3419R.layout.fork_web_screen);
         Lazy lazy;
         Lazy lazy2;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkWebScreenBinding.class, this);
-        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new SocialWebScreen$special$$inlined$viewModel$default$2(this, null, new SocialWebScreen$special$$inlined$viewModel$default$1(this), null, null));
+        final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$special$$inlined$viewModel$default$1
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Fragment invoke() {
+                return Fragment.this;
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new Function0<SocialWebViewModel>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$special$$inlined$viewModel$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            /* JADX WARN: Type inference failed for: r0v3, types: [com.iMe.feature.socialMedias.webScreen.SocialWebViewModel, androidx.lifecycle.ViewModel] */
+            @Override // kotlin.jvm.functions.Function0
+            public final SocialWebViewModel invoke() {
+                CreationExtras defaultViewModelCreationExtras;
+                ?? resolveViewModel;
+                Fragment fragment = Fragment.this;
+                Qualifier qualifier = r2;
+                Function0 function02 = function0;
+                Function0 function03 = r4;
+                Function0 function04 = r5;
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function02.invoke()).getViewModelStore();
+                if (function03 == null || (defaultViewModelCreationExtras = (CreationExtras) function03.invoke()) == null) {
+                    defaultViewModelCreationExtras = fragment.getDefaultViewModelCreationExtras();
+                    Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "this.defaultViewModelCreationExtras");
+                }
+                resolveViewModel = GetViewModelKt.resolveViewModel(Reflection.getOrCreateKotlinClass(SocialWebViewModel.class), viewModelStore, (i & 4) != 0 ? null : null, defaultViewModelCreationExtras, (i & 16) != 0 ? null : qualifier, AndroidKoinScopeExtKt.getKoinScope(fragment), (i & 64) != 0 ? null : function04);
+                return resolveViewModel;
+            }
+        });
         this.viewModel$delegate = lazy;
-        this.args$delegate = new NavArgsLazy(Reflection.getOrCreateKotlinClass(SocialWebScreenArgs.class), new SocialWebScreen$special$$inlined$navArgs$1(this));
-        lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new SocialWebScreen$special$$inlined$inject$default$1(this, null, null));
+        this.args$delegate = new NavArgsLazy(Reflection.getOrCreateKotlinClass(SocialWebScreenArgs.class), new Function0<Bundle>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$special$$inlined$navArgs$1
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Bundle invoke() {
+                Bundle arguments = Fragment.this.getArguments();
+                if (arguments != null) {
+                    return arguments;
+                }
+                throw new IllegalStateException("Fragment " + Fragment.this + " has null arguments");
+            }
+        });
+        lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resource$delegate = lazy2;
     }
 
@@ -119,7 +201,24 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         super.onViewCreated(view, bundle);
         OnBackPressedDispatcher onBackPressedDispatcher = requireActivity().getOnBackPressedDispatcher();
         Intrinsics.checkNotNullExpressionValue(onBackPressedDispatcher, "requireActivity().onBackPressedDispatcher");
-        OnBackPressedDispatcherKt.addCallback$default(onBackPressedDispatcher, getViewLifecycleOwner(), false, new SocialWebScreen$onViewCreated$1(this), 2, null);
+        OnBackPressedDispatcherKt.addCallback$default(onBackPressedDispatcher, getViewLifecycleOwner(), false, new Function1<OnBackPressedCallback, Unit>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$onViewCreated$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(OnBackPressedCallback onBackPressedCallback) {
+                invoke2(onBackPressedCallback);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(OnBackPressedCallback addCallback) {
+                Intrinsics.checkNotNullParameter(addCallback, "$this$addCallback");
+                SocialWebScreen.this.showCloseDialog();
+            }
+        }, 2, null);
         initToolbar();
         setupWebView();
         SocialWebViewModel viewModel = getViewModel();
@@ -141,7 +240,7 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.FinishAuth.INSTANCE)) {
             requireActivity().finish();
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.ShowError.INSTANCE)) {
-            ContextExtKt.toast(getResource().getString(C3417R.string.social_unable_to_load_page));
+            ContextExtKt.toast(getResource().getString(C3419R.string.social_unable_to_load_page));
         } else if (socialSideEffects instanceof SocialSideEffects.ShowResetAlert) {
             showResetDialog(((SocialSideEffects.ShowResetAlert) socialSideEffects).getNetworkName());
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.RemoveCookies.INSTANCE)) {
@@ -177,20 +276,56 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         ImageView initToolbar$lambda$4$lambda$2 = forkToolbarBinding.imageBack;
         initToolbar$lambda$4$lambda$2.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         Intrinsics.checkNotNullExpressionValue(initToolbar$lambda$4$lambda$2, "initToolbar$lambda$4$lambda$2");
-        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$4$lambda$2, 0L, new SocialWebScreen$initToolbar$1$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$4$lambda$2, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$initToolbar$1$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                SocialWebScreen.this.showCloseDialog();
+            }
+        }, 1, null);
         ImageView initToolbar$lambda$4$lambda$3 = forkToolbarBinding.imageMenu;
         initToolbar$lambda$4$lambda$3.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         Intrinsics.checkNotNullExpressionValue(initToolbar$lambda$4$lambda$3, "initToolbar$lambda$4$lambda$3");
-        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$4$lambda$3, 0L, new SocialWebScreen$initToolbar$1$2$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$4$lambda$3, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$initToolbar$1$2$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                SocialWebViewModel viewModel;
+                Intrinsics.checkNotNullParameter(it, "it");
+                viewModel = SocialWebScreen.this.getViewModel();
+                viewModel.onMenuClicked();
+            }
+        }, 1, null);
     }
 
     private final void showImageMenu(SocialNetwork socialNetwork) {
         List mutableListOf;
         String socialName = socialNetwork.getSocialName();
-        String string = getResource().getString(C3417R.string.social_reset_menu_item);
-        int i = C3417R.C3419drawable.msg_delete;
+        String string = getResource().getString(C3419R.string.social_reset_menu_item);
+        int i = C3419R.C3421drawable.msg_delete;
         int i2 = Theme.key_color_red;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3417R.string.social_social_open_in_menu_item, socialName), C3417R.C3419drawable.msg_openin, 0, 0, new SocialWebScreen$showImageMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new SocialWebScreen$showImageMenu$menuItems$2(getViewModel())));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3419R.string.social_social_open_in_menu_item, socialName), C3419R.C3421drawable.msg_openin, 0, 0, new SocialWebScreen$showImageMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new SocialWebScreen$showImageMenu$menuItems$2(getViewModel())));
         if (!socialNetwork.getHasEditAccess()) {
             CollectionsKt.removeLast(mutableListOf);
         }
@@ -204,7 +339,7 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         String capitalizeOnlyFirstSymbol = StringExtKt.capitalizeOnlyFirstSymbol(getArgs().getSocialNetwork().getSocial().name());
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, new DialogModel(getResource().getString(C3417R.string.social_exit_confirmation_title), getResource().getString(C3417R.string.social_exit_confirmation_message, capitalizeOnlyFirstSymbol), getResource().getString(C3417R.string.social_web_cancel_button), getResource().getString(C3417R.string.social_web_exit_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda0
+        AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, new DialogModel(getResource().getString(C3419R.string.social_exit_confirmation_title), getResource().getString(C3419R.string.social_exit_confirmation_message, capitalizeOnlyFirstSymbol), getResource().getString(C3419R.string.social_web_cancel_button), getResource().getString(C3419R.string.social_web_exit_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 SocialWebScreen.showCloseDialog$lambda$5(SocialWebScreen.this);
@@ -222,11 +357,11 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
     }
 
     private final void showResetDialog(String str) {
-        String string = getResource().getString(C3417R.string.social_reset_account_title, str);
-        String string2 = getResource().getString(C3417R.string.social_reset_account_message, str);
+        String string = getResource().getString(C3419R.string.social_reset_account_title, str);
+        String string2 = getResource().getString(C3419R.string.social_reset_account_message, str);
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        DialogModel dialogModel = new DialogModel(string, string2, getResource().getString(C3417R.string.social_reset_account_negative_button), getResource().getString(C3417R.string.social_reset_account_positive_button));
+        DialogModel dialogModel = new DialogModel(string, string2, getResource().getString(C3419R.string.social_reset_account_negative_button), getResource().getString(C3419R.string.social_reset_account_positive_button));
         final SocialWebViewModel viewModel = getViewModel();
         AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, dialogModel, new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback

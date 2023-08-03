@@ -42,10 +42,10 @@ public class MentionCell extends LinearLayout {
         setOrientation(0);
         AvatarDrawable avatarDrawable = new AvatarDrawable();
         this.avatarDrawable = avatarDrawable;
-        avatarDrawable.setTextSize(AndroidUtilities.m54dp(18));
+        avatarDrawable.setTextSize(AndroidUtilities.m72dp(18));
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(14));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(14));
         addView(this.imageView, LayoutHelper.createLinear(28, 28, 12, 4, 0, 0));
         TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Cells.MentionCell.1
             @Override // android.widget.TextView
@@ -73,7 +73,7 @@ public class MentionCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(36), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(36), 1073741824));
     }
 
     public void setUser(TLRPC$User tLRPC$User) {
@@ -114,7 +114,7 @@ public class MentionCell extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.needsDivider) {
-            canvas.drawLine(AndroidUtilities.m54dp(52), getHeight() - 1, getWidth() - AndroidUtilities.m54dp(8), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m72dp(52), getHeight() - 1, getWidth() - AndroidUtilities.m72dp(8), getHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -202,7 +202,7 @@ public class MentionCell extends LinearLayout {
             textView.setText(sb);
             return;
         }
-        this.nameTextView.setPadding(AndroidUtilities.m54dp(22), 0, 0, 0);
+        this.nameTextView.setPadding(AndroidUtilities.m72dp(22), 0, 0, 0);
         TextView textView2 = this.nameTextView;
         StringBuilder sb2 = new StringBuilder();
         sb2.append(":  ");
@@ -215,9 +215,9 @@ public class MentionCell extends LinearLayout {
         super.dispatchDraw(canvas);
         Drawable drawable = this.emojiDrawable;
         if (drawable != null) {
-            int m54dp = AndroidUtilities.m54dp(drawable instanceof AnimatedEmojiDrawable ? 24 : 20);
-            int m54dp2 = AndroidUtilities.m54dp(this.emojiDrawable instanceof AnimatedEmojiDrawable ? -2 : 0);
-            this.emojiDrawable.setBounds(this.nameTextView.getLeft() + m54dp2, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) - m54dp) / 2, this.nameTextView.getLeft() + m54dp2 + m54dp, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) + m54dp) / 2);
+            int m72dp = AndroidUtilities.m72dp(drawable instanceof AnimatedEmojiDrawable ? 24 : 20);
+            int m72dp2 = AndroidUtilities.m72dp(this.emojiDrawable instanceof AnimatedEmojiDrawable ? -2 : 0);
+            this.emojiDrawable.setBounds(this.nameTextView.getLeft() + m72dp2, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) - m72dp) / 2, this.nameTextView.getLeft() + m72dp2 + m72dp, ((this.nameTextView.getTop() + this.nameTextView.getBottom()) + m72dp) / 2);
             Drawable drawable2 = this.emojiDrawable;
             if (drawable2 instanceof AnimatedEmojiDrawable) {
                 ((AnimatedEmojiDrawable) drawable2).setTime(System.currentTimeMillis());
@@ -243,7 +243,7 @@ public class MentionCell extends LinearLayout {
         this.usernameTextView.setVisibility(0);
         this.nameTextView.setText(str);
         TextView textView = this.usernameTextView;
-        textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false));
+        textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(20), false));
     }
 
     public void setIsDarkTheme(boolean z) {

@@ -54,7 +54,7 @@
 
     const-class v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;"
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p4, "presenter"
+    const-string/jumbo p4, "presenter"
 
     invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

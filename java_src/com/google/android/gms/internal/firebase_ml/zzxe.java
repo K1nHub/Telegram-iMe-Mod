@@ -2,9 +2,10 @@ package com.google.android.gms.internal.firebase_ml;
 
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* JADX WARN: Incorrect field signature: TK; */
 /* loaded from: classes.dex */
-public final class zzxe implements Comparable<zzxe>, Map.Entry<K, V> {
+public final class zzxe<K, V> implements Comparable<zzxe>, Map.Entry<K, V> {
     private V value;
     private final /* synthetic */ zzwz zzbwm;
     private final Comparable zzbwq;
@@ -52,7 +53,7 @@ public final class zzxe implements Comparable<zzxe>, Map.Entry<K, V> {
         Comparable comparable = this.zzbwq;
         int hashCode = comparable == null ? 0 : comparable.hashCode();
         V v = this.value;
-        return hashCode ^ (v != 0 ? v.hashCode() : 0);
+        return hashCode ^ (v != null ? v.hashCode() : 0);
     }
 
     public final String toString() {

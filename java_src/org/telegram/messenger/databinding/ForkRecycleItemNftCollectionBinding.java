@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.Components.BackupImageView;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemNftCollectionBinding implements ViewBinding {
@@ -30,7 +30,7 @@ public final class ForkRecycleItemNftCollectionBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemNftCollectionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_nft_collection, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_nft_collection, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -38,23 +38,23 @@ public final class ForkRecycleItemNftCollectionBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemNftCollectionBinding bind(View view) {
-        int i = C3417R.C3420id.card_nft_collection;
+        int i = C3419R.C3422id.card_nft_collection;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
-            i = C3417R.C3420id.constraint_root;
+            i = C3419R.C3422id.constraint_root;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
                 FrameLayout frameLayout = (FrameLayout) view;
-                i = C3417R.C3420id.image_arrow;
+                i = C3419R.C3422id.image_arrow;
                 AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView != null) {
-                    i = C3417R.C3420id.image_collection_image;
+                    i = C3419R.C3422id.image_collection_image;
                     BackupImageView backupImageView = (BackupImageView) ViewBindings.findChildViewById(view, i);
                     if (backupImageView != null) {
-                        i = C3417R.C3420id.text_collection_name;
+                        i = C3419R.C3422id.text_collection_name;
                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView != null) {
-                            i = C3417R.C3420id.text_collection_size;
+                            i = C3419R.C3422id.text_collection_size;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
                                 return new ForkRecycleItemNftCollectionBinding(frameLayout, cardView, constraintLayout, frameLayout, appCompatImageView, backupImageView, appCompatTextView, appCompatTextView2);

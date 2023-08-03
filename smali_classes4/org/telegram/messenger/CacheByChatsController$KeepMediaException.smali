@@ -24,13 +24,13 @@
 .method public constructor <init>(JI)V
     .locals 0
 
-    .line 180
+    .line 188
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
+    .line 189
     iput-wide p1, p0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
-    .line 182
+    .line 190
     iput p3, p0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->keepMedia:I
 
     return-void

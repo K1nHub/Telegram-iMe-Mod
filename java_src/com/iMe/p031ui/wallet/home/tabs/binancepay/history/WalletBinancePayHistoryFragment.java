@@ -17,12 +17,14 @@ import com.iMe.model.wallet.home.pay.BinanceTransactionItem;
 import com.iMe.model.wallet.home.pay.BinanceTransactionsGroup;
 import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
+import com.iMe.p031ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment;
 import com.iMe.p031ui.wallet.home.tabs.binancepay.history.adapter.BinancePayHistoryRecycleAdapter;
 import com.iMe.p031ui.wallet.home.tabs.binancepay.history.adapter.diff.BinancePayHistoryDiffCallback;
 import com.iMe.storage.data.utils.system.AndroidActivityHolder;
 import com.iMe.storage.domain.model.binancepay.BinanceTransaction;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -30,8 +32,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -39,10 +43,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletBinancePayHistoryBinding;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletBinancePayHistoryFragment.kt */
@@ -63,15 +73,94 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         this.screenType = screenType;
         this.tokenCode = tokenCode;
-        WalletBinancePayHistoryFragment$presenter$2 walletBinancePayHistoryFragment$presenter$2 = new WalletBinancePayHistoryFragment$presenter$2(this);
+        Function0<WalletBinancePayHistoryPresenter> function0 = new Function0<WalletBinancePayHistoryPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletBinancePayHistoryPresenter invoke() {
+                Lazy lazy2;
+                final WalletBinancePayHistoryFragment walletBinancePayHistoryFragment = WalletBinancePayHistoryFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        WalletBinancePayHistoryFragment.ScreenType screenType2;
+                        String str;
+                        screenType2 = WalletBinancePayHistoryFragment.this.screenType;
+                        str = WalletBinancePayHistoryFragment.this.tokenCode;
+                        return ParametersHolderKt.parametersOf(screenType2, str);
+                    }
+                };
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletBinancePayHistoryPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletBinancePayHistoryPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryPresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletBinancePayHistoryPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletBinancePayHistoryPresenter.class.getName() + ".presenter", walletBinancePayHistoryFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2290xc9259482(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletBinancePayHistoryPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BinancePayHistoryRecycleAdapter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.binancepay.history.adapter.BinancePayHistoryRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinancePayHistoryRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayHistoryRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.binancePayHistoryAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletBinancePayHistoryFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletBinancePayHistoryBinding>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletBinancePayHistoryBinding invoke() {
+                return ForkFragmentWalletBinancePayHistoryBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletBinancePayHistoryFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final WalletBinancePayHistoryPresenter getPresenter() {
         return (WalletBinancePayHistoryPresenter) this.presenter$delegate.getValue(this, $$delegatedProperties[0]);
     }
@@ -190,6 +279,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
         return arrayListOf;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void getThemeDescriptions$lambda$0(WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBinancePayHistoryAdapter().notifyDataSetChanged();
@@ -197,12 +287,12 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_binance_pay_action_history));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_binance_pay_action_history));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletBinancePayHistoryFragment.this.finishFragment();
@@ -231,6 +321,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupLoadMore$lambda$6$lambda$5$lambda$4(BinancePayHistoryRecycleAdapter this_with, WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -248,7 +339,25 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
 
     private final void setupListeners() {
         ForkFragmentWalletBinancePayHistoryBinding binding = getBinding();
-        binding.globalStateLayout.setRetryButtonClickListener(new WalletBinancePayHistoryFragment$setupListeners$1$1(this));
+        binding.globalStateLayout.setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletBinancePayHistoryPresenter presenter;
+                presenter = WalletBinancePayHistoryFragment.this.getPresenter();
+                WalletBinancePayHistoryPresenter.loadTransactions$default(presenter, false, null, 2, null);
+            }
+        });
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
@@ -263,11 +372,13 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$9$lambda$8(WalletBinancePayHistoryFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletBinancePayHistoryPresenter.loadTransactions$default(this$0.getPresenter(), true, null, 2, null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$10(WalletBinancePayHistoryFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");

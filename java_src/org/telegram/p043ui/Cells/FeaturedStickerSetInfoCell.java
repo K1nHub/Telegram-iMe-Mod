@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -29,6 +29,7 @@ import org.telegram.p043ui.Components.ColorSpanUnderline;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.ProgressButton;
 import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.tgnet.TLRPC$StickerSet;
 import org.telegram.tgnet.TLRPC$StickerSetCovered;
 /* renamed from: org.telegram.ui.Cells.FeaturedStickerSetInfoCell */
 /* loaded from: classes5.dex */
@@ -92,7 +93,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             progressButton.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
-            this.addButton.setText(LocaleController.getString("Add", C3417R.string.Add));
+            this.addButton.setText(LocaleController.getString("Add", C3419R.string.Add));
             if (z) {
                 createFrame3 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -105,7 +106,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             this.delButton.setTextColor(getThemedColor(Theme.key_featuredStickers_removeButtonText));
             this.delButton.setTextSize(1, 14.0f);
             this.delButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.delButton.setText(LocaleController.getString("StickersRemove", C3417R.string.StickersRemove));
+            this.delButton.setText(LocaleController.getString("StickersRemove", C3419R.string.StickersRemove));
             if (z) {
                 createFrame4 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -119,15 +120,15 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(60), 1073741824));
         if (this.canAddRemove) {
             int measuredWidth = this.addButton.getMeasuredWidth();
             int measuredWidth2 = this.delButton.getMeasuredWidth();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.delButton.getLayoutParams();
             if (measuredWidth2 < measuredWidth) {
-                layoutParams.rightMargin = AndroidUtilities.m54dp(14) + ((measuredWidth - measuredWidth2) / 2);
+                layoutParams.rightMargin = AndroidUtilities.m72dp(14) + ((measuredWidth - measuredWidth2) / 2);
             } else {
-                layoutParams.rightMargin = AndroidUtilities.m54dp(14);
+                layoutParams.rightMargin = AndroidUtilities.m72dp(14);
             }
             measureChildWithMargins(this.nameTextView, i, measuredWidth, i2, 0);
         }
@@ -173,12 +174,17 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         } else {
             this.nameTextView.setText(tLRPC$StickerSetCovered.set.title);
         }
-        this.infoTextView.setText(LocaleController.formatPluralString("Stickers", tLRPC$StickerSetCovered.set.count, new Object[0]));
+        TLRPC$StickerSet tLRPC$StickerSet = tLRPC$StickerSetCovered.set;
+        if (tLRPC$StickerSet.emojis) {
+            this.infoTextView.setText(LocaleController.formatPluralString("EmojiCount", tLRPC$StickerSet.count, new Object[0]));
+        } else {
+            this.infoTextView.setText(LocaleController.formatPluralString("Stickers", tLRPC$StickerSet.count, new Object[0]));
+        }
         this.isUnread = z;
         if (this.canAddRemove) {
             if (this.hasOnClick) {
                 this.addButton.setVisibility(0);
-                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1548id);
+                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1552id);
                 this.isInstalled = z4;
                 if (!z2) {
                     if (z4) {
@@ -319,7 +325,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                         invalidate();
                     }
                     this.paint.setColor(getThemedColor(Theme.key_featuredStickers_unread));
-                    canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(4) * this.unreadProgress, this.paint);
+                    canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(4) * this.unreadProgress, this.paint);
                 }
             }
             if (!z) {
@@ -335,10 +341,10 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                 }
             }
             this.paint.setColor(getThemedColor(Theme.key_featuredStickers_unread));
-            canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(4) * this.unreadProgress, this.paint);
+            canvas.drawCircle(this.nameTextView.getRight() + AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(4) * this.unreadProgress, this.paint);
         }
         if (this.needDivider) {
-            canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), BitmapDescriptorFactory.HUE_RED, Theme.dividerPaint);
+            canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), BitmapDescriptorFactory.HUE_RED, Theme.getThemePaint("paintDivider", this.resourcesProvider));
         }
     }
 

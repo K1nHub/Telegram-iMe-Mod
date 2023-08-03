@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatActionCell;Landroid/text/style/CharacterStyle;)V
     .locals 0
 
-    .line 1694
+    .line 1748
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatActionCell$1;->this$0:Lorg/telegram/ui/Cells/ChatActionCell;
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/ChatActionCell$1;->val$link:Landroid/text/style/CharacterStyle;
@@ -39,7 +39,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 1697
+    .line 1751
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatActionCell$1;->this$0:Lorg/telegram/ui/Cells/ChatActionCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatActionCell;->access$000(Lorg/telegram/ui/Cells/ChatActionCell;)Lorg/telegram/ui/Cells/ChatActionCell$ChatActionCellDelegate;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1698
+    .line 1752
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatActionCell$1;->this$0:Lorg/telegram/ui/Cells/ChatActionCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatActionCell$1;->val$link:Landroid/text/style/CharacterStyle;

@@ -180,17 +180,17 @@ public class Engine implements EngineJobListener, MemoryCache.ResourceRemovedLis
     public class LoadStatus {
 
         /* renamed from: cb */
-        private final ResourceCallback f85cb;
+        private final ResourceCallback f87cb;
         private final EngineJob<?> engineJob;
 
         LoadStatus(ResourceCallback resourceCallback, EngineJob<?> engineJob) {
-            this.f85cb = resourceCallback;
+            this.f87cb = resourceCallback;
             this.engineJob = engineJob;
         }
 
         public void cancel() {
             synchronized (Engine.this) {
-                this.engineJob.removeCallback(this.f85cb);
+                this.engineJob.removeCallback(this.f87cb);
             }
         }
     }

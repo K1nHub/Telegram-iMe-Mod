@@ -122,7 +122,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 11044
+    .line 11064
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -135,67 +135,67 @@
 .method public constructor <init>(Landroid/view/View;)V
     .locals 3
 
-    .line 11071
+    .line 11091
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 10932
+    .line 10952
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    .line 10933
+    .line 10953
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
     const-wide/16 v1, -0x1
 
-    .line 10934
+    .line 10954
     iput-wide v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mItemId:J
 
-    .line 10935
+    .line 10955
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mItemViewType:I
 
-    .line 10936
+    .line 10956
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     const/4 v1, 0x0
 
-    .line 10939
+    .line 10959
     iput-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mShadowedHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    .line 10941
+    .line 10961
     iput-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mShadowingHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    .line 11046
+    .line 11066
     iput-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
-    .line 11047
+    .line 11067
     iput-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mUnmodifiedPayloads:Ljava/util/List;
 
     const/4 v2, 0x0
 
-    .line 11049
+    .line 11069
     iput v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
-    .line 11053
+    .line 11073
     iput-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mScrapContainer:Landroidx/recyclerview/widget/RecyclerView$Recycler;
 
-    .line 11055
+    .line 11075
     iput-boolean v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mInChangeScrap:Z
 
-    .line 11059
+    .line 11079
     iput v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 11062
+    .line 11082
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPendingAccessibilityState:I
 
     if-eqz p1, :cond_0
 
-    .line 11075
+    .line 11095
     iput-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     return-void
 
-    .line 11073
+    .line 11093
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -209,19 +209,19 @@
 .method private createPayloadsIfNeeded()V
     .locals 1
 
-    .line 11294
+    .line 11314
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 11295
+    .line 11315
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
-    .line 11296
+    .line 11316
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -241,12 +241,12 @@
 
     if-nez p1, :cond_0
 
-    .line 11286
+    .line 11306
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->addFlags(I)V
 
     goto :goto_0
 
-    .line 11287
+    .line 11307
     :cond_0
     iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
@@ -254,10 +254,10 @@
 
     if-nez v0, :cond_1
 
-    .line 11288
+    .line 11308
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->createPayloadsIfNeeded()V
 
-    .line 11289
+    .line 11309
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -270,7 +270,7 @@
 .method addFlags(I)V
     .locals 1
 
-    .line 11281
+    .line 11301
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     or-int/2addr p1, v0
@@ -285,10 +285,10 @@
 
     const/4 v0, -0x1
 
-    .line 11101
+    .line 11121
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
-    .line 11102
+    .line 11122
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     return-void
@@ -297,15 +297,15 @@
 .method clearPayload()V
     .locals 1
 
-    .line 11301
+    .line 11321
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 11302
+    .line 11322
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 11304
+    .line 11324
     :cond_0
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
@@ -319,7 +319,7 @@
 .method clearReturnedFromScrapFlag()V
     .locals 1
 
-    .line 11228
+    .line 11248
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, -0x21
@@ -332,7 +332,7 @@
 .method clearTmpDetachFlag()V
     .locals 1
 
-    .line 11232
+    .line 11252
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, -0x101
@@ -345,7 +345,7 @@
 .method doesTransientStatePreventRecycling()Z
     .locals 1
 
-    .line 11439
+    .line 11459
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
@@ -376,13 +376,13 @@
 
     const/16 v0, 0x8
 
-    .line 11079
+    .line 11099
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->addFlags(I)V
 
-    .line 11080
+    .line 11100
     invoke-virtual {p0, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->offsetPosition(IZ)V
 
-    .line 11081
+    .line 11101
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
     return-void
@@ -391,7 +391,7 @@
 .method public final getAdapterPosition()I
     .locals 1
 
-    .line 11177
+    .line 11197
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-nez v0, :cond_0
@@ -400,7 +400,7 @@
 
     return v0
 
-    .line 11180
+    .line 11200
     :cond_0
     invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapterPositionFor(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
 
@@ -412,7 +412,7 @@
 .method public final getItemId()J
     .locals 2
 
-    .line 11205
+    .line 11225
     iget-wide v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mItemId:J
 
     return-wide v0
@@ -421,7 +421,7 @@
 .method public final getItemViewType()I
     .locals 1
 
-    .line 11212
+    .line 11232
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mItemViewType:I
 
     return v0
@@ -430,7 +430,7 @@
 .method public final getLayoutPosition()I
     .locals 2
 
-    .line 11151
+    .line 11171
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     const/4 v1, -0x1
@@ -446,7 +446,7 @@
 .method public final getOldPosition()I
     .locals 1
 
-    .line 11195
+    .line 11215
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
     return v0
@@ -457,7 +457,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 11125
+    .line 11145
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     const/4 v1, -0x1
@@ -481,14 +481,14 @@
         }
     .end annotation
 
-    .line 11308
+    .line 11328
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, 0x400
 
     if-nez v0, :cond_2
 
-    .line 11309
+    .line 11329
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPayloads:Ljava/util/List;
 
     if-eqz v0, :cond_1
@@ -501,20 +501,20 @@
 
     goto :goto_0
 
-    .line 11314
+    .line 11334
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mUnmodifiedPayloads:Ljava/util/List;
 
     return-object v0
 
-    .line 11311
+    .line 11331
     :cond_1
     :goto_0
     sget-object v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->FULLUPDATE_PAYLOADS:Ljava/util/List;
 
     return-object v0
 
-    .line 11317
+    .line 11337
     :cond_2
     sget-object v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->FULLUPDATE_PAYLOADS:Ljava/util/List;
 
@@ -524,7 +524,7 @@
 .method hasAnyOfTheFlags(I)Z
     .locals 1
 
-    .line 11261
+    .line 11281
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/2addr p1, v0
@@ -545,7 +545,7 @@
 .method isAdapterPositionUnknown()Z
     .locals 1
 
-    .line 11273
+    .line 11293
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, 0x200
@@ -576,7 +576,7 @@
 .method isAttachedToTransitionOverlay()Z
     .locals 2
 
-    .line 11269
+    .line 11289
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -609,7 +609,7 @@
 .method isBound()Z
     .locals 2
 
-    .line 11253
+    .line 11273
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     const/4 v1, 0x1
@@ -630,7 +630,7 @@
 .method isInvalid()Z
     .locals 1
 
-    .line 11245
+    .line 11265
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x4
@@ -651,7 +651,7 @@
 .method public final isRecyclable()Z
     .locals 1
 
-    .line 11422
+    .line 11442
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
@@ -660,7 +660,7 @@
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 11423
+    .line 11443
     invoke-static {v0}, Landroidx/core/view/ViewCompat;->hasTransientState(Landroid/view/View;)Z
 
     move-result v0
@@ -681,7 +681,7 @@
 .method isRemoved()Z
     .locals 1
 
-    .line 11257
+    .line 11277
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x8
@@ -702,7 +702,7 @@
 .method isScrap()Z
     .locals 1
 
-    .line 11216
+    .line 11236
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mScrapContainer:Landroidx/recyclerview/widget/RecyclerView$Recycler;
 
     if-eqz v0, :cond_0
@@ -721,7 +721,7 @@
 .method isTmpDetached()Z
     .locals 1
 
-    .line 11265
+    .line 11285
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, 0x100
@@ -742,7 +742,7 @@
 .method isUpdated()Z
     .locals 1
 
-    .line 11443
+    .line 11463
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -763,7 +763,7 @@
 .method needsUpdate()Z
     .locals 1
 
-    .line 11249
+    .line 11269
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -784,25 +784,25 @@
 .method offsetPosition(IZ)V
     .locals 2
 
-    .line 11085
+    .line 11105
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 11086
+    .line 11106
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
-    .line 11088
+    .line 11108
     :cond_0
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     if-ne v0, v1, :cond_1
 
-    .line 11089
+    .line 11109
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
@@ -810,14 +810,14 @@
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 11092
+    .line 11112
     iget p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
     add-int/2addr p2, p1
 
     iput p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
-    .line 11094
+    .line 11114
     :cond_2
     iget p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
@@ -825,7 +825,7 @@
 
     iput p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    .line 11095
+    .line 11115
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -834,7 +834,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 11096
+    .line 11116
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -854,23 +854,23 @@
 .method onEnteredHiddenState(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 2
 
-    .line 11341
+    .line 11361
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPendingAccessibilityState:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 11342
+    .line 11362
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mWasImportantForAccessibilityBeforeHidden:I
 
     goto :goto_0
 
-    .line 11344
+    .line 11364
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 11345
+    .line 11365
     invoke-static {v0}, Landroidx/core/view/ViewCompat;->getImportantForAccessibility(Landroid/view/View;)I
 
     move-result v0
@@ -880,7 +880,7 @@
     :goto_0
     const/4 v0, 0x4
 
-    .line 11347
+    .line 11367
     invoke-virtual {p1, p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setChildImportantForAccessibilityInternal(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)Z
 
     return-void
@@ -889,14 +889,14 @@
 .method onLeftHiddenState(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
 
-    .line 11355
+    .line 11375
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mWasImportantForAccessibilityBeforeHidden:I
 
     invoke-virtual {p1, p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setChildImportantForAccessibilityInternal(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)Z
 
     const/4 p1, 0x0
 
-    .line 11357
+    .line 11377
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mWasImportantForAccessibilityBeforeHidden:I
 
     return-void
@@ -907,46 +907,46 @@
 
     const/4 v0, 0x0
 
-    .line 11322
+    .line 11342
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     const/4 v1, -0x1
 
-    .line 11323
+    .line 11343
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    .line 11324
+    .line 11344
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
     const-wide/16 v2, -0x1
 
-    .line 11325
+    .line 11345
     iput-wide v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mItemId:J
 
-    .line 11326
+    .line 11346
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPreLayoutPosition:I
 
-    .line 11327
+    .line 11347
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
     const/4 v2, 0x0
 
-    .line 11328
+    .line 11348
     iput-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mShadowedHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    .line 11329
+    .line 11349
     iput-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mShadowingHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    .line 11330
+    .line 11350
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->clearPayload()V
 
-    .line 11331
+    .line 11351
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 11332
+    .line 11352
     iput v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPendingAccessibilityState:I
 
-    .line 11333
+    .line 11353
     invoke-static {p0}, Landroidx/recyclerview/widget/RecyclerView;->clearNestedRecyclerViewIfNotNested(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
     return-void
@@ -955,14 +955,14 @@
 .method saveOldPosition()V
     .locals 2
 
-    .line 11106
+    .line 11126
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 11107
+    .line 11127
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
     iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOldPosition:I
@@ -974,7 +974,7 @@
 .method setFlags(II)V
     .locals 2
 
-    .line 11277
+    .line 11297
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     not-int v1, p2
@@ -995,7 +995,7 @@
 
     const/4 v0, 0x1
 
-    .line 11397
+    .line 11417
     iget v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
     if-eqz p1, :cond_0
@@ -1014,17 +1014,17 @@
 
     const/4 p1, 0x0
 
-    .line 11399
+    .line 11419
     iput p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
 
-    .line 11400
+    .line 11420
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     const-string v0, "isRecyclable decremented below 0: unmatched pair of setIsRecyable() calls for "
 
     if-nez p1, :cond_1
 
-    .line 11404
+    .line 11424
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1043,7 +1043,7 @@
 
     goto :goto_1
 
-    .line 11401
+    .line 11421
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -1068,7 +1068,7 @@
 
     if-ne v1, v0, :cond_3
 
-    .line 11407
+    .line 11427
     iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     or-int/lit8 p1, p1, 0x10
@@ -1082,7 +1082,7 @@
 
     if-nez v1, :cond_4
 
-    .line 11409
+    .line 11429
     iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 p1, p1, -0x11
@@ -1097,10 +1097,10 @@
 .method setScrapContainer(Landroidx/recyclerview/widget/RecyclerView$Recycler;Z)V
     .locals 0
 
-    .line 11240
+    .line 11260
     iput-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mScrapContainer:Landroidx/recyclerview/widget/RecyclerView$Recycler;
 
-    .line 11241
+    .line 11261
     iput-boolean p2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mInChangeScrap:Z
 
     return-void
@@ -1109,7 +1109,7 @@
 .method shouldBeKeptAsChild()Z
     .locals 1
 
-    .line 11431
+    .line 11451
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1130,7 +1130,7 @@
 .method public shouldIgnore()Z
     .locals 1
 
-    .line 11112
+    .line 11132
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1151,7 +1151,7 @@
 .method stopIgnoring()V
     .locals 1
 
-    .line 11236
+    .line 11256
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit16 v0, v0, -0x81
@@ -1164,7 +1164,7 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 11362
+    .line 11382
     new-instance v0, Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1175,7 +1175,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11363
+    .line 11383
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
@@ -1224,7 +1224,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 11365
+    .line 11385
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isScrap()Z
 
     move-result v1
@@ -1233,10 +1233,10 @@
 
     const-string v1, " scrap "
 
-    .line 11366
+    .line 11386
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11367
+    .line 11387
     iget-boolean v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mInChangeScrap:Z
 
     if-eqz v1, :cond_0
@@ -1251,7 +1251,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11369
+    .line 11389
     :cond_1
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isInvalid()Z
 
@@ -1263,7 +1263,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11370
+    .line 11390
     :cond_2
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isBound()Z
 
@@ -1275,7 +1275,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11371
+    .line 11391
     :cond_3
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->needsUpdate()Z
 
@@ -1287,7 +1287,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11372
+    .line 11392
     :cond_4
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isRemoved()Z
 
@@ -1299,7 +1299,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11373
+    .line 11393
     :cond_5
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->shouldIgnore()Z
 
@@ -1311,7 +1311,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11374
+    .line 11394
     :cond_6
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isTmpDetached()Z
 
@@ -1323,7 +1323,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11375
+    .line 11395
     :cond_7
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isRecyclable()Z
 
@@ -1353,7 +1353,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11376
+    .line 11396
     :cond_8
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isAdapterPositionUnknown()Z
 
@@ -1365,7 +1365,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11378
+    .line 11398
     :cond_9
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1382,10 +1382,10 @@
     :cond_a
     const-string v1, "}"
 
-    .line 11379
+    .line 11399
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11380
+    .line 11400
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1396,7 +1396,7 @@
 .method unScrap()V
     .locals 1
 
-    .line 11220
+    .line 11240
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mScrapContainer:Landroidx/recyclerview/widget/RecyclerView$Recycler;
 
     invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView$Recycler;->unscrapView(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
@@ -1407,7 +1407,7 @@
 .method wasReturnedFromScrap()Z
     .locals 1
 
-    .line 11224
+    .line 11244
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
     and-int/lit8 v0, v0, 0x20

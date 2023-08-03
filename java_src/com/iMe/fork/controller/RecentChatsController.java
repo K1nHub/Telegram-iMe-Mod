@@ -17,7 +17,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -28,12 +27,18 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
@@ -62,7 +67,27 @@ public final class RecentChatsController extends BaseController implements KoinC
     public RecentChatsController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new RecentChatsController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<HistoryDialogDao>() { // from class: com.iMe.fork.controller.RecentChatsController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.HistoryDialogDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final HistoryDialogDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(HistoryDialogDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.isRecentChatsEnabled = TelegramPreferenceKeys.User.Default.isRecentChatsEnabled();
         this.selectedRecentChatsDialogTypes = new LinkedHashSet();
@@ -165,8 +190,8 @@ public final class RecentChatsController extends BaseController implements KoinC
             coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
             LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
             for (HistoryDialogModel historyDialogModel2 : pinnedRecentChats2) {
-                Pair m85to = TuplesKt.m85to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
-                linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+                Pair m103to = TuplesKt.m103to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
+                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.historyDialogs = mutableMap;
@@ -202,7 +227,7 @@ public final class RecentChatsController extends BaseController implements KoinC
                 RecentChatsController.updateCreationDate$lambda$4(RecentChatsController.this, historyDialogModel2);
             }
         });
-        getNotificationCenter().postNotificationName(NotificationCenter.recentChatsDidLoad, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.recentChatsDidLoad, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -276,8 +301,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m85to = TuplesKt.m85to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;
@@ -314,11 +339,17 @@ public final class RecentChatsController extends BaseController implements KoinC
 
     public final void clearRecentChatsHistory() {
         Collection<HistoryDialogModel> values = this.historyDialogs.values();
-        final RecentChatsController$clearRecentChatsHistory$1 recentChatsController$clearRecentChatsHistory$1 = RecentChatsController$clearRecentChatsHistory$1.INSTANCE;
+        final RecentChatsController$clearRecentChatsHistory$1 recentChatsController$clearRecentChatsHistory$1 = new Function1<HistoryDialogModel, Boolean>() { // from class: com.iMe.fork.controller.RecentChatsController$clearRecentChatsHistory$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(HistoryDialogModel it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf(!it.isPinned());
+            }
+        };
         Collection$EL.removeIf(values, new Predicate() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
             @Override // p033j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Objects.requireNonNull(predicate);
+                return Predicate.CC.$default$and(this, predicate);
             }
 
             @Override // p033j$.util.function.Predicate
@@ -328,8 +359,8 @@ public final class RecentChatsController extends BaseController implements KoinC
 
             @Override // p033j$.util.function.Predicate
             /* renamed from: or */
-            public /* synthetic */ Predicate mo23or(Predicate predicate) {
-                return Objects.requireNonNull(predicate);
+            public /* synthetic */ Predicate mo25or(Predicate predicate) {
+                return Predicate.CC.$default$or(this, predicate);
             }
 
             @Override // p033j$.util.function.Predicate
@@ -413,14 +444,26 @@ public final class RecentChatsController extends BaseController implements KoinC
             return (RecentChatsController) tmp0.invoke(obj);
         }
 
-        public final RecentChatsController getInstance(int i) {
+        public final RecentChatsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = RecentChatsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final RecentChatsController$Companion$getInstance$1 recentChatsController$Companion$getInstance$1 = new RecentChatsController$Companion$getInstance$1(i);
+            final Function1<Integer, RecentChatsController> function1 = new Function1<Integer, RecentChatsController>() { // from class: com.iMe.fork.controller.RecentChatsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final RecentChatsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new RecentChatsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.RecentChatsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -432,7 +475,7 @@ public final class RecentChatsController extends BaseController implements KoinC
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

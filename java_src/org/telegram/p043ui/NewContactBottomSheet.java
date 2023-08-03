@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -100,7 +100,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.classGuid = ConnectionsManager.generateClassGuid();
         this.parentFragment = baseFragment;
         setCustomView(createView(getContext()));
-        setTitle(LocaleController.getString("NewContactTitle", C3417R.string.NewContactTitle), true);
+        setTitle(LocaleController.getString("NewContactTitle", C3419R.string.NewContactTitle), true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:57:0x03e8  */
@@ -143,15 +143,15 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$1 */
     /* loaded from: classes5.dex */
-    public class C61601 extends TextView {
+    public class C62221 extends TextView {
         final NotificationCenter.NotificationCenterDelegate delegate;
 
-        C61601(NewContactBottomSheet newContactBottomSheet, Context context) {
+        C62221(NewContactBottomSheet newContactBottomSheet, Context context) {
             super(context);
             this.delegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.NewContactBottomSheet$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    NewContactBottomSheet.C61601.this.lambda$$0(i, i2, objArr);
+                    NewContactBottomSheet.C62221.this.lambda$$0(i, i2, objArr);
                 }
             };
         }
@@ -177,8 +177,8 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$2 */
     /* loaded from: classes5.dex */
-    public class C61612 implements CountrySelectActivity.CountrySelectActivityDelegate {
-        C61612() {
+    public class C62232 implements CountrySelectActivity.CountrySelectActivityDelegate {
+        C62232() {
         }
 
         @Override // org.telegram.p043ui.CountrySelectActivity.CountrySelectActivityDelegate
@@ -187,7 +187,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NewContactBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewContactBottomSheet.C61612.this.lambda$didSelectCountry$0();
+                    NewContactBottomSheet.C62232.this.lambda$didSelectCountry$0();
                 }
             }, 300L);
             NewContactBottomSheet.this.phoneField.requestFocus();
@@ -203,7 +203,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         CountrySelectActivity countrySelectActivity = new CountrySelectActivity(true);
-        countrySelectActivity.setCountrySelectActivityDelegate(new C61612());
+        countrySelectActivity.setCountrySelectActivityDelegate(new C62232());
         this.parentFragment.showAsSheet(countrySelectActivity);
     }
 
@@ -341,7 +341,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             }
             bufferedReader.close();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         if (str.startsWith("+")) {
             return str;
@@ -401,7 +401,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         if (languageFlag != null) {
             spannableStringBuilder.append((CharSequence) languageFlag);
         }
-        setCountryButtonText(Emoji.replaceEmoji(spannableStringBuilder, this.countryFlag.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false));
+        setCountryButtonText(Emoji.replaceEmoji(spannableStringBuilder, this.countryFlag.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(20), false));
         this.countryCodeForHint = str;
         this.wasCountryHintIndex = -1;
         invalidateCountryHint();
@@ -412,9 +412,9 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         if (TextUtils.isEmpty(charSequence)) {
             ViewPropertyAnimator animate = this.countryFlag.animate();
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
-            animate.setInterpolator(cubicBezierInterpolator).translationY(AndroidUtilities.m54dp(30)).setDuration(150L);
-            this.plusTextView.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m54dp(30)).setDuration(150L);
-            this.codeField.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m54dp(30)).setDuration(150L);
+            animate.setInterpolator(cubicBezierInterpolator).translationY(AndroidUtilities.m72dp(30)).setDuration(150L);
+            this.plusTextView.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m72dp(30)).setDuration(150L);
+            this.codeField.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.m72dp(30)).setDuration(150L);
             return;
         }
         this.countryFlag.animate().setInterpolator(AndroidUtilities.overshootInterpolator).translationY(BitmapDescriptorFactory.HUE_RED).setDuration(350L).start();

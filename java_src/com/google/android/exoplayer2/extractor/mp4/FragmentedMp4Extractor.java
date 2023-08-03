@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
+import android.net.Uri;
 import android.util.Pair;
 import android.util.SparseArray;
 import com.google.android.exoplayer2.C0480C;
@@ -41,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 /* loaded from: classes.dex */
 public class FragmentedMp4Extractor implements Extractor {
@@ -90,7 +92,21 @@ public class FragmentedMp4Extractor implements Extractor {
     private final Track sideloadedTrack;
     private final TimestampAdjuster timestampAdjuster;
     private final SparseArray<TrackBundle> trackBundles;
-    public static final ExtractorsFactory FACTORY = FragmentedMp4Extractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = FragmentedMp4Extractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final byte[] PIFF_SAMPLE_ENCRYPTION_BOX_EXTENDED_TYPE = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
     private static final Format EMSG_FORMAT = new Format.Builder().setSampleMimeType(MimeTypes.APPLICATION_EMSG).build();
 
@@ -377,7 +393,7 @@ public class FragmentedMp4Extractor implements Extractor {
             while (i < size2) {
                 TrackSampleTable trackSampleTable = parseTraks.get(i);
                 Track track = trackSampleTable.track;
-                this.trackBundles.put(track.f191id, new TrackBundle(this.extractorOutput.track(i, track.type), trackSampleTable, getDefaultSampleValues(sparseArray, track.f191id)));
+                this.trackBundles.put(track.f193id, new TrackBundle(this.extractorOutput.track(i, track.type), trackSampleTable, getDefaultSampleValues(sparseArray, track.f193id)));
                 this.durationUs = Math.max(this.durationUs, track.durationUs);
                 i++;
             }
@@ -388,7 +404,7 @@ public class FragmentedMp4Extractor implements Extractor {
         while (i < size2) {
             TrackSampleTable trackSampleTable2 = parseTraks.get(i);
             Track track2 = trackSampleTable2.track;
-            this.trackBundles.get(track2.f191id).reset(trackSampleTable2, getDefaultSampleValues(sparseArray, track2.f191id));
+            this.trackBundles.get(track2.f193id).reset(trackSampleTable2, getDefaultSampleValues(sparseArray, track2.f193id));
             i++;
         }
     }
@@ -477,7 +493,7 @@ public class FragmentedMp4Extractor implements Extractor {
             readUnsignedInt = parsableByteArray.readUnsignedInt();
             j = j3;
         } else if (parseFullAtomVersion != 1) {
-            Log.m796w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
+            Log.m814w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
             return;
         } else {
             long readUnsignedInt3 = parsableByteArray.readUnsignedInt();
@@ -914,7 +930,7 @@ public class FragmentedMp4Extractor implements Extractor {
             }
             int currentSampleOffset = (int) (trackBundle.getCurrentSampleOffset() - extractorInput.getPosition());
             if (currentSampleOffset < 0) {
-                Log.m796w(TAG, "Ignoring negative offset to sample data.");
+                Log.m814w(TAG, "Ignoring negative offset to sample data.");
                 currentSampleOffset = 0;
             }
             extractorInput.skipFully(currentSampleOffset);
@@ -1070,7 +1086,7 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = leafAtom.data.getData();
                 UUID parseUuid = PsshAtomUtil.parseUuid(data);
                 if (parseUuid == null) {
-                    Log.m796w(TAG, "Skipped pssh atom (failed to extract uuid)");
+                    Log.m814w(TAG, "Skipped pssh atom (failed to extract uuid)");
                 } else {
                     arrayList.add(new DrmInitData.SchemeData(parseUuid, MimeTypes.VIDEO_MP4, data));
                 }

@@ -31,7 +31,7 @@ public class OutlineEditText extends OutlineTextContainerView {
         this.editText.setTypeface(Typeface.DEFAULT);
         this.editText.setCursorColor(Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated));
         this.editText.setCursorWidth(1.5f);
-        this.editText.setPadding(AndroidUtilities.m54dp(15), 0, AndroidUtilities.m54dp(15), 0);
+        this.editText.setPadding(AndroidUtilities.m72dp(15), 0, AndroidUtilities.m72dp(15), 0);
         attachEditText(this.editText);
         addView(this.editText, LayoutHelper.createFrame(-1, -2, 16));
     }

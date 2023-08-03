@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;
-.super Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
+.super Lorg/telegram/ui/Components/EmojiTabsStrip;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,210 +17,470 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 .field final synthetic val$type:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;I)V
+.method public static synthetic $r8$lambda$VxNvIJmLx-37sk9CalKdougyQXU(Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 630
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->lambda$onTabClickLong$0(Landroid/content/DialogInterface;I)V
 
-    iput p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$type:I
+    return-void
+.end method
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZZZILjava/lang/Runnable;Landroid/content/Context;I)V
+    .locals 9
+
+    move-object v8, p0
+
+    move-object v0, p1
+
+    .line 561
+    iput-object v0, v8, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    move-object/from16 v0, p9
+
+    iput-object v0, v8, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$context:Landroid/content/Context;
+
+    move/from16 v0, p10
+
+    iput v0, v8, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$type:I
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
+    move/from16 v6, p7
+
+    move-object/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/EmojiTabsStrip;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZZZILjava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onTabClickLong$0(Landroid/content/DialogInterface;I)V
+    .locals 1
+
+    .line 575
+    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSuggestPremiumReactionsEmoji(Z)V
+
+    .line 576
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->featuredEmojiDidLoad:I
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScrollStateChanged(I)V
+.method protected getEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
+
+    .line 594
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/graphics/ColorFilter;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected onTabClick(I)Z
     .locals 4
 
-    if-nez p1, :cond_1
-
-    .line 646
+    .line 599
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
+
+    move-result v0
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$502(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
+    if-eqz v0, :cond_0
 
-    .line 647
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    return v1
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+    .line 602
+    :cond_0
+    iget v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$type:I
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x1
+
+    if-ne v0, v2, :cond_3
+
+    if-nez p1, :cond_2
+
+    .line 604
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
 
     move-result v0
 
-    const/4 v2, -0x1
+    xor-int/2addr v0, v3
 
-    if-eq v0, v2, :cond_1
+    invoke-static {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$602(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 605
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
+    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiTabs:Lorg/telegram/ui/Components/EmojiTabsStrip;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
+
+    .line 606
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$700(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)[Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
+    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    move-result v0
+    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
 
-    if-nez v0, :cond_1
+    move-result v2
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    aget-object v0, v0, v2
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
+    iput-object v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiTabs:Lorg/telegram/ui/Components/EmojiTabsStrip;
+
+    .line 607
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiTabs:Lorg/telegram/ui/Components/EmojiTabsStrip;
+
+    invoke-virtual {p1, v1}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
+
+    .line 608
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiTabs:Lorg/telegram/ui/Components/EmojiTabsStrip;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/EmojiTabsStrip;->toggleEmojiStickersTab:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
+
+    invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTranslationY()F
+    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg_emoji_stickers:I
+
+    goto :goto_0
+
+    :cond_1
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg_emoji_smiles:I
+
+    :goto_0
+    invoke-static {v0, v2}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->setDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 609
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {p1, v3, v1, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$800(Lorg/telegram/ui/SelectAnimatedEmojiDialog;ZZZ)V
+
+    .line 610
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$900(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroidx/recyclerview/widget/GridLayoutManager;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    return v3
+
+    :cond_2
+    add-int/lit8 p1, p1, -0x1
+
+    :cond_3
+    if-lez p1, :cond_4
+
+    .line 616
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/util/SparseIntArray;
+
+    move-result-object v0
+
+    add-int/lit8 v2, p1, -0x1
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v0
 
-    const/16 v2, 0x33
+    if-ltz v0, :cond_4
+
+    .line 617
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/util/SparseIntArray;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v1
+
+    .line 619
+    :cond_4
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    const/4 v2, -0x2
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    neg-int v2, v2
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;II)V
 
-    int-to-float v2, v2
-
-    cmpl-float v0, v0, v2
-
-    if-lez v0, :cond_1
-
-    .line 648
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
+    iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiTabs:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
-    move-result-object v2
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->select(I)V
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationY()F
-
-    move-result v2
-
-    const/16 v3, 0x10
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    neg-int v3, v3
-
-    int-to-float v3, v3
-
-    cmpl-float v2, v2, v3
-
-    if-lez v2, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x1
-
-    :goto_0
-    invoke-static {v0, v2, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;II)V
-
-    .line 651
-    :cond_1
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->onScrollStateChanged(I)V
-
-    return-void
-.end method
-
-.method public onScrolled(II)V
-    .locals 2
-
-    .line 633
-    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
-
-    .line 634
+    .line 621
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+    iget-object v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
 
-    .line 635
+    iput-boolean v3, v0, Lorg/telegram/ui/Components/RecyclerListView;->scrolledByUserOnce:Z
+
+    const/4 v0, 0x0
+
+    .line 622
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->search(Ljava/lang/String;)V
+
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
+    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->searchBox:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    move-result p1
+    if-eqz p1, :cond_5
 
-    if-nez p1, :cond_0
-
-    .line 636
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$900(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroidx/recyclerview/widget/GridLayoutManager;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstCompletelyVisibleItemPosition()I
-
-    move-result p2
-
-    invoke-static {p1, p2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1700(Lorg/telegram/ui/SelectAnimatedEmojiDialog;I)V
-
-    .line 638
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1800(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
-
-    .line 639
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1900(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$1200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     move-result-object p1
 
-    iget-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    if-eqz p1, :cond_5
 
-    iget-object p2, p2, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
+    .line 624
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->computeVerticalScrollOffset()I
+    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->searchBox:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    move-result p2
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$1200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)Lorg/telegram/ui/Components/StickerCategoriesListView;
 
-    const/4 v0, 0x1
+    move-result-object p1
 
-    if-nez p2, :cond_2
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectCategory(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
 
-    iget p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$type:I
+    :cond_5
+    return v3
+.end method
 
-    if-eqz p2, :cond_2
+.method protected onTabClickLong(I)Z
+    .locals 4
 
-    if-ne p2, v0, :cond_1
+    .line 569
+    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
+
+    if-eqz v0, :cond_0
+
+    sget v0, Lorg/telegram/messenger/R$string;->emoji_premium_title_off_alert:I
 
     goto :goto_0
 
-    :cond_1
-    const/4 p2, 0x0
+    :cond_0
+    sget v0, Lorg/telegram/messenger/R$string;->emoji_premium_title_on_alert:I
+
+    :goto_0
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 570
+    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
+
+    if-eqz v1, :cond_1
+
+    sget v1, Lorg/telegram/messenger/R$string;->emoji_premium_message_off_alert:I
 
     goto :goto_1
 
-    :cond_2
-    :goto_0
-    move p2, v0
+    :cond_1
+    sget v1, Lorg/telegram/messenger/R$string;->emoji_premium_message_on_alert:I
 
     :goto_1
-    const/high16 v1, 0x3f800000    # 1.0f
+    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    invoke-static {p1, p2, v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    move-result-object v1
 
-    .line 640
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 571
+    new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->invalidateParent()V
+    iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->val$context:Landroid/content/Context;
 
+    invoke-direct {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    sget v3, Lorg/telegram/messenger/R$string;->settings_emoji_premium_suggest_sets:I
+
+    .line 572
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    move-result-object v2
+
+    .line 573
+    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;)V
+
+    .line 574
+    invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    move-result-object v0
+
+    sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
+
+    .line 578
+    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    move-result-object v0
+
+    .line 579
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    move-result-object v0
+
+    .line 580
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
+
+    const/4 v1, -0x1
+
+    .line 581
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    if-eqz v0, :cond_2
+
+    .line 583
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 585
+    :cond_2
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->onTabClickLong(I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method protected onTabCreate(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;)V
+    .locals 1
+
+    .line 631
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$5;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 632
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setScaleX(F)V
+
+    .line 633
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setScaleY(F)V
+
+    :cond_1
     return-void
 .end method

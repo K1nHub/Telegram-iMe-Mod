@@ -12,9 +12,10 @@ import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ImageHeaderView.kt */
@@ -39,7 +40,18 @@ public final class ImageHeaderView extends FrameLayout {
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new ImageHeaderView$networkIconCornerSize$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.custom.ImageHeaderView$networkIconCornerSize$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(ImageHeaderView.this.getResources().getDimension(C3419R.dimen.icon_size_medium) / 2);
+            }
+        });
         this.networkIconCornerSize$delegate = lazy;
         ForkContentImageHeaderBinding inflate = ForkContentImageHeaderBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -79,7 +91,7 @@ public final class ImageHeaderView extends FrameLayout {
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
         AppCompatImageView imageIcon = forkContentImageHeaderBinding.imageIcon;
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
-        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3417R.C3419drawable.fork_ic_internal_logo), false, 4, null);
+        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3419R.C3421drawable.fork_ic_internal_logo), false, 4, null);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }

@@ -15,13 +15,13 @@ import com.google.android.gms.fido.fido2.api.common.PublicKeyCredentialType;
 /* loaded from: classes.dex */
 public class PublicKeyCredentialParameters extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PublicKeyCredentialParameters> CREATOR = new zzai();
-    @SafeParcelable.Field(getter = "getTypeAsString", m779id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getTypeAsString", m797id = 2, type = "java.lang.String")
     private final PublicKeyCredentialType zza;
-    @SafeParcelable.Field(getter = "getAlgorithmIdAsInteger", m779id = 3, type = "java.lang.Integer")
+    @SafeParcelable.Field(getter = "getAlgorithmIdAsInteger", m797id = 3, type = "java.lang.Integer")
     private final COSEAlgorithmIdentifier zzb;
 
     @SafeParcelable.Constructor
-    public PublicKeyCredentialParameters(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) int i) {
+    public PublicKeyCredentialParameters(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) int i) {
         Preconditions.checkNotNull(str);
         try {
             this.zza = PublicKeyCredentialType.fromString(str);

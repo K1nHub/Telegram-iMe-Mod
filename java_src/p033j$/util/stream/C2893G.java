@@ -6,7 +6,7 @@ import p033j$.util.function.InterfaceC2821g;
 public final /* synthetic */ class C2893G implements InterfaceC2821g {
 
     /* renamed from: a */
-    public static final /* synthetic */ C2893G f825a = new C2893G();
+    public static final /* synthetic */ C2893G f828a = new C2893G();
 
     private /* synthetic */ C2893G() {
     }

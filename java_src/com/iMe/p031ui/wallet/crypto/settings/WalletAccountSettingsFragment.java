@@ -14,6 +14,7 @@ import com.iMe.p031ui.wallet.crypto.settings.blockchains.BlockchainsManagementFr
 import com.iMe.p031ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment;
 import com.iMe.p031ui.wallet.crypto.wallet_connect.WalletConnectFragment;
 import com.iMe.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -22,6 +23,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -29,10 +31,15 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthSettingsBinding;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.PasscodeActivity;
@@ -54,13 +61,77 @@ public final class WalletAccountSettingsFragment extends WalletAuthBaseFragment 
 
     public WalletAccountSettingsFragment() {
         Lazy lazy;
-        WalletAccountSettingsFragment$presenter$2 walletAccountSettingsFragment$presenter$2 = new WalletAccountSettingsFragment$presenter$2(this);
+        Function0<WalletAccountSettingsPresenter> function0 = new Function0<WalletAccountSettingsPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletAccountSettingsPresenter invoke() {
+                Lazy lazy2;
+                final WalletAccountSettingsFragment walletAccountSettingsFragment = WalletAccountSettingsFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletAccountSettingsPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletAccountSettingsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletAccountSettingsPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletAccountSettingsPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletAccountSettingsPresenter.class.getName() + ".presenter", walletAccountSettingsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletAccountSettingsFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletAccountSettingsPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletSettingsRecycleAdapter>() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.settings.adapter.WalletSettingsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSettingsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSettingsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.settingsRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletAccountSettingsFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletEthSettingsBinding>() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletEthSettingsBinding invoke() {
+                return ForkFragmentWalletEthSettingsBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletAccountSettingsFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     private final WalletAccountSettingsPresenter getPresenter() {
@@ -142,13 +213,13 @@ public final class WalletAccountSettingsFragment extends WalletAuthBaseFragment 
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setCastShadows(false);
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_eth_account_settings_toolbar_title));
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setCastShadows(false);
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_eth_account_settings_toolbar_title));
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletAccountSettingsFragment.this.finishFragment();

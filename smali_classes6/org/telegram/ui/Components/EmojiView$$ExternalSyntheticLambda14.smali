@@ -2,36 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/EmojiView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Components/EmojiView;
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Ljava/lang/Integer;
 
-    check-cast p2, Ljava/lang/Integer;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$7EtfrQMGEpEtr6BGs_-hl40zkoE(Ljava/lang/Integer;)Ljava/lang/Integer;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$YlPjWFxOM9Sb6Q4TKJL-K6Ug7xs(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/Integer;Ljava/lang/Integer;)V
+    move-result-object p1
 
-    return-void
+    return-object p1
 .end method

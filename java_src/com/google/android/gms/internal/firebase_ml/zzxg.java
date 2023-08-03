@@ -4,8 +4,9 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* loaded from: classes.dex */
-public class zzxg extends AbstractSet<Map.Entry<K, V>> {
+public class zzxg<K, V> extends AbstractSet<Map.Entry<K, V>> {
     private final /* synthetic */ zzwz zzbwm;
 
     private zzxg(zzwz zzwzVar) {
@@ -48,6 +49,7 @@ public class zzxg extends AbstractSet<Map.Entry<K, V>> {
         this.zzbwm.clear();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public /* synthetic */ boolean add(Object obj) {
         Map.Entry entry = (Map.Entry) obj;

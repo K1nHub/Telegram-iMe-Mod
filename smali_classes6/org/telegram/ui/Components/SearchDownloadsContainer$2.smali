@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchDownloadsContainer;)V
     .locals 0
 
-    .line 103
+    .line 93
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$2;->this$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 107
+    .line 97
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$2;->this$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SearchDownloadsContainer;->parentActivity:Landroid/app/Activity;

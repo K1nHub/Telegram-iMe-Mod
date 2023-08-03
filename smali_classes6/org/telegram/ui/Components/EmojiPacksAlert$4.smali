@@ -21,15 +21,15 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 270
+    .line 276
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 309
+    .line 315
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -46,7 +46,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 313
+    .line 319
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/AnimatedFloat;
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 314
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/AnimatedFloat;
@@ -100,7 +100,7 @@
 
     const/4 v3, 0x0
 
-    .line 318
+    .line 324
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -108,12 +108,12 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 319
+    .line 325
     invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 320
+    .line 326
     invoke-virtual {p0, v4}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v5
@@ -122,7 +122,7 @@
 
     if-eq v5, v6, :cond_0
 
-    .line 322
+    .line 328
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     iget v7, v6, Lorg/telegram/ui/Components/EmojiPacksAlert;->highlightStartPosition:I
@@ -133,7 +133,7 @@
 
     if-gt v5, v6, :cond_0
 
-    .line 323
+    .line 329
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
     move-result v5
@@ -150,7 +150,7 @@
 
     move-result v1
 
-    .line 324
+    .line 330
     invoke-virtual {v4}, Landroid/view/View;->getBottom()I
 
     move-result v5
@@ -175,7 +175,7 @@
     :cond_1
     if-ge v1, v2, :cond_2
 
-    .line 329
+    .line 335
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->highlightPaint:Landroid/graphics/Paint;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_linkSelectBackground:I
@@ -194,7 +194,7 @@
 
     int-to-float v6, v1
 
-    .line 330
+    .line 336
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v0
@@ -209,11 +209,11 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 333
+    .line 339
     :cond_2
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 337
+    .line 343
     :cond_3
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -231,10 +231,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 300
+    .line 306
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onDetachedFromWindow()V
 
-    .line 301
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
@@ -255,7 +255,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 274
+    .line 280
     invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
 
     move-result-object v0
@@ -282,7 +282,7 @@
 
     move-result v0
 
-    .line 275
+    .line 281
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -309,10 +309,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 294
+    .line 300
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 295
+    .line 301
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;
@@ -325,49 +325,23 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 3
+    .locals 2
 
-    .line 280
+    .line 286
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v0
+    .line 287
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    .line 281
-    iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
+    move-result-object v0
 
-    move-result-object v1
+    const/16 v1, 0x28
 
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanCount(I)V
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const/16 v2, 0x3c
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v2, 0x2d
-
-    :goto_0
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    div-int/2addr v0, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanCount(I)V
-
-    .line 282
+    .line 288
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->onMeasure(II)V
 
     return-void
@@ -376,10 +350,10 @@
 .method public onScrolled(II)V
     .locals 0
 
-    .line 287
+    .line 293
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
 
-    .line 288
+    .line 294
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;
@@ -388,7 +362,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->updateEmojiDrawables()V
 
-    .line 289
+    .line 295
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$4;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1500(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;

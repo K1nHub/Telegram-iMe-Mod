@@ -80,7 +80,7 @@
     .line 45
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;"
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "presenter"
+    const-string/jumbo v4, "presenter"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -509,7 +509,7 @@
 
     move-result-object v4
 
-    const-string v3, "parentActivity"
+    const-string/jumbo v3, "parentActivity"
 
     invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1358,7 +1358,7 @@
 
     invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p3, "parentActivity"
+    const-string/jumbo p3, "parentActivity"
 
     .line 136
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

@@ -67,6 +67,16 @@
     return v0
 .end method
 
+.method public synthetic getReplyToStory()Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getReplyToStory(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/TLRPC$StoryItem;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public synthetic getSendAsPeers()Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
     .locals 1
 
@@ -502,6 +512,14 @@
     .locals 0
 
     invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$sendGif(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;IJLjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public synthetic sendMedia(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
+    .locals 0
+
+    invoke-static/range {p0 .. p6}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$sendMedia(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
 
     return-void
 .end method

@@ -25,14 +25,10 @@ public class TextDetailSettingsCell extends FrameLayout {
     private TextView valueTextView;
 
     public TextDetailSettingsCell(Context context) {
-        this(context, null);
-    }
-
-    public TextDetailSettingsCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
         this.textView.setMaxLines(1);
@@ -42,7 +38,7 @@ public class TextDetailSettingsCell extends FrameLayout {
         addView(this.textView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 21, 10, 21, 0));
         TextView textView2 = new TextView(context);
         this.valueTextView = textView2;
-        textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
+        textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         this.valueTextView.setTextSize(1, 13.0f);
         this.valueTextView.setGravity(LocaleController.isRTL ? 5 : 3);
         this.valueTextView.setLines(1);
@@ -53,7 +49,7 @@ public class TextDetailSettingsCell extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon, resourcesProvider), PorterDuff.Mode.MULTIPLY));
+        this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.MULTIPLY));
         this.imageView.setVisibility(8);
         addView(this.imageView, LayoutHelper.createFrame(52, 52, (LocaleController.isRTL ? 5 : 3) | 48, 8, 6, 8, 0));
     }
@@ -61,7 +57,7 @@ public class TextDetailSettingsCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (!this.multiline) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64) + (this.needDivider ? 1 : 0), 1073741824));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         }
@@ -81,7 +77,7 @@ public class TextDetailSettingsCell extends FrameLayout {
             this.valueTextView.setLines(0);
             this.valueTextView.setMaxLines(0);
             this.valueTextView.setSingleLine(false);
-            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(12));
+            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m72dp(12));
             return;
         }
         this.valueTextView.setLines(1);
@@ -103,8 +99,8 @@ public class TextDetailSettingsCell extends FrameLayout {
         this.valueTextView.setText(charSequence);
         this.imageView.setImageResource(i);
         this.imageView.setVisibility(0);
-        this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(50), 0, LocaleController.isRTL ? AndroidUtilities.m54dp(50) : 0, 0);
-        this.valueTextView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(50), 0, LocaleController.isRTL ? AndroidUtilities.m54dp(50) : 0, this.multiline ? AndroidUtilities.m54dp(12) : 0);
+        this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(50), 0, LocaleController.isRTL ? AndroidUtilities.m72dp(50) : 0, 0);
+        this.valueTextView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(50), 0, LocaleController.isRTL ? AndroidUtilities.m72dp(50) : 0, this.multiline ? AndroidUtilities.m72dp(12) : 0);
         this.needDivider = z;
         setWillNotDraw(!z);
     }
@@ -115,7 +111,7 @@ public class TextDetailSettingsCell extends FrameLayout {
 
     public void setTextWithEmojiAnd21Value(String str, CharSequence charSequence, boolean z) {
         TextView textView = this.textView;
-        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false));
+        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(14), false));
         this.valueTextView.setText(charSequence);
         this.needDivider = z;
         setWillNotDraw(!z);
@@ -129,21 +125,21 @@ public class TextDetailSettingsCell extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        float m54dp;
+        float m72dp;
         int i;
         if (!this.needDivider || Theme.dividerPaint == null) {
             return;
         }
         if (LocaleController.isRTL) {
-            m54dp = BitmapDescriptorFactory.HUE_RED;
+            m72dp = BitmapDescriptorFactory.HUE_RED;
         } else {
-            m54dp = AndroidUtilities.m54dp(this.imageView.getVisibility() == 0 ? 71 : 20);
+            m72dp = AndroidUtilities.m72dp(this.imageView.getVisibility() == 0 ? 71 : 20);
         }
-        float f = m54dp;
+        float f = m72dp;
         float measuredHeight = getMeasuredHeight() - 1;
         int measuredWidth = getMeasuredWidth();
         if (LocaleController.isRTL) {
-            i = AndroidUtilities.m54dp(this.imageView.getVisibility() != 0 ? 20 : 71);
+            i = AndroidUtilities.m72dp(this.imageView.getVisibility() != 0 ? 20 : 71);
         } else {
             i = 0;
         }

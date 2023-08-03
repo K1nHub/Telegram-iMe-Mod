@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ContactsActivity$10;
-.super Landroid/view/ViewOutlineProvider;
+.super Lorg/telegram/ui/NewContactBottomSheet;
 .source "ContactsActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ContactsActivity;->createView(Landroid/content/Context;)Landroid/view/View;
+    value = Lorg/telegram/ui/ContactsActivity;->lambda$createView$10(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,35 +14,40 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/ContactsActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ContactsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 1134
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    .line 1189
+    iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$10;->this$0:Lorg/telegram/ui/ContactsActivity;
+
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/NewContactBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+.method public dismissInternal()V
     .locals 2
 
-    const/16 p1, 0x38
+    .line 1192
+    invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 1138
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 1193
+    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$10;->this$0:Lorg/telegram/ui/ContactsActivity;
 
-    move-result v0
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result-object v0
 
-    move-result p1
+    iget v1, p0, Lorg/telegram/ui/NewContactBottomSheet;->classGuid:I
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
     return-void
 .end method

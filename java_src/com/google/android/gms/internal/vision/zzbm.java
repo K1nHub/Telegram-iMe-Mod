@@ -4,9 +4,10 @@ import android.util.Base64;
 import android.util.Log;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-public final class zzbm extends zzbi<T> {
+public final class zzbm<T> extends zzbi<T> {
     private final /* synthetic */ zzbp zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -16,12 +17,11 @@ public final class zzbm extends zzbi<T> {
         this.zza = zzbpVar;
     }
 
-    /* JADX WARN: Type inference failed for: r4v2, types: [T, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.zzbi
     final T zza(Object obj) {
         if (obj instanceof String) {
             try {
-                return this.zza.zza(Base64.decode((String) obj, 3));
+                return (T) this.zza.zza(Base64.decode((String) obj, 3));
             } catch (IOException | IllegalArgumentException unused) {
             }
         }

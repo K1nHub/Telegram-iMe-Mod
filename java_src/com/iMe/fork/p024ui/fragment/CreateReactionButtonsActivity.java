@@ -47,10 +47,13 @@ import java.util.Collections;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -60,9 +63,15 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -70,7 +79,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -166,26 +175,207 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         this.messageObject = messageObject;
         this.replyMessageObject = messageObject2;
         this.delegate = reactionDelegate;
-        CreateReactionButtonsActivity$presenter$2 createReactionButtonsActivity$presenter$2 = new CreateReactionButtonsActivity$presenter$2(this);
+        Function0<ReactionPresenter> function0 = new Function0<ReactionPresenter>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ReactionPresenter invoke() {
+                Lazy lazy2;
+                final CreateReactionButtonsActivity createReactionButtonsActivity = CreateReactionButtonsActivity.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        long j2;
+                        j2 = CreateReactionButtonsActivity.this.dialogId;
+                        return ParametersHolderKt.parametersOf(Long.valueOf(j2));
+                    }
+                };
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ReactionPresenter>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.reaction.ReactionPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ReactionPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(ReactionPresenter.class), qualifier, function03);
+                    }
+                });
+                return (ReactionPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, ReactionPresenter.class.getName() + ".presenter", createReactionButtonsActivity$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CreateReactionButtonsActivity$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, ReactionPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy;
-        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$rootView$2(this), 1, (Object) null);
-        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$listView$2(this), 1, (Object) null);
-        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$listAdapter$2(this), 1, (Object) null);
-        this.emojiView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$emojiView$2(this), 1, (Object) null);
-        this.uploadView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$uploadView$2(this), 1, (Object) null);
-        this.uploadCircleView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$uploadCircleView$2(this), 1, (Object) null);
-        this.uploadProgressTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$uploadProgressTextView$2(this), 1, (Object) null);
-        this.uploadTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$uploadTextView$2(this), 1, (Object) null);
-        this.uploadProgressBar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateReactionButtonsActivity$uploadProgressBar$2(this), 1, (Object) null);
+        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initRootView;
+                initRootView = CreateReactionButtonsActivity.this.initRootView();
+                return initRootView;
+            }
+        }, 1, (Object) null);
+        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = CreateReactionButtonsActivity.this.initListView();
+                return initListView;
+            }
+        }, 1, (Object) null);
+        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateReactionButtonsActivity.ListAdapter invoke() {
+                ResourceManager resourceManager;
+                CreateReactionButtonsActivity createReactionButtonsActivity = CreateReactionButtonsActivity.this;
+                resourceManager = createReactionButtonsActivity.getResourceManager();
+                return new CreateReactionButtonsActivity.ListAdapter(createReactionButtonsActivity, resourceManager);
+            }
+        }, 1, (Object) null);
+        this.emojiView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<EmojiView>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$emojiView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final EmojiView invoke() {
+                EmojiView initEmojiView;
+                initEmojiView = CreateReactionButtonsActivity.this.initEmojiView();
+                return initEmojiView;
+            }
+        }, 1, (Object) null);
+        this.uploadView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<CreateReactionButtonsActivity$initProgressView$1>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateReactionButtonsActivity$initProgressView$1 invoke() {
+                CreateReactionButtonsActivity$initProgressView$1 initProgressView;
+                initProgressView = CreateReactionButtonsActivity.this.initProgressView();
+                return initProgressView;
+            }
+        }, 1, (Object) null);
+        this.uploadCircleView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<View>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadCircleView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initProgressCircleView;
+                initProgressCircleView = CreateReactionButtonsActivity.this.initProgressCircleView();
+                return initProgressCircleView;
+            }
+        }, 1, (Object) null);
+        this.uploadProgressTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<TextView>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadProgressTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView uploadProgressTextView;
+                uploadProgressTextView = CreateReactionButtonsActivity.this.uploadProgressTextView();
+                return uploadProgressTextView;
+            }
+        }, 1, (Object) null);
+        this.uploadTextView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<TextView>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initUploadTextView;
+                initUploadTextView = CreateReactionButtonsActivity.this.initUploadTextView();
+                return initUploadTextView;
+            }
+        }, 1, (Object) null);
+        this.uploadProgressBar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RadialProgress>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadProgressBar$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RadialProgress invoke() {
+                RadialProgress initUploadProgressBar;
+                initUploadProgressBar = CreateReactionButtonsActivity.this.initUploadProgressBar();
+                return initUploadProgressBar;
+            }
+        }, 1, (Object) null);
         this.reactions = new ArrayList<>();
         this.buttons = new UrlButton[12];
         this.buttonsRowsType = ReactionButtonsRowsType.SINGLE;
-        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m55dp(200.0f));
-        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m55dp(200.0f));
+        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m73dp(200.0f));
+        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m73dp(200.0f));
     }
 
     static {
@@ -330,8 +520,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         Intrinsics.checkNotNullParameter(buttonPosition, "buttonPosition");
         showEmojiView$default(this, false, null, 2, null);
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(getResourceManager().getString(C3417R.string.chat_reaction_button_position));
-        builder.setNegativeButton(getResourceManager().getString(C3417R.string.common_cancel), null);
+        builder.setTitle(getResourceManager().getString(C3419R.string.chat_reaction_button_position));
+        builder.setNegativeButton(getResourceManager().getString(C3419R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         builder.setView(linearLayout);
@@ -340,7 +530,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         for (int i = 0; i < length; i++) {
             ReactionButtonsRowsType reactionButtonsRowsType = values[i];
             RadioColorCell radioColorCell = new RadioColorCell(getParentActivity());
-            radioColorCell.setPadding(AndroidUtilities.m55dp(4.0f), 0, AndroidUtilities.m55dp(4.0f), 0);
+            radioColorCell.setPadding(AndroidUtilities.m73dp(4.0f), 0, AndroidUtilities.m73dp(4.0f), 0);
             radioColorCell.setTag(Integer.valueOf(reactionButtonsRowsType.ordinal()));
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue(getResourceManager().getString(reactionButtonsRowsType.getResource()), buttonPosition == reactionButtonsRowsType);
@@ -455,7 +645,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final EmojiView initEmojiView() {
-        EmojiView emojiView = new EmojiView(this, false, false, false, getParentActivity(), false, null, null, null);
+        EmojiView emojiView = new EmojiView(this, false, false, false, getParentActivity(), false, null, null, true, null);
         Point point = AndroidUtilities.displaySize;
         this.currentHeight = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-2, -2, 80);
@@ -514,6 +704,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isSearchOpened() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isSearchOpened(this);
+            }
+
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
+            public /* synthetic */ boolean isStoryReply() {
+                return EmojiView.EmojiViewDelegate.CC.$default$isStoryReply(this);
             }
 
             @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
@@ -643,11 +838,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 RadialProgress uploadProgressBar;
                 super.onLayout(z, i, i2, i3, i4);
-                int m55dp = AndroidUtilities.m55dp(45.0f);
-                int i5 = ((i3 - i) - m55dp) / 2;
-                int i6 = ((i4 - i2) - m55dp) / 2;
+                int m73dp = AndroidUtilities.m73dp(45.0f);
+                int i5 = ((i3 - i) - m73dp) / 2;
+                int i6 = ((i4 - i2) - m73dp) / 2;
                 uploadProgressBar = CreateReactionButtonsActivity.this.getUploadProgressBar();
-                uploadProgressBar.setProgressRect(i5, i6, i5 + m55dp, m55dp + i6);
+                uploadProgressBar.setProgressRect(i5, i6, i5 + m73dp, m73dp + i6);
             }
         };
         ViewExtKt.invisible$default(r1, false, 1, null);
@@ -662,7 +857,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final View initProgressCircleView() {
         View view = new View(getParentActivity());
-        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m55dp(18.0f), view, this.fragmentView));
+        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m73dp(18.0f), view, this.fragmentView));
         return view;
     }
 
@@ -677,7 +872,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initUploadTextView() {
         TextView textView = new TextView(getParentActivity());
-        textView.setText(getResourceManager().getString(C3417R.string.chat_reaction_text_loader));
+        textView.setText(getResourceManager().getString(C3419R.string.chat_reaction_text_loader));
         textView.setTextSize(1, 16.0f);
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
@@ -694,11 +889,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.chat_reaction_title));
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.chat_reaction_title));
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == 1) {
                     CreateReactionButtonsActivity.this.createMessage();
@@ -707,7 +902,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             }
         });
-        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3484ActionBar.createMenu().addItem(1, getResourceManager().getString(C3417R.string.chat_reaction_create));
+        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3485ActionBar.createMenu().addItem(1, getResourceManager().getString(C3419R.string.chat_reaction_create));
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$20$lambda$19$lambda$18, "setupActionBar$lambda$20$lambda$19$lambda$18");
         ViewExtKt.invisible$default(setupActionBar$lambda$20$lambda$19$lambda$18, false, 1, null);
         this.doneItem = setupActionBar$lambda$20$lambda$19$lambda$18;
@@ -739,7 +934,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final void createMessage() {
         if (!getListAdapter().isAllButtonsValid()) {
-            showToast(getResourceManager().getString(C3417R.string.chat_reaction_empty_field_warning));
+            showToast(getResourceManager().getString(C3419R.string.chat_reaction_empty_field_warning));
         } else {
             getPresenter().prepareTextMessage(getListAdapter().getFixedEmotions(), getListAdapter().getAllButtons(), this.messageText, getListAdapter().getButtonLine(), this.attachedFile, this.replyMessageObject);
         }
@@ -771,7 +966,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(64.0f), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m73dp(64.0f), 1073741824));
             }
         };
         ViewExtKt.singleLine(editTextBoldCursor);
@@ -788,7 +983,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         editTextBoldCursor.setText(str);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3417R.string.URL));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3419R.string.URL));
         editTextBoldCursor.setHeaderHintColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         editTextBoldCursor.setTransformHintToHeader(true);
         editTextBoldCursor.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_text_RedRegular));
@@ -800,15 +995,20 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         ViewExtKt.setHorizontalPadding(frameLayout, 24);
         frameLayout.addView(editTextBoldCursor);
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("CreateLink", C3417R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3419R.string.CreateLink));
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 CreateReactionButtonsActivity.showURLButtonDialog$lambda$27$lambda$25(CreateReactionButtonsActivity.this, i, editTextBoldCursor, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), CreateReactionButtonsActivity$$ExternalSyntheticLambda1.INSTANCE);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda1
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i2) {
+                dialogInterface.dismiss();
+            }
+        });
         AlertDialog create = builder.create();
         create.setDismissDialogByButtons(false);
         create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda2
@@ -1044,10 +1244,28 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             } else if (i == IdFabric$ViewTypes.MOVING_REACTION) {
                 Context context = this.this$0.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
-                MovingReactionCell movingReactionCell2 = new MovingReactionCell(context, false);
-                CreateReactionButtonsActivity createReactionButtonsActivity = this.this$0;
+                final MovingReactionCell movingReactionCell2 = new MovingReactionCell(context, false);
+                final CreateReactionButtonsActivity createReactionButtonsActivity = this.this$0;
                 movingReactionCell2.setShowNextButton(true);
-                ViewExtKt.safeThrottledClick$default(movingReactionCell2.getDeleteImageView(), 0L, new CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1(createReactionButtonsActivity, movingReactionCell2), 1, null);
+                ViewExtKt.safeThrottledClick$default(movingReactionCell2.getDeleteImageView(), 0L, new Function1<View, Unit>() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$3$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                        invoke2(view);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        CreateReactionButtonsActivity.this.getListAdapter().removeEmojiItem(movingReactionCell2);
+                    }
+                }, 1, null);
                 movingReactionCell = movingReactionCell2;
             } else if (i == IdFabric$ViewTypes.URL_BUTTON) {
                 Context context2 = this.this$0.getContext();
@@ -1145,11 +1363,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 if (i == createReactionButtonsActivity.reactionsSectionRow) {
                     if (6 - createReactionButtonsActivity.reactions.size() > 1) {
                         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3417R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3419R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     } else {
                         StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3417R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3419R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     }
                     textInfoPrivacyCell.setText(format2);
@@ -1157,11 +1375,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
                 if (12 - createReactionButtonsActivity.buttonsCount > 1) {
                     StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3417R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3419R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 } else {
                     StringCompanionObject stringCompanionObject4 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3417R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3419R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 }
                 textInfoPrivacyCell.setText(format);
@@ -1170,13 +1388,13 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 CreateReactionButtonsActivity createReactionButtonsActivity2 = this.this$0;
                 TextCell textCell = (TextCell) view;
                 textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
-                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3417R.C3419drawable.poll_add_circle);
-                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3417R.C3419drawable.poll_add_plus)) == null) {
+                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3419R.C3421drawable.poll_add_circle);
+                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3419R.C3421drawable.poll_add_plus)) == null) {
                     return;
                 }
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3417R.string.chat_reaction_select_emoji : C3417R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
+                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3419R.string.chat_reaction_select_emoji : C3419R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
             } else if (view instanceof MovingReactionCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 CreateReactionButtonsActivity createReactionButtonsActivity3 = this.this$0;
@@ -1198,7 +1416,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             } else if (view instanceof TextSettingsCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3417R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
+                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3419R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
             }
         }
 
@@ -1307,7 +1525,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         }
 
         private final String updateHeader(int i) {
-            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3417R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3417R.string.chat_reaction_create_button) : this.resourceManager.getString(C3417R.string.chat_reaction_settings);
+            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3419R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3419R.string.chat_reaction_create_button) : this.resourceManager.getString(C3419R.string.chat_reaction_settings);
         }
 
         private final void removeUrlItem(int i) {

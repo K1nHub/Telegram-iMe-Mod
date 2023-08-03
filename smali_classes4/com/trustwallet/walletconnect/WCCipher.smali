@@ -95,7 +95,7 @@
 .method public final decrypt(Lcom/trustwallet/walletconnect/models/WCEncryptionPayload;[B)[B
     .locals 4
 
-    const-string v0, "payload"
+    const-string/jumbo v0, "payload"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

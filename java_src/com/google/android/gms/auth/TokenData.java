@@ -17,24 +17,24 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class TokenData extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<TokenData> CREATOR = new zzm();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getToken", m779id = 2)
+    @SafeParcelable.Field(getter = "getToken", m797id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m779id = 3)
+    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m797id = 3)
     private final Long zzc;
-    @SafeParcelable.Field(getter = "isCached", m779id = 4)
+    @SafeParcelable.Field(getter = "isCached", m797id = 4)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "isSnowballed", m779id = 5)
+    @SafeParcelable.Field(getter = "isSnowballed", m797id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "getGrantedScopes", m779id = 6)
+    @SafeParcelable.Field(getter = "getGrantedScopes", m797id = 6)
     private final List zzf;
-    @SafeParcelable.Field(getter = "getScopeData", m779id = 7)
+    @SafeParcelable.Field(getter = "getScopeData", m797id = 7)
     private final String zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public TokenData(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) Long l, @SafeParcelable.Param(m778id = 4) boolean z, @SafeParcelable.Param(m778id = 5) boolean z2, @SafeParcelable.Param(m778id = 6) List list, @SafeParcelable.Param(m778id = 7) String str2) {
+    public TokenData(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) Long l, @SafeParcelable.Param(m796id = 4) boolean z, @SafeParcelable.Param(m796id = 5) boolean z2, @SafeParcelable.Param(m796id = 6) List list, @SafeParcelable.Param(m796id = 7) String str2) {
         this.zza = i;
         this.zzb = Preconditions.checkNotEmpty(str);
         this.zzc = l;

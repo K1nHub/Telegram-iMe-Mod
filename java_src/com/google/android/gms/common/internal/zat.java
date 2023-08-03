@@ -12,18 +12,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zat extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zat> CREATOR = new zau();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getAccount", m779id = 2)
+    @SafeParcelable.Field(getter = "getAccount", m797id = 2)
     private final Account zab;
-    @SafeParcelable.Field(getter = "getSessionId", m779id = 3)
+    @SafeParcelable.Field(getter = "getSessionId", m797id = 3)
     private final int zac;
-    @SafeParcelable.Field(getter = "getSignInAccountHint", m779id = 4)
+    @SafeParcelable.Field(getter = "getSignInAccountHint", m797id = 4)
     private final GoogleSignInAccount zad;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zat(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) Account account, @SafeParcelable.Param(m778id = 3) int i2, @SafeParcelable.Param(m778id = 4) GoogleSignInAccount googleSignInAccount) {
+    public zat(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) Account account, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) GoogleSignInAccount googleSignInAccount) {
         this.zaa = i;
         this.zab = account;
         this.zac = i2;

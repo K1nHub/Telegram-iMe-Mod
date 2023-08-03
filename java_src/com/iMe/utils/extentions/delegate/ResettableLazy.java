@@ -41,7 +41,22 @@ public final class ResettableLazy<PROPTYPE> implements Resettable {
 
     private final Lazy<PROPTYPE> makeInitBlock() {
         Lazy<PROPTYPE> lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(new ResettableLazy$makeInitBlock$1(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<PROPTYPE>(this) { // from class: com.iMe.utils.extentions.delegate.ResettableLazy$makeInitBlock$1
+            final /* synthetic */ ResettableLazy<PROPTYPE> this$0;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final PROPTYPE invoke() {
+                this.this$0.getManager().register(this.this$0);
+                return this.this$0.getInit().invoke();
+            }
+        });
         return lazy;
     }
 }

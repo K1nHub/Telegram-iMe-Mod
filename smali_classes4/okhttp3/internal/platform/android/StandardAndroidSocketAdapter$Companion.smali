@@ -56,7 +56,7 @@
 .method public final buildIfSupported(Ljava/lang/String;)Lokhttp3/internal/platform/android/SocketAdapter;
     .locals 4
 
-    const-string v0, "packageName"
+    const-string/jumbo v0, "packageName"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -121,7 +121,7 @@
     .line 59
     new-instance v2, Lokhttp3/internal/platform/android/StandardAndroidSocketAdapter;
 
-    const-string v3, "paramsClass"
+    const-string/jumbo v3, "paramsClass"
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

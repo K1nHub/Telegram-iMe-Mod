@@ -557,7 +557,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/AbstractLog;->setTimestamp(Ljava/util/Date;)V
 
-    const-string v0, "popSample"
+    const-string/jumbo v0, "popSample"
 
     .line 268
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -861,7 +861,7 @@
 
     move-result-object v0
 
-    const-string v1, "popSample"
+    const-string/jumbo v1, "popSample"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

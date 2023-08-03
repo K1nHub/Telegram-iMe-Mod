@@ -7,7 +7,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 public final class C2751r {
 
     /* renamed from: a */
-    public static final C2751r f601a = new C2751r('0', '+', '-', '.');
+    public static final C2751r f604a = new C2751r('0', '+', '-', '.');
 
     static {
         new ConcurrentHashMap(16, 0.75f, 2);

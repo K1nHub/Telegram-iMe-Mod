@@ -90,6 +90,10 @@ public final class DnsNameResolver extends NameResolver {
         Throwable unavailabilityCause();
     }
 
+    static /* synthetic */ String access$1200() {
+        return getLocalHostname();
+    }
+
     static {
         String property = System.getProperty("io.grpc.internal.DnsNameResolverProvider.enable_jndi", "true");
         JNDI_PROPERTY = property;
@@ -211,7 +215,7 @@ public final class DnsNameResolver extends NameResolver {
                         newBuilder.set(GrpcAttributes.ATTR_LB_ADDRS, resolveAll.balancerAddresses);
                     }
                     if (!resolveAll.txtRecords.isEmpty()) {
-                        NameResolver.ConfigOrError parseServiceConfig = DnsNameResolver.parseServiceConfig(resolveAll.txtRecords, DnsNameResolver.this.random, DnsNameResolver.getLocalHostname());
+                        NameResolver.ConfigOrError parseServiceConfig = DnsNameResolver.parseServiceConfig(resolveAll.txtRecords, DnsNameResolver.this.random, DnsNameResolver.access$1200());
                         if (parseServiceConfig != null) {
                             if (parseServiceConfig.getError() != null) {
                                 this.savedListener.onError(parseServiceConfig.getError());
@@ -528,8 +532,7 @@ public final class DnsNameResolver extends NameResolver {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static String getLocalHostname() {
+    private static String getLocalHostname() {
         if (localHostname == null) {
             try {
                 localHostname = InetAddress.getLocalHost().getHostName();

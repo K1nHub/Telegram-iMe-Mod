@@ -15,9 +15,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class SefReader {
+final class SefReader {
     private static final int LENGTH_OF_ONE_SDR = 12;
     private static final int SAMSUNG_TAIL_SIGNATURE = 1397048916;
     private static final int STATE_CHECKING_FOR_SEF = 1;
@@ -35,8 +34,8 @@ public final class SefReader {
     private final List<DataReference> dataReferences = new ArrayList();
     private int readerState = 0;
     private int tailLength;
-    private static final Splitter COLON_SPLITTER = Splitter.m746on(':');
-    private static final Splitter ASTERISK_SPLITTER = Splitter.m746on('*');
+    private static final Splitter COLON_SPLITTER = Splitter.m764on(':');
+    private static final Splitter ASTERISK_SPLITTER = Splitter.m764on('*');
 
     @Target({ElementType.TYPE_USE})
     @Documented

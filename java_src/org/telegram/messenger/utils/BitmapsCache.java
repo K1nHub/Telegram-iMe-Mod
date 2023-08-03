@@ -42,7 +42,7 @@ public class BitmapsCache {
     private int frameIndex;
 
     /* renamed from: h */
-    int f1501h;
+    int f1504h;
     BitmapFactory.Options options;
     volatile boolean recycled;
     private final Cacheable source;
@@ -50,11 +50,11 @@ public class BitmapsCache {
     final boolean useSharedBuffers;
 
     /* renamed from: w */
-    int f1502w;
+    int f1505w;
     static ConcurrentHashMap<Thread, byte[]> sharedBuffers = new ConcurrentHashMap<>();
 
     /* renamed from: N */
-    private static final int f1500N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
+    private static final int f1503N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
     ArrayList<FrameOffset> frameOffsets = new ArrayList<>();
     private final Object mutex = new Object();
     public AtomicBoolean cancelled = new AtomicBoolean(false);
@@ -98,17 +98,17 @@ public class BitmapsCache {
     public void cancelCreate() {
     }
 
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x011c -> B:72:0x0134). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x011d -> B:72:0x0135). Please submit an issue!!! */
     public BitmapsCache(File file, Cacheable cacheable, CacheOptions cacheOptions, int i, int i2, boolean z) {
         RandomAccessFile randomAccessFile;
         Throwable th;
         this.source = cacheable;
-        this.f1502w = i;
-        this.f1501h = i2;
+        this.f1505w = i;
+        this.f1504h = i2;
         this.compressQuality = cacheOptions.compressQuality;
         this.fileName = file.getName();
         if (bitmapCompressExecutor == null) {
-            int i3 = f1500N;
+            int i3 = f1503N;
             bitmapCompressExecutor = new ThreadPoolExecutor(i3, i3, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         }
         File file2 = new File(FileLoader.checkDirectory(4), "acache");
@@ -127,7 +127,7 @@ public class BitmapsCache {
         sb.append(".pcache2");
         File file3 = new File(file2, sb.toString());
         this.file = file3;
-        this.useSharedBuffers = (i >= AndroidUtilities.m54dp(60) || i2 >= AndroidUtilities.m54dp(60)) ? false : z2;
+        this.useSharedBuffers = (i >= AndroidUtilities.m72dp(60) || i2 >= AndroidUtilities.m72dp(60)) ? false : z2;
         if (SharedConfig.getDevicePerformanceClass() >= 2) {
             this.fileExist = file3.exists();
             if (this.fileExist) {
@@ -199,7 +199,12 @@ public class BitmapsCache {
         taskCounter = i;
         if (i <= 0) {
             taskCounter = 0;
-            RLottieDrawable.lottieCacheGenerateQueue.postRunnable(BitmapsCache$$ExternalSyntheticLambda1.INSTANCE);
+            RLottieDrawable.lottieCacheGenerateQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.utils.BitmapsCache$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    BitmapsCache.lambda$decrementTaskCounter$0();
+                }
+            });
         }
     }
 
@@ -212,22 +217,22 @@ public class BitmapsCache {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0068, code lost:
         if (r24.cachedFile != r0) goto L110;
      */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x00c3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x00e7 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0088 A[Catch: all -> 0x01fe, IOException -> 0x0200, FileNotFoundException -> 0x0205, TryCatch #12 {FileNotFoundException -> 0x0205, IOException -> 0x0200, blocks: (B:3:0x0002, B:17:0x004b, B:26:0x0065, B:32:0x0073, B:36:0x007a, B:38:0x0088, B:39:0x008f, B:40:0x00bf, B:42:0x00c3, B:46:0x00cd, B:48:0x00d5, B:51:0x00dd, B:54:0x00e8, B:56:0x00ec, B:58:0x00f0, B:62:0x00fa, B:61:0x00f7, B:63:0x00fd, B:64:0x011a, B:66:0x0120, B:67:0x013d, B:68:0x0178, B:73:0x01c1, B:75:0x01cc, B:76:0x01d1, B:77:0x01d6, B:79:0x01da, B:81:0x01de, B:85:0x01e8, B:84:0x01e5, B:89:0x01f4, B:45:0x00ca), top: B:121:0x0002, outer: #10 }] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0178 A[Catch: all -> 0x01fe, IOException -> 0x0200, FileNotFoundException -> 0x0205, TryCatch #12 {FileNotFoundException -> 0x0205, IOException -> 0x0200, blocks: (B:3:0x0002, B:17:0x004b, B:26:0x0065, B:32:0x0073, B:36:0x007a, B:38:0x0088, B:39:0x008f, B:40:0x00bf, B:42:0x00c3, B:46:0x00cd, B:48:0x00d5, B:51:0x00dd, B:54:0x00e8, B:56:0x00ec, B:58:0x00f0, B:62:0x00fa, B:61:0x00f7, B:63:0x00fd, B:64:0x011a, B:66:0x0120, B:67:0x013d, B:68:0x0178, B:73:0x01c1, B:75:0x01cc, B:76:0x01d1, B:77:0x01d6, B:79:0x01da, B:81:0x01de, B:85:0x01e8, B:84:0x01e5, B:89:0x01f4, B:45:0x00ca), top: B:121:0x0002, outer: #10 }] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01cc A[Catch: all -> 0x01fe, IOException -> 0x0200, FileNotFoundException -> 0x0205, TryCatch #12 {FileNotFoundException -> 0x0205, IOException -> 0x0200, blocks: (B:3:0x0002, B:17:0x004b, B:26:0x0065, B:32:0x0073, B:36:0x007a, B:38:0x0088, B:39:0x008f, B:40:0x00bf, B:42:0x00c3, B:46:0x00cd, B:48:0x00d5, B:51:0x00dd, B:54:0x00e8, B:56:0x00ec, B:58:0x00f0, B:62:0x00fa, B:61:0x00f7, B:63:0x00fd, B:64:0x011a, B:66:0x0120, B:67:0x013d, B:68:0x0178, B:73:0x01c1, B:75:0x01cc, B:76:0x01d1, B:77:0x01d6, B:79:0x01da, B:81:0x01de, B:85:0x01e8, B:84:0x01e5, B:89:0x01f4, B:45:0x00ca), top: B:121:0x0002, outer: #10 }] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01da A[Catch: all -> 0x01fe, IOException -> 0x0200, FileNotFoundException -> 0x0205, TRY_LEAVE, TryCatch #12 {FileNotFoundException -> 0x0205, IOException -> 0x0200, blocks: (B:3:0x0002, B:17:0x004b, B:26:0x0065, B:32:0x0073, B:36:0x007a, B:38:0x0088, B:39:0x008f, B:40:0x00bf, B:42:0x00c3, B:46:0x00cd, B:48:0x00d5, B:51:0x00dd, B:54:0x00e8, B:56:0x00ec, B:58:0x00f0, B:62:0x00fa, B:61:0x00f7, B:63:0x00fd, B:64:0x011a, B:66:0x0120, B:67:0x013d, B:68:0x0178, B:73:0x01c1, B:75:0x01cc, B:76:0x01d1, B:77:0x01d6, B:79:0x01da, B:81:0x01de, B:85:0x01e8, B:84:0x01e5, B:89:0x01f4, B:45:0x00ca), top: B:121:0x0002, outer: #10 }] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x00c4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x00e8 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0089 A[Catch: all -> 0x01ff, IOException -> 0x0201, FileNotFoundException -> 0x0206, TryCatch #12 {FileNotFoundException -> 0x0206, IOException -> 0x0201, blocks: (B:3:0x0002, B:17:0x004c, B:26:0x0066, B:32:0x0074, B:36:0x007b, B:38:0x0089, B:39:0x0090, B:40:0x00c0, B:42:0x00c4, B:46:0x00ce, B:48:0x00d6, B:51:0x00de, B:54:0x00e9, B:56:0x00ed, B:58:0x00f1, B:62:0x00fb, B:61:0x00f8, B:63:0x00fe, B:64:0x011b, B:66:0x0121, B:67:0x013e, B:68:0x0179, B:73:0x01c2, B:75:0x01cd, B:76:0x01d2, B:77:0x01d7, B:79:0x01db, B:81:0x01df, B:85:0x01e9, B:84:0x01e6, B:89:0x01f5, B:45:0x00cb), top: B:123:0x0002, outer: #11 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0179 A[Catch: all -> 0x01ff, IOException -> 0x0201, FileNotFoundException -> 0x0206, TryCatch #12 {FileNotFoundException -> 0x0206, IOException -> 0x0201, blocks: (B:3:0x0002, B:17:0x004c, B:26:0x0066, B:32:0x0074, B:36:0x007b, B:38:0x0089, B:39:0x0090, B:40:0x00c0, B:42:0x00c4, B:46:0x00ce, B:48:0x00d6, B:51:0x00de, B:54:0x00e9, B:56:0x00ed, B:58:0x00f1, B:62:0x00fb, B:61:0x00f8, B:63:0x00fe, B:64:0x011b, B:66:0x0121, B:67:0x013e, B:68:0x0179, B:73:0x01c2, B:75:0x01cd, B:76:0x01d2, B:77:0x01d7, B:79:0x01db, B:81:0x01df, B:85:0x01e9, B:84:0x01e6, B:89:0x01f5, B:45:0x00cb), top: B:123:0x0002, outer: #11 }] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01cd A[Catch: all -> 0x01ff, IOException -> 0x0201, FileNotFoundException -> 0x0206, TryCatch #12 {FileNotFoundException -> 0x0206, IOException -> 0x0201, blocks: (B:3:0x0002, B:17:0x004c, B:26:0x0066, B:32:0x0074, B:36:0x007b, B:38:0x0089, B:39:0x0090, B:40:0x00c0, B:42:0x00c4, B:46:0x00ce, B:48:0x00d6, B:51:0x00de, B:54:0x00e9, B:56:0x00ed, B:58:0x00f1, B:62:0x00fb, B:61:0x00f8, B:63:0x00fe, B:64:0x011b, B:66:0x0121, B:67:0x013e, B:68:0x0179, B:73:0x01c2, B:75:0x01cd, B:76:0x01d2, B:77:0x01d7, B:79:0x01db, B:81:0x01df, B:85:0x01e9, B:84:0x01e6, B:89:0x01f5, B:45:0x00cb), top: B:123:0x0002, outer: #11 }] */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01db A[Catch: all -> 0x01ff, IOException -> 0x0201, FileNotFoundException -> 0x0206, TRY_LEAVE, TryCatch #12 {FileNotFoundException -> 0x0206, IOException -> 0x0201, blocks: (B:3:0x0002, B:17:0x004c, B:26:0x0066, B:32:0x0074, B:36:0x007b, B:38:0x0089, B:39:0x0090, B:40:0x00c0, B:42:0x00c4, B:46:0x00ce, B:48:0x00d6, B:51:0x00de, B:54:0x00e9, B:56:0x00ed, B:58:0x00f1, B:62:0x00fb, B:61:0x00f8, B:63:0x00fe, B:64:0x011b, B:66:0x0121, B:67:0x013e, B:68:0x0179, B:73:0x01c2, B:75:0x01cd, B:76:0x01d2, B:77:0x01d7, B:79:0x01db, B:81:0x01df, B:85:0x01e9, B:84:0x01e6, B:89:0x01f5, B:45:0x00cb), top: B:123:0x0002, outer: #11 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void createCache() {
         /*
-            Method dump skipped, instructions count: 533
+            Method dump skipped, instructions count: 534
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.utils.BitmapsCache.createCache():void");
@@ -331,7 +336,7 @@ public class BitmapsCache {
                     } catch (Throwable th) {
                         th = th;
                         randomAccessFile2 = randomAccessFile;
-                        FileLog.m48e(th, false);
+                        FileLog.m66e(th, false);
                         int i2 = this.tryCount + 1;
                         this.tryCount = i2;
                         if (i2 > 10) {
@@ -450,15 +455,15 @@ public class BitmapsCache {
         private int lastSize;
 
         private CacheGeneratorSharedTools() {
-            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1500N];
-            this.bitmap = new Bitmap[BitmapsCache.f1500N];
+            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1503N];
+            this.bitmap = new Bitmap[BitmapsCache.f1503N];
         }
 
         void allocate(int i, int i2) {
             int i3 = (i2 << 16) + i;
             boolean z = this.lastSize != i3;
             this.lastSize = i3;
-            for (int i4 = 0; i4 < BitmapsCache.f1500N; i4++) {
+            for (int i4 = 0; i4 < BitmapsCache.f1503N; i4++) {
                 if (z || this.bitmap[i4] == null) {
                     Bitmap[] bitmapArr = this.bitmap;
                     if (bitmapArr[i4] != null) {
@@ -489,7 +494,7 @@ public class BitmapsCache {
 
         void release() {
             final ArrayList arrayList = null;
-            for (int i = 0; i < BitmapsCache.f1500N; i++) {
+            for (int i = 0; i < BitmapsCache.f1503N; i++) {
                 if (this.bitmap[i] != null) {
                     if (arrayList == null) {
                         arrayList = new ArrayList();

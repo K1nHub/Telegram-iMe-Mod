@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 227
+    .line 240
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->val$incomingViews:Ljava/util/ArrayList;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 230
+    .line 243
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -52,7 +52,7 @@
 
     return-void
 
-    .line 233
+    .line 246
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
@@ -66,7 +66,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/RecyclerListView;->fastScrollAnimationRunning:Z
 
-    .line 235
+    .line 248
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->val$oldViews:Ljava/util/ArrayList;
@@ -93,23 +93,23 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 236
+    .line 249
     instance-of v4, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v4, :cond_2
 
-    .line 237
+    .line 250
     move-object v4, v1
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4, v0, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAnimationRunning(ZZ)V
 
-    .line 239
+    .line 252
     :cond_2
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 240
+    .line 253
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -120,7 +120,7 @@
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->stopIgnoringView(Landroid/view/View;)V
 
-    .line 241
+    .line 254
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -131,7 +131,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 242
+    .line 255
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -142,7 +142,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 243
+    .line 256
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -153,7 +153,7 @@
 
     invoke-virtual {v2, v1, v0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;->ignoreView(Landroid/view/View;Z)V
 
-    .line 244
+    .line 257
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 261
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setScrollEnabled(Z)V
 
-    .line 249
+    .line 262
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -189,12 +189,12 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 251
+    .line 264
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz p1, :cond_6
 
-    .line 252
+    .line 265
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -223,7 +223,7 @@
 
     if-ne p1, v1, :cond_5
 
-    .line 256
+    .line 269
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -242,7 +242,7 @@
 
     goto :goto_1
 
-    .line 257
+    .line 270
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -252,7 +252,7 @@
 
     throw p1
 
-    .line 253
+    .line 266
     :cond_5
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -262,7 +262,7 @@
 
     throw p1
 
-    .line 261
+    .line 274
     :cond_6
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
@@ -282,7 +282,7 @@
     :goto_2
     if-ge v1, p1, :cond_8
 
-    .line 263
+    .line 276
     iget-object v3, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -295,19 +295,19 @@
 
     move-result-object v3
 
-    .line 264
+    .line 277
     instance-of v4, v3, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v4, :cond_7
 
-    .line 265
+    .line 278
     move-object v4, v3
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4, v0, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAnimationRunning(ZZ)V
 
-    .line 267
+    .line 280
     :cond_7
     invoke-virtual {v3, v2}, Landroid/view/View;->setTranslationY(F)V
 
@@ -315,7 +315,7 @@
 
     goto :goto_2
 
-    .line 270
+    .line 283
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->val$incomingViews:Ljava/util/ArrayList;
 
@@ -336,25 +336,25 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 271
+    .line 284
     instance-of v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v3, :cond_9
 
-    .line 272
+    .line 285
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3, v0, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAnimationRunning(ZZ)V
 
-    .line 274
+    .line 287
     :cond_9
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationY(F)V
 
     goto :goto_3
 
-    .line 277
+    .line 290
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
@@ -362,10 +362,10 @@
 
     if-eqz p1, :cond_b
 
-    .line 278
+    .line 291
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->onAnimationEnd()V
 
-    .line 281
+    .line 294
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
@@ -377,7 +377,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 282
+    .line 295
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;->onEndAnimation()V
 
-    .line 285
+    .line 298
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
@@ -398,7 +398,7 @@
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->clear()V
 
-    .line 287
+    .line 300
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1$1;->this$1:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$1;->this$0:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;

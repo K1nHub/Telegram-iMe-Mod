@@ -69,7 +69,7 @@ public final class zzcb {
     private static final /* synthetic */ zzcb[] zzjd;
 
     /* renamed from: id */
-    private final int f232id;
+    private final int f234id;
     private final zzcq zzix;
     private final zzcd zziy;
     private final Class<?> zziz;
@@ -195,13 +195,13 @@ public final class zzcb {
         zzcb[] values = values();
         zzjb = new zzcb[values.length];
         for (zzcb zzcbVar52 : values) {
-            zzjb[zzcbVar52.f232id] = zzcbVar52;
+            zzjb[zzcbVar52.f234id] = zzcbVar52;
         }
     }
 
     private zzcb(String str, int i, int i2, zzcd zzcdVar, zzcq zzcqVar) {
         int i3;
-        this.f232id = i2;
+        this.f234id = i2;
         this.zziy = zzcdVar;
         this.zzix = zzcqVar;
         int i4 = zzcc.zzje[zzcdVar.ordinal()];
@@ -215,7 +215,7 @@ public final class zzcb {
     }
 
     /* renamed from: id */
-    public final int m768id() {
-        return this.f232id;
+    public final int m786id() {
+        return this.f234id;
     }
 }

@@ -26,22 +26,22 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 1246
+    .line 1287
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1248
+    .line 1289
     new-instance p2, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 1249
+    .line 1290
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1250
+    .line 1291
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/high16 v0, 0x42600000    # 56.0f
@@ -56,50 +56,50 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1252
+    .line 1293
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$LottieLayout$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout$1;-><init>(Lorg/telegram/ui/Components/Bulletin$LottieLayout;Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    .line 1259
+    .line 1300
     invoke-static {p2}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1260
+    .line 1301
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x1
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->setDisablePaddingsOffset(Z)V
 
-    .line 1261
+    .line 1302
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 1262
+    .line 1303
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget-object v0, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1263
+    .line 1304
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/high16 v0, 0x41700000    # 15.0f
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1264
+    .line 1305
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget-object p2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1265
+    .line 1306
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/16 p2, 0x8
@@ -116,7 +116,7 @@
 
     invoke-virtual {p1, v1, v0, v1, p2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1266
+    .line 1307
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/high16 v0, -0x40000000    # -2.0f
@@ -137,7 +137,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1268
+    .line 1309
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -148,7 +148,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1269
+    .line 1310
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -157,7 +157,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setTextColor(I)V
 
-    .line 1270
+    .line 1311
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_background:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -172,13 +172,13 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
     .locals 0
 
-    .line 1274
+    .line 1315
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1275
+    .line 1316
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/Bulletin$Layout;->setBackground(I)V
 
-    .line 1276
+    .line 1317
     invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setTextColor(I)V
 
     return-void
@@ -189,7 +189,7 @@
 .method public getAccessibilityText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 1314
+    .line 1355
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -202,10 +202,10 @@
 .method protected onShow()V
     .locals 1
 
-    .line 1286
+    .line 1327
     invoke-super {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->onShow()V
 
-    .line 1287
+    .line 1328
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -216,12 +216,12 @@
 .method public varargs setAnimation(III[Ljava/lang/String;)V
     .locals 2
 
-    .line 1295
+    .line 1336
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1296
+    .line 1337
     array-length p1, p4
 
     const/4 p2, 0x0
@@ -231,7 +231,7 @@
 
     aget-object p3, p4, p2
 
-    .line 1297
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -265,7 +265,7 @@
 
     const/16 v0, 0x20
 
-    .line 1291
+    .line 1332
     invoke-virtual {p0, p1, v0, v0, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     return-void
@@ -274,19 +274,19 @@
 .method public varargs setAnimation(Lorg/telegram/tgnet/TLRPC$Document;II[Ljava/lang/String;)V
     .locals 2
 
-    .line 1302
+    .line 1343
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 1303
+    .line 1344
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/tgnet/TLRPC$Document;II)V
 
-    .line 1304
+    .line 1345
     array-length p1, p4
 
     const/4 p2, 0x0
@@ -296,7 +296,7 @@
 
     aget-object p3, p4, p2
 
-    .line 1305
+    .line 1346
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -328,7 +328,7 @@
 .method public setIconPaddingBottom(I)V
     .locals 9
 
-    .line 1310
+    .line 1351
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     rsub-int/lit8 v1, p1, 0x30
@@ -359,10 +359,10 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 1280
+    .line 1321
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textColor:I
 
-    .line 1281
+    .line 1322
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V

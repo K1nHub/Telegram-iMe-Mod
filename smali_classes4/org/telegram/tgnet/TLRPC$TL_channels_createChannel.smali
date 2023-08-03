@@ -39,7 +39,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 58315
+    .line 59205
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 58330
+    .line 59220
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Updates;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Updates;
 
     move-result-object p1
@@ -61,12 +61,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 58334
+    .line 59224
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58335
+    .line 59225
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->broadcast:Z
 
     if-eqz v0, :cond_0
@@ -85,7 +85,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
-    .line 58336
+    .line 59226
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->megagroup:Z
 
     if-eqz v1, :cond_1
@@ -100,7 +100,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
-    .line 58337
+    .line 59227
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->for_import:Z
 
     if-eqz v1, :cond_2
@@ -115,7 +115,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
-    .line 58338
+    .line 59228
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->forum:Z
 
     if-eqz v1, :cond_3
@@ -130,32 +130,32 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
-    .line 58339
+    .line 59229
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58340
+    .line 59230
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 58341
+    .line 59231
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->about:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 58342
+    .line 59232
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_4
 
-    .line 58343
+    .line 59233
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->geo_point:Lorg/telegram/tgnet/TLRPC$InputGeoPoint;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 58345
+    .line 59235
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
@@ -163,12 +163,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 58346
+    .line 59236
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->address:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 58348
+    .line 59238
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->flags:I
 
@@ -176,7 +176,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 58349
+    .line 59239
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;->ttl_period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

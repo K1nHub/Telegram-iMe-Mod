@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final THREAD_PRIORITY_DEFAULT:I = -0x3e8
+
 .field private static indexPointer:I
 
 
@@ -13,6 +15,8 @@
 .field public final index:I
 
 .field private lastTaskTime:J
+
+.field private priority:I
 
 .field private syncLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -39,7 +43,7 @@
 
     const/4 v0, 0x1
 
-    .line 27
+    .line 31
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;Z)V
 
     return-void
@@ -48,15 +52,15 @@
 .method public constructor <init>(Ljava/lang/String;Z)V
     .locals 2
 
-    .line 30
+    .line 34
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 20
+    .line 23
     iput-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
-    .line 21
+    .line 24
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -65,7 +69,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 24
+    .line 27
     sget v0, Lorg/telegram/messenger/DispatchQueue;->indexPointer:I
 
     add-int/lit8 v1, v0, 0x1
@@ -74,12 +78,66 @@
 
     iput v0, p0, Lorg/telegram/messenger/DispatchQueue;->index:I
 
-    .line 31
+    const/16 v0, -0x3e8
+
+    .line 28
+    iput v0, p0, Lorg/telegram/messenger/DispatchQueue;->priority:I
+
+    .line 35
     invoke-virtual {p0, p1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
     if-eqz p2, :cond_0
 
-    .line 33
+    .line 37
+    invoke-virtual {p0}, Ljava/lang/Thread;->start()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ZI)V
+    .locals 2
+
+    .line 41
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 23
+    iput-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
+
+    .line 24
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
+
+    .line 27
+    sget v0, Lorg/telegram/messenger/DispatchQueue;->indexPointer:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    sput v1, Lorg/telegram/messenger/DispatchQueue;->indexPointer:I
+
+    iput v0, p0, Lorg/telegram/messenger/DispatchQueue;->index:I
+
+    const/16 v0, -0x3e8
+
+    .line 28
+    iput v0, p0, Lorg/telegram/messenger/DispatchQueue;->priority:I
+
+    .line 42
+    iput p3, p0, Lorg/telegram/messenger/DispatchQueue;->priority:I
+
+    .line 43
+    invoke-virtual {p0, p1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+
+    if-eqz p2, :cond_0
+
+    .line 45
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
     :cond_0
@@ -89,7 +147,7 @@
 .method private synthetic lambda$run$0(Landroid/os/Message;)Z
     .locals 0
 
-    .line 113
+    .line 125
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/DispatchQueue;->handleMessage(Landroid/os/Message;)V
 
     const/4 p1, 0x1
@@ -102,13 +160,13 @@
 .method public cancelRunnable(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 52
+    .line 64
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
 
-    .line 53
+    .line 65
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
@@ -122,7 +180,7 @@
 
     const/4 v0, 0x0
 
-    .line 55
+    .line 67
     invoke-static {p1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -134,7 +192,7 @@
 
     const/4 v0, 0x0
 
-    .line 61
+    .line 73
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -142,13 +200,13 @@
 
     move v1, v0
 
-    .line 62
+    .line 74
     :goto_0
     array-length v2, p1
 
     if-ge v1, v2, :cond_0
 
-    .line 63
+    .line 75
     iget-object v2, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     aget-object v3, p1, v1
@@ -164,7 +222,7 @@
     :catch_0
     move-exception p1
 
-    .line 66
+    .line 78
     invoke-static {p1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :cond_0
@@ -174,13 +232,13 @@
 .method public cleanupQueue()V
     .locals 2
 
-    .line 90
+    .line 102
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
 
-    .line 91
+    .line 103
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     const/4 v1, 0x0
@@ -196,7 +254,7 @@
 
     const/4 v1, 0x0
 
-    .line 93
+    .line 105
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -206,7 +264,7 @@
 .method public getHandler()Landroid/os/Handler;
     .locals 1
 
-    .line 125
+    .line 140
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     return-object v0
@@ -215,7 +273,7 @@
 .method public getLastTaskTime()J
     .locals 2
 
-    .line 102
+    .line 114
     iget-wide v0, p0, Lorg/telegram/messenger/DispatchQueue;->lastTaskTime:J
 
     return-wide v0
@@ -230,7 +288,7 @@
 .method public isReady()Z
     .locals 4
 
-    .line 121
+    .line 136
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
@@ -257,7 +315,7 @@
 .method public postRunnable(Ljava/lang/Runnable;)Z
     .locals 2
 
-    .line 71
+    .line 83
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -266,7 +324,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 72
+    .line 84
     invoke-virtual {p0, p1, v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;J)Z
 
     move-result p1
@@ -277,7 +335,7 @@
 .method public postRunnable(Ljava/lang/Runnable;J)Z
     .locals 2
 
-    .line 77
+    .line 89
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -292,7 +350,7 @@
 
     const/4 v1, 0x0
 
-    .line 79
+    .line 91
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -302,7 +360,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 82
+    .line 94
     iget-object p2, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
@@ -311,7 +369,7 @@
 
     return p1
 
-    .line 84
+    .line 96
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
@@ -325,7 +383,7 @@
 .method public recycle()V
     .locals 1
 
-    .line 106
+    .line 118
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -340,10 +398,10 @@
 .method public run()V
     .locals 3
 
-    .line 111
+    .line 123
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 112
+    .line 124
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -358,12 +416,23 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
-    .line 116
+    .line 128
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 117
+    .line 129
+    iget v0, p0, Lorg/telegram/messenger/DispatchQueue;->priority:I
+
+    const/16 v1, -0x3e8
+
+    if-eq v0, v1, :cond_0
+
+    .line 130
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+
+    .line 132
+    :cond_0
     invoke-static {}, Landroid/os/Looper;->loop()V
 
     return-void
@@ -372,7 +441,7 @@
 .method public sendMessage(Landroid/os/Message;I)V
     .locals 3
 
-    .line 39
+    .line 51
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -380,14 +449,14 @@
 
     if-gtz p2, :cond_0
 
-    .line 41
+    .line 53
     iget-object p2, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 
-    .line 43
+    .line 55
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;
 

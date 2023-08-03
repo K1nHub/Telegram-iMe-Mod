@@ -133,7 +133,7 @@ public class Engine {
         long totalReadUs = getTotalReadUs();
         long totalDurationUs = getTotalDurationUs();
         Logger logger = LOG;
-        logger.m689v("computeProgress - readUs:" + totalReadUs + ", totalUs:" + totalDurationUs);
+        logger.m707v("computeProgress - readUs:" + totalReadUs + ", totalUs:" + totalDurationUs);
         if (totalDurationUs == 0) {
             totalDurationUs = 1;
         }
@@ -152,13 +152,13 @@ public class Engine {
         gIFOptions.getStrategy().createOutputFormat(arrayList, mediaFormat);
         this.mOutputFormat = mediaFormat;
         Logger logger = LOG;
-        logger.m689v("Duration (us): " + getTotalDurationUs());
+        logger.m707v("Duration (us): " + getTotalDurationUs());
         boolean z = false;
         long j = 0L;
         while (!z) {
             try {
                 Logger logger2 = LOG;
-                logger2.m689v("new loop: " + j);
+                logger2.m707v("new loop: " + j);
                 if (Thread.interrupted()) {
                     throw new InterruptedException();
                 }
@@ -167,7 +167,7 @@ public class Engine {
                 j++;
                 if (j % 10 == 0) {
                     double computeProgress = computeProgress();
-                    logger2.m689v("progress:" + computeProgress);
+                    logger2.m707v("progress:" + computeProgress);
                     setProgress(computeProgress);
                 }
                 if (!transcode) {

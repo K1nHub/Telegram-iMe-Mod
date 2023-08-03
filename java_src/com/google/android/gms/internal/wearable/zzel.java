@@ -19,13 +19,36 @@ final class zzel extends zzen {
         return Float.intBitsToFloat(zzj(obj, j));
     }
 
+    /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+        jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.android.gms.internal.wearable.zzeo.zzi(java.lang.Object, long, boolean):void
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+        	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+        Caused by: java.util.ConcurrentModificationException
+        	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+        	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+        	at jadx.core.dex.instructions.args.SSAVar.updateUsedInPhiList(SSAVar.java:151)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:482)
+        	at jadx.core.dex.instructions.mods.TernaryInsn.rebindArgs(TernaryInsn.java:92)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:484)
+        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1079)
+        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1088)
+        	at jadx.core.dex.visitors.InlineMethods.inlineMethod(InlineMethods.java:115)
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:74)
+        	... 1 more
+        */
     @Override // com.google.android.gms.internal.wearable.zzen
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzeo.zzb) {
-            zzeo.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
-        } else {
-            zzeo.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
-        }
+    public final void zzc(java.lang.Object r2, long r3, boolean r5) {
+        /*
+            r1 = this;
+            boolean r0 = com.google.android.gms.internal.wearable.zzeo.zzb
+            if (r0 == 0) goto L8
+            com.google.android.gms.internal.wearable.zzeo.zzi(r2, r3, r5)
+            return
+        L8:
+            com.google.android.gms.internal.wearable.zzeo.zzj(r2, r3, r5)
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.wearable.zzel.zzc(java.lang.Object, long, boolean):void");
     }
 
     @Override // com.google.android.gms.internal.wearable.zzen

@@ -1048,7 +1048,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase;->mListener:Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$OnGestureListener;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$OnGestureListener;->hasDoubleTap()Z
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$OnGestureListener;->hasDoubleTap(Landroid/view/MotionEvent;)Z
 
     move-result v0
 

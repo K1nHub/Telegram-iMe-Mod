@@ -458,9 +458,8 @@ public class AppCompatTextHelper {
         EditorInfoCompat.setInitialSurroundingText(editorInfo, textView.getText());
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api26Impl {
+    static class Api26Impl {
         static boolean setFontVariationSettings(TextView textView, String str) {
             return textView.setFontVariationSettings(str);
         }
@@ -478,9 +477,8 @@ public class AppCompatTextHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api24Impl {
+    static class Api24Impl {
         static void setTextLocales(TextView textView, LocaleList localeList) {
             textView.setTextLocales(localeList);
         }
@@ -506,9 +504,8 @@ public class AppCompatTextHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api21Impl {
+    static class Api21Impl {
         static Locale forLanguageTag(String str) {
             return Locale.forLanguageTag(str);
         }

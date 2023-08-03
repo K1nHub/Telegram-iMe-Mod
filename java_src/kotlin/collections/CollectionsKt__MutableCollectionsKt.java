@@ -52,8 +52,13 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
     }
 
     public static final <T> Collection<T> convertToListIfNotCollection(Iterable<? extends T> iterable) {
+        List list;
         Intrinsics.checkNotNullParameter(iterable, "<this>");
-        return iterable instanceof Collection ? (Collection) iterable : CollectionsKt.toList(iterable);
+        if (iterable instanceof Collection) {
+            return (Collection) iterable;
+        }
+        list = CollectionsKt___CollectionsKt.toList(iterable);
+        return list;
     }
 
     public static final <T> boolean retainAll(Collection<? super T> collection, Iterable<? extends T> elements) {
@@ -81,19 +86,23 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
     }
 
     public static <T> T removeLast(List<T> list) {
+        int lastIndex;
         Intrinsics.checkNotNullParameter(list, "<this>");
         if (list.isEmpty()) {
             throw new NoSuchElementException("List is empty.");
         }
-        return list.remove(CollectionsKt.getLastIndex(list));
+        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(list);
+        return list.remove(lastIndex);
     }
 
     public static <T> T removeLastOrNull(List<T> list) {
+        int lastIndex;
         Intrinsics.checkNotNullParameter(list, "<this>");
         if (list.isEmpty()) {
             return null;
         }
-        return list.remove(CollectionsKt.getLastIndex(list));
+        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(list);
+        return list.remove(lastIndex);
     }
 
     public static <T> boolean removeAll(List<T> list, Function1<? super T, Boolean> predicate) {
@@ -104,11 +113,14 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
 
     /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     private static final <T> boolean filterInPlace$CollectionsKt__MutableCollectionsKt(List<T> list, Function1<? super T, Boolean> function1, boolean z) {
+        int lastIndex;
+        int lastIndex2;
         if (!(list instanceof RandomAccess)) {
             Intrinsics.checkNotNull(list, "null cannot be cast to non-null type kotlin.collections.MutableIterable<T of kotlin.collections.CollectionsKt__MutableCollectionsKt.filterInPlace>");
             return filterInPlace$CollectionsKt__MutableCollectionsKt(TypeIntrinsics.asMutableIterable(list), function1, z);
         }
-        ?? it = new IntRange(0, CollectionsKt.getLastIndex(list)).iterator();
+        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(list);
+        ?? it = new IntRange(0, lastIndex).iterator();
         int i = 0;
         while (it.hasNext()) {
             int nextInt = it.nextInt();
@@ -123,16 +135,16 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
         if (i >= list.size()) {
             return false;
         }
-        int lastIndex = CollectionsKt.getLastIndex(list);
-        if (i > lastIndex) {
+        lastIndex2 = CollectionsKt__CollectionsKt.getLastIndex(list);
+        if (i > lastIndex2) {
             return true;
         }
         while (true) {
-            list.remove(lastIndex);
-            if (lastIndex == i) {
+            list.remove(lastIndex2);
+            if (lastIndex2 == i) {
                 return true;
             }
-            lastIndex--;
+            lastIndex2--;
         }
     }
 }

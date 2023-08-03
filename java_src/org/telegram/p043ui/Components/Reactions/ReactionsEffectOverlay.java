@@ -34,19 +34,21 @@ public class ReactionsEffectOverlay {
     private final AnimationView effectImageView;
     private final AnimationView emojiImageView;
     private final AnimationView emojiStaticImageView;
-    private boolean finished;
     private final long groupId;
     private ReactionsContainerLayout.ReactionHolderView holderView;
+    boolean isFinished;
+    public boolean isStories;
     private float lastDrawnToX;
     private float lastDrawnToY;
     private final int messageId;
+    private ReactionsEffectOverlay nextReactionOverlay;
     private final ReactionsLayoutInBubble.VisibleReaction reaction;
-    long startTime;
-    private boolean started;
+    public long startTime;
+    public boolean started;
     private boolean useWindow;
     private boolean wasScrolled;
     private WindowManager windowManager;
-    FrameLayout windowView;
+    public FrameLayout windowView;
     int[] loc = new int[2];
     ArrayList<AvatarParticle> avatars = new ArrayList<>();
 
@@ -56,41 +58,33 @@ public class ReactionsEffectOverlay {
         return f2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0344  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0353  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x03dd  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x03f2  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0405  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x054a  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x05da  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0615  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0639  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01b4  */
-    /* JADX WARN: Type inference failed for: r15v11 */
-    /* JADX WARN: Type inference failed for: r15v13 */
-    /* JADX WARN: Type inference failed for: r15v14 */
-    /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r15v5, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r15v6 */
-    /* JADX WARN: Type inference failed for: r15v7 */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x064c  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x0687  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x06af  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x01f7  */
+    /* JADX WARN: Type inference failed for: r2v32 */
+    /* JADX WARN: Type inference failed for: r2v34, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v36 */
+    /* JADX WARN: Type inference failed for: r7v11 */
+    /* JADX WARN: Type inference failed for: r7v12, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r7v14 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private ReactionsEffectOverlay(android.content.Context r35, org.telegram.p043ui.ActionBar.BaseFragment r36, org.telegram.p043ui.Components.ReactionsContainerLayout r37, org.telegram.p043ui.Cells.ChatMessageCell r38, android.view.View r39, float r40, float r41, org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble.VisibleReaction r42, int r43, int r44) {
+    public ReactionsEffectOverlay(android.content.Context r35, org.telegram.p043ui.ActionBar.BaseFragment r36, org.telegram.p043ui.Components.ReactionsContainerLayout r37, org.telegram.p043ui.Cells.ChatMessageCell r38, android.view.View r39, float r40, float r41, org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble.VisibleReaction r42, int r43, int r44, boolean r45) {
         /*
-            Method dump skipped, instructions count: 1738
+            Method dump skipped, instructions count: 1854
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.<init>(android.content.Context, org.telegram.ui.ActionBar.BaseFragment, org.telegram.ui.Components.ReactionsContainerLayout, org.telegram.ui.Cells.ChatMessageCell, android.view.View, float, float, org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$VisibleReaction, int, int):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.<init>(android.content.Context, org.telegram.ui.ActionBar.BaseFragment, org.telegram.ui.Components.ReactionsContainerLayout, org.telegram.ui.Cells.ChatMessageCell, android.view.View, float, float, org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$VisibleReaction, int, int, boolean):void");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsEffectOverlay$1 */
     /* loaded from: classes6.dex */
-    public class C51451 extends FrameLayout {
+    public class C51821 extends FrameLayout {
         final /* synthetic */ int val$animationType;
         final /* synthetic */ ChatMessageCell val$cell;
         final /* synthetic */ ChatActivity val$chatActivity;
@@ -100,31 +94,37 @@ public class ReactionsEffectOverlay {
         final /* synthetic */ float val$fromScale;
         final /* synthetic */ float val$fromX;
         final /* synthetic */ float val$fromY;
+        final /* synthetic */ boolean val$isStories;
         final /* synthetic */ ReactionsLayoutInBubble.VisibleReaction val$visibleReaction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C51451(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        C51821(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, boolean z, ChatActivity chatActivity, int i, int i2, boolean z2, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
             super(context);
             this.val$fragment = baseFragment;
             this.val$cell = chatMessageCell;
+            this.val$isStories = z;
             this.val$chatActivity = chatActivity;
             this.val$emojiSize = i;
             this.val$animationType = i2;
-            this.val$fromHolder = z;
+            this.val$fromHolder = z2;
             this.val$fromScale = f;
             this.val$fromX = f2;
             this.val$fromY = f3;
             this.val$visibleReaction = visibleReaction;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:176:0x0469  */
-        /* JADX WARN: Removed duplicated region for block: B:184:0x0497  */
-        /* JADX WARN: Removed duplicated region for block: B:185:0x049a  */
-        /* JADX WARN: Removed duplicated region for block: B:188:0x0557  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x0564  */
-        /* JADX WARN: Removed duplicated region for block: B:194:0x0577  */
-        /* JADX WARN: Removed duplicated region for block: B:197:0x0581  */
-        /* JADX WARN: Removed duplicated region for block: B:201:0x0594  */
+        /* JADX WARN: Removed duplicated region for block: B:107:0x029b  */
+        /* JADX WARN: Removed duplicated region for block: B:126:0x0310  */
+        /* JADX WARN: Removed duplicated region for block: B:165:0x03d2  */
+        /* JADX WARN: Removed duplicated region for block: B:213:0x04ef  */
+        /* JADX WARN: Removed duplicated region for block: B:223:0x054a  */
+        /* JADX WARN: Removed duplicated region for block: B:231:0x0579  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x057c  */
+        /* JADX WARN: Removed duplicated region for block: B:235:0x0639  */
+        /* JADX WARN: Removed duplicated region for block: B:240:0x0646  */
+        /* JADX WARN: Removed duplicated region for block: B:241:0x0659  */
+        /* JADX WARN: Removed duplicated region for block: B:244:0x0663  */
+        /* JADX WARN: Removed duplicated region for block: B:248:0x0676  */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -132,10 +132,10 @@ public class ReactionsEffectOverlay {
         */
         protected void dispatchDraw(android.graphics.Canvas r20) {
             /*
-                Method dump skipped, instructions count: 1456
+                Method dump skipped, instructions count: 1681
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.C51451.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.C51821.dispatchDraw(android.graphics.Canvas):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -175,92 +175,96 @@ public class ReactionsEffectOverlay {
             if (this.useWindow) {
                 this.windowManager.removeView(this.windowView);
             } else {
-                this.decorView.removeView(this.windowView);
+                AndroidUtilities.removeFromParent(this.windowView);
             }
         } catch (Exception unused) {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0063, code lost:
-        if (r24 != 2) goto L38;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0069, code lost:
+        if (r25 != 2) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x006d, code lost:
-        if (r1.isShowing() == false) goto L38;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0073, code lost:
+        if (r1.isShowing() == false) goto L39;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static void show(org.telegram.p043ui.ActionBar.BaseFragment r16, org.telegram.p043ui.Components.ReactionsContainerLayout r17, org.telegram.p043ui.Cells.ChatMessageCell r18, android.view.View r19, float r20, float r21, org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble.VisibleReaction r22, int r23, int r24) {
+    public static void show(org.telegram.p043ui.ActionBar.BaseFragment r17, org.telegram.p043ui.Components.ReactionsContainerLayout r18, org.telegram.p043ui.Cells.ChatMessageCell r19, android.view.View r20, float r21, float r22, org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble.VisibleReaction r23, int r24, int r25) {
         /*
-            r11 = r16
-            r12 = r24
-            if (r18 == 0) goto Lc8
-            if (r22 == 0) goto Lc8
-            if (r11 == 0) goto Lc8
-            android.app.Activity r0 = r16.getParentActivity()
+            r12 = r17
+            r13 = r25
+            if (r19 == 0) goto Lce
+            if (r23 == 0) goto Lce
+            if (r12 == 0) goto Lce
+            android.app.Activity r0 = r17.getParentActivity()
             if (r0 != 0) goto L12
-            goto Lc8
+            goto Lce
         L12:
             android.content.SharedPreferences r0 = org.telegram.messenger.MessagesController.getGlobalMainSettings()
             java.lang.String r1 = "view_animations"
-            r13 = 1
-            boolean r0 = r0.getBoolean(r1, r13)
+            r14 = 1
+            boolean r0 = r0.getBoolean(r1, r14)
             if (r0 != 0) goto L20
             return
         L20:
-            r14 = 2
-            if (r12 == r14) goto L25
-            if (r12 != 0) goto L36
+            r15 = 2
+            if (r13 == r15) goto L25
+            if (r13 != 0) goto L36
         L25:
             r1 = 0
             r4 = 0
             r5 = 0
             r8 = 1
-            r0 = r16
-            r2 = r18
-            r3 = r19
-            r6 = r22
-            r7 = r23
+            r0 = r17
+            r2 = r19
+            r3 = r20
+            r6 = r23
+            r7 = r24
             show(r0, r1, r2, r3, r4, r5, r6, r7, r8)
         L36:
-            org.telegram.ui.Components.Reactions.ReactionsEffectOverlay r15 = new org.telegram.ui.Components.Reactions.ReactionsEffectOverlay
-            android.app.Activity r1 = r16.getParentActivity()
-            r0 = r15
-            r2 = r16
-            r3 = r17
-            r4 = r18
-            r5 = r19
-            r6 = r20
-            r7 = r21
-            r8 = r22
-            r9 = r23
-            r10 = r24
-            r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10)
-            if (r12 != r13) goto L57
+            org.telegram.ui.Components.Reactions.ReactionsEffectOverlay r11 = new org.telegram.ui.Components.Reactions.ReactionsEffectOverlay
+            android.app.Activity r1 = r17.getParentActivity()
+            r16 = 0
+            r0 = r11
+            r2 = r17
+            r3 = r18
+            r4 = r19
+            r5 = r20
+            r6 = r21
+            r7 = r22
+            r8 = r23
+            r9 = r24
+            r10 = r25
+            r15 = r11
+            r11 = r16
+            r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11)
+            if (r13 != r14) goto L5c
             org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.currentShortOverlay = r15
-            goto L59
-        L57:
+            goto L5e
+        L5c:
             org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.currentOverlay = r15
-        L59:
+        L5e:
             r0 = 0
-            boolean r1 = r11 instanceof org.telegram.p043ui.ChatActivity
-            if (r1 == 0) goto L70
-            r1 = r11
+            boolean r1 = r12 instanceof org.telegram.p043ui.ChatActivity
+            if (r1 == 0) goto L76
+            r1 = r12
             org.telegram.ui.ChatActivity r1 = (org.telegram.p043ui.ChatActivity) r1
-            if (r12 == 0) goto L65
-            if (r12 != r14) goto L70
-        L65:
+            if (r13 == 0) goto L6b
+            r2 = 2
+            if (r13 != r2) goto L76
+        L6b:
             org.telegram.ui.ActionBar.ActionBarPopupWindow r1 = r1.scrimPopupWindow
-            if (r1 == 0) goto L70
+            if (r1 == 0) goto L76
             boolean r1 = r1.isShowing()
-            if (r1 == 0) goto L70
-            goto L71
-        L70:
-            r13 = r0
-        L71:
-            r15.useWindow = r13
-            if (r13 == 0) goto L9b
+            if (r1 == 0) goto L76
+            goto L77
+        L76:
+            r14 = r0
+        L77:
+            r15.useWindow = r14
+            if (r14 == 0) goto La1
             android.view.WindowManager$LayoutParams r0 = new android.view.WindowManager$LayoutParams
             r0.<init>()
             r1 = -1
@@ -272,30 +276,30 @@ public class ReactionsEffectOverlay {
             r0.flags = r1
             r1 = -3
             r0.format = r1
-            android.app.Activity r1 = r16.getParentActivity()
+            android.app.Activity r1 = r17.getParentActivity()
             android.view.WindowManager r1 = r1.getWindowManager()
             r15.windowManager = r1
             android.widget.FrameLayout r2 = r15.windowView
             r1.addView(r2, r0)
-            goto Lb0
-        L9b:
-            android.app.Activity r0 = r16.getParentActivity()
+            goto Lb6
+        La1:
+            android.app.Activity r0 = r17.getParentActivity()
             android.view.Window r0 = r0.getWindow()
             android.view.View r0 = r0.getDecorView()
             android.widget.FrameLayout r0 = (android.widget.FrameLayout) r0
             r15.decorView = r0
             android.widget.FrameLayout r1 = r15.windowView
             r0.addView(r1)
-        Lb0:
-            r18.invalidate()
-            org.telegram.messenger.MessageObject$GroupedMessages r0 = r18.getCurrentMessagesGroup()
-            if (r0 == 0) goto Lc8
-            android.view.ViewParent r0 = r18.getParent()
-            if (r0 == 0) goto Lc8
-            android.view.ViewParent r0 = r18.getParent()
+        Lb6:
+            r19.invalidate()
+            org.telegram.messenger.MessageObject$GroupedMessages r0 = r19.getCurrentMessagesGroup()
+            if (r0 == 0) goto Lce
+            android.view.ViewParent r0 = r19.getParent()
+            if (r0 == 0) goto Lce
+            android.view.ViewParent r0 = r19.getParent()
             android.view.View r0 = (android.view.View) r0
             r0.invalidate()
-        Lc8:
+        Lce:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.show(org.telegram.ui.ActionBar.BaseFragment, org.telegram.ui.Components.ReactionsContainerLayout, org.telegram.ui.Cells.ChatMessageCell, android.view.View, float, float, org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$VisibleReaction, int, int):void");
@@ -399,7 +403,7 @@ public class ReactionsEffectOverlay {
                 this.wasPlaying = true;
             }
             if (!this.wasPlaying && getImageReceiver().getLottieAnimation() != null && !getImageReceiver().getLottieAnimation().isRunning()) {
-                if (ReactionsEffectOverlay.this.animationType == 2) {
+                if (ReactionsEffectOverlay.this.animationType == 2 && !ReactionsEffectOverlay.this.isStories) {
                     getImageReceiver().getLottieAnimation().setCurrentFrame(getImageReceiver().getLottieAnimation().getFramesCount() - 1, false);
                 } else {
                     getImageReceiver().getLottieAnimation().setCurrentFrame(0, false);
@@ -466,13 +470,13 @@ public class ReactionsEffectOverlay {
     }
 
     public static int sizeForBigReaction() {
-        int m54dp = AndroidUtilities.m54dp(350);
+        int m72dp = AndroidUtilities.m72dp(350);
         Point point = AndroidUtilities.displaySize;
-        return (int) (Math.round(Math.min(m54dp, Math.min(point.x, point.y)) * 0.7f) / AndroidUtilities.density);
+        return (int) (Math.round(Math.min(m72dp, Math.min(point.x, point.y)) * 0.7f) / AndroidUtilities.density);
     }
 
     public static int sizeForAroundReaction() {
-        return (int) ((AndroidUtilities.m54dp(40) * 2.0f) / AndroidUtilities.density);
+        return (int) ((AndroidUtilities.m72dp(40) * 2.0f) / AndroidUtilities.density);
     }
 
     public static void dismissAll() {
@@ -507,7 +511,7 @@ public class ReactionsEffectOverlay {
         private AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay) {
         }
 
-        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C51451 c51451) {
+        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C51821 c51821) {
             this(reactionsEffectOverlay);
         }
     }

@@ -26,12 +26,12 @@
 
     const-string p1, "context"
 
-    .line 154
+    .line 153
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 p1, 0x24
 
-    .line 153
+    .line 152
     invoke-direct {p0, p2, p1, p3}, Lcom/iMe/fork/ui/view/CircleCheckCell;-><init>(Landroid/content/Context;ILandroid/widget/ImageView$ScaleType;)V
 
     return-void
@@ -42,7 +42,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 160
+    .line 159
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->access$getItemWidth$p(Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;)I
@@ -57,7 +57,7 @@
 
     const/16 v0, 0x64
 
-    .line 161
+    .line 160
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -66,7 +66,7 @@
 
     move-result p2
 
-    .line 159
+    .line 158
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

@@ -46,15 +46,15 @@ public class IdManager implements InstallIdProvider {
         if (str != null) {
             return str;
         }
-        Logger.getLogger().m722v("Determining Crashlytics installation ID...");
+        Logger.getLogger().m740v("Determining Crashlytics installation ID...");
         SharedPreferences sharedPrefs = CommonUtils.getSharedPrefs(this.appContext);
         String string = sharedPrefs.getString("firebase.installation.id", null);
         Logger logger = Logger.getLogger();
-        logger.m722v("Cached Firebase Installation ID: " + string);
+        logger.m740v("Cached Firebase Installation ID: " + string);
         if (this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
             String fetchTrueFid = fetchTrueFid();
             Logger logger2 = Logger.getLogger();
-            logger2.m722v("Fetched Firebase Installation ID: " + fetchTrueFid);
+            logger2.m740v("Fetched Firebase Installation ID: " + fetchTrueFid);
             if (fetchTrueFid == null) {
                 fetchTrueFid = string == null ? createSyntheticFid() : string;
             }
@@ -69,11 +69,11 @@ public class IdManager implements InstallIdProvider {
             this.crashlyticsInstallId = createAndCacheCrashlyticsInstallId(createSyntheticFid(), sharedPrefs);
         }
         if (this.crashlyticsInstallId == null) {
-            Logger.getLogger().m720w("Unable to determine Crashlytics Install Id, creating a new one.");
+            Logger.getLogger().m738w("Unable to determine Crashlytics Install Id, creating a new one.");
             this.crashlyticsInstallId = createAndCacheCrashlyticsInstallId(createSyntheticFid(), sharedPrefs);
         }
         Logger logger3 = Logger.getLogger();
-        logger3.m722v("Crashlytics installation ID: " + this.crashlyticsInstallId);
+        logger3.m740v("Crashlytics installation ID: " + this.crashlyticsInstallId);
         return this.crashlyticsInstallId;
     }
 
@@ -93,7 +93,7 @@ public class IdManager implements InstallIdProvider {
         try {
             return (String) Utils.awaitEvenIfOnMainThread(this.firebaseInstallationsApi.getId());
         } catch (Exception e) {
-            Logger.getLogger().m719w("Failed to retrieve Firebase Installations ID.", e);
+            Logger.getLogger().m737w("Failed to retrieve Firebase Installations ID.", e);
             return null;
         }
     }
@@ -102,7 +102,7 @@ public class IdManager implements InstallIdProvider {
         String formatId;
         formatId = formatId(UUID.randomUUID().toString());
         Logger logger = Logger.getLogger();
-        logger.m722v("Created new Crashlytics installation ID: " + formatId + " for FID: " + str);
+        logger.m740v("Created new Crashlytics installation ID: " + formatId + " for FID: " + str);
         sharedPreferences.edit().putString("crashlytics.installation.id", formatId).putString("firebase.installation.id", str).apply();
         return formatId;
     }

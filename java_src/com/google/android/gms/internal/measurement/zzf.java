@@ -1,4 +1,6 @@
 package com.google.android.gms.internal.measurement;
+
+import java.util.concurrent.Callable;
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
 /* loaded from: classes.dex */
 public final class zzf {
@@ -16,7 +18,12 @@ public final class zzf {
         zzj zzjVar = new zzj();
         this.zzd = zzjVar;
         zzgVar.zzg("require", new zzw(zzjVar));
-        zzjVar.zza("internal.platform", zze.zza);
+        zzjVar.zza("internal.platform", new Callable() { // from class: com.google.android.gms.internal.measurement.zze
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                return new zzy();
+            }
+        });
         zzgVar.zzg("runtime.counter", new zzah(Double.valueOf(0.0d)));
     }
 

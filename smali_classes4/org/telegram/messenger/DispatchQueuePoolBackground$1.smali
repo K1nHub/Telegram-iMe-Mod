@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/DispatchQueuePoolBackground;)V
     .locals 0
 
-    .line 27
+    .line 29
     iput-object p1, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 12
 
-    .line 30
+    .line 32
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-static {v0}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->access$000(Lorg/telegram/messenger/DispatchQueuePoolBackground;)Ljava/util/ArrayList;
@@ -57,14 +57,14 @@
 
     if-nez v0, :cond_1
 
-    .line 31
+    .line 33
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
 
     move v0, v4
 
-    .line 32
+    .line 34
     :goto_0
     iget-object v7, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
@@ -78,7 +78,7 @@
 
     if-ge v0, v7, :cond_1
 
-    .line 33
+    .line 35
     iget-object v7, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-static {v7}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->access$000(Lorg/telegram/messenger/DispatchQueuePoolBackground;)Ljava/util/ArrayList;
@@ -91,7 +91,7 @@
 
     check-cast v7, Lorg/telegram/messenger/DispatchQueue;
 
-    .line 34
+    .line 36
     invoke-virtual {v7}, Lorg/telegram/messenger/DispatchQueue;->getLastTaskTime()J
 
     move-result-wide v8
@@ -102,10 +102,10 @@
 
     if-gez v8, :cond_0
 
-    .line 35
+    .line 37
     invoke-virtual {v7}, Lorg/telegram/messenger/DispatchQueue;->recycle()V
 
-    .line 36
+    .line 38
     iget-object v7, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-static {v7}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->access$000(Lorg/telegram/messenger/DispatchQueuePoolBackground;)Ljava/util/ArrayList;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 37
+    .line 39
     iget-object v7, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-static {v7}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->access$110(Lorg/telegram/messenger/DispatchQueuePoolBackground;)I
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 42
+    .line 44
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
@@ -154,7 +154,7 @@
 
     goto :goto_1
 
-    .line 46
+    .line 48
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
@@ -162,14 +162,14 @@
 
     goto :goto_2
 
-    .line 43
+    .line 45
     :cond_3
     :goto_1
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {v0, p0, v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;J)Z
 
-    .line 44
+    .line 46
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->access$302(Lorg/telegram/messenger/DispatchQueuePoolBackground;Z)Z

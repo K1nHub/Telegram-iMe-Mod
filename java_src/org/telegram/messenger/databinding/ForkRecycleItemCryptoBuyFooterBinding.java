@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemCryptoBuyFooterBinding implements ViewBinding {
     private final LinearLayout rootView;
@@ -26,7 +26,7 @@ public final class ForkRecycleItemCryptoBuyFooterBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoBuyFooterBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_crypto_buy_footer, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_crypto_buy_footer, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ForkRecycleItemCryptoBuyFooterBinding implements ViewBinding 
 
     public static ForkRecycleItemCryptoBuyFooterBinding bind(View view) {
         LinearLayout linearLayout = (LinearLayout) view;
-        int i = C3417R.C3420id.text_powered_by;
+        int i = C3419R.C3422id.text_powered_by;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
-            i = C3417R.C3420id.text_title;
+            i = C3419R.C3422id.text_title;
             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView2 != null) {
                 return new ForkRecycleItemCryptoBuyFooterBinding(linearLayout, linearLayout, appCompatTextView, appCompatTextView2);

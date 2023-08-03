@@ -2136,11 +2136,11 @@
     if-nez p2, :cond_1
 
     .line 277
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result p2
+    move-result-wide v2
 
-    int-to-long v2, p2
+    double-to-long v2, v2
 
     mul-long/2addr v2, v0
 

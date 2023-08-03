@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/view/View;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;->switchSearchEmptyView(Z)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,63 +15,43 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-.field final synthetic val$empty:Z
+.field final synthetic val$bubbleX:Ljava/lang/Integer;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 1448
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 1046
+    iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->val$bubbleX:Ljava/lang/Integer;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->val$empty:Z
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 0
 
-    .line 1451
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 1049
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    iget-object v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiSearchEmptyView:Landroid/widget/FrameLayout;
+    .line 1050
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->val$bubbleX:Ljava/lang/Integer;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->val$empty:Z
+    if-eqz p1, :cond_0
 
-    if-eqz v1, :cond_0
-
-    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiSearchGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getVisibility()I
+    .line 1051
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_0
+    int-to-float p1, p1
 
-    const/4 p1, 0x0
-
-    goto :goto_0
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotX(F)V
 
     :cond_0
-    const/16 p1, 0x8
-
-    :goto_0
-    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 1452
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3902(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-
     return-void
 .end method

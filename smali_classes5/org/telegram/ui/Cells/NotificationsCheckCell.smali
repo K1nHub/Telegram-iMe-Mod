@@ -1139,18 +1139,3 @@
 
     return-void
 .end method
-
-.method public toggleCheckBox()V
-    .locals 1
-
-    .line 41
-    invoke-virtual {p0}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isChecked()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
-
-    return-void
-.end method

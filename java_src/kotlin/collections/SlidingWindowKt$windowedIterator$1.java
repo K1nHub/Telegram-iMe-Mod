@@ -9,10 +9,11 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SlidingWindow.kt */
-@DebugMetadata(m84c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", m83f = "SlidingWindow.kt", m82l = {34, 40, 49, 55, 58}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", m101f = "SlidingWindow.kt", m100l = {34, 40, 49, 55, 58}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
+public final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Iterator<T> $iterator;
     final /* synthetic */ boolean $partialWindows;
     final /* synthetic */ boolean $reuseBuffer;
@@ -44,6 +45,10 @@ public final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendL
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((SequenceScope) ((SequenceScope) obj), continuation);
+    }
+
     public final Object invoke(SequenceScope<? super List<? extends T>> sequenceScope, Continuation<? super Unit> continuation) {
         return ((SlidingWindowKt$windowedIterator$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }

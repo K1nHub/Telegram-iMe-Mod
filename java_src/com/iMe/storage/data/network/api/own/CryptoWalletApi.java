@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.api.own;
 
 import com.iMe.storage.data.network.model.request.crypto.wallet.LinkWalletsRequest;
 import com.iMe.storage.data.network.model.request.crypto.wallet.PrepareTransferRequest;
-import com.iMe.storage.data.network.model.request.crypto.wallet.SendCryptoTransferTransactionRequest;
+import com.iMe.storage.data.network.model.request.crypto.wallet.SendTransferTransactionRequest;
 import com.iMe.storage.data.network.model.request.crypto.wallet.UnlinkWalletAddressRequest;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse;
@@ -32,8 +32,8 @@ public interface CryptoWalletApi {
     @POST("linkWallets")
     Observable<ApiBaseResponse<Object>> linkWallet(@Body LinkWalletsRequest linkWalletsRequest);
 
-    @POST("sendCryptoTransferTransaction")
-    Observable<ApiBaseResponse<TransactionResponse>> sendCryptoTransferTransaction(@Body SendCryptoTransferTransactionRequest sendCryptoTransferTransactionRequest);
+    @POST("sendTransferTx")
+    Observable<ApiBaseResponse<TransactionResponse>> sendCryptoTransferTransaction(@Body SendTransferTransactionRequest sendTransferTransactionRequest);
 
     @POST("unlinkWallet")
     Observable<ApiBaseResponse<Object>> unlinkWallet(@Body UnlinkWalletAddressRequest unlinkWalletAddressRequest);

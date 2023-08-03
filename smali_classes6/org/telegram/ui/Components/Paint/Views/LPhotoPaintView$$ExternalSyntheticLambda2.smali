@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda2;->f$1:Z
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$hyn_6Vt14DcaK8HXAVA26ALkSM4(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$SV5f2WkH3cpr7N8K25fbIKsGY3A(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

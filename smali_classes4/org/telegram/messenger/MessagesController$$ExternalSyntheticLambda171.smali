@@ -10,13 +10,11 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:I
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;ZI)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$2:Z
-
-    iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$3:I
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$2:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$2:Ljava/util/ArrayList;
 
-    iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda171;->f$3:I
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$qul22iDgSDo4lfzkK_b2nb-whE0(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;ZI)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$xM2NKY1TKAP_yZQsan5W6VpDiPM(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
 
     return-void
 .end method

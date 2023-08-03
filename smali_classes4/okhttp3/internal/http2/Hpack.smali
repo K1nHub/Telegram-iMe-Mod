@@ -576,7 +576,7 @@
     .line 106
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "proxy-authenticate"
+    const-string/jumbo v3, "proxy-authenticate"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -587,7 +587,7 @@
     .line 107
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "proxy-authorization"
+    const-string/jumbo v3, "proxy-authorization"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

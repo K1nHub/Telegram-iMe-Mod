@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
@@ -47,7 +47,7 @@ public class MemberRequestCell extends FrameLayout {
         this.nameTextView = simpleTextView;
         SimpleTextView simpleTextView2 = new SimpleTextView(getContext());
         this.statusTextView = simpleTextView2;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(23));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(23));
         addView(backupImageView, LayoutHelper.createFrame(46, 46, LocaleController.isRTL ? 5 : 3, 12, 8, 12, 0));
         simpleTextView.setGravity(LocaleController.isRTL ? 5 : 3);
         simpleTextView.setMaxLines(1);
@@ -62,17 +62,17 @@ public class MemberRequestCell extends FrameLayout {
         simpleTextView2.setTextSize(14);
         boolean z3 = LocaleController.isRTL;
         addView(simpleTextView2, LayoutHelper.createFrame(-1, -2, 48, z3 ? 12 : 74, 36, z3 ? 74 : 12, 0));
-        int m54dp = AndroidUtilities.m54dp(17);
+        int m72dp = AndroidUtilities.m72dp(17);
         TextView textView = new TextView(getContext());
         textView.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setMaxLines(1);
-        textView.setPadding(m54dp, 0, m54dp, 0);
+        textView.setPadding(m72dp, 0, m72dp, 0);
         if (z) {
-            i = C3417R.string.AddToChannel;
+            i = C3419R.string.AddToChannel;
             str = "AddToChannel";
         } else {
-            i = C3417R.string.AddToGroup;
+            i = C3419R.string.AddToGroup;
             str = "AddToGroup";
         }
         textView.setText(LocaleController.getString(str, i));
@@ -87,13 +87,13 @@ public class MemberRequestCell extends FrameLayout {
         });
         boolean z4 = LocaleController.isRTL;
         addView(textView, LayoutHelper.createFrame(-2, 32, z4 ? 5 : 3, z4 ? 0 : 73, 62, z4 ? 73 : 0, 0));
-        float measureText = textView.getPaint().measureText(textView.getText().toString()) + (m54dp * 2);
+        float measureText = textView.getPaint().measureText(textView.getText().toString()) + (m72dp * 2);
         TextView textView2 = new TextView(getContext());
-        textView2.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), 0, Theme.getColor(Theme.key_listSelector), -16777216));
+        textView2.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), 0, Theme.getColor(Theme.key_listSelector), -16777216));
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView2.setMaxLines(1);
-        textView2.setPadding(m54dp, 0, m54dp, 0);
-        textView2.setText(LocaleController.getString("Dismiss", C3417R.string.Dismiss));
+        textView2.setPadding(m72dp, 0, m72dp, 0);
+        textView2.setText(LocaleController.getString("Dismiss", C3419R.string.Dismiss));
         textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText));
         textView2.setTextSize(14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -103,10 +103,10 @@ public class MemberRequestCell extends FrameLayout {
                 MemberRequestCell.this.lambda$new$1(onClickListener, view);
             }
         });
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, AndroidUtilities.m54dp(32), LocaleController.isRTL ? 5 : 3);
-        layoutParams.topMargin = AndroidUtilities.m54dp(62);
-        layoutParams.leftMargin = LocaleController.isRTL ? 0 : (int) (AndroidUtilities.m54dp(79) + measureText);
-        layoutParams.rightMargin = LocaleController.isRTL ? (int) (measureText + AndroidUtilities.m54dp(79)) : 0;
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, AndroidUtilities.m72dp(32), LocaleController.isRTL ? 5 : 3);
+        layoutParams.topMargin = AndroidUtilities.m72dp(62);
+        layoutParams.leftMargin = LocaleController.isRTL ? 0 : (int) (AndroidUtilities.m72dp(79) + measureText);
+        layoutParams.rightMargin = LocaleController.isRTL ? (int) (measureText + AndroidUtilities.m72dp(79)) : 0;
         addView(textView2, layoutParams);
     }
 
@@ -138,17 +138,17 @@ public class MemberRequestCell extends FrameLayout {
         this.nameTextView.setText(UserObject.getUserName(tLRPC$User));
         String formatDateAudio = LocaleController.formatDateAudio(tLRPC$TL_chatInviteImporter.date, false);
         if (tLRPC$TL_chatInviteImporter.via_chatlist) {
-            this.statusTextView.setText(LocaleController.getString("JoinedViaFolder", C3417R.string.JoinedViaFolder));
+            this.statusTextView.setText(LocaleController.getString("JoinedViaFolder", C3419R.string.JoinedViaFolder));
             return;
         }
         long j = tLRPC$TL_chatInviteImporter.approved_by;
         if (j == 0) {
-            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3417R.string.RequestedToJoinAt, formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3419R.string.RequestedToJoinAt, formatDateAudio));
             return;
         }
         TLRPC$User tLRPC$User2 = longSparseArray.get(j);
         if (tLRPC$User2 != null) {
-            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3417R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3419R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
         } else {
             this.statusTextView.setText("");
         }
@@ -168,14 +168,14 @@ public class MemberRequestCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(107), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(107), 1073741824));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.isNeedDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(72), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(72) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(72), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(72) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

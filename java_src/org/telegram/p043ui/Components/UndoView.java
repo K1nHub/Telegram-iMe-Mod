@@ -33,7 +33,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.FiltersController;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -113,11 +113,11 @@ public class UndoView extends FrameLayout {
     }
 
     public void showInfo(CharSequence charSequence, Runnable runnable) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3417R.raw.info), (Runnable) null, runnable);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3419R.raw.info), (Runnable) null, runnable);
     }
 
     public void showError(CharSequence charSequence) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3417R.raw.error), (Runnable) null, (Runnable) null);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3419R.raw.error), (Runnable) null, (Runnable) null);
     }
 
     private boolean isFoldersHidden() {
@@ -151,7 +151,7 @@ public class UndoView extends FrameLayout {
                 }
                 return super.onTouchEvent(textView, spannable, motionEvent);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 return false;
             }
         }
@@ -170,7 +170,7 @@ public class UndoView extends FrameLayout {
         this.currentAccount = UserConfig.selectedAccount;
         this.currentAction = -1;
         this.hideAnimationType = 1;
-        this.enterOffsetMargin = AndroidUtilities.m54dp(8);
+        this.enterOffsetMargin = AndroidUtilities.m72dp(8);
         this.timeReplaceProgress = 1.0f;
         this.resourcesProvider = resourcesProvider;
         this.parentFragment = baseFragment;
@@ -219,12 +219,12 @@ public class UndoView extends FrameLayout {
         addView(this.leftImageView, LayoutHelper.createFrame(54, -2, 19, 3, 0, 0, 0));
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(15));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(15));
         addView(this.avatarImageView, LayoutHelper.createFrame(30, 30, 19, 15, 0, 0, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         this.undoButton = linearLayout;
         linearLayout.setOrientation(0);
-        this.undoButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i2) & 587202559, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2)));
+        this.undoButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i2) & 587202559, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2)));
         addView(this.undoButton, LayoutHelper.createFrame(-2, -2, 21, 0, 0, 11, 0));
         this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -234,7 +234,7 @@ public class UndoView extends FrameLayout {
         });
         ImageView imageView = new ImageView(context);
         this.undoImageView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.chats_undo);
+        imageView.setImageResource(C3419R.C3421drawable.chats_undo);
         this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
         this.undoButton.addView(this.undoImageView, LayoutHelper.createLinear(-2, -2, 19, 4, 4, 0, 4));
         TextView textView5 = new TextView(context);
@@ -242,23 +242,30 @@ public class UndoView extends FrameLayout {
         textView5.setTextSize(1, 14.0f);
         this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.undoTextView.setTextColor(getThemedColor(i2));
-        this.undoTextView.setText(LocaleController.getString("Undo", C3417R.string.Undo));
+        this.undoTextView.setText(LocaleController.getString("Undo", C3419R.string.Undo));
         this.undoButton.addView(this.undoTextView, LayoutHelper.createLinear(-2, -2, 19, 6, 4, 8, 4));
-        this.rect = new RectF(AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(33), AndroidUtilities.m54dp(33));
+        this.rect = new RectF(AndroidUtilities.m72dp(15), AndroidUtilities.m72dp(15), AndroidUtilities.m72dp(33), AndroidUtilities.m72dp(33));
         Paint paint = new Paint(1);
         this.progressPaint = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.progressPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.progressPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
         this.progressPaint.setColor(getThemedColor(i));
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m54dp(12));
+        textPaint.setTextSize(AndroidUtilities.m72dp(12));
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textPaint.setColor(getThemedColor(i));
         setWillNotDraw(false);
-        this.backgroundDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m54dp(10), getThemedColor(i3));
-        setOnTouchListener(UndoView$$ExternalSyntheticLambda3.INSTANCE);
+        this.backgroundDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m72dp(10), getThemedColor(i3));
+        setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$new$1;
+                lambda$new$1 = UndoView.lambda$new$1(view, motionEvent);
+                return lambda$new$1;
+            }
+        });
         setVisibility(4);
     }
 
@@ -395,11 +402,11 @@ public class UndoView extends FrameLayout {
         showWithAction(arrayList, i, obj, obj2, runnable, runnable2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:750:0x19dc  */
-    /* JADX WARN: Removed duplicated region for block: B:753:0x19fc  */
-    /* JADX WARN: Removed duplicated region for block: B:756:0x1a23  */
-    /* JADX WARN: Removed duplicated region for block: B:760:0x1a68  */
-    /* JADX WARN: Removed duplicated region for block: B:791:0x1b1b  */
+    /* JADX WARN: Removed duplicated region for block: B:750:0x19e1  */
+    /* JADX WARN: Removed duplicated region for block: B:753:0x1a01  */
+    /* JADX WARN: Removed duplicated region for block: B:756:0x1a28  */
+    /* JADX WARN: Removed duplicated region for block: B:760:0x1a6d  */
+    /* JADX WARN: Removed duplicated region for block: B:791:0x1b20  */
     /* JADX WARN: Removed duplicated region for block: B:818:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -407,7 +414,7 @@ public class UndoView extends FrameLayout {
     */
     public void showWithAction(java.util.ArrayList<java.lang.Long> r22, int r23, java.lang.Object r24, java.lang.Object r25, java.lang.Runnable r26, java.lang.Runnable r27) {
         /*
-            Method dump skipped, instructions count: 7029
+            Method dump skipped, instructions count: 7034
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.UndoView.showWithAction(java.util.ArrayList, int, java.lang.Object, java.lang.Object, java.lang.Runnable, java.lang.Runnable):void");
@@ -422,7 +429,7 @@ public class UndoView extends FrameLayout {
     public /* synthetic */ void lambda$showWithAction$6(TLRPC$Message tLRPC$Message, View view) {
         hide(true, 1);
         TLRPC$TL_payments_getPaymentReceipt tLRPC$TL_payments_getPaymentReceipt = new TLRPC$TL_payments_getPaymentReceipt();
-        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1539id;
+        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1542id;
         tLRPC$TL_payments_getPaymentReceipt.peer = this.parentFragment.getMessagesController().getInputPeer(tLRPC$Message.peer_id);
         this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_payments_getPaymentReceipt, new RequestDelegate() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
@@ -468,7 +475,7 @@ public class UndoView extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         if (this.additionalTranslationY != BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + AndroidUtilities.m54dp(9);
+            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + AndroidUtilities.m72dp(9);
             if (measuredHeight > BitmapDescriptorFactory.HUE_RED) {
                 canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), measuredHeight);
                 super.dispatchDraw(canvas);
@@ -483,7 +490,7 @@ public class UndoView extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         if (this.additionalTranslationY != BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + this.enterOffsetMargin + AndroidUtilities.m54dp(1);
+            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + this.enterOffsetMargin + AndroidUtilities.m72dp(1);
             if (measuredHeight > BitmapDescriptorFactory.HUE_RED) {
                 canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), measuredHeight);
                 super.dispatchDraw(canvas);
@@ -525,7 +532,7 @@ public class UndoView extends FrameLayout {
                 if (f3 < 1.0f) {
                     this.textPaint.setAlpha((int) (alpha * (1.0f - f3)));
                     canvas.save();
-                    canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m55dp(17.2f) + (AndroidUtilities.m54dp(10) * this.timeReplaceProgress));
+                    canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m73dp(17.2f) + (AndroidUtilities.m72dp(10) * this.timeReplaceProgress));
                     this.timeLayoutOut.draw(canvas);
                     this.textPaint.setAlpha(alpha);
                     canvas.restore();
@@ -537,7 +544,7 @@ public class UndoView extends FrameLayout {
                     this.textPaint.setAlpha((int) (alpha * f4));
                 }
                 canvas.save();
-                canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m55dp(17.2f) - (AndroidUtilities.m54dp(10) * (1.0f - this.timeReplaceProgress)));
+                canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m73dp(17.2f) - (AndroidUtilities.m72dp(10) * (1.0f - this.timeReplaceProgress)));
                 this.timeLayout.draw(canvas);
                 if (this.timeReplaceProgress != 1.0f) {
                     this.textPaint.setAlpha(alpha);
@@ -587,7 +594,7 @@ public class UndoView extends FrameLayout {
     }
 
     private void updatePosition() {
-        setTranslationY(((this.enterOffset - this.enterOffsetMargin) + AndroidUtilities.m54dp(8)) - this.additionalTranslationY);
+        setTranslationY(((this.enterOffset - this.enterOffsetMargin) + AndroidUtilities.m72dp(8)) - this.additionalTranslationY);
         invalidate();
     }
 

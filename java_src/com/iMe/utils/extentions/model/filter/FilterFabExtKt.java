@@ -3,7 +3,9 @@ package com.iMe.utils.extentions.model.filter;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import org.telegram.messenger.LocaleController;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FilterFabExt.kt */
 /* loaded from: classes4.dex */
 public final class FilterFabExtKt {
@@ -55,61 +57,145 @@ public final class FilterFabExtKt {
                 iArr[FilterFab.CLEAR_DRAFTS.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
+            try {
+                iArr[FilterFab.CREATE_STORY.ordinal()] = 11;
+            } catch (NoSuchFieldError unused11) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public static final int iconResId(FilterFab filterFab, boolean z) {
+    public static final void bindBig(FilterFab filterFab, RLottieImageView view) {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
+        Intrinsics.checkNotNullParameter(view, "view");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return z ? C3417R.C3419drawable.fork_fab_create_chat : C3417R.C3419drawable.fork_mini_fab_create_chat;
+                view.setAnimation(C3419R.raw.write_contacts_fab_icon, 52, 52);
+                return;
             case 2:
-                return z ? C3417R.C3419drawable.fork_fab_archive : C3417R.C3419drawable.fork_mini_fab_archive;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_archive);
+                return;
             case 3:
-                return z ? C3417R.C3419drawable.fork_fab_cloud : C3417R.C3419drawable.fork_mini_fab_cloud;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_cloud);
+                return;
             case 4:
-                return z ? C3417R.C3419drawable.fork_fab_mark_all_read : C3417R.C3419drawable.fork_mini_fab_mark_all_read;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_mark_all_read);
+                return;
             case 5:
-                return z ? C3417R.C3419drawable.fork_fab_wallet : C3417R.C3419drawable.fork_mini_fab_wallet;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_wallet);
+                return;
             case 6:
-                return z ? C3417R.C3419drawable.fork_fab_contacts : C3417R.C3419drawable.fork_mini_fab_contacts;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_contacts);
+                return;
             case 7:
-                return z ? C3417R.C3419drawable.fork_fab_music : C3417R.C3419drawable.fork_mini_fab_music;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_music);
+                return;
             case 8:
-                return z ? C3417R.C3419drawable.fork_fab_albums : C3417R.C3419drawable.fork_mini_fab_albums;
+                view.setImageResource(C3419R.C3421drawable.fork_fab_albums);
+                return;
             case 9:
-                return C3417R.C3419drawable.msg_add;
+                view.setImageResource(C3419R.C3421drawable.msg_add);
+                return;
             case 10:
-                return C3417R.C3419drawable.msg_clear;
+                view.setImageResource(C3419R.C3421drawable.msg_clear);
+                return;
+            case 11:
+                view.setAnimation(C3419R.raw.write_contacts_fab_icon_camera, 56, 56);
+                return;
             default:
-                throw new NoWhenBranchMatchedException();
+                return;
         }
     }
 
-    public static final int nameResId(FilterFab filterFab) {
+    public static final void bindMini(FilterFab filterFab, RLottieImageView view) {
+        Intrinsics.checkNotNullParameter(filterFab, "<this>");
+        Intrinsics.checkNotNullParameter(view, "view");
+        switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
+            case 1:
+                view.setImageResource(C3419R.C3421drawable.fab_compose_small);
+                return;
+            case 2:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_archive);
+                return;
+            case 3:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_cloud);
+                return;
+            case 4:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_mark_all_read);
+                return;
+            case 5:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_wallet);
+                return;
+            case 6:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_contacts);
+                return;
+            case 7:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_music);
+                return;
+            case 8:
+                view.setImageResource(C3419R.C3421drawable.fork_mini_fab_albums);
+                return;
+            case 9:
+                view.setImageResource(C3419R.C3421drawable.msg_add);
+                return;
+            case 10:
+                view.setImageResource(C3419R.C3421drawable.msg_clear);
+                return;
+            case 11:
+                view.setAnimation(C3419R.raw.write_contacts_fab_icon_camera, 44, 44);
+                return;
+            default:
+                return;
+        }
+    }
+
+    public static final String nameResId(FilterFab filterFab) {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return C3417R.string.folder_fab_settings_fab_create_chat;
+                String internalString = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_create_chat);
+                Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…settings_fab_create_chat)");
+                return internalString;
             case 2:
-                return C3417R.string.folder_fab_settings_fab_archive;
+                String internalString2 = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_archive);
+                Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…fab_settings_fab_archive)");
+                return internalString2;
             case 3:
-                return C3417R.string.folder_fab_settings_fab_cloud;
+                String internalString3 = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_cloud);
+                Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…r_fab_settings_fab_cloud)");
+                return internalString3;
             case 4:
-                return C3417R.string.folder_fab_settings_fab_mark_all_read;
+                String internalString4 = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_mark_all_read);
+                Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…ttings_fab_mark_all_read)");
+                return internalString4;
             case 5:
-                return C3417R.string.folder_fab_settings_fab_wallet;
+                String internalString5 = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_wallet);
+                Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…_fab_settings_fab_wallet)");
+                return internalString5;
             case 6:
-                return C3417R.string.folder_fab_settings_fab_contacts;
+                String internalString6 = LocaleController.getInternalString(C3419R.string.folder_fab_settings_fab_contacts);
+                Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…ab_settings_fab_contacts)");
+                return internalString6;
             case 7:
-                return C3417R.string.cloud_filter_music;
+                String internalString7 = LocaleController.getInternalString(C3419R.string.cloud_filter_music);
+                Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.string.cloud_filter_music)");
+                return internalString7;
             case 8:
-                return C3417R.string.music_albums_tab;
+                String internalString8 = LocaleController.getInternalString(C3419R.string.music_albums_tab);
+                Intrinsics.checkNotNullExpressionValue(internalString8, "getInternalString(R.string.music_albums_tab)");
+                return internalString8;
             case 9:
-                return C3417R.string.cloud_albums_intro_button;
+                String internalString9 = LocaleController.getInternalString(C3419R.string.cloud_albums_intro_button);
+                Intrinsics.checkNotNullExpressionValue(internalString9, "getInternalString(R.stri…loud_albums_intro_button)");
+                return internalString9;
             case 10:
-                return C3417R.string.AreYouSureClearDraftsTitle;
+                String string = LocaleController.getString("AreYouSureClearDraftsTitle", C3419R.string.AreYouSureClearDraftsTitle);
+                Intrinsics.checkNotNullExpressionValue(string, "getString(\"AreYouSureCle…eYouSureClearDraftsTitle)");
+                return string;
+            case 11:
+                String string2 = LocaleController.getString("Story", C3419R.string.Story);
+                Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Story\", R.string.Story)");
+                return string2;
             default:
                 throw new NoWhenBranchMatchedException();
         }

@@ -30,13 +30,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p043ui.ActionBar.BackDrawable;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.MotionBackgroundDrawable;
@@ -161,20 +161,20 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         this.textureView.renderer.setRotateTextureWithScreen(true);
         this.textureView.renderer.setUseCameraRotation(true);
         addView(this.textureView, LayoutHelper.createFrame(-1, -1));
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(context);
-        c3484ActionBar.setBackButtonDrawable(new BackDrawable(false));
-        c3484ActionBar.setBackgroundColor(0);
-        c3484ActionBar.setItemsColor(Theme.getColor(Theme.key_voipgroup_actionBarItems), false);
-        c3484ActionBar.setOccupyStatusBar(true);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog.2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(context);
+        c3485ActionBar.setBackButtonDrawable(new BackDrawable(false));
+        c3485ActionBar.setBackgroundColor(0);
+        c3485ActionBar.setItemsColor(Theme.getColor(Theme.key_voipgroup_actionBarItems), false);
+        c3485ActionBar.setOccupyStatusBar(true);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog.2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     PrivateVideoPreviewDialog.this.dismiss(false, false);
                 }
             }
         });
-        addView(c3484ActionBar);
+        addView(c3485ActionBar);
         TextView textView = new TextView(getContext()) { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog.3
             private Paint[] gradientPaint;
 
@@ -225,20 +225,20 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
                 this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(255);
-                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage]);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(6), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage]);
                 if (PrivateVideoPreviewDialog.this.pageOffset > BitmapDescriptorFactory.HUE_RED) {
                     int i = PrivateVideoPreviewDialog.this.currentPage + 1;
                     Paint[] paintArr = this.gradientPaint;
                     if (i < paintArr.length) {
                         paintArr[PrivateVideoPreviewDialog.this.currentPage + 1].setAlpha((int) (PrivateVideoPreviewDialog.this.pageOffset * 255.0f));
-                        canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage + 1]);
+                        canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(6), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage + 1]);
                     }
                 }
                 super.onDraw(canvas);
             }
         };
         this.positiveButton = textView;
-        textView.setMinWidth(AndroidUtilities.m54dp(64));
+        textView.setMinWidth(AndroidUtilities.m72dp(64));
         this.positiveButton.setTag(-1);
         this.positiveButton.setTextSize(1, 14.0f);
         TextView textView2 = this.positiveButton;
@@ -246,11 +246,11 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         textView2.setTextColor(Theme.getColor(i));
         this.positiveButton.setGravity(17);
         this.positiveButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.positiveButton.setText(LocaleController.getString("VoipShareVideo", C3417R.string.VoipShareVideo));
+        this.positiveButton.setText(LocaleController.getString("VoipShareVideo", C3419R.string.VoipShareVideo));
         if (Build.VERSION.SDK_INT >= 23) {
-            this.positiveButton.setForeground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), 0, ColorUtils.setAlphaComponent(Theme.getColor(i), 76)));
+            this.positiveButton.setForeground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(6), 0, ColorUtils.setAlphaComponent(Theme.getColor(i), 76)));
         }
-        this.positiveButton.setPadding(0, AndroidUtilities.m54dp(12), 0, AndroidUtilities.m54dp(12));
+        this.positiveButton.setPadding(0, AndroidUtilities.m72dp(12), 0, AndroidUtilities.m72dp(12));
         this.positiveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -271,16 +271,16 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             this.titles[i2].setTextSize(1, 12.0f);
             this.titles[i2].setTextColor(-1);
             this.titles[i2].setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.titles[i2].setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
+            this.titles[i2].setPadding(AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(10), 0);
             this.titles[i2].setGravity(16);
             this.titles[i2].setSingleLine(true);
             this.titlesLayout.addView(this.titles[i2], LayoutHelper.createLinear(-2, -1));
             if (i2 == 0 && this.needScreencast) {
-                this.titles[i2].setText(LocaleController.getString("VoipPhoneScreen", C3417R.string.VoipPhoneScreen));
+                this.titles[i2].setText(LocaleController.getString("VoipPhoneScreen", C3419R.string.VoipPhoneScreen));
             } else if (i2 == 0 || (i2 == 1 && this.needScreencast)) {
-                this.titles[i2].setText(LocaleController.getString("VoipFrontCamera", C3417R.string.VoipFrontCamera));
+                this.titles[i2].setText(LocaleController.getString("VoipFrontCamera", C3419R.string.VoipFrontCamera));
             } else {
-                this.titles[i2].setText(LocaleController.getString("VoipBackCamera", C3417R.string.VoipBackCamera));
+                this.titles[i2].setText(LocaleController.getString("VoipBackCamera", C3419R.string.VoipBackCamera));
             }
             this.titles[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -291,7 +291,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             i2++;
         }
         setAlpha(BitmapDescriptorFactory.HUE_RED);
-        setTranslationX(AndroidUtilities.m54dp(32));
+        setTranslationX(AndroidUtilities.m72dp(32));
         animate().alpha(1.0f).translationX(BitmapDescriptorFactory.HUE_RED).setDuration(150L).start();
         setWillNotDraw(false);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -312,10 +312,10 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         if (z) {
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.micIconView = rLottieImageView;
-            rLottieImageView.setPadding(AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(9));
-            this.micIconView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m54dp(48), ColorUtils.setAlphaComponent(-16777216, 76)));
-            int i3 = C3417R.raw.voice_mini;
-            final RLottieDrawable rLottieDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24), true, null);
+            rLottieImageView.setPadding(AndroidUtilities.m72dp(9), AndroidUtilities.m72dp(9), AndroidUtilities.m72dp(9), AndroidUtilities.m72dp(9));
+            this.micIconView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m72dp(48), ColorUtils.setAlphaComponent(-16777216, 76)));
+            int i3 = C3419R.raw.voice_mini;
+            final RLottieDrawable rLottieDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(24), true, null);
             this.micIconView.setAnimation(rLottieDrawable);
             this.micIconView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             this.micEnabled = true;
@@ -362,7 +362,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
     }
 
     public void setBottomPadding(int i) {
-        ((FrameLayout.LayoutParams) this.positiveButton.getLayoutParams()).bottomMargin = AndroidUtilities.m54dp(64) + i;
+        ((FrameLayout.LayoutParams) this.positiveButton.getLayoutParams()).bottomMargin = AndroidUtilities.m72dp(64) + i;
         ((FrameLayout.LayoutParams) this.titlesLayout.getLayoutParams()).bottomMargin = i;
     }
 
@@ -500,7 +500,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         this.isDismissed = true;
         saveLastCameraBitmap();
         onDismiss(z, z2);
-        animate().alpha(BitmapDescriptorFactory.HUE_RED).translationX(AndroidUtilities.m54dp(32)).setDuration(150L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog.5
+        animate().alpha(BitmapDescriptorFactory.HUE_RED).translationX(AndroidUtilities.m72dp(32)).setDuration(150L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.PrivateVideoPreviewDialog.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
@@ -517,29 +517,29 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
         boolean z = View.MeasureSpec.getSize(i) > View.MeasureSpec.getSize(i2);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.positiveButton.getLayoutParams();
         if (z) {
-            int m54dp = AndroidUtilities.m54dp(80);
-            marginLayoutParams.leftMargin = m54dp;
-            marginLayoutParams.rightMargin = m54dp;
+            int m72dp = AndroidUtilities.m72dp(80);
+            marginLayoutParams.leftMargin = m72dp;
+            marginLayoutParams.rightMargin = m72dp;
         } else {
-            int m54dp2 = AndroidUtilities.m54dp(16);
-            marginLayoutParams.leftMargin = m54dp2;
-            marginLayoutParams.rightMargin = m54dp2;
+            int m72dp2 = AndroidUtilities.m72dp(16);
+            marginLayoutParams.leftMargin = m72dp2;
+            marginLayoutParams.rightMargin = m72dp2;
         }
         RLottieImageView rLottieImageView = this.micIconView;
         if (rLottieImageView != null) {
             ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) rLottieImageView.getLayoutParams();
             if (z) {
-                int m54dp3 = AndroidUtilities.m54dp(88);
-                marginLayoutParams2.leftMargin = m54dp3;
-                marginLayoutParams2.rightMargin = m54dp3;
+                int m72dp3 = AndroidUtilities.m72dp(88);
+                marginLayoutParams2.leftMargin = m72dp3;
+                marginLayoutParams2.rightMargin = m72dp3;
             } else {
-                int m54dp4 = AndroidUtilities.m54dp(24);
-                marginLayoutParams2.leftMargin = m54dp4;
-                marginLayoutParams2.rightMargin = m54dp4;
+                int m72dp4 = AndroidUtilities.m72dp(24);
+                marginLayoutParams2.leftMargin = m72dp4;
+                marginLayoutParams2.rightMargin = m72dp4;
             }
         }
         super.onMeasure(i, i2);
-        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64), 1073741824), 0);
+        measureChildWithMargins(this.titlesLayout, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64), 1073741824), 0);
     }
 
     public int getBackgroundColor() {
@@ -595,12 +595,12 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
                 frameLayout.setBackground(new MotionBackgroundDrawable(-14602694, -13935795, -14395293, -14203560, true));
                 ImageView imageView2 = new ImageView(PrivateVideoPreviewDialog.this.getContext());
                 imageView2.setScaleType(ImageView.ScaleType.CENTER);
-                imageView2.setImageResource(C3417R.C3419drawable.screencast_big);
+                imageView2.setImageResource(C3419R.C3421drawable.screencast_big);
                 frameLayout.addView(imageView2, LayoutHelper.createFrame(82, 82, 17, 0, 0, 0, 60));
                 TextView textView = new TextView(PrivateVideoPreviewDialog.this.getContext());
-                textView.setText(LocaleController.getString("VoipVideoPrivateScreenSharing", C3417R.string.VoipVideoPrivateScreenSharing));
+                textView.setText(LocaleController.getString("VoipVideoPrivateScreenSharing", C3419R.string.VoipVideoPrivateScreenSharing));
                 textView.setGravity(17);
-                textView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
+                textView.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
                 textView.setTextColor(-1);
                 textView.setTextSize(1, 15.0f);
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -625,7 +625,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
                 if (bitmap != null) {
                     imageView3.setImageBitmap(bitmap);
                 } else {
-                    imageView3.setImageResource(C3417R.C3419drawable.icplaceholder);
+                    imageView3.setImageResource(C3419R.C3421drawable.icplaceholder);
                 }
                 imageView3.setScaleType(ImageView.ScaleType.FIT_XY);
                 imageView = imageView3;

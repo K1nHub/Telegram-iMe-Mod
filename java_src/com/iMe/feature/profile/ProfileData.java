@@ -27,7 +27,7 @@ public final class ProfileData {
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chatId)) * 31) + this.dialogIdText.hashCode();
+        return (((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chatId)) * 31) + this.dialogIdText.hashCode();
     }
 
     public String toString() {

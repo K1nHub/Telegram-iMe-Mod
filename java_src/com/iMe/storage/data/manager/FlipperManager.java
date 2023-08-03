@@ -11,6 +11,7 @@ import com.facebook.flipper.plugins.sharedpreferences.SharedPreferencesFlipperPl
 import com.facebook.soloader.SoLoader;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FlipperManager.kt */
 /* loaded from: classes3.dex */
@@ -27,7 +28,13 @@ public final class FlipperManager {
 
     static {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(FlipperManager$networkFlipperPlugin$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<NetworkFlipperPlugin>() { // from class: com.iMe.storage.data.manager.FlipperManager$networkFlipperPlugin$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final NetworkFlipperPlugin invoke() {
+                return new NetworkFlipperPlugin();
+            }
+        });
         networkFlipperPlugin$delegate = lazy;
     }
 

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactAddActivity;)V
     .locals 0
 
-    .line 287
+    .line 289
     iput-object p1, p0, Lorg/telegram/ui/ContactAddActivity$4;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 0
 
-    .line 291
+    .line 293
     iget-object p1, p0, Lorg/telegram/ui/ContactAddActivity$4;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     iget-boolean p1, p1, Lorg/telegram/ui/ContactAddActivity;->paused:Z
@@ -55,10 +55,10 @@
 
     const-string p1, "changed"
 
-    .line 292
+    .line 294
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 294
+    .line 296
     :cond_0
     iput-boolean p2, p0, Lorg/telegram/ui/ContactAddActivity$4;->focused:Z
 

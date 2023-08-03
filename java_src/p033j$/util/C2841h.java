@@ -27,7 +27,7 @@ public class C2841h implements InterfaceC2831q, InterfaceC2826l {
     }
 
     /* renamed from: b */
-    public void m536b(C2841h c2841h) {
+    public void m554b(C2841h c2841h) {
         this.count += c2841h.count;
         this.sum += c2841h.sum;
         this.min = Math.min(this.min, c2841h.min);
@@ -36,14 +36,14 @@ public class C2841h implements InterfaceC2831q, InterfaceC2826l {
 
     @Override // p033j$.util.function.InterfaceC2831q
     /* renamed from: f */
-    public InterfaceC2831q mo140f(InterfaceC2831q interfaceC2831q) {
+    public InterfaceC2831q mo158f(InterfaceC2831q interfaceC2831q) {
         Objects.requireNonNull(interfaceC2831q);
         return new C2830p(this, interfaceC2831q);
     }
 
     @Override // p033j$.util.function.InterfaceC2826l
     /* renamed from: l */
-    public InterfaceC2826l mo165l(InterfaceC2826l interfaceC2826l) {
+    public InterfaceC2826l mo183l(InterfaceC2826l interfaceC2826l) {
         Objects.requireNonNull(interfaceC2826l);
         return new C2825k(this, interfaceC2826l);
     }

@@ -8,10 +8,6 @@ import org.telegram.p043ui.Components.LinkActionView;
 public final /* synthetic */ class ManageLinksActivity$$ExternalSyntheticLambda8 implements Callbacks$Callback1 {
     public final /* synthetic */ LinkActionView f$0;
 
-    public /* synthetic */ ManageLinksActivity$$ExternalSyntheticLambda8(LinkActionView linkActionView) {
-        this.f$0 = linkActionView;
-    }
-
     @Override // com.iMe.fork.utils.Callbacks$Callback1
     public final void invoke(Object obj) {
         this.f$0.setAvatar((Bitmap) obj);

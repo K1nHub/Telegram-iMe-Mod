@@ -33,6 +33,8 @@
 
 .field public installed:Z
 
+.field public resId:I
+
 .field public set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
 
@@ -40,10 +42,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 7258
+    .line 7476
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7261
+    .line 7479
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

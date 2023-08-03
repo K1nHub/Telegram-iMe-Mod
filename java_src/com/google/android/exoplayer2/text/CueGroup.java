@@ -12,10 +12,17 @@ import java.util.List;
 public final class CueGroup implements Bundleable {
     public final ImmutableList<Cue> cues;
     public final long presentationTimeUs;
-    public static final CueGroup EMPTY_TIME_ZERO = new CueGroup(ImmutableList.m744of(), 0);
+    public static final CueGroup EMPTY_TIME_ZERO = new CueGroup(ImmutableList.m762of(), 0);
     private static final String FIELD_CUES = Util.intToStringMaxRadix(0);
     private static final String FIELD_PRESENTATION_TIME_US = Util.intToStringMaxRadix(1);
-    public static final Bundleable.Creator<CueGroup> CREATOR = CueGroup$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<CueGroup> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.text.CueGroup$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            CueGroup fromBundle;
+            fromBundle = CueGroup.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     public CueGroup(List<Cue> list, long j) {
         this.cues = ImmutableList.copyOf((Collection) list);
@@ -35,7 +42,7 @@ public final class CueGroup implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_CUES);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m744of();
+            fromBundleList = ImmutableList.m762of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Cue.CREATOR, parcelableArrayList);
         }

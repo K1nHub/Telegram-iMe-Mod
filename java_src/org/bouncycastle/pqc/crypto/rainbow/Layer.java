@@ -10,18 +10,18 @@ public class Layer {
     private short[][] coeff_gamma;
 
     /* renamed from: oi */
-    private int f1422oi;
+    private int f1425oi;
 
     /* renamed from: vi */
-    private int f1423vi;
+    private int f1426vi;
     private int viNext;
 
     public Layer(byte b, byte b2, short[][][] sArr, short[][][] sArr2, short[][] sArr3, short[] sArr4) {
         int i = b & 255;
-        this.f1423vi = i;
+        this.f1426vi = i;
         int i2 = b2 & 255;
         this.viNext = i2;
-        this.f1422oi = i2 - i;
+        this.f1425oi = i2 - i;
         this.coeff_alpha = sArr;
         this.coeff_beta = sArr2;
         this.coeff_gamma = sArr3;
@@ -33,7 +33,7 @@ public class Layer {
             return false;
         }
         Layer layer = (Layer) obj;
-        return this.f1423vi == layer.getVi() && this.viNext == layer.getViNext() && this.f1422oi == layer.getOi() && RainbowUtil.equals(this.coeff_alpha, layer.getCoeffAlpha()) && RainbowUtil.equals(this.coeff_beta, layer.getCoeffBeta()) && RainbowUtil.equals(this.coeff_gamma, layer.getCoeffGamma()) && RainbowUtil.equals(this.coeff_eta, layer.getCoeffEta());
+        return this.f1426vi == layer.getVi() && this.viNext == layer.getViNext() && this.f1425oi == layer.getOi() && RainbowUtil.equals(this.coeff_alpha, layer.getCoeffAlpha()) && RainbowUtil.equals(this.coeff_beta, layer.getCoeffBeta()) && RainbowUtil.equals(this.coeff_gamma, layer.getCoeffGamma()) && RainbowUtil.equals(this.coeff_eta, layer.getCoeffEta());
     }
 
     public short[][][] getCoeffAlpha() {
@@ -53,11 +53,11 @@ public class Layer {
     }
 
     public int getOi() {
-        return this.f1422oi;
+        return this.f1425oi;
     }
 
     public int getVi() {
-        return this.f1423vi;
+        return this.f1426vi;
     }
 
     public int getViNext() {
@@ -65,6 +65,6 @@ public class Layer {
     }
 
     public int hashCode() {
-        return (((((((((((this.f1423vi * 37) + this.viNext) * 37) + this.f1422oi) * 37) + Arrays.hashCode(this.coeff_alpha)) * 37) + Arrays.hashCode(this.coeff_beta)) * 37) + Arrays.hashCode(this.coeff_gamma)) * 37) + Arrays.hashCode(this.coeff_eta);
+        return (((((((((((this.f1426vi * 37) + this.viNext) * 37) + this.f1425oi) * 37) + Arrays.hashCode(this.coeff_alpha)) * 37) + Arrays.hashCode(this.coeff_beta)) * 37) + Arrays.hashCode(this.coeff_gamma)) * 37) + Arrays.hashCode(this.coeff_eta);
     }
 }

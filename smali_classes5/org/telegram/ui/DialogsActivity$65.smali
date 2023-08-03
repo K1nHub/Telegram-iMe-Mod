@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/DialogsActivity$65;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/widget/FrameLayout;
 .source "DialogsActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
+    value = Lorg/telegram/ui/DialogsActivity;->performSelectedDialogsAction(Ljava/util/ArrayList;IZZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,59 +15,110 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
+.field final synthetic val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-.field final synthetic val$localView:Landroid/view/View;
+.field final synthetic val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 12875
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 12108
+    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$65;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$65;->val$localView:Landroid/view/View;
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$65;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method protected onMeasure(II)V
     .locals 1
 
-    .line 12878
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->val$localView:Landroid/view/View;
+    .line 12111
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    .line 12112
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result-object p1
+    move-result p1
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    .line 12879
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->val$localView:Landroid/view/View;
+    move-result p2
 
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    check-cast p1, Landroid/view/ViewGroup;
+    move-result v0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->val$localView:Landroid/view/View;
+    add-int/2addr p2, v0
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 12881
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    goto :goto_0
+
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
-
     const/4 v0, 0x0
 
-    iput-object v0, p1, Lorg/telegram/ui/DialogsActivity;->databaseMigrationHint:Landroid/view/View;
+    :goto_0
+    add-int/2addr p2, v0
+
+    const/4 v0, 0x7
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    add-int/2addr p2, v0
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
+
+    .line 12113
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$65;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$65;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result p2
+
+    neg-int p2, p2
+
+    int-to-float p2, p2
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p2, 0x0
+
+    :goto_1
+    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     return-void
 .end method

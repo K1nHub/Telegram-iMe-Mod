@@ -79,7 +79,7 @@ public final class BaseQuickAdapterExtKt {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
         View view = baseViewHolder.getView(i);
         PaintDrawable paintDrawable = new PaintDrawable(Theme.getColor(i2));
-        paintDrawable.setCornerRadius(AndroidUtilities.m55dp(f));
+        paintDrawable.setCornerRadius(AndroidUtilities.m73dp(f));
         view.setBackground(paintDrawable);
         return baseViewHolder;
     }
@@ -107,7 +107,7 @@ public final class BaseQuickAdapterExtKt {
 
     public static final BaseViewHolder setPadding(BaseViewHolder baseViewHolder, int i, float f, float f2, float f3, float f4) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        baseViewHolder.getView(i).setPadding(AndroidUtilities.m55dp(f), AndroidUtilities.m55dp(f2), AndroidUtilities.m55dp(f3), AndroidUtilities.m55dp(f4));
+        baseViewHolder.getView(i).setPadding(AndroidUtilities.m73dp(f), AndroidUtilities.m73dp(f2), AndroidUtilities.m73dp(f3), AndroidUtilities.m73dp(f4));
         return baseViewHolder;
     }
 

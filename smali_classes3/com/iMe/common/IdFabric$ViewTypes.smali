@@ -180,8 +180,6 @@
 
 .field public static final TOPICS_BAR:I
 
-.field public static final TOPICS_SETTINGS_CATALOG_AUTO_UPDATE:I
-
 .field public static final TOPICS_SETTINGS_CATALOG_UPDATE:I
 
 .field public static final TOPICS_SETTINGS_PANEL:I
@@ -322,234 +320,234 @@
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 36
+    .line 34
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_IMAGE_VIEW_BUTTON:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SHADOW_SECTION:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 37
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_NETWORK:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_IMAGE_VIEW_BUTTON:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 38
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_NETWORK:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 39
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEMPLATE:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 40
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEMPLATE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 41
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->MUSIC_NO_PERMISSION:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 42
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->MUSIC_NO_PERMISSION:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 43
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_PADDING:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 44
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANK:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_PADDING:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 45
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_REACTION:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANK:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 46
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPIC_PROFILE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_REACTION:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 47
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FLOATING_ACTION_BUTTON:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPIC_PROFILE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 48
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->IMAGE_RADIO:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FLOATING_ACTION_BUTTON:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 49
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_BAR:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->IMAGE_RADIO:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 50
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->URL_BUTTON:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_BAR:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 51
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SORTING_FILTER:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->URL_BUTTON:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 52
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_ALERT_BUTTON:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SORTING_FILTER:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 53
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_ALERT_BUTTON:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 54
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_ALBUMS:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 55
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_WALLET:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_ALBUMS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 56
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_CATALOG:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_WALLET:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 57
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_MUSIC:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_CATALOG:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 58
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_PANEL_AT_BOTTOM:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_MUSIC:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 59
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_NOTIFICATION_MODE:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_PANEL_AT_BOTTOM:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 60
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_WIDTH_MODE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_NOTIFICATION_MODE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 61
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_REMEMBER_LAST_TAB:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_WIDTH_MODE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 62
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_ALL_CHATS_TAB:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_REMEMBER_LAST_TAB:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 63
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_HIDE_FOLDERS:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_ALL_CHATS_TAB:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 64
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_FOLDERS_FIRST:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_HIDE_FOLDERS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 65
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_SORTING:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_FOLDERS_FIRST:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 66
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_SETTINGS_PANEL:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_SETTINGS_SORTING:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 67
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_SETTINGS_PANEL_AT_BOTTOM:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_SETTINGS_PANEL:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 68
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_SETTINGS_CATALOG_AUTO_UPDATE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOPICS_SETTINGS_PANEL_AT_BOTTOM:I
 
     add-int/lit8 v0, v1, 0x1
 
@@ -724,215 +722,203 @@
     .line 95
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SHADOW_SECTION:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_NETWORK_SWITCHER:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 96
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_NETWORK_SWITCHER:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SLIDE_CHOOSE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 97
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SLIDE_CHOOSE:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->PROFILE_SEARCH:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 98
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->PROFILE_SEARCH:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_COLLECTION:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 99
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_COLLECTION:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_AVATAR:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 100
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_AVATAR:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CARD_BUTTON:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 101
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CARD_BUTTON:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CATEGORY_WITH_CAMPAIGNS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 102
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CATEGORY_WITH_CAMPAIGNS:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CAMPAIGN:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 103
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CAMPAIGN:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CREATE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 104
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CREATE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_TOP:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 105
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_TOP:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_MIDDLE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 106
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_MIDDLE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_BOTTOM:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 107
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_BOTTOM:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_GAP:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 108
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SUB_ITEM_GAP:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_INFO:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 109
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_INFO:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_ACTIONS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 110
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_ACTIONS:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_SAFE_WITHDRAWAL:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 111
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_SAFE_WITHDRAWAL:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_WITHDRAWAL_FEE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 112
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_WITHDRAWAL_FEE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_DASHBOARD:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 113
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_DASHBOARD:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGRAMME:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 114
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGRAMME:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGNOSIS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 115
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGNOSIS:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TON_ADDRESS_VERSION:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 116
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TON_ADDRESS_VERSION:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_LIST:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 117
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->FILTERS_LIST:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->SOCIAL:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 118
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->SOCIAL:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TWITTER_USER:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 119
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TWITTER_USER:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TWITTER_INVITE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 120
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TWITTER_INVITE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TWEET:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 121
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TWEET:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->TWEETS_DATE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 122
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->TWEETS_DATE:I
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_RECIPIENT_OPTIONS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 123
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_RECIPIENT_OPTIONS:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    .line 124
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
-
-    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->NETWORK_CELL:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    .line 125
-    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->NETWORK_CELL:I
 
     return-void
 .end method

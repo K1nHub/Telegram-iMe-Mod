@@ -2,6 +2,7 @@ package com.google.firebase.firestore.remote;
 
 import android.content.Context;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.auth.CredentialsProvider;
 import com.google.firebase.firestore.core.DatabaseInfo;
@@ -26,8 +27,8 @@ public class FirestoreChannel {
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        X_GOOG_API_CLIENT_HEADER = Metadata.Key.m685of("x-goog-api-client", asciiMarshaller);
-        RESOURCE_PREFIX_HEADER = Metadata.Key.m685of("google-cloud-resource-prefix", asciiMarshaller);
+        X_GOOG_API_CLIENT_HEADER = Metadata.Key.m703of("x-goog-api-client", asciiMarshaller);
+        RESOURCE_PREFIX_HEADER = Metadata.Key.m703of("google-cloud-resource-prefix", asciiMarshaller);
         clientLanguage = "gl-java/";
     }
 
@@ -62,7 +63,12 @@ public class FirestoreChannel {
             @Override // io.grpc.PartialForwardingClientCall, io.grpc.ClientCall
             public void halfClose() {
                 if (clientCallArr[0] == null) {
-                    createClientCall.addOnSuccessListener(FirestoreChannel.this.asyncQueue.getExecutor(), FirestoreChannel$2$$ExternalSyntheticLambda0.INSTANCE);
+                    createClientCall.addOnSuccessListener(FirestoreChannel.this.asyncQueue.getExecutor(), new OnSuccessListener() { // from class: com.google.firebase.firestore.remote.FirestoreChannel$2$$ExternalSyntheticLambda0
+                        @Override // com.google.android.gms.tasks.OnSuccessListener
+                        public final void onSuccess(Object obj) {
+                            ((ClientCall) obj).halfClose();
+                        }
+                    });
                 } else {
                     super.halfClose();
                 }

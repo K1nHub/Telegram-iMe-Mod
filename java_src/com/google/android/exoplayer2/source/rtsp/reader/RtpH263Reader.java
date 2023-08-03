@@ -53,7 +53,7 @@ final class RtpH263Reader implements RtpPayloadReader {
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         boolean z2 = (readUnsignedShort & 1024) > 0;
         if ((readUnsignedShort & 512) != 0 || (readUnsignedShort & 504) != 0 || (readUnsignedShort & 7) != 0) {
-            Log.m796w(TAG, "Dropping packet: video reduncancy coding is not supported, packet header VRC, or PLEN or PEBIT is non-zero");
+            Log.m814w(TAG, "Dropping packet: video reduncancy coding is not supported, packet header VRC, or PLEN or PEBIT is non-zero");
             return;
         }
         if (z2) {
@@ -62,7 +62,7 @@ final class RtpH263Reader implements RtpPayloadReader {
             }
             this.gotFirstPacketOfH263Frame = true;
             if ((parsableByteArray.peekUnsignedByte() & 252) < 128) {
-                Log.m796w(TAG, "Picture start Code (PSC) missing, dropping packet.");
+                Log.m814w(TAG, "Picture start Code (PSC) missing, dropping packet.");
                 return;
             }
             parsableByteArray.getData()[position] = 0;
@@ -71,11 +71,11 @@ final class RtpH263Reader implements RtpPayloadReader {
         } else if (this.gotFirstPacketOfH263Frame) {
             int nextSequenceNumber = RtpPacket.getNextSequenceNumber(this.previousSequenceNumber);
             if (i < nextSequenceNumber) {
-                Log.m796w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+                Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
                 return;
             }
         } else {
-            Log.m796w(TAG, "First payload octet of the H263 packet is not the beginning of a new H263 partition, Dropping current packet.");
+            Log.m814w(TAG, "First payload octet of the H263 packet is not the beginning of a new H263 partition, Dropping current packet.");
             return;
         }
         if (this.fragmentedSampleSizeBytes == 0) {

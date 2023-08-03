@@ -11,7 +11,7 @@ public class HandledErrorLog extends LogWithProperties {
     private Exception exception;
 
     /* renamed from: id */
-    private UUID f460id;
+    private UUID f463id;
 
     @Override // com.microsoft.appcenter.ingestion.models.Log
     public String getType() {
@@ -19,11 +19,11 @@ public class HandledErrorLog extends LogWithProperties {
     }
 
     public UUID getId() {
-        return this.f460id;
+        return this.f463id;
     }
 
     public void setId(UUID id) {
-        this.f460id = id;
+        this.f463id = id;
     }
 
     public Exception getException() {
@@ -64,8 +64,8 @@ public class HandledErrorLog extends LogWithProperties {
         }
         if (o != null && HandledErrorLog.class == o.getClass() && super.equals(o)) {
             HandledErrorLog handledErrorLog = (HandledErrorLog) o;
-            UUID uuid = this.f460id;
-            if (uuid == null ? handledErrorLog.f460id == null : uuid.equals(handledErrorLog.f460id)) {
+            UUID uuid = this.f463id;
+            if (uuid == null ? handledErrorLog.f463id == null : uuid.equals(handledErrorLog.f463id)) {
                 Exception exception = this.exception;
                 Exception exception2 = handledErrorLog.exception;
                 return exception != null ? exception.equals(exception2) : exception2 == null;
@@ -78,7 +78,7 @@ public class HandledErrorLog extends LogWithProperties {
     @Override // com.microsoft.appcenter.ingestion.models.LogWithProperties, com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
-        UUID uuid = this.f460id;
+        UUID uuid = this.f463id;
         int hashCode2 = (hashCode + (uuid != null ? uuid.hashCode() : 0)) * 31;
         Exception exception = this.exception;
         return hashCode2 + (exception != null ? exception.hashCode() : 0);

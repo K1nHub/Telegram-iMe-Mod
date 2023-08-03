@@ -18,7 +18,7 @@
 .method static getContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;)I
     .locals 0
 
-    .line 463
+    .line 485
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getContentChangeTypes()I
 
     move-result p0
@@ -29,7 +29,7 @@
 .method static setContentChangeTypes(Landroid/view/accessibility/AccessibilityEvent;I)V
     .locals 0
 
-    .line 458
+    .line 480
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
 
     return-void

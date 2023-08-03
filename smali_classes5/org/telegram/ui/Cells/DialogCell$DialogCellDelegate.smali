@@ -23,3 +23,12 @@
 
 .method public abstract onButtonLongPress(Lorg/telegram/ui/Cells/DialogCell;)V
 .end method
+
+.method public abstract openHiddenStories()V
+.end method
+
+.method public abstract openStory(Lorg/telegram/ui/Cells/DialogCell;Ljava/lang/Runnable;)V
+.end method
+
+.method public abstract showChatPreview(Lorg/telegram/ui/Cells/DialogCell;)V
+.end method

@@ -48,7 +48,7 @@ public class MemberRequestsController extends BaseController {
         tLRPC$TL_messages_getChatInviteImporters.requested = true;
         tLRPC$TL_messages_getChatInviteImporters.limit = 30;
         if (!isEmpty) {
-            tLRPC$TL_messages_getChatInviteImporters.f1602q = str;
+            tLRPC$TL_messages_getChatInviteImporters.f1610q = str;
             tLRPC$TL_messages_getChatInviteImporters.flags |= 4;
         }
         if (tLRPC$TL_chatInviteImporter == null) {
@@ -95,7 +95,7 @@ public class MemberRequestsController extends BaseController {
             NotificationCenter notificationCenter = getNotificationCenter();
             int i = NotificationCenter.chatInfoDidLoad;
             Boolean bool = Boolean.FALSE;
-            notificationCenter.postNotificationName(i, chatFull, 0, bool, bool);
+            notificationCenter.lambda$postNotificationNameOnUIThread$1(i, chatFull, 0, bool, bool);
         }
     }
 }

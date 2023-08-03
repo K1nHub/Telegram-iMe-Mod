@@ -6,5 +6,5 @@ import java.util.function.DoubleToIntFunction;
 public abstract /* synthetic */ class AbstractC3179G implements DoubleToIntFunction {
 
     /* renamed from: a */
-    final /* synthetic */ C3177F f1223a;
+    final /* synthetic */ C3177F f1226a;
 }

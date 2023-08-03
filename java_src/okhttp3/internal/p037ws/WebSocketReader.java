@@ -10,6 +10,7 @@ import okhttp3.internal.Util;
 import okio.Buffer;
 import okio.BufferedSource;
 import okio.ByteString;
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: WebSocketReader.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketReader */
 /* loaded from: classes4.dex */
@@ -112,11 +113,11 @@ public final class WebSocketReader implements Closeable {
             if (z5 == this.isClient) {
                 throw new ProtocolException(this.isClient ? "Server-sent frames must not be masked." : "Client-sent frames must be masked.");
             }
-            long j = and2 & 127;
+            long j = and2 & MessagesStorage.LAST_DB_VERSION;
             this.frameLength = j;
             if (j == 126) {
                 this.frameLength = Util.and(this.source.readShort(), (int) RtpPacket.MAX_SEQUENCE_NUMBER);
-            } else if (j == 127) {
+            } else if (j == ((long) MessagesStorage.LAST_DB_VERSION)) {
                 long readLong = this.source.readLong();
                 this.frameLength = readLong;
                 if (readLong < 0) {

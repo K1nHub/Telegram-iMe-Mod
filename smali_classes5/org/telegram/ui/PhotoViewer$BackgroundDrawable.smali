@@ -40,27 +40,27 @@
 .method public constructor <init>(Lorg/telegram/ui/PhotoViewer;I)V
     .locals 1
 
-    .line 2048
+    .line 2050
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    .line 2049
+    .line 2051
     invoke-direct {p0, p2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    .line 2040
+    .line 2042
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
-    .line 2041
+    .line 2043
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->visibleRect:Landroid/graphics/RectF;
 
-    .line 2050
+    .line 2052
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -69,16 +69,16 @@
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 2051
+    .line 2053
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
-.method static synthetic access$28802(Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+.method static synthetic access$28702(Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 2038
+    .line 2040
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->drawRunnable:Ljava/lang/Runnable;
 
     return-object p1
@@ -87,19 +87,19 @@
 .method private synthetic lambda$setAlpha$0()V
     .locals 2
 
-    .line 2063
+    .line 2065
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2064
+    .line 2066
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v0
 
@@ -116,10 +116,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 2078
+    .line 2080
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6800(Lorg/telegram/ui/PhotoViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6700(Lorg/telegram/ui/PhotoViewer;)I
 
     move-result v0
 
@@ -133,7 +133,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6800(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     move-result-object v0
 
@@ -141,7 +141,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6800(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     move-result-object v0
 
@@ -149,10 +149,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 2079
+    .line 2081
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$7000(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ClippingImageView;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ClippingImageView;
 
     move-result-object v0
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ClippingImageView;->getClippedVisibleRect(Landroid/graphics/RectF;)V
 
-    .line 2080
+    .line 2082
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->visibleRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
@@ -169,7 +169,7 @@
 
     if-nez v0, :cond_5
 
-    .line 2081
+    .line 2083
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->visibleRect:Landroid/graphics/RectF;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -188,17 +188,17 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 2083
+    .line 2085
     invoke-virtual {p0}, Landroid/graphics/drawable/ColorDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 2084
+    .line 2086
     iget v1, v0, Landroid/graphics/Rect;->right:I
 
     int-to-float v1, v1
 
-    .line 2085
+    .line 2087
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v0, v0
@@ -228,7 +228,7 @@
 
     goto :goto_1
 
-    .line 2099
+    .line 2101
     :cond_0
     iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
@@ -240,7 +240,7 @@
 
     goto :goto_1
 
-    .line 2096
+    .line 2098
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
@@ -256,7 +256,7 @@
 
     goto :goto_1
 
-    .line 2093
+    .line 2095
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
@@ -268,7 +268,7 @@
 
     goto :goto_1
 
-    .line 2090
+    .line 2092
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
@@ -282,7 +282,7 @@
 
     invoke-virtual {v4, v3, v6, v7, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2102
+    .line 2104
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->rect:Landroid/graphics/RectF;
 
@@ -294,11 +294,11 @@
 
     goto :goto_0
 
-    .line 2106
+    .line 2108
     :cond_4
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2108
+    .line 2110
     :cond_5
     invoke-virtual {p0}, Landroid/graphics/drawable/ColorDrawable;->getAlpha()I
 
@@ -306,17 +306,17 @@
 
     if-eqz p1, :cond_6
 
-    .line 2109
+    .line 2111
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->drawRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_6
 
-    .line 2110
+    .line 2112
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 2111
+    .line 2113
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->drawRunnable:Ljava/lang/Runnable;
 
     :cond_6
@@ -328,7 +328,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2057
+    .line 2059
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$5200(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -339,10 +339,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 2058
+    .line 2060
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6500(Lorg/telegram/ui/PhotoViewer;)Z
 
     move-result v0
 
@@ -368,7 +368,7 @@
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->allowDrawContent:Z
 
-    .line 2059
+    .line 2061
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$5200(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -383,21 +383,21 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowDrawContent(Z)V
 
-    .line 2060
+    .line 2062
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 2061
+    .line 2063
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->allowDrawContent:Z
 
     if-nez v0, :cond_2
 
-    .line 2062
+    .line 2064
     new-instance v0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;)V
@@ -408,22 +408,22 @@
 
     goto :goto_2
 
-    .line 2068
+    .line 2070
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->setAllowDrawContent(Z)V
 
-    .line 2072
+    .line 2074
     :cond_3
     :goto_2
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 2073
+    .line 2075
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V

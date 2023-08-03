@@ -126,7 +126,7 @@ public final class ExceptionHandlingFrameWriter implements FrameWriter {
 
     @Override // io.grpc.okhttp.internal.framed.FrameWriter
     public void goAway(int i, ErrorCode errorCode, byte[] bArr) {
-        this.frameLogger.logGoAway(OkHttpFrameLogger.Direction.OUTBOUND, i, errorCode, ByteString.m74of(bArr));
+        this.frameLogger.logGoAway(OkHttpFrameLogger.Direction.OUTBOUND, i, errorCode, ByteString.m92of(bArr));
         try {
             this.frameWriter.goAway(i, errorCode, bArr);
             this.frameWriter.flush();

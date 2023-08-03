@@ -16,6 +16,7 @@ import com.iMe.fork.controller.MultiPanelController;
 import com.iMe.fork.enums.DialogType;
 import com.iMe.fork.enums.MultiPanelButton;
 import com.iMe.fork.models.MultiPanelButtonState;
+import com.iMe.fork.p024ui.fragment.MultiPanelSettingsActivity;
 import com.iMe.fork.p024ui.view.DialogTypeTopicsBar;
 import com.iMe.fork.p024ui.view.MovingCheckCell;
 import com.iMe.p031ui.base.mvp.MvpFragment;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -37,6 +39,8 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.collections.MapsKt___MapsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -44,11 +48,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -102,9 +106,45 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     public MultiPanelSettingsActivity(DialogType currentDialogType) {
         Intrinsics.checkNotNullParameter(currentDialogType, "currentDialogType");
         this.currentDialogType = currentDialogType;
-        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MultiPanelSettingsActivity$rootView$2(this), 1, (Object) null);
-        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MultiPanelSettingsActivity$listView$2(this), 1, (Object) null);
-        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MultiPanelSettingsActivity$listAdapter$2(this), 1, (Object) null);
+        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initRootView;
+                initRootView = MultiPanelSettingsActivity.this.initRootView();
+                return initRootView;
+            }
+        }, 1, (Object) null);
+        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = MultiPanelSettingsActivity.this.initListView();
+                return initListView;
+            }
+        }, 1, (Object) null);
+        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final MultiPanelSettingsActivity.ListAdapter invoke() {
+                return new MultiPanelSettingsActivity.ListAdapter();
+            }
+        }, 1, (Object) null);
         readSettings();
     }
 
@@ -146,7 +186,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
             }
             buttonStates.putAll(map);
             multiPanelController.saveConfig();
-            getNotificationCenter().postNotificationName(NotificationCenter.multiPanelSettingsChanged, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.multiPanelSettingsChanged, new Object[0]);
         }
         super.onFragmentDestroy();
     }
@@ -163,7 +203,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
         int i3 = Theme.key_windowBackgroundWhiteBlackText;
@@ -177,20 +217,20 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, MovingCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"subtitleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"iconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_actionBackground), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"moveIconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_stickers_menu), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, MovingCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"subtitleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"iconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_actionBackground), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"moveIconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_stickers_menu), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.settings_multi_panel_item_title));
-        ActionBarMenuItem addItem = c3484ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3417R.C3419drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.RESET, C3417R.C3419drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3417R.string.ThemeResetToDefaults));
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.settings_multi_panel_item_title));
+        ActionBarMenuItem addItem = c3485ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3419R.C3421drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.RESET, C3419R.C3421drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3419R.string.ThemeResetToDefaults));
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     MultiPanelSettingsActivity.this.finishFragment();
@@ -328,8 +368,8 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 arrayList.add(new MultiPanelButtonState(multiPanelButtonState.getType(), multiPanelButtonState.isEnabled(), multiPanelButtonState.getPosition()));
             }
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-            Pair m85to = TuplesKt.m85to(first, mutableList);
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(first, mutableList);
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.newButtonStates = mutableMap;
@@ -467,14 +507,36 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 Activity parentActivity = MultiPanelSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 list = ArraysKt___ArraysKt.toList(DialogType.values());
-                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, MultiPanelSettingsActivity.this.getCurrentDialogType(), new MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1(MultiPanelSettingsActivity.this, this));
+                DialogType currentDialogType = MultiPanelSettingsActivity.this.getCurrentDialogType();
+                final MultiPanelSettingsActivity multiPanelSettingsActivity = MultiPanelSettingsActivity.this;
+                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, currentDialogType, new Function1<DialogType, Unit>() { // from class: com.iMe.fork.ui.fragment.MultiPanelSettingsActivity$ListAdapter$onCreateViewHolder$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(DialogType dialogType) {
+                        Intrinsics.checkNotNullParameter(dialogType, "dialogType");
+                        MultiPanelSettingsActivity.this.setCurrentDialogType(dialogType);
+                        this.updateRows();
+                        MultiPanelSettingsActivity.this.getListAdapter().notifyDataSetChanged();
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(DialogType dialogType) {
+                        invoke2(dialogType);
+                        return Unit.INSTANCE;
+                    }
+                });
                 MultiPanelSettingsActivity.this.topicsBar = dialogTypeTopicsBar2;
                 dialogTypeTopicsBar = dialogTypeTopicsBar2;
             } else if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                 dialogTypeTopicsBar = new TextCheckCell(MultiPanelSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL) {
                 FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(MultiPanelSettingsActivity.this.getParentActivity());
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(MultiPanelSettingsActivity.this.getParentActivity(), C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(MultiPanelSettingsActivity.this.getParentActivity(), C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 dialogTypeTopicsBar = textInfoPrivacyCell;
             } else {
                 Activity parentActivity2 = MultiPanelSettingsActivity.this.getParentActivity();
@@ -483,7 +545,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 movingCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 dialogTypeTopicsBar = movingCheckCell;
             }
-            dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, i == i2 ? AndroidUtilities.m54dp(36) : -2));
+            dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, i == i2 ? AndroidUtilities.m72dp(36) : -2));
             return new RecyclerListView.Holder(dialogTypeTopicsBar);
         }
 
@@ -499,34 +561,34 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == multiPanelSettingsActivity.enableRow) {
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
                     return;
                 }
                 textCheckCell.setType(0);
                 if (i == multiPanelSettingsActivity.hideOnScrollRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
                 } else if (i == multiPanelSettingsActivity.allButtonsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                 MultiPanelSettingsActivity multiPanelSettingsActivity2 = MultiPanelSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == multiPanelSettingsActivity2.enableSectionRow && multiPanelSettingsActivity2.newIsEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.setFixedSize(12);
                     textInfoPrivacyCell.setText(null);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 textInfoPrivacyCell.setFixedSize(0);
                 if (i != multiPanelSettingsActivity2.enableSectionRow) {
                     if (i == multiPanelSettingsActivity2.sectionInfoRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3417R.string.multi_panel_settings_section_hint));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3419R.string.multi_panel_settings_section_hint));
                         return;
                     }
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3417R.string.multi_panel_settings_enable_item_subtitle));
+                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3419R.string.multi_panel_settings_enable_item_subtitle));
             } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK_CELL && (view instanceof MovingCheckCell)) {
                 MovingCheckCell movingCheckCell = (MovingCheckCell) view;
                 MultiPanelButtonState button = MultiPanelSettingsActivity.this.getButton(i);
@@ -537,7 +599,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 movingCheckCell.setIcon(button.getType().getIconId(), Theme.key_chats_actionBackground, button.getType().getPorterDuffMode());
                 if (button.getType() == MultiPanelButton.SUBSCRIBERS || button.getType() == MultiPanelButton.RECENT_ACTIONS) {
                     Intrinsics.checkNotNullExpressionValue(text, "text");
-                    String internalString = LocaleController.getInternalString(C3417R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
+                    String internalString = LocaleController.getInternalString(C3419R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
                     Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…min_button_item_subtitle)");
                     movingCheckCell.setTextAndValueAndCheck(text, internalString, button.isEnabled(), needDivider);
                     return;

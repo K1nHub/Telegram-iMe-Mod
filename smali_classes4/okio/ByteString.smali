@@ -145,7 +145,7 @@
 .method public compareTo(Lokio/ByteString;)I
     .locals 9
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -497,7 +497,7 @@
 .method public rangeEquals(ILokio/ByteString;II)Z
     .locals 1
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -516,7 +516,7 @@
 .method public rangeEquals(I[BII)Z
     .locals 1
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -622,7 +622,7 @@
 .method public final startsWith(Lokio/ByteString;)Z
     .locals 2
 
-    const-string v0, "prefix"
+    const-string/jumbo v0, "prefix"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

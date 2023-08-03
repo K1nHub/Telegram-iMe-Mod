@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;)V
     .locals 0
 
-    .line 883
+    .line 918
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$8;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 887
+    .line 922
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$8;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V

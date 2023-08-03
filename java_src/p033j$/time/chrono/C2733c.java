@@ -6,7 +6,7 @@ import java.io.Serializable;
 public final class C2733c extends AbstractC2731a implements Serializable {
 
     /* renamed from: a */
-    public static final C2733c f571a = new C2733c();
+    public static final C2733c f574a = new C2733c();
 
     private C2733c() {
     }

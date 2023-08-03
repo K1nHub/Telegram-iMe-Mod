@@ -18,7 +18,7 @@
 .method public abstract applyServiceShaderMatrix(IIFF)V
 .end method
 
-.method public abstract contains(I)Z
+.method public abstract getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
 .end method
 
 .method public abstract getColor(I)I

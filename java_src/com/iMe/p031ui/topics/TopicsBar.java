@@ -23,6 +23,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
@@ -70,11 +71,45 @@ public final class TopicsBar extends FrameLayout {
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
         this.delegate = delegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new TopicsBar$listView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.ui.topics.TopicsBar$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = TopicsBar.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TopicsBar$listAdapter$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.ui.topics.TopicsBar$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicsBar.ListAdapter invoke() {
+                return new TopicsBar.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TopicsBar$controller$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<ForkTopicsController>() { // from class: com.iMe.ui.topics.TopicsBar$controller$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkTopicsController invoke() {
+                return ForkTopicsController.Companion.getInstance(TopicsBar.this.currentAccount);
+            }
+        });
         this.controller$delegate = lazy3;
         this.data = new ArrayList();
         this.selectedTopicId = -1L;
@@ -300,10 +335,10 @@ public final class TopicsBar extends FrameLayout {
                         Intrinsics.checkNotNullParameter(state2, "state");
                         Intrinsics.checkNotNullParameter(action, "action");
                         int calculateDxToMakeVisible = calculateDxToMakeVisible(targetView, getHorizontalSnapPreference());
-                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m54dp(21) < 0)) {
-                            calculateDxToMakeVisible += AndroidUtilities.m54dp(60);
-                        } else if (calculateDxToMakeVisible < 0 || targetView.getRight() + AndroidUtilities.m54dp(21) > RecyclerListView.this.getMeasuredWidth()) {
-                            calculateDxToMakeVisible -= AndroidUtilities.m54dp(60);
+                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m72dp(21) < 0)) {
+                            calculateDxToMakeVisible += AndroidUtilities.m72dp(60);
+                        } else if (calculateDxToMakeVisible < 0 || targetView.getRight() + AndroidUtilities.m72dp(21) > RecyclerListView.this.getMeasuredWidth()) {
+                            calculateDxToMakeVisible -= AndroidUtilities.m72dp(60);
                         }
                         int calculateDyToMakeVisible = calculateDyToMakeVisible(targetView, getVerticalSnapPreference());
                         int max = Math.max(180, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
@@ -492,7 +527,7 @@ public final class TopicsBar extends FrameLayout {
                         if (!(f == BitmapDescriptorFactory.HUE_RED)) {
                             f2 = TopicsBar.this.editingAnimationProgress;
                             float f3 = f2 * (this.position % 2 == 0 ? 1.0f : -1.0f);
-                            canvas.translate(AndroidUtilities.m55dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
+                            canvas.translate(AndroidUtilities.m73dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
                             canvas.rotate(f3, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
                         }
                     }
@@ -513,7 +548,7 @@ public final class TopicsBar extends FrameLayout {
             TopicModel topicModel = (TopicModel) topicsBar.data.get(holder.getAdapterPosition());
             topicView.setTopic(topicModel, topicModel.getTopicId() == topicsBar.selectedTopicId);
             topicView.position = holder.getAdapterPosition();
-            topicView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_windowBackgroundWhite)));
+            topicView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m72dp(4), Theme.getColor(Theme.key_windowBackgroundWhite)));
         }
     }
 }

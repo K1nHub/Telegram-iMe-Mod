@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$40;
-.super Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
+.super Landroid/view/ViewOutlineProvider;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;->scrollEmojisToPosition(II)V
+    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,46 +14,33 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/EmojiView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 4995
-    iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
+    .line 3289
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEnd()V
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 2
 
-    .line 4998
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    .line 3293
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result p1
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
-
-    return-void
-.end method
-
-.method protected onStart()V
-    .locals 2
-
-    .line 5003
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
 
     return-void
 .end method

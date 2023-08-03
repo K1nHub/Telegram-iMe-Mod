@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -109,18 +109,18 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         this.avatarImageReceiver = imageReceiver;
         imageReceiver.setParentView(this);
         if (z) {
-            this.dialogText = LocaleController.getString("ArchivedChats", C3417R.string.ArchivedChats);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m54dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3417R.C3419drawable.fork_fab_archive));
-            combinedDrawable.setIconSize(AndroidUtilities.m54dp(30), AndroidUtilities.m54dp(30));
+            this.dialogText = LocaleController.getString("ArchivedChats", C3419R.string.ArchivedChats);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3419R.C3421drawable.fork_fab_archive));
+            combinedDrawable.setIconSize(AndroidUtilities.m72dp(30), AndroidUtilities.m72dp(30));
             this.avatarImageReceiver.setImageBitmap(combinedDrawable);
         } else if (j == Long.MAX_VALUE) {
-            this.dialogText = LocaleController.getString("CacheOtherChats", C3417R.string.CacheOtherChats);
+            this.dialogText = LocaleController.getString("CacheOtherChats", C3419R.string.CacheOtherChats);
             this.avatarDrawable.setAvatarType(14);
             this.avatarImageReceiver.setForUserOrChat(null, this.avatarDrawable);
         } else {
             String dialogPhotoTitle = DialogObject.setDialogPhotoTitle(this.avatarImageReceiver, this.avatarDrawable, MessagesController.getInstance(UserConfig.selectedAccount).getUserOrChat(j));
             this.dialogText = dialogPhotoTitle;
-            this.dialogText = Emoji.replaceEmoji(dialogPhotoTitle, null, AndroidUtilities.m54dp(6), false);
+            this.dialogText = Emoji.replaceEmoji(dialogPhotoTitle, null, AndroidUtilities.m72dp(6), false);
         }
     }
 
@@ -129,37 +129,37 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         int i3;
         int i4;
         if (this.dialogId != null) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(166), 1073741824));
-            i4 = (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(110)) / 2;
-            this.rectF.set(AndroidUtilities.m54dp(3) + i4, AndroidUtilities.m54dp(3), AndroidUtilities.m54dp(107) + i4, AndroidUtilities.m54dp(107));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(166), 1073741824));
+            i4 = (View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(110)) / 2;
+            this.rectF.set(AndroidUtilities.m72dp(3) + i4, AndroidUtilities.m72dp(3), AndroidUtilities.m72dp(107) + i4, AndroidUtilities.m72dp(107));
         } else {
             int i5 = this.customSize;
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5 != 0 ? i5 + 6 : AndroidUtilities.m54dp(110), 1073741824);
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5 != 0 ? i5 + 6 : AndroidUtilities.m72dp(110), 1073741824);
             int i6 = this.customSize;
-            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i6 != 0 ? i6 + 6 : AndroidUtilities.m54dp(110), 1073741824));
+            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i6 != 0 ? i6 + 6 : AndroidUtilities.m72dp(110), 1073741824));
             RectF rectF = this.rectF;
-            float m54dp = AndroidUtilities.m54dp(3);
-            float m54dp2 = AndroidUtilities.m54dp(3);
+            float m72dp = AndroidUtilities.m72dp(3);
+            float m72dp2 = AndroidUtilities.m72dp(3);
             int i7 = this.customSize;
-            rectF.set(m54dp, m54dp2, i7 != 0 ? i7 - 3 : AndroidUtilities.m54dp(107), this.customSize != 0 ? i3 - 3 : AndroidUtilities.m54dp(107));
+            rectF.set(m72dp, m72dp2, i7 != 0 ? i7 - 3 : AndroidUtilities.m72dp(107), this.customSize != 0 ? i3 - 3 : AndroidUtilities.m72dp(107));
             i4 = 0;
         }
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.text1;
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         animatedTextDrawable.setAnimationProperties(0.18f, 0L, 300L, cubicBezierInterpolator);
         if (this.customCenterText != null) {
-            this.text1.setTextSize(AndroidUtilities.m54dp(13));
+            this.text1.setTextSize(AndroidUtilities.m72dp(13));
         } else {
-            this.text1.setTextSize(AndroidUtilities.m54dp(24));
+            this.text1.setTextSize(AndroidUtilities.m72dp(24));
         }
         this.text1.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.text2.setAnimationProperties(0.18f, 0L, 300L, cubicBezierInterpolator);
         if (this.dialogId != null) {
-            this.text2.setTextSize(AndroidUtilities.m54dp(16));
+            this.text2.setTextSize(AndroidUtilities.m72dp(16));
             this.text1.setGravity(5);
             this.text2.setGravity(3);
         } else {
-            this.text2.setTextSize(AndroidUtilities.m54dp(13));
+            this.text2.setTextSize(AndroidUtilities.m72dp(13));
             int textSize = (int) this.text1.getTextSize();
             int textSize2 = (int) this.text2.getTextSize();
             if (this.customCenterText != null) {
@@ -167,12 +167,12 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
             }
             int i8 = this.customSize;
             if (i8 == 0) {
-                i8 = AndroidUtilities.m54dp(110);
+                i8 = AndroidUtilities.m72dp(110);
             }
             int i9 = ((i8 - textSize) - textSize2) / 2;
             int i10 = textSize + i9;
             this.text1.setBounds(0, i9, getMeasuredWidth(), i10);
-            this.text2.setBounds(0, AndroidUtilities.m54dp(2) + i10, getMeasuredWidth(), i10 + textSize2 + AndroidUtilities.m54dp(2));
+            this.text2.setBounds(0, AndroidUtilities.m72dp(2) + i10, getMeasuredWidth(), i10 + textSize2 + AndroidUtilities.m72dp(2));
             this.text1.setGravity(17);
             this.text2.setGravity(17);
         }
@@ -180,14 +180,14 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
             if (this.dialogTextPaint == null) {
                 this.dialogTextPaint = new TextPaint(1);
             }
-            this.dialogTextPaint.setTextSize(AndroidUtilities.m54dp(13));
-            int size = View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(60);
+            this.dialogTextPaint.setTextSize(AndroidUtilities.m72dp(13));
+            int size = View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(60);
             this.dialogTextLayout = StaticLayoutEx.createStaticLayout2(this.dialogText, this.dialogTextPaint, size, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, size, 1);
         }
         ImageReceiver imageReceiver = this.avatarImageReceiver;
         if (imageReceiver != null) {
-            imageReceiver.setImageCoords(i4 + AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(90), AndroidUtilities.m54dp(90));
-            this.avatarImageReceiver.setRoundRadius(AndroidUtilities.m54dp(45));
+            imageReceiver.setImageCoords(i4 + AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(90), AndroidUtilities.m72dp(90));
+            this.avatarImageReceiver.setRoundRadius(AndroidUtilities.m72dp(45));
         }
         updateDescription();
     }
@@ -347,18 +347,18 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
             animatedTextDrawable.setTextColor(Theme.getColor(i5));
             this.text2.setTextColor(Theme.getColor(i5));
             if (this.dialogId != null) {
-                float currentWidth = this.text1.getCurrentWidth() + AndroidUtilities.m54dp(4) + this.text2.getCurrentWidth();
+                float currentWidth = this.text1.getCurrentWidth() + AndroidUtilities.m72dp(4) + this.text2.getCurrentWidth();
                 float width3 = (getWidth() - currentWidth) / 2.0f;
-                this.text1.setBounds(0, AndroidUtilities.m54dp(115), (int) (this.text1.getCurrentWidth() + width3), AndroidUtilities.m54dp(145));
+                this.text1.setBounds(0, AndroidUtilities.m72dp(115), (int) (this.text1.getCurrentWidth() + width3), AndroidUtilities.m72dp(145));
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable2 = this.text2;
-                animatedTextDrawable2.setBounds((int) ((width3 + currentWidth) - animatedTextDrawable2.getCurrentWidth()), AndroidUtilities.m54dp(118), getWidth(), AndroidUtilities.m54dp(148));
+                animatedTextDrawable2.setBounds((int) ((width3 + currentWidth) - animatedTextDrawable2.getCurrentWidth()), AndroidUtilities.m72dp(118), getWidth(), AndroidUtilities.m72dp(148));
             }
             this.text1.draw(canvas);
             this.text2.draw(canvas);
         }
         if (this.dialogTextLayout != null) {
             canvas.save();
-            canvas.translate(AndroidUtilities.m54dp(30), AndroidUtilities.m54dp(148) - ((this.dialogTextLayout.getHeight() - AndroidUtilities.m54dp(13)) / 2.0f));
+            canvas.translate(AndroidUtilities.m72dp(30), AndroidUtilities.m72dp(148) - ((this.dialogTextLayout.getHeight() - AndroidUtilities.m72dp(13)) / 2.0f));
             this.dialogTextPaint.setColor(Theme.getColor(Theme.key_dialogTextBlack));
             this.dialogTextLayout.draw(canvas);
             canvas.restore();
@@ -393,7 +393,7 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
             this.clear = true;
             this.firstDraw = false;
             paint.setStyle(Paint.Style.STROKE);
-            this.paint.setStrokeWidth(AndroidUtilities.m54dp(5));
+            this.paint.setStrokeWidth(AndroidUtilities.m72dp(5));
             this.paint.setStrokeCap(Paint.Cap.ROUND);
             this.paint.setStrokeJoin(Paint.Join.ROUND);
         }

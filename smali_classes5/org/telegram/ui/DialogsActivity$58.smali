@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/DialogsActivity$58;
-.super Landroid/widget/FrameLayout;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "DialogsActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->performSelectedDialogsAction(Ljava/util/ArrayList;IZZZ)V
+    value = Lorg/telegram/ui/DialogsActivity;->showSearch(ZZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,110 +15,32 @@
 
 
 # instance fields
-.field final synthetic val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-.field final synthetic val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 11098
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
+    .line 10076
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$58;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onMeasure(II)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11101
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    .line 10079
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$58;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 11102
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result p1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result p2
-
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v0
-
-    add-int/2addr p2, v0
-
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    add-int/2addr p2, v0
-
-    const/4 v0, 0x7
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    add-int/2addr p2, v0
-
-    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
-
-    .line 11103
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result p2
-
-    neg-int p2, p2
-
-    int-to-float p2, p2
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p2, 0x0
-
-    :goto_1
-    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$38602(Lorg/telegram/ui/DialogsActivity;Landroid/animation/Animator;)Landroid/animation/Animator;
 
     return-void
 .end method

@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda27;->f$3:Ljava/util/HashMap;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$IzXWzW52VBFez3hb2C7Ess_sbhA(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$NERvhVGkhLAgoIBLv0LNOnnsnEo(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

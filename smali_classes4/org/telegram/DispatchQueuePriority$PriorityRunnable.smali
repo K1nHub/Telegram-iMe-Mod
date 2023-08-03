@@ -27,13 +27,13 @@
 .method private constructor <init>(ILjava/lang/Runnable;)V
     .locals 0
 
-    .line 66
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 93
     iput p1, p0, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;->priority:I
 
-    .line 68
+    .line 94
     iput-object p2, p0, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;->runnable:Ljava/lang/Runnable;
 
     return-void
@@ -42,7 +42,7 @@
 .method synthetic constructor <init>(ILjava/lang/Runnable;Lorg/telegram/DispatchQueuePriority$1;)V
     .locals 0
 
-    .line 62
+    .line 88
     invoke-direct {p0, p1, p2}, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;-><init>(ILjava/lang/Runnable;)V
 
     return-void
@@ -53,7 +53,7 @@
 .method public run()V
     .locals 1
 
-    .line 73
+    .line 99
     iget-object v0, p0, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;->runnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V

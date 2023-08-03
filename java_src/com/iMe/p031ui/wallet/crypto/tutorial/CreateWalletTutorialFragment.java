@@ -11,6 +11,7 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.tutorial.TutorialPage;
 import com.iMe.model.wallet.crypto.tutorial.TutorialType;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.base.wallet_creation.WalletCreationBaseFragment;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.WrapContentViewPager;
@@ -21,6 +22,7 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.extentions.common.ActionBarExtKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -33,7 +35,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -41,14 +46,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTutorialBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BackDrawable;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
+import timber.log.Timber;
 /* compiled from: CreateWalletTutorialFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment */
 /* loaded from: classes4.dex */
@@ -69,13 +81,89 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
         Lazy lazy;
         Intrinsics.checkNotNullParameter(tutorialType, "tutorialType");
         this.tutorialType = tutorialType;
-        CreateWalletTutorialFragment$presenter$2 createWalletTutorialFragment$presenter$2 = new CreateWalletTutorialFragment$presenter$2(this);
+        Function0<CreateWalletTutorialPresenter> function0 = new Function0<CreateWalletTutorialPresenter>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateWalletTutorialPresenter invoke() {
+                Lazy lazy2;
+                final CreateWalletTutorialFragment createWalletTutorialFragment = CreateWalletTutorialFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        TutorialType tutorialType2;
+                        tutorialType2 = CreateWalletTutorialFragment.this.tutorialType;
+                        return ParametersHolderKt.parametersOf(tutorialType2);
+                    }
+                };
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CreateWalletTutorialPresenter>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CreateWalletTutorialPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CreateWalletTutorialPresenter.class), qualifier, function03);
+                    }
+                });
+                return (CreateWalletTutorialPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletTutorialPresenter.class.getName() + ".presenter", createWalletTutorialFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CreateWalletTutorialFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletTutorialPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CreateWalletTutorialAdapter>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.tutorial.adapter.CreateWalletTutorialAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateWalletTutorialAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CreateWalletTutorialAdapter.class), qualifier, function02);
+            }
+        });
         this.tutorialAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletTutorialFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletTutorialBinding>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletTutorialBinding invoke() {
+                return ForkFragmentWalletTutorialBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CreateWalletTutorialFragment.this));
+            }
+        }, 1, (Object) null);
         this.swipeBackEnabled = true;
     }
 
@@ -172,15 +260,15 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
     }
 
     private final void setupActionBar() {
-        C3484ActionBar setupActionBar$lambda$1 = this.actionBar;
+        C3485ActionBar setupActionBar$lambda$1 = this.actionBar;
         setupActionBar$lambda$1.setCastShadows(false);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$1, "setupActionBar$lambda$1");
         ActionBarExtKt.applyColorsWithWhiteBackground(setupActionBar$lambda$1);
         setupActionBar$lambda$1.setAllowOverlayTitle(true);
         setupActionBar$lambda$1.setBackButtonDrawable(new BackDrawable(false));
         setupActionBar$lambda$1.createMenu();
-        setupActionBar$lambda$1.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        setupActionBar$lambda$1.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletTutorialFragment.this.handleBackPressed();
@@ -194,7 +282,7 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
         if (this.tutorialType instanceof TutorialType.WalletIntro) {
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3417R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3417R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3417R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3417R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
+            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3419R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3419R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3419R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3419R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     CreateWalletTutorialFragment.this.finishFragment();
@@ -230,21 +318,59 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updatePageButton(boolean z) {
-        ForkFragmentWalletTutorialBinding binding = getBinding();
+        final ForkFragmentWalletTutorialBinding binding = getBinding();
         ActionButton updatePageButton$lambda$6$lambda$5 = binding.buttonAction;
         if (z) {
             updatePageButton$lambda$6$lambda$5.setText(getResourceManager().getString(this.tutorialType.getLastPageButtonTextResId()));
             Intrinsics.checkNotNullExpressionValue(updatePageButton$lambda$6$lambda$5, "updatePageButton$lambda$6$lambda$5");
-            ViewExtKt.safeThrottledClick$default(updatePageButton$lambda$6$lambda$5, 0L, new CreateWalletTutorialFragment$updatePageButton$1$1$1(this), 1, null);
+            ViewExtKt.safeThrottledClick$default(updatePageButton$lambda$6$lambda$5, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$updatePageButton$1$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                    invoke2(view);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(View it) {
+                    CreateWalletTutorialPresenter presenter;
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    presenter = CreateWalletTutorialFragment.this.getPresenter();
+                    presenter.onLastPageActionClick();
+                }
+            }, 1, null);
             return;
         }
-        updatePageButton$lambda$6$lambda$5.setText(getResourceManager().getString(C3417R.string.common_next));
+        updatePageButton$lambda$6$lambda$5.setText(getResourceManager().getString(C3419R.string.common_next));
         Intrinsics.checkNotNullExpressionValue(updatePageButton$lambda$6$lambda$5, "updatePageButton$lambda$6$lambda$5");
-        ViewExtKt.safeThrottledClick$default(updatePageButton$lambda$6$lambda$5, 0L, new CreateWalletTutorialFragment$updatePageButton$1$1$2(binding), 1, null);
+        ViewExtKt.safeThrottledClick$default(updatePageButton$lambda$6$lambda$5, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$updatePageButton$1$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WrapContentViewPager viewPagerTutorial = ForkFragmentWalletTutorialBinding.this.viewPagerTutorial;
+                Intrinsics.checkNotNullExpressionValue(viewPagerTutorial, "viewPagerTutorial");
+                ViewExtKt.nextPage(viewPagerTutorial);
+            }
+        }, 1, null);
     }
 
     private final void setupTexts() {
-        getBinding().buttonAction.setText(getResourceManager().getString(C3417R.string.common_next));
+        getBinding().buttonAction.setText(getResourceManager().getString(C3419R.string.common_next));
     }
 
     private final void setupColors() {
@@ -252,10 +378,10 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
         NestedScrollView root = binding.getRoot();
         int i = Theme.key_windowBackgroundWhite;
         root.setBackgroundColor(getThemedColor(i));
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackgroundColor(getThemedColor(i));
-        c3484ActionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
-        c3484ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_listSelector), false);
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackgroundColor(getThemedColor(i));
+        c3485ActionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
+        c3485ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_listSelector), false);
         binding.buttonAction.applyColors();
         DotsIndicator dotsIndicator = binding.dotsIndicatorTutorial;
         dotsIndicator.setSelectedDotColor(getThemedColor(Theme.key_chats_actionBackground));
@@ -264,9 +390,53 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
 
     private final void setupListeners() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.BackupFlowStarted.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.BackupFlowStarted.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2216x88dbe126(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2217x88dbe127(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.BackupFlowStarted, Unit>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.BackupFlowStarted backupFlowStarted) {
+                m1472invoke(backupFlowStarted);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1472invoke(DomainRxEvents.BackupFlowStarted it) {
+                TutorialType tutorialType;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                tutorialType = CreateWalletTutorialFragment.this.tutorialType;
+                if (tutorialType instanceof TutorialType.WalletIntro) {
+                    return;
+                }
+                CreateWalletTutorialFragment.this.removeSelfFromStack();
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         autoDispose(subscribe);
     }

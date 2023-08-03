@@ -100,7 +100,7 @@
 
     move-result v8
 
-    invoke-virtual {v4, v8}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 774
     iget-object v4, v0, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;->field:Lorg/telegram/ui/Components/EditTextBoldCursor;

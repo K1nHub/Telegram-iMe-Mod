@@ -55,7 +55,7 @@ public final class zzdx {
         if (z) {
             long modelDownloadBeginTimeMs = this.zze.getModelDownloadBeginTimeMs(this.zzd);
             if (modelDownloadBeginTimeMs == 0) {
-                zzb.m781w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
+                zzb.m799w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
             } else {
                 long modelFirstUseTimeMs = this.zze.getModelFirstUseTimeMs(this.zzd);
                 if (modelFirstUseTimeMs == 0) {
@@ -68,7 +68,7 @@ public final class zzdx {
         if (z2) {
             long modelDownloadBeginTimeMs2 = this.zze.getModelDownloadBeginTimeMs(this.zzd);
             if (modelDownloadBeginTimeMs2 == 0) {
-                zzb.m781w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
+                zzb.m799w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
             } else {
                 zza5.zzb(SystemClock.elapsedRealtime() - modelDownloadBeginTimeMs2);
             }

@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -103,7 +103,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         addView(backupImageView, LayoutHelper.createFrame(48, 48, (z3 ? 5 : 3) | 48, z3 ? 0 : 12, 8, z3 ? 12 : 0, 0));
         ProgressButton progressButton = new ProgressButton(context);
         this.addButton = progressButton;
-        progressButton.setText(LocaleController.getString("Add", C3417R.string.Add));
+        progressButton.setText(LocaleController.getString("Add", C3419R.string.Add));
         progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 18.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
         TextView textView3 = new TextView(context);
@@ -112,12 +112,12 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_removeButtonText));
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("StickersRemove", C3417R.string.StickersRemove));
+        textView3.setText(LocaleController.getString("StickersRemove", C3419R.string.StickersRemove));
         addView(textView3, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
-        PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m54dp(4), false);
+        PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m72dp(4), false);
         this.unlockButton = premiumButtonView;
-        premiumButtonView.setIcon(C3417R.raw.unlock_icon);
-        premiumButtonView.setButton(LocaleController.getString("Unlock", C3417R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
+        premiumButtonView.setIcon(C3419R.raw.unlock_icon);
+        premiumButtonView.setButton(LocaleController.getString("Unlock", C3419R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeaturedStickerSetCell2.this.lambda$new$0(view);
@@ -126,13 +126,13 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         premiumButtonView.setVisibility(8);
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) premiumButtonView.getIconView().getLayoutParams();
-            marginLayoutParams.leftMargin = AndroidUtilities.m54dp(1);
-            marginLayoutParams.topMargin = AndroidUtilities.m54dp(1);
-            int m54dp = AndroidUtilities.m54dp(20);
-            marginLayoutParams.height = m54dp;
-            marginLayoutParams.width = m54dp;
-            ((ViewGroup.MarginLayoutParams) premiumButtonView.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.m54dp(3);
-            premiumButtonView.getChildAt(0).setPadding(AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8), 0);
+            marginLayoutParams.leftMargin = AndroidUtilities.m72dp(1);
+            marginLayoutParams.topMargin = AndroidUtilities.m72dp(1);
+            int m72dp = AndroidUtilities.m72dp(20);
+            marginLayoutParams.height = m72dp;
+            marginLayoutParams.width = m72dp;
+            ((ViewGroup.MarginLayoutParams) premiumButtonView.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.m72dp(3);
+            premiumButtonView.getChildAt(0).setPadding(AndroidUtilities.m72dp(8), 0, AndroidUtilities.m72dp(8), 0);
         } catch (Exception unused) {
         }
         addView(this.unlockButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 10.0f, BitmapDescriptorFactory.HUE_RED));
@@ -150,14 +150,14 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64) + (this.needDivider ? 1 : 0), 1073741824));
         int measuredWidth = this.addButton.getMeasuredWidth();
         int measuredWidth2 = this.delButton.getMeasuredWidth();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.delButton.getLayoutParams();
         if (measuredWidth2 < measuredWidth) {
-            layoutParams.rightMargin = AndroidUtilities.m54dp(14) + ((measuredWidth - measuredWidth2) / 2);
+            layoutParams.rightMargin = AndroidUtilities.m72dp(14) + ((measuredWidth - measuredWidth2) / 2);
         } else {
-            layoutParams.rightMargin = AndroidUtilities.m54dp(14);
+            layoutParams.rightMargin = AndroidUtilities.m72dp(14);
         }
         measureChildWithMargins(this.textView, i, measuredWidth, i2, 0);
     }
@@ -197,17 +197,17 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                 @Override // android.graphics.drawable.Drawable
                 public void draw(Canvas canvas) {
                     this.paint.setColor(-12277526);
-                    canvas.drawCircle(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(5), AndroidUtilities.m54dp(3), this.paint);
+                    canvas.drawCircle(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(5), AndroidUtilities.m72dp(3), this.paint);
                 }
 
                 @Override // android.graphics.drawable.Drawable
                 public int getIntrinsicWidth() {
-                    return AndroidUtilities.m54dp(12);
+                    return AndroidUtilities.m72dp(12);
                 }
 
                 @Override // android.graphics.drawable.Drawable
                 public int getIntrinsicHeight() {
-                    return AndroidUtilities.m54dp(8);
+                    return AndroidUtilities.m72dp(8);
                 }
             };
             TextView textView = this.textView;
@@ -224,7 +224,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         TLRPC$StickerSet tLRPC$StickerSet2 = tLRPC$StickerSetCovered.set;
         textView2.setText(LocaleController.formatPluralString(tLRPC$StickerSet2.emojis ? "EmojiCount" : "Stickers", tLRPC$StickerSet2.count, new Object[0]));
         if ((tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetNoCovered) && (tLRPC$StickerSet = tLRPC$StickerSetCovered.set) != null) {
-            this.waitingForStickerSetId = Long.valueOf(tLRPC$StickerSet.f1548id);
+            this.waitingForStickerSetId = Long.valueOf(tLRPC$StickerSet.f1552id);
             if (!this.bindedObserver) {
                 NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
                 this.bindedObserver = true;
@@ -236,7 +236,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                 while (true) {
                     if (i >= stickerSet.documents.size()) {
                         break;
-                    } else if (stickerSet.documents.get(i).f1523id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                    } else if (stickerSet.documents.get(i).f1526id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                         tLRPC$Document = stickerSet.documents.get(i);
                         break;
                     } else {
@@ -251,7 +251,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                     tLRPC$Document = tLRPC$StickerSetCovered.covers.get(0);
                     if (tLRPC$StickerSetCovered.set != null) {
                         for (int i2 = 0; i2 < tLRPC$StickerSetCovered.covers.size(); i2++) {
-                            if (tLRPC$StickerSetCovered.covers.get(i2).f1523id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                            if (tLRPC$StickerSetCovered.covers.get(i2).f1526id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                                 tLRPC$Document2 = tLRPC$StickerSetCovered.covers.get(i2);
                             }
                         }
@@ -262,7 +262,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                         ArrayList<TLRPC$Document> arrayList2 = tLRPC$TL_stickerSetFullCovered.documents;
                         TLRPC$Document tLRPC$Document3 = arrayList2.get(0);
                         for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                            if (arrayList2.get(i3).f1523id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                            if (arrayList2.get(i3).f1526id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                                 tLRPC$Document2 = arrayList2.get(i3);
                             }
                         }
@@ -311,7 +311,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         }
         this.addButton.setVisibility(0);
         this.forceInstalled = z3;
-        this.isInstalled = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1548id);
+        this.isInstalled = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1552id);
         boolean z7 = !UserConfig.getInstance(this.currentAccount).isPremium() && MessageObject.isPremiumEmojiPack(tLRPC$StickerSetCovered);
         this.isLocked = z7;
         if (!z4) {
@@ -454,7 +454,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(71), getHeight() - 1, getWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(71) : 0), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(71), getHeight() - 1, getWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(71) : 0), getHeight() - 1, Theme.dividerPaint);
         }
     }
 

@@ -2,15 +2,17 @@ package org.telegram.tgnet;
 /* loaded from: classes4.dex */
 public abstract class TLRPC$DocumentAttribute extends TLObject {
     public String alt;
-    public int duration;
+    public double duration;
     public String file_name;
     public int flags;
 
     /* renamed from: h */
-    public int f1525h;
+    public int f1528h;
     public boolean mask;
     public TLRPC$TL_maskCoords mask_coords;
+    public boolean nosound;
     public String performer;
+    public int preload_prefix_size;
     public boolean round_message;
     public TLRPC$InputStickerSet stickerset;
     public boolean supports_streaming;
@@ -18,7 +20,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
     public boolean voice;
 
     /* renamed from: w */
-    public int f1526w;
+    public int f1529w;
     public byte[] waveform;
 
     public static TLRPC$DocumentAttribute TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -46,6 +48,9 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     }
                 };
                 break;
+            case -745541182:
+                tLRPC$TL_documentAttributeHasStickers = new TLRPC$TL_documentAttributeVideo();
+                break;
             case -556656416:
                 tLRPC$TL_documentAttributeHasStickers = new TLRPC$TL_documentAttributeAudio() { // from class: org.telegram.tgnet.TLRPC$TL_documentAttributeAudio_layer45
                     public static int constructor = -556656416;
@@ -60,7 +65,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeAudio, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.duration);
+                        abstractSerializedData2.writeInt32((int) this.duration);
                         abstractSerializedData2.writeString(this.title);
                         abstractSerializedData2.writeString(this.performer);
                     }
@@ -95,12 +100,38 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeAudio, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.duration);
+                        abstractSerializedData2.writeInt32((int) this.duration);
                     }
                 };
                 break;
             case 250621158:
-                tLRPC$TL_documentAttributeHasStickers = new TLRPC$TL_documentAttributeVideo();
+                tLRPC$TL_documentAttributeHasStickers = new TLRPC$TL_documentAttributeVideo() { // from class: org.telegram.tgnet.TLRPC$TL_documentAttributeVideo_layer159
+                    public static int constructor = 250621158;
+
+                    @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
+                    public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
+                        int readInt32 = abstractSerializedData2.readInt32(z2);
+                        this.flags = readInt32;
+                        this.round_message = (readInt32 & 1) != 0;
+                        this.supports_streaming = (readInt32 & 2) != 0;
+                        this.duration = abstractSerializedData2.readInt32(z2);
+                        this.f1529w = abstractSerializedData2.readInt32(z2);
+                        this.f1528h = abstractSerializedData2.readInt32(z2);
+                    }
+
+                    @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
+                    public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
+                        abstractSerializedData2.writeInt32(constructor);
+                        int i2 = this.round_message ? this.flags | 1 : this.flags & (-2);
+                        this.flags = i2;
+                        int i3 = this.supports_streaming ? i2 | 2 : i2 & (-3);
+                        this.flags = i3;
+                        abstractSerializedData2.writeInt32(i3);
+                        abstractSerializedData2.writeInt32((int) this.duration);
+                        abstractSerializedData2.writeInt32(this.f1529w);
+                        abstractSerializedData2.writeInt32(this.f1528h);
+                    }
+                };
                 break;
             case 297109817:
                 tLRPC$TL_documentAttributeHasStickers = new TLRPC$TL_documentAttributeAnimated();
@@ -118,16 +149,16 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1526w = abstractSerializedData2.readInt32(z2);
-                        this.f1525h = abstractSerializedData2.readInt32(z2);
+                        this.f1529w = abstractSerializedData2.readInt32(z2);
+                        this.f1528h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.duration);
-                        abstractSerializedData2.writeInt32(this.f1526w);
-                        abstractSerializedData2.writeInt32(this.f1525h);
+                        abstractSerializedData2.writeInt32((int) this.duration);
+                        abstractSerializedData2.writeInt32(this.f1529w);
+                        abstractSerializedData2.writeInt32(this.f1528h);
                     }
                 };
                 break;

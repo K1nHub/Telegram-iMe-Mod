@@ -1,9 +1,10 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
 /* loaded from: classes.dex */
-final class zzx extends zzai {
+public final class zzx extends zzai {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzx(zzy zzyVar, String str) {
         super("getVersion");

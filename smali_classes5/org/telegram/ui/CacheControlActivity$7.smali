@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)V
     .locals 0
 
-    .line 1558
+    .line 1595
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$7;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$7;->val$entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
@@ -42,7 +42,7 @@
 .method public cleanupDialogFiles(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;Lorg/telegram/ui/Storage/CacheModel;)V
     .locals 1
 
-    .line 1573
+    .line 1610
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$7;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/CacheControlActivity;->access$1800(Lorg/telegram/ui/CacheControlActivity;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;[Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;Lorg/telegram/ui/Storage/CacheModel;)V
@@ -53,7 +53,7 @@
 .method public onAvatarClick()V
     .locals 5
 
-    .line 1561
+    .line 1598
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$7;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$1700(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/BottomSheet;
@@ -62,12 +62,12 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 1562
+    .line 1599
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1563
+    .line 1600
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$7;->val$entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
     iget-wide v1, v1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;->dialogId:J
@@ -80,7 +80,7 @@
 
     const-string v3, "user_id"
 
-    .line 1564
+    .line 1601
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_0
@@ -90,10 +90,10 @@
 
     const-string v3, "chat_id"
 
-    .line 1566
+    .line 1603
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1568
+    .line 1605
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$7;->this$0:Lorg/telegram/ui/CacheControlActivity;
 

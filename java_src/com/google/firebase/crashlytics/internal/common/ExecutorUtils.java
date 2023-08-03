@@ -50,16 +50,16 @@ public final class ExecutorUtils {
             public void onRun() {
                 try {
                     Logger logger = Logger.getLogger();
-                    logger.m728d("Executing shutdown hook for " + str);
+                    logger.m746d("Executing shutdown hook for " + str);
                     executorService.shutdown();
                     if (executorService.awaitTermination(j, timeUnit)) {
                         return;
                     }
                     Logger logger2 = Logger.getLogger();
-                    logger2.m728d(str + " did not shut down in the allocated time. Requesting immediate shutdown.");
+                    logger2.m746d(str + " did not shut down in the allocated time. Requesting immediate shutdown.");
                     executorService.shutdownNow();
                 } catch (InterruptedException unused) {
-                    Logger.getLogger().m728d(String.format(Locale.US, "Interrupted while waiting for %s to shut down. Requesting immediate shutdown.", str));
+                    Logger.getLogger().m746d(String.format(Locale.US, "Interrupted while waiting for %s to shut down. Requesting immediate shutdown.", str));
                     executorService.shutdownNow();
                 }
             }

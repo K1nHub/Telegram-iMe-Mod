@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class EOS {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface AssetOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -34,7 +34,7 @@ public final class EOS {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         Asset getAsset();
 
@@ -75,7 +75,7 @@ public final class EOS {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -98,7 +98,7 @@ public final class EOS {
     private EOS() {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum KeyType implements Internal.EnumLite {
         LEGACY(0),
         MODERNK1(1),
@@ -150,7 +150,7 @@ public final class EOS {
             return KeyTypeVerifier.INSTANCE;
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         private static final class KeyTypeVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new KeyTypeVerifier();
 
@@ -168,7 +168,7 @@ public final class EOS {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Asset extends GeneratedMessageLite<Asset, Builder> implements AssetOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         public static final int DECIMALS_FIELD_NUMBER = 2;
@@ -295,9 +295,9 @@ public final class EOS {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Asset, Builder> implements AssetOrBuilder {
-            /* synthetic */ Builder(C69471 c69471) {
+            /* synthetic */ Builder(C72061 c72061) {
                 this();
             }
 
@@ -370,7 +370,7 @@ public final class EOS {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69471.f1877xa1df5c61[method.ordinal()]) {
+            switch (C72061.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Asset();
                 case 2:
@@ -416,47 +416,47 @@ public final class EOS {
     }
 
     /* renamed from: wallet.core.jni.proto.EOS$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C69471 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72061 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1877xa1df5c61;
+        static final /* synthetic */ int[] f1933xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1877xa1df5c61 = iArr;
+            f1933xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1877xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int ASSET_FIELD_NUMBER = 8;
         public static final int CHAIN_ID_FIELD_NUMBER = 1;
@@ -778,9 +778,9 @@ public final class EOS {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C69471 c69471) {
+            /* synthetic */ Builder(C72061 c72061) {
                 this();
             }
 
@@ -1033,7 +1033,7 @@ public final class EOS {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69471.f1877xa1df5c61[method.ordinal()]) {
+            switch (C72061.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1078,7 +1078,7 @@ public final class EOS {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ERROR_FIELD_NUMBER = 2;
@@ -1199,9 +1199,9 @@ public final class EOS {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C69471 c69471) {
+            /* synthetic */ Builder(C72061 c72061) {
                 this();
             }
 
@@ -1268,7 +1268,7 @@ public final class EOS {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69471.f1877xa1df5c61[method.ordinal()]) {
+            switch (C72061.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

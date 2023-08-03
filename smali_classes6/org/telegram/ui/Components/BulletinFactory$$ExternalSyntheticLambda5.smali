@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic f$0:Z
+.field public final synthetic f$0:I
 
 .field public final synthetic f$1:Lorg/telegram/ui/Components/Bulletin;
 
@@ -14,12 +14,12 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLorg/telegram/ui/Components/Bulletin;J)V
+.method public synthetic constructor <init>(ILorg/telegram/ui/Components/Bulletin;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$0:Z
+    iput p1, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$0:I
 
     iput-object p2, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/Components/Bulletin;
 
@@ -33,7 +33,7 @@
 .method public final run(Ljava/lang/Object;)V
     .locals 4
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$0:Z
+    iget v0, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$0:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/Components/Bulletin;
 
@@ -41,7 +41,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/BulletinFactory;->$r8$lambda$G9PPj6zexBxlbcRGG-9ZrBiwUQE(ZLorg/telegram/ui/Components/Bulletin;JLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/BulletinFactory;->$r8$lambda$6j8NiebGtWo4Ehq9GxXUmw96iLQ(ILorg/telegram/ui/Components/Bulletin;JLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
 .end method

@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 3043
+    .line 3057
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,12 +34,12 @@
 
     const/4 v0, 0x0
 
-    .line 3046
+    .line 3060
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->access$2102(Z)Z
 
     const/4 v0, 0x1
 
-    .line 3047
+    .line 3061
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->applyDayNightThemeMaybe(Z)V
 
     return-void

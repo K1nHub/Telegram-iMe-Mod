@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 108
+    .line 95
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iput p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$currentAccount:I
@@ -47,7 +47,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 150
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$200(Lorg/telegram/ui/Components/ReactedUsersListView;)Ljava/util/List;
@@ -94,7 +94,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 155
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$200(Lorg/telegram/ui/Components/ReactedUsersListView;)Ljava/util/List;
@@ -120,19 +120,19 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 142
+    .line 129
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 143
+    .line 130
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    check-cast p1, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;
+    check-cast p1, Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    .line 144
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$200(Lorg/telegram/ui/Components/ReactedUsersListView;)Ljava/util/List;
@@ -145,7 +145,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;->setUserReaction(Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;)V
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ReactedUserHolderView;->setUserReaction(Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;)V
 
     :cond_0
     return-void
@@ -156,21 +156,21 @@
 
     if-eqz p2, :cond_2
 
-    .line 120
+    .line 107
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-object p2, p1, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     if-eqz p2, :cond_0
 
-    .line 121
+    .line 108
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 122
+    .line 109
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
@@ -189,11 +189,11 @@
 
     goto :goto_0
 
-    .line 125
+    .line 112
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->access$100(Lorg/telegram/ui/Components/ReactedUsersListView;)V
 
-    .line 128
+    .line 115
     :cond_1
     :goto_0
     new-instance p1, Landroid/widget/FrameLayout;
@@ -202,14 +202,14 @@
 
     invoke-direct {p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 129
+    .line 116
     new-instance p2, Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$context:Landroid/content/Context;
 
     invoke-direct {p2, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 130
+    .line 117
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -224,14 +224,14 @@
 
     const/16 v1, 0x8
 
-    .line 131
+    .line 118
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 132
+    .line 119
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->this$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
@@ -258,17 +258,21 @@
 
     goto :goto_1
 
-    .line 116
+    .line 103
     :cond_2
-    new-instance p1, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;
+    new-instance p1, Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    iget p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$currentAccount:I
+    sget p2, Lorg/telegram/ui/Cells/ReactedUserHolderView;->STYLE_DEFAULT:I
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$context:Landroid/content/Context;
+    iget v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$currentAccount:I
 
-    invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Components/ReactedUsersListView$ReactedUserHolderView;-><init>(ILandroid/content/Context;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView$2;->val$context:Landroid/content/Context;
 
-    .line 137
+    const/4 v2, 0x0
+
+    invoke-direct {p1, p2, v0, v1, v2}, Lorg/telegram/ui/Cells/ReactedUserHolderView;-><init>(IILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 124
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

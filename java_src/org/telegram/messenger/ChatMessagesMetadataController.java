@@ -3,11 +3,20 @@ package org.telegram.messenger;
 import com.google.android.exoplayer2.C0480C;
 import java.util.ArrayList;
 import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Stories.StoriesStorage;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC$Message;
+import org.telegram.tgnet.TLRPC$MessageMedia;
+import org.telegram.tgnet.TLRPC$MessageReplyHeader;
+import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_messages_getExtendedMedia;
 import org.telegram.tgnet.TLRPC$TL_messages_getMessagesReactions;
+import org.telegram.tgnet.TLRPC$TL_stories_getStoriesByID;
+import org.telegram.tgnet.TLRPC$TL_stories_stories;
+import org.telegram.tgnet.TLRPC$TL_storyItem;
+import org.telegram.tgnet.TLRPC$TL_storyItemDeleted;
 import org.telegram.tgnet.TLRPC$TL_updateMessageReactions;
 import org.telegram.tgnet.TLRPC$Updates;
 /* loaded from: classes4.dex */
@@ -15,6 +24,7 @@ public class ChatMessagesMetadataController {
     final ChatActivity chatActivity;
     private ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
     private ArrayList<MessageObject> extendedMediaToCheck = new ArrayList<>(10);
+    private ArrayList<MessageObject> storiesToCheck = new ArrayList<>(10);
     ArrayList<Integer> reactionsRequests = new ArrayList<>();
     ArrayList<Integer> extendedMediaRequests = new ArrayList<>();
 
@@ -39,6 +49,7 @@ public class ChatMessagesMetadataController {
         }
         this.reactionsToCheck.clear();
         this.extendedMediaToCheck.clear();
+        this.storiesToCheck.clear();
         while (i4 < i5) {
             MessageObject messageObject = arrayList.get(i4);
             if (this.chatActivity.getThreadMessage() != messageObject && messageObject.getId() > 0 && messageObject.messageOwner.action == null && j - messageObject.reactionsLastCheckTime > C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS) {
@@ -49,10 +60,103 @@ public class ChatMessagesMetadataController {
                 messageObject.extendedMediaLastCheckTime = j;
                 this.extendedMediaToCheck.add(messageObject);
             }
+            int i6 = messageObject.type;
+            if (i6 == 23 || i6 == 24 || messageObject.messageOwner.replyStory != null) {
+                TLRPC$StoryItem tLRPC$StoryItem = (i6 == 23 || i6 == 24) ? messageObject.messageOwner.media.storyItem : messageObject.messageOwner.replyStory;
+                if (tLRPC$StoryItem != null && !(tLRPC$StoryItem instanceof TLRPC$TL_storyItemDeleted) && j - tLRPC$StoryItem.lastUpdateTime > 300000) {
+                    tLRPC$StoryItem.lastUpdateTime = j;
+                    this.storiesToCheck.add(messageObject);
+                }
+            }
             i4++;
         }
         loadReactionsForMessages(this.chatActivity.getDialogId(), this.reactionsToCheck);
         loadExtendedMediaForMessages(this.chatActivity.getDialogId(), this.extendedMediaToCheck);
+        loadStoriesForMessages(this.chatActivity.getDialogId(), this.storiesToCheck);
+    }
+
+    private void loadStoriesForMessages(long j, ArrayList<MessageObject> arrayList) {
+        TLRPC$StoryItem tLRPC$StoryItem;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            TLRPC$TL_stories_getStoriesByID tLRPC$TL_stories_getStoriesByID = new TLRPC$TL_stories_getStoriesByID();
+            final MessageObject messageObject = arrayList.get(i);
+            new TLRPC$TL_storyItem();
+            int i2 = messageObject.type;
+            if (i2 == 23 || i2 == 24) {
+                TLRPC$MessageMedia tLRPC$MessageMedia = messageObject.messageOwner.media;
+                TLRPC$StoryItem tLRPC$StoryItem2 = tLRPC$MessageMedia.storyItem;
+                tLRPC$StoryItem2.dialogId = tLRPC$MessageMedia.user_id;
+                tLRPC$StoryItem = tLRPC$StoryItem2;
+            } else {
+                TLRPC$Message tLRPC$Message = messageObject.messageOwner;
+                TLRPC$MessageReplyHeader tLRPC$MessageReplyHeader = tLRPC$Message.reply_to;
+                if (tLRPC$MessageReplyHeader != null) {
+                    tLRPC$StoryItem = tLRPC$Message.replyStory;
+                    tLRPC$StoryItem.dialogId = tLRPC$MessageReplyHeader.user_id;
+                }
+            }
+            final long j2 = tLRPC$StoryItem.dialogId;
+            tLRPC$TL_stories_getStoriesByID.user_id = this.chatActivity.getMessagesController().getInputUser(j2);
+            tLRPC$TL_stories_getStoriesByID.f1656id.add(Integer.valueOf(tLRPC$StoryItem.f1553id));
+            final int i3 = tLRPC$StoryItem.f1553id;
+            this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_stories_getStoriesByID, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda4
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+                    ChatMessagesMetadataController.this.lambda$loadStoriesForMessages$2(i3, messageObject, j2, tLObject, tLRPC$TL_error);
+                }
+            })));
+        }
+        if (this.extendedMediaRequests.size() > 10) {
+            this.chatActivity.getConnectionsManager().cancelRequest(this.extendedMediaRequests.remove(0).intValue(), false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadStoriesForMessages$2(int i, final MessageObject messageObject, final long j, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+        if (tLObject != null) {
+            TLRPC$TL_stories_stories tLRPC$TL_stories_stories = (TLRPC$TL_stories_stories) tLObject;
+            TLRPC$StoryItem tLRPC$StoryItem = tLRPC$TL_stories_stories.stories.size() > 0 ? tLRPC$TL_stories_stories.stories.get(0) : null;
+            if (tLRPC$StoryItem == null) {
+                tLRPC$StoryItem = new TLRPC$TL_storyItemDeleted();
+            }
+            final TLRPC$StoryItem tLRPC$StoryItem2 = tLRPC$StoryItem;
+            tLRPC$StoryItem2.lastUpdateTime = System.currentTimeMillis();
+            tLRPC$StoryItem2.f1553id = i;
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatMessagesMetadataController.this.lambda$loadStoriesForMessages$1(messageObject, j, tLRPC$StoryItem2);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadStoriesForMessages$1(MessageObject messageObject, long j, TLRPC$StoryItem tLRPC$StoryItem) {
+        boolean isExpiredStory = messageObject.isExpiredStory();
+        StoriesStorage.applyStory(this.chatActivity.getCurrentAccount(), j, messageObject, tLRPC$StoryItem);
+        final ArrayList<MessageObject> arrayList = new ArrayList<>();
+        messageObject.forceUpdate = true;
+        arrayList.add(messageObject);
+        this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                ChatMessagesMetadataController.this.lambda$loadStoriesForMessages$0(arrayList);
+            }
+        });
+        if (!isExpiredStory && messageObject.isExpiredStory() && messageObject.type == 24) {
+            this.chatActivity.updateMessages(arrayList, true);
+        } else {
+            this.chatActivity.updateMessages(arrayList, false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadStoriesForMessages$0(ArrayList arrayList) {
+        this.chatActivity.getMessagesController().getStoriesController().getStoriesStorage().lambda$fillMessagesWithStories$12(arrayList);
     }
 
     public void loadReactionsForMessages(long j, ArrayList<MessageObject> arrayList) {
@@ -62,12 +166,12 @@ public class ChatMessagesMetadataController {
         TLRPC$TL_messages_getMessagesReactions tLRPC$TL_messages_getMessagesReactions = new TLRPC$TL_messages_getMessagesReactions();
         tLRPC$TL_messages_getMessagesReactions.peer = this.chatActivity.getMessagesController().getInputPeer(j);
         for (int i = 0; i < arrayList.size(); i++) {
-            tLRPC$TL_messages_getMessagesReactions.f1608id.add(Integer.valueOf(arrayList.get(i).getId()));
+            tLRPC$TL_messages_getMessagesReactions.f1616id.add(Integer.valueOf(arrayList.get(i).getId()));
         }
-        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getMessagesReactions, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda0
+        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getMessagesReactions, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                ChatMessagesMetadataController.this.lambda$loadReactionsForMessages$0(tLObject, tLRPC$TL_error);
+                ChatMessagesMetadataController.this.lambda$loadReactionsForMessages$3(tLObject, tLRPC$TL_error);
             }
         })));
         if (this.reactionsRequests.size() > 5) {
@@ -76,7 +180,7 @@ public class ChatMessagesMetadataController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadReactionsForMessages$0(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public /* synthetic */ void lambda$loadReactionsForMessages$3(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         if (tLRPC$TL_error == null) {
             TLRPC$Updates tLRPC$Updates = (TLRPC$Updates) tLObject;
             for (int i = 0; i < tLRPC$Updates.updates.size(); i++) {
@@ -95,21 +199,21 @@ public class ChatMessagesMetadataController {
         TLRPC$TL_messages_getExtendedMedia tLRPC$TL_messages_getExtendedMedia = new TLRPC$TL_messages_getExtendedMedia();
         tLRPC$TL_messages_getExtendedMedia.peer = this.chatActivity.getMessagesController().getInputPeer(j);
         for (int i = 0; i < arrayList.size(); i++) {
-            tLRPC$TL_messages_getExtendedMedia.f1604id.add(Integer.valueOf(arrayList.get(i).getId()));
+            tLRPC$TL_messages_getExtendedMedia.f1612id.add(Integer.valueOf(arrayList.get(i).getId()));
         }
-        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getExtendedMedia, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda1
+        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getExtendedMedia, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                ChatMessagesMetadataController.this.lambda$loadExtendedMediaForMessages$1(tLObject, tLRPC$TL_error);
+                ChatMessagesMetadataController.this.lambda$loadExtendedMediaForMessages$4(tLObject, tLRPC$TL_error);
             }
         })));
-        if (this.extendedMediaRequests.size() > 5) {
+        if (this.extendedMediaRequests.size() > 10) {
             this.chatActivity.getConnectionsManager().cancelRequest(this.extendedMediaRequests.remove(0).intValue(), false);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadExtendedMediaForMessages$1(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public /* synthetic */ void lambda$loadExtendedMediaForMessages$4(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         if (tLRPC$TL_error == null) {
             this.chatActivity.getMessagesController().processUpdates((TLRPC$Updates) tLObject, false);
         }

@@ -22,7 +22,7 @@ public final class SinglePeriodAdTimeline extends ForwardingTimeline {
         if (j == C0480C.TIME_UNSET) {
             j = this.adPlaybackState.contentDurationUs;
         }
-        period.set(period.f188id, period.uid, period.windowIndex, j, period.getPositionInWindowUs(), this.adPlaybackState, period.isPlaceholder);
+        period.set(period.f190id, period.uid, period.windowIndex, j, period.getPositionInWindowUs(), this.adPlaybackState, period.isPlaceholder);
         return period;
     }
 }

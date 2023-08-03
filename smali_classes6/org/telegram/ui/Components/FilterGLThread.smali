@@ -28,6 +28,8 @@
 
 .field private filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
+.field private filterTextureAvailable:Z
+
 .field private initied:Z
 
 .field private lastRenderCallTime:J
@@ -74,132 +76,143 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$By6v6Mcz3sQ2JNtzvJhhHyWN4fQ(Lorg/telegram/ui/Components/FilterGLThread;Landroid/graphics/SurfaceTexture;)V
+.method public static synthetic $r8$lambda$4y9719TljEIMcHpUJ8YL-Ij2xv4(Lorg/telegram/ui/Components/FilterGLThread;II)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$initGL$1(Landroid/graphics/SurfaceTexture;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setVideoSize$4(II)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$J4osYD9BNfokqT1uFL-7DJCx2Cg(Lorg/telegram/ui/Components/FilterGLThread;)V
+.method public static synthetic $r8$lambda$6m07K8sid7iKTz-eSP9GeNNkgOw(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$initGL$2()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setFilterGLThreadDelegate$1(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$OcnNlrC1T-oYh_6MRx2MOcgimHw(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
+.method public static synthetic $r8$lambda$I2BsWoCeNHsoEs_Dkys2JQaJeNE(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$requestRender$7(ZZZ)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$getTexture$5([Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$TaFuzPrcp98k0zdYH-rXw1_Ldxs(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
+.method public static synthetic $r8$lambda$Mav2Uv41s9sViWKGmhZRCKR-TOg(Lorg/telegram/ui/Components/FilterGLThread;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setFilterGLThreadDelegate$0(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$shutdown$6()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YRhfUdHOGO--RabpV6q8-ellU74(Lorg/telegram/ui/Components/FilterGLThread;)V
+.method public static synthetic $r8$lambda$RF9h64c5MKRgjFPxLvsXp66eDM8(Lorg/telegram/ui/Components/FilterGLThread;Landroid/graphics/SurfaceTexture;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$shutdown$5()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$initGL$2(Landroid/graphics/SurfaceTexture;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lkNu33NBCqtXmgsGzb-uJ8hHnIw(Lorg/telegram/ui/Components/FilterGLThread;II)V
+.method public static synthetic $r8$lambda$UIgnBmW5mKpY1a4Dr20v9uxFEqY(Lorg/telegram/ui/Components/FilterGLThread;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setVideoSize$3(II)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$initGL$3()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lkenepau3bF5QAqD7wgE1XZzQlk(Lorg/telegram/ui/Components/FilterGLThread;II)V
+.method public static synthetic $r8$lambda$YL7DDG_LpCd7Ujsjo8P_SSEGXP0(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setSurfaceTextureSize$6(II)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$updateHDRInfo$0(Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qeR6hdqb-ByADPuAyRCWdnJC95g(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+.method public static synthetic $r8$lambda$m6G2aFWDAGDflTAIide-tg1YM_8(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$getTexture$4([Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$requestRender$8(ZZZ)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/graphics/SurfaceTexture;Landroid/graphics/Bitmap;IZ)V
+.method public static synthetic $r8$lambda$uxcOi5esD_W3bpm703Rso8WsGqA(Lorg/telegram/ui/Components/FilterGLThread;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->lambda$setSurfaceTextureSize$7(II)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/graphics/SurfaceTexture;Landroid/graphics/Bitmap;IZLorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;Z)V
     .locals 2
 
     const-string v0, "PhotoFilterGLThread"
 
     const/4 v1, 0x0
 
-    .line 76
+    .line 83
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;Z)V
 
     const/16 v0, 0x10
 
     new-array v0, v0, [F
 
-    .line 46
+    .line 49
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTextureMatrix:[F
 
     const/4 v0, 0x1
 
     new-array v0, v0, [I
 
-    .line 47
+    .line 50
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTexture:[I
 
-    .line 313
+    .line 359
     new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FilterGLThread$1;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->drawRunnable:Ljava/lang/Runnable;
 
-    .line 77
+    .line 84
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 78
+    .line 85
     iput-object p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->currentBitmap:Landroid/graphics/Bitmap;
 
-    .line 79
+    .line 86
     iput p3, p0, Lorg/telegram/ui/Components/FilterGLThread;->orientation:I
 
-    .line 80
+    .line 87
     new-instance p1, Lorg/telegram/ui/Components/FilterShaders;
 
-    invoke-direct {p1, v1}, Lorg/telegram/ui/Components/FilterShaders;-><init>(Z)V
+    invoke-direct {p1, v1, p5}, Lorg/telegram/ui/Components/FilterShaders;-><init>(ZLorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
+
+    .line 88
+    invoke-virtual {p1, p6}, Lorg/telegram/ui/Components/FilterShaders;->setScaleBitmap(Z)V
 
     const/16 p1, 0x8
 
     new-array p1, p1, [F
 
-    .line 82
+    .line 90
     fill-array-data p1, :array_0
 
     if-eqz p4, :cond_0
 
     const/4 p2, 0x2
 
-    .line 89
+    .line 97
     aget p3, p1, p2
 
-    .line 90
+    .line 98
     aget p4, p1, v1
 
     aput p4, p1, p2
@@ -208,52 +221,54 @@
 
     const/4 p2, 0x6
 
-    .line 93
+    .line 101
     aget p3, p1, p2
 
     const/4 p4, 0x4
 
-    .line 94
-    aget v0, p1, p4
+    .line 102
+    aget p5, p1, p4
 
-    aput v0, p1, p2
+    aput p5, p1, p2
 
     aput p3, p1, p4
 
     :cond_0
     const/16 p2, 0x20
 
-    .line 98
+    .line 106
     invoke-static {p2}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object p2
 
-    .line 99
+    .line 107
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
     move-result-object p3
 
     invoke-virtual {p2, p3}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 100
+    .line 108
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
 
     move-result-object p2
 
     iput-object p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->textureBuffer:Ljava/nio/FloatBuffer;
 
-    .line 101
+    .line 109
     invoke-virtual {p2, p1}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
 
-    .line 102
+    .line 110
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->textureBuffer:Ljava/nio/FloatBuffer;
 
     invoke-virtual {p1, v1}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 104
+    .line 112
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -268,51 +283,51 @@
     .end array-data
 .end method
 
-.method public constructor <init>(Landroid/graphics/SurfaceTexture;Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;)V
+.method public constructor <init>(Landroid/graphics/SurfaceTexture;Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
     .locals 2
 
     const-string v0, "VideoFilterGLThread"
 
     const/4 v1, 0x0
 
-    .line 108
+    .line 116
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;Z)V
 
     const/16 v0, 0x10
 
     new-array v0, v0, [F
 
-    .line 46
+    .line 49
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTextureMatrix:[F
 
     const/4 v0, 0x1
 
     new-array v1, v0, [I
 
-    .line 47
+    .line 50
     iput-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTexture:[I
 
-    .line 313
+    .line 359
     new-instance v1, Lorg/telegram/ui/Components/FilterGLThread$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FilterGLThread$1;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->drawRunnable:Ljava/lang/Runnable;
 
-    .line 109
+    .line 117
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 110
+    .line 118
     iput-object p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoDelegate:Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
 
-    .line 111
+    .line 119
     new-instance p1, Lorg/telegram/ui/Components/FilterShaders;
 
-    invoke-direct {p1, v0}, Lorg/telegram/ui/Components/FilterShaders;-><init>(Z)V
+    invoke-direct {p1, v0, p3}, Lorg/telegram/ui/Components/FilterShaders;-><init>(ZLorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
-    .line 112
+    .line 120
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
     return-void
@@ -321,98 +336,98 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/FilterGLThread;)Z
     .locals 0
 
-    .line 27
+    .line 30
     iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->initied:Z
 
     return p0
 .end method
 
-.method static synthetic access$100(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGL10;
+.method static synthetic access$100(Lorg/telegram/ui/Components/FilterGLThread;)V
     .locals 0
 
-    .line 27
-    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+    .line 30
+    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->makeCurrentContext()V
 
-    return-object p0
+    return-void
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/ui/Components/FilterGLThread;)Z
+.method static synthetic access$1000(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
-    iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoFrameAvailable:Z
-
-    return p0
-.end method
-
-.method static synthetic access$1002(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
-    .locals 0
-
-    .line 27
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoFrameAvailable:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1100(Lorg/telegram/ui/Components/FilterGLThread;)Z
-    .locals 0
-
-    .line 27
-    iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
-
-    return p0
-.end method
-
-.method static synthetic access$1200(Lorg/telegram/ui/Components/FilterGLThread;)Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoDelegate:Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
-
-    return-object p0
-.end method
-
-.method static synthetic access$1300(Lorg/telegram/ui/Components/FilterGLThread;)I
-    .locals 0
-
-    .line 27
+    .line 30
     iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
     return p0
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/Components/FilterGLThread;)I
+.method static synthetic access$1100(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
+    .line 30
     iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferHeight:I
 
     return p0
 .end method
 
-.method static synthetic access$1500(Lorg/telegram/ui/Components/FilterGLThread;)Z
+.method static synthetic access$1200(Lorg/telegram/ui/Components/FilterGLThread;)Z
     .locals 0
 
-    .line 27
+    .line 30
     iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->blurred:Z
 
     return p0
 .end method
 
-.method static synthetic access$1502(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
+.method static synthetic access$1202(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
     .locals 0
 
-    .line 27
+    .line 30
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->blurred:Z
 
     return p1
 .end method
 
+.method static synthetic access$1300(Lorg/telegram/ui/Components/FilterGLThread;)Z
+    .locals 0
+
+    .line 30
+    iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterTextureAvailable:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1302(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
+    .locals 0
+
+    .line 30
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterTextureAvailable:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1400(Lorg/telegram/ui/Components/FilterGLThread;)I
+    .locals 0
+
+    .line 30
+    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceWidth:I
+
+    return p0
+.end method
+
+.method static synthetic access$1500(Lorg/telegram/ui/Components/FilterGLThread;)I
+    .locals 0
+
+    .line 30
+    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceHeight:I
+
+    return p0
+.end method
+
 .method static synthetic access$1600(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
-    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceWidth:I
+    .line 30
+    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     return p0
 .end method
@@ -420,8 +435,8 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
-    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceHeight:I
+    .line 30
+    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleSourceImageHandle:I
 
     return p0
 .end method
@@ -429,125 +444,143 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
-    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
-
-    return p0
-.end method
-
-.method static synthetic access$1900(Lorg/telegram/ui/Components/FilterGLThread;)I
-    .locals 0
-
-    .line 27
-    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleSourceImageHandle:I
-
-    return p0
-.end method
-
-.method static synthetic access$200(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGLContext;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
-
-    return-object p0
-.end method
-
-.method static synthetic access$2000(Lorg/telegram/ui/Components/FilterGLThread;)I
-    .locals 0
-
-    .line 27
+    .line 30
     iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleInputTexCoordHandle:I
 
     return p0
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/Components/FilterGLThread;)Ljava/nio/FloatBuffer;
+.method static synthetic access$1900(Lorg/telegram/ui/Components/FilterGLThread;)Ljava/nio/FloatBuffer;
     .locals 0
 
-    .line 27
+    .line 30
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->textureBuffer:Ljava/nio/FloatBuffer;
 
     return-object p0
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/Components/FilterGLThread;)I
+.method static synthetic access$200(Lorg/telegram/ui/Components/FilterGLThread;)Z
     .locals 0
 
-    .line 27
-    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simplePositionHandle:I
-
-    return p0
-.end method
-
-.method static synthetic access$300(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGLSurface;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
-
-    return-object p0
-.end method
-
-.method static synthetic access$400(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGLDisplay;
-    .locals 0
-
-    .line 27
-    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
-
-    return-object p0
-.end method
-
-.method static synthetic access$500(Lorg/telegram/ui/Components/FilterGLThread;)Z
-    .locals 0
-
-    .line 27
+    .line 30
     iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->updateSurface:Z
 
     return p0
 .end method
 
-.method static synthetic access$502(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
+.method static synthetic access$2000(Lorg/telegram/ui/Components/FilterGLThread;)I
     .locals 0
 
-    .line 27
+    .line 30
+    iget p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->simplePositionHandle:I
+
+    return p0
+.end method
+
+.method static synthetic access$202(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
+    .locals 0
+
+    .line 30
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->updateSurface:Z
 
     return p1
 .end method
 
-.method static synthetic access$600(Lorg/telegram/ui/Components/FilterGLThread;)Landroid/graphics/SurfaceTexture;
+.method static synthetic access$2100(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGLDisplay;
     .locals 0
 
-    .line 27
+    .line 30
+    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    return-object p0
+.end method
+
+.method static synthetic access$2200(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGLSurface;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    return-object p0
+.end method
+
+.method static synthetic access$2300(Lorg/telegram/ui/Components/FilterGLThread;)Ljavax/microedition/khronos/egl/EGL10;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+
+    return-object p0
+.end method
+
+.method static synthetic access$300(Lorg/telegram/ui/Components/FilterGLThread;)Landroid/graphics/SurfaceTexture;
+    .locals 0
+
+    .line 30
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     return-object p0
 .end method
 
-.method static synthetic access$700(Lorg/telegram/ui/Components/FilterGLThread;)[F
+.method static synthetic access$400(Lorg/telegram/ui/Components/FilterGLThread;)[F
     .locals 0
 
-    .line 27
+    .line 30
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTextureMatrix:[F
 
     return-object p0
 .end method
 
-.method static synthetic access$800(Lorg/telegram/ui/Components/FilterGLThread;)V
+.method static synthetic access$500(Lorg/telegram/ui/Components/FilterGLThread;)V
     .locals 0
 
-    .line 27
+    .line 30
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->setRenderData()V
 
     return-void
 .end method
 
-.method static synthetic access$900(Lorg/telegram/ui/Components/FilterGLThread;)Lorg/telegram/ui/Components/FilterShaders;
+.method static synthetic access$600(Lorg/telegram/ui/Components/FilterGLThread;)Lorg/telegram/ui/Components/FilterShaders;
     .locals 0
 
-    .line 27
+    .line 30
     iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
+
+    return-object p0
+.end method
+
+.method static synthetic access$700(Lorg/telegram/ui/Components/FilterGLThread;)Z
+    .locals 0
+
+    .line 30
+    iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoFrameAvailable:Z
+
+    return p0
+.end method
+
+.method static synthetic access$702(Lorg/telegram/ui/Components/FilterGLThread;Z)Z
+    .locals 0
+
+    .line 30
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoFrameAvailable:Z
+
+    return p1
+.end method
+
+.method static synthetic access$800(Lorg/telegram/ui/Components/FilterGLThread;)Z
+    .locals 0
+
+    .line 30
+    iget-boolean p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
+
+    return p0
+.end method
+
+.method static synthetic access$900(Lorg/telegram/ui/Components/FilterGLThread;)Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoDelegate:Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
 
     return-object p0
 .end method
@@ -555,7 +588,7 @@
 .method private getRenderBufferBitmap()Landroid/graphics/Bitmap;
     .locals 8
 
-    .line 371
+    .line 413
     iget v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
     if-eqz v0, :cond_1
@@ -571,7 +604,7 @@
 
     mul-int/lit8 v0, v0, 0x4
 
-    .line 374
+    .line 416
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -580,7 +613,7 @@
 
     const/4 v2, 0x0
 
-    .line 375
+    .line 417
     iget v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
     iget v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferHeight:I
@@ -593,7 +626,7 @@
 
     invoke-static/range {v1 .. v7}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
-    .line 376
+    .line 418
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
     iget v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferHeight:I
@@ -604,7 +637,7 @@
 
     move-result-object v1
 
-    .line 377
+    .line 419
     invoke-virtual {v1, v0}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
 
     return-object v1
@@ -619,7 +652,7 @@
 .method private initGL()Z
     .locals 10
 
-    .line 120
+    .line 135
     invoke-static {}, Ljavax/microedition/khronos/egl/EGLContext;->getEGL()Ljavax/microedition/khronos/egl/EGL;
 
     move-result-object v0
@@ -628,7 +661,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
-    .line 122
+    .line 137
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_DEFAULT_DISPLAY:Ljava/lang/Object;
 
     invoke-interface {v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetDisplay(Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -637,19 +670,19 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 123
+    .line 138
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_DISPLAY:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     const/4 v2, 0x0
 
     if-ne v0, v1, :cond_1
 
-    .line 124
+    .line 139
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 125
+    .line 140
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -676,7 +709,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 127
+    .line 142
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
@@ -687,7 +720,7 @@
 
     new-array v1, v1, [I
 
-    .line 132
+    .line 147
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {v3, v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglInitialize(Ljavax/microedition/khronos/egl/EGLDisplay;[I)Z
@@ -696,12 +729,12 @@
 
     if-nez v0, :cond_3
 
-    .line 133
+    .line 148
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
-    .line 134
+    .line 149
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -728,7 +761,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 136
+    .line 151
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
@@ -745,10 +778,10 @@
 
     new-array v5, v3, [I
 
-    .line 142
+    .line 157
     fill-array-data v5, :array_0
 
-    .line 153
+    .line 168
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -765,12 +798,12 @@
 
     if-nez v3, :cond_5
 
-    .line 154
+    .line 169
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_4
 
-    .line 155
+    .line 170
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -797,29 +830,29 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 157
+    .line 172
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
     return v2
 
-    .line 159
+    .line 174
     :cond_5
     aget v1, v1, v2
 
     if-lez v1, :cond_14
 
-    .line 160
+    .line 175
     aget-object v1, v9, v2
 
     const/4 v3, 0x3
 
     new-array v3, v3, [I
 
-    .line 169
+    .line 184
     fill-array-data v3, :array_1
 
-    .line 170
+    .line 185
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -834,12 +867,12 @@
 
     if-nez v3, :cond_7
 
-    .line 172
+    .line 187
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_6
 
-    .line 173
+    .line 188
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -866,13 +899,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 175
+    .line 190
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
     return v2
 
-    .line 179
+    .line 194
     :cond_7
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
@@ -880,7 +913,7 @@
 
     if-eqz v4, :cond_13
 
-    .line 180
+    .line 195
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -895,14 +928,14 @@
 
     if-eqz v1, :cond_11
 
-    .line 186
+    .line 201
     sget-object v3, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-ne v1, v3, :cond_8
 
     goto/16 :goto_2
 
-    .line 193
+    .line 208
     :cond_8
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -916,12 +949,12 @@
 
     if-nez v1, :cond_a
 
-    .line 194
+    .line 209
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_9
 
-    .line 195
+    .line 210
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -948,7 +981,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 197
+    .line 212
     :cond_9
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
@@ -957,18 +990,18 @@
     :cond_a
     const v1, 0x8b31
 
-    const-string v3, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 texCoord;void main() {gl_Position = position;texCoord = inputTexCoord;}"
+    const-string v3, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}"
 
-    .line 201
+    .line 216
     invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterShaders;->loadShader(ILjava/lang/String;)I
 
     move-result v1
 
     const v3, 0x8b30
 
-    const-string v4, "varying highp vec2 texCoord;uniform sampler2D sourceImage;void main() {gl_FragColor = texture2D(sourceImage, texCoord);}"
+    const-string v4, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}"
 
-    .line 202
+    .line 217
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/FilterShaders;->loadShader(ILjava/lang/String;)I
 
     move-result v3
@@ -977,65 +1010,65 @@
 
     if-eqz v3, :cond_10
 
-    .line 204
+    .line 219
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
     move-result v4
 
     iput v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
-    .line 205
+    .line 220
     invoke-static {v4, v1}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 206
+    .line 221
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     invoke-static {v1, v3}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 207
+    .line 222
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     const-string v3, "position"
 
     invoke-static {v1, v2, v3}, Landroid/opengl/GLES20;->glBindAttribLocation(IILjava/lang/String;)V
 
-    .line 208
+    .line 223
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     const-string v4, "inputTexCoord"
 
     invoke-static {v1, v0, v4}, Landroid/opengl/GLES20;->glBindAttribLocation(IILjava/lang/String;)V
 
-    .line 210
+    .line 225
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     invoke-static {v1}, Landroid/opengl/GLES20;->glLinkProgram(I)V
 
     new-array v1, v0, [I
 
-    .line 212
+    .line 227
     iget v5, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     const v6, 0x8b82
 
     invoke-static {v5, v6, v1, v2}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
 
-    .line 213
+    .line 228
     aget v1, v1, v2
 
     if-nez v1, :cond_b
 
-    .line 214
+    .line 229
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     invoke-static {v1}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    .line 215
+    .line 230
     iput v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     goto :goto_0
 
-    .line 217
+    .line 232
     :cond_b
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
@@ -1045,7 +1078,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simplePositionHandle:I
 
-    .line 218
+    .line 233
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     invoke-static {v1, v4}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
@@ -1054,7 +1087,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleInputTexCoordHandle:I
 
-    .line 219
+    .line 234
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleShaderProgram:I
 
     const-string v3, "sourceImage"
@@ -1065,18 +1098,18 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->simpleSourceImageHandle:I
 
-    .line 227
+    .line 242
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->currentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_c
 
-    .line 228
+    .line 243
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
 
-    .line 229
+    .line 244
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->currentBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
@@ -1085,11 +1118,11 @@
 
     goto :goto_1
 
-    .line 231
+    .line 246
     :cond_c
     iget v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
 
-    .line 232
+    .line 247
     iget v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
 
     :goto_1
@@ -1097,22 +1130,22 @@
 
     move v9, v3
 
-    .line 235
+    .line 250
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoDelegate:Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
 
     if-eqz v1, :cond_d
 
-    .line 236
+    .line 251
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTexture:[I
 
     invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 238
+    .line 253
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTextureMatrix:[F
 
     invoke-static {v1, v2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    .line 239
+    .line 254
     new-instance v1, Landroid/graphics/SurfaceTexture;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTexture:[I
@@ -1123,14 +1156,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 240
+    .line 255
     new-instance v3, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     invoke-virtual {v1, v3}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 242
+    .line 257
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoTexture:[I
 
     aget v1, v1, v2
@@ -1143,36 +1176,36 @@
 
     const v4, 0x46180400    # 9729.0f
 
-    .line 243
+    .line 258
     invoke-static {v3, v1, v4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const/16 v1, 0x2801
 
     const/high16 v4, 0x46180000    # 9728.0f
 
-    .line 244
+    .line 259
     invoke-static {v3, v1, v4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const/16 v1, 0x2802
 
     const v4, 0x812f
 
-    .line 245
+    .line 260
     invoke-static {v3, v1, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v1, 0x2803
 
-    .line 246
+    .line 261
     invoke-static {v3, v1, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    .line 248
-    new-instance v1, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda1;
+    .line 263
+    new-instance v1, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 251
+    .line 266
     :cond_d
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
@@ -1182,7 +1215,7 @@
 
     if-nez v1, :cond_e
 
-    .line 252
+    .line 267
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
     return v2
@@ -1192,7 +1225,7 @@
 
     if-eqz v9, :cond_f
 
-    .line 257
+    .line 272
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/FilterGLThread;->currentBitmap:Landroid/graphics/Bitmap;
@@ -1205,10 +1238,10 @@
 
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Components/FilterShaders;->setRenderData(Landroid/graphics/Bitmap;IIII)V
 
-    .line 258
+    .line 273
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
 
-    .line 259
+    .line 274
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/FilterShaders;->getRenderBufferWidth()I
@@ -1217,7 +1250,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
-    .line 260
+    .line 275
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/FilterShaders;->getRenderBufferHeight()I
@@ -1232,14 +1265,14 @@
     :cond_10
     return v2
 
-    .line 187
+    .line 202
     :cond_11
     :goto_2
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_12
 
-    .line 188
+    .line 203
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1266,19 +1299,19 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 190
+    .line 205
     :cond_12
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
     return v2
 
-    .line 182
+    .line 197
     :cond_13
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
     return v2
 
-    .line 162
+    .line 177
     :cond_14
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -1286,10 +1319,10 @@
 
     const-string v0, "eglConfig not initialized"
 
-    .line 163
+    .line 178
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 165
+    .line 180
     :cond_15
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
@@ -1324,10 +1357,10 @@
     .end array-data
 .end method
 
-.method private synthetic lambda$getTexture$4([Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+.method private synthetic lambda$getTexture$5([Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
     .locals 5
 
-    .line 389
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterShaders;->getRenderFrameBuffer()I
@@ -1338,7 +1371,7 @@
 
     invoke-static {v1, v0}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    .line 390
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->blurred:Z
@@ -1357,45 +1390,45 @@
 
     invoke-static {v1, v2, v3, v0, v4}, Landroid/opengl/GLES20;->glFramebufferTexture2D(IIIII)V
 
-    .line 391
+    .line 433
     invoke-static {v4}, Landroid/opengl/GLES20;->glClear(I)V
 
-    .line 392
+    .line 434
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->getRenderBufferBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     aput-object v0, p1, v4
 
-    .line 393
+    .line 435
     invoke-virtual {p2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 394
+    .line 436
     invoke-static {v1, v4}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    .line 395
+    .line 437
     invoke-static {v4}, Landroid/opengl/GLES20;->glClear(I)V
 
     return-void
 .end method
 
-.method private synthetic lambda$initGL$1(Landroid/graphics/SurfaceTexture;)V
+.method private synthetic lambda$initGL$2(Landroid/graphics/SurfaceTexture;)V
     .locals 1
 
     const/4 p1, 0x0
 
     const/4 v0, 0x1
 
-    .line 240
+    .line 255
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Components/FilterGLThread;->requestRender(ZZZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$initGL$2()V
+.method private synthetic lambda$initGL$3()V
     .locals 2
 
-    .line 248
+    .line 263
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoDelegate:Lorg/telegram/ui/Components/FilterGLThread$FilterGLThreadVideoDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoSurfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -1405,12 +1438,12 @@
     return-void
 .end method
 
-.method private synthetic lambda$requestRender$7(ZZZ)V
+.method private synthetic lambda$requestRender$8(ZZZ)V
     .locals 4
 
     if-eqz p1, :cond_0
 
-    .line 435
+    .line 477
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FilterShaders;->requestUpdateBlurTexture()V
@@ -1420,10 +1453,10 @@
 
     const/4 p1, 0x1
 
-    .line 438
+    .line 480
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->updateSurface:Z
 
-    .line 440
+    .line 482
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1431,7 +1464,7 @@
 
     if-nez p3, :cond_2
 
-    .line 441
+    .line 483
     iget-wide v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->lastRenderCallTime:J
 
     sub-long/2addr v0, p1
@@ -1446,11 +1479,11 @@
 
     if-lez p3, :cond_3
 
-    .line 442
+    .line 484
     :cond_2
     iput-wide p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->lastRenderCallTime:J
 
-    .line 443
+    .line 485
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->drawRunnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -1459,10 +1492,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$setFilterGLThreadDelegate$0(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
+.method private synthetic lambda$setFilterGLThreadDelegate$1(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
     .locals 1
 
-    .line 116
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/FilterShaders;->setDelegate(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
@@ -1470,22 +1503,22 @@
     return-void
 .end method
 
-.method private synthetic lambda$setSurfaceTextureSize$6(II)V
+.method private synthetic lambda$setSurfaceTextureSize$7(II)V
     .locals 0
 
-    .line 417
+    .line 459
     iput p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceWidth:I
 
-    .line 418
+    .line 460
     iput p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceHeight:I
 
     return-void
 .end method
 
-.method private synthetic lambda$setVideoSize$3(II)V
-    .locals 1
+.method private synthetic lambda$setVideoSize$4(II)V
+    .locals 2
 
-    .line 268
+    .line 283
     iget v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
 
     if-ne v0, p1, :cond_0
@@ -1496,40 +1529,115 @@
 
     return-void
 
-    .line 271
+    .line 286
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
 
-    .line 272
+    .line 287
     iput p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
+
+    .line 289
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
+
+    move-result p1
+
+    const/4 p2, 0x1
+
+    const/16 v0, 0x780
+
+    if-eq p1, p2, :cond_2
+
+    const/4 p2, 0x2
+
+    if-eq p1, p2, :cond_1
 
     const/16 v0, 0x500
 
-    if-gt p1, v0, :cond_1
+    goto :goto_0
 
-    if-le p2, v0, :cond_2
-
-    .line 274
+    .line 291
     :cond_1
-    div-int/lit8 p1, p1, 0x2
+    sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
+    iget p2, p1, Landroid/graphics/Point;->x:I
+
+    iget p1, p1, Landroid/graphics/Point;->y:I
+
+    invoke-static {p2, p1}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 301
+    :cond_2
+    :goto_0
+    iget p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
+
+    if-gt p1, v0, :cond_3
+
+    iget p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
+
+    if-le p2, v0, :cond_5
+
+    .line 302
+    :cond_3
+    iget p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
+
+    if-le p1, p2, :cond_4
+
+    int-to-float p2, p2
+
+    int-to-float v1, v0
+
+    int-to-float p1, p1
+
+    div-float/2addr v1, p1
+
+    div-float/2addr p2, v1
+
+    float-to-int p1, p2
+
+    .line 303
+    iput p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
+
+    .line 304
+    iput v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
+
+    goto :goto_1
+
+    :cond_4
+    int-to-float p1, p1
+
+    int-to-float v1, v0
+
+    int-to-float p2, p2
+
+    div-float/2addr v1, p2
+
+    div-float/2addr p1, v1
+
+    float-to-int p1, p1
+
+    .line 306
     iput p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoWidth:I
 
-    .line 275
-    div-int/lit8 p2, p2, 0x2
+    .line 307
+    iput v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
 
-    iput p2, p0, Lorg/telegram/ui/Components/FilterGLThread;->videoHeight:I
-
-    :cond_2
+    :cond_5
+    :goto_1
     const/4 p1, 0x0
 
-    .line 277
+    .line 310
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
 
-    .line 278
+    .line 311
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->setRenderData()V
 
-    .line 279
+    .line 312
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterGLThread;->drawRunnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -1537,30 +1645,130 @@
     return-void
 .end method
 
-.method private synthetic lambda$shutdown$5()V
+.method private synthetic lambda$shutdown$6()V
     .locals 1
 
-    .line 407
+    .line 449
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FilterGLThread;->finish()V
 
-    .line 408
+    .line 450
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 410
+    .line 452
     invoke-virtual {v0}, Landroid/os/Looper;->quit()V
 
     :cond_0
     return-void
 .end method
 
+.method private synthetic lambda$updateHDRInfo$0(Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
+    .locals 1
+
+    .line 125
+    invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->makeCurrentContext()V
+
+    .line 126
+    iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/FilterShaders;->updateHDRInfo(Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
+
+    return-void
+.end method
+
+.method private makeCurrentContext()V
+    .locals 4
+
+    .line 347
+    iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+
+    invoke-interface {v1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetCurrentContext()Ljavax/microedition/khronos/egl/EGLContext;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+
+    const/16 v2, 0x3059
+
+    invoke-interface {v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglGetCurrentSurface(I)Ljavax/microedition/khronos/egl/EGLSurface;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 348
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
+
+    invoke-interface {v0, v1, v2, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 349
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_1
+
+    .line 350
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "eglMakeCurrent failed "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
+
+    invoke-interface {v1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+
+    move-result v1
+
+    invoke-static {v1}, Landroid/opengl/GLUtils;->getEGLErrorString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    :cond_1
+    return-void
+.end method
+
 .method private setRenderData()V
     .locals 7
 
-    .line 304
+    .line 337
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
 
     if-nez v0, :cond_1
@@ -1575,7 +1783,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 340
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
@@ -1593,10 +1801,10 @@
 
     const/4 v0, 0x1
 
-    .line 308
+    .line 341
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderDataSet:Z
 
-    .line 309
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterShaders;->getRenderBufferWidth()I
@@ -1605,7 +1813,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->renderBufferWidth:I
 
-    .line 310
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->filterShaders:Lorg/telegram/ui/Components/FilterShaders;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterShaders;->getRenderBufferHeight()I
@@ -1626,15 +1834,15 @@
 
     const/4 v0, 0x0
 
-    .line 284
+    .line 317
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->currentBitmap:Landroid/graphics/Bitmap;
 
-    .line 285
+    .line 318
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-eqz v1, :cond_0
 
-    .line 286
+    .line 319
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -1645,7 +1853,7 @@
 
     invoke-interface {v1, v2, v3, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 287
+    .line 320
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -1654,46 +1862,46 @@
 
     invoke-interface {v1, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 288
+    .line 321
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 290
+    .line 323
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     if-eqz v1, :cond_1
 
-    .line 291
+    .line 324
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     invoke-interface {v2, v3, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 292
+    .line 325
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 294
+    .line 327
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     if-eqz v1, :cond_2
 
-    .line 295
+    .line 328
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {v2, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglTerminate(Ljavax/microedition/khronos/egl/EGLDisplay;)Z
 
-    .line 296
+    .line 329
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 298
+    .line 331
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_3
 
-    .line 299
+    .line 332
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
 
     :cond_3
@@ -1703,7 +1911,7 @@
 .method public getTexture()Landroid/graphics/Bitmap;
     .locals 3
 
-    .line 382
+    .line 424
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->initied:Z
 
     if-eqz v0, :cond_2
@@ -1716,7 +1924,7 @@
 
     goto :goto_1
 
-    .line 385
+    .line 427
     :cond_0
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
@@ -1726,11 +1934,11 @@
 
     new-array v1, v1, [Landroid/graphics/Bitmap;
 
-    .line 388
+    .line 430
     :try_start_0
-    new-instance v2, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;
+    new-instance v2, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda8;
 
-    invoke-direct {v2, p0, v1, v0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
+    invoke-direct {v2, p0, v1, v0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/FilterGLThread;[Landroid/graphics/Bitmap;Ljava/util/concurrent/CountDownLatch;)V
 
     invoke-virtual {p0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -1738,7 +1946,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 397
+    .line 439
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1748,14 +1956,14 @@
     :catch_0
     move-exception v0
 
-    .line 400
+    .line 442
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_0
     const/4 v0, 0x0
 
-    .line 402
+    .line 444
     aget-object v0, v1, v0
 
     return-object v0
@@ -1772,7 +1980,7 @@
 
     const/4 v0, 0x0
 
-    .line 429
+    .line 471
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Components/FilterGLThread;->requestRender(ZZZ)V
 
     return-void
@@ -1781,10 +1989,10 @@
 .method public requestRender(ZZZ)V
     .locals 1
 
-    .line 433
-    new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda6;
+    .line 475
+    new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;
 
-    invoke-direct {v0, p0, p1, p3, p2}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
+    invoke-direct {v0, p0, p1, p3, p2}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/FilterGLThread;ZZZ)V
 
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -1794,14 +2002,14 @@
 .method public run()V
     .locals 1
 
-    .line 424
+    .line 466
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterGLThread;->initGL()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FilterGLThread;->initied:Z
 
-    .line 425
+    .line 467
     invoke-super {p0}, Lorg/telegram/messenger/DispatchQueue;->run()V
 
     return-void
@@ -1810,7 +2018,7 @@
 .method public setFilterGLThreadDelegate(Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
     .locals 1
 
-    .line 116
+    .line 131
     new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
@@ -1823,7 +2031,7 @@
 .method public setSurfaceTextureSize(II)V
     .locals 1
 
-    .line 416
+    .line 458
     new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/FilterGLThread;II)V
@@ -1836,7 +2044,7 @@
 .method public setVideoSize(II)V
     .locals 1
 
-    .line 267
+    .line 282
     new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/FilterGLThread;II)V
@@ -1849,10 +2057,23 @@
 .method public shutdown()V
     .locals 1
 
-    .line 406
-    new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda2;
+    .line 448
+    new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/FilterGLThread;)V
+
+    invoke-virtual {p0, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method public updateHDRInfo(Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
+    .locals 1
+
+    .line 124
+    new-instance v0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda6;
+
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
 
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 

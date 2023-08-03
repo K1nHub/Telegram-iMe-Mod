@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lio/grpc/internal/FailingClientStream;->rpcProgress:Lio/grpc/internal/ClientStreamListener$RpcProgress;
 
-    const-string v1, "progress"
+    const-string/jumbo v1, "progress"
 
     invoke-virtual {p1, v1, v0}, Lio/grpc/internal/InsightBuilder;->appendKeyValue(Ljava/lang/String;Ljava/lang/Object;)Lio/grpc/internal/InsightBuilder;
 

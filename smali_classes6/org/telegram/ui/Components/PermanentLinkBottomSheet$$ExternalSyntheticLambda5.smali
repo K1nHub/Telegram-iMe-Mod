@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/LinkActionView$Delegate;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
@@ -22,36 +22,20 @@
 
 
 # virtual methods
-.method public synthetic editLink()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/LinkActionView$Delegate$-CC;->$default$editLink(Lorg/telegram/ui/Components/LinkActionView$Delegate;)V
-
-    return-void
-.end method
-
-.method public synthetic removeLink()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/LinkActionView$Delegate$-CC;->$default$removeLink(Lorg/telegram/ui/Components/LinkActionView$Delegate;)V
-
-    return-void
-.end method
-
-.method public final revokeLink()V
+.method public final didSetColor()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PermanentLinkBottomSheet$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/PermanentLinkBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PermanentLinkBottomSheet;->$r8$lambda$bRT18ggKb99XPRBBvw2jeu7W7bg(Lorg/telegram/ui/Components/PermanentLinkBottomSheet;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/PermanentLinkBottomSheet;->$r8$lambda$XWZYQo6LGTsuMJpFU-1mpbxqvfY(Lorg/telegram/ui/Components/PermanentLinkBottomSheet;)V
 
     return-void
 .end method
 
-.method public synthetic showUsersForPermanentLink()V
+.method public synthetic onAnimationProgress(F)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/LinkActionView$Delegate$-CC;->$default$showUsersForPermanentLink(Lorg/telegram/ui/Components/LinkActionView$Delegate;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
     return-void
 .end method

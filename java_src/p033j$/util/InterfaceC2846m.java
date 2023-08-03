@@ -6,7 +6,7 @@ import p033j$.util.function.InterfaceC2820f;
 /* loaded from: classes2.dex */
 public interface InterfaceC2846m extends InterfaceC2848o {
     /* renamed from: e */
-    void mo153e(InterfaceC2820f interfaceC2820f);
+    void mo171e(InterfaceC2820f interfaceC2820f);
 
     void forEachRemaining(Consumer consumer);
 

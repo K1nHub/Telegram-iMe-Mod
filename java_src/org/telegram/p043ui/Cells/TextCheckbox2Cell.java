@@ -97,7 +97,7 @@ public class TextCheckbox2Cell extends FrameLayout {
         if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
         }
     }
 
@@ -131,7 +131,7 @@ public class TextCheckbox2Cell extends FrameLayout {
             this.valueTextView.setMaxLines(0);
             this.valueTextView.setSingleLine(false);
             this.valueTextView.setEllipsize(null);
-            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(11));
+            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m72dp(11));
         } else {
             this.valueTextView.setLines(1);
             this.valueTextView.setMaxLines(1);
@@ -141,7 +141,7 @@ public class TextCheckbox2Cell extends FrameLayout {
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
         layoutParams.height = -2;
-        layoutParams.topMargin = AndroidUtilities.m54dp(10);
+        layoutParams.topMargin = AndroidUtilities.m72dp(10);
         this.textView.setLayoutParams(layoutParams);
         setWillNotDraw(true ^ z2);
     }
@@ -161,17 +161,17 @@ public class TextCheckbox2Cell extends FrameLayout {
     public void setAnimationProgress(float f) {
         this.animationProgress = f;
         Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX);
-        AndroidUtilities.m54dp(40);
+        AndroidUtilities.m72dp(40);
         int measuredHeight = getMeasuredHeight() / 2;
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.animatedColorBackground != 0) {
-            canvas.drawCircle(this.lastTouchX, getMeasuredHeight() / 2, (Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX) + AndroidUtilities.m54dp(40)) * this.animationProgress, this.animationPaint);
+            canvas.drawCircle(this.lastTouchX, getMeasuredHeight() / 2, (Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX) + AndroidUtilities.m72dp(40)) * this.animationProgress, this.animationPaint);
         }
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(64), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(64) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(64), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(64) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

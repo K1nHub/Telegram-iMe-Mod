@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/JoinCallAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 444
+    .line 448
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$3;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 447
+    .line 451
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$3;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$900(Lorg/telegram/ui/Components/JoinCallAlert;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 450
+    .line 454
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

@@ -2,38 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:J
+.field public final synthetic f$1:Lcom/iMe/fork/enums/ParticipantsActionType;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;J)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/fork/enums/ParticipantsActionType;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-wide p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$1:J
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$1:Lcom/iMe/fork/enums/ParticipantsActionType;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-wide v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$1:J
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$1:Lcom/iMe/fork/enums/ParticipantsActionType;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$uLoTPgSoyDn984Wz4NelAdQ8E2Y(Lorg/telegram/ui/ProfileActivity;J)V
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$7PCkLezlz6EtRDQA0IYxfbJ9Mp4(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/fork/enums/ParticipantsActionType;Ljava/lang/Boolean;)V
 
     return-void
 .end method

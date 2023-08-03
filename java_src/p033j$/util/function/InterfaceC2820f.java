@@ -5,5 +5,5 @@ public interface InterfaceC2820f {
     void accept(double d);
 
     /* renamed from: j */
-    InterfaceC2820f mo87j(InterfaceC2820f interfaceC2820f);
+    InterfaceC2820f mo105j(InterfaceC2820f interfaceC2820f);
 }

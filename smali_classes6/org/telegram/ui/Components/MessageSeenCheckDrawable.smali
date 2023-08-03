@@ -71,8 +71,8 @@
 
 
 # virtual methods
-.method public getSpanned(Landroid/content/Context;)Ljava/lang/CharSequence;
-    .locals 5
+.method public getSpanned(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Ljava/lang/CharSequence;
+    .locals 4
 
     .line 48
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastSpanned:Ljava/lang/CharSequence;
@@ -96,7 +96,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->colorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
@@ -109,15 +109,15 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->colorKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v1
+    move-result p2
 
-    iput v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastColor:I
+    iput p2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastColor:I
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v0, v1, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v0, p2, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
@@ -169,15 +169,15 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->colorKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v2
+    move-result p2
 
-    iput v2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastColor:I
+    iput p2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastColor:I
 
-    sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v1, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v1, p2, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
@@ -201,65 +201,65 @@
 
     .line 62
     :goto_0
-    iget v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->h:I
+    iget p2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->h:I
 
-    if-gtz v1, :cond_4
+    if-gtz p2, :cond_4
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v1
+    move-result p2
 
     goto :goto_1
 
     :cond_4
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v1
+    move-result p2
 
     .line 63
     :goto_1
-    iget v2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->oy:F
+    iget v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->oy:F
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v2
+    move-result v1
 
     .line 64
-    iget-object v3, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
-    add-int/2addr v1, v2
+    add-int/2addr p2, v1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v3, v4, v2, p1, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v3, v1, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 65
     new-instance p1, Landroid/text/style/ImageSpan;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-direct {p1, v1, v2}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
+    invoke-direct {p1, p2, v1}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    const/16 v3, 0x21
+    const/16 v2, 0x21
 
-    invoke-virtual {v0, p1, v4, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, p1, v3, p2, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 66
     new-instance p1, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-direct {p1, v4}, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;-><init>(I)V
+    invoke-direct {p1, v3}, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;-><init>(I)V
 
-    invoke-virtual {v0, p1, v1, v2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, p1, p2, v1, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 67
     iput-object v0, p0, Lorg/telegram/ui/Components/MessageSeenCheckDrawable;->lastSpanned:Ljava/lang/CharSequence;

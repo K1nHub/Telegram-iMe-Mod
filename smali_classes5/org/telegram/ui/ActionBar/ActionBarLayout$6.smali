@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarLayout;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/BaseFragment;Z)V
     .locals 0
 
-    .line 1624
+    .line 1650
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$currentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -50,10 +50,10 @@
 .method public run()V
     .locals 3
 
-    .line 1627
+    .line 1653
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2000(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2100(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Ljava/lang/Runnable;
 
     move-result-object v0
 
@@ -61,25 +61,25 @@
 
     return-void
 
-    .line 1630
+    .line 1656
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2002(Lorg/telegram/ui/ActionBar/ActionBarLayout;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2102(Lorg/telegram/ui/ActionBar/ActionBarLayout;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 1631
+    .line 1657
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$currentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 1632
+    .line 1658
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationStart(ZZ)V
 
-    .line 1634
+    .line 1660
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -87,12 +87,12 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationStart(ZZ)V
 
-    .line 1635
+    .line 1661
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$preview:Z
 
-    invoke-static {v0, v2, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1800(Lorg/telegram/ui/ActionBar/ActionBarLayout;ZZZ)V
+    invoke-static {v0, v2, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1900(Lorg/telegram/ui/ActionBar/ActionBarLayout;ZZZ)V
 
     return-void
 .end method

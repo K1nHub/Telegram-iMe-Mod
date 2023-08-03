@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.MediaController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BackupImageView;
@@ -32,10 +32,9 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
         void didSelectAlbum(MediaController.AlbumEntry albumEntry);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Cells.PhotoPickerAlbumsCell$AlbumView */
     /* loaded from: classes5.dex */
-    public class AlbumView extends FrameLayout {
+    private class AlbumView extends FrameLayout {
         private TextView countTextView;
         private BackupImageView imageView;
         private TextView nameTextView;
@@ -48,7 +47,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             addView(backupImageView, LayoutHelper.createFrame(-1, -1));
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
-            linearLayout.setBackgroundResource(C3417R.C3419drawable.album_shadow);
+            linearLayout.setBackgroundResource(C3419R.C3421drawable.album_shadow);
             addView(linearLayout, LayoutHelper.createFrame(-1, 60, 83));
             TextView textView = new TextView(context);
             this.nameTextView = textView;
@@ -166,21 +165,21 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        int m54dp;
+        int m72dp;
         if (AndroidUtilities.isTablet()) {
-            m54dp = ((AndroidUtilities.m54dp(490) - AndroidUtilities.m54dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m54dp(4))) / this.albumsCount;
+            m72dp = ((AndroidUtilities.m72dp(490) - AndroidUtilities.m72dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m72dp(4))) / this.albumsCount;
         } else {
-            m54dp = ((AndroidUtilities.displaySize.x - AndroidUtilities.m54dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m54dp(4))) / this.albumsCount;
+            m72dp = ((AndroidUtilities.displaySize.x - AndroidUtilities.m72dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m72dp(4))) / this.albumsCount;
         }
         for (int i3 = 0; i3 < this.albumsCount; i3++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.albumViews[i3].getLayoutParams();
-            layoutParams.topMargin = AndroidUtilities.m54dp(4);
-            layoutParams.leftMargin = (AndroidUtilities.m54dp(4) + m54dp) * i3;
-            layoutParams.width = m54dp;
-            layoutParams.height = m54dp;
+            layoutParams.topMargin = AndroidUtilities.m72dp(4);
+            layoutParams.leftMargin = (AndroidUtilities.m72dp(4) + m72dp) * i3;
+            layoutParams.width = m72dp;
+            layoutParams.height = m72dp;
             layoutParams.gravity = 51;
             this.albumViews[i3].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(4) + m54dp, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(4) + m72dp, 1073741824));
     }
 }

@@ -12,11 +12,13 @@
 
 .field public final synthetic f$2:Z
 
-.field public final synthetic f$3:Landroid/view/View;
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZLandroid/view/View;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZZLandroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +29,9 @@
 
     iput-boolean p3, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$2:Z
 
-    iput-object p4, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$3:Landroid/view/View;
+    iput-boolean p4, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$3:Z
+
+    iput-object p5, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$4:Landroid/view/View;
 
     return-void
 .end method
@@ -35,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -43,9 +47,11 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$2:Z
 
-    iget-object v3, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$3:Landroid/view/View;
+    iget-boolean v3, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$yCgx4UCk_Q-pdmE84MPYZagyrdA(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZLandroid/view/View;)V
+    iget-object v4, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;->f$4:Landroid/view/View;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$4Q_0ogkFBqF6HjzxkarPhUGHt-A(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZZLandroid/view/View;)V
 
     return-void
 .end method

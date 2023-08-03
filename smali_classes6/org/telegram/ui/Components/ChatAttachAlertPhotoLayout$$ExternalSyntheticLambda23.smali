@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ZoomControlView$ZoomControlViewDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final didSetZoom(F)V
+.method public final onItemClick(Landroid/view/View;I)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$JY37shHNTb7jdOOLgYTymR3nUmA(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;F)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$jnnm5U3lMx6yO6CWFJQpXQOGKWo(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/view/View;I)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

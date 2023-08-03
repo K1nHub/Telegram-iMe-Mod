@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -61,7 +62,23 @@ public final class RealContainer<STATE, SIDE_EFFECT> implements Container<STATE,
         Channel<SIDE_EFFECT> Channel$default = ChannelKt.Channel$default(getSettings().getSideEffectBufferSize(), null, null, 6, null);
         this.sideEffectChannel = Channel$default;
         this.sideEffectFlow = RefCountFlowKt.refCount(FlowKt.receiveAsFlow(Channel$default), delayingSubscribedCounter);
-        this.pluginContext = new ContainerContext<>(getSettings(), new RealContainer$pluginContext$1(this, null), new RealContainer$pluginContext$2(this), new RealContainer$pluginContext$3(this, null), delayingSubscribedCounter);
+        this.pluginContext = new ContainerContext<>(getSettings(), new RealContainer$pluginContext$1(this, null), new Function0<STATE>(this) { // from class: org.orbitmvi.orbit.internal.RealContainer$pluginContext$2
+            final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final STATE invoke() {
+                MutableStateFlow mutableStateFlow;
+                mutableStateFlow = ((RealContainer) this.this$0).internalStateFlow;
+                return (STATE) mutableStateFlow.getValue();
+            }
+        }, new RealContainer$pluginContext$3(this, null), delayingSubscribedCounter);
     }
 
     public /* synthetic */ RealContainer(Object obj, CoroutineScope coroutineScope, Container.Settings settings, SubscribedCounter subscribedCounter, int i, DefaultConstructorMarker defaultConstructorMarker) {

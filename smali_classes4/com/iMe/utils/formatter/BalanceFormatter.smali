@@ -262,7 +262,7 @@
 .method public final formatPercents(Ljava/lang/Number;I)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "percentage"
+    const-string/jumbo v0, "percentage"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

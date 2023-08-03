@@ -7,30 +7,30 @@ import p033j$.time.temporal.InterfaceC2764j;
 public final class C2747n implements InterfaceC2740g {
 
     /* renamed from: a */
-    private final InterfaceC2764j f594a;
+    private final InterfaceC2764j f597a;
 
     /* renamed from: b */
-    private final EnumC2754u f595b;
+    private final EnumC2754u f598b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2747n(InterfaceC2764j interfaceC2764j, EnumC2754u enumC2754u, C2736c c2736c) {
-        this.f594a = interfaceC2764j;
-        this.f595b = enumC2754u;
+        this.f597a = interfaceC2764j;
+        this.f598b = enumC2754u;
     }
 
     public String toString() {
         StringBuilder sb;
         Object obj;
-        if (this.f595b == EnumC2754u.FULL) {
+        if (this.f598b == EnumC2754u.FULL) {
             sb = new StringBuilder();
             sb.append("Text(");
-            obj = this.f594a;
+            obj = this.f597a;
         } else {
             sb = new StringBuilder();
             sb.append("Text(");
-            sb.append(this.f594a);
+            sb.append(this.f597a);
             sb.append(",");
-            obj = this.f595b;
+            obj = this.f598b;
         }
         sb.append(obj);
         sb.append(")");

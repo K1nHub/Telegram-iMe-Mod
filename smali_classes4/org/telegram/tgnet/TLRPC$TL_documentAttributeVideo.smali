@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = 0xef02ce6
+.field public static constructor:I = -0x2c700e3e
 
 
 # direct methods
@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2248
+    .line 2255
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 2252
+    .line 2259
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,53 +50,83 @@
     :cond_0
     move v1, v2
 
-    .line 2253
+    .line 2260
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->round_message:Z
 
-    and-int/lit8 v0, v0, 0x2
+    and-int/lit8 v1, v0, 0x2
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
+
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
+
+    .line 2261
+    :goto_1
+    iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->supports_streaming:Z
+
+    and-int/lit8 v0, v0, 0x8
+
+    if-eqz v0, :cond_2
 
     move v2, v3
 
-    .line 2254
-    :cond_1
-    iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->supports_streaming:Z
+    .line 2262
+    :cond_2
+    iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->nosound:Z
 
-    .line 2255
-    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+    .line 2263
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readDouble(Z)D
 
-    move-result v0
+    move-result-wide v0
 
-    iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:I
+    iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 2256
+    .line 2264
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
-    .line 2257
+    .line 2265
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
+
+    .line 2266
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_3
+
+    .line 2267
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
 
-    iput p1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
+    iput p1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->preload_prefix_size:I
 
+    :cond_3
     return-void
 .end method
 
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2261
+    .line 2272
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2262
+    .line 2273
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->round_message:Z
 
     if-eqz v0, :cond_0
@@ -115,7 +145,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 2263
+    .line 2274
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->supports_streaming:Z
 
     if-eqz v1, :cond_1
@@ -130,23 +160,51 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 2264
+    .line 2275
+    iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->nosound:Z
+
+    if-eqz v1, :cond_2
+
+    or-int/lit8 v0, v0, 0x8
+
+    goto :goto_2
+
+    :cond_2
+    and-int/lit8 v0, v0, -0x9
+
+    :goto_2
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
+
+    .line 2276
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2265
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:I
+    .line 2277
+    iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeDouble(D)V
 
-    .line 2266
+    .line 2278
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2267
+    .line 2279
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
+    .line 2280
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_3
+
+    .line 2281
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->preload_prefix_size:I
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    :cond_3
     return-void
 .end method

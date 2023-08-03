@@ -53,13 +53,13 @@ public class PipettePickerView extends View {
         this.dstRect = new RectF();
         this.bitmap = bitmap;
         this.outlinePaint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(4));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m72dp(4));
         this.outlinePaint.setColor(-1);
         this.linePaint.setStyle(Paint.Style.STROKE);
-        this.linePaint.setStrokeWidth(AndroidUtilities.m54dp(1));
+        this.linePaint.setStrokeWidth(AndroidUtilities.m72dp(1));
         this.linePaint.setColor(-1711276033);
         this.colorPaint.setStyle(Paint.Style.STROKE);
-        this.colorPaint.setStrokeWidth(AndroidUtilities.m54dp(12));
+        this.colorPaint.setStrokeWidth(AndroidUtilities.m72dp(12));
     }
 
     public void setColorListener(Consumer<Integer> consumer) {
@@ -211,7 +211,7 @@ public class PipettePickerView extends View {
         canvas.drawPath(this.path, this.linePaint);
         float f8 = f3 / 2.0f;
         this.dstRect.set(width - f8, height - f8, width + f8, height + f8);
-        canvas.drawRoundRect(this.dstRect, AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), this.outlinePaint);
+        canvas.drawRoundRect(this.dstRect, AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), this.outlinePaint);
         canvas.restore();
     }
 }

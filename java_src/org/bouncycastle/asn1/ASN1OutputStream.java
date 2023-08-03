@@ -3,14 +3,15 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Enumeration;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public class ASN1OutputStream {
 
     /* renamed from: os */
-    private OutputStream f1318os;
+    private OutputStream f1321os;
 
     public ASN1OutputStream(OutputStream outputStream) {
-        this.f1318os = outputStream;
+        this.f1321os = outputStream;
     }
 
     public static ASN1OutputStream create(OutputStream outputStream) {
@@ -26,22 +27,22 @@ public class ASN1OutputStream {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DEROutputStream getDERSubStream() {
-        return new DEROutputStream(this.f1318os);
+        return new DEROutputStream(this.f1321os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1OutputStream getDLSubStream() {
-        return new DLOutputStream(this.f1318os);
+        return new DLOutputStream(this.f1321os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void write(int i) throws IOException {
-        this.f1318os.write(i);
+        this.f1321os.write(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void write(byte[] bArr, int i, int i2) throws IOException {
-        this.f1318os.write(bArr, i, i2);
+        this.f1321os.write(bArr, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -190,11 +191,11 @@ public class ASN1OutputStream {
             }
             byte[] bArr = new byte[5];
             int i3 = 4;
-            bArr[4] = (byte) (i2 & 127);
+            bArr[4] = (byte) (i2 & MessagesStorage.LAST_DB_VERSION);
             do {
                 i2 >>= 7;
                 i3--;
-                bArr[i3] = (byte) ((i2 & 127) | 128);
+                bArr[i3] = (byte) ((i2 & MessagesStorage.LAST_DB_VERSION) | 128);
             } while (i2 > 127);
             write(bArr, i3, 5 - i3);
         }

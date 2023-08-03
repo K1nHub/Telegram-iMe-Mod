@@ -60,7 +60,14 @@ public final class TonControllerImpl implements TonController {
 
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<Boolean>> isValidWalletAddress(String str) {
-        Observable map = sendRequest(new TonApi.UnpackAccountAddress(str)).subscribeOn(this.schedulersProvider.mo699io()).map(TonControllerImpl$$ExternalSyntheticLambda10.INSTANCE);
+        Observable map = sendRequest(new TonApi.UnpackAccountAddress(str)).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda10
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result isValidWalletAddress$lambda$0;
+                isValidWalletAddress$lambda$0 = TonControllerImpl.isValidWalletAddress$lambda$0(obj);
+                return isValidWalletAddress$lambda$0;
+            }
+        });
         Intrinsics.checkNotNullExpressionValue(map, "sendRequest(UnpackAccoun…s()\n                    }");
         return map;
     }
@@ -200,7 +207,7 @@ public final class TonControllerImpl implements TonController {
             r17.<init>(r18, r19, r20, r21, r22)
             io.reactivex.Observable r1 = r0.sendRequest(r2)
             com.iMe.storage.domain.utils.rx.SchedulersProvider r2 = r0.schedulersProvider
-            io.reactivex.Scheduler r2 = r2.mo699io()
+            io.reactivex.Scheduler r2 = r2.mo717io()
             io.reactivex.Observable r1 = r1.subscribeOn(r2)
             com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2 r2 = new com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
             r2.<init>()
@@ -221,7 +228,7 @@ public final class TonControllerImpl implements TonController {
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f503id)).subscribeOn(this$0.schedulersProvider.mo699io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
+        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f506id)).subscribeOn(this$0.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Result sendTransaction$lambda$5$lambda$4;
@@ -279,8 +286,42 @@ public final class TonControllerImpl implements TonController {
     }
 
     private final Observable<Boolean> initTonLib() {
-        Observable<Result<String>> subscribeOn = this.tonConfigRepository.getTonConfigJsonString().subscribeOn(this.schedulersProvider.mo699io());
-        final TonControllerImpl$initTonLib$1 tonControllerImpl$initTonLib$1 = new TonControllerImpl$initTonLib$1(this);
+        Observable<Result<String>> subscribeOn = this.tonConfigRepository.getTonConfigJsonString().subscribeOn(this.schedulersProvider.mo717io());
+        final Function1<Result<? extends String>, ObservableSource<? extends Boolean>> function1 = new Function1<Result<? extends String>, ObservableSource<? extends Boolean>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$initTonLib$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Boolean> invoke(Result<? extends String> result) {
+                return invoke2((Result<String>) result);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Boolean> invoke2(Result<String> result) {
+                CryptoPreferenceHelper cryptoPreferenceHelper;
+                Observable initTonLibObservable;
+                Observable initTonLibObservable2;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (result instanceof Result.Success) {
+                    initTonLibObservable2 = TonControllerImpl.this.getInitTonLibObservable((String) ((Result.Success) result).getData());
+                    return initTonLibObservable2;
+                } else if (result instanceof Result.Error) {
+                    cryptoPreferenceHelper = TonControllerImpl.this.cryptoPreferenceHelper;
+                    String tonConfigJsonString = cryptoPreferenceHelper.getTonConfigJsonString();
+                    if (!(tonConfigJsonString.length() > 0)) {
+                        Observable just = Observable.just(Boolean.FALSE);
+                        Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                        return just;
+                    }
+                    initTonLibObservable = TonControllerImpl.this.getInitTonLibObservable(tonConfigJsonString);
+                    return initTonLibObservable;
+                } else {
+                    return Observable.empty();
+                }
+            }
+        };
         Observable<R> flatMap = subscribeOn.flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -289,7 +330,13 @@ public final class TonControllerImpl implements TonController {
                 return initTonLib$lambda$8;
             }
         });
-        final TonControllerImpl$initTonLib$2 tonControllerImpl$initTonLib$2 = TonControllerImpl$initTonLib$2.INSTANCE;
+        final TonControllerImpl$initTonLib$2 tonControllerImpl$initTonLib$2 = new Function1<Throwable, Boolean>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$initTonLib$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.FALSE;
+            }
+        };
         Observable<Boolean> onErrorReturn = flatMap.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -324,7 +371,7 @@ public final class TonControllerImpl implements TonController {
         File filesFixedDirectory = this.telegramGateway.getFilesFixedDirectory();
         File file = new File(filesFixedDirectory, BlockchainType.TON.name() + this.telegramGateway.getSelectedAccountId());
         file.mkdirs();
-        Observable map = sendRequest(new TonApi.Init(new TonApi.Options(getConfig(str), new TonApi.KeyStoreTypeDirectory(file.getAbsolutePath())))).subscribeOn(this.schedulersProvider.mo699io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
+        Observable map = sendRequest(new TonApi.Init(new TonApi.Options(getConfig(str), new TonApi.KeyStoreTypeDirectory(file.getAbsolutePath())))).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Boolean initTonLibObservable$lambda$11;
@@ -360,7 +407,7 @@ public final class TonControllerImpl implements TonController {
     public final Observable<Result<Wallet.TON>> processInputKey(TonApi.Key key, final List<String> list) {
         final TonApi.InputKeyRegular inputKeyRegular = new TonApi.InputKeyRegular(key, new byte[0]);
         this.inputKey = inputKeyRegular;
-        Observable map = sendRequest(new TonApi.GetAccountAddress(new TonApi.WalletV3InitialAccountState(key.publicKey, this.walletId), 2, 0)).subscribeOn(this.schedulersProvider.mo699io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda5
+        Observable map = sendRequest(new TonApi.GetAccountAddress(new TonApi.WalletV3InitialAccountState(key.publicKey, this.walletId), 2, 0)).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Result processInputKey$lambda$12;

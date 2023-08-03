@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
-    .line 309
+    .line 312
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
     move-object/from16 v1, p0
 
-    .line 314
+    .line 317
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->isRecycled:Z
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 317
+    .line 320
     :cond_0
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -77,7 +77,7 @@
 
     goto/16 :goto_8
 
-    .line 324
+    .line 327
     :cond_1
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -85,7 +85,7 @@
 
     if-nez v0, :cond_2
 
-    .line 326
+    .line 329
     :try_start_0
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -108,10 +108,10 @@
     :catchall_0
     move-exception v0
 
-    .line 328
+    .line 331
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 331
+    .line 334
     :cond_2
     :goto_0
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_1f
 
-    .line 333
+    .line 336
     :try_start_1
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -134,7 +134,7 @@
 
     if-nez v0, :cond_4
 
-    .line 334
+    .line 337
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$300(Lorg/telegram/ui/Components/RLottieDrawable;)Ljava/util/HashMap;
@@ -162,7 +162,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 335
+    .line 338
     iget-object v6, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-wide v6, v6, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
@@ -187,7 +187,7 @@
 
     goto :goto_1
 
-    .line 337
+    .line 340
     :cond_3
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -199,7 +199,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 342
+    .line 345
     :catch_0
     :cond_4
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -220,7 +220,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 343
+    .line 346
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-wide v6, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
@@ -233,12 +233,12 @@
 
     invoke-static {v6, v7, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$600(J[I)V
 
-    .line 344
+    .line 347
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->access$502(Lorg/telegram/ui/Components/RLottieDrawable;[I)[I
 
-    .line 348
+    .line 351
     :cond_5
     :try_start_2
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -249,7 +249,7 @@
 
     if-ne v6, v7, :cond_7
 
-    .line 349
+    .line 352
     iget-wide v8, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
     :cond_6
@@ -261,17 +261,17 @@
     :cond_7
     if-ne v6, v5, :cond_8
 
-    .line 351
+    .line 354
     iget-wide v8, v0, Lorg/telegram/ui/Components/RLottieDrawable;->secondNativePtr:J
 
-    .line 352
+    .line 355
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->setLastFrame:Z
 
     if-eqz v0, :cond_6
 
-    .line 353
+    .line 356
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v6, v0, Lorg/telegram/ui/Components/RLottieDrawable;->secondFramesCount:I
@@ -282,13 +282,13 @@
 
     goto :goto_2
 
-    .line 356
+    .line 359
     :cond_8
     iget-wide v8, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
     goto :goto_2
 
-    .line 359
+    .line 362
     :goto_3
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -305,7 +305,7 @@
     :cond_9
     move v6, v7
 
-    .line 360
+    .line 363
     :goto_4
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -321,7 +321,7 @@
 
     if-eqz v8, :cond_a
 
-    .line 362
+    .line 365
     :try_start_3
     iget v10, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
@@ -340,7 +340,7 @@
     :catch_1
     move-exception v0
 
-    .line 364
+    .line 367
     :try_start_4
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -348,7 +348,7 @@
 
     goto :goto_5
 
-    .line 367
+    .line 370
     :cond_a
     iget v12, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
@@ -372,7 +372,7 @@
 
     move-result v0
 
-    .line 369
+    .line 372
     :goto_5
     iget-object v8, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -388,7 +388,7 @@
 
     if-eqz v8, :cond_c
 
-    .line 370
+    .line 373
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$800(Lorg/telegram/ui/Components/RLottieDrawable;)Z
@@ -397,12 +397,12 @@
 
     if-nez v0, :cond_b
 
-    .line 371
+    .line 374
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->access$802(Lorg/telegram/ui/Components/RLottieDrawable;Z)Z
 
-    .line 372
+    .line 375
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->uiHandler:Landroid/os/Handler;
 
     iget-object v8, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -419,7 +419,7 @@
     :cond_c
     if-ne v0, v10, :cond_e
 
-    .line 377
+    .line 380
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->uiHandler:Landroid/os/Handler;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -428,20 +428,20 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 378
+    .line 381
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->frameWaitSync:Ljava/util/concurrent/CountDownLatch;
 
     if-eqz v0, :cond_d
 
-    .line 379
+    .line 382
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_d
     return-void
 
-    .line 384
+    .line 387
     :cond_e
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -449,14 +449,14 @@
 
     iput-object v8, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextRenderingBitmap:Landroid/graphics/Bitmap;
 
-    .line 386
+    .line 389
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v8, v0, Lorg/telegram/ui/Components/RLottieDrawable;->isDice:I
 
     if-ne v8, v7, :cond_12
 
-    .line 387
+    .line 390
     iget v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
     add-int v8, v7, v6
@@ -474,19 +474,19 @@
 
     add-int/2addr v7, v6
 
-    .line 388
+    .line 391
     iput v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
     goto/16 :goto_7
 
-    .line 390
+    .line 393
     :cond_10
     iput v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 391
+    .line 394
     iput-boolean v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 392
+    .line 395
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-wide v6, v0, Lorg/telegram/ui/Components/RLottieDrawable;->secondNativePtr:J
@@ -495,12 +495,12 @@
 
     if-eqz v0, :cond_11
 
-    .line 393
+    .line 396
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iput v5, v0, Lorg/telegram/ui/Components/RLottieDrawable;->isDice:I
 
-    .line 395
+    .line 398
     :cond_11
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -510,12 +510,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 396
+    .line 399
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1102(Lorg/telegram/ui/Components/RLottieDrawable;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 397
+    .line 400
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1002(Lorg/telegram/ui/Components/RLottieDrawable;Z)Z
@@ -525,7 +525,7 @@
     :cond_12
     if-ne v8, v5, :cond_14
 
-    .line 401
+    .line 404
     iget v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
     add-int v3, v2, v6
@@ -536,16 +536,16 @@
 
     add-int/2addr v2, v6
 
-    .line 402
+    .line 405
     iput v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
     goto/16 :goto_7
 
-    .line 404
+    .line 407
     :cond_13
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 405
+    .line 408
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeatPlayCount:I
@@ -556,7 +556,7 @@
 
     goto/16 :goto_7
 
-    .line 408
+    .line 411
     :cond_14
     iget v3, v0, Lorg/telegram/ui/Components/RLottieDrawable;->customEndFrame:I
 
@@ -566,7 +566,7 @@
 
     if-eqz v4, :cond_18
 
-    .line 409
+    .line 412
     iget v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
     if-le v2, v3, :cond_16
@@ -577,19 +577,19 @@
 
     sub-int/2addr v2, v6
 
-    .line 411
+    .line 414
     iput v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 412
+    .line 415
     iput-boolean v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
     goto/16 :goto_7
 
-    .line 414
+    .line 417
     :cond_15
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 415
+    .line 418
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1200(Lorg/telegram/ui/Components/RLottieDrawable;)V
@@ -603,26 +603,26 @@
 
     add-int/2addr v2, v6
 
-    .line 419
+    .line 422
     iput v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 420
+    .line 423
     iput-boolean v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
     goto/16 :goto_7
 
-    .line 422
+    .line 425
     :cond_17
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 423
+    .line 426
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1200(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     goto/16 :goto_7
 
-    .line 427
+    .line 430
     :cond_18
     iget v4, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
@@ -640,17 +640,17 @@
     :goto_6
     if-ge v8, v3, :cond_1b
 
-    .line 428
+    .line 431
     iget v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeat:I
 
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_1a
 
-    .line 429
+    .line 432
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 430
+    .line 433
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeatPlayCount:I
@@ -664,27 +664,27 @@
     :cond_1a
     add-int/2addr v4, v6
 
-    .line 432
+    .line 435
     iput v4, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 433
+    .line 436
     iput-boolean v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
     goto :goto_7
 
-    .line 435
+    .line 438
     :cond_1b
     iget v3, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeat:I
 
     if-ne v3, v7, :cond_1d
 
-    .line 436
+    .line 439
     iput v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 437
+    .line 440
     iput-boolean v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 438
+    .line 441
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1000(Lorg/telegram/ui/Components/RLottieDrawable;)Z
@@ -693,17 +693,17 @@
 
     if-eqz v0, :cond_1c
 
-    .line 439
+    .line 442
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1102(Lorg/telegram/ui/Components/RLottieDrawable;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 440
+    .line 443
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1002(Lorg/telegram/ui/Components/RLottieDrawable;Z)Z
 
-    .line 442
+    .line 445
     :cond_1c
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -713,7 +713,7 @@
 
     sub-int/2addr v2, v7
 
-    .line 443
+    .line 446
     iput v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeatCount:I
 
     goto :goto_7
@@ -721,13 +721,13 @@
     :cond_1d
     if-ne v3, v5, :cond_1e
 
-    .line 446
+    .line 449
     iput v9, v0, Lorg/telegram/ui/Components/RLottieDrawable;->currentFrame:I
 
-    .line 447
+    .line 450
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 448
+    .line 451
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v3, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeatPlayCount:I
@@ -736,30 +736,30 @@
 
     iput v3, v0, Lorg/telegram/ui/Components/RLottieDrawable;->autoRepeatPlayCount:I
 
-    .line 449
+    .line 452
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1000(Lorg/telegram/ui/Components/RLottieDrawable;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1f
 
-    .line 450
+    .line 453
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1102(Lorg/telegram/ui/Components/RLottieDrawable;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 451
+    .line 454
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1002(Lorg/telegram/ui/Components/RLottieDrawable;Z)Z
 
     goto :goto_7
 
-    .line 454
+    .line 457
     :cond_1e
     iput-boolean v7, v0, Lorg/telegram/ui/Components/RLottieDrawable;->nextFrameIsLast:Z
 
-    .line 455
+    .line 458
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$1200(Lorg/telegram/ui/Components/RLottieDrawable;)V
@@ -771,10 +771,10 @@
     :catch_2
     move-exception v0
 
-    .line 460
+    .line 463
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 463
+    .line 466
     :cond_1f
     :goto_7
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->uiHandler:Landroid/os/Handler;
@@ -785,20 +785,20 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 464
+    .line 467
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->frameWaitSync:Ljava/util/concurrent/CountDownLatch;
 
     if-eqz v0, :cond_20
 
-    .line 465
+    .line 468
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_20
     return-void
 
-    .line 318
+    .line 321
     :cond_21
     :goto_8
     iget-object v0, v1, Lorg/telegram/ui/Components/RLottieDrawable$5;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -807,10 +807,10 @@
 
     if-eqz v0, :cond_22
 
-    .line 319
+    .line 322
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 321
+    .line 324
     :cond_22
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->uiHandler:Landroid/os/Handler;
 

@@ -46,7 +46,7 @@
 
     invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "productId"
+    const-string/jumbo v1, "productId"
 
     .line 93
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -55,7 +55,7 @@
 
     iput-object v1, p0, Lorg/solovyev/android/checkout/Purchase;->sku:Ljava/lang/String;
 
-    const-string v1, "orderId"
+    const-string/jumbo v1, "orderId"
 
     .line 94
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
@@ -64,7 +64,7 @@
 
     iput-object v1, p0, Lorg/solovyev/android/checkout/Purchase;->orderId:Ljava/lang/String;
 
-    const-string v1, "packageName"
+    const-string/jumbo v1, "packageName"
 
     .line 95
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
@@ -73,7 +73,7 @@
 
     iput-object v1, p0, Lorg/solovyev/android/checkout/Purchase;->packageName:Ljava/lang/String;
 
-    const-string v1, "purchaseTime"
+    const-string/jumbo v1, "purchaseTime"
 
     .line 96
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
@@ -82,7 +82,7 @@
 
     iput-wide v1, p0, Lorg/solovyev/android/checkout/Purchase;->time:J
 
-    const-string v1, "purchaseState"
+    const-string/jumbo v1, "purchaseState"
 
     const/4 v2, 0x0
 
@@ -102,7 +102,7 @@
     .line 98
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v1, "purchaseToken"
+    const-string/jumbo v1, "purchaseToken"
 
     .line 99
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;

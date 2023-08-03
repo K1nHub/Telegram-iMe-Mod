@@ -7,6 +7,7 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.internal.InternalAuthProvider;
 import com.google.firebase.components.Component;
 import com.google.firebase.components.ComponentContainer;
+import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.components.Dependency;
 import com.google.firebase.firestore.remote.FirebaseClientGrpcMetadataProvider;
@@ -21,7 +22,14 @@ public class FirestoreRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     @Keep
     public List<Component<?>> getComponents() {
-        return Arrays.asList(Component.builder(FirestoreMultiDbComponent.class).add(Dependency.required(FirebaseApp.class)).add(Dependency.required(Context.class)).add(Dependency.optionalProvider(HeartBeatInfo.class)).add(Dependency.optionalProvider(UserAgentPublisher.class)).add(Dependency.deferred(InternalAuthProvider.class)).add(Dependency.optional(FirebaseOptions.class)).factory(FirestoreRegistrar$$ExternalSyntheticLambda0.INSTANCE).build(), LibraryVersionComponent.create("fire-fst", "23.0.4"));
+        return Arrays.asList(Component.builder(FirestoreMultiDbComponent.class).add(Dependency.required(FirebaseApp.class)).add(Dependency.required(Context.class)).add(Dependency.optionalProvider(HeartBeatInfo.class)).add(Dependency.optionalProvider(UserAgentPublisher.class)).add(Dependency.deferred(InternalAuthProvider.class)).add(Dependency.optional(FirebaseOptions.class)).factory(new ComponentFactory() { // from class: com.google.firebase.firestore.FirestoreRegistrar$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                FirestoreMultiDbComponent lambda$getComponents$0;
+                lambda$getComponents$0 = FirestoreRegistrar.lambda$getComponents$0(componentContainer);
+                return lambda$getComponents$0;
+            }
+        }).build(), LibraryVersionComponent.create("fire-fst", "23.0.4"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

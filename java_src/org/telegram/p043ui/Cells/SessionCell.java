@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
@@ -71,23 +71,23 @@ public class SessionCell extends FrameLayout {
             addView(linearLayout2, LayoutHelper.createFrame(-1, 30, (z ? 5 : 3) | 48, z ? 15 : 49, 11, z ? 49 : 15, 0));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
             this.avatarDrawable = avatarDrawable;
-            avatarDrawable.setTextSize(AndroidUtilities.m54dp(10));
+            avatarDrawable.setTextSize(AndroidUtilities.m72dp(10));
             BackupImageView backupImageView = new BackupImageView(context);
             this.imageView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.m54dp(10));
+            backupImageView.setRoundRadius(AndroidUtilities.m72dp(10));
             BackupImageView backupImageView2 = this.imageView;
             boolean z2 = LocaleController.isRTL;
             addView(backupImageView2, LayoutHelper.createFrame(20, 20, (z2 ? 5 : 3) | 48, z2 ? 0 : 21, 13, z2 ? 21 : 0, 0));
         } else {
             BackupImageView backupImageView3 = new BackupImageView(context);
             this.placeholderImageView = backupImageView3;
-            backupImageView3.setRoundRadius(AndroidUtilities.m54dp(10));
+            backupImageView3.setRoundRadius(AndroidUtilities.m72dp(10));
             BackupImageView backupImageView4 = this.placeholderImageView;
             boolean z3 = LocaleController.isRTL;
             addView(backupImageView4, LayoutHelper.createFrame(42, 42, (z3 ? 5 : 3) | 48, z3 ? 0 : 16, 9, z3 ? 16 : 0, 0));
             BackupImageView backupImageView5 = new BackupImageView(context);
             this.imageView = backupImageView5;
-            backupImageView5.setRoundRadius(AndroidUtilities.m54dp(10));
+            backupImageView5.setRoundRadius(AndroidUtilities.m72dp(10));
             BackupImageView backupImageView6 = this.imageView;
             boolean z4 = LocaleController.isRTL;
             addView(backupImageView6, LayoutHelper.createFrame(42, 42, (z4 ? 5 : 3) | 48, z4 ? 0 : 16, 9, z4 ? 16 : 0, 0));
@@ -178,7 +178,7 @@ public class SessionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.currentType == 0 ? 70 : 90) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.currentType == 0 ? 70 : 90) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setSession(TLObject tLObject, boolean z) {
@@ -206,7 +206,7 @@ public class SessionCell extends FrameLayout {
             this.nameTextView.setText(sb);
             if ((tLRPC$TL_authorization.flags & 1) != 0) {
                 setTag(Integer.valueOf(Theme.key_windowBackgroundWhiteValueText));
-                stringForMessageListDate = LocaleController.getString("Online", C3417R.string.Online);
+                stringForMessageListDate = LocaleController.getString("Online", C3419R.string.Online);
             } else {
                 setTag(Integer.valueOf(Theme.key_windowBackgroundWhiteGrayText3));
                 stringForMessageListDate = LocaleController.stringForMessageListDate(tLRPC$TL_authorization.date_active);
@@ -217,7 +217,7 @@ public class SessionCell extends FrameLayout {
             }
             if (spannableStringBuilder.length() != 0) {
                 DotDividerSpan dotDividerSpan = new DotDividerSpan();
-                dotDividerSpan.setTopPadding(AndroidUtilities.m55dp(1.5f));
+                dotDividerSpan.setTopPadding(AndroidUtilities.m73dp(1.5f));
                 spannableStringBuilder.append((CharSequence) " . ").setSpan(dotDividerSpan, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
             }
             spannableStringBuilder.append((CharSequence) stringForMessageListDate);
@@ -243,8 +243,8 @@ public class SessionCell extends FrameLayout {
             this.onlineTextView.setText(LocaleController.stringForMessageListDate(tLRPC$TL_webAuthorization.date_active));
             this.onlineTextView.setTextColor(Theme.getColor(i));
             StringBuilder sb3 = new StringBuilder();
-            if (tLRPC$TL_webAuthorization.f1654ip.length() != 0) {
-                sb3.append(tLRPC$TL_webAuthorization.f1654ip);
+            if (tLRPC$TL_webAuthorization.f1672ip.length() != 0) {
+                sb3.append(tLRPC$TL_webAuthorization.f1672ip);
             }
             if (tLRPC$TL_webAuthorization.region.length() != 0) {
                 if (sb3.length() != 0) {
@@ -288,57 +288,57 @@ public class SessionCell extends FrameLayout {
         }
         String lowerCase2 = tLRPC$TL_authorization.device_model.toLowerCase();
         if (lowerCase2.contains("safari")) {
-            i = C3417R.C3419drawable.device_web_safari;
+            i = C3419R.C3421drawable.device_web_safari;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase2.contains("edge")) {
-            i = C3417R.C3419drawable.device_web_edge;
+            i = C3419R.C3421drawable.device_web_edge;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase2.contains("chrome")) {
-            i = C3417R.C3419drawable.device_web_chrome;
+            i = C3419R.C3421drawable.device_web_chrome;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase2.contains("opera")) {
-            i = C3417R.C3419drawable.device_web_opera;
+            i = C3419R.C3421drawable.device_web_opera;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase2.contains("firefox")) {
-            i = C3417R.C3419drawable.device_web_firefox;
+            i = C3419R.C3421drawable.device_web_firefox;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase2.contains("vivaldi")) {
-            i = C3417R.C3419drawable.device_web_other;
+            i = C3419R.C3421drawable.device_web_other;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         } else if (lowerCase.contains("ios")) {
-            i = lowerCase2.contains("ipad") ? C3417R.C3419drawable.device_tablet_ios : C3417R.C3419drawable.device_phone_ios;
+            i = lowerCase2.contains("ipad") ? C3419R.C3421drawable.device_tablet_ios : C3419R.C3421drawable.device_phone_ios;
             i2 = Theme.key_avatar_backgroundBlue;
             i3 = Theme.key_avatar_background2Blue;
         } else if (lowerCase.contains("windows")) {
-            i = C3417R.C3419drawable.device_desktop_win;
+            i = C3419R.C3421drawable.device_desktop_win;
             i2 = Theme.key_avatar_backgroundCyan;
             i3 = Theme.key_avatar_background2Cyan;
         } else if (lowerCase.contains("macos")) {
-            i = C3417R.C3419drawable.device_desktop_osx;
+            i = C3419R.C3421drawable.device_desktop_osx;
             i2 = Theme.key_avatar_backgroundCyan;
             i3 = Theme.key_avatar_background2Cyan;
         } else if (lowerCase.contains("android")) {
-            i = lowerCase2.contains("tab") ? C3417R.C3419drawable.device_tablet_android : C3417R.C3419drawable.device_phone_android;
+            i = lowerCase2.contains("tab") ? C3419R.C3421drawable.device_tablet_android : C3419R.C3421drawable.device_phone_android;
             i2 = Theme.key_avatar_backgroundGreen;
             i3 = Theme.key_avatar_background2Green;
         } else if (tLRPC$TL_authorization.app_name.toLowerCase().contains("desktop")) {
-            i = C3417R.C3419drawable.device_desktop_other;
+            i = C3419R.C3421drawable.device_desktop_other;
             i2 = Theme.key_avatar_backgroundCyan;
             i3 = Theme.key_avatar_background2Cyan;
         } else {
-            i = C3417R.C3419drawable.device_web_other;
+            i = C3419R.C3421drawable.device_web_other;
             i2 = Theme.key_avatar_backgroundPink;
             i3 = Theme.key_avatar_background2Pink;
         }
         Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_avatar_text), PorterDuff.Mode.SRC_IN));
-        return new CombinedDrawable(new CircleGradientDrawable(AndroidUtilities.m54dp(42), Theme.getColor(i2), Theme.getColor(i3)), mutate);
+        return new CombinedDrawable(new CircleGradientDrawable(AndroidUtilities.m72dp(42), Theme.getColor(i2), Theme.getColor(i3)), mutate);
     }
 
     /* renamed from: org.telegram.ui.Cells.SessionCell$CircleGradientDrawable */
@@ -404,19 +404,19 @@ public class SessionCell extends FrameLayout {
                 View view = (View) getParent();
                 this.globalGradient.setParentSize(view.getMeasuredWidth(), view.getMeasuredHeight(), -getX());
             }
-            float top = this.linearLayout.getTop() + this.nameTextView.getTop() + AndroidUtilities.m54dp(12);
+            float top = this.linearLayout.getTop() + this.nameTextView.getTop() + AndroidUtilities.m72dp(12);
             float x = this.linearLayout.getX();
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(x, top - AndroidUtilities.m54dp(4), (getMeasuredWidth() * 0.2f) + x, top + AndroidUtilities.m54dp(4));
-            canvas.drawRoundRect(rectF2, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.globalGradient.getPaint());
-            float top2 = (this.linearLayout.getTop() + this.detailTextView.getTop()) - AndroidUtilities.m54dp(1);
+            rectF2.set(x, top - AndroidUtilities.m72dp(4), (getMeasuredWidth() * 0.2f) + x, top + AndroidUtilities.m72dp(4));
+            canvas.drawRoundRect(rectF2, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), this.globalGradient.getPaint());
+            float top2 = (this.linearLayout.getTop() + this.detailTextView.getTop()) - AndroidUtilities.m72dp(1);
             float x2 = this.linearLayout.getX();
-            rectF2.set(x2, top2 - AndroidUtilities.m54dp(4), (getMeasuredWidth() * 0.4f) + x2, top2 + AndroidUtilities.m54dp(4));
-            canvas.drawRoundRect(rectF2, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.globalGradient.getPaint());
-            float top3 = (this.linearLayout.getTop() + this.detailExTextView.getTop()) - AndroidUtilities.m54dp(1);
+            rectF2.set(x2, top2 - AndroidUtilities.m72dp(4), (getMeasuredWidth() * 0.4f) + x2, top2 + AndroidUtilities.m72dp(4));
+            canvas.drawRoundRect(rectF2, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), this.globalGradient.getPaint());
+            float top3 = (this.linearLayout.getTop() + this.detailExTextView.getTop()) - AndroidUtilities.m72dp(1);
             float x3 = this.linearLayout.getX();
-            rectF2.set(x3, top3 - AndroidUtilities.m54dp(4), (getMeasuredWidth() * 0.3f) + x3, top3 + AndroidUtilities.m54dp(4));
-            canvas.drawRoundRect(rectF2, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.globalGradient.getPaint());
+            rectF2.set(x3, top3 - AndroidUtilities.m72dp(4), (getMeasuredWidth() * 0.3f) + x3, top3 + AndroidUtilities.m72dp(4));
+            canvas.drawRoundRect(rectF2, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), this.globalGradient.getPaint());
             invalidate();
             if (i < 0) {
                 canvas.restore();
@@ -425,18 +425,18 @@ public class SessionCell extends FrameLayout {
         if (this.needDivider) {
             int i2 = this.currentType == 1 ? 49 : 72;
             if (!LocaleController.isRTL) {
-                f = AndroidUtilities.m54dp(i2);
+                f = AndroidUtilities.m72dp(i2);
             }
-            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(i2) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(i2) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
     public void showStub(FlickerLoadingView flickerLoadingView) {
         this.globalGradient = flickerLoadingView;
         this.showStub = true;
-        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3417R.C3419drawable.device_tablet_android : C3417R.C3419drawable.device_phone_android).mutate();
+        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3419R.C3421drawable.device_tablet_android : C3419R.C3421drawable.device_phone_android).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_avatar_text), PorterDuff.Mode.SRC_IN));
-        CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m54dp(42), Theme.getColor(Theme.key_avatar_backgroundGreen)), mutate);
+        CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(42), Theme.getColor(Theme.key_avatar_backgroundGreen)), mutate);
         BackupImageView backupImageView = this.placeholderImageView;
         if (backupImageView != null) {
             backupImageView.setImageDrawable(combinedDrawable);

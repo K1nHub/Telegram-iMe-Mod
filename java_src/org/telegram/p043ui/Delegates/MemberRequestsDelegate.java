@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageLocation;
@@ -187,23 +187,23 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         int i2;
         String str2;
         if (this.emptyView == null) {
-            StickerEmptyView stickerEmptyView = new StickerEmptyView(this.fragment.getParentActivity(), null, 2, this.fragment.getResourceProvider());
+            StickerEmptyView stickerEmptyView = new StickerEmptyView(this.fragment.getParentActivity(), null, 16, this.fragment.getResourceProvider());
             this.emptyView = stickerEmptyView;
             TextView textView = stickerEmptyView.title;
             if (this.isChannel) {
-                i = C3417R.string.NoSubscribeRequests;
+                i = C3419R.string.NoSubscribeRequests;
                 str = "NoSubscribeRequests";
             } else {
-                i = C3417R.string.NoMemberRequests;
+                i = C3419R.string.NoMemberRequests;
                 str = "NoMemberRequests";
             }
             textView.setText(LocaleController.getString(str, i));
             TextView textView2 = this.emptyView.subtitle;
             if (this.isChannel) {
-                i2 = C3417R.string.NoSubscribeRequestsDescription;
+                i2 = C3419R.string.NoSubscribeRequestsDescription;
                 str2 = "NoSubscribeRequestsDescription";
             } else {
-                i2 = C3417R.string.NoMemberRequestsDescription;
+                i2 = C3419R.string.NoMemberRequestsDescription;
                 str2 = "NoMemberRequestsDescription";
             }
             textView2.setText(LocaleController.getString(str2, i2));
@@ -220,8 +220,8 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             if (this.isShowLastItemDivider) {
                 stickerEmptyView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.fragment.getResourceProvider()));
             }
-            this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3417R.string.NoResult));
-            this.searchEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3417R.string.SearchEmptyViewFilteredSubtitle2));
+            this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3419R.string.NoResult));
+            this.searchEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3419R.string.SearchEmptyViewFilteredSubtitle2));
             this.searchEmptyView.setAnimateLayoutChange(true);
             this.searchEmptyView.setVisibility(8);
         }
@@ -283,7 +283,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             this.fragment.dismissCurrentDialog();
             Bundle bundle = new Bundle();
             ProfileActivity profileActivity = new ProfileActivity(bundle);
-            bundle.putLong("user_id", tLRPC$User.f1656id);
+            bundle.putLong("user_id", tLRPC$User.f1675id);
             bundle.putBoolean("removeFragmentOnChatOpen", false);
             this.fragment.presentFragment(profileActivity);
         } else if (this.previewDialog == null) {
@@ -448,7 +448,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
     private void onImportersLoaded(TLRPC$TL_messages_chatInviteImporters tLRPC$TL_messages_chatInviteImporters, String str, boolean z, boolean z2) {
         for (int i = 0; i < tLRPC$TL_messages_chatInviteImporters.users.size(); i++) {
             TLRPC$User tLRPC$User = tLRPC$TL_messages_chatInviteImporters.users.get(i);
-            this.users.put(tLRPC$User.f1656id, tLRPC$User);
+            this.users.put(tLRPC$User.f1675id, tLRPC$User);
         }
         if (z) {
             this.adapter.setItems(tLRPC$TL_messages_chatInviteImporters.importers);
@@ -570,7 +570,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         if (tLRPC$TL_error == null) {
             TLRPC$TL_updates tLRPC$TL_updates = (TLRPC$TL_updates) tLObject;
             if (!tLRPC$TL_updates.chats.isEmpty()) {
-                MessagesController.getInstance(this.currentAccount).loadFullChat(tLRPC$TL_updates.chats.get(0).f1515id, 0, true);
+                MessagesController.getInstance(this.currentAccount).loadFullChat(tLRPC$TL_updates.chats.get(0).f1518id, 0, true);
             }
             int i = 0;
             while (true) {
@@ -590,13 +590,13 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             }
             if (z) {
                 Bulletin.MultiLineLayout multiLineLayout = new Bulletin.MultiLineLayout(this.fragment.getParentActivity(), this.fragment.getResourceProvider());
-                multiLineLayout.imageView.setRoundRadius(AndroidUtilities.m54dp(15));
+                multiLineLayout.imageView.setRoundRadius(AndroidUtilities.m72dp(15));
                 multiLineLayout.imageView.setForUserOrChat(tLRPC$User, new AvatarDrawable(tLRPC$User));
                 String firstName = UserObject.getFirstName(tLRPC$User);
                 if (this.isChannel) {
-                    formatString = LocaleController.formatString("HasBeenAddedToChannel", C3417R.string.HasBeenAddedToChannel, firstName);
+                    formatString = LocaleController.formatString("HasBeenAddedToChannel", C3419R.string.HasBeenAddedToChannel, firstName);
                 } else {
-                    formatString = LocaleController.formatString("HasBeenAddedToGroup", C3417R.string.HasBeenAddedToGroup, firstName);
+                    formatString = LocaleController.formatString("HasBeenAddedToGroup", C3419R.string.HasBeenAddedToGroup, firstName);
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                 int indexOf = formatString.indexOf(firstName);
@@ -656,13 +656,13 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             MemberRequestCell memberRequestCell;
             if (i == 1) {
                 View view = new View(viewGroup.getContext());
-                view.setBackground(Theme.getThemedDrawableByKey(viewGroup.getContext(), C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                view.setBackground(Theme.getThemedDrawableByKey(viewGroup.getContext(), C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 memberRequestCell = view;
             } else if (i == 2) {
                 memberRequestCell = new View(this, viewGroup.getContext()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(52), 1073741824));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(52), 1073741824));
                     }
                 };
             } else if (i != 3) {
@@ -808,10 +808,10 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         private final ProfileGalleryView viewPager;
 
         public PreviewDialog(Context context, RecyclerListView recyclerListView, Theme.ResourcesProvider resourcesProvider, boolean z) {
-            super(context, C3417R.style.TransparentDialog2);
+            super(context, C3419R.style.TransparentDialog2);
             int i;
             String str;
-            Drawable mutate = getContext().getResources().getDrawable(C3417R.C3419drawable.popup_fixed_alert2).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3419R.C3421drawable.popup_fixed_alert2).mutate();
             this.pagerShadowDrawable = mutate;
             TextView textView = new TextView(getContext());
             this.nameText = textView;
@@ -845,11 +845,11 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
                 protected void onMeasure(int i2, int i3) {
                     setWillNotDraw(false);
                     super.onMeasure(i2, i3);
-                    int min = Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)) - (AndroidUtilities.m54dp(12) * 2);
+                    int min = Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)) - (AndroidUtilities.m72dp(12) * 2);
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(min, Integer.MIN_VALUE);
                     PreviewDialog.this.viewPager.measure(makeMeasureSpec, makeMeasureSpec);
                     PreviewDialog.this.pagerIndicator.measure(makeMeasureSpec, makeMeasureSpec);
-                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(min - (AndroidUtilities.m54dp(16) * 2), 1073741824);
+                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(min - (AndroidUtilities.m72dp(16) * 2), 1073741824);
                     PreviewDialog.this.nameText.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
                     PreviewDialog.this.bioText.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
                     PreviewDialog.this.popupLayout.measure(View.MeasureSpec.makeMeasureSpec(PreviewDialog.this.viewPager.getMeasuredWidth() + (PreviewDialog.this.shadowPaddingLeft * 2), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(0, 0));
@@ -861,24 +861,24 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
                     int width = (getWidth() - PreviewDialog.this.viewPager.getMeasuredWidth()) / 2;
                     PreviewDialog.this.viewPager.layout(width, height, PreviewDialog.this.viewPager.getMeasuredWidth() + width, PreviewDialog.this.viewPager.getMeasuredHeight() + height);
                     PreviewDialog.this.pagerIndicator.layout(PreviewDialog.this.viewPager.getLeft(), PreviewDialog.this.viewPager.getTop(), PreviewDialog.this.viewPager.getRight(), PreviewDialog.this.viewPager.getTop() + PreviewDialog.this.pagerIndicator.getMeasuredHeight());
-                    int measuredHeight = height + PreviewDialog.this.viewPager.getMeasuredHeight() + AndroidUtilities.m54dp(12);
-                    PreviewDialog.this.nameText.layout(PreviewDialog.this.viewPager.getLeft() + AndroidUtilities.m54dp(16), measuredHeight, PreviewDialog.this.viewPager.getRight() - AndroidUtilities.m54dp(16), PreviewDialog.this.nameText.getMeasuredHeight() + measuredHeight);
+                    int measuredHeight = height + PreviewDialog.this.viewPager.getMeasuredHeight() + AndroidUtilities.m72dp(12);
+                    PreviewDialog.this.nameText.layout(PreviewDialog.this.viewPager.getLeft() + AndroidUtilities.m72dp(16), measuredHeight, PreviewDialog.this.viewPager.getRight() - AndroidUtilities.m72dp(16), PreviewDialog.this.nameText.getMeasuredHeight() + measuredHeight);
                     int measuredHeight2 = measuredHeight + PreviewDialog.this.nameText.getMeasuredHeight();
                     if (PreviewDialog.this.bioText.getVisibility() != 8) {
-                        int m54dp = measuredHeight2 + AndroidUtilities.m54dp(4);
-                        PreviewDialog.this.bioText.layout(PreviewDialog.this.nameText.getLeft(), m54dp, PreviewDialog.this.nameText.getRight(), PreviewDialog.this.bioText.getMeasuredHeight() + m54dp);
-                        measuredHeight2 = m54dp + PreviewDialog.this.bioText.getMeasuredHeight();
+                        int m72dp = measuredHeight2 + AndroidUtilities.m72dp(4);
+                        PreviewDialog.this.bioText.layout(PreviewDialog.this.nameText.getLeft(), m72dp, PreviewDialog.this.nameText.getRight(), PreviewDialog.this.bioText.getMeasuredHeight() + m72dp);
+                        measuredHeight2 = m72dp + PreviewDialog.this.bioText.getMeasuredHeight();
                     }
-                    int m54dp2 = measuredHeight2 + AndroidUtilities.m54dp(12);
-                    PreviewDialog.this.pagerShadowDrawable.setBounds(PreviewDialog.this.viewPager.getLeft() - PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.viewPager.getTop() - PreviewDialog.this.shadowPaddingTop, PreviewDialog.this.viewPager.getRight() + PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.shadowPaddingTop + m54dp2);
-                    PreviewDialog.this.popupLayout.layout((PreviewDialog.this.viewPager.getRight() - PreviewDialog.this.popupLayout.getMeasuredWidth()) + PreviewDialog.this.shadowPaddingLeft, m54dp2, PreviewDialog.this.viewPager.getRight() + PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.popupLayout.getMeasuredHeight() + m54dp2);
+                    int m72dp2 = measuredHeight2 + AndroidUtilities.m72dp(12);
+                    PreviewDialog.this.pagerShadowDrawable.setBounds(PreviewDialog.this.viewPager.getLeft() - PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.viewPager.getTop() - PreviewDialog.this.shadowPaddingTop, PreviewDialog.this.viewPager.getRight() + PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.shadowPaddingTop + m72dp2);
+                    PreviewDialog.this.popupLayout.layout((PreviewDialog.this.viewPager.getRight() - PreviewDialog.this.popupLayout.getMeasuredWidth()) + PreviewDialog.this.shadowPaddingLeft, m72dp2, PreviewDialog.this.viewPager.getRight() + PreviewDialog.this.shadowPaddingLeft, PreviewDialog.this.popupLayout.getMeasuredHeight() + m72dp2);
                     PreviewDialog.this.popupLayout.setVisibility(PreviewDialog.this.popupLayout.getBottom() < i5 ? 0 : 8);
-                    int m54dp3 = AndroidUtilities.m54dp(6);
-                    this.rectF.set(PreviewDialog.this.viewPager.getLeft(), PreviewDialog.this.viewPager.getTop(), PreviewDialog.this.viewPager.getRight(), PreviewDialog.this.viewPager.getTop() + (m54dp3 * 2));
+                    int m72dp3 = AndroidUtilities.m72dp(6);
+                    this.rectF.set(PreviewDialog.this.viewPager.getLeft(), PreviewDialog.this.viewPager.getTop(), PreviewDialog.this.viewPager.getRight(), PreviewDialog.this.viewPager.getTop() + (m72dp3 * 2));
                     this.clipPath.reset();
-                    float f = m54dp3;
+                    float f = m72dp3;
                     this.clipPath.addRoundRect(this.rectF, f, f, Path.Direction.CW);
-                    this.rectF.set(i2, PreviewDialog.this.viewPager.getTop() + m54dp3, i4, i5);
+                    this.rectF.set(i2, PreviewDialog.this.viewPager.getTop() + m72dp3, i4, i5);
                     this.clipPath.addRect(this.rectF, Path.Direction.CW);
                 }
 
@@ -963,13 +963,13 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             int i4 = Theme.key_dialogButtonSelector;
             actionBarMenuSubItem.setSelectorColor(Theme.getColor(i4, resourcesProvider));
             if (z) {
-                i = C3417R.string.AddToChannel;
+                i = C3419R.string.AddToChannel;
                 str = "AddToChannel";
             } else {
-                i = C3417R.string.AddToGroup;
+                i = C3419R.string.AddToGroup;
                 str = "AddToGroup";
             }
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i), C3417R.C3419drawable.msg_requests);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i), C3419R.C3421drawable.msg_requests);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -980,7 +980,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(context, false, false);
             actionBarMenuSubItem2.setColors(Theme.getColor(i2, resourcesProvider), Theme.getColor(i3, resourcesProvider));
             actionBarMenuSubItem2.setSelectorColor(Theme.getColor(i4, resourcesProvider));
-            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3417R.string.SendMessage), C3417R.C3419drawable.msg_msgbubble3);
+            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3419R.string.SendMessage), C3419R.C3421drawable.msg_msgbubble3);
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -991,7 +991,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(context, false, true);
             actionBarMenuSubItem3.setColors(Theme.getColor(Theme.key_text_RedBold, resourcesProvider), Theme.getColor(Theme.key_text_RedRegular, resourcesProvider));
             actionBarMenuSubItem3.setSelectorColor(Theme.getColor(i4, resourcesProvider));
-            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DismissRequest", C3417R.string.DismissRequest), C3417R.C3419drawable.msg_remove);
+            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DismissRequest", C3419R.string.DismissRequest), C3419R.C3421drawable.msg_remove);
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1034,7 +1034,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         @Override // android.app.Dialog
         protected void onCreate(Bundle bundle) {
             super.onCreate(bundle);
-            getWindow().setWindowAnimations(C3417R.style.DialogNoAnimation);
+            getWindow().setWindowAnimations(C3419R.style.DialogNoAnimation);
             setContentView(this.contentView, new ViewGroup.LayoutParams(-1, -1));
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.width = -1;
@@ -1197,11 +1197,11 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
 
         /* JADX INFO: Access modifiers changed from: private */
         public int getContentHeight() {
-            int measuredHeight = this.viewPager.getMeasuredHeight() + AndroidUtilities.m54dp(12) + this.nameText.getMeasuredHeight();
+            int measuredHeight = this.viewPager.getMeasuredHeight() + AndroidUtilities.m72dp(12) + this.nameText.getMeasuredHeight();
             if (this.bioText.getVisibility() != 8) {
-                measuredHeight += AndroidUtilities.m54dp(4) + this.bioText.getMeasuredHeight();
+                measuredHeight += AndroidUtilities.m72dp(4) + this.bioText.getMeasuredHeight();
             }
-            return measuredHeight + AndroidUtilities.m54dp(12) + this.popupLayout.getMeasuredHeight();
+            return measuredHeight + AndroidUtilities.m72dp(12) + this.popupLayout.getMeasuredHeight();
         }
 
         private int getContentWidth() {

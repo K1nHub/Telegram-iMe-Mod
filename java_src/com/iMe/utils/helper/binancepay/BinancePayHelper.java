@@ -16,12 +16,20 @@ import com.iMe.utils.helper.wallet.WalletHelper;
 import java.util.HashMap;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
@@ -47,16 +55,83 @@ public final class BinancePayHelper implements KoinComponent {
         Lazy lazy2;
         Lazy lazy3;
         Lazy lazy4;
-        BinancePayHelper binancePayHelper = new BinancePayHelper();
+        final BinancePayHelper binancePayHelper = new BinancePayHelper();
         INSTANCE = binancePayHelper;
-        lazy = LazyKt__LazyJVMKt.lazy(BinancePayHelper$refererHeader$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, String>>() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$refererHeader$2
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, String> invoke() {
+                HashMap<String, String> hashMapOf;
+                hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m103to("referer", "https://www.binance.com/"));
+                return hashMapOf;
+            }
+        });
         refererHeader$delegate = lazy;
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new BinancePayHelper$special$$inlined$inject$default$1(binancePayHelper, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<RxEventBus>() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.RxEventBus, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final RxEventBus invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), qualifier, function0);
+            }
+        });
         rxEventBus$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new BinancePayHelper$special$$inlined$inject$default$2(binancePayHelper, null, null));
+        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinancePayManager>() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.binancepay.BinancePayManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinancePayManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayManager.class), qualifier, function0);
+            }
+        });
         binancePayManager$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new BinancePayHelper$special$$inlined$inject$default$3(binancePayHelper, null, null));
+        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletFlowCoordinator>() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$special$$inlined$inject$default$3
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletFlowCoordinator invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), qualifier, function0);
+            }
+        });
         walletFlowCoordinator$delegate = lazy4;
     }
 
@@ -107,7 +182,7 @@ public final class BinancePayHelper implements KoinComponent {
             action.invoke();
             return;
         }
-        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3417R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3417R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3417R.string.common_cancel), LocaleController.getInternalString(C3417R.string.wallet_button_auth_dialog_action_btn));
+        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3419R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3419R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3419R.string.common_cancel), LocaleController.getInternalString(C3419R.string.wallet_button_auth_dialog_action_btn));
         Activity parentActivity = fragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "fragment.parentActivity");
         DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda1

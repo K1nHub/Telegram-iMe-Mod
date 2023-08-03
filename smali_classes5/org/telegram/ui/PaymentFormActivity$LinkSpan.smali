@@ -22,7 +22,7 @@
 .method public constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
     .locals 0
 
-    .line 374
+    .line 373
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$LinkSpan;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
-    .line 383
+    .line 382
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$LinkSpan;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     new-instance v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;
@@ -56,12 +56,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 377
+    .line 376
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 378
+    .line 377
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

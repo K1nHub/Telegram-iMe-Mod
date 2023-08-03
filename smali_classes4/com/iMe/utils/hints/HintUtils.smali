@@ -46,7 +46,7 @@
 .method public final showChangeNetworkHint(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
     .locals 10
 
-    const-string v0, "parentLayout"
+    const-string/jumbo v0, "parentLayout"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -127,7 +127,7 @@
 .method public final showStakingInfoHint(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
     .locals 10
 
-    const-string v0, "parentLayout"
+    const-string/jumbo v0, "parentLayout"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

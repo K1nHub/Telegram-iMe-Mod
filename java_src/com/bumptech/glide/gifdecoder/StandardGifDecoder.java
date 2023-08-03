@@ -240,12 +240,12 @@ public class StandardGifDecoder implements GifDecoder {
                         i3 = i4;
                     }
                 }
-                int i5 = gifFrame2.f74ih;
+                int i5 = gifFrame2.f76ih;
                 int i6 = this.sampleSize;
                 int i7 = i5 / i6;
-                int i8 = gifFrame2.f77iy / i6;
-                int i9 = gifFrame2.f75iw / i6;
-                int i10 = gifFrame2.f76ix / i6;
+                int i8 = gifFrame2.f79iy / i6;
+                int i9 = gifFrame2.f77iw / i6;
+                int i10 = gifFrame2.f78ix / i6;
                 int i11 = this.downsampledWidth;
                 int i12 = (i8 * i11) + i10;
                 int i13 = (i7 * i11) + i12;
@@ -284,10 +284,10 @@ public class StandardGifDecoder implements GifDecoder {
     private void copyIntoScratchFast(GifFrame gifFrame) {
         GifFrame gifFrame2 = gifFrame;
         int[] iArr = this.mainScratch;
-        int i = gifFrame2.f74ih;
-        int i2 = gifFrame2.f77iy;
-        int i3 = gifFrame2.f75iw;
-        int i4 = gifFrame2.f76ix;
+        int i = gifFrame2.f76ih;
+        int i2 = gifFrame2.f79iy;
+        int i3 = gifFrame2.f77iw;
+        int i4 = gifFrame2.f78ix;
         boolean z = this.framePointer == 0;
         int i5 = this.downsampledWidth;
         byte[] bArr = this.mainPixels;
@@ -302,7 +302,7 @@ public class StandardGifDecoder implements GifDecoder {
             if (i10 < i9) {
                 i9 = i10;
             }
-            int i11 = gifFrame2.f75iw * i6;
+            int i11 = gifFrame2.f77iw * i6;
             int i12 = i8;
             while (i12 < i9) {
                 byte b2 = bArr[i11];
@@ -334,12 +334,12 @@ public class StandardGifDecoder implements GifDecoder {
         int i4;
         int i5;
         int[] iArr = this.mainScratch;
-        int i6 = gifFrame.f74ih;
+        int i6 = gifFrame.f76ih;
         int i7 = this.sampleSize;
         int i8 = i6 / i7;
-        int i9 = gifFrame.f77iy / i7;
-        int i10 = gifFrame.f75iw / i7;
-        int i11 = gifFrame.f76ix / i7;
+        int i9 = gifFrame.f79iy / i7;
+        int i10 = gifFrame.f77iw / i7;
+        int i11 = gifFrame.f78ix / i7;
         boolean z = this.framePointer == 0;
         int i12 = this.downsampledWidth;
         int i13 = this.downsampledHeight;
@@ -390,7 +390,7 @@ public class StandardGifDecoder implements GifDecoder {
                     i22 = i23;
                 }
                 i3 = i2;
-                int i24 = i15 * i7 * gifFrame.f75iw;
+                int i24 = i15 * i7 * gifFrame.f77iw;
                 if (z2) {
                     int i25 = i21;
                     while (i25 < i22) {
@@ -412,7 +412,7 @@ public class StandardGifDecoder implements GifDecoder {
                     while (true) {
                         i4 = i10;
                         if (i29 < i22) {
-                            int averageColorsNear = averageColorsNear(i24, i28, gifFrame.f75iw);
+                            int averageColorsNear = averageColorsNear(i24, i28, gifFrame.f77iw);
                             if (averageColorsNear != 0) {
                                 iArr[i29] = averageColorsNear;
                             } else if (z && bool2 == null) {
@@ -503,8 +503,8 @@ public class StandardGifDecoder implements GifDecoder {
             i = gifHeader.width;
             i2 = gifHeader.height;
         } else {
-            i = gifFrame.f75iw;
-            i2 = gifFrame.f74ih;
+            i = gifFrame.f77iw;
+            i2 = gifFrame.f76ih;
         }
         int i3 = i * i2;
         byte[] bArr = standardGifDecoder.mainPixels;

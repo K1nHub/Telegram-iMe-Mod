@@ -22,7 +22,7 @@ public class VisionClearcutLogger {
     public final void zza(int i, zzfi.zzo zzoVar) {
         byte[] zzh = zzoVar.zzh();
         if (i < 0 || i > 3) {
-            C0719L.m754i("Illegal event code: %d", Integer.valueOf(i));
+            C0719L.m772i("Illegal event code: %d", Integer.valueOf(i));
             return;
         }
         try {
@@ -33,13 +33,13 @@ public class VisionClearcutLogger {
             zzfi.zzo.zza zza = zzfi.zzo.zza();
             try {
                 zza.zza(zzh, 0, zzh.length, zzio.zzc());
-                C0719L.m756e("Would have logged:\n%s", zza.toString());
+                C0719L.m774e("Would have logged:\n%s", zza.toString());
             } catch (Exception e) {
-                C0719L.m755e(e, "Parsing error", new Object[0]);
+                C0719L.m773e(e, "Parsing error", new Object[0]);
             }
         } catch (Exception e2) {
             zzfe.zza(e2);
-            C0719L.m755e(e2, "Failed to log", new Object[0]);
+            C0719L.m773e(e2, "Failed to log", new Object[0]);
         }
     }
 }

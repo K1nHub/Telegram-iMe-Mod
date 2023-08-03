@@ -549,7 +549,7 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {p1, p3, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {p1, p3, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 46
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->chats:Ljava/util/ArrayList;
@@ -1004,7 +1004,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p3, v1, v2, v4, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {p3, v1, v2, v4, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 79
     invoke-direct {p1}, Lcom/iMe/manager/TelegramApiManager;->getMessagesController()Lorg/telegram/messenger/MessagesController;

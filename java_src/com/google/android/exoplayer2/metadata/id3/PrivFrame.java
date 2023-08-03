@@ -21,18 +21,18 @@ public final class PrivFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f202ID = "PRIV";
+    public static final String f204ID = "PRIV";
     public final String owner;
     public final byte[] privateData;
 
     public PrivFrame(String str, byte[] bArr) {
-        super(f202ID);
+        super(f204ID);
         this.owner = str;
         this.privateData = bArr;
     }
 
     PrivFrame(Parcel parcel) {
-        super(f202ID);
+        super(f204ID);
         this.owner = (String) Util.castNonNull(parcel.readString());
         this.privateData = (byte[]) Util.castNonNull(parcel.createByteArray());
     }
@@ -55,7 +55,7 @@ public final class PrivFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f199id + ": owner=" + this.owner;
+        return this.f201id + ": owner=" + this.owner;
     }
 
     @Override // android.os.Parcelable

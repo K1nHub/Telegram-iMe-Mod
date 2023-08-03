@@ -221,21 +221,6 @@
     return-void
 .end method
 
-.method public notifyItemRemoved(I)V
-    .locals 1
-
-    .line 2506
-    invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
-
-    move-result-object v0
-
-    add-int/lit8 p1, p1, 0x1
-
-    invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
-
-    return-void
-.end method
-
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 

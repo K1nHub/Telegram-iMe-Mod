@@ -42,7 +42,7 @@ public abstract class CreateWalletScreenType {
         private final String pin;
 
         /* renamed from: wallet  reason: collision with root package name */
-        private final Wallet f1925wallet;
+        private final Wallet f1981wallet;
 
         public /* synthetic */ SecretWords(String str, String str2, Wallet wallet2, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? "" : str2, wallet2);
@@ -64,15 +64,15 @@ public abstract class CreateWalletScreenType {
             Intrinsics.checkNotNullParameter(wallet2, "wallet");
             this.password = password;
             this.pin = pin;
-            this.f1925wallet = wallet2;
+            this.f1981wallet = wallet2;
         }
 
         public final List<String> getSecretWords() {
-            return StringExtKt.splitBySpace(this.f1925wallet.getMnemonic());
+            return StringExtKt.splitBySpace(this.f1981wallet.getMnemonic());
         }
 
         public final String getAddress() {
-            return this.f1925wallet.getAddress();
+            return this.f1981wallet.getAddress();
         }
 
         public final int getWordsCount() {

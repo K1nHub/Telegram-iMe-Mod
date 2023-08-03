@@ -2779,7 +2779,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v5, v10, v8, v8}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v5, v10, v8, v8}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 304
     iget-object v5, v0, Lorg/telegram/ui/LinkEditActivity;->approveCell:Lorg/telegram/ui/Cells/TextCheckCell;

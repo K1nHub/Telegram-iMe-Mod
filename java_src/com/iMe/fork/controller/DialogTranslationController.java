@@ -12,10 +12,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
@@ -24,13 +24,19 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
@@ -51,7 +57,27 @@ public final class DialogTranslationController extends BaseController implements
     public DialogTranslationController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new DialogTranslationController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<DialogTranslationSettingsDao>() { // from class: com.iMe.fork.controller.DialogTranslationController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.DialogTranslationSettingsDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final DialogTranslationSettingsDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(DialogTranslationSettingsDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.translationSettings = new LinkedHashMap();
     }
@@ -101,14 +127,39 @@ public final class DialogTranslationController extends BaseController implements
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(allTranslationSettingsForUser, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (DialogTranslationSettingsDb dialogTranslationSettingsDb : allTranslationSettingsForUser) {
-            arrayList.add(TuplesKt.m85to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
+            arrayList.add(TuplesKt.m103to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
 
-    public final void setSettings(DialogTranslationSettings translationSettings, boolean z) {
+    public final void setSettings(final DialogTranslationSettings translationSettings, boolean z) {
         Intrinsics.checkNotNullParameter(translationSettings, "translationSettings");
-        final DialogTranslationController$setSettings$runnable$1 dialogTranslationController$setSettings$runnable$1 = new DialogTranslationController$setSettings$runnable$1(this, translationSettings);
+        final Function0<Unit> function0 = new Function0<Unit>() { // from class: com.iMe.fork.controller.DialogTranslationController$setSettings$runnable$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                DialogTranslationSettingsDao dao;
+                UserConfig userConfig;
+                Map map;
+                dao = DialogTranslationController.this.getDao();
+                DialogTranslationSettings dialogTranslationSettings = translationSettings;
+                userConfig = DialogTranslationController.this.getUserConfig();
+                dao.insert((DialogTranslationSettingsDao) DialogSettingsMappingKt.mapToDb(dialogTranslationSettings, userConfig.clientUserId));
+                map = DialogTranslationController.this.translationSettings;
+                map.put(Long.valueOf(translationSettings.getDialogId()), translationSettings);
+            }
+        };
         if (z) {
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.DialogTranslationController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -117,7 +168,7 @@ public final class DialogTranslationController extends BaseController implements
                 }
             });
         } else {
-            dialogTranslationController$setSettings$runnable$1.invoke();
+            function0.invoke();
         }
     }
 
@@ -180,14 +231,26 @@ public final class DialogTranslationController extends BaseController implements
             return (DialogTranslationController) tmp0.invoke(obj);
         }
 
-        public final DialogTranslationController getInstance(int i) {
+        public final DialogTranslationController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = DialogTranslationController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final DialogTranslationController$Companion$getInstance$1 dialogTranslationController$Companion$getInstance$1 = new DialogTranslationController$Companion$getInstance$1(i);
+            final Function1<Integer, DialogTranslationController> function1 = new Function1<Integer, DialogTranslationController>() { // from class: com.iMe.fork.controller.DialogTranslationController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final DialogTranslationController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new DialogTranslationController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.DialogTranslationController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -199,7 +262,7 @@ public final class DialogTranslationController extends BaseController implements
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
@@ -209,7 +272,7 @@ public final class DialogTranslationController extends BaseController implements
 
     static {
         Map<String, String> mapOf;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m85to("ru-RU", "Russian (Russia)"), TuplesKt.m85to("ja-JP", "Japanese (Japan)"), TuplesKt.m85to("hi-IN", "Hindi (India)"), TuplesKt.m85to("fr-FR", "French (France)"), TuplesKt.m85to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m85to("tr-TR", "Turkish (Turkey)"), TuplesKt.m85to("fa-IR", "Persian (Iran)"), TuplesKt.m85to("es-ES", "Spanish (Spain)"), TuplesKt.m85to("de-DE", "German (Germany)"), TuplesKt.m85to("ko-KR", "Korean (South Korea)"), TuplesKt.m85to("it-IT", "Italian (Italy)"), TuplesKt.m85to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m85to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m85to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m85to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m85to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m85to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m85to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m85to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m85to("en-US", "English (United States)"), TuplesKt.m85to("en-GB", "English (United Kingdom)"));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m103to("ru-RU", "Russian (Russia)"), TuplesKt.m103to("ja-JP", "Japanese (Japan)"), TuplesKt.m103to("hi-IN", "Hindi (India)"), TuplesKt.m103to("fr-FR", "French (France)"), TuplesKt.m103to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m103to("tr-TR", "Turkish (Turkey)"), TuplesKt.m103to("fa-IR", "Persian (Iran)"), TuplesKt.m103to("es-ES", "Spanish (Spain)"), TuplesKt.m103to("de-DE", "German (Germany)"), TuplesKt.m103to("ko-KR", "Korean (South Korea)"), TuplesKt.m103to("it-IT", "Italian (Italy)"), TuplesKt.m103to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m103to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m103to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m103to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m103to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m103to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m103to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m103to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m103to("en-US", "English (United States)"), TuplesKt.m103to("en-GB", "English (United Kingdom)"));
         voiceTranslateLanguages = mapOf;
         accountInstances = new ConcurrentHashMap<>(5);
     }

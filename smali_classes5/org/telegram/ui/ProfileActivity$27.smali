@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$27;
-.super Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
+.super Lorg/telegram/ui/Stories/ProfileStoriesView;
 .source "ProfileActivity.java"
 
 
@@ -21,61 +21,163 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Landroid/content/Context;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;IJLandroid/view/View;Lorg/telegram/ui/ProfileActivity$AvatarImageView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/Context;)V
+    .locals 9
 
-    .line 4794
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+    move-object v8, p0
 
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
+    move-object v0, p1
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;-><init>(Landroid/content/Context;)V
+    .line 4847
+    iput-object v0, v8, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    move-object/from16 v0, p9
+
+    iput-object v0, v8, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move v2, p3
+
+    move-wide v3, p4
+
+    move-object v5, p6
+
+    move-object/from16 v6, p7
+
+    move-object/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Stories/ProfileStoriesView;-><init>(Landroid/content/Context;IJLandroid/view/View;Lorg/telegram/ui/ProfileActivity$AvatarImageView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected createTextView()Landroid/widget/TextView;
-    .locals 3
+.method protected onTap(Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;)V
+    .locals 4
 
-    .line 4797
-    new-instance v0, Landroid/widget/TextView;
+    .line 4850
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$TL_userStories;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 4851
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
+
+    move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 4798
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
+    move-result-wide v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(I)I
+    invoke-virtual {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;JLorg/telegram/ui/Stories/StoryViewer$PlaceProvider;)V
 
-    move-result v1
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    .line 4852
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
 
-    const/high16 v2, 0x41600000    # 14.0f
+    move-result-object v0
 
-    .line 4799
-    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    if-eqz v0, :cond_1
 
-    .line 4800
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 4801
-    sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    move-result-object v0
 
-    const/4 v1, 0x3
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    .line 4802
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+    if-eqz v0, :cond_1
 
-    return-object v0
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v2
+
+    iget-wide v2, v2, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_1
+
+    .line 4853
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$6600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
+
+    invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_userStories;Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;)V
+
+    goto :goto_0
+
+    .line 4855
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;JLorg/telegram/ui/Stories/StoryViewer$PlaceProvider;)V
+
+    :goto_0
+    return-void
 .end method

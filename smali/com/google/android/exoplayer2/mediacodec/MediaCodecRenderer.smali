@@ -123,7 +123,7 @@
 
 .field private codecOperatingRate:F
 
-.field private codecOutputMediaFormat:Landroid/media/MediaFormat;
+.field public codecOutputMediaFormat:Landroid/media/MediaFormat;
 
 .field private codecOutputMediaFormatChanged:Z
 

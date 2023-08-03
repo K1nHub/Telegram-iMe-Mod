@@ -13,8 +13,14 @@
     name = "Companion"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDrawerSwitchableItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerSwitchableItem.kt\ncom/iMe/ui/drawer/DrawerSwitchableItem$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,44:1\n1#2:45\n1#2:56\n1#2:69\n1603#3,9:46\n1855#3:55\n1856#3:57\n1612#3:58\n1603#3,9:59\n1855#3:68\n1856#3:70\n1612#3:71\n1549#3:75\n1620#3,3:76\n3792#4:72\n4307#4,2:73\n*S KotlinDebug\n*F\n+ 1 DrawerSwitchableItem.kt\ncom/iMe/ui/drawer/DrawerSwitchableItem$Companion\n*L\n33#1:56\n36#1:69\n33#1:46,9\n33#1:55\n33#1:57\n33#1:58\n36#1:59,9\n36#1:68\n36#1:70\n36#1:71\n42#1:75\n42#1:76,3\n39#1:72\n39#1:73,2\n*E\n"
+    value = "SMAP\nDrawerSwitchableItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerSwitchableItem.kt\ncom/iMe/ui/drawer/DrawerSwitchableItem$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,49:1\n1#2:50\n1#2:61\n1#2:74\n1603#3,9:51\n1855#3:60\n1856#3:62\n1612#3:63\n1603#3,9:64\n1855#3:73\n1856#3:75\n1612#3:76\n3792#4:77\n4307#4,2:78\n11335#4:80\n11670#4,3:81\n*S KotlinDebug\n*F\n+ 1 DrawerSwitchableItem.kt\ncom/iMe/ui/drawer/DrawerSwitchableItem$Companion\n*L\n33#1:61\n36#1:74\n33#1:51,9\n33#1:60\n33#1:62\n33#1:63\n36#1:64,9\n36#1:73\n36#1:75\n36#1:76\n39#1:77\n39#1:78,2\n47#1:80\n47#1:81,3\n*E\n"
 .end annotation
 
 
@@ -39,7 +45,7 @@
 
 # virtual methods
 .method public final getDefaultItems()Ljava/util/Set;
-    .locals 3
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -49,52 +55,41 @@
         }
     .end annotation
 
-    .line 42
-    invoke-virtual {p0}, Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion;->getSupportedItems()Ljava/util/List;
+    .line 47
+    invoke-static {}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->values()[Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     move-result-object v0
 
-    .line 1549
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
-    const/16 v2, 0xa
-
-    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v2
+    array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1620
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 11670
+    array-length v2, v0
 
-    move-result-object v0
+    const/4 v3, 0x0
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v3, v2, :cond_0
 
-    move-result v2
+    aget-object v4, v0, v3
 
-    if-eqz v2, :cond_0
+    .line 47
+    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object v2
+    .line 11671
+    invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 1621
-    check-cast v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    .line 42
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1621
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 42
+    .line 47
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -104,7 +99,7 @@
 .end method
 
 .method public final getSupportedItems()Ljava/util/List;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -134,24 +129,34 @@
 
     aget-object v4, v0, v3
 
-    .line 39
-    sget-object v5, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    .line 40
+    sget-object v5, Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    if-ne v4, v5, :cond_0
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    const-string v5, "android.hardware.location.gps"
+    move-result v6
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->hasSystemFeature(Ljava/lang/String;)Z
+    aget v5, v5, v6
 
-    move-result v5
+    const/4 v6, 0x1
 
-    goto :goto_1
+    if-ne v5, v6, :cond_0
+
+    .line 41
+    sget-object v5, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v5
+
+    const-string v6, "android.hardware.location.gps"
+
+    invoke-virtual {v5, v6}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v6
 
     :cond_0
-    const/4 v5, 0x1
-
-    :goto_1
-    if-eqz v5, :cond_1
+    if-eqz v6, :cond_1
 
     .line 4307
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z

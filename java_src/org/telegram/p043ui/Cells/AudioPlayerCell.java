@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -61,8 +61,8 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
 
     public AudioPlayerCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.titleY = AndroidUtilities.m54dp(9);
-        this.descriptionY = AndroidUtilities.m54dp(29);
+        this.titleY = AndroidUtilities.m72dp(9);
+        this.descriptionY = AndroidUtilities.m72dp(29);
         this.currentAccount = UserConfig.selectedAccount;
         this.resourcesProvider = resourcesProvider;
         this.viewType = i;
@@ -82,34 +82,34 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     protected void onMeasure(int i, int i2) {
         this.descriptionLayout = null;
         this.titleLayout = null;
-        int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.m54dp(28);
+        int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.m72dp(28);
         try {
             String musicTitle = this.currentMessageObject.getMusicTitle();
-            StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(musicTitle.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(musicTitle)), size), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, size + AndroidUtilities.m54dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(musicTitle.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(musicTitle)), size), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, size + AndroidUtilities.m72dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             this.titleLayout = staticLayout;
             this.titleLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.titleLayoutEmojis, staticLayout);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         try {
             CharSequence replace = this.currentMessageObject.getMusicAuthor().replace('\n', ' ');
             if (this.viewType == 1) {
-                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.dotSpan).append(' ').append(FilteredSearchView.createFromInfoString(this.currentMessageObject));
+                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.dotSpan).append(' ').append(FilteredSearchView.createFromInfoString(this.currentMessageObject, 2));
             }
-            StaticLayout staticLayout2 = new StaticLayout(TextUtils.ellipsize(replace, Theme.chat_contextResult_descriptionTextPaint, size, TextUtils.TruncateAt.END), Theme.chat_contextResult_descriptionTextPaint, size + AndroidUtilities.m54dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            StaticLayout staticLayout2 = new StaticLayout(TextUtils.ellipsize(replace, Theme.chat_contextResult_descriptionTextPaint, size, TextUtils.TruncateAt.END), Theme.chat_contextResult_descriptionTextPaint, size + AndroidUtilities.m72dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             this.descriptionLayout = staticLayout2;
             this.descriptionLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.descriptionLayoutEmojis, staticLayout2);
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
         }
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(56));
-        int size2 = LocaleController.isRTL ? (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(8)) - AndroidUtilities.m54dp(52) : AndroidUtilities.m54dp(8);
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(56));
+        int size2 = LocaleController.isRTL ? (View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(8)) - AndroidUtilities.m72dp(52) : AndroidUtilities.m72dp(8);
         RadialProgress2 radialProgress2 = this.radialProgress;
-        int m54dp = AndroidUtilities.m54dp(4) + size2;
-        this.buttonX = m54dp;
-        int m54dp2 = AndroidUtilities.m54dp(6);
-        this.buttonY = m54dp2;
-        radialProgress2.setProgressRect(m54dp, m54dp2, size2 + AndroidUtilities.m54dp(48), AndroidUtilities.m54dp(50));
+        int m72dp = AndroidUtilities.m72dp(4) + size2;
+        this.buttonX = m72dp;
+        int m72dp2 = AndroidUtilities.m72dp(6);
+        this.buttonY = m72dp2;
+        radialProgress2.setProgressRect(m72dp, m72dp2, size2 + AndroidUtilities.m72dp(48), AndroidUtilities.m72dp(50));
     }
 
     public void setMessageObject(MessageObject messageObject) {
@@ -165,13 +165,13 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
             float r1 = r9.getY()
             int r1 = (int) r1
             r2 = 36
-            int r2 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r2 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             int r3 = r8.miniButtonState
             r4 = 1
             r5 = 0
             if (r3 < 0) goto L32
             r3 = 27
-            int r3 = org.telegram.messenger.AndroidUtilities.m54dp(r3)
+            int r3 = org.telegram.messenger.AndroidUtilities.m72dp(r3)
             int r6 = r8.buttonX
             int r7 = r6 + r3
             if (r0 < r7) goto L32
@@ -306,7 +306,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     protected void onDraw(Canvas canvas) {
         if (this.titleLayout != null) {
             canvas.save();
-            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
+            canvas.translate(AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
             this.titleLayout.draw(canvas);
             AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.titleLayout, this.titleLayoutEmojis, BitmapDescriptorFactory.HUE_RED, null, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f);
             canvas.restore();
@@ -314,7 +314,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
         if (this.descriptionLayout != null) {
             Theme.chat_contextResult_descriptionTextPaint.setColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText2));
             canvas.save();
-            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
+            canvas.translate(AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
             this.descriptionLayout.draw(canvas);
             AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.descriptionLayout, this.descriptionLayoutEmojis, BitmapDescriptorFactory.HUE_RED, null, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f);
             canvas.restore();
@@ -460,7 +460,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3417R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3419R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
             return;
         }
         accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));

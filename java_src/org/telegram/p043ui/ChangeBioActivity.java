@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.AlertsCreator;
@@ -57,13 +57,13 @@ public class ChangeBioActivity extends BaseFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         String str;
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        int i = C3417R.string.UserBio;
-        c3484ActionBar.setTitle(LocaleController.getString("UserBio", i));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        int i = C3419R.string.UserBio;
+        c3485ActionBar.setTitle(LocaleController.getString("UserBio", i));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     ChangeBioActivity.this.finishFragment();
@@ -72,14 +72,21 @@ public class ChangeBioActivity extends BaseFragment {
                 }
             }
         });
-        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3417R.C3419drawable.ic_ab_done, AndroidUtilities.m54dp(56));
+        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3419R.C3421drawable.ic_ab_done, AndroidUtilities.m72dp(56));
         this.doneButton = addItemWithWidth;
-        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3417R.string.Done));
+        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3419R.string.Done));
         LinearLayout linearLayout = new LinearLayout(context);
         this.fragmentView = linearLayout;
         LinearLayout linearLayout2 = linearLayout;
         linearLayout2.setOrientation(1);
-        this.fragmentView.setOnTouchListener(ChangeBioActivity$$ExternalSyntheticLambda1.INSTANCE);
+        this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChangeBioActivity$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createView$0;
+                lambda$createView$0 = ChangeBioActivity.lambda$createView$0(view, motionEvent);
+                return lambda$createView$0;
+            }
+        });
         FrameLayout frameLayout = new FrameLayout(context);
         linearLayout2.addView(frameLayout, LayoutHelper.createLinear(-1, -2, 24, 24, 20, 0));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.ChangeBioActivity.2
@@ -100,7 +107,7 @@ public class ChangeBioActivity extends BaseFragment {
         this.firstNameField.setBackgroundDrawable(null);
         this.firstNameField.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_text_RedRegular));
         this.firstNameField.setMaxLines(4);
-        this.firstNameField.setPadding(AndroidUtilities.m54dp(LocaleController.isRTL ? 24 : 0), 0, AndroidUtilities.m54dp(LocaleController.isRTL ? 0 : 24), AndroidUtilities.m54dp(6));
+        this.firstNameField.setPadding(AndroidUtilities.m72dp(LocaleController.isRTL ? 24 : 0), 0, AndroidUtilities.m72dp(LocaleController.isRTL ? 0 : 24), AndroidUtilities.m72dp(6));
         this.firstNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.firstNameField.setImeOptions(268435456);
         this.firstNameField.setInputType(147457);
@@ -123,10 +130,10 @@ public class ChangeBioActivity extends BaseFragment {
                 return filter;
             }
         }});
-        this.firstNameField.setMinHeight(AndroidUtilities.m54dp(36));
+        this.firstNameField.setMinHeight(AndroidUtilities.m72dp(36));
         this.firstNameField.setHint(LocaleController.getString("UserBio", i));
         this.firstNameField.setCursorColor(Theme.getColor(i2));
-        this.firstNameField.setCursorSize(AndroidUtilities.m54dp(20));
+        this.firstNameField.setCursorSize(AndroidUtilities.m72dp(20));
         this.firstNameField.setCursorWidth(1.5f);
         this.firstNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ChangeBioActivity$$ExternalSyntheticLambda2
             @Override // android.widget.TextView.OnEditorActionListener
@@ -165,7 +172,7 @@ public class ChangeBioActivity extends BaseFragment {
         this.helpTextView.setTextSize(1, 15.0f);
         this.helpTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText8));
         this.helpTextView.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3417R.string.UserBioInfo)));
+        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3419R.string.UserBioInfo)));
         linearLayout2.addView(this.helpTextView, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 24, 10, 24, 0));
         TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
         if (userFull != null && (str = userFull.about) != null) {
@@ -256,10 +263,10 @@ public class ChangeBioActivity extends BaseFragment {
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         tLRPC$UserFull.about = str;
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(tLRPC$User.f1656id), tLRPC$UserFull);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(tLRPC$User.f1675id), tLRPC$UserFull);
         finishFragment();
     }
 
@@ -268,7 +275,7 @@ public class ChangeBioActivity extends BaseFragment {
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         AlertsCreator.processError(this.currentAccount, tLRPC$TL_error, this, tLRPC$TL_account_updateProfile, new Object[0]);
     }

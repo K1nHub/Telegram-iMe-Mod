@@ -7,7 +7,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: JavaWalletAuthBaseFragment.kt */
 /* renamed from: com.iMe.ui.base.wallet_auth.JavaWalletAuthBaseFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class JavaWalletAuthBaseFragment extends WalletAuthBaseFragment {
     @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {

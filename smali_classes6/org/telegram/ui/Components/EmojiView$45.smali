@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$45;
-.super Landroidx/recyclerview/widget/LinearSmoothScroller;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;->animateSearchField(IZI)V
+    value = Lorg/telegram/ui/Components/EmojiView;->showEmojiShadow(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,55 +15,32 @@
 
 
 # instance fields
-.field final synthetic val$tabsMinusDy:I
+.field final synthetic this$0:Lorg/telegram/ui/Components/EmojiView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 5385
-    iput p3, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$tabsMinusDy:I
+    .line 5132
+    iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$45;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearSmoothScroller;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public calculateDtToFit(IIIII)I
-    .locals 0
-
-    .line 5398
-    invoke-super/range {p0 .. p5}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateDtToFit(IIIII)I
-
-    move-result p1
-
-    iget p2, p0, Lorg/telegram/ui/Components/EmojiView$45;->val$tabsMinusDy:I
-
-    add-int/2addr p1, p2
-
-    return p1
-.end method
-
-.method protected calculateTimeForDeceleration(I)I
-    .locals 0
-
-    .line 5393
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForDeceleration(I)I
-
-    move-result p1
-
-    mul-int/lit8 p1, p1, 0x10
-
-    return p1
-.end method
-
-.method protected getVerticalSnapPreference()I
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    const/4 v0, -0x1
+    .line 5135
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$45;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    return v0
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$15402(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    return-void
 .end method

@@ -47,7 +47,7 @@ public class PremiumButtonView extends FrameLayout {
     private boolean showOverlay;
 
     public PremiumButtonView(Context context, boolean z) {
-        this(context, AndroidUtilities.m54dp(8), z);
+        this(context, AndroidUtilities.m72dp(8), z);
     }
 
     public PremiumButtonView(Context context, int i, boolean z) {
@@ -66,9 +66,10 @@ public class PremiumButtonView extends FrameLayout {
         linearLayout.setOrientation(0);
         AnimatedTextView animatedTextView = new AnimatedTextView(context);
         this.buttonTextView = animatedTextView;
-        animatedTextView.setGravity(17);
+        animatedTextView.setAnimationProperties(0.35f, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
+        this.buttonTextView.setGravity(17);
         this.buttonTextView.setTextColor(-1);
-        this.buttonTextView.setTextSize(AndroidUtilities.m54dp(14));
+        this.buttonTextView.setTextSize(AndroidUtilities.m72dp(14));
         this.buttonTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.iconView = rLottieImageView;
@@ -84,13 +85,13 @@ public class PremiumButtonView extends FrameLayout {
         if (z) {
             AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true);
             this.overlayTextView = animatedTextView2;
-            animatedTextView2.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+            animatedTextView2.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
             this.overlayTextView.setGravity(17);
             this.overlayTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-            this.overlayTextView.setTextSize(AndroidUtilities.m54dp(14));
+            this.overlayTextView.setTextSize(AndroidUtilities.m72dp(14));
             this.overlayTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.overlayTextView.getDrawable().setAllowCancel(true);
-            this.overlayTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(8), 0, ColorUtils.setAlphaComponent(-1, 120)));
+            this.overlayTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(8), 0, ColorUtils.setAlphaComponent(-1, 120)));
             addView(this.overlayTextView);
             this.paintOverlayPaint.setColor(Theme.getColor(Theme.key_featuredStickers_addButton));
             updateOverlayProgress();
@@ -114,8 +115,8 @@ public class PremiumButtonView extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         CounterView counterView = this.counterView;
         if (counterView != null) {
-            this.counterOffset.set(((counterView.counterDrawable.getWidth() * 0.85f) + AndroidUtilities.m54dp(3)) / 2.0f);
-            this.counterOffset2.set((getMeasuredWidth() / 2.0f) + (this.overlayTextView.getDrawable().getWidth() / 2.0f) + AndroidUtilities.m54dp(3));
+            this.counterOffset.set(((counterView.counterDrawable.getWidth() * 0.85f) + AndroidUtilities.m72dp(3)) / 2.0f);
+            this.counterOffset2.set((getMeasuredWidth() / 2.0f) + (this.overlayTextView.getDrawable().getWidth() / 2.0f) + AndroidUtilities.m72dp(3));
             this.overlayTextView.setTranslationX(-this.counterOffset.get());
             this.counterView.setTranslationX(this.counterOffset2.get() - this.counterOffset.get());
         } else {
@@ -214,9 +215,9 @@ public class PremiumButtonView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateOverlayProgress() {
         this.overlayTextView.setAlpha(this.overlayProgress);
-        this.overlayTextView.setTranslationY(AndroidUtilities.m54dp(12) * (1.0f - this.overlayProgress));
+        this.overlayTextView.setTranslationY(AndroidUtilities.m72dp(12) * (1.0f - this.overlayProgress));
         this.buttonLayout.setAlpha(1.0f - this.overlayProgress);
-        this.buttonLayout.setTranslationY((-AndroidUtilities.m54dp(12)) * this.overlayProgress);
+        this.buttonLayout.setTranslationY((-AndroidUtilities.m72dp(12)) * this.overlayProgress);
         this.buttonLayout.setVisibility(this.overlayProgress == 1.0f ? 4 : 0);
         this.overlayTextView.setVisibility(this.overlayProgress != BitmapDescriptorFactory.HUE_RED ? 0 : 4);
         invalidate();

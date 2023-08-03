@@ -52,7 +52,7 @@ public final class zzpr implements zzno<FirebaseModelOutputs, zzpn>, zznx {
         sb.append(valueOf);
         sb.append(". Local model is: ");
         sb.append(valueOf2);
-        gmsLogger.m789d("ModelInterpreterTask", sb.toString());
+        gmsLogger.m807d("ModelInterpreterTask", sb.toString());
         this.zzaxs = new zzon(zza, zzojVar, new zzop(this) { // from class: com.google.android.gms.internal.firebase_ml.zzpu
             private final zzpr zzaxx;
 

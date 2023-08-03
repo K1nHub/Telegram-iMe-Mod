@@ -31,7 +31,7 @@ public final class SQLitePersistence extends Persistence {
     private final SQLiteBundleCache bundleCache;
 
     /* renamed from: db */
-    private SQLiteDatabase f257db;
+    private SQLiteDatabase f259db;
     private final IndexBackfiller indexBackfiller;
     private final SQLiteIndexManager indexManager;
     private final SQLiteOpenHelper opener;
@@ -85,7 +85,7 @@ public final class SQLitePersistence extends Persistence {
         Assert.hardAssert(!this.started, "SQLitePersistence double-started!", new Object[0]);
         this.started = true;
         try {
-            this.f257db = this.opener.getWritableDatabase();
+            this.f259db = this.opener.getWritableDatabase();
             this.targetCache.start();
             this.referenceDelegate.start(this.targetCache.getHighestListenSequenceNumber());
         } catch (SQLiteDatabaseLockedException e) {
@@ -107,8 +107,9 @@ public final class SQLitePersistence extends Persistence {
         return this.indexBackfiller;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.firebase.firestore.local.Persistence
-    MutationQueue getMutationQueue(User user) {
+    public MutationQueue getMutationQueue(User user) {
         return new SQLiteMutationQueue(this, this.serializer, user);
     }
 
@@ -124,8 +125,9 @@ public final class SQLitePersistence extends Persistence {
         return this.indexManager;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.firebase.firestore.local.Persistence
-    BundleCache getBundleCache() {
+    public BundleCache getBundleCache() {
         return this.bundleCache;
     }
 
@@ -135,28 +137,30 @@ public final class SQLitePersistence extends Persistence {
         return this.remoteDocumentCache;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.firebase.firestore.local.Persistence
-    void runTransaction(String str, Runnable runnable) {
+    public void runTransaction(String str, Runnable runnable) {
         Logger.debug(Persistence.TAG, "Starting transaction: %s", str);
-        this.f257db.beginTransactionWithListener(this.transactionListener);
+        this.f259db.beginTransactionWithListener(this.transactionListener);
         try {
             runnable.run();
-            this.f257db.setTransactionSuccessful();
+            this.f259db.setTransactionSuccessful();
         } finally {
-            this.f257db.endTransaction();
+            this.f259db.endTransaction();
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.firebase.firestore.local.Persistence
-    <T> T runTransaction(String str, Supplier<T> supplier) {
+    public <T> T runTransaction(String str, Supplier<T> supplier) {
         Logger.debug(Persistence.TAG, "Starting transaction: %s", str);
-        this.f257db.beginTransactionWithListener(this.transactionListener);
+        this.f259db.beginTransactionWithListener(this.transactionListener);
         try {
             T t = supplier.get();
-            this.f257db.setTransactionSuccessful();
+            this.f259db.setTransactionSuccessful();
             return t;
         } finally {
-            this.f257db.endTransaction();
+            this.f259db.endTransaction();
         }
     }
 
@@ -166,7 +170,14 @@ public final class SQLitePersistence extends Persistence {
     }
 
     private long getPageSize() {
-        return ((Long) query("PRAGMA page_size").firstValue(SQLitePersistence$$ExternalSyntheticLambda0.INSTANCE)).longValue();
+        return ((Long) query("PRAGMA page_size").firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLitePersistence$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.firestore.util.Function
+            public final Object apply(Object obj) {
+                Long lambda$getPageSize$0;
+                lambda$getPageSize$0 = SQLitePersistence.lambda$getPageSize$0((Cursor) obj);
+                return lambda$getPageSize$0;
+            }
+        })).longValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +186,14 @@ public final class SQLitePersistence extends Persistence {
     }
 
     private long getPageCount() {
-        return ((Long) query("PRAGMA page_count").firstValue(SQLitePersistence$$ExternalSyntheticLambda1.INSTANCE)).longValue();
+        return ((Long) query("PRAGMA page_count").firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLitePersistence$$ExternalSyntheticLambda1
+            @Override // com.google.firebase.firestore.util.Function
+            public final Object apply(Object obj) {
+                Long lambda$getPageCount$1;
+                lambda$getPageCount$1 = SQLitePersistence.lambda$getPageCount$1((Cursor) obj);
+                return lambda$getPageCount$1;
+            }
+        })).longValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -231,12 +249,12 @@ public final class SQLitePersistence extends Persistence {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void execute(String str, Object... objArr) {
-        this.f257db.execSQL(str, objArr);
+        this.f259db.execSQL(str, objArr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteStatement prepare(String str) {
-        return this.f257db.compileStatement(str);
+        return this.f259db.compileStatement(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -248,7 +266,7 @@ public final class SQLitePersistence extends Persistence {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Query query(String str) {
-        return new Query(this.f257db, str);
+        return new Query(this.f259db, str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -257,12 +275,12 @@ public final class SQLitePersistence extends Persistence {
         private SQLiteDatabase.CursorFactory cursorFactory;
 
         /* renamed from: db */
-        private final SQLiteDatabase f259db;
+        private final SQLiteDatabase f261db;
         private final String sql;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Query(SQLiteDatabase sQLiteDatabase, String str) {
-            this.f259db = sQLiteDatabase;
+            this.f261db = sQLiteDatabase;
             this.sql = str;
         }
 
@@ -385,9 +403,9 @@ public final class SQLitePersistence extends Persistence {
         private Cursor startQuery() {
             SQLiteDatabase.CursorFactory cursorFactory = this.cursorFactory;
             if (cursorFactory != null) {
-                return this.f259db.rawQueryWithFactory(cursorFactory, this.sql, null, null);
+                return this.f261db.rawQueryWithFactory(cursorFactory, this.sql, null, null);
             }
-            return this.f259db.rawQuery(this.sql, null);
+            return this.f261db.rawQuery(this.sql, null);
         }
     }
 
@@ -397,7 +415,7 @@ public final class SQLitePersistence extends Persistence {
         private final Iterator<Object> argsIter;
 
         /* renamed from: db */
-        private final SQLitePersistence f258db;
+        private final SQLitePersistence f260db;
         private final String head;
         private int subqueriesPerformed;
         private final String tail;
@@ -405,7 +423,7 @@ public final class SQLitePersistence extends Persistence {
         /* JADX INFO: Access modifiers changed from: package-private */
         public LongQuery(SQLitePersistence sQLitePersistence, String str, List<Object> list, String str2) {
             this.subqueriesPerformed = 0;
-            this.f258db = sQLitePersistence;
+            this.f260db = sQLitePersistence;
             this.head = str;
             this.argsHead = Collections.emptyList();
             this.tail = str2;
@@ -415,7 +433,7 @@ public final class SQLitePersistence extends Persistence {
         /* JADX INFO: Access modifiers changed from: package-private */
         public LongQuery(SQLitePersistence sQLitePersistence, String str, List<Object> list, List<Object> list2, String str2) {
             this.subqueriesPerformed = 0;
-            this.f258db = sQLitePersistence;
+            this.f260db = sQLitePersistence;
             this.head = str;
             this.argsHead = list;
             this.tail = str2;
@@ -440,7 +458,7 @@ public final class SQLitePersistence extends Persistence {
                 arrayList.add(this.argsIter.next());
             }
             String sb2 = sb.toString();
-            return this.f258db.query(this.head + sb2 + this.tail).binding(arrayList.toArray());
+            return this.f260db.query(this.head + sb2 + this.tail).binding(arrayList.toArray());
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
-    .line 82
+    .line 99
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 1
 
-    .line 84
+    .line 101
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$000(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 88
+    .line 105
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$302(Lorg/telegram/ui/Components/Paint/Views/EntityView;Z)Z
 
-    .line 89
+    .line 106
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$400(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;
@@ -79,14 +79,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 90
+    .line 107
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 91
+    .line 108
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$400(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;

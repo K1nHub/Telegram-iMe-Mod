@@ -14,7 +14,7 @@ public final class XMSSParameters {
     private final int height;
 
     /* renamed from: k */
-    private final int f1425k;
+    private final int f1428k;
     private final XMSSOid oid;
     private final String treeDigest;
     private final ASN1ObjectIdentifier treeDigestOID;
@@ -53,7 +53,7 @@ public final class XMSSParameters {
         }
         Objects.requireNonNull(aSN1ObjectIdentifier, "digest == null");
         this.height = i;
-        this.f1425k = determineMinK();
+        this.f1428k = determineMinK();
         String digestName = DigestUtil.getDigestName(aSN1ObjectIdentifier);
         this.treeDigest = digestName;
         this.treeDigestOID = aSN1ObjectIdentifier;
@@ -94,7 +94,7 @@ public final class XMSSParameters {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getK() {
-        return this.f1425k;
+        return this.f1428k;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

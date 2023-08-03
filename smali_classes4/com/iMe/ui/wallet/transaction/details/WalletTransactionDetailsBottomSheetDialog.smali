@@ -131,7 +131,7 @@
 
     const-class v2, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;"
 
@@ -252,7 +252,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "presenter"
+    const-string/jumbo v2, "presenter"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1512,7 +1512,7 @@
 
     invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v9, "processing"
+    const-string/jumbo v9, "processing"
 
     invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

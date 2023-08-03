@@ -15,4 +15,9 @@
 
 # virtual methods
 .method public abstract applyAsLong(Ljava/lang/Object;)J
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)J"
+        }
+    .end annotation
 .end method

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -22,13 +21,19 @@ import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
@@ -54,7 +59,27 @@ public final class MusicController extends BaseController implements KoinCompone
     public MusicController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new MusicController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<PlaylistsDao>() { // from class: com.iMe.fork.controller.MusicController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.PlaylistsDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final PlaylistsDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(PlaylistsDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.selectedMusicTab = TelegramPreferenceKeys.User.Default.selectedMusicTab();
         this.playlists = new LinkedHashMap();
@@ -112,11 +137,17 @@ public final class MusicController extends BaseController implements KoinCompone
         Sequence<PlaylistsDb> filter;
         Map<Long, PlaylistModel> mutableMap;
         asSequence = CollectionsKt___CollectionsKt.asSequence(getDao().getAllPlaylistsForUser(getUserConfig().clientUserId));
-        filter = SequencesKt___SequencesKt.filter(asSequence, MusicController$loadPlaylists$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(asSequence, new Function1<PlaylistsDb, Boolean>() { // from class: com.iMe.fork.controller.MusicController$loadPlaylists$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(PlaylistsDb it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf(!it.getMessageIds().isEmpty());
+            }
+        });
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (PlaylistsDb playlistsDb : filter) {
-            Pair m85to = TuplesKt.m85to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.playlists = mutableMap;
@@ -165,7 +196,7 @@ public final class MusicController extends BaseController implements KoinCompone
     public static final void addPlaylistMessage$lambda$7(MusicController this$0, List messages) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(messages, "$messages");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.playlistDidChanged, messages, Boolean.TRUE);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.playlistDidChanged, messages, Boolean.TRUE);
     }
 
     public final void removePlaylistMessage(long j, final List<Integer> messageIds) {
@@ -206,7 +237,7 @@ public final class MusicController extends BaseController implements KoinCompone
     public static final void removePlaylistMessage$lambda$9(MusicController this$0, List messageIds) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(messageIds, "$messageIds");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.playlistDidChanged, messageIds, Boolean.FALSE);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.playlistDidChanged, messageIds, Boolean.FALSE);
     }
 
     public final ArrayList<Integer> getPlaylistForDialog(long j) {
@@ -251,14 +282,26 @@ public final class MusicController extends BaseController implements KoinCompone
             return (MusicController) tmp0.invoke(obj);
         }
 
-        public final MusicController getInstance(int i) {
+        public final MusicController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = MusicController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final MusicController$Companion$getInstance$1 musicController$Companion$getInstance$1 = new MusicController$Companion$getInstance$1(i);
+            final Function1<Integer, MusicController> function1 = new Function1<Integer, MusicController>() { // from class: com.iMe.fork.controller.MusicController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final MusicController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new MusicController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.MusicController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -270,7 +313,7 @@ public final class MusicController extends BaseController implements KoinCompone
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

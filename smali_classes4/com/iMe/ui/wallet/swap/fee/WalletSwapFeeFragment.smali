@@ -87,7 +87,7 @@
     .line 36
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;"
 
@@ -207,7 +207,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

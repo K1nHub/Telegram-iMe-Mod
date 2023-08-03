@@ -40,11 +40,13 @@ import com.google.android.gms.internal.base.zad;
 import com.google.android.gms.internal.base.zae;
 import com.google.android.gms.internal.base.zao;
 import com.google.android.gms.internal.base.zap;
+import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.errorprone.annotations.RestrictedInheritance;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @RestrictedInheritance(allowedOnPath = ".*java.*/com/google/android/gms.*", allowlistAnnotations = {zad.class, zae.class}, explanation = "Sub classing of GMS Core's APIs are restricted to GMS Core client libs and testing fakes.", link = "go/gmscore-restrictedinheritance")
 /* loaded from: classes.dex */
@@ -71,7 +73,14 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
     }
 
     public Task<Void> checkApiAvailability(GoogleApi<?> googleApi, GoogleApi<?>... googleApiArr) {
-        return zai(googleApi, googleApiArr).onSuccessTask(zab.zaa);
+        return zai(googleApi, googleApiArr).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.gms.common.zab
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                Map map = (Map) obj;
+                int i = GoogleApiAvailability.GOOGLE_PLAY_SERVICES_VERSION_CODE;
+                return Tasks.forResult(null);
+            }
+        });
     }
 
     @Override // com.google.android.gms.common.GoogleApiAvailabilityLight
@@ -315,7 +324,14 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
     }
 
     public Task<Void> checkApiAvailability(HasApiKey<?> hasApiKey, HasApiKey<?>... hasApiKeyArr) {
-        return zai(hasApiKey, hasApiKeyArr).onSuccessTask(zaa.zaa);
+        return zai(hasApiKey, hasApiKeyArr).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.gms.common.zaa
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                Map map = (Map) obj;
+                int i = GoogleApiAvailability.GOOGLE_PLAY_SERVICES_VERSION_CODE;
+                return Tasks.forResult(null);
+            }
+        });
     }
 
     public void showErrorNotification(Context context, ConnectionResult connectionResult) {

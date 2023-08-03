@@ -24,10 +24,12 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import kotlin.text.Regex;
+import kotlin.text.StringsKt__StringsKt;
 import kotlin.text.StringsKt___StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CompletableJob;
@@ -106,16 +108,52 @@ public final class SmartReplier implements Replier, CoroutineScope {
         int i = WhenMappings.$EnumSwitchMapping$0[botLanguage.ordinal()];
         if (i == 1) {
             asSequence = CollectionsKt___CollectionsKt.asSequence(new Regex("[@#$%^&*+-/|\\_><.,?!:;)(= ]").split(str, 0));
-            filter = SequencesKt___SequencesKt.filter(asSequence, SmartReplier$splitLemmas$1.INSTANCE);
-            map = SequencesKt___SequencesKt.map(filter, SmartReplier$splitLemmas$2.INSTANCE);
+            filter = SequencesKt___SequencesKt.filter(asSequence, new Function1<String, Boolean>() { // from class: com.iMe.bots.data.SmartReplier$splitLemmas$1
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(String it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return Boolean.valueOf(it.length() > 0);
+                }
+            });
+            map = SequencesKt___SequencesKt.map(filter, new Function1<String, String>() { // from class: com.iMe.bots.data.SmartReplier$splitLemmas$2
+                @Override // kotlin.jvm.functions.Function1
+                public final String invoke(String it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    String lowerCase = it.toLowerCase();
+                    Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase()");
+                    return lowerCase;
+                }
+            });
             list = SequencesKt___SequencesKt.toList(map);
             return list;
         } else if (i == 2) {
             ArrayList arrayList = new ArrayList();
             asSequence2 = CollectionsKt___CollectionsKt.asSequence(new Regex("[-_.,?!:;')( ]").split(str, 0));
-            filter2 = SequencesKt___SequencesKt.filter(asSequence2, SmartReplier$splitLemmas$words$1.INSTANCE);
-            map2 = SequencesKt___SequencesKt.map(filter2, SmartReplier$splitLemmas$words$2.INSTANCE);
-            map3 = SequencesKt___SequencesKt.map(map2, SmartReplier$splitLemmas$words$3.INSTANCE);
+            filter2 = SequencesKt___SequencesKt.filter(asSequence2, new Function1<String, Boolean>() { // from class: com.iMe.bots.data.SmartReplier$splitLemmas$words$1
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(String it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return Boolean.valueOf(it.length() > 0);
+                }
+            });
+            map2 = SequencesKt___SequencesKt.map(filter2, new Function1<String, String>() { // from class: com.iMe.bots.data.SmartReplier$splitLemmas$words$2
+                @Override // kotlin.jvm.functions.Function1
+                public final String invoke(String it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    String lowerCase = it.toLowerCase();
+                    Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase()");
+                    return lowerCase;
+                }
+            });
+            map3 = SequencesKt___SequencesKt.map(map2, new Function1<String, String>() { // from class: com.iMe.bots.data.SmartReplier$splitLemmas$words$3
+                @Override // kotlin.jvm.functions.Function1
+                public final String invoke(String it) {
+                    CharSequence trim;
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    trim = StringsKt__StringsKt.trim(it);
+                    return trim.toString();
+                }
+            });
             for (String str2 : map3) {
                 if (str2.length() != 2) {
                     arrayList.add(str2);

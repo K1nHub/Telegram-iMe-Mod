@@ -18,7 +18,7 @@
 .method static finishAffinity(Landroid/app/Activity;)V
     .locals 0
 
-    .line 822
+    .line 873
     invoke-virtual {p0}, Landroid/app/Activity;->finishAffinity()V
 
     return-void
@@ -27,7 +27,7 @@
 .method static startActivityForResult(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
     .locals 0
 
-    .line 809
+    .line 860
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
     return-void
@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    .line 816
+    .line 867
     invoke-virtual/range {p0 .. p7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
     return-void

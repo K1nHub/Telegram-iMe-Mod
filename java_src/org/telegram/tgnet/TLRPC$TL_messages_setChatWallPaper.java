@@ -5,7 +5,7 @@ public class TLRPC$TL_messages_setChatWallPaper extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1625id;
+    public int f1633id;
     public TLRPC$InputPeer peer;
     public TLRPC$WallPaperSettings settings;
     public TLRPC$InputWallPaper wallpaper;
@@ -27,7 +27,7 @@ public class TLRPC$TL_messages_setChatWallPaper extends TLObject {
             this.settings.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 2) != 0) {
-            abstractSerializedData.writeInt32(this.f1625id);
+            abstractSerializedData.writeInt32(this.f1633id);
         }
     }
 }

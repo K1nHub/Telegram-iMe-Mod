@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$L8UFu28IvW2QzL5sAXEtRb6PujM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$ga1IkGBzIxOPVo3PoO3vHBpkBUg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Integer;)V
 
     return-void
 .end method

@@ -26,7 +26,7 @@ public final class MemoryRemoteDocumentCache implements RemoteDocumentCache {
     @Override // com.google.firebase.firestore.local.RemoteDocumentCache
     public void add(MutableDocument mutableDocument, SnapshotVersion snapshotVersion) {
         Assert.hardAssert(!snapshotVersion.equals(SnapshotVersion.NONE), "Cannot add document to the RemoteDocumentCache with a read time of zero", new Object[0]);
-        this.docs = this.docs.insert(mutableDocument.getKey(), new Pair<>(mutableDocument.m1087clone(), snapshotVersion));
+        this.docs = this.docs.insert(mutableDocument.getKey(), new Pair<>(mutableDocument.m1104clone(), snapshotVersion));
         this.persistence.getIndexManager().addToCollectionParentIndex(mutableDocument.getKey().getPath().popLast());
     }
 
@@ -38,7 +38,7 @@ public final class MemoryRemoteDocumentCache implements RemoteDocumentCache {
     @Override // com.google.firebase.firestore.local.RemoteDocumentCache
     public MutableDocument get(DocumentKey documentKey) {
         Pair<MutableDocument, SnapshotVersion> pair = this.docs.get(documentKey);
-        return pair != null ? ((MutableDocument) pair.first).m1087clone() : MutableDocument.newInvalidDocument(documentKey);
+        return pair != null ? ((MutableDocument) pair.first).m1104clone() : MutableDocument.newInvalidDocument(documentKey);
     }
 
     @Override // com.google.firebase.firestore.local.RemoteDocumentCache
@@ -63,7 +63,7 @@ public final class MemoryRemoteDocumentCache implements RemoteDocumentCache {
             }
             MutableDocument mutableDocument = (MutableDocument) next.getValue().first;
             if (mutableDocument.isFoundDocument() && ((SnapshotVersion) next.getValue().second).compareTo(snapshotVersion) > 0 && query.matches(mutableDocument)) {
-                emptyMutableDocumentMap = emptyMutableDocumentMap.insert(mutableDocument.getKey(), mutableDocument.m1087clone());
+                emptyMutableDocumentMap = emptyMutableDocumentMap.insert(mutableDocument.getKey(), mutableDocument.m1104clone());
             }
         }
         return emptyMutableDocumentMap;

@@ -10,6 +10,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.LazyThreadSafetyMode;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseProviderMultiAdapter.kt */
@@ -30,7 +31,12 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
     public BaseProviderMultiAdapter(List<T> list) {
         super(0, list);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, BaseProviderMultiAdapter$mItemProviders$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new Function0<SparseArray<BaseItemProvider<T>>>() { // from class: com.chad.library.adapter.base.BaseProviderMultiAdapter$mItemProviders$2
+            @Override // kotlin.jvm.functions.Function0
+            public final SparseArray<BaseItemProvider<T>> invoke() {
+                return new SparseArray<>();
+            }
+        });
         this.mItemProviders$delegate = lazy;
     }
 
@@ -82,8 +88,9 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
         itemProvider.convert(holder, t, payloads);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
-    protected void bindViewClickListener(BaseViewHolder viewHolder, int i) {
+    public void bindViewClickListener(BaseViewHolder viewHolder, int i) {
         Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         super.bindViewClickListener(viewHolder, i);
         bindClick(viewHolder);

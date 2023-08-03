@@ -27,7 +27,7 @@ public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
     private class QuerySnapshotIterator implements Iterator<QueryDocumentSnapshot>, p033j$.util.Iterator {
 
         /* renamed from: it */
-        private final Iterator<Document> f247it;
+        private final Iterator<Document> f249it;
 
         @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
@@ -35,17 +35,17 @@ public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
         }
 
         QuerySnapshotIterator(java.util.Iterator<Document> it) {
-            this.f247it = it;
+            this.f249it = it;
         }
 
         @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
-            return this.f247it.hasNext();
+            return this.f249it.hasNext();
         }
 
         @Override // java.util.Iterator, p033j$.util.Iterator
         public QueryDocumentSnapshot next() {
-            return QuerySnapshot.this.convertDocument(this.f247it.next());
+            return QuerySnapshot.this.convertDocument(this.f249it.next());
         }
 
         @Override // java.util.Iterator, p033j$.util.Iterator

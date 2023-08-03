@@ -25,7 +25,7 @@ public class PlayPauseDrawable extends Drawable {
     }
 
     public PlayPauseDrawable(int i) {
-        this.size = AndroidUtilities.m54dp(i);
+        this.size = AndroidUtilities.m72dp(i);
         Paint paint = new Paint(1);
         this.paint = paint;
         paint.setColor(-1);

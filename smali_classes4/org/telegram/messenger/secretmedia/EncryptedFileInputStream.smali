@@ -53,7 +53,7 @@
     .line 33
     new-instance v2, Ljava/io/RandomAccessFile;
 
-    const-string v3, "r"
+    const-string/jumbo v3, "r"
 
     invoke-direct {v2, p2, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -143,7 +143,7 @@
     .line 79
     new-instance v4, Ljava/io/RandomAccessFile;
 
-    const-string v5, "r"
+    const-string/jumbo v5, "r"
 
     invoke-direct {v4, p3, v5}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

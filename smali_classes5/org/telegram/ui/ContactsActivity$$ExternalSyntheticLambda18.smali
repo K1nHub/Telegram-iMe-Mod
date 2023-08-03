@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
 
 
 # instance fields
@@ -26,14 +26,40 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
-    .locals 2
+.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
+
+    return-void
+.end method
+
+.method public final onItemClick(Landroid/view/View;IFF)V
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/ContactsActivity;
 
     iget v1, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda18;->f$1:I
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$_O14409lX-kLZNjC7jxJ50DnBJI(Lorg/telegram/ui/ContactsActivity;ILandroid/view/View;I)V
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$M_6Dt_5JD5IdzCCNP6e5_uceJak(Lorg/telegram/ui/ContactsActivity;ILandroid/view/View;IFF)V
 
     return-void
 .end method

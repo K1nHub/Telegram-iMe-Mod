@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Landroid/widget/ImageView;",
+        "Lorg/telegram/ui/Components/RLottieImageView;",
         ">;"
     }
 .end annotation
@@ -45,24 +45,24 @@
 
 
 # virtual methods
-.method public final invoke()Landroid/widget/ImageView;
+.method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 33
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;->this$0:Lcom/iMe/fork/ui/view/CircleCheckCell;
-
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->access$initIconView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Landroid/widget/ImageView;
+    .line 38
+    invoke-virtual {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;->invoke()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic invoke()Ljava/lang/Object;
+.method public final invoke()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 1
 
-    .line 33
-    invoke-virtual {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;->invoke()Landroid/widget/ImageView;
+    .line 38
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;->this$0:Lcom/iMe/fork/ui/view/CircleCheckCell;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->access$initIconView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
 

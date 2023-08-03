@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1297
+    .line 1302
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$13;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected allowSelectChildAtPosition(FF)Z
     .locals 4
 
-    .line 1301
+    .line 1306
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$13;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
@@ -104,7 +104,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1306
+    .line 1311
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$13;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$6200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -119,12 +119,12 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1307
+    .line 1312
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 1308
+    .line 1313
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$13;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ShareAlert;->access$2800(Lorg/telegram/ui/Components/ShareAlert;)I
@@ -175,11 +175,11 @@
 
     invoke-virtual {p1, v0, v2, v3, v4}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 1310
+    .line 1315
     :cond_1
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1311
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$13;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$6200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -192,7 +192,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 1312
+    .line 1317
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 53771
+    .line 54669
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 53780
+    .line 54678
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_photos_photo;
 
     move-result-object p1
@@ -49,12 +49,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 53784
+    .line 54682
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 53785
+    .line 54683
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->fallback:Z
 
     if-eqz v0, :cond_0
@@ -73,22 +73,22 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->flags:I
 
-    .line 53786
+    .line 54684
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 53787
+    .line 54685
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 53788
+    .line 54686
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 53790
+    .line 54688
     :cond_1
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;->id:Lorg/telegram/tgnet/TLRPC$InputPhoto;
 

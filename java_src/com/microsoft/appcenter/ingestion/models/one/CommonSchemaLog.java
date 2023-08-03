@@ -11,7 +11,7 @@ import org.json.JSONStringer;
 public abstract class CommonSchemaLog extends AbstractLog {
 
     /* renamed from: cV */
-    private String f464cV;
+    private String f467cV;
     private Data data;
     private Extensions ext;
     private Long flags;
@@ -61,11 +61,11 @@ public abstract class CommonSchemaLog extends AbstractLog {
     }
 
     public String getCV() {
-        return this.f464cV;
+        return this.f467cV;
     }
 
     public void setCV(String cV) {
-        this.f464cV = cV;
+        this.f467cV = cV;
     }
 
     public Extensions getExt() {
@@ -145,8 +145,8 @@ public abstract class CommonSchemaLog extends AbstractLog {
                         if (str3 == null ? commonSchemaLog.iKey == null : str3.equals(commonSchemaLog.iKey)) {
                             Long l = this.flags;
                             if (l == null ? commonSchemaLog.flags == null : l.equals(commonSchemaLog.flags)) {
-                                String str4 = this.f464cV;
-                                if (str4 == null ? commonSchemaLog.f464cV == null : str4.equals(commonSchemaLog.f464cV)) {
+                                String str4 = this.f467cV;
+                                if (str4 == null ? commonSchemaLog.f467cV == null : str4.equals(commonSchemaLog.f467cV)) {
                                     Extensions extensions = this.ext;
                                     if (extensions == null ? commonSchemaLog.ext == null : extensions.equals(commonSchemaLog.ext)) {
                                         Data data = this.data;
@@ -183,7 +183,7 @@ public abstract class CommonSchemaLog extends AbstractLog {
         int hashCode5 = (hashCode4 + (str3 != null ? str3.hashCode() : 0)) * 31;
         Long l = this.flags;
         int hashCode6 = (hashCode5 + (l != null ? l.hashCode() : 0)) * 31;
-        String str4 = this.f464cV;
+        String str4 = this.f467cV;
         int hashCode7 = (hashCode6 + (str4 != null ? str4.hashCode() : 0)) * 31;
         Extensions extensions = this.ext;
         int hashCode8 = (hashCode7 + (extensions != null ? extensions.hashCode() : 0)) * 31;

@@ -4,15 +4,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
-import org.telegram.PhoneFormat.C3333PhoneFormat;
+import org.telegram.PhoneFormat.C3334PhoneFormat;
 /* loaded from: classes4.dex */
 public class CallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
-            String stripExceptNumbers = C3333PhoneFormat.stripExceptNumbers(intent.getStringExtra("incoming_number"));
+            String stripExceptNumbers = C3334PhoneFormat.stripExceptNumbers(intent.getStringExtra("incoming_number"));
             SharedConfig.getPreferences().edit().putString("last_call_phone_number", stripExceptNumbers).putLong("last_call_time", System.currentTimeMillis()).apply();
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveCall, stripExceptNumbers);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, stripExceptNumbers);
         }
     }
 
@@ -30,7 +30,7 @@ public class CallReceiver extends BroadcastReceiver {
     public static void checkLastReceivedCall() {
         String lastReceivedCall = getLastReceivedCall();
         if (lastReceivedCall != null) {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveCall, lastReceivedCall);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, lastReceivedCall);
         }
     }
 

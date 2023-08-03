@@ -70,7 +70,7 @@ public final class CachedRegionTracker implements Cache.Listener {
         Region region = new Region(j, cacheSpan.length + j);
         Region floor = this.regions.floor(region);
         if (floor == null) {
-            Log.m800e(TAG, "Removed a span we were not aware of");
+            Log.m818e(TAG, "Removed a span we were not aware of");
             return;
         }
         this.regions.remove(floor);

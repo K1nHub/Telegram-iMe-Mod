@@ -2,6 +2,7 @@ package com.google.android.gms.internal.wearable;
 
 import java.io.IOException;
 import java.util.Objects;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 /* loaded from: classes3.dex */
@@ -204,7 +205,7 @@ public final class zzbb extends zzbe {
                 byte[] bArr = this.zzb;
                 int i2 = this.zzd;
                 this.zzd = i2 + 1;
-                bArr[i2] = (byte) ((i & 127) | 128);
+                bArr[i2] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                 i >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzbc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zzd), Integer.valueOf(this.zzc), 1), e);
@@ -225,7 +226,7 @@ public final class zzbb extends zzbe {
                 byte[] bArr = this.zzb;
                 int i = this.zzd;
                 this.zzd = i + 1;
-                zzeo.zzn(bArr, i, (byte) ((((int) j) & 127) | 128));
+                zzeo.zzn(bArr, i, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                 j >>>= 7;
             }
             byte[] bArr2 = this.zzb;
@@ -239,7 +240,7 @@ public final class zzbb extends zzbe {
                 byte[] bArr3 = this.zzb;
                 int i3 = this.zzd;
                 this.zzd = i3 + 1;
-                bArr3[i3] = (byte) ((((int) j) & 127) | 128);
+                bArr3[i3] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                 j >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzbc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zzd), Integer.valueOf(this.zzc), 1), e);

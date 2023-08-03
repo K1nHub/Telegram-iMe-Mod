@@ -232,7 +232,14 @@ public class CrashlyticsReportJsonTransform {
                     builder.setDevice(parseDevice(jsonReader));
                     break;
                 case 4:
-                    builder.setEvents(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda0.INSTANCE));
+                    builder.setEvents(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda0
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.Session.Event parseEvent;
+                            parseEvent = CrashlyticsReportJsonTransform.parseEvent(jsonReader2);
+                            return parseEvent;
+                        }
+                    }));
                     break;
                 case 5:
                     builder.setOs(parseOs(jsonReader));
@@ -268,7 +275,14 @@ public class CrashlyticsReportJsonTransform {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             if (nextName.equals("files")) {
-                builder.setFiles(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda3.INSTANCE));
+                builder.setFiles(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda3
+                    @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                    public final Object parse(JsonReader jsonReader2) {
+                        CrashlyticsReport.FilesPayload.File parseFile;
+                        parseFile = CrashlyticsReportJsonTransform.parseFile(jsonReader2);
+                        return parseFile;
+                    }
+                }));
             } else if (nextName.equals("orgId")) {
                 builder.setOrgId(jsonReader.nextString());
             } else {
@@ -745,10 +759,24 @@ public class CrashlyticsReportJsonTransform {
                     builder.setExecution(parseEventExecution(jsonReader));
                     break;
                 case 2:
-                    builder.setInternalKeys(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5.INSTANCE));
+                    builder.setInternalKeys(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.CustomAttribute parseCustomAttribute;
+                            parseCustomAttribute = CrashlyticsReportJsonTransform.parseCustomAttribute(jsonReader2);
+                            return parseCustomAttribute;
+                        }
+                    }));
                     break;
                 case 3:
-                    builder.setCustomAttributes(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5.INSTANCE));
+                    builder.setCustomAttributes(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.CustomAttribute parseCustomAttribute;
+                            parseCustomAttribute = CrashlyticsReportJsonTransform.parseCustomAttribute(jsonReader2);
+                            return parseCustomAttribute;
+                        }
+                    }));
                     break;
                 case 4:
                     builder.setUiOrientation(jsonReader.nextInt());
@@ -806,13 +834,27 @@ public class CrashlyticsReportJsonTransform {
                     builder.setAppExitInfo(parseAppExitInfo(jsonReader));
                     break;
                 case 1:
-                    builder.setThreads(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda2.INSTANCE));
+                    builder.setThreads(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda2
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.Session.Event.Application.Execution.Thread parseEventThread;
+                            parseEventThread = CrashlyticsReportJsonTransform.parseEventThread(jsonReader2);
+                            return parseEventThread;
+                        }
+                    }));
                     break;
                 case 2:
                     builder.setSignal(parseEventSignal(jsonReader));
                     break;
                 case 3:
-                    builder.setBinaries(parseArray(jsonReader, CrashlyticsReportJsonTransform$$ExternalSyntheticLambda4.INSTANCE));
+                    builder.setBinaries(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda4
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.Session.Event.Application.Execution.BinaryImage parseEventBinaryImage;
+                            parseEventBinaryImage = CrashlyticsReportJsonTransform.parseEventBinaryImage(jsonReader2);
+                            return parseEventBinaryImage;
+                        }
+                    }));
                     break;
                 case 4:
                     builder.setException(parseEventExecutionException(jsonReader));

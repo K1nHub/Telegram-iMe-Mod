@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/DownloadController;)V
     .locals 0
 
-    .line 1290
+    .line 1310
     iput-object p1, p0, Lorg/telegram/messenger/DownloadController$2;->this$0:Lorg/telegram/messenger/DownloadController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public run()V
     .locals 3
 
-    .line 1293
+    .line 1313
     iget-object v0, p0, Lorg/telegram/messenger/DownloadController$2;->this$0:Lorg/telegram/messenger/DownloadController;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/DownloadController;->clearUnviewedDownloads()V
 
-    .line 1294
+    .line 1314
     iget-object v0, p0, Lorg/telegram/messenger/DownloadController$2;->this$0:Lorg/telegram/messenger/DownloadController;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;

@@ -13,15 +13,15 @@ import com.google.android.gms.internal.location.zzdj;
 /* loaded from: classes3.dex */
 public final class LastLocationRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LastLocationRequest> CREATOR = new zzv();
-    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getMaxUpdateAgeMillis", m779id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getMaxUpdateAgeMillis", m797id = 1)
     private final long zza;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.location.Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m779id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.location.Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m797id = 2)
     private final int zzb;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m779id = 3)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m797id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "getModuleId", m779id = 4)
+    @SafeParcelable.Field(getter = "getModuleId", m797id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getImpersonation", m779id = 5)
+    @SafeParcelable.Field(getter = "getImpersonation", m797id = 5)
     private final com.google.android.gms.internal.location.zzd zze;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
@@ -68,7 +68,7 @@ public final class LastLocationRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LastLocationRequest(@SafeParcelable.Param(m778id = 1) long j, @SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) boolean z, @SafeParcelable.Param(m778id = 4) String str, @SafeParcelable.Param(m778id = 5) com.google.android.gms.internal.location.zzd zzdVar) {
+    public LastLocationRequest(@SafeParcelable.Param(m796id = 1) long j, @SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) boolean z, @SafeParcelable.Param(m796id = 4) String str, @SafeParcelable.Param(m796id = 5) com.google.android.gms.internal.location.zzd zzdVar) {
         this.zza = j;
         this.zzb = i;
         this.zzc = z;

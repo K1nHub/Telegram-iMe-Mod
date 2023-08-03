@@ -7,6 +7,7 @@ import android.net.Uri;
 import androidx.core.util.Preconditions;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.api.internal.ListenerHolders;
 import com.google.android.gms.common.api.internal.RegistrationMethods;
@@ -16,6 +17,7 @@ import com.google.android.gms.common.internal.PendingResultUtil;
 import com.google.android.gms.common.util.VisibleForTesting;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.wearable.MessageApi;
 import com.google.android.gms.wearable.MessageClient;
 import com.google.android.gms.wearable.MessageOptions;
 import com.google.android.gms.wearable.PutDataRequest;
@@ -86,7 +88,12 @@ public final class zzfw extends MessageClient {
     public final Task<Integer> sendMessage(String str, String str2, byte[] bArr) {
         zzfl zzflVar = this.zza;
         GoogleApiClient asGoogleApiClient = asGoogleApiClient();
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzfg(zzflVar, asGoogleApiClient, str, str2, bArr)), zzfp.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzfg(zzflVar, asGoogleApiClient, str, str2, bArr)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzfp
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return Integer.valueOf(((MessageApi.SendMessageResult) result).getRequestId());
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.MessageClient

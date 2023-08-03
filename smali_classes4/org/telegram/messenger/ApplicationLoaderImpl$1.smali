@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/messenger/ApplicationLoaderImpl;)V
     .locals 0
 
-    .line 86
+    .line 92
     iput-object p1, p0, Lorg/telegram/messenger/ApplicationLoaderImpl$1;->this$0:Lorg/telegram/messenger/ApplicationLoaderImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 198
+    .line 204
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/ApplicationLoaderImpl$1;->loadSticker(Lcom/iMe/fork/models/Changelog;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     goto :goto_0
@@ -62,7 +62,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 200
+    .line 206
     invoke-interface {p2, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     :goto_0
@@ -72,14 +72,14 @@
 .method private static synthetic lambda$onReleaseAvailable$0(Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;Landroid/app/Activity;Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 3
 
-    .line 128
+    .line 134
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 129
+    .line 135
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     return-void
@@ -87,28 +87,28 @@
     :cond_0
     const/4 v0, 0x6
 
-    .line 132
+    .line 138
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->flags:I
 
     if-eqz p2, :cond_1
 
     or-int/lit8 v0, v0, 0x8
 
-    .line 134
+    .line 140
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->flags:I
 
-    .line 136
+    .line 142
     :cond_1
     iput-object p2, p0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 137
+    .line 143
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->isAppUpdateAvailable()Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    .line 138
+    .line 144
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
@@ -128,16 +128,16 @@
     :cond_2
     move v0, v1
 
-    .line 139
+    .line 145
     :goto_0
     sget-boolean v2, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateInProgress:Z
 
-    .line 140
+    .line 146
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateInProgress:Z
 
-    .line 141
+    .line 147
     invoke-static {p0}, Lorg/telegram/messenger/SharedConfig;->setNewAppVersionAvailable(Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;)Z
 
     move-result p0
@@ -150,7 +150,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 144
+    .line 150
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object p0
@@ -165,13 +165,13 @@
 
     goto :goto_1
 
-    .line 147
+    .line 153
     :cond_3
     check-cast p1, Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/LaunchActivity;->showAppUpdateDialog()V
 
-    .line 150
+    .line 156
     :cond_4
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
@@ -203,7 +203,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 181
+    .line 187
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result v1
@@ -212,7 +212,7 @@
 
     goto :goto_2
 
-    .line 185
+    .line 191
     :cond_0
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -228,7 +228,7 @@
 
     if-nez v1, :cond_1
 
-    .line 187
+    .line 193
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -244,7 +244,7 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 190
+    .line 196
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -255,7 +255,7 @@
 
     if-le v2, v3, :cond_2
 
-    .line 191
+    .line 197
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -269,12 +269,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 194
+    .line 200
     invoke-interface {p2, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     goto :goto_1
 
-    .line 196
+    .line 202
     :cond_3
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -305,7 +305,7 @@
     :goto_1
     return-void
 
-    .line 182
+    .line 188
     :cond_5
     :goto_2
     invoke-interface {p2, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -318,19 +318,19 @@
 .method public onNoReleaseAvailable(Landroid/app/Activity;)V
     .locals 6
 
-    .line 157
+    .line 163
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 158
+    .line 164
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     return-void
 
-    .line 161
+    .line 167
     :cond_0
     instance-of v0, p1, Lorg/telegram/ui/LaunchActivity;
 
@@ -338,7 +338,7 @@
 
     return-void
 
-    .line 164
+    .line 170
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -348,24 +348,24 @@
 
     const/4 v0, 0x0
 
-    .line 165
+    .line 171
     sput-object v0, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
-    .line 166
+    .line 172
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 167
+    .line 173
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
-    .line 168
+    .line 174
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateInProgress:Z
 
     if-eqz v0, :cond_2
 
-    .line 169
+    .line 175
     sput-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateInProgress:Z
 
-    .line 170
+    .line 176
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -386,7 +386,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f111a36
+    const v5, 0x7f111bce
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
@@ -396,12 +396,12 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 171
+    .line 177
     check-cast p1, Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/LaunchActivity;->dismissUpdateAppDialog()V
 
-    .line 173
+    .line 179
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -419,22 +419,22 @@
 .method public onReleaseAvailable(Landroid/app/Activity;Lcom/microsoft/appcenter/distribute/ReleaseDetails;)Z
     .locals 7
 
-    .line 92
+    .line 98
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     sput-wide v0, Lorg/telegram/messenger/SharedConfig;->lastUpdateCheckTime:J
 
-    .line 93
+    .line 99
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
     const/4 v0, -0x2
 
-    .line 94
+    .line 100
     invoke-static {v0}, Lcom/microsoft/appcenter/distribute/Distribute;->notifyUpdateAction(I)V
 
-    .line 95
+    .line 101
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     const/4 v1, 0x1
@@ -443,12 +443,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 102
     sput-boolean v2, Lorg/telegram/messenger/ApplicationLoader;->isCheckForUpdateCanceled:Z
 
     return v1
 
-    .line 99
+    .line 105
     :cond_0
     instance-of v0, p1, Lorg/telegram/ui/LaunchActivity;
 
@@ -456,7 +456,7 @@
 
     return v1
 
-    .line 102
+    .line 108
     :cond_1
     new-instance v0, Lcom/google/gson/Gson;
 
@@ -474,19 +474,19 @@
 
     check-cast v0, Lcom/iMe/fork/models/Changelog;
 
-    .line 103
+    .line 109
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;-><init>()V
 
-    .line 104
+    .line 110
     invoke-virtual {p2}, Lcom/microsoft/appcenter/distribute/ReleaseDetails;->getShortVersion()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
 
-    .line 105
+    .line 111
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
@@ -495,22 +495,22 @@
 
     new-array v5, v2, [B
 
-    .line 106
+    .line 112
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     const-string v5, "application/vnd.android.package-archive"
 
-    .line 107
+    .line 113
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 108
+    .line 114
     invoke-virtual {p2}, Lcom/microsoft/appcenter/distribute/ReleaseDetails;->getSize()J
 
     move-result-wide v5
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 109
+    .line 115
     invoke-virtual {p2}, Lcom/microsoft/appcenter/distribute/ReleaseDetails;->getDownloadUrl()Landroid/net/Uri;
 
     move-result-object p2
@@ -523,7 +523,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 111
+    .line 117
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -538,14 +538,14 @@
 
     iput v4, p2, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 113
+    .line 119
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x18
 
     if-lt p2, v4, :cond_2
 
-    .line 114
+    .line 120
     invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -564,7 +564,7 @@
 
     goto :goto_0
 
-    .line 116
+    .line 122
     :cond_2
     invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
@@ -579,7 +579,7 @@
     :goto_0
     if-eqz p2, :cond_4
 
-    .line 118
+    .line 124
     new-instance v2, Ljava/util/Locale;
 
     const-string/jumbo v4, "ru"
@@ -640,7 +640,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 119
+    .line 125
     :cond_3
     iget-object p2, v0, Lcom/iMe/fork/models/Changelog;->ruChangelog:Ljava/lang/String;
 
@@ -648,13 +648,13 @@
 
     goto :goto_1
 
-    .line 121
+    .line 127
     :cond_4
     iget-object p2, v0, Lcom/iMe/fork/models/Changelog;->enChangelog:Ljava/lang/String;
 
     iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
 
-    .line 124
+    .line 130
     :cond_5
     :goto_1
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
@@ -663,10 +663,10 @@
 
     const-string p2, ""
 
-    .line 125
+    .line 131
     iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
 
-    .line 127
+    .line 133
     :cond_6
     new-instance p2, Lorg/telegram/messenger/ApplicationLoaderImpl$1$$ExternalSyntheticLambda0;
 

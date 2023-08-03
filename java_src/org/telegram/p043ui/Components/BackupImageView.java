@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SecureDocument;
@@ -44,7 +44,7 @@ public class BackupImageView extends View {
     }
 
     public void setUser(TLRPC$User tLRPC$User) {
-        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3417R.dimen.telegram_avatar_size_medium) / 2);
+        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3419R.dimen.telegram_avatar_size_medium) / 2);
         AvatarDrawable avatarDrawable = new AvatarDrawable(tLRPC$User);
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         setForUserOrChat(tLRPC$User, avatarDrawable);
@@ -54,18 +54,18 @@ public class BackupImageView extends View {
         super(context);
         this.width = -1;
         this.height = -1;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.imageReceiver = imageReceiver;
-        imageReceiver.setAllowLoadingOnAttachedOnly(true);
+        ImageReceiver createImageReciever = createImageReciever();
+        this.imageReceiver = createImageReciever;
+        createImageReciever.setAllowLoadingOnAttachedOnly(true);
         this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.BackupImageView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-            public final void didSetImage(ImageReceiver imageReceiver2, boolean z, boolean z2, boolean z3) {
-                BackupImageView.this.lambda$new$0(imageReceiver2, z, z2, z3);
+            public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+                BackupImageView.this.lambda$new$0(imageReceiver, z, z2, z3);
             }
 
             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-            public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver2) {
-                ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver2);
+            public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+                ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver);
             }
         });
     }
@@ -76,6 +76,10 @@ public class BackupImageView extends View {
             return;
         }
         checkCreateBlurredImage();
+    }
+
+    protected ImageReceiver createImageReciever() {
+        return new ImageReceiver(this);
     }
 
     public void setBlurAllowed(boolean z) {

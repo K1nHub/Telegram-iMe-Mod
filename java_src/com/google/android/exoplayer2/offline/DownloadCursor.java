@@ -39,6 +39,11 @@ public interface DownloadCursor extends Closeable {
             return _this.getPosition() == 0 && _this.getCount() != 0;
         }
 
+        public static boolean $default$isLast(DownloadCursor _this) {
+            int count = _this.getCount();
+            return _this.getPosition() == count + (-1) && count != 0;
+        }
+
         public static boolean $default$isBeforeFirst(DownloadCursor _this) {
             return _this.getCount() == 0 || _this.getPosition() == -1;
         }

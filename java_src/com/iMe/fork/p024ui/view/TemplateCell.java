@@ -14,10 +14,11 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -51,20 +52,97 @@ public final class TemplateCell extends LinearLayout {
         Lazy lazy5;
         Lazy lazy6;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new TemplateCell$avatarView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<BackupImageView>() { // from class: com.iMe.fork.ui.view.TemplateCell$avatarView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final BackupImageView invoke() {
+                BackupImageView initAvatarView;
+                initAvatarView = TemplateCell.this.initAvatarView();
+                return initAvatarView;
+            }
+        });
         this.avatarView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TemplateCell$titleContainer$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.view.TemplateCell$titleContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initTitleContainer;
+                initTitleContainer = TemplateCell.this.initTitleContainer();
+                return initTitleContainer;
+            }
+        });
         this.titleContainer$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TemplateCell$titleTextView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.TemplateCell$titleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTitleTextView;
+                initTitleTextView = TemplateCell.this.initTitleTextView();
+                return initTitleTextView;
+            }
+        });
         this.titleTextView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new TemplateCell$subtitleTextView$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.TemplateCell$subtitleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSubtitleTextView;
+                initSubtitleTextView = TemplateCell.this.initSubtitleTextView();
+                return initSubtitleTextView;
+            }
+        });
         this.subtitleTextView$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new TemplateCell$goToMessageButton$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.TemplateCell$goToMessageButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initGoToMessageButton;
+                initGoToMessageButton = TemplateCell.this.initGoToMessageButton();
+                return initGoToMessageButton;
+            }
+        });
         this.goToMessageButton$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new TemplateCell$sendButton$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.TemplateCell$sendButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initSendButton;
+                initSendButton = TemplateCell.this.initSendButton();
+                return initSendButton;
+            }
+        });
         this.sendButton$delegate = lazy6;
-        int m54dp = AndroidUtilities.m54dp(6);
-        setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(6);
+        setPadding(m72dp, m72dp, m72dp, m72dp);
         setGravity(16);
         addView(getAvatarView(), LayoutHelper.createLinear(40, 40, 16, 6, 0, 0, 0));
         addView(getTitleContainer(), LayoutHelper.createLinear(0, -2, 1.0f, 16, 16, 0, 6, 0));
@@ -117,10 +195,10 @@ public final class TemplateCell extends LinearLayout {
         TextView subtitleTextView = getSubtitleTextView();
         if (SharedConfig.selectedTemplatesSortingType != TemplatesSortingType.USAGE) {
             ViewExtKt.visible$default(subtitleTextView, false, 1, null);
-            subtitleTextView.setText(LocaleController.getInternalString(C3417R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
+            subtitleTextView.setText(LocaleController.getInternalString(C3419R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
         } else {
             subtitleTextView.setVisibility(template.getUsageRating() != 0 ? 0 : 8);
-            subtitleTextView.setText(LocaleController.getInternalString(C3417R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
+            subtitleTextView.setText(LocaleController.getInternalString(C3419R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
         }
         getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -171,7 +249,7 @@ public final class TemplateCell extends LinearLayout {
         ViewExtKt.singleLine(textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(16.0f);
-        textView.setMaxHeight(AndroidUtilities.m54dp(20));
+        textView.setMaxHeight(AndroidUtilities.m72dp(20));
         textView.setIncludeFontPadding(false);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         return textView;
@@ -181,7 +259,7 @@ public final class TemplateCell extends LinearLayout {
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
         textView.setTextSize(15.0f);
-        textView.setMaxHeight(AndroidUtilities.m54dp(20));
+        textView.setMaxHeight(AndroidUtilities.m72dp(20));
         textView.setIncludeFontPadding(false);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         return textView;
@@ -193,7 +271,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3417R.C3419drawable.msg_message);
+        imageView.setImageResource(C3419R.C3421drawable.msg_message);
         return imageView;
     }
 
@@ -203,7 +281,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelSend), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3417R.C3419drawable.ic_send);
+        imageView.setImageResource(C3419R.C3421drawable.ic_send);
         return imageView;
     }
 

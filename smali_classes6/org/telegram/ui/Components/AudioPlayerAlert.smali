@@ -266,10 +266,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$hTiy4G9OiVZ36en8h4FHEXKPR7U(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
+.method public static synthetic $r8$lambda$d1tgcEXaRNZfpDBxV4-VhmZ2Gmk(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/net/Uri;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->lambda$onSubItemClick$15()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->lambda$onSubItemClick$15(Landroid/net/Uri;)V
 
     return-void
 .end method
@@ -849,7 +849,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 551
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_time:I
@@ -1515,9 +1515,9 @@
     .line 774
     iget-object v2, v0, Lorg/telegram/ui/Components/AudioPlayerAlert;->speedSlider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
 
-    new-instance v3, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda11;
+    new-instance v3, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda10;
 
-    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback2;)V
 
@@ -4980,7 +4980,7 @@
 .end method
 
 .method private synthetic lambda$onSubItemClick$14(Ljava/util/ArrayList;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 32
+    .locals 31
 
     move-object/from16 v0, p0
 
@@ -5179,43 +5179,47 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v16
+    move-result-object v1
 
     invoke-interface/range {p4 .. p4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v16
+
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
     const/16 v21, 0x0
 
-    const/16 v22, 0x0
+    const/16 v22, 0x1
 
-    const/16 v23, 0x1
+    const/16 v23, 0x0
 
     const/16 v24, 0x0
 
     const/16 v25, 0x0
 
-    const/16 v26, 0x0
+    iget-boolean v2, v13, Lorg/telegram/ui/DialogsActivity;->notify:Z
 
-    iget-boolean v1, v13, Lorg/telegram/ui/DialogsActivity;->notify:Z
+    iget v5, v13, Lorg/telegram/ui/DialogsActivity;->scheduleDate:I
 
-    iget v2, v13, Lorg/telegram/ui/DialogsActivity;->scheduleDate:I
+    const/16 v28, 0x0
 
     const/16 v29, 0x0
 
     const/16 v30, 0x0
 
-    const/16 v31, 0x0
+    move-wide/from16 v17, v3
 
-    move-wide/from16 v18, v3
+    move/from16 v26, v2
 
-    move/from16 v27, v1
+    move/from16 v27, v5
 
-    move/from16 v28, v2
+    invoke-static/range {v16 .. v30}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    invoke-virtual/range {v16 .. v31}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     .line 1573
     :cond_7
@@ -5262,27 +5266,27 @@
     return v15
 .end method
 
-.method private synthetic lambda$onSubItemClick$15()V
-    .locals 2
+.method private synthetic lambda$onSubItemClick$15(Landroid/net/Uri;)V
+    .locals 1
 
     .line 1687
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    check-cast v0, Landroid/widget/FrameLayout;
+    check-cast p1, Landroid/widget/FrameLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget-object v1, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
+    sget-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/Bulletin;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return-void
 .end method
@@ -6901,21 +6905,21 @@
     if-eqz v0, :cond_0
 
     .line 2026
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
+
+    move-result-wide v0
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
 
     move-result p2
 
-    int-to-float p2, p2
+    float-to-double v2, p2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    mul-double/2addr v0, v2
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
-
-    move-result v0
-
-    mul-float/2addr p2, v0
-
-    float-to-int p2, p2
+    double-to-int p2, v0
 
     goto/16 :goto_3
 
@@ -7071,21 +7075,21 @@
     if-eqz v1, :cond_8
 
     .line 2052
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
+
+    move-result-wide v0
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
 
     move-result p2
 
-    int-to-float p2, p2
+    float-to-double v2, p2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    mul-double/2addr v0, v2
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
-
-    move-result v0
-
-    mul-float/2addr p2, v0
-
-    float-to-int p2, p2
+    double-to-int p2, v0
 
     .line 2053
     iput p2, p1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
@@ -7821,9 +7825,11 @@
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;)V
 
     .line 2150
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v0
+    move-result-wide v2
+
+    double-to-int v0, v2
 
     iput v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->lastDuration:I
 
@@ -10659,11 +10665,11 @@
     :goto_5
     move-object v9, p1
 
-    new-instance v10, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda10;
+    new-instance v10, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda11;
 
-    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
+    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
 
-    invoke-static/range {v5 .. v10}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-static/range {v5 .. v10}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
 
     :cond_16
     :goto_6

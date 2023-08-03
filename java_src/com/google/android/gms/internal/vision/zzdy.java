@@ -2,19 +2,19 @@ package com.google.android.gms.internal.vision;
 
 import java.util.Map;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-final class zzdy extends zzdl<K, V> {
+final class zzdy<K, V> extends zzdl<K, V> {
     @NullableDecl
     private final K zza;
     private int zzb;
     private final /* synthetic */ zzdp zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Multi-variable type inference failed */
     public zzdy(zzdp zzdpVar, int i) {
         this.zzc = zzdpVar;
-        this.zza = zzdpVar.zzb[i];
+        this.zza = (K) zzdpVar.zzb[i];
         this.zzb = i;
     }
 
@@ -33,12 +33,10 @@ final class zzdy extends zzdl<K, V> {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v5, types: [V, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.zzdl, java.util.Map.Entry
     @NullableDecl
     public final V getValue() {
-        Map zzb = this.zzc.zzb();
+        Map<K, V> zzb = this.zzc.zzb();
         if (zzb != null) {
             return zzb.get(this.zza);
         }
@@ -47,14 +45,12 @@ final class zzdy extends zzdl<K, V> {
         if (i == -1) {
             return null;
         }
-        return this.zzc.zzc[i];
+        return (V) this.zzc.zzc[i];
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v2, types: [V, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.zzdl, java.util.Map.Entry
     public final V setValue(V v) {
-        Map zzb = this.zzc.zzb();
+        Map<K, V> zzb = this.zzc.zzb();
         if (zzb != null) {
             return zzb.put(this.zza, v);
         }
@@ -65,7 +61,7 @@ final class zzdy extends zzdl<K, V> {
             return null;
         }
         Object[] objArr = this.zzc.zzc;
-        V v2 = objArr[i];
+        V v2 = (V) objArr[i];
         objArr[i] = v;
         return v2;
     }

@@ -2843,7 +2843,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "proximity "
+    const-string/jumbo v1, "proximity "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3178,7 +3178,7 @@
     if-eqz v1, :cond_5
 
     :try_start_0
-    const-string v2, "power"
+    const-string/jumbo v2, "power"
 
     .line 3775
     invoke-virtual {p0, v2}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -5219,7 +5219,7 @@
     move-object/from16 v1, p0
 
     :goto_e
-    const-string v0, "proxy_enabled"
+    const-string/jumbo v0, "proxy_enabled"
 
     move-object/from16 v2, v27
 
@@ -5232,7 +5232,7 @@
 
     if-eqz v0, :cond_14
 
-    const-string v0, "proxy_enabled_calls"
+    const-string/jumbo v0, "proxy_enabled_calls"
 
     invoke-interface {v2, v0, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -5240,7 +5240,7 @@
 
     if-eqz v0, :cond_14
 
-    const-string v0, "proxy_ip"
+    const-string/jumbo v0, "proxy_ip"
 
     const/4 v3, 0x0
 
@@ -5249,7 +5249,7 @@
 
     move-result-object v0
 
-    const-string v4, "proxy_secret"
+    const-string/jumbo v4, "proxy_secret"
 
     .line 2416
     invoke-interface {v2, v4, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -5272,7 +5272,7 @@
     .line 2418
     new-instance v3, Lorg/telegram/messenger/voip/Instance$Proxy;
 
-    const-string v4, "proxy_port"
+    const-string/jumbo v4, "proxy_port"
 
     const/4 v5, 0x0
 
@@ -5280,7 +5280,7 @@
 
     move-result v4
 
-    const-string v5, "proxy_user"
+    const-string/jumbo v5, "proxy_user"
 
     const/4 v6, 0x0
 
@@ -5288,7 +5288,7 @@
 
     move-result-object v5
 
-    const-string v7, "proxy_pass"
+    const-string/jumbo v7, "proxy_pass"
 
     invoke-interface {v2, v7, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -6383,7 +6383,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "phone.discardCall "
+    const-string/jumbo v0, "phone.discardCall "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7650,7 +7650,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "phone.discardCall "
+    const-string/jumbo v0, "phone.discardCall "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10163,7 +10163,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "phone.discardCall "
+    const-string/jumbo v0, "phone.discardCall "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -16605,7 +16605,7 @@
     return v1
 
     :cond_1
-    const-string v0, "phone"
+    const-string/jumbo v0, "phone"
 
     .line 2580
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -17866,7 +17866,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/voip/Instance;->setBufferSize(I)V
 
     :goto_0
-    const-string v0, "power"
+    const-string/jumbo v0, "power"
 
     .line 3546
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -19549,21 +19549,21 @@
 
     iput-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->joinHash:Ljava/lang/String;
 
-    const-string v0, "peerChannelId"
+    const-string/jumbo v0, "peerChannelId"
 
     .line 706
     invoke-virtual {v2, v0, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v11
 
-    const-string v0, "peerChatId"
+    const-string/jumbo v0, "peerChatId"
 
     .line 707
     invoke-virtual {v2, v0, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v13
 
-    const-string v0, "peerUserId"
+    const-string/jumbo v0, "peerUserId"
 
     move-wide v15, v11
 
@@ -19586,7 +19586,7 @@
     .line 711
     iput-wide v13, v0, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
-    const-string v10, "peerAccessHash"
+    const-string/jumbo v10, "peerAccessHash"
 
     .line 712
     invoke-virtual {v2, v10, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
@@ -19614,7 +19614,7 @@
     .line 715
     iput-wide v10, v0, Lorg/telegram/tgnet/TLRPC$InputPeer;->channel_id:J
 
-    const-string v10, "peerAccessHash"
+    const-string/jumbo v10, "peerAccessHash"
 
     .line 716
     invoke-virtual {v2, v10, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
@@ -19640,7 +19640,7 @@
     .line 719
     iput-wide v10, v0, Lorg/telegram/tgnet/TLRPC$InputPeer;->user_id:J
 
-    const-string v10, "peerAccessHash"
+    const-string/jumbo v10, "peerAccessHash"
 
     .line 720
     invoke-virtual {v2, v10, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J

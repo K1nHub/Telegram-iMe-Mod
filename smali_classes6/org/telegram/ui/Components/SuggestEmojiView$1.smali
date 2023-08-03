@@ -306,21 +306,31 @@
     return v0
 .end method
 
-.method public needCopy()Z
+.method public synthetic isStoryReply()Z
     .locals 1
 
-    .line 108
-    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$isStoryReply(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public needCopy(Lorg/telegram/tgnet/TLRPC$Document;)Z
+    .locals 0
+
+    .line 108
+    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public synthetic needMenu()Z
@@ -681,7 +691,7 @@
     invoke-direct {p1, v1, v2}, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 155
-    iget-object v1, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Landroid/widget/TextView;
+    iget-object v1, p1, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->RemoveStatusInfo:I
 

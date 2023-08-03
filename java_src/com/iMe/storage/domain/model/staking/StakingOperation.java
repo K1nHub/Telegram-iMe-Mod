@@ -16,7 +16,7 @@ public final class StakingOperation {
     private final StakingOperationCost fee;
 
     /* renamed from: id */
-    private final long f428id;
+    private final long f431id;
     private final String issuedAt;
     private final String issuer;
     private final Boolean safe;
@@ -70,7 +70,7 @@ public final class StakingOperation {
     }
 
     public final long component1() {
-        return this.f428id;
+        return this.f431id;
     }
 
     public final StakingOperationCost component10() {
@@ -141,15 +141,15 @@ public final class StakingOperation {
         }
         if (obj instanceof StakingOperation) {
             StakingOperation stakingOperation = (StakingOperation) obj;
-            return this.f428id == stakingOperation.f428id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token);
+            return this.f431id == stakingOperation.f431id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token);
         }
         return false;
     }
 
     public int hashCode() {
-        int m706m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f428id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m724m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f431id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
-        int hashCode = (m706m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m724m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
         int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         StakingOperationCost stakingOperationCost = this.amount;
@@ -163,7 +163,7 @@ public final class StakingOperation {
     }
 
     public String toString() {
-        return "StakingOperation(id=" + this.f428id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ')';
+        return "StakingOperation(id=" + this.f431id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ')';
     }
 
     public StakingOperation(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, TokenDetailed tokenDetailed, TokenDetailed token) {
@@ -173,7 +173,7 @@ public final class StakingOperation {
         Intrinsics.checkNotNullParameter(issuer, "issuer");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
-        this.f428id = j;
+        this.f431id = j;
         this.stakingId = i;
         this.transaction = transaction;
         this.type = type;
@@ -190,7 +190,7 @@ public final class StakingOperation {
     }
 
     public final long getId() {
-        return this.f428id;
+        return this.f431id;
     }
 
     public final int getStakingId() {
@@ -279,7 +279,7 @@ public final class StakingOperation {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
-                    return TransactionDirection.f446IN;
+                    return TransactionDirection.f449IN;
                 }
                 throw new NoWhenBranchMatchedException();
             }

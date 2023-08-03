@@ -29,7 +29,7 @@
     .line 216
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "onSetupNavigationRouter"
+    const-string/jumbo v0, "onSetupNavigationRouter"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

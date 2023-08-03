@@ -12,11 +12,11 @@
 
 .field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
     return-void
 .end method
@@ -43,9 +43,9 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda190;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$oFNWeZ0jU_VqpQgY37A7TMcdqe0(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$IChPGKQUxwkUfLvKQEAPuBG1aR8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;)V
 
     return-void
 .end method

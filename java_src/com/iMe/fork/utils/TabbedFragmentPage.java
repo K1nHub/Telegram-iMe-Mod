@@ -4,7 +4,6 @@ import android.view.View;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 /*  JADX ERROR: JadxRuntimeException in pass: ClassModifier
     jadx.core.utils.exceptions.JadxRuntimeException: Not class type: T extends org.telegram.ui.ActionBar.BaseFragment
@@ -51,39 +50,30 @@ public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTa
         return this.icon;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: TabbedFragmentPage.kt */
-    /* renamed from: com.iMe.fork.utils.TabbedFragmentPage$1 */
-    /* loaded from: classes3.dex */
-    public static final class C15571 extends Lambda implements Function0<View> {
-        final /* synthetic */ T $fragment;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C15571(T t) {
-            super(0);
-            this.$fragment = t;
-        }
-
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final View invoke() {
-            View fragmentView = this.$fragment.getFragmentView();
-            Intrinsics.checkNotNullExpressionValue(fragmentView, "fragment.fragmentView");
-            return fragmentView;
-        }
-
-        @Override // kotlin.jvm.functions.Function0
-        public /* bridge */ /* synthetic */ View invoke() {
-            return invoke();
-        }
-    }
-
     public final T getFragment() {
         return this.fragment;
     }
 
-    public /* synthetic */ TabbedFragmentPage(String str, int i, BaseFragment baseFragment, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new C15571(baseFragment) : function0);
+    public /* synthetic */ TabbedFragmentPage(String str, int i, final BaseFragment baseFragment, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new Function0<View>() { // from class: com.iMe.fork.utils.TabbedFragmentPage.1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View fragmentView = baseFragment.getFragmentView();
+                Intrinsics.checkNotNullExpressionValue(fragmentView, "fragment.fragmentView");
+                return fragmentView;
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ View invoke() {
+                return invoke();
+            }
+        } : function0);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

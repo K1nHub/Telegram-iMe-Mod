@@ -193,7 +193,7 @@
 
     move/from16 v2, v22
 
-    invoke-static/range {v1 .. v20}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$kw0idaPrv_iWOQCAmgKlf_T-ZbE(Lorg/telegram/messenger/ImageLoader;ILjava/lang/String;Ljava/lang/String;ILorg/telegram/messenger/ImageReceiver;ILjava/lang/String;ILorg/telegram/messenger/ImageLocation;ZLjava/lang/Object;ILorg/telegram/tgnet/TLRPC$Document;ZZLjava/lang/String;IJ)V
+    invoke-static/range {v1 .. v20}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$fmsWZ_Jo8epLbXaf2pg8errYNdU(Lorg/telegram/messenger/ImageLoader;ILjava/lang/String;Ljava/lang/String;ILorg/telegram/messenger/ImageReceiver;ILjava/lang/String;ILorg/telegram/messenger/ImageLocation;ZLjava/lang/Object;ILorg/telegram/tgnet/TLRPC$Document;ZZLjava/lang/String;IJ)V
 
     return-void
 .end method

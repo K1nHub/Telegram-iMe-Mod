@@ -11,25 +11,25 @@ import p033j$.util.function.ToLongFunction;
 public final /* synthetic */ class C2812d implements Comparator, Serializable {
 
     /* renamed from: a */
-    public final /* synthetic */ int f730a = 0;
+    public final /* synthetic */ int f733a = 0;
 
     /* renamed from: b */
-    public final /* synthetic */ Object f731b;
+    public final /* synthetic */ Object f734b;
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f730a) {
+        switch (this.f733a) {
             case 0:
-                Function function = (Function) this.f731b;
+                Function function = (Function) this.f734b;
                 return ((Comparable) function.apply(obj)).compareTo(function.apply(obj2));
             case 1:
-                ToDoubleFunction toDoubleFunction = (ToDoubleFunction) this.f731b;
+                ToDoubleFunction toDoubleFunction = (ToDoubleFunction) this.f734b;
                 return Double.compare(toDoubleFunction.applyAsDouble(obj), toDoubleFunction.applyAsDouble(obj2));
             case 2:
-                ToIntFunction toIntFunction = (ToIntFunction) this.f731b;
+                ToIntFunction toIntFunction = (ToIntFunction) this.f734b;
                 return Integer.compare(toIntFunction.applyAsInt(obj), toIntFunction.applyAsInt(obj2));
             default:
-                ToLongFunction toLongFunction = (ToLongFunction) this.f731b;
+                ToLongFunction toLongFunction = (ToLongFunction) this.f734b;
                 return Long.compare(toLongFunction.applyAsLong(obj), toLongFunction.applyAsLong(obj2));
         }
     }

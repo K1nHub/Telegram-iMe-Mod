@@ -12,23 +12,23 @@ import p033j$.util.function.InterfaceC2820f;
 class C3164x implements InterfaceC2846m, InterfaceC2820f, Iterator {
 
     /* renamed from: a */
-    boolean f1196a = false;
+    boolean f1199a = false;
 
     /* renamed from: b */
-    double f1197b;
+    double f1200b;
 
     /* renamed from: c */
-    final /* synthetic */ InterfaceC2853s.InterfaceC2854a f1198c;
+    final /* synthetic */ InterfaceC2853s.InterfaceC2854a f1201c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C3164x(InterfaceC2853s.InterfaceC2854a interfaceC2854a) {
-        this.f1198c = interfaceC2854a;
+        this.f1201c = interfaceC2854a;
     }
 
     @Override // p033j$.util.function.InterfaceC2820f
     public void accept(double d) {
-        this.f1196a = true;
-        this.f1197b = d;
+        this.f1199a = true;
+        this.f1200b = d;
     }
 
     @Override // p033j$.util.InterfaceC2848o
@@ -47,35 +47,35 @@ class C3164x implements InterfaceC2846m, InterfaceC2820f, Iterator {
             return;
         }
         Objects.requireNonNull(consumer);
-        if (!AbstractC2779K.f649a) {
+        if (!AbstractC2779K.f652a) {
             while (hasNext()) {
                 consumer.accept(Double.valueOf(nextDouble()));
             }
             return;
         }
-        AbstractC2779K.m612a(C3164x.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
+        AbstractC2779K.m630a(C3164x.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
         throw null;
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator
     public boolean hasNext() {
-        if (!this.f1196a) {
-            this.f1198c.mo131k(this);
+        if (!this.f1199a) {
+            this.f1201c.mo149k(this);
         }
-        return this.f1196a;
+        return this.f1199a;
     }
 
     @Override // p033j$.util.function.InterfaceC2820f
     /* renamed from: j */
-    public InterfaceC2820f mo87j(InterfaceC2820f interfaceC2820f) {
+    public InterfaceC2820f mo105j(InterfaceC2820f interfaceC2820f) {
         Objects.requireNonNull(interfaceC2820f);
         return new C2819e(this, interfaceC2820f);
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator
     public Double next() {
-        if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(C3164x.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
+        if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(C3164x.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
             throw null;
         }
         return Double.valueOf(nextDouble());
@@ -83,16 +83,16 @@ class C3164x implements InterfaceC2846m, InterfaceC2820f, Iterator {
 
     @Override // p033j$.util.InterfaceC2846m
     public double nextDouble() {
-        if (this.f1196a || hasNext()) {
-            this.f1196a = false;
-            return this.f1197b;
+        if (this.f1199a || hasNext()) {
+            this.f1199a = false;
+            return this.f1200b;
         }
         throw new NoSuchElementException();
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator
     public /* synthetic */ void remove() {
-        Iterator.CC.m613a(this);
+        Iterator.CC.m631a(this);
         throw null;
     }
 }

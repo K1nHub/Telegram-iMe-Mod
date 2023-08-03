@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/view/ViewPropertyAnimatorCompat$Api19Impl;,
-        Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;
+        Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;,
+        Landroidx/core/view/ViewPropertyAnimatorCompat$Api19Impl;
     }
 .end annotation
 

@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLog;
 public class SerializedData extends AbstractSerializedData {
 
     /* renamed from: in */
-    private DataInputStream f1509in;
+    private DataInputStream f1512in;
     private ByteArrayInputStream inbuf;
     protected boolean isOut;
     private boolean justCalc;
@@ -58,7 +58,7 @@ public class SerializedData extends AbstractSerializedData {
         this.justCalc = false;
         this.isOut = false;
         this.inbuf = new ByteArrayInputStream(bArr);
-        this.f1509in = new DataInputStream(this.inbuf);
+        this.f1512in = new DataInputStream(this.inbuf);
         this.len = 0;
     }
 
@@ -70,16 +70,16 @@ public class SerializedData extends AbstractSerializedData {
                 this.inbuf = null;
             }
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         try {
-            DataInputStream dataInputStream = this.f1509in;
+            DataInputStream dataInputStream = this.f1512in;
             if (dataInputStream != null) {
                 dataInputStream.close();
-                this.f1509in = null;
+                this.f1512in = null;
             }
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
         }
         try {
             ByteArrayOutputStream byteArrayOutputStream = this.outbuf;
@@ -88,7 +88,7 @@ public class SerializedData extends AbstractSerializedData {
                 this.outbuf = null;
             }
         } catch (Exception e3) {
-            FileLog.m49e(e3);
+            FileLog.m67e(e3);
         }
         try {
             DataOutputStream dataOutputStream = this.out;
@@ -97,7 +97,7 @@ public class SerializedData extends AbstractSerializedData {
                 this.out = null;
             }
         } catch (Exception e4) {
-            FileLog.m49e(e4);
+            FileLog.m67e(e4);
         }
     }
 
@@ -116,8 +116,8 @@ public class SerializedData extends AbstractSerializedData {
                 dataOutputStream.write(i >> (i2 * 8));
             } catch (Exception e) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("write int32 error");
-                    FileLog.m49e(e);
+                    FileLog.m69e("write int32 error");
+                    FileLog.m67e(e);
                     return;
                 }
                 return;
@@ -140,8 +140,8 @@ public class SerializedData extends AbstractSerializedData {
                 dataOutputStream.write((int) (j >> (i * 8)));
             } catch (Exception e) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("write int64 error");
-                    FileLog.m49e(e);
+                    FileLog.m69e("write int64 error");
+                    FileLog.m67e(e);
                     return;
                 }
                 return;
@@ -170,8 +170,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write raw error");
-                FileLog.m49e(e);
+                FileLog.m69e("write raw error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -186,8 +186,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write bytes error");
-                FileLog.m49e(e);
+                FileLog.m69e("write bytes error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -202,8 +202,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write byte error");
-                FileLog.m49e(e);
+                FileLog.m69e("write byte error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -218,8 +218,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write byte error");
-                FileLog.m49e(e);
+                FileLog.m69e("write byte error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -255,8 +255,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write byte array error");
-                FileLog.m49e(e);
+                FileLog.m69e("write byte array error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -267,8 +267,8 @@ public class SerializedData extends AbstractSerializedData {
             writeByteArray(str.getBytes("UTF-8"));
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write string error");
-                FileLog.m49e(e);
+                FileLog.m69e("write string error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -304,8 +304,8 @@ public class SerializedData extends AbstractSerializedData {
             }
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write byte array error");
-                FileLog.m49e(e);
+                FileLog.m69e("write byte array error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -316,19 +316,20 @@ public class SerializedData extends AbstractSerializedData {
             writeInt64(Double.doubleToRawLongBits(d));
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write double error");
-                FileLog.m49e(e);
+                FileLog.m69e("write double error");
+                FileLog.m67e(e);
             }
         }
     }
 
+    @Override // org.telegram.tgnet.AbstractSerializedData
     public void writeFloat(float f) {
         try {
             writeInt32(Float.floatToIntBits(f));
         } catch (Exception e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("write float error");
-                FileLog.m49e(e);
+                FileLog.m69e("write float error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -351,13 +352,13 @@ public class SerializedData extends AbstractSerializedData {
             return;
         }
         if (!this.justCalc) {
-            DataInputStream dataInputStream = this.f1509in;
+            DataInputStream dataInputStream = this.f1512in;
             if (dataInputStream != null) {
                 try {
                     dataInputStream.skipBytes(i);
                     return;
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                     return;
                 }
             }
@@ -384,14 +385,15 @@ public class SerializedData extends AbstractSerializedData {
             throw new RuntimeException("Not bool value!");
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m51e("Not bool value!");
+            FileLog.m69e("Not bool value!");
         }
         return false;
     }
 
+    @Override // org.telegram.tgnet.AbstractSerializedData
     public byte readByte(boolean z) {
         try {
-            byte readByte = this.f1509in.readByte();
+            byte readByte = this.f1512in.readByte();
             this.len++;
             return readByte;
         } catch (Exception e) {
@@ -399,8 +401,8 @@ public class SerializedData extends AbstractSerializedData {
                 throw new RuntimeException("read byte error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read byte error");
-                FileLog.m49e(e);
+                FileLog.m69e("read byte error");
+                FileLog.m67e(e);
                 return (byte) 0;
             }
             return (byte) 0;
@@ -410,15 +412,15 @@ public class SerializedData extends AbstractSerializedData {
     @Override // org.telegram.tgnet.AbstractSerializedData
     public void readBytes(byte[] bArr, boolean z) {
         try {
-            this.f1509in.read(bArr);
+            this.f1512in.read(bArr);
             this.len += bArr.length;
         } catch (Exception e) {
             if (z) {
                 throw new RuntimeException("read bytes error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read bytes error");
-                FileLog.m49e(e);
+                FileLog.m69e("read bytes error");
+                FileLog.m67e(e);
             }
         }
     }
@@ -434,20 +436,20 @@ public class SerializedData extends AbstractSerializedData {
     public String readString(boolean z) {
         int i;
         try {
-            int read = this.f1509in.read();
+            int read = this.f1512in.read();
             this.len++;
             if (read >= 254) {
-                read = this.f1509in.read() | (this.f1509in.read() << 8) | (this.f1509in.read() << 16);
+                read = this.f1512in.read() | (this.f1512in.read() << 8) | (this.f1512in.read() << 16);
                 this.len += 3;
                 i = 4;
             } else {
                 i = 1;
             }
             byte[] bArr = new byte[read];
-            this.f1509in.read(bArr);
+            this.f1512in.read(bArr);
             this.len++;
             while ((read + i) % 4 != 0) {
-                this.f1509in.read();
+                this.f1512in.read();
                 this.len++;
                 i++;
             }
@@ -457,8 +459,8 @@ public class SerializedData extends AbstractSerializedData {
                 throw new RuntimeException("read string error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read string error");
-                FileLog.m49e(e);
+                FileLog.m69e("read string error");
+                FileLog.m67e(e);
                 return null;
             }
             return null;
@@ -469,20 +471,20 @@ public class SerializedData extends AbstractSerializedData {
     public byte[] readByteArray(boolean z) {
         int i;
         try {
-            int read = this.f1509in.read();
+            int read = this.f1512in.read();
             this.len++;
             if (read >= 254) {
-                read = this.f1509in.read() | (this.f1509in.read() << 8) | (this.f1509in.read() << 16);
+                read = this.f1512in.read() | (this.f1512in.read() << 8) | (this.f1512in.read() << 16);
                 this.len += 3;
                 i = 4;
             } else {
                 i = 1;
             }
             byte[] bArr = new byte[read];
-            this.f1509in.read(bArr);
+            this.f1512in.read(bArr);
             this.len++;
             while ((read + i) % 4 != 0) {
-                this.f1509in.read();
+                this.f1512in.read();
                 this.len++;
                 i++;
             }
@@ -492,8 +494,8 @@ public class SerializedData extends AbstractSerializedData {
                 throw new RuntimeException("read byte array error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read byte array error");
-                FileLog.m49e(e);
+                FileLog.m69e("read byte array error");
+                FileLog.m67e(e);
                 return null;
             }
             return null;
@@ -509,14 +511,15 @@ public class SerializedData extends AbstractSerializedData {
                 throw new RuntimeException("read double error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read double error");
-                FileLog.m49e(e);
+                FileLog.m69e("read double error");
+                FileLog.m67e(e);
                 return 0.0d;
             }
             return 0.0d;
         }
     }
 
+    @Override // org.telegram.tgnet.AbstractSerializedData
     public float readFloat(boolean z) {
         try {
             return Float.intBitsToFloat(readInt32(z));
@@ -525,8 +528,8 @@ public class SerializedData extends AbstractSerializedData {
                 throw new RuntimeException("read float error", e);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("read float error");
-                FileLog.m49e(e);
+                FileLog.m69e("read float error");
+                FileLog.m67e(e);
                 return BitmapDescriptorFactory.HUE_RED;
             }
             return BitmapDescriptorFactory.HUE_RED;
@@ -538,15 +541,15 @@ public class SerializedData extends AbstractSerializedData {
         int i = 0;
         for (int i2 = 0; i2 < 4; i2++) {
             try {
-                i |= this.f1509in.read() << (i2 * 8);
+                i |= this.f1512in.read() << (i2 * 8);
                 this.len++;
             } catch (Exception e) {
                 if (z) {
                     throw new RuntimeException("read int32 error", e);
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("read int32 error");
-                    FileLog.m49e(e);
+                    FileLog.m69e("read int32 error");
+                    FileLog.m67e(e);
                 }
                 return 0;
             }
@@ -559,15 +562,15 @@ public class SerializedData extends AbstractSerializedData {
         long j = 0;
         for (int i = 0; i < 8; i++) {
             try {
-                j |= this.f1509in.read() << (i * 8);
+                j |= this.f1512in.read() << (i * 8);
                 this.len++;
             } catch (Exception e) {
                 if (z) {
                     throw new RuntimeException("read int64 error", e);
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m51e("read int64 error");
-                    FileLog.m49e(e);
+                    FileLog.m69e("read int64 error");
+                    FileLog.m67e(e);
                 }
                 return 0L;
             }
@@ -578,7 +581,7 @@ public class SerializedData extends AbstractSerializedData {
     @Override // org.telegram.tgnet.AbstractSerializedData
     public int remaining() {
         try {
-            return this.f1509in.available();
+            return this.f1512in.available();
         } catch (Exception unused) {
             return Integer.MAX_VALUE;
         }

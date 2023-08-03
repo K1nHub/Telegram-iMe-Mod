@@ -11,16 +11,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class WalletObjectMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<WalletObjectMessage> CREATOR = new zzo();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     String zza;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     String zzb;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     TimeInterval zzc;
-    @SafeParcelable.Field(m779id = 5)
+    @SafeParcelable.Field(m797id = 5)
     @Deprecated
     UriData zzd;
-    @SafeParcelable.Field(m779id = 6)
+    @SafeParcelable.Field(m797id = 6)
     @Deprecated
     UriData zze;
 
@@ -104,7 +104,7 @@ public final class WalletObjectMessage extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public WalletObjectMessage(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) TimeInterval timeInterval, @SafeParcelable.Param(m778id = 5) UriData uriData, @SafeParcelable.Param(m778id = 6) UriData uriData2) {
+    public WalletObjectMessage(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2, @SafeParcelable.Param(m796id = 4) TimeInterval timeInterval, @SafeParcelable.Param(m796id = 5) UriData uriData, @SafeParcelable.Param(m796id = 6) UriData uriData2) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = timeInterval;

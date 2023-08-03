@@ -9,7 +9,12 @@ import java.util.Map;
 /* loaded from: classes3.dex */
 public abstract class AssetPackStates {
     public static AssetPackStates zza(Bundle bundle, zzco zzcoVar, zzeb zzebVar) {
-        return zzd(bundle, zzcoVar, zzebVar, new ArrayList(), zzbf.zza);
+        return zzd(bundle, zzcoVar, zzebVar, new ArrayList(), new zzbe() { // from class: com.google.android.play.core.assetpacks.zzbf
+            @Override // com.google.android.play.core.assetpacks.zzbe
+            public final int zza(int i, String str) {
+                return i;
+            }
+        });
     }
 
     private static AssetPackStates zzd(Bundle bundle, zzco zzcoVar, zzeb zzebVar, List<String> list, zzbe zzbeVar) {

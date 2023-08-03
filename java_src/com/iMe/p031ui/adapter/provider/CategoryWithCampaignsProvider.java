@@ -17,16 +17,36 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider */
 /* loaded from: classes.dex */
 public final class CategoryWithCampaignsProvider extends BaseNodeProvider<CategoryWithCampaignsItem> implements KoinComponent {
-    private Function1<? super CampaignItem, Unit> onChannelItemClick = CategoryWithCampaignsProvider$onChannelItemClick$1.INSTANCE;
-    private Function1<? super Long, Unit> onLoadMoreChannels = CategoryWithCampaignsProvider$onLoadMoreChannels$1.INSTANCE;
+    private Function1<? super CampaignItem, Unit> onChannelItemClick = new Function1<CampaignItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$onChannelItemClick$1
+        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+        public final void invoke2(CampaignItem it) {
+            Intrinsics.checkNotNullParameter(it, "it");
+        }
+
+        @Override // kotlin.jvm.functions.Function1
+        public /* bridge */ /* synthetic */ Unit invoke(CampaignItem campaignItem) {
+            invoke2(campaignItem);
+            return Unit.INSTANCE;
+        }
+    };
+    private Function1<? super Long, Unit> onLoadMoreChannels = new Function1<Long, Unit>() { // from class: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$onLoadMoreChannels$1
+        public final void invoke(long j) {
+        }
+
+        @Override // kotlin.jvm.functions.Function1
+        public /* bridge */ /* synthetic */ Unit invoke(Long l) {
+            invoke(l.longValue());
+            return Unit.INSTANCE;
+        }
+    };
     private final int itemViewType = IdFabric$ViewTypes.CATALOG_CATEGORY_WITH_CAMPAIGNS;
-    private final int layoutId = C3417R.layout.fork_recycle_item_catalog_category_preview;
+    private final int layoutId = C3419R.layout.fork_recycle_item_catalog_category_preview;
     private final ChannelsDiffCallback channelsDiffCallback = new ChannelsDiffCallback();
     private Map<Integer, Parcelable> channelsRecyclersScrollStates = new LinkedHashMap();
     private final Map<Long, CatalogAllChannelsRecycleAdapter> channelsAdapters = new LinkedHashMap();
@@ -69,7 +89,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
             Map<Integer, Parcelable> map = this.channelsRecyclersScrollStates;
             Integer valueOf = Integer.valueOf(holder.getAdapterPosition());
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3417R.C3420id.recycle_channels)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3419R.C3422id.recycle_channels)).getLayoutManager();
             map.put(valueOf, layoutManager != null ? layoutManager.onSaveInstanceState() : null);
         }
     }
@@ -86,7 +106,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
     public void convert(BaseViewHolder helper, CategoryWithCampaignsItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3417R.C3420id.text_title;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3417R.C3420id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
+        int i = C3419R.C3422id.text_title;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3419R.C3422id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
     }
 }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactAddActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 419
+    .line 421
     iput-object p1, p0, Lorg/telegram/ui/ContactAddActivity$6;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,17 +35,17 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 429
+    .line 431
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Cells/TextCell;->onLayout(ZIIII)V
 
     const/16 p1, 0x15
 
-    .line 430
+    .line 432
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 431
+    .line 433
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p2
@@ -64,7 +64,7 @@
 
     div-int/lit8 p2, p2, 0x2
 
-    .line 432
+    .line 434
     iget-object p3, p0, Lorg/telegram/ui/ContactAddActivity$6;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ContactAddActivity;->access$900(Lorg/telegram/ui/ContactAddActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -103,10 +103,10 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 422
+    .line 424
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Cells/TextCell;->onMeasure(II)V
 
-    .line 423
+    .line 425
     iget-object p1, p0, Lorg/telegram/ui/ContactAddActivity$6;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactAddActivity;->access$900(Lorg/telegram/ui/ContactAddActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -135,7 +135,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->measure(II)V
 
-    .line 424
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/ContactAddActivity$6;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactAddActivity;->access$900(Lorg/telegram/ui/ContactAddActivity;)Lorg/telegram/ui/Components/BackupImageView;

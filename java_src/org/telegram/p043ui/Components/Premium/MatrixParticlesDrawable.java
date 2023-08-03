@@ -25,7 +25,7 @@ public class MatrixParticlesDrawable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void init() {
-        this.size = AndroidUtilities.m54dp(16);
+        this.size = AndroidUtilities.m72dp(16);
         TextPaint textPaint = new TextPaint(65);
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         textPaint.setTextSize(this.size);
@@ -58,7 +58,7 @@ public class MatrixParticlesDrawable {
         }
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList<Particle>[] arrayListArr = this.particles;
-        C50721 c50721 = null;
+        C51071 c51071 = null;
         int i4 = 0;
         if (arrayListArr == null || arrayListArr.length != width + 1) {
             this.particles = new ArrayList[width + 1];
@@ -88,8 +88,8 @@ public class MatrixParticlesDrawable {
                 Particle particle3 = arrayList.get(i9);
                 int i10 = 1;
                 if (currentTimeMillis - particle3.time > 50) {
-                    int i11 = particle3.f1788y + 1;
-                    particle3.f1788y = i11;
+                    int i11 = particle3.f1810y + 1;
+                    particle3.f1810y = i11;
                     particle3.time = currentTimeMillis;
                     if (i11 - particle3.len >= height) {
                         if (arrayList.size() == 1) {
@@ -99,15 +99,15 @@ public class MatrixParticlesDrawable {
                             i9--;
                         }
                     }
-                    if (particle3.f1788y > particle3.len && i9 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
+                    if (particle3.f1810y > particle3.len && i9 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
                         Particle particle4 = new Particle();
                         particle4.reset(currentTimeMillis);
                         arrayList.add(particle4);
                     }
                 }
                 int i12 = i9;
-                int min = Math.min(particle3.f1788y, height + 1);
-                int max = Math.max(i4, particle3.f1788y - particle3.len);
+                int min = Math.min(particle3.f1810y, height + 1);
+                int max = Math.max(i4, particle3.f1810y - particle3.len);
                 while (max < min) {
                     int i13 = this.size;
                     float f = i13 * i8;
@@ -122,7 +122,7 @@ public class MatrixParticlesDrawable {
                         i2 = i10;
                         i3 = min;
                         particle = particle3;
-                        this.matrixTextParticles[i8][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1788y - max) / (particle3.len - i10))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
+                        this.matrixTextParticles[i8][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1810y - max) / (particle3.len - i10))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
                     }
                     max = i + 1;
                     min = i3;
@@ -130,11 +130,11 @@ public class MatrixParticlesDrawable {
                     particle3 = particle;
                 }
                 i9 = i12 + 1;
-                c50721 = null;
+                c51071 = null;
                 i4 = 0;
             }
             i8++;
-            c50721 = null;
+            c51071 = null;
             i4 = 0;
         }
     }
@@ -146,20 +146,20 @@ public class MatrixParticlesDrawable {
         long time;
 
         /* renamed from: y */
-        int f1788y;
+        int f1810y;
 
         private Particle(MatrixParticlesDrawable matrixParticlesDrawable) {
             this.len = 5;
         }
 
         public void init(int i, long j) {
-            this.f1788y = Math.abs(Utilities.fastRandom.nextInt() % i);
+            this.f1810y = Math.abs(Utilities.fastRandom.nextInt() % i);
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }
 
         public void reset(long j) {
-            this.f1788y = 0;
+            this.f1810y = 0;
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }

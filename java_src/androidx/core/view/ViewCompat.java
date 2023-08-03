@@ -58,7 +58,14 @@ public class ViewCompat {
     private static WeakHashMap<View, ViewPropertyAnimatorCompat> sViewPropertyAnimatorMap = null;
     private static boolean sAccessibilityDelegateCheckFailed = false;
     private static final int[] ACCESSIBILITY_ACTIONS_RESOURCE_IDS = {R$id.accessibility_custom_action_0, R$id.accessibility_custom_action_1, R$id.accessibility_custom_action_2, R$id.accessibility_custom_action_3, R$id.accessibility_custom_action_4, R$id.accessibility_custom_action_5, R$id.accessibility_custom_action_6, R$id.accessibility_custom_action_7, R$id.accessibility_custom_action_8, R$id.accessibility_custom_action_9, R$id.accessibility_custom_action_10, R$id.accessibility_custom_action_11, R$id.accessibility_custom_action_12, R$id.accessibility_custom_action_13, R$id.accessibility_custom_action_14, R$id.accessibility_custom_action_15, R$id.accessibility_custom_action_16, R$id.accessibility_custom_action_17, R$id.accessibility_custom_action_18, R$id.accessibility_custom_action_19, R$id.accessibility_custom_action_20, R$id.accessibility_custom_action_21, R$id.accessibility_custom_action_22, R$id.accessibility_custom_action_23, R$id.accessibility_custom_action_24, R$id.accessibility_custom_action_25, R$id.accessibility_custom_action_26, R$id.accessibility_custom_action_27, R$id.accessibility_custom_action_28, R$id.accessibility_custom_action_29, R$id.accessibility_custom_action_30, R$id.accessibility_custom_action_31};
-    private static final OnReceiveContentViewBehavior NO_OP_ON_RECEIVE_CONTENT_VIEW_BEHAVIOR = ViewCompat$$ExternalSyntheticLambda0.INSTANCE;
+    private static final OnReceiveContentViewBehavior NO_OP_ON_RECEIVE_CONTENT_VIEW_BEHAVIOR = new OnReceiveContentViewBehavior() { // from class: androidx.core.view.ViewCompat$$ExternalSyntheticLambda0
+        @Override // androidx.core.view.OnReceiveContentViewBehavior
+        public final ContentInfoCompat onReceiveContent(ContentInfoCompat contentInfoCompat) {
+            ContentInfoCompat lambda$static$0;
+            lambda$static$0 = ViewCompat.lambda$static$0(contentInfoCompat);
+            return lambda$static$0;
+        }
+    };
     private static final AccessibilityPaneVisibilityManager sAccessibilityPaneVisibilityManager = new AccessibilityPaneVisibilityManager();
 
     /* loaded from: classes.dex */
@@ -866,7 +873,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m841at(view).preDispatch(keyEvent);
+        return UnhandledKeyEventManager.m859at(view).preDispatch(keyEvent);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -874,7 +881,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m841at(view).dispatch(view, keyEvent);
+        return UnhandledKeyEventManager.m859at(view).dispatch(view, keyEvent);
     }
 
     public static void setScreenReaderFocusable(View view, boolean z) {
@@ -1182,7 +1189,7 @@ public class ViewCompat {
         }
 
         /* renamed from: at */
-        static UnhandledKeyEventManager m841at(View view) {
+        static UnhandledKeyEventManager m859at(View view) {
             int i = R$id.tag_unhandled_key_event_manager;
             UnhandledKeyEventManager unhandledKeyEventManager = (UnhandledKeyEventManager) view.getTag(i);
             if (unhandledKeyEventManager == null) {

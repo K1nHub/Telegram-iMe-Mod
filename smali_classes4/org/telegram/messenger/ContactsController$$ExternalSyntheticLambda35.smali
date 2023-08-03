@@ -20,9 +20,11 @@
 
 .field public final synthetic f$6:Ljava/util/HashMap;
 
+.field public final synthetic f$7:[Z
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;[Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +43,15 @@
 
     iput-object p7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda35;->f$6:Ljava/util/HashMap;
 
+    iput-object p8, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda35;->f$7:[Z
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda35;->f$0:Lorg/telegram/messenger/ContactsController;
 
@@ -63,7 +67,9 @@
 
     iget-object v6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda35;->f$6:Ljava/util/HashMap;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$zfTYZDeqarIlIfsuqWKCtInnjV4(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    iget-object v7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda35;->f$7:[Z
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$nyuurZw-m3AjZef05LHp62LaB3Y(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;Ljava/util/HashMap;ZLjava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;[Z)V
 
     return-void
 .end method

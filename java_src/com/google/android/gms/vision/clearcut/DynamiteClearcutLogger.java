@@ -22,7 +22,7 @@ public class DynamiteClearcutLogger {
 
     public final void zza(int i, zzfi.zzo zzoVar) {
         if (i == 3 && !this.zzb.zza()) {
-            C0719L.m753v("Skipping image analysis log due to rate limiting", new Object[0]);
+            C0719L.m771v("Skipping image analysis log due to rate limiting", new Object[0]);
         } else {
             zza.execute(new zza(this, i, zzoVar));
         }

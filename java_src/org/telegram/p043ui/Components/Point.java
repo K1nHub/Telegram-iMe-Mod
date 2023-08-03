@@ -4,16 +4,16 @@ package org.telegram.p043ui.Components;
 public class Point {
 
     /* renamed from: x */
-    public float f1775x;
+    public float f1797x;
 
     /* renamed from: y */
-    public float f1776y;
+    public float f1798y;
 
     public Point() {
     }
 
     public Point(float f, float f2) {
-        this.f1775x = f;
-        this.f1776y = f2;
+        this.f1797x = f;
+        this.f1798y = f2;
     }
 }

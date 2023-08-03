@@ -118,20 +118,20 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)V
     .locals 5
 
-    .line 1924
+    .line 1930
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1925
+    .line 1931
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->groupCell:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     const/4 p1, 0x0
 
-    .line 1931
+    .line 1937
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
-    .line 1932
+    .line 1938
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -140,45 +140,45 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1933
+    .line 1939
     iput-wide v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->lastUpdate:J
 
     const/4 v2, 0x0
 
-    .line 1935
+    .line 1941
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->positionFlags:I
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 1936
+    .line 1942
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
     const/4 v3, 0x0
 
-    .line 1937
+    .line 1943
     iput v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->scale:F
 
-    .line 1944
+    .line 1950
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
-    .line 1945
+    .line 1951
     new-instance v3, Landroid/graphics/RectF;
 
     invoke-direct {v3}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->roundRadiuses:Landroid/graphics/RectF;
 
-    .line 1947
+    .line 1953
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationText:Ljava/lang/String;
 
-    .line 1949
+    .line 1955
     new-instance v3, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 1950
+    .line 1956
     new-instance v3, Landroid/graphics/Path;
 
     invoke-direct {v3}, Landroid/graphics/Path;-><init>()V
@@ -189,13 +189,13 @@
 
     new-array v3, v3, [F
 
-    .line 1951
+    .line 1957
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->radii:[F
 
-    .line 1954
+    .line 1960
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
-    .line 1955
+    .line 1961
     new-instance v3, Landroid/graphics/Paint;
 
     const/4 v4, 0x1
@@ -204,47 +204,47 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadePaint:Landroid/graphics/Paint;
 
-    .line 2115
+    .line 2121
     new-instance v3, Landroid/graphics/RectF;
 
     invoke-direct {v3}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
-    .line 2169
+    .line 2175
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v4}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->paint:Landroid/graphics/Paint;
 
-    .line 2170
+    .line 2176
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v4}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->strokePaint:Landroid/graphics/Paint;
 
-    .line 2173
+    .line 2179
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v4}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->bitmapPaint:Landroid/graphics/Paint;
 
-    .line 2175
+    .line 2181
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
-    .line 2176
+    .line 2182
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmapText:Ljava/lang/String;
 
-    .line 2177
+    .line 2183
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
-    .line 2178
+    .line 2184
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmapText:Ljava/lang/String;
 
-    .line 2180
+    .line 2186
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -257,7 +257,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexOut:Landroid/graphics/Rect;
 
-    .line 2181
+    .line 2187
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -270,10 +270,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->durationOut:Landroid/graphics/Rect;
 
-    .line 2301
+    .line 2307
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->visibleT:F
 
-    .line 2302
+    .line 2308
     iput-wide v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->lastVisibleTUpdate:J
 
     return-void
@@ -282,7 +282,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$1;)V
     .locals 0
 
-    .line 1924
+    .line 1930
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)V
 
     return-void
@@ -291,7 +291,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 0
 
-    .line 1924
+    .line 1930
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->setImage(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
     return-void
@@ -300,7 +300,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)I
     .locals 0
 
-    .line 1924
+    .line 1930
     iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->positionFlags:I
 
     return p0
@@ -309,7 +309,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)V
     .locals 0
 
-    .line 1924
+    .line 1930
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->layoutFrom(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)V
 
     return-void
@@ -318,7 +318,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)F
     .locals 0
 
-    .line 1924
+    .line 1930
     iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealProgress:F
 
     return p0
@@ -327,7 +327,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;FF)V
     .locals 0
 
-    .line 1924
+    .line 1930
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->startRevealMedia(FF)V
 
     return-void
@@ -336,7 +336,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$GroupCalculator;Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;Z)V
     .locals 0
 
-    .line 1924
+    .line 1930
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->layout(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$GroupCalculator;Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;Z)V
 
     return-void
@@ -345,7 +345,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)J
     .locals 2
 
-    .line 1924
+    .line 1930
     iget-wide v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->lastUpdate:J
 
     return-wide v0
@@ -356,7 +356,7 @@
 
     if-eqz p4, :cond_6
 
-    .line 2238
+    .line 2244
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -371,13 +371,13 @@
 
     if-nez v0, :cond_5
 
-    .line 2239
+    .line 2245
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationTextPaint:Landroid/text/TextPaint;
 
     if-nez v0, :cond_1
 
-    .line 2240
+    .line 2246
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -388,14 +388,14 @@
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 2241
+    .line 2247
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 2242
+    .line 2248
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationTextPaint:Landroid/text/TextPaint;
 
     const/4 v1, -0x1
@@ -405,26 +405,26 @@
     :cond_1
     const/16 v0, 0xc
 
-    .line 2244
+    .line 2250
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 2245
+    .line 2251
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 2246
+    .line 2252
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, p4}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result v1
 
-    .line 2247
+    .line 2253
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -453,7 +453,7 @@
 
     add-float/2addr v2, v1
 
-    .line 2248
+    .line 2254
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -484,7 +484,7 @@
 
     float-to-double v4, v2
 
-    .line 2249
+    .line 2255
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v4
@@ -499,7 +499,7 @@
 
     double-to-int v5, v5
 
-    .line 2251
+    .line 2257
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v6, :cond_2
@@ -518,16 +518,16 @@
 
     if-eq v6, v5, :cond_4
 
-    .line 2252
+    .line 2258
     :cond_2
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v6, :cond_3
 
-    .line 2253
+    .line 2259
     invoke-virtual {v6}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 2255
+    .line 2261
     :cond_3
     sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -537,7 +537,7 @@
 
     iput-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
-    .line 2257
+    .line 2263
     :cond_4
     new-instance v6, Landroid/graphics/Canvas;
 
@@ -545,14 +545,14 @@
 
     invoke-direct {v6, v7}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 2259
+    .line 2265
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v8, 0x0
 
     invoke-virtual {v7, v8, v8, v2, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2260
+    .line 2266
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -571,12 +571,12 @@
 
     const/4 v2, 0x5
 
-    .line 2262
+    .line 2268
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 2263
+    .line 2269
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -601,7 +601,7 @@
 
     float-to-int v1, v1
 
-    .line 2264
+    .line 2270
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -646,7 +646,7 @@
 
     invoke-virtual {v3, v2, v1, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2265
+    .line 2271
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -661,7 +661,7 @@
 
     const/16 v1, 0x12
 
-    .line 2266
+    .line 2272
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -682,17 +682,17 @@
 
     invoke-virtual {v6, p4, v1, v0, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 2268
+    .line 2274
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->durationIn:Landroid/graphics/Rect;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2269
+    .line 2275
     iput-object p4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmapText:Ljava/lang/String;
 
-    .line 2272
+    .line 2278
     :cond_5
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
@@ -706,7 +706,7 @@
 
     move-result v0
 
-    .line 2273
+    .line 2279
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->durationOut:Landroid/graphics/Rect;
 
     float-to-int v2, p2
@@ -731,7 +731,7 @@
 
     invoke-virtual {v1, v2, v0, p2, p3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2274
+    .line 2280
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->bitmapPaint:Landroid/graphics/Paint;
 
     const/high16 p3, 0x437f0000    # 255.0f
@@ -742,7 +742,7 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2275
+    .line 2281
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationBitmap:Landroid/graphics/Bitmap;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->durationIn:Landroid/graphics/Rect;
@@ -766,14 +766,14 @@
 
     const/16 v2, 0xc
 
-    .line 2184
+    .line 2190
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     const v3, 0x3f99999a    # 1.2f
 
-    .line 2185
+    .line 2191
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
@@ -788,7 +788,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 2189
+    .line 2195
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v7, :cond_0
@@ -803,13 +803,13 @@
 
     if-nez v7, :cond_5
 
-    .line 2190
+    .line 2196
     :cond_0
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
     if-nez v7, :cond_1
 
-    .line 2191
+    .line 2197
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v4, v4, v7}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -818,7 +818,7 @@
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
-    .line 2193
+    .line 2199
     :cond_1
     new-instance v7, Landroid/graphics/Canvas;
 
@@ -828,17 +828,17 @@
 
     const/4 v8, 0x0
 
-    .line 2194
+    .line 2200
     invoke-virtual {v7, v8}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 2196
+    .line 2202
     iget-object v9, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->textPaint:Landroid/text/TextPaint;
 
     const/4 v10, 0x1
 
     if-nez v9, :cond_2
 
-    .line 2197
+    .line 2203
     new-instance v9, Landroid/text/TextPaint;
 
     invoke-direct {v9, v10}, Landroid/text/TextPaint;-><init>(I)V
@@ -847,14 +847,14 @@
 
     const-string v11, "fonts/rmedium.ttf"
 
-    .line 2198
+    .line 2204
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v11
 
     invoke-virtual {v9, v11}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 2200
+    .line 2206
     :cond_2
     iget-object v9, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->textPaint:Landroid/text/TextPaint;
 
@@ -872,7 +872,7 @@
 
     invoke-virtual {v9, v11}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2202
+    .line 2208
     invoke-virtual/range {p4 .. p4}, Ljava/lang/String;->length()I
 
     move-result v9
@@ -899,7 +899,7 @@
     :cond_4
     const/high16 v5, 0x41600000    # 14.0f
 
-    .line 2214
+    .line 2220
     :goto_0
     iget-object v9, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->textPaint:Landroid/text/TextPaint;
 
@@ -917,7 +917,7 @@
 
     div-float/2addr v9, v11
 
-    .line 2217
+    .line 2223
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->paint:Landroid/graphics/Paint;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
@@ -940,12 +940,12 @@
 
     int-to-float v2, v2
 
-    .line 2218
+    .line 2224
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v13, v13, v2, v14}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 2219
+    .line 2225
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->strokePaint:Landroid/graphics/Paint;
 
     const/4 v15, -0x1
@@ -968,26 +968,26 @@
 
     invoke-virtual {v14, v8}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2220
+    .line 2226
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->strokePaint:Landroid/graphics/Paint;
 
     sget-object v12, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v8, v12}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2221
+    .line 2227
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->strokePaint:Landroid/graphics/Paint;
 
     int-to-float v3, v3
 
     invoke-virtual {v8, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 2222
+    .line 2228
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v13, v13, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 2223
+    .line 2229
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v2, v1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -1022,23 +1022,23 @@
 
     invoke-virtual {v7, v1, v2, v9, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 2225
+    .line 2231
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexIn:Landroid/graphics/Rect;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3, v3, v4, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2226
+    .line 2232
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmapText:Ljava/lang/String;
 
-    .line 2229
+    .line 2235
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_6
 
-    .line 2230
+    .line 2236
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexOut:Landroid/graphics/Rect;
 
     int-to-float v2, v4
@@ -1067,7 +1067,7 @@
 
     invoke-virtual {v1, v3, v6, v4, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2231
+    .line 2237
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->bitmapPaint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x437f0000    # 255.0f
@@ -1078,7 +1078,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2232
+    .line 2238
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexBitmap:Landroid/graphics/Bitmap;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->indexIn:Landroid/graphics/Rect;
@@ -1104,7 +1104,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1988
+    .line 1994
     iget-boolean p1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
     if-eqz p1, :cond_1
@@ -1117,7 +1117,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1989
+    .line 1995
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -1138,7 +1138,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1990
+    .line 1996
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
@@ -1147,20 +1147,20 @@
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1991
+    .line 1997
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 p3, 0x0
 
     invoke-virtual {p1, p3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 1994
+    .line 2000
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 1995
+    .line 2001
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->stackBlurBitmapMax(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -1176,7 +1176,7 @@
 .method private synthetic lambda$startRevealMedia$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 2288
+    .line 2294
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1189,7 +1189,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealProgress:F
 
-    .line 2289
+    .line 2295
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -1208,7 +1208,7 @@
 
     goto/16 :goto_3
 
-    .line 2065
+    .line 2071
     :cond_0
     iget v0, p2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -1216,33 +1216,33 @@
 
     if-eqz p3, :cond_3
 
-    .line 2067
+    .line 2073
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->getT()F
 
     move-result p3
 
-    .line 2068
+    .line 2074
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_1
 
-    .line 2069
+    .line 2075
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-static {v0, v1, p3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2071
+    .line 2077
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_2
 
-    .line 2072
+    .line 2078
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->roundRadiuses:Landroid/graphics/RectF;
 
     invoke-static {v0, v1, p3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2074
+    .line 2080
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
@@ -1254,14 +1254,14 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
-    .line 2075
+    .line 2081
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->lastUpdate:J
 
-    .line 2077
+    .line 2083
     :cond_3
     iget p3, p2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->left:F
 
@@ -1271,14 +1271,14 @@
 
     div-float/2addr p3, v1
 
-    .line 2078
+    .line 2084
     iget v1, p2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->top:F
 
     iget p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$GroupCalculator;->height:F
 
     div-float/2addr v1, p1
 
-    .line 2079
+    .line 2085
     iget v2, p2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
     int-to-float v2, v2
@@ -1287,17 +1287,17 @@
 
     div-float/2addr v2, v0
 
-    .line 2080
+    .line 2086
     iget p2, p2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
     div-float/2addr p2, p1
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 2081
+    .line 2087
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->scale:F
 
-    .line 2082
+    .line 2088
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     add-float/2addr v2, p3
@@ -1308,14 +1308,14 @@
 
     const/4 p1, 0x2
 
-    .line 2083
+    .line 2089
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     int-to-float p1, p1
 
-    .line 2084
+    .line 2090
     sget p2, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     add-int/lit8 p2, p2, -0x1
@@ -1326,10 +1326,10 @@
 
     int-to-float p2, p2
 
-    .line 2085
+    .line 2091
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->roundRadiuses:Landroid/graphics/RectF;
 
-    .line 2086
+    .line 2092
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->positionFlags:I
 
     and-int/lit8 v1, v0, 0x5
@@ -1382,41 +1382,41 @@
 
     move p1, p2
 
-    .line 2085
+    .line 2091
     :cond_7
     invoke-virtual {p3, v1, v2, v3, p1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2091
+    .line 2097
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-nez p1, :cond_8
 
-    .line 2092
+    .line 2098
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
-    .line 2093
+    .line 2099
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p1, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 2095
+    .line 2101
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     if-nez p1, :cond_9
 
-    .line 2096
+    .line 2102
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
-    .line 2097
+    .line 2103
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->roundRadiuses:Landroid/graphics/RectF;
 
     invoke-virtual {p1, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
@@ -1430,12 +1430,12 @@
 
     if-eqz p3, :cond_c
 
-    .line 2053
+    .line 2059
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p2
 
-    .line 2054
+    .line 2060
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->scale:F
@@ -1450,12 +1450,12 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
-    .line 2055
+    .line 2061
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_b
 
-    .line 2056
+    .line 2062
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->getT()F
@@ -1466,16 +1466,16 @@
 
     invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2058
+    .line 2064
     :cond_b
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->scale:F
 
-    .line 2059
+    .line 2065
     iput-wide p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->lastUpdate:J
 
     goto :goto_4
 
-    .line 2061
+    .line 2067
     :cond_c
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
@@ -1488,7 +1488,7 @@
 .method private layoutFrom(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)V
     .locals 8
 
-    .line 2017
+    .line 2023
     iget v0, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
     iget v1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->scale:F
@@ -1503,37 +1503,37 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
-    .line 2018
+    .line 2024
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-nez v0, :cond_0
 
-    .line 2019
+    .line 2025
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
-    .line 2021
+    .line 2027
     :cond_0
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    .line 2022
+    .line 2028
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-nez v1, :cond_1
 
-    .line 2023
+    .line 2029
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     goto :goto_0
 
-    .line 2025
+    .line 2031
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
@@ -1543,7 +1543,7 @@
 
     invoke-static {v1, v2, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2028
+    .line 2034
     :goto_0
     iget-object v1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
@@ -1551,7 +1551,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2029
+    .line 2035
     iget-object v3, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->getT()F
@@ -1562,10 +1562,10 @@
 
     invoke-static {v1, v3, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2030
+    .line 2036
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
-    .line 2031
+    .line 2037
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v3
@@ -1596,7 +1596,7 @@
 
     sub-float/2addr v3, v4
 
-    .line 2032
+    .line 2038
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v4
@@ -1627,7 +1627,7 @@
 
     sub-float/2addr v4, v5
 
-    .line 2033
+    .line 2039
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v5
@@ -1658,7 +1658,7 @@
 
     add-float/2addr v5, v6
 
-    .line 2034
+    .line 2040
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v0
@@ -1689,16 +1689,16 @@
 
     add-float/2addr v0, v6
 
-    .line 2030
+    .line 2036
     invoke-virtual {v1, v3, v4, v5, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_1
 
-    .line 2037
+    .line 2043
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
-    .line 2038
+    .line 2044
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v3
@@ -1729,7 +1729,7 @@
 
     sub-float/2addr v3, v4
 
-    .line 2039
+    .line 2045
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v4
@@ -1760,7 +1760,7 @@
 
     sub-float/2addr v4, v5
 
-    .line 2040
+    .line 2046
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v5
@@ -1791,7 +1791,7 @@
 
     add-float/2addr v5, v6
 
-    .line 2041
+    .line 2047
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v0
@@ -1822,10 +1822,10 @@
 
     add-float/2addr v0, v6
 
-    .line 2037
+    .line 2043
     invoke-virtual {v1, v3, v4, v5, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2045
+    .line 2051
     :goto_1
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
@@ -1841,7 +1841,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
-    .line 2047
+    .line 2053
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -1858,17 +1858,17 @@
 
     move-object/from16 v1, p1
 
-    .line 1977
+    .line 1983
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v1, :cond_0
 
-    .line 1978
+    .line 1984
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v2, :cond_0
 
-    .line 1979
+    .line 1985
     iget v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->formatShortDuration(I)Ljava/lang/String;
@@ -1882,16 +1882,16 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 1981
+    .line 1987
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->videoDurationText:Ljava/lang/String;
 
-    .line 1983
+    .line 1989
     :goto_0
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     if-nez v2, :cond_1
 
-    .line 1984
+    .line 1990
     new-instance v2, Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
@@ -1902,7 +1902,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1985
+    .line 1991
     new-instance v2, Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
@@ -1913,7 +1913,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1987
+    .line 1993
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell$$ExternalSyntheticLambda1;
@@ -1925,12 +1925,12 @@
     :cond_1
     if-eqz v1, :cond_5
 
-    .line 2000
+    .line 2006
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 2001
+    .line 2007
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v2}, Lorg/telegram/messenger/ImageLocation;->getForPath(Ljava/lang/String;)Lorg/telegram/messenger/ImageLocation;
@@ -1957,13 +1957,13 @@
 
     goto/16 :goto_1
 
-    .line 2002
+    .line 2008
     :cond_2
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
-    .line 2003
+    .line 2009
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     const-string v3, ":"
@@ -1972,7 +1972,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 2004
+    .line 2010
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2019,14 +2019,14 @@
 
     invoke-virtual/range {v5 .. v15}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 2005
+    .line 2011
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
     goto :goto_1
 
-    .line 2007
+    .line 2013
     :cond_3
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
@@ -2034,7 +2034,7 @@
 
     invoke-virtual {v2, v5, v4}, Lorg/telegram/messenger/ImageReceiver;->setOrientation(IZ)V
 
-    .line 2008
+    .line 2014
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2083,7 +2083,7 @@
 
     goto :goto_1
 
-    .line 2011
+    .line 2017
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
@@ -2099,18 +2099,18 @@
 .method private startRevealMedia(FF)V
     .locals 4
 
-    .line 2280
+    .line 2286
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealX:F
 
-    .line 2281
+    .line 2287
     iput p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealY:F
 
-    .line 2283
+    .line 2289
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->drawingRect()Landroid/graphics/RectF;
 
     move-result-object p1
 
-    .line 2284
+    .line 2290
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result p2
@@ -2147,7 +2147,7 @@
 
     new-array p1, p1, [F
 
-    .line 2285
+    .line 2291
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -2174,26 +2174,26 @@
 
     move-result-object p1
 
-    .line 2286
+    .line 2292
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2287
+    .line 2293
     new-instance p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2291
+    .line 2297
     new-instance p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell$1;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2298
+    .line 2304
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -2217,7 +2217,7 @@
         }
     .end annotation
 
-    .line 1924
+    .line 1930
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->clone()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;
 
     move-result-object v0
@@ -2228,26 +2228,26 @@
 .method protected clone()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;
     .locals 3
 
-    .line 2108
+    .line 2114
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)V
 
-    .line 2109
+    .line 2115
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 2110
+    .line 2116
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 2111
+    .line 2117
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -2260,7 +2260,7 @@
 
     const/4 v0, 0x0
 
-    .line 2305
+    .line 2311
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->draw(Landroid/graphics/Canvas;Z)Z
 
     move-result p1
@@ -2277,7 +2277,7 @@
 
     move/from16 v0, p2
 
-    .line 2311
+    .line 2317
     iget-object v1, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     const/4 v9, 0x0
@@ -2290,7 +2290,7 @@
 
     goto/16 :goto_9
 
-    .line 2314
+    .line 2320
     :cond_0
     iget-object v1, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -2319,7 +2319,7 @@
     :cond_1
     move v1, v2
 
-    .line 2315
+    .line 2321
     :goto_0
     iget v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
@@ -2335,13 +2335,13 @@
 
     return v9
 
-    .line 2319
+    .line 2325
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->drawingRect()Landroid/graphics/RectF;
 
     move-result-object v11
 
-    .line 2320
+    .line 2326
     sget v3, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     const/4 v12, 0x1
@@ -2354,7 +2354,7 @@
 
     int-to-float v3, v3
 
-    .line 2321
+    .line 2327
     iget-object v4, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->roundRadiuses:Landroid/graphics/RectF;
 
     iget v5, v4, Landroid/graphics/RectF;->left:F
@@ -2371,19 +2371,19 @@
 
     if-gez v15, :cond_3
 
-    .line 2322
+    .line 2328
     iget-object v14, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     if-eqz v14, :cond_3
 
-    .line 2323
+    .line 2329
     iget v14, v14, Landroid/graphics/RectF;->left:F
 
     invoke-static {v14, v5, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v5
 
-    .line 2324
+    .line 2330
     iget-object v14, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     iget v14, v14, Landroid/graphics/RectF;->top:F
@@ -2392,7 +2392,7 @@
 
     move-result v6
 
-    .line 2325
+    .line 2331
     iget-object v14, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     iget v14, v14, Landroid/graphics/RectF;->right:F
@@ -2401,7 +2401,7 @@
 
     move-result v13
 
-    .line 2326
+    .line 2332
     iget-object v14, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRoundRadiuses:Landroid/graphics/RectF;
 
     iget v14, v14, Landroid/graphics/RectF;->bottom:F
@@ -2410,33 +2410,33 @@
 
     move-result v4
 
-    .line 2328
+    .line 2334
     :cond_3
     invoke-static {v5, v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v0
 
-    .line 2329
+    .line 2335
     invoke-static {v6, v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v5
 
-    .line 2330
+    .line 2336
     invoke-static {v13, v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v6
 
-    .line 2331
+    .line 2337
     invoke-static {v4, v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
 
     if-eqz p3, :cond_4
 
-    .line 2333
+    .line 2339
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2334
+    .line 2340
     invoke-virtual {v11}, Landroid/graphics/RectF;->centerX()F
 
     move-result v3
@@ -2451,7 +2451,7 @@
 
     invoke-virtual {v8, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2336
+    .line 2342
     :cond_4
     iget-object v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
@@ -2465,7 +2465,7 @@
 
     invoke-virtual {v3, v4, v13, v14, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
 
-    .line 2337
+    .line 2343
     iget-object v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     iget v9, v11, Landroid/graphics/RectF;->left:F
@@ -2486,17 +2486,17 @@
 
     invoke-virtual {v3, v9, v12, v15, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 2338
+    .line 2344
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v10}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 2339
+    .line 2345
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v8}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 2341
+    .line 2347
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v3, 0x7
@@ -2519,7 +2519,7 @@
 
     if-nez v2, :cond_8
 
-    .line 2342
+    .line 2348
     iget-boolean v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->wasSpoiler:Z
 
     if-nez v2, :cond_5
@@ -2542,10 +2542,10 @@
 
     const/4 v2, 0x1
 
-    .line 2343
+    .line 2349
     iput-boolean v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->wasSpoiler:Z
 
-    .line 2344
+    .line 2350
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v9, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
@@ -2562,7 +2562,7 @@
 
     goto :goto_1
 
-    .line 2345
+    .line 2351
     :cond_5
     iget-boolean v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->wasSpoiler:Z
 
@@ -2578,7 +2578,7 @@
 
     const/4 v2, 0x1
 
-    .line 2346
+    .line 2352
     iput-boolean v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->wasSpoiler:Z
 
     goto :goto_2
@@ -2587,7 +2587,7 @@
     :goto_1
     const/4 v2, 0x1
 
-    .line 2349
+    .line 2355
     :goto_2
     iget-object v9, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->radii:[F
 
@@ -2597,32 +2597,32 @@
 
     aput v0, v9, v2
 
-    .line 2350
+    .line 2356
     aput v5, v9, v15
 
     aput v5, v9, v17
 
-    .line 2351
+    .line 2357
     aput v6, v9, v12
 
     aput v6, v9, v18
 
-    .line 2352
+    .line 2358
     aput v1, v9, v3
 
     const/4 v2, 0x6
 
     aput v1, v9, v2
 
-    .line 2354
+    .line 2360
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2355
+    .line 2361
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->rewind()V
 
-    .line 2356
+    .line 2362
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     iget-object v9, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->radii:[F
@@ -2631,12 +2631,12 @@
 
     invoke-virtual {v2, v11, v9, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 2357
+    .line 2363
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v8, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 2359
+    .line 2365
     iget v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealProgress:F
 
     const/4 v3, 0x0
@@ -2645,12 +2645,12 @@
 
     if-eqz v2, :cond_7
 
-    .line 2360
+    .line 2366
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->rewind()V
 
-    .line 2361
+    .line 2367
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     iget v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealX:F
@@ -2667,14 +2667,14 @@
 
     invoke-virtual {v2, v3, v9, v12, v15}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 2362
+    .line 2368
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     sget-object v3, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
     invoke-virtual {v8, v2, v3}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
-    .line 2365
+    .line 2371
     :cond_7
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -2682,7 +2682,7 @@
 
     invoke-virtual {v2, v4, v13, v14, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(IIII)V
 
-    .line 2366
+    .line 2372
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget v3, v11, Landroid/graphics/RectF;->left:F
@@ -2699,19 +2699,19 @@
 
     invoke-virtual {v2, v3, v4, v9, v12}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 2367
+    .line 2373
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v10}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 2368
+    .line 2374
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->blurredImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v8}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     const/4 v2, -0x1
 
-    .line 2371
+    .line 2377
     iget-object v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {v2}, Landroid/graphics/Color;->alpha(I)I
@@ -2734,7 +2734,7 @@
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 2372
+    .line 2378
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     iget-object v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
@@ -2757,29 +2757,29 @@
 
     invoke-virtual {v2, v9, v9, v3, v4}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setBounds(IIII)V
 
-    .line 2373
+    .line 2379
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2374
+    .line 2380
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2376
+    .line 2382
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;->invalidate()V
 
-    .line 2377
+    .line 2383
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;->invalidate()V
 
-    .line 2380
+    .line 2386
     :cond_8
     iget v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
@@ -2795,7 +2795,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 2381
+    .line 2387
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->radii:[F
 
     const/4 v4, 0x1
@@ -2808,36 +2808,36 @@
 
     const/4 v0, 0x3
 
-    .line 2382
+    .line 2388
     aput v5, v2, v0
 
     aput v5, v2, v17
 
     const/4 v0, 0x5
 
-    .line 2383
+    .line 2389
     aput v6, v2, v0
 
     aput v6, v2, v18
 
     const/4 v0, 0x7
 
-    .line 2384
+    .line 2390
     aput v1, v2, v0
 
     const/4 v0, 0x6
 
     aput v1, v2, v0
 
-    .line 2386
+    .line 2392
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2387
+    .line 2393
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 2388
+    .line 2394
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->radii:[F
@@ -2846,14 +2846,14 @@
 
     invoke-virtual {v0, v11, v1, v2}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 2389
+    .line 2395
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v8, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     const-wide/16 v0, 0x10
 
-    .line 2391
+    .line 2397
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -2866,7 +2866,7 @@
 
     move-result-wide v0
 
-    .line 2392
+    .line 2398
     iget v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
     long-to-float v0, v0
@@ -2885,7 +2885,7 @@
 
     iput v1, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
-    .line 2394
+    .line 2400
     iget-object v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadePaint:Landroid/graphics/Paint;
 
     sub-float v14, v0, v1
@@ -2898,7 +2898,7 @@
 
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2395
+    .line 2401
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
     iget v1, v11, Landroid/graphics/RectF;->left:F
@@ -2909,10 +2909,10 @@
 
     invoke-virtual {v8, v0, v1, v2, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 2397
+    .line 2403
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2399
+    .line 2405
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
@@ -2928,25 +2928,25 @@
 
     if-nez v1, :cond_a
 
-    .line 2400
+    .line 2406
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_a
 
-    .line 2401
+    .line 2407
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 2402
+    .line 2408
     iput-object v3, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
-    .line 2404
+    .line 2410
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;->invalidate()V
 
-    .line 2407
+    .line 2413
     :cond_a
     :goto_3
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
@@ -2969,7 +2969,7 @@
 
     if-ltz v1, :cond_b
 
-    .line 2408
+    .line 2414
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2997,7 +2997,7 @@
 
     move-object v4, v3
 
-    .line 2409
+    .line 2415
     :goto_4
     iget-object v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->image:Lorg/telegram/messenger/ImageReceiver;
 
@@ -3014,7 +3014,7 @@
     :cond_c
     const/4 v3, 0x0
 
-    .line 2411
+    .line 2417
     :goto_5
     iget v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->visibleT:F
 
@@ -3042,7 +3042,7 @@
 
     const-wide/16 v0, 0x11
 
-    .line 2412
+    .line 2418
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
@@ -3055,7 +3055,7 @@
 
     move-result-wide v0
 
-    .line 2413
+    .line 2419
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
@@ -3068,7 +3068,7 @@
 
     div-float/2addr v0, v1
 
-    .line 2415
+    .line 2421
     iget v1, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->visibleT:F
 
     cmpg-float v2, v3, v1
@@ -3079,7 +3079,7 @@
 
     const/4 v0, 0x0
 
-    .line 2416
+    .line 2422
     invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
@@ -3093,14 +3093,14 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2418
+    .line 2424
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
     iput v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->visibleT:F
 
-    .line 2421
+    .line 2427
     :cond_f
     :goto_7
     iget v0, v11, Landroid/graphics/RectF;->top:F
@@ -3137,7 +3137,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->drawPhotoIndex(Landroid/graphics/Canvas;FFLjava/lang/String;FF)V
 
-    .line 2422
+    .line 2428
     iget v0, v11, Landroid/graphics/RectF;->left:F
 
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3172,7 +3172,7 @@
 
     if-eqz p3, :cond_10
 
-    .line 2425
+    .line 2431
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_10
@@ -3199,7 +3199,7 @@
 .method public draw(Landroid/graphics/Canvas;Z)Z
     .locals 1
 
-    .line 2308
+    .line 2314
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->getT()F
 
     move-result v0
@@ -3214,7 +3214,7 @@
 .method public drawingRect()Landroid/graphics/RectF;
     .locals 8
 
-    .line 2153
+    .line 2159
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     const/4 v1, 0x0
@@ -3227,7 +3227,7 @@
 
     goto :goto_0
 
-    .line 2157
+    .line 2163
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -3265,7 +3265,7 @@
 
     move-result v1
 
-    .line 2158
+    .line 2164
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromScale:F
 
@@ -3293,15 +3293,15 @@
 
     mul-float/2addr v0, v1
 
-    .line 2159
+    .line 2165
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect()Landroid/graphics/RectF;
 
     move-result-object v1
 
-    .line 2160
+    .line 2166
     iget v2, v1, Landroid/graphics/RectF;->left:F
 
-    .line 2161
+    .line 2167
     invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
 
     move-result v3
@@ -3318,7 +3318,7 @@
 
     iget v3, v1, Landroid/graphics/RectF;->top:F
 
-    .line 2162
+    .line 2168
     invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
 
     move-result v7
@@ -3331,7 +3331,7 @@
 
     iget v5, v1, Landroid/graphics/RectF;->left:F
 
-    .line 2163
+    .line 2169
     invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
 
     move-result v7
@@ -3346,7 +3346,7 @@
 
     iget v4, v1, Landroid/graphics/RectF;->top:F
 
-    .line 2164
+    .line 2170
     invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
 
     move-result v7
@@ -3357,19 +3357,19 @@
 
     add-float/2addr v4, v7
 
-    .line 2160
+    .line 2166
     invoke-virtual {v1, v2, v3, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
     return-object v1
 
-    .line 2154
+    .line 2160
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2155
+    .line 2161
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
     return-object v0
@@ -3378,7 +3378,7 @@
 .method public getT()F
     .locals 5
 
-    .line 2102
+    .line 2108
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->access$3200(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)Landroid/view/animation/Interpolator;
@@ -3415,7 +3415,7 @@
 .method public rect()Landroid/graphics/RectF;
     .locals 1
 
-    .line 2117
+    .line 2123
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->getT()F
 
     move-result v0
@@ -3430,7 +3430,7 @@
 .method public rect(F)Landroid/graphics/RectF;
     .locals 7
 
-    .line 2120
+    .line 2126
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     if-eqz v0, :cond_6
@@ -3441,7 +3441,7 @@
 
     goto/16 :goto_0
 
-    .line 2124
+    .line 2130
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -3463,7 +3463,7 @@
 
     add-float/2addr v0, v1
 
-    .line 2125
+    .line 2131
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->access$2900(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)F
@@ -3484,7 +3484,7 @@
 
     add-float/2addr v1, v2
 
-    .line 2126
+    .line 2132
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v2}, Landroid/graphics/RectF;->width()F
@@ -3499,7 +3499,7 @@
 
     mul-float/2addr v2, v3
 
-    .line 2127
+    .line 2133
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -3520,12 +3520,12 @@
 
     if-gez v4, :cond_1
 
-    .line 2128
+    .line 2134
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     if-eqz v4, :cond_1
 
-    .line 2129
+    .line 2135
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->access$3300(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)F
@@ -3550,7 +3550,7 @@
 
     move-result v0
 
-    .line 2130
+    .line 2136
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->access$2900(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;)F
@@ -3575,7 +3575,7 @@
 
     move-result v1
 
-    .line 2131
+    .line 2137
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->width()F
@@ -3594,7 +3594,7 @@
 
     move-result v2
 
-    .line 2132
+    .line 2138
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->fromRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -3613,7 +3613,7 @@
 
     move-result v3
 
-    .line 2134
+    .line 2140
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->positionFlags:I
 
@@ -3621,7 +3621,7 @@
 
     if-nez v4, :cond_2
 
-    .line 2135
+    .line 2141
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget v4, v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->halfGap:I
@@ -3639,7 +3639,7 @@
 
     if-nez v4, :cond_3
 
-    .line 2139
+    .line 2145
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget v4, v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->halfGap:I
@@ -3653,7 +3653,7 @@
 
     if-nez v4, :cond_4
 
-    .line 2142
+    .line 2148
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget v4, v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->halfGap:I
@@ -3671,7 +3671,7 @@
 
     if-nez p1, :cond_5
 
-    .line 2146
+    .line 2152
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->halfGap:I
@@ -3680,7 +3680,7 @@
 
     sub-float/2addr v2, p1
 
-    .line 2148
+    .line 2154
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
@@ -3690,12 +3690,12 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2149
+    .line 2155
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
     return-object p1
 
-    .line 2121
+    .line 2127
     :cond_6
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
@@ -3704,7 +3704,7 @@
 
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2122
+    .line 2128
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->tempRect:Landroid/graphics/RectF;
 
     return-object p1
@@ -3713,12 +3713,12 @@
 .method public startCrossfade()V
     .locals 4
 
-    .line 1958
+    .line 1964
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->drawingRect()Landroid/graphics/RectF;
 
     move-result-object v0
 
-    .line 1959
+    .line 1965
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
     move-result v1
@@ -3733,7 +3733,7 @@
 
     move-result v1
 
-    .line 1960
+    .line 1966
     invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
 
     move-result v3
@@ -3746,22 +3746,22 @@
 
     move-result v2
 
-    .line 1961
+    .line 1967
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 1962
+    .line 1968
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1963
+    .line 1969
     invoke-virtual {v2}, Landroid/graphics/Canvas;->save()I
 
-    .line 1964
+    .line 1970
     iget v3, v0, Landroid/graphics/RectF;->left:F
 
     neg-float v3, v3
@@ -3772,13 +3772,13 @@
 
     invoke-virtual {v2, v3, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1965
+    .line 1971
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 1966
+    .line 1972
     invoke-virtual {v2}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1968
+    .line 1974
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -3789,21 +3789,21 @@
 
     if-nez v0, :cond_0
 
-    .line 1969
+    .line 1975
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1971
+    .line 1977
     :cond_0
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
     const/4 v0, 0x0
 
-    .line 1972
+    .line 1978
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
-    .line 1973
+    .line 1979
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;

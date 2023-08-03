@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* renamed from: org.telegram.ui.Components.SearchField */
@@ -46,7 +46,7 @@ public class SearchField extends FrameLayout {
         this.resourcesProvider = resourcesProvider;
         View view = new View(context);
         this.searchBackground = view;
-        view.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(18), getThemedColor(Theme.key_dialogSearchBackground)));
+        view.setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m72dp(18), getThemedColor(Theme.key_dialogSearchBackground)));
         if (z) {
             createFrame = LayoutHelper.createFrameRelatively(-1.0f, 36.0f, 8388659, 14.0f, 11.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
         } else {
@@ -56,7 +56,7 @@ public class SearchField extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.searchIconImageView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.searchIconImageView.setImageResource(C3417R.C3419drawable.smiles_inputsearch);
+        this.searchIconImageView.setImageResource(C3419R.C3421drawable.smiles_inputsearch);
         this.searchIconImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogSearchIcon), PorterDuff.Mode.MULTIPLY));
         if (z) {
             createFrame2 = LayoutHelper.createFrameRelatively(36.0f, 36.0f, 8388659, 16.0f, 11.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
@@ -76,7 +76,7 @@ public class SearchField extends FrameLayout {
         };
         this.progressDrawable = closeProgressDrawable2;
         imageView3.setImageDrawable(closeProgressDrawable2);
-        this.progressDrawable.setSide(AndroidUtilities.m54dp(7));
+        this.progressDrawable.setSide(AndroidUtilities.m72dp(7));
         this.clearSearchImageView.setScaleX(0.1f);
         this.clearSearchImageView.setScaleY(0.1f);
         this.clearSearchImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -122,7 +122,7 @@ public class SearchField extends FrameLayout {
         this.searchEditText.setGravity((z ? LayoutHelper.getAbsoluteGravityStart() : 3) | 16);
         this.searchEditText.setImeOptions(268435459);
         this.searchEditText.setCursorColor(getThemedColor(Theme.key_featuredStickers_addedIcon));
-        this.searchEditText.setCursorSize(AndroidUtilities.m54dp(20));
+        this.searchEditText.setCursorSize(AndroidUtilities.m72dp(20));
         this.searchEditText.setCursorWidth(1.5f);
         if (z) {
             createFrame4 = LayoutHelper.createFrameRelatively(-1.0f, 40.0f, 8388659, 54.0f, 9.0f, 46.0f, BitmapDescriptorFactory.HUE_RED);

@@ -4,15 +4,15 @@ package p033j$.time.format;
 final class C2746m implements InterfaceC2740g {
 
     /* renamed from: a */
-    private final String f593a;
+    private final String f596a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2746m(String str) {
-        this.f593a = str;
+        this.f596a = str;
     }
 
     public String toString() {
-        String replace = this.f593a.replace("'", "''");
+        String replace = this.f596a.replace("'", "''");
         return "'" + replace + "'";
     }
 }

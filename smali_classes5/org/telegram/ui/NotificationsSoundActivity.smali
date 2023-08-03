@@ -248,7 +248,7 @@
 .method private checkSelection(Lorg/telegram/ui/NotificationsSoundActivity$Tone;)V
     .locals 4
 
-    .line 422
+    .line 427
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
@@ -263,7 +263,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 423
+    .line 428
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
 
     iget p1, p1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
@@ -272,13 +272,13 @@
 
     goto :goto_0
 
-    .line 425
+    .line 430
     :cond_0
     iget-boolean v0, p1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->fromServer:Z
 
     if-eqz v0, :cond_1
 
-    .line 426
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
 
     iget v3, p1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
@@ -293,10 +293,10 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 430
+    .line 435
     invoke-direct {p0}, Lorg/telegram/ui/NotificationsSoundActivity;->updateActionMode()V
 
-    .line 431
+    .line 436
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->adapter:Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/NotificationsSoundActivity$Adapter;->getItemCount()I
@@ -318,7 +318,7 @@
 
     return-object v0
 
-    .line 529
+    .line 534
     :cond_0
     :try_start_0
     new-instance v1, Landroid/media/RingtoneManager;
@@ -329,15 +329,15 @@
 
     const/4 v2, 0x2
 
-    .line 530
+    .line 535
     invoke-virtual {v1, v2}, Landroid/media/RingtoneManager;->setType(I)V
 
-    .line 531
+    .line 536
     invoke-virtual {v1}, Landroid/media/RingtoneManager;->getCursor()Landroid/database/Cursor;
 
     move-result-object v1
 
-    .line 533
+    .line 538
     :cond_1
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -347,12 +347,12 @@
 
     const/4 v3, 0x1
 
-    .line 534
+    .line 539
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 535
+    .line 540
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -379,7 +379,7 @@
 
     move-result-object v4
 
-    .line 537
+    .line 542
     invoke-virtual {p0, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v3
@@ -393,7 +393,7 @@
     :catchall_0
     move-exception p0
 
-    .line 544
+    .line 549
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -403,12 +403,12 @@
 .method private hideActionMode()V
     .locals 3
 
-    .line 415
+    .line 420
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 416
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->adapter:Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/NotificationsSoundActivity$Adapter;->getItemCount()I
@@ -419,7 +419,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
-    .line 417
+    .line 422
     invoke-direct {p0}, Lorg/telegram/ui/NotificationsSoundActivity;->updateActionMode()V
 
     return-void
@@ -436,12 +436,12 @@
 .method private synthetic lambda$createView$1(Landroid/content/Context;Landroid/view/View;I)V
     .locals 8
 
-    .line 343
+    .line 348
     iget v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->uploadRow:I
 
     if-ne p3, v0, :cond_0
 
-    .line 344
+    .line 349
     new-instance p3, Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v4, 0x0
@@ -462,29 +462,29 @@
 
     iput-object p3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    .line 345
+    .line 350
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->setSoundPicker()V
 
-    .line 346
+    .line 351
     iget-object p3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->init()V
 
-    .line 347
+    .line 352
     iget-object p3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->show()V
 
-    .line 349
+    .line 354
     :cond_0
     instance-of p3, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;
 
     if-eqz p3, :cond_a
 
-    .line 350
+    .line 355
     check-cast p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;
 
-    .line 351
+    .line 356
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
@@ -499,13 +499,13 @@
 
     goto/16 :goto_2
 
-    .line 355
+    .line 360
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->lastPlayedRingtone:Landroid/media/Ringtone;
 
     if-eqz p3, :cond_2
 
-    .line 356
+    .line 361
     invoke-virtual {p3}, Landroid/media/Ringtone;->stop()V
 
     :cond_2
@@ -513,7 +513,7 @@
 
     const/4 v0, 0x0
 
-    .line 359
+    .line 364
     :try_start_0
     iget-object v1, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
@@ -523,7 +523,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 360
+    .line 365
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -531,44 +531,6 @@
     const/4 v1, 0x2
 
     invoke-static {v1}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-static {p1, v1}, Landroid/media/RingtoneManager;->getRingtone(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;
-
-    move-result-object p1
-
-    .line 361
-    invoke-virtual {p1, v3}, Landroid/media/Ringtone;->setStreamType(I)V
-
-    .line 362
-    iput-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->lastPlayedRingtone:Landroid/media/Ringtone;
-
-    .line 363
-    invoke-virtual {p1}, Landroid/media/Ringtone;->play()V
-
-    goto/16 :goto_1
-
-    .line 364
-    :cond_3
-    iget-object v2, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
-
-    if-eqz v2, :cond_4
-
-    iget-boolean v4, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->fromServer:Z
-
-    if-nez v4, :cond_4
-
-    .line 365
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    iget-object v1, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
-
-    iget-object v1, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
@@ -585,22 +547,60 @@
     .line 368
     invoke-virtual {p1}, Landroid/media/Ringtone;->play()V
 
-    goto :goto_1
+    goto/16 :goto_1
 
     .line 369
+    :cond_3
+    iget-object v2, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
+
+    if-eqz v2, :cond_4
+
+    iget-boolean v4, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->fromServer:Z
+
+    if-nez v4, :cond_4
+
+    .line 370
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget-object v1, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
+
+    iget-object v1, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Landroid/media/RingtoneManager;->getRingtone(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;
+
+    move-result-object p1
+
+    .line 371
+    invoke-virtual {p1, v3}, Landroid/media/Ringtone;->setStreamType(I)V
+
+    .line 372
+    iput-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->lastPlayedRingtone:Landroid/media/Ringtone;
+
+    .line 373
+    invoke-virtual {p1}, Landroid/media/Ringtone;->play()V
+
+    goto :goto_1
+
+    .line 374
     :cond_4
     iget-boolean v1, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->fromServer:Z
 
     if-eqz v1, :cond_8
 
-    .line 371
+    .line 376
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_5
 
-    .line 372
+    .line 377
     new-instance v1, Ljava/io/File;
 
     iget-object v2, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
@@ -609,7 +609,7 @@
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 373
+    .line 378
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -624,7 +624,7 @@
     :goto_0
     if-nez v1, :cond_6
 
-    .line 378
+    .line 383
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFileLoader()Lorg/telegram/messenger/FileLoader;
 
     move-result-object v1
@@ -640,14 +640,14 @@
     :cond_6
     if-eqz v1, :cond_7
 
-    .line 380
+    .line 385
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
     if-eqz v2, :cond_7
 
-    .line 381
+    .line 386
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -664,18 +664,18 @@
 
     move-result-object p1
 
-    .line 382
+    .line 387
     invoke-virtual {p1, v3}, Landroid/media/Ringtone;->setStreamType(I)V
 
-    .line 383
+    .line 388
     iput-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->lastPlayedRingtone:Landroid/media/Ringtone;
 
-    .line 384
+    .line 389
     invoke-virtual {p1}, Landroid/media/Ringtone;->play()V
 
     goto :goto_1
 
-    .line 386
+    .line 391
     :cond_7
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFileLoader()Lorg/telegram/messenger/FileLoader;
 
@@ -696,25 +696,25 @@
     :catch_0
     move-exception p1
 
-    .line 390
+    .line 395
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 392
+    .line 397
     :cond_8
     :goto_1
     iput-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 393
+    .line 398
     iget-object p1, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     const/4 p1, 0x1
 
-    .line 394
+    .line 399
     iput-boolean p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedToneChanged:Z
 
-    .line 395
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->adapter:Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/NotificationsSoundActivity$Adapter;->getItemCount()I
@@ -725,7 +725,7 @@
 
     goto :goto_3
 
-    .line 352
+    .line 357
     :cond_9
     :goto_2
     iget-object p1, p2, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
@@ -740,22 +740,22 @@
 .method private synthetic lambda$createView$2(Landroid/view/View;I)Z
     .locals 1
 
-    .line 401
+    .line 406
     instance-of p2, p1, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    .line 402
+    .line 407
     check-cast p1, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;
 
-    .line 403
+    .line 408
     iget-object p2, p1, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->tone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/NotificationsSoundActivity;->checkSelection(Lorg/telegram/ui/NotificationsSoundActivity$Tone;)V
 
-    .line 404
+    .line 409
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
     :cond_0
@@ -765,7 +765,7 @@
 .method private loadTones()V
     .locals 11
 
-    .line 445
+    .line 450
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v0
@@ -776,19 +776,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadUserRingtones(Z)V
 
-    .line 446
+    .line 451
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 447
+    .line 452
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     move v0, v1
 
-    .line 449
+    .line 454
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
@@ -808,7 +808,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 450
+    .line 455
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v2
@@ -823,12 +823,12 @@
 
     check-cast v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;
 
-    .line 451
+    .line 456
     new-instance v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     invoke-direct {v5, v3}, Lorg/telegram/ui/NotificationsSoundActivity$Tone;-><init>(Lorg/telegram/ui/NotificationsSoundActivity$1;)V
 
-    .line 452
+    .line 457
     iget v6, p0, Lorg/telegram/ui/NotificationsSoundActivity;->stableIds:I
 
     add-int/lit8 v7, v6, 0x1
@@ -837,20 +837,20 @@
 
     iput v6, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
 
-    .line 453
+    .line 458
     iput-boolean v4, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->fromServer:Z
 
-    .line 454
+    .line 459
     iget v4, v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->localId:I
 
     iput v4, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->localId:I
 
-    .line 456
+    .line 461
     iget-object v4, v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-nez v4, :cond_0
 
-    .line 457
+    .line 462
     new-instance v4, Ljava/io/File;
 
     iget-object v6, v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->localUri:Ljava/lang/String;
@@ -865,27 +865,27 @@
 
     goto :goto_1
 
-    .line 459
+    .line 464
     :cond_0
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Document;->file_name_fixed:Ljava/lang/String;
 
     iput-object v4, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
-    .line 460
+    .line 465
     :goto_1
     iget-object v4, v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput-object v4, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 461
+    .line 466
     invoke-direct {p0, v5}, Lorg/telegram/ui/NotificationsSoundActivity;->trimTitle(Lorg/telegram/ui/NotificationsSoundActivity$Tone;)V
 
-    .line 463
+    .line 468
     iget-object v4, v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$CachedTone;->localUri:Ljava/lang/String;
 
     iput-object v4, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
 
-    .line 465
+    .line 470
     iget-object v4, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     if-eqz v4, :cond_1
@@ -906,13 +906,13 @@
 
     if-nez v2, :cond_1
 
-    .line 466
+    .line 471
     iput-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 467
+    .line 472
     iput-object v5, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 470
+    .line 475
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTones:Ljava/util/ArrayList;
 
@@ -922,7 +922,7 @@
 
     goto :goto_0
 
-    .line 473
+    .line 478
     :cond_2
     new-instance v0, Landroid/media/RingtoneManager;
 
@@ -932,20 +932,20 @@
 
     const/4 v2, 0x2
 
-    .line 474
+    .line 479
     invoke-virtual {v0, v2}, Landroid/media/RingtoneManager;->setType(I)V
 
-    .line 475
+    .line 480
     invoke-virtual {v0}, Landroid/media/RingtoneManager;->getCursor()Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 477
+    .line 482
     new-instance v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     invoke-direct {v5, v3}, Lorg/telegram/ui/NotificationsSoundActivity$Tone;-><init>(Lorg/telegram/ui/NotificationsSoundActivity$1;)V
 
-    .line 478
+    .line 483
     iget v6, p0, Lorg/telegram/ui/NotificationsSoundActivity;->stableIds:I
 
     add-int/lit8 v7, v6, 0x1
@@ -954,7 +954,7 @@
 
     iput v6, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
 
-    .line 479
+    .line 484
     sget v6, Lorg/telegram/messenger/R$string;->NoSound:I
 
     const-string v7, "NoSound"
@@ -965,17 +965,17 @@
 
     iput-object v6, v5, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
-    .line 481
+    .line 486
     iget-object v6, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 484
+    .line 489
     new-instance v6, Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     invoke-direct {v6, v3}, Lorg/telegram/ui/NotificationsSoundActivity$Tone;-><init>(Lorg/telegram/ui/NotificationsSoundActivity$1;)V
 
-    .line 485
+    .line 490
     iget v8, p0, Lorg/telegram/ui/NotificationsSoundActivity;->stableIds:I
 
     add-int/lit8 v9, v8, 0x1
@@ -984,7 +984,7 @@
 
     iput v8, v6, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
 
-    .line 486
+    .line 491
     sget v8, Lorg/telegram/messenger/R$string;->DefaultRingtone:I
 
     const-string v9, "DefaultRingtone"
@@ -995,15 +995,15 @@
 
     iput-object v8, v6, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
-    .line 487
+    .line 492
     iput-boolean v4, v6, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->isSystemDefault:Z
 
-    .line 488
+    .line 493
     iget-object v8, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 490
+    .line 495
     iget-object v8, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     if-eqz v8, :cond_3
@@ -1020,13 +1020,13 @@
 
     if-eqz v7, :cond_3
 
-    .line 491
+    .line 496
     iput-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 492
+    .line 497
     iput-object v5, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 495
+    .line 500
     :cond_3
     iget-object v5, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
@@ -1046,13 +1046,13 @@
 
     if-eqz v5, :cond_4
 
-    .line 496
+    .line 501
     iput-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 497
+    .line 502
     iput-object v6, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 500
+    .line 505
     :cond_4
     :goto_2
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
@@ -1061,12 +1061,12 @@
 
     if-eqz v5, :cond_6
 
-    .line 501
+    .line 506
     invoke-interface {v0, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 502
+    .line 507
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -1091,12 +1091,12 @@
 
     move-result-object v7
 
-    .line 504
+    .line 509
     new-instance v8, Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     invoke-direct {v8, v3}, Lorg/telegram/ui/NotificationsSoundActivity$Tone;-><init>(Lorg/telegram/ui/NotificationsSoundActivity$1;)V
 
-    .line 505
+    .line 510
     iget v9, p0, Lorg/telegram/ui/NotificationsSoundActivity;->stableIds:I
 
     add-int/lit8 v10, v9, 0x1
@@ -1105,13 +1105,13 @@
 
     iput v9, v8, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->stableId:I
 
-    .line 506
+    .line 511
     iput-object v5, v8, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
-    .line 507
+    .line 512
     iput-object v7, v8, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
 
-    .line 509
+    .line 514
     iget-object v5, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     if-eqz v5, :cond_5
@@ -1128,13 +1128,13 @@
 
     if-eqz v5, :cond_5
 
-    .line 510
+    .line 515
     iput-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 511
+    .line 516
     iput-object v8, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 514
+    .line 519
     :cond_5
     iget-object v5, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
@@ -1142,7 +1142,7 @@
 
     goto :goto_2
 
-    .line 516
+    .line 521
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
@@ -1160,13 +1160,13 @@
 
     if-nez v0, :cond_7
 
-    .line 517
+    .line 522
     iput-object v6, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    .line 518
+    .line 523
     iput-boolean v4, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedToneChanged:Z
 
-    .line 520
+    .line 525
     :cond_7
     invoke-direct {p0}, Lorg/telegram/ui/NotificationsSoundActivity;->updateRows()V
 
@@ -1253,7 +1253,7 @@
 .method private updateActionMode()V
     .locals 3
 
-    .line 436
+    .line 441
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -1262,7 +1262,7 @@
 
     if-lez v0, :cond_0
 
-    .line 437
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTonesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     iget-object v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTones:Landroid/util/SparseArray;
@@ -1279,14 +1279,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
 
-    .line 438
+    .line 443
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->showActionMode()V
 
     goto :goto_0
 
-    .line 440
+    .line 445
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -1301,45 +1301,45 @@
 
     const/4 v0, -0x1
 
-    .line 550
+    .line 555
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesHeaderRow:I
 
-    .line 551
+    .line 556
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesStartRow:I
 
-    .line 552
+    .line 557
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesEndRow:I
 
-    .line 553
+    .line 558
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->uploadRow:I
 
-    .line 554
+    .line 559
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->dividerRow:I
 
-    .line 555
+    .line 560
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesHeaderRow:I
 
-    .line 556
+    .line 561
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesStartRow:I
 
-    .line 557
+    .line 562
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesEndRow:I
 
     const/4 v0, 0x0
 
-    .line 559
+    .line 564
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
     const/4 v1, 0x0
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 561
+    .line 566
     iput v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesHeaderRow:I
 
-    .line 562
+    .line 567
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1348,12 +1348,12 @@
 
     if-nez v0, :cond_0
 
-    .line 563
+    .line 568
     iget v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesStartRow:I
 
-    .line 564
+    .line 569
     iget-object v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTones:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1364,10 +1364,10 @@
 
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
-    .line 565
+    .line 570
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->serverTonesEndRow:I
 
-    .line 567
+    .line 572
     :cond_0
     iget v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
@@ -1379,12 +1379,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 568
+    .line 573
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->dividerRow:I
 
-    .line 570
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1393,7 +1393,7 @@
 
     if-nez v0, :cond_1
 
-    .line 571
+    .line 576
     iget v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1402,10 +1402,10 @@
 
     iput v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesHeaderRow:I
 
-    .line 572
+    .line 577
     iput v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesStartRow:I
 
-    .line 573
+    .line 578
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTones:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1416,10 +1416,10 @@
 
     iput v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
-    .line 574
+    .line 579
     iput v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->systemTonesEndRow:I
 
-    .line 576
+    .line 581
     :cond_1
     iget v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->rowCount:I
 
@@ -1441,7 +1441,7 @@
 
     move-object/from16 v1, p1
 
-    .line 178
+    .line 181
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarSelectorBlue:I
@@ -1456,7 +1456,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 179
+    .line 182
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
@@ -1469,7 +1469,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 180
+    .line 183
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v3, Lorg/telegram/ui/ActionBar/BackDrawable;
@@ -1478,12 +1478,12 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 181
+    .line 184
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 182
+    .line 185
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v3, Lorg/telegram/ui/NotificationsSoundActivity$1;
@@ -1492,7 +1492,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 286
+    .line 289
     iget-wide v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->dialogId:J
 
     const-wide/16 v5, 0x0
@@ -1505,14 +1505,14 @@
 
     const/4 v8, 0x1
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
-    .line 287
+    .line 290
     iget v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->currentType:I
 
     if-ne v2, v8, :cond_0
 
-    .line 288
+    .line 291
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->NotificationsSoundPrivate:I
@@ -1530,7 +1530,7 @@
     :cond_0
     if-nez v2, :cond_1
 
-    .line 290
+    .line 293
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->NotificationsSoundGroup:I
@@ -1546,9 +1546,9 @@
     goto/16 :goto_2
 
     :cond_1
-    if-ne v2, v3, :cond_7
+    if-ne v2, v3, :cond_2
 
-    .line 292
+    .line 295
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->NotificationsSoundChannels:I
@@ -1563,8 +1563,28 @@
 
     goto/16 :goto_2
 
-    .line 295
     :cond_2
+    const/4 v5, 0x3
+
+    if-ne v2, v5, :cond_8
+
+    .line 297
+    iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    sget v5, Lorg/telegram/messenger/R$string;->NotificationsSoundStories:I
+
+    const-string v6, "NotificationsSoundStories"
+
+    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_2
+
+    .line 300
+    :cond_3
     new-instance v2, Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     iget-object v9, v0, Lorg/telegram/ui/NotificationsSoundActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1573,7 +1593,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
-    .line 296
+    .line 301
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v9
@@ -1582,7 +1602,7 @@
 
     invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setOccupyStatusBar(Z)V
 
-    .line 297
+    .line 302
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v9, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
@@ -1595,13 +1615,13 @@
 
     iget-boolean v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->inPreviewMode:Z
 
-    if-nez v13, :cond_3
+    if-nez v13, :cond_4
 
     const/16 v13, 0x38
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     move v13, v4
 
     :goto_0
@@ -1617,19 +1637,19 @@
 
     invoke-virtual {v2, v9, v4, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 298
+    .line 303
     iget-wide v9, v0, Lorg/telegram/ui/NotificationsSoundActivity;->dialogId:J
 
     cmp-long v2, v9, v5
 
-    if-gez v2, :cond_5
+    if-gez v2, :cond_6
 
-    .line 299
+    .line 304
     iget v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->topicId:I
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
-    .line 300
+    .line 305
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -1648,7 +1668,7 @@
 
     move-result-object v2
 
-    .line 301
+    .line 306
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getAvatarImageView()Lorg/telegram/ui/Components/BackupImageView;
@@ -1659,7 +1679,7 @@
 
     invoke-static {v5, v2, v4, v8, v6}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->setTopicIcon(Lorg/telegram/ui/Components/BackupImageView;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 302
+    .line 307
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->title:Ljava/lang/String;
@@ -1668,8 +1688,8 @@
 
     goto :goto_1
 
-    .line 304
-    :cond_4
+    .line 309
+    :cond_5
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -1686,12 +1706,12 @@
 
     move-result-object v2
 
-    .line 305
+    .line 310
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setChatAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 306
+    .line 311
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
@@ -1700,8 +1720,8 @@
 
     goto :goto_1
 
-    .line 309
-    :cond_5
+    .line 314
+    :cond_6
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -1716,14 +1736,14 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
-    .line 311
+    .line 316
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setUserAvatar(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 312
+    .line 317
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -1736,8 +1756,8 @@
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 315
-    :cond_6
+    .line 320
+    :cond_7
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->avatarContainer:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
@@ -1751,8 +1771,8 @@
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 318
-    :cond_7
+    .line 323
+    :cond_8
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -1760,7 +1780,7 @@
 
     move-result-object v2
 
-    .line 320
+    .line 325
     new-instance v5, Lorg/telegram/ui/Components/NumberTextView;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1773,10 +1793,10 @@
 
     const/16 v6, 0x12
 
-    .line 321
+    .line 326
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/NumberTextView;->setTextSize(I)V
 
-    .line 322
+    .line 327
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTonesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     const-string v6, "fonts/rmedium.ttf"
@@ -1787,7 +1807,7 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/NumberTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 323
+    .line 328
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTonesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultIcon:I
@@ -1800,7 +1820,7 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/NumberTextView;->setTextColor(I)V
 
-    .line 324
+    .line 329
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTonesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     const/4 v9, 0x0
@@ -1823,14 +1843,14 @@
 
     invoke-virtual {v2, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 325
+    .line 330
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTonesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     sget-object v6, Lorg/telegram/ui/NotificationsSoundActivity$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/NotificationsSoundActivity$$ExternalSyntheticLambda0;
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 327
+    .line 332
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_forward:I
 
     const/16 v6, 0x36
@@ -1849,7 +1869,7 @@
 
     invoke-virtual {v2, v3, v5, v9, v10}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItemWithWidth(IIILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 328
+    .line 333
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1866,17 +1886,17 @@
 
     invoke-virtual {v2, v8, v3, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItemWithWidth(IIILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 330
+    .line 335
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 331
+    .line 336
     check-cast v2, Landroid/widget/FrameLayout;
 
-    .line 332
+    .line 337
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     iget-object v5, v0, Lorg/telegram/ui/NotificationsSoundActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1887,7 +1907,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 334
+    .line 339
     new-instance v3, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -1896,31 +1916,31 @@
 
     const/4 v5, -0x1
 
-    .line 335
+    .line 340
     invoke-static {v5, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v2, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 336
+    .line 341
     new-instance v2, Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
     invoke-direct {v2, v0, v7}, Lorg/telegram/ui/NotificationsSoundActivity$Adapter;-><init>(Lorg/telegram/ui/NotificationsSoundActivity;Lorg/telegram/ui/NotificationsSoundActivity$1;)V
 
     iput-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->adapter:Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
-    .line 337
+    .line 342
     invoke-virtual {v2, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
 
-    .line 338
+    .line 343
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v3, v0, Lorg/telegram/ui/NotificationsSoundActivity;->adapter:Lorg/telegram/ui/NotificationsSoundActivity$Adapter;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 339
+    .line 344
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
@@ -1931,7 +1951,7 @@
 
     invoke-virtual {v2, v4}, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
 
-    .line 340
+    .line 345
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
@@ -1942,7 +1962,7 @@
 
     invoke-virtual {v2, v4}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 341
+    .line 346
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v3, Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -1951,7 +1971,7 @@
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 342
+    .line 347
     iget-object v2, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v3, Lorg/telegram/ui/NotificationsSoundActivity$$ExternalSyntheticLambda1;
@@ -1960,7 +1980,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 400
+    .line 405
     iget-object v1, v0, Lorg/telegram/ui/NotificationsSoundActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v2, Lorg/telegram/ui/NotificationsSoundActivity$$ExternalSyntheticLambda2;
@@ -1969,13 +1989,13 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemLongClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;)V
 
-    .line 409
+    .line 414
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/NotificationsSoundActivity;->loadTones()V
 
-    .line 410
+    .line 415
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/NotificationsSoundActivity;->updateRows()V
 
-    .line 411
+    .line 416
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v1
@@ -2285,7 +2305,7 @@
 
     move p3, p2
 
-    .line 581
+    .line 586
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2293,7 +2313,7 @@
 
     if-ge p3, p4, :cond_0
 
-    .line 582
+    .line 587
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p4
@@ -2310,7 +2330,7 @@
 
     goto :goto_0
 
-    .line 584
+    .line 589
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -2333,23 +2353,10 @@
     return-void
 .end method
 
-.method public getNavigationBarColor()I
-    .locals 1
-
-    .line 791
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
-
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 173
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object v0
@@ -2366,13 +2373,13 @@
 
     return-void
 
-    .line 941
+    .line 945
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz p1, :cond_6
 
-    .line 943
+    .line 947
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
@@ -2383,7 +2390,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 944
+    .line 948
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
@@ -2394,12 +2401,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 946
+    .line 950
     new-instance p3, Ljava/io/File;
 
     invoke-direct {p3, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 948
+    .line 952
     iget-object v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getDocumentLayout()Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
@@ -2408,7 +2415,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 949
+    .line 953
     iget-object v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getDocumentLayout()Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
@@ -2421,14 +2428,14 @@
 
     if-eqz p3, :cond_1
 
-    .line 951
+    .line 955
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p3
 
     invoke-virtual {p3, p1}, Lorg/telegram/messenger/MediaDataController;->uploadRingtone(Ljava/lang/String;)V
 
-    .line 952
+    .line 956
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2449,7 +2456,7 @@
 
     goto :goto_2
 
-    .line 955
+    .line 959
     :cond_2
     invoke-virtual {p3}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
 
@@ -2457,7 +2464,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 956
+    .line 960
     invoke-virtual {p3}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
 
     move-result-object p1
@@ -2466,7 +2473,7 @@
 
     move v1, p3
 
-    .line 957
+    .line 961
     :goto_1
     invoke-virtual {p1}, Landroid/content/ClipData;->getItemCount()I
 
@@ -2474,7 +2481,7 @@
 
     if-ge p3, v2, :cond_4
 
-    .line 958
+    .line 962
     invoke-virtual {p1, p3}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
     move-result-object v2
@@ -2487,7 +2494,7 @@
 
     move-result-object v2
 
-    .line 960
+    .line 964
     iget-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatAttachAlert;->getDocumentLayout()Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
@@ -2496,7 +2503,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 961
+    .line 965
     iget-object v3, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatAttachAlert;->getDocumentLayout()Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
@@ -2513,14 +2520,14 @@
 
     if-eqz v3, :cond_3
 
-    .line 963
+    .line 967
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v1
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/MediaDataController;->uploadRingtone(Ljava/lang/String;)V
 
-    .line 964
+    .line 968
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2545,7 +2552,7 @@
     :goto_2
     if-eqz v0, :cond_6
 
-    .line 969
+    .line 973
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismiss()V
@@ -2682,31 +2689,42 @@
     :cond_3
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_5
+    if-ne v0, v3, :cond_4
 
     const-string v0, "ChannelSoundPath"
 
     const-string v3, "ChannelSoundDocId"
 
-    .line 157
+    goto :goto_0
+
+    :cond_4
+    const/4 v3, 0x3
+
+    if-ne v0, v3, :cond_6
+
+    const-string v0, "StoriesSoundPath"
+
+    const-string v3, "StoriesSoundDocId"
+
+    .line 160
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationsSettings()Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 158
+    .line 161
     invoke-interface {v4, v3, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v5
 
     const-string v3, "NoSound"
 
-    .line 159
+    .line 162
     invoke-interface {v4, v0, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 161
+    .line 164
     new-instance v3, Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     const/4 v4, 0x0
@@ -2717,16 +2735,16 @@
 
     cmp-long v1, v5, v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
-    .line 163
+    .line 166
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v0, v3, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 164
+    .line 167
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->startSelectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     iget-object v0, v0, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2735,11 +2753,11 @@
 
     goto :goto_1
 
-    .line 166
-    :cond_4
+    .line 169
+    :cond_5
     iput-object v0, v3, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
 
-    .line 168
+    .line 171
     :goto_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
@@ -2747,8 +2765,8 @@
 
     return v0
 
-    .line 153
-    :cond_5
+    .line 156
+    :cond_6
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Unsupported type"
@@ -2767,11 +2785,11 @@
     .line 862
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     iget-boolean v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedToneChanged:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     .line 863
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationsSettings()Landroid/content/SharedPreferences;
@@ -2918,7 +2936,7 @@
     :cond_2
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_7
+    if-ne v1, v2, :cond_3
 
     const-string v1, "ChannelSound"
 
@@ -2926,7 +2944,20 @@
 
     const-string v6, "ChannelSoundDocId"
 
-    .line 893
+    goto :goto_0
+
+    :cond_3
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_8
+
+    const-string v1, "StoriesSound"
+
+    const-string v5, "StoriesSoundPath"
+
+    const-string v6, "StoriesSoundDocId"
+
+    .line 897
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
@@ -2934,93 +2965,93 @@
 
     const-string v8, "NoSound"
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
     iget-object v7, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
-    .line 894
+    .line 898
     iget-wide v9, v7, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     invoke-interface {v0, v6, v9, v10}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 895
+    .line 899
     iget-object v2, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     iget-object v2, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 896
+    .line 900
     invoke-interface {v0, v5, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 897
-    :cond_3
+    .line 901
+    :cond_4
     iget-object v7, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
-    .line 898
+    .line 902
     iget-object v2, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->title:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 899
+    .line 903
     iget-object v1, p0, Lorg/telegram/ui/NotificationsSoundActivity;->selectedTone:Lorg/telegram/ui/NotificationsSoundActivity$Tone;
 
     iget-object v1, v1, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->uri:Ljava/lang/String;
 
     invoke-interface {v0, v5, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 900
-    invoke-interface {v0, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    goto :goto_1
-
-    .line 901
-    :cond_4
-    iget-boolean v2, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->isSystemDefault:Z
-
-    if-eqz v2, :cond_5
-
-    const-string v2, "Default"
-
-    .line 902
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 903
-    invoke-interface {v0, v5, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
     .line 904
     invoke-interface {v0, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 906
+    .line 905
     :cond_5
-    invoke-interface {v0, v1, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    iget-boolean v2, v2, Lorg/telegram/ui/NotificationsSoundActivity$Tone;->isSystemDefault:Z
+
+    if-eqz v2, :cond_6
+
+    const-string v2, "Default"
+
+    .line 906
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 907
-    invoke-interface {v0, v5, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v5, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 908
     invoke-interface {v0, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    goto :goto_1
+
+    .line 910
+    :cond_6
+    invoke-interface {v0, v1, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
     .line 911
+    invoke-interface {v0, v5, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 912
+    invoke-interface {v0, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 915
     :goto_1
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 912
+    .line 916
     iget-wide v0, p0, Lorg/telegram/ui/NotificationsSoundActivity;->dialogId:J
 
     cmp-long v0, v0, v3
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
-    .line 913
+    .line 917
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v0
@@ -3033,8 +3064,8 @@
 
     goto :goto_2
 
-    .line 915
-    :cond_6
+    .line 919
+    :cond_7
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v0
@@ -3043,7 +3074,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationsController;->updateServerNotificationsSettings(I)V
 
-    .line 916
+    .line 920
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3058,8 +3089,8 @@
 
     goto :goto_2
 
-    .line 889
-    :cond_7
+    .line 893
+    :cond_8
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Unsupported type"
@@ -3068,7 +3099,7 @@
 
     throw v0
 
-    :cond_8
+    :cond_9
     :goto_2
     return-void
 .end method
@@ -3076,10 +3107,10 @@
 .method public onPause()V
     .locals 2
 
-    .line 785
+    .line 790
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPause()V
 
-    .line 786
+    .line 791
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3094,10 +3125,10 @@
 .method public onResume()V
     .locals 2
 
-    .line 779
+    .line 784
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 780
+    .line 785
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3112,7 +3143,7 @@
 .method public startDocumentSelectActivity()V
     .locals 3
 
-    .line 923
+    .line 927
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -3120,7 +3151,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 924
+    .line 928
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x12
@@ -3131,18 +3162,18 @@
 
     const/4 v2, 0x1
 
-    .line 925
+    .line 929
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     :cond_0
     const-string v1, "audio/mpeg"
 
-    .line 927
+    .line 931
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const/16 v1, 0x15
 
-    .line 928
+    .line 932
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -3152,7 +3183,7 @@
     :catch_0
     move-exception v0
 
-    .line 930
+    .line 934
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

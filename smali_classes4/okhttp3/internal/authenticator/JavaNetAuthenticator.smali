@@ -237,7 +237,7 @@
     iget-object v8, v0, Lokhttp3/internal/authenticator/JavaNetAuthenticator;->defaultDns:Lokhttp3/Dns;
 
     :goto_3
-    const-string v9, "proxy"
+    const-string/jumbo v9, "proxy"
 
     if-eqz v2, :cond_5
 

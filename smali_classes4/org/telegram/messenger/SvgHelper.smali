@@ -1809,7 +1809,7 @@
     return-object p2
 
     :cond_0
-    const-string p1, "px"
+    const-string/jumbo p1, "px"
 
     .line 934
     invoke-virtual {p0, p1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z

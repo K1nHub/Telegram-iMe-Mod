@@ -515,7 +515,7 @@
 .end method
 
 .method private handlePlayRequest()V
-    .locals 5
+    .locals 6
 
     .line 547
     iget-object v0, p0, Lorg/telegram/messenger/MusicBrowserService;->delayedStopHandler:Lorg/telegram/messenger/MusicBrowserService$DelayedStopHandler;
@@ -595,13 +595,15 @@
     invoke-direct {v1}, Landroid/media/MediaMetadata$Builder;-><init>()V
 
     .line 566
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v2
+    move-result-wide v2
 
-    mul-int/lit16 v2, v2, 0x3e8
+    const-wide v4, 0x408f400000000000L    # 1000.0
 
-    int-to-long v2, v2
+    mul-double/2addr v2, v4
+
+    double-to-long v2, v2
 
     const-string v4, "android.media.metadata.DURATION"
 
@@ -903,13 +905,15 @@
     invoke-direct {p2}, Landroid/media/MediaMetadata$Builder;-><init>()V
 
     .line 262
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v0
+    move-result-wide v0
 
-    mul-int/lit16 v0, v0, 0x3e8
+    const-wide v2, 0x408f400000000000L    # 1000.0
 
-    int-to-long v0, v0
+    mul-double/2addr v0, v2
+
+    double-to-long v0, v0
 
     const-string v2, "android.media.metadata.DURATION"
 

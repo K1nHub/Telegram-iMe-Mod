@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
-    public static int constructor = 250621158;
+    public static int constructor = -745541182;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
@@ -9,9 +9,13 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.flags = readInt32;
         this.round_message = (readInt32 & 1) != 0;
         this.supports_streaming = (readInt32 & 2) != 0;
-        this.duration = abstractSerializedData.readInt32(z);
-        this.f1526w = abstractSerializedData.readInt32(z);
-        this.f1525h = abstractSerializedData.readInt32(z);
+        this.nosound = (readInt32 & 8) != 0;
+        this.duration = abstractSerializedData.readDouble(z);
+        this.f1529w = abstractSerializedData.readInt32(z);
+        this.f1528h = abstractSerializedData.readInt32(z);
+        if ((this.flags & 4) != 0) {
+            this.preload_prefix_size = abstractSerializedData.readInt32(z);
+        }
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -21,9 +25,14 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.flags = i;
         int i2 = this.supports_streaming ? i | 2 : i & (-3);
         this.flags = i2;
-        abstractSerializedData.writeInt32(i2);
-        abstractSerializedData.writeInt32(this.duration);
-        abstractSerializedData.writeInt32(this.f1526w);
-        abstractSerializedData.writeInt32(this.f1525h);
+        int i3 = this.nosound ? i2 | 8 : i2 & (-9);
+        this.flags = i3;
+        abstractSerializedData.writeInt32(i3);
+        abstractSerializedData.writeDouble(this.duration);
+        abstractSerializedData.writeInt32(this.f1529w);
+        abstractSerializedData.writeInt32(this.f1528h);
+        if ((this.flags & 4) != 0) {
+            abstractSerializedData.writeInt32(this.preload_prefix_size);
+        }
     }
 }

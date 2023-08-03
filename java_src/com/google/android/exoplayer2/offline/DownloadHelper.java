@@ -23,6 +23,7 @@ import com.google.android.exoplayer2.drm.DrmSessionManager;
 import com.google.android.exoplayer2.drm.DrmSessionManagerProvider;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
 import com.google.android.exoplayer2.metadata.Metadata;
+import com.google.android.exoplayer2.metadata.MetadataOutput;
 import com.google.android.exoplayer2.offline.DownloadHelper;
 import com.google.android.exoplayer2.offline.DownloadRequest;
 import com.google.android.exoplayer2.source.DefaultMediaSourceFactory;
@@ -33,6 +34,7 @@ import com.google.android.exoplayer2.source.TrackGroupArray;
 import com.google.android.exoplayer2.source.chunk.MediaChunk;
 import com.google.android.exoplayer2.source.chunk.MediaChunkIterator;
 import com.google.android.exoplayer2.text.CueGroup;
+import com.google.android.exoplayer2.text.TextOutput;
 import com.google.android.exoplayer2.trackselection.BaseTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
@@ -40,6 +42,7 @@ import com.google.android.exoplayer2.trackselection.MappingTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelectionOverride;
 import com.google.android.exoplayer2.trackselection.TrackSelectionParameters;
 import com.google.android.exoplayer2.trackselection.TrackSelectionUtil;
+import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelectorResult;
 import com.google.android.exoplayer2.upstream.Allocator;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
@@ -218,7 +221,22 @@ public final class DownloadHelper {
             public /* synthetic */ void onSkipSilenceEnabledChanged(boolean z) {
                 AudioRendererEventListener.CC.$default$onSkipSilenceEnabledChanged(this, z);
             }
-        }, DownloadHelper$$ExternalSyntheticLambda2.INSTANCE, DownloadHelper$$ExternalSyntheticLambda1.INSTANCE);
+        }, new TextOutput() { // from class: com.google.android.exoplayer2.offline.DownloadHelper$$ExternalSyntheticLambda2
+            @Override // com.google.android.exoplayer2.text.TextOutput
+            public final void onCues(CueGroup cueGroup) {
+                DownloadHelper.lambda$getRendererCapabilities$0(cueGroup);
+            }
+
+            @Override // com.google.android.exoplayer2.text.TextOutput
+            public /* synthetic */ void onCues(List list) {
+                TextOutput.CC.$default$onCues(this, list);
+            }
+        }, new MetadataOutput() { // from class: com.google.android.exoplayer2.offline.DownloadHelper$$ExternalSyntheticLambda1
+            @Override // com.google.android.exoplayer2.metadata.MetadataOutput
+            public final void onMetadata(Metadata metadata) {
+                DownloadHelper.lambda$getRendererCapabilities$1(metadata);
+            }
+        });
         RendererCapabilities[] rendererCapabilitiesArr = new RendererCapabilities[createRenderers.length];
         for (int i = 0; i < createRenderers.length; i++) {
             rendererCapabilitiesArr[i] = createRenderers[i].getCapabilities();
@@ -305,7 +323,12 @@ public final class DownloadHelper {
         this.trackSelector = defaultTrackSelector;
         this.rendererCapabilities = rendererCapabilitiesArr;
         this.scratchSet = new SparseIntArray();
-        defaultTrackSelector.init(DownloadHelper$$ExternalSyntheticLambda3.INSTANCE, new FakeBandwidthMeter());
+        defaultTrackSelector.init(new TrackSelector.InvalidationListener() { // from class: com.google.android.exoplayer2.offline.DownloadHelper$$ExternalSyntheticLambda3
+            @Override // com.google.android.exoplayer2.trackselection.TrackSelector.InvalidationListener
+            public final void onTrackSelectionsInvalidated() {
+                DownloadHelper.lambda$new$2();
+            }
+        }, new FakeBandwidthMeter());
         this.callbackHandler = Util.createHandlerForCurrentOrMainLooper();
         this.window = new Timeline.Window();
     }

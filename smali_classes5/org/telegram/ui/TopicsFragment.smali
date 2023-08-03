@@ -7332,7 +7332,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 713
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_player_time:I

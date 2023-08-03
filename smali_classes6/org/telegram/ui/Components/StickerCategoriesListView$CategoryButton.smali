@@ -78,25 +78,25 @@
 .end method
 
 .method public constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/content/Context;)V
-    .locals 2
+    .locals 0
 
-    .line 603
+    .line 613
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
-    .line 604
+    .line 614
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     const/4 p2, 0x0
 
-    .line 652
+    .line 660
     iput-boolean p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loaded:Z
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 769
+    .line 777
     iput p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
-    .line 606
+    .line 616
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
@@ -105,33 +105,12 @@
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->setImageColor(I)V
 
-    .line 607
+    .line 617
     sget-object p2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 609
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
-
-    move-result p2
-
-    const/16 v0, 0xf
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    invoke-static {p2, v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 611
+    .line 619
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView;->layerNum:Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerNum(Ljava/lang/Integer;)V
@@ -142,7 +121,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 596
+    .line 606
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -151,7 +130,7 @@
 .method static synthetic access$1202(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 596
+    .line 606
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -160,7 +139,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;F)V
     .locals 0
 
-    .line 596
+    .line 606
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->updateSelectedT(F)V
 
     return-void
@@ -169,7 +148,7 @@
 .method private synthetic lambda$onLoaded$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 664
+    .line 672
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -182,7 +161,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
-    .line 665
+    .line 673
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     return-void
@@ -193,15 +172,15 @@
 
     xor-int/lit8 p1, p1, 0x1
 
-    .line 629
+    .line 637
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setOnlyLastFrame(Z)V
 
     const/16 p1, 0x18
 
-    .line 630
+    .line 638
     invoke-virtual {p0, p2, p1, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/tgnet/TLRPC$Document;II)V
 
-    .line 631
+    .line 639
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     return-void
@@ -210,14 +189,14 @@
 .method private synthetic lambda$set$1()V
     .locals 1
 
-    .line 634
+    .line 642
     iget-boolean v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loaded:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 635
+    .line 643
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
     :cond_0
@@ -227,7 +206,7 @@
 .method private synthetic lambda$setPressed$4(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 801
+    .line 809
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -240,7 +219,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->pressedProgress:F
 
-    .line 802
+    .line 810
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     return-void
@@ -249,7 +228,7 @@
 .method private synthetic lambda$setSelected$3(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 691
+    .line 699
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -268,15 +247,15 @@
 .method private updateSelectedT(F)V
     .locals 2
 
-    .line 710
+    .line 718
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedT:F
 
-    .line 711
+    .line 719
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
-    .line 713
+    .line 721
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p1
@@ -285,22 +264,22 @@
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
-    .line 714
+    .line 722
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result v0
 
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedT:F
 
-    .line 712
+    .line 720
     invoke-static {p1, v0, v1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
 
-    .line 711
+    .line 719
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->setImageColor(I)V
 
-    .line 718
+    .line 726
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     return-void
@@ -311,10 +290,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 729
+    .line 737
     invoke-virtual {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->updatePressedProgress()V
 
-    .line 730
+    .line 738
     invoke-virtual {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->getScale()F
 
     move-result v0
@@ -325,10 +304,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 732
+    .line 740
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 733
+    .line 741
     invoke-virtual {p0}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v2
@@ -349,13 +328,13 @@
 
     invoke-virtual {p1, v0, v0, v2, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 735
+    .line 743
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
     if-eqz v1, :cond_1
 
-    .line 737
+    .line 745
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1
@@ -365,7 +344,7 @@
 .method public getScale()F
     .locals 2
 
-    .line 783
+    .line 791
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->pressedProgress:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -392,10 +371,10 @@
 
     const/4 v0, 0x1
 
-    .line 656
+    .line 664
     iput-boolean v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loaded:Z
 
-    .line 657
+    .line 665
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -404,17 +383,17 @@
 
     if-gez v1, :cond_1
 
-    .line 658
+    .line 666
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_0
 
-    .line 659
+    .line 667
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v1, 0x0
 
-    .line 660
+    .line 668
     iput-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -424,7 +403,7 @@
 
     const/4 v3, 0x0
 
-    .line 662
+    .line 670
     iget v4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
     aput v4, v1, v3
@@ -437,14 +416,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
-    .line 663
+    .line 671
     new-instance v1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 667
+    .line 675
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$1;
@@ -453,21 +432,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 675
+    .line 683
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x140
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 676
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 677
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -479,14 +458,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 743
+    .line 751
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/4 p2, 0x4
 
-    .line 745
+    .line 753
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -499,12 +478,12 @@
 
     move-result p2
 
-    .line 746
+    .line 754
     invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 744
+    .line 752
     invoke-super {p0, p2, p1}, Landroid/widget/ImageView;->onMeasure(II)V
 
     return-void
@@ -513,7 +492,7 @@
 .method public play()V
     .locals 4
 
-    .line 752
+    .line 760
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -528,28 +507,28 @@
 
     if-lez v0, :cond_2
 
-    .line 753
+    .line 761
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->lastPlayed:J
 
-    .line 754
+    .line 762
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 755
+    .line 763
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 756
+    .line 764
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
@@ -561,17 +540,17 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 759
+    .line 767
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
     const/4 v1, 0x0
 
-    .line 760
+    .line 768
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
     const/4 v1, 0x1
 
-    .line 761
+    .line 769
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->restart(Z)Z
 
     goto :goto_0
@@ -581,10 +560,10 @@
 
     const/4 v0, 0x0
 
-    .line 763
+    .line 771
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 764
+    .line 772
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     :cond_2
@@ -595,20 +574,20 @@
 .method public set(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;IZ)V
     .locals 4
 
-    .line 616
+    .line 624
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_0
 
-    .line 617
+    .line 625
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 p2, 0x0
 
-    .line 618
+    .line 626
     iput-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
-    .line 620
+    .line 628
     :cond_0
     iget-boolean p2, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->remote:Z
 
@@ -618,13 +597,13 @@
 
     if-eqz p2, :cond_1
 
-    .line 621
+    .line 629
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 623
+    .line 631
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->clearAnimationDrawable()V
 
-    .line 624
+    .line 632
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     const/4 v2, 0x1
@@ -633,13 +612,13 @@
 
     move-result p2
 
-    .line 625
+    .line 633
     iput-boolean v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loaded:Z
 
-    .line 626
+    .line 634
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
-    .line 627
+    .line 635
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getDocumentFetcher(I)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;
@@ -652,10 +631,10 @@
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;Z)V
 
-    .line 628
+    .line 636
     invoke-virtual {v0, v2, v3, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->fetchDocument(JLorg/telegram/ui/Components/AnimatedEmojiDrawable$ReceivedDocument;)V
 
-    .line 633
+    .line 641
     new-instance p1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)V
@@ -666,46 +645,46 @@
 
     goto :goto_0
 
-    .line 638
+    .line 646
     :cond_1
     iget-boolean p2, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->animated:Z
 
     if-eqz p2, :cond_2
 
-    .line 639
+    .line 647
     iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->cached:Z
 
-    .line 640
+    .line 648
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 641
+    .line 649
     iget p1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->iconResId:I
 
     const/16 p2, 0x18
 
     invoke-virtual {p0, p1, p2, p2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 642
+    .line 650
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 643
+    .line 651
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
     goto :goto_0
 
-    .line 645
+    .line 653
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieImageView;->clearAnimationDrawable()V
 
-    .line 646
+    .line 654
     iget p1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->iconResId:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 647
+    .line 655
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
-    .line 649
+    .line 657
     :goto_0
     invoke-virtual {p0, p3, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->setSelected(ZZ)V
 
@@ -715,12 +694,12 @@
 .method public setImageColor(I)V
     .locals 2
 
-    .line 722
+    .line 730
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->imageColor:I
 
     if-eq v0, p1, :cond_0
 
-    .line 723
+    .line 731
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->imageColor:I
@@ -738,35 +717,35 @@
 .method public setPressed(Z)V
     .locals 3
 
-    .line 788
+    .line 796
     invoke-virtual {p0}, Landroid/widget/ImageView;->isPressed()Z
 
     move-result v0
 
     if-eq v0, p1, :cond_1
 
-    .line 789
+    .line 797
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setPressed(Z)V
 
-    .line 790
+    .line 798
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 791
+    .line 799
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     if-eqz p1, :cond_0
 
-    .line 793
+    .line 801
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 794
+    .line 802
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 795
+    .line 803
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -774,7 +753,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 798
+    .line 806
     iget p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->pressedProgress:F
 
     const/4 v0, 0x0
@@ -795,21 +774,21 @@
 
     aput v0, v1, p1
 
-    .line 799
+    .line 807
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 800
+    .line 808
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 804
+    .line 812
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$3;
@@ -818,7 +797,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 811
+    .line 819
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -829,14 +808,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 812
+    .line 820
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 813
+    .line 821
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -848,7 +827,7 @@
 .method public setSelected(ZZ)V
     .locals 4
 
-    .line 682
+    .line 690
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedT:F
 
     int-to-float v1, p1
@@ -865,17 +844,17 @@
 
     if-lez v0, :cond_4
 
-    .line 683
+    .line 691
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 684
+    .line 692
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 685
+    .line 693
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -891,7 +870,7 @@
 
     const/4 v2, 0x0
 
-    .line 689
+    .line 697
     iget v3, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedT:F
 
     aput v3, p2, v2
@@ -914,14 +893,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
-    .line 690
+    .line 698
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 693
+    .line 701
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$2;
@@ -930,21 +909,21 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 700
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 701
+    .line 709
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 702
+    .line 710
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->selectedAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -959,7 +938,7 @@
     :cond_3
     move v0, v1
 
-    .line 704
+    .line 712
     :goto_1
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->updateSelectedT(F)V
 
@@ -971,7 +950,7 @@
 .method public updatePressedProgress()V
     .locals 4
 
-    .line 775
+    .line 783
     invoke-virtual {p0}, Landroid/widget/ImageView;->isPressed()Z
 
     move-result v0
@@ -988,7 +967,7 @@
 
     const/high16 v2, 0x447a0000    # 1000.0f
 
-    .line 776
+    .line 784
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
     div-float/2addr v2, v3
@@ -1007,10 +986,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->pressedProgress:F
 
-    .line 777
+    .line 785
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 778
+    .line 786
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V

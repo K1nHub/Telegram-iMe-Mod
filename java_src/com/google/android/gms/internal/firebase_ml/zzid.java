@@ -1,8 +1,9 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import java.util.Iterator;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* loaded from: classes.dex */
-final class zzid implements Iterable<T> {
+final class zzid<T> implements Iterable<T> {
     final /* synthetic */ Object zzzy;
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -21,10 +21,13 @@ import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.tgnet.TLRPC$User;
+import timber.log.Timber;
 /* compiled from: CreateWalletIntroPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter */
@@ -81,17 +84,72 @@ public final class CreateWalletIntroPresenter extends BasePresenter<CreateWallet
 
     public final void prepareCreateWalletFlow() {
         String randomString;
-        boolean isAnyWalletCreated = this.cryptoAccessManager.isAnyWalletCreated();
+        final boolean isAnyWalletCreated = this.cryptoAccessManager.isAnyWalletCreated();
         WalletCreationType.Initial initial = this.walletCreationType;
         if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Create.INSTANCE)) {
-            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(this.currentBlockchainType).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(this.currentBlockchainType).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-            Disposable subscribe = RxExtKt.withLoadingUpdate(observeOn, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter$$ExternalSyntheticLambda0
+            Observable withLoadingUpdate = RxExtKt.withLoadingUpdate(observeOn, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     CreateWalletIntroPresenter.prepareCreateWalletFlow$lambda$0(CreateWalletIntroPresenter.this, (Boolean) obj);
                 }
-            }).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2151xcb3c75da(isAnyWalletCreated, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2152xcb3c75db((BaseView) getViewState())));
+            });
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingUpdate.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Wallet>, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
+                    m1444invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1444invoke(Result<? extends Wallet> it) {
+                    ResourceManager resourceManager;
+                    CryptoAccessManager cryptoAccessManager;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends Wallet> result = it;
+                    if (result instanceof Result.Success) {
+                        if (isAnyWalletCreated) {
+                            cryptoAccessManager = this.cryptoAccessManager;
+                            ((CreateWalletIntroView) this.getViewState()).openAddWalletScreen((Wallet) ((Result.Success) result).getData(), cryptoAccessManager.getWalletPassword());
+                            return;
+                        }
+                        ((CreateWalletIntroView) this.getViewState()).openCreateWalletScreen((Wallet) ((Result.Success) result).getData(), CryptoExtKt.randomString());
+                    } else if (result instanceof Result.Error) {
+                        resourceManager = this.resourceManager;
+                        ((CreateWalletIntroView) this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         } else if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Import.INSTANCE)) {
@@ -123,6 +181,6 @@ public final class CreateWalletIntroPresenter extends BasePresenter<CreateWallet
     }
 
     private final void showCreateNewWalletConfirmationDialog() {
-        ((CreateWalletIntroView) getViewState()).showCreateNewWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_creation_intro_new_wallet_confirmation_title), this.resourceManager.getString(C3417R.string.wallet_creation_intro_new_wallet_confirmation_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(this.walletCreationType.getButtonTextResId())));
+        ((CreateWalletIntroView) getViewState()).showCreateNewWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3419R.string.wallet_creation_intro_new_wallet_confirmation_title), this.resourceManager.getString(C3419R.string.wallet_creation_intro_new_wallet_confirmation_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(this.walletCreationType.getButtonTextResId())));
     }
 }

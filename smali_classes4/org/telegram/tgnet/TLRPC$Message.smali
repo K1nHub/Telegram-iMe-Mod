@@ -99,9 +99,11 @@
 
 .field public replyMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
+.field public replyStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
 .field public reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
 
-.field public reply_to:Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
+.field public reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
 .field public reqId:I
 
@@ -162,17 +164,17 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 60955
+    .line 61861
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 60977
+    .line 61883
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
-    .line 60996
+    .line 61902
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -181,23 +183,23 @@
 
     const/4 v0, 0x0
 
-    .line 61000
+    .line 61906
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->send_state:I
 
-    .line 61001
+    .line 61907
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->fwd_msg_id:I
 
     const-string v1, ""
 
-    .line 61002
+    .line 61908
     iput-object v1, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 61005
+    .line 61911
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->local_id:I
 
     const/4 v0, 0x1
 
-    .line 61016
+    .line 61922
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->stickerVerified:I
 
     return-void
@@ -212,7 +214,7 @@
 
     goto/16 :goto_0
 
-    .line 61057
+    .line 61964
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old7;
 
@@ -220,7 +222,7 @@
 
     goto/16 :goto_0
 
-    .line 61105
+    .line 62012
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer123;
 
@@ -228,7 +230,7 @@
 
     goto/16 :goto_0
 
-    .line 61084
+    .line 61991
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old2;
 
@@ -236,7 +238,7 @@
 
     goto/16 :goto_0
 
-    .line 61042
+    .line 61949
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_secret;
 
@@ -244,7 +246,7 @@
 
     goto/16 :goto_0
 
-    .line 61045
+    .line 61952
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_secret_layer72;
 
@@ -252,7 +254,7 @@
 
     goto/16 :goto_0
 
-    .line 61093
+    .line 62000
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_secret_old;
 
@@ -260,7 +262,7 @@
 
     goto/16 :goto_0
 
-    .line 61099
+    .line 62006
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer117;
 
@@ -268,7 +270,7 @@
 
     goto/16 :goto_0
 
-    .line 61069
+    .line 61976
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer104;
 
@@ -276,7 +278,7 @@
 
     goto/16 :goto_0
 
-    .line 61114
+    .line 62021
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message;
 
@@ -284,7 +286,7 @@
 
     goto/16 :goto_0
 
-    .line 61066
+    .line 61973
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old6;
 
@@ -292,7 +294,7 @@
 
     goto/16 :goto_0
 
-    .line 61123
+    .line 62030
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService;
 
@@ -300,7 +302,7 @@
 
     goto/16 :goto_0
 
-    .line 61120
+    .line 62027
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_layer123;
 
@@ -308,7 +310,7 @@
 
     goto/16 :goto_0
 
-    .line 61090
+    .line 61997
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old;
 
@@ -316,7 +318,7 @@
 
     goto/16 :goto_0
 
-    .line 61033
+    .line 61940
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_old2;
 
@@ -324,7 +326,7 @@
 
     goto/16 :goto_0
 
-    .line 61075
+    .line 61982
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer104_2;
 
@@ -332,7 +334,7 @@
 
     goto/16 :goto_0
 
-    .line 61081
+    .line 61988
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageForwarded_old;
 
@@ -340,7 +342,7 @@
 
     goto/16 :goto_0
 
-    .line 61102
+    .line 62009
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer118;
 
@@ -348,7 +350,7 @@
 
     goto :goto_0
 
-    .line 61126
+    .line 62033
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old5;
 
@@ -356,7 +358,7 @@
 
     goto :goto_0
 
-    .line 61054
+    .line 61961
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer47;
 
@@ -364,7 +366,7 @@
 
     goto :goto_0
 
-    .line 61039
+    .line 61946
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old4;
 
@@ -372,7 +374,7 @@
 
     goto :goto_0
 
-    .line 61051
+    .line 61958
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer68;
 
@@ -380,7 +382,7 @@
 
     goto :goto_0
 
-    .line 61060
+    .line 61967
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_layer48;
 
@@ -388,7 +390,7 @@
 
     goto :goto_0
 
-    .line 61108
+    .line 62015
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer131;
 
@@ -396,7 +398,7 @@
 
     goto :goto_0
 
-    .line 61036
+    .line 61943
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_old3;
 
@@ -404,7 +406,7 @@
 
     goto :goto_0
 
-    .line 61078
+    .line 61985
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageForwarded_old2;
 
@@ -412,7 +414,7 @@
 
     goto :goto_0
 
-    .line 61087
+    .line 61994
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_old;
 
@@ -420,7 +422,7 @@
 
     goto :goto_0
 
-    .line 61117
+    .line 62024
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_layer118;
 
@@ -428,7 +430,7 @@
 
     goto :goto_0
 
-    .line 61096
+    .line 62003
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer104_3;
 
@@ -436,7 +438,7 @@
 
     goto :goto_0
 
-    .line 61048
+    .line 61955
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer72;
 
@@ -444,7 +446,7 @@
 
     goto :goto_0
 
-    .line 61072
+    .line 61979
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEmpty;
 
@@ -452,7 +454,7 @@
 
     goto :goto_0
 
-    .line 61111
+    .line 62018
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message_layer135;
 
@@ -460,7 +462,7 @@
 
     goto :goto_0
 
-    .line 61063
+    .line 61970
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEmpty_layer122;
 
@@ -473,7 +475,7 @@
 
     goto :goto_1
 
-    .line 61130
+    .line 62037
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -503,15 +505,15 @@
     :goto_1
     if-eqz v0, :cond_3
 
-    .line 61133
+    .line 62040
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 61134
+    .line 62041
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     if-nez p0, :cond_3
 
-    .line 61135
+    .line 62042
     iget p0, v0, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     if-gez p0, :cond_2
@@ -524,7 +526,7 @@
 
     if-nez p0, :cond_2
 
-    .line 61136
+    .line 62043
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -533,7 +535,7 @@
 
     goto :goto_2
 
-    .line 61138
+    .line 62045
     :cond_2
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -585,7 +587,7 @@
 .method public readAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;J)V
     .locals 11
 
-    .line 61146
+    .line 62053
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     const/4 v1, 0x0
@@ -609,7 +611,7 @@
     :cond_0
     move v0, v1
 
-    .line 61147
+    .line 62054
     :goto_0
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
@@ -650,7 +652,7 @@
 
     const-string v4, "-1"
 
-    .line 61154
+    .line 62061
     invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -664,7 +666,7 @@
     :cond_2
     move v3, v1
 
-    .line 61155
+    .line 62062
     :goto_1
     iget-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
@@ -721,7 +723,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 61157
+    .line 62064
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     invoke-virtual {p3}, Ljava/lang/String;->length()I
@@ -742,21 +744,21 @@
 
     if-ne p3, v0, :cond_6
 
-    .line 61158
+    .line 62065
     new-instance p3, Ljava/util/HashMap;
 
     invoke-direct {p3}, Ljava/util/HashMap;-><init>()V
 
     iput-object p3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
-    .line 61159
+    .line 62066
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     const-string/jumbo v3, "ve"
 
     invoke-virtual {p3, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 61161
+    .line 62068
     :cond_6
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
@@ -773,10 +775,10 @@
     :cond_7
     const-string p3, ""
 
-    .line 61162
+    .line 62069
     iput-object p3, p0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 61165
+    .line 62072
     :cond_8
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -784,7 +786,7 @@
 
     if-lez p3, :cond_e
 
-    .line 61166
+    .line 62073
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p3
@@ -793,7 +795,7 @@
 
     if-eqz p3, :cond_e
 
-    .line 61168
+    .line 62075
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     if-ltz v0, :cond_9
@@ -815,7 +817,7 @@
 
     if-eqz p3, :cond_d
 
-    .line 61169
+    .line 62076
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
     const-string v0, "\\|\\|"
@@ -824,17 +826,17 @@
 
     move-result-object p3
 
-    .line 61170
+    .line 62077
     array-length v0, p3
 
     if-lez v0, :cond_e
 
-    .line 61171
+    .line 62078
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     if-nez v0, :cond_a
 
-    .line 61172
+    .line 62079
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -844,7 +846,7 @@
     :cond_a
     move v0, v2
 
-    .line 61174
+    .line 62081
     :goto_2
     array-length v3, p3
 
@@ -852,7 +854,7 @@
 
     if-ge v0, v3, :cond_c
 
-    .line 61175
+    .line 62082
     aget-object v3, p3, v0
 
     const-string v4, "\\|=\\|"
@@ -861,12 +863,12 @@
 
     move-result-object v3
 
-    .line 61176
+    .line 62083
     array-length v4, v3
 
     if-ne v4, p2, :cond_b
 
-    .line 61177
+    .line 62084
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     aget-object v5, v3, v1
@@ -880,7 +882,7 @@
 
     goto :goto_2
 
-    .line 61180
+    .line 62087
     :cond_c
     array-length p2, p3
 
@@ -894,12 +896,12 @@
 
     iput-object p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 61181
+    .line 62088
     iget-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->legacy:Z
 
     if-eqz p2, :cond_e
 
-    .line 61182
+    .line 62089
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     const-string p3, "legacy_layer"
@@ -922,7 +924,7 @@
 
     goto :goto_3
 
-    .line 61186
+    .line 62093
     :cond_d
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
@@ -932,7 +934,7 @@
 
     iput-object p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 61191
+    .line 62098
     :cond_e
     :goto_3
     iget p2, p0, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
@@ -945,7 +947,7 @@
 
     if-gez p2, :cond_f
 
-    .line 61192
+    .line 62099
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -959,7 +961,7 @@
 .method protected writeAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 7
 
-    .line 61197
+    .line 62104
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_message_secret;
 
     const-string/jumbo v1, "|=|"
@@ -974,7 +976,7 @@
 
     goto/16 :goto_2
 
-    .line 61207
+    .line 62114
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
@@ -991,18 +993,18 @@
     :cond_1
     const-string v0, " "
 
-    .line 61208
+    .line 62115
     :goto_0
     iget-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->legacy:Z
 
     if-eqz v3, :cond_3
 
-    .line 61209
+    .line 62116
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     if-nez v3, :cond_2
 
-    .line 61210
+    .line 62117
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
@@ -1010,21 +1012,21 @@
     iput-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     :cond_2
-    const/16 v3, 0x9e
+    const/16 v3, 0xa0
 
-    .line 61212
+    .line 62119
     iput v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->layer:I
 
-    .line 61213
+    .line 62120
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     const-string v4, "legacy_layer"
 
-    const-string v5, "158"
+    const-string v5, "160"
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 61215
+    .line 62122
     :cond_3
     iget v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
@@ -1051,7 +1053,7 @@
 
     if-lez v3, :cond_6
 
-    .line 61216
+    .line 62123
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -1075,7 +1077,7 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 61217
+    .line 62124
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1108,7 +1110,7 @@
 
     goto :goto_1
 
-    .line 61219
+    .line 62126
     :cond_5
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1122,11 +1124,11 @@
 
     move-result-object v0
 
-    .line 61221
+    .line 62128
     :cond_6
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 61222
+    .line 62129
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1137,14 +1139,14 @@
 
     if-gez v0, :cond_b
 
-    .line 61223
+    .line 62130
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->fwd_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_5
 
-    .line 61198
+    .line 62105
     :cond_7
     :goto_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -1156,7 +1158,7 @@
     :cond_8
     const-string v0, ""
 
-    .line 61199
+    .line 62106
     :goto_3
     iget v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->send_state:I
 
@@ -1174,7 +1176,7 @@
 
     if-lez v3, :cond_a
 
-    .line 61200
+    .line 62107
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -1198,7 +1200,7 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 61201
+    .line 62108
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1231,7 +1233,7 @@
 
     goto :goto_4
 
-    .line 61203
+    .line 62110
     :cond_9
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1245,7 +1247,7 @@
 
     move-result-object v0
 
-    .line 61205
+    .line 62112
     :cond_a
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 

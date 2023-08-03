@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _CollectionsJvm.kt */
@@ -30,5 +32,10 @@ public class CollectionsKt___CollectionsJvmKt extends CollectionsKt__ReversedVie
     public static final <T> void reverse(List<T> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         Collections.reverse(list);
+    }
+
+    public static <T extends Comparable<? super T>> SortedSet<T> toSortedSet(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        return (SortedSet) CollectionsKt___CollectionsKt.toCollection(iterable, new TreeSet());
     }
 }

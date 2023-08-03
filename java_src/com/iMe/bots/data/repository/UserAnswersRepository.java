@@ -4,11 +4,15 @@ import android.content.Context;
 import com.iMe.bots.data.database.BotsDatabase;
 import com.iMe.bots.data.database.HolidaysDao;
 import com.iMe.bots.data.database.RecentDao;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UserAnswersRepository.kt */
 /* loaded from: classes3.dex */
@@ -21,7 +25,12 @@ public final class UserAnswersRepository {
     public UserAnswersRepository(Context context) {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(UserAnswersRepository$yearTag$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<String>() { // from class: com.iMe.bots.data.repository.UserAnswersRepository$yearTag$2
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                return new SimpleDateFormat("yyyy", Locale.getDefault()).format(new Date());
+            }
+        });
         this.yearTag$delegate = lazy;
         BotsDatabase.Companion companion = BotsDatabase.Companion;
         Context applicationContext = context.getApplicationContext();

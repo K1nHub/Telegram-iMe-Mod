@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SimpleIdlingExtensions.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.idling.SimpleIdlingExtensionsKt", m83f = "SimpleIdlingExtensions.kt", m82l = {30}, m81m = "withIdling")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.idling.SimpleIdlingExtensionsKt", m101f = "SimpleIdlingExtensions.kt", m100l = {30}, m99m = "withIdling")
 /* loaded from: classes4.dex */
 public final class SimpleIdlingExtensionsKt$withIdling$1<STATE, SIDE_EFFECT> extends ContinuationImpl {
     Object L$0;

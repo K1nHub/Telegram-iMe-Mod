@@ -432,7 +432,7 @@
 
     .line 246
     :goto_1
-    invoke-virtual {v2, v3}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v2, v3}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
 
     move-result-object v2
 
@@ -1419,7 +1419,7 @@
 
     .line 53
     :goto_0
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
 
     move-result-object v0
 
@@ -1644,7 +1644,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
 
     move-result-object p1
 

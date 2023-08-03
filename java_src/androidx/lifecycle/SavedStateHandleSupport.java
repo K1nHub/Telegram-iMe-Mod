@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.InitializerViewModelFactoryBuilder;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryOwner;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 /* compiled from: SavedStateHandleSupport.kt */
@@ -22,7 +23,13 @@ public final class SavedStateHandleSupport {
     public static final SavedStateHandlesVM getSavedStateHandlesVM(ViewModelStoreOwner viewModelStoreOwner) {
         Intrinsics.checkNotNullParameter(viewModelStoreOwner, "<this>");
         InitializerViewModelFactoryBuilder initializerViewModelFactoryBuilder = new InitializerViewModelFactoryBuilder();
-        initializerViewModelFactoryBuilder.addInitializer(Reflection.getOrCreateKotlinClass(SavedStateHandlesVM.class), SavedStateHandleSupport$savedStateHandlesVM$1$1.INSTANCE);
+        initializerViewModelFactoryBuilder.addInitializer(Reflection.getOrCreateKotlinClass(SavedStateHandlesVM.class), new Function1<CreationExtras, SavedStateHandlesVM>() { // from class: androidx.lifecycle.SavedStateHandleSupport$savedStateHandlesVM$1$1
+            @Override // kotlin.jvm.functions.Function1
+            public final SavedStateHandlesVM invoke(CreationExtras initializer) {
+                Intrinsics.checkNotNullParameter(initializer, "$this$initializer");
+                return new SavedStateHandlesVM();
+            }
+        });
         return (SavedStateHandlesVM) new ViewModelProvider(viewModelStoreOwner, initializerViewModelFactoryBuilder.build()).get("androidx.lifecycle.internal.SavedStateHandlesVM", SavedStateHandlesVM.class);
     }
 

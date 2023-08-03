@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda8;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$E-SK7mlbfOrnS2s_b2p5563FHxI(Ljava/lang/String;J)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$iJoltYzXeUlIRyLFNTC3yafFlkw(Ljava/lang/String;J)V
 
     return-void
 .end method

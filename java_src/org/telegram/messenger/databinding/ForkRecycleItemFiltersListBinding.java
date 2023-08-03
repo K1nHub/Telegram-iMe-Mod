@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemFiltersListBinding implements ViewBinding {
     private final RecyclerView rootView;
@@ -25,7 +25,7 @@ public final class ForkRecycleItemFiltersListBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemFiltersListBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_filters_list, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_filters_list, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

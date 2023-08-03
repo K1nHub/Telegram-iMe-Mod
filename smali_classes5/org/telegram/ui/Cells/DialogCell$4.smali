@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/DialogCell;->createStatusDrawableAnimator(II)V
+    value = Lorg/telegram/ui/Cells/DialogCell;->update(IZ)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 4590
+    .line 3196
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,93 +33,19 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 1
 
-    .line 4593
+    .line 3199
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$600(Lorg/telegram/ui/Cells/DialogCell;)Z
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    move-result p1
+    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$602(Lorg/telegram/ui/Cells/DialogCell;F)F
 
-    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$700(Lorg/telegram/ui/Cells/DialogCell;)Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    add-int/2addr p1, v0
-
-    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$800(Lorg/telegram/ui/Cells/DialogCell;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x4
-
-    goto :goto_1
-
-    :cond_1
-    move v0, v1
-
-    :goto_1
-    add-int/2addr p1, v0
-
-    .line 4594
-    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
-
-    move-result v0
-
-    if-eq v0, p1, :cond_2
-
-    .line 4595
-    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
-
-    move-result v1
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Cells/DialogCell;->access$1000(Lorg/telegram/ui/Cells/DialogCell;II)V
-
-    goto :goto_2
-
-    .line 4597
-    :cond_2
+    .line 3200
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1102(Lorg/telegram/ui/Cells/DialogCell;Z)Z
-
-    .line 4598
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
-
-    move-result v0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1202(Lorg/telegram/ui/Cells/DialogCell;I)I
-
-    .line 4600
-    :goto_2
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     return-void
 .end method

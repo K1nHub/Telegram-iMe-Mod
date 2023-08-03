@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Lorg/telegram/ui/Components/BottomPagesView;)V
     .locals 0
 
-    .line 240
+    .line 241
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->val$bottomPages:Lorg/telegram/ui/Components/BottomPagesView;
@@ -58,7 +58,7 @@
 
     move v1, v0
 
-    .line 261
+    .line 262
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -72,7 +72,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 262
+    .line 263
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->viewPager:Landroidx/viewpager/widget/ViewPager;
@@ -83,7 +83,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;
 
-    .line 264
+    .line 265
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-boolean v4, v4, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->enterAnimationIsRunning:Z
@@ -96,7 +96,7 @@
 
     if-nez v4, :cond_3
 
-    .line 265
+    .line 266
     :cond_0
     iget v4, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->position:I
 
@@ -104,7 +104,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 266
+    .line 267
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topHeader:Lorg/telegram/ui/Components/Premium/PagerHeaderView;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -126,13 +126,13 @@
 
     goto :goto_2
 
-    .line 267
+    .line 268
     :cond_1
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->toPosition:I
 
     if-ne v4, v5, :cond_2
 
-    .line 268
+    .line 269
     iget-object v3, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topHeader:Lorg/telegram/ui/Components/Premium/PagerHeaderView;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -159,7 +159,7 @@
 
     goto :goto_1
 
-    .line 270
+    .line 271
     :cond_2
     iget-object v4, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topHeader:Lorg/telegram/ui/Components/Premium/PagerHeaderView;
 
@@ -171,7 +171,7 @@
 
     invoke-interface {v4, v5}, Lorg/telegram/ui/Components/Premium/PagerHeaderView;->setOffset(F)V
 
-    .line 274
+    .line 275
     :cond_3
     :goto_2
     iget-object v4, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
@@ -182,15 +182,15 @@
 
     neg-float v4, v3
 
-    .line 275
+    .line 276
     invoke-virtual {v2, v4}, Landroid/widget/LinearLayout;->setTranslationX(F)V
 
-    .line 276
+    .line 277
     iget-object v4, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 277
+    .line 278
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTranslationX(F)V
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 280
+    .line 281
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -208,7 +208,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->containerViewsProgress:F
 
-    .line 281
+    .line 282
     iget v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->toPosition:I
 
     iget v4, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->selectedPosition:I
@@ -224,7 +224,7 @@
 
     if-ltz v4, :cond_7
 
-    .line 282
+    .line 283
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->premiumFeatures:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -249,7 +249,7 @@
 
     if-nez v1, :cond_7
 
-    .line 283
+    .line 284
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->progress:F
@@ -260,7 +260,7 @@
 
     goto :goto_3
 
-    .line 284
+    .line 285
     :cond_7
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->toPosition:I
 
@@ -292,7 +292,7 @@
 
     if-nez v1, :cond_8
 
-    .line 285
+    .line 286
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->progress:F
@@ -301,7 +301,7 @@
 
     goto :goto_3
 
-    .line 287
+    .line 288
     :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -310,7 +310,7 @@
     :goto_3
     const/high16 v1, 0x437f0000    # 255.0f
 
-    .line 289
+    .line 290
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget v3, v2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->progressToFullscreenView:F
@@ -321,26 +321,26 @@
 
     float-to-int v0, v0
 
-    .line 290
+    .line 291
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$100(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)I
 
     move-result v1
 
     if-eq v0, v1, :cond_9
 
-    .line 291
+    .line 292
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$102(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;I)I
 
-    .line 292
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->content:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 293
+    .line 294
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;)V
@@ -354,7 +354,7 @@
 .method private synthetic lambda$checkPage$0()V
     .locals 1
 
-    .line 294
+    .line 295
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->checkTopOffset()V
@@ -373,12 +373,12 @@
 .method public onPageScrolled(IFI)V
     .locals 1
 
-    .line 248
+    .line 249
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->val$bottomPages:Lorg/telegram/ui/Components/BottomPagesView;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/BottomPagesView;->setPageOffset(IF)V
 
-    .line 249
+    .line 250
     iput p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->selectedPosition:I
 
     if-lez p3, :cond_0
@@ -390,14 +390,14 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 250
+    .line 251
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->toPosition:I
 
-    .line 251
+    .line 252
     iput p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->progress:F
 
-    .line 252
+    .line 253
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->checkPage()V
 
     return-void
@@ -406,7 +406,7 @@
 .method public onPageSelected(I)V
     .locals 0
 
-    .line 257
+    .line 258
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->checkPage()V
 
     return-void

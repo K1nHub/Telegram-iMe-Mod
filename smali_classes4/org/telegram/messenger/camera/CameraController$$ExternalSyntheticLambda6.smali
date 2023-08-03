@@ -69,7 +69,7 @@
 
     iget-object v7, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda6;->f$7:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$BIerGXjO1aL-Suc2vMvlT37z9Ag(Lorg/telegram/messenger/camera/CameraController;Landroid/hardware/Camera;Lorg/telegram/messenger/camera/CameraSession;ZLjava/io/File;Lorg/telegram/messenger/camera/CameraInfo;Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$Ds6dRasVmBqCAyzH5i-5gI5RvwA(Lorg/telegram/messenger/camera/CameraController;Landroid/hardware/Camera;Lorg/telegram/messenger/camera/CameraSession;ZLjava/io/File;Lorg/telegram/messenger/camera/CameraInfo;Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;Ljava/lang/Runnable;)V
 
     return-void
 .end method

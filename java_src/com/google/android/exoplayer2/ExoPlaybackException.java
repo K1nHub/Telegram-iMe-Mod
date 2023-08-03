@@ -27,7 +27,12 @@ public final class ExoPlaybackException extends PlaybackException {
     public final int rendererIndex;
     public final String rendererName;
     public final int type;
-    public static final Bundleable.Creator<ExoPlaybackException> CREATOR = ExoPlaybackException$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<ExoPlaybackException> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.ExoPlaybackException$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            return ExoPlaybackException.$r8$lambda$mXbXdGG_PHMarv0ObcHmIhB4uIw(bundle);
+        }
+    };
     private static final String FIELD_TYPE = Util.intToStringMaxRadix(1001);
     private static final String FIELD_RENDERER_NAME = Util.intToStringMaxRadix(1002);
     private static final String FIELD_RENDERER_INDEX = Util.intToStringMaxRadix(1003);

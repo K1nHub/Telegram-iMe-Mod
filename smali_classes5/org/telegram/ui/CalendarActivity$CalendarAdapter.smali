@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 476
+    .line 665
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$1;)V
     .locals 0
 
-    .line 476
+    .line 665
     invoke-direct {p0, p1}, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;-><init>(Lorg/telegram/ui/CalendarActivity;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 510
+    .line 699
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget v0, v0, Lorg/telegram/ui/CalendarActivity;->monthCount:I
@@ -55,7 +55,7 @@
 .method public getItemId(I)J
     .locals 5
 
-    .line 503
+    .line 692
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget v1, v0, Lorg/telegram/ui/CalendarActivity;->startFromYear:I
@@ -64,7 +64,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 504
+    .line 693
     iget v0, v0, Lorg/telegram/ui/CalendarActivity;->startFromMonth:I
 
     rem-int/lit8 p1, p1, 0xc
@@ -87,12 +87,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 
-    .line 486
+    .line 675
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    .line 488
+    .line 677
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget v1, v0, Lorg/telegram/ui/CalendarActivity;->startFromYear:I
@@ -101,7 +101,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 489
+    .line 678
     iget v2, v0, Lorg/telegram/ui/CalendarActivity;->startFromMonth:I
 
     rem-int/lit8 p2, p2, 0xc
@@ -114,7 +114,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 494
+    .line 683
     :cond_0
     iget p2, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->currentYear:I
 
@@ -133,7 +133,7 @@
     :cond_1
     move p2, v3
 
-    .line 495
+    .line 684
     :goto_0
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity;->messagesByYearMounth:Landroid/util/SparseArray;
 
@@ -149,30 +149,30 @@
 
     invoke-virtual {p1, v1, v2, v0, p2}, Lorg/telegram/ui/CalendarActivity$MonthView;->setDate(IILandroid/util/SparseArray;Z)V
 
-    .line 496
+    .line 685
     iget-object p2, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/CalendarActivity;->access$300(Lorg/telegram/ui/CalendarActivity;)I
+    invoke-static {p2}, Lorg/telegram/ui/CalendarActivity;->access$700(Lorg/telegram/ui/CalendarActivity;)I
 
     move-result p2
 
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$400(Lorg/telegram/ui/CalendarActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$800(Lorg/telegram/ui/CalendarActivity;)I
 
     move-result v0
 
-    invoke-static {p1, p2, v0}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$800(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
+    invoke-static {p1, p2, v0}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$1300(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 497
-    invoke-static {p1, p2}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$900(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
+    .line 686
+    invoke-static {p1, p2}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$1400(Lorg/telegram/ui/CalendarActivity$MonthView;F)V
 
-    .line 498
+    .line 687
     iget-object p2, p0, Lorg/telegram/ui/CalendarActivity$CalendarAdapter;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {p2, p1, v3}, Lorg/telegram/ui/CalendarActivity;->access$1000(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
+    invoke-static {p2, p1, v3}, Lorg/telegram/ui/CalendarActivity;->access$1500(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$MonthView;Z)V
 
     return-void
 .end method
@@ -180,7 +180,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 481
+    .line 670
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance v0, Lorg/telegram/ui/CalendarActivity$MonthView;

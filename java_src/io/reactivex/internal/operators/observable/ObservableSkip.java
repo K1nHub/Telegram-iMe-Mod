@@ -8,16 +8,16 @@ import io.reactivex.internal.disposables.DisposableHelper;
 public final class ObservableSkip<T> extends AbstractObservableWithUpstream<T, T> {
 
     /* renamed from: n */
-    final long f549n;
+    final long f552n;
 
     public ObservableSkip(ObservableSource<T> observableSource, long j) {
         super(observableSource);
-        this.f549n = j;
+        this.f552n = j;
     }
 
     @Override // io.reactivex.Observable
     public void subscribeActual(Observer<? super T> observer) {
-        this.source.subscribe(new SkipObserver(observer, this.f549n));
+        this.source.subscribe(new SkipObserver(observer, this.f552n));
     }
 
     /* loaded from: classes4.dex */

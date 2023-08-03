@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;Lorg/telegram/ui/Components/MentionsContainerView;)V
     .locals 0
 
-    .line 540
+    .line 634
     iput-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView$2;->this$1:Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -37,19 +37,19 @@
 
     const/4 p4, 0x0
 
-    .line 543
+    .line 637
     iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    .line 544
+    .line 638
     iput p4, p1, Landroid/graphics/Rect;->right:I
 
-    .line 545
+    .line 639
     iput p4, p1, Landroid/graphics/Rect;->top:I
 
-    .line 546
+    .line 640
     iput p4, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 547
+    .line 641
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 548
+    .line 642
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
@@ -76,7 +76,7 @@
     :cond_0
     add-int/lit8 p2, p2, -0x1
 
-    .line 553
+    .line 647
     iget-object p3, p0, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView$2;->this$1:Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
@@ -93,7 +93,7 @@
 
     return-void
 
-    .line 555
+    .line 649
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView$2;->this$1:Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 564
+    .line 658
     :cond_2
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -146,7 +146,7 @@
     :cond_4
     add-int/lit8 p2, p2, -0x1
 
-    .line 560
+    .line 654
     iget-object p3, p0, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView$2;->this$1:Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
@@ -161,14 +161,14 @@
 
     if-nez p3, :cond_5
 
-    .line 561
+    .line 655
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
 
     iput p3, p1, Landroid/graphics/Rect;->top:I
 
-    .line 566
+    .line 660
     :cond_5
     :goto_1
     iget-object p3, p0, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView$2;->this$1:Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;

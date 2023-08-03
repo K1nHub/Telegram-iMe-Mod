@@ -9,15 +9,20 @@ import com.iMe.storage.data.locale.p027db.model.hidden_chats.HiddenChatsDb;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
@@ -43,7 +48,27 @@ public final class HiddenChatsController extends BaseController implements KoinC
     public HiddenChatsController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new HiddenChatsController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<HiddenChatsDao>() { // from class: com.iMe.fork.controller.HiddenChatsController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.HiddenChatsDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final HiddenChatsDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(HiddenChatsDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.hiddenChatDialogs = new ArrayList();
         this.isHiddenChatsHidden = TelegramPreferenceKeys.User.Default.isHiddenChatsHidden();
@@ -146,7 +171,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
         list.addAll(backup.getHiddenChatDialogs());
         this$0.removeRecentChatsAndPeer(this$0.hiddenChatDialogs);
         this$0.getMessagesController().sortDialogs(null);
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
     }
 
     public final boolean hideChats(List<Long> dialogIds, boolean z) {
@@ -166,10 +191,10 @@ public final class HiddenChatsController extends BaseController implements KoinC
         if (!this.hiddenChatDialogs.isEmpty()) {
             getMessagesController().ensureFolderDialogExists(1);
             getMessagesController().sortDialogs(null);
-            getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
         }
         getMessagesStorage().resetAllUnreadCounters(false);
-        getNotificationCenter().postNotificationName(NotificationCenter.recentChatsDidLoad, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.recentChatsDidLoad, new Object[0]);
         return this.hiddenChatDialogs.isEmpty();
     }
 
@@ -193,14 +218,26 @@ public final class HiddenChatsController extends BaseController implements KoinC
             return (HiddenChatsController) tmp0.invoke(obj);
         }
 
-        public final HiddenChatsController getInstance(int i) {
+        public final HiddenChatsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = HiddenChatsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final HiddenChatsController$Companion$getInstance$1 hiddenChatsController$Companion$getInstance$1 = new HiddenChatsController$Companion$getInstance$1(i);
+            final Function1<Integer, HiddenChatsController> function1 = new Function1<Integer, HiddenChatsController>() { // from class: com.iMe.fork.controller.HiddenChatsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final HiddenChatsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new HiddenChatsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.HiddenChatsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -212,7 +249,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

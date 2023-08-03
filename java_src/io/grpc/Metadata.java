@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public final class Metadata {
     public static final AsciiMarshaller<String> ASCII_STRING_MARSHALLER;
@@ -270,23 +271,23 @@ public final class Metadata {
         abstract byte[] toBytes(T t);
 
         /* renamed from: of */
-        public static <T> Key<T> m685of(String str, AsciiMarshaller<T> asciiMarshaller) {
-            return m684of(str, false, (AsciiMarshaller) asciiMarshaller);
+        public static <T> Key<T> m703of(String str, AsciiMarshaller<T> asciiMarshaller) {
+            return m702of(str, false, (AsciiMarshaller) asciiMarshaller);
         }
 
         /* renamed from: of */
-        static <T> Key<T> m684of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
+        static <T> Key<T> m702of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
             return new AsciiKey(str, z, asciiMarshaller);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: of */
-        public static <T> Key<T> m683of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
+        public static <T> Key<T> m701of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
             return new TrustedAsciiKey(str, z, trustedAsciiMarshaller);
         }
 
         private static BitSet generateValidTChars() {
-            BitSet bitSet = new BitSet(127);
+            BitSet bitSet = new BitSet(MessagesStorage.LAST_DB_VERSION);
             bitSet.set(45);
             bitSet.set(95);
             bitSet.set(46);

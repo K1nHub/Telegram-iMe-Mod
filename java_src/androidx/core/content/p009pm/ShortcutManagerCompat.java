@@ -78,7 +78,7 @@ public class ShortcutManagerCompat {
 
     public static boolean requestPinShortcut(Context context, ShortcutInfoCompat shortcutInfoCompat, final IntentSender intentSender) {
         int i = Build.VERSION.SDK_INT;
-        if (i > 31 || !shortcutInfoCompat.isExcludedFromSurfaces(1)) {
+        if (i > 32 || !shortcutInfoCompat.isExcludedFromSurfaces(1)) {
             if (i >= 26) {
                 return ((ShortcutManager) context.getSystemService(ShortcutManager.class)).requestPinShortcut(shortcutInfoCompat.toShortcutInfo(), intentSender);
             }
@@ -239,7 +239,7 @@ public class ShortcutManagerCompat {
         Preconditions.checkNotNull(context);
         Preconditions.checkNotNull(shortcutInfoCompat);
         int i = Build.VERSION.SDK_INT;
-        if (i <= 31 && shortcutInfoCompat.isExcludedFromSurfaces(1)) {
+        if (i <= 32 && shortcutInfoCompat.isExcludedFromSurfaces(1)) {
             for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
                 shortcutInfoChangeListener.onShortcutAdded(Collections.singletonList(shortcutInfoCompat));
             }
@@ -390,7 +390,7 @@ public class ShortcutManagerCompat {
 
     private static List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface(List<ShortcutInfoCompat> list, int i) {
         Objects.requireNonNull(list);
-        if (Build.VERSION.SDK_INT > 31) {
+        if (Build.VERSION.SDK_INT > 32) {
             return list;
         }
         ArrayList arrayList = new ArrayList(list);

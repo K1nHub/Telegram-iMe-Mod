@@ -18,7 +18,7 @@
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 2361
+    .line 2367
     invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 2
 
-    .line 2364
+    .line 2370
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
@@ -44,7 +44,7 @@
 
     move-result-object p1
 
-    .line 2365
+    .line 2371
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     return-void

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -36,7 +36,7 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.ContextProgressView;
@@ -108,7 +108,7 @@ public class WebviewActivity extends BaseFragment {
                 return;
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d(str);
+                FileLog.m70d(str);
             }
             str.hashCode();
             if (str.equals("share_game")) {
@@ -159,16 +159,16 @@ public class WebviewActivity extends BaseFragment {
             this.webView.destroy();
             this.webView = null;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.WebviewActivity.2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.WebviewActivity.2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WebviewActivity.this.finishFragment();
@@ -184,13 +184,13 @@ public class WebviewActivity extends BaseFragment {
             }
         });
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        this.progressItem = createMenu.addItemWithWidth(1, C3417R.C3419drawable.share, AndroidUtilities.m54dp(54));
+        this.progressItem = createMenu.addItemWithWidth(1, C3419R.C3421drawable.share, AndroidUtilities.m72dp(54));
         int i = this.type;
         if (i == 0) {
-            createMenu.addItem(0, C3417R.C3419drawable.ic_ab_other).addSubItem(2, C3417R.C3419drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3417R.string.OpenInExternalApp));
+            createMenu.addItem(0, C3419R.C3421drawable.ic_ab_other).addSubItem(2, C3419R.C3421drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3419R.string.OpenInExternalApp));
             this.actionBar.setTitle(this.currentGame);
-            C3484ActionBar c3484ActionBar = this.actionBar;
-            c3484ActionBar.setSubtitle("@" + this.currentBot);
+            C3485ActionBar c3485ActionBar = this.actionBar;
+            c3485ActionBar.setSubtitle("@" + this.currentBot);
             ContextProgressView contextProgressView = new ContextProgressView(context, 1);
             this.progressView = contextProgressView;
             this.progressItem.addView(contextProgressView, LayoutHelper.createFrame(-1, -1));
@@ -204,7 +204,7 @@ public class WebviewActivity extends BaseFragment {
             this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_player_actionBarSelector), false);
             this.actionBar.setTitleColor(Theme.getColor(Theme.key_player_actionBarTitle));
             this.actionBar.setSubtitleColor(Theme.getColor(Theme.key_player_actionBarSubtitle));
-            this.actionBar.setTitle(LocaleController.getString("Statistics", C3417R.string.Statistics));
+            this.actionBar.setTitle(LocaleController.getString("Statistics", C3419R.string.Statistics));
             ContextProgressView contextProgressView2 = new ContextProgressView(context, 3);
             this.progressView = contextProgressView2;
             this.progressItem.addView(contextProgressView2, LayoutHelper.createFrame(-1, -1));
@@ -244,7 +244,7 @@ public class WebviewActivity extends BaseFragment {
                         try {
                             WebviewActivity.this.reloadStats(Uri.parse(str.replace("tg:statsrefresh", "tg://telegram.org")).getQueryParameter("params"));
                         } catch (Throwable th) {
-                            FileLog.m49e(th);
+                            FileLog.m67e(th);
                         }
                     } else {
                         WebviewActivity.this.finishFragment(false);
@@ -254,7 +254,7 @@ public class WebviewActivity extends BaseFragment {
                             intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
                             ApplicationLoader.applicationContext.startActivity(intent);
                         } catch (Exception e) {
-                            FileLog.m49e(e);
+                            FileLog.m67e(e);
                         }
                     }
                     return true;
@@ -414,7 +414,7 @@ public class WebviewActivity extends BaseFragment {
             Browser.openUrl((Context) activity, str4, false);
             serializedData.cleanup();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -436,10 +436,10 @@ public class WebviewActivity extends BaseFragment {
             arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_dialogBackground));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_player_actionBarItems));
-            C3484ActionBar c3484ActionBar = this.actionBar;
+            C3485ActionBar c3485ActionBar = this.actionBar;
             int i = ThemeDescription.FLAG_AB_TITLECOLOR;
             int i2 = Theme.key_player_actionBarTitle;
-            arrayList.add(new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2));
+            arrayList.add(new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBTITLECOLOR, null, null, null, null, i2));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_player_actionBarSelector));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, Theme.key_actionBarDefaultSubmenuBackground));

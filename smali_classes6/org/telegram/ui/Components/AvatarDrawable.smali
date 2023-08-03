@@ -55,7 +55,7 @@
 
     const/4 v0, 0x0
 
-    .line 98
+    .line 99
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -66,7 +66,7 @@
 
     const/4 v0, 0x0
 
-    .line 114
+    .line 115
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
     return-void
@@ -75,12 +75,12 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
     .locals 6
 
-    .line 127
+    .line 128
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     if-eqz p1, :cond_0
 
-    .line 130
+    .line 131
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     const/4 v0, 0x0
 
-    .line 110
+    .line 111
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$User;Z)V
 
     return-void
@@ -111,12 +111,12 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Z)V
     .locals 6
 
-    .line 118
+    .line 119
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     if-eqz p1, :cond_0
 
-    .line 121
+    .line 122
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -129,7 +129,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 122
+    .line 123
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p1
@@ -143,7 +143,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 102
+    .line 103
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -167,13 +167,13 @@
 
     const/16 v0, 0xff
 
-    .line 93
+    .line 94
     iput v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->alpha:I
 
-    .line 103
+    .line 104
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 104
+    .line 105
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -184,14 +184,14 @@
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 105
+    .line 106
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 106
+    .line 107
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->namePaint:Landroid/text/TextPaint;
 
     const/16 v0, 0x12
@@ -207,10 +207,172 @@
     return-void
 .end method
 
+.method public static getAvatarSymbols(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    .line 329
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->setLength(I)V
+
+    if-eqz p2, :cond_0
+
+    .line 331
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_1
+
+    :cond_0
+    if-eqz p0, :cond_1
+
+    .line 333
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_1
+
+    .line 334
+    invoke-static {p0}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    const-string p2, "\u200c"
+
+    const/16 v0, 0x11
+
+    const/16 v1, 0x20
+
+    if-eqz p1, :cond_4
+
+    .line 336
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-lez v2, :cond_4
+
+    .line 339
+    invoke-virtual {p1, v1}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result p0
+
+    if-ltz p0, :cond_2
+
+    add-int/lit8 p0, p0, 0x1
+
+    .line 340
+    invoke-virtual {p1, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 342
+    :cond_2
+    sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-le p0, v0, :cond_3
+
+    .line 343
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 345
+    :cond_3
+    invoke-static {p1}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_4
+    if-eqz p0, :cond_7
+
+    .line 346
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    if-lez p1, :cond_7
+
+    .line 347
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    add-int/lit8 p1, p1, -0x1
+
+    :goto_0
+    if-ltz p1, :cond_7
+
+    .line 348
+    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    if-ne v2, v1, :cond_6
+
+    .line 349
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    if-eq p1, v2, :cond_6
+
+    add-int/lit8 v2, p1, 0x1
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    if-eq v2, v1, :cond_6
+
+    .line 350
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->length()I
+
+    move-result p1
+
+    .line 351
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-le v1, v0, :cond_5
+
+    .line 352
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 354
+    :cond_5
+    invoke-virtual {p0, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_6
+    add-int/lit8 p1, p1, -0x1
+
+    goto :goto_0
+
+    :cond_7
+    :goto_1
+    return-void
+.end method
+
 .method public static getColorForId(J)I
     .locals 1
 
-    .line 146
+    .line 147
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -245,7 +407,7 @@
 
     return p0
 
-    .line 142
+    .line 143
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
@@ -267,7 +429,7 @@
 .method public static getIconColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    .line 154
+    .line 155
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
 
     invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -280,7 +442,7 @@
 .method public static getNameColorNameForId(J)I
     .locals 1
 
-    .line 170
+    .line 171
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -295,7 +457,7 @@
 .method public static getProfileBackColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    .line 166
+    .line 167
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundActionBarBlue:I
 
     invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -308,7 +470,7 @@
 .method public static getProfileColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 1
 
-    .line 158
+    .line 159
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -327,7 +489,7 @@
 .method public static getProfileTextColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    .line 162
+    .line 163
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_subtitleInProfileBlue:I
 
     invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -340,7 +502,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 544
+    .line 551
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -350,11 +512,11 @@
     return p1
 .end method
 
-.method private takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
+.method private static takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    .line 302
-    invoke-static {p1}, Lorg/telegram/messenger/Emoji;->parseEmojis(Ljava/lang/CharSequence;)Ljava/util/ArrayList;
+    .line 303
+    invoke-static {p0}, Lorg/telegram/messenger/Emoji;->parseEmojis(Ljava/lang/CharSequence;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -362,7 +524,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 303
+    .line 304
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
@@ -379,7 +541,7 @@
 
     if-nez v2, :cond_0
 
-    .line 304
+    .line 305
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -388,19 +550,19 @@
 
     iget v0, v0, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->end:I
 
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    return-object p0
 
-    .line 306
+    .line 307
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->codePointCount(II)I
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->codePointCount(II)I
 
     move-result v0
 
@@ -410,15 +572,15 @@
 
     move-result v0
 
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->offsetByCodePoints(II)I
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->offsetByCodePoints(II)I
 
     move-result v0
 
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    return-object p0
 .end method
 
 
@@ -430,7 +592,7 @@
 
     move-object/from16 v2, p1
 
-    .line 360
+    .line 365
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -439,13 +601,13 @@
 
     return-void
 
-    .line 364
+    .line 369
     :cond_0
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v3
 
-    .line 365
+    .line 370
     iget-object v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->namePaint:Landroid/text/TextPaint;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
@@ -462,14 +624,14 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 366
+    .line 371
     iget-boolean v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     const/4 v5, 0x0
 
     if-eqz v4, :cond_3
 
-    .line 367
+    .line 372
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor()I
 
     move-result v4
@@ -480,7 +642,7 @@
 
     move-result v12
 
-    .line 368
+    .line 373
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor2()I
 
     move-result v4
@@ -491,7 +653,7 @@
 
     move-result v13
 
-    .line 369
+    .line 374
     iget-object v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     if-eqz v4, :cond_1
@@ -512,7 +674,7 @@
 
     if-eq v4, v13, :cond_2
 
-    .line 370
+    .line 375
     :cond_1
     new-instance v4, Landroid/graphics/LinearGradient;
 
@@ -542,7 +704,7 @@
 
     iput-object v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->gradient:Landroid/graphics/LinearGradient;
 
-    .line 372
+    .line 377
     :cond_2
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
@@ -552,13 +714,13 @@
 
     goto :goto_0
 
-    .line 374
+    .line 379
     :cond_3
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 375
+    .line 380
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor()I
@@ -573,11 +735,11 @@
 
     invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 377
+    .line 382
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 378
+    .line 383
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
     int-to-float v4, v4
@@ -588,7 +750,7 @@
 
     invoke-virtual {v2, v4, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 379
+    .line 384
     iget v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->roundRadius:I
 
     const/4 v4, 0x0
@@ -597,14 +759,14 @@
 
     if-lez v0, :cond_4
 
-    .line 380
+    .line 385
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v7, v3
 
     invoke-virtual {v0, v4, v4, v7, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 381
+    .line 386
     iget v7, v1, Lorg/telegram/ui/Components/AvatarDrawable;->roundRadius:I
 
     int-to-float v8, v7
@@ -622,12 +784,12 @@
 
     div-float/2addr v0, v6
 
-    .line 383
+    .line 388
     sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v0, v0, v0, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 386
+    .line 391
     :goto_1
     iget v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
 
@@ -639,7 +801,7 @@
 
     if-ne v0, v8, :cond_7
 
-    .line 387
+    .line 392
     iget v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->archivedAvatarProgress:F
 
     cmpl-float v0, v0, v4
@@ -650,7 +812,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 388
+    .line 393
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchived:I
@@ -671,7 +833,7 @@
 
     div-float/2addr v0, v6
 
-    .line 389
+    .line 394
     iget v6, v1, Lorg/telegram/ui/Components/AvatarDrawable;->archivedAvatarProgress:F
 
     mul-float/2addr v6, v0
@@ -680,17 +842,17 @@
 
     invoke-virtual {v2, v0, v0, v6, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 390
+    .line 395
     sget-boolean v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
     if-eqz v0, :cond_6
 
-    .line 391
+    .line 396
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 392
+    .line 397
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
@@ -699,7 +861,7 @@
 
     invoke-virtual {v0, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 393
+    .line 398
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
@@ -708,50 +870,50 @@
 
     invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 394
+    .line 399
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 395
+    .line 400
     sput-boolean v9, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
     goto :goto_2
 
-    .line 398
+    .line 403
     :cond_5
     sget-boolean v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
     if-nez v0, :cond_6
 
-    .line 399
+    .line 404
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 400
+    .line 405
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v6, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     invoke-virtual {v0, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 401
+    .line 406
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 402
+    .line 407
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 403
+    .line 408
     sput-boolean v7, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
-    .line 406
+    .line 411
     :cond_6
     :goto_2
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -760,7 +922,7 @@
 
     move-result v0
 
-    .line 407
+    .line 412
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieDrawable;->getIntrinsicHeight()I
@@ -769,7 +931,7 @@
 
     int-to-float v0, v0
 
-    .line 409
+    .line 414
     iget v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->scaleSize:F
 
     mul-float/2addr v0, v5
@@ -784,18 +946,18 @@
 
     sub-int v5, v3, v0
 
-    .line 412
+    .line 417
     div-int/2addr v5, v8
 
     sub-int/2addr v3, v4
 
-    .line 413
+    .line 418
     div-int/2addr v3, v8
 
-    .line 414
+    .line 419
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 415
+    .line 420
     sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     add-int/2addr v0, v5
@@ -804,12 +966,12 @@
 
     invoke-virtual {v6, v5, v3, v0, v4}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 416
+    .line 421
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 417
+    .line 422
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_5
@@ -819,13 +981,13 @@
 
     const/4 v10, 0x6
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
     const/16 v5, 0x65
 
     if-ne v0, v5, :cond_8
 
-    .line 423
+    .line 428
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_templates_filled:I
@@ -834,9 +996,9 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
-    .line 425
+    .line 430
     invoke-virtual {v0, v9, v9, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     goto/16 :goto_3
@@ -844,7 +1006,7 @@
     :cond_8
     if-ne v0, v4, :cond_9
 
-    .line 428
+    .line 433
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_lock_filled:I
@@ -853,9 +1015,9 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
-    .line 430
+    .line 435
     invoke-virtual {v0, v9, v9, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     goto/16 :goto_3
@@ -863,22 +1025,22 @@
     :cond_9
     if-ne v0, v7, :cond_a
 
-    .line 434
+    .line 439
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v9
 
-    .line 435
+    .line 440
     invoke-virtual {v0, v9, v9, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_a
     const/4 v4, 0x4
 
     if-ne v0, v4, :cond_b
 
-    .line 437
+    .line 442
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v8
@@ -892,7 +1054,7 @@
 
     if-ne v0, v6, :cond_c
 
-    .line 439
+    .line 444
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v5
@@ -902,7 +1064,7 @@
     :cond_c
     if-ne v0, v10, :cond_d
 
-    .line 441
+    .line 446
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v4
@@ -914,7 +1076,7 @@
 
     if-ne v0, v4, :cond_e
 
-    .line 443
+    .line 448
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v6
@@ -926,7 +1088,7 @@
 
     if-ne v0, v6, :cond_f
 
-    .line 445
+    .line 450
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v10
@@ -938,7 +1100,7 @@
 
     if-ne v0, v7, :cond_10
 
-    .line 447
+    .line 452
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v4
@@ -950,7 +1112,7 @@
 
     if-ne v0, v4, :cond_11
 
-    .line 449
+    .line 454
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v6
@@ -960,7 +1122,7 @@
     :cond_11
     if-ne v0, v5, :cond_12
 
-    .line 451
+    .line 456
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v4
@@ -972,7 +1134,7 @@
 
     if-ne v0, v4, :cond_13
 
-    .line 453
+    .line 458
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     const/16 v4, 0xb
@@ -986,24 +1148,38 @@
 
     if-ne v0, v5, :cond_14
 
-    .line 455
+    .line 460
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v4
 
     goto :goto_3
 
-    .line 457
     :cond_14
+    const/16 v4, 0xf
+
+    if-ne v0, v4, :cond_15
+
+    .line 462
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
+
+    const/16 v4, 0xd
+
+    aget-object v0, v0, v4
+
+    goto :goto_3
+
+    .line 464
+    :cond_15
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v7
 
-    :cond_15
+    :cond_16
     :goto_3
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1f
 
-    .line 460
+    .line 467
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v4
@@ -1016,7 +1192,7 @@
 
     float-to-int v4, v4
 
-    .line 461
+    .line 468
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v5
@@ -1031,67 +1207,67 @@
 
     sub-int v6, v3, v4
 
-    .line 462
+    .line 469
     div-int/2addr v6, v8
 
     sub-int/2addr v3, v5
 
-    .line 463
+    .line 470
     div-int/2addr v3, v8
 
     add-int/2addr v4, v6
 
     add-int/2addr v5, v3
 
-    .line 464
+    .line 471
     invoke-virtual {v0, v6, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 465
+    .line 472
     iget v3, v1, Lorg/telegram/ui/Components/AvatarDrawable;->alpha:I
 
     const/16 v4, 0xff
 
-    if-eq v3, v4, :cond_16
+    if-eq v3, v4, :cond_17
 
-    .line 466
+    .line 473
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 467
+    .line 474
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 468
+    .line 475
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     goto/16 :goto_5
 
-    .line 470
-    :cond_16
+    .line 477
+    :cond_17
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto/16 :goto_5
 
-    .line 473
-    :cond_17
+    .line 480
+    :cond_18
     iget-boolean v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->drawDeleted:Z
 
     const/16 v11, 0x32
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1b
 
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v12, v0, v7
 
-    if-eqz v12, :cond_1a
+    if-eqz v12, :cond_1b
 
-    .line 474
+    .line 481
     aget-object v0, v0, v7
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
 
-    .line 475
+    .line 482
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v4, v4, v7
@@ -1100,14 +1276,14 @@
 
     move-result v4
 
-    .line 476
+    .line 483
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     sub-int v5, v3, v5
 
-    if-gt v0, v5, :cond_18
+    if-gt v0, v5, :cond_19
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1115,12 +1291,12 @@
 
     sub-int v5, v3, v5
 
-    if-le v4, v5, :cond_19
+    if-le v4, v5, :cond_1a
 
-    :cond_18
+    :cond_19
     int-to-float v5, v3
 
-    .line 477
+    .line 484
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -1141,18 +1317,18 @@
 
     float-to-int v4, v4
 
-    :cond_19
+    :cond_1a
     sub-int v5, v3, v0
 
-    .line 481
+    .line 488
     div-int/2addr v5, v8
 
     sub-int/2addr v3, v4
 
-    .line 482
+    .line 489
     div-int/2addr v3, v8
 
-    .line 483
+    .line 490
     sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v6, v6, v7
@@ -1163,7 +1339,7 @@
 
     invoke-virtual {v6, v5, v3, v0, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 484
+    .line 491
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatarDrawables:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v7
@@ -1172,25 +1348,25 @@
 
     goto/16 :goto_5
 
-    .line 486
-    :cond_1a
+    .line 493
+    :cond_1b
     iget-boolean v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->invalidateTextLayout:Z
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1e
 
-    .line 487
+    .line 494
     iput-boolean v9, v1, Lorg/telegram/ui/Components/AvatarDrawable;->invalidateTextLayout:Z
 
-    .line 488
+    .line 495
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_1d
 
-    .line 489
+    .line 496
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1201,7 +1377,7 @@
 
     move-result-object v0
 
-    .line 490
+    .line 497
     iget-object v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->namePaint:Landroid/text/TextPaint;
 
     invoke-virtual {v5}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
@@ -1218,10 +1394,10 @@
 
     move-result-object v13
 
-    .line 491
+    .line 498
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
@@ -1231,10 +1407,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1e
 
-    .line 493
-    :cond_1b
+    .line 500
+    :cond_1c
     :try_start_0
     new-instance v0, Landroid/text/StaticLayout;
 
@@ -1258,14 +1434,14 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
-    .line 494
+    .line 501
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
 
-    if-lez v0, :cond_1d
+    if-lez v0, :cond_1e
 
-    .line 495
+    .line 502
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v9}, Landroid/text/StaticLayout;->getLineLeft(I)F
@@ -1274,7 +1450,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLeft:F
 
-    .line 496
+    .line 503
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v9}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -1283,7 +1459,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textWidth:F
 
-    .line 497
+    .line 504
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v9}, Landroid/text/StaticLayout;->getLineBottom(I)I
@@ -1301,25 +1477,25 @@
     :catch_0
     move-exception v0
 
-    .line 500
+    .line 507
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_4
 
-    .line 504
-    :cond_1c
+    .line 511
+    :cond_1d
     iput-object v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
-    .line 507
-    :cond_1d
+    .line 514
+    :cond_1e
     :goto_4
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1f
 
     int-to-float v0, v3
 
-    .line 508
+    .line 515
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1330,10 +1506,10 @@
 
     div-float v4, v0, v6
 
-    .line 509
+    .line 516
     invoke-virtual {v2, v3, v3, v4, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 510
+    .line 517
     iget v3, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textWidth:F
 
     sub-float v3, v0, v3
@@ -1352,13 +1528,13 @@
 
     invoke-virtual {v2, v3, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 512
+    .line 519
     iget-object v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v2}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 515
-    :cond_1e
+    .line 522
+    :cond_1f
     :goto_5
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1368,7 +1544,7 @@
 .method public getAvatarType()I
     .locals 1
 
-    .line 258
+    .line 259
     iget v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
 
     return v0
@@ -1377,7 +1553,7 @@
 .method public getColor()I
     .locals 1
 
-    .line 294
+    .line 295
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     if-eqz v0, :cond_0
@@ -1400,7 +1576,7 @@
 .method public getColor2()I
     .locals 1
 
-    .line 298
+    .line 299
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     if-eqz v0, :cond_0
@@ -1447,7 +1623,7 @@
 .method public setAlpha(I)V
     .locals 0
 
-    .line 520
+    .line 527
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->alpha:I
 
     return-void
@@ -1456,7 +1632,7 @@
 .method public setArchivedAvatarHiddenProgress(F)V
     .locals 0
 
-    .line 254
+    .line 255
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->archivedAvatarProgress:F
 
     return-void
@@ -1465,7 +1641,7 @@
 .method public setAvatarType(I)V
     .locals 11
 
-    .line 195
+    .line 196
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
 
     const/16 v0, 0xe
@@ -1482,7 +1658,7 @@
 
     if-ne p1, v3, :cond_0
 
-    .line 198
+    .line 199
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
@@ -1498,7 +1674,7 @@
 
     if-ne p1, v6, :cond_1
 
-    .line 200
+    .line 201
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundViolet:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1514,10 +1690,10 @@
 
     if-ne p1, v6, :cond_2
 
-    .line 203
+    .line 204
     iput-boolean v4, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 204
+    .line 205
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1533,10 +1709,10 @@
     :cond_2
     if-ne p1, v2, :cond_3
 
-    .line 206
+    .line 207
     iput-boolean v4, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 207
+    .line 208
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchivedHidden:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
@@ -1565,10 +1741,10 @@
 
     if-ne p1, v6, :cond_5
 
-    .line 213
+    .line 214
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 214
+    .line 215
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1583,7 +1759,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 215
+    .line 216
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1605,10 +1781,10 @@
 
     if-ne p1, v6, :cond_6
 
-    .line 217
+    .line 218
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 218
+    .line 219
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1623,7 +1799,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 219
+    .line 220
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1647,10 +1823,10 @@
 
     if-ne p1, v6, :cond_7
 
-    .line 221
+    .line 222
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 222
+    .line 223
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1665,7 +1841,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 223
+    .line 224
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1687,10 +1863,10 @@
 
     if-ne p1, v6, :cond_8
 
-    .line 225
+    .line 226
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 226
+    .line 227
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     const-wide/16 v6, 0x3
@@ -1707,7 +1883,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 227
+    .line 228
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1729,10 +1905,10 @@
 
     if-ne p1, v6, :cond_9
 
-    .line 229
+    .line 230
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 230
+    .line 231
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     const-wide/16 v6, 0x1
@@ -1749,7 +1925,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 231
+    .line 232
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1771,10 +1947,10 @@
 
     if-ne p1, v6, :cond_a
 
-    .line 233
+    .line 234
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 234
+    .line 235
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     const-wide/16 v6, 0x0
@@ -1791,7 +1967,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 235
+    .line 236
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1813,10 +1989,10 @@
 
     if-ne p1, v6, :cond_b
 
-    .line 237
+    .line 238
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 238
+    .line 239
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     const-wide/16 v6, 0x6
@@ -1833,7 +2009,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 239
+    .line 240
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1855,10 +2031,10 @@
 
     if-ne p1, v6, :cond_c
 
-    .line 241
+    .line 242
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 242
+    .line 243
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1873,7 +2049,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 243
+    .line 244
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1890,11 +2066,11 @@
 
     goto :goto_1
 
-    .line 245
+    .line 246
     :cond_c
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 246
+    .line 247
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1909,7 +2085,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 247
+    .line 248
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -1926,12 +2102,12 @@
 
     goto :goto_1
 
-    .line 209
+    .line 210
     :cond_d
     :goto_0
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 210
+    .line 211
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
@@ -1940,7 +2116,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 211
+    .line 212
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Saved:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
@@ -1949,7 +2125,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color2:I
 
-    .line 249
+    .line 250
     :goto_1
     iget p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
 
@@ -1978,7 +2154,7 @@
     :cond_f
     and-int p1, v0, v4
 
-    .line 250
+    .line 251
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     return-void
@@ -1989,15 +2165,15 @@
 
     const/4 v0, 0x0
 
-    .line 273
+    .line 274
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 274
+    .line 275
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color2:I
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 275
+    .line 276
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     return-void
@@ -2008,18 +2184,18 @@
 
     const/4 v0, 0x1
 
-    .line 279
+    .line 280
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 280
+    .line 281
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 281
+    .line 282
     iput p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color2:I
 
     const/4 p1, 0x0
 
-    .line 282
+    .line 283
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     return-void
@@ -2044,7 +2220,7 @@
 
     move-object v4, p4
 
-    .line 290
+    .line 291
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -2055,13 +2231,13 @@
 
     const/4 v0, 0x1
 
-    .line 310
+    .line 311
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
-    .line 311
+    .line 312
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->invalidateTextLayout:Z
 
-    .line 312
+    .line 313
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -2076,7 +2252,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    .line 313
+    .line 314
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
@@ -2099,26 +2275,24 @@
 
     if-nez p1, :cond_0
 
-    move p1, v0
-
     goto :goto_0
 
     :cond_0
-    move p1, p2
+    move v0, p2
 
-    .line 314
+    .line 315
     :goto_0
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
-
-    .line 316
-    iput p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     .line 317
+    iput p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
+
+    .line 318
     iput-boolean p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->drawDeleted:Z
 
     if-eqz p3, :cond_1
 
-    .line 319
+    .line 320
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -2132,215 +2306,50 @@
 
     move-object p4, p1
 
-    .line 324
+    .line 325
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-static {p3, p4, p5, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getAvatarSymbols(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    if-eqz p5, :cond_3
-
-    .line 326
-    iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_2
-
-    :cond_3
-    if-eqz p3, :cond_4
-
-    .line 328
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-lez p1, :cond_4
-
-    .line 329
-    iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_4
-    const-string p1, "\u200c"
-
-    const/16 p2, 0x11
-
-    const/16 p5, 0x20
-
-    if-eqz p4, :cond_7
-
-    .line 331
-    invoke-virtual {p4}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_7
-
-    .line 334
-    invoke-virtual {p4, p5}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result p3
-
-    if-ltz p3, :cond_5
-
-    add-int/2addr p3, v0
-
-    .line 335
-    invoke-virtual {p4, p3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p4
-
-    .line 337
-    :cond_5
-    sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-le p3, p2, :cond_6
-
-    .line 338
-    iget-object p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 340
-    :cond_6
-    iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-direct {p0, p4}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_7
-    if-eqz p3, :cond_a
-
-    .line 341
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p4
-
-    if-lez p4, :cond_a
-
-    .line 342
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p4
-
-    sub-int/2addr p4, v0
-
-    :goto_1
-    if-ltz p4, :cond_a
-
-    .line 343
-    invoke-virtual {p3, p4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    if-ne v1, p5, :cond_9
-
-    .line 344
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    sub-int/2addr v1, v0
-
-    if-eq p4, v1, :cond_9
-
-    add-int/lit8 v1, p4, 0x1
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    if-eq v1, p5, :cond_9
-
-    .line 345
-    iget-object p4, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4}, Ljava/lang/StringBuilder;->length()I
-
-    move-result p4
-
-    .line 346
-    sget p5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-le p5, p2, :cond_8
-
-    .line 347
-    iget-object p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 349
-    :cond_8
-    iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->takeFirstCharacter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_9
-    add-int/lit8 p4, p4, -0x1
-
-    goto :goto_1
-
-    :cond_a
-    :goto_2
     return-void
 .end method
 
 .method public setInfo(Lorg/telegram/tgnet/TLObject;)V
     .locals 1
 
-    .line 181
+    .line 182
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_0
 
-    .line 182
+    .line 183
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
     goto :goto_0
 
-    .line 183
+    .line 184
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_1
 
-    .line 184
+    .line 185
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     goto :goto_0
 
-    .line 185
+    .line 186
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$ChatInvite;
 
     if-eqz v0, :cond_2
 
-    .line 186
+    .line 187
     check-cast p1, Lorg/telegram/tgnet/TLRPC$ChatInvite;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
@@ -2355,7 +2364,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 263
+    .line 264
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
@@ -2379,7 +2388,7 @@
 
     const-wide/16 v1, 0x0
 
-    .line 268
+    .line 269
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$ChatInvite;->title:Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -2399,7 +2408,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 175
+    .line 176
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -2412,7 +2421,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 176
+    .line 177
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p1
@@ -2432,7 +2441,7 @@
 .method public setRoundRadius(I)V
     .locals 0
 
-    .line 548
+    .line 555
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->roundRadius:I
 
     return-void
@@ -2441,7 +2450,7 @@
 .method public setScaleSize(F)V
     .locals 0
 
-    .line 191
+    .line 192
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->scaleSize:F
 
     return-void
@@ -2450,7 +2459,7 @@
 .method public setTextSize(I)V
     .locals 1
 
-    .line 286
+    .line 287
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->namePaint:Landroid/text/TextPaint;
 
     int-to-float p1, p1

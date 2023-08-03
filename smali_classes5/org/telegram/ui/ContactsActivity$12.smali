@@ -3,12 +3,12 @@
 .source "ContactsActivity.java"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ContactsActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    value = Lorg/telegram/ui/ContactsActivity;->didSelectResult(Lorg/telegram/tgnet/TLRPC$User;ZLjava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ContactsActivity;
+.field final synthetic val$editTextFinal:Landroid/widget/EditText;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/widget/EditText;)V
     .locals 0
 
-    .line 1312
-    iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
+    .line 1322
+    iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,79 +35,145 @@
 
 
 # virtual methods
-.method public onGlobalLayout()V
-    .locals 2
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 3
 
-    .line 1315
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
+    const-string v0, ""
 
-    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
+    .line 1336
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
+    .line 1337
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1300(Lorg/telegram/ui/ContactsActivity;)Z
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 1338
+    invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-gez v1, :cond_0
 
-    const/16 v1, 0x64
+    .line 1340
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const-string v0, "0"
 
-    move-result v1
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1341
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/widget/EditText;->length()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setSelection(I)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/16 v2, 0x12c
 
-    :goto_0
-    int-to-float v1, v1
+    if-le v1, v2, :cond_1
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
+    .line 1343
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
-    .line 1316
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
+    const-string v0, "300"
 
-    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v0
+    .line 1344
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
-    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
+    invoke-virtual {p1}, Landroid/widget/EditText;->length()I
 
-    invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1300(Lorg/telegram/ui/ContactsActivity;)Z
+    move-result v0
 
-    move-result v1
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setSelection(I)V
 
-    xor-int/lit8 v1, v1, 0x1
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
-
-    .line 1317
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 1318
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$12;->this$0:Lorg/telegram/ui/ContactsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
+    .line 1345
     :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    .line 1346
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1347
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/widget/EditText;->length()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setSelection(I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 1351
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
     return-void
 .end method

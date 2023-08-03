@@ -7,22 +7,22 @@ import p033j$.util.function.InterfaceC2836v;
 public final /* synthetic */ class C3244s0 implements InterfaceC2836v {
 
     /* renamed from: a */
-    final /* synthetic */ ObjIntConsumer f1288a;
+    final /* synthetic */ ObjIntConsumer f1291a;
 
     private /* synthetic */ C3244s0(ObjIntConsumer objIntConsumer) {
-        this.f1288a = objIntConsumer;
+        this.f1291a = objIntConsumer;
     }
 
     /* renamed from: a */
-    public static /* synthetic */ InterfaceC2836v m101a(ObjIntConsumer objIntConsumer) {
+    public static /* synthetic */ InterfaceC2836v m119a(ObjIntConsumer objIntConsumer) {
         if (objIntConsumer == null) {
             return null;
         }
-        return objIntConsumer instanceof C3246t0 ? ((C3246t0) objIntConsumer).f1290a : new C3244s0(objIntConsumer);
+        return objIntConsumer instanceof C3246t0 ? ((C3246t0) objIntConsumer).f1293a : new C3244s0(objIntConsumer);
     }
 
     @Override // p033j$.util.function.InterfaceC2836v
     public /* synthetic */ void accept(Object obj, int i) {
-        this.f1288a.accept(obj, i);
+        this.f1291a.accept(obj, i);
     }
 }

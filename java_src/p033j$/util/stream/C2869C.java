@@ -11,25 +11,25 @@ import p033j$.util.function.InterfaceC2816b;
 public final /* synthetic */ class C2869C implements InterfaceC2816b {
 
     /* renamed from: a */
-    public final /* synthetic */ int f784a;
+    public final /* synthetic */ int f787a;
 
     /* renamed from: b */
-    public final /* synthetic */ BiConsumer f785b;
+    public final /* synthetic */ BiConsumer f788b;
 
     public /* synthetic */ C2869C(BiConsumer biConsumer, int i) {
-        this.f784a = i;
+        this.f787a = i;
         if (i == 1) {
-            this.f785b = biConsumer;
+            this.f788b = biConsumer;
         } else if (i != 2) {
-            this.f785b = biConsumer;
+            this.f788b = biConsumer;
         } else {
-            this.f785b = biConsumer;
+            this.f788b = biConsumer;
         }
     }
 
     @Override // p033j$.util.function.BiFunction
     public BiFunction andThen(Function function) {
-        switch (this.f784a) {
+        switch (this.f787a) {
             case 0:
                 Objects.requireNonNull(function);
                 return new C2808a(this, function);
@@ -44,15 +44,15 @@ public final /* synthetic */ class C2869C implements InterfaceC2816b {
 
     @Override // p033j$.util.function.BiFunction
     public final Object apply(Object obj, Object obj2) {
-        switch (this.f784a) {
+        switch (this.f787a) {
             case 0:
-                this.f785b.accept(obj, obj2);
+                this.f788b.accept(obj, obj2);
                 return obj;
             case 1:
-                this.f785b.accept(obj, obj2);
+                this.f788b.accept(obj, obj2);
                 return obj;
             default:
-                this.f785b.accept(obj, obj2);
+                this.f788b.accept(obj, obj2);
                 return obj;
         }
     }

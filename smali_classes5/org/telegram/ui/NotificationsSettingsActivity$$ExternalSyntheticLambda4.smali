@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSettingsActivity$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/NotificationsSettingsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/NotificationsSettingsActivity;->$r8$lambda$lENCJPVfaGN3vHSsU2J06Z3GFoE(Lorg/telegram/ui/NotificationsSettingsActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/NotificationsSettingsActivity;->$r8$lambda$IQmX9kc_ZFWLVHBEhT99FZ3rMYQ(Lorg/telegram/ui/NotificationsSettingsActivity;)V
 
     return-void
 .end method

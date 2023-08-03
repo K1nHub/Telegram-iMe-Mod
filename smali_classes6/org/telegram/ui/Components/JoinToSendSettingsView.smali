@@ -182,7 +182,7 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->isJoinToSend:Z
 
-    invoke-virtual {v1, v2, v3, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 67
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->joinToSendCell:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -256,7 +256,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->isJoinRequest:Z
 
-    invoke-virtual {v1, v2, v4, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v4, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 98
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->joinRequestCell:Lorg/telegram/ui/Cells/TextCheckCell;

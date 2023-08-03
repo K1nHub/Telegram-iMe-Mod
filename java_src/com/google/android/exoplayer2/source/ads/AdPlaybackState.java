@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import com.google.android.exoplayer2.Bundleable;
 import com.google.android.exoplayer2.C0480C;
+import com.google.android.exoplayer2.source.ads.AdPlaybackState;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.lang.annotation.Documented;
@@ -33,7 +34,14 @@ public final class AdPlaybackState implements Bundleable {
     private static final String FIELD_AD_RESUME_POSITION_US = Util.intToStringMaxRadix(2);
     private static final String FIELD_CONTENT_DURATION_US = Util.intToStringMaxRadix(3);
     private static final String FIELD_REMOVED_AD_GROUP_COUNT = Util.intToStringMaxRadix(4);
-    public static final Bundleable.Creator<AdPlaybackState> CREATOR = AdPlaybackState$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<AdPlaybackState> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.source.ads.AdPlaybackState$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            AdPlaybackState fromBundle;
+            fromBundle = AdPlaybackState.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
@@ -60,7 +68,14 @@ public final class AdPlaybackState implements Bundleable {
         private static final String FIELD_CONTENT_RESUME_OFFSET_US = Util.intToStringMaxRadix(5);
         private static final String FIELD_IS_SERVER_SIDE_INSERTED = Util.intToStringMaxRadix(6);
         private static final String FIELD_ORIGINAL_COUNT = Util.intToStringMaxRadix(7);
-        public static final Bundleable.Creator<AdGroup> CREATOR = AdPlaybackState$AdGroup$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<AdGroup> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.source.ads.AdPlaybackState$AdGroup$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                AdPlaybackState.AdGroup fromBundle;
+                fromBundle = AdPlaybackState.AdGroup.fromBundle(bundle);
+                return fromBundle;
+            }
+        };
 
         public AdGroup(long j) {
             this(j, -1, -1, new int[0], new Uri[0], new long[0], 0L, false);

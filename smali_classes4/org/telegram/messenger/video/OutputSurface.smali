@@ -33,8 +33,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZ)V
-    .locals 15
+.method public constructor <init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZLjava/lang/Integer;Ljava/lang/Integer;Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;Ljava/util/ArrayList;)V
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,70 +45,84 @@
             "Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;",
             ">;",
             "Lorg/telegram/messenger/MediaController$CropState;",
-            "IIIIIFZ)V"
+            "IIIIIFZ",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            "Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;",
+            ">;)V"
         }
     .end annotation
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
-    .line 39
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p2
+
+    move-object/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move/from16 v7, p6
+
+    move/from16 v8, p7
+
+    move/from16 v9, p8
+
+    move/from16 v10, p9
+
+    move/from16 v11, p10
+
+    move/from16 v12, p11
+
+    move/from16 v13, p12
+
+    move-object/from16 v14, p13
+
+    move-object/from16 v15, p14
+
+    move-object/from16 v16, p15
+
+    move-object/from16 v17, p16
+
+    .line 42
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 30
+    .line 33
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 31
+    .line 34
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mEGLContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 32
+    .line 35
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mEGLSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 35
+    .line 38
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
 
-    .line 40
+    .line 43
     new-instance v1, Lorg/telegram/messenger/video/TextureRenderer;
 
-    move-object v2, v1
+    move-object/from16 p1, v1
 
-    move-object/from16 v3, p1
-
-    move-object/from16 v4, p2
-
-    move-object/from16 v5, p3
-
-    move-object/from16 v6, p4
-
-    move-object/from16 v7, p5
-
-    move/from16 v8, p6
-
-    move/from16 v9, p7
-
-    move/from16 v10, p8
-
-    move/from16 v11, p9
-
-    move/from16 v12, p10
-
-    move/from16 v13, p11
-
-    move/from16 v14, p12
-
-    invoke-direct/range {v2 .. v14}, Lorg/telegram/messenger/video/TextureRenderer;-><init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZ)V
+    invoke-direct/range {v1 .. v17}, Lorg/telegram/messenger/video/TextureRenderer;-><init>(Lorg/telegram/messenger/MediaController$SavedFilterState;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;IIIIIFZLjava/lang/Integer;Ljava/lang/Integer;Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;Ljava/util/ArrayList;)V
 
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
 
-    .line 41
+    .line 44
     invoke-virtual {v1}, Lorg/telegram/messenger/video/TextureRenderer;->surfaceCreated()V
 
-    .line 42
+    .line 45
     new-instance v1, Landroid/graphics/SurfaceTexture;
 
     iget-object v2, v0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
@@ -121,10 +135,10 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/video/OutputSurface;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 43
-    invoke-virtual {v1, p0}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+    .line 46
+    invoke-virtual {v1, v0}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 44
+    .line 47
     new-instance v1, Landroid/view/Surface;
 
     iget-object v2, v0, Lorg/telegram/messenger/video/OutputSurface;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -139,7 +153,7 @@
 .method private checkEglError(Ljava/lang/String;)V
     .locals 1
 
-    .line 164
+    .line 167
     iget-object p1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {p1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
@@ -152,7 +166,7 @@
 
     return-void
 
-    .line 165
+    .line 168
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -166,7 +180,7 @@
 .method private eglSetup(II)V
     .locals 9
 
-    .line 48
+    .line 51
     invoke-static {}, Ljavax/microedition/khronos/egl/EGLContext;->getEGL()Ljavax/microedition/khronos/egl/EGL;
 
     move-result-object v0
@@ -175,7 +189,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
-    .line 49
+    .line 52
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_DEFAULT_DISPLAY:Ljava/lang/Object;
 
     invoke-interface {v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetDisplay(Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -184,12 +198,12 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 51
+    .line 54
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_DISPLAY:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     if-eq v0, v1, :cond_4
 
-    .line 55
+    .line 58
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     const/4 v2, 0x0
@@ -204,7 +218,7 @@
 
     new-array v3, v0, [I
 
-    .line 60
+    .line 63
     fill-array-data v3, :array_0
 
     const/4 v0, 0x1
@@ -213,7 +227,7 @@
 
     new-array v6, v0, [I
 
-    .line 71
+    .line 74
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -232,10 +246,10 @@
 
     new-array v2, v1, [I
 
-    .line 74
+    .line 77
     fill-array-data v2, :array_1
 
-    .line 78
+    .line 81
     iget-object v3, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v4, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -254,10 +268,10 @@
 
     const-string v2, "eglCreateContext"
 
-    .line 79
+    .line 82
     invoke-direct {p0, v2}, Lorg/telegram/messenger/video/OutputSurface;->checkEglError(Ljava/lang/String;)V
 
-    .line 80
+    .line 83
     iget-object v2, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     if-eqz v2, :cond_1
@@ -286,7 +300,7 @@
 
     aput p2, v2, p1
 
-    .line 88
+    .line 91
     iget-object p1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object p2, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -301,17 +315,17 @@
 
     const-string p1, "eglCreatePbufferSurface"
 
-    .line 89
+    .line 92
     invoke-direct {p0, p1}, Lorg/telegram/messenger/video/OutputSurface;->checkEglError(Ljava/lang/String;)V
 
-    .line 90
+    .line 93
     iget-object p1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 91
+    .line 94
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -321,7 +335,7 @@
 
     throw p1
 
-    .line 81
+    .line 84
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -331,7 +345,7 @@
 
     throw p1
 
-    .line 72
+    .line 75
     :cond_2
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -341,11 +355,11 @@
 
     throw p1
 
-    .line 56
+    .line 59
     :cond_3
     iput-object v2, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 57
+    .line 60
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string/jumbo p2, "unable to initialize EGL10"
@@ -354,7 +368,7 @@
 
     throw p1
 
-    .line 52
+    .line 55
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -394,12 +408,12 @@
 .method public awaitNewImage()V
     .locals 4
 
-    .line 132
+    .line 135
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 133
+    .line 136
     :goto_0
     :try_start_0
     iget-boolean v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameAvailable:Z
@@ -408,7 +422,7 @@
 
     if-nez v1, :cond_1
 
-    .line 135
+    .line 138
     :try_start_1
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
 
@@ -416,14 +430,14 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/Object;->wait(J)V
 
-    .line 136
+    .line 139
     iget-boolean v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameAvailable:Z
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
-    .line 137
+    .line 140
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -439,7 +453,7 @@
     :catch_0
     move-exception v1
 
-    .line 140
+    .line 143
     :try_start_2
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -450,15 +464,15 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 143
+    .line 146
     iput-boolean v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameAvailable:Z
 
-    .line 144
+    .line 147
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 145
+    .line 148
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
@@ -468,7 +482,7 @@
     :catchall_0
     move-exception v1
 
-    .line 144
+    .line 147
     :try_start_3
     monitor-exit v0
     :try_end_3
@@ -477,13 +491,13 @@
     throw v1
 .end method
 
-.method public changeFragmentShader(Ljava/lang/String;Ljava/lang/String;)V
+.method public changeFragmentShader(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 1
 
-    .line 170
+    .line 173
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
 
-    invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/video/TextureRenderer;->changeFragmentShader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/messenger/video/TextureRenderer;->changeFragmentShader(Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -491,7 +505,7 @@
 .method public drawImage()V
     .locals 2
 
-    .line 149
+    .line 152
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
 
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -504,7 +518,7 @@
 .method public getSurface()Landroid/view/Surface;
     .locals 1
 
-    .line 127
+    .line 130
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurface:Landroid/view/Surface;
 
     return-object v0
@@ -513,17 +527,17 @@
 .method public makeCurrent()V
     .locals 4
 
-    .line 117
+    .line 120
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     if-eqz v0, :cond_1
 
     const-string v0, "before makeCurrent"
 
-    .line 120
+    .line 123
     invoke-direct {p0, v0}, Lorg/telegram/messenger/video/OutputSurface;->checkEglError(Ljava/lang/String;)V
 
-    .line 121
+    .line 124
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -540,7 +554,7 @@
 
     return-void
 
-    .line 122
+    .line 125
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -550,7 +564,7 @@
 
     throw v0
 
-    .line 118
+    .line 121
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -564,12 +578,12 @@
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 2
 
-    .line 154
+    .line 157
     iget-object p1, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
 
     monitor-enter p1
 
-    .line 155
+    .line 158
     :try_start_0
     iget-boolean v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameAvailable:Z
 
@@ -577,20 +591,20 @@
 
     const/4 v0, 0x1
 
-    .line 158
+    .line 161
     iput-boolean v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameAvailable:Z
 
-    .line 159
+    .line 162
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 160
+    .line 163
     monitor-exit p1
 
     return-void
 
-    .line 156
+    .line 159
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -603,7 +617,7 @@
     :catchall_0
     move-exception v0
 
-    .line 160
+    .line 163
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -614,12 +628,12 @@
 .method public release()V
     .locals 4
 
-    .line 96
+    .line 99
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     if-eqz v0, :cond_1
 
-    .line 97
+    .line 100
     invoke-interface {v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetCurrentContext()Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v0
@@ -632,7 +646,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 101
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -643,7 +657,7 @@
 
     invoke-interface {v0, v1, v2, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 100
+    .line 103
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -653,7 +667,7 @@
 
     invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 101
+    .line 104
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v1, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -662,16 +676,16 @@
 
     invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 103
+    .line 106
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
 
     if-eqz v0, :cond_2
 
-    .line 104
+    .line 107
     invoke-virtual {v0}, Lorg/telegram/messenger/video/TextureRenderer;->release()V
 
-    .line 106
+    .line 109
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurface:Landroid/view/Surface;
 
@@ -679,26 +693,59 @@
 
     const/4 v0, 0x0
 
-    .line 107
+    .line 110
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 108
+    .line 111
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 109
+    .line 112
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGLSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 110
+    .line 113
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mEGL:Ljavax/microedition/khronos/egl/EGL10;
 
-    .line 111
+    .line 114
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mTextureRender:Lorg/telegram/messenger/video/TextureRenderer;
 
-    .line 112
+    .line 115
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurface:Landroid/view/Surface;
 
-    .line 113
+    .line 116
     iput-object v0, p0, Lorg/telegram/messenger/video/OutputSurface;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     return-void
+.end method
+
+.method public supportsEXTYUV()Z
+    .locals 2
+
+    const/16 v0, 0x1f03
+
+    .line 178
+    :try_start_0
+    invoke-static {v0}, Landroid/opengl/GLES20;->glGetString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "GL_EXT_YUV_target"
+
+    .line 179
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    .line 181
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

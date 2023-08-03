@@ -1,6 +1,7 @@
 package com.iMe.p031ui.wallet.transaction;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.iMe.common.AppRxEvents;
 import com.iMe.i_staking.StakingInteractor;
 import com.iMe.mapper.staking.StackingOperationUiMappingKt;
 import com.iMe.mapper.transaction.TransactionUiMappingKt;
@@ -19,6 +20,7 @@ import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.staking.StakingOperation;
+import com.iMe.storage.domain.model.staking.StakingOperationsPaged;
 import com.iMe.storage.domain.model.wallet.Hint;
 import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
@@ -26,6 +28,7 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.storage.HintsPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
@@ -44,6 +47,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
+import timber.log.Timber;
 /* compiled from: WalletTransactionsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter */
@@ -90,7 +94,28 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
     }
 
     public final void startChooseNetworkDialog() {
-        ((WalletTransactionsView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getLoggedIndWalletsBlockchains()), new WalletTransactionsPresenter$startChooseNetworkDialog$1(this));
+        ((WalletTransactionsView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getLoggedIndWalletsBlockchains()), new Function1<Network, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$startChooseNetworkDialog$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+                invoke2(network);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Network newNetwork) {
+                Network network;
+                Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
+                WalletTransactionsPresenter.this.selectedNetwork = newNetwork;
+                network = WalletTransactionsPresenter.this.selectedNetwork;
+                ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).setupNetwork(network);
+                WalletTransactionsPresenter.load$default(WalletTransactionsPresenter.this, true, false, null, 6, null);
+            }
+        });
     }
 
     public static /* synthetic */ void load$default(WalletTransactionsPresenter walletTransactionsPresenter, boolean z, boolean z2, String str, int i, Object obj) {
@@ -146,6 +171,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         walletTransactionsView.openStakingOperationDetails(item, network);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         ((WalletTransactionsView) getViewState()).setupNetwork(this.selectedNetwork);
@@ -160,20 +186,58 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         return this.cryptoPreferenceHelper.getNetwork();
     }
 
-    private final void loadTransactions(boolean z, String str) {
-        boolean z2 = str != null;
-        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.token, 0, this.selectedNetwork.getId(), 8, null), new WalletTransactionsPresenter$loadTransactions$1(this, z2, z));
+    private final void loadTransactions(final boolean z, String str) {
+        final boolean z2 = str != null;
+        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.token, 0, this.selectedNetwork.getId(), 8, null), new Function1<List<? extends Transaction>, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$loadTransactions$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(List<? extends Transaction> list) {
+                invoke2(list);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(List<? extends Transaction> data) {
+                List filterTransactionsByTypeIfNeeded;
+                List<BaseNode> mapTransactionsToGroups;
+                Intrinsics.checkNotNullParameter(data, "data");
+                filterTransactionsByTypeIfNeeded = WalletTransactionsPresenter.this.filterTransactionsByTypeIfNeeded(data);
+                if (!filterTransactionsByTypeIfNeeded.isEmpty()) {
+                    mapTransactionsToGroups = WalletTransactionsPresenter.this.mapTransactionsToGroups(filterTransactionsByTypeIfNeeded);
+                    if (z2) {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).onLoadMoreItems(mapTransactionsToGroups);
+                        return;
+                    } else if (z) {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).renderInitialItems(mapTransactionsToGroups);
+                        return;
+                    } else {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).renderItems(mapTransactionsToGroups);
+                        return;
+                    }
+                }
+                if (!z2) {
+                    WalletTransactionsPresenter.this.renderGlobalState(GlobalState.Empty.Common.INSTANCE);
+                }
+                ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).onLoadMoreComplete();
+            }
+        });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final void renderGlobalState(GlobalState globalState) {
         List<BaseNode> mutableListOf;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new GlobalStateItem(globalState));
         ((WalletTransactionsView) getViewState()).renderItems(mutableListOf);
     }
 
-    private final void loadStakingOperations(boolean z, boolean z2) {
+    private final void loadStakingOperations(final boolean z, boolean z2) {
         Observable stakingOperations$default;
-        boolean z3 = (z || z2) ? false : true;
+        final boolean z3 = (z || z2) ? false : true;
         if (z3 && this.stakingOperationsCursor == null) {
             ((WalletTransactionsView) getViewState()).onLoadMoreComplete();
             return;
@@ -186,27 +250,115 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         } else {
             stakingOperations$default = StakingInteractor.getStakingOperations$default(this.stakingInteractor, null, ((WalletTransactionsFragment.ScreenType.StakingOperationsTab) screenType).getOperationsType(), this.selectedNetwork.getId(), this.stakingOperationsCursor, 1, null);
         }
-        loadInternal(z, z3, stakingOperations$default, new WalletTransactionsPresenter$loadStakingOperations$1(this, z3, z));
+        loadInternal(z, z3, stakingOperations$default, new Function1<StakingOperationsPaged, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$loadStakingOperations$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(StakingOperationsPaged stakingOperationsPaged) {
+                invoke2(stakingOperationsPaged);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(StakingOperationsPaged data) {
+                List<BaseNode> mapStakingOperationsToGroups;
+                Intrinsics.checkNotNullParameter(data, "data");
+                if (!data.getOperations().isEmpty()) {
+                    mapStakingOperationsToGroups = WalletTransactionsPresenter.this.mapStakingOperationsToGroups(data.getOperations());
+                    WalletTransactionsPresenter.this.stakingOperationsCursor = data.getNextCursor();
+                    if (z3) {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).onLoadMoreItems(mapStakingOperationsToGroups);
+                    } else if (z) {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).renderItems(mapStakingOperationsToGroups);
+                    } else {
+                        ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).renderInitialItems(mapStakingOperationsToGroups);
+                    }
+                } else if (!z3) {
+                    WalletTransactionsPresenter.this.renderGlobalState(GlobalState.Empty.Common.INSTANCE);
+                }
+                if (data.getNextCursor() == null) {
+                    ((WalletTransactionsView) WalletTransactionsPresenter.this.getViewState()).onLoadMoreComplete();
+                }
+            }
+        });
     }
 
-    private final <T> void loadInternal(boolean z, boolean z2, Observable<Result<T>> observable, Function1<? super T, Unit> function1) {
-        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
+    private final <T> void loadInternal(final boolean z, final boolean z2, Observable<Result<T>> observable, final Function1<? super T, Unit> function1) {
+        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletTransactionsPresenter.loadInternal$lambda$0(WalletTransactionsPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2462x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2463x713e531((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends T>, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
+                invoke2(obj);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<? extends T> it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends T> result = it;
+                if (result instanceof Result.Success) {
+                    Function1.this.invoke(((Result.Success) result).getData());
+                } else if (result instanceof Result.Loading) {
+                    if (z2) {
+                        return;
+                    }
+                    this.onLoading(z);
+                } else if (result instanceof Result.Error) {
+                    this.onError(((Result.Error) result).getError(), z2);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void loadInternal$lambda$0(WalletTransactionsPresenter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ((WalletTransactionsView) this$0.getViewState()).showRefreshing(false);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final void onLoading(boolean z) {
         if (z) {
             ((WalletTransactionsView) getViewState()).showRefreshing(true);
@@ -215,6 +367,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final void onError(ErrorModel errorModel, boolean z) {
         if (z) {
             ((WalletTransactionsView) getViewState()).onLoadMoreError();
@@ -226,13 +379,59 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2460x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2461x655d1dae(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
+                m1590invoke(rxEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1590invoke(RxEvent it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                RxEvent rxEvent = it;
+                if (Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateWalletScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateTransactionScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.RefreshTransactions.INSTANCE)) {
+                    WalletTransactionsPresenter.load$default(WalletTransactionsPresenter.this, true, false, null, 6, null);
+                } else if (rxEvent instanceof DomainRxEvents.StakingOperationsReload) {
+                    WalletTransactionsPresenter.this.selectedNetwork = NetworksHelper.getNetworkById(((DomainRxEvents.StakingOperationsReload) rxEvent).getNetworkId());
+                    WalletTransactionsPresenter.load$default(WalletTransactionsPresenter.this, true, false, null, 6, null);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public final List<Transaction> filterTransactionsByTypeIfNeeded(List<? extends Transaction> list) {
         if (this.screenType instanceof WalletTransactionsFragment.ScreenType.TokenDetailsTab) {
@@ -247,6 +446,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         return list;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final List<BaseNode> mapTransactionsToGroups(List<? extends Transaction> list) {
         List distinct;
         this.transactions.addAll(list);
@@ -271,6 +471,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         return arrayList;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final List<BaseNode> mapStakingOperationsToGroups(List<StakingOperation> list) {
         List distinct;
         this.stakingOperations.addAll(list);

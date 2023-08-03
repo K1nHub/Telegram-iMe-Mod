@@ -37,7 +37,7 @@ public class EmojiMetadata {
     }
 
     public int getId() {
-        return getMetadataItem().m840id();
+        return getMetadataItem().m858id();
     }
 
     public short getWidth() {

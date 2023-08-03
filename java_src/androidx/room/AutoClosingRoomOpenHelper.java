@@ -88,7 +88,14 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
         }
 
         void pokeOpen() {
-            this.mAutoCloser.executeRefCountingFunction(C0290x9c57900c.INSTANCE);
+            this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda2
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    Object lambda$pokeOpen$0;
+                    lambda$pokeOpen$0 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.lambda$pokeOpen$0((SupportSQLiteDatabase) obj);
+                    return lambda$pokeOpen$0;
+                }
+            });
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
@@ -142,7 +149,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             if (this.mAutoCloser.getDelegateDatabase() == null) {
                 return false;
             }
-            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0293x9c57900f.INSTANCE)).booleanValue();
+            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda5
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    return Boolean.valueOf(((SupportSQLiteDatabase) obj).inTransaction());
+                }
+            })).booleanValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
@@ -180,11 +192,17 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda0
                 @Override // androidx.arch.core.util.Function
                 public final Object apply(Object obj) {
-                    Object execSQL;
-                    execSQL = ((SupportSQLiteDatabase) obj).execSQL(str);
-                    return execSQL;
+                    Object lambda$execSQL$7;
+                    lambda$execSQL$7 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.lambda$execSQL$7(str, (SupportSQLiteDatabase) obj);
+                    return lambda$execSQL$7;
                 }
             });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ Object lambda$execSQL$7(String str, SupportSQLiteDatabase supportSQLiteDatabase) {
+            supportSQLiteDatabase.execSQL(str);
+            return null;
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
@@ -198,12 +216,24 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public String getPath() {
-            return (String) this.mAutoCloser.executeRefCountingFunction(C0292x9c57900e.INSTANCE);
+            return (String) this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda4
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    return ((SupportSQLiteDatabase) obj).getPath();
+                }
+            });
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public boolean isWriteAheadLoggingEnabled() {
-            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(C0289x9c57900b.INSTANCE)).booleanValue();
+            return ((Boolean) this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda1
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    Boolean lambda$isWriteAheadLoggingEnabled$13;
+                    lambda$isWriteAheadLoggingEnabled$13 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.lambda$isWriteAheadLoggingEnabled$13((SupportSQLiteDatabase) obj);
+                    return lambda$isWriteAheadLoggingEnabled$13;
+                }
+            })).booleanValue();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -216,7 +246,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteDatabase
         public List<Pair<String, String>> getAttachedDbs() {
-            return (List) this.mAutoCloser.executeRefCountingFunction(C0291x9c57900d.INSTANCE);
+            return (List) this.mAutoCloser.executeRefCountingFunction(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda3
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    return ((SupportSQLiteDatabase) obj).getAttachedDbs();
+                }
+            });
         }
 
         @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -520,12 +555,22 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
 
         @Override // androidx.sqlite.p011db.SupportSQLiteStatement
         public int executeUpdateDelete() {
-            return ((Integer) executeSqliteStatementWithRefCount(C0295xd7aa7fff.INSTANCE)).intValue();
+            return ((Integer) executeSqliteStatementWithRefCount(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSqliteStatement$$ExternalSyntheticLambda1
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    return Integer.valueOf(((SupportSQLiteStatement) obj).executeUpdateDelete());
+                }
+            })).intValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteStatement
         public long executeInsert() {
-            return ((Long) executeSqliteStatementWithRefCount(C0296xd7aa8000.INSTANCE)).longValue();
+            return ((Long) executeSqliteStatementWithRefCount(new Function() { // from class: androidx.room.AutoClosingRoomOpenHelper$AutoClosingSupportSqliteStatement$$ExternalSyntheticLambda2
+                @Override // androidx.arch.core.util.Function
+                public final Object apply(Object obj) {
+                    return Long.valueOf(((SupportSQLiteStatement) obj).executeInsert());
+                }
+            })).longValue();
         }
 
         @Override // androidx.sqlite.p011db.SupportSQLiteProgram

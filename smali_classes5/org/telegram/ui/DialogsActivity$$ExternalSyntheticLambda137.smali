@@ -2,34 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Ljava/lang/Runnable;
 
-    check-cast p1, Ljava/lang/Long;
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$2Sp5MfUAdaHML9OBmMEdvMBr3IY(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$hfRmO5ennowtUsHfySOEkb4uE78(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

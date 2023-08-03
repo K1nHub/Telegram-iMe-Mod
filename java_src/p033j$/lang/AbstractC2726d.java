@@ -9,7 +9,7 @@ import p033j$.util.function.Function;
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class AbstractC2726d {
     /* renamed from: a */
-    public static Object m678a(ConcurrentMap concurrentMap, Object obj, Function function) {
+    public static Object m696a(ConcurrentMap concurrentMap, Object obj, Function function) {
         Object apply;
         Objects.requireNonNull(function);
         Object obj2 = concurrentMap.get(obj);
@@ -17,7 +17,7 @@ public abstract /* synthetic */ class AbstractC2726d {
     }
 
     /* renamed from: b */
-    public static void m677b(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
+    public static void m695b(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
         Objects.requireNonNull(biConsumer);
         for (Map.Entry entry : concurrentMap.entrySet()) {
             try {
@@ -28,7 +28,7 @@ public abstract /* synthetic */ class AbstractC2726d {
     }
 
     /* renamed from: c */
-    public static /* synthetic */ long m676c(long j, long j2) {
+    public static /* synthetic */ long m694c(long j, long j2) {
         long j3 = j + j2;
         if (((j2 ^ j) < 0) || ((j ^ j3) >= 0)) {
             return j3;

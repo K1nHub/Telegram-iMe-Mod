@@ -22,7 +22,14 @@ import java.util.List;
 import java.util.Map;
 /* loaded from: classes.dex */
 public final class MediaParserHlsMediaChunkExtractor implements HlsMediaChunkExtractor {
-    public static final HlsExtractorFactory FACTORY = MediaParserHlsMediaChunkExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final HlsExtractorFactory FACTORY = new HlsExtractorFactory() { // from class: com.google.android.exoplayer2.source.hls.MediaParserHlsMediaChunkExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.source.hls.HlsExtractorFactory
+        public final HlsMediaChunkExtractor createExtractor(Uri uri, Format format, List list, TimestampAdjuster timestampAdjuster, Map map, ExtractorInput extractorInput, PlayerId playerId) {
+            HlsMediaChunkExtractor lambda$static$0;
+            lambda$static$0 = MediaParserHlsMediaChunkExtractor.lambda$static$0(uri, format, list, timestampAdjuster, map, extractorInput, playerId);
+            return lambda$static$0;
+        }
+    };
     private final Format format;
     private final InputReaderAdapterV30 inputReaderAdapter = new InputReaderAdapterV30();
     private final MediaParser mediaParser;
@@ -50,7 +57,7 @@ public final class MediaParserHlsMediaChunkExtractor implements HlsMediaChunkExt
         ImmutableList build = builder.build();
         OutputConsumerAdapterV30 outputConsumerAdapterV30 = new OutputConsumerAdapterV30();
         if (list == null) {
-            list = ImmutableList.m744of();
+            list = ImmutableList.m762of();
         }
         outputConsumerAdapterV30.setMuxedCaptionFormats(list);
         outputConsumerAdapterV30.setTimestampAdjuster(timestampAdjuster);

@@ -7,7 +7,7 @@ import com.iMe.model.wallet.transaction.TransactionActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletActionAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.details.adapter.WalletActionAdapter */
@@ -17,7 +17,7 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletActionAdapter(ResourceManager resourceManager) {
-        super(C3417R.layout.fork_recycle_item_wallet_action, null, 2, null);
+        super(C3419R.layout.fork_recycle_item_wallet_action, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -27,15 +27,15 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
     public void convert(BaseViewHolder holder, ActionItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3417R.C3420id.linear_root;
+        int i = C3419R.C3422id.linear_root;
         BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3417R.C3420id.text_action;
+        int i2 = C3419R.C3422id.text_action;
         BaseViewHolder text = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i2, Theme.key_dialogTextBlack).setText(i2, item.getTitle(this.resourceManager));
         if (item instanceof TransactionActionItem.OpenScan) {
-            BaseQuickAdapterExtKt.loadImage(text, C3417R.C3420id.image_action, ((TransactionActionItem.OpenScan) item).getIconUrl(), null, false);
+            BaseQuickAdapterExtKt.loadImage(text, C3419R.C3422id.image_action, ((TransactionActionItem.OpenScan) item).getIconUrl(), null, false);
             return;
         }
-        int i3 = C3417R.C3420id.image_action;
+        int i3 = C3419R.C3422id.image_action;
         BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i3, item.getIcon()), i3, Theme.key_dialogIcon);
     }
 }

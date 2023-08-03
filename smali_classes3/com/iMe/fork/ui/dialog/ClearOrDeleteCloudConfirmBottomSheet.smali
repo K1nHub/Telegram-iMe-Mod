@@ -272,7 +272,7 @@
 .method private final checkCaptcha()V
     .locals 2
 
-    .line 102
+    .line 101
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->getInputEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
@@ -301,24 +301,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 102
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->getInputEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 104
+    .line 103
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->onPassed:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 105
+    .line 104
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     goto :goto_0
 
-    .line 107
+    .line 106
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->getInputEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -380,21 +380,21 @@
 .method private final initDoneButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
     .locals 3
 
-    .line 95
+    .line 94
     new-instance v0, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;-><init>(Landroid/content/Context;)V
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 95
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 96
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 97
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->getBackgroundPublic()Landroid/view/View;
 
     move-result-object v1
@@ -405,7 +405,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 98
+    .line 97
     sget v1, Lorg/telegram/messenger/R$string;->cloud_clear_or_delete_captcha_alert_positive_button:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -424,7 +424,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 97
+    .line 96
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->checkCaptcha()V
 
     return-void
@@ -480,27 +480,26 @@
     .line 82
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 84
+    .line 83
     sget v2, Lorg/telegram/messenger/R$string;->cloud_clear_or_delete_captcha_alert_message:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 83
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 85
+    .line 84
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
 
     const/4 v2, 0x1
 
     const/high16 v3, 0x41900000    # 18.0f
 
-    .line 86
+    .line 85
     invoke-virtual {v0, v2, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 87
+    .line 86
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -509,16 +508,16 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 88
+    .line 87
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 89
+    .line 88
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
@@ -527,7 +526,7 @@
 
     const/16 v2, 0x14
 
-    .line 90
+    .line 89
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -536,10 +535,10 @@
 
     const/high16 v2, 0x3fc00000    # 1.5f
 
-    .line 91
+    .line 90
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 92
+    .line 91
     new-instance v2, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
@@ -556,7 +555,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 91
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->getDoneButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
     move-result-object p0

@@ -13,18 +13,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInAccount> CREATOR = new zbc();
-    @SafeParcelable.Field(defaultValue = "", m779id = 4)
+    @SafeParcelable.Field(defaultValue = "", m797id = 4)
     @Deprecated
     String zba;
-    @SafeParcelable.Field(defaultValue = "", m779id = 8)
+    @SafeParcelable.Field(defaultValue = "", m797id = 8)
     @Deprecated
     String zbb;
-    @SafeParcelable.Field(getter = "getGoogleSignInAccount", m779id = 7)
+    @SafeParcelable.Field(getter = "getGoogleSignInAccount", m797id = 7)
     private GoogleSignInAccount zbc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SignInAccount(@SafeParcelable.Param(m778id = 4) String str, @SafeParcelable.Param(m778id = 7) GoogleSignInAccount googleSignInAccount, @SafeParcelable.Param(m778id = 8) String str2) {
+    public SignInAccount(@SafeParcelable.Param(m796id = 4) String str, @SafeParcelable.Param(m796id = 7) GoogleSignInAccount googleSignInAccount, @SafeParcelable.Param(m796id = 8) String str2) {
         this.zbc = googleSignInAccount;
         this.zba = Preconditions.checkNotEmpty(str, "8.3 and 8.4 SDKs require non-null email");
         this.zbb = Preconditions.checkNotEmpty(str2, "8.3 and 8.4 SDKs require non-null userId");

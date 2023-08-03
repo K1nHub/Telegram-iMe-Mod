@@ -7,7 +7,7 @@ public final class BinanceUserInfo {
     private final String email;
 
     /* renamed from: id */
-    private final String f396id;
+    private final String f399id;
     private final boolean isVerified;
 
     public static /* synthetic */ BinanceUserInfo copy$default(BinanceUserInfo binanceUserInfo, String str, String str2, boolean z, int i, Object obj) {
@@ -15,7 +15,7 @@ public final class BinanceUserInfo {
             str = binanceUserInfo.email;
         }
         if ((i & 2) != 0) {
-            str2 = binanceUserInfo.f396id;
+            str2 = binanceUserInfo.f399id;
         }
         if ((i & 4) != 0) {
             z = binanceUserInfo.isVerified;
@@ -28,7 +28,7 @@ public final class BinanceUserInfo {
     }
 
     public final String component2() {
-        return this.f396id;
+        return this.f399id;
     }
 
     public final boolean component3() {
@@ -47,14 +47,14 @@ public final class BinanceUserInfo {
         }
         if (obj instanceof BinanceUserInfo) {
             BinanceUserInfo binanceUserInfo = (BinanceUserInfo) obj;
-            return Intrinsics.areEqual(this.email, binanceUserInfo.email) && Intrinsics.areEqual(this.f396id, binanceUserInfo.f396id) && this.isVerified == binanceUserInfo.isVerified;
+            return Intrinsics.areEqual(this.email, binanceUserInfo.email) && Intrinsics.areEqual(this.f399id, binanceUserInfo.f399id) && this.isVerified == binanceUserInfo.isVerified;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.email.hashCode() * 31) + this.f396id.hashCode()) * 31;
+        int hashCode = ((this.email.hashCode() * 31) + this.f399id.hashCode()) * 31;
         boolean z = this.isVerified;
         int i = z;
         if (z != 0) {
@@ -64,14 +64,14 @@ public final class BinanceUserInfo {
     }
 
     public String toString() {
-        return "BinanceUserInfo(email=" + this.email + ", id=" + this.f396id + ", isVerified=" + this.isVerified + ')';
+        return "BinanceUserInfo(email=" + this.email + ", id=" + this.f399id + ", isVerified=" + this.isVerified + ')';
     }
 
     public BinanceUserInfo(String email, String id, boolean z) {
         Intrinsics.checkNotNullParameter(email, "email");
         Intrinsics.checkNotNullParameter(id, "id");
         this.email = email;
-        this.f396id = id;
+        this.f399id = id;
         this.isVerified = z;
     }
 
@@ -80,7 +80,7 @@ public final class BinanceUserInfo {
     }
 
     public final String getId() {
-        return this.f396id;
+        return this.f399id;
     }
 
     public final boolean isVerified() {

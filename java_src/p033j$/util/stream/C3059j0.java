@@ -7,58 +7,58 @@ import p033j$.util.InterfaceC2853s;
 final class C3059j0 extends AbstractC3022d {
 
     /* renamed from: j */
-    private final C3023d0 f1054j;
+    private final C3023d0 f1057j;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C3059j0(C3023d0 c3023d0, AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s) {
         super(abstractC3151y2, interfaceC2853s);
-        this.f1054j = c3023d0;
+        this.f1057j = c3023d0;
     }
 
     C3059j0(C3059j0 c3059j0, InterfaceC2853s interfaceC2853s) {
         super(c3059j0, interfaceC2853s);
-        this.f1054j = c3059j0.f1054j;
+        this.f1057j = c3059j0.f1057j;
     }
 
     /* renamed from: m */
-    private void m386m(Object obj) {
+    private void m404m(Object obj) {
         boolean z;
         C3059j0 c3059j0 = this;
         while (true) {
             if (c3059j0 != null) {
-                AbstractC3034f m406c = c3059j0.m406c();
-                if (m406c != null && m406c.f1022d != c3059j0) {
+                AbstractC3034f m424c = c3059j0.m424c();
+                if (m424c != null && m424c.f1025d != c3059j0) {
                     z = false;
                     break;
                 }
-                c3059j0 = m406c;
+                c3059j0 = m424c;
             } else {
                 z = true;
                 break;
             }
         }
         if (z) {
-            m428l(obj);
+            m446l(obj);
         } else {
-            m429j();
+            m447j();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // p033j$.util.stream.AbstractC3034f
     /* renamed from: a */
-    public Object mo372a() {
-        AbstractC3151y2 abstractC3151y2 = this.f1019a;
-        InterfaceC2946O4 interfaceC2946O4 = (InterfaceC2946O4) this.f1054j.f990e.get();
-        abstractC3151y2.mo288u0(interfaceC2946O4, this.f1020b);
+    public Object mo390a() {
+        AbstractC3151y2 abstractC3151y2 = this.f1022a;
+        InterfaceC2946O4 interfaceC2946O4 = (InterfaceC2946O4) this.f1057j.f993e.get();
+        abstractC3151y2.mo306u0(interfaceC2946O4, this.f1023b);
         Object obj = interfaceC2946O4.get();
-        if (!this.f1054j.f987b) {
+        if (!this.f1057j.f990b) {
             if (obj != null) {
-                m428l(obj);
+                m446l(obj);
             }
             return null;
         } else if (obj != null) {
-            m386m(obj);
+            m404m(obj);
             return obj;
         } else {
             return null;
@@ -68,38 +68,38 @@ final class C3059j0 extends AbstractC3022d {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // p033j$.util.stream.AbstractC3034f
     /* renamed from: f */
-    public AbstractC3034f mo371f(InterfaceC2853s interfaceC2853s) {
+    public AbstractC3034f mo389f(InterfaceC2853s interfaceC2853s) {
         return new C3059j0(this, interfaceC2853s);
     }
 
     @Override // p033j$.util.stream.AbstractC3022d
     /* renamed from: k */
-    protected Object mo370k() {
-        return this.f1054j.f988c;
+    protected Object mo388k() {
+        return this.f1057j.f991c;
     }
 
     @Override // p033j$.util.stream.AbstractC3034f, java.util.concurrent.CountedCompleter
     public void onCompletion(CountedCompleter countedCompleter) {
-        if (this.f1054j.f987b) {
-            C3059j0 c3059j0 = (C3059j0) this.f1022d;
+        if (this.f1057j.f990b) {
+            C3059j0 c3059j0 = (C3059j0) this.f1025d;
             C3059j0 c3059j02 = null;
             while (true) {
                 if (c3059j0 != c3059j02) {
-                    Object mo407b = c3059j0.mo407b();
-                    if (mo407b != null && this.f1054j.f989d.test(mo407b)) {
-                        mo403g(mo407b);
-                        m386m(mo407b);
+                    Object mo425b = c3059j0.mo425b();
+                    if (mo425b != null && this.f1057j.f992d.test(mo425b)) {
+                        mo421g(mo425b);
+                        m404m(mo425b);
                         break;
                     }
                     c3059j02 = c3059j0;
-                    c3059j0 = (C3059j0) this.f1023e;
+                    c3059j0 = (C3059j0) this.f1026e;
                 } else {
                     break;
                 }
             }
         }
-        this.f1020b = null;
-        this.f1023e = null;
-        this.f1022d = null;
+        this.f1023b = null;
+        this.f1026e = null;
+        this.f1025d = null;
     }
 }

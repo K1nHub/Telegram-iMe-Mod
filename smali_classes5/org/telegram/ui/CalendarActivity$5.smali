@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/CalendarActivity$5;
-.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
+.super Landroid/view/View;
 .source "CalendarActivity.java"
 
 
@@ -17,93 +17,137 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/CalendarActivity;
 
+.field final synthetic val$daysOfWeek:[Ljava/lang/String;
+
+.field final synthetic val$headerShadowDrawable:Landroid/graphics/drawable/Drawable;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
+.method constructor <init>(Lorg/telegram/ui/CalendarActivity;Landroid/content/Context;[Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 242
+    .line 326
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
+    iput-object p3, p0, Lorg/telegram/ui/CalendarActivity$5;->val$daysOfWeek:[Ljava/lang/String;
+
+    iput-object p4, p0, Lorg/telegram/ui/CalendarActivity$5;->val$headerShadowDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(I)V
-    .locals 1
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 7
 
-    const/4 v0, -0x1
+    .line 330
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    if-ne p1, v0, :cond_2
+    .line 331
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    .line 246
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    move-result v0
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$300(Lorg/telegram/ui/CalendarActivity;)I
+    int-to-float v0, v0
 
-    move-result p1
+    const/high16 v1, 0x40e00000    # 7.0f
 
-    if-nez p1, :cond_1
+    div-float/2addr v0, v1
 
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    const/4 v1, 0x0
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$400(Lorg/telegram/ui/CalendarActivity;)I
+    move v2, v1
 
-    move-result p1
+    :goto_0
+    const/4 v3, 0x7
 
-    if-nez p1, :cond_1
+    if-ge v2, v3, :cond_0
 
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    int-to-float v3, v2
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$500(Lorg/telegram/ui/CalendarActivity;)Z
+    mul-float/2addr v3, v0
 
-    move-result p1
+    const/high16 v4, 0x40000000    # 2.0f
 
-    if-eqz p1, :cond_0
+    div-float v5, v0, v4
+
+    add-float/2addr v3, v5
+
+    .line 334
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v5
+
+    const/4 v6, 0x2
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    int-to-float v5, v5
+
+    div-float/2addr v5, v4
+
+    .line 335
+    iget-object v4, p0, Lorg/telegram/ui/CalendarActivity$5;->val$daysOfWeek:[Ljava/lang/String;
+
+    aget-object v4, v4, v2
+
+    const/4 v6, 0x5
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    add-float/2addr v5, v6
+
+    iget-object v6, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->textPaint2:Landroid/text/TextPaint;
+
+    invoke-virtual {p1, v4, v3, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 253
+    .line 337
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$5;->val$headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    goto :goto_1
+    move-result v2
 
-    .line 247
-    :cond_1
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    const/4 v3, 0x3
 
-    const/4 v0, 0x0
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$502(Lorg/telegram/ui/CalendarActivity;Z)Z
+    move-result v3
 
-    .line 248
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    sub-int/2addr v2, v3
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$302(Lorg/telegram/ui/CalendarActivity;I)I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    .line 249
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    move-result v3
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$402(Lorg/telegram/ui/CalendarActivity;I)I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    .line 250
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    move-result v4
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$600(Lorg/telegram/ui/CalendarActivity;)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 251
-    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$5;->this$0:Lorg/telegram/ui/CalendarActivity;
+    .line 338
+    iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$5;->val$headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$700(Lorg/telegram/ui/CalendarActivity;)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    :cond_2
-    :goto_1
     return-void
 .end method

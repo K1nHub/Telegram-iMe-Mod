@@ -32,12 +32,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;)V
     .locals 0
 
-    .line 734
+    .line 738
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;-><init>()V
 
-    .line 736
+    .line 740
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x0
 
-    .line 740
+    .line 744
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
@@ -64,7 +64,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 741
+    .line 745
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -75,7 +75,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 742
+    .line 746
     invoke-static {v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->access$400(Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;)[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
     move-result-object v2
@@ -86,7 +86,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 743
+    .line 747
     iget-object v2, v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->access$400(Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;)[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
@@ -111,18 +111,18 @@
 .end method
 
 .method public drawInUiThread(Landroid/graphics/Canvas;F)V
-    .locals 10
+    .locals 11
 
-    .line 750
+    .line 754
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v8
 
     const/4 v0, 0x0
 
-    move v9, v0
+    move v10, v0
 
-    .line 751
+    .line 755
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
@@ -132,20 +132,20 @@
 
     move-result v0
 
-    if-ge v9, v0, :cond_1
+    if-ge v10, v0, :cond_1
 
-    .line 752
+    .line 756
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->holders:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;
 
-    .line 753
+    .line 757
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget-boolean v1, v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->spanDrawn:Z
@@ -159,17 +159,19 @@
 
     const/4 v5, 0x0
 
+    const/4 v7, 0x0
+
     move-object v1, p1
 
-    move-wide v2, v7
+    move-wide v2, v8
 
     move v6, p2
 
-    .line 756
-    invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->draw(Landroid/graphics/Canvas;JFFF)V
+    .line 760
+    invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->draw(Landroid/graphics/Canvas;JFFFLandroid/graphics/ColorFilter;)V
 
     :goto_1
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
@@ -182,7 +184,7 @@
 
     const/4 v0, 0x0
 
-    .line 776
+    .line 780
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
@@ -192,7 +194,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 777
+    .line 781
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -201,7 +203,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 778
+    .line 782
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -219,13 +221,13 @@
 
     goto :goto_0
 
-    .line 781
+    .line 785
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 782
+    .line 786
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->view:Landroid/view/View;
@@ -238,7 +240,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 783
+    .line 787
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->view:Landroid/view/View;
@@ -258,7 +260,7 @@
 .method public onPaused()V
     .locals 0
 
-    .line 789
+    .line 793
     invoke-super {p0}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->onPaused()V
 
     return-void
@@ -267,7 +269,7 @@
 .method public onResume()V
     .locals 1
 
-    .line 794
+    .line 798
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->view:Landroid/view/View;
@@ -280,7 +282,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 795
+    .line 799
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->view:Landroid/view/View;
@@ -300,12 +302,12 @@
 .method public prepareDraw(J)V
     .locals 3
 
-    .line 762
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 763
+    .line 767
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->this$0:Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
@@ -316,7 +318,7 @@
 
     const/4 v0, 0x0
 
-    .line 764
+    .line 768
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
@@ -326,7 +328,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 765
+    .line 769
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -335,14 +337,14 @@
 
     check-cast v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;
 
-    .line 766
+    .line 770
     iget-object v2, v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->spanDrawn:Z
 
     if-nez v2, :cond_0
 
-    .line 767
+    .line 771
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk$1;->backgroundHolders:Ljava/util/ArrayList;
 
     add-int/lit8 v2, v0, -0x1
@@ -353,7 +355,7 @@
 
     goto :goto_1
 
-    .line 770
+    .line 774
     :cond_0
     iget v2, p0, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->threadIndex:I
 

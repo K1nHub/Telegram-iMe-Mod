@@ -6,6 +6,7 @@ import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.storage.BasePreferenceHelper;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BasePreference.kt */
 /* loaded from: classes3.dex */
@@ -25,7 +26,22 @@ public abstract class BasePreference implements BasePreferenceHelper {
         this.telegramGateway = telegramGateway;
         this.context = context;
         this.tempOneActionUserId = "";
-        lazy = LazyKt__LazyJVMKt.lazy(new BasePreference$mPref$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<SharedPreferences>() { // from class: com.iMe.storage.data.locale.prefs.impl.BasePreference$mPref$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SharedPreferences invoke() {
+                Context context2;
+                String str;
+                context2 = BasePreference.this.context;
+                str = BasePreference.this.prefName;
+                return context2.getSharedPreferences(str, 0);
+            }
+        });
         this.mPref$delegate = lazy;
     }
 

@@ -3,7 +3,6 @@ package com.iMe.fork.controller;
 import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.ForkTopicsController;
-import com.iMe.fork.enums.Interval;
 import com.iMe.fork.models.backup.Backup;
 import com.iMe.fork.models.backup.BackupMappingKt;
 import com.iMe.fork.models.backup.TopicBackup;
@@ -11,7 +10,6 @@ import com.iMe.storage.data.locale.p027db.dao.main.TopicsDao;
 import com.iMe.storage.data.locale.p027db.model.topics.TopicDb;
 import com.iMe.storage.data.mapper.topics.TopicMappingKt;
 import com.iMe.storage.data.repository.topics.Topic;
-import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.storage.domain.model.topics.TopicModel;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,9 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Pair;
@@ -36,12 +32,18 @@ import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.collections.SetsKt___SetsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
@@ -57,14 +59,11 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, ForkTopicsController> accountInstances = new ConcurrentHashMap<>(5);
     private final Lazy dao$delegate;
-    private boolean isAutoUpdateTopicsCatalogEnabled;
     private boolean isNoTopicFirstEnabled;
     private boolean isTopicsBarAtBottomEnabled;
     private boolean isTopicsBarEnabled;
-    private long lastAutoUpdateTopicsCatalogTime;
     private int lastTopicsCount;
     private long selectedArchiveTopicId;
-    private Interval selectedAutoUpdateTopicsCatalogInterval;
     private long selectedMainTopicId;
     private Map<Long, TopicModel> topics;
 
@@ -75,14 +74,31 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     public ForkTopicsController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new ForkTopicsController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<TopicsDao>() { // from class: com.iMe.fork.controller.ForkTopicsController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.TopicsDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicsDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(TopicsDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.isTopicsBarEnabled = TelegramPreferenceKeys.User.Default.isTopicsBarEnabled();
         this.isTopicsBarAtBottomEnabled = TelegramPreferenceKeys.User.Default.isTopicsBarAtBottomEnabled();
-        this.isAutoUpdateTopicsCatalogEnabled = TelegramPreferenceKeys.User.Default.isAutoUpdateTopicsCatalogEnabled();
-        this.selectedAutoUpdateTopicsCatalogInterval = TelegramPreferenceKeys.User.Default.selectedAutoUpdateTopicsCatalogInterval();
         this.isNoTopicFirstEnabled = TelegramPreferenceKeys.User.Default.isNoTopicFirstEnabled();
-        this.lastAutoUpdateTopicsCatalogTime = TelegramPreferenceKeys.User.Default.lastAutoUpdateTopicsCatalogTime();
         this.selectedMainTopicId = -1L;
         this.selectedArchiveTopicId = -1L;
         this.topics = new LinkedHashMap();
@@ -113,23 +129,6 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         this.isTopicsBarAtBottomEnabled = z;
     }
 
-    public final boolean isAutoUpdateTopicsCatalogEnabled() {
-        return this.isAutoUpdateTopicsCatalogEnabled;
-    }
-
-    public final void setAutoUpdateTopicsCatalogEnabled(boolean z) {
-        this.isAutoUpdateTopicsCatalogEnabled = z;
-    }
-
-    public final Interval getSelectedAutoUpdateTopicsCatalogInterval() {
-        return this.selectedAutoUpdateTopicsCatalogInterval;
-    }
-
-    public final void setSelectedAutoUpdateTopicsCatalogInterval(Interval interval) {
-        Intrinsics.checkNotNullParameter(interval, "<set-?>");
-        this.selectedAutoUpdateTopicsCatalogInterval = interval;
-    }
-
     public final boolean isNoTopicFirstEnabled() {
         return this.isNoTopicFirstEnabled;
     }
@@ -142,20 +141,14 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         Intrinsics.checkNotNullParameter(preferences, "preferences");
         this.isTopicsBarEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isTopicsBarEnabled(), TelegramPreferenceKeys.User.Default.isTopicsBarEnabled());
         this.isTopicsBarAtBottomEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isTopicsBarAtBottomEnabled(), TelegramPreferenceKeys.User.Default.isTopicsBarAtBottomEnabled());
-        this.isAutoUpdateTopicsCatalogEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isAutoUpdateTopicsCatalogEnabled(), TelegramPreferenceKeys.User.Default.isAutoUpdateTopicsCatalogEnabled());
-        this.selectedAutoUpdateTopicsCatalogInterval = Interval.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedAutoUpdateTopicsCatalogInterval(), TelegramPreferenceKeys.User.Default.selectedAutoUpdateTopicsCatalogInterval().name()), TelegramPreferenceKeys.User.Default.selectedAutoUpdateTopicsCatalogInterval());
         this.isNoTopicFirstEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isNoTopicFirstEnabled(), TelegramPreferenceKeys.User.Default.isNoTopicFirstEnabled());
-        this.lastAutoUpdateTopicsCatalogTime = preferences.getLong(TelegramPreferenceKeys.User.lastAutoUpdateTopicsCatalogTime(), TelegramPreferenceKeys.User.Default.lastAutoUpdateTopicsCatalogTime());
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
         edit.putBoolean(TelegramPreferenceKeys.User.isTopicsBarEnabled(), this.isTopicsBarEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isTopicsBarAtBottomEnabled(), this.isTopicsBarAtBottomEnabled);
-        edit.putBoolean(TelegramPreferenceKeys.User.isAutoUpdateTopicsCatalogEnabled(), this.isAutoUpdateTopicsCatalogEnabled);
-        edit.putString(TelegramPreferenceKeys.User.selectedAutoUpdateTopicsCatalogInterval(), this.selectedAutoUpdateTopicsCatalogInterval.name());
         edit.putBoolean(TelegramPreferenceKeys.User.isNoTopicFirstEnabled(), this.isNoTopicFirstEnabled);
-        edit.putLong(TelegramPreferenceKeys.User.lastAutoUpdateTopicsCatalogTime(), this.lastAutoUpdateTopicsCatalogTime);
         edit.apply();
     }
 
@@ -168,12 +161,6 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         }
         if (backup.getTopicsBarAtBottom() != null) {
             this.isTopicsBarAtBottomEnabled = backup.getTopicsBarAtBottom().booleanValue();
-        }
-        if (backup.isAutoUpdateCatalogEnabled() != null) {
-            this.isAutoUpdateTopicsCatalogEnabled = backup.isAutoUpdateCatalogEnabled().booleanValue();
-        }
-        if (backup.getSelectedAutoUpdateCatalogInterval() != null) {
-            this.selectedAutoUpdateTopicsCatalogInterval = Interval.Companion.mapNameToEnum(backup.getSelectedAutoUpdateCatalogInterval(), TelegramPreferenceKeys.User.Default.selectedAutoUpdateTopicsCatalogInterval());
         }
         if (backup.getNoTopicFirst() != null) {
             this.isNoTopicFirstEnabled = backup.getNoTopicFirst().booleanValue();
@@ -271,15 +258,15 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
     public final void filterTopics() {
         boolean z;
-        Collection<TopicModel> topicsList = getTopicsList();
-        int size = topicsList.size();
+        Collection<TopicModel> values = this.topics.values();
+        int size = values.size();
         if (this.lastTopicsCount != size) {
             this.lastTopicsCount = size;
             z = true;
         } else {
             z = false;
         }
-        for (TopicModel topicModel : topicsList) {
+        for (TopicModel topicModel : values) {
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             for (Number number : topicModel.getPresets()) {
@@ -287,7 +274,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog = getMessagesController().getDialog(longValue);
                 if (dialog != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog.f1521id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog.f1524id)) {
                         if (dialog.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue));
                         } else {
@@ -301,7 +288,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog2 = getMessagesController().getDialog(longValue2);
                 if (dialog2 != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog2, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog2.f1521id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog2.f1524id)) {
                         if (dialog2.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue2));
                         } else {
@@ -324,7 +311,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             }
         }
         if (z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.ForkTopicsController$$ExternalSyntheticLambda1
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.ForkTopicsController$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     ForkTopicsController.filterTopics$lambda$10(ForkTopicsController.this);
@@ -336,14 +323,14 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     /* JADX INFO: Access modifiers changed from: private */
     public static final void filterTopics$lambda$10(ForkTopicsController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.topicsDidLoad, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoad, new Object[0]);
     }
 
     public final List<TopicModel> getTopicsNotEmpty(boolean z) {
         List<TopicModel> sortedWith;
-        Collection<TopicModel> topicsList = getTopicsList();
+        Collection<TopicModel> values = this.topics.values();
         ArrayList arrayList = new ArrayList();
-        for (Object obj : topicsList) {
+        for (Object obj : values) {
             TopicModel topicModel = (TopicModel) obj;
             boolean z2 = true;
             if (!z ? topicModel.getFilterDialogs().isEmpty() : topicModel.getFilterArchivedDialogs().isEmpty()) {
@@ -366,9 +353,9 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
     public final List<TopicModel> getAllTopicsNotEmpty() {
         List<TopicModel> sortedWith;
-        Collection<TopicModel> topicsList = getTopicsList();
+        Collection<TopicModel> values = this.topics.values();
         ArrayList arrayList = new ArrayList();
-        for (Object obj : topicsList) {
+        for (Object obj : values) {
             TopicModel topicModel = (TopicModel) obj;
             boolean z = true;
             if (!(!topicModel.getFilterArchivedDialogs().isEmpty()) && !(!topicModel.getFilterDialogs().isEmpty())) {
@@ -392,7 +379,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     public final TopicModel getTopicForDialog(long j) {
         Object obj;
         boolean contains;
-        Iterator<T> it = getTopicsList().iterator();
+        Iterator<T> it = this.topics.values().iterator();
         while (true) {
             if (!it.hasNext()) {
                 obj = null;
@@ -420,9 +407,9 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         List<TopicModel> plus;
         Object obj;
         boolean z;
-        Collection<TopicModel> topicsList = getTopicsList();
+        Collection<TopicModel> values = this.topics.values();
         ArrayList arrayList = new ArrayList();
-        for (Object obj2 : topicsList) {
+        for (Object obj2 : values) {
             if (((TopicModel) obj2).isUserTopic()) {
                 arrayList.add(obj2);
             }
@@ -436,7 +423,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             }
         });
         ArrayList arrayList2 = new ArrayList();
-        for (Object obj3 : topicsList) {
+        for (Object obj3 : values) {
             if (true ^ ((TopicModel) obj3).isUserTopic()) {
                 arrayList2.add(obj3);
             }
@@ -485,7 +472,28 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             this.selectedMainTopicId = j;
         }
         getMessagesController().sortDialogs(null);
-        getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00fa, code lost:
+        if (r0 == null) goto L66;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final void updateCatalog(com.iMe.fork.utils.Callbacks$Callback1<java.lang.Boolean> r17) {
+        /*
+            Method dump skipped, instructions count: 320
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.ForkTopicsController.updateCatalog(com.iMe.fork.utils.Callbacks$Callback1):void");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void updateCatalog$lambda$28(ForkTopicsController this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoad, new Object[0]);
     }
 
     public final long getSelectedTopicId(boolean z) {
@@ -498,7 +506,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
     public final long calcNextId() {
         Object obj;
-        Iterator<T> it = getTopicsList().iterator();
+        Iterator<T> it = this.topics.values().iterator();
         if (it.hasNext()) {
             Object next = it.next();
             if (it.hasNext()) {
@@ -527,7 +535,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
     public final int calcNextOrder() {
         Object obj;
-        Iterator<T> it = getTopicsList().iterator();
+        Iterator<T> it = this.topics.values().iterator();
         if (it.hasNext()) {
             Object next = it.next();
             if (it.hasNext()) {
@@ -557,47 +565,18 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     public final List<TopicBackup> getTopicsBackupData() {
         int collectionSizeOrDefault;
         List<TopicBackup> mutableList;
-        Collection<TopicModel> topicsList = getTopicsList();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(topicsList, 10);
+        Collection<TopicModel> values = this.topics.values();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(values, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (TopicModel topicModel : topicsList) {
+        for (TopicModel topicModel : values) {
             arrayList.add(BackupMappingKt.mapToBackup(topicModel));
         }
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
         return mutableList;
     }
 
-    public final Collection<TopicModel> getTopicsList() {
-        return this.topics.values();
-    }
-
     public final TopicModel getTopic(long j) {
         return this.topics.get(Long.valueOf(j));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0103, code lost:
-        if (r0 == null) goto L75;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void updateCatalog(boolean r17, com.iMe.fork.utils.Callbacks$Callback1<java.lang.Boolean> r18) {
-        /*
-            Method dump skipped, instructions count: 329
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.ForkTopicsController.updateCatalog(boolean, com.iMe.fork.utils.Callbacks$Callback1):void");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateCatalog$lambda$32(ForkTopicsController this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.topicsDidLoad, new Object[0]);
-    }
-
-    public final void resetLastAutoUpdateCatalogTime() {
-        this.lastAutoUpdateTopicsCatalogTime = DateExtKt.now();
     }
 
     public static /* synthetic */ TopicModel createNewTopic$default(ForkTopicsController forkTopicsController, Topic topic, long j, int i, int i2, Object obj) {
@@ -644,7 +623,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.ForkTopicsController$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ForkTopicsController.saveTopic$lambda$33(ForkTopicsController.this, topicModel);
+                    ForkTopicsController.saveTopic$lambda$32(ForkTopicsController.this, topicModel);
                 }
             });
             return;
@@ -654,7 +633,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void saveTopic$lambda$33(ForkTopicsController this$0, TopicModel topic) {
+    public static final void saveTopic$lambda$32(ForkTopicsController this$0, TopicModel topic) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(topic, "$topic");
         this$0.getDao().removeTopic(this$0.getUserConfig().clientUserId, topic.getTopicId());
@@ -684,10 +663,6 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         dao.insert((List) arrayList);
     }
 
-    private final boolean needSkipAutoUpdateCatalog() {
-        return DateExtKt.now() - this.lastAutoUpdateTopicsCatalogTime < TimeUnit.DAYS.toMillis((long) this.selectedAutoUpdateTopicsCatalogInterval.getDays());
-    }
-
     /* compiled from: ForkTopicsController.kt */
     /* loaded from: classes3.dex */
     public static final class Companion {
@@ -704,14 +679,26 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             return (ForkTopicsController) tmp0.invoke(obj);
         }
 
-        public final ForkTopicsController getInstance(int i) {
+        public final ForkTopicsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = ForkTopicsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final ForkTopicsController$Companion$getInstance$1 forkTopicsController$Companion$getInstance$1 = new ForkTopicsController$Companion$getInstance$1(i);
+            final Function1<Integer, ForkTopicsController> function1 = new Function1<Integer, ForkTopicsController>() { // from class: com.iMe.fork.controller.ForkTopicsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final ForkTopicsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new ForkTopicsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.ForkTopicsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -723,7 +710,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
@@ -731,19 +718,18 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         }
     }
 
-    public final void setTopics(List<TopicDb> newTopics) {
+    private final void setTopics(List<TopicDb> list) {
         int collectionSizeOrDefault;
         int mapCapacity;
         int coerceAtLeast;
         Map<Long, TopicModel> mutableMap;
-        Intrinsics.checkNotNullParameter(newTopics, "newTopics");
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(newTopics, 10);
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault);
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
-        for (TopicDb topicDb : newTopics) {
-            Pair m85to = TuplesKt.m85to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+        for (TopicDb topicDb : list) {
+            Pair m103to = TuplesKt.m103to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.topics = mutableMap;

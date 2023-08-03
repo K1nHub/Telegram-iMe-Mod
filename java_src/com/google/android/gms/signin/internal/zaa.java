@@ -13,11 +13,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zaa extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zaa> CREATOR = new zab();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getConnectionResultCode", m779id = 2)
+    @SafeParcelable.Field(getter = "getConnectionResultCode", m797id = 2)
     private int zab;
-    @SafeParcelable.Field(getter = "getRawAuthResolutionIntent", m779id = 3)
+    @SafeParcelable.Field(getter = "getRawAuthResolutionIntent", m797id = 3)
     private Intent zac;
 
     public zaa() {
@@ -40,7 +40,7 @@ public final class zaa extends AbstractSafeParcelable implements Result {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zaa(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) Intent intent) {
+    public zaa(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) Intent intent) {
         this.zaa = i;
         this.zab = i2;
         this.zac = intent;

@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
@@ -42,6 +42,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
     ActionBarMenuSubItem oneMonth;
     ActionBarMenuSubItem oneWeek;
     BaseFragment parentFragment;
+    ActionBarMenuSubItem twoDay;
 
     /* renamed from: org.telegram.ui.KeepMediaPopupView$Callback */
     /* loaded from: classes5.dex */
@@ -55,15 +56,17 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         this.parentFragment = baseFragment;
         this.cacheByChatsController = baseFragment.getMessagesController().getCacheByChatsController();
         setFitItems(true);
-        this.oneDay = ActionBarMenuItem.addItem(this, C3417R.C3419drawable.msg_autodelete_1d, LocaleController.formatPluralString("Days", 1, new Object[0]), false, null);
-        this.oneWeek = ActionBarMenuItem.addItem(this, C3417R.C3419drawable.msg_autodelete_1w, LocaleController.formatPluralString("Weeks", 1, new Object[0]), false, null);
-        this.oneMonth = ActionBarMenuItem.addItem(this, C3417R.C3419drawable.msg_autodelete_1m, LocaleController.formatPluralString("Months", 1, new Object[0]), false, null);
-        this.forever = ActionBarMenuItem.addItem(this, C3417R.C3419drawable.msg_cancel, LocaleController.getString("AutoDeleteMediaNever", C3417R.string.AutoDeleteMediaNever), false, null);
-        ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this, C3417R.C3419drawable.msg_delete, LocaleController.getString("DeleteException", C3417R.string.DeleteException), false, null);
+        this.oneDay = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_autodelete_1d, LocaleController.formatPluralString("Days", 1, new Object[0]), false, null);
+        this.twoDay = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_autodelete_2d, LocaleController.formatPluralString("Days", 2, new Object[0]), false, null);
+        this.oneWeek = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_autodelete_1w, LocaleController.formatPluralString("Weeks", 1, new Object[0]), false, null);
+        this.oneMonth = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_autodelete_1m, LocaleController.formatPluralString("Months", 1, new Object[0]), false, null);
+        this.forever = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_cancel, LocaleController.getString("AutoDeleteMediaNever", C3419R.string.AutoDeleteMediaNever), false, null);
+        ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this, C3419R.C3421drawable.msg_delete, LocaleController.getString("DeleteException", C3419R.string.DeleteException), false, null);
         this.delete = addItem;
         int i = Theme.key_text_RedRegular;
         addItem.setColors(Theme.getColor(i), Theme.getColor(i));
         this.checkItems.add(new CheckItem(this.oneDay, CacheByChatsController.KEEP_MEDIA_ONE_DAY));
+        this.checkItems.add(new CheckItem(this.twoDay, CacheByChatsController.KEEP_MEDIA_TWO_DAY));
         this.checkItems.add(new CheckItem(this.oneWeek, CacheByChatsController.KEEP_MEDIA_ONE_WEEK));
         this.checkItems.add(new CheckItem(this.oneMonth, CacheByChatsController.KEEP_MEDIA_ONE_MONTH));
         this.checkItems.add(new CheckItem(this.forever, CacheByChatsController.KEEP_MEDIA_FOREVER));
@@ -72,9 +75,9 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         this.gap = frameLayout;
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuSeparator));
         View view = new View(context);
-        view.setBackground(Theme.getThemedDrawableByKey(context, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow, null));
+        view.setBackground(Theme.getThemedDrawableByKey(context, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow, null));
         this.gap.addView(view, LayoutHelper.createFrame(-1, -1));
-        this.gap.setTag(C3417R.C3420id.fit_width_tag, 1);
+        this.gap.setTag(C3419R.C3422id.fit_width_tag, 1);
         addView(this.gap, LayoutHelper.createLinear(-1, 8));
         ExceptionsView exceptionsView = new ExceptionsView(context);
         this.exceptionsView = exceptionsView;
@@ -96,13 +99,13 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         }
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
         this.description = linksTextView;
-        linksTextView.setTag(C3417R.C3420id.fit_width_tag, 1);
-        linksTextView.setPadding(AndroidUtilities.m54dp(13), 0, AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(8));
+        linksTextView.setTag(C3419R.C3422id.fit_width_tag, 1);
+        linksTextView.setPadding(AndroidUtilities.m72dp(13), 0, AndroidUtilities.m72dp(13), AndroidUtilities.m72dp(8));
         linksTextView.setTextSize(1, 13.0f);
         linksTextView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
         linksTextView.setMovementMethod(LinkMovementMethod.getInstance());
         linksTextView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
-        linksTextView.setText(LocaleController.getString("KeepMediaPopupDescription", C3417R.string.KeepMediaPopupDescription));
+        linksTextView.setText(LocaleController.getString("KeepMediaPopupDescription", C3419R.string.KeepMediaPopupDescription));
         addView((View) linksTextView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 0, 8, 0, 0));
     }
 
@@ -202,18 +205,31 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
 
     public void update(int i) {
         this.currentType = i;
+        if (i == 3) {
+            this.twoDay.setVisibility(0);
+            this.oneMonth.setVisibility(8);
+            this.gap.setVisibility(8);
+            this.exceptionsView.setVisibility(8);
+            this.description.setVisibility(8);
+        } else {
+            this.twoDay.setVisibility(8);
+            this.oneMonth.setVisibility(0);
+            this.gap.setVisibility(0);
+            this.exceptionsView.setVisibility(0);
+            this.description.setVisibility(0);
+        }
         ArrayList<CacheByChatsController.KeepMediaException> keepMediaExceptions = this.cacheByChatsController.getKeepMediaExceptions(i);
         this.exceptions = keepMediaExceptions;
         if (keepMediaExceptions.isEmpty()) {
-            this.exceptionsView.titleView.setText(LocaleController.getString("AddAnException", C3417R.string.AddAnException));
-            this.exceptionsView.titleView.setRightPadding(AndroidUtilities.m54dp(8));
+            this.exceptionsView.titleView.setText(LocaleController.getString("AddAnException", C3419R.string.AddAnException));
+            this.exceptionsView.titleView.setRightPadding(AndroidUtilities.m72dp(8));
             this.exceptionsView.avatarsImageView.setObject(0, this.parentFragment.getCurrentAccount(), null);
             this.exceptionsView.avatarsImageView.setObject(1, this.parentFragment.getCurrentAccount(), null);
             this.exceptionsView.avatarsImageView.setObject(2, this.parentFragment.getCurrentAccount(), null);
             this.exceptionsView.avatarsImageView.commitTransition(false);
         } else {
             int min = Math.min(3, this.exceptions.size());
-            this.exceptionsView.titleView.setRightPadding(AndroidUtilities.m54dp((Math.max(0, min - 1) * 12) + 64));
+            this.exceptionsView.titleView.setRightPadding(AndroidUtilities.m72dp((Math.max(0, min - 1) * 12) + 64));
             this.exceptionsView.titleView.setText(LocaleController.formatPluralString("ExceptionShort", this.exceptions.size(), Integer.valueOf(this.exceptions.size())));
             for (int i2 = 0; i2 < min; i2++) {
                 this.exceptionsView.avatarsImageView.setObject(i2, this.parentFragment.getCurrentAccount(), this.parentFragment.getMessagesController().getUserOrChat(this.exceptions.get(i2).dialogId));
@@ -247,14 +263,14 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
             this.titleView = simpleTextView;
             simpleTextView.setTextSize(16);
             this.titleView.setEllipsizeByGradient(true);
-            this.titleView.setRightPadding(AndroidUtilities.m54dp(68));
+            this.titleView.setRightPadding(AndroidUtilities.m72dp(68));
             this.titleView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
             addView(this.titleView, LayoutHelper.createFrame(0, -2, 19, 19, 0, 19, 0));
             AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
             this.avatarsImageView = avatarsImageView;
             avatarsImageView.avatarsDrawable.setShowSavedMessages(true);
             this.avatarsImageView.setStyle(11);
-            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m54dp(22));
+            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m72dp(22));
             addView(this.avatarsImageView, LayoutHelper.createFrame(56, -1, 21, 0, 0, 4, 0));
             setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector), 0, 4));
         }
@@ -287,7 +303,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
     /* JADX INFO: Access modifiers changed from: private */
     public void updateAvatarsPosition() {
         if (this.exceptions != null) {
-            this.exceptionsView.avatarsImageView.setTranslationX(AndroidUtilities.m54dp(12) * (3 - Math.min(3, this.exceptions.size())));
+            this.exceptionsView.avatarsImageView.setTranslationX(AndroidUtilities.m72dp(12) * (3 - Math.min(3, this.exceptions.size())));
         }
     }
 

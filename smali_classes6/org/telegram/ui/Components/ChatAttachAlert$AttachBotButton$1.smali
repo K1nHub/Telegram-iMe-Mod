@@ -30,12 +30,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;Landroid/content/Context;Lorg/telegram/ui/Components/ChatAttachAlert;)V
     .locals 0
 
-    .line 1171
+    .line 1201
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    .line 1173
+    .line 1203
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     sget-object p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton$1$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton$1$$ExternalSyntheticLambda0;
@@ -48,29 +48,29 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
     .locals 0
 
-    .line 1174
+    .line 1204
     invoke-virtual {p0}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    .line 1175
+    .line 1205
     instance-of p1, p0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_0
 
-    .line 1176
+    .line 1206
     check-cast p0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1177
+    .line 1207
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
     const/4 p2, 0x0
 
-    .line 1178
+    .line 1208
     invoke-virtual {p0, p2, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(FZ)V
 
     :cond_0
@@ -82,10 +82,10 @@
 .method public setScaleX(F)V
     .locals 0
 
-    .line 1185
+    .line 1215
     invoke-super {p0, p1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1186
+    .line 1216
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

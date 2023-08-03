@@ -45,7 +45,10 @@
 .method public abstract isInScheduleMode()Z
 .end method
 
-.method public abstract needCopy()Z
+.method public abstract isStoryReply()Z
+.end method
+
+.method public abstract needCopy(Lorg/telegram/tgnet/TLRPC$Document;)Z
 .end method
 
 .method public abstract needMenu()Z

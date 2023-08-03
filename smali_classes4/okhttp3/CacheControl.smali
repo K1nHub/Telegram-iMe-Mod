@@ -295,7 +295,7 @@
 
     if-eqz v1, :cond_4
 
-    const-string v1, "private, "
+    const-string/jumbo v1, "private, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -305,7 +305,7 @@
 
     if-eqz v1, :cond_5
 
-    const-string v1, "public, "
+    const-string/jumbo v1, "public, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -357,7 +357,7 @@
 
     if-eqz v1, :cond_9
 
-    const-string v1, "only-if-cached, "
+    const-string/jumbo v1, "only-if-cached, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -11,6 +11,8 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntProgression;
 import kotlin.ranges.IntRange;
@@ -447,7 +449,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             if (indexOf$default < 0) {
                 return null;
             }
-            return TuplesKt.m85to(Integer.valueOf(indexOf$default), str);
+            return TuplesKt.m103to(Integer.valueOf(indexOf$default), str);
         }
         if (z2) {
             lastIndex = getLastIndex(charSequence);
@@ -482,7 +484,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first += step;
                     } else {
-                        return TuplesKt.m85to(Integer.valueOf(first), str3);
+                        return TuplesKt.m103to(Integer.valueOf(first), str3);
                     }
                 }
             }
@@ -511,7 +513,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first2 += step2;
                     } else {
-                        return TuplesKt.m85to(Integer.valueOf(first2), str5);
+                        return TuplesKt.m103to(Integer.valueOf(first2), str5);
                     }
                 }
             }
@@ -644,9 +646,29 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return rangesDelimitedBy$StringsKt__StringsKt(charSequence, cArr, i, z, i2);
     }
 
-    private static final Sequence<IntRange> rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, char[] cArr, int i, boolean z, int i2) {
+    private static final Sequence<IntRange> rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, final char[] cArr, int i, final boolean z, int i2) {
         requireNonNegativeLimit(i2);
-        return new DelimitedRangesSequence(charSequence, i, i2, new StringsKt__StringsKt$rangesDelimitedBy$1(cArr, z));
+        return new DelimitedRangesSequence(charSequence, i, i2, new Function2<CharSequence, Integer, Pair<? extends Integer, ? extends Integer>>() { // from class: kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Pair<? extends Integer, ? extends Integer> invoke(CharSequence charSequence2, Integer num) {
+                return invoke(charSequence2, num.intValue());
+            }
+
+            public final Pair<Integer, Integer> invoke(CharSequence $receiver, int i3) {
+                Intrinsics.checkNotNullParameter($receiver, "$this$$receiver");
+                int indexOfAny = StringsKt__StringsKt.indexOfAny($receiver, cArr, i3, z);
+                if (indexOfAny < 0) {
+                    return null;
+                }
+                return TuplesKt.m103to(Integer.valueOf(indexOfAny), 1);
+            }
+        });
     }
 
     static /* synthetic */ Sequence rangesDelimitedBy$StringsKt__StringsKt$default(CharSequence charSequence, String[] strArr, int i, boolean z, int i2, int i3, Object obj) {
@@ -662,11 +684,32 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return rangesDelimitedBy$StringsKt__StringsKt(charSequence, strArr, i, z, i2);
     }
 
-    private static final Sequence<IntRange> rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, String[] strArr, int i, boolean z, int i2) {
-        List asList;
+    private static final Sequence<IntRange> rangesDelimitedBy$StringsKt__StringsKt(CharSequence charSequence, String[] strArr, int i, final boolean z, int i2) {
+        final List asList;
         requireNonNegativeLimit(i2);
         asList = ArraysKt___ArraysJvmKt.asList(strArr);
-        return new DelimitedRangesSequence(charSequence, i, i2, new StringsKt__StringsKt$rangesDelimitedBy$2(asList, z));
+        return new DelimitedRangesSequence(charSequence, i, i2, new Function2<CharSequence, Integer, Pair<? extends Integer, ? extends Integer>>() { // from class: kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Pair<? extends Integer, ? extends Integer> invoke(CharSequence charSequence2, Integer num) {
+                return invoke(charSequence2, num.intValue());
+            }
+
+            public final Pair<Integer, Integer> invoke(CharSequence $receiver, int i3) {
+                Pair findAnyOf$StringsKt__StringsKt;
+                Intrinsics.checkNotNullParameter($receiver, "$this$$receiver");
+                findAnyOf$StringsKt__StringsKt = StringsKt__StringsKt.findAnyOf$StringsKt__StringsKt($receiver, asList, i3, z, false);
+                if (findAnyOf$StringsKt__StringsKt != null) {
+                    return TuplesKt.m103to(findAnyOf$StringsKt__StringsKt.getFirst(), Integer.valueOf(((String) findAnyOf$StringsKt__StringsKt.getSecond()).length()));
+                }
+                return null;
+            }
+        });
     }
 
     public static final void requireNonNegativeLimit(int i) {
@@ -686,11 +729,23 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return splitToSequence(charSequence, strArr, z, i);
     }
 
-    public static final Sequence<String> splitToSequence(CharSequence charSequence, String[] delimiters, boolean z, int i) {
+    public static final Sequence<String> splitToSequence(final CharSequence charSequence, String[] delimiters, boolean z, int i) {
         Sequence<String> map;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(delimiters, "delimiters");
-        map = SequencesKt___SequencesKt.map(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null), new StringsKt__StringsKt$splitToSequence$1(charSequence));
+        map = SequencesKt___SequencesKt.map(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null), new Function1<IntRange, String>() { // from class: kotlin.text.StringsKt__StringsKt$splitToSequence$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final String invoke(IntRange it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return StringsKt__StringsKt.substring(charSequence, it);
+            }
+        });
         return map;
     }
 

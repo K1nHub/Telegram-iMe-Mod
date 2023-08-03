@@ -28,7 +28,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
     int currentAccount;
     int keyboardSize;
     private int lastH;
-    private LinearLayout linearLayout;
+    public LinearLayout linearLayout;
     boolean preventMoving;
     private RadialProgressView progressBar;
     private boolean progressShowing;
@@ -161,6 +161,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         if (getVisibility() != i && i == 0) {
             if (this.progressShowing) {
                 this.linearLayout.animate().alpha(BitmapDescriptorFactory.HUE_RED).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();
+                this.progressView.animate().setListener(null).cancel();
                 this.progressView.setVisibility(0);
                 this.progressView.setAlpha(1.0f);
             } else {
@@ -232,7 +233,7 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
         String str = null;
         tLRPC$Document2 = null;
         tLRPC$Document2 = null;
-        if (this.stickerType == 2) {
+        if (this.stickerType == 16) {
             tLRPC$Document = MediaDataController.getInstance(this.currentAccount).getEmojiAnimatedSticker("👍");
             tLRPC$TL_messages_stickerSet = null;
         } else {
@@ -283,22 +284,22 @@ public class StickerEmptyView extends FrameLayout implements NotificationCenter.
                 z = false;
             }
             this.keyboardSize = i;
-            float m54dp = (-(i >> 1)) + (i > 0 ? AndroidUtilities.m54dp(20) : 0);
+            float m72dp = (-(i >> 1)) + (i > 0 ? AndroidUtilities.m72dp(20) : 0);
             if (z) {
-                ViewPropertyAnimator translationY = this.linearLayout.animate().translationY(m54dp);
+                ViewPropertyAnimator translationY = this.linearLayout.animate().translationY(m72dp);
                 CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
                 translationY.setInterpolator(cubicBezierInterpolator).setDuration(250L);
                 RadialProgressView radialProgressView = this.progressBar;
                 if (radialProgressView != null) {
-                    radialProgressView.animate().translationY(m54dp).setInterpolator(cubicBezierInterpolator).setDuration(250L);
+                    radialProgressView.animate().translationY(m72dp).setInterpolator(cubicBezierInterpolator).setDuration(250L);
                     return;
                 }
                 return;
             }
-            this.linearLayout.setTranslationY(m54dp);
+            this.linearLayout.setTranslationY(m72dp);
             RadialProgressView radialProgressView2 = this.progressBar;
             if (radialProgressView2 != null) {
-                radialProgressView2.setTranslationY(m54dp);
+                radialProgressView2.setTranslationY(m72dp);
             }
         }
     }

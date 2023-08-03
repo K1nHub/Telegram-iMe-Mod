@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;Ljava/lang/String;)V
     .locals 0
 
-    .line 1720
+    .line 1748
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
@@ -35,12 +35,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
-    .line 1723
+    .line 1751
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6300(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6000(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
 
     move-result p1
 
@@ -64,14 +64,14 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->openByUserName(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
 
-    .line 1724
+    .line 1752
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->onCloseByLink()V
 
-    .line 1725
+    .line 1753
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$2;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;

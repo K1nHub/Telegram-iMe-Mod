@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
 
 # instance fields
@@ -22,14 +22,20 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final didSelectCloudDialog(J)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda136;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Uv_xIgCzDX8Dm3X1jVP7pwY7ZPA(Lorg/telegram/ui/ChatActivity;J)V
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$8RCTkVdYHVi3llzu_nWCd2kQneE(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;)V
+    return-void
+.end method
+
+.method public synthetic onAlbumCreatorOpened()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     return-void
 .end method

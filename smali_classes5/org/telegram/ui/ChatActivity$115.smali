@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 25418
+    .line 25484
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,6 +43,16 @@
     return v0
 .end method
 
+.method public synthetic clipWithGradient(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getBottomOffset(I)I
     .locals 2
 
@@ -54,7 +64,7 @@
 
     return p1
 
-    .line 25425
+    .line 25491
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -68,7 +78,7 @@
 
     if-nez p1, :cond_4
 
-    .line 25426
+    .line 25492
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
@@ -106,7 +116,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 25427
+    .line 25493
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -128,7 +138,7 @@
 
     goto :goto_0
 
-    .line 25429
+    .line 25495
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -143,12 +153,12 @@
     :cond_4
     const/16 p1, 0x33
 
-    .line 25432
+    .line 25498
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 25434
+    .line 25500
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -160,7 +170,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 25435
+    .line 25501
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$10500(Lorg/telegram/ui/ChatActivity;)F
@@ -188,7 +198,7 @@
     :cond_5
     int-to-float p1, p1
 
-    .line 25438
+    .line 25504
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$18500(Lorg/telegram/ui/ChatActivity;)F
@@ -201,7 +211,7 @@
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    .line 25439
+    .line 25505
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -214,7 +224,7 @@
 .method public getTopOffset(I)I
     .locals 2
 
-    .line 25444
+    .line 25510
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$115;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$46900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;

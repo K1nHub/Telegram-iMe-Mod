@@ -11,23 +11,23 @@ import java.util.Arrays;
 /* loaded from: classes3.dex */
 public final class zzo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzo> CREATOR = new zzp();
-    @SafeParcelable.Field(m779id = 1)
+    @SafeParcelable.Field(m797id = 1)
     public final String zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final String zzb;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final zziv zzc;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     public final String zzd;
-    @SafeParcelable.Field(m779id = 5)
+    @SafeParcelable.Field(m797id = 5)
     public final String zze;
-    @SafeParcelable.Field(m779id = 6)
+    @SafeParcelable.Field(m797id = 6)
     public final Float zzf;
-    @SafeParcelable.Field(m779id = 7)
+    @SafeParcelable.Field(m797id = 7)
     public final zzs zzg;
 
     @SafeParcelable.Constructor
-    public zzo(@SafeParcelable.Param(m778id = 1) String str, @SafeParcelable.Param(m778id = 2) String str2, @SafeParcelable.Param(m778id = 3) zziv zzivVar, @SafeParcelable.Param(m778id = 4) String str3, @SafeParcelable.Param(m778id = 5) String str4, @SafeParcelable.Param(m778id = 6) Float f, @SafeParcelable.Param(m778id = 7) zzs zzsVar) {
+    public zzo(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) zziv zzivVar, @SafeParcelable.Param(m796id = 4) String str3, @SafeParcelable.Param(m796id = 5) String str4, @SafeParcelable.Param(m796id = 6) Float f, @SafeParcelable.Param(m796id = 7) zzs zzsVar) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = zzivVar;

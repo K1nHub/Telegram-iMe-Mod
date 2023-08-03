@@ -2240,7 +2240,7 @@
     :cond_0
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "output buffer too short"
+    const-string/jumbo p2, "output buffer too short"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

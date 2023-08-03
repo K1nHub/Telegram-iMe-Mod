@@ -232,11 +232,17 @@ public class AsyncQueue {
         return enqueue(new Callable() { // from class: com.google.firebase.firestore.util.AsyncQueue$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Void run;
-                run = runnable.run();
-                return run;
+                Void lambda$enqueue$2;
+                lambda$enqueue$2 = AsyncQueue.lambda$enqueue$2(runnable);
+                return lambda$enqueue$2;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Void lambda$enqueue$2(Runnable runnable) throws Exception {
+        runnable.run();
+        return null;
     }
 
     public boolean isShuttingDown() {

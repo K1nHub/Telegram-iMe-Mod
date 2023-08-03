@@ -55,26 +55,30 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 3
+    .locals 4
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 29
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
     const-string v1, "SpoilerEffectBitmapFactory"
 
-    invoke-direct {v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x1
+
+    const/4 v3, 0x3
+
+    invoke-direct {v0, v1, v2, v3}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;ZI)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 37
+    .line 38
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 41
+    .line 42
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v0
@@ -95,7 +99,7 @@
 
     move-result v0
 
-    .line 42
+    .line 43
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v1, Landroid/graphics/Point;->x:I
@@ -124,14 +128,14 @@
 
     const/16 v1, 0x64
 
-    .line 43
+    .line 44
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     if-ge v0, v2, :cond_1
 
-    .line 44
+    .line 45
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -145,19 +149,19 @@
 .method public static getInstance()Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
     .locals 1
 
-    .line 22
+    .line 23
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->factory:Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
     if-nez v0, :cond_0
 
-    .line 23
+    .line 24
     new-instance v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->factory:Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
-    .line 25
+    .line 26
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->factory:Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
@@ -167,15 +171,15 @@
 .method private synthetic lambda$checkUpdate$0(Landroid/graphics/Bitmap;)V
     .locals 3
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderBitmap:Landroid/graphics/Bitmap;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->bufferBitmap:Landroid/graphics/Bitmap;
 
-    .line 110
+    .line 111
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderBitmap:Landroid/graphics/Bitmap;
 
-    .line 111
+    .line 112
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderPaint:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/BitmapShader;
@@ -190,7 +194,7 @@
 
     const/4 p1, 0x0
 
-    .line 112
+    .line 113
     iput-boolean p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->isRunning:Z
 
     return-void
@@ -201,7 +205,7 @@
 
     if-nez p1, :cond_0
 
-    .line 91
+    .line 92
     iget p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->size:I
 
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -210,7 +214,7 @@
 
     move-result-object p1
 
-    .line 93
+    .line 94
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->backgroundBitmap:Landroid/graphics/Bitmap;
 
@@ -218,7 +222,7 @@
 
     if-nez v0, :cond_1
 
-    .line 94
+    .line 95
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->size:I
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -231,17 +235,17 @@
 
     goto :goto_0
 
-    .line 96
+    .line 97
     :cond_1
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 98
+    .line 99
     :goto_0
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 99
+    .line 100
     new-instance v2, Landroid/graphics/Canvas;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->backgroundBitmap:Landroid/graphics/Bitmap;
@@ -260,7 +264,7 @@
     :goto_2
     if-ge v5, v4, :cond_2
 
-    .line 102
+    .line 103
     iget-object v6, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderSpoilerEffects:Ljava/util/ArrayList;
 
     mul-int/lit8 v7, v3, 0xa
@@ -284,11 +288,11 @@
 
     goto :goto_1
 
-    .line 105
+    .line 106
     :cond_3
     invoke-virtual {p1, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 106
+    .line 107
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->backgroundBitmap:Landroid/graphics/Bitmap;
 
     const/4 v2, 0x0
@@ -297,7 +301,7 @@
 
     invoke-virtual {v0, v1, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 108
+    .line 109
     new-instance v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;Landroid/graphics/Bitmap;)V
@@ -312,12 +316,12 @@
 .method public checkUpdate()V
     .locals 4
 
-    .line 83
+    .line 84
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 84
+    .line 85
     iget-wide v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->lastUpdateTime:J
 
     sub-long/2addr v0, v2
@@ -332,7 +336,7 @@
 
     if-nez v0, :cond_0
 
-    .line 85
+    .line 86
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -341,13 +345,13 @@
 
     const/4 v0, 0x1
 
-    .line 86
+    .line 87
     iput-boolean v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->isRunning:Z
 
-    .line 87
+    .line 88
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->bufferBitmap:Landroid/graphics/Bitmap;
 
-    .line 88
+    .line 89
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory$$ExternalSyntheticLambda0;
@@ -363,12 +367,12 @@
 .method getPaint()Landroid/graphics/Paint;
     .locals 13
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderBitmap:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_4
 
-    .line 51
+    .line 52
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->size:I
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -379,7 +383,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderBitmap:Landroid/graphics/Bitmap;
 
-    .line 52
+    .line 53
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderBitmap:Landroid/graphics/Bitmap;
@@ -388,14 +392,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderCanvas:Landroid/graphics/Canvas;
 
-    .line 53
+    .line 54
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderPaint:Landroid/graphics/Paint;
 
-    .line 54
+    .line 55
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0x64
@@ -404,7 +408,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderSpoilerEffects:Ljava/util/ArrayList;
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderPaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/BitmapShader;
@@ -417,7 +421,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 56
+    .line 57
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->size:I
 
     int-to-float v1, v0
@@ -434,7 +438,7 @@
 
     const/16 v3, 0xc8
 
-    .line 57
+    .line 58
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -461,7 +465,7 @@
     :goto_1
     if-ge v5, v4, :cond_0
 
-    .line 60
+    .line 61
     new-instance v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
@@ -472,7 +476,7 @@
 
     const/4 v9, 0x5
 
-    .line 61
+    .line 62
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -501,10 +505,10 @@
 
     const/4 v7, 0x1
 
-    .line 62
+    .line 63
     iput-boolean v7, v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->drawPoints:Z
 
-    .line 63
+    .line 64
     sget-object v8, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
     array-length v8, v8
@@ -529,15 +533,15 @@
 
     iput-object v7, v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
-    .line 64
+    .line 65
     invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setMaxParticlesCount(I)V
 
     const/4 v7, -0x1
 
-    .line 65
+    .line 66
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 66
+    .line 67
     iget-object v7, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderSpoilerEffects:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -562,7 +566,7 @@
     :goto_3
     if-ge v1, v4, :cond_2
 
-    .line 72
+    .line 73
     iget-object v3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderSpoilerEffects:Ljava/util/ArrayList;
 
     mul-int/lit8 v5, v0, 0xa
@@ -588,7 +592,7 @@
 
     goto :goto_2
 
-    .line 75
+    .line 76
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderPaint:Landroid/graphics/Paint;
 
@@ -602,14 +606,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 76
+    .line 77
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->lastUpdateTime:J
 
-    .line 79
+    .line 80
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->shaderPaint:Landroid/graphics/Paint;
 

@@ -8,22 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-.field public final synthetic f$1:[Ljava/io/File;
+.field public final synthetic f$1:[J
 
-.field public final synthetic f$2:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:J
+
+.field public final synthetic f$4:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;[Ljava/io/File;Ljava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;[JJJLjava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    iput-object p2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$1:[Ljava/io/File;
+    iput-object p2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$1:[J
 
-    iput-object p3, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$2:Ljava/util/concurrent/CountDownLatch;
+    iput-wide p3, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$2:J
+
+    iput-wide p5, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$3:J
+
+    iput-object p7, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$4:Ljava/util/concurrent/CountDownLatch;
 
     return-void
 .end method
@@ -31,15 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$1:[Ljava/io/File;
+    iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$1:[J
 
-    iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$2:Ljava/util/concurrent/CountDownLatch;
+    iget-wide v2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$2:J
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$WsmGM55qlB6z4xZUt35RBaKqO8c(Lorg/telegram/messenger/FileLoadOperation;[Ljava/io/File;Ljava/util/concurrent/CountDownLatch;)V
+    iget-wide v4, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$3:J
+
+    iget-object v6, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda14;->f$4:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$INewfCsyCDK7X--Mb0RWfm_VqEI(Lorg/telegram/messenger/FileLoadOperation;[JJJLjava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

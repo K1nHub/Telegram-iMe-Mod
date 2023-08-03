@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.internal.RemoteCall;
 import com.google.android.gms.common.api.internal.TaskApiCall;
 import com.google.android.gms.common.internal.PendingResultUtil;
@@ -38,14 +39,24 @@ public final class zzgl extends NodeClient {
     public final Task<List<Node>> getConnectedNodes() {
         NodeApi nodeApi = this.zza;
         GoogleApiClient asGoogleApiClient = asGoogleApiClient();
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzga((zzgd) nodeApi, asGoogleApiClient)), zzgf.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzga((zzgd) nodeApi, asGoogleApiClient)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzgf
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((NodeApi.GetConnectedNodesResult) result).getNodes();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.NodeClient
     public final Task<Node> getLocalNode() {
         NodeApi nodeApi = this.zza;
         GoogleApiClient asGoogleApiClient = asGoogleApiClient();
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzfz((zzgd) nodeApi, asGoogleApiClient)), zzgh.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzfz((zzgd) nodeApi, asGoogleApiClient)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzgh
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((NodeApi.GetLocalNodeResult) result).getNode();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.NodeClient

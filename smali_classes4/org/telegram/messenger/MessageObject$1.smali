@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 4963
+    .line 5080
     iput-object p1, p0, Lorg/telegram/messenger/MessageObject$1;->this$0:Lorg/telegram/messenger/MessageObject;
 
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
@@ -35,7 +35,7 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 2
 
-    .line 4966
+    .line 5083
     invoke-virtual {p1}, Landroid/text/TextPaint;->getTextSize()F
 
     move-result v0
@@ -46,7 +46,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 4967
+    .line 5084
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_timePaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getColor()I

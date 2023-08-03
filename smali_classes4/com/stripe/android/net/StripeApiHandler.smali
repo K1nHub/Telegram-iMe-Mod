@@ -917,11 +917,11 @@
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v6, "os.name"
+    const-string/jumbo v6, "os.name"
 
-    const-string v7, "os.version"
+    const-string/jumbo v7, "os.version"
 
-    const-string v8, "os.arch"
+    const-string/jumbo v8, "os.arch"
 
     const-string v9, "java.version"
 
@@ -973,7 +973,7 @@
     .line 157
     invoke-interface {v3, v2, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "publisher"
+    const-string/jumbo v2, "publisher"
 
     const-string v4, "Stripe"
 

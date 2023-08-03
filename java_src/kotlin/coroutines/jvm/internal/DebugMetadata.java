@@ -13,17 +13,17 @@ import java.lang.annotation.Target;
 /* loaded from: classes4.dex */
 public @interface DebugMetadata {
     /* renamed from: c */
-    String m84c() default "";
+    String m102c() default "";
 
     /* renamed from: f */
-    String m83f() default "";
+    String m101f() default "";
 
     /* renamed from: l */
-    int[] m82l() default {};
+    int[] m100l() default {};
 
     /* renamed from: m */
-    String m81m() default "";
+    String m99m() default "";
 
     /* renamed from: v */
-    int m80v() default 1;
+    int m98v() default 1;
 }

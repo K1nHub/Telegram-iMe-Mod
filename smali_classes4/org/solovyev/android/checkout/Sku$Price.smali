@@ -88,7 +88,7 @@
 
     move-result-wide v0
 
-    const-string v2, "price_currency_code"
+    const-string/jumbo v2, "price_currency_code"
 
     .line 326
     invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
@@ -134,14 +134,14 @@
         }
     .end annotation
 
-    const-string v0, "price_amount_micros"
+    const-string/jumbo v0, "price_amount_micros"
 
     .line 314
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    const-string v2, "price_currency_code"
+    const-string/jumbo v2, "price_currency_code"
 
     .line 315
     invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;

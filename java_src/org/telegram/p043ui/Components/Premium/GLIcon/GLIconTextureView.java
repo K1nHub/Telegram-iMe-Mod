@@ -116,7 +116,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         setOpaque(false);
         setRenderer(new GLIconRenderer(context, i));
         initialize(context);
-        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC50541());
+        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC50891());
         this.gestureDetector = gestureDetector;
         gestureDetector.setIsLongpressEnabled(true);
         for (int i2 = 0; i2 < 5; i2++) {
@@ -128,7 +128,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1 */
     /* loaded from: classes6.dex */
-    public class GestureDetector$OnGestureListenerC50541 implements GestureDetector.OnGestureListener {
+    public class GestureDetector$OnGestureListenerC50891 implements GestureDetector.OnGestureListener {
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
             return false;
@@ -138,7 +138,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         public void onShowPress(MotionEvent motionEvent) {
         }
 
-        GestureDetector$OnGestureListenerC50541() {
+        GestureDetector$OnGestureListenerC50891() {
         }
 
         @Override // android.view.GestureDetector.OnGestureListener
@@ -168,7 +168,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GLIconTextureView.GestureDetector$OnGestureListenerC50541.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
+                    GLIconTextureView.GestureDetector$OnGestureListenerC50891.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
                 }
             }, 16L);
             return true;
@@ -317,7 +317,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         private RenderThread() {
         }
 
-        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC50541 gestureDetector$OnGestureListenerC50541) {
+        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC50891 gestureDetector$OnGestureListenerC50891) {
             this();
         }
 
@@ -408,7 +408,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
 
     private void checkEglError() {
         if (this.mEgl.eglGetError() != 12288) {
-            FileLog.m51e("cannot swap buffers!");
+            FileLog.m69e("cannot swap buffers!");
         }
     }
 
@@ -416,7 +416,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
     public void checkGlError() {
         int glGetError = this.mGl.glGetError();
         if (glGetError != 0) {
-            FileLog.m51e("GL error = 0x" + Integer.toHexString(glGetError));
+            FileLog.m69e("GL error = 0x" + Integer.toHexString(glGetError));
         }
     }
 
@@ -454,7 +454,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
             int eglGetError = this.mEgl.eglGetError();
             if (eglGetError == 12299) {
-                FileLog.m51e("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
+                FileLog.m69e("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
                 return;
             }
             throw new RuntimeException("eglCreateWindowSurface failed " + GLUtils.getEGLErrorString(eglGetError));

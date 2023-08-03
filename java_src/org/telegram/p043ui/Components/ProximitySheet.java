@@ -26,7 +26,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -98,7 +98,7 @@ public class ProximitySheet extends FrameLayout {
         this.onDismissCallback = runnable;
         this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         Rect rect = new Rect();
-        Drawable mutate = context.getResources().getDrawable(C3417R.C3419drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3419R.C3421drawable.sheet_shadow_round).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         mutate.getPadding(rect);
         this.backgroundPaddingLeft = rect.left;
@@ -110,7 +110,7 @@ public class ProximitySheet extends FrameLayout {
         };
         this.containerView = frameLayout;
         frameLayout.setBackgroundDrawable(mutate);
-        this.containerView.setPadding(this.backgroundPaddingLeft, (AndroidUtilities.m54dp(8) + rect.top) - 1, this.backgroundPaddingLeft, 0);
+        this.containerView.setPadding(this.backgroundPaddingLeft, (AndroidUtilities.m72dp(8) + rect.top) - 1, this.backgroundPaddingLeft, 0);
         this.containerView.setVisibility(4);
         addView(this.containerView, 0, LayoutHelper.createFrame(-1, -2, 80));
         this.useImperialSystem = LocaleController.getUseImperialSystemType();
@@ -118,12 +118,12 @@ public class ProximitySheet extends FrameLayout {
         this.onRadiusChange = onradiuspickerchange;
         NumberPicker numberPicker = new NumberPicker(context);
         this.kmPicker = numberPicker;
-        numberPicker.setTextOffset(AndroidUtilities.m54dp(10));
+        numberPicker.setTextOffset(AndroidUtilities.m72dp(10));
         this.kmPicker.setItemCount(5);
         NumberPicker numberPicker2 = new NumberPicker(context);
         this.mPicker = numberPicker2;
         numberPicker2.setItemCount(5);
-        this.mPicker.setTextOffset(-AndroidUtilities.m54dp(10));
+        this.mPicker.setTextOffset(-AndroidUtilities.m72dp(10));
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Components.ProximitySheet.2
             boolean ignoreLayout = false;
 
@@ -134,8 +134,8 @@ public class ProximitySheet extends FrameLayout {
                 int i3 = point.x > point.y ? 3 : 5;
                 ProximitySheet.this.kmPicker.setItemCount(i3);
                 ProximitySheet.this.mPicker.setItemCount(i3);
-                ProximitySheet.this.kmPicker.getLayoutParams().height = AndroidUtilities.m54dp(54) * i3;
-                ProximitySheet.this.mPicker.getLayoutParams().height = AndroidUtilities.m54dp(54) * i3;
+                ProximitySheet.this.kmPicker.getLayoutParams().height = AndroidUtilities.m72dp(54) * i3;
+                ProximitySheet.this.mPicker.getLayoutParams().height = AndroidUtilities.m72dp(54) * i3;
                 this.ignoreLayout = false;
                 ProximitySheet.this.totalWidth = View.MeasureSpec.getSize(i);
                 if (ProximitySheet.this.totalWidth != 0) {
@@ -157,12 +157,19 @@ public class ProximitySheet extends FrameLayout {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.customView.addView(frameLayout2, LayoutHelper.createLinear(-1, -2, 51, 22, 0, 0, 4));
         TextView textView = new TextView(context);
-        textView.setText(LocaleController.getString("LocationNotifiation", C3417R.string.LocationNotifiation));
+        textView.setText(LocaleController.getString("LocationNotifiation", C3419R.string.LocationNotifiation));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, -2, 51, 0, 12, 0, 0));
-        textView.setOnTouchListener(ProximitySheet$$ExternalSyntheticLambda1.INSTANCE);
+        textView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$new$0;
+                lambda$new$0 = ProximitySheet.lambda$new$0(view, motionEvent);
+                return lambda$new$0;
+            }
+        });
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setWeightSum(1.0f);
@@ -188,7 +195,7 @@ public class ProximitySheet extends FrameLayout {
         this.kmPicker.setMinValue(0);
         this.kmPicker.setMaxValue(10);
         this.kmPicker.setWrapSelectorWheel(false);
-        this.kmPicker.setTextOffset(AndroidUtilities.m54dp(20));
+        this.kmPicker.setTextOffset(AndroidUtilities.m72dp(20));
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda4
             @Override // org.telegram.p043ui.Components.NumberPicker.OnValueChangeListener
             public final void onValueChange(NumberPicker numberPicker3, int i, int i2) {
@@ -199,7 +206,7 @@ public class ProximitySheet extends FrameLayout {
         this.mPicker.setMinValue(0);
         this.mPicker.setMaxValue(10);
         this.mPicker.setWrapSelectorWheel(false);
-        this.mPicker.setTextOffset(-AndroidUtilities.m54dp(20));
+        this.mPicker.setTextOffset(-AndroidUtilities.m72dp(20));
         linearLayout2.addView(this.mPicker, LayoutHelper.createLinear(0, 270, 0.5f));
         this.mPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.ProximitySheet$$ExternalSyntheticLambda3
             @Override // org.telegram.p043ui.Components.NumberPicker.Formatter
@@ -213,7 +220,7 @@ public class ProximitySheet extends FrameLayout {
         this.kmPicker.setValue(0);
         this.mPicker.setValue(6);
         this.customView.addView(frameLayout3, LayoutHelper.createLinear(-1, 48, 83, 16, 15, 16, 16));
-        this.buttonTextView.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+        this.buttonTextView.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
         this.buttonTextView.setGravity(17);
         this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         this.buttonTextView.setTextSize(1, 14.0f);
@@ -227,7 +234,7 @@ public class ProximitySheet extends FrameLayout {
                 ProximitySheet.this.lambda$new$4(onradiuspickerchange2, view);
             }
         });
-        this.infoTextView.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+        this.infoTextView.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
         this.infoTextView.setGravity(17);
         this.infoTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray2));
         this.infoTextView.setTextSize(1, 14.0f);
@@ -240,7 +247,7 @@ public class ProximitySheet extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ String lambda$new$1(int i) {
-        return this.useImperialSystem ? LocaleController.formatString("MilesShort", C3417R.string.MilesShort, Integer.valueOf(i)) : LocaleController.formatString("KMetersShort", C3417R.string.KMetersShort, Integer.valueOf(i));
+        return this.useImperialSystem ? LocaleController.formatString("MilesShort", C3419R.string.MilesShort, Integer.valueOf(i)) : LocaleController.formatString("KMetersShort", C3419R.string.KMetersShort, Integer.valueOf(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -256,19 +263,19 @@ public class ProximitySheet extends FrameLayout {
     public /* synthetic */ String lambda$new$3(int i) {
         if (this.useImperialSystem) {
             if (i == 1) {
-                return LocaleController.formatString("FootsShort", C3417R.string.FootsShort, 250);
+                return LocaleController.formatString("FootsShort", C3419R.string.FootsShort, 250);
             }
             if (i > 1) {
                 i--;
             }
             return String.format(Locale.US, ".%d", Integer.valueOf(i));
         } else if (i == 1) {
-            return LocaleController.formatString("MetersShort", C3417R.string.MetersShort, 50);
+            return LocaleController.formatString("MetersShort", C3419R.string.MetersShort, 50);
         } else {
             if (i > 1) {
                 i--;
             }
-            return LocaleController.formatString("MetersShort", C3417R.string.MetersShort, Integer.valueOf(i * 100));
+            return LocaleController.formatString("MetersShort", C3419R.string.MetersShort, Integer.valueOf(i * 100));
         }
     }
 
@@ -354,10 +361,10 @@ public class ProximitySheet extends FrameLayout {
         String formatDistance = LocaleController.formatDistance(value, 2, Boolean.valueOf(this.useImperialSystem));
         if (this.onRadiusChange.run(z, (int) value) || this.currentUser == null) {
             if (this.currentUser == null) {
-                this.buttonTextView.setText(LocaleController.formatString("LocationNotifiationButtonGroup", C3417R.string.LocationNotifiationButtonGroup, formatDistance));
+                this.buttonTextView.setText(LocaleController.formatString("LocationNotifiationButtonGroup", C3419R.string.LocationNotifiationButtonGroup, formatDistance));
             } else {
-                int i = C3417R.string.LocationNotifiationButtonUser;
-                this.buttonTextView.setText(LocaleController.formatString("LocationNotifiationButtonUser", i, TextUtils.ellipsize(UserObject.getFirstName(this.currentUser), this.buttonTextView.getPaint(), Math.max(AndroidUtilities.m54dp(10), (int) (((this.totalWidth - AndroidUtilities.m54dp(94)) * 1.5f) - ((int) Math.ceil(this.buttonTextView.getPaint().measureText(LocaleController.getString("LocationNotifiationButtonUser", i)))))), TextUtils.TruncateAt.END), formatDistance));
+                int i = C3419R.string.LocationNotifiationButtonUser;
+                this.buttonTextView.setText(LocaleController.formatString("LocationNotifiationButtonUser", i, TextUtils.ellipsize(UserObject.getFirstName(this.currentUser), this.buttonTextView.getPaint(), Math.max(AndroidUtilities.m72dp(10), (int) (((this.totalWidth - AndroidUtilities.m72dp(94)) * 1.5f) - ((int) Math.ceil(this.buttonTextView.getPaint().measureText(LocaleController.getString("LocationNotifiationButtonUser", i)))))), TextUtils.TruncateAt.END), formatDistance));
             }
             if (this.buttonTextView.getTag() != null) {
                 this.buttonTextView.setTag(null);
@@ -367,7 +374,7 @@ public class ProximitySheet extends FrameLayout {
             }
             return;
         }
-        this.infoTextView.setText(LocaleController.formatString("LocationNotifiationCloser", C3417R.string.LocationNotifiationCloser, formatDistance));
+        this.infoTextView.setText(LocaleController.formatString("LocationNotifiationCloser", C3419R.string.LocationNotifiationCloser, formatDistance));
         if (this.buttonTextView.getTag() == null) {
             this.buttonTextView.setTag(1);
             this.buttonTextView.animate().setDuration(180L).alpha(BitmapDescriptorFactory.HUE_RED).scaleX(0.5f).scaleY(0.5f).start();
@@ -393,10 +400,10 @@ public class ProximitySheet extends FrameLayout {
                 if (ProximitySheet.this.currentAnimation != null && ProximitySheet.this.currentAnimation.equals(animator)) {
                     ProximitySheet.this.currentAnimation = null;
                 }
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
             }
         });
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentAnimation.start();
     }
 
@@ -651,7 +658,7 @@ public class ProximitySheet extends FrameLayout {
                         ProximitySheet.this.setLayerType(0, null);
                     }
                 }
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -663,7 +670,7 @@ public class ProximitySheet extends FrameLayout {
                 ProximitySheet.this.currentSheetAnimationType = 0;
             }
         });
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
 
@@ -684,7 +691,7 @@ public class ProximitySheet extends FrameLayout {
         cancelSheetAnimation();
         AnimatorSet animatorSet = new AnimatorSet();
         this.currentSheetAnimation = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(this.containerView, View.TRANSLATION_Y, viewGroup.getMeasuredHeight() + AndroidUtilities.m54dp(10)));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(this.containerView, View.TRANSLATION_Y, viewGroup.getMeasuredHeight() + AndroidUtilities.m72dp(10)));
         if (this.useFastDismiss) {
             float measuredHeight = this.containerView.getMeasuredHeight();
             this.currentSheetAnimation.setDuration(Math.max(60, (int) (((measuredHeight - this.containerView.getTranslationY()) * 250.0f) / measuredHeight)));
@@ -693,16 +700,16 @@ public class ProximitySheet extends FrameLayout {
             this.currentSheetAnimation.setDuration(250L);
         }
         this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.DEFAULT);
-        this.currentSheetAnimation.addListener(new C51146());
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
+        this.currentSheetAnimation.addListener(new C51496());
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ProximitySheet$6 */
     /* loaded from: classes6.dex */
-    public class C51146 extends AnimatorListenerAdapter {
-        C51146() {
+    public class C51496 extends AnimatorListenerAdapter {
+        C51496() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -713,11 +720,11 @@ public class ProximitySheet extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ProximitySheet$6$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProximitySheet.C51146.this.lambda$onAnimationEnd$0();
+                        ProximitySheet.C51496.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -725,7 +732,7 @@ public class ProximitySheet extends FrameLayout {
             try {
                 ProximitySheet.this.dismissInternal();
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
 

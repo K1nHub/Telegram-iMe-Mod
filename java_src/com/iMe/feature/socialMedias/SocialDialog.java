@@ -14,11 +14,18 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksBinding;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksItemBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -43,7 +50,27 @@ public final class SocialDialog extends MvpBottomSheet {
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
         this.binding = inflate;
         this.textColor = Theme.getColor(Theme.key_chat_messagePanelText);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new SocialDialog$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.socialMedias.SocialDialog$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resource$delegate = lazy;
     }
 
@@ -54,7 +81,7 @@ public final class SocialDialog extends MvpBottomSheet {
     @Override // com.iMe.p031ui.base.mvp.MvpBottomSheet
     public View onCreateView(Bundle bundle) {
         this.binding.text.setTextColor(this.textColor);
-        this.binding.text.setText(getResource().getString(C3417R.string.social_cell_social_networks));
+        this.binding.text.setText(getResource().getString(C3419R.string.social_cell_social_networks));
         ConstraintLayout root = this.binding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;
@@ -69,7 +96,7 @@ public final class SocialDialog extends MvpBottomSheet {
         }
     }
 
-    private final void addItemToContainer(SocialNetwork socialNetwork, Function1<? super SocialNetwork, Unit> function1) {
+    private final void addItemToContainer(final SocialNetwork socialNetwork, final Function1<? super SocialNetwork, Unit> function1) {
         ForkDialogSocialNetworksItemBinding inflate = ForkDialogSocialNetworksItemBinding.inflate(LayoutInflater.from(getContext()), this.binding.getRoot(), false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(inflater, binding.root, false)");
         inflate.text.setText(socialNetwork.getSocialName());
@@ -79,7 +106,28 @@ public final class SocialDialog extends MvpBottomSheet {
         ImageViewExtKt.withGlide$default(icon, socialNetwork.getIcon(), null, null, 6, null);
         ConstraintLayout root = inflate.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "root");
-        ViewExtKt.safeThrottledClick$default(root, 0L, new SocialDialog$addItemToContainer$1$1(function1, socialNetwork, this), 1, null);
+        ViewExtKt.safeThrottledClick$default(root, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.socialMedias.SocialDialog$addItemToContainer$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                function1.invoke(socialNetwork);
+                Unit unit = Unit.INSTANCE;
+                this.dismiss();
+            }
+        }, 1, null);
         this.binding.linearLayout.addView(inflate.getRoot());
     }
 

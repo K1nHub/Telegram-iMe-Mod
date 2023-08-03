@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;
-.super Lorg/telegram/messenger/Fetcher;
+.super Lorg/telegram/messenger/CacheFetcher;
 .source "StickerCategoriesListView.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lorg/telegram/messenger/Fetcher<",
+        "Lorg/telegram/messenger/CacheFetcher<",
         "Ljava/lang/String;",
         "Lorg/telegram/tgnet/TLRPC$TL_emojiList;",
         ">;"
@@ -24,10 +24,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XELMUkeq30dd1cB3FT2cwiK5giU(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$OG210lqKK6EQxcDFiDeT07ijTdI(Lorg/telegram/messenger/Utilities$Callback4;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;->lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;->lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback4;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -35,8 +35,8 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 946
-    invoke-direct {p0}, Lorg/telegram/messenger/Fetcher;-><init>()V
+    .line 954
+    invoke-direct {p0}, Lorg/telegram/messenger/CacheFetcher;-><init>()V
 
     return-void
 .end method
@@ -44,21 +44,21 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView$1;)V
     .locals 0
 
-    .line 946
+    .line 954
     invoke-direct {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;-><init>()V
 
     return-void
 .end method
 
-.method private static synthetic lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static synthetic lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback4;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 953
+    .line 961
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiListNotModified;
 
     const-wide/16 v0, 0x0
 
-    .line 954
+    .line 962
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -69,20 +69,20 @@
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1, v1, v0}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p0, p1, v1, v0, p1}, Lorg/telegram/messenger/Utilities$Callback4;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 955
+    .line 963
     :cond_0
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiList;
 
     if-eqz p2, :cond_1
 
-    .line 956
+    .line 964
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_emojiList;
 
-    .line 957
+    .line 965
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiList;->hash:J
@@ -91,15 +91,19 @@
 
     move-result-object v0
 
-    invoke-interface {p0, p2, p1, v0}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p2, p1, v0, v1}, Lorg/telegram/messenger/Utilities$Callback4;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 959
+    .line 967
     :cond_1
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1, v1, v0}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1, v1, v0, p2}, Lorg/telegram/messenger/Utilities$Callback4;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :goto_0
     return-void
@@ -107,51 +111,52 @@
 
 
 # virtual methods
-.method protected bridge synthetic getRemote(ILjava/lang/Object;JLorg/telegram/messenger/Utilities$Callback3;)V
+.method protected bridge synthetic getRemote(ILjava/lang/Object;JLorg/telegram/messenger/Utilities$Callback4;)V
     .locals 0
 
-    .line 946
+    .line 954
     check-cast p2, Ljava/lang/String;
 
-    invoke-virtual/range {p0 .. p5}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;->getRemote(ILjava/lang/String;JLorg/telegram/messenger/Utilities$Callback3;)V
+    invoke-virtual/range {p0 .. p5}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;->getRemote(ILjava/lang/String;JLorg/telegram/messenger/Utilities$Callback4;)V
 
     return-void
 .end method
 
-.method protected getRemote(ILjava/lang/String;JLorg/telegram/messenger/Utilities$Callback3;)V
+.method protected getRemote(ILjava/lang/String;JLorg/telegram/messenger/Utilities$Callback4;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
             "Ljava/lang/String;",
             "J",
-            "Lorg/telegram/messenger/Utilities$Callback3<",
+            "Lorg/telegram/messenger/Utilities$Callback4<",
             "Ljava/lang/Boolean;",
             "Lorg/telegram/tgnet/TLRPC$TL_emojiList;",
             "Ljava/lang/Long;",
+            "Ljava/lang/Boolean;",
             ">;)V"
         }
     .end annotation
 
-    .line 949
+    .line 957
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;-><init>()V
 
-    .line 950
+    .line 958
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;->emoticon:Ljava/lang/String;
 
-    .line 951
+    .line 959
     iput-wide p3, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;->hash:J
 
-    .line 952
+    .line 960
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
 
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p5}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/Utilities$Callback3;)V
+    invoke-direct {p2, p5}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/Utilities$Callback4;)V
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 

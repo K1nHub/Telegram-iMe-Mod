@@ -42,8 +42,8 @@ public class PaintColorsListView extends RecyclerListView {
         this.outlinePaint = paint;
         this.selectedColorIndex = 0;
         paint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(2));
-        setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m72dp(2));
+        setPadding(AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8));
         setLayoutManager(new GridLayoutManager(context, 7));
         setAdapter(new RecyclerView.Adapter() { // from class: org.telegram.ui.Components.Paint.Views.PaintColorsListView.1
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -116,7 +116,7 @@ public class PaintColorsListView extends RecyclerListView {
             colorCirclePath.addArc(rectF, -45.0f, 180.0f);
             canvas.save();
             canvas.clipPath(colorCirclePath);
-            drawCheckerboard(canvas, rectF, AndroidUtilities.m54dp(4));
+            drawCheckerboard(canvas, rectF, AndroidUtilities.m72dp(4));
             canvas.restore();
             colorCirclePaint.setColor(i);
             canvas.drawArc(rectF, -45.0f, 180.0f, true, colorCirclePaint);
@@ -169,7 +169,7 @@ public class PaintColorsListView extends RecyclerListView {
 
         public ColorView(Context context) {
             super(context);
-            setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4));
+            setPadding(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4));
             setLayoutParams(new RecyclerView.LayoutParams(-2, 0));
         }
 
@@ -179,13 +179,13 @@ public class PaintColorsListView extends RecyclerListView {
             PaintColorsListView.this.paint.setColor(this.mColor);
             float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
             if (this.selectProgress != BitmapDescriptorFactory.HUE_RED) {
-                min -= (AndroidUtilities.m55dp(3.0f) + PaintColorsListView.this.outlinePaint.getStrokeWidth()) * this.selectProgress;
+                min -= (AndroidUtilities.m73dp(3.0f) + PaintColorsListView.this.outlinePaint.getStrokeWidth()) * this.selectProgress;
             }
             float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
             float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
             PaintColorsListView.drawColorCircle(canvas, width, height, min, this.mColor);
             if (this.selectProgress != BitmapDescriptorFactory.HUE_RED) {
-                float min2 = (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.m55dp(2.0f);
+                float min2 = (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.m73dp(2.0f);
                 PaintColorsListView.this.outlinePaint.setColor(this.mColor);
                 PaintColorsListView.this.outlinePaint.setAlpha(255);
                 canvas.drawCircle(width, height, min2, PaintColorsListView.this.outlinePaint);

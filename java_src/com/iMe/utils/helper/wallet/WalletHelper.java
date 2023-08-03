@@ -22,13 +22,19 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
@@ -96,20 +102,99 @@ public final class WalletHelper implements KoinComponent {
         Lazy lazy2;
         Lazy lazy3;
         Lazy lazy4;
-        WalletHelper walletHelper = new WalletHelper();
+        final WalletHelper walletHelper = new WalletHelper();
         INSTANCE = walletHelper;
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$1(walletHelper, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<AuthManager>() { // from class: com.iMe.utils.helper.wallet.WalletHelper$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.auth.AuthManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final AuthManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(AuthManager.class), qualifier, function0);
+            }
+        });
         authManager$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$2(walletHelper, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<CryptoAccessManager>() { // from class: com.iMe.utils.helper.wallet.WalletHelper$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.crypto.CryptoAccessManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CryptoAccessManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), qualifier, function0);
+            }
+        });
         cryptoAccessManager$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$3(walletHelper, null, null));
+        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<RxEventBus>() { // from class: com.iMe.utils.helper.wallet.WalletHelper$special$$inlined$inject$default$3
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.RxEventBus, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final RxEventBus invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), qualifier, function0);
+            }
+        });
         rxEventBus$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$4(walletHelper, null, null));
+        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletFlowCoordinator>() { // from class: com.iMe.utils.helper.wallet.WalletHelper$special$$inlined$inject$default$4
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletFlowCoordinator invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), qualifier, function0);
+            }
+        });
         walletFlowCoordinator$delegate = lazy4;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void runWithCheckIsCryptoWalletCreated$lambda$1$lambda$0(Callbacks$Callback callbacks$Callback, BaseFragment this_with) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         if (callbacks$Callback != null) {
@@ -130,7 +215,6 @@ public final class WalletHelper implements KoinComponent {
         safeRunWalletScreen(baseFragment, callbacks$Callback);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void safeRunWalletScreen$lambda$2(BaseFragment this_safeRunWalletScreen) {
         Intrinsics.checkNotNullParameter(this_safeRunWalletScreen, "$this_safeRunWalletScreen");
         List<BaseFragment> fragmentStack = this_safeRunWalletScreen.getParentLayout().getFragmentStack();
@@ -184,7 +268,7 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAppUpdateDialog(final LaunchActivity launchActivity) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3417R.string.common_cancel), LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3419R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3419R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3419R.string.common_cancel), LocaleController.getInternalString(C3419R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletHelper.showAppUpdateDialog$lambda$4(LaunchActivity.this);
@@ -192,18 +276,17 @@ public final class WalletHelper implements KoinComponent {
         }, null, 8, null).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void showAppUpdateDialog$lambda$4(LaunchActivity activity) {
         Intrinsics.checkNotNullParameter(activity, "$activity");
         Browser.openUrl(activity, BuildVars.PLAYSTORE_APP_URL);
     }
 
     private final void showAuthDialog(final LaunchActivity launchActivity, final Callbacks$Callback callbacks$Callback) {
-        int i = C3417R.raw.fork_auth;
-        String internalString = LocaleController.getInternalString(C3417R.string.auth_dialog_title);
+        int i = C3419R.raw.fork_auth;
+        String internalString = LocaleController.getInternalString(C3419R.string.auth_dialog_title);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.auth_dialog_title)");
         SpannableStringBuilder authSpannableStringBuilder = getAuthSpannableStringBuilder();
-        String internalString2 = LocaleController.getInternalString(C3417R.string.common_next);
+        String internalString2 = LocaleController.getInternalString(C3419R.string.common_next);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.common_next)");
         DialogsFactoryKt.createDialogWithAnimation(launchActivity, new AnimatedSpannableDialogModel(i, internalString, authSpannableStringBuilder, internalString2), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -213,7 +296,6 @@ public final class WalletHelper implements KoinComponent {
         }).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void showAuthDialog$lambda$5(LaunchActivity this_showAuthDialog, Callbacks$Callback activateClickAction) {
         Intrinsics.checkNotNullParameter(this_showAuthDialog, "$this_showAuthDialog");
         Intrinsics.checkNotNullParameter(activateClickAction, "$activateClickAction");
@@ -226,7 +308,7 @@ public final class WalletHelper implements KoinComponent {
         int indexOf$default;
         int lastIndexOf$default;
         List<Object> listOf;
-        String descriptionText = LocaleController.getInternalString(C3417R.string.auth_dialog_description);
+        String descriptionText = LocaleController.getInternalString(C3419R.string.auth_dialog_description);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(descriptionText);
         Intrinsics.checkNotNullExpressionValue(descriptionText, "descriptionText");
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) descriptionText, "*", 0, false, 6, (Object) null);
@@ -234,7 +316,7 @@ public final class WalletHelper implements KoinComponent {
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3417R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3419R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
             for (Object obj : listOf) {
                 spannableStringBuilder.setSpan(obj, indexOf$default, lastIndexOf$default - 1, 33);
             }

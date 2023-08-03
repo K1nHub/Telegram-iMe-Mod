@@ -26,13 +26,13 @@
 .method public constructor <init>(II)V
     .locals 0
 
-    .line 13258
+    .line 13470
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13259
+    .line 13471
     iput p1, p0, Lorg/telegram/messenger/MessagesStorage$Hole;->start:I
 
-    .line 13260
+    .line 13472
     iput p2, p0, Lorg/telegram/messenger/MessagesStorage$Hole;->end:I
 
     return-void
@@ -41,16 +41,16 @@
 .method public constructor <init>(III)V
     .locals 0
 
-    .line 13263
+    .line 13475
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13264
+    .line 13476
     iput p1, p0, Lorg/telegram/messenger/MessagesStorage$Hole;->type:I
 
-    .line 13265
+    .line 13477
     iput p2, p0, Lorg/telegram/messenger/MessagesStorage$Hole;->start:I
 
-    .line 13266
+    .line 13478
     iput p3, p0, Lorg/telegram/messenger/MessagesStorage$Hole;->end:I
 
     return-void

@@ -59,10 +59,10 @@ public final class FileTypes {
     public static final int OGG = 9;
 
     /* renamed from: PS */
-    public static final int f224PS = 10;
+    public static final int f226PS = 10;
 
     /* renamed from: TS */
-    public static final int f225TS = 11;
+    public static final int f227TS = 11;
     public static final int UNKNOWN = -1;
     public static final int WAV = 12;
     public static final int WEBVTT = 13;

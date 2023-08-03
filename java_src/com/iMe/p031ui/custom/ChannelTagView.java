@@ -28,8 +28,8 @@ public class ChannelTagView extends AppCompatTextView {
         int i = Theme.key_chats_actionBackground;
         setTextColor(Theme.getColor(i));
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(2.0f));
-        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(i));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m73dp(2.0f));
+        gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), Theme.getColor(i));
         setBackground(gradientDrawable);
         setGravity(17);
         setTextSize(1, 10.0f);

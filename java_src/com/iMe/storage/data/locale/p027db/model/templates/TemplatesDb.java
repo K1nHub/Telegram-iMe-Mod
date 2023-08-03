@@ -27,13 +27,13 @@ public final class TemplatesDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m706m = ((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.messageId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.groupId)) * 31) + this.templateName.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.creationDate)) * 31) + this.usageRating) * 31;
+        int m724m = ((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.messageId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.groupId)) * 31) + this.templateName.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.creationDate)) * 31) + this.usageRating) * 31;
         boolean z = this.sent;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m706m + i;
+        return m724m + i;
     }
 
     public String toString() {

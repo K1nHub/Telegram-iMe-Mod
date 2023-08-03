@@ -55,7 +55,7 @@ public class GIFCompressor {
         final ListenerWrapper listenerWrapper = new ListenerWrapper(gIFOptions.listenerHandler, gIFOptions.listener);
         return this.mExecutor.submit(new Callable<Void>(this) { // from class: com.otaliastudios.gif.GIFCompressor.1
             /* JADX WARN: Code restructure failed: missing block: B:15:0x0037, code lost:
-                com.otaliastudios.gif.GIFCompressor.LOG.m690i("Compression canceled.", r2);
+                com.otaliastudios.gif.GIFCompressor.LOG.m708i("Compression canceled.", r2);
                 r2.onGIFCompressionCanceled();
              */
             /* JADX WARN: Code restructure failed: missing block: B:16:0x0045, code lost:
@@ -98,7 +98,7 @@ public class GIFCompressor {
                     if (r1 == 0) goto L47
                     com.otaliastudios.gif.internal.Logger r0 = com.otaliastudios.gif.GIFCompressor.access$300()
                     java.lang.String r1 = "Compression canceled."
-                    r0.m690i(r1, r2)
+                    r0.m708i(r1, r2)
                     com.otaliastudios.gif.GIFListener r0 = r2
                     r0.onGIFCompressionCanceled()
                 L45:
@@ -109,14 +109,14 @@ public class GIFCompressor {
                     if (r1 == 0) goto L5a
                     com.otaliastudios.gif.internal.Logger r1 = com.otaliastudios.gif.GIFCompressor.access$300()
                     java.lang.String r2 = "Fatal error while compressing, this might be invalid format or bug in engine or Android."
-                    r1.m692e(r2, r0)
+                    r1.m710e(r2, r0)
                     com.otaliastudios.gif.GIFListener r1 = r2
                     r1.onGIFCompressionFailed(r0)
                     throw r0
                 L5a:
                     com.otaliastudios.gif.internal.Logger r1 = com.otaliastudios.gif.GIFCompressor.access$300()
                     java.lang.String r2 = "Unexpected error while compressing"
-                    r1.m692e(r2, r0)
+                    r1.m710e(r2, r0)
                     com.otaliastudios.gif.GIFListener r1 = r2
                     r1.onGIFCompressionFailed(r0)
                     throw r0

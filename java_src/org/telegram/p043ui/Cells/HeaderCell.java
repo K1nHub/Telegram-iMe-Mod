@@ -17,7 +17,7 @@ import androidx.core.view.ViewCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -110,7 +110,7 @@ public class HeaderCell extends FrameLayout {
         this.resourcesProvider = resourcesProvider;
         ImageView imageView = new ImageView(context);
         this.expandImageView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.arrow_more);
+        imageView.setImageResource(C3419R.C3421drawable.arrow_more);
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(8);
         addView(imageView, LayoutHelper.createFrame(-2, -2, 51, i2 - 4, i3, 0, 0));
@@ -120,7 +120,7 @@ public class HeaderCell extends FrameLayout {
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
         this.textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        this.textView.setMinHeight(AndroidUtilities.m54dp(this.height - i3));
+        this.textView.setMinHeight(AndroidUtilities.m72dp(this.height - i3));
         this.textView.setTextColor(getThemedColor(i));
         this.textView.setTag(Integer.valueOf(i));
         addView(this.textView, LayoutHelper.createFrame(-1, -1, (LocaleController.isRTL ? 5 : 3) | 48, i2, i3, i2, z ? 0 : i4));
@@ -137,21 +137,21 @@ public class HeaderCell extends FrameLayout {
     public void setHeight(int i) {
         TextView textView = this.textView;
         this.height = i;
-        textView.setMinHeight(AndroidUtilities.m54dp(i) - ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin);
+        textView.setMinHeight(AndroidUtilities.m72dp(i) - ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin);
     }
 
     public void setTopMargin(int i, boolean z) {
-        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin = AndroidUtilities.m54dp(i);
+        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin = AndroidUtilities.m72dp(i);
         if (z) {
             setHeight(this.height);
         }
     }
 
     public void setBottomMargin(int i) {
-        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).bottomMargin = AndroidUtilities.m54dp(i);
+        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).bottomMargin = AndroidUtilities.m72dp(i);
         SimpleTextView simpleTextView = this.textView2;
         if (simpleTextView != null) {
-            ((FrameLayout.LayoutParams) simpleTextView.getLayoutParams()).bottomMargin = AndroidUtilities.m54dp(i);
+            ((FrameLayout.LayoutParams) simpleTextView.getLayoutParams()).bottomMargin = AndroidUtilities.m72dp(i);
         }
     }
 

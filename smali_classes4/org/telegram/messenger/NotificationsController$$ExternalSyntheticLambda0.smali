@@ -35,7 +35,7 @@
 .method public final onHeaderDecoded(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$VHgcplzGmBaKtRgRg0kOeCk4Zpw(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
+    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$tcUSJcmWIoade2DmL6uRmW7o9AE(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
 
     return-void
 .end method

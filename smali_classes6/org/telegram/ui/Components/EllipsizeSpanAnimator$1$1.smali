@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;)V
     .locals 0
 
-    .line 33
+    .line 35
     iput-object p1, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1$1;->this$1:Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 36
+    .line 38
     iget-object v0, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1$1;->this$1:Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->this$0:Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
@@ -69,7 +69,7 @@
 
     if-nez v0, :cond_0
 
-    .line 38
+    .line 40
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1$1;->this$1:Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;
 

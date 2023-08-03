@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkPanelViewBinding implements ViewBinding {
     public final AppBarLayout appbar;
@@ -54,7 +54,7 @@ public final class ForkPanelViewBinding implements ViewBinding {
     }
 
     public static ForkPanelViewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_panel_view, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_panel_view, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -64,34 +64,34 @@ public final class ForkPanelViewBinding implements ViewBinding {
     public static ForkPanelViewBinding bind(View view) {
         View findChildViewById;
         View findChildViewById2;
-        int i = C3417R.C3420id.appbar;
+        int i = C3419R.C3422id.appbar;
         AppBarLayout appBarLayout = (AppBarLayout) ViewBindings.findChildViewById(view, i);
-        if (appBarLayout != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3417R.C3420id.divider1))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3417R.C3420id.divider2))) != null) {
-            i = C3417R.C3420id.imageBots;
+        if (appBarLayout != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3419R.C3422id.divider1))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3419R.C3422id.divider2))) != null) {
+            i = C3419R.C3422id.imageBots;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3417R.C3420id.imageGifResponses;
+                i = C3419R.C3422id.imageGifResponses;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3417R.C3420id.imageSettings;
+                    i = C3419R.C3422id.imageSettings;
                     AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView3 != null) {
-                        i = C3417R.C3420id.imageTextResponses;
+                        i = C3419R.C3422id.imageTextResponses;
                         AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView4 != null) {
-                            i = C3417R.C3420id.layoutBottom;
+                            i = C3419R.C3422id.layoutBottom;
                             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                             if (frameLayout != null) {
-                                i = C3417R.C3420id.smart_panel_root;
+                                i = C3419R.C3422id.smart_panel_root;
                                 CoordinatorLayout coordinatorLayout = (CoordinatorLayout) ViewBindings.findChildViewById(view, i);
                                 if (coordinatorLayout != null) {
-                                    i = C3417R.C3420id.tabs;
+                                    i = C3419R.C3422id.tabs;
                                     TabLayout tabLayout = (TabLayout) ViewBindings.findChildViewById(view, i);
                                     if (tabLayout != null) {
-                                        i = C3417R.C3420id.textEmptyBots;
+                                        i = C3419R.C3422id.textEmptyBots;
                                         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView != null) {
-                                            i = C3417R.C3420id.viewpager;
+                                            i = C3419R.C3422id.viewpager;
                                             ViewPager viewPager = (ViewPager) ViewBindings.findChildViewById(view, i);
                                             if (viewPager != null) {
                                                 return new ForkPanelViewBinding((LinearLayout) view, appBarLayout, findChildViewById, findChildViewById2, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, frameLayout, coordinatorLayout, tabLayout, textView, viewPager);

@@ -30,7 +30,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
-    .line 1389
+    .line 1398
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieDrawable$NativePtrArgs;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;Lorg/telegram/ui/Components/RLottieDrawable$1;)V
     .locals 0
 
-    .line 1389
+    .line 1398
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RLottieDrawable$NativePtrArgs;-><init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     return-void

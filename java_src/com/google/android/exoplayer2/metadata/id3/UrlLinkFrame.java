@@ -41,11 +41,11 @@ public final class UrlLinkFrame extends Id3Frame {
             return false;
         }
         UrlLinkFrame urlLinkFrame = (UrlLinkFrame) obj;
-        return this.f199id.equals(urlLinkFrame.f199id) && Util.areEqual(this.description, urlLinkFrame.description) && Util.areEqual(this.url, urlLinkFrame.url);
+        return this.f201id.equals(urlLinkFrame.f201id) && Util.areEqual(this.description, urlLinkFrame.description) && Util.areEqual(this.url, urlLinkFrame.url);
     }
 
     public int hashCode() {
-        int hashCode = (527 + this.f199id.hashCode()) * 31;
+        int hashCode = (527 + this.f201id.hashCode()) * 31;
         String str = this.description;
         int hashCode2 = (hashCode + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.url;
@@ -54,12 +54,12 @@ public final class UrlLinkFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f199id + ": url=" + this.url;
+        return this.f201id + ": url=" + this.url;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f199id);
+        parcel.writeString(this.f201id);
         parcel.writeString(this.description);
         parcel.writeString(this.url);
     }

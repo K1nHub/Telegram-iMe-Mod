@@ -27,7 +27,7 @@ public enum TlsVersion {
     }
 
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m1634deprecated_javaName() {
+    public final String m1653deprecated_javaName() {
         return this.javaName;
     }
 

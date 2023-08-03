@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$6;
-.super Landroidx/recyclerview/widget/DefaultItemAnimator;
+.super Landroid/view/View;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,33 +14,44 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$bubbleX:Ljava/lang/Integer;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 654
-    invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
+    .line 660
+    iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$6;->val$bubbleX:Ljava/lang/Integer;
+
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected animateByScale(Landroid/view/View;)F
+.method protected onMeasure(II)V
     .locals 0
 
-    .line 657
-    instance-of p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;
+    .line 664
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
+
+    .line 665
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$6;->val$bubbleX:Ljava/lang/Integer;
 
     if-eqz p1, :cond_0
 
-    const p1, 0x3f19999a    # 0.6f
+    .line 666
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    goto :goto_0
+    move-result p1
+
+    int-to-float p1, p1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotX(F)V
 
     :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
+    return-void
 .end method

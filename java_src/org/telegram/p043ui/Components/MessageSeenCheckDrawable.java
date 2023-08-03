@@ -16,38 +16,38 @@ public class MessageSeenCheckDrawable {
     private Drawable drawable;
 
     /* renamed from: h */
-    private int f1746h;
+    private int f1767h;
     private int lastColor;
     private float lastDensity;
     private CharSequence lastSpanned;
 
     /* renamed from: oy */
-    private float f1747oy;
+    private float f1768oy;
     private int resId;
 
     /* renamed from: w */
-    private int f1748w;
+    private int f1769w;
 
     public MessageSeenCheckDrawable(int i, int i2) {
-        this.f1748w = -1;
-        this.f1746h = -1;
-        this.f1747oy = 4.66f;
+        this.f1769w = -1;
+        this.f1767h = -1;
+        this.f1768oy = 4.66f;
         this.resId = i;
         this.colorKey = i2;
     }
 
     public MessageSeenCheckDrawable(int i, int i2, int i3, int i4, float f) {
         this(i, i2);
-        this.f1748w = i3;
-        this.f1746h = i4;
-        this.f1747oy = f;
+        this.f1769w = i3;
+        this.f1767h = i4;
+        this.f1768oy = f;
     }
 
-    public CharSequence getSpanned(Context context) {
+    public CharSequence getSpanned(Context context, Theme.ResourcesProvider resourcesProvider) {
         if (this.lastSpanned != null && this.drawable != null && AndroidUtilities.density == this.lastDensity) {
-            if (this.lastColor != Theme.getColor(this.colorKey)) {
+            if (this.lastColor != Theme.getColor(this.colorKey, resourcesProvider)) {
                 Drawable drawable = this.drawable;
-                int color = Theme.getColor(this.colorKey);
+                int color = Theme.getColor(this.colorKey, resourcesProvider);
                 this.lastColor = color;
                 drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
             }
@@ -59,17 +59,17 @@ public class MessageSeenCheckDrawable {
             this.lastDensity = AndroidUtilities.density;
             Drawable mutate = context.getResources().getDrawable(this.resId).mutate();
             this.drawable = mutate;
-            int color2 = Theme.getColor(this.colorKey);
+            int color2 = Theme.getColor(this.colorKey, resourcesProvider);
             this.lastColor = color2;
             mutate.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
-            int i = this.f1748w;
-            int intrinsicWidth = i <= 0 ? this.drawable.getIntrinsicWidth() : AndroidUtilities.m54dp(i);
-            int i2 = this.f1746h;
-            int intrinsicHeight = i2 <= 0 ? this.drawable.getIntrinsicHeight() : AndroidUtilities.m54dp(i2);
-            int m55dp = AndroidUtilities.m55dp(this.f1747oy);
-            this.drawable.setBounds(0, m55dp, intrinsicWidth, intrinsicHeight + m55dp);
+            int i = this.f1769w;
+            int intrinsicWidth = i <= 0 ? this.drawable.getIntrinsicWidth() : AndroidUtilities.m72dp(i);
+            int i2 = this.f1767h;
+            int intrinsicHeight = i2 <= 0 ? this.drawable.getIntrinsicHeight() : AndroidUtilities.m72dp(i2);
+            int m73dp = AndroidUtilities.m73dp(this.f1768oy);
+            this.drawable.setBounds(0, m73dp, intrinsicWidth, intrinsicHeight + m73dp);
             spannableStringBuilder.setSpan(new ImageSpan(this.drawable, 2), 0, 1, 33);
-            spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(2)), 1, 2, 33);
+            spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m72dp(2)), 1, 2, 33);
             this.lastSpanned = spannableStringBuilder;
             return spannableStringBuilder;
         }

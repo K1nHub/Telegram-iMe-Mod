@@ -9,12 +9,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import com.iMe.utils.extentions.model.filter.FilterFabExtKt;
+import java.util.List;
 import java.util.Set;
+import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FabsView.kt */
 /* renamed from: com.iMe.fork.ui.view.FabsView */
 /* loaded from: classes3.dex */
@@ -30,18 +33,20 @@ public final class FabsView extends FrameLayout {
     }
 
     public final void setFabs(Set<? extends FilterFab> fabs) {
+        List<FilterFab> reversed;
         Intrinsics.checkNotNullParameter(fabs, "fabs");
         removeAllViews();
-        for (FilterFab filterFab : fabs) {
+        reversed = CollectionsKt___CollectionsKt.reversed(fabs);
+        for (FilterFab filterFab : reversed) {
             addView(createFab(filterFab), LayoutHelper.createFrame(36, 36, 5, 0, 0, getChildCount() * 24, 0));
         }
     }
 
-    private final ImageView createFab(FilterFab filterFab) {
-        ImageView imageView = new ImageView(getContext());
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(FilterFabExtKt.iconResId(filterFab, false));
-        return imageView;
+    private final RLottieImageView createFab(FilterFab filterFab) {
+        RLottieImageView rLottieImageView = new RLottieImageView(getContext());
+        rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
+        FilterFabExtKt.bindMini(filterFab, rLottieImageView);
+        return rLottieImageView;
     }
 
     /* compiled from: FabsView.kt */
@@ -66,9 +71,9 @@ public final class FabsView extends FrameLayout {
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
-            gradientDrawable.setStroke(AndroidUtilities.m54dp(1), Theme.getColor(Theme.key_windowBackgroundWhite));
+            gradientDrawable.setStroke(AndroidUtilities.m72dp(1), Theme.getColor(Theme.key_windowBackgroundWhite));
             gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
-            gradientDrawable.setSize(AndroidUtilities.m54dp(36), AndroidUtilities.m54dp(36));
+            gradientDrawable.setSize(AndroidUtilities.m72dp(36), AndroidUtilities.m72dp(36));
             imageView.setBackground(gradientDrawable);
         }
     }

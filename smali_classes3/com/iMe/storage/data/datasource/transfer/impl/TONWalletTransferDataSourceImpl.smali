@@ -186,12 +186,13 @@
     return-object p1
 .end method
 
-.method public transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
+.method public transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -204,10 +205,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
-    instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+    const-string v0, "networkId"
 
-    if-eqz v0, :cond_2
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 48
+    instance-of p2, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+
+    if-eqz p2, :cond_2
 
     .line 51
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
@@ -216,32 +221,34 @@
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
     .line 53
-    iget-object v1, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    iget-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    sget-object v2, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
+    invoke-interface {p2, v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    move-result-object v1
+    move-result-object p2
 
-    if-eqz v1, :cond_0
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
     :goto_0
-    if-nez v1, :cond_1
+    if-nez p2, :cond_1
 
-    const-string v1, ""
+    const-string p2, ""
+
+    :cond_1
+    move-object v1, p2
 
     .line 54
-    :cond_1
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -249,9 +256,9 @@
     .line 55
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
-    move-result-object v3
+    move-result-object p2
 
-    invoke-virtual {v3}, Ljava/math/BigInteger;->longValue()J
+    invoke-virtual {p2}, Ljava/math/BigInteger;->longValue()J
 
     move-result-wide v3
 
@@ -281,9 +288,9 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Incorrect transfer args passed"
+    const-string p2, "Incorrect transfer args passed"
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

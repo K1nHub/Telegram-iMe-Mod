@@ -32,18 +32,22 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
+    protected void logDualCameraInternal(boolean z, boolean z2) {
+    }
+
+    @Override // org.telegram.messenger.ApplicationLoader
     protected String onGetApplicationId() {
         return "com.iMe.android.web";
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected int onGetVersionCode() {
-        return 961109;
+        return 970409;
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected String onGetVersionName() {
-        return "9.6.11";
+        return "9.7.4";
     }
 
     private void clearPostponeStatus() {
@@ -67,19 +71,19 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 throw new RuntimeException("App Center hash is empty. add to local.properties field APP_CENTER_HASH_PRIVATE and APP_CENTER_HASH_PUBLIC");
             }
             Distribute.disableAutomaticCheckForUpdate();
-            Distribute.setListener(new C33431());
+            Distribute.setListener(new C33451());
             AppCenter.start(activity.getApplication(), BuildConfig.APP_CENTER_HASH, Distribute.class);
             AppCenter.setUserId("uid=" + UserConfig.getInstance(UserConfig.selectedAccount).clientUserId);
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.ApplicationLoaderImpl$1 */
     /* loaded from: classes4.dex */
-    public class C33431 implements DistributeListener {
-        C33431() {
+    public class C33451 implements DistributeListener {
+        C33451() {
         }
 
         @Override // com.microsoft.appcenter.distribute.DistributeListener
@@ -120,7 +124,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 loadSticker(changelog, new Callbacks$Callback1() { // from class: org.telegram.messenger.ApplicationLoaderImpl$1$$ExternalSyntheticLambda0
                     @Override // com.iMe.fork.utils.Callbacks$Callback1
                     public final void invoke(Object obj) {
-                        ApplicationLoaderImpl.C33431.lambda$onReleaseAvailable$0(TLRPC$TL_help_appUpdate.this, activity, (TLRPC$Document) obj);
+                        ApplicationLoaderImpl.C33451.lambda$onReleaseAvailable$0(TLRPC$TL_help_appUpdate.this, activity, (TLRPC$Document) obj);
                     }
                 });
                 return true;
@@ -152,7 +156,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                     ImageLoader.getInstance().loadHttpFile(SharedConfig.pendingAppUpdate.url, null, 0);
                 }
             }
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
         }
 
         @Override // com.microsoft.appcenter.distribute.DistributeListener
@@ -166,10 +170,10 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 ApplicationLoader.isCheckForUpdateCanceled = false;
                 if (ApplicationLoader.isCheckForUpdateInProgress) {
                     ApplicationLoader.isCheckForUpdateInProgress = false;
-                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString((int) com.iMe.android.web.R.string.app_update_not_found));
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 6, LocaleController.getString((int) com.iMe.android.web.R.string.app_update_not_found));
                     ((LaunchActivity) activity).dismissUpdateAppDialog();
                 }
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
             }
         }
 
@@ -196,7 +200,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 MediaDataController.getInstance(UserConfig.selectedAccount).loadStickersByEmojiOrName(changelog.stickerPackName, false, stickerSetByName == null, new MessagesStorage.BooleanCallback() { // from class: org.telegram.messenger.ApplicationLoaderImpl$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                     public final void run(boolean z) {
-                        ApplicationLoaderImpl.C33431.this.lambda$loadSticker$1(changelog, callbacks$Callback1, z);
+                        ApplicationLoaderImpl.C33451.this.lambda$loadSticker$1(changelog, callbacks$Callback1, z);
                     }
                 });
             }
@@ -219,7 +223,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
             clearPostponeStatus();
             Distribute.checkForUpdate();
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 }

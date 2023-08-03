@@ -6,6 +6,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import org.bouncycastle.util.p041io.Streams;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public class ASN1InputStream extends FilterInputStream {
     private final boolean lazyEvaluate;
@@ -156,7 +157,7 @@ public class ASN1InputStream extends FilterInputStream {
                 return -1;
             }
             if (read > 127) {
-                int i2 = read & 127;
+                int i2 = read & MessagesStorage.LAST_DB_VERSION;
                 if (i2 > 4) {
                     throw new IOException("DER length more than 4 bytes: " + i2);
                 }
@@ -187,13 +188,13 @@ public class ASN1InputStream extends FilterInputStream {
         if (i2 == 31) {
             int i3 = 0;
             int read = inputStream.read();
-            if ((read & 127) != 0) {
+            if ((read & MessagesStorage.LAST_DB_VERSION) != 0) {
                 while (read >= 0 && (read & 128) != 0) {
-                    i3 = (i3 | (read & 127)) << 7;
+                    i3 = (i3 | (read & MessagesStorage.LAST_DB_VERSION)) << 7;
                     read = inputStream.read();
                 }
                 if (read >= 0) {
-                    return i3 | (read & 127);
+                    return i3 | (read & MessagesStorage.LAST_DB_VERSION);
                 }
                 throw new EOFException("EOF found inside tag value.");
             }

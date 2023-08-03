@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Landroid/view/View;)V
     .locals 0
 
-    .line 15073
+    .line 15100
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$71;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/PhotoViewerWebView;-><init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Landroid/view/View;)V
 
-    .line 15075
+    .line 15102
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -44,10 +44,10 @@
 .method protected drawBlackBackground(Landroid/graphics/Canvas;II)V
     .locals 4
 
-    .line 15079
+    .line 15106
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$71;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$10200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$10100(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
@@ -59,7 +59,7 @@
 
     int-to-float v1, p2
 
-    .line 15081
+    .line 15108
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -82,7 +82,7 @@
 
     move-result v1
 
-    .line 15082
+    .line 15109
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -93,7 +93,7 @@
 
     float-to-int v2, v2
 
-    .line 15083
+    .line 15110
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v3
@@ -106,15 +106,15 @@
 
     sub-int/2addr p3, v1
 
-    .line 15084
+    .line 15111
     div-int/lit8 p3, p3, 0x2
 
     sub-int/2addr p2, v2
 
-    .line 15085
+    .line 15112
     div-int/lit8 p2, p2, 0x2
 
-    .line 15086
+    .line 15113
     iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$71;->rect:Landroid/graphics/Rect;
 
     add-int/2addr v2, p2
@@ -123,7 +123,7 @@
 
     invoke-virtual {v3, p2, p3, v2, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 15087
+    .line 15114
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$71;->rect:Landroid/graphics/Rect;
 
     const/4 p3, 0x0

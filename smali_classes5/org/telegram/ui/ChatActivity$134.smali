@@ -39,7 +39,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ILjava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 30117
+    .line 30236
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$134;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput p2, p0, Lorg/telegram/ui/ChatActivity$134;->val$commentsClassGuid:I
@@ -56,7 +56,7 @@
 .method private static synthetic lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 30123
+    .line 30242
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
 
     return-void
@@ -67,7 +67,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    .line 30120
+    .line 30239
     sget v0, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoad:I
 
     if-ne p1, v0, :cond_0
@@ -86,12 +86,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 30121
+    .line 30240
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$134;->val$openCommentsChat:Ljava/lang/Runnable;
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 30122
+    .line 30241
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$134;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
     new-instance v2, Lorg/telegram/ui/ChatActivity$134$$ExternalSyntheticLambda0;
@@ -102,7 +102,7 @@
 
     invoke-static {v2, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 30125
+    .line 30244
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$134;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47800(Lorg/telegram/ui/ChatActivity;)I

@@ -9,7 +9,7 @@ public final class JsonRpcErrorResponse {
     private final JsonRpcError error;
 
     /* renamed from: id */
-    private final long f469id;
+    private final long f472id;
     private final String jsonrpc;
 
     public boolean equals(Object obj) {
@@ -18,24 +18,24 @@ public final class JsonRpcErrorResponse {
         }
         if (obj instanceof JsonRpcErrorResponse) {
             JsonRpcErrorResponse jsonRpcErrorResponse = (JsonRpcErrorResponse) obj;
-            return Intrinsics.areEqual(this.jsonrpc, jsonRpcErrorResponse.jsonrpc) && this.f469id == jsonRpcErrorResponse.f469id && Intrinsics.areEqual(this.error, jsonRpcErrorResponse.error);
+            return Intrinsics.areEqual(this.jsonrpc, jsonRpcErrorResponse.jsonrpc) && this.f472id == jsonRpcErrorResponse.f472id && Intrinsics.areEqual(this.error, jsonRpcErrorResponse.error);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f469id)) * 31) + this.error.hashCode();
+        return (((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f472id)) * 31) + this.error.hashCode();
     }
 
     public String toString() {
-        return "JsonRpcErrorResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f469id + ", error=" + this.error + ')';
+        return "JsonRpcErrorResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f472id + ", error=" + this.error + ')';
     }
 
     public JsonRpcErrorResponse(String jsonrpc, long j, JsonRpcError error) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
         Intrinsics.checkNotNullParameter(error, "error");
         this.jsonrpc = jsonrpc;
-        this.f469id = j;
+        this.f472id = j;
         this.error = error;
     }
 

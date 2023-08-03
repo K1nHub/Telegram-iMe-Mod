@@ -31,7 +31,7 @@ public class KeysMap {
         }
         if (i > 0) {
             Logger logger = Logger.getLogger();
-            logger.m720w("Ignored " + i + " entries when adding custom keys. Maximum allowable: " + this.maxEntries);
+            logger.m738w("Ignored " + i + " entries when adding custom keys. Maximum allowable: " + this.maxEntries);
         }
     }
 

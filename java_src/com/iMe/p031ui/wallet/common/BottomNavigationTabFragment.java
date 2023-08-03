@@ -3,6 +3,8 @@ package com.iMe.p031ui.wallet.common;
 import android.view.View;
 import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.utils.extentions.common.ViewExtKt;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 /* compiled from: BottomNavigationTabFragment.kt */
 /* renamed from: com.iMe.ui.wallet.common.BottomNavigationTabFragment */
 /* loaded from: classes3.dex */
@@ -33,7 +35,22 @@ public abstract class BottomNavigationTabFragment extends WalletAuthBaseFragment
         super.onResume();
         BottomNavigationDelegate bottomNavigationDelegate = this.bottomNavigationDelegate;
         if (bottomNavigationDelegate != null) {
-            bottomNavigationDelegate.getBottomNavigationPadding(new BottomNavigationTabFragment$onResume$1(this));
+            bottomNavigationDelegate.getBottomNavigationPadding(new Function1<Integer, Unit>() { // from class: com.iMe.ui.wallet.common.BottomNavigationTabFragment$onResume$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                    invoke(num.intValue());
+                    return Unit.INSTANCE;
+                }
+
+                public final void invoke(int i) {
+                    BottomNavigationTabFragment.this.handleBottomPadding(i);
+                }
+            });
         }
     }
 

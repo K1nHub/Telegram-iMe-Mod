@@ -43,17 +43,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 37138
+    .line 37836
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 37143
+    .line 37841
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->prefixes:Ljava/util/ArrayList;
 
-    .line 37144
+    .line 37842
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -66,7 +66,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;
     .locals 1
 
-    .line 37147
+    .line 37845
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -77,7 +77,7 @@
 
     return-object p0
 
-    .line 37149
+    .line 37847
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -103,13 +103,13 @@
 
     throw p0
 
-    .line 37154
+    .line 37852
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;-><init>()V
 
-    .line 37155
+    .line 37853
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -120,21 +120,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 37160
+    .line 37858
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
-    .line 37161
+    .line 37859
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->country_code:Ljava/lang/String;
 
-    .line 37162
+    .line 37860
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
     const/4 v1, 0x1
@@ -149,7 +149,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 37163
+    .line 37861
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -160,7 +160,7 @@
 
     return-void
 
-    .line 37166
+    .line 37864
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -180,7 +180,7 @@
 
     throw p1
 
-    .line 37170
+    .line 37868
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -191,7 +191,7 @@
     :goto_0
     if-ge v5, v0, :cond_2
 
-    .line 37172
+    .line 37870
     iget-object v6, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->prefixes:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -204,7 +204,7 @@
 
     goto :goto_0
 
-    .line 37175
+    .line 37873
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
@@ -212,7 +212,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 37176
+    .line 37874
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -223,7 +223,7 @@
 
     return-void
 
-    .line 37179
+    .line 37877
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -243,7 +243,7 @@
 
     throw p1
 
-    .line 37183
+    .line 37881
     :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -252,7 +252,7 @@
     :goto_1
     if-ge v4, v0, :cond_5
 
-    .line 37185
+    .line 37883
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->patterns:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -272,22 +272,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 37191
+    .line 37889
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37192
+    .line 37890
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37193
+    .line 37891
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->country_code:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 37194
+    .line 37892
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -298,17 +298,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 37195
+    .line 37893
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37196
+    .line 37894
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->prefixes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 37197
+    .line 37895
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v1
@@ -316,7 +316,7 @@
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 37199
+    .line 37897
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->prefixes:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -331,7 +331,7 @@
 
     goto :goto_0
 
-    .line 37202
+    .line 37900
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->flags:I
 
@@ -339,23 +339,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 37203
+    .line 37901
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37204
+    .line 37902
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->patterns:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 37205
+    .line 37903
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 37207
+    .line 37905
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_help_countryCode;->patterns:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

@@ -14,7 +14,7 @@ public class LetterSectionCell extends FrameLayout {
 
     public LetterSectionCell(Context context) {
         super(context);
-        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m54dp(54), AndroidUtilities.m54dp(64)));
+        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m72dp(54), AndroidUtilities.m72dp(64)));
         TextView textView = new TextView(getContext());
         this.textView = textView;
         textView.setTextSize(1, 22.0f);
@@ -29,6 +29,6 @@ public class LetterSectionCell extends FrameLayout {
     }
 
     public void setCellHeight(int i) {
-        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m54dp(54), i));
+        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m72dp(54), i));
     }
 }

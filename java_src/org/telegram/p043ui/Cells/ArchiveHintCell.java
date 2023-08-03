@@ -1,67 +1,15 @@
 package org.telegram.p043ui.Cells;
 
-import android.content.Context;
-import android.database.DataSetObserver;
-import android.os.Parcelable;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BottomPagesView;
-import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.ArchiveHintCell */
 /* loaded from: classes5.dex */
 public class ArchiveHintCell extends FrameLayout {
     private BottomPagesView bottomPages;
     private ViewPager viewPager;
-
-    public ArchiveHintCell(Context context) {
-        super(context);
-        ViewPager viewPager = new ViewPager(this, context) { // from class: org.telegram.ui.Cells.ArchiveHintCell.1
-            @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
-            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                if (getParent() != null) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                return super.onInterceptTouchEvent(motionEvent);
-            }
-
-            /* JADX INFO: Access modifiers changed from: protected */
-            @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
-            public void onAttachedToWindow() {
-                super.onAttachedToWindow();
-                requestLayout();
-            }
-        };
-        this.viewPager = viewPager;
-        AndroidUtilities.setViewPagerEdgeEffectColor(viewPager, Theme.getColor(Theme.key_actionBarDefaultArchived));
-        this.viewPager.setAdapter(new Adapter());
-        this.viewPager.setPageMargin(0);
-        this.viewPager.setOffscreenPageLimit(1);
-        addView(this.viewPager, LayoutHelper.createFrame(-1, -1));
-        this.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: org.telegram.ui.Cells.ArchiveHintCell.2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-            public void onPageScrollStateChanged(int i) {
-            }
-
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-            public void onPageSelected(int i) {
-            }
-
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-            public void onPageScrolled(int i, float f, int i2) {
-                ArchiveHintCell.this.bottomPages.setPageOffset(i, f);
-            }
-        });
-        BottomPagesView bottomPagesView = new BottomPagesView(context, this.viewPager, 3);
-        this.bottomPages = bottomPagesView;
-        bottomPagesView.setColor(Theme.key_chats_unreadCounterMuted, Theme.key_chats_actionBackground);
-        addView(this.bottomPages, LayoutHelper.createFrame(33, 5, 81, 0, 0, 0, 19));
-    }
 
     @Override // android.view.View
     public void invalidate() {
@@ -75,60 +23,6 @@ public class ArchiveHintCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(204), 1073741824));
-    }
-
-    /* renamed from: org.telegram.ui.Cells.ArchiveHintCell$Adapter */
-    /* loaded from: classes5.dex */
-    private class Adapter extends PagerAdapter {
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public int getCount() {
-            return 3;
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public void restoreState(Parcelable parcelable, ClassLoader classLoader) {
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public Parcelable saveState() {
-            return null;
-        }
-
-        private Adapter() {
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public Object instantiateItem(ViewGroup viewGroup, int i) {
-            ArchiveHintInnerCell archiveHintInnerCell = new ArchiveHintInnerCell(viewGroup.getContext(), i);
-            if (archiveHintInnerCell.getParent() != null) {
-                ((ViewGroup) archiveHintInnerCell.getParent()).removeView(archiveHintInnerCell);
-            }
-            viewGroup.addView(archiveHintInnerCell, 0);
-            return archiveHintInnerCell;
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
-            viewGroup.removeView((View) obj);
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public void setPrimaryItem(ViewGroup viewGroup, int i, Object obj) {
-            super.setPrimaryItem(viewGroup, i, obj);
-            ArchiveHintCell.this.bottomPages.setCurrentPage(i);
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public boolean isViewFromObject(View view, Object obj) {
-            return view.equals(obj);
-        }
-
-        @Override // androidx.viewpager.widget.PagerAdapter
-        public void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
-            if (dataSetObserver != null) {
-                super.unregisterDataSetObserver(dataSetObserver);
-            }
-        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(204), 1073741824));
     }
 }

@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -38,20 +38,25 @@ public class PremiumNotAvailableBottomSheet extends BottomSheet {
         textView2.setTextColor(Theme.getColor(i));
         linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
         TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+        textView3.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
         textView3.setGravity(17);
         textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView3.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 8.0f));
-        textView3.setText(LocaleController.getString(C3417R.string.InstallOfficialApp));
-        textView3.setOnClickListener(PremiumNotAvailableBottomSheet$$ExternalSyntheticLambda0.INSTANCE);
+        textView3.setText(LocaleController.getString(C3419R.string.InstallOfficialApp));
+        textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumNotAvailableBottomSheet$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                PremiumNotAvailableBottomSheet.lambda$new$0(view);
+            }
+        });
         FrameLayout frameLayout = new FrameLayout(parentActivity);
         frameLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 16, 16, 0, 16, 0));
         frameLayout.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 68, 80));
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3417R.string.SubscribeToPremiumOfficialAppNeeded)));
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3417R.string.SubscribeToPremiumOfficialAppNeededDescription)));
+        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3419R.string.SubscribeToPremiumOfficialAppNeeded)));
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3419R.string.SubscribeToPremiumOfficialAppNeededDescription)));
         ScrollView scrollView = new ScrollView(parentActivity);
         scrollView.addView(linearLayout);
         setCustomView(scrollView);
@@ -62,7 +67,7 @@ public class PremiumNotAvailableBottomSheet extends BottomSheet {
         try {
             view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
         } catch (ActivityNotFoundException e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 }

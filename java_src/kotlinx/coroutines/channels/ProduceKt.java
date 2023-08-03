@@ -76,7 +76,7 @@ public final class ProduceKt {
             r6.<init>(r2, r3)     // Catch: java.lang.Throwable -> L32
             r6.initCancellability()     // Catch: java.lang.Throwable -> L32
             kotlinx.coroutines.channels.ProduceKt$awaitClose$4$1 r2 = new kotlinx.coroutines.channels.ProduceKt$awaitClose$4$1     // Catch: java.lang.Throwable -> L32
-            r2.<init>(r6)     // Catch: java.lang.Throwable -> L32
+            r2.<init>()     // Catch: java.lang.Throwable -> L32
             r4.invokeOnClose(r2)     // Catch: java.lang.Throwable -> L32
             java.lang.Object r4 = r6.getResult()     // Catch: java.lang.Throwable -> L32
             java.lang.Object r6 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()     // Catch: java.lang.Throwable -> L32

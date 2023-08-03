@@ -123,7 +123,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
         public final String peerUrl;
 
         /* renamed from: to */
-        public final String f455to;
+        public final String f458to;
         public final String transactionAmount;
 
         SetupScreenWithDataCommand(WalletConnectTransactionView$$State walletConnectTransactionView$$State, String str, String str2, String str3, String str4, String str5) {
@@ -131,13 +131,13 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
             this.transactionAmount = str;
             this.network = str2;
             this.from = str3;
-            this.f455to = str4;
+            this.f458to = str4;
             this.peerUrl = str5;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletConnectTransactionView walletConnectTransactionView) {
-            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f455to, this.peerUrl);
+            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f458to, this.peerUrl);
         }
     }
 

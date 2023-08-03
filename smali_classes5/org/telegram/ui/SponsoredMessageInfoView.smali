@@ -13,25 +13,25 @@
 
     move-object/from16 v2, p2
 
-    .line 28
+    .line 29
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 30
+    .line 31
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v4, 0x1
 
-    .line 31
+    .line 32
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 33
+    .line 34
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 34
+    .line 35
     sget v6, Lorg/telegram/messenger/R$string;->SponsoredMessageInfo:I
 
     const-string v7, "SponsoredMessageInfo"
@@ -44,14 +44,14 @@
 
     const-string v6, "fonts/rmedium.ttf"
 
-    .line 35
+    .line 36
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 36
+    .line 37
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v6, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -62,26 +62,37 @@
 
     const/high16 v7, 0x41a00000    # 20.0f
 
-    .line 37
+    .line 38
     invoke-virtual {v5, v4, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 39
-    new-instance v7, Landroid/widget/TextView;
-
-    invoke-direct {v7, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
     .line 40
-    sget v8, Lorg/telegram/messenger/R$string;->SponsoredMessageInfoDescription1:I
+    new-instance v7, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const-string v9, "SponsoredMessageInfoDescription1"
+    invoke-direct {v7, v1, v2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    invoke-static {v9, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    const-string v8, "SponsoredMessageInfo2Description1"
+
+    .line 41
+    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8, v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceLinks(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 41
+    .line 42
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
+
+    invoke-static {v8, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setLinkTextColor(I)V
+
+    .line 43
     invoke-static {v6, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v8
@@ -90,12 +101,12 @@
 
     const/high16 v8, 0x41600000    # 14.0f
 
-    .line 42
+    .line 44
     invoke-virtual {v7, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/4 v9, 0x2
 
-    .line 43
+    .line 45
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -106,33 +117,35 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 45
-    new-instance v10, Landroid/widget/TextView;
+    .line 47
+    new-instance v10, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-direct {v10, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
 
-    .line 46
-    sget v12, Lorg/telegram/messenger/R$string;->SponsoredMessageInfoDescription2:I
+    const-string v12, "SponsoredMessageInfo2Description2"
 
-    const-string v13, "SponsoredMessageInfoDescription2"
+    .line 48
+    invoke-static {v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    move-result-object v12
+
+    invoke-static {v12, v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceLinks(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v12
 
     invoke-virtual {v10, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 47
+    .line 49
     invoke-static {v6, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v12
 
     invoke-virtual {v10, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 48
+    .line 50
     invoke-virtual {v10, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 49
+    .line 51
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -141,33 +154,35 @@
 
     invoke-virtual {v10, v12, v11}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 51
-    new-instance v12, Landroid/widget/TextView;
+    .line 53
+    new-instance v12, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-direct {v12, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v12, v1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
 
-    .line 52
-    sget v13, Lorg/telegram/messenger/R$string;->SponsoredMessageInfoDescription3:I
+    const-string v13, "SponsoredMessageInfo2Description3"
 
-    const-string v14, "SponsoredMessageInfoDescription3"
+    .line 54
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    move-result-object v13
+
+    invoke-static {v13, v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceLinks(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v13
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 53
+    .line 55
     invoke-static {v6, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v13
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 54
+    .line 56
     invoke-virtual {v12, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 55
+    .line 57
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -176,17 +191,17 @@
 
     invoke-virtual {v12, v13, v11}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 57
+    .line 59
     new-instance v13, Landroid/graphics/Paint;
 
     invoke-direct {v13, v4}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 58
+    .line 60
     sget-object v14, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v13, v14}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 59
+    .line 61
     sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-static {v14, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -195,7 +210,7 @@
 
     invoke-virtual {v13, v15}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 60
+    .line 62
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
@@ -204,12 +219,12 @@
 
     invoke-virtual {v13, v15}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 61
+    .line 63
     new-instance v15, Lorg/telegram/ui/SponsoredMessageInfoView$1;
 
     invoke-direct {v15, v0, v1, v13}, Lorg/telegram/ui/SponsoredMessageInfoView$1;-><init>(Lorg/telegram/ui/SponsoredMessageInfoView;Landroid/content/Context;Landroid/graphics/Paint;)V
 
-    .line 70
+    .line 72
     new-instance v13, Lorg/telegram/ui/SponsoredMessageInfoView$2;
 
     invoke-direct {v13, v0, v1}, Lorg/telegram/ui/SponsoredMessageInfoView$2;-><init>(Lorg/telegram/ui/SponsoredMessageInfoView;Landroid/app/Activity;)V
@@ -218,7 +233,7 @@
 
     const/16 v13, 0xc
 
-    .line 77
+    .line 79
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -231,7 +246,7 @@
 
     invoke-virtual {v15, v11, v9, v13, v9}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 78
+    .line 80
     sget v11, Lorg/telegram/messenger/R$string;->SponsoredMessageAlertLearnMoreUrl:I
 
     const-string v13, "SponsoredMessageAlertLearnMoreUrl"
@@ -242,14 +257,14 @@
 
     invoke-virtual {v15, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 79
+    .line 81
     invoke-static {v14, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v11
 
     invoke-virtual {v15, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 80
+    .line 82
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {v11, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -264,59 +279,85 @@
 
     invoke-static {v11, v13}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(I[F)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v15, v9}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v15, v11}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 81
+    .line 83
     invoke-virtual {v15, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const/16 v9, 0x10
+    const/16 v11, 0x10
 
-    .line 82
-    invoke-virtual {v15, v9}, Landroid/widget/TextView;->setGravity(I)V
+    .line 84
+    invoke-virtual {v15, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 85
-    new-instance v9, Landroid/widget/TextView;
+    .line 87
+    new-instance v11, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-direct {v9, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
 
-    .line 86
-    sget v1, Lorg/telegram/messenger/R$string;->SponsoredMessageInfoDescription4:I
+    const-string v1, "SponsoredMessageInfo2Description4"
 
-    const-string v11, "SponsoredMessageInfoDescription4"
-
-    invoke-static {v11, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 88
+    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v9, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceLinks(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v11, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 v1, 0x2
 
-    .line 87
+    .line 89
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    const/high16 v13, 0x3f800000    # 1.0f
 
-    invoke-virtual {v9, v1, v11}, Landroid/widget/TextView;->setLineSpacing(FF)V
+    invoke-virtual {v11, v1, v13}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 88
+    .line 90
     invoke-static {v6, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
-    invoke-virtual {v9, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 89
-    invoke-virtual {v9, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v11, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 91
+    invoke-virtual {v11, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    const/16 v1, 0x16
+
+    .line 93
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v5, v2, v9, v4, v9}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 94
     invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 96
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v7, v2, v9, v4, v9}, Landroid/widget/TextView;->setPadding(IIII)V
 
     const/16 v16, -0x1
 
@@ -332,28 +373,50 @@
 
     const/16 v22, 0x0
 
-    .line 92
+    .line 97
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v3, v7, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v7, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 99
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v10, v2, v9, v4, v9}, Landroid/widget/TextView;->setPadding(IIII)V
 
     const/16 v20, 0x18
 
-    .line 93
+    .line 100
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v3, v10, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v10, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 94
+    .line 102
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v12, v2, v9, v4, v9}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 103
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v3, v12, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v12, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     const/16 v16, -0x2
 
@@ -361,29 +424,52 @@
 
     const/16 v18, 0x1
 
+    const/16 v19, 0x16
+
     const/16 v20, 0xe
 
-    .line 95
+    const/16 v21, 0x16
+
+    .line 105
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v3, v15, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v15, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/16 v16, -0x1
+    .line 107
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/16 v17, -0x2
+    move-result v2
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    invoke-virtual {v11, v2, v9, v1, v9}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    const/4 v12, -0x1
+
+    const/4 v13, -0x2
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0xe
+
+    const/16 v17, 0x0
 
     const/16 v18, 0x0
 
-    .line 96
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    .line 108
+    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {v3, v9, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v11, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 98
+    .line 110
     new-instance v1, Landroid/widget/ScrollView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -392,7 +478,7 @@
 
     invoke-direct {v1, v2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 99
+    .line 111
     invoke-virtual {v1, v3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
     const/4 v4, -0x1
@@ -401,15 +487,13 @@
 
     const/4 v6, 0x0
 
-    const/16 v7, 0x16
+    const/4 v7, 0x0
 
     const/16 v8, 0xc
 
-    const/16 v9, 0x16
-
     const/16 v10, 0x16
 
-    .line 100
+    .line 112
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2

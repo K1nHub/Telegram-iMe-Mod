@@ -20,9 +20,9 @@
 
 
 # instance fields
-.field private billingClient:Lcom/android/billingclient/api/BillingClient;
+.field private final billingClient:Lcom/android/billingclient/api/BillingClient;
 
-.field private currencyExpMap:Ljava/util/Map;
+.field private final currencyExpMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -33,11 +33,13 @@
     .end annotation
 .end field
 
+.field private isDisconnected:Z
+
 .field private lastPremiumToken:Ljava/lang/String;
 
 .field private lastPremiumTransaction:Ljava/lang/String;
 
-.field private requestingTokens:Ljava/util/List;
+.field private final requestingTokens:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -47,7 +49,7 @@
     .end annotation
 .end field
 
-.field private resultListeners:Ljava/util/Map;
+.field private final resultListeners:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -77,26 +79,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$CI5PliQgom8y-XGNWhJkLBSBp3Q(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$Uu1GmAqpPBqPTVz03ntZHXn1Qqg(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/messenger/BillingController;->lambda$onPurchasesUpdated$3(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lorg/telegram/messenger/BillingController;->lambda$consumeGiftPurchase$4(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$RrRTSjEkiBY4VSEzfNTmeghVfC8()V
+.method public static synthetic $r8$lambda$VOOlAc8crCdqRAqLFgMguuBdHo4(Lorg/telegram/messenger/BillingController;)V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/messenger/BillingController;->lambda$onBillingSetupFinished$5()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$aQtErhdrgmBdPYMObnhkOKlm-j0(Lorg/telegram/messenger/BillingController;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/Purchase;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/messenger/BillingController;->lambda$onPurchasesUpdated$4(Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/Purchase;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0}, Lorg/telegram/messenger/BillingController;->lambda$onBillingServiceDisconnected$5()V
 
     return-void
 .end method
@@ -117,29 +111,37 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$spTGdw7irzPqq7VQ6qcIeI4UjrU(Lorg/telegram/messenger/BillingController;Lcom/android/billingclient/api/Purchase;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/messenger/BillingController;->lambda$onPurchasesUpdated$3(Lcom/android/billingclient/api/Purchase;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 45
+    .line 43
     invoke-static {}, Lcom/android/billingclient/api/QueryProductDetailsParams$Product;->newBuilder()Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
 
     move-result-object v0
 
     const-string/jumbo v1, "subs"
 
-    .line 46
+    .line 44
     invoke-virtual {v0, v1}, Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;->setProductType(Ljava/lang/String;)Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
 
     move-result-object v0
 
     const-string/jumbo v1, "telegram_premium"
 
-    .line 47
+    .line 45
     invoke-virtual {v0, v1}, Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;->setProductId(Ljava/lang/String;)Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;
 
     move-result-object v0
 
-    .line 48
+    .line 46
     invoke-virtual {v0}, Lcom/android/billingclient/api/QueryProductDetailsParams$Product$Builder;->build()Lcom/android/billingclient/api/QueryProductDetailsParams$Product;
 
     move-result-object v0
@@ -152,46 +154,50 @@
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 73
+    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
+    .line 55
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/BillingController;->resultListeners:Ljava/util/Map;
 
-    .line 58
+    .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
     iput-object v0, p0, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
 
-    .line 62
+    .line 57
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/BillingController;->currencyExpMap:Ljava/util/Map;
 
-    .line 74
+    .line 71
     invoke-static {p1}, Lcom/android/billingclient/api/BillingClient;->newBuilder(Landroid/content/Context;)Lcom/android/billingclient/api/BillingClient$Builder;
 
     move-result-object p1
 
-    .line 75
+    .line 72
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingClient$Builder;->enablePendingPurchases()Lcom/android/billingclient/api/BillingClient$Builder;
 
     move-result-object p1
 
-    .line 76
+    .line 73
     invoke-virtual {p1, p0}, Lcom/android/billingclient/api/BillingClient$Builder;->setListener(Lcom/android/billingclient/api/PurchasesUpdatedListener;)Lcom/android/billingclient/api/BillingClient$Builder;
 
     move-result-object p1
 
-    .line 77
+    .line 74
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingClient$Builder;->build()Lcom/android/billingclient/api/BillingClient;
 
     move-result-object p1
@@ -201,15 +207,54 @@
     return-void
 .end method
 
+.method private consumeGiftPurchase(Lcom/android/billingclient/api/Purchase;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;)V
+    .locals 1
+
+    .line 287
+    instance-of p2, p2, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;
+
+    if-eqz p2, :cond_0
+
+    .line 288
+    iget-object p2, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
+
+    .line 289
+    invoke-static {}, Lcom/android/billingclient/api/ConsumeParams;->newBuilder()Lcom/android/billingclient/api/ConsumeParams$Builder;
+
+    move-result-object v0
+
+    .line 290
+    invoke-virtual {p1}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/android/billingclient/api/ConsumeParams$Builder;->setPurchaseToken(Ljava/lang/String;)Lcom/android/billingclient/api/ConsumeParams$Builder;
+
+    move-result-object p1
+
+    .line 291
+    invoke-virtual {p1}, Lcom/android/billingclient/api/ConsumeParams$Builder;->build()Lcom/android/billingclient/api/ConsumeParams;
+
+    move-result-object p1
+
+    sget-object v0, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda1;
+
+    .line 288
+    invoke-virtual {p2, p1, v0}, Lcom/android/billingclient/api/BillingClient;->consumeAsync(Lcom/android/billingclient/api/ConsumeParams;Lcom/android/billingclient/api/ConsumeResponseListener;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public static getInstance()Lorg/telegram/messenger/BillingController;
     .locals 2
 
-    .line 65
+    .line 64
     sget-object v0, Lorg/telegram/messenger/BillingController;->instance:Lorg/telegram/messenger/BillingController;
 
     if-nez v0, :cond_0
 
-    .line 66
+    .line 65
     new-instance v0, Lorg/telegram/messenger/BillingController;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -218,11 +263,17 @@
 
     sput-object v0, Lorg/telegram/messenger/BillingController;->instance:Lorg/telegram/messenger/BillingController;
 
-    .line 68
+    .line 67
     :cond_0
     sget-object v0, Lorg/telegram/messenger/BillingController;->instance:Lorg/telegram/messenger/BillingController;
 
     return-object v0
+.end method
+
+.method private static synthetic lambda$consumeGiftPurchase$4(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
+    .locals 0
+
+    return-void
 .end method
 
 .method private synthetic lambda$launchBillingFlow$0(Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)V
@@ -242,7 +293,7 @@
 
     move-object v5, p5
 
-    .line 190
+    .line 168
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/BillingController;->launchBillingFlow(Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Z)V
 
     return-void
@@ -251,17 +302,17 @@
 .method private static synthetic lambda$launchBillingFlow$1(Ljava/util/List;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/lang/Runnable;Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
     .locals 0
 
-    .line 203
+    .line 181
     invoke-virtual {p4}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p4
 
     if-nez p4, :cond_0
 
-    .line 204
+    .line 182
     invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 206
+    .line 184
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p1
@@ -272,7 +323,7 @@
 
     if-ne p1, p0, :cond_0
 
-    .line 207
+    .line 185
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -282,15 +333,15 @@
 .method private synthetic lambda$launchBillingFlow$2(Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
     .locals 7
 
-    .line 189
+    .line 167
     invoke-virtual {p6}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p6
 
     if-nez p6, :cond_4
 
-    .line 190
-    new-instance p6, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda5;
+    .line 168
+    new-instance p6, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda6;
 
     move-object v0, p6
 
@@ -306,21 +357,21 @@
 
     move-object v6, p5
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/BillingController;Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/messenger/BillingController;Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)V
 
-    .line 192
+    .line 170
     new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 p2, 0x0
 
     invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 193
+    .line 171
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 194
+    .line 172
     invoke-interface {p7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p5
@@ -339,14 +390,14 @@
 
     check-cast p7, Lcom/android/billingclient/api/Purchase;
 
-    .line 195
+    .line 173
     invoke-virtual {p7}, Lcom/android/billingclient/api/Purchase;->isAcknowledged()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 196
+    .line 174
     invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -364,7 +415,7 @@
 
     check-cast v1, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
 
-    .line 197
+    .line 175
     invoke-virtual {v1}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;->zza()Lcom/android/billingclient/api/ProductDetails;
 
     move-result-object v1
@@ -373,7 +424,7 @@
 
     move-result-object v1
 
-    .line 198
+    .line 176
     invoke-virtual {p7}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
 
     move-result-object v2
@@ -384,17 +435,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 199
+    .line 177
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 200
+    .line 178
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
     invoke-static {}, Lcom/android/billingclient/api/ConsumeParams;->newBuilder()Lcom/android/billingclient/api/ConsumeParams$Builder;
 
     move-result-object v2
 
-    .line 201
+    .line 179
     invoke-virtual {p7}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
 
     move-result-object p7
@@ -403,7 +454,7 @@
 
     move-result-object p7
 
-    .line 202
+    .line 180
     invoke-virtual {p7}, Lcom/android/billingclient/api/ConsumeParams$Builder;->build()Lcom/android/billingclient/api/ConsumeParams;
 
     move-result-object p7
@@ -412,12 +463,12 @@
 
     invoke-direct {v2, p3, v1, p1, p6}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda0;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/lang/Runnable;)V
 
-    .line 200
+    .line 178
     invoke-virtual {v0, p7, v2}, Lcom/android/billingclient/api/BillingClient;->consumeAsync(Lcom/android/billingclient/api/ConsumeParams;Lcom/android/billingclient/api/ConsumeResponseListener;)V
 
     goto :goto_0
 
-    .line 215
+    .line 193
     :cond_2
     invoke-static {}, Lcom/android/billingclient/api/BillingResult;->newBuilder()Lcom/android/billingclient/api/BillingResult$Builder;
 
@@ -439,7 +490,7 @@
 
     return-void
 
-    .line 220
+    .line 198
     :cond_3
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
@@ -447,28 +498,18 @@
 
     if-nez p1, :cond_4
 
-    .line 221
+    .line 199
     invoke-interface {p6}, Ljava/lang/Runnable;->run()V
 
     :cond_4
     return-void
 .end method
 
-.method private static synthetic lambda$onBillingSetupFinished$5()V
-    .locals 3
+.method private synthetic lambda$onBillingServiceDisconnected$5()V
+    .locals 0
 
-    .line 341
-    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->billingProductDetailsUpdated:I
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    .line 306
+    invoke-virtual {p0}, Lorg/telegram/messenger/BillingController;->startConnection()V
 
     return-void
 .end method
@@ -476,12 +517,12 @@
 .method private synthetic lambda$onBillingSetupFinished$6(Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
     .locals 2
 
-    .line 331
+    .line 315
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Query product details finished "
+    const-string v1, "Billing: Query product details finished "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -499,14 +540,14 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 332
+    .line 316
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p1
 
     if-nez p1, :cond_3
 
-    .line 333
+    .line 317
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -525,7 +566,7 @@
 
     check-cast p2, Lcom/android/billingclient/api/ProductDetails;
 
-    .line 334
+    .line 318
     invoke-virtual {p2}, Lcom/android/billingclient/api/ProductDetails;->getProductId()Ljava/lang/String;
 
     move-result-object v0
@@ -538,31 +579,39 @@
 
     if-eqz v0, :cond_0
 
-    .line 335
+    .line 319
     sput-object p2, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
 
     goto :goto_0
 
-    .line 338
+    .line 322
     :cond_1
     sget-object p1, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT_DETAILS:Lcom/android/billingclient/api/ProductDetails;
 
     if-nez p1, :cond_2
 
-    .line 339
+    .line 323
     invoke-direct {p0}, Lorg/telegram/messenger/BillingController;->switchToInvoice()V
 
     goto :goto_1
 
-    .line 341
+    .line 325
     :cond_2
-    sget-object p1, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda6;
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->billingProductDetailsUpdated:I
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationNameOnUIThread(I[Ljava/lang/Object;)V
 
     goto :goto_1
 
-    .line 344
+    .line 328
     :cond_3
     invoke-direct {p0}, Lorg/telegram/messenger/BillingController;->switchToInvoice()V
 
@@ -570,211 +619,139 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onPurchasesUpdated$3(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
-    .locals 0
+.method private synthetic lambda$onPurchasesUpdated$3(Lcom/android/billingclient/api/Purchase;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 2
 
-    return-void
-.end method
+    .line 257
+    iget-object v0, p0, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
 
-.method private synthetic lambda$onPurchasesUpdated$4(Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/Purchase;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 4
+    invoke-virtual {p1}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
 
-    .line 285
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 259
     instance-of v0, p5, Lorg/telegram/tgnet/TLRPC$Updates;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 286
-    invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v0
-
-    move-object v2, p5
-
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$Updates;
-
-    invoke-virtual {v0, v2, v1}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
-
-    .line 287
-    iget-object v0, p0, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
-
-    invoke-virtual {p2}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    .line 289
-    invoke-virtual {p2}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    .line 290
-    iget-object v3, p0, Lorg/telegram/messenger/BillingController;->resultListeners:Ljava/util/Map;
-
-    invoke-interface {v3, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/core/util/Consumer;
-
-    if-eqz v2, :cond_0
-
-    .line 292
-    invoke-interface {v2, p3}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 296
-    :cond_1
-    iget-object p3, p4, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
-
-    instance-of p3, p3, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;
-
-    if-eqz p3, :cond_2
-
-    .line 297
-    iget-object p3, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
-
-    invoke-static {}, Lcom/android/billingclient/api/ConsumeParams;->newBuilder()Lcom/android/billingclient/api/ConsumeParams$Builder;
-
-    move-result-object p4
-
-    .line 298
-    invoke-virtual {p2}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p4, v0}, Lcom/android/billingclient/api/ConsumeParams$Builder;->setPurchaseToken(Ljava/lang/String;)Lcom/android/billingclient/api/ConsumeParams$Builder;
-
-    move-result-object p4
-
-    .line 299
-    invoke-virtual {p4}, Lcom/android/billingclient/api/ConsumeParams$Builder;->build()Lcom/android/billingclient/api/ConsumeParams;
-
-    move-result-object p4
-
-    sget-object v0, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda1;
-
-    .line 297
-    invoke-virtual {p3, p4, v0}, Lcom/android/billingclient/api/BillingClient;->consumeAsync(Lcom/android/billingclient/api/ConsumeParams;Lcom/android/billingclient/api/ConsumeResponseListener;)V
-
-    :cond_2
-    if-nez p5, :cond_3
-
-    .line 302
-    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnline()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_4
-
-    if-eqz p6, :cond_4
-
-    iget p3, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
-
-    const/16 p4, -0x3e8
-
-    if-eq p3, p4, :cond_4
-
-    .line 303
-    :cond_3
-    invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object p3
-
-    iget-object p3, p3, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-virtual {p2}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
+    .line 260
+    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
 
-    invoke-interface {p3, p2}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
+    check-cast p5, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    .line 304
-    invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+    invoke-virtual {p2, p5, v1}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    move-result-object p1
+    .line 262
+    invoke-virtual {p1}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
 
-    invoke-virtual {p1, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
+    move-result-object p2
 
-    :cond_4
-    return-void
-.end method
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-.method private parseCurrencies(Lorg/json/JSONObject;)V
-    .locals 5
+    move-result-object p2
 
-    .line 142
-    invoke-virtual {p1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .line 143
+    :cond_0
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result p5
 
-    if-eqz v1, :cond_0
+    if-eqz p5, :cond_1
 
-    .line 144
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p5
 
-    check-cast v1, Ljava/lang/String;
+    check-cast p5, Ljava/lang/String;
 
-    .line 145
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 263
+    iget-object p6, p0, Lorg/telegram/messenger/BillingController;->resultListeners:Ljava/util/Map;
 
-    move-result-object v2
+    invoke-interface {p6, p5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 146
-    iget-object v3, p0, Lorg/telegram/messenger/BillingController;->currencyExpMap:Ljava/util/Map;
+    move-result-object p5
 
-    const-string v4, "exp"
+    check-cast p5, Landroidx/core/util/Consumer;
 
-    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+    if-eqz p5, :cond_0
 
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 265
+    invoke-interface {p5, p3}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_0
+    .line 269
+    :cond_1
+    iget-object p2, p4, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/BillingController;->consumeGiftPurchase(Lcom/android/billingclient/api/Purchase;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;)V
+
+    goto :goto_1
+
+    :cond_2
+    if-eqz p6, :cond_3
+
+    .line 271
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p2, "Billing: Confirmation Error: "
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p2, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p2, " "
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p2, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 272
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->billingConfirmPurchaseError:I
+
+    const/4 p3, 0x2
+
+    new-array p3, p3, [Ljava/lang/Object;
+
+    aput-object p4, p3, v1
+
+    const/4 p4, 0x1
+
+    aput-object p6, p3, p4
+
+    invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationNameOnUIThread(I[Ljava/lang/Object;)V
+
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method private switchToInvoice()V
     .locals 3
 
-    .line 134
+    .line 118
     sget-boolean v0, Lorg/telegram/messenger/BillingController;->billingClientEmpty:Z
 
     if-eqz v0, :cond_0
@@ -784,10 +761,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 137
+    .line 121
     sput-boolean v0, Lorg/telegram/messenger/BillingController;->billingClientEmpty:Z
 
-    .line 138
+    .line 122
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -817,7 +794,7 @@
         }
     .end annotation
 
-    .line 175
+    .line 153
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->resultListeners:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -828,7 +805,7 @@
 .method public formatCurrency(JLjava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 89
+    .line 86
     invoke-virtual {p0, p3}, Lorg/telegram/messenger/BillingController;->getCurrencyExp(Ljava/lang/String;)I
 
     move-result v0
@@ -843,21 +820,21 @@
 .method public formatCurrency(JLjava/lang/String;I)Ljava/lang/String;
     .locals 4
 
-    .line 93
+    .line 90
     invoke-virtual {p3}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 91
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
 
-    .line 96
+    .line 93
     :cond_0
     invoke-static {p3}, Ljava/util/Currency;->getInstance(Ljava/lang/String;)Ljava/util/Currency;
 
@@ -865,12 +842,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 98
+    .line 95
     invoke-static {}, Ljava/text/NumberFormat;->getCurrencyInstance()Ljava/text/NumberFormat;
 
     move-result-object p3
 
-    .line 99
+    .line 96
     invoke-virtual {p3, v0}, Ljava/text/NumberFormat;->setCurrency(Ljava/util/Currency;)V
 
     long-to-double p1, p1
@@ -879,7 +856,7 @@
 
     int-to-double v2, p4
 
-    .line 101
+    .line 97
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v0
@@ -892,7 +869,7 @@
 
     return-object p1
 
-    .line 103
+    .line 99
     :cond_1
     new-instance p4, Ljava/lang/StringBuilder;
 
@@ -914,25 +891,23 @@
 .end method
 
 .method public getCurrencyExp(Ljava/lang/String;)I
-    .locals 1
+    .locals 2
 
-    .line 107
+    .line 104
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->currencyExpMap:Ljava/util/Map;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, p1, v1}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    .line 111
-    :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -943,7 +918,7 @@
 .method public getLastPremiumToken()Ljava/lang/String;
     .locals 1
 
-    .line 85
+    .line 82
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->lastPremiumToken:Ljava/lang/String;
 
     return-object v0
@@ -952,7 +927,7 @@
 .method public getLastPremiumTransaction()Ljava/lang/String;
     .locals 1
 
-    .line 81
+    .line 78
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->lastPremiumTransaction:Ljava/lang/String;
 
     return-object v0
@@ -961,7 +936,7 @@
 .method public isReady()Z
     .locals 1
 
-    .line 151
+    .line 126
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
     invoke-virtual {v0}, Lcom/android/billingclient/api/BillingClient;->isReady()Z
@@ -999,7 +974,7 @@
 
     move-object v4, p4
 
-    .line 179
+    .line 157
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/BillingController;->launchBillingFlow(Landroid/app/Activity;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Ljava/util/List;Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;Z)V
 
     return-void
@@ -1021,18 +996,18 @@
         }
     .end annotation
 
-    .line 183
+    .line 161
     invoke-virtual {p0}, Lorg/telegram/messenger/BillingController;->isReady()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
     if-nez p1, :cond_0
 
-    goto/16 :goto_2
+    goto/16 :goto_0
 
-    .line 187
+    .line 165
     :cond_0
     instance-of v0, p3, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;
 
@@ -1040,7 +1015,7 @@
 
     if-nez p6, :cond_1
 
-    .line 188
+    .line 166
     new-instance p6, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda4;
 
     move-object v1, p6
@@ -1065,31 +1040,56 @@
 
     return-void
 
-    .line 228
+    .line 206
     :cond_1
+    invoke-static {p3, p2}, Lorg/telegram/messenger/utils/BillingUtilities;->createDeveloperPayload(Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;Lorg/telegram/messenger/AccountInstance;)Landroidx/core/util/Pair;
+
+    move-result-object p2
+
+    .line 207
+    iget-object p3, p2, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast p3, Ljava/lang/String;
+
+    .line 208
+    iget-object p2, p2, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast p2, Ljava/lang/String;
+
+    .line 210
     invoke-static {}, Lcom/android/billingclient/api/BillingFlowParams;->newBuilder()Lcom/android/billingclient/api/BillingFlowParams$Builder;
 
     move-result-object p6
 
-    .line 229
-    invoke-virtual {p6, p4}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setProductDetailsParamsList(Ljava/util/List;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+    .line 211
+    invoke-virtual {p6, p3}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setObfuscatedAccountId(Ljava/lang/String;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
 
     move-result-object p6
+
+    .line 212
+    invoke-virtual {p6, p2}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setObfuscatedProfileId(Ljava/lang/String;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+
+    move-result-object p6
+
+    .line 213
+    invoke-virtual {p6, p4}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setProductDetailsParamsList(Ljava/util/List;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+
+    move-result-object p4
 
     if-eqz p5, :cond_2
 
-    .line 231
-    invoke-virtual {p6, p5}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setSubscriptionUpdateParams(Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+    .line 215
+    invoke-virtual {p4, p5}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->setSubscriptionUpdateParams(Lcom/android/billingclient/api/BillingFlowParams$SubscriptionUpdateParams;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
 
-    .line 233
+    .line 217
     :cond_2
     iget-object p5, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
-    invoke-virtual {p6}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->build()Lcom/android/billingclient/api/BillingFlowParams;
+    invoke-virtual {p4}, Lcom/android/billingclient/api/BillingFlowParams$Builder;->build()Lcom/android/billingclient/api/BillingFlowParams;
 
-    move-result-object p6
+    move-result-object p4
 
-    invoke-virtual {p5, p1, p6}, Lcom/android/billingclient/api/BillingClient;->launchBillingFlow(Landroid/app/Activity;Lcom/android/billingclient/api/BillingFlowParams;)Lcom/android/billingclient/api/BillingResult;
+    invoke-virtual {p5, p1, p4}, Lcom/android/billingclient/api/BillingClient;->launchBillingFlow(Landroid/app/Activity;Lcom/android/billingclient/api/BillingFlowParams;)Lcom/android/billingclient/api/BillingResult;
 
     move-result-object p1
 
@@ -1097,84 +1097,74 @@
 
     move-result p1
 
-    const/4 p5, 0x0
+    if-eqz p1, :cond_3
 
-    if-nez p1, :cond_3
+    .line 219
+    new-instance p4, Ljava/lang/StringBuilder;
 
-    const/4 p1, 0x1
+    invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto :goto_0
+    const-string p5, "Billing: Launch Error: "
+
+    invoke-virtual {p4, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ", "
+
+    invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_3
-    move p1, p5
-
     :goto_0
-    if-eqz p1, :cond_5
-
-    .line 236
-    invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p4
-
-    if-eqz p4, :cond_4
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
-
-    .line 237
-    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object p6
-
-    iput-object p3, p6, Lorg/telegram/messenger/UserConfig;->billingPaymentPurpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
-
-    .line 238
-    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object p6
-
-    iget-object p6, p6, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-virtual {p4}, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;->zza()Lcom/android/billingclient/api/ProductDetails;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Lcom/android/billingclient/api/ProductDetails;->getProductId()Ljava/lang/String;
-
-    move-result-object p4
-
-    invoke-interface {p6, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 240
-    :cond_4
-    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p5}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
-
-    :cond_5
-    :goto_2
     return-void
 .end method
 
 .method public onBillingServiceDisconnected()V
-    .locals 1
+    .locals 4
 
-    const-string v0, "Billing service disconnected"
+    const-string v0, "Billing: Service disconnected"
 
-    .line 323
+    .line 303
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 304
+    iget-boolean v0, p0, Lorg/telegram/messenger/BillingController;->isDisconnected:Z
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0x3a98
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v0, 0x1388
+
+    :goto_0
+    const/4 v1, 0x1
+
+    .line 305
+    iput-boolean v1, p0, Lorg/telegram/messenger/BillingController;->isDisconnected:Z
+
+    .line 306
+    new-instance v1, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda5;
+
+    invoke-direct {v1, p0}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/BillingController;)V
+
+    int-to-long v2, v0
+
+    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
 .end method
@@ -1182,12 +1172,12 @@
 .method public onBillingSetupFinished(Lcom/android/billingclient/api/BillingResult;)V
     .locals 2
 
-    .line 328
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Billing setup finished with result "
+    const-string v1, "Billing: Setup finished with result "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1199,14 +1189,19 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 329
+    .line 312
     invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 330
+    const/4 p1, 0x0
+
+    .line 313
+    iput-boolean p1, p0, Lorg/telegram/messenger/BillingController;->isDisconnected:Z
+
+    .line 314
     sget-object p1, Lorg/telegram/messenger/BillingController;->PREMIUM_PRODUCT:Lcom/android/billingclient/api/QueryProductDetailsParams$Product;
 
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -1219,7 +1214,16 @@
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/BillingController;->queryProductDetails(Ljava/util/List;Lcom/android/billingclient/api/ProductDetailsResponseListener;)V
 
-    .line 347
+    .line 331
+    new-instance p1, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda3;
+
+    invoke-direct {p1, p0}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/BillingController;)V
+
+    const-string v0, "inapp"
+
+    invoke-virtual {p0, v0, p1}, Lorg/telegram/messenger/BillingController;->queryPurchases(Ljava/lang/String;Lcom/android/billingclient/api/PurchasesResponseListener;)V
+
+    .line 332
     new-instance p1, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/BillingController;)V
@@ -1230,16 +1234,22 @@
 
     goto :goto_0
 
-    .line 349
+    .line 334
     :cond_0
+    iget-boolean p1, p0, Lorg/telegram/messenger/BillingController;->isDisconnected:Z
+
+    if-nez p1, :cond_1
+
+    .line 335
     invoke-direct {p0}, Lorg/telegram/messenger/BillingController;->switchToInvoice()V
 
+    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public onPurchasesUpdated(Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
-    .locals 16
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1250,356 +1260,231 @@
         }
     .end annotation
 
-    move-object/from16 v6, p0
+    .line 225
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, p2
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 246
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Billing: Purchases updated: "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "Billing purchases updated: "
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", "
 
-    move-object/from16 v7, p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, ", "
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 247
-    invoke-virtual/range {p1 .. p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
-
-    move-result v1
-
-    const/4 v8, 0x5
-
-    const/4 v2, 0x0
-
-    const/4 v9, 0x1
-
-    const/4 v10, 0x0
-
-    if-eqz v1, :cond_3
-
-    .line 248
-    invoke-virtual/range {p1 .. p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
+    .line 226
+    invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
 
     move-result v0
 
-    if-ne v0, v9, :cond_0
+    const/4 v1, 0x1
 
-    .line 249
+    if-eqz v0, :cond_1
+
+    .line 227
+    invoke-virtual {p1}, Lcom/android/billingclient/api/BillingResult;->getResponseCode()I
+
+    move-result p1
+
+    if-ne p1, v1, :cond_0
+
+    .line 228
     invoke-static {}, Lorg/telegram/ui/PremiumPreviewFragment;->sentPremiumBuyCanceled()V
 
     :cond_0
-    move v0, v10
-
-    :goto_0
-    if-ge v0, v8, :cond_2
-
-    .line 253
-    invoke-static {v0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
-
-    move-result-object v1
-
-    .line 254
-    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 255
-    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->clear()V
-
-    .line 256
-    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v3
-
-    iput-object v2, v3, Lorg/telegram/messenger/UserConfig;->billingPaymentPurpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
-
-    .line 257
-    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v10}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
+    return-void
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    if-eqz p2, :cond_7
 
-    goto :goto_0
-
-    :cond_2
-    return-void
-
-    :cond_3
-    if-nez v0, :cond_4
-
-    return-void
-
-    .line 266
-    :cond_4
-    iput-object v2, v6, Lorg/telegram/messenger/BillingController;->lastPremiumTransaction:Ljava/lang/String;
-
-    .line 267
-    invoke-interface/range {p2 .. p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v11
-
-    :goto_1
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+    .line 232
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
-
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v12, v0
-
-    check-cast v12, Lcom/android/billingclient/api/Purchase;
-
-    .line 268
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "telegram_premium"
-
-    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 269
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getOrderId()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v6, Lorg/telegram/messenger/BillingController;->lastPremiumTransaction:Ljava/lang/String;
-
-    .line 270
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v6, Lorg/telegram/messenger/BillingController;->lastPremiumToken:Ljava/lang/String;
-
-    .line 273
-    :cond_5
-    iget-object v0, v6, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_9
-
-    move v13, v10
-
-    :goto_2
-    if-ge v13, v8, :cond_9
-
-    .line 275
-    invoke-static {v13}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
-
-    move-result-object v2
-
-    .line 276
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getPurchaseState()I
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_8
-
-    .line 277
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getPurchaseState()I
-
-    move-result v0
-
-    if-ne v0, v9, :cond_7
-
-    .line 278
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->isAcknowledged()Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
-
-    .line 279
-    iget-object v0, v6, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 280
-    new-instance v14, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;
-
-    invoke-direct {v14}, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;-><init>()V
-
-    .line 281
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
-
-    iput-object v0, v14, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->receipt:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
-
-    .line 282
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getOriginalJson()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
-
-    .line 283
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lorg/telegram/messenger/UserConfig;->billingPaymentPurpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
-
-    iput-object v0, v14, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
-
-    .line 284
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v15
-
-    new-instance v5, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda7;
-
-    move-object v0, v5
-
-    move-object/from16 v1, p0
-
-    move-object v3, v12
-
-    move-object/from16 v4, p1
-
-    move-object v8, v5
-
-    move-object v5, v14
-
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/BillingController;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/Purchase;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;)V
-
-    const/16 v0, 0x42
-
-    invoke-virtual {v15, v14, v8, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;I)I
-
-    goto :goto_3
-
-    .line 308
-    :cond_6
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
-
-    .line 309
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v10}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
-
-    goto :goto_3
-
-    .line 312
-    :cond_7
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lorg/telegram/messenger/UserConfig;->awaitBillingProductIds:Ljava/util/List;
-
-    invoke-virtual {v12}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
-
-    .line 313
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v10}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
-
-    :cond_8
-    :goto_3
-    add-int/lit8 v13, v13, 0x1
-
-    const/4 v8, 0x5
-
-    goto/16 :goto_2
-
-    :cond_9
-    const/4 v8, 0x5
+    if-eqz v0, :cond_2
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_2
+    const/4 v0, 0x0
+
+    .line 235
+    iput-object v0, p0, Lorg/telegram/messenger/BillingController;->lastPremiumTransaction:Ljava/lang/String;
+
+    .line 236
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :cond_3
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lcom/android/billingclient/api/Purchase;
+
+    .line 237
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getProducts()Ljava/util/List;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "telegram_premium"
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 238
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getOrderId()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/messenger/BillingController;->lastPremiumTransaction:Ljava/lang/String;
+
+    .line 239
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/messenger/BillingController;->lastPremiumToken:Ljava/lang/String;
+
+    .line 242
+    :cond_4
+    iget-object v0, p0, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
+
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getPurchaseState()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_3
+
+    .line 243
+    invoke-static {v4}, Lorg/telegram/messenger/utils/BillingUtilities;->extractDeveloperPayload(Lcom/android/billingclient/api/Purchase;)Landroidx/core/util/Pair;
+
+    move-result-object v0
+
+    if-nez v0, :cond_5
+
+    goto :goto_0
+
+    .line 247
+    :cond_5
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->isAcknowledged()Z
+
+    move-result v2
+
+    if-nez v2, :cond_6
+
+    .line 248
+    iget-object v2, p0, Lorg/telegram/messenger/BillingController;->requestingTokens:Ljava/util/List;
+
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getPurchaseToken()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 250
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;
+
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;-><init>()V
+
+    .line 251
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
+
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
+
+    iput-object v2, v8, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->receipt:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
+
+    .line 252
+    invoke-virtual {v4}, Lcom/android/billingclient/api/Purchase;->getOriginalJson()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
+
+    .line 253
+    iget-object v2, v0, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
+
+    iput-object v2, v8, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;->purpose:Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
+
+    .line 255
+    iget-object v0, v0, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
+
+    move-object v5, v0
+
+    check-cast v5, Lorg/telegram/messenger/AccountInstance;
+
+    .line 256
+    invoke-virtual {v5}, Lorg/telegram/messenger/AccountInstance;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object v0
+
+    new-instance v9, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda7;
+
+    move-object v2, v9
+
+    move-object v3, p0
+
+    move-object v6, p1
+
+    move-object v7, v8
+
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/BillingController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/BillingController;Lcom/android/billingclient/api/Purchase;Lorg/telegram/messenger/AccountInstance;Lcom/android/billingclient/api/BillingResult;Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;)V
+
+    const/16 v2, 0x42
+
+    invoke-virtual {v0, v8, v9, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;I)I
+
+    goto :goto_0
+
+    .line 276
+    :cond_6
+    iget-object v0, v0, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
+
+    invoke-direct {p0, v4, v0}, Lorg/telegram/messenger/BillingController;->consumeGiftPurchase(Lcom/android/billingclient/api/Purchase;Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;)V
+
+    goto/16 :goto_0
+
+    :cond_7
+    :goto_1
     return-void
 .end method
 
@@ -1616,14 +1501,14 @@
         }
     .end annotation
 
-    .line 155
+    .line 130
     invoke-virtual {p0}, Lorg/telegram/messenger/BillingController;->isReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 158
+    .line 133
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
     invoke-static {}, Lcom/android/billingclient/api/QueryProductDetailsParams;->newBuilder()Lcom/android/billingclient/api/QueryProductDetailsParams$Builder;
@@ -1642,11 +1527,11 @@
 
     return-void
 
-    .line 156
+    .line 131
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "Billing controller should be ready for this call!"
+    const-string p2, "Billing: Controller should be ready for this call!"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -1656,7 +1541,7 @@
 .method public queryPurchases(Ljava/lang/String;Lcom/android/billingclient/api/PurchasesResponseListener;)V
     .locals 2
 
-    .line 162
+    .line 140
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
     invoke-static {}, Lcom/android/billingclient/api/QueryPurchasesParams;->newBuilder()Lcom/android/billingclient/api/QueryPurchasesParams$Builder;
@@ -1677,9 +1562,9 @@
 .end method
 
 .method public startConnection()V
-    .locals 5
+    .locals 1
 
-    .line 115
+    .line 108
     invoke-virtual {p0}, Lorg/telegram/messenger/BillingController;->isReady()Z
 
     move-result v0
@@ -1688,62 +1573,20 @@
 
     return-void
 
-    .line 119
+    .line 111
     :cond_0
-    :try_start_0
-    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+    iget-object v0, p0, Lorg/telegram/messenger/BillingController;->currencyExpMap:Ljava/util/Map;
 
-    .line 120
-    invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+    invoke-static {v0}, Lorg/telegram/messenger/utils/BillingUtilities;->extractCurrencyExp(Ljava/util/Map;)V
 
-    move-result-object v0
-
-    const-string v1, "currencies.json"
-
-    invoke-virtual {v0, v1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    .line 121
-    new-instance v1, Lorg/json/JSONObject;
-
-    new-instance v2, Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->toByteArray(Ljava/io/InputStream;)[B
-
-    move-result-object v3
-
-    const-string v4, "UTF-8"
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-
-    invoke-direct {v1, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 122
-    invoke-direct {p0, v1}, Lorg/telegram/messenger/BillingController;->parseCurrencies(Lorg/json/JSONObject;)V
-
-    .line 123
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 125
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    .line 128
-    :goto_0
+    .line 112
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 129
+    .line 113
     iget-object v0, p0, Lorg/telegram/messenger/BillingController;->billingClient:Lcom/android/billingclient/api/BillingClient;
 
     invoke-virtual {v0, p0}, Lcom/android/billingclient/api/BillingClient;->startConnection(Lcom/android/billingclient/api/BillingClientStateListener;)V
@@ -1757,7 +1600,7 @@
 
     const/4 v0, 0x0
 
-    .line 167
+    .line 145
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 

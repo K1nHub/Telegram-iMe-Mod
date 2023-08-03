@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Cells/DialogCell$2;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lorg/telegram/ui/Components/CheckBox2;
 .source "DialogCell.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/DialogCell;->update(IZ)Z
+    value = Lorg/telegram/ui/Cells/DialogCell;->setChecked(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,50 +19,29 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
+.method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 3075
+    .line 2776
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public invalidate()V
     .locals 1
 
-    .line 3078
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
+    .line 2779
+    invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    .line 2780
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$102(Lorg/telegram/ui/Cells/DialogCell;F)F
-
-    .line 3079
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$202(Lorg/telegram/ui/Cells/DialogCell;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
-
-    .line 3080
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$302(Lorg/telegram/ui/Cells/DialogCell;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
-
-    .line 3081
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$402(Lorg/telegram/ui/Cells/DialogCell;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
-
-    .line 3082
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$2;->this$0:Lorg/telegram/ui/Cells/DialogCell;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-virtual {v0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     return-void
 .end method

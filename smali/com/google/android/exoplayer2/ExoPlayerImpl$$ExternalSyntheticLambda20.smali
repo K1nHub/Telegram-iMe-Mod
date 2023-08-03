@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$xPRvbbAFEXpRipm4zHUUlaXa8_c(Lcom/google/android/exoplayer2/PlaybackInfo;ILcom/google/android/exoplayer2/Player$Listener;)V
+    invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$mCYQfy342yJtmHOPlWY2PP6AubE(Lcom/google/android/exoplayer2/PlaybackInfo;ILcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

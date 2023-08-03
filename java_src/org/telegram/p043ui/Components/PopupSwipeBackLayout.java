@@ -390,9 +390,9 @@ public class PopupSwipeBackLayout extends FrameLayout {
         }
         int save = canvas.save();
         this.mPath.rewind();
-        int m54dp = AndroidUtilities.m54dp(6);
+        int m72dp = AndroidUtilities.m72dp(6);
         this.mRect.set(BitmapDescriptorFactory.HUE_RED, top, measuredWidth, measuredHeight + top);
-        float f2 = m54dp;
+        float f2 = m72dp;
         this.mPath.addRoundRect(this.mRect, f2, f2, Path.Direction.CW);
         canvas.clipPath(this.mPath);
         super.dispatchDraw(canvas);

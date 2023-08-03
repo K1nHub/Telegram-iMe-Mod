@@ -44,7 +44,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 888
+    .line 908
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +53,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$1;)V
     .locals 0
 
-    .line 888
+    .line 908
     invoke-direct {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;-><init>()V
 
     return-void
@@ -64,17 +64,17 @@
 .method public recycle()V
     .locals 1
 
-    .line 902
+    .line 922
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;->topBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 903
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;->bottomBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 904
+    .line 924
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_0

@@ -997,7 +997,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/Device;->setOemName(Ljava/lang/String;)V
 
-    const-string v0, "osName"
+    const-string/jumbo v0, "osName"
 
     .line 428
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1006,7 +1006,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/Device;->setOsName(Ljava/lang/String;)V
 
-    const-string v0, "osVersion"
+    const-string/jumbo v0, "osVersion"
 
     .line 429
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1015,7 +1015,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/Device;->setOsVersion(Ljava/lang/String;)V
 
-    const-string v0, "osBuild"
+    const-string/jumbo v0, "osBuild"
 
     const/4 v1, 0x0
 
@@ -1026,7 +1026,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/Device;->setOsBuild(Ljava/lang/String;)V
 
-    const-string v0, "osApiLevel"
+    const-string/jumbo v0, "osApiLevel"
 
     .line 431
     invoke-static {p1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->readInteger(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Integer;
@@ -1458,7 +1458,7 @@
 
     invoke-virtual {v0, v1}, Lorg/json/JSONStringer;->value(Ljava/lang/Object;)Lorg/json/JSONStringer;
 
-    const-string v0, "osName"
+    const-string/jumbo v0, "osName"
 
     .line 449
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;
@@ -1471,7 +1471,7 @@
 
     invoke-virtual {v0, v1}, Lorg/json/JSONStringer;->value(Ljava/lang/Object;)Lorg/json/JSONStringer;
 
-    const-string v0, "osVersion"
+    const-string/jumbo v0, "osVersion"
 
     .line 450
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;
@@ -1489,7 +1489,7 @@
 
     move-result-object v0
 
-    const-string v1, "osBuild"
+    const-string/jumbo v1, "osBuild"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -1498,7 +1498,7 @@
 
     move-result-object v0
 
-    const-string v1, "osApiLevel"
+    const-string/jumbo v1, "osApiLevel"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

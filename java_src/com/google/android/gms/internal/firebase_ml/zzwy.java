@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [FieldDescriptorType] */
 /* loaded from: classes.dex */
-public final class zzwy extends zzwz<FieldDescriptorType, Object> {
+public final class zzwy<FieldDescriptorType> extends zzwz<FieldDescriptorType, Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzwy(int i) {
         super(i, null);
@@ -21,9 +21,7 @@ public final class zzwy extends zzwz<FieldDescriptorType, Object> {
                     zzdq.setValue(Collections.unmodifiableList((List) zzdq.getValue()));
                 }
             }
-            Iterator it = zztf().iterator();
-            while (it.hasNext()) {
-                Map.Entry entry = (Map.Entry) it.next();
+            for (Map.Entry<FieldDescriptorType, Object> entry : zztf()) {
                 if (((zzuo) entry.getKey()).zzra()) {
                     entry.setValue(Collections.unmodifiableList((List) entry.getValue()));
                 }

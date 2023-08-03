@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda2;->f$0:Ljava/lang/Runnable;
+    check-cast p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity$45;->$r8$lambda$LbN9oW4r9qwZQLmapy4XMeq5Q2k(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$45;->$r8$lambda$_Q70N7mm-OyKZwnFV-2fG9C47u8(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

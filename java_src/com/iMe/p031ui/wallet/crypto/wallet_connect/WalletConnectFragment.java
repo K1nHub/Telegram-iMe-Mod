@@ -30,6 +30,7 @@ import com.iMe.p031ui.wallet.crypto.wallet_connect.session_details.WalletConnect
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -41,6 +42,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -50,15 +52,20 @@ import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -87,13 +94,77 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
 
     public WalletConnectFragment() {
         Lazy lazy;
-        WalletConnectFragment$presenter$2 walletConnectFragment$presenter$2 = new WalletConnectFragment$presenter$2(this);
+        Function0<WalletConnectPresenter> function0 = new Function0<WalletConnectPresenter>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletConnectPresenter invoke() {
+                Lazy lazy2;
+                final WalletConnectFragment walletConnectFragment = WalletConnectFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletConnectPresenter>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletConnectPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletConnectPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletConnectPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletConnectPresenter.class.getName() + ".presenter", walletConnectFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletConnectFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletConnectPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletConnectSessionsRecycleAdapter>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.wallet_connect.adapter.WalletConnectSessionsRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletConnectSessionsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletConnectSessionsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.sessionsAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletConnectFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletConnectBinding>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletConnectBinding invoke() {
+                return ForkFragmentWalletConnectBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletConnectFragment.this));
+            }
+        }, 1, (Object) null);
         this.colors = new int[10];
     }
 
@@ -226,12 +297,12 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_connect_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_connect_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -245,10 +316,10 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$2$lambda$1 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$2$lambda$1 = c3485ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$2$lambda$1.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$2$lambda$1, "setupActionBar$lambda$2$lambda$1");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$2$lambda$1, AndroidUtilities.m54dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$2$lambda$1, AndroidUtilities.m72dp(14));
         setupActionBar$lambda$2$lambda$1.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
@@ -273,13 +344,64 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         ForkFragmentWalletConnectBinding binding = getBinding();
         BigActionButton buttonConnect = binding.buttonConnect;
         Intrinsics.checkNotNullExpressionValue(buttonConnect, "buttonConnect");
-        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(buttonConnect, 0L, new WalletConnectFragment$setupListeners$1$1(this), 1, null);
+        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(buttonConnect, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectFragment.this.onConnectClick();
+            }
+        }, 1, null);
         TextCell buttonDisconnectAll = binding.buttonDisconnectAll;
         Intrinsics.checkNotNullExpressionValue(buttonDisconnectAll, "buttonDisconnectAll");
-        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(buttonDisconnectAll, 0L, new WalletConnectFragment$setupListeners$1$2(this), 1, null);
+        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(buttonDisconnectAll, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectFragment.this.showDisconnectAllConfirmationDialog();
+            }
+        }, 1, null);
         RLottieImageView imageHeader = binding.imageHeader;
         Intrinsics.checkNotNullExpressionValue(imageHeader, "imageHeader");
-        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(imageHeader, 0L, new WalletConnectFragment$setupListeners$1$3(this), 1, null);
+        com.iMe.utils.extentions.common.ViewExtKt.safeThrottledClick$default(imageHeader, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupListeners$1$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectFragment.this.onImageHeaderClick();
+            }
+        }, 1, null);
         getSessionsAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -298,11 +420,30 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
 
     private final void onSessionItemClick(int i) {
         WalletConnectSessionItem item = getSessionsAdapter().getItem(i);
-        WalletConnectSessionItem walletConnectSessionItem = item instanceof WalletConnectSessionItem ? item : null;
+        final WalletConnectSessionItem walletConnectSessionItem = item instanceof WalletConnectSessionItem ? item : null;
         if (walletConnectSessionItem == null) {
             return;
         }
-        showDialog(WalletConnectSessionDetailsBottomSheetDialog.Companion.newInstance(walletConnectSessionItem, this, new WalletConnectFragment$onSessionItemClick$1(this, walletConnectSessionItem)));
+        showDialog(WalletConnectSessionDetailsBottomSheetDialog.Companion.newInstance(walletConnectSessionItem, this, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$onSessionItemClick$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletConnectPresenter presenter;
+                presenter = WalletConnectFragment.this.getPresenter();
+                presenter.disconnect(walletConnectSessionItem);
+            }
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -345,22 +486,22 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3417R.C3419drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3419R.C3421drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
-        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3417R.string.wallet_connect_new_connection));
+        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m72dp(8)), 1, 2, 0);
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3419R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
-        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3419R.raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3417R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3417R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3417R.string.wallet_connect_terminate_all), C3417R.C3419drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3419R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3419R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3419R.string.wallet_connect_terminate_all), C3419R.C3421drawable.msg_block2, false);
     }
 
     private final void openQRScan() {

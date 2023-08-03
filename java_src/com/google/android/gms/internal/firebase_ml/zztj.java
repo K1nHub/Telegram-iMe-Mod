@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import java.io.IOException;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public final class zztj {
@@ -17,7 +18,7 @@ public final class zztj {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int zza(int i, byte[] bArr, int i2, zztm zztmVar) {
-        int i3 = i & 127;
+        int i3 = i & MessagesStorage.LAST_DB_VERSION;
         int i4 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

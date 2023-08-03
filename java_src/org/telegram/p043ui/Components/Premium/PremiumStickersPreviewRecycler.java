@@ -24,6 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.Premium.PremiumStickersPreviewRecycler;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.tgnet.TLRPC$Document;
 /* renamed from: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler */
@@ -86,7 +87,14 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
         };
         this.interpolator = new CubicBezierInterpolator((float) BitmapDescriptorFactory.HUE_RED, 0.5f, 0.5f, 1.0f);
         this.sortedView = new ArrayList<>();
-        this.comparator = PremiumStickersPreviewRecycler$$ExternalSyntheticLambda1.INSTANCE;
+        this.comparator = new Comparator() { // from class: org.telegram.ui.Components.Premium.PremiumStickersPreviewRecycler$$ExternalSyntheticLambda1
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$new$0;
+                lambda$new$0 = PremiumStickersPreviewRecycler.lambda$new$0((PremiumStickersPreviewRecycler.StickerView) obj, (PremiumStickersPreviewRecycler.StickerView) obj2);
+                return lambda$new$0;
+            }
+        };
         this.selectStickerOnNextLayout = -1;
         this.currentAccount = i;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
@@ -468,9 +476,9 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
             int i3 = (int) (PremiumStickersPreviewRecycler.this.size * 0.6f);
             ViewGroup.LayoutParams layoutParams = this.view.getLayoutParams();
             ViewGroup.LayoutParams layoutParams2 = this.view.getLayoutParams();
-            int m54dp = i3 - AndroidUtilities.m54dp(16);
-            layoutParams2.height = m54dp;
-            layoutParams.width = m54dp;
+            int m72dp = i3 - AndroidUtilities.m72dp(16);
+            layoutParams2.height = m72dp;
+            layoutParams.width = m72dp;
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (i3 * 0.7f), 1073741824));
         }
 

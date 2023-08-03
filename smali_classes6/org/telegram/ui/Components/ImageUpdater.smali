@@ -1480,7 +1480,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8, v3}, Lorg/telegram/messenger/MediaController;->scheduleVideoConvert(Lorg/telegram/messenger/MessageObject;Z)Z
+    invoke-virtual {v1, v8, v3, v3}, Lorg/telegram/messenger/MediaController;->scheduleVideoConvert(Lorg/telegram/messenger/MessageObject;ZZ)Z
 
     .line 866
     iput-object v9, v0, Lorg/telegram/ui/Components/ImageUpdater;->uploadingImage:Ljava/lang/String;

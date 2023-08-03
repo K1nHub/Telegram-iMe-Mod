@@ -1,6 +1,7 @@
 package kotlin.collections;
 
 import java.util.Collection;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
@@ -51,7 +52,29 @@ public abstract class AbstractCollection<E> implements Collection<E>, KMappedMar
 
     public String toString() {
         String joinToString$default;
-        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new AbstractCollection$toString$1(this), 24, null);
+        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1<E, CharSequence>(this) { // from class: kotlin.collections.AbstractCollection$toString$1
+            final /* synthetic */ AbstractCollection<E> this$0;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+                this.this$0 = this;
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ CharSequence invoke(Object obj) {
+                return invoke((AbstractCollection$toString$1<E>) obj);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final CharSequence invoke(E e) {
+                return e == this.this$0 ? "(this Collection)" : String.valueOf(e);
+            }
+        }, 24, null);
         return joinToString$default;
     }
 

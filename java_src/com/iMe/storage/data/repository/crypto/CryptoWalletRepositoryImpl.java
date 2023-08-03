@@ -1,12 +1,17 @@
 package com.iMe.storage.data.repository.crypto;
 
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
+import com.iMe.storage.data.mapper.crypto.WalletInformationMappingKt;
 import com.iMe.storage.data.network.api.own.CryptoWalletApi;
+import com.iMe.storage.data.network.handlers.ErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.data.network.model.request.crypto.wallet.LinkWalletsRequest;
 import com.iMe.storage.data.network.model.request.crypto.wallet.LinkingWalletRequest;
 import com.iMe.storage.data.network.model.request.crypto.wallet.UnlinkWalletAddressRequest;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.data.network.model.response.crypto.wallet.CryptoWalletsInfoResponse;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
@@ -26,6 +31,7 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletRepositoryImpl.kt */
 /* loaded from: classes3.dex */
@@ -60,9 +66,35 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
         for (Map.Entry<BlockchainType, String> entry : publicKeys.entrySet()) {
             arrayList.add(new LinkingWalletRequest(entry.getKey().getBackendName(), entry.getValue()));
         }
-        Observable<R> map = cryptoWalletApi.linkWallet(new LinkWalletsRequest(arrayList)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$linkWallets$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<Object>> linkWallet = cryptoWalletApi.linkWallet(new LinkWalletsRequest(arrayList));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = linkWallet.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$linkWallets$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(Boolean.TRUE);
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$linkWallets$$inlined$handleError$1(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$linkWallets$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -70,20 +102,99 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoWalletRepository
     public Observable<Result<Boolean>> unlinkWallet(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> map = this.cryptoWalletApi.unlinkWallet(new UnlinkWalletAddressRequest(blockchainType.getBackendName())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<Object>> unlinkWallet = this.cryptoWalletApi.unlinkWallet(new UnlinkWalletAddressRequest(blockchainType.getBackendName()));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = unlinkWallet.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(Boolean.TRUE);
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable map2 = map.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapError$1(FirebaseFunctionsErrorHandler.CryptoErrorStatus.ETHER_WALLET_NOT_LINKED)));
+        final FirebaseFunctionsErrorHandler.CryptoErrorStatus cryptoErrorStatus = FirebaseFunctionsErrorHandler.CryptoErrorStatus.ETHER_WALLET_NOT_LINKED;
+        Observable map2 = map.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<? extends Boolean> invoke(Result<? extends Boolean> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (result instanceof Result.Success) {
+                    return result;
+                }
+                if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (!Intrinsics.areEqual(error.getError().getStatus(), IErrorStatus.this)) {
+                        Result<? extends Boolean> error$default = Result.Companion.error$default(Result.Companion, error.getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapError");
+                        return error$default;
+                    }
+                    error.getError();
+                    return Result.Companion.success(Boolean.TRUE);
+                } else if (result instanceof Object) {
+                    return result;
+                } else {
+                    return null;
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map2, "errorStatus: IErrorStatu…ult as? R\n        }\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$handleError$1(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = map2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$unlinkWallet$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoWalletRepository
     public Observable<Result<CryptoWalletsInfo>> getLinkedCryptoWalletInfo() {
-        Observable<R> map = this.cryptoWalletApi.getCryptoWalletInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1878x1fe7c804(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<CryptoWalletsInfoResponse>> cryptoWalletInfo = this.cryptoWalletApi.getCryptoWalletInfo();
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = cryptoWalletInfo.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<CryptoWalletsInfoResponse>, Result<? extends CryptoWalletsInfo>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$getLinkedCryptoWalletInfo$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<CryptoWalletsInfo> invoke(ApiBaseResponse<CryptoWalletsInfoResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(WalletInformationMappingKt.mapToDomain(response.getPayload()));
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CryptoWalletsInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1877xc018f11d(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<CryptoWalletsInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends CryptoWalletsInfo>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$getLinkedCryptoWalletInfo$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<CryptoWalletsInfo> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -112,7 +223,18 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         Observable andThen2 = andThen.andThen(just);
         Intrinsics.checkNotNullExpressionValue(andThen2, "walletTokensBalancesDao\n…Success().toObservable())");
-        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1876x72fefc63(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$clearTokensData$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -139,7 +261,18 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         Observable andThen2 = andThen.andThen(just);
         Intrinsics.checkNotNullExpressionValue(andThen2, "walletTokensBalancesDao\n…Success().toObservable())");
-        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1875x2ff8d0fc(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoWalletRepositoryImpl$clearAllTokensData$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

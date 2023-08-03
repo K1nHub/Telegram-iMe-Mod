@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBTCWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,106:1\n70#2:107\n14#3:108\n7#4:109\n11#4:115\n18#5:110\n18#5:116\n1549#6:111\n1620#6,3:112\n*S KotlinDebug\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n*L\n50#1:107\n53#1:108\n65#1:109\n101#1:115\n65#1:110\n101#1:116\n79#1:111\n79#1:112,3\n*E\n"
+    value = "SMAP\nBTCWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,109:1\n70#2:110\n14#3:111\n7#4:112\n11#4:118\n18#5:113\n18#5:119\n1549#6:114\n1620#6,3:115\n*S KotlinDebug\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n*L\n50#1:110\n53#1:111\n68#1:112\n104#1:118\n68#1:113\n104#1:119\n82#1:114\n82#1:115,3\n*E\n"
 .end annotation
 
 
@@ -151,12 +151,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 62
+    .line 65
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
 
     if-eqz v0, :cond_2
 
-    .line 64
+    .line 67
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getBTCWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;
@@ -169,7 +169,7 @@
 
     if-nez v0, :cond_0
 
-    .line 65
+    .line 68
     new-instance p1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     const/4 v0, 0x3
@@ -194,7 +194,7 @@
 
     return-object p1
 
-    .line 67
+    .line 70
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;->getPrivateKeyBytes()[B
 
@@ -204,7 +204,7 @@
 
     move-result-object v3
 
-    .line 68
+    .line 71
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -227,15 +227,15 @@
 
     move-result-object v0
 
-    .line 70
+    .line 73
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
 
-    .line 71
+    .line 74
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$SigningInput;->newBuilder()Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object v5
 
-    .line 72
+    .line 75
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -248,7 +248,7 @@
 
     move-result-object v5
 
-    .line 73
+    .line 76
     invoke-static {v4}, Lwallet/core/jni/BitcoinScript;->hashTypeForCoin(Lwallet/core/jni/CoinType;)I
 
     move-result v6
@@ -257,7 +257,7 @@
 
     move-result-object v5
 
-    .line 74
+    .line 77
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v6
@@ -266,7 +266,7 @@
 
     move-result-object v5
 
-    .line 75
+    .line 78
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getChangeAddress()Ljava/lang/String;
 
     move-result-object v6
@@ -275,7 +275,7 @@
 
     move-result-object v5
 
-    .line 76
+    .line 79
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getByteFee()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -288,7 +288,7 @@
 
     move-result-object v5
 
-    .line 77
+    .line 80
     invoke-virtual {v4}, Lwallet/core/jni/CoinType;->value()I
 
     move-result v4
@@ -297,7 +297,7 @@
 
     move-result-object v4
 
-    .line 79
+    .line 82
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getUtxos()Ljava/util/List;
 
     move-result-object p1
@@ -332,7 +332,7 @@
     .line 1621
     check-cast v6, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;
 
-    .line 81
+    .line 84
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getTxId()Ljava/lang/String;
 
     move-result-object v7
@@ -357,22 +357,22 @@
 
     move-result-object v7
 
-    .line 82
+    .line 85
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction;->newBuilder()Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v8
 
-    .line 84
+    .line 87
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$OutPoint;->newBuilder()Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;
 
     move-result-object v9
 
-    .line 85
+    .line 88
     invoke-virtual {v9, v7}, Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;->setHash(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;
 
     move-result-object v7
 
-    .line 86
+    .line 89
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getIndex()I
 
     move-result v9
@@ -381,19 +381,19 @@
 
     move-result-object v7
 
-    .line 87
+    .line 90
     invoke-virtual {v7}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v7
 
     check-cast v7, Lwallet/core/jni/proto/Bitcoin$OutPoint;
 
-    .line 83
+    .line 86
     invoke-virtual {v8, v7}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;->setOutPoint(Lwallet/core/jni/proto/Bitcoin$OutPoint;)Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v7
 
-    .line 89
+    .line 92
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getAmount()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -406,12 +406,12 @@
 
     move-result-object v6
 
-    .line 90
+    .line 93
     invoke-virtual {v6, v0}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;->setScript(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v6
 
-    .line 91
+    .line 94
     invoke-virtual {v6}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v6
@@ -423,25 +423,25 @@
 
     goto :goto_0
 
-    .line 78
+    .line 81
     :cond_1
     invoke-virtual {v4, v5}, Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;->addAllUtxo(Ljava/lang/Iterable;)Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object p1
 
-    .line 95
+    .line 98
     invoke-virtual {p1, v3}, Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;->addPrivateKey(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object p1
 
-    .line 96
+    .line 99
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p1
 
     check-cast p1, Lwallet/core/jni/proto/Bitcoin$SigningInput;
 
-    .line 99
+    .line 102
     sget-object v0, Lwallet/core/jni/CoinType;->BITCOIN:Lwallet/core/jni/CoinType;
 
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$SigningOutput;->parser()Lcom/google/protobuf/Parser;
@@ -454,7 +454,7 @@
 
     check-cast p1, Lwallet/core/jni/proto/Bitcoin$SigningOutput;
 
-    .line 101
+    .line 104
     invoke-virtual {p1}, Lwallet/core/jni/proto/Bitcoin$SigningOutput;->getEncoded()Lcom/google/protobuf/ByteString;
 
     move-result-object p1
@@ -487,7 +487,7 @@
 
     return-object p1
 
-    .line 62
+    .line 65
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -511,12 +511,13 @@
     return-object p1
 .end method
 
-.method public transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
-    .locals 2
+.method public transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -529,6 +530,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "networkId"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     .line 53
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
@@ -537,19 +542,19 @@
     .line 14
     new-instance v0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;
 
-    invoke-direct {v0, p0}, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;)V
+    invoke-direct {v0, p0, p2}, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;Ljava/lang/String;)V
 
-    new-instance v1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance p2, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {v1, v0}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, v0}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v0, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
+    const-string p2, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method

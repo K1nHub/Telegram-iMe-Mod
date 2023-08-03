@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/SharedMediaLayout$22;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
 .source "SharedMediaLayout.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/SharedMediaLayout;->animateToMediaColumnsCount(I)V
+    value = Lorg/telegram/ui/Components/SharedMediaLayout;->startPinchToMediaColumnsCount(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,138 +19,173 @@
 
 .field final synthetic val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-.field final synthetic val$newColumnsCount:I
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;ILorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
+.method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 2958
+    .line 3251
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    iput p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$newColumnsCount:I
+    iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public getSpanSize(I)I
+    .locals 4
 
-    .line 2961
-    iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+    .line 3254
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
-
-    .line 2962
-    iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$900(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->getItemCount()I
-
-    move-result p1
-
-    .line 2963
-    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2402(Lorg/telegram/ui/Components/SharedMediaLayout;Z)Z
-
-    .line 2964
-    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$600(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     move-result-object v0
 
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->setListFrozen(Z)V
-
-    .line 2965
-    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
-
-    iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$newColumnsCount:I
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2502(Lorg/telegram/ui/Components/SharedMediaLayout;I)I
-
-    .line 2966
-    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2500(Lorg/telegram/ui/Components/SharedMediaLayout;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3800(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
 
-    move-result v1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanCount(I)V
+    const/4 v2, 0x2
 
-    .line 2967
+    const/4 v3, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    .line 3255
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$900(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3800(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->getItemCount()I
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->getItemViewType(I)I
 
-    move-result v0
+    move-result p1
 
-    if-ne v0, p1, :cond_0
+    if-ne p1, v2, :cond_0
 
-    .line 2968
+    .line 3256
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
 
     move-result-object p1
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
 
-    goto :goto_0
+    move-result p1
 
-    .line 2970
+    return p1
+
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+    return v3
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$900(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
+    .line 3259
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    move-result-object p1
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+    move-result-object v0
 
-    .line 2972
-    :goto_0
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_3
+
+    .line 3260
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getItemViewType(I)I
+
+    move-result p1
+
+    if-ne p1, v2, :cond_2
+
+    .line 3261
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3400(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
 
     move-result-object p1
 
-    const/16 v0, 0x8
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
+    move-result p1
 
-    .line 2973
-    iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+    return p1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+    :cond_2
+    return v3
 
-    return-void
+    .line 3264
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_4
+
+    .line 3265
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getItemViewType(I)I
+
+    move-result p1
+
+    if-ne p1, v2, :cond_4
+
+    .line 3266
+    iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
+
+    move-result p1
+
+    return p1
+
+    :cond_4
+    return v3
 .end method

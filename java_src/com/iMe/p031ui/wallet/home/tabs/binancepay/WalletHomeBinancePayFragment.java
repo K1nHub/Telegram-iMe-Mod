@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.binance.android.binancepay.api.BinancePay;
+import com.binance.android.binancepay.api.BinancePayFactory;
 import com.binance.android.opensdk.api.BinanceAPI;
+import com.binance.android.opensdk.api.BinanceAPIFactory;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
@@ -37,6 +39,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.RecycleViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
@@ -56,8 +59,14 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -81,16 +90,121 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
-        WalletHomeBinancePayFragment$presenter$2 walletHomeBinancePayFragment$presenter$2 = new WalletHomeBinancePayFragment$presenter$2(this);
+        Function0<WalletHomeBinancePayPresenter> function0 = new Function0<WalletHomeBinancePayPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletHomeBinancePayPresenter invoke() {
+                Lazy lazy4;
+                final WalletHomeBinancePayFragment walletHomeBinancePayFragment = WalletHomeBinancePayFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        BinanceAPI binanceApi;
+                        BinancePay binancePayApi;
+                        binanceApi = WalletHomeBinancePayFragment.this.getBinanceApi();
+                        binancePayApi = WalletHomeBinancePayFragment.this.getBinancePayApi();
+                        return ParametersHolderKt.parametersOf(binanceApi, binancePayApi);
+                    }
+                };
+                lazy4 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletHomeBinancePayPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletHomeBinancePayPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletHomeBinancePayPresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletHomeBinancePayPresenter) lazy4.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeBinancePayPresenter.class.getName() + ".presenter", walletHomeBinancePayFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletHomeBinancePayFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeBinancePayPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BinancePayRecycleAdapter>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.home.tabs.binancepay.adapter.BinancePayRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinancePayRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.binancePayRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeBinancePayFragment$binding$2(this), 1, (Object) null);
-        lazy2 = LazyKt__LazyJVMKt.lazy(new WalletHomeBinancePayFragment$binanceApi$2(this));
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletHomeBinancePayBinding>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletHomeBinancePayBinding invoke() {
+                return ForkFragmentWalletHomeBinancePayBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeBinancePayFragment.this));
+            }
+        }, 1, (Object) null);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<BinanceAPI>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$binanceApi$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinanceAPI invoke() {
+                Activity parentActivity = WalletHomeBinancePayFragment.this.getParentActivity();
+                Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+                return BinanceAPIFactory.createAPI(parentActivity);
+            }
+        });
         this.binanceApi$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new WalletHomeBinancePayFragment$binancePayApi$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<BinancePay>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$binancePayApi$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final BinancePay invoke() {
+                BinancePayFactory.Companion companion = BinancePayFactory.Companion;
+                Activity parentActivity = WalletHomeBinancePayFragment.this.getParentActivity();
+                Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+                return companion.getBinancePay(parentActivity);
+            }
+        });
         this.binancePayApi$delegate = lazy3;
     }
 
@@ -375,7 +489,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3417R.C3420id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3419R.C3422id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -390,20 +504,20 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         int id = view.getId();
-        if (id == C3417R.C3420id.image_copy) {
+        if (id == C3419R.C3422id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3417R.C3420id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3419R.C3422id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new TokensScreenType.Binance(SelectableMappingKt.mapToDetailedTokensList(this$0.getPresenter().getBalances()))));
-        } else if (id == C3417R.C3420id.image_wallet_order_tokens) {
+        } else if (id == C3419R.C3422id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda4
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$13$lambda$12(WalletHomeBinancePayFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3417R.C3420id.image_wallet_crypto_eye) {
+        } else if (id == C3419R.C3422id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }

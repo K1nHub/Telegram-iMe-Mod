@@ -3,7 +3,6 @@ package com.googlecode.mp4parser.boxes.mp4;
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import com.googlecode.mp4parser.AbstractFullBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;
-import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor;
 import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ObjectDescriptorFactory;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -13,7 +12,6 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.reflect.Factory;
 /* loaded from: classes3.dex */
 public class AbstractDescriptorBox extends AbstractFullBox {
-    private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_3 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_4 = null;
     private static Logger log;
     protected ByteBuffer data;
@@ -23,7 +21,7 @@ public class AbstractDescriptorBox extends AbstractFullBox {
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "", "java.nio.ByteBuffer"), 42);
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"), 58);
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "", "java.lang.String"), 62);
-        ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "", "void"), 66);
+        factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "", "void"), 66);
         ajc$tjp_4 = factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "java.nio.ByteBuffer", "data", "", "void"), 70);
     }
 
@@ -46,10 +44,6 @@ public class AbstractDescriptorBox extends AbstractFullBox {
     @Override // com.googlecode.mp4parser.AbstractBox
     protected long getContentSize() {
         return this.data.limit() + 4;
-    }
-
-    public void setDescriptor(BaseDescriptor baseDescriptor) {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_3, this, this, baseDescriptor));
     }
 
     public void setData(ByteBuffer byteBuffer) {

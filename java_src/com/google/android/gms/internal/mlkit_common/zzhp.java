@@ -124,6 +124,6 @@ final class zzhp<E> extends zzek<E> implements RandomAccess {
     static {
         zzhp<Object> zzhpVar = new zzhp<>(new Object[0], 0);
         zza = zzhpVar;
-        zzhpVar.mo764b_();
+        zzhpVar.mo782b_();
     }
 }

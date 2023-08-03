@@ -1130,10 +1130,402 @@
     return-void
 .end method
 
+.method public static getChatSubtitle(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$ChatFull;I)Ljava/lang/CharSequence;
+    .locals 8
+
+    .line 880
+    invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v0
+
+    const-string v1, "OnlineCount"
+
+    const/4 v2, 0x2
+
+    const-string v3, "%s, %s"
+
+    const-string v4, "Members"
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    if-eqz v0, :cond_a
+
+    if-eqz p1, :cond_4
+
+    .line 881
+    iget v0, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
+
+    if-eqz v0, :cond_4
+
+    .line 882
+    iget-boolean v7, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+
+    if-eqz v7, :cond_1
+
+    if-le p2, v5, :cond_0
+
+    new-array p0, v2, [Ljava/lang/Object;
+
+    new-array v2, v6, [Ljava/lang/Object;
+
+    .line 884
+    invoke-static {v4, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    aput-object v0, p0, v6
+
+    iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
+
+    invoke-static {p2, p1}, Ljava/lang/Math;->min(II)I
+
+    move-result p1
+
+    new-array p2, v6, [Ljava/lang/Object;
+
+    invoke-static {v1, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    aput-object p1, p0, v5
+
+    invoke-static {v3, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    :cond_0
+    new-array p0, v6, [Ljava/lang/Object;
+
+    .line 886
+    invoke-static {v4, v0, p0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    :cond_1
+    new-array p2, v5, [I
+
+    .line 890
+    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isAccessibilityScreenReaderEnabled()Z
+
+    move-result v0
+
+    .line 891
+    iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
+
+    if-eqz v0, :cond_2
+
+    aput p1, p2, v6
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1, p2}, Lorg/telegram/messenger/LocaleController;->formatShortNumber(I[I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 892
+    :goto_0
+    iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+
+    const-string v0, "%d"
+
+    if-eqz p0, :cond_3
+
+    .line 893
+    aget p0, p2, v6
+
+    new-array v1, v6, [Ljava/lang/Object;
+
+    invoke-static {v4, p0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-array v1, v5, [Ljava/lang/Object;
+
+    aget p2, p2, v6
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    aput-object p2, v1, v6
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p2, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 895
+    :cond_3
+    aget p0, p2, v6
+
+    new-array v1, v6, [Ljava/lang/Object;
+
+    const-string v2, "Subscribers"
+
+    invoke-static {v2, p0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-array v1, v5, [Ljava/lang/Object;
+
+    aget p2, p2, v6
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    aput-object p2, v1, v6
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p2, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 899
+    :cond_4
+    iget-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+
+    if-eqz p2, :cond_8
+
+    if-nez p1, :cond_5
+
+    .line 901
+    sget p0, Lorg/telegram/messenger/R$string;->Loading:I
+
+    const-string p1, "Loading"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 903
+    :cond_5
+    iget-boolean p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
+
+    if-eqz p1, :cond_6
+
+    .line 904
+    sget p0, Lorg/telegram/messenger/R$string;->MegaLocation:I
+
+    const-string p1, "MegaLocation"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 905
+    :cond_6
+    invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_7
+
+    .line 906
+    sget p0, Lorg/telegram/messenger/R$string;->MegaPublic:I
+
+    const-string p1, "MegaPublic"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 908
+    :cond_7
+    sget p0, Lorg/telegram/messenger/R$string;->MegaPrivate:I
+
+    const-string p1, "MegaPrivate"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto/16 :goto_1
+
+    .line 912
+    :cond_8
+    invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_9
+
+    .line 913
+    sget p0, Lorg/telegram/messenger/R$string;->ChannelPublic:I
+
+    const-string p1, "ChannelPublic"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    .line 915
+    :cond_9
+    sget p0, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
+
+    const-string p1, "ChannelPrivate"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    .line 920
+    :cond_a
+    invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isKickedFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    .line 921
+    sget p0, Lorg/telegram/messenger/R$string;->YouWereKicked:I
+
+    const-string p1, "YouWereKicked"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    .line 922
+    :cond_b
+    invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isLeftFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    .line 923
+    sget p0, Lorg/telegram/messenger/R$string;->YouLeft:I
+
+    const-string p1, "YouLeft"
+
+    invoke-static {p1, p0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    .line 925
+    :cond_c
+    iget p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
+
+    if-eqz p1, :cond_d
+
+    .line 926
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
+
+    if-eqz p1, :cond_d
+
+    .line 927
+    iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result p0
+
+    :cond_d
+    if-le p2, v5, :cond_e
+
+    if-eqz p0, :cond_e
+
+    new-array p1, v2, [Ljava/lang/Object;
+
+    new-array v0, v6, [Ljava/lang/Object;
+
+    .line 930
+    invoke-static {v4, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    aput-object p0, p1, v6
+
+    new-array p0, v6, [Ljava/lang/Object;
+
+    invoke-static {v1, p2, p0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    aput-object p0, p1, v5
+
+    invoke-static {v3, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    :cond_e
+    new-array p1, v6, [Ljava/lang/Object;
+
+    .line 932
+    invoke-static {v4, p0, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    :goto_1
+    return-object p0
+.end method
+
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 1148
+    .line 1154
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -1460,7 +1852,7 @@
 .method private updateCurrentConnectionState()V
     .locals 3
 
-    .line 1088
+    .line 1094
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
     const/4 v1, 0x0
@@ -1469,7 +1861,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 1089
+    .line 1095
     sget v0, Lorg/telegram/messenger/R$string;->WaitingForNetwork:I
 
     const-string v2, "WaitingForNetwork"
@@ -1485,7 +1877,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 1091
+    .line 1097
     sget v0, Lorg/telegram/messenger/R$string;->Connecting:I
 
     const-string v2, "Connecting"
@@ -1501,7 +1893,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 1093
+    .line 1099
     sget v0, Lorg/telegram/messenger/R$string;->Updating:I
 
     const-string v2, "Updating"
@@ -1517,7 +1909,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 1095
+    .line 1101
     sget v0, Lorg/telegram/messenger/R$string;->ConnectingToProxy:I
 
     const-string v2, "ConnectingToProxy"
@@ -1534,25 +1926,25 @@
     :goto_0
     if-nez v0, :cond_5
 
-    .line 1098
+    .line 1104
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_8
 
-    .line 1099
+    .line 1105
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1100
+    .line 1106
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    .line 1101
+    .line 1107
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     if-eqz v0, :cond_4
 
-    .line 1102
+    .line 1108
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1563,13 +1955,13 @@
 
     goto :goto_1
 
-    .line 1103
+    .line 1109
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
     if-ltz v0, :cond_8
 
-    .line 1104
+    .line 1110
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -1578,7 +1970,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1105
+    .line 1111
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -1591,13 +1983,13 @@
 
     goto :goto_1
 
-    .line 1109
+    .line 1115
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-nez v1, :cond_6
 
-    .line 1110
+    .line 1116
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -1606,18 +1998,18 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    .line 1112
+    .line 1118
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1113
+    .line 1119
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     if-eqz v0, :cond_7
 
-    .line 1114
+    .line 1120
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1628,7 +2020,7 @@
 
     goto :goto_1
 
-    .line 1116
+    .line 1122
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -1640,7 +2032,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1117
+    .line 1123
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1657,22 +2049,22 @@
 
 # virtual methods
 .method public checkAndUpdateAvatar()V
-    .locals 7
+    .locals 8
 
-    .line 978
+    .line 984
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 981
+    .line 987
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v2
 
-    .line 982
+    .line 988
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1685,49 +2077,17 @@
 
     if-eqz v2, :cond_3
 
-    .line 984
+    .line 990
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 985
+    .line 991
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
-
-    .line 986
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
-
-    .line 987
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/16 v1, 0xc
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-
-    .line 988
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
-
-    if-eqz v0, :cond_7
-
-    .line 989
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
-
-    goto/16 :goto_2
-
-    .line 991
-    :cond_1
-    invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
 
     .line 992
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -1737,7 +2097,7 @@
     .line 993
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const/4 v1, 0x1
+    const/16 v1, 0xc
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
@@ -1751,9 +2111,41 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto/16 :goto_2
+
+    .line 997
+    :cond_1
+    invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
 
     .line 998
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+
+    .line 999
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+
+    .line 1000
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    if-eqz v0, :cond_7
+
+    .line 1001
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    .line 1004
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -1761,12 +2153,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 999
+    .line 1005
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_7
 
-    .line 1000
+    .line 1006
     iget-object v1, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -1777,24 +2169,26 @@
 
     const/4 v6, 0x3
 
-    invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;ZI)V
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v1 .. v7}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;ZIZ)V
 
     goto :goto_2
 
     :cond_3
     if-eqz v0, :cond_7
 
-    .line 1004
+    .line 1010
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 1005
+    .line 1011
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v2, :cond_5
 
-    .line 1007
+    .line 1013
     iget v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -1805,19 +2199,19 @@
 
     if-eqz v2, :cond_4
 
-    .line 1008
+    .line 1014
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1009
+    .line 1015
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v2, 0x65
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1010
+    .line 1016
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -1826,7 +2220,7 @@
 
     goto :goto_0
 
-    .line 1012
+    .line 1018
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1834,7 +2228,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 1014
+    .line 1020
     :cond_5
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -1865,12 +2259,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1069
+    .line 1075
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
 
     if-ne p1, p2, :cond_0
 
-    .line 1070
+    .line 1076
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1881,43 +2275,43 @@
 
     move-result p1
 
-    .line 1071
+    .line 1077
     iget p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
     if-eq p2, p1, :cond_3
 
-    .line 1072
+    .line 1078
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
-    .line 1073
+    .line 1079
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->updateCurrentConnectionState()V
 
     goto :goto_0
 
-    .line 1075
+    .line 1081
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_3
 
-    .line 1076
+    .line 1082
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p1, :cond_1
 
-    .line 1077
+    .line 1083
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1079
+    .line 1085
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p1, :cond_2
 
-    .line 1080
+    .line 1086
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1082
+    .line 1088
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -1929,7 +2323,7 @@
 .method public getAvatarImageView()Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 1144
+    .line 1150
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object v0
@@ -1938,7 +2332,7 @@
 .method public getLastSubtitleColorKey()I
     .locals 1
 
-    .line 934
+    .line 940
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
     return v0
@@ -1947,7 +2341,7 @@
 .method public getSharedMediaPreloader()Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
     .locals 1
 
-    .line 1140
+    .line 1146
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     return-object v0
@@ -2082,15 +2476,15 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 1043
+    .line 1049
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1044
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 1045
+    .line 1051
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2101,7 +2495,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1046
+    .line 1052
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2110,7 +2504,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1047
+    .line 1053
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2123,16 +2517,16 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
-    .line 1048
+    .line 1054
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->updateCurrentConnectionState()V
 
-    .line 1050
+    .line 1056
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 1051
+    .line 1057
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
 
     :cond_1
@@ -2167,15 +2561,15 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1057
+    .line 1063
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1058
+    .line 1064
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 1059
+    .line 1065
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2186,7 +2580,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1060
+    .line 1066
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2195,13 +2589,13 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1062
+    .line 1068
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 1063
+    .line 1069
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->detach()V
 
     :cond_1
@@ -2211,15 +2605,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 1124
+    .line 1130
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1125
+    .line 1131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1126
+    .line 1132
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -2228,17 +2622,17 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 1127
+    .line 1133
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
     const-string v1, ", "
 
-    .line 1128
+    .line 1134
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1129
+    .line 1135
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2246,10 +2640,10 @@
     :cond_0
     const-string v1, "\n"
 
-    .line 1131
+    .line 1137
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1132
+    .line 1138
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -2258,10 +2652,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 1133
+    .line 1139
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1134
+    .line 1140
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->isClickable()Z
 
     move-result v0
@@ -2274,7 +2668,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1135
+    .line 1141
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v1, 0x10
@@ -3499,19 +3893,19 @@
 .method public setChatAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
     .locals 3
 
-    .line 938
+    .line 944
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 939
+    .line 945
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_2
 
     if-eqz p1, :cond_0
 
-    .line 941
+    .line 947
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -3522,21 +3916,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 942
+    .line 948
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 943
+    .line 949
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const v1, 0x3f4ccccd    # 0.8f
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 944
+    .line 950
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -3547,7 +3941,7 @@
 
     goto :goto_0
 
-    .line 946
+    .line 952
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -3555,7 +3949,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 947
+    .line 953
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -4301,7 +4695,7 @@
 
     const/4 v0, 0x0
 
-    .line 952
+    .line 958
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setUserAvatar(Lorg/telegram/tgnet/TLRPC$User;Z)V
 
     return-void
@@ -4310,12 +4704,12 @@
 .method public setUserAvatar(Lorg/telegram/tgnet/TLRPC$User;Z)V
     .locals 3
 
-    .line 956
+    .line 962
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 957
+    .line 963
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -4326,44 +4720,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 958
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/16 v0, 0xc
-
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-
-    .line 959
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
-
-    .line 960
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
-
-    if-eqz p2, :cond_2
-
-    .line 961
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {p2, v2, v2, v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 963
-    :cond_0
-    invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    if-nez p2, :cond_1
-
     .line 964
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const/4 v0, 0x1
+    const/16 v0, 0xc
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
@@ -4384,7 +4744,41 @@
 
     goto :goto_0
 
+    .line 969
+    :cond_0
+    invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    if-nez p2, :cond_1
+
     .line 970
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+
+    .line 971
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+
+    .line 972
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    if-eqz p2, :cond_2
+
+    .line 973
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {p2, v2, v2, v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 976
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -4392,12 +4786,12 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 971
+    .line 977
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz p2, :cond_2
 
-    .line 972
+    .line 978
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
@@ -4518,12 +4912,12 @@
 .method public updateColors()V
     .locals 2
 
-    .line 1152
+    .line 1158
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentTypingDrawable:Lorg/telegram/ui/Components/StatusDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1153
+    .line 1159
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_status:I
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -4539,7 +4933,7 @@
 .method public updateOnlineCount()V
     .locals 8
 
-    .line 1019
+    .line 1025
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -4549,10 +4943,10 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1022
+    .line 1028
     iput v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
-    .line 1023
+    .line 1029
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object v0
@@ -4561,7 +4955,7 @@
 
     return-void
 
-    .line 1027
+    .line 1033
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
@@ -4573,7 +4967,7 @@
 
     move-result v2
 
-    .line 1028
+    .line 1034
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull;
 
     if-nez v3, :cond_3
@@ -4597,19 +4991,19 @@
     :cond_2
     if-eqz v3, :cond_6
 
-    .line 1036
+    .line 1042
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
 
     if-le v1, v4, :cond_6
 
-    .line 1037
+    .line 1043
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->online_count:I
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
     goto :goto_1
 
-    .line 1029
+    .line 1035
     :cond_3
     :goto_0
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
@@ -4622,7 +5016,7 @@
 
     if-ge v1, v3, :cond_6
 
-    .line 1030
+    .line 1036
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
@@ -4633,7 +5027,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    .line 1031
+    .line 1037
     iget v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -4652,7 +5046,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1032
+    .line 1038
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     if-eqz v4, :cond_5
@@ -4686,7 +5080,7 @@
 
     if-le v3, v4, :cond_5
 
-    .line 1033
+    .line 1039
     iget v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
     add-int/lit8 v3, v3, 0x1
@@ -4735,13 +5129,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1f
 
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1f
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -4749,7 +5143,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1f
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -4763,7 +5157,7 @@
 
     if-eqz v1, :cond_1
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     .line 738
     :cond_1
@@ -4845,7 +5239,7 @@
 
     goto/16 :goto_2
 
-    .line 885
+    .line 830
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -4855,7 +5249,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 886
+    .line 831
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -4864,25 +5258,25 @@
 
     if-eqz v0, :cond_6
 
-    .line 887
+    .line 832
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v10}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 888
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 889
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_4
 
-    .line 890
+    .line 835
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 891
+    .line 836
     iput-object v10, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     :cond_4
@@ -4890,7 +5284,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 894
+    .line 839
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -4899,7 +5293,7 @@
 
     new-array v1, v8, [Landroid/animation/Animator;
 
-    .line 895
+    .line 840
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v8, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -4908,7 +5302,7 @@
 
     aput v9, v10, v3
 
-    .line 896
+    .line 841
     invoke-static {v5, v8, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -4923,17 +5317,17 @@
 
     aput v0, v9, v3
 
-    .line 897
+    .line 842
     invoke-static {v5, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v1, v2
 
-    .line 895
+    .line 840
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 898
+    .line 843
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ChatAvatarContainer$6;
@@ -4942,30 +5336,30 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 904
+    .line 849
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 905
+    .line 850
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_0
 
-    .line 907
+    .line 852
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v9}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 908
+    .line 853
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 913
+    .line 858
     :cond_6
     :goto_0
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
@@ -4998,7 +5392,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 914
+    .line 859
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextPaint()Landroid/text/TextPaint;
@@ -5026,11 +5420,11 @@
     :cond_7
     move-object v5, v4
 
-    .line 917
+    .line 862
     :goto_1
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setTypingAnimation(Z)V
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     .line 746
     :cond_8
@@ -5249,7 +5643,7 @@
 
     move-result-object p1
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     .line 793
     :cond_e
@@ -5267,10 +5661,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_6
+    goto :goto_5
 
     :cond_f
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_12
 
     .line 796
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -5286,7 +5680,7 @@
 
     if-eqz v0, :cond_10
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 800
     :cond_10
@@ -5309,404 +5703,22 @@
 
     move-result-object p1
 
-    goto/16 :goto_6
+    goto :goto_5
 
     .line 803
     :cond_11
-    invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v0
-
-    const-string v4, "OnlineCount"
-
-    const-string v5, "%s, %s"
-
-    const-string v6, "Members"
-
-    if-eqz v0, :cond_1c
-
-    if-eqz p1, :cond_16
-
-    .line 804
-    iget v0, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
-
-    if-eqz v0, :cond_16
-
-    .line 805
-    iget-boolean v7, v1, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
-
-    if-eqz v7, :cond_13
-
-    .line 806
-    iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
-
-    if-le v1, v2, :cond_12
-
-    new-array v1, v8, [Ljava/lang/Object;
-
-    new-array v7, v3, [Ljava/lang/Object;
-
-    .line 807
-    invoke-static {v6, v0, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v1, v3
-
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
-
-    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    new-array v0, v3, [Ljava/lang/Object;
-
-    invoke-static {v4, p1, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    aput-object p1, v1, v2
-
-    invoke-static {v5, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    :cond_12
-    new-array p1, v3, [Ljava/lang/Object;
-
-    .line 809
-    invoke-static {v6, v0, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    :cond_13
-    new-array v0, v2, [I
-
-    .line 813
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isAccessibilityScreenReaderEnabled()Z
-
-    move-result v4
-
-    .line 814
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
-
-    if-eqz v4, :cond_14
-
-    aput p1, v0, v3
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v1, p1, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getChatSubtitle(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$ChatFull;I)Ljava/lang/CharSequence;
 
     move-result-object p1
 
     goto :goto_5
 
-    :cond_14
-    invoke-static {p1, v0}, Lorg/telegram/messenger/LocaleController;->formatShortNumber(I[I)Ljava/lang/String;
+    :cond_12
+    if-eqz v0, :cond_1b
 
-    move-result-object p1
-
-    .line 815
-    :goto_5
-    iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
-
-    const-string v4, "%d"
-
-    if-eqz v1, :cond_15
-
-    .line 816
-    aget v1, v0, v3
-
-    new-array v5, v3, [Ljava/lang/Object;
-
-    invoke-static {v6, v1, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aget v0, v0, v3
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    aput-object v0, v2, v3
-
-    invoke-static {v4, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 818
-    :cond_15
-    aget v1, v0, v3
-
-    new-array v5, v3, [Ljava/lang/Object;
-
-    const-string v6, "Subscribers"
-
-    invoke-static {v6, v1, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aget v0, v0, v3
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    aput-object v0, v2, v3
-
-    invoke-static {v4, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 822
-    :cond_16
-    iget-boolean v0, v1, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
-
-    if-eqz v0, :cond_1a
-
-    if-nez p1, :cond_17
-
-    .line 824
-    sget p1, Lorg/telegram/messenger/R$string;->Loading:I
-
-    const-string v0, "Loading"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 826
-    :cond_17
-    iget-boolean p1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
-
-    if-eqz p1, :cond_18
-
-    .line 827
-    sget p1, Lorg/telegram/messenger/R$string;->MegaLocation:I
-
-    const-string v0, "MegaLocation"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 828
-    :cond_18
-    invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_19
-
-    .line 829
-    sget p1, Lorg/telegram/messenger/R$string;->MegaPublic:I
-
-    const-string v0, "MegaPublic"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 831
-    :cond_19
-    sget p1, Lorg/telegram/messenger/R$string;->MegaPrivate:I
-
-    const-string v0, "MegaPrivate"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 835
-    :cond_1a
-    invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1b
-
-    .line 836
-    sget p1, Lorg/telegram/messenger/R$string;->ChannelPublic:I
-
-    const-string v0, "ChannelPublic"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 838
-    :cond_1b
-    sget p1, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
-
-    const-string v0, "ChannelPrivate"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 843
-    :cond_1c
-    invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isKickedFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    .line 844
-    sget p1, Lorg/telegram/messenger/R$string;->YouWereKicked:I
-
-    const-string v0, "YouWereKicked"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 845
-    :cond_1d
-    invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isLeftFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    .line 846
-    sget p1, Lorg/telegram/messenger/R$string;->YouLeft:I
-
-    const-string v0, "YouLeft"
-
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_6
-
-    .line 848
-    :cond_1e
-    iget v0, v1, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
-
-    if-eqz p1, :cond_1f
-
-    .line 849
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
-
-    if-eqz p1, :cond_1f
-
-    .line 850
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    .line 852
-    :cond_1f
-    iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
-
-    if-le p1, v2, :cond_20
-
-    if-eqz v0, :cond_20
-
-    new-array p1, v8, [Ljava/lang/Object;
-
-    new-array v1, v3, [Ljava/lang/Object;
-
-    .line 853
-    invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, p1, v3
-
-    iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
-
-    new-array v1, v3, [Ljava/lang/Object;
-
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, p1, v2
-
-    invoke-static {v5, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_6
-
-    :cond_20
-    new-array p1, v3, [Ljava/lang/Object;
-
-    .line 855
-    invoke-static {v6, v0, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_6
-
-    :cond_21
-    if-eqz v0, :cond_2a
-
-    .line 860
+    .line 805
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5723,22 +5735,22 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_13
 
     move-object v0, p1
 
-    .line 865
-    :cond_22
+    .line 810
+    :cond_13
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_14
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
-    .line 867
-    :cond_23
+    .line 812
+    :cond_14
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
@@ -5753,9 +5765,9 @@
 
     cmp-long p1, v1, v4
 
-    if-nez p1, :cond_24
+    if-nez p1, :cond_15
 
-    .line 868
+    .line 813
     sget p1, Lorg/telegram/messenger/R$string;->ChatYourSelf:I
 
     const-string v0, "ChatYourSelf"
@@ -5764,44 +5776,44 @@
 
     move-result-object p1
 
-    :goto_6
+    :goto_5
     move-object v5, p1
 
-    goto :goto_8
+    goto :goto_7
 
-    .line 869
-    :cond_24
+    .line 814
+    :cond_15
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-wide/32 v4, 0x514c8
 
     cmp-long p1, v1, v4
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1a
 
     const-wide/32 v4, 0xbdb28
 
     cmp-long p1, v1, v4
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1a
 
     const-wide/32 v4, 0xa719
 
     cmp-long p1, v1, v4
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_16
 
-    goto :goto_7
+    goto :goto_6
 
-    .line 871
-    :cond_25
+    .line 816
+    :cond_16
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_17
 
-    .line 872
+    .line 817
     sget p1, Lorg/telegram/messenger/R$string;->SupportStatus:I
 
     const-string v0, "SupportStatus"
@@ -5810,15 +5822,15 @@
 
     move-result-object p1
 
-    goto :goto_6
+    goto :goto_5
 
-    .line 873
-    :cond_26
+    .line 818
+    :cond_17
     iget-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_18
 
-    .line 874
+    .line 819
     sget p1, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string v0, "Bot"
@@ -5827,29 +5839,29 @@
 
     move-result-object p1
 
-    goto :goto_6
+    goto :goto_5
 
-    .line 876
-    :cond_27
+    .line 821
+    :cond_18
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
 
     aput-boolean v3, p1, v3
 
-    .line 877
+    .line 822
     iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->allowShorterStatus:Z
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_19
 
     iget-object v10, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusMadeShorter:[Z
 
-    :cond_28
+    :cond_19
     invoke-static {v1, v0, p1, v10}, Lorg/telegram/messenger/LocaleController;->formatUserStatus(ILorg/telegram/tgnet/TLRPC$User;[Z[Z)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 878
+    .line 823
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
 
     aget-boolean v0, v0, v3
@@ -5858,11 +5870,11 @@
 
     move v2, v0
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 870
-    :cond_29
-    :goto_7
+    .line 815
+    :cond_1a
+    :goto_6
     sget p1, Lorg/telegram/messenger/R$string;->ServiceNotifications:I
 
     const-string v0, "ServiceNotifications"
@@ -5871,42 +5883,42 @@
 
     move-result-object p1
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_2a
-    :goto_8
+    :cond_1b
+    :goto_7
     move v2, v3
 
-    :goto_9
-    if-eqz v2, :cond_2b
+    :goto_8
+    if-eqz v2, :cond_1c
 
-    .line 919
+    .line 864
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_status:I
 
-    goto :goto_a
+    goto :goto_9
 
-    :cond_2b
+    :cond_1c
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
 
-    :goto_a
+    :goto_9
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
-    .line 920
+    .line 865
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_1e
 
-    .line 921
+    .line 866
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 922
+    .line 867
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_1d
 
-    .line 923
+    .line 868
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -5917,7 +5929,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 924
+    .line 869
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -5928,10 +5940,10 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    goto :goto_b
+    goto :goto_a
 
-    .line 926
-    :cond_2c
+    .line 871
+    :cond_1d
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -5940,18 +5952,18 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_b
+    goto :goto_a
 
-    .line 929
-    :cond_2d
+    .line 874
+    :cond_1e
     iput-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    :goto_b
+    :goto_a
     return-void
 
     .line 733
-    :cond_2e
-    :goto_c
+    :cond_1f
+    :goto_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
@@ -5960,13 +5972,13 @@
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_2f
+    if-eq p1, v0, :cond_20
 
     .line 734
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_2f
+    :cond_20
     return-void
 .end method

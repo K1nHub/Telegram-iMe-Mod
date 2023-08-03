@@ -15,7 +15,7 @@ public final class NavBackStackEntryState implements Parcelable {
     private final int destinationId;
 
     /* renamed from: id */
-    private final String f47id;
+    private final String f49id;
     private final Bundle savedState;
 
     @Override // android.os.Parcelable
@@ -24,7 +24,7 @@ public final class NavBackStackEntryState implements Parcelable {
     }
 
     public final String getId() {
-        return this.f47id;
+        return this.f49id;
     }
 
     public final int getDestinationId() {
@@ -33,7 +33,7 @@ public final class NavBackStackEntryState implements Parcelable {
 
     public NavBackStackEntryState(NavBackStackEntry entry) {
         Intrinsics.checkNotNullParameter(entry, "entry");
-        this.f47id = entry.getId();
+        this.f49id = entry.getId();
         this.destinationId = entry.getDestination().getId();
         this.args = entry.getArguments();
         Bundle bundle = new Bundle();
@@ -45,7 +45,7 @@ public final class NavBackStackEntryState implements Parcelable {
         Intrinsics.checkNotNullParameter(inParcel, "inParcel");
         String readString = inParcel.readString();
         Intrinsics.checkNotNull(readString);
-        this.f47id = readString;
+        this.f49id = readString;
         this.destinationId = inParcel.readInt();
         this.args = inParcel.readBundle(NavBackStackEntryState.class.getClassLoader());
         Bundle readBundle = inParcel.readBundle(NavBackStackEntryState.class.getClassLoader());
@@ -63,13 +63,13 @@ public final class NavBackStackEntryState implements Parcelable {
         } else {
             bundle = null;
         }
-        return NavBackStackEntry.Companion.create(context, destination, bundle, hostLifecycleState, navControllerViewModel, this.f47id, this.savedState);
+        return NavBackStackEntry.Companion.create(context, destination, bundle, hostLifecycleState, navControllerViewModel, this.f49id, this.savedState);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         Intrinsics.checkNotNullParameter(parcel, "parcel");
-        parcel.writeString(this.f47id);
+        parcel.writeString(this.f49id);
         parcel.writeInt(this.destinationId);
         parcel.writeBundle(this.args);
         parcel.writeBundle(this.savedState);

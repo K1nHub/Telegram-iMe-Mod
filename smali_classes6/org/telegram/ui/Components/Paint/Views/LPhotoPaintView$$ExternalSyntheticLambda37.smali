@@ -2,40 +2,110 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;->INSTANCE:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public synthetic applyServiceShaderMatrix(IIFF)V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$iLOCEppt5xNzsL9hX1CSgobXZHc()V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$applyServiceShaderMatrix(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;IIFF)V
+
+    return-void
+.end method
+
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getColor(I)I
+    .locals 1
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$AEWjU2KziRlO0UfcW51-QeBj3dY(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic getColorOrDefault(I)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic getCurrentColor(I)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getDrawable(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getPaint(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/Paint;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic hasGradientService()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$hasGradientService(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic setAnimatedColor(II)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
     return-void
 .end method

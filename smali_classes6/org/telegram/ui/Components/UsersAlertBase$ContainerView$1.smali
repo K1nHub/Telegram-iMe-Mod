@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;)V
     .locals 0
 
-    .line 531
+    .line 536
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$1;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,20 +35,20 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 534
+    .line 539
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 535
+    .line 540
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$1;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;
 
     const/4 v0, 0x0
 
     iput v0, p1, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->snapToTopOffset:F
 
-    .line 536
+    .line 541
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->setTranslationY(F)V
 
-    .line 537
+    .line 542
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView$1;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;
 
     const/4 v0, 0x0

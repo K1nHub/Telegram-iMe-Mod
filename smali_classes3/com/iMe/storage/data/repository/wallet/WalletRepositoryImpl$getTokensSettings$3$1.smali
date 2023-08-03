@@ -74,7 +74,7 @@
 .method public bridge synthetic call()Ljava/lang/Object;
     .locals 1
 
-    .line 168
+    .line 160
     invoke-virtual {p0}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$3$1;->call()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -85,14 +85,14 @@
 .method public final call()V
     .locals 4
 
-    .line 169
+    .line 161
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$3$1;->this$0:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     move-result-object v0
 
-    .line 170
+    .line 162
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$3$1;->this$0:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;
 
     iget-object v2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$3$1;->$response:Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;
@@ -103,10 +103,10 @@
 
     move-result-object v1
 
-    .line 171
+    .line 163
     iget-object v2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$3$1;->$networkId:Ljava/lang/String;
 
-    .line 169
+    .line 161
     invoke-interface {v0, v1, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->saveTokensSettings(Ljava/util/List;Ljava/lang/String;)V
 
     return-void

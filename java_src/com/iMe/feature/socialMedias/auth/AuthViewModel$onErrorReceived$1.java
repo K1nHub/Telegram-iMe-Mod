@@ -9,15 +9,13 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
 import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m84c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1", m83f = "AuthViewModel.kt", m82l = {46}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1", m101f = "AuthViewModel.kt", m100l = {46}, m99m = "invokeSuspend")
 /* loaded from: classes3.dex */
-public final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
+final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
 
@@ -38,24 +36,6 @@ public final class AuthViewModel$onErrorReceived$1 extends SuspendLambda impleme
         return ((AuthViewModel$onErrorReceived$1) create(simpleSyntax, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: AuthViewModel.kt */
-    /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1$1 */
-    /* loaded from: classes3.dex */
-    public static final class C14651 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        public static final C14651 INSTANCE = new C14651();
-
-        C14651() {
-            super(1);
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final AuthState invoke(SimpleContext<AuthState> reduce) {
-            Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
-            return AuthState.copy$default(reduce.getState(), null, null, false, 3, null);
-        }
-    }
-
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended;
@@ -63,7 +43,13 @@ public final class AuthViewModel$onErrorReceived$1 extends SuspendLambda impleme
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C14651 c14651 = C14651.INSTANCE;
+            C14651 c14651 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1.1
+                @Override // kotlin.jvm.functions.Function1
+                public final AuthState invoke(SimpleContext<AuthState> reduce) {
+                    Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
+                    return AuthState.copy$default(reduce.getState(), null, null, false, 3, null);
+                }
+            };
             this.label = 1;
             if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14651, this) == coroutine_suspended) {
                 return coroutine_suspended;

@@ -57,7 +57,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 47415
+    .line 48168
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;-><init>()V
 
     return-void
@@ -68,7 +68,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 47435
+    .line 48188
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -90,7 +90,7 @@
     :cond_0
     move v1, v2
 
-    .line 47436
+    .line 48189
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
@@ -105,7 +105,7 @@
     :cond_1
     move v1, v2
 
-    .line 47437
+    .line 48190
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->permanent:Z
 
@@ -115,46 +115,46 @@
 
     move v2, v3
 
-    .line 47438
+    .line 48191
     :cond_2
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->request_needed:Z
 
-    .line 47439
+    .line 48192
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
-    .line 47440
+    .line 48193
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->admin_id:J
 
-    .line 47441
+    .line 48194
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->date:I
 
-    .line 47442
+    .line 48195
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_3
 
-    .line 47443
+    .line 48196
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->start_date:I
 
-    .line 47445
+    .line 48198
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -162,14 +162,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 47446
+    .line 48199
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->expire_date:I
 
-    .line 47448
+    .line 48201
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -177,14 +177,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 47449
+    .line 48202
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage_limit:I
 
-    .line 47451
+    .line 48204
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -192,14 +192,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 47452
+    .line 48205
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage:I
 
-    .line 47454
+    .line 48207
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -207,14 +207,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 47455
+    .line 48208
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->requested:I
 
-    .line 47457
+    .line 48210
     :cond_7
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -222,7 +222,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 47458
+    .line 48211
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -236,12 +236,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 47463
+    .line 48216
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47464
+    .line 48217
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
     if-eqz v0, :cond_0
@@ -260,7 +260,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
-    .line 47465
+    .line 48218
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->permanent:Z
 
     if-eqz v1, :cond_1
@@ -275,7 +275,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
-    .line 47466
+    .line 48219
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->request_needed:Z
 
     if-eqz v1, :cond_2
@@ -290,37 +290,37 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
-    .line 47467
+    .line 48220
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47468
+    .line 48221
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 47469
+    .line 48222
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->admin_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 47470
+    .line 48223
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47471
+    .line 48224
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_3
 
-    .line 47472
+    .line 48225
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->start_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47474
+    .line 48227
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -328,12 +328,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 47475
+    .line 48228
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->expire_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47477
+    .line 48230
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -341,12 +341,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 47478
+    .line 48231
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage_limit:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47480
+    .line 48233
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -354,12 +354,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 47481
+    .line 48234
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->usage:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47483
+    .line 48236
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -367,12 +367,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 47484
+    .line 48237
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->requested:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 47486
+    .line 48239
     :cond_7
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->flags:I
 
@@ -380,7 +380,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 47487
+    .line 48240
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$31;
-.super Lorg/telegram/ui/Components/BotWebViewMenuContainer;
+.super Ljava/lang/Object;
 .source "ChatActivityEnterView.java"
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createBotWebViewMenuContainer()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->onSendLongClick(Landroid/view/View;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,49 +18,100 @@
 
 
 # instance fields
+.field private popupRect:Landroid/graphics/Rect;
+
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 4243
+    .line 4103
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4105
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDismiss()V
-    .locals 2
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    .line 4246
-    invoke-super {p0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->onDismiss()V
+    .line 4109
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    .line 4247
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 4110
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 4248
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotCommandsMenuView;->setOpened(Z)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 4111
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->popupRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+
+    .line 4112
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->popupRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 4113
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$31;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0
-    return-void
+    const/4 p1, 0x0
+
+    return p1
 .end method

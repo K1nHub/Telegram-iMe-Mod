@@ -71,11 +71,11 @@ public class CheckBox extends View {
             paint4.setColor(-1);
             backgroundPaint.setStyle(Paint.Style.STROKE);
         }
-        eraser2.setStrokeWidth(AndroidUtilities.m54dp(28));
-        backgroundPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        eraser2.setStrokeWidth(AndroidUtilities.m72dp(28));
+        backgroundPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m54dp(18));
+        textPaint.setTextSize(AndroidUtilities.m72dp(18));
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.checkDrawable = context.getResources().getDrawable(i).mutate();
     }
@@ -85,9 +85,9 @@ public class CheckBox extends View {
         super.setVisibility(i);
         if (i == 0 && this.drawBitmap == null) {
             try {
-                this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(this.size), AndroidUtilities.m54dp(this.size), Bitmap.Config.ARGB_4444);
+                this.drawBitmap = Bitmap.createBitmap(AndroidUtilities.m72dp(this.size), AndroidUtilities.m72dp(this.size), Bitmap.Config.ARGB_4444);
                 this.bitmapCanvas = new Canvas(this.drawBitmap);
-                this.checkBitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(this.size), AndroidUtilities.m54dp(this.size), Bitmap.Config.ARGB_4444);
+                this.checkBitmap = Bitmap.createBitmap(AndroidUtilities.m72dp(this.size), AndroidUtilities.m72dp(this.size), Bitmap.Config.ARGB_4444);
                 this.checkCanvas = new Canvas(this.checkBitmap);
             } catch (Throwable unused) {
             }
@@ -118,7 +118,7 @@ public class CheckBox extends View {
     public void setSize(int i) {
         this.size = i;
         if (i == 40) {
-            this.textPaint.setTextSize(AndroidUtilities.m54dp(24));
+            this.textPaint.setTextSize(AndroidUtilities.m72dp(24));
         }
     }
 

@@ -6,22 +6,22 @@ import java.util.function.LongToIntFunction;
 public final /* synthetic */ class C3232m0 {
 
     /* renamed from: a */
-    final /* synthetic */ LongToIntFunction f1276a;
+    final /* synthetic */ LongToIntFunction f1279a;
 
     private /* synthetic */ C3232m0(LongToIntFunction longToIntFunction) {
-        this.f1276a = longToIntFunction;
+        this.f1279a = longToIntFunction;
     }
 
     /* renamed from: b */
-    public static /* synthetic */ C3232m0 m116b(LongToIntFunction longToIntFunction) {
+    public static /* synthetic */ C3232m0 m134b(LongToIntFunction longToIntFunction) {
         if (longToIntFunction == null) {
             return null;
         }
-        return longToIntFunction instanceof AbstractC3234n0 ? ((AbstractC3234n0) longToIntFunction).f1278a : new C3232m0(longToIntFunction);
+        return longToIntFunction instanceof AbstractC3234n0 ? ((AbstractC3234n0) longToIntFunction).f1281a : new C3232m0(longToIntFunction);
     }
 
     /* renamed from: a */
-    public int m117a(long j) {
-        return this.f1276a.applyAsInt(j);
+    public int m135a(long j) {
+        return this.f1279a.applyAsInt(j);
     }
 }

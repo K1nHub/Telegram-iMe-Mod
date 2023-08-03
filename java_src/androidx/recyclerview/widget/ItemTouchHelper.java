@@ -81,8 +81,8 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
                 ItemTouchHelper itemTouchHelper = ItemTouchHelper.this;
                 if (itemTouchHelper.mSelected == null && (findAnimation = itemTouchHelper.findAnimation(motionEvent)) != null) {
                     ItemTouchHelper itemTouchHelper2 = ItemTouchHelper.this;
-                    itemTouchHelper2.mInitialTouchX -= findAnimation.f51mX;
-                    itemTouchHelper2.mInitialTouchY -= findAnimation.f52mY;
+                    itemTouchHelper2.mInitialTouchX -= findAnimation.f53mX;
+                    itemTouchHelper2.mInitialTouchY -= findAnimation.f54mY;
                     itemTouchHelper2.endRecoverAnimation(findAnimation.mViewHolder, true);
                     if (ItemTouchHelper.this.mPendingCleanup.remove(findAnimation.mViewHolder.itemView)) {
                         ItemTouchHelper itemTouchHelper3 = ItemTouchHelper.this;
@@ -206,8 +206,8 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         this.mRecyclerView = recyclerView;
         if (recyclerView != null) {
             recyclerView.getResources();
-            this.mSwipeEscapeVelocity = AndroidUtilities.m54dp(120);
-            this.mMaxSwipeVelocity = AndroidUtilities.m54dp(800);
+            this.mSwipeEscapeVelocity = AndroidUtilities.m72dp(120);
+            this.mMaxSwipeVelocity = AndroidUtilities.m72dp(800);
             setupCallbacks();
         }
     }
@@ -564,7 +564,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         for (int size = this.mRecoverAnimations.size() - 1; size >= 0; size--) {
             RecoverAnimation recoverAnimation = this.mRecoverAnimations.get(size);
             View view2 = recoverAnimation.mViewHolder.itemView;
-            if (hitTest(view2, x, y, recoverAnimation.f51mX, recoverAnimation.f52mY)) {
+            if (hitTest(view2, x, y, recoverAnimation.f53mX, recoverAnimation.f54mY)) {
                 return view2;
             }
         }
@@ -886,7 +886,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
 
         private int getMaxDragScroll(RecyclerView recyclerView) {
             if (this.mCachedMaxScrollSpeed == -1) {
-                this.mCachedMaxScrollSpeed = AndroidUtilities.m54dp(20);
+                this.mCachedMaxScrollSpeed = AndroidUtilities.m72dp(20);
             }
             return this.mCachedMaxScrollSpeed;
         }
@@ -921,7 +921,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
                 RecoverAnimation recoverAnimation = list.get(i2);
                 recoverAnimation.update();
                 int save = canvas.save();
-                onChildDraw(canvas, recyclerView, recoverAnimation.mViewHolder, recoverAnimation.f51mX, recoverAnimation.f52mY, recoverAnimation.mActionState, false);
+                onChildDraw(canvas, recyclerView, recoverAnimation.mViewHolder, recoverAnimation.f53mX, recoverAnimation.f54mY, recoverAnimation.mActionState, false);
                 canvas.restoreToCount(save);
             }
             if (viewHolder != null) {
@@ -937,7 +937,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             for (int i2 = 0; i2 < size; i2++) {
                 RecoverAnimation recoverAnimation = list.get(i2);
                 int save = canvas.save();
-                onChildDrawOver(canvas, recyclerView, recoverAnimation.mViewHolder, recoverAnimation.f51mX, recoverAnimation.f52mY, recoverAnimation.mActionState, false);
+                onChildDrawOver(canvas, recyclerView, recoverAnimation.mViewHolder, recoverAnimation.f53mX, recoverAnimation.f54mY, recoverAnimation.mActionState, false);
                 canvas.restoreToCount(save);
             }
             if (viewHolder != null) {
@@ -1071,10 +1071,10 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         final RecyclerView.ViewHolder mViewHolder;
 
         /* renamed from: mX */
-        float f51mX;
+        float f53mX;
 
         /* renamed from: mY */
-        float f52mY;
+        float f54mY;
         boolean mOverridden = false;
         boolean mEnded = false;
 
@@ -1127,16 +1127,16 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             float f = this.mStartDx;
             float f2 = this.mTargetX;
             if (f == f2) {
-                this.f51mX = this.mViewHolder.itemView.getTranslationX();
+                this.f53mX = this.mViewHolder.itemView.getTranslationX();
             } else {
-                this.f51mX = f + (this.mFraction * (f2 - f));
+                this.f53mX = f + (this.mFraction * (f2 - f));
             }
             float f3 = this.mStartDy;
             float f4 = this.mTargetY;
             if (f3 == f4) {
-                this.f52mY = this.mViewHolder.itemView.getTranslationY();
+                this.f54mY = this.mViewHolder.itemView.getTranslationY();
             } else {
-                this.f52mY = f3 + (this.mFraction * (f4 - f3));
+                this.f54mY = f3 + (this.mFraction * (f4 - f3));
             }
         }
 

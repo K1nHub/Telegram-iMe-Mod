@@ -8,36 +8,36 @@ import p033j$.util.function.Function;
 public final /* synthetic */ class C2782c implements Comparator, Serializable {
 
     /* renamed from: a */
-    public final /* synthetic */ int f652a = 1;
+    public final /* synthetic */ int f655a = 1;
 
     /* renamed from: b */
-    public final /* synthetic */ Comparator f653b;
+    public final /* synthetic */ Comparator f656b;
 
     /* renamed from: c */
-    public final /* synthetic */ Object f654c;
+    public final /* synthetic */ Object f657c;
 
     public /* synthetic */ C2782c(Comparator comparator, Function function) {
-        this.f653b = comparator;
-        this.f654c = function;
+        this.f656b = comparator;
+        this.f657c = function;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f652a) {
+        switch (this.f655a) {
             case 0:
-                Comparator comparator = this.f653b;
-                Comparator comparator2 = (Comparator) this.f654c;
+                Comparator comparator = this.f656b;
+                Comparator comparator2 = (Comparator) this.f657c;
                 int compare = comparator.compare(obj, obj2);
                 return compare != 0 ? compare : comparator2.compare(obj, obj2);
             default:
-                Comparator comparator3 = this.f653b;
-                Function function = (Function) this.f654c;
+                Comparator comparator3 = this.f656b;
+                Function function = (Function) this.f657c;
                 return comparator3.compare(function.apply(obj), function.apply(obj2));
         }
     }
 
     public /* synthetic */ C2782c(Comparator comparator, Comparator comparator2) {
-        this.f653b = comparator;
-        this.f654c = comparator2;
+        this.f656b = comparator;
+        this.f657c = comparator2;
     }
 }

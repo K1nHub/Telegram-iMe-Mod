@@ -15,42 +15,42 @@ import p033j$.wrappers.C3221h;
 public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable, InterfaceC2727e {
 
     /* renamed from: e */
-    Object f950e;
+    Object f953e;
 
     /* renamed from: f */
-    Object[] f951f;
+    Object[] f954f;
 
     /* renamed from: j$.util.stream.Z3$a */
     /* loaded from: classes2.dex */
     abstract class AbstractC3003a implements InterfaceC3160t {
 
         /* renamed from: a */
-        int f952a;
+        int f955a;
 
         /* renamed from: b */
-        final int f953b;
+        final int f956b;
 
         /* renamed from: c */
-        int f954c;
+        int f957c;
 
         /* renamed from: d */
-        final int f955d;
+        final int f958d;
 
         /* renamed from: e */
-        Object f956e;
+        Object f959e;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public AbstractC3003a(int i, int i2, int i3, int i4) {
-            this.f952a = i;
-            this.f953b = i2;
-            this.f954c = i3;
-            this.f955d = i4;
-            Object[] objArr = AbstractC3002Z3.this.f951f;
-            this.f956e = objArr == null ? AbstractC3002Z3.this.f950e : objArr[i];
+            this.f955a = i;
+            this.f956b = i2;
+            this.f957c = i3;
+            this.f958d = i4;
+            Object[] objArr = AbstractC3002Z3.this.f954f;
+            this.f959e = objArr == null ? AbstractC3002Z3.this.f953e : objArr[i];
         }
 
         /* renamed from: a */
-        abstract void mo455a(Object obj, int i, Object obj2);
+        abstract void mo473a(Object obj, int i, Object obj2);
 
         @Override // p033j$.util.InterfaceC2853s
         public int characteristics() {
@@ -59,41 +59,41 @@ public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable
 
         @Override // p033j$.util.InterfaceC2853s
         public long estimateSize() {
-            int i = this.f952a;
-            int i2 = this.f953b;
+            int i = this.f955a;
+            int i2 = this.f956b;
             if (i == i2) {
-                return this.f955d - this.f954c;
+                return this.f958d - this.f957c;
             }
-            long[] jArr = AbstractC3002Z3.this.f1016d;
-            return ((jArr[i2] + this.f955d) - jArr[i]) - this.f954c;
+            long[] jArr = AbstractC3002Z3.this.f1019d;
+            return ((jArr[i2] + this.f958d) - jArr[i]) - this.f957c;
         }
 
         /* renamed from: f */
-        abstract InterfaceC3160t mo451f(Object obj, int i, int i2);
+        abstract InterfaceC3160t mo469f(Object obj, int i, int i2);
 
         @Override // p033j$.util.InterfaceC3160t
         /* renamed from: forEachRemaining */
-        public void m452e(Object obj) {
+        public void m470e(Object obj) {
             int i;
             Objects.requireNonNull(obj);
-            int i2 = this.f952a;
-            int i3 = this.f953b;
-            if (i2 < i3 || (i2 == i3 && this.f954c < this.f955d)) {
-                int i4 = this.f954c;
+            int i2 = this.f955a;
+            int i3 = this.f956b;
+            if (i2 < i3 || (i2 == i3 && this.f957c < this.f958d)) {
+                int i4 = this.f957c;
                 while (true) {
-                    i = this.f953b;
+                    i = this.f956b;
                     if (i2 >= i) {
                         break;
                     }
                     AbstractC3002Z3 abstractC3002Z3 = AbstractC3002Z3.this;
-                    Object obj2 = abstractC3002Z3.f951f[i2];
-                    abstractC3002Z3.mo462t(obj2, i4, abstractC3002Z3.mo461u(obj2), obj);
+                    Object obj2 = abstractC3002Z3.f954f[i2];
+                    abstractC3002Z3.mo480t(obj2, i4, abstractC3002Z3.mo479u(obj2), obj);
                     i4 = 0;
                     i2++;
                 }
-                AbstractC3002Z3.this.mo462t(this.f952a == i ? this.f956e : AbstractC3002Z3.this.f951f[i], i4, this.f955d, obj);
-                this.f952a = this.f953b;
-                this.f954c = this.f955d;
+                AbstractC3002Z3.this.mo480t(this.f955a == i ? this.f959e : AbstractC3002Z3.this.f954f[i], i4, this.f958d, obj);
+                this.f955a = this.f956b;
+                this.f957c = this.f958d;
             }
         }
 
@@ -104,35 +104,35 @@ public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable
 
         @Override // p033j$.util.InterfaceC2853s
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2780a.m606e(this);
+            return AbstractC2780a.m624e(this);
         }
 
         /* renamed from: h */
-        abstract InterfaceC3160t mo449h(int i, int i2, int i3, int i4);
+        abstract InterfaceC3160t mo467h(int i, int i2, int i3, int i4);
 
         @Override // p033j$.util.InterfaceC2853s
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2780a.m605f(this, i);
+            return AbstractC2780a.m623f(this, i);
         }
 
         @Override // p033j$.util.InterfaceC3160t
         /* renamed from: tryAdvance */
-        public boolean m447k(Object obj) {
+        public boolean m465k(Object obj) {
             Objects.requireNonNull(obj);
-            int i = this.f952a;
-            int i2 = this.f953b;
-            if (i < i2 || (i == i2 && this.f954c < this.f955d)) {
-                Object obj2 = this.f956e;
-                int i3 = this.f954c;
-                this.f954c = i3 + 1;
-                mo455a(obj2, i3, obj);
-                if (this.f954c == AbstractC3002Z3.this.mo461u(this.f956e)) {
-                    this.f954c = 0;
-                    int i4 = this.f952a + 1;
-                    this.f952a = i4;
-                    Object[] objArr = AbstractC3002Z3.this.f951f;
-                    if (objArr != null && i4 <= this.f953b) {
-                        this.f956e = objArr[i4];
+            int i = this.f955a;
+            int i2 = this.f956b;
+            if (i < i2 || (i == i2 && this.f957c < this.f958d)) {
+                Object obj2 = this.f959e;
+                int i3 = this.f957c;
+                this.f957c = i3 + 1;
+                mo473a(obj2, i3, obj);
+                if (this.f957c == AbstractC3002Z3.this.mo479u(this.f959e)) {
+                    this.f957c = 0;
+                    int i4 = this.f955a + 1;
+                    this.f955a = i4;
+                    Object[] objArr = AbstractC3002Z3.this.f954f;
+                    if (objArr != null && i4 <= this.f956b) {
+                        this.f959e = objArr[i4];
                     }
                 }
                 return true;
@@ -157,27 +157,27 @@ public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable
 
         @Override // p033j$.util.InterfaceC2853s
         public InterfaceC3160t trySplit() {
-            int i = this.f952a;
-            int i2 = this.f953b;
+            int i = this.f955a;
+            int i2 = this.f956b;
             if (i < i2) {
-                int i3 = this.f954c;
+                int i3 = this.f957c;
                 AbstractC3002Z3 abstractC3002Z3 = AbstractC3002Z3.this;
-                InterfaceC3160t mo449h = mo449h(i, i2 - 1, i3, abstractC3002Z3.mo461u(abstractC3002Z3.f951f[i2 - 1]));
-                int i4 = this.f953b;
-                this.f952a = i4;
-                this.f954c = 0;
-                this.f956e = AbstractC3002Z3.this.f951f[i4];
-                return mo449h;
+                InterfaceC3160t mo467h = mo467h(i, i2 - 1, i3, abstractC3002Z3.mo479u(abstractC3002Z3.f954f[i2 - 1]));
+                int i4 = this.f956b;
+                this.f955a = i4;
+                this.f957c = 0;
+                this.f959e = AbstractC3002Z3.this.f954f[i4];
+                return mo467h;
             } else if (i == i2) {
-                int i5 = this.f955d;
-                int i6 = this.f954c;
+                int i5 = this.f958d;
+                int i6 = this.f957c;
                 int i7 = (i5 - i6) / 2;
                 if (i7 == 0) {
                     return null;
                 }
-                InterfaceC3160t mo451f = mo451f(this.f956e, i6, i7);
-                this.f954c += i7;
-                return mo451f;
+                InterfaceC3160t mo469f = mo469f(this.f959e, i6, i7);
+                this.f957c += i7;
+                return mo469f;
             } else {
                 return null;
             }
@@ -186,133 +186,133 @@ public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3002Z3() {
-        this.f950e = mo463c(16);
+        this.f953e = mo481c(16);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3002Z3(int i) {
         super(i);
-        this.f950e = mo463c(1 << this.f1013a);
+        this.f953e = mo481c(1 << this.f1016a);
     }
 
     /* renamed from: y */
-    private void m457y() {
-        if (this.f951f == null) {
-            Object[] mo456z = mo456z(8);
-            this.f951f = mo456z;
-            this.f1016d = new long[8];
-            mo456z[0] = this.f950e;
+    private void m475y() {
+        if (this.f954f == null) {
+            Object[] mo474z = mo474z(8);
+            this.f954f = mo474z;
+            this.f1019d = new long[8];
+            mo474z[0] = this.f953e;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: A */
-    public void m464A() {
-        if (this.f1014b == mo461u(this.f950e)) {
-            m457y();
-            int i = this.f1015c;
+    public void m482A() {
+        if (this.f1017b == mo479u(this.f953e)) {
+            m475y();
+            int i = this.f1018c;
             int i2 = i + 1;
-            Object[] objArr = this.f951f;
+            Object[] objArr = this.f954f;
             if (i2 >= objArr.length || objArr[i + 1] == null) {
-                m458x(m460v() + 1);
+                m476x(m478v() + 1);
             }
-            this.f1014b = 0;
-            int i3 = this.f1015c + 1;
-            this.f1015c = i3;
-            this.f950e = this.f951f[i3];
+            this.f1017b = 0;
+            int i3 = this.f1018c + 1;
+            this.f1018c = i3;
+            this.f953e = this.f954f[i3];
         }
     }
 
     /* renamed from: c */
-    public abstract Object mo463c(int i);
+    public abstract Object mo481c(int i);
 
     @Override // p033j$.util.stream.AbstractC3028e
     public void clear() {
-        Object[] objArr = this.f951f;
+        Object[] objArr = this.f954f;
         if (objArr != null) {
-            this.f950e = objArr[0];
-            this.f951f = null;
-            this.f1016d = null;
+            this.f953e = objArr[0];
+            this.f954f = null;
+            this.f1019d = null;
         }
-        this.f1014b = 0;
-        this.f1015c = 0;
+        this.f1017b = 0;
+        this.f1018c = 0;
     }
 
     /* renamed from: d */
-    public void mo278d(Object obj, int i) {
+    public void mo296d(Object obj, int i) {
         long j = i;
         long count = count() + j;
-        if (count > mo461u(obj) || count < j) {
+        if (count > mo479u(obj) || count < j) {
             throw new IndexOutOfBoundsException("does not fit");
         }
-        if (this.f1015c == 0) {
-            System.arraycopy(this.f950e, 0, obj, i, this.f1014b);
+        if (this.f1018c == 0) {
+            System.arraycopy(this.f953e, 0, obj, i, this.f1017b);
             return;
         }
-        for (int i2 = 0; i2 < this.f1015c; i2++) {
-            Object[] objArr = this.f951f;
-            System.arraycopy(objArr[i2], 0, obj, i, mo461u(objArr[i2]));
-            i += mo461u(this.f951f[i2]);
+        for (int i2 = 0; i2 < this.f1018c; i2++) {
+            Object[] objArr = this.f954f;
+            System.arraycopy(objArr[i2], 0, obj, i, mo479u(objArr[i2]));
+            i += mo479u(this.f954f[i2]);
         }
-        int i3 = this.f1014b;
+        int i3 = this.f1017b;
         if (i3 > 0) {
-            System.arraycopy(this.f950e, 0, obj, i, i3);
+            System.arraycopy(this.f953e, 0, obj, i, i3);
         }
     }
 
     /* renamed from: e */
-    public Object mo277e() {
+    public Object mo295e() {
         long count = count();
         if (count < 2147483639) {
-            Object mo463c = mo463c((int) count);
-            mo278d(mo463c, 0);
-            return mo463c;
+            Object mo481c = mo481c((int) count);
+            mo296d(mo481c, 0);
+            return mo481c;
         }
         throw new IllegalArgumentException("Stream size exceeds max array size");
     }
 
     /* renamed from: g */
-    public void mo276g(Object obj) {
-        for (int i = 0; i < this.f1015c; i++) {
-            Object[] objArr = this.f951f;
-            mo462t(objArr[i], 0, mo461u(objArr[i]), obj);
+    public void mo294g(Object obj) {
+        for (int i = 0; i < this.f1018c; i++) {
+            Object[] objArr = this.f954f;
+            mo480t(objArr[i], 0, mo479u(objArr[i]), obj);
         }
-        mo462t(this.f950e, 0, this.f1014b, obj);
+        mo480t(this.f953e, 0, this.f1017b, obj);
     }
 
     public abstract InterfaceC2853s spliterator();
 
     @Override // java.lang.Iterable
     public /* synthetic */ Spliterator spliterator() {
-        return C3221h.m135a(spliterator());
+        return C3221h.m153a(spliterator());
     }
 
     /* renamed from: t */
-    protected abstract void mo462t(Object obj, int i, int i2, Object obj2);
+    protected abstract void mo480t(Object obj, int i, int i2, Object obj2);
 
     /* renamed from: u */
-    protected abstract int mo461u(Object obj);
+    protected abstract int mo479u(Object obj);
 
     /* renamed from: v */
-    protected long m460v() {
-        int i = this.f1015c;
+    protected long m478v() {
+        int i = this.f1018c;
         if (i == 0) {
-            return mo461u(this.f950e);
+            return mo479u(this.f953e);
         }
-        return mo461u(this.f951f[i]) + this.f1016d[i];
+        return mo479u(this.f954f[i]) + this.f1019d[i];
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: w */
-    public int m459w(long j) {
-        if (this.f1015c == 0) {
-            if (j < this.f1014b) {
+    public int m477w(long j) {
+        if (this.f1018c == 0) {
+            if (j < this.f1017b) {
                 return 0;
             }
             throw new IndexOutOfBoundsException(Long.toString(j));
         } else if (j < count()) {
-            for (int i = 0; i <= this.f1015c; i++) {
-                if (j < this.f1016d[i] + mo461u(this.f951f[i])) {
+            for (int i = 0; i <= this.f1018c; i++) {
+                if (j < this.f1019d[i] + mo479u(this.f954f[i])) {
                     return i;
                 }
             }
@@ -324,33 +324,33 @@ public abstract class AbstractC3002Z3 extends AbstractC3028e implements Iterable
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: x */
-    public final void m458x(long j) {
+    public final void m476x(long j) {
         int i;
-        long m460v = m460v();
-        if (j <= m460v) {
+        long m478v = m478v();
+        if (j <= m478v) {
             return;
         }
-        m457y();
-        int i2 = this.f1015c;
+        m475y();
+        int i2 = this.f1018c;
         while (true) {
             i2++;
-            if (j <= m460v) {
+            if (j <= m478v) {
                 return;
             }
-            Object[] objArr = this.f951f;
+            Object[] objArr = this.f954f;
             if (i2 >= objArr.length) {
                 int length = objArr.length * 2;
-                this.f951f = Arrays.copyOf(objArr, length);
-                this.f1016d = Arrays.copyOf(this.f1016d, length);
+                this.f954f = Arrays.copyOf(objArr, length);
+                this.f1019d = Arrays.copyOf(this.f1019d, length);
             }
-            int m416s = m416s(i2);
-            this.f951f[i2] = mo463c(m416s);
-            long[] jArr = this.f1016d;
-            jArr[i2] = jArr[i2 - 1] + mo461u(this.f951f[i]);
-            m460v += m416s;
+            int m434s = m434s(i2);
+            this.f954f[i2] = mo481c(m434s);
+            long[] jArr = this.f1019d;
+            jArr[i2] = jArr[i2 - 1] + mo479u(this.f954f[i]);
+            m478v += m434s;
         }
     }
 
     /* renamed from: z */
-    protected abstract Object[] mo456z(int i);
+    protected abstract Object[] mo474z(int i);
 }

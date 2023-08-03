@@ -116,7 +116,7 @@
 
     const/4 v0, 0x0
 
-    .line 143
+    .line 147
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Cells/ProfileSearchCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -125,34 +125,34 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 147
+    .line 151
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/BaseCell;-><init>(Landroid/content/Context;)V
 
-    .line 106
+    .line 110
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     const/16 v0, 0x13
 
-    .line 124
+    .line 128
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countTop:I
 
-    .line 138
+    .line 142
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->rect:Landroid/graphics/RectF;
 
-    .line 148
+    .line 152
     iput-object p2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 150
+    .line 154
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
@@ -161,21 +161,21 @@
 
     const/16 v1, 0x17
 
-    .line 151
+    .line 155
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 152
+    .line 156
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    .line 154
+    .line 158
     new-instance v0, Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v1, 0x15
@@ -184,7 +184,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    .line 155
+    .line 159
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
@@ -193,26 +193,26 @@
 
     invoke-virtual {v0, v1, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 156
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 157
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 p2, 0x3
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 158
+    .line 162
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 160
+    .line 164
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     const/16 p2, 0x14
@@ -225,7 +225,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    .line 161
+    .line 165
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     return-void
@@ -234,7 +234,7 @@
 .method private synthetic lambda$buildLayout$0()V
     .locals 2
 
-    .line 368
+    .line 372
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -243,14 +243,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 373
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 370
+    .line 374
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RecyclerListView;->getOnItemClickListener()Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
     move-result-object v1
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 372
+    .line 376
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->callOnClick()Z
 
@@ -280,18 +280,18 @@
 
     const/4 v1, 0x0
 
-    .line 318
+    .line 322
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawNameLock:Z
 
-    .line 319
+    .line 323
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
-    .line 321
+    .line 325
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumStatusEnabled:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumBadgeEnabled:Z
 
-    .line 323
+    .line 327
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->encryptedChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
     const/4 v3, 0x1
@@ -302,10 +302,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 324
+    .line 328
     iput-boolean v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawNameLock:Z
 
-    .line 325
+    .line 329
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v6, v2
@@ -316,12 +316,12 @@
 
     iput-wide v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->dialog_id:J
 
-    .line 326
+    .line 330
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v2, :cond_0
 
-    .line 327
+    .line 331
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -330,7 +330,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockLeft:I
 
-    .line 328
+    .line 332
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     add-int/lit8 v2, v2, 0x4
@@ -351,7 +351,7 @@
 
     goto :goto_0
 
-    .line 330
+    .line 334
     :cond_0
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -377,7 +377,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockLeft:I
 
-    .line 331
+    .line 335
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -387,42 +387,42 @@
     :goto_0
     const/high16 v2, 0x41b00000    # 22.0f
 
-    .line 333
+    .line 337
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockTop:I
 
-    .line 334
+    .line 338
     invoke-virtual {v0, v1, v5, v1}, Lorg/telegram/ui/Cells/ProfileSearchCell;->updateStatus(ZLorg/telegram/tgnet/TLRPC$User;Z)V
 
     goto/16 :goto_4
 
-    .line 335
+    .line 339
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v2, :cond_3
 
-    .line 336
+    .line 340
     iget-wide v6, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     neg-long v6, v6
 
     iput-wide v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->dialog_id:J
 
-    .line 337
+    .line 341
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->verified:Z
 
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
-    .line 338
+    .line 342
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v2, :cond_2
 
-    .line 339
+    .line 343
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -433,7 +433,7 @@
 
     goto :goto_1
 
-    .line 341
+    .line 345
     :cond_2
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -441,7 +441,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 343
+    .line 347
     :goto_1
     iget-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
@@ -449,23 +449,23 @@
 
     goto/16 :goto_4
 
-    .line 344
+    .line 348
     :cond_3
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_6
 
-    .line 345
+    .line 349
     iget-wide v6, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->dialog_id:J
 
-    .line 346
+    .line 350
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v2, :cond_4
 
-    .line 347
+    .line 351
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -476,7 +476,7 @@
 
     goto :goto_2
 
-    .line 349
+    .line 353
     :cond_4
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -487,21 +487,21 @@
     :goto_2
     const/16 v2, 0x15
 
-    .line 351
+    .line 355
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockTop:I
 
-    .line 352
+    .line 356
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$User;->verified:Z
 
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
-    .line 354
+    .line 358
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
@@ -514,7 +514,7 @@
 
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumBadgeEnabled:Z
 
-    .line 355
+    .line 359
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
@@ -527,7 +527,7 @@
 
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumStatusEnabled:Z
 
-    .line 357
+    .line 361
     iget-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->savedMessages:Z
 
     if-nez v2, :cond_5
@@ -548,7 +548,7 @@
 
     iget-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumBadgeEnabled:Z
 
-    .line 358
+    .line 362
     :cond_5
     iget-boolean v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
@@ -558,18 +558,18 @@
 
     goto :goto_4
 
-    .line 359
+    .line 363
     :cond_6
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
 
     if-eqz v2, :cond_8
 
-    .line 360
+    .line 364
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v2, :cond_7
 
-    .line 361
+    .line 365
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -580,7 +580,7 @@
 
     goto :goto_3
 
-    .line 363
+    .line 367
     :cond_7
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -588,34 +588,34 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 365
+    .line 369
     :goto_3
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     if-nez v2, :cond_8
 
-    .line 366
+    .line 370
     new-instance v2, Lorg/telegram/ui/Components/CanvasButton;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/Components/CanvasButton;-><init>(Landroid/view/View;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
-    .line 367
+    .line 371
     new-instance v6, Lorg/telegram/ui/Cells/ProfileSearchCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v6, v0}, Lorg/telegram/ui/Cells/ProfileSearchCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/ProfileSearchCell;)V
 
     invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/CanvasButton;->setDelegate(Ljava/lang/Runnable;)V
 
-    .line 377
+    .line 381
     :cond_8
     :goto_4
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v2, :cond_9
 
-    .line 378
+    .line 382
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -626,7 +626,7 @@
 
     goto :goto_5
 
-    .line 380
+    .line 384
     :cond_9
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -634,7 +634,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
-    .line 383
+    .line 387
     :goto_5
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentName:Ljava/lang/CharSequence;
 
@@ -646,24 +646,24 @@
 
     goto :goto_7
 
-    .line 387
+    .line 391
     :cond_a
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v2, :cond_b
 
-    .line 388
+    .line 392
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     goto :goto_6
 
-    .line 389
+    .line 393
     :cond_b
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_d
 
-    .line 391
+    .line 395
     iget-boolean v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->albumMode:Z
 
     if-eqz v8, :cond_c
@@ -674,7 +674,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 392
+    .line 396
     sget v2, Lorg/telegram/messenger/R$string;->SavedMessages:I
 
     const-string v8, "SavedMessages"
@@ -685,7 +685,7 @@
 
     goto :goto_6
 
-    .line 394
+    .line 398
     :cond_c
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -698,13 +698,13 @@
     :cond_d
     const-string v2, ""
 
-    .line 396
+    .line 400
     :goto_6
     invoke-virtual {v2, v7, v6}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 398
+    .line 402
     :goto_7
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
@@ -712,7 +712,7 @@
 
     if-nez v8, :cond_f
 
-    .line 399
+    .line 403
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_e
@@ -727,7 +727,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 400
+    .line 404
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v2
@@ -756,7 +756,7 @@
 
     goto :goto_8
 
-    .line 402
+    .line 406
     :cond_e
     sget v2, Lorg/telegram/messenger/R$string;->HiddenName:I
 
@@ -766,31 +766,31 @@
 
     move-result-object v2
 
-    .line 405
+    .line 409
     :cond_f
     :goto_8
     iget-object v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->encryptedChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
     if-eqz v8, :cond_10
 
-    .line 406
+    .line 410
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_searchNameEncryptedPaint:Landroid/text/TextPaint;
 
     goto :goto_9
 
-    .line 408
+    .line 412
     :cond_10
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_searchNamePaint:Landroid/text/TextPaint;
 
     :goto_9
     move-object v11, v8
 
-    .line 412
+    .line 416
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v8, :cond_11
 
-    .line 413
+    .line 417
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v8
@@ -811,7 +811,7 @@
 
     goto :goto_a
 
-    .line 415
+    .line 419
     :cond_11
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -831,13 +831,13 @@
 
     iput v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 417
+    .line 421
     :goto_a
     iget-boolean v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawNameLock:Z
 
     if-eqz v9, :cond_12
 
-    .line 418
+    .line 422
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     const/4 v10, 0x6
@@ -858,7 +858,7 @@
 
     iput v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 420
+    .line 424
     :cond_12
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
 
@@ -866,7 +866,7 @@
 
     if-eqz v9, :cond_14
 
-    .line 421
+    .line 425
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countTextPaint:Landroid/text/TextPaint;
 
     sget v10, Lorg/telegram/messenger/R$string;->Invite:I
@@ -885,7 +885,7 @@
 
     float-to-int v9, v9
 
-    .line 423
+    .line 427
     new-instance v12, Landroid/text/StaticLayout;
 
     invoke-static {v10}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -910,14 +910,14 @@
 
     iput-object v12, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLayout:Landroid/text/StaticLayout;
 
-    .line 424
+    .line 428
     sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v12, 0x10
 
     if-nez v10, :cond_13
 
-    .line 425
+    .line 429
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v10
@@ -940,7 +940,7 @@
 
     goto :goto_b
 
-    .line 427
+    .line 431
     :cond_13
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -954,21 +954,21 @@
 
     iput v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLeft:I
 
-    .line 428
+    .line 432
     iget v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     add-int/2addr v10, v9
 
     iput v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 429
+    .line 433
     iget v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     add-int/2addr v10, v9
 
     iput v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
-    .line 431
+    .line 435
     :goto_b
     iget v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
@@ -982,7 +982,7 @@
 
     iput v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 434
+    .line 438
     :cond_14
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
@@ -1000,7 +1000,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 435
+    .line 439
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v6
@@ -1013,12 +1013,12 @@
 
     sub-int/2addr v8, v6
 
-    .line 438
+    .line 442
     iget-object v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v6, :cond_16
 
-    .line 439
+    .line 443
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIconSize:I
@@ -1027,12 +1027,12 @@
 
     iput v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 440
+    .line 444
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v6, :cond_15
 
-    .line 441
+    .line 445
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v6
@@ -1051,7 +1051,7 @@
 
     goto :goto_c
 
-    .line 443
+    .line 447
     :cond_15
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1059,7 +1059,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLeft:I
 
-    .line 444
+    .line 448
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIconSize:I
@@ -1068,7 +1068,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 448
+    .line 452
     :cond_16
     :goto_c
     iget-boolean v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCount:Z
@@ -1077,7 +1077,7 @@
 
     if-eqz v6, :cond_19
 
-    .line 449
+    .line 453
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1094,7 +1094,7 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 450
+    .line 454
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1107,10 +1107,10 @@
 
     if-eqz v6, :cond_18
 
-    .line 452
+    .line 456
     iput v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastUnreadCount:I
 
-    .line 453
+    .line 457
     sget-object v9, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v10, v3, [Ljava/lang/Object;
@@ -1127,7 +1127,7 @@
 
     move-result-object v6
 
-    .line 454
+    .line 458
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1152,7 +1152,7 @@
 
     iput v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countWidth:I
 
-    .line 455
+    .line 459
     new-instance v9, Landroid/text/StaticLayout;
 
     sget-object v21, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countTextPaint:Landroid/text/TextPaint;
@@ -1177,7 +1177,7 @@
 
     iput-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
 
-    .line 456
+    .line 460
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countWidth:I
 
     const/16 v9, 0x12
@@ -1188,7 +1188,7 @@
 
     add-int/2addr v6, v9
 
-    .line 457
+    .line 461
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     sub-int/2addr v9, v6
@@ -1197,12 +1197,12 @@
 
     sub-int/2addr v8, v6
 
-    .line 459
+    .line 463
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v9, :cond_17
 
-    .line 460
+    .line 464
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v6
@@ -1221,7 +1221,7 @@
 
     goto :goto_d
 
-    .line 462
+    .line 466
     :cond_17
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1229,14 +1229,14 @@
 
     iput v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLeft:I
 
-    .line 463
+    .line 467
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     add-int/2addr v9, v6
 
     iput v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 464
+    .line 468
     iget v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     add-int/2addr v9, v6
@@ -1245,32 +1245,32 @@
 
     goto :goto_d
 
-    .line 467
-    :cond_18
-    iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastUnreadCount:I
-
-    .line 468
-    iput-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
-
-    goto :goto_d
-
     .line 471
-    :cond_19
+    :cond_18
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastUnreadCount:I
 
     .line 472
     iput-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
 
+    goto :goto_d
+
     .line 475
+    :cond_19
+    iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastUnreadCount:I
+
+    .line 476
+    iput-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
+
+    .line 479
     :goto_d
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     if-gez v6, :cond_1a
 
-    .line 476
+    .line 480
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
-    .line 478
+    .line 482
     :cond_1a
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
@@ -1292,7 +1292,7 @@
 
     if-eqz v2, :cond_1b
 
-    .line 480
+    .line 484
     invoke-virtual {v11}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v9
@@ -1308,7 +1308,7 @@
     :cond_1b
     move-object v10, v2
 
-    .line 482
+    .line 486
     new-instance v2, Landroid/text/StaticLayout;
 
     iget v12, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
@@ -1327,10 +1327,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
-    .line 485
+    .line 489
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_offlinePaint:Landroid/text/TextPaint;
 
-    .line 486
+    .line 490
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v9, :cond_24
@@ -1341,13 +1341,13 @@
 
     goto/16 :goto_f
 
-    .line 517
+    .line 521
     :cond_1c
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->albumMode:Z
 
     if-eqz v3, :cond_1d
 
-    .line 518
+    .line 522
     sget v3, Lorg/telegram/messenger/R$string;->cloud_album:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1360,7 +1360,7 @@
 
     goto/16 :goto_e
 
-    .line 520
+    .line 524
     :cond_1d
     invoke-static {v9}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1374,21 +1374,21 @@
 
     if-nez v9, :cond_20
 
-    .line 521
+    .line 525
     iget v9, v3, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz v9, :cond_1e
 
     const-string v3, "Subscribers"
 
-    .line 522
+    .line 526
     invoke-static {v3, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralStringComma(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_e
 
-    .line 524
+    .line 528
     :cond_1e
     invoke-static {v3}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1396,7 +1396,7 @@
 
     if-nez v3, :cond_1f
 
-    .line 525
+    .line 529
     sget v3, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
 
     const-string v9, "ChannelPrivate"
@@ -1411,7 +1411,7 @@
 
     goto :goto_e
 
-    .line 527
+    .line 531
     :cond_1f
     sget v3, Lorg/telegram/messenger/R$string;->ChannelPublic:I
 
@@ -1427,7 +1427,7 @@
 
     goto :goto_e
 
-    .line 531
+    .line 535
     :cond_20
     iget-object v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -1437,20 +1437,20 @@
 
     const-string v3, "Members"
 
-    .line 532
+    .line 536
     invoke-static {v3, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralStringComma(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_e
 
-    .line 534
+    .line 538
     :cond_21
     iget-boolean v9, v3, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
 
     if-eqz v9, :cond_22
 
-    .line 535
+    .line 539
     sget v3, Lorg/telegram/messenger/R$string;->MegaLocation:I
 
     const-string v9, "MegaLocation"
@@ -1461,7 +1461,7 @@
 
     goto :goto_e
 
-    .line 536
+    .line 540
     :cond_22
     invoke-static {v3}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1469,7 +1469,7 @@
 
     if-nez v3, :cond_23
 
-    .line 537
+    .line 541
     sget v3, Lorg/telegram/messenger/R$string;->MegaPrivate:I
 
     const-string v9, "MegaPrivate"
@@ -1484,7 +1484,7 @@
 
     goto :goto_e
 
-    .line 539
+    .line 543
     :cond_23
     sget v3, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
@@ -1498,7 +1498,7 @@
 
     move-result-object v3
 
-    .line 543
+    .line 547
     :goto_e
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1508,7 +1508,7 @@
 
     goto/16 :goto_12
 
-    .line 487
+    .line 491
     :cond_24
     :goto_f
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->subLabel:Ljava/lang/CharSequence;
@@ -1519,20 +1519,20 @@
 
     goto/16 :goto_11
 
-    .line 489
+    .line 493
     :cond_25
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v9, :cond_2d
 
-    .line 490
+    .line 494
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v9
 
     if-eqz v9, :cond_26
 
-    .line 491
+    .line 495
     sget v3, Lorg/telegram/messenger/R$string;->SupportStatus:I
 
     const-string v9, "SupportStatus"
@@ -1543,7 +1543,7 @@
 
     goto/16 :goto_11
 
-    .line 492
+    .line 496
     :cond_26
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -1551,7 +1551,7 @@
 
     if-eqz v10, :cond_27
 
-    .line 493
+    .line 497
     sget v3, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string v9, "Bot"
@@ -1562,7 +1562,7 @@
 
     goto :goto_11
 
-    .line 494
+    .line 498
     :cond_27
     iget-wide v10, v9, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -1580,7 +1580,7 @@
 
     goto :goto_10
 
-    .line 497
+    .line 501
     :cond_28
     iget-object v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isOnline:[Z
 
@@ -1588,33 +1588,33 @@
 
     new-array v3, v3, [Z
 
-    .line 498
+    .line 502
     iput-object v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isOnline:[Z
 
-    .line 500
+    .line 504
     :cond_29
     iget-object v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isOnline:[Z
 
     aput-boolean v1, v3, v1
 
-    .line 501
+    .line 505
     iget v10, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v10, v9, v3}, Lorg/telegram/messenger/LocaleController;->formatUserStatus(ILorg/telegram/tgnet/TLRPC$User;[Z)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 502
+    .line 506
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isOnline:[Z
 
     aget-boolean v9, v9, v1
 
     if-eqz v9, :cond_2a
 
-    .line 503
+    .line 507
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlinePaint:Landroid/text/TextPaint;
 
-    .line 505
+    .line 509
     :cond_2a
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -1656,11 +1656,11 @@
 
     if-le v9, v10, :cond_2e
 
-    .line 506
+    .line 510
     :cond_2b
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlinePaint:Landroid/text/TextPaint;
 
-    .line 507
+    .line 511
     sget v3, Lorg/telegram/messenger/R$string;->Online:I
 
     const-string v9, "Online"
@@ -1671,7 +1671,7 @@
 
     goto :goto_11
 
-    .line 495
+    .line 499
     :cond_2c
     :goto_10
     sget v3, Lorg/telegram/messenger/R$string;->ServiceNotifications:I
@@ -1687,7 +1687,7 @@
     :cond_2d
     move-object v3, v5
 
-    .line 511
+    .line 515
     :cond_2e
     :goto_11
     iget-boolean v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->savedMessages:Z
@@ -1702,7 +1702,7 @@
 
     if-eqz v9, :cond_30
 
-    .line 513
+    .line 517
     :cond_2f
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1712,7 +1712,7 @@
 
     move-object v3, v5
 
-    .line 546
+    .line 550
     :cond_30
     :goto_12
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1721,7 +1721,7 @@
 
     if-nez v9, :cond_31
 
-    .line 547
+    .line 551
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -1736,7 +1736,7 @@
 
     move-result-object v20
 
-    .line 548
+    .line 552
     new-instance v3, Landroid/text/StaticLayout;
 
     sget-object v23, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
@@ -1759,14 +1759,14 @@
 
     const/16 v2, 0x9
 
-    .line 549
+    .line 553
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameTop:I
 
-    .line 550
+    .line 554
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockTop:I
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1779,7 +1779,7 @@
 
     goto :goto_13
 
-    .line 552
+    .line 556
     :cond_31
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1787,16 +1787,16 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameTop:I
 
-    .line 553
+    .line 557
     iput-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
-    .line 557
+    .line 561
     :goto_13
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_32
 
-    .line 558
+    .line 562
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -1817,7 +1817,7 @@
 
     goto :goto_14
 
-    .line 560
+    .line 564
     :cond_32
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1829,7 +1829,7 @@
 
     add-int/2addr v2, v3
 
-    .line 563
+    .line 567
     :goto_14
     iget-object v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1859,12 +1859,12 @@
 
     invoke-virtual {v3, v2, v4, v6, v5}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 567
+    .line 571
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_34
 
-    .line 568
+    .line 572
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
@@ -1875,7 +1875,7 @@
 
     if-lez v2, :cond_33
 
-    .line 569
+    .line 573
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineLeft(I)F
@@ -1886,7 +1886,7 @@
 
     if-nez v2, :cond_33
 
-    .line 571
+    .line 575
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -1899,7 +1899,7 @@
 
     move-result-wide v4
 
-    .line 572
+    .line 576
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     int-to-double v6, v2
@@ -1908,7 +1908,7 @@
 
     if-gez v6, :cond_33
 
-    .line 573
+    .line 577
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     int-to-double v6, v6
@@ -1923,7 +1923,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 577
+    .line 581
     :cond_33
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
@@ -1935,7 +1935,7 @@
 
     if-lez v2, :cond_36
 
-    .line 578
+    .line 582
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineLeft(I)F
@@ -1946,7 +1946,7 @@
 
     if-nez v2, :cond_36
 
-    .line 580
+    .line 584
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -1965,7 +1965,7 @@
 
     if-gez v5, :cond_36
 
-    .line 582
+    .line 586
     iget v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     int-to-double v5, v5
@@ -1980,7 +1980,7 @@
 
     goto :goto_15
 
-    .line 587
+    .line 591
     :cond_34
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
@@ -1990,14 +1990,14 @@
 
     if-lez v2, :cond_35
 
-    .line 588
+    .line 592
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineRight(I)F
 
     move-result v2
 
-    .line 589
+    .line 593
     iget v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     int-to-float v3, v3
@@ -2006,7 +2006,7 @@
 
     if-nez v2, :cond_35
 
-    .line 590
+    .line 594
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -2019,7 +2019,7 @@
 
     move-result-wide v2
 
-    .line 591
+    .line 595
     iget v4, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
 
     int-to-double v5, v4
@@ -2028,7 +2028,7 @@
 
     if-gez v5, :cond_35
 
-    .line 592
+    .line 596
     iget v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     int-to-double v5, v5
@@ -2043,7 +2043,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 596
+    .line 600
     :cond_35
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
@@ -2055,7 +2055,7 @@
 
     if-lez v2, :cond_36
 
-    .line 597
+    .line 601
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineRight(I)F
@@ -2068,7 +2068,7 @@
 
     if-nez v2, :cond_36
 
-    .line 599
+    .line 603
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
@@ -2087,7 +2087,7 @@
 
     if-gez v5, :cond_36
 
-    .line 601
+    .line 605
     iget v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     int-to-double v5, v5
@@ -2100,7 +2100,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
-    .line 607
+    .line 611
     :cond_36
     :goto_15
     iget v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
@@ -2113,7 +2113,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
-    .line 608
+    .line 612
     iget v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -2124,7 +2124,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
-    .line 609
+    .line 613
     iget v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockLeft:I
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -2141,12 +2141,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 273
+    .line 277
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_0
 
-    .line 274
+    .line 278
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -2156,7 +2156,7 @@
 .method public getChat()Lorg/telegram/tgnet/TLRPC$Chat;
     .locals 1
 
-    .line 306
+    .line 310
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     return-object v0
@@ -2165,7 +2165,7 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 844
+    .line 848
     iget-wide v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->dialog_id:J
 
     return-wide v0
@@ -2174,24 +2174,49 @@
 .method public getUser()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 302
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     return-object v0
 .end method
 
+.method public isPointInsideAvatar(FF)Z
+    .locals 1
+
+    .line 83
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/ImageReceiver;->isInsideImage(FF)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 265
+    .line 269
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 266
+    .line 270
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 267
+    .line 271
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2200,7 +2225,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 268
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
@@ -2211,15 +2236,15 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 257
+    .line 261
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    .line 258
+    .line 262
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 259
+    .line 263
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2228,7 +2253,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 260
+    .line 264
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->detach()V
@@ -2239,7 +2264,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 742
+    .line 746
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-nez v0, :cond_0
@@ -2258,7 +2283,7 @@
 
     return-void
 
-    .line 746
+    .line 750
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
 
@@ -2266,14 +2291,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 747
+    .line 751
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_1
 
     const/4 v3, 0x0
 
-    .line 748
+    .line 752
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v0
@@ -2312,7 +2337,7 @@
 
     goto :goto_0
 
-    .line 750
+    .line 754
     :cond_1
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
@@ -2350,14 +2375,14 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 754
+    .line 758
     :cond_2
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawNameLock:Z
 
     if-eqz v0, :cond_3
 
-    .line 755
+    .line 759
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_lockDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLockLeft:I
@@ -2366,12 +2391,12 @@
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/Cells/BaseCell;->setDrawableBounds(Landroid/graphics/drawable/Drawable;II)V
 
-    .line 756
+    .line 760
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_lockDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 759
+    .line 763
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
@@ -2379,10 +2404,10 @@
 
     if-eqz v0, :cond_6
 
-    .line 760
+    .line 764
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 761
+    .line 765
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     int-to-float v0, v0
@@ -2393,20 +2418,20 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 762
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 763
+    .line 767
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 766
+    .line 770
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_5
 
-    .line 767
+    .line 771
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v2}, Landroid/text/StaticLayout;->getLineLeft(I)F
@@ -2421,7 +2446,7 @@
 
     if-nez v0, :cond_4
 
-    .line 768
+    .line 772
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2440,7 +2465,7 @@
 
     goto :goto_1
 
-    .line 770
+    .line 774
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
@@ -2448,7 +2473,7 @@
 
     move-result v0
 
-    .line 771
+    .line 775
     iget v4, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
     iget v5, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameWidth:I
@@ -2487,7 +2512,7 @@
 
     goto :goto_1
 
-    .line 774
+    .line 778
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
 
@@ -2513,7 +2538,7 @@
 
     float-to-int v0, v0
 
-    .line 776
+    .line 780
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
@@ -2547,21 +2572,21 @@
 
     invoke-static {v3, v0, v4}, Lorg/telegram/ui/Cells/BaseCell;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FF)V
 
-    .line 777
+    .line 781
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 780
+    .line 784
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_7
 
-    .line 781
+    .line 785
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 782
+    .line 786
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLeft:I
 
     iget v3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->sublabelOffsetX:I
@@ -2584,15 +2609,15 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 783
+    .line 787
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 784
+    .line 788
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 787
+    .line 791
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
 
@@ -2602,7 +2627,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 788
+    .line 792
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLeft:I
 
     const/high16 v5, 0x40b00000    # 5.5f
@@ -2613,7 +2638,7 @@
 
     sub-int/2addr v0, v5
 
-    .line 789
+    .line 793
     iget-object v5, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->rect:Landroid/graphics/RectF;
 
     int-to-float v6, v0
@@ -2648,7 +2673,7 @@
 
     invoke-virtual {v5, v6, v7, v0, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 790
+    .line 794
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->rect:Landroid/graphics/RectF;
 
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -2683,10 +2708,10 @@
     :goto_2
     invoke-virtual {p1, v0, v7, v5, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 791
+    .line 795
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 792
+    .line 796
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLeft:I
 
     int-to-float v0, v0
@@ -2703,21 +2728,21 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 793
+    .line 797
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->countLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 794
+    .line 798
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 797
+    .line 801
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_a
 
-    .line 798
+    .line 802
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounter:I
@@ -2734,7 +2759,7 @@
 
     invoke-virtual {v0, v2, v5}, Lorg/telegram/ui/Components/CanvasButton;->setColor(II)V
 
-    .line 799
+    .line 803
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLeft:I
@@ -2769,7 +2794,7 @@
 
     const/16 v2, 0x10
 
-    .line 800
+    .line 804
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2788,25 +2813,25 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 801
+    .line 805
     iget-object v2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/CanvasButton;->setRect(Landroid/graphics/RectF;)V
 
-    .line 802
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CanvasButton;->setRounded(Z)V
 
-    .line 803
+    .line 807
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CanvasButton;->draw(Landroid/graphics/Canvas;)V
 
-    .line 805
+    .line 809
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 806
+    .line 810
     iget v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLeft:I
 
     int-to-float v0, v0
@@ -2823,26 +2848,26 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 807
+    .line 811
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 808
+    .line 812
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 810
+    .line 814
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 812
+    .line 816
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 813
+    .line 817
     iget v1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIconLeft:I
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -2857,7 +2882,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Cells/BaseCell;->setDrawableBounds(Landroid/graphics/drawable/Drawable;II)V
 
-    .line 814
+    .line 818
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->promoSubscribeIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -2869,27 +2894,27 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 821
+    .line 825
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 822
+    .line 826
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 823
+    .line 827
     iget-object v1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_0
 
-    .line 824
+    .line 828
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 826
+    .line 830
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCheck:Z
 
@@ -2897,7 +2922,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 827
+    .line 831
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrVerified:I
@@ -2914,23 +2939,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 829
+    .line 833
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_3
 
-    .line 830
+    .line 834
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_2
 
-    .line 831
+    .line 835
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 833
+    .line 837
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusLayout:Landroid/text/StaticLayout;
 
@@ -2940,7 +2965,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 835
+    .line 839
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2948,7 +2973,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 836
+    .line 840
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -2959,10 +2984,10 @@
 
     const/4 v0, 0x1
 
-    .line 837
+    .line 841
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 838
+    .line 842
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -2973,7 +2998,7 @@
 
     const-string v0, "android.widget.CheckBox"
 
-    .line 839
+    .line 843
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     :cond_4
@@ -2983,7 +3008,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 856
+    .line 860
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/ProfileSearchCell;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -2994,7 +3019,7 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 288
+    .line 292
     iget-object p3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-nez p3, :cond_0
@@ -3013,13 +3038,13 @@
 
     return-void
 
-    .line 291
+    .line 295
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz p3, :cond_2
 
-    .line 292
+    .line 296
     sget-boolean p3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 p5, 0x2a
@@ -3044,12 +3069,12 @@
     :goto_0
     const/16 p2, 0x24
 
-    .line 293
+    .line 297
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
-    .line 294
+    .line 298
     iget-object p3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
@@ -3071,7 +3096,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 297
+    .line 301
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/ProfileSearchCell;->buildLayout()V
 
     :cond_3
@@ -3081,14 +3106,14 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 280
+    .line 284
     iget-object p2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz p2, :cond_0
 
     const/16 v0, 0x18
 
-    .line 281
+    .line 285
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3109,7 +3134,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 283
+    .line 287
     :cond_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -3133,7 +3158,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 861
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->actionButton:Lorg/telegram/ui/Components/CanvasButton;
 
     if-eqz v0, :cond_0
@@ -3148,7 +3173,7 @@
 
     return p1
 
-    .line 864
+    .line 868
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -3160,14 +3185,14 @@
 .method public setChecked(ZZ)V
     .locals 1
 
-    .line 848
+    .line 852
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 851
+    .line 855
     :cond_0
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
@@ -3177,42 +3202,23 @@
 .method public setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
     .locals 1
 
-    .line 170
+    .line 174
     iput-object p3, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentName:Ljava/lang/CharSequence;
 
-    .line 171
+    .line 175
     instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     const/4 v0, 0x0
 
     if-eqz p3, :cond_0
 
-    .line 172
+    .line 176
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 173
-    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    .line 174
-    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
-
-    goto :goto_0
-
-    .line 175
-    :cond_0
-    instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    if-eqz p3, :cond_1
-
-    .line 176
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iput-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
-
     .line 177
-    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
+    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     .line 178
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
@@ -3220,39 +3226,58 @@
     goto :goto_0
 
     .line 179
+    :cond_0
+    instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    if-eqz p3, :cond_1
+
+    .line 180
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    iput-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    .line 181
+    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
+
+    .line 182
+    iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
+
+    goto :goto_0
+
+    .line 183
     :cond_1
     instance-of p3, p1, Lorg/telegram/messenger/ContactsController$Contact;
 
     if-eqz p3, :cond_2
 
-    .line 180
+    .line 184
     check-cast p1, Lorg/telegram/messenger/ContactsController$Contact;
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
 
-    .line 181
+    .line 185
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 182
+    .line 186
     iput-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 184
+    .line 188
     :cond_2
     :goto_0
     iput-object p2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->encryptedChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 185
+    .line 189
     iput-object p4, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->subLabel:Ljava/lang/CharSequence;
 
-    .line 186
+    .line 190
     iput-boolean p5, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCount:Z
 
-    .line 187
+    .line 191
     iput-boolean p6, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->savedMessages:Z
 
     const/4 p1, 0x0
 
-    .line 188
+    .line 192
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/ProfileSearchCell;->update(I)V
 
     return-void
@@ -3288,10 +3313,10 @@
 .method public setSublabelOffset(II)V
     .locals 0
 
-    .line 310
+    .line 314
     iput p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->sublabelOffsetX:I
 
-    .line 311
+    .line 315
     iput p2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->sublabelOffsetY:I
 
     return-void
@@ -3302,7 +3327,7 @@
 
     move-object/from16 v0, p0
 
-    .line 634
+    .line 638
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     const/4 v2, 0x2
@@ -3313,12 +3338,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 635
+    .line 639
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 636
+    .line 640
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
@@ -3327,44 +3352,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 637
+    .line 641
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v2, 0xc
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 638
-    iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    iget-object v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    invoke-virtual/range {v5 .. v11}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
-
-    goto/16 :goto_2
-
-    .line 639
-    :cond_0
-    iget-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->savedMessages:Z
-
-    if-eqz v1, :cond_1
-
-    .line 640
-    iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-
-    .line 641
+    .line 642
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -3384,20 +3379,50 @@
     goto/16 :goto_2
 
     .line 643
+    :cond_0
+    iget-boolean v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->savedMessages:Z
+
+    if-eqz v1, :cond_1
+
+    .line 644
+    iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+
+    .line 645
+    iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    iget-object v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    invoke-virtual/range {v5 .. v11}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
+
+    goto/16 :goto_2
+
+    .line 647
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    .line 644
+    .line 648
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
     if-eqz v6, :cond_2
 
-    .line 645
+    .line 649
     iget-object v3, v6, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->photo_small:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 646
+    .line 650
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->strippedBitmap:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v6, :cond_2
@@ -3409,7 +3434,7 @@
     :cond_2
     move-object v12, v1
 
-    .line 650
+    .line 654
     :goto_0
     iget-object v7, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -3435,24 +3460,24 @@
 
     goto/16 :goto_2
 
-    .line 652
+    .line 656
     :cond_3
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v1, :cond_7
 
-    .line 653
+    .line 657
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    .line 654
+    .line 658
     iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$Chat;->photo:Lorg/telegram/tgnet/TLRPC$ChatPhoto;
 
     if-eqz v6, :cond_4
 
-    .line 655
+    .line 659
     iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_small:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 656
+    .line 660
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->strippedBitmap:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v6, :cond_5
@@ -3467,11 +3492,11 @@
     :cond_5
     move-object v13, v5
 
-    .line 660
+    .line 664
     :goto_1
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 662
+    .line 666
     iget v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -3484,14 +3509,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 664
+    .line 668
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v2, 0x65
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 665
+    .line 669
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -3510,7 +3535,7 @@
 
     goto :goto_2
 
-    .line 667
+    .line 671
     :cond_6
     iget-object v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -3540,7 +3565,7 @@
 
     goto :goto_2
 
-    .line 668
+    .line 672
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->contact:Lorg/telegram/messenger/ContactsController$Contact;
 
@@ -3548,7 +3573,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 669
+    .line 673
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     iget-object v7, v1, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
@@ -3557,7 +3582,7 @@
 
     invoke-virtual {v2, v5, v6, v7, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 670
+    .line 674
     iget-object v8, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v9, 0x0
@@ -3576,13 +3601,13 @@
 
     goto :goto_2
 
-    .line 672
+    .line 676
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v1, v5, v6, v3, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 673
+    .line 677
     iget-object v7, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v8, 0x0
@@ -3599,7 +3624,7 @@
 
     invoke-virtual/range {v7 .. v13}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 676
+    .line 680
     :goto_2
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -3629,7 +3654,7 @@
 
     if-eqz p1, :cond_18
 
-    .line 679
+    .line 683
     sget v2, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_AVATAR:I
 
     and-int v2, p1, v2
@@ -3651,7 +3676,7 @@
 
     if-eqz v2, :cond_f
 
-    .line 680
+    .line 684
     :cond_b
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastAvatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
@@ -3692,7 +3717,7 @@
     :goto_4
     if-nez v2, :cond_11
 
-    .line 684
+    .line 688
     sget v5, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_STATUS:I
 
     and-int v5, p1, v5
@@ -3703,12 +3728,12 @@
 
     if-eqz v5, :cond_11
 
-    .line 686
+    .line 690
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     if-eqz v5, :cond_10
 
-    .line 687
+    .line 691
     iget v5, v5, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     goto :goto_5
@@ -3716,7 +3741,7 @@
     :cond_10
     move v5, v1
 
-    .line 689
+    .line 693
     :goto_5
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastStatus:I
 
@@ -3727,7 +3752,7 @@
     :cond_11
     if-nez v2, :cond_12
 
-    .line 693
+    .line 697
     sget v5, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_EMOJI_STATUS:I
 
     and-int v5, p1, v5
@@ -3738,7 +3763,7 @@
 
     if-eqz v5, :cond_12
 
-    .line 694
+    .line 698
     iget-boolean v6, v5, Lorg/telegram/tgnet/TLRPC$User;->verified:Z
 
     invoke-virtual {v0, v6, v5, v4}, Lorg/telegram/ui/Cells/ProfileSearchCell;->updateStatus(ZLorg/telegram/tgnet/TLRPC$User;Z)V
@@ -3746,7 +3771,7 @@
     :cond_12
     if-nez v2, :cond_13
 
-    .line 696
+    .line 700
     sget v5, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_NAME:I
 
     and-int v5, p1, v5
@@ -3768,13 +3793,13 @@
 
     if-eqz v5, :cond_16
 
-    .line 698
+    .line 702
     :cond_14
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v5, :cond_15
 
-    .line 699
+    .line 703
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3797,13 +3822,13 @@
 
     goto :goto_6
 
-    .line 701
+    .line 705
     :cond_15
     iget-object v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 703
+    .line 707
     :goto_6
     iget-object v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastName:Ljava/lang/String;
 
@@ -3818,7 +3843,7 @@
     :cond_16
     if-nez v2, :cond_17
 
-    .line 707
+    .line 711
     iget-boolean v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->drawCount:Z
 
     if-eqz v5, :cond_17
@@ -3829,7 +3854,7 @@
 
     if-eqz v5, :cond_17
 
-    .line 708
+    .line 712
     iget v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3848,7 +3873,7 @@
 
     if-eqz v5, :cond_17
 
-    .line 709
+    .line 713
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3873,29 +3898,29 @@
 
     return-void
 
-    .line 719
+    .line 723
     :cond_18
     iget-object v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_1a
 
-    .line 720
+    .line 724
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     if-eqz v2, :cond_19
 
-    .line 721
+    .line 725
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastStatus:I
 
     goto :goto_8
 
-    .line 723
+    .line 727
     :cond_19
     iput v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastStatus:I
 
-    .line 725
+    .line 729
     :goto_8
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3921,23 +3946,23 @@
 
     goto :goto_9
 
-    .line 726
+    .line 730
     :cond_1a
     iget-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v1, :cond_1b
 
-    .line 727
+    .line 731
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastName:Ljava/lang/String;
 
-    .line 730
+    .line 734
     :cond_1b
     :goto_9
     iput-object v3, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->lastAvatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 732
+    .line 736
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -3952,18 +3977,18 @@
 
     goto :goto_a
 
-    .line 735
+    .line 739
     :cond_1c
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->requestLayout()V
 
     goto :goto_b
 
-    .line 733
+    .line 737
     :cond_1d
     :goto_a
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ProfileSearchCell;->buildLayout()V
 
-    .line 737
+    .line 741
     :goto_b
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->postInvalidate()V
 
@@ -3973,7 +3998,7 @@
 .method public updateStatus(ZLorg/telegram/tgnet/TLRPC$User;Z)V
     .locals 6
 
-    .line 613
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3984,7 +4009,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 615
+    .line 619
     new-instance p1, Lorg/telegram/ui/Components/CombinedDrawable;
 
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_verifiedDrawable:Landroid/graphics/drawable/Drawable;
@@ -3997,14 +4022,14 @@
 
     invoke-virtual {v0, p1, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 616
+    .line 620
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setColor(Ljava/lang/Integer;)V
 
     goto/16 :goto_0
 
-    .line 617
+    .line 621
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumStatusEnabled:Z
 
@@ -4038,7 +4063,7 @@
 
     if-le p1, v0, :cond_1
 
-    .line 618
+    .line 622
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
@@ -4049,7 +4074,7 @@
 
     invoke-virtual {p1, v0, v1, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
-    .line 619
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
@@ -4068,7 +4093,7 @@
 
     goto/16 :goto_0
 
-    .line 620
+    .line 624
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumStatusEnabled:Z
 
@@ -4086,7 +4111,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 621
+    .line 625
     iget-object p2, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
@@ -4095,7 +4120,7 @@
 
     invoke-virtual {p2, v0, v1, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
-    .line 622
+    .line 626
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
@@ -4114,7 +4139,7 @@
 
     goto :goto_0
 
-    .line 623
+    .line 627
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->isShowPremiumBadgeEnabled:Z
 
@@ -4138,7 +4163,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 624
+    .line 628
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
@@ -4149,7 +4174,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 625
+    .line 629
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
@@ -4168,13 +4193,13 @@
 
     goto :goto_0
 
-    .line 627
+    .line 631
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {p1, v1, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 628
+    .line 632
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
@@ -4198,7 +4223,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 166
+    .line 170
     iget-object v0, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eq v0, p1, :cond_1

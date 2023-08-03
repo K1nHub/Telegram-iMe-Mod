@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;)V
     .locals 0
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 50
+    .line 51
     invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
 
     move-result-object v0
@@ -52,12 +52,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 44
+    .line 45
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;
 
-    .line 45
+    .line 46
     invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 37
+    .line 38
     new-instance p2, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -85,7 +85,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;-><init>(Landroid/content/Context;)V
 
-    .line 38
+    .line 39
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -96,7 +96,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 39
+    .line 40
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

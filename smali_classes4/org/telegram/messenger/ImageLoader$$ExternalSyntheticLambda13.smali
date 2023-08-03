@@ -2,44 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/io/File;
+.field public final synthetic f$0:Lorg/telegram/messenger/ImageLoader;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/messenger/ImageReceiver;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/io/File;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ImageLoader;ZLorg/telegram/messenger/ImageReceiver;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$0:Ljava/io/File;
+    iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/ImageLoader;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/messenger/ImageReceiver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$0:Ljava/io/File;
+    iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/ImageLoader;
 
-    check-cast p1, Ljava/nio/file/Path;
+    iget-boolean v1, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$1:Z
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$nvS1PGh6JAGAk9sstmlzPfbuLmY(Ljava/io/File;Ljava/nio/file/Path;)V
+    iget-object v2, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$Q-PCnMqsggzlCv1iESJHI5ry67w(Lorg/telegram/messenger/ImageLoader;ZLorg/telegram/messenger/ImageReceiver;)V
 
     return-void
-.end method
-
-.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
 .end method

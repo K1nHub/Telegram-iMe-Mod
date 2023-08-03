@@ -9,12 +9,12 @@ public final class AutoValue_PersistedEvent extends PersistedEvent {
     private final EventInternal event;
 
     /* renamed from: id */
-    private final long f181id;
+    private final long f183id;
     private final TransportContext transportContext;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AutoValue_PersistedEvent(long j, TransportContext transportContext, EventInternal eventInternal) {
-        this.f181id = j;
+        this.f183id = j;
         Objects.requireNonNull(transportContext, "Null transportContext");
         this.transportContext = transportContext;
         Objects.requireNonNull(eventInternal, "Null event");
@@ -23,7 +23,7 @@ public final class AutoValue_PersistedEvent extends PersistedEvent {
 
     @Override // com.google.android.datatransport.runtime.scheduling.persistence.PersistedEvent
     public long getId() {
-        return this.f181id;
+        return this.f183id;
     }
 
     @Override // com.google.android.datatransport.runtime.scheduling.persistence.PersistedEvent
@@ -37,7 +37,7 @@ public final class AutoValue_PersistedEvent extends PersistedEvent {
     }
 
     public String toString() {
-        return "PersistedEvent{id=" + this.f181id + ", transportContext=" + this.transportContext + ", event=" + this.event + "}";
+        return "PersistedEvent{id=" + this.f183id + ", transportContext=" + this.transportContext + ", event=" + this.event + "}";
     }
 
     public boolean equals(Object obj) {
@@ -46,13 +46,13 @@ public final class AutoValue_PersistedEvent extends PersistedEvent {
         }
         if (obj instanceof PersistedEvent) {
             PersistedEvent persistedEvent = (PersistedEvent) obj;
-            return this.f181id == persistedEvent.getId() && this.transportContext.equals(persistedEvent.getTransportContext()) && this.event.equals(persistedEvent.getEvent());
+            return this.f183id == persistedEvent.getId() && this.transportContext.equals(persistedEvent.getTransportContext()) && this.event.equals(persistedEvent.getEvent());
         }
         return false;
     }
 
     public int hashCode() {
-        long j = this.f181id;
+        long j = this.f183id;
         return ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.transportContext.hashCode()) * 1000003) ^ this.event.hashCode();
     }
 }

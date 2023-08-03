@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactAddActivity;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 217
+    .line 219
     iput-object p1, p0, Lorg/telegram/ui/ContactAddActivity$2;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/ContactAddActivity$2;->val$paint:Landroid/graphics/Paint;
@@ -39,7 +39,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 220
+    .line 222
     iget-object v0, p0, Lorg/telegram/ui/ContactAddActivity$2;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactAddActivity;->access$700(Lorg/telegram/ui/ContactAddActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lorg/telegram/ui/ContactAddActivity$2;->val$paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x42aa0000    # 85.0f
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 222
+    .line 224
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0

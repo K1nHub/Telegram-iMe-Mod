@@ -18,7 +18,7 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -103,21 +103,21 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
         for (int i2 = 0; i2 < 4; i2++) {
             this.states[i2] = new WeavingState(i2);
         }
-        this.blobDrawable.maxRadius = AndroidUtilities.m54dp(37);
-        this.blobDrawable.minRadius = AndroidUtilities.m54dp(32);
-        this.blobDrawable2.maxRadius = AndroidUtilities.m54dp(37);
-        this.blobDrawable2.minRadius = AndroidUtilities.m54dp(32);
+        this.blobDrawable.maxRadius = AndroidUtilities.m72dp(37);
+        this.blobDrawable.minRadius = AndroidUtilities.m72dp(32);
+        this.blobDrawable2.maxRadius = AndroidUtilities.m72dp(37);
+        this.blobDrawable2.minRadius = AndroidUtilities.m72dp(32);
         this.blobDrawable.generateBlob();
         this.blobDrawable2.generateBlob();
-        int i3 = C3417R.raw.voice_outlined;
-        this.bigMicDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m54dp(22), AndroidUtilities.m54dp(30), true, null);
+        int i3 = C3419R.raw.voice_outlined;
+        this.bigMicDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m72dp(22), AndroidUtilities.m72dp(30), true, null);
         setWillNotDraw(false);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.muteButton = rLottieImageView;
         rLottieImageView.setAnimation(this.bigMicDrawable);
         this.muteButton.setScaleType(ImageView.ScaleType.CENTER);
         addView(this.muteButton);
-        this.prepareToRemoveShader = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(350), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-2801343, -561538, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 1.0f}, Shader.TileMode.CLAMP);
+        this.prepareToRemoveShader = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(350), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-2801343, -561538, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 1.0f}, Shader.TileMode.CLAMP);
         if (z) {
             setState(0);
         }
@@ -188,7 +188,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                     this.shader = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{color5, color6, color7}, (float[]) null, Shader.TileMode.CLAMP);
                 }
             }
-            int m54dp = AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
+            int m72dp = AndroidUtilities.m72dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
             float f2 = this.duration;
             if (f2 == BitmapDescriptorFactory.HUE_RED || this.time >= f2) {
                 this.duration = Utilities.random.nextInt(700) + 500;
@@ -208,7 +208,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                 this.time = f5;
             }
             float interpolation = CubicBezierInterpolator.EASE_OUT.getInterpolation(this.time / f5);
-            float f6 = m54dp;
+            float f6 = m72dp;
             float f7 = this.startX;
             float f8 = ((f7 + ((this.targetX - f7) * interpolation)) * f6) - 200.0f;
             float f9 = this.startY;
@@ -304,16 +304,16 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             if (sharedInstance != null && ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
-                string = LocaleController.getString("VoipChannelVoiceChat", C3417R.string.VoipChannelVoiceChat);
+                string = LocaleController.getString("VoipChannelVoiceChat", C3419R.string.VoipChannelVoiceChat);
             } else {
-                string = LocaleController.getString("VoipGroupVoiceChat", C3417R.string.VoipGroupVoiceChat);
+                string = LocaleController.getString("VoipGroupVoiceChat", C3419R.string.VoipGroupVoiceChat);
             }
             if (i == 0) {
-                string = string + ", " + LocaleController.getString("VoipTapToMute", C3417R.string.VoipTapToMute);
+                string = string + ", " + LocaleController.getString("VoipTapToMute", C3419R.string.VoipTapToMute);
             } else if (i == 2) {
-                string = string + ", " + LocaleController.getString("Connecting", C3417R.string.Connecting);
+                string = string + ", " + LocaleController.getString("Connecting", C3419R.string.Connecting);
             } else if (i == 3) {
-                string = string + ", " + LocaleController.getString("VoipMutedByAdmin", C3417R.string.VoipMutedByAdmin);
+                string = string + ", " + LocaleController.getString("VoipMutedByAdmin", C3419R.string.VoipMutedByAdmin);
             }
             setContentDescription(string);
             invalidate();
@@ -329,10 +329,10 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             return;
         }
         if (GroupCallPip.getInstance().showAlert) {
-            i = C3417R.string.AccDescrCloseMenu;
+            i = C3419R.string.AccDescrCloseMenu;
             str = "AccDescrCloseMenu";
         } else {
-            i = C3417R.string.AccDescrOpenMenu2;
+            i = C3419R.string.AccDescrOpenMenu2;
             str = "AccDescrOpenMenu2";
         }
         accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(str, i)));

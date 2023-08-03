@@ -28,6 +28,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -35,7 +36,9 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -43,12 +46,18 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentTwitterSearchBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.ChatActivity;
@@ -78,22 +87,118 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         LoadMoreView.CC.$default$resetLoadMore(this);
     }
 
-    public TwitterSearchFragment(BlockchainType blockchainType, Callbacks$Callback2<TwitterUserItem, String> onUserSelectedAction) {
+    public TwitterSearchFragment(final BlockchainType blockchainType, Callbacks$Callback2<TwitterUserItem, String> onUserSelectedAction) {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         Intrinsics.checkNotNullParameter(onUserSelectedAction, "onUserSelectedAction");
         this.onUserSelectedAction = onUserSelectedAction;
-        TwitterSearchFragment$presenter$2 twitterSearchFragment$presenter$2 = new TwitterSearchFragment$presenter$2(this, blockchainType);
+        Function0<TwitterSearchPresenter> function0 = new Function0<TwitterSearchPresenter>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TwitterSearchPresenter invoke() {
+                Lazy lazy3;
+                final TwitterSearchFragment twitterSearchFragment = TwitterSearchFragment.this;
+                final BlockchainType blockchainType2 = blockchainType;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(BlockchainType.this);
+                    }
+                };
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<TwitterSearchPresenter>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.feature.twitter.search.TwitterSearchPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final TwitterSearchPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(TwitterSearchPresenter.class), qualifier, function03);
+                    }
+                });
+                return (TwitterSearchPresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TwitterSearchPresenter.class.getName() + ".presenter", twitterSearchFragment$presenter$2);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TwitterSearchPresenter.class.getName() + ".presenter", function0);
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new TwitterSearchFragment$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new TwitterSearchFragment$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<TwitterUsersRecycleAdapter>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.feature.twitter.search.adapter.TwitterUsersRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final TwitterUsersRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(TwitterUsersRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.twitterUsersRecycleAdapter$delegate = lazy2;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new TwitterSearchFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentTwitterSearchBinding>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentTwitterSearchBinding invoke() {
+                return ForkFragmentTwitterSearchBinding.inflate(BaseFragmentExtKt.getLayoutInflater(TwitterSearchFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -207,7 +312,7 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(action, "action");
-        DialogsFactoryKt.showSuccessAlert(this, title, message, getResourceManager().getString(C3417R.string.common_ok), action);
+        DialogsFactoryKt.showSuccessAlert(this, title, message, getResourceManager().getString(C3419R.string.common_ok), action);
     }
 
     @Override // com.iMe.manager.crypto.recipient.CryptoRecipientView
@@ -240,11 +345,11 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_binance_receive_choose_contact_title));
-        ActionBarMenuItem actionBarMenuItemSearchListener = c3484ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$1
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_binance_receive_choose_contact_title));
+        ActionBarMenuItem actionBarMenuItemSearchListener = c3485ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3419R.C3421drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$1
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
             }
@@ -267,11 +372,11 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
         searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(15)});
         searchField.setImeOptions(Integer.MIN_VALUE);
-        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3417R.string.twitter_search_hint));
-        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3419R.string.twitter_search_hint));
+        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3419R.string.Search));
         this.searchItem = actionBarMenuItemSearchListener;
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$3
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$3
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TwitterSearchFragment.this.finishFragment();
@@ -289,7 +394,25 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         TwitterUsersRecycleAdapter twitterUsersRecycleAdapter = getTwitterUsersRecycleAdapter();
         GlobalStateProvider globalStateProvider = twitterUsersRecycleAdapter.getGlobalStateProvider();
         globalStateProvider.setMatchParentHeight(true);
-        globalStateProvider.setOnRetryButtonClickAction(new TwitterSearchFragment$setupRecycleView$1$1$1$1(this));
+        globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupRecycleView$1$1$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                TwitterSearchPresenter presenter;
+                presenter = TwitterSearchFragment.this.getPresenter();
+                presenter.reload();
+            }
+        });
         twitterUsersRecycleAdapter.setDiffCallback(new TwitterSearchDiffCallback());
         setupLoadMore(twitterUsersRecycleAdapter);
         recyclerView.setAdapter(twitterUsersRecycleAdapter);

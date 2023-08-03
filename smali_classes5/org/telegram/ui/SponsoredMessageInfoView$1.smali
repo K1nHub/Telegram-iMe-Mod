@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SponsoredMessageInfoView;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 61
+    .line 63
     iput-object p3, p0, Lorg/telegram/ui/SponsoredMessageInfoView$1;->val$buttonPaint:Landroid/graphics/Paint;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 65
+    .line 67
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 66
+    .line 68
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v1, 0x1
@@ -83,7 +83,7 @@
 
     const/4 v1, 0x4
 
-    .line 67
+    .line 69
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2

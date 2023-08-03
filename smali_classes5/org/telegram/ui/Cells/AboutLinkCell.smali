@@ -2337,10 +2337,8 @@
 
     move-result-object p1
 
-    const/4 p2, 0x1
-
     .line 731
-    invoke-virtual {p1, p2}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+    invoke-virtual {p1, v0}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object p1
 

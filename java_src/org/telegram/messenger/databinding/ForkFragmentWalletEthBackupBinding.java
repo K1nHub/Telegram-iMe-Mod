@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.backup.SeedListView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthBackupBinding implements ViewBinding {
     private final RelativeLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletEthBackupBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthBackupBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_eth_backup, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_eth_backup, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,16 +36,16 @@ public final class ForkFragmentWalletEthBackupBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthBackupBinding bind(View view) {
-        int i = C3417R.C3420id.button_action;
+        int i = C3419R.C3422id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3417R.C3420id.seed_list;
+            i = C3419R.C3422id.seed_list;
             SeedListView seedListView = (SeedListView) ViewBindings.findChildViewById(view, i);
             if (seedListView != null) {
-                i = C3417R.C3420id.text_copy_info;
+                i = C3419R.C3422id.text_copy_info;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3417R.C3420id.text_title;
+                    i = C3419R.C3422id.text_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkFragmentWalletEthBackupBinding((RelativeLayout) view, actionButton, seedListView, appCompatTextView, appCompatTextView2);

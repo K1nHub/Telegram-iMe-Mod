@@ -183,7 +183,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
         int i2 = (retryDelayMsFor > C0480C.TIME_UNSET ? 1 : (retryDelayMsFor == C0480C.TIME_UNSET ? 0 : -1));
         boolean z = i2 == 0 || i >= this.loadErrorHandlingPolicy.getMinimumLoadableRetryCount(1);
         if (this.treatLoadErrorsAsEndOfStream && z) {
-            Log.m795w(TAG, "Loading failed, treating as end-of-stream.", iOException);
+            Log.m813w(TAG, "Loading failed, treating as end-of-stream.", iOException);
             this.loadingFinished = true;
             loadErrorAction = Loader.DONT_RETRY;
         } else if (i2 != 0) {

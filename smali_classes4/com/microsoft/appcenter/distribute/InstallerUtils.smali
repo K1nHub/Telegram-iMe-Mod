@@ -58,7 +58,7 @@
     .line 48
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "pc"
+    const-string/jumbo v1, "pc"
 
     .line 49
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -68,7 +68,7 @@
     .line 50
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "org.mozilla.firefox"
+    const-string/jumbo v1, "org.mozilla.firefox"
 
     .line 51
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z

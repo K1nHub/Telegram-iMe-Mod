@@ -35,7 +35,7 @@ public class SearchCounterView extends View {
     String currentString;
 
     /* renamed from: dx */
-    float f1820dx;
+    float f1842dx;
     int gravity;
     public float horizontalPadding;
     int lastH;
@@ -46,7 +46,7 @@ public class SearchCounterView extends View {
     TextPaint textPaint;
 
     /* renamed from: x */
-    float f1821x;
+    float f1843x;
 
     public SearchCounterView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
@@ -55,10 +55,10 @@ public class SearchCounterView extends View {
         this.countChangeProgress = 1.0f;
         this.textColorKey = Theme.key_chat_searchPanelText;
         this.gravity = 17;
-        this.f1820dx = BitmapDescriptorFactory.HUE_RED;
+        this.f1842dx = BitmapDescriptorFactory.HUE_RED;
         this.resourcesProvider = resourcesProvider;
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.textPaint.setTextSize(AndroidUtilities.m54dp(15));
+        this.textPaint.setTextSize(AndroidUtilities.m72dp(15));
     }
 
     @Override // android.view.View
@@ -96,12 +96,12 @@ public class SearchCounterView extends View {
                     this.countWidth = 0;
                     this.countLayout = null;
                 } else {
-                    this.countWidth = Math.max(AndroidUtilities.m54dp(12), (int) Math.ceil(this.textPaint.measureText(str2)));
+                    this.countWidth = Math.max(AndroidUtilities.m72dp(12), (int) Math.ceil(this.textPaint.measureText(str2)));
                     this.countLayout = new StaticLayout(str2, this.textPaint, this.countWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                 }
                 invalidate();
             }
-            this.f1820dx = BitmapDescriptorFactory.HUE_RED;
+            this.f1842dx = BitmapDescriptorFactory.HUE_RED;
             if (z3) {
                 ValueAnimator valueAnimator2 = this.countAnimator;
                 if (valueAnimator2 != null) {
@@ -179,8 +179,8 @@ public class SearchCounterView extends View {
                         i2 = 12;
                     }
                     int i7 = i2;
-                    int max = Math.max(AndroidUtilities.m54dp(i7), (int) Math.ceil(this.textPaint.measureText(str4)));
-                    int max2 = Math.max(AndroidUtilities.m54dp(i7), (int) Math.ceil(this.textPaint.measureText(str2)));
+                    int max = Math.max(AndroidUtilities.m72dp(i7), (int) Math.ceil(this.textPaint.measureText(str4)));
+                    int max2 = Math.max(AndroidUtilities.m72dp(i7), (int) Math.ceil(this.textPaint.measureText(str2)));
                     this.countOldLayout = new StaticLayout(spannableStringBuilder, this.textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     this.countAnimationStableLayout = new StaticLayout(spannableStringBuilder3, this.textPaint, max2, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     this.countAnimationInLayout = new StaticLayout(spannableStringBuilder2, this.textPaint, max2, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
@@ -193,7 +193,7 @@ public class SearchCounterView extends View {
                         z2 = false;
                         this.countAnimationStableLayout2 = null;
                     }
-                    this.f1820dx = this.countOldLayout.getPrimaryHorizontal(i3) - this.countAnimationStableLayout.getPrimaryHorizontal(i4);
+                    this.f1842dx = this.countOldLayout.getPrimaryHorizontal(i3) - this.countAnimationStableLayout.getPrimaryHorizontal(i4);
                 } else {
                     z2 = false;
                 }
@@ -202,7 +202,7 @@ public class SearchCounterView extends View {
                 this.countAnimator.start();
             }
             if (i > 0) {
-                this.countWidth = Math.max(AndroidUtilities.m54dp(12), (int) Math.ceil(this.textPaint.measureText(str2)));
+                this.countWidth = Math.max(AndroidUtilities.m72dp(12), (int) Math.ceil(this.textPaint.measureText(str2)));
                 this.countLayout = new StaticLayout(str2, this.textPaint, this.countWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             }
             this.currentCount = i;
@@ -227,7 +227,7 @@ public class SearchCounterView extends View {
             this.textPaint.setColor(color);
         }
         if (this.countChangeProgress != 1.0f) {
-            float measuredHeight = (getMeasuredHeight() - AndroidUtilities.m54dp(23)) / 2.0f;
+            float measuredHeight = (getMeasuredHeight() - AndroidUtilities.m72dp(23)) / 2.0f;
             int i = this.countWidth;
             int i2 = this.countWidthOld;
             if (i == i2) {
@@ -238,51 +238,51 @@ public class SearchCounterView extends View {
             }
             updateX(f);
             RectF rectF = this.rectF;
-            float f3 = this.f1821x;
-            rectF.set(f3, measuredHeight, f + f3 + AndroidUtilities.m54dp(11), AndroidUtilities.m54dp(23) + measuredHeight);
+            float f3 = this.f1843x;
+            rectF.set(f3, measuredHeight, f + f3 + AndroidUtilities.m72dp(11), AndroidUtilities.m72dp(23) + measuredHeight);
             boolean z = this.countAnimationIncrement;
             if (this.countAnimationInLayout != null) {
                 canvas.save();
                 float f4 = this.countLeft;
-                float m54dp = AndroidUtilities.m54dp(2) + measuredHeight;
-                int m54dp2 = AndroidUtilities.m54dp(13);
+                float m72dp = AndroidUtilities.m72dp(2) + measuredHeight;
+                int m72dp2 = AndroidUtilities.m72dp(13);
                 if (!z) {
-                    m54dp2 = -m54dp2;
+                    m72dp2 = -m72dp2;
                 }
-                canvas.translate(f4, m54dp + (m54dp2 * (1.0f - this.countChangeProgress)));
+                canvas.translate(f4, m72dp + (m72dp2 * (1.0f - this.countChangeProgress)));
                 this.textPaint.setAlpha((int) (this.countChangeProgress * 255.0f));
                 this.countAnimationInLayout.draw(canvas);
                 canvas.restore();
             } else if (this.countLayout != null) {
                 canvas.save();
                 float f5 = this.countLeft;
-                float m54dp3 = AndroidUtilities.m54dp(2) + measuredHeight;
-                int m54dp4 = AndroidUtilities.m54dp(13);
+                float m72dp3 = AndroidUtilities.m72dp(2) + measuredHeight;
+                int m72dp4 = AndroidUtilities.m72dp(13);
                 if (!z) {
-                    m54dp4 = -m54dp4;
+                    m72dp4 = -m72dp4;
                 }
-                canvas.translate(f5, m54dp3 + (m54dp4 * (1.0f - this.countChangeProgress)));
+                canvas.translate(f5, m72dp3 + (m72dp4 * (1.0f - this.countChangeProgress)));
                 this.textPaint.setAlpha((int) (this.countChangeProgress * 255.0f));
                 this.countLayout.draw(canvas);
                 canvas.restore();
             }
             if (this.countOldLayout != null) {
                 canvas.save();
-                canvas.translate(this.countLeft, AndroidUtilities.m54dp(2) + measuredHeight + ((z ? -AndroidUtilities.m54dp(13) : AndroidUtilities.m54dp(13)) * this.countChangeProgress));
+                canvas.translate(this.countLeft, AndroidUtilities.m72dp(2) + measuredHeight + ((z ? -AndroidUtilities.m72dp(13) : AndroidUtilities.m72dp(13)) * this.countChangeProgress));
                 this.textPaint.setAlpha((int) ((1.0f - this.countChangeProgress) * 255.0f));
                 this.countOldLayout.draw(canvas);
                 canvas.restore();
             }
             if (this.countAnimationStableLayout != null) {
                 canvas.save();
-                canvas.translate(this.countLeft + (this.f1820dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m54dp(2) + measuredHeight);
+                canvas.translate(this.countLeft + (this.f1842dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m72dp(2) + measuredHeight);
                 this.textPaint.setAlpha(255);
                 this.countAnimationStableLayout.draw(canvas);
                 canvas.restore();
             }
             if (this.countAnimationStableLayout2 != null) {
                 canvas.save();
-                canvas.translate(this.countLeft, measuredHeight + AndroidUtilities.m54dp(2));
+                canvas.translate(this.countLeft, measuredHeight + AndroidUtilities.m72dp(2));
                 this.textPaint.setAlpha(255);
                 this.countAnimationStableLayout2.draw(canvas);
                 canvas.restore();
@@ -296,7 +296,7 @@ public class SearchCounterView extends View {
     private void updateX(float f) {
         int i = this.gravity;
         if (i == 5) {
-            float measuredWidth = getMeasuredWidth() - AndroidUtilities.m55dp(5.5f);
+            float measuredWidth = getMeasuredWidth() - AndroidUtilities.m73dp(5.5f);
             this.countLeft = measuredWidth;
             float f2 = this.horizontalPadding;
             if (f2 != BitmapDescriptorFactory.HUE_RED) {
@@ -305,19 +305,19 @@ public class SearchCounterView extends View {
                 this.countLeft = measuredWidth - f;
             }
         } else if (i == 3) {
-            this.countLeft = AndroidUtilities.m55dp(5.5f);
+            this.countLeft = AndroidUtilities.m73dp(5.5f);
         } else {
             this.countLeft = (int) ((getMeasuredWidth() - f) / 2.0f);
         }
-        this.f1821x = this.countLeft - AndroidUtilities.m55dp(5.5f);
+        this.f1843x = this.countLeft - AndroidUtilities.m73dp(5.5f);
     }
 
     private void drawInternal(Canvas canvas) {
-        float measuredHeight = (getMeasuredHeight() - AndroidUtilities.m54dp(23)) / 2.0f;
+        float measuredHeight = (getMeasuredHeight() - AndroidUtilities.m72dp(23)) / 2.0f;
         updateX(this.countWidth);
         if (this.countLayout != null) {
             canvas.save();
-            canvas.translate(this.countLeft, measuredHeight + AndroidUtilities.m54dp(2));
+            canvas.translate(this.countLeft, measuredHeight + AndroidUtilities.m72dp(2));
             this.countLayout.draw(canvas);
             canvas.restore();
         }

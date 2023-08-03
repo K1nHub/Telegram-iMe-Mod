@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/FileLoadOperation;
-
-    iput p2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda2;->f$1:I
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    iget v1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda2;->f$1:I
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$4ZPZGY3f2q_DT4Kdb_TOVsn4b84(Lorg/telegram/messenger/FileLoadOperation;I)V
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$t2cuJo-Xnn5KHqIJWU-4FbHliQ0(Lorg/telegram/messenger/FileLoadOperation;)V
 
     return-void
 .end method

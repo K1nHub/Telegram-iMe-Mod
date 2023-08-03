@@ -21,7 +21,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
@@ -81,8 +81,8 @@ public class VideoSeekPreviewImage extends View {
         this.matrix = new Matrix();
         this.ytPath = new Path();
         setVisibility(4);
-        this.frameDrawable = context.getResources().getDrawable(C3417R.C3419drawable.videopreview);
-        this.textPaint.setTextSize(AndroidUtilities.m54dp(13));
+        this.frameDrawable = context.getResources().getDrawable(C3419R.C3421drawable.videopreview);
+        this.textPaint.setTextSize(AndroidUtilities.m72dp(13));
         this.textPaint.setColor(-1);
         this.delegate = videoSeekPreviewImageDelegate;
         ImageReceiver imageReceiver = new ImageReceiver();
@@ -107,7 +107,7 @@ public class VideoSeekPreviewImage extends View {
         if (!z || this.webView == null) {
             return;
         }
-        int m54dp = AndroidUtilities.m54dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        int m72dp = AndroidUtilities.m72dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         int youtubeStoryboardImageCount = this.webView.getYoutubeStoryboardImageCount(this.lastYoutubePosition);
         float bitmapWidth = this.youtubeBoardsReceiver.getBitmapWidth() / Math.min(youtubeStoryboardImageCount, 5);
         float bitmapHeight = this.youtubeBoardsReceiver.getBitmapHeight() / ((int) Math.ceil(youtubeStoryboardImageCount / 5.0f));
@@ -118,16 +118,16 @@ public class VideoSeekPreviewImage extends View {
         this.ytImageHeight = (int) bitmapHeight;
         float f = bitmapWidth / bitmapHeight;
         if (f > 1.0f) {
-            i = (int) (m54dp / f);
+            i = (int) (m72dp / f);
         } else {
-            i = m54dp;
-            m54dp = (int) (m54dp * f);
+            i = m72dp;
+            m72dp = (int) (m72dp * f);
         }
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        if (getVisibility() == 0 && layoutParams.width == m54dp && layoutParams.height == i) {
+        if (getVisibility() == 0 && layoutParams.width == m72dp && layoutParams.height == i) {
             return;
         }
-        layoutParams.width = m54dp;
+        layoutParams.width = m72dp;
         layoutParams.height = i;
         setVisibility(0);
         requestLayout();
@@ -213,7 +213,7 @@ public class VideoSeekPreviewImage extends View {
             this.pendingProgress = f;
             return;
         }
-        int max = Math.max(200, AndroidUtilities.m54dp(100));
+        int max = Math.max(200, AndroidUtilities.m72dp(100));
         final Bitmap frameAtTime = this.fileDrawable.getFrameAtTime(j);
         if (frameAtTime != null) {
             int width = frameAtTime.getWidth();
@@ -263,17 +263,17 @@ public class VideoSeekPreviewImage extends View {
             bitmapShader.setLocalMatrix(this.matrix);
             this.bitmapPaint.setShader(this.bitmapShader);
             invalidate();
-            int m54dp = AndroidUtilities.m54dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+            int m72dp = AndroidUtilities.m72dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
             float width = bitmap.getWidth() / bitmap.getHeight();
             if (width > 1.0f) {
-                i = (int) (m54dp / width);
+                i = (int) (m72dp / width);
             } else {
-                m54dp = (int) (m54dp * width);
-                i = m54dp;
+                m72dp = (int) (m72dp * width);
+                i = m72dp;
             }
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
-            if (getVisibility() != 0 || layoutParams.width != m54dp || layoutParams.height != i) {
-                layoutParams.width = m54dp;
+            if (getVisibility() != 0 || layoutParams.width != m72dp || layoutParams.height != i) {
+                layoutParams.width = m72dp;
                 layoutParams.height = i;
                 setVisibility(0);
                 requestLayout();
@@ -307,7 +307,7 @@ public class VideoSeekPreviewImage extends View {
             Object parentObject = FileLoader.getInstance(intValue).getParentObject(Utilities.parseInt((CharSequence) uri.getQueryParameter("rid")).intValue());
             TLRPC$TL_document tLRPC$TL_document = new TLRPC$TL_document();
             tLRPC$TL_document.access_hash = Utilities.parseLong(uri.getQueryParameter("hash")).longValue();
-            tLRPC$TL_document.f1523id = Utilities.parseLong(uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
+            tLRPC$TL_document.f1526id = Utilities.parseLong(uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
             tLRPC$TL_document.size = Utilities.parseLong(uri.getQueryParameter("size")).longValue();
             tLRPC$TL_document.dc_id = Utilities.parseInt((CharSequence) uri.getQueryParameter("dc")).intValue();
             tLRPC$TL_document.mime_type = uri.getQueryParameter("mime");
@@ -318,7 +318,7 @@ public class VideoSeekPreviewImage extends View {
             tLRPC$TL_document.attributes.add(new TLRPC$TL_documentAttributeVideo());
             if (FileLoader.getInstance(intValue).isLoadingFile(FileLoader.getAttachFileName(tLRPC$TL_document))) {
                 File directory = FileLoader.getDirectory(4);
-                absolutePath = new File(directory, tLRPC$TL_document.dc_id + "_" + tLRPC$TL_document.f1523id + ".temp").getAbsolutePath();
+                absolutePath = new File(directory, tLRPC$TL_document.dc_id + "_" + tLRPC$TL_document.f1526id + ".temp").getAbsolutePath();
             } else {
                 absolutePath = FileLoader.getInstance(intValue).getPathToAttach(tLRPC$TL_document, false).getAbsolutePath();
             }
@@ -366,16 +366,16 @@ public class VideoSeekPreviewImage extends View {
             float measuredWidth = getMeasuredWidth() / this.bitmapToDraw.getWidth();
             this.matrix.preScale(measuredWidth, measuredWidth);
             this.bitmapRect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            canvas.drawRoundRect(this.bitmapRect, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), this.bitmapPaint);
+            canvas.drawRoundRect(this.bitmapRect, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(6), this.bitmapPaint);
             this.frameDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.frameDrawable.draw(canvas);
-            canvas.drawText(this.frameTime, (getMeasuredWidth() - this.timeWidth) / 2.0f, getMeasuredHeight() - AndroidUtilities.m54dp(9), this.textPaint);
+            canvas.drawText(this.frameTime, (getMeasuredWidth() - this.timeWidth) / 2.0f, getMeasuredHeight() - AndroidUtilities.m72dp(9), this.textPaint);
         } else if (this.isYoutube) {
             canvas.save();
             this.ytPath.rewind();
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.ytPath.addRoundRect(rectF, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), Path.Direction.CW);
+            this.ytPath.addRoundRect(rectF, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(6), Path.Direction.CW);
             canvas.clipPath(this.ytPath);
             canvas.scale(getWidth() / this.ytImageWidth, getHeight() / this.ytImageHeight);
             canvas.translate(-this.ytImageX, -this.ytImageY);
@@ -385,7 +385,7 @@ public class VideoSeekPreviewImage extends View {
             canvas.restore();
             this.frameDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.frameDrawable.draw(canvas);
-            canvas.drawText(this.frameTime, (getMeasuredWidth() - this.timeWidth) / 2.0f, getMeasuredHeight() - AndroidUtilities.m54dp(9), this.textPaint);
+            canvas.drawText(this.frameTime, (getMeasuredWidth() - this.timeWidth) / 2.0f, getMeasuredHeight() - AndroidUtilities.m72dp(9), this.textPaint);
         }
     }
 

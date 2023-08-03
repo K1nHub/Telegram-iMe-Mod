@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/graphics/drawable/DrawableCompat$Api23Impl;,
+        Landroidx/core/graphics/drawable/DrawableCompat$Api19Impl;,
         Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;,
-        Landroidx/core/graphics/drawable/DrawableCompat$Api19Impl;
+        Landroidx/core/graphics/drawable/DrawableCompat$Api23Impl;
     }
 .end annotation
 

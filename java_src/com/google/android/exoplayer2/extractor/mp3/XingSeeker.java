@@ -7,9 +7,8 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class XingSeeker implements Seeker {
+final class XingSeeker implements Seeker {
     private static final String TAG = "XingSeeker";
     private final long dataEndPosition;
     private final long dataSize;
@@ -38,7 +37,7 @@ public final class XingSeeker implements Seeker {
         if (j != -1) {
             long j3 = j2 + readUnsignedInt;
             if (j != j3) {
-                Log.m796w(TAG, "XING data size mismatch: " + j + ", " + j3);
+                Log.m814w(TAG, "XING data size mismatch: " + j + ", " + j3);
             }
         }
         return new XingSeeker(j2, header.frameSize, scaleLargeTimestamp, readUnsignedInt, jArr);

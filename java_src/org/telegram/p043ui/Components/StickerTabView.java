@@ -46,7 +46,7 @@ public class StickerTabView extends FrameLayout {
             this.imageView = backupImageView;
             backupImageView.setLayerNum(1);
             this.imageView.setAspectFit(false);
-            this.imageView.setRoundRadius(AndroidUtilities.m54dp(6));
+            this.imageView.setRoundRadius(AndroidUtilities.m72dp(6));
             addView(this.imageView, LayoutHelper.createFrame(26, 26, 17));
             this.visibleView = this.imageView;
         } else if (i == 1 || i == 100) {
@@ -60,7 +60,7 @@ public class StickerTabView extends FrameLayout {
             this.imageView = backupImageView2;
             backupImageView2.setLayerNum(1);
             this.imageView.setAspectFit(true);
-            this.imageView.setRoundRadius(AndroidUtilities.m54dp(6));
+            this.imageView.setRoundRadius(AndroidUtilities.m72dp(6));
             addView(this.imageView, LayoutHelper.createFrame(26, 26, 17));
             this.visibleView = this.imageView;
         }
@@ -107,17 +107,17 @@ public class StickerTabView extends FrameLayout {
         this.expanded = z;
         float f = i == 1 ? 24.0f : 26.0f;
         float f2 = i == 1 ? 38.0f : 44.0f;
-        this.visibleView.getLayoutParams().width = AndroidUtilities.m55dp(z ? f2 : f);
+        this.visibleView.getLayoutParams().width = AndroidUtilities.m73dp(z ? f2 : f);
         ViewGroup.LayoutParams layoutParams = this.visibleView.getLayoutParams();
         if (z) {
             f = f2;
         }
-        layoutParams.height = AndroidUtilities.m55dp(f);
+        layoutParams.height = AndroidUtilities.m73dp(f);
         this.textView.setVisibility(z ? 0 : 8);
         if (this.type == 1 || !this.roundImage) {
             return;
         }
-        this.imageView.setRoundRadius(AndroidUtilities.m55dp(this.visibleView.getLayoutParams().width / 2.0f));
+        this.imageView.setRoundRadius(AndroidUtilities.m73dp(this.visibleView.getLayoutParams().width / 2.0f));
     }
 
     public void updateExpandProgress(float f) {
@@ -129,11 +129,11 @@ public class StickerTabView extends FrameLayout {
             float f2 = i == 1 ? 24.0f : 26.0f;
             float f3 = i == 1 ? 38.0f : 44.0f;
             float f4 = 1.0f - f;
-            this.visibleView.setTranslationY((((AndroidUtilities.m55dp(36.0f - f2) / 2.0f) - (AndroidUtilities.m55dp(86.0f - f3) / 2.0f)) * f4) - (AndroidUtilities.m54dp(8) * f));
-            this.visibleView.setTranslationX(((AndroidUtilities.m55dp(33.0f - f2) / 2.0f) - (AndroidUtilities.m55dp(ScrollSlidingTabStrip.EXPANDED_WIDTH - f3) / 2.0f)) * f4);
+            this.visibleView.setTranslationY((((AndroidUtilities.m73dp(36.0f - f2) / 2.0f) - (AndroidUtilities.m73dp(86.0f - f3) / 2.0f)) * f4) - (AndroidUtilities.m72dp(8) * f));
+            this.visibleView.setTranslationX(((AndroidUtilities.m73dp(33.0f - f2) / 2.0f) - (AndroidUtilities.m73dp(ScrollSlidingTabStrip.EXPANDED_WIDTH - f3) / 2.0f)) * f4);
             this.textView.setAlpha(Math.max((float) BitmapDescriptorFactory.HUE_RED, (f - 0.5f) / 0.5f));
-            this.textView.setTranslationY((-AndroidUtilities.m54dp(40)) * f4);
-            this.textView.setTranslationX((-AndroidUtilities.m54dp(12)) * f4);
+            this.textView.setTranslationY((-AndroidUtilities.m72dp(40)) * f4);
+            this.textView.setTranslationX((-AndroidUtilities.m72dp(12)) * f4);
             this.visibleView.setPivotX(BitmapDescriptorFactory.HUE_RED);
             this.visibleView.setPivotY(BitmapDescriptorFactory.HUE_RED);
             float f5 = ((f2 / f3) * f4) + f;

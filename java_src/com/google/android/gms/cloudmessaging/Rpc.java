@@ -13,6 +13,7 @@ import android.util.Log;
 import androidx.collection.SimpleArrayMap;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -29,7 +30,12 @@ import java.util.regex.Pattern;
 public class Rpc {
     private static int zza;
     private static PendingIntent zzb;
-    private static final Executor zzc = zzz.zza;
+    private static final Executor zzc = new Executor() { // from class: com.google.android.gms.cloudmessaging.zzz
+        @Override // java.util.concurrent.Executor
+        public final void execute(Runnable runnable) {
+            runnable.run();
+        }
+    };
     private static final Pattern zzd = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)");
     private final Context zzf;
     private final zzt zzg;
@@ -272,11 +278,31 @@ public class Rpc {
                 }
             });
         }
-        return zzs.zzb(this.zzf).zzd(1, bundle).continueWith(zzc, zzv.zza);
+        return zzs.zzb(this.zzf).zzd(1, bundle).continueWith(zzc, new Continuation() { // from class: com.google.android.gms.cloudmessaging.zzv
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                if (task.isSuccessful()) {
+                    return (Bundle) task.getResult();
+                }
+                if (Log.isLoggable("Rpc", 3)) {
+                    String valueOf = String.valueOf(task.getException());
+                    StringBuilder sb = new StringBuilder(valueOf.length() + 22);
+                    sb.append("Error making request: ");
+                    sb.append(valueOf);
+                    Log.d("Rpc", sb.toString());
+                }
+                throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+            }
+        });
     }
 
     public final /* synthetic */ Task zzb(Bundle bundle, Task task) throws Exception {
-        return (task.isSuccessful() && zzi((Bundle) task.getResult())) ? zze(bundle).onSuccessTask(zzc, zzx.zza) : task;
+        return (task.isSuccessful() && zzi((Bundle) task.getResult())) ? zze(bundle).onSuccessTask(zzc, new SuccessContinuation() { // from class: com.google.android.gms.cloudmessaging.zzx
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                return Rpc.zza((Bundle) obj);
+            }
+        }) : task;
     }
 
     public final /* synthetic */ void zzd(String str, ScheduledFuture scheduledFuture, Task task) {

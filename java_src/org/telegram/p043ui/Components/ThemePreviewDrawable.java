@@ -17,7 +17,7 @@ import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -57,13 +57,13 @@ public class ThemePreviewDrawable extends BitmapDrawable {
         if (valueOf5 == null) {
             valueOf5 = 45;
         }
-        Drawable mutate = ApplicationLoader.applicationContext.getResources().getDrawable(C3417R.C3419drawable.preview_back).mutate();
+        Drawable mutate = ApplicationLoader.applicationContext.getResources().getDrawable(C3419R.C3421drawable.preview_back).mutate();
         Theme.setDrawableColor(mutate, previewColor2);
-        Drawable mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(C3417R.C3419drawable.preview_dots).mutate();
+        Drawable mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(C3419R.C3421drawable.preview_dots).mutate();
         Theme.setDrawableColor(mutate2, previewColor2);
-        Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(C3417R.C3419drawable.preview_smile).mutate();
+        Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(C3419R.C3421drawable.preview_smile).mutate();
         Theme.setDrawableColor(mutate3, previewColor4);
-        Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(C3417R.C3419drawable.preview_mic).mutate();
+        Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(C3419R.C3421drawable.preview_mic).mutate();
         Theme.setDrawableColor(mutate4, previewColor4);
         Theme.MessageDrawable[] messageDrawableArr = new Theme.MessageDrawable[2];
         int i = 0;

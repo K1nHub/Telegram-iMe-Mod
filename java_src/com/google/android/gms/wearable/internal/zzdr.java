@@ -12,13 +12,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzdr extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzdr> CREATOR = new zzds();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final int zza;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final ParcelFileDescriptor zzb;
 
     @SafeParcelable.Constructor
-    public zzdr(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) ParcelFileDescriptor parcelFileDescriptor) {
+    public zzdr(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) ParcelFileDescriptor parcelFileDescriptor) {
         this.zza = i;
         this.zzb = parcelFileDescriptor;
     }

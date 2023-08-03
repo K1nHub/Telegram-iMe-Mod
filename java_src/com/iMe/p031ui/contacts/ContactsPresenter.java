@@ -12,9 +12,12 @@ import io.reactivex.Completable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import java.util.List;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
+import timber.log.Timber;
 /* compiled from: ContactsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.contacts.ContactsPresenter */
@@ -31,16 +34,43 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
     }
 
     public final void deleteSelectedContacts() {
-        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo698ui());
+        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "contactInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new Action() { // from class: com.iMe.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$1
+        Completable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new Action() { // from class: com.iMe.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$1
             @Override // io.reactivex.functions.Action
             public final void run() {
                 ContactsPresenter.this.deleteAction();
             }
-        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2043x3873914f((BaseView) getViewState(), this)));
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+                this.deleteAction();
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

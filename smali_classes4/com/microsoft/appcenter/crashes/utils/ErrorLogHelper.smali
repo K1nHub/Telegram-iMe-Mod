@@ -1026,7 +1026,7 @@
     .line 323
     new-instance v1, Ljava/io/File;
 
-    const-string v3, "pending"
+    const-string/jumbo v3, "pending"
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

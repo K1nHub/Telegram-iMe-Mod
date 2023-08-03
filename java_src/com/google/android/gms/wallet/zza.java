@@ -12,27 +12,27 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zza extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zza> CREATOR = new zzb();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     String zza;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     String zzb;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     String zzc;
-    @SafeParcelable.Field(m779id = 5)
+    @SafeParcelable.Field(m797id = 5)
     String zzd;
-    @SafeParcelable.Field(m779id = 6)
+    @SafeParcelable.Field(m797id = 6)
     String zze;
-    @SafeParcelable.Field(m779id = 7)
+    @SafeParcelable.Field(m797id = 7)
     String zzf;
-    @SafeParcelable.Field(m779id = 8)
+    @SafeParcelable.Field(m797id = 8)
     String zzg;
-    @SafeParcelable.Field(m779id = 9)
+    @SafeParcelable.Field(m797id = 9)
     String zzh;
-    @SafeParcelable.Field(m779id = 10)
+    @SafeParcelable.Field(m797id = 10)
     String zzi;
-    @SafeParcelable.Field(m779id = 11)
+    @SafeParcelable.Field(m797id = 11)
     boolean zzj;
-    @SafeParcelable.Field(m779id = 12)
+    @SafeParcelable.Field(m797id = 12)
     String zzk;
 
     zza() {
@@ -57,7 +57,7 @@ public final class zza extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zza(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) String str3, @SafeParcelable.Param(m778id = 5) String str4, @SafeParcelable.Param(m778id = 6) String str5, @SafeParcelable.Param(m778id = 7) String str6, @SafeParcelable.Param(m778id = 8) String str7, @SafeParcelable.Param(m778id = 9) String str8, @SafeParcelable.Param(m778id = 10) String str9, @SafeParcelable.Param(m778id = 11) boolean z, @SafeParcelable.Param(m778id = 12) String str10) {
+    public zza(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2, @SafeParcelable.Param(m796id = 4) String str3, @SafeParcelable.Param(m796id = 5) String str4, @SafeParcelable.Param(m796id = 6) String str5, @SafeParcelable.Param(m796id = 7) String str6, @SafeParcelable.Param(m796id = 8) String str7, @SafeParcelable.Param(m796id = 9) String str8, @SafeParcelable.Param(m796id = 10) String str9, @SafeParcelable.Param(m796id = 11) boolean z, @SafeParcelable.Param(m796id = 12) String str10) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

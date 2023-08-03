@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
-import org.telegram.PhoneFormat.C3333PhoneFormat;
+import org.telegram.PhoneFormat.C3334PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -114,7 +114,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                 timer.cancel();
             }
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         this.searchResult.clear();
         this.unregistredContacts.clear();
@@ -135,7 +135,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                     SearchAdapter.this.searchTimer.cancel();
                     SearchAdapter.this.searchTimer = null;
                 } catch (Exception e2) {
-                    FileLog.m49e(e2);
+                    FileLog.m67e(e2);
                 }
                 SearchAdapter.this.processSearch(str);
             }
@@ -211,9 +211,9 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                         strArr4[1] = null;
                     }
                     if (UserObject.isReplyUser(user)) {
-                        strArr4[2] = LocaleController.getString("RepliesTitle", C3417R.string.RepliesTitle).toLowerCase();
+                        strArr4[2] = LocaleController.getString("RepliesTitle", C3419R.string.RepliesTitle).toLowerCase();
                     } else if (user.self) {
-                        strArr4[2] = LocaleController.getString("SavedMessages", C3417R.string.SavedMessages).toLowerCase();
+                        strArr4[2] = LocaleController.getString("SavedMessages", C3419R.string.SavedMessages).toLowerCase();
                     }
                     int i9 = i8;
                     int i10 = 0;
@@ -293,14 +293,14 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                 ContactsController.Contact next = it.next();
                 ContactEntry contactEntry = new ContactEntry();
                 contactEntry.contact = next;
-                contactEntry.f1674q1 = (next.first_name + " " + next.last_name).toLowerCase();
+                contactEntry.f1693q1 = (next.first_name + " " + next.last_name).toLowerCase();
                 (next.last_name + " " + next.first_name).toLowerCase();
                 this.allUnregistredContacts.add(contactEntry);
             }
         }
         for (int i13 = i12; i13 < this.allUnregistredContacts.size(); i13++) {
             ContactEntry contactEntry2 = this.allUnregistredContacts.get(i13);
-            if ((translitString != null && (contactEntry2.f1674q1.toLowerCase().contains(translitString) || contactEntry2.f1674q1.toLowerCase().contains(translitString))) || contactEntry2.f1674q1.toLowerCase().contains(lowerCase) || contactEntry2.f1674q1.toLowerCase().contains(lowerCase)) {
+            if ((translitString != null && (contactEntry2.f1693q1.toLowerCase().contains(translitString) || contactEntry2.f1693q1.toLowerCase().contains(translitString))) || contactEntry2.f1693q1.toLowerCase().contains(lowerCase) || contactEntry2.f1693q1.toLowerCase().contains(lowerCase)) {
                 arrayList4.add(contactEntry2.contact);
             }
         }
@@ -433,19 +433,19 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
             if (itemViewType == 1) {
                 GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
                 if (i == this.unregistredContactsHeaderRow) {
-                    graySectionCell.setText(LocaleController.getString("InviteToTelegramShort", C3417R.string.InviteToTelegramShort));
+                    graySectionCell.setText(LocaleController.getString("InviteToTelegramShort", C3419R.string.InviteToTelegramShort));
                     return;
                 } else if (getItem(i) == null) {
-                    graySectionCell.setText(LocaleController.getString("GlobalSearch", C3417R.string.GlobalSearch));
+                    graySectionCell.setText(LocaleController.getString("GlobalSearch", C3419R.string.GlobalSearch));
                     return;
                 } else {
-                    graySectionCell.setText(LocaleController.getString("PhoneNumberSearch", C3417R.string.PhoneNumberSearch));
+                    graySectionCell.setText(LocaleController.getString("PhoneNumberSearch", C3419R.string.PhoneNumberSearch));
                     return;
                 }
             } else if (itemViewType == 2) {
                 TextCell textCell = (TextCell) viewHolder.itemView;
                 textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText2);
-                textCell.setText(LocaleController.formatString("AddContactByPhone", C3417R.string.AddContactByPhone, C3333PhoneFormat.getInstance().format("+" + ((String) getItem(i)))), false);
+                textCell.setText(LocaleController.formatString("AddContactByPhone", C3419R.string.AddContactByPhone, C3334PhoneFormat.getInstance().format("+" + ((String) getItem(i)))), false);
                 return;
             } else if (itemViewType != 3) {
                 return;
@@ -453,7 +453,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                 ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
                 ContactsController.Contact contact = (ContactsController.Contact) getItem(i);
                 profileSearchCell.useSeparator = getItem(i + 1) instanceof ContactsController.Contact;
-                profileSearchCell.setData(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), C3333PhoneFormat.getInstance().format("+" + contact.shortPhones.get(0)), false, false);
+                profileSearchCell.setData(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), C3334PhoneFormat.getInstance().format("+" + contact.shortPhones.get(0)), false, false);
                 return;
             }
         }
@@ -463,12 +463,12 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
             if (tLObject instanceof TLRPC$User) {
                 TLRPC$User tLRPC$User = (TLRPC$User) tLObject;
                 str = tLRPC$User.username;
-                j = tLRPC$User.f1656id;
+                j = tLRPC$User.f1675id;
                 z = tLRPC$User.self;
             } else if (tLObject instanceof TLRPC$Chat) {
                 TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) tLObject;
                 str = ChatObject.getPublicUsername(tLRPC$Chat);
-                j = tLRPC$Chat.f1515id;
+                j = tLRPC$Chat.f1518id;
                 z = false;
             } else {
                 z = false;
@@ -511,7 +511,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                         }
                     }
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                     charSequence = str;
                 }
             }
@@ -526,7 +526,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
                 return;
             }
             ProfileSearchCell profileSearchCell2 = (ProfileSearchCell) viewHolder.itemView;
-            profileSearchCell2.setData(tLObject, null, z ? LocaleController.getString("SavedMessages", C3417R.string.SavedMessages) : charSequence2, charSequence, false, z);
+            profileSearchCell2.setData(tLObject, null, z ? LocaleController.getString("SavedMessages", C3419R.string.SavedMessages) : charSequence2, charSequence, false, z);
             if (i != getItemCount() - 1 && i != this.searchResult.size() - 1) {
                 z2 = true;
             }
@@ -550,7 +550,7 @@ public class SearchAdapter extends RecyclerListView.SelectionAdapter {
         ContactsController.Contact contact;
 
         /* renamed from: q1 */
-        String f1674q1;
+        String f1693q1;
 
         private ContactEntry() {
         }

@@ -62,7 +62,7 @@ public final class TrackEncryptionBox {
             case 3:
                 break;
             default:
-                Log.m796w(TAG, "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
+                Log.m814w(TAG, "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
                 break;
         }
         return 1;

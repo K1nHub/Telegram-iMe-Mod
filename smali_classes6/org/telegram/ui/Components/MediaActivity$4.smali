@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/Components/MediaActivity$4;
-.super Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
+.super Ljava/lang/Object;
 .source "MediaActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # annotations
@@ -14,62 +17,81 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$context:Landroid/content/Context;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;Landroid/content/Context;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;)V
     .locals 0
 
-    .line 215
-    iput-object p3, p0, Lorg/telegram/ui/Components/MediaActivity$4;->val$context:Landroid/content/Context;
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;-><init>(Landroid/content/Context;)V
+    .line 551
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected createTextView()Landroid/widget/TextView;
-    .locals 3
+.method public synthetic allowLayoutChanges()Z
+    .locals 1
 
-    .line 218
-    new-instance v0, Landroid/widget/TextView;
+    invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$allowLayoutChanges(Lorg/telegram/ui/Components/Bulletin$Delegate;)Z
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$4;->val$context:Landroid/content/Context;
+    move-result v0
 
-    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    return v0
+.end method
 
-    .line 219
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
+.method public synthetic clipWithGradient(I)Z
+    .locals 0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
 
-    move-result v1
+    move-result p1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    return p1
+.end method
 
-    const/4 v1, 0x1
+.method public getBottomOffset(I)I
+    .locals 0
 
-    const/high16 v2, 0x41600000    # 14.0f
+    const/16 p1, 0x40
 
-    .line 220
-    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    .line 554
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 221
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+    move-result p1
 
-    .line 222
-    sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    return p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+.method public synthetic getTopOffset(I)I
+    .locals 0
 
-    const/4 v1, 0x3
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$getTopOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
 
-    .line 223
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+    move-result p1
 
-    return-object v0
+    return p1
+.end method
+
+.method public synthetic onBottomOffsetChange(F)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onBottomOffsetChange(Lorg/telegram/ui/Components/Bulletin$Delegate;F)V
+
+    return-void
+.end method
+
+.method public synthetic onHide(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onHide(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
+
+    return-void
+.end method
+
+.method public synthetic onShow(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onShow(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
+
+    return-void
 .end method

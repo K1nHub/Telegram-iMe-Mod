@@ -20,29 +20,6 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;I)V
-    .locals 7
-
-    const/4 v3, 0x1
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v4, p3
-
-    .line 50
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/StickerSetBulletinLayout;-><init>(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;IILorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;IILorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 15
 

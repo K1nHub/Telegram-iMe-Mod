@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.binancepay;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -216,7 +217,7 @@ public final class BinanceTokenBalanceInfo {
         }
 
         public int hashCode() {
-            return (((((((((((Double.doubleToLongBits(this.total) * 31) + Double.doubleToLongBits(this.free)) * 31) + Double.doubleToLongBits(this.locked)) * 31) + Double.doubleToLongBits(this.freeze)) * 31) + Double.doubleToLongBits(this.withdrawing)) * 31) + Double.doubleToLongBits(this.btcValuation)) * 31) + Double.doubleToLongBits(this.fiatValuation);
+            return (((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.free)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.locked)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.freeze)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.withdrawing)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.btcValuation)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.fiatValuation);
         }
 
         public String toString() {

@@ -12,7 +12,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SocialWebViewModel.kt */
-@DebugMetadata(m84c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$resetCookiesAndFinish$1", m83f = "SocialWebViewModel.kt", m82l = {62, 63}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$resetCookiesAndFinish$1", m101f = "SocialWebViewModel.kt", m100l = {62, 63}, m99m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class SocialWebViewModel$resetCookiesAndFinish$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

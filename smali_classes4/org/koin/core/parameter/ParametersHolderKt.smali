@@ -22,7 +22,7 @@
 .method public static final varargs parametersOf([Ljava/lang/Object;)Lorg/koin/core/parameter/ParametersHolder;
     .locals 1
 
-    const-string v0, "parameters"
+    const-string/jumbo v0, "parameters"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

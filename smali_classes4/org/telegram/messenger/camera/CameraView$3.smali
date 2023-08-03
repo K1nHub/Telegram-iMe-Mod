@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/messenger/camera/CameraView;Z)V
     .locals 0
 
-    .line 560
+    .line 802
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iput-boolean p2, p0, Lorg/telegram/messenger/camera/CameraView$3;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 563
+    .line 805
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -60,7 +60,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 564
+    .line 806
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v0, 0x0

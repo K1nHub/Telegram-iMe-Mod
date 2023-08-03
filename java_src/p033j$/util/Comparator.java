@@ -14,7 +14,7 @@ public interface Comparator<T> {
     /* loaded from: classes2.dex */
     public final /* synthetic */ class EL {
         /* renamed from: a */
-        public static /* synthetic */ java.util.Comparator m632a(java.util.Comparator comparator, java.util.Comparator comparator2) {
+        public static /* synthetic */ java.util.Comparator m650a(java.util.Comparator comparator, java.util.Comparator comparator2) {
             return comparator instanceof Comparator ? ((Comparator) comparator).thenComparing(comparator2) : CC.$default$thenComparing(comparator, comparator2);
         }
 
@@ -47,11 +47,11 @@ public interface Comparator<T> {
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, Function function, java.util.Comparator comparator2) {
             Objects.requireNonNull(function);
             Objects.requireNonNull(comparator2);
-            return EL.m632a(comparator, new C2782c(comparator2, function));
+            return EL.m650a(comparator, new C2782c(comparator2, function));
         }
 
         /* renamed from: a */
-        public static java.util.Comparator m633a() {
+        public static java.util.Comparator m651a() {
             return EnumC2813e.INSTANCE;
         }
 
@@ -60,9 +60,19 @@ public interface Comparator<T> {
             return new C2812d(function);
         }
 
+        public static <T> java.util.Comparator<T> comparingDouble(ToDoubleFunction<? super T> toDoubleFunction) {
+            Objects.requireNonNull(toDoubleFunction);
+            return new C2812d(toDoubleFunction);
+        }
+
         public static <T> java.util.Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
             Objects.requireNonNull(toIntFunction);
             return new C2812d(toIntFunction);
+        }
+
+        public static <T> java.util.Comparator<T> comparingLong(ToLongFunction<? super T> toLongFunction) {
+            Objects.requireNonNull(toLongFunction);
+            return new C2812d(toLongFunction);
         }
 
         public static <T extends Comparable<? super T>> java.util.Comparator<T> reverseOrder() {

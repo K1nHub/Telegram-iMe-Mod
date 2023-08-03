@@ -45,7 +45,7 @@
 
     iget-wide v4, p0, Lorg/telegram/messenger/ImageLoader$5$$ExternalSyntheticLambda0;->f$3:J
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/ImageLoader$5;->$r8$lambda$oy2u-C-LSmRMdN1t_Gr1i8A-FZQ(ILjava/lang/String;JJ)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/ImageLoader$5;->$r8$lambda$mVWYhn1ieyYnxtOJlhB0-CJZt1Y(ILjava/lang/String;JJ)V
 
     return-void
 .end method

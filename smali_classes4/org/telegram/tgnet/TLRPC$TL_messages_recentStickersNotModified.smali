@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50244
+    .line 51150
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$messages_RecentStickers;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 50249
+    .line 51155
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_recentStickersNotModified;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

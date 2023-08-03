@@ -82,46 +82,46 @@ public class GroupCallTextCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
-        int m54dp = AndroidUtilities.m54dp(48);
-        this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(this.leftPadding), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(20), 1073741824));
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.m54dp(this.leftPadding + 71)) - this.valueTextView.getTextWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(20), 1073741824));
+        int m72dp = AndroidUtilities.m72dp(48);
+        this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m72dp(this.leftPadding), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(20), 1073741824));
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.m72dp(this.leftPadding + 71)) - this.valueTextView.getTextWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(20), 1073741824));
         if (this.imageView.getVisibility() == 0) {
-            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
         }
         if (this.valueImageView.getVisibility() == 0) {
-            this.valueImageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+            this.valueImageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
         }
-        setMeasuredDimension(size, AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
+        setMeasuredDimension(size, AndroidUtilities.m72dp(50) + (this.needDivider ? 1 : 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int m54dp;
+        int m72dp;
         int i5 = i4 - i2;
         int i6 = i3 - i;
         int textHeight = (i5 - this.valueTextView.getTextHeight()) / 2;
-        int m54dp2 = LocaleController.isRTL ? AndroidUtilities.m54dp(this.leftPadding) : 0;
+        int m72dp2 = LocaleController.isRTL ? AndroidUtilities.m72dp(this.leftPadding) : 0;
         SimpleTextView simpleTextView = this.valueTextView;
-        simpleTextView.layout(m54dp2, textHeight, simpleTextView.getMeasuredWidth() + m54dp2, this.valueTextView.getMeasuredHeight() + textHeight);
+        simpleTextView.layout(m72dp2, textHeight, simpleTextView.getMeasuredWidth() + m72dp2, this.valueTextView.getMeasuredHeight() + textHeight);
         int textHeight2 = (i5 - this.textView.getTextHeight()) / 2;
         if (LocaleController.isRTL) {
-            m54dp = (getMeasuredWidth() - this.textView.getMeasuredWidth()) - AndroidUtilities.m54dp(this.imageView.getVisibility() == 0 ? this.offsetFromImage : this.leftPadding);
+            m72dp = (getMeasuredWidth() - this.textView.getMeasuredWidth()) - AndroidUtilities.m72dp(this.imageView.getVisibility() == 0 ? this.offsetFromImage : this.leftPadding);
         } else {
-            m54dp = AndroidUtilities.m54dp(this.imageView.getVisibility() == 0 ? this.offsetFromImage : this.leftPadding);
+            m72dp = AndroidUtilities.m72dp(this.imageView.getVisibility() == 0 ? this.offsetFromImage : this.leftPadding);
         }
         SimpleTextView simpleTextView2 = this.textView;
-        simpleTextView2.layout(m54dp, textHeight2, simpleTextView2.getMeasuredWidth() + m54dp, this.textView.getMeasuredHeight() + textHeight2);
+        simpleTextView2.layout(m72dp, textHeight2, simpleTextView2.getMeasuredWidth() + m72dp, this.textView.getMeasuredHeight() + textHeight2);
         if (this.imageView.getVisibility() == 0) {
-            int m54dp3 = AndroidUtilities.m54dp(5);
-            int m54dp4 = !LocaleController.isRTL ? AndroidUtilities.m54dp(this.imageLeft) : (i6 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m54dp(this.imageLeft);
+            int m72dp3 = AndroidUtilities.m72dp(5);
+            int m72dp4 = !LocaleController.isRTL ? AndroidUtilities.m72dp(this.imageLeft) : (i6 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m72dp(this.imageLeft);
             ImageView imageView = this.imageView;
-            imageView.layout(m54dp4, m54dp3, imageView.getMeasuredWidth() + m54dp4, this.imageView.getMeasuredHeight() + m54dp3);
+            imageView.layout(m72dp4, m72dp3, imageView.getMeasuredWidth() + m72dp4, this.imageView.getMeasuredHeight() + m72dp3);
         }
         if (this.valueImageView.getVisibility() == 0) {
             int measuredHeight = (i5 - this.valueImageView.getMeasuredHeight()) / 2;
-            int m54dp5 = LocaleController.isRTL ? AndroidUtilities.m54dp(23) : (i6 - this.valueImageView.getMeasuredWidth()) - AndroidUtilities.m54dp(23);
+            int m72dp5 = LocaleController.isRTL ? AndroidUtilities.m72dp(23) : (i6 - this.valueImageView.getMeasuredWidth()) - AndroidUtilities.m72dp(23);
             ImageView imageView2 = this.valueImageView;
-            imageView2.layout(m54dp5, measuredHeight, imageView2.getMeasuredWidth() + m54dp5, this.valueImageView.getMeasuredHeight() + measuredHeight);
+            imageView2.layout(m72dp5, measuredHeight, imageView2.getMeasuredWidth() + m72dp5, this.valueImageView.getMeasuredHeight() + measuredHeight);
         }
     }
 
@@ -143,7 +143,7 @@ public class GroupCallTextCell extends FrameLayout {
         this.imageView.setVisibility(0);
         this.valueTextView.setVisibility(8);
         this.valueImageView.setVisibility(8);
-        this.imageView.setPadding(0, AndroidUtilities.m54dp(7), 0, 0);
+        this.imageView.setPadding(0, AndroidUtilities.m72dp(7), 0, 0);
         this.needDivider = z;
         setWillNotDraw(!z);
     }
@@ -154,19 +154,19 @@ public class GroupCallTextCell extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        float m54dp;
+        float m72dp;
         int i;
         if (this.needDivider) {
             if (LocaleController.isRTL) {
-                m54dp = BitmapDescriptorFactory.HUE_RED;
+                m72dp = BitmapDescriptorFactory.HUE_RED;
             } else {
-                m54dp = AndroidUtilities.m54dp(this.imageView.getVisibility() == 0 ? 68 : 20);
+                m72dp = AndroidUtilities.m72dp(this.imageView.getVisibility() == 0 ? 68 : 20);
             }
-            float f = m54dp;
+            float f = m72dp;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
             if (LocaleController.isRTL) {
-                i = AndroidUtilities.m54dp(this.imageView.getVisibility() != 0 ? 20 : 68);
+                i = AndroidUtilities.m72dp(this.imageView.getVisibility() != 0 ? 20 : 68);
             } else {
                 i = 0;
             }

@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/TextView;
     .locals 1
 
-    .line 34
+    .line 39
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell$nameTextView$2;->this$0:Lcom/iMe/fork/ui/view/CircleCheckCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->access$initNameTextView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Landroid/widget/TextView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 39
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$nameTextView$2;->invoke()Landroid/widget/TextView;
 
     move-result-object v0

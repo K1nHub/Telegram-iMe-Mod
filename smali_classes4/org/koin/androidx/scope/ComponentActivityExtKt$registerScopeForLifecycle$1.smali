@@ -22,7 +22,7 @@
 .method public onDestroy(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
 
-    const-string v0, "owner"
+    const-string/jumbo v0, "owner"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

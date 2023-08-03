@@ -9,6 +9,7 @@ import com.google.firebase.p020ml.common.modeldownload.FirebaseModelManager;
 import com.google.firebase.p020ml.custom.FirebaseModelInputOutputOptions;
 import com.google.firebase.p020ml.custom.FirebaseModelInputs;
 import com.google.firebase.p020ml.custom.FirebaseModelInterpreter;
+import com.google.firebase.p020ml.custom.FirebaseModelOptions;
 import com.google.firebase.p020ml.custom.FirebaseModelOutputs;
 import com.iMe.bots.data.model.Response;
 import com.iMe.bots.domain.AigramBot;
@@ -21,12 +22,14 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Result;
 import kotlin.ResultKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.SafeContinuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -58,7 +61,18 @@ public final class NeuroBot implements AigramBot {
         this.factory = factory;
         this.useAssets = z;
         this.language = language;
-        lazy = LazyKt__LazyJVMKt.lazy(new NeuroBot$classifier$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<FirebaseModelInterpreter>() { // from class: com.iMe.bots.data.model.bot.NeuroBot$classifier$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FirebaseModelInterpreter invoke() {
+                return FirebaseModelInterpreter.getInstance(new FirebaseModelOptions.Builder().setLocalModelName(NeuroBot.this.getBotId()).build());
+            }
+        });
         this.classifier$delegate = lazy;
         this.classifierWords = factory.getBotWordsBag(getBotId(), z);
         this.classifierResponses = factory.getBotResponsesList(getBotId(), z);
@@ -120,14 +134,34 @@ public final class NeuroBot implements AigramBot {
         intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
         final SafeContinuation safeContinuation = new SafeContinuation(intercepted);
         if (firebaseModelInterpreter != null && (run = firebaseModelInterpreter.run(firebaseModelInputs, firebaseModelInputOutputOptions)) != null) {
-            final NeuroBot$getOutputsFromModel$2$1 neuroBot$getOutputsFromModel$2$1 = new NeuroBot$getOutputsFromModel$2$1(safeContinuation);
-            Task<FirebaseModelOutputs> addOnSuccessListener = run.addOnSuccessListener(new OnSuccessListener(neuroBot$getOutputsFromModel$2$1) { // from class: com.iMe.bots.data.model.bot.NeuroBot$sam$com_google_android_gms_tasks_OnSuccessListener$0
+            final Function1<FirebaseModelOutputs, Unit> function1 = new Function1<FirebaseModelOutputs, Unit>() { // from class: com.iMe.bots.data.model.bot.NeuroBot$getOutputsFromModel$2$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(FirebaseModelOutputs firebaseModelOutputs) {
+                    invoke2(firebaseModelOutputs);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(FirebaseModelOutputs result) {
+                    Intrinsics.checkNotNullParameter(result, "result");
+                    Continuation<Object> continuation2 = safeContinuation;
+                    Result.Companion companion = Result.Companion;
+                    continuation2.resumeWith(Result.m1620constructorimpl(result.getOutput(0)));
+                }
+            };
+            Task<FirebaseModelOutputs> addOnSuccessListener = run.addOnSuccessListener(new OnSuccessListener(function1) { // from class: com.iMe.bots.data.model.bot.NeuroBot$sam$com_google_android_gms_tasks_OnSuccessListener$0
                 private final /* synthetic */ Function1 function;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    Intrinsics.checkNotNullParameter(neuroBot$getOutputsFromModel$2$1, "function");
-                    this.function = neuroBot$getOutputsFromModel$2$1;
+                    Intrinsics.checkNotNullParameter(function1, "function");
+                    this.function = function1;
                 }
 
                 @Override // com.google.android.gms.tasks.OnSuccessListener
@@ -142,7 +176,7 @@ public final class NeuroBot implements AigramBot {
                         Intrinsics.checkNotNullParameter(exception, "exception");
                         Continuation<Object> continuation2 = safeContinuation;
                         Result.Companion companion = Result.Companion;
-                        continuation2.resumeWith(Result.m1601constructorimpl(ResultKt.createFailure(exception)));
+                        continuation2.resumeWith(Result.m1620constructorimpl(ResultKt.createFailure(exception)));
                     }
                 });
             }

@@ -14,33 +14,33 @@ public abstract class AbstractC3159z4 extends AbstractC2880D4 implements Interfa
     }
 
     /* renamed from: f */
-    protected abstract Object mo271f();
+    protected abstract Object mo289f();
 
     @Override // p033j$.util.InterfaceC3160t
     /* renamed from: forEachRemaining */
-    public void m272e(Object obj) {
+    public void m290e(Object obj) {
         Objects.requireNonNull(obj);
-        long j = this.f801a;
-        long j2 = this.f805e;
+        long j = this.f804a;
+        long j2 = this.f808e;
         if (j >= j2) {
             return;
         }
-        long j3 = this.f804d;
+        long j3 = this.f807d;
         if (j3 >= j2) {
             return;
         }
-        if (j3 >= j && ((InterfaceC3160t) this.f803c).estimateSize() + j3 <= this.f802b) {
-            ((InterfaceC3160t) this.f803c).forEachRemaining(obj);
-            this.f804d = this.f805e;
+        if (j3 >= j && ((InterfaceC3160t) this.f806c).estimateSize() + j3 <= this.f805b) {
+            ((InterfaceC3160t) this.f806c).forEachRemaining(obj);
+            this.f807d = this.f808e;
             return;
         }
-        while (this.f801a > this.f804d) {
-            ((InterfaceC3160t) this.f803c).tryAdvance(mo271f());
-            this.f804d++;
+        while (this.f804a > this.f807d) {
+            ((InterfaceC3160t) this.f806c).tryAdvance(mo289f());
+            this.f807d++;
         }
-        while (this.f804d < this.f805e) {
-            ((InterfaceC3160t) this.f803c).tryAdvance(obj);
-            this.f804d++;
+        while (this.f807d < this.f808e) {
+            ((InterfaceC3160t) this.f806c).tryAdvance(obj);
+            this.f807d++;
         }
     }
 
@@ -51,36 +51,36 @@ public abstract class AbstractC3159z4 extends AbstractC2880D4 implements Interfa
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ long getExactSizeIfKnown() {
-        return AbstractC2780a.m606e(this);
+        return AbstractC2780a.m624e(this);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 
     @Override // p033j$.util.InterfaceC3160t
     /* renamed from: tryAdvance */
-    public boolean m268k(Object obj) {
+    public boolean m286k(Object obj) {
         long j;
         Objects.requireNonNull(obj);
-        if (this.f801a >= this.f805e) {
+        if (this.f804a >= this.f808e) {
             return false;
         }
         while (true) {
-            long j2 = this.f801a;
-            j = this.f804d;
+            long j2 = this.f804a;
+            j = this.f807d;
             if (j2 <= j) {
                 break;
             }
-            ((InterfaceC3160t) this.f803c).tryAdvance(mo271f());
-            this.f804d++;
+            ((InterfaceC3160t) this.f806c).tryAdvance(mo289f());
+            this.f807d++;
         }
-        if (j >= this.f805e) {
+        if (j >= this.f808e) {
             return false;
         }
-        this.f804d = j + 1;
-        return ((InterfaceC3160t) this.f803c).tryAdvance(obj);
+        this.f807d = j + 1;
+        return ((InterfaceC3160t) this.f806c).tryAdvance(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;
-.super Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
+.super Landroidx/recyclerview/widget/DefaultItemAnimator;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,126 +14,33 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 689
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
+    .line 697
+    invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getSpanSize(I)I
-    .locals 1
+.method protected animateByScale(Landroid/view/View;)F
+    .locals 0
 
-    .line 692
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 700
+    instance-of p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/util/SparseIntArray;
+    if-eqz p1, :cond_0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroid/util/SparseIntArray;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-
-    move-result v0
-
-    if-eq p1, v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-
-    move-result v0
-
-    if-eq p1, v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-
-    move-result v0
-
-    if-eq p1, v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-
-    move-result v0
-
-    if-eq p1, v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2700(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-
-    move-result v0
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_1
-
-    .line 695
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/16 p1, 0x8
+    const p1, 0x3f19999a    # 0.6f
 
     goto :goto_0
 
-    :cond_1
-    const/4 p1, 0x5
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
-    return p1
-
-    .line 693
-    :cond_2
-    :goto_1
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$8;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$900(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroidx/recyclerview/widget/GridLayoutManager;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
-
-    move-result p1
-
     return p1
 .end method

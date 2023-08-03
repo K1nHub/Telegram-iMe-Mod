@@ -179,7 +179,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
                 Iterator<ResourceCallbackAndExecutor> it = copy.iterator();
                 while (it.hasNext()) {
                     ResourceCallbackAndExecutor next = it.next();
-                    next.executor.execute(new CallResourceReady(next.f88cb));
+                    next.executor.execute(new CallResourceReady(next.f90cb));
                 }
                 decrementPendingCallbacks();
             }
@@ -275,7 +275,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
                 Iterator<ResourceCallbackAndExecutor> it = copy.iterator();
                 while (it.hasNext()) {
                     ResourceCallbackAndExecutor next = it.next();
-                    next.executor.execute(new CallLoadFailed(next.f88cb));
+                    next.executor.execute(new CallLoadFailed(next.f90cb));
                 }
                 decrementPendingCallbacks();
             }
@@ -292,18 +292,18 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public class CallLoadFailed implements Runnable {
 
         /* renamed from: cb */
-        private final ResourceCallback f86cb;
+        private final ResourceCallback f88cb;
 
         CallLoadFailed(ResourceCallback resourceCallback) {
-            this.f86cb = resourceCallback;
+            this.f88cb = resourceCallback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            synchronized (this.f86cb.getLock()) {
+            synchronized (this.f88cb.getLock()) {
                 synchronized (EngineJob.this) {
-                    if (EngineJob.this.cbs.contains(this.f86cb)) {
-                        EngineJob.this.callCallbackOnLoadFailed(this.f86cb);
+                    if (EngineJob.this.cbs.contains(this.f88cb)) {
+                        EngineJob.this.callCallbackOnLoadFailed(this.f88cb);
                     }
                     EngineJob.this.decrementPendingCallbacks();
                 }
@@ -316,20 +316,20 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public class CallResourceReady implements Runnable {
 
         /* renamed from: cb */
-        private final ResourceCallback f87cb;
+        private final ResourceCallback f89cb;
 
         CallResourceReady(ResourceCallback resourceCallback) {
-            this.f87cb = resourceCallback;
+            this.f89cb = resourceCallback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            synchronized (this.f87cb.getLock()) {
+            synchronized (this.f89cb.getLock()) {
                 synchronized (EngineJob.this) {
-                    if (EngineJob.this.cbs.contains(this.f87cb)) {
+                    if (EngineJob.this.cbs.contains(this.f89cb)) {
                         EngineJob.this.engineResource.acquire();
-                        EngineJob.this.callCallbackOnResourceReady(this.f87cb);
-                        EngineJob.this.removeCallback(this.f87cb);
+                        EngineJob.this.callCallbackOnResourceReady(this.f89cb);
+                        EngineJob.this.removeCallback(this.f89cb);
                     }
                     EngineJob.this.decrementPendingCallbacks();
                 }
@@ -393,23 +393,23 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public static final class ResourceCallbackAndExecutor {
 
         /* renamed from: cb */
-        final ResourceCallback f88cb;
+        final ResourceCallback f90cb;
         final Executor executor;
 
         ResourceCallbackAndExecutor(ResourceCallback resourceCallback, Executor executor) {
-            this.f88cb = resourceCallback;
+            this.f90cb = resourceCallback;
             this.executor = executor;
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof ResourceCallbackAndExecutor) {
-                return this.f88cb.equals(((ResourceCallbackAndExecutor) obj).f88cb);
+                return this.f90cb.equals(((ResourceCallbackAndExecutor) obj).f90cb);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f88cb.hashCode();
+            return this.f90cb.hashCode();
         }
     }
 

@@ -28,21 +28,21 @@
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;II)V
     .locals 1
 
-    .line 841
+    .line 879
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     const/16 v0, 0xff
 
-    .line 870
+    .line 908
     iput v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->alpha:I
 
-    .line 842
+    .line 880
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 843
+    .line 881
     iput p2, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->width:I
 
-    .line 844
+    .line 882
     iput p3, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->height:I
 
     return-void
@@ -53,26 +53,26 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 853
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 854
+    .line 892
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 855
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->alpha:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 856
+    .line 894
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -84,7 +84,7 @@
 .method public getDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 848
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -93,7 +93,7 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 867
+    .line 905
     iget v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->height:I
 
     return v0
@@ -102,7 +102,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 862
+    .line 900
     iget v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->width:I
 
     return v0
@@ -111,12 +111,12 @@
 .method public getOpacity()I
     .locals 1
 
-    .line 888
+    .line 927
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 928
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
 
     move-result v0
@@ -132,15 +132,15 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 873
+    .line 912
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->alpha:I
 
-    .line 874
+    .line 913
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 914
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     :cond_0
@@ -150,12 +150,12 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 881
+    .line 920
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 882
+    .line 921
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     :cond_0

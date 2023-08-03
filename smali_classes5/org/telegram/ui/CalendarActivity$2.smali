@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/CalendarActivity$2;
-.super Lorg/telegram/ui/Components/RecyclerListView;
+.super Landroid/widget/FrameLayout;
 .source "CalendarActivity.java"
 
 
@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field lastSize:I
+
 .field final synthetic this$0:Lorg/telegram/ui/CalendarActivity;
 
 
@@ -22,28 +24,50 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 191
+    .line 274
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$2;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 1
+.method protected onLayout(ZIIII)V
+    .locals 0
 
-    .line 194
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
+    .line 279
+    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 195
+    .line 280
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result p1
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result p2
+
+    add-int/2addr p1, p2
+
+    shl-int/lit8 p1, p1, 0x10
+
+    .line 281
+    iget p2, p0, Lorg/telegram/ui/CalendarActivity$2;->lastSize:I
+
+    if-eq p2, p1, :cond_0
+
+    .line 282
+    iput p1, p0, Lorg/telegram/ui/CalendarActivity$2;->lastSize:I
+
+    .line 283
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$2;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    const/4 v0, 0x0
+    iget-object p1, p1, Lorg/telegram/ui/CalendarActivity;->adapter:Lorg/telegram/ui/CalendarActivity$CalendarAdapter;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$002(Lorg/telegram/ui/CalendarActivity;Z)Z
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
+    :cond_0
     return-void
 .end method

@@ -3242,7 +3242,7 @@
 .end method
 
 .method private sendInviteMessages()V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -3312,16 +3312,16 @@
 
     invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
-    move-result-object v18
+    move-result-object v17
 
     :goto_1
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -3333,17 +3333,19 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v3
+    move-result-object v15
 
-    iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/4 v8, 0x1
 
-    const/4 v9, 0x1
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
@@ -3355,17 +3357,25 @@
 
     const/4 v14, 0x0
 
-    const/4 v15, 0x0
-
     const/16 v16, 0x0
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
-    move-object v2, v3
+    move-object v2, v1
 
-    move-object v3, v1
+    move-object/from16 v19, v15
 
-    invoke-virtual/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move/from16 v15, v16
+
+    move-object/from16 v16, v18
+
+    invoke-static/range {v2 .. v16}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
+
+    move-result-object v2
+
+    move-object/from16 v3, v19
+
+    invoke-virtual {v3, v2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     goto :goto_1
 

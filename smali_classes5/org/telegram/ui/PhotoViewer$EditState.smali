@@ -1,4 +1,4 @@
-.class Lorg/telegram/ui/PhotoViewer$EditState;
+.class public Lorg/telegram/ui/PhotoViewer$EditState;
 .super Ljava/lang/Object;
 .source "PhotoViewer.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "EditState"
 .end annotation
 
@@ -47,20 +47,11 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1815
+    .line 1817
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$1;)V
-    .locals 0
-
-    .line 1815
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EditState;-><init>()V
 
     return-void
 .end method
@@ -72,27 +63,27 @@
 
     const/4 v0, 0x0
 
-    .line 1825
+    .line 1827
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->paintPath:Ljava/lang/String;
 
-    .line 1826
+    .line 1828
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
-    .line 1827
+    .line 1829
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->savedFilterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 1828
+    .line 1830
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 1829
+    .line 1831
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->croppedPaintPath:Ljava/lang/String;
 
-    .line 1830
+    .line 1832
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->croppedMediaEntities:Ljava/util/ArrayList;
 
     const-wide/16 v0, 0x0
 
-    .line 1831
+    .line 1833
     iput-wide v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->averageDuration:J
 
     return-void

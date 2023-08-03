@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->updateRecordInterface(I)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->checkSendButton(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 7442
+    .line 6926
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -32,37 +32,55 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 7445
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 6936
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
 
-    move-result-object p1
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 7446
+    .line 6937
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
+    const/4 v0, 0x0
 
-    move-result-object p1
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14502(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleX(F)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 7447
+    .line 6929
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 6930
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$49;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
+    const/4 v0, 0x0
 
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleY(F)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14502(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     :cond_0
     return-void

@@ -79,7 +79,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 198
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     invoke-static {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->access$getWalletSessionInteractor(Lcom/iMe/utils/helper/wallet/AuthHelper;)Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
@@ -96,7 +96,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 197
+    .line 198
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeToAuthSubject$1$1;->invoke(Ljava/lang/String;)Lio/reactivex/ObservableSource;

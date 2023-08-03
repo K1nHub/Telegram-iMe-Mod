@@ -44,10 +44,12 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletTransactionDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter */
@@ -70,7 +72,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f446IN.ordinal()] = 1;
+                iArr[TransactionDirection.f449IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -117,7 +119,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             String formatISODate = StringExtKt.formatISODate(item.getCreatedAt(), DateFormatter.DateType.DATE_AND_TIME);
             String transactionTitle = item.getTransactionTitle(this.resourceManager);
             String amount = item.getAmount(this.resourceManager);
-            String string = this.resourceManager.getString(C3417R.string.wallet_transaction_details_transaction_hash_title);
+            String string = this.resourceManager.getString(C3419R.string.wallet_transaction_details_transaction_hash_title);
             String txHash = item.getTxHash();
             if (txHash.length() == 0) {
                 txHash = "-";
@@ -147,27 +149,27 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     private final String getRecipientOrSenderOrElseTitle(Transaction transaction) {
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_simplex_order_id_title);
+            return this.resourceManager.getString(C3419R.string.wallet_transaction_details_simplex_order_id_title);
         }
         if (transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve) {
-            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_transaction_hash_title);
+            return this.resourceManager.getString(C3419R.string.wallet_transaction_details_transaction_hash_title);
         }
         int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
-                return this.resourceManager.getString(C3417R.string.wallet_transaction_details_recipient_title);
+                return this.resourceManager.getString(C3419R.string.wallet_transaction_details_recipient_title);
             }
             throw new NoWhenBranchMatchedException();
         }
-        return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_title);
+        return this.resourceManager.getString(C3419R.string.wallet_transaction_details_sender_title);
     }
 
     private final String getRecipientOrSenderOrElseValue(Transaction transaction) {
         if (transaction instanceof Transaction.Referral) {
-            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
+            return this.resourceManager.getString(C3419R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
         }
         if (transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_bonus);
+            return this.resourceManager.getString(C3419R.string.wallet_transaction_details_sender_bonus);
         }
         if (transaction instanceof Transaction.Transfer) {
             return ((Transaction.Transfer) transaction).getRecipientUserId();
@@ -191,7 +193,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }
             return ((Transaction.Crypto.Transfer) transaction).getSenderAddress();
         }
-        return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender);
+        return this.resourceManager.getString(C3419R.string.wallet_transaction_details_sender);
     }
 
     private final List<Pair<TransactionActionItem, Function0<Unit>>> resolveTransactionAction() {
@@ -199,12 +201,108 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         List filterNotNull;
         List<Pair<TransactionActionItem, Function0<Unit>>> mutableList;
         Pair[] pairArr = new Pair[6];
-        pairArr[0] = canAskSupport() ? TuplesKt.m85to(TransactionActionItem.Support.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$1(this)) : null;
-        pairArr[1] = canOpenProfile() ? TuplesKt.m85to(TransactionActionItem.Profile.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$2(this)) : null;
-        pairArr[2] = canOpenScanSite() ? TuplesKt.m85to(new TransactionActionItem.OpenScan(getOpenTitle(), getScanIconUrl()), new WalletTransactionDetailsPresenter$resolveTransactionAction$3(this)) : null;
-        pairArr[3] = canCopy() ? TuplesKt.m85to(new TransactionActionItem.Copy(getCopyTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$4(this)) : null;
-        pairArr[4] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Cancel.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$5(this)) : null;
-        pairArr[5] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Boost.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$6(this)) : null;
+        pairArr[0] = canAskSupport() ? TuplesKt.m103to(TransactionActionItem.Support.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.startAskSupport();
+            }
+        }) : null;
+        pairArr[1] = canOpenProfile() ? TuplesKt.m103to(TransactionActionItem.Profile.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.startProfileScreen();
+            }
+        }) : null;
+        pairArr[2] = canOpenScanSite() ? TuplesKt.m103to(new TransactionActionItem.OpenScan(getOpenTitle(), getScanIconUrl()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.startBrowserWithUrl();
+            }
+        }) : null;
+        pairArr[3] = canCopy() ? TuplesKt.m103to(new TransactionActionItem.Copy(getCopyTitle()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$4
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.copyAddress();
+            }
+        }) : null;
+        pairArr[4] = canCancelOrBoost() ? TuplesKt.m103to(TransactionActionItem.Cancel.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$5
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.startCancelTransaction();
+            }
+        }) : null;
+        pairArr[5] = canCancelOrBoost() ? TuplesKt.m103to(TransactionActionItem.Boost.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$6
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.startBoostTransaction();
+            }
+        }) : null;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -214,48 +312,180 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     /* JADX INFO: Access modifiers changed from: private */
     public final void startCancelTransaction() {
         TransactionItem item;
-        Transaction transaction;
+        final Transaction transaction;
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails transactionDetails = screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails ? (WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType : null;
         if (transactionDetails == null || (item = transactionDetails.getItem()) == null || (transaction = item.getTransaction()) == null || !(transaction instanceof Transaction.Crypto) || transaction.getStatus() != Status.PENDING) {
             return;
         }
-        ((WalletTransactionDetailsView) getViewState()).showConfirmCancelDialog(getConfirmCancelDialogModel(), new WalletTransactionDetailsPresenter$startCancelTransaction$1$1(this, transaction));
+        ((WalletTransactionDetailsView) getViewState()).showConfirmCancelDialog(getConfirmCancelDialogModel(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$startCancelTransaction$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.cancelTransaction(((Transaction.Crypto) transaction).getTxHash());
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void startBoostTransaction() {
         TransactionItem item;
-        Transaction transaction;
+        final Transaction transaction;
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails transactionDetails = screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails ? (WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType : null;
         if (transactionDetails == null || (item = transactionDetails.getItem()) == null || (transaction = item.getTransaction()) == null || !(transaction instanceof Transaction.Crypto) || transaction.getStatus() != Status.PENDING) {
             return;
         }
-        ((WalletTransactionDetailsView) getViewState()).showConfirmBoostDialog(getConfirmBoostDialogModel(), new WalletTransactionDetailsPresenter$startBoostTransaction$1$1(this, transaction));
+        ((WalletTransactionDetailsView) getViewState()).showConfirmBoostDialog(getConfirmBoostDialogModel(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$startBoostTransaction$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionDetailsPresenter.this.boostTransaction(((Transaction.Crypto) transaction).getTxHash());
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void cancelTransaction(String str) {
+    public final void cancelTransaction(final String str) {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
-            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getToken().getTicker(), str).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getToken().getTicker(), str).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cancelInteractor\n       …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2480xbfdb298e(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2481xbfdb298f((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                    m1594invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1594invoke(Result<? extends String> it) {
+                    ResourceManager resourceManager;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends String> result = it;
+                    if (result instanceof Result.Success) {
+                        ((WalletTransactionDetailsView) WalletTransactionDetailsPresenter.this.getViewState()).onSuccessCancelTransaction(str);
+                    } else if (result instanceof Result.Error) {
+                        resourceManager = WalletTransactionDetailsPresenter.this.resourceManager;
+                        ((WalletTransactionDetailsView) WalletTransactionDetailsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void boostTransaction(String str) {
-        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo698ui());
+    public final void boostTransaction(final String str) {
+        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "boostInteractor\n        …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2478x2bc727d7(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2479x2bc727d8((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1593invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1593invoke(Result<? extends String> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    ((WalletTransactionDetailsView) WalletTransactionDetailsPresenter.this.getViewState()).onSuccessBoostTransaction(str);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletTransactionDetailsPresenter.this.resourceManager;
+                    ((WalletTransactionDetailsView) WalletTransactionDetailsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -263,7 +493,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final String getOpenTitle() {
         Network networkTypeByProcessing;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3417R.string.wallet_transaction_details_action_open_etherscan;
+        int i = C3419R.string.wallet_transaction_details_action_open_etherscan;
         Object[] objArr = new Object[1];
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
@@ -459,14 +689,14 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final int getCopyTitle() {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            return C3417R.string.wallet_transaction_details_action_copy_hash;
+            return C3419R.string.wallet_transaction_details_action_copy_hash;
         }
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
             if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-                return C3417R.string.wallet_token_details_action_copy_order_id;
+                return C3419R.string.wallet_token_details_action_copy_order_id;
             }
-            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3417R.string.wallet_transaction_details_action_copy_hash : C3417R.string.wallet_transaction_details_action_copy_address;
+            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3419R.string.wallet_transaction_details_action_copy_hash : C3419R.string.wallet_transaction_details_action_copy_address;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -507,7 +737,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             throw new NoWhenBranchMatchedException();
         }
         if (Intrinsics.areEqual(feeAmount.stripTrailingZeros(), BigDecimal.ZERO)) {
-            return this.resourceManager.getString(C3417R.string.fee_nothing);
+            return this.resourceManager.getString(C3419R.string.fee_nothing);
         }
         String str = BalanceFormatter.formatBalance(feeAmount, Integer.valueOf(tokenDetailed.getDecimals())) + ' ' + tokenDetailed.getTicker();
         if (r2) {
@@ -528,11 +758,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getConfirmCancelDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3417R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3419R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.common_confirm));
     }
 
     private final DialogModel getConfirmBoostDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3417R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3419R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.common_confirm));
     }
 
     private final void setupTransactionActions(List<Pair<TransactionActionItem, Function0<Unit>>> list) {

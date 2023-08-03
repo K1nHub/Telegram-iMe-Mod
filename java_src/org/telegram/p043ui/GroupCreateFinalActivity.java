@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -43,7 +43,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.GroupCreateUserCell;
@@ -195,7 +195,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             try {
                 countDownLatch.await();
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
             if (arrayList.size() != arrayList2.size() || arrayList2.isEmpty()) {
                 return false;
@@ -294,11 +294,11 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         if (editTextEmoji != null) {
             editTextEmoji.onDestroy();
         }
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("NewGroup", C3417R.string.NewGroup));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GroupCreateFinalActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("NewGroup", C3419R.string.NewGroup));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GroupCreateFinalActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     GroupCreateFinalActivity.this.finishFragment();
@@ -315,7 +315,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                 setMeasuredDimension(size, size2);
                 int paddingTop = size2 - getPaddingTop();
                 measureChildWithMargins(((BaseFragment) GroupCreateFinalActivity.this).actionBar, i2, 0, i3, 0);
-                if (measureKeyboardHeight() > AndroidUtilities.m54dp(20) && !GroupCreateFinalActivity.this.editText.isPopupShowing()) {
+                if (measureKeyboardHeight() > AndroidUtilities.m72dp(20) && !GroupCreateFinalActivity.this.editText.isPopupShowing()) {
                     this.ignoreLayout = true;
                     GroupCreateFinalActivity.this.editText.hideEmojiView();
                     this.ignoreLayout = false;
@@ -327,7 +327,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                         if (GroupCreateFinalActivity.this.editText != null && GroupCreateFinalActivity.this.editText.isPopupView(childAt)) {
                             if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
                                 if (AndroidUtilities.isTablet()) {
-                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m54dp(AndroidUtilities.isTablet() ? 200 : 320), (paddingTop - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m72dp(AndroidUtilities.isTablet() ? 200 : 320), (paddingTop - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
                                 } else {
                                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec((paddingTop - AndroidUtilities.statusBarHeight) + getPaddingTop(), 1073741824));
                                 }
@@ -358,7 +358,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     int r11 = r10.getChildCount()
                     int r0 = r10.measureKeyboardHeight()
                     r1 = 20
-                    int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r1)
+                    int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r1)
                     r2 = 0
                     if (r0 > r1) goto L26
                     boolean r1 = org.telegram.messenger.AndroidUtilities.isInMultiwindow
@@ -472,7 +472,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     r10.notifyHeightChanged()
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.GroupCreateFinalActivity.C58872.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.GroupCreateFinalActivity.C59492.onLayout(boolean, int, int, int, int):void");
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -485,8 +485,15 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         };
         this.fragmentView = sizeNotifierFrameLayout2;
         sizeNotifierFrameLayout2.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
-        this.fragmentView.setOnTouchListener(GroupCreateFinalActivity$$ExternalSyntheticLambda3.INSTANCE);
-        this.shadowDrawable = context.getResources().getDrawable(C3417R.C3419drawable.greydivider_top).mutate();
+        this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createView$1;
+                lambda$createView$1 = GroupCreateFinalActivity.lambda$createView$1(view, motionEvent);
+                return lambda$createView$1;
+            }
+        });
+        this.shadowDrawable = context.getResources().getDrawable(C3419R.C3421drawable.greydivider_top).mutate();
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.GroupCreateFinalActivity.3
             @Override // android.view.ViewGroup
             protected boolean drawChild(Canvas canvas, View view, long j) {
@@ -522,10 +529,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         };
         this.avatarImage = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(this.chatType == 5 ? 16 : 32));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(this.chatType == 5 ? 16 : 32));
         this.avatarDrawable.setInfo(5L, null, null);
         this.avatarImage.setImageDrawable(this.avatarDrawable);
-        this.avatarImage.setContentDescription(LocaleController.getString("ChoosePhoto", C3417R.string.ChoosePhoto));
+        this.avatarImage.setContentDescription(LocaleController.getString("ChoosePhoto", C3419R.string.ChoosePhoto));
         FrameLayout frameLayout2 = this.editTextContainer;
         BackupImageView backupImageView2 = this.avatarImage;
         boolean z = LocaleController.isRTL;
@@ -551,8 +558,8 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                 GroupCreateFinalActivity.this.lambda$createView$4(view2);
             }
         });
-        int i2 = C3417R.raw.camera;
-        this.cameraDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m54dp(60), AndroidUtilities.m54dp(60), false, null);
+        int i2 = C3419R.raw.camera;
+        this.cameraDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m72dp(60), AndroidUtilities.m72dp(60), false, null);
         RLottieImageView rLottieImageView = new RLottieImageView(context) { // from class: org.telegram.ui.GroupCreateFinalActivity.6
             @Override // android.view.View
             public void invalidate(int i3, int i4, int i5, int i6) {
@@ -571,7 +578,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.avatarEditor.setAnimation(this.cameraDrawable);
         this.avatarEditor.setEnabled(false);
         this.avatarEditor.setClickable(false);
-        this.avatarEditor.setPadding(AndroidUtilities.m54dp(0), 0, 0, AndroidUtilities.m54dp(1));
+        this.avatarEditor.setPadding(AndroidUtilities.m72dp(0), 0, 0, AndroidUtilities.m72dp(1));
         FrameLayout frameLayout4 = this.editTextContainer;
         RLottieImageView rLottieImageView2 = this.avatarEditor;
         boolean z3 = LocaleController.isRTL;
@@ -584,7 +591,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         };
         this.avatarProgressView = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.m54dp(30));
+        radialProgressView.setSize(AndroidUtilities.m72dp(30));
         this.avatarProgressView.setProgressColor(-1);
         this.avatarProgressView.setNoProgress(false);
         FrameLayout frameLayout5 = this.editTextContainer;
@@ -596,10 +603,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.editText = editTextEmoji2;
         int i3 = this.chatType;
         if (i3 == 0 || i3 == 4 || i3 == 5) {
-            i = C3417R.string.EnterGroupNamePlaceholder;
+            i = C3419R.string.EnterGroupNamePlaceholder;
             str = "EnterGroupNamePlaceholder";
         } else {
-            i = C3417R.string.EnterListName;
+            i = C3419R.string.EnterListName;
             str = "EnterListName";
         }
         editTextEmoji2.setHint(LocaleController.getString(str, i));
@@ -649,26 +656,26 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         });
         this.floatingButtonContainer = new FrameLayout(context);
-        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground));
+        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m72dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground));
         int i4 = Build.VERSION.SDK_INT;
         if (i4 < 21) {
-            Drawable mutate = context.getResources().getDrawable(C3417R.C3419drawable.floating_shadow).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3419R.C3421drawable.floating_shadow).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
+            combinedDrawable.setIconSize(AndroidUtilities.m72dp(56), AndroidUtilities.m72dp(56));
             createSimpleSelectorCircleDrawable = combinedDrawable;
         }
         this.floatingButtonContainer.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
         if (i4 >= 21) {
             StateListAnimator stateListAnimator = new StateListAnimator();
             sizeNotifierFrameLayout = sizeNotifierFrameLayout2;
-            stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(4)).setDuration(200L));
-            stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(2)).setDuration(200L));
+            stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(4)).setDuration(200L));
+            stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(2)).setDuration(200L));
             this.floatingButtonContainer.setStateListAnimator(stateListAnimator);
             this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider(this) { // from class: org.telegram.ui.GroupCreateFinalActivity.10
                 @Override // android.view.ViewOutlineProvider
                 public void getOutline(View view2, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
+                    outline.setOval(0, 0, AndroidUtilities.m72dp(56), AndroidUtilities.m72dp(56));
                 }
             });
         } else {
@@ -690,9 +697,9 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.floatingButtonIcon = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.floatingButtonIcon.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
-        this.floatingButtonIcon.setImageResource(C3417R.C3419drawable.checkbig);
-        this.floatingButtonIcon.setPadding(0, AndroidUtilities.m54dp(2), 0, 0);
-        this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", C3417R.string.Done));
+        this.floatingButtonIcon.setImageResource(C3419R.C3421drawable.checkbig);
+        this.floatingButtonIcon.setPadding(0, AndroidUtilities.m72dp(2), 0, 0);
+        this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", C3419R.string.Done));
         this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(i4 >= 21 ? 56 : 60, i4 >= 21 ? 56 : 60));
         ContextProgressView contextProgressView = new ContextProgressView(context, 1);
         this.progressView = contextProgressView;
@@ -792,9 +799,9 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             this.popupWindow.setDismissAnimationDuration(220);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
-            this.popupWindow.setAnimationStyle(C3417R.style.PopupContextAnimation);
+            this.popupWindow.setAnimationStyle(C3419R.style.PopupContextAnimation);
             this.popupWindow.setFocusable(true);
-            autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
+            autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE));
             this.popupWindow.setInputMethodMode(2);
             this.popupWindow.getContentView().setFocusableInTouchMode(true);
             this.popupWindow.showAtLocation(getFragmentView(), 0, (int) (view.getX() + f), (int) (view.getY() + f2 + (autoDeletePopupWrapper.windowLayout.getMeasuredHeight() / 2.0f)));
@@ -1028,7 +1035,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             if (groupCreateFinalActivityDelegate2 != null) {
                 groupCreateFinalActivityDelegate2.didFinishChatCreation(this, longValue);
             } else {
-                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.closeChats, new Object[0]);
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", longValue);
                 bundle.putBoolean("just_created_chat", true);
@@ -1101,10 +1108,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             this.items.add(new InnerItem(this, 0));
             if (GroupCreateFinalActivity.this.chatType == 5) {
                 this.items.add(new InnerItem(this, 6));
-                this.items.add(new InnerItem(this, 5, LocaleController.getString("ForumToggleDescription", C3417R.string.ForumToggleDescription)));
+                this.items.add(new InnerItem(this, 5, LocaleController.getString("ForumToggleDescription", C3419R.string.ForumToggleDescription)));
             } else {
                 this.items.add(new InnerItem(this, 4));
-                this.items.add(new InnerItem(this, 5, LocaleController.getString("GroupCreateAutodeleteDescription", C3417R.string.GroupCreateAutodeleteDescription)));
+                this.items.add(new InnerItem(this, 5, LocaleController.getString("GroupCreateAutodeleteDescription", C3419R.string.GroupCreateAutodeleteDescription)));
             }
             if (GroupCreateFinalActivity.this.currentGroupCreateAddress != null) {
                 this.items.add(new InnerItem(this, 1));
@@ -1138,7 +1145,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             TextSettingsCell textSettingsCell;
             if (i == 0) {
                 shadowSectionCell = new ShadowSectionCell(this.context);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.context, C3417R.C3419drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.context, C3419R.C3421drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 shadowSectionCell.setBackgroundDrawable(combinedDrawable);
             } else {
@@ -1152,7 +1159,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     textSettingsCell = new TextCell(this.context);
                 } else if (i == 5) {
                     shadowSectionCell = new TextInfoPrivacyCell(this.context);
-                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.context, GroupCreateFinalActivity.this.selectedContacts.size() == 0 ? C3417R.C3419drawable.greydivider_bottom : C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.context, GroupCreateFinalActivity.this.selectedContacts.size() == 0 ? C3419R.C3421drawable.greydivider_bottom : C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     combinedDrawable2.setFullsize(true);
                     shadowSectionCell.setBackgroundDrawable(combinedDrawable2);
                 } else if (i == 6) {
@@ -1183,7 +1190,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                         headerCell.setText(LocaleController.formatPluralString("Members", GroupCreateFinalActivity.this.selectedContacts.size(), new Object[0]));
                         return;
                     } else {
-                        headerCell.setText(LocaleController.getString("AttachLocation", C3417R.string.AttachLocation));
+                        headerCell.setText(LocaleController.getString("AttachLocation", C3419R.string.AttachLocation));
                         return;
                     }
                 case 2:
@@ -1199,16 +1206,16 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     if (GroupCreateFinalActivity.this.ttlPeriod != 0) {
                         formatTTLString = LocaleController.formatTTLString(GroupCreateFinalActivity.this.ttlPeriod);
                     } else {
-                        formatTTLString = LocaleController.getString("PasswordOff", C3417R.string.PasswordOff);
+                        formatTTLString = LocaleController.getString("PasswordOff", C3419R.string.PasswordOff);
                     }
-                    textCell.setTextAndValueAndIcon(LocaleController.getString("AutoDeleteMessages", C3417R.string.AutoDeleteMessages), formatTTLString, ((BaseFragment) GroupCreateFinalActivity.this).fragmentBeginToShow, C3417R.C3419drawable.msg_autodelete, false);
+                    textCell.setTextAndValueAndIcon(LocaleController.getString("AutoDeleteMessages", C3419R.string.AutoDeleteMessages), formatTTLString, ((BaseFragment) GroupCreateFinalActivity.this).fragmentBeginToShow, C3419R.C3421drawable.msg_autodelete, false);
                     return;
                 case 5:
                     ((TextInfoPrivacyCell) viewHolder.itemView).setText(this.items.get(i).string);
                     return;
                 case 6:
                     TextCell textCell2 = (TextCell) viewHolder.itemView;
-                    textCell2.setTextAndCheckAndIcon(LocaleController.getString("ChannelTopics", C3417R.string.ChannelTopics), true, C3417R.C3419drawable.msg_topics, false);
+                    textCell2.setTextAndCheckAndIcon(LocaleController.getString("ChannelTopics", C3419R.string.ChannelTopics), true, C3419R.C3421drawable.msg_topics, false);
                     textCell2.getCheckBox().setAlpha(0.75f);
                     return;
                 default:
@@ -1260,10 +1267,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         };
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

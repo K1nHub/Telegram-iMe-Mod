@@ -410,7 +410,7 @@
 
     move-result-object v0
 
-    const-string v1, "private fun loadTokenInf\u2026     .autoDispose()\n    }"
+    const-string/jumbo v1, "private fun loadTokenInf\u2026     .autoDispose()\n    }"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

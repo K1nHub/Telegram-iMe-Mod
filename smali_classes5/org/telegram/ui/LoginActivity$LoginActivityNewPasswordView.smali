@@ -2081,7 +2081,7 @@
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 7574
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I

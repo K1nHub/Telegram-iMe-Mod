@@ -28,6 +28,7 @@ import com.iMe.storage.domain.model.binancepay.BinanceTokenInfo;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
+import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
@@ -51,6 +52,7 @@ import com.iMe.storage.domain.utils.extentions.TokenExtKt;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.model.wallet.BinanceTokenBalanceExtKt;
+import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
@@ -71,16 +73,20 @@ import java.util.concurrent.TimeUnit;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletSwapProcessPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter */
@@ -209,9 +215,61 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         walletSwapProcessPresenter.startChooseNetworkDialog(swapSide);
     }
 
-    public final void startChooseNetworkDialog(SwapSide side) {
+    public final void startChooseNetworkDialog(final SwapSide side) {
         Intrinsics.checkNotNullParameter(side, "side");
-        ((WalletSwapProcessView) getViewState()).showChooseNetworkDialog(NetworksHelper.getNetworkById(getSelectedNetworkIdBySwapSide(side)), this.availableNetworks, new WalletSwapProcessPresenter$startChooseNetworkDialog$1(side, this));
+        ((WalletSwapProcessView) getViewState()).showChooseNetworkDialog(NetworksHelper.getNetworkById(getSelectedNetworkIdBySwapSide(side)), this.availableNetworks, new Function1<Network, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startChooseNetworkDialog$1
+
+            /* compiled from: WalletSwapProcessPresenter.kt */
+            /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startChooseNetworkDialog$1$WhenMappings */
+            /* loaded from: classes4.dex */
+            public /* synthetic */ class WhenMappings {
+                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                static {
+                    int[] iArr = new int[SwapSide.values().length];
+                    try {
+                        iArr[SwapSide.INPUT.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[SwapSide.OUTPUT.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
+                    $EnumSwitchMapping$0 = iArr;
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+                invoke2(network);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Network newNetwork) {
+                String selectedNetworkIdBySwapSide;
+                Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
+                int i = WhenMappings.$EnumSwitchMapping$0[SwapSide.this.ordinal()];
+                if (i == 1) {
+                    this.selectedInputNetworkId = newNetwork.getId();
+                } else if (i == 2) {
+                    this.selectedOutputNetworkId = newNetwork.getId();
+                }
+                selectedNetworkIdBySwapSide = this.getSelectedNetworkIdBySwapSide(SwapSide.this);
+                ((WalletSwapProcessView) this.getViewState()).setupNetwork(NetworksHelper.getNetworkById(selectedNetworkIdBySwapSide), SwapSide.this);
+                this.resetLoadedInformation();
+                this.resolveSwapProtocol();
+                this.setupSwapInformation();
+                this.resetStateTo(SwapUiState.Idle.INSTANCE);
+                this.loadAvailableSwapTokens(SwapSide.this);
+            }
+        });
     }
 
     public final void processSwapFee(SwapFeeScreenArgs args) {
@@ -291,11 +349,59 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     public final void approve() {
         ApproveArgs resolveApproveArgs;
         if (isValidForApprove() && (resolveApproveArgs = resolveApproveArgs()) != null) {
-            Observable<Result<String>> observeOn = this.swapInteractor.approveToken(resolveApproveArgs).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<String>> observeOn = this.swapInteractor.approveToken(resolveApproveArgs).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2422x8810b3d1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2423x8810b3d2((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$approve$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                    m1572invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1572invoke(Result<? extends String> it) {
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends String> result = it;
+                    if (result instanceof Result.Success) {
+                        WalletSwapProcessPresenter.this.renderState(SwapUiState.ApproveInProgress.INSTANCE);
+                        WalletSwapProcessPresenter.loadApproveTokensInfo$default(WalletSwapProcessPresenter.this, true, false, null, 6, null);
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showSuccessApproveAlert();
+                    } else if (result instanceof Result.Error) {
+                        WalletSwapProcessPresenter.this.handleSwapErrors((Result.Error) result);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$approve$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -331,13 +437,13 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     public final DialogModel getApproveTokenDescriptionModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3417R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3417R.string.common_ok), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3419R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3419R.string.common_ok), 4, null);
     }
 
     public final DialogModel getApproveConfirmationDialogModel() {
-        String string = this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_approve_alert_title);
+        String string = this.resourceManager.getString(C3419R.string.wallet_swap_process_confirm_approve_alert_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3417R.string.wallet_swap_process_confirm_approve_alert_description;
+        int i = C3419R.string.wallet_swap_process_confirm_approve_alert_description;
         Object[] objArr = new Object[1];
         TokenDetailed tokenDetailed = this.inputToken;
         String ticker = tokenDetailed != null ? tokenDetailed.getTicker() : null;
@@ -345,7 +451,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             ticker = "";
         }
         objArr[0] = ticker;
-        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_approve_alert_action));
+        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_swap_process_confirm_approve_alert_action));
     }
 
     public final void startSelectTokenDialog(final SwapSide side) {
@@ -370,11 +476,29 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                         }
                     });
                 } else {
-                    ((WalletSwapProcessView) getViewState()).openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Binance(getAvailableTokensByNetwork(NetworksHelper.getBSCNetwork().getId())), NetworksHelper.getBSCNetwork().getId(), true, new WalletSwapProcessPresenter$startSelectTokenDialog$2(this, side));
+                    ((WalletSwapProcessView) getViewState()).openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Binance(getAvailableTokensByNetwork(NetworksHelper.getBSCNetwork().getId())), NetworksHelper.getBSCNetwork().getId(), true, new Function1<TokenDetailed, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startSelectTokenDialog$2
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public /* bridge */ /* synthetic */ Unit invoke(TokenDetailed tokenDetailed3) {
+                            invoke2(tokenDetailed3);
+                            return Unit.INSTANCE;
+                        }
+
+                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                        public final void invoke2(TokenDetailed token) {
+                            Intrinsics.checkNotNullParameter(token, "token");
+                            WalletSwapProcessPresenter.this.selectToken(side, token);
+                        }
+                    });
                 }
             } else if (i == 2) {
                 if (this.inputToken == null) {
-                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_swap_process_give_token_validation));
+                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_swap_process_give_token_validation));
                     return;
                 }
                 Pair<String, ? extends List<OutputConvertToken>> pair = this.binanceAvailableOppositeSelectableSwapTokens;
@@ -393,7 +517,25 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                     if (list == null) {
                         list = CollectionsKt__CollectionsKt.emptyList();
                     }
-                    walletSwapProcessView.openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Binance(list), NetworksHelper.getBSCNetwork().getId(), false, new WalletSwapProcessPresenter$startSelectTokenDialog$4(this, side));
+                    walletSwapProcessView.openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Binance(list), NetworksHelper.getBSCNetwork().getId(), false, new Function1<TokenDetailed, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startSelectTokenDialog$4
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public /* bridge */ /* synthetic */ Unit invoke(TokenDetailed tokenDetailed4) {
+                            invoke2(tokenDetailed4);
+                            return Unit.INSTANCE;
+                        }
+
+                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                        public final void invoke2(TokenDetailed token) {
+                            Intrinsics.checkNotNullParameter(token, "token");
+                            WalletSwapProcessPresenter.this.selectToken(side, token);
+                        }
+                    });
                     return;
                 }
                 TokenDetailed tokenDetailed4 = this.inputToken;
@@ -422,9 +564,27 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             } else if (i2 != 2) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                transactionDirection = TransactionDirection.f446IN;
+                transactionDirection = TransactionDirection.f449IN;
             }
-            ((WalletSwapProcessView) getViewState()).openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Swap(this.swapProtocol, transactionDirection, tokenDetailed2), getSelectedNetworkIdBySwapSide(side), side == swapSide, new WalletSwapProcessPresenter$startSelectTokenDialog$6(this, side));
+            ((WalletSwapProcessView) getViewState()).openSelectTokenDialog(tokenDetailed, new WalletSelectTokenFragment.ScreenType.Swap(this.swapProtocol, transactionDirection, tokenDetailed2), getSelectedNetworkIdBySwapSide(side), side == swapSide, new Function1<TokenDetailed, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startSelectTokenDialog$6
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(TokenDetailed tokenDetailed5) {
+                    invoke2(tokenDetailed5);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(TokenDetailed token) {
+                    Intrinsics.checkNotNullParameter(token, "token");
+                    WalletSwapProcessPresenter.this.selectToken(side, token);
+                }
+            });
         }
     }
 
@@ -630,7 +790,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     public final void setupSwapInformation() {
         WalletSwapProcessFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3417R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3417R.string.binance_convert_description), C3417R.C3419drawable.fork_ic_bnb_logo, false, WalletSwapProcessFragment.NetworkSwitchType.GLOBAL);
+            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3419R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3419R.string.binance_convert_description), C3419R.C3421drawable.fork_ic_bnb_logo, false, WalletSwapProcessFragment.NetworkSwitchType.GLOBAL);
         } else if (screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) {
             Pair<WalletSwapProcessFragment.NetworkSwitchType, Boolean> networkSwitchState = getNetworkSwitchState();
             WalletSwapProcessFragment.NetworkSwitchType component1 = networkSwitchState.component1();
@@ -644,22 +804,70 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         if (i == 1 || i == 2 || i == 3) {
             WalletSwapProcessFragment.NetworkSwitchType networkSwitchType = WalletSwapProcessFragment.NetworkSwitchType.GLOBAL;
             WalletSwapProcessFragment.ScreenType screenType = this.screenType;
-            return TuplesKt.m85to(networkSwitchType, Boolean.valueOf(((screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) && ((WalletSwapProcessFragment.ScreenType.Crypto) screenType).getForcedNetworkId() == null) ? false : false));
+            return TuplesKt.m103to(networkSwitchType, Boolean.valueOf(((screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) && ((WalletSwapProcessFragment.ScreenType.Crypto) screenType).getForcedNetworkId() == null) ? false : false));
         } else if (i == 4) {
-            return TuplesKt.m85to(WalletSwapProcessFragment.NetworkSwitchType.CROSS_CHAIN, Boolean.TRUE);
+            return TuplesKt.m103to(WalletSwapProcessFragment.NetworkSwitchType.CROSS_CHAIN, Boolean.TRUE);
         } else {
-            return TuplesKt.m85to(WalletSwapProcessFragment.NetworkSwitchType.GLOBAL, Boolean.FALSE);
+            return TuplesKt.m103to(WalletSwapProcessFragment.NetworkSwitchType.GLOBAL, Boolean.FALSE);
         }
     }
 
     private final void swapCrypto() {
         SwapArgs resolveSwapArgs;
         if (isValidForCryptoSwap() && (resolveSwapArgs = resolveSwapArgs()) != null) {
-            Observable<Result<String>> observeOn = this.swapInteractor.swap(resolveSwapArgs).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<String>> observeOn = this.swapInteractor.swap(resolveSwapArgs).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2440x471dfc16(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2441x471dfc17((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$swapCrypto$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                    m1581invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1581invoke(Result<? extends String> it) {
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends String> result = it;
+                    if (result instanceof Result.Success) {
+                        WalletSwapProcessPresenter.loadApproveTokensInfo$default(WalletSwapProcessPresenter.this, false, false, null, 6, null);
+                        WalletSwapProcessPresenter.this.resetStateTo(SwapUiState.Idle.INSTANCE);
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showSuccessSwapAlert();
+                    } else if (result instanceof Result.Error) {
+                        WalletSwapProcessPresenter.this.handleSwapErrors((Result.Error) result);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$swapCrypto$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -673,11 +881,58 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             if (quoteId == null) {
                 quoteId = "";
             }
-            Observable<Result<Boolean>> observeOn = binanceInternalInteractor.confirmConvertQuote(quoteId).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<Boolean>> observeOn = binanceInternalInteractor.confirmConvertQuote(quoteId).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2438x71745cc7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2439x71745cc8((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$swapBinance$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                    m1580invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1580invoke(Result<? extends Boolean> it) {
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends Boolean> result = it;
+                    if (result instanceof Result.Success) {
+                        WalletSwapProcessPresenter.this.resetStateTo(SwapUiState.Idle.INSTANCE);
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showSuccessSwapAlert();
+                    } else if (result instanceof Result.Error) {
+                        WalletSwapProcessPresenter.this.handleSwapErrors((Result.Error) result);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$swapBinance$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -685,11 +940,59 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final void prepareForSwapBinance(String str, String str2, String str3) {
         if (isValidForPrepareSwap(str)) {
-            Observable<Result<BinanceConvertQuote>> observeOn = this.binanceInternalInteractor.getConvertQuote(str2, str3, str).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<BinanceConvertQuote>> observeOn = this.binanceInternalInteractor.getConvertQuote(str2, str3, str).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2434x90737ee5(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2435x90737ee6((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends BinanceConvertQuote>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$prepareForSwapBinance$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends BinanceConvertQuote> result) {
+                    m1578invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1578invoke(Result<? extends BinanceConvertQuote> it) {
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends BinanceConvertQuote> result = it;
+                    if (result instanceof Result.Success) {
+                        Result.Success success = (Result.Success) result;
+                        WalletSwapProcessPresenter.this.binanceConvertQuote = (BinanceConvertQuote) success.getData();
+                        WalletSwapProcessPresenter.this.renderState(new SwapUiState.Swap.Binance((BinanceConvertQuote) success.getData()));
+                    } else if (result instanceof Result.Error) {
+                        WalletSwapProcessPresenter.this.handleSwapErrors((Result.Error) result);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$prepareForSwapBinance$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -703,11 +1006,66 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             if (tokenDetailed == null || (indexedToken = TokenExtKt.toIndexedToken(tokenDetailed)) == null || tokenDetailed2 == null || (indexedToken2 = TokenExtKt.toIndexedToken(tokenDetailed2)) == null) {
                 return;
             }
-            Observable<Result<CryptoSwapMetadata>> observeOn = swapInteractor.getQuoteToSwap(swapProtocol, indexedToken, indexedToken2, str, TradeType.EXACT_INPUT, SwapSlippage.PERCENT_5.getPercent()).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<CryptoSwapMetadata>> observeOn = swapInteractor.getQuoteToSwap(swapProtocol, indexedToken, indexedToken2, str, TradeType.EXACT_INPUT, SwapSlippage.PERCENT_5.getPercent()).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2436xdcc31e38(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2437xdcc31e39((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoSwapMetadata>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$prepareForSwapCrypto$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoSwapMetadata> result) {
+                    m1579invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1579invoke(Result<? extends CryptoSwapMetadata> it) {
+                    FeeView.ChooseFeeType swapFeeType;
+                    CryptoSwapMetadata cryptoSwapMetadata;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends CryptoSwapMetadata> result = it;
+                    if (result instanceof Result.Success) {
+                        Result.Success success = (Result.Success) result;
+                        WalletSwapProcessPresenter.this.swapMetadata = (CryptoSwapMetadata) success.getData();
+                        WalletSwapProcessPresenter.this.selectedSwapFee = new GasPriceItem(TransactionSpeedLevel.MEDIUM, ((CryptoSwapMetadata) success.getData()).getFeeToken(), ((CryptoSwapMetadata) success.getData()).getTransactionParams().getMedium());
+                        WalletSwapProcessPresenter walletSwapProcessPresenter = WalletSwapProcessPresenter.this;
+                        swapFeeType = walletSwapProcessPresenter.getSwapFeeType();
+                        cryptoSwapMetadata = WalletSwapProcessPresenter.this.swapMetadata;
+                        Intrinsics.checkNotNull(cryptoSwapMetadata);
+                        walletSwapProcessPresenter.renderState(new SwapUiState.Swap.Crypto(swapFeeType, cryptoSwapMetadata));
+                    } else if (result instanceof Result.Error) {
+                        WalletSwapProcessPresenter.this.handleSwapErrors((Result.Error) result);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$prepareForSwapCrypto$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -722,18 +1080,150 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         }
     }
 
-    private final void loadBalanceBinance(TokenDetailed tokenDetailed) {
-        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo698ui());
+    private final void loadBalanceBinance(final TokenDetailed tokenDetailed) {
+        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2430x263949c2(this, tokenDetailed)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2431x263949c3((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BinanceTokenBalanceInfo>>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> result) {
+                m1576invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1576invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
+                ResourceManager resourceManager;
+                String formatBinanceBalance;
+                Object obj;
+                BinanceTokenBalanceInfo binanceTokenBalanceInfo;
+                BinanceTokenBalanceInfo binanceTokenBalanceInfo2;
+                String formatBinanceBalance2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends BinanceTokenBalanceInfo>> result = it;
+                if (result instanceof Result.Success) {
+                    WalletSwapProcessPresenter walletSwapProcessPresenter = WalletSwapProcessPresenter.this;
+                    Iterator it2 = ((Iterable) ((Result.Success) result).getData()).iterator();
+                    while (true) {
+                        if (!it2.hasNext()) {
+                            obj = null;
+                            break;
+                        }
+                        obj = it2.next();
+                        if (Intrinsics.areEqual(((BinanceTokenBalanceInfo) obj).getAsset(), tokenDetailed.getTicker())) {
+                            break;
+                        }
+                    }
+                    walletSwapProcessPresenter.binanceTokenBalance = (BinanceTokenBalanceInfo) obj;
+                    binanceTokenBalanceInfo = WalletSwapProcessPresenter.this.binanceTokenBalance;
+                    if (binanceTokenBalanceInfo != null) {
+                        WalletSwapProcessPresenter walletSwapProcessPresenter2 = WalletSwapProcessPresenter.this;
+                        binanceTokenBalanceInfo2 = walletSwapProcessPresenter2.binanceTokenBalance;
+                        Intrinsics.checkNotNull(binanceTokenBalanceInfo2);
+                        formatBinanceBalance2 = walletSwapProcessPresenter2.formatBinanceBalance(binanceTokenBalanceInfo2);
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(formatBinanceBalance2);
+                    }
+                } else if (result instanceof Result.Loading) {
+                    formatBinanceBalance = WalletSwapProcessPresenter.this.formatBinanceBalance(BinanceTokenBalanceInfo.Companion.createEmptyBalanceFor(tokenDetailed.getTicker()));
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(formatBinanceBalance);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletSwapProcessPresenter.this.resourceManager;
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    private final void loadBalanceCrypto(TokenDetailed tokenDetailed) {
-        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, TokenExtKt.toIndexedToken(tokenDetailed), false, getSelectedNetworkIdBySwapSide$default(this, null, 1, null), 2, null).observeOn(this.schedulersProvider.mo698ui());
+    private final void loadBalanceCrypto(final TokenDetailed tokenDetailed) {
+        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, TokenExtKt.toIndexedToken(tokenDetailed), false, getSelectedNetworkIdBySwapSide$default(this, null, 1, null), 2, null).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2432xe9da03bb(this, tokenDetailed)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2433xe9da03bc((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadBalanceCrypto$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
+                m1577invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1577invoke(Result<? extends TokenBalance> it) {
+                ResourceManager resourceManager;
+                ResourceManager resourceManager2;
+                ResourceManager resourceManager3;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends TokenBalance> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    WalletSwapProcessPresenter.this.tokenBalance = (TokenBalance) success.getData();
+                    resourceManager3 = WalletSwapProcessPresenter.this.resourceManager;
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(resourceManager3.getString(C3419R.string.wallet_swap_process_my_balance, TokenBalanceExtKt.getTotalBalanceShortText((TokenBalance) success.getData())));
+                } else if (result instanceof Result.Loading) {
+                    resourceManager2 = WalletSwapProcessPresenter.this.resourceManager;
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(resourceManager2.getString(C3419R.string.wallet_swap_process_my_balance, TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.Companion.createEmptyBalanceFor(tokenDetailed))));
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletSwapProcessPresenter.this.resourceManager;
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadBalanceCrypto$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -743,15 +1233,42 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             z = false;
         }
         if ((i & 2) != 0) {
-            callbacks$Callback = WalletSwapProcessPresenter$$ExternalSyntheticLambda4.INSTANCE;
+            callbacks$Callback = new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda4
+                @Override // com.iMe.fork.utils.Callbacks$Callback
+                public final void invoke() {
+                    WalletSwapProcessPresenter.loadAvailableSwapTokensBinance$lambda$20();
+                }
+            };
         }
         walletSwapProcessPresenter.loadAvailableSwapTokensBinance(z, callbacks$Callback);
     }
 
-    private final void loadAvailableSwapTokensBinance(boolean z, Callbacks$Callback callbacks$Callback) {
+    private final void loadAvailableSwapTokensBinance(final boolean z, final Callbacks$Callback callbacks$Callback) {
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForConvert().observeOn(this.schedulersProvider.mo698ui());
-            final WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 walletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 = new WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2(z, this);
+            Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForConvert().observeOn(this.schedulersProvider.mo716ui());
+            final Function1<Observable<Result<? extends List<? extends BinanceTokenInfo>>>, ObservableSource<Result<? extends List<? extends BinanceTokenInfo>>>> function1 = new Function1<Observable<Result<? extends List<? extends BinanceTokenInfo>>>, ObservableSource<Result<? extends List<? extends BinanceTokenInfo>>>>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ ObservableSource<Result<? extends List<? extends BinanceTokenInfo>>> invoke(Observable<Result<? extends List<? extends BinanceTokenInfo>>> observable) {
+                    return invoke2((Observable<Result<List<BinanceTokenInfo>>>) observable);
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final ObservableSource<Result<List<BinanceTokenInfo>>> invoke2(Observable<Result<List<BinanceTokenInfo>>> observable) {
+                    Intrinsics.checkNotNullParameter(observable, "observable");
+                    if (z) {
+                        T viewState = this.getViewState();
+                        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                        return RxExtKt.withLoadingDialog$default((Observable) observable, (BaseView) viewState, false, 2, (Object) null);
+                    }
+                    return observable;
+                }
+            };
             Observable<R> compose = observeOn.compose(new ObservableTransformer() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda7
                 @Override // io.reactivex.ObservableTransformer
                 public final ObservableSource apply(Observable observable) {
@@ -761,7 +1278,67 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             });
             Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAvailabl…     .autoDispose()\n    }");
-            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2428x912b3628(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2429x912b3629((BaseView) getViewState())));
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BinanceTokenInfo>>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
+                    m1575invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1575invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+                    ResourceManager resourceManager;
+                    HashMap hashMap;
+                    int collectionSizeOrDefault;
+                    List mutableList;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends List<? extends BinanceTokenInfo>> result = it;
+                    if (result instanceof Result.Success) {
+                        hashMap = WalletSwapProcessPresenter.this.selectableSupportedSwapTokens;
+                        Iterable<BinanceTokenInfo> iterable = (Iterable) ((Result.Success) result).getData();
+                        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
+                        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                        for (BinanceTokenInfo binanceTokenInfo : iterable) {
+                            arrayList.add(SelectableMappingKt.mapToDetailedToken(binanceTokenInfo));
+                        }
+                        mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
+                        hashMap.put(NetworkType.BSC, mutableList);
+                        callbacks$Callback.invoke();
+                    } else if (result instanceof Result.Error) {
+                        resourceManager = WalletSwapProcessPresenter.this.resourceManager;
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -779,15 +1356,42 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             z = false;
         }
         if ((i & 4) != 0) {
-            callbacks$Callback = WalletSwapProcessPresenter$$ExternalSyntheticLambda5.INSTANCE;
+            callbacks$Callback = new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda5
+                @Override // com.iMe.fork.utils.Callbacks$Callback
+                public final void invoke() {
+                    WalletSwapProcessPresenter.loadAvailableOppositeSwapTokensBinance$lambda$24();
+                }
+            };
         }
         walletSwapProcessPresenter.loadAvailableOppositeSwapTokensBinance(str, z, callbacks$Callback);
     }
 
-    private final void loadAvailableOppositeSwapTokensBinance(String str, boolean z, Callbacks$Callback callbacks$Callback) {
+    private final void loadAvailableOppositeSwapTokensBinance(final String str, final boolean z, final Callbacks$Callback callbacks$Callback) {
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            Observable<Result<List<OutputConvertToken>>> observeOn = this.binanceInternalInteractor.getOppositeTokensForConvertByToken(str).observeOn(this.schedulersProvider.mo698ui());
-            final C2442xa8fd99cc c2442xa8fd99cc = new C2442xa8fd99cc(z, this);
+            Observable<Result<List<OutputConvertToken>>> observeOn = this.binanceInternalInteractor.getOppositeTokensForConvertByToken(str).observeOn(this.schedulersProvider.mo716ui());
+            final Function1<Observable<Result<? extends List<? extends OutputConvertToken>>>, ObservableSource<Result<? extends List<? extends OutputConvertToken>>>> function1 = new Function1<Observable<Result<? extends List<? extends OutputConvertToken>>>, ObservableSource<Result<? extends List<? extends OutputConvertToken>>>>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableOppositeSwapTokensBinance$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ ObservableSource<Result<? extends List<? extends OutputConvertToken>>> invoke(Observable<Result<? extends List<? extends OutputConvertToken>>> observable) {
+                    return invoke2((Observable<Result<List<OutputConvertToken>>>) observable);
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final ObservableSource<Result<List<OutputConvertToken>>> invoke2(Observable<Result<List<OutputConvertToken>>> observable) {
+                    Intrinsics.checkNotNullParameter(observable, "observable");
+                    if (z) {
+                        T viewState = this.getViewState();
+                        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                        return RxExtKt.withLoadingDialog$default((Observable) observable, (BaseView) viewState, false, 2, (Object) null);
+                    }
+                    return observable;
+                }
+            };
             Observable<R> compose = observeOn.compose(new ObservableTransformer() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda6
                 @Override // io.reactivex.ObservableTransformer
                 public final ObservableSource apply(Observable observable) {
@@ -797,7 +1401,56 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             });
             Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAvailabl…     .autoDispose()\n    }");
-            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2426x9b0acc81(this, str, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2427x9b0acc82((BaseView) getViewState())));
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends OutputConvertToken>>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableOppositeSwapTokensBinance$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends OutputConvertToken>> result) {
+                    m1574invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1574invoke(Result<? extends List<? extends OutputConvertToken>> it) {
+                    ResourceManager resourceManager;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends List<? extends OutputConvertToken>> result = it;
+                    if (result instanceof Result.Success) {
+                        WalletSwapProcessPresenter.this.binanceAvailableOppositeSelectableSwapTokens = TuplesKt.m103to(str, ((Result.Success) result).getData());
+                        callbacks$Callback.invoke();
+                    } else if (result instanceof Result.Error) {
+                        resourceManager = WalletSwapProcessPresenter.this.resourceManager;
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadAvailableOppositeSwapTokensBinance$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -828,17 +1481,17 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         walletSwapProcessPresenter.loadApproveTokensInfo(z, z2, token);
     }
 
-    private final void loadApproveTokensInfo(boolean z, final boolean z2, Token token) {
+    private final void loadApproveTokensInfo(final boolean z, final boolean z2, final Token token) {
         Observable<Long> just;
         int collectionSizeOrDefault;
-        List list;
+        final List list;
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) {
             if (z) {
                 just = Observable.interval(30L, TimeUnit.SECONDS);
             } else {
                 just = Observable.just(Boolean.TRUE);
             }
-            String selectedNetworkIdBySwapSide$default = getSelectedNetworkIdBySwapSide$default(this, null, 1, null);
+            final String selectedNetworkIdBySwapSide$default = getSelectedNetworkIdBySwapSide$default(this, null, 1, null);
             if (token != null) {
                 list = CollectionsKt__CollectionsJVMKt.listOf(token);
             } else {
@@ -856,7 +1509,24 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
                 list = arrayList;
             }
-            final WalletSwapProcessPresenter$loadApproveTokensInfo$1 walletSwapProcessPresenter$loadApproveTokensInfo$1 = new WalletSwapProcessPresenter$loadApproveTokensInfo$1(this, selectedNetworkIdBySwapSide$default, list);
+            final Function1<?, ObservableSource<? extends Result<? extends List<? extends CryptoTokenApproveMetadata>>>> function1 = new Function1<?, ObservableSource<? extends Result<? extends List<? extends CryptoTokenApproveMetadata>>>>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadApproveTokensInfo$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                /* renamed from: invoke */
+                public final ObservableSource<? extends Result<? extends List<? extends CryptoTokenApproveMetadata>>> invoke2(Object obj) {
+                    SwapInteractor swapInteractor;
+                    SwapProtocol swapProtocol;
+                    swapInteractor = WalletSwapProcessPresenter.this.swapInteractor;
+                    String str = selectedNetworkIdBySwapSide$default;
+                    swapProtocol = WalletSwapProcessPresenter.this.swapProtocol;
+                    return swapInteractor.getApproveTokensInfo(str, swapProtocol, list);
+                }
+            };
             Observable doFinally = just.flatMap(new Function() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda9
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
@@ -864,14 +1534,89 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                     loadApproveTokensInfo$lambda$29 = WalletSwapProcessPresenter.loadApproveTokensInfo$lambda$29(Function1.this, obj);
                     return loadApproveTokensInfo$lambda$29;
                 }
-            }).observeOn(this.schedulersProvider.mo698ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda8
+            }).observeOn(this.schedulersProvider.mo716ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda8
                 @Override // io.reactivex.functions.Action
                 public final void run() {
                     WalletSwapProcessPresenter.loadApproveTokensInfo$lambda$30(z2, this);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(doFinally, "private fun loadApproveT…}\n                }\n    }");
-            Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2424x9faf7813(token, this, selectedNetworkIdBySwapSide$default, z, z2)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2425x9faf7814((BaseView) getViewState())));
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends CryptoTokenApproveMetadata>>, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadApproveTokensInfo$$inlined$subscribeWithErrorHandle$default$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends CryptoTokenApproveMetadata>> result) {
+                    m1573invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1573invoke(Result<? extends List<? extends CryptoTokenApproveMetadata>> it) {
+                    HashMap hashMap;
+                    List mutableList;
+                    HashMap hashMap2;
+                    HashMap hashMap3;
+                    HashMap hashMap4;
+                    List mutableList2;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends List<? extends CryptoTokenApproveMetadata>> result = it;
+                    if (result instanceof Result.Success) {
+                        if (Token.this != null) {
+                            hashMap2 = this.approveTokensMetadata;
+                            if (hashMap2.get(selectedNetworkIdBySwapSide$default) == null) {
+                                hashMap4 = this.approveTokensMetadata;
+                                String str = selectedNetworkIdBySwapSide$default;
+                                mutableList2 = CollectionsKt___CollectionsKt.toMutableList((Collection) ((Collection) ((Result.Success) result).getData()));
+                                hashMap4.put(str, mutableList2);
+                            } else {
+                                hashMap3 = this.approveTokensMetadata;
+                                List list3 = (List) hashMap3.get(selectedNetworkIdBySwapSide$default);
+                                if (list3 != null) {
+                                    list3.addAll((Collection) ((Result.Success) result).getData());
+                                }
+                            }
+                        } else {
+                            hashMap = this.approveTokensMetadata;
+                            String str2 = selectedNetworkIdBySwapSide$default;
+                            mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) ((Collection) ((Result.Success) result).getData()));
+                            hashMap.put(str2, mutableList);
+                        }
+                        this.checkSelectedTokenApprove();
+                        this.startUpdatingApproveMetadataIfNeed((List) ((Result.Success) result).getData(), z);
+                    } else if ((result instanceof Result.Loading) && z2) {
+                        T viewState = this.getViewState();
+                        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                        BaseView.CC.showLoadingDialog$default((BaseView) viewState, true, false, null, 4, null);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadApproveTokensInfo$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             this.loadApproveMetadataDisposable = subscribe;
         }
@@ -1063,10 +1808,26 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FeeView.ChooseFeeType getSwapFeeType() {
-        WalletSwapProcessPresenter$getSwapFeeType$1 walletSwapProcessPresenter$getSwapFeeType$1 = new WalletSwapProcessPresenter$getSwapFeeType$1(this);
+        Function0<Unit> function0 = new Function0<Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$getSwapFeeType$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletSwapProcessPresenter.this.chooseSwapFee();
+            }
+        };
         GasPriceItem gasPriceItem = this.selectedSwapFee;
         Intrinsics.checkNotNull(gasPriceItem);
-        return new FeeView.ChooseFeeType.Custom(walletSwapProcessPresenter$getSwapFeeType$1, gasPriceItem);
+        return new FeeView.ChooseFeeType.Custom(function0, gasPriceItem);
     }
 
     private final FeeView.ChooseFeeType getApproveFeeType() {
@@ -1079,7 +1840,24 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         TokenDetailed feeToken = needApprove2.getFeeToken();
         GasPriceItem gasPriceItem = this.selectedApproveFee;
         Intrinsics.checkNotNull(gasPriceItem);
-        return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, feeToken, gasPriceItem, new WalletSwapProcessPresenter$getApproveFeeType$1(this));
+        return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, feeToken, gasPriceItem, new Function1<GasPriceItem, Unit>() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$getApproveFeeType$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(GasPriceItem gasPriceItem2) {
+                invoke2(gasPriceItem2);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(GasPriceItem fee) {
+                Intrinsics.checkNotNullParameter(fee, "fee");
+                WalletSwapProcessPresenter.this.selectApproveFee(fee);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1099,13 +1877,13 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         boolean z;
         TokenDetailed tokenDetailed = this.inputToken;
         if (tokenDetailed == null) {
-            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_swap_process_give_token_validation));
+            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_swap_process_give_token_validation));
         } else {
             TokenDetailed tokenDetailed2 = this.outputToken;
             if (tokenDetailed2 == null) {
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_swap_process_receive_token_amount_validation));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_swap_process_receive_token_amount_validation));
             } else if (Intrinsics.areEqual(tokenDetailed, tokenDetailed2)) {
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_swap_process_diff_tokens_validation));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_swap_process_diff_tokens_validation));
             } else {
                 if (!(str.length() == 0)) {
                     doubleOrNull = StringsKt__StringNumberConversionsJVMKt.toDoubleOrNull(str);
@@ -1125,12 +1903,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                                 z = true;
                                 return (this.state instanceof SwapUiState.PrepareSwap) && z;
                             }
-                            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_swap_process_approve_info_not_loaded_yet_validation));
+                            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_swap_process_approve_info_not_loaded_yet_validation));
                             loadApproveTokensInfo$default(this, false, true, null, 4, null);
                         }
                     }
                 }
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_amount_enter_valid_amount_title));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_amount_enter_valid_amount_title));
             }
         }
         z = false;
@@ -1234,7 +2012,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3419R.string.common_cancel), 6, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1278,11 +2056,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final DialogModel getSwapConfirmationDialogModel() {
         String string;
-        String string2 = this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_swap_alert_title);
+        String string2 = this.resourceManager.getString(C3419R.string.wallet_swap_process_confirm_swap_alert_title);
         WalletSwapProcessFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3417R.string.wallet_swap_process_confirm_swap_alert_description;
+            int i = C3419R.string.wallet_swap_process_confirm_swap_alert_description;
             Object[] objArr = new Object[4];
             BinanceConvertQuote binanceConvertQuote = this.binanceConvertQuote;
             Number valueOf = binanceConvertQuote != null ? Double.valueOf(binanceConvertQuote.getInputAmount()) : 0;
@@ -1304,7 +2082,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             throw new NoWhenBranchMatchedException();
         } else {
             ResourceManager resourceManager2 = this.resourceManager;
-            int i2 = C3417R.string.wallet_swap_process_confirm_swap_alert_description;
+            int i2 = C3419R.string.wallet_swap_process_confirm_swap_alert_description;
             CryptoSwapMetadata cryptoSwapMetadata = this.swapMetadata;
             Intrinsics.checkNotNull(cryptoSwapMetadata);
             BigDecimal amountIn = cryptoSwapMetadata.getAmountIn();
@@ -1321,12 +2099,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             Intrinsics.checkNotNull(cryptoSwapMetadata6);
             string = resourceManager2.getString(i2, BalanceFormatter.formatBalance(amountIn, Integer.valueOf(cryptoSwapMetadata2.getInputToken().getDecimals())), cryptoSwapMetadata3.getInputToken().getTicker(), BalanceFormatter.formatBalance(amountOut, Integer.valueOf(cryptoSwapMetadata5.getOutputToken().getDecimals())), cryptoSwapMetadata6.getOutputToken().getTicker());
         }
-        return new DialogModel(string2, string, this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_swap_alert_action));
+        return new DialogModel(string2, string, this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_swap_process_confirm_swap_alert_action));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String formatBinanceBalance(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
-        return this.resourceManager.getString(C3417R.string.binance_convert_balance, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo), BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
+        return this.resourceManager.getString(C3419R.string.binance_convert_balance, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo), BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
     }
 
     /* compiled from: WalletSwapProcessPresenter.kt */

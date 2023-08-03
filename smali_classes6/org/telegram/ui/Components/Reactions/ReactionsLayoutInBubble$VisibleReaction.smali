@@ -26,7 +26,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 929
+    .line 938
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,19 +35,19 @@
 .method public static fromCustomEmoji(Ljava/lang/Long;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
     .locals 3
 
-    .line 980
+    .line 989
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;-><init>()V
 
-    .line 981
+    .line 990
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    .line 982
+    .line 991
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->hash:J
 
     return-object v0
@@ -60,7 +60,7 @@
 
     const-string p0, ""
 
-    .line 961
+    .line 970
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
@@ -68,7 +68,7 @@
 
     const-string v1, "animated_"
 
-    .line 964
+    .line 973
     invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -77,7 +77,7 @@
 
     const/16 v1, 0x9
 
-    .line 966
+    .line 975
     :try_start_0
     invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -89,18 +89,18 @@
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    .line 967
+    .line 976
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->hash:J
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 969
+    .line 978
     :catch_0
     iput-object p0, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
-    .line 970
+    .line 979
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
@@ -111,11 +111,11 @@
 
     goto :goto_0
 
-    .line 973
+    .line 982
     :cond_1
     iput-object p0, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
-    .line 974
+    .line 983
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
@@ -131,17 +131,17 @@
 .method public static fromEmojicon(Lorg/telegram/tgnet/TLRPC$TL_availableReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
     .locals 3
 
-    .line 950
+    .line 959
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;-><init>()V
 
-    .line 951
+    .line 960
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->reaction:Ljava/lang/String;
 
     iput-object p0, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
-    .line 952
+    .line 961
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
@@ -156,24 +156,24 @@
 .method public static fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
     .locals 3
 
-    .line 937
+    .line 946
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;-><init>()V
 
-    .line 938
+    .line 947
     instance-of v1, p0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     if-eqz v1, :cond_0
 
-    .line 939
+    .line 948
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;->emoticon:Ljava/lang/String;
 
     iput-object p0, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
-    .line 940
+    .line 949
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
@@ -184,20 +184,20 @@
 
     goto :goto_0
 
-    .line 941
+    .line 950
     :cond_0
     instance-of v1, p0, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
 
     if-eqz v1, :cond_1
 
-    .line 942
+    .line 951
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
 
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;->document_id:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    .line 943
+    .line 952
     iput-wide v1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->hash:J
 
     :cond_1
@@ -221,7 +221,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 989
+    .line 998
     const-class v2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -232,11 +232,11 @@
 
     goto :goto_1
 
-    .line 990
+    .line 999
     :cond_1
     check-cast p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    .line 991
+    .line 1000
     iget-wide v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
     iget-wide v4, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
@@ -275,7 +275,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 996
+    .line 1005
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     const/4 v2, 0x0

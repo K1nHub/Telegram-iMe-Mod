@@ -14,7 +14,7 @@ public final class WCEthereumTransaction {
     private final String nonce;
 
     /* renamed from: to */
-    private final String f476to;
+    private final String f479to;
     private final String value;
 
     public boolean equals(Object obj) {
@@ -23,14 +23,14 @@ public final class WCEthereumTransaction {
         }
         if (obj instanceof WCEthereumTransaction) {
             WCEthereumTransaction wCEthereumTransaction = (WCEthereumTransaction) obj;
-            return Intrinsics.areEqual(this.from, wCEthereumTransaction.from) && Intrinsics.areEqual(this.f476to, wCEthereumTransaction.f476to) && Intrinsics.areEqual(this.nonce, wCEthereumTransaction.nonce) && Intrinsics.areEqual(this.gasPrice, wCEthereumTransaction.gasPrice) && Intrinsics.areEqual(this.maxFeePerGas, wCEthereumTransaction.maxFeePerGas) && Intrinsics.areEqual(this.maxPriorityFeePerGas, wCEthereumTransaction.maxPriorityFeePerGas) && Intrinsics.areEqual(this.gas, wCEthereumTransaction.gas) && Intrinsics.areEqual(this.gasLimit, wCEthereumTransaction.gasLimit) && Intrinsics.areEqual(this.value, wCEthereumTransaction.value) && Intrinsics.areEqual(this.data, wCEthereumTransaction.data);
+            return Intrinsics.areEqual(this.from, wCEthereumTransaction.from) && Intrinsics.areEqual(this.f479to, wCEthereumTransaction.f479to) && Intrinsics.areEqual(this.nonce, wCEthereumTransaction.nonce) && Intrinsics.areEqual(this.gasPrice, wCEthereumTransaction.gasPrice) && Intrinsics.areEqual(this.maxFeePerGas, wCEthereumTransaction.maxFeePerGas) && Intrinsics.areEqual(this.maxPriorityFeePerGas, wCEthereumTransaction.maxPriorityFeePerGas) && Intrinsics.areEqual(this.gas, wCEthereumTransaction.gas) && Intrinsics.areEqual(this.gasLimit, wCEthereumTransaction.gasLimit) && Intrinsics.areEqual(this.value, wCEthereumTransaction.value) && Intrinsics.areEqual(this.data, wCEthereumTransaction.data);
         }
         return false;
     }
 
     public int hashCode() {
         int hashCode = this.from.hashCode() * 31;
-        String str = this.f476to;
+        String str = this.f479to;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.nonce;
         int hashCode3 = (hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31;
@@ -49,7 +49,7 @@ public final class WCEthereumTransaction {
     }
 
     public String toString() {
-        return "WCEthereumTransaction(from=" + this.from + ", to=" + this.f476to + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", maxFeePerGas=" + this.maxFeePerGas + ", maxPriorityFeePerGas=" + this.maxPriorityFeePerGas + ", gas=" + this.gas + ", gasLimit=" + this.gasLimit + ", value=" + this.value + ", data=" + this.data + ')';
+        return "WCEthereumTransaction(from=" + this.from + ", to=" + this.f479to + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", maxFeePerGas=" + this.maxFeePerGas + ", maxPriorityFeePerGas=" + this.maxPriorityFeePerGas + ", gas=" + this.gas + ", gasLimit=" + this.gasLimit + ", value=" + this.value + ", data=" + this.data + ')';
     }
 
     public final String getFrom() {
@@ -57,7 +57,7 @@ public final class WCEthereumTransaction {
     }
 
     public final String getTo() {
-        return this.f476to;
+        return this.f479to;
     }
 
     public final String getNonce() {

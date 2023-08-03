@@ -1642,7 +1642,7 @@
 
     move-result-object v0
 
-    const-string v1, "publisher\n              \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "publisher\n              \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1885,7 +1885,7 @@
 
     move-result-object p1
 
-    const-string p2, "private fun loadTokens(\n\u2026creenSubscriptions)\n    }"
+    const-string/jumbo p2, "private fun loadTokens(\n\u2026creenSubscriptions)\n    }"
 
     .line 177
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

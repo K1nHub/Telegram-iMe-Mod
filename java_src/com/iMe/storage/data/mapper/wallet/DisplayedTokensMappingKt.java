@@ -34,8 +34,8 @@ public final class DisplayedTokensMappingKt {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (DisplayedTokenResponse displayedTokenResponse : displayedTokens) {
-            Pair m85to = TuplesKt.m85to(TokenMappingKt.mapToDomain(displayedTokenResponse.getToken()), Boolean.valueOf(displayedTokenResponse.isVisible()));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(TokenMappingKt.mapToDomain(displayedTokenResponse.getToken()), Boolean.valueOf(displayedTokenResponse.isVisible()));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         return linkedHashMap;
     }

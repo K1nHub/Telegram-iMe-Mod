@@ -124,7 +124,7 @@
 
     const-string v2, "clientLanguage"
 
-    const-string v3, "percentage"
+    const-string/jumbo v3, "percentage"
 
     const-string v4, "clientHostname"
 
@@ -364,7 +364,7 @@
 
     move-result-object p1
 
-    const-string p2, "proxyDetector"
+    const-string/jumbo p2, "proxyDetector"
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -808,7 +808,7 @@
         }
     .end annotation
 
-    const-string v0, "percentage"
+    const-string/jumbo v0, "percentage"
 
     .line 476
     invoke-static {p0, v0}, Lio/grpc/internal/JsonUtil;->getNumber(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/Double;

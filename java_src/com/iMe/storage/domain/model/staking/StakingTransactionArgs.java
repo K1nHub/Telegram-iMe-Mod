@@ -16,7 +16,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f429to;
+    private final String f432to;
     private final int value;
 
     public final long component1() {
@@ -28,7 +28,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String component3() {
-        return this.f429to;
+        return this.f432to;
     }
 
     public final int component4() {
@@ -67,17 +67,17 @@ public final class StakingTransactionArgs implements TransactionArgs {
         }
         if (obj instanceof StakingTransactionArgs) {
             StakingTransactionArgs stakingTransactionArgs = (StakingTransactionArgs) obj;
-            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f429to, stakingTransactionArgs.f429to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
+            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f432to, stakingTransactionArgs.f432to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f429to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f432to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {
-        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f429to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
+        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f432to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
     }
 
     public StakingTransactionArgs(long j, String from, String to, int i, String data, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit) {
@@ -89,7 +89,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
         Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
         this.chainId = j;
         this.from = from;
-        this.f429to = to;
+        this.f432to = to;
         this.value = i;
         this.data = data;
         this.nonce = nonce;
@@ -110,7 +110,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String getTo() {
-        return this.f429to;
+        return this.f432to;
     }
 
     public final int getValue() {

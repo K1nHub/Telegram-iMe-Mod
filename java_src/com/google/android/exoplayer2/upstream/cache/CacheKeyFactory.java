@@ -1,9 +1,17 @@
 package com.google.android.exoplayer2.upstream.cache;
 
 import com.google.android.exoplayer2.upstream.DataSpec;
+import com.google.android.exoplayer2.upstream.cache.CacheKeyFactory;
 /* loaded from: classes.dex */
 public interface CacheKeyFactory {
-    public static final CacheKeyFactory DEFAULT = CacheKeyFactory$$ExternalSyntheticLambda0.INSTANCE;
+    public static final CacheKeyFactory DEFAULT = new CacheKeyFactory() { // from class: com.google.android.exoplayer2.upstream.cache.CacheKeyFactory$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.upstream.cache.CacheKeyFactory
+        public final String buildCacheKey(DataSpec dataSpec) {
+            String lambda$static$0;
+            lambda$static$0 = CacheKeyFactory.CC.lambda$static$0(dataSpec);
+            return lambda$static$0;
+        }
+    };
 
     String buildCacheKey(DataSpec dataSpec);
 

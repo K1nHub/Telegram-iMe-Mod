@@ -17,16 +17,16 @@ import kotlin.jvm.internal.Intrinsics;
 public final class DialogC0376a extends Dialog {
 
     /* renamed from: a */
-    private final Integer f58a;
+    private final Integer f60a;
 
     /* renamed from: b */
-    private final int f59b;
+    private final int f61b;
 
     /* renamed from: c */
-    private final Function0<Unit> f60c;
+    private final Function0<Unit> f62c;
 
     /* renamed from: d */
-    private final Function0<Unit> f61d;
+    private final Function0<Unit> f63d;
 
     /* renamed from: com.binance.android.opensdk.a.a$a */
     /* loaded from: classes.dex */
@@ -37,7 +37,7 @@ public final class DialogC0376a extends Dialog {
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             DialogC0376a.this.dismiss();
-            DialogC0376a.this.f60c.invoke();
+            DialogC0376a.this.f62c.invoke();
         }
     }
 
@@ -50,7 +50,7 @@ public final class DialogC0376a extends Dialog {
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             DialogC0376a.this.dismiss();
-            DialogC0376a.this.f61d.invoke();
+            DialogC0376a.this.f63d.invoke();
         }
     }
 
@@ -72,10 +72,10 @@ public final class DialogC0376a extends Dialog {
         Intrinsics.checkParameterIsNotNull(context, "context");
         Intrinsics.checkParameterIsNotNull(loginWithAppAction, "loginWithAppAction");
         Intrinsics.checkParameterIsNotNull(loginWithWebAction, "loginWithWebAction");
-        this.f58a = num;
-        this.f59b = i;
-        this.f60c = loginWithAppAction;
-        this.f61d = loginWithWebAction;
+        this.f60a = num;
+        this.f61b = i;
+        this.f62c = loginWithAppAction;
+        this.f63d = loginWithWebAction;
     }
 
     @Override // android.app.Dialog
@@ -86,7 +86,7 @@ public final class DialogC0376a extends Dialog {
             window.setBackgroundDrawable(new ColorDrawable(0));
         }
         setContentView(R$layout.binance_opensdk_dialog);
-        Integer num = this.f58a;
+        Integer num = this.f60a;
         if (num != null) {
             int intValue = num.intValue();
             TextView tvContent = (TextView) findViewById(R$id.tvContent);
@@ -96,7 +96,7 @@ public final class DialogC0376a extends Dialog {
         int i = R$id.tvDownloadApp;
         TextView tvDownloadApp = (TextView) findViewById(i);
         Intrinsics.checkExpressionValueIsNotNull(tvDownloadApp, "tvDownloadApp");
-        tvDownloadApp.setText(getContext().getString(this.f59b));
+        tvDownloadApp.setText(getContext().getString(this.f61b));
         ((TextView) findViewById(i)).setOnClickListener(new View$OnClickListenerC0377a());
         ((TextView) findViewById(R$id.tvLoginWeb)).setOnClickListener(new View$OnClickListenerC0378b());
         ((TextView) findViewById(R$id.tvClose)).setOnClickListener(new View$OnClickListenerC0379c());

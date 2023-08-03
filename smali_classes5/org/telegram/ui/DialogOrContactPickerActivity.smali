@@ -605,14 +605,14 @@
 .method private synthetic lambda$showBlockAlert$3(Lorg/telegram/tgnet/TLRPC$User;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 634
+    .line 635
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    .line 635
+    .line 636
     sget p1, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
 
     const-string p2, "ErrorOccurred"
@@ -625,7 +625,7 @@
 
     goto :goto_0
 
-    .line 637
+    .line 638
     :cond_0
     iget p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -637,7 +637,7 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/messenger/MessagesController;->blockPeer(J)V
 
-    .line 638
+    .line 639
     sget p1, Lorg/telegram/messenger/R$string;->UserBlocked:I
 
     const-string p2, "UserBlocked"
@@ -648,7 +648,7 @@
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleToast(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/widget/Toast;
 
-    .line 640
+    .line 641
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -678,14 +678,14 @@
 .method private setScrollY(F)V
     .locals 3
 
-    .line 616
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
 
     const/4 v0, 0x0
 
-    .line 617
+    .line 618
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
@@ -693,7 +693,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 618
+    .line 619
     aget-object v1, v1, v0
 
     invoke-static {v1}, Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;->access$1200(Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -704,7 +704,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setPinnedSectionOffsetY(I)V
 
-    .line 619
+    .line 620
     iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v1, v1, v0
@@ -715,7 +715,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 620
+    .line 621
     iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v1, v1, v0
@@ -731,7 +731,7 @@
 
     goto :goto_0
 
-    .line 623
+    .line 624
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -747,7 +747,7 @@
 
     return-void
 
-    .line 630
+    .line 631
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -757,7 +757,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 631
+    .line 632
     sget v1, Lorg/telegram/messenger/R$string;->BlockUser:I
 
     const-string v2, "BlockUser"
@@ -768,7 +768,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 632
+    .line 633
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureBlockContact2:I
 
     const/4 v2, 0x1
@@ -799,7 +799,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 633
+    .line 634
     sget v1, Lorg/telegram/messenger/R$string;->BlockContact:I
 
     const-string v2, "BlockContact"
@@ -814,7 +814,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 642
+    .line 643
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -827,17 +827,17 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 643
+    .line 644
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 644
+    .line 645
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v0, -0x1
 
-    .line 645
+    .line 646
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -846,7 +846,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 647
+    .line 648
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -866,7 +866,7 @@
 
     move v1, v0
 
-    .line 667
+    .line 668
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
@@ -874,7 +874,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 668
+    .line 669
     aget-object v2, v2, v1
 
     invoke-static {v2}, Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;->access$1200(Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -883,7 +883,7 @@
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RecyclerListView;->stopScroll()V
 
-    .line 669
+    .line 670
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v2, v2, v1
@@ -894,7 +894,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 670
+    .line 671
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v2, v2, v1
@@ -918,7 +918,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 675
+    .line 676
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     if-nez v1, :cond_2
@@ -943,16 +943,16 @@
 
     goto :goto_3
 
-    .line 679
+    .line 680
     :cond_3
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     const/4 v3, 0x0
 
-    .line 680
+    .line 681
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setPinnedHeaderShadowDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 681
+    .line 682
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -965,14 +965,14 @@
 
     if-eqz v3, :cond_4
 
-    .line 682
+    .line 683
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v2
 
     check-cast v2, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 683
+    .line 684
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -996,14 +996,14 @@
 .method private updateTabs()V
     .locals 5
 
-    .line 652
+    .line 653
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 655
+    .line 656
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->BlockUserChatsTitle:I
 
@@ -1017,7 +1017,7 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->addTextTab(ILjava/lang/CharSequence;)V
 
-    .line 656
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     const/4 v1, 0x1
@@ -1032,12 +1032,12 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->addTextTab(ILjava/lang/CharSequence;)V
 
-    .line 657
+    .line 658
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {v0, v2}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
 
-    .line 658
+    .line 659
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/16 v1, 0x2c
@@ -1048,7 +1048,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setExtraHeight(I)V
 
-    .line 659
+    .line 660
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getCurrentTabId()I
@@ -1057,14 +1057,14 @@
 
     if-ltz v0, :cond_1
 
-    .line 661
+    .line 662
     iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v1, v1, v2
 
     invoke-static {v1, v0}, Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;->access$402(Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;I)I
 
-    .line 663
+    .line 664
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
@@ -1430,6 +1430,17 @@
     .line 515
     iget-object v5, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
+    aget-object v5, v5, v2
+
+    invoke-static {v5}, Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;->access$3400(Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V
+
+    .line 516
+    iget-object v5, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
+
     aget-object v8, v5, v2
 
     aget-object v5, v5, v2
@@ -1444,7 +1455,7 @@
 
     invoke-virtual {v8, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 516
+    .line 517
     iget-object v5, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     aget-object v5, v5, v2
@@ -1462,7 +1473,7 @@
 
     if-ge v4, v5, :cond_5
 
-    .line 519
+    .line 520
     iget-object v5, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->viewPages:[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
     if-nez v4, :cond_3
@@ -1487,16 +1498,16 @@
 
     goto :goto_4
 
-    .line 523
+    .line 524
     :cond_4
     invoke-virtual {v5, v1}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 524
+    .line 525
     invoke-virtual {v5}, Lorg/telegram/ui/Components/RecyclerListView;->getOnScrollListener()Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     move-result-object v7
 
-    .line 525
+    .line 526
     new-instance v8, Lorg/telegram/ui/DialogOrContactPickerActivity$6;
 
     invoke-direct {v8, p0, v7}, Lorg/telegram/ui/DialogOrContactPickerActivity$6;-><init>(Lorg/telegram/ui/DialogOrContactPickerActivity;Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
@@ -1513,7 +1524,7 @@
 
     goto/16 :goto_0
 
-    .line 568
+    .line 569
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -1523,13 +1534,13 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 570
+    .line 571
     invoke-direct {p0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->updateTabs()V
 
-    .line 571
+    .line 572
     invoke-direct {p0, v1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->switchToCurrentSelectedMode(Z)V
 
-    .line 572
+    .line 573
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getCurrentTabId()I
@@ -1549,7 +1560,7 @@
     :cond_7
     iput-boolean v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->swipeBackEnabled:Z
 
-    .line 574
+    .line 575
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -1568,12 +1579,12 @@
 
     move-object/from16 v0, p0
 
-    .line 690
+    .line 691
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 692
+    .line 693
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -1596,7 +1607,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 693
+    .line 694
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1619,7 +1630,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 694
+    .line 695
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1636,7 +1647,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 695
+    .line 696
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1651,7 +1662,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 696
+    .line 697
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1666,7 +1677,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 698
+    .line 699
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1699,7 +1710,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 699
+    .line 700
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1736,7 +1747,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 700
+    .line 701
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/DialogOrContactPickerActivity;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
@@ -1771,7 +1782,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 701
+    .line 702
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     new-array v3, v3, [Landroid/graphics/drawable/Drawable;
@@ -1800,7 +1811,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 703
+    .line 704
     iget-object v2, v0, Lorg/telegram/ui/DialogOrContactPickerActivity;->dialogsActivity:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/DialogsActivity;->getThemeDescriptions()Ljava/util/ArrayList;
@@ -1809,7 +1820,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 704
+    .line 705
     iget-object v2, v0, Lorg/telegram/ui/DialogOrContactPickerActivity;->contactsActivity:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ContactsActivity;->getThemeDescriptions()Ljava/util/ArrayList;
@@ -1824,7 +1835,7 @@
 .method public isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 601
+    .line 602
     iget-boolean p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->swipeBackEnabled:Z
 
     return p1
@@ -1833,24 +1844,24 @@
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 606
+    .line 607
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->dialogsActivity:Lorg/telegram/ui/DialogsActivity;
 
     if-eqz v0, :cond_0
 
-    .line 607
+    .line 608
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->onFragmentDestroy()V
 
-    .line 609
+    .line 610
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->contactsActivity:Lorg/telegram/ui/ContactsActivity;
 
     if-eqz v0, :cond_1
 
-    .line 610
+    .line 611
     invoke-virtual {v0}, Lorg/telegram/ui/ContactsActivity;->onFragmentDestroy()V
 
-    .line 612
+    .line 613
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
@@ -1860,24 +1871,24 @@
 .method public onPause()V
     .locals 1
 
-    .line 590
+    .line 591
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPause()V
 
-    .line 591
+    .line 592
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->dialogsActivity:Lorg/telegram/ui/DialogsActivity;
 
     if-eqz v0, :cond_0
 
-    .line 592
+    .line 593
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->onPause()V
 
-    .line 594
+    .line 595
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->contactsActivity:Lorg/telegram/ui/ContactsActivity;
 
     if-eqz v0, :cond_1
 
-    .line 595
+    .line 596
     invoke-virtual {v0}, Lorg/telegram/ui/ContactsActivity;->onPause()V
 
     :cond_1
@@ -1887,24 +1898,24 @@
 .method public onResume()V
     .locals 1
 
-    .line 579
+    .line 580
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 580
+    .line 581
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->dialogsActivity:Lorg/telegram/ui/DialogsActivity;
 
     if-eqz v0, :cond_0
 
-    .line 581
+    .line 582
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->onResume()V
 
-    .line 583
+    .line 584
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->contactsActivity:Lorg/telegram/ui/ContactsActivity;
 
     if-eqz v0, :cond_1
 
-    .line 584
+    .line 585
     invoke-virtual {v0}, Lorg/telegram/ui/ContactsActivity;->onResume()V
 
     :cond_1

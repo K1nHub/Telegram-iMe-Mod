@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
     .locals 0
 
-    .line 310
+    .line 334
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton$3;->this$0:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
@@ -35,7 +35,7 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 313
+    .line 337
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton$3;->this$0:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->access$200(Lorg/telegram/ui/Components/MessageContainsEmojiButton;)Landroid/graphics/Rect;

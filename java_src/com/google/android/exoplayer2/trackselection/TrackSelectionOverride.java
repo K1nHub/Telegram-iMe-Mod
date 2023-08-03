@@ -16,10 +16,17 @@ public final class TrackSelectionOverride implements Bundleable {
     public final ImmutableList<Integer> trackIndices;
     private static final String FIELD_TRACK_GROUP = Util.intToStringMaxRadix(0);
     private static final String FIELD_TRACKS = Util.intToStringMaxRadix(1);
-    public static final Bundleable.Creator<TrackSelectionOverride> CREATOR = TrackSelectionOverride$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<TrackSelectionOverride> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.trackselection.TrackSelectionOverride$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            TrackSelectionOverride lambda$static$0;
+            lambda$static$0 = TrackSelectionOverride.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     public TrackSelectionOverride(TrackGroup trackGroup, int i) {
-        this(trackGroup, ImmutableList.m743of(Integer.valueOf(i)));
+        this(trackGroup, ImmutableList.m761of(Integer.valueOf(i)));
     }
 
     public TrackSelectionOverride(TrackGroup trackGroup, List<Integer> list) {

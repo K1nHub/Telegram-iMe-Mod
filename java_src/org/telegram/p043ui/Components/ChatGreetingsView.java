@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -60,11 +60,11 @@ public class ChatGreetingsView extends LinearLayout {
         addView(this.stickerToSendView, LayoutHelper.createLinear(112, 112, 1, 0, 16, 0, 16));
         updateColors();
         if (i <= 0) {
-            this.titleView.setText(LocaleController.getString("NoMessages", C3417R.string.NoMessages));
-            this.descriptionView.setText(LocaleController.getString("NoMessagesGreetingsDescription", C3417R.string.NoMessagesGreetingsDescription));
+            this.titleView.setText(LocaleController.getString("NoMessages", C3419R.string.NoMessages));
+            this.descriptionView.setText(LocaleController.getString("NoMessagesGreetingsDescription", C3419R.string.NoMessagesGreetingsDescription));
         } else {
-            this.titleView.setText(LocaleController.formatString("NearbyPeopleGreetingsMessage", C3417R.string.NearbyPeopleGreetingsMessage, tLRPC$User.first_name, LocaleController.formatDistance(i, 1)));
-            this.descriptionView.setText(LocaleController.getString("NearbyPeopleGreetingsDescription", C3417R.string.NearbyPeopleGreetingsDescription));
+            this.titleView.setText(LocaleController.formatString("NearbyPeopleGreetingsMessage", C3419R.string.NearbyPeopleGreetingsMessage, tLRPC$User.first_name, LocaleController.formatDistance(i, 1)));
+            this.descriptionView.setText(LocaleController.getString("NearbyPeopleGreetingsDescription", C3419R.string.NearbyPeopleGreetingsDescription));
         }
         this.stickerToSendView.setContentDescription(this.descriptionView.getText());
         this.preloadedGreetingsSticker = tLRPC$Document;
@@ -122,8 +122,8 @@ public class ChatGreetingsView extends LinearLayout {
             }
             TLRPC$DocumentAttribute tLRPC$DocumentAttribute = tLRPC$Document.attributes.get(i3);
             if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) {
-                i = tLRPC$DocumentAttribute.f1526w;
-                i2 = tLRPC$DocumentAttribute.f1525h;
+                i = tLRPC$DocumentAttribute.f1529w;
+                i2 = tLRPC$DocumentAttribute.f1528h;
                 break;
             }
             i3++;
@@ -134,7 +134,7 @@ public class ChatGreetingsView extends LinearLayout {
         }
         if (i == 0) {
             i2 = (int) f2;
-            i = i2 + AndroidUtilities.m54dp(100);
+            i = i2 + AndroidUtilities.m72dp(100);
         }
         int i4 = (int) (i2 * (f2 / i));
         int i5 = (int) f2;

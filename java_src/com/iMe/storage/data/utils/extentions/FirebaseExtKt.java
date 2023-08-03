@@ -1,6 +1,7 @@
 package com.iMe.storage.data.utils.extentions;
 
 import android.app.Activity;
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -11,6 +12,7 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Single;
 import io.reactivex.SingleEmitter;
 import io.reactivex.SingleOnSubscribe;
+import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
@@ -41,7 +43,29 @@ public final class FirebaseExtKt {
                 FirebaseExtKt.asObservableTask$lambda$9$lambda$5(ObservableEmitter.this, exc);
             }
         });
-        final FirebaseExtKt$asObservableTask$2$2 firebaseExtKt$asObservableTask$2$2 = new FirebaseExtKt$asObservableTask$2$2(emitter);
+        final Function1<TResult, Unit> function1 = new Function1<TResult, Unit>() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$asObservableTask$2$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
+                invoke2((FirebaseExtKt$asObservableTask$2$2<TResult>) obj);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(TResult tresult) {
+                if (tresult != null) {
+                    emitter.onNext(tresult);
+                } else {
+                    emitter.onError(new IllegalStateException("Observables can't emit null values"));
+                }
+            }
+        };
         this_asObservableTask.addOnSuccessListener(activity, new OnSuccessListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda4
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -54,7 +78,12 @@ public final class FirebaseExtKt {
                 FirebaseExtKt.asObservableTask$lambda$9$lambda$7(ObservableEmitter.this, task);
             }
         });
-        this_asObservableTask.addOnCanceledListener(activity, FirebaseExtKt$$ExternalSyntheticLambda0.INSTANCE);
+        this_asObservableTask.addOnCanceledListener(activity, new OnCanceledListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.OnCanceledListener
+            public final void onCanceled() {
+                FirebaseExtKt.asObservableTask$lambda$9$lambda$8();
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -105,7 +134,29 @@ public final class FirebaseExtKt {
                 FirebaseExtKt.asSingleTask$lambda$12$lambda$10(SingleEmitter.this, exc);
             }
         });
-        final FirebaseExtKt$asSingleTask$1$2 firebaseExtKt$asSingleTask$1$2 = new FirebaseExtKt$asSingleTask$1$2(emitter);
+        final Function1<TResult, Unit> function1 = new Function1<TResult, Unit>() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$asSingleTask$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
+                invoke2((FirebaseExtKt$asSingleTask$1$2<TResult>) obj);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(TResult tresult) {
+                if (tresult != null) {
+                    emitter.onSuccess(tresult);
+                } else {
+                    emitter.onError(new IllegalStateException("Observables can't emit null values"));
+                }
+            }
+        };
         this_asSingleTask.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.utils.extentions.FirebaseExtKt$$ExternalSyntheticLambda5
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {

@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$$ExternalSyntheticLambda7;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->$r8$lambda$IJ-zs9r8nv35v2K4b6in9IXSA0Y(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;J)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->$r8$lambda$52s4IbtdwmwDNFYnAXQQxbpSlAs(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;J)V
 
     return-void
 .end method

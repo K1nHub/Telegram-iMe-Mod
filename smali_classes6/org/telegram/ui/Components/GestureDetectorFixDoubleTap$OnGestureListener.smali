@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public hasDoubleTap()Z
+.method public hasDoubleTap(Landroid/view/MotionEvent;)Z
     .locals 0
 
     const p0, 0x0

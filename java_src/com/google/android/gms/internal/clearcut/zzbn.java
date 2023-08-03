@@ -8,6 +8,7 @@ import java.nio.ByteOrder;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public abstract class zzbn extends zzba {
     private static final Logger logger = Logger.getLogger(zzbn.class.getName());
@@ -163,7 +164,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    zzfd.zza(bArr, i, (byte) ((((int) j) & 127) | 128));
+                    zzfd.zza(bArr, i, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -177,7 +178,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr3 = this.buffer;
                     int i3 = this.position;
                     this.position = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) j) & 127) | 128);
+                    bArr3[i3] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -299,7 +300,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    zzfd.zza(bArr, i2, (byte) ((i & 127) | 128));
+                    zzfd.zza(bArr, i2, (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128));
                     i >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -313,7 +314,7 @@ public abstract class zzbn extends zzba {
                     byte[] bArr3 = this.buffer;
                     int i4 = this.position;
                     this.position = i4 + 1;
-                    bArr3[i4] = (byte) ((i & 127) | 128);
+                    bArr3[i4] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                     i >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -560,7 +561,7 @@ public abstract class zzbn extends zzba {
         public final void zzb(long j) throws IOException {
             while (((-128) & j) != 0) {
                 try {
-                    this.zzgd.put((byte) ((((int) j) & 127) | 128));
+                    this.zzgd.put((byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new zzc(e);
@@ -653,7 +654,7 @@ public abstract class zzbn extends zzba {
         public final void zzo(int i) throws IOException {
             while ((i & (-128)) != 0) {
                 try {
-                    this.zzgd.put((byte) ((i & 127) | 128));
+                    this.zzgd.put((byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128));
                     i >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new zzc(e);
@@ -822,7 +823,7 @@ public abstract class zzbn extends zzba {
                 while ((j & (-128)) != 0) {
                     long j2 = this.zzgi;
                     this.zzgi = j2 + 1;
-                    zzfd.zza(j2, (byte) ((((int) j) & 127) | 128));
+                    zzfd.zza(j2, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 }
                 long j3 = this.zzgi;
@@ -841,7 +842,7 @@ public abstract class zzbn extends zzba {
                     return;
                 }
                 this.zzgi = j4 + 1;
-                zzfd.zza(j4, (byte) ((((int) j) & 127) | 128));
+                zzfd.zza(j4, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                 j >>>= 7;
             }
         }
@@ -939,7 +940,7 @@ public abstract class zzbn extends zzba {
                         break;
                     }
                     this.zzgi = j + 1;
-                    zzfd.zza(j, (byte) ((i & 127) | 128));
+                    zzfd.zza(j, (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128));
                     i >>>= 7;
                 }
             } else {
@@ -952,7 +953,7 @@ public abstract class zzbn extends zzba {
                         break;
                     }
                     this.zzgi = j + 1;
-                    zzfd.zza(j, (byte) ((i & 127) | 128));
+                    zzfd.zza(j, (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128));
                     i >>>= 7;
                 }
             }

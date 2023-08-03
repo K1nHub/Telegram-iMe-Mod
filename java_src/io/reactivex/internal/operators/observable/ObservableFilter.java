@@ -53,7 +53,7 @@ public final class ObservableFilter<T> extends AbstractObservableWithUpstream<T,
         public T poll() throws Exception {
             T poll;
             do {
-                poll = this.f529qd.poll();
+                poll = this.f532qd.poll();
                 if (poll == null) {
                     break;
                 }

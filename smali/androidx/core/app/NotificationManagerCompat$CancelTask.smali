@@ -31,21 +31,21 @@
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
 
-    .line 1026
+    .line 1032
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1027
+    .line 1033
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
 
-    .line 1028
+    .line 1034
     iput p2, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->id:I
 
-    .line 1029
+    .line 1035
     iput-object p3, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->tag:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 1030
+    .line 1036
     iput-boolean p1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->all:Z
 
     return-void
@@ -61,19 +61,19 @@
         }
     .end annotation
 
-    .line 1035
+    .line 1041
     iget-boolean v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->all:Z
 
     if-eqz v0, :cond_0
 
-    .line 1036
+    .line 1042
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Landroid/support/v4/app/INotificationSideChannel;->cancelAll(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1038
+    .line 1044
     :cond_0
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
 
@@ -90,7 +90,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1045
+    .line 1051
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "CancelTask["
@@ -99,7 +99,7 @@
 
     const-string v1, "packageName:"
 
-    .line 1046
+    .line 1052
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
@@ -108,7 +108,7 @@
 
     const-string v1, ", id:"
 
-    .line 1047
+    .line 1053
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->id:I
@@ -117,7 +117,7 @@
 
     const-string v1, ", tag:"
 
-    .line 1048
+    .line 1054
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->tag:Ljava/lang/String;
@@ -126,7 +126,7 @@
 
     const-string v1, ", all:"
 
-    .line 1049
+    .line 1055
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->all:Z
@@ -135,10 +135,10 @@
 
     const-string v1, "]"
 
-    .line 1050
+    .line 1056
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1051
+    .line 1057
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0

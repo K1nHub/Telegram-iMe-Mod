@@ -224,7 +224,7 @@
     goto :goto_0
 
     :sswitch_0
-    const-string v0, "org.telegram.android.musicplayer.previous"
+    const-string/jumbo v0, "org.telegram.android.musicplayer.previous"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -256,7 +256,7 @@
     goto :goto_0
 
     :sswitch_2
-    const-string v0, "org.telegram.android.musicplayer.play"
+    const-string/jumbo v0, "org.telegram.android.musicplayer.play"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -272,7 +272,7 @@
     goto :goto_0
 
     :sswitch_3
-    const-string v0, "org.telegram.android.musicplayer.next"
+    const-string/jumbo v0, "org.telegram.android.musicplayer.next"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -288,7 +288,7 @@
     goto :goto_0
 
     :sswitch_4
-    const-string v0, "org.telegram.android.musicplayer.pause"
+    const-string/jumbo v0, "org.telegram.android.musicplayer.pause"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -304,7 +304,7 @@
     goto :goto_0
 
     :sswitch_5
-    const-string v0, "org.telegram.android.musicplayer.close"
+    const-string/jumbo v0, "org.telegram.android.musicplayer.close"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -388,8 +388,6 @@
 
     :goto_1
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

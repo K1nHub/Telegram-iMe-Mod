@@ -22,7 +22,7 @@ class CrashlyticsAnalyticsListener implements AnalyticsConnector.AnalyticsConnec
     @Override // com.google.firebase.analytics.connector.AnalyticsConnector.AnalyticsConnectorListener
     public void onMessageTriggered(int i, Bundle bundle) {
         String string;
-        Logger.getLogger().m722v(String.format(Locale.US, "Analytics listener received message. ID: %d, Extras: %s", Integer.valueOf(i), bundle));
+        Logger.getLogger().m740v(String.format(Locale.US, "Analytics listener received message. ID: %d, Extras: %s", Integer.valueOf(i), bundle));
         if (bundle == null || (string = bundle.getString(AppMeasurementSdk.ConditionalUserProperty.NAME)) == null) {
             return;
         }

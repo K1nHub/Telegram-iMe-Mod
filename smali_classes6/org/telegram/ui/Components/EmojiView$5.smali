@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/os/Bundle;)V
     .locals 0
 
-    .line 1614
+    .line 1674
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method private synthetic lambda$onTransitionAnimationEnd$0()V
     .locals 1
 
-    .line 1621
+    .line 1681
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEmojiView()Lorg/telegram/ui/Components/EmojiView;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1622
+    .line 1682
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEmojiView()Lorg/telegram/ui/Components/EmojiView;
@@ -62,20 +62,20 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 2
 
-    .line 1617
+    .line 1677
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ChatActivity;->onTransitionAnimationEnd(ZZ)V
 
     if-eqz p1, :cond_0
 
-    .line 1618
+    .line 1678
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz p1, :cond_0
 
-    .line 1619
+    .line 1679
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->showEmojiView()V
 
-    .line 1620
+    .line 1680
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     new-instance p2, Lorg/telegram/ui/Components/EmojiView$5$$ExternalSyntheticLambda0;

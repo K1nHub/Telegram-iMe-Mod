@@ -18,6 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.GroupCallUserCell;
+import org.telegram.p043ui.Stories.StoriesGradientTools;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$TL_groupCallParticipant;
@@ -29,12 +30,14 @@ public class AvatarsDrawable {
     boolean centered;
     public int count;
     int currentStyle;
+    public boolean drawStoriesCircle;
     public int height;
     private boolean isInCall;
     private int overrideSize;
     View parent;
     Random random;
     private boolean showSavedMessages;
+    StoriesGradientTools storiesTools;
     private boolean transitionInProgress;
     ValueAnimator transitionProgressAnimator;
     boolean updateAfterTransition;
@@ -46,6 +49,7 @@ public class AvatarsDrawable {
     float transitionProgress = 1.0f;
     private Paint paint = new Paint(1);
     private Paint xRefP = new Paint(1);
+    private float overrideSizeStepFactor = 0.8f;
     private float overrideAlpha = 1.0f;
     public long transitionDuration = 220;
 
@@ -76,7 +80,7 @@ public class AvatarsDrawable {
         for (int i = 0; i < 3; i++) {
             DrawingState[] drawingStateArr2 = this.currentStates;
             drawingStateArr[i] = drawingStateArr2[i];
-            if (drawingStateArr2[i].f1701id != this.animatingStates[i].f1701id) {
+            if (drawingStateArr2[i].f1721id != this.animatingStates[i].f1721id) {
                 z4 = true;
             } else {
                 this.currentStates[i].lastSpeakTime = this.animatingStates[i].lastSpeakTime;
@@ -92,7 +96,7 @@ public class AvatarsDrawable {
                 if (i3 >= 3) {
                     z3 = false;
                     break;
-                } else if (this.currentStates[i3].f1701id == this.animatingStates[i2].f1701id) {
+                } else if (this.currentStates[i3].f1721id == this.animatingStates[i2].f1721id) {
                     drawingStateArr[i3] = null;
                     if (i2 == i3) {
                         this.animatingStates[i2].animationType = -1;
@@ -119,7 +123,8 @@ public class AvatarsDrawable {
         }
         ValueAnimator valueAnimator = this.transitionProgressAnimator;
         if (valueAnimator != null) {
-            valueAnimator.cancel();
+            valueAnimator.removeAllListeners();
+            this.transitionProgressAnimator.cancel();
             if (this.transitionInProgress) {
                 swapStates();
                 this.transitionInProgress = false;
@@ -206,6 +211,10 @@ public class AvatarsDrawable {
         this.overrideSize = i;
     }
 
+    public void setStepFactor(float f) {
+        this.overrideSizeStepFactor = f;
+    }
+
     public void animateFromState(AvatarsDrawable avatarsDrawable, int i, boolean z) {
         ValueAnimator valueAnimator = avatarsDrawable.transitionProgressAnimator;
         if (valueAnimator != null) {
@@ -240,7 +249,7 @@ public class AvatarsDrawable {
         private AvatarDrawable avatarDrawable;
 
         /* renamed from: id */
-        private long f1701id;
+        private long f1721id;
         private ImageReceiver imageReceiver;
         private long lastSpeakTime;
         private long lastUpdateTime;
@@ -260,14 +269,14 @@ public class AvatarsDrawable {
         for (int i = 0; i < 3; i++) {
             this.currentStates[i] = new DrawingState();
             this.currentStates[i].imageReceiver = new ImageReceiver(view);
-            this.currentStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(12));
+            this.currentStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m72dp(12));
             this.currentStates[i].avatarDrawable = new AvatarDrawable();
-            this.currentStates[i].avatarDrawable.setTextSize(AndroidUtilities.m54dp(12));
+            this.currentStates[i].avatarDrawable.setTextSize(AndroidUtilities.m72dp(12));
             this.animatingStates[i] = new DrawingState();
             this.animatingStates[i].imageReceiver = new ImageReceiver(view);
-            this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(12));
+            this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m72dp(12));
             this.animatingStates[i].avatarDrawable = new AvatarDrawable();
-            this.animatingStates[i].avatarDrawable.setTextSize(AndroidUtilities.m54dp(12));
+            this.animatingStates[i].avatarDrawable.setTextSize(AndroidUtilities.m72dp(12));
         }
         this.isInCall = z;
         this.xRefP.setColor(0);
@@ -290,7 +299,7 @@ public class AvatarsDrawable {
     public void setObject(int i, int i2, TLObject tLObject) {
         TLRPC$Chat tLRPC$Chat;
         TLRPC$Chat chat;
-        this.animatingStates[i].f1701id = 0L;
+        this.animatingStates[i].f1721id = 0L;
         DrawingState[] drawingStateArr = this.animatingStates;
         TLRPC$User tLRPC$User = null;
         drawingStateArr[i].participant = null;
@@ -301,7 +310,6 @@ public class AvatarsDrawable {
         }
         drawingStateArr[i].lastSpeakTime = -1L;
         this.animatingStates[i].object = tLObject;
-        boolean z = true;
         if (tLObject instanceof TLRPC$TL_groupCallParticipant) {
             TLRPC$TL_groupCallParticipant tLRPC$TL_groupCallParticipant = (TLRPC$TL_groupCallParticipant) tLObject;
             this.animatingStates[i].participant = tLRPC$TL_groupCallParticipant;
@@ -315,16 +323,18 @@ public class AvatarsDrawable {
                 chat = MessagesController.getInstance(i2).getChat(Long.valueOf(-peerId));
                 this.animatingStates[i].avatarDrawable.setInfo(chat);
             }
-            if (this.currentStyle != 4) {
-                this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.active_date;
-            } else if (peerId == AccountInstance.getInstance(i2).getUserConfig().getClientUserId()) {
-                this.animatingStates[i].lastSpeakTime = 0L;
-            } else if (this.isInCall) {
-                this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.lastActiveDate;
+            if (this.currentStyle == 4) {
+                if (peerId == AccountInstance.getInstance(i2).getUserConfig().getClientUserId()) {
+                    this.animatingStates[i].lastSpeakTime = 0L;
+                } else if (this.isInCall) {
+                    this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.lastActiveDate;
+                } else {
+                    this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.active_date;
+                }
             } else {
                 this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.active_date;
             }
-            this.animatingStates[i].f1701id = peerId;
+            this.animatingStates[i].f1721id = peerId;
             tLRPC$Chat = chat;
         } else if (tLObject instanceof TLRPC$User) {
             TLRPC$User tLRPC$User2 = (TLRPC$User) tLObject;
@@ -336,7 +346,7 @@ public class AvatarsDrawable {
                 this.animatingStates[i].avatarDrawable.setAvatarType(1);
                 this.animatingStates[i].avatarDrawable.setScaleSize(0.6f);
             }
-            this.animatingStates[i].f1701id = tLRPC$User2.f1656id;
+            this.animatingStates[i].f1721id = tLRPC$User2.f1675id;
             tLRPC$User = tLRPC$User2;
             tLRPC$Chat = null;
         } else {
@@ -344,7 +354,7 @@ public class AvatarsDrawable {
             this.animatingStates[i].avatarDrawable.setAvatarType(0);
             this.animatingStates[i].avatarDrawable.setScaleSize(1.0f);
             this.animatingStates[i].avatarDrawable.setInfo(tLRPC$Chat);
-            this.animatingStates[i].f1701id = -tLRPC$Chat.f1515id;
+            this.animatingStates[i].f1721id = -tLRPC$Chat.f1518id;
         }
         if (tLRPC$User == null) {
             this.animatingStates[i].imageReceiver.setForUserOrChat(tLRPC$Chat, this.animatingStates[i].avatarDrawable);
@@ -353,44 +363,48 @@ public class AvatarsDrawable {
         } else {
             this.animatingStates[i].imageReceiver.setImageBitmap(this.animatingStates[i].avatarDrawable);
         }
-        int i3 = this.currentStyle;
-        if (i3 != 4 && i3 != 10) {
-            z = false;
-        }
-        this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(z ? 16 : 12));
-        float size = getSize();
-        this.animatingStates[i].imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, size, size);
+        int size = getSize();
+        this.animatingStates[i].imageReceiver.setRoundRadius(size / 2);
+        float f = size;
+        this.animatingStates[i].imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, f, f);
         invalidate();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x04d8  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x04ed  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x04f2  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x04f5 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r9v2, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r9v35 */
-    /* JADX WARN: Type inference failed for: r9v36 */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x026f  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x02a6  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x041b  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x05c8  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x05f7  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0613  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0640  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x0652  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x0676  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x06a0  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x06b5  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x06ba  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x02a9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x06bd A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void onDraw(android.graphics.Canvas r33) {
+    public void onDraw(android.graphics.Canvas r32) {
         /*
-            Method dump skipped, instructions count: 1298
+            Method dump skipped, instructions count: 1742
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.AvatarsDrawable.onDraw(android.graphics.Canvas):void");
     }
 
-    private int getSize() {
+    public int getSize() {
         int i = this.overrideSize;
         if (i != 0) {
             return i;
         }
         int i2 = this.currentStyle;
-        return AndroidUtilities.m54dp(i2 == 4 || i2 == 10 ? 32 : 24);
+        return AndroidUtilities.m72dp(i2 == 4 || i2 == 10 ? 32 : 24);
     }
 
     public void onDetachedFromWindow() {

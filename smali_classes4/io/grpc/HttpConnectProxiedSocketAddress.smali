@@ -28,7 +28,7 @@
     .line 46
     invoke-direct {p0}, Lio/grpc/ProxiedSocketAddress;-><init>()V
 
-    const-string v0, "proxyAddress"
+    const-string/jumbo v0, "proxyAddress"
 
     .line 47
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -249,7 +249,7 @@
 
     iget-object v1, p0, Lio/grpc/HttpConnectProxiedSocketAddress;->proxyAddress:Ljava/net/SocketAddress;
 
-    const-string v2, "proxyAddr"
+    const-string/jumbo v2, "proxyAddr"
 
     .line 111
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

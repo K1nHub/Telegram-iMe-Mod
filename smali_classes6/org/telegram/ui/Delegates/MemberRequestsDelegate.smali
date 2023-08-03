@@ -1515,7 +1515,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x2
+    const/16 v3, 0x10
 
     iget-object v4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 

@@ -6,29 +6,29 @@ import java.util.Objects;
 public final /* synthetic */ class C2833s implements InterfaceC2834t {
 
     /* renamed from: a */
-    public final /* synthetic */ int f746a;
+    public final /* synthetic */ int f749a;
 
     /* renamed from: b */
-    public final /* synthetic */ InterfaceC2834t f747b;
+    public final /* synthetic */ InterfaceC2834t f750b;
 
     /* renamed from: c */
-    public final /* synthetic */ InterfaceC2834t f748c;
+    public final /* synthetic */ InterfaceC2834t f751c;
 
     public /* synthetic */ C2833s(InterfaceC2834t interfaceC2834t, InterfaceC2834t interfaceC2834t2, int i) {
-        this.f746a = i;
+        this.f749a = i;
         if (i != 1) {
-            this.f747b = interfaceC2834t;
-            this.f748c = interfaceC2834t2;
+            this.f750b = interfaceC2834t;
+            this.f751c = interfaceC2834t2;
             return;
         }
-        this.f747b = interfaceC2834t;
-        this.f748c = interfaceC2834t2;
+        this.f750b = interfaceC2834t;
+        this.f751c = interfaceC2834t2;
     }
 
     @Override // p033j$.util.function.InterfaceC2834t
     /* renamed from: a */
-    public InterfaceC2834t mo112a(InterfaceC2834t interfaceC2834t) {
-        switch (this.f746a) {
+    public InterfaceC2834t mo130a(InterfaceC2834t interfaceC2834t) {
+        switch (this.f749a) {
             case 0:
                 Objects.requireNonNull(interfaceC2834t);
                 return new C2833s(this, interfaceC2834t, 0);
@@ -40,18 +40,18 @@ public final /* synthetic */ class C2833s implements InterfaceC2834t {
 
     @Override // p033j$.util.function.InterfaceC2834t
     public final long applyAsLong(long j) {
-        switch (this.f746a) {
+        switch (this.f749a) {
             case 0:
-                return this.f748c.applyAsLong(this.f747b.applyAsLong(j));
+                return this.f751c.applyAsLong(this.f750b.applyAsLong(j));
             default:
-                return this.f747b.applyAsLong(this.f748c.applyAsLong(j));
+                return this.f750b.applyAsLong(this.f751c.applyAsLong(j));
         }
     }
 
     @Override // p033j$.util.function.InterfaceC2834t
     /* renamed from: b */
-    public InterfaceC2834t mo111b(InterfaceC2834t interfaceC2834t) {
-        switch (this.f746a) {
+    public InterfaceC2834t mo129b(InterfaceC2834t interfaceC2834t) {
+        switch (this.f749a) {
             case 0:
                 Objects.requireNonNull(interfaceC2834t);
                 return new C2833s(this, interfaceC2834t, 1);

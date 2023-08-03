@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 756
+    .line 782
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p1, 0xfa0
 
-    .line 759
+    .line 785
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

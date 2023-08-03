@@ -2,66 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Ljava/lang/String;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ZILjava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$1:Z
-
-    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$2:I
-
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$3:Ljava/lang/String;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 11
+.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
+    .locals 0
 
-    move-object v0, p0
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/LaunchActivity;
+    move-result p1
 
-    iget-boolean v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$1:Z
+    return p1
+.end method
 
-    iget v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$2:I
+.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
+    .locals 0
 
-    iget-object v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$3:Ljava/lang/String;
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
 
-    move-object v5, p1
+    return-void
+.end method
 
-    move-object v6, p2
+.method public final onItemClick(Landroid/view/View;IFF)V
+    .locals 1
 
-    move-object v7, p3
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    move v8, p4
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$uEoTNrRe6gxG_K9Hc7UXe0Cl2gw(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;IFF)V
 
-    move-object/from16 v9, p5
-
-    move-object/from16 v10, p6
-
-    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$YxmK7qNjy11SD5zTjlGGpdQWC0I(Lorg/telegram/ui/LaunchActivity;ZILjava/lang/String;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-
-    move-result v1
-
-    return v1
+    return-void
 .end method

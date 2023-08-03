@@ -15,16 +15,16 @@ import com.google.android.gms.internal.maps.zzam;
 /* loaded from: classes3.dex */
 public final class TileOverlayOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TileOverlayOptions> CREATOR = new zzac();
-    @SafeParcelable.Field(getter = "getTileProviderDelegate", m779id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getTileProviderDelegate", m797id = 2, type = "android.os.IBinder")
     private zzam zza;
     private TileProvider zzb;
-    @SafeParcelable.Field(getter = "isVisible", m779id = 3)
+    @SafeParcelable.Field(getter = "isVisible", m797id = 3)
     private boolean zzc;
-    @SafeParcelable.Field(getter = "getZIndex", m779id = 4)
+    @SafeParcelable.Field(getter = "getZIndex", m797id = 4)
     private float zzd;
-    @SafeParcelable.Field(defaultValue = "true", getter = "getFadeIn", m779id = 5)
+    @SafeParcelable.Field(defaultValue = "true", getter = "getFadeIn", m797id = 5)
     private boolean zze;
-    @SafeParcelable.Field(getter = "getTransparency", m779id = 6)
+    @SafeParcelable.Field(getter = "getTransparency", m797id = 6)
     private float zzf;
 
     public TileOverlayOptions() {
@@ -98,7 +98,7 @@ public final class TileOverlayOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public TileOverlayOptions(@SafeParcelable.Param(m778id = 2) IBinder iBinder, @SafeParcelable.Param(m778id = 3) boolean z, @SafeParcelable.Param(m778id = 4) float f, @SafeParcelable.Param(m778id = 5) boolean z2, @SafeParcelable.Param(m778id = 6) float f2) {
+    public TileOverlayOptions(@SafeParcelable.Param(m796id = 2) IBinder iBinder, @SafeParcelable.Param(m796id = 3) boolean z, @SafeParcelable.Param(m796id = 4) float f, @SafeParcelable.Param(m796id = 5) boolean z2, @SafeParcelable.Param(m796id = 6) float f2) {
         this.zzc = true;
         this.zze = true;
         this.zzf = BitmapDescriptorFactory.HUE_RED;

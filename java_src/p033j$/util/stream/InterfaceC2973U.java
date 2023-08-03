@@ -18,27 +18,27 @@ import p033j$.wrappers.C3185J;
 /* loaded from: classes2.dex */
 public interface InterfaceC2973U extends InterfaceC3040g {
     /* renamed from: G */
-    C2842i mo205G(InterfaceC2818d interfaceC2818d);
+    C2842i mo223G(InterfaceC2818d interfaceC2818d);
 
     /* renamed from: H */
-    Object mo204H(InterfaceC2839y interfaceC2839y, InterfaceC2835u interfaceC2835u, BiConsumer biConsumer);
+    Object mo222H(InterfaceC2839y interfaceC2839y, InterfaceC2835u interfaceC2835u, BiConsumer biConsumer);
 
     /* renamed from: K */
-    double mo203K(double d, InterfaceC2818d interfaceC2818d);
+    double mo221K(double d, InterfaceC2818d interfaceC2818d);
 
     /* renamed from: M */
-    Stream mo202M(InterfaceC2821g interfaceC2821g);
+    Stream mo220M(InterfaceC2821g interfaceC2821g);
 
     /* renamed from: R */
-    IntStream mo201R(C3177F c3177f);
+    IntStream mo219R(C3177F c3177f);
 
     /* renamed from: Y */
-    boolean mo200Y(C3173D c3173d);
+    boolean mo218Y(C3173D c3173d);
 
     C2842i average();
 
     /* renamed from: b */
-    InterfaceC2973U mo199b(InterfaceC2820f interfaceC2820f);
+    InterfaceC2973U mo217b(InterfaceC2820f interfaceC2820f);
 
     Stream boxed();
 
@@ -51,19 +51,19 @@ public interface InterfaceC2973U extends InterfaceC3040g {
     C2842i findFirst();
 
     /* renamed from: h0 */
-    boolean mo198h0(C3173D c3173d);
+    boolean mo216h0(C3173D c3173d);
 
     /* renamed from: i0 */
-    boolean mo197i0(C3173D c3173d);
+    boolean mo215i0(C3173D c3173d);
 
     @Override // p033j$.util.stream.InterfaceC3040g
     InterfaceC2846m iterator();
 
     /* renamed from: j */
-    void mo196j(InterfaceC2820f interfaceC2820f);
+    void mo214j(InterfaceC2820f interfaceC2820f);
 
     /* renamed from: l0 */
-    void mo195l0(InterfaceC2820f interfaceC2820f);
+    void mo213l0(InterfaceC2820f interfaceC2820f);
 
     InterfaceC2973U limit(long j);
 
@@ -75,7 +75,7 @@ public interface InterfaceC2973U extends InterfaceC3040g {
     InterfaceC2973U parallel();
 
     /* renamed from: r */
-    InterfaceC2973U mo193r(C3173D c3173d);
+    InterfaceC2973U mo211r(C3173D c3173d);
 
     @Override // p033j$.util.stream.InterfaceC3040g, p033j$.util.stream.IntStream
     InterfaceC2973U sequential();
@@ -94,11 +94,11 @@ public interface InterfaceC2973U extends InterfaceC3040g {
     double[] toArray();
 
     /* renamed from: w */
-    InterfaceC2973U mo192w(InterfaceC2821g interfaceC2821g);
+    InterfaceC2973U mo210w(InterfaceC2821g interfaceC2821g);
 
     /* renamed from: x */
-    InterfaceC3030e1 mo191x(InterfaceC2822h interfaceC2822h);
+    InterfaceC3030e1 mo209x(InterfaceC2822h interfaceC2822h);
 
     /* renamed from: y */
-    InterfaceC2973U mo190y(C3185J c3185j);
+    InterfaceC2973U mo208y(C3185J c3185j);
 }

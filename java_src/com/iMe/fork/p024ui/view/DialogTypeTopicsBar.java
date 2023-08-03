@@ -9,12 +9,14 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.fork.enums.DialogType;
+import com.iMe.fork.p024ui.view.DialogTypeTopicsBar;
 import com.iMe.p031ui.topics.TopicView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -59,9 +61,32 @@ public final class DialogTypeTopicsBar extends FrameLayout {
         this.data = data;
         this.currentDialogType = currentDialogType;
         this.delegate = delegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new DialogTypeTopicsBar$listView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.view.DialogTypeTopicsBar$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = DialogTypeTopicsBar.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new DialogTypeTopicsBar$listAdapter$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.view.DialogTypeTopicsBar$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final DialogTypeTopicsBar.ListAdapter invoke() {
+                return new DialogTypeTopicsBar.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy2;
         setupListeners();
         addView(getListView(), LayoutHelper.createFrame(-1, -1));

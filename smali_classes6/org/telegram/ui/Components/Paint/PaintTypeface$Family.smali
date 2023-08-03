@@ -30,10 +30,10 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 171
+    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 173
+    .line 217
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -45,6 +45,62 @@
 
 
 # virtual methods
+.method public getBold()Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
+    .locals 3
+
+    const/4 v0, 0x0
+
+    .line 235
+    :goto_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1
+
+    .line 236
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->subfamily:Ljava/lang/String;
+
+    const-string v2, "Bold"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 237
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
+
+    return-object v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getRegular()Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
     .locals 4
 
@@ -52,7 +108,7 @@
 
     move v1, v0
 
-    .line 177
+    .line 221
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
@@ -62,7 +118,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 178
+    .line 222
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -81,7 +137,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 179
+    .line 223
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -103,7 +159,7 @@
     :goto_1
     if-nez v1, :cond_2
 
-    .line 183
+    .line 227
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -112,7 +168,7 @@
 
     if-nez v2, :cond_2
 
-    .line 184
+    .line 228
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

@@ -279,7 +279,7 @@ public final class DashMediaSource extends BaseMediaSource {
         int intValue = ((Integer) mediaPeriodId.periodUid).intValue() - this.firstPeriodId;
         MediaSourceEventListener.EventDispatcher createEventDispatcher = createEventDispatcher(mediaPeriodId, this.manifest.getPeriod(intValue).startMs);
         DashMediaPeriod dashMediaPeriod = new DashMediaPeriod(intValue + this.firstPeriodId, this.manifest, this.baseUrlExclusionList, intValue, this.chunkSourceFactory, this.mediaTransferListener, this.drmSessionManager, createDrmEventDispatcher(mediaPeriodId), this.loadErrorHandlingPolicy, createEventDispatcher, this.elapsedRealtimeOffsetMs, this.manifestLoadErrorThrower, allocator, this.compositeSequenceableLoaderFactory, this.playerEmsgCallback, getPlayerId());
-        this.periodsById.put(dashMediaPeriod.f211id, dashMediaPeriod);
+        this.periodsById.put(dashMediaPeriod.f213id, dashMediaPeriod);
         return dashMediaPeriod;
     }
 
@@ -287,7 +287,7 @@ public final class DashMediaSource extends BaseMediaSource {
     public void releasePeriod(MediaPeriod mediaPeriod) {
         DashMediaPeriod dashMediaPeriod = (DashMediaPeriod) mediaPeriod;
         dashMediaPeriod.release();
-        this.periodsById.remove(dashMediaPeriod.f211id);
+        this.periodsById.remove(dashMediaPeriod.f213id);
     }
 
     @Override // com.google.android.exoplayer2.source.BaseMediaSource
@@ -430,7 +430,7 @@ public final class DashMediaSource extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onUtcTimestampResolutionError(IOException iOException) {
-        Log.m799e("DashMediaSource", "Failed to resolve time offset.", iOException);
+        Log.m817e("DashMediaSource", "Failed to resolve time offset.", iOException);
         processManifest(true);
     }
 
@@ -681,7 +681,7 @@ public final class DashMediaSource extends BaseMediaSource {
         @Override // com.google.android.exoplayer2.Timeline
         public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
             Assertions.checkIndex(i, 0, getPeriodCount());
-            return period.set(z ? this.manifest.getPeriod(i).f214id : null, z ? Integer.valueOf(this.firstPeriodId + i) : null, 0, this.manifest.getPeriodDurationUs(i), Util.msToUs(this.manifest.getPeriod(i).startMs - this.manifest.getPeriod(0).startMs) - this.offsetInFirstPeriodUs);
+            return period.set(z ? this.manifest.getPeriod(i).f216id : null, z ? Integer.valueOf(this.firstPeriodId + i) : null, 0, this.manifest.getPeriodDurationUs(i), Util.msToUs(this.manifest.getPeriod(i).startMs - this.manifest.getPeriod(0).startMs) - this.offsetInFirstPeriodUs);
         }
 
         @Override // com.google.android.exoplayer2.Timeline

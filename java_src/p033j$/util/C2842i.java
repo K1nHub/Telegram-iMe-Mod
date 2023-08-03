@@ -6,45 +6,45 @@ import java.util.NoSuchElementException;
 public final class C2842i {
 
     /* renamed from: c */
-    private static final C2842i f752c = new C2842i();
+    private static final C2842i f755c = new C2842i();
 
     /* renamed from: a */
-    private final boolean f753a;
+    private final boolean f756a;
 
     /* renamed from: b */
-    private final double f754b;
+    private final double f757b;
 
     private C2842i() {
-        this.f753a = false;
-        this.f754b = Double.NaN;
+        this.f756a = false;
+        this.f757b = Double.NaN;
     }
 
     private C2842i(double d) {
-        this.f753a = true;
-        this.f754b = d;
+        this.f756a = true;
+        this.f757b = d;
     }
 
     /* renamed from: a */
-    public static C2842i m535a() {
-        return f752c;
+    public static C2842i m553a() {
+        return f755c;
     }
 
     /* renamed from: d */
-    public static C2842i m532d(double d) {
+    public static C2842i m550d(double d) {
         return new C2842i(d);
     }
 
     /* renamed from: b */
-    public double m534b() {
-        if (this.f753a) {
-            return this.f754b;
+    public double m552b() {
+        if (this.f756a) {
+            return this.f757b;
         }
         throw new NoSuchElementException("No value present");
     }
 
     /* renamed from: c */
-    public boolean m533c() {
-        return this.f753a;
+    public boolean m551c() {
+        return this.f756a;
     }
 
     public boolean equals(Object obj) {
@@ -53,12 +53,12 @@ public final class C2842i {
         }
         if (obj instanceof C2842i) {
             C2842i c2842i = (C2842i) obj;
-            boolean z = this.f753a;
-            if (z && c2842i.f753a) {
-                if (Double.compare(this.f754b, c2842i.f754b) == 0) {
+            boolean z = this.f756a;
+            if (z && c2842i.f756a) {
+                if (Double.compare(this.f757b, c2842i.f757b) == 0) {
                     return true;
                 }
-            } else if (z == c2842i.f753a) {
+            } else if (z == c2842i.f756a) {
                 return true;
             }
             return false;
@@ -67,14 +67,14 @@ public final class C2842i {
     }
 
     public int hashCode() {
-        if (this.f753a) {
-            long doubleToLongBits = Double.doubleToLongBits(this.f754b);
+        if (this.f756a) {
+            long doubleToLongBits = Double.doubleToLongBits(this.f757b);
             return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
         }
         return 0;
     }
 
     public String toString() {
-        return this.f753a ? String.format("OptionalDouble[%s]", Double.valueOf(this.f754b)) : "OptionalDouble.empty";
+        return this.f756a ? String.format("OptionalDouble[%s]", Double.valueOf(this.f757b)) : "OptionalDouble.empty";
     }
 }

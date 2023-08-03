@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarsDrawable;)V
     .locals 0
 
-    .line 145
+    .line 150
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarsDrawable$1;->this$0:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 148
+    .line 153
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarsDrawable$1;->this$0:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/AvatarsDrawable;->transitionProgressAnimator:Landroid/animation/ValueAnimator;
@@ -44,13 +44,13 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 149
+    .line 154
     iput v0, p1, Lorg/telegram/ui/Components/AvatarsDrawable;->transitionProgress:F
 
-    .line 150
+    .line 155
     invoke-static {p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->access$500(Lorg/telegram/ui/Components/AvatarsDrawable;)V
 
-    .line 151
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarsDrawable$1;->this$0:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     iget-boolean v0, p1, Lorg/telegram/ui/Components/AvatarsDrawable;->updateAfterTransition:Z
@@ -59,24 +59,24 @@
 
     const/4 v0, 0x0
 
-    .line 152
+    .line 157
     iput-boolean v0, p1, Lorg/telegram/ui/Components/AvatarsDrawable;->updateAfterTransition:Z
 
-    .line 153
+    .line 158
     iget-object p1, p1, Lorg/telegram/ui/Components/AvatarsDrawable;->updateDelegate:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 154
+    .line 159
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 157
+    .line 162
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarsDrawable$1;->this$0:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->access$600(Lorg/telegram/ui/Components/AvatarsDrawable;)V
 
-    .line 159
+    .line 164
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarsDrawable$1;->this$0:Lorg/telegram/ui/Components/AvatarsDrawable;
 

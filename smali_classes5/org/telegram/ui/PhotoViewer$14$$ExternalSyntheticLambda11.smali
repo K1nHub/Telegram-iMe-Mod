@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer$14;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$14;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$Tjgn51vCYjbfAxfoBh6Lvm3nECc(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$cv5n8Lw2NZRn_Zdj3QHjwxeCBbo(Lorg/telegram/ui/PhotoViewer$14;)V
 
     return-void
 .end method

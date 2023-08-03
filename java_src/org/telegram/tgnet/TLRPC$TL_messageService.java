@@ -13,13 +13,13 @@ public class TLRPC$TL_messageService extends TLRPC$Message {
         this.silent = (readInt32 & 8192) != 0;
         this.post = (readInt32 & 16384) != 0;
         this.legacy = (readInt32 & 524288) != 0;
-        this.f1539id = abstractSerializedData.readInt32(z);
+        this.f1542id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         this.peer_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         if ((this.flags & 8) != 0) {
-            this.reply_to = TLRPC$TL_messageReplyHeader.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            this.reply_to = TLRPC$MessageReplyHeader.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         this.date = abstractSerializedData.readInt32(z);
         this.action = TLRPC$MessageAction.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
@@ -44,7 +44,7 @@ public class TLRPC$TL_messageService extends TLRPC$Message {
         int i6 = this.legacy ? i5 | 524288 : i5 & (-524289);
         this.flags = i6;
         abstractSerializedData.writeInt32(i6);
-        abstractSerializedData.writeInt32(this.f1539id);
+        abstractSerializedData.writeInt32(this.f1542id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }

@@ -306,17 +306,17 @@ public class UnzipEngine {
                 } catch (IOException | Exception unused2) {
                 }
                 return true;
-            } catch (FileNotFoundException e) {
-                throw new ZipException(e);
-            }
-        } catch (Throwable th) {
-            if (0 != 0) {
-                try {
-                    randomAccessFile.close();
-                } catch (IOException | Exception unused3) {
+            } catch (Throwable th) {
+                if (0 != 0) {
+                    try {
+                        randomAccessFile.close();
+                    } catch (IOException | Exception unused3) {
+                    }
                 }
+                throw th;
             }
-            throw th;
+        } catch (FileNotFoundException e) {
+            throw new ZipException(e);
         }
     }
 

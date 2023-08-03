@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
@@ -44,11 +44,11 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
         this.downloadImageReceiver = new ImageReceiver(this);
         this.downloadCompleteImageReceiver = new ImageReceiver(this);
         this.currentAccount = i;
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3417R.raw.download_progress, "download_progress", AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3419R.raw.download_progress, "download_progress", AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(28), true, null);
         this.downloadDrawable = rLottieDrawable;
         int i2 = Theme.key_actionBarDefaultIcon;
         rLottieDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
-        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3417R.raw.download_finish, "download_finish", AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
+        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3419R.raw.download_finish, "download_finish", AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(28), true, null);
         this.downloadCompleteDrawable = rLottieDrawable2;
         rLottieDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
         this.downloadImageReceiver.setImageBitmap(this.downloadDrawable);
@@ -61,9 +61,9 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824));
-        int m54dp = AndroidUtilities.m54dp(15);
-        float f = m54dp;
-        int i3 = m54dp * 2;
+        int m72dp = AndroidUtilities.m72dp(15);
+        float f = m72dp;
+        int i3 = m72dp * 2;
         this.downloadImageReceiver.setImageCoords(f, f, getMeasuredWidth() - i3, getMeasuredHeight() - i3);
         this.downloadCompleteImageReceiver.setImageCoords(f, f, getMeasuredWidth() - i3, getMeasuredHeight() - i3);
     }
@@ -98,16 +98,16 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
                 invalidate();
             }
         }
-        float m55dp = AndroidUtilities.m55dp(1.0f);
-        float m54dp = AndroidUtilities.m54dp(16);
+        float m73dp = AndroidUtilities.m73dp(1.0f);
+        float m72dp = AndroidUtilities.m72dp(16);
         RectF rectF = AndroidUtilities.rectTmp;
-        float measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(8);
-        float f5 = measuredHeight - m55dp;
-        float f6 = measuredHeight + m55dp;
-        rectF.set(m54dp, f5, getMeasuredWidth() - m54dp, f6);
-        canvas.drawRoundRect(rectF, m55dp, m55dp, this.paint2);
-        rectF.set(m54dp, f5, ((getMeasuredWidth() - (2.0f * m54dp)) * this.currentProgress) + m54dp, f6);
-        canvas.drawRoundRect(rectF, m55dp, m55dp, this.paint);
+        float measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m72dp(8);
+        float f5 = measuredHeight - m73dp;
+        float f6 = measuredHeight + m73dp;
+        rectF.set(m72dp, f5, getMeasuredWidth() - m72dp, f6);
+        canvas.drawRoundRect(rectF, m73dp, m73dp, this.paint2);
+        rectF.set(m72dp, f5, ((getMeasuredWidth() - (2.0f * m72dp)) * this.currentProgress) + m72dp, f6);
+        canvas.drawRoundRect(rectF, m73dp, m73dp, this.paint);
         canvas.save();
         canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), f5);
         if (this.progress != 1.0f) {

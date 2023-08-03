@@ -11,7 +11,7 @@ public interface InterfaceC2848o extends Iterator {
     /* loaded from: classes2.dex */
     public interface InterfaceC2849a extends InterfaceC2848o {
         /* renamed from: c */
-        void mo147c(InterfaceC2826l interfaceC2826l);
+        void mo165c(InterfaceC2826l interfaceC2826l);
 
         void forEachRemaining(Consumer consumer);
 

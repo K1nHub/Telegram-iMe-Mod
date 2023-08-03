@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharedDocumentCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 139
+    .line 140
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedDocumentCell$1;->this$0:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 143
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell$1;->this$0:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharedDocumentCell;->access$000(Lorg/telegram/ui/Cells/SharedDocumentCell;)Lorg/telegram/ui/Components/BackupImageView;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell$1;->this$0:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharedDocumentCell;->access$000(Lorg/telegram/ui/Cells/SharedDocumentCell;)Lorg/telegram/ui/Components/BackupImageView;
@@ -71,7 +71,7 @@
 
     sub-float/2addr v1, v0
 
-    .line 148
+    .line 149
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell$1;->this$0:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell$1;->this$0:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharedDocumentCell;->access$200(Lorg/telegram/ui/Cells/SharedDocumentCell;)Landroid/widget/ImageView;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 150
+    .line 151
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void

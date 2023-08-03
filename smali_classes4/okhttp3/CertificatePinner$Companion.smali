@@ -107,7 +107,7 @@
 
     move-result-object p1
 
-    const-string v0, "publicKey"
+    const-string/jumbo v0, "publicKey"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -115,7 +115,7 @@
 
     move-result-object v2
 
-    const-string p1, "publicKey.encoded"
+    const-string/jumbo p1, "publicKey.encoded"
 
     invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -152,7 +152,7 @@
 
     move-result-object p1
 
-    const-string v0, "publicKey"
+    const-string/jumbo v0, "publicKey"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -160,7 +160,7 @@
 
     move-result-object v2
 
-    const-string p1, "publicKey.encoded"
+    const-string/jumbo p1, "publicKey.encoded"
 
     invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.SeekBarView;
@@ -73,13 +73,13 @@ public class BrightnessControlCell extends FrameLayout {
         this.rightImageView = imageView2;
         addView(imageView2, LayoutHelper.createFrame(24, 24, 53, 0, 12, 17, 0));
         if (i == 0) {
-            this.leftImageView.setImageResource(C3417R.C3419drawable.msg_brightness_low);
-            this.rightImageView.setImageResource(C3417R.C3419drawable.msg_brightness_high);
+            this.leftImageView.setImageResource(C3419R.C3421drawable.msg_brightness_low);
+            this.rightImageView.setImageResource(C3419R.C3421drawable.msg_brightness_high);
             this.size = 48;
             return;
         }
-        this.leftImageView.setImageResource(C3417R.C3419drawable.msg_brightness_high);
-        this.rightImageView.setImageResource(C3417R.C3419drawable.msg_brightness_low);
+        this.leftImageView.setImageResource(C3419R.C3421drawable.msg_brightness_high);
+        this.rightImageView.setImageResource(C3419R.C3421drawable.msg_brightness_low);
         this.size = 43;
     }
 
@@ -94,7 +94,7 @@ public class BrightnessControlCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.size), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.size), 1073741824));
     }
 
     public void setProgress(float f) {

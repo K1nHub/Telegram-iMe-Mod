@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/DownloadController;)V
     .locals 0
 
-    .line 312
+    .line 330
     iput-object p1, p0, Lorg/telegram/messenger/DownloadController$1;->this$0:Lorg/telegram/messenger/DownloadController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
 
-    .line 315
+    .line 333
     iget-object p1, p0, Lorg/telegram/messenger/DownloadController$1;->this$0:Lorg/telegram/messenger/DownloadController;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/DownloadController;->checkAutodownloadSettings()V

@@ -24,13 +24,13 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
     .locals 0
 
-    .line 147
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
+    .line 157
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 149
+    .line 158
     iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;->parent:Ljava/lang/Object;
 
     return-void

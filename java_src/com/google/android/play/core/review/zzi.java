@@ -2,8 +2,11 @@ package com.google.android.play.core.review;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.IBinder;
+import com.google.android.play.core.internal.zzab;
 import com.google.android.play.core.internal.zzac;
 import com.google.android.play.core.internal.zzag;
+import com.google.android.play.core.internal.zzan;
 import com.google.android.play.core.internal.zzas;
 import com.google.android.play.core.internal.zzch;
 import com.google.android.play.core.tasks.Task;
@@ -18,7 +21,12 @@ public final class zzi {
     public zzi(Context context) {
         this.zzc = context.getPackageName();
         if (zzch.zzb(context)) {
-            this.zza = new zzas<>(context, zzb, "com.google.android.finsky.inappreviewservice.InAppReviewService", new Intent("com.google.android.finsky.BIND_IN_APP_REVIEW_SERVICE").setPackage("com.android.vending"), zze.zza, null);
+            this.zza = new zzas<>(context, zzb, "com.google.android.finsky.inappreviewservice.InAppReviewService", new Intent("com.google.android.finsky.BIND_IN_APP_REVIEW_SERVICE").setPackage("com.android.vending"), new zzan() { // from class: com.google.android.play.core.review.zze
+                @Override // com.google.android.play.core.internal.zzan
+                public final Object zza(IBinder iBinder) {
+                    return zzab.zzb(iBinder);
+                }
+            }, null);
         }
     }
 

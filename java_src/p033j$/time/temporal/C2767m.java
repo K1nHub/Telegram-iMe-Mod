@@ -7,26 +7,26 @@ import p033j$.time.C2728a;
 public final class C2767m implements Serializable {
 
     /* renamed from: a */
-    private final long f616a;
+    private final long f619a;
 
     /* renamed from: b */
-    private final long f617b;
+    private final long f620b;
 
     /* renamed from: c */
-    private final long f618c;
+    private final long f621c;
 
     /* renamed from: d */
-    private final long f619d;
+    private final long f622d;
 
     private C2767m(long j, long j2, long j3, long j4) {
-        this.f616a = j;
-        this.f617b = j2;
-        this.f618c = j3;
-        this.f619d = j4;
+        this.f619a = j;
+        this.f620b = j2;
+        this.f621c = j3;
+        this.f622d = j4;
     }
 
     /* renamed from: c */
-    public static C2767m m637c(long j, long j2) {
+    public static C2767m m655c(long j, long j2) {
         if (j <= j2) {
             return new C2767m(j, j, j2, j2);
         }
@@ -34,7 +34,7 @@ public final class C2767m implements Serializable {
     }
 
     /* renamed from: d */
-    public static C2767m m636d(long j, long j2, long j3) {
+    public static C2767m m654d(long j, long j2, long j3) {
         if (j <= j) {
             if (j2 <= j3) {
                 if (j <= j3) {
@@ -48,16 +48,16 @@ public final class C2767m implements Serializable {
     }
 
     /* renamed from: a */
-    public long m639a(long j, InterfaceC2764j interfaceC2764j) {
-        if (j >= this.f616a && j <= this.f619d) {
+    public long m657a(long j, InterfaceC2764j interfaceC2764j) {
+        if (j >= this.f619a && j <= this.f622d) {
             return j;
         }
         throw new C2728a("Invalid value for " + interfaceC2764j + " (valid values " + this + "): " + j);
     }
 
     /* renamed from: b */
-    public boolean m638b() {
-        return this.f616a == this.f617b && this.f618c == this.f619d;
+    public boolean m656b() {
+        return this.f619a == this.f620b && this.f621c == this.f622d;
     }
 
     public boolean equals(Object obj) {
@@ -66,34 +66,34 @@ public final class C2767m implements Serializable {
         }
         if (obj instanceof C2767m) {
             C2767m c2767m = (C2767m) obj;
-            return this.f616a == c2767m.f616a && this.f617b == c2767m.f617b && this.f618c == c2767m.f618c && this.f619d == c2767m.f619d;
+            return this.f619a == c2767m.f619a && this.f620b == c2767m.f620b && this.f621c == c2767m.f621c && this.f622d == c2767m.f622d;
         }
         return false;
     }
 
     public int hashCode() {
-        long j = this.f616a;
-        long j2 = this.f617b;
+        long j = this.f619a;
+        long j2 = this.f620b;
         long j3 = j + (j2 << 16) + (j2 >> 48);
-        long j4 = this.f618c;
+        long j4 = this.f621c;
         long j5 = j3 + (j4 << 32) + (j4 >> 32);
-        long j6 = this.f619d;
+        long j6 = this.f622d;
         long j7 = j5 + (j6 << 48) + (j6 >> 16);
         return (int) (j7 ^ (j7 >>> 32));
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f616a);
-        if (this.f616a != this.f617b) {
+        sb.append(this.f619a);
+        if (this.f619a != this.f620b) {
             sb.append('/');
-            sb.append(this.f617b);
+            sb.append(this.f620b);
         }
         sb.append(" - ");
-        sb.append(this.f618c);
-        if (this.f618c != this.f619d) {
+        sb.append(this.f621c);
+        if (this.f621c != this.f622d) {
             sb.append('/');
-            sb.append(this.f619d);
+            sb.append(this.f622d);
         }
         return sb.toString();
     }

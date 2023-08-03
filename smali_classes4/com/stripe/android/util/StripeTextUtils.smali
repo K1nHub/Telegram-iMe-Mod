@@ -144,7 +144,7 @@
     return-object v0
 
     :cond_2
-    const-string v0, "prepaid"
+    const-string/jumbo v0, "prepaid"
 
     .line 130
     invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z

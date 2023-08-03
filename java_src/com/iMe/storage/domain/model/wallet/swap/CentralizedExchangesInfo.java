@@ -2,10 +2,13 @@ package com.iMe.storage.domain.model.wallet.swap;
 
 import com.iMe.storage.R$drawable;
 import com.iMe.storage.R$string;
+import com.iMe.storage.domain.model.wallet.swap.CentralizedExchangesInfo;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CentralizedExchangesInfo.kt */
@@ -146,7 +149,14 @@ public abstract class CentralizedExchangesInfo implements Exchange {
 
     static {
         Lazy<List<CentralizedExchangesInfo>> lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(CentralizedExchangesInfo$Companion$supportedExchanges$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends CentralizedExchangesInfo>>() { // from class: com.iMe.storage.domain.model.wallet.swap.CentralizedExchangesInfo$Companion$supportedExchanges$2
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends CentralizedExchangesInfo> invoke() {
+                List<? extends CentralizedExchangesInfo> listOf;
+                listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CentralizedExchangesInfo[]{CentralizedExchangesInfo.Binance.INSTANCE, CentralizedExchangesInfo.Gate.INSTANCE, CentralizedExchangesInfo.Ascendeex.INSTANCE});
+                return listOf;
+            }
+        });
         supportedExchanges$delegate = lazy;
     }
 }

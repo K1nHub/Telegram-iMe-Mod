@@ -41,10 +41,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 26466
+    .line 27035
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 26474
+    .line 27043
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -63,7 +63,7 @@
 
     goto :goto_0
 
-    .line 26487
+    .line 27056
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
 
@@ -71,7 +71,7 @@
 
     goto :goto_0
 
-    .line 26499
+    .line 27068
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer45;
 
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 26484
+    .line 27053
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer17;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 26493
+    .line 27062
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer8;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 26490
+    .line 27059
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService_layer8;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 26496
+    .line 27065
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage;
 
@@ -116,7 +116,7 @@
 
     goto :goto_1
 
-    .line 26503
+    .line 27072
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -146,7 +146,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 26506
+    .line 27075
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

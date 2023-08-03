@@ -529,7 +529,7 @@ public final class DownloadManager {
                         this.downloads.add(downloadCursor.getDownload());
                     }
                 } catch (IOException e) {
-                    Log.m799e(DownloadManager.TAG, "Failed to load index.", e);
+                    Log.m817e(DownloadManager.TAG, "Failed to load index.", e);
                     this.downloads.clear();
                 }
                 Util.closeQuietly(downloadCursor);
@@ -559,7 +559,7 @@ public final class DownloadManager {
                 try {
                     this.downloadIndex.setStopReason(i);
                 } catch (IOException e) {
-                    Log.m799e(DownloadManager.TAG, "Failed to set manual stop reason", e);
+                    Log.m817e(DownloadManager.TAG, "Failed to set manual stop reason", e);
                 }
             } else {
                 Download download = getDownload(str, false);
@@ -569,7 +569,7 @@ public final class DownloadManager {
                     try {
                         this.downloadIndex.setStopReason(str, i);
                     } catch (IOException e2) {
-                        Log.m799e(DownloadManager.TAG, "Failed to set manual stop reason: " + str, e2);
+                        Log.m817e(DownloadManager.TAG, "Failed to set manual stop reason: " + str, e2);
                     }
                 }
             }
@@ -600,7 +600,7 @@ public final class DownloadManager {
         }
 
         private void addDownload(DownloadRequest downloadRequest, int i) {
-            Download download = getDownload(downloadRequest.f203id, true);
+            Download download = getDownload(downloadRequest.f205id, true);
             long currentTimeMillis = System.currentTimeMillis();
             if (download != null) {
                 putDownload(DownloadManager.mergeRequest(download, downloadRequest, i, currentTimeMillis));
@@ -613,7 +613,7 @@ public final class DownloadManager {
         private void removeDownload(String str) {
             Download download = getDownload(str, true);
             if (download == null) {
-                Log.m800e(DownloadManager.TAG, "Failed to remove nonexistent download: " + str);
+                Log.m818e(DownloadManager.TAG, "Failed to remove nonexistent download: " + str);
                 return;
             }
             putDownloadWithState(download, 5, 0);
@@ -629,7 +629,7 @@ public final class DownloadManager {
                 }
                 downloads.close();
             } catch (IOException unused) {
-                Log.m800e(DownloadManager.TAG, "Failed to load downloads.");
+                Log.m818e(DownloadManager.TAG, "Failed to load downloads.");
             }
             for (int i = 0; i < this.downloads.size(); i++) {
                 ArrayList<Download> arrayList2 = this.downloads;
@@ -642,7 +642,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.setStatesToRemoving();
             } catch (IOException e) {
-                Log.m799e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m817e(DownloadManager.TAG, "Failed to update index.", e);
             }
             ArrayList arrayList3 = new ArrayList(this.downloads);
             for (int i3 = 0; i3 < this.downloads.size(); i3++) {
@@ -658,7 +658,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.setDownloadingStatesToQueued();
             } catch (IOException e) {
-                Log.m799e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m817e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.downloads.clear();
             this.thread.quit();
@@ -672,7 +672,7 @@ public final class DownloadManager {
             int i = 0;
             for (int i2 = 0; i2 < this.downloads.size(); i2++) {
                 Download download = this.downloads.get(i2);
-                Task task = this.activeTasks.get(download.request.f203id);
+                Task task = this.activeTasks.get(download.request.f205id);
                 int i3 = download.state;
                 if (i3 == 0) {
                     task = syncQueuedDownload(task, download);
@@ -706,7 +706,7 @@ public final class DownloadManager {
                 }
                 Download putDownloadWithState = putDownloadWithState(download, 2, 0);
                 Task task2 = new Task(putDownloadWithState.request, this.downloaderFactory.createDownloader(putDownloadWithState.request), putDownloadWithState.progress, false, this.minRetryCount, this);
-                this.activeTasks.put(putDownloadWithState.request.f203id, task2);
+                this.activeTasks.put(putDownloadWithState.request.f205id, task2);
                 int i = this.activeDownloadTaskCount;
                 this.activeDownloadTaskCount = i + 1;
                 if (i == 0) {
@@ -734,7 +734,7 @@ public final class DownloadManager {
                     return;
                 }
                 Task task2 = new Task(download.request, this.downloaderFactory.createDownloader(download.request), download.progress, true, this.minRetryCount, this);
-                this.activeTasks.put(download.request.f203id, task2);
+                this.activeTasks.put(download.request.f205id, task2);
                 this.hasActiveRemoveTask = true;
                 task2.start();
             } else if (task.isRemove) {
@@ -744,7 +744,7 @@ public final class DownloadManager {
         }
 
         private void onContentLengthChanged(Task task, long j) {
-            Download download = (Download) Assertions.checkNotNull(getDownload(task.request.f203id, false));
+            Download download = (Download) Assertions.checkNotNull(getDownload(task.request.f205id, false));
             if (j == download.contentLength || j == -1) {
                 return;
             }
@@ -752,7 +752,7 @@ public final class DownloadManager {
         }
 
         private void onTaskStopped(Task task) {
-            String str = task.request.f203id;
+            String str = task.request.f205id;
             this.activeTasks.remove(str);
             boolean z = task.isRemove;
             if (z) {
@@ -770,7 +770,7 @@ public final class DownloadManager {
             }
             Exception exc = task.finalException;
             if (exc != null) {
-                Log.m799e(DownloadManager.TAG, "Task failed: " + task.request + ", " + z, exc);
+                Log.m817e(DownloadManager.TAG, "Task failed: " + task.request + ", " + z, exc);
             }
             Download download = (Download) Assertions.checkNotNull(getDownload(str, false));
             int i2 = download.state;
@@ -788,11 +788,11 @@ public final class DownloadManager {
 
         private void onDownloadTaskStopped(Download download, Exception exc) {
             Download download2 = new Download(download.request, exc == null ? 3 : 4, download.startTimeMs, System.currentTimeMillis(), download.contentLength, download.stopReason, exc == null ? 0 : 1, download.progress);
-            this.downloads.remove(getDownloadIndex(download2.request.f203id));
+            this.downloads.remove(getDownloadIndex(download2.request.f205id));
             try {
                 this.downloadIndex.putDownload(download2);
             } catch (IOException e) {
-                Log.m799e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m817e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download2, false, new ArrayList(this.downloads), exc)).sendToTarget();
         }
@@ -804,11 +804,11 @@ public final class DownloadManager {
                 syncTasks();
                 return;
             }
-            this.downloads.remove(getDownloadIndex(download.request.f203id));
+            this.downloads.remove(getDownloadIndex(download.request.f205id));
             try {
-                this.downloadIndex.removeDownload(download.request.f203id);
+                this.downloadIndex.removeDownload(download.request.f205id);
             } catch (IOException unused) {
-                Log.m800e(DownloadManager.TAG, "Failed to remove from database");
+                Log.m818e(DownloadManager.TAG, "Failed to remove from database");
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download, true, new ArrayList(this.downloads), null)).sendToTarget();
         }
@@ -820,7 +820,7 @@ public final class DownloadManager {
                     try {
                         this.downloadIndex.putDownload(download);
                     } catch (IOException e) {
-                        Log.m799e(DownloadManager.TAG, "Failed to update index.", e);
+                        Log.m817e(DownloadManager.TAG, "Failed to update index.", e);
                     }
                 }
             }
@@ -839,7 +839,7 @@ public final class DownloadManager {
         private Download putDownload(Download download) {
             int i = download.state;
             Assertions.checkState((i == 3 || i == 4) ? false : true);
-            int downloadIndex = getDownloadIndex(download.request.f203id);
+            int downloadIndex = getDownloadIndex(download.request.f205id);
             if (downloadIndex == -1) {
                 this.downloads.add(download);
                 Collections.sort(this.downloads, DownloadManager$InternalHandler$$ExternalSyntheticLambda0.INSTANCE);
@@ -853,7 +853,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.putDownload(download);
             } catch (IOException e) {
-                Log.m799e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m817e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download, false, new ArrayList(this.downloads), null)).sendToTarget();
             return download;
@@ -868,7 +868,7 @@ public final class DownloadManager {
                 try {
                     return this.downloadIndex.getDownload(str);
                 } catch (IOException e) {
-                    Log.m799e(DownloadManager.TAG, "Failed to load download: " + str, e);
+                    Log.m817e(DownloadManager.TAG, "Failed to load download: " + str, e);
                     return null;
                 }
             }
@@ -877,7 +877,7 @@ public final class DownloadManager {
 
         private int getDownloadIndex(String str) {
             for (int i = 0; i < this.downloads.size(); i++) {
-                if (this.downloads.get(i).request.f203id.equals(str)) {
+                if (this.downloads.get(i).request.f205id.equals(str)) {
                     return i;
                 }
             }

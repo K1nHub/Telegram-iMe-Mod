@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1724
+    .line 1729
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,19 +49,19 @@
         }
     .end annotation
 
-    .line 1727
+    .line 1732
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ShareAlert;->access$10602(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 1728
+    .line 1733
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->access$10702(Lorg/telegram/ui/Components/ShareAlert;Landroidx/collection/LongSparseArray;)Landroidx/collection/LongSparseArray;
 
     const/4 p1, 0x0
 
-    .line 1729
+    .line 1734
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
@@ -75,7 +75,7 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 1730
+    .line 1735
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ShareAlert;->access$10600(Lorg/telegram/ui/Components/ShareAlert;)Ljava/util/ArrayList;
@@ -88,7 +88,7 @@
 
     check-cast p2, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$RecentSearchObject;
 
-    .line 1731
+    .line 1736
     iget-object v0, p2, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$RecentSearchObject;->object:Lorg/telegram/tgnet/TLObject;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$User;
@@ -97,7 +97,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1732
+    .line 1737
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$10800(Lorg/telegram/ui/Components/ShareAlert;)I
@@ -116,13 +116,13 @@
 
     goto :goto_1
 
-    .line 1733
+    .line 1738
     :cond_0
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v1, :cond_1
 
-    .line 1734
+    .line 1739
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$10900(Lorg/telegram/ui/Components/ShareAlert;)I
@@ -141,13 +141,13 @@
 
     goto :goto_1
 
-    .line 1735
+    .line 1740
     :cond_1
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
     if-eqz v0, :cond_2
 
-    .line 1736
+    .line 1741
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$11000(Lorg/telegram/ui/Components/ShareAlert;)I
@@ -170,7 +170,7 @@
 
     goto :goto_0
 
-    .line 1739
+    .line 1744
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$23;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 

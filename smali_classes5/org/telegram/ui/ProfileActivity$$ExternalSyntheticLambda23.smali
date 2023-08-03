@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/ProfileActivity;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$aQYc6GZS0avB0QaU03ciVGzuOlo(Landroid/view/View;)V
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$QkaTydT0BRjdXjKXm6UdiSu6A54(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

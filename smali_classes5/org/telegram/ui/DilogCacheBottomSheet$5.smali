@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DilogCacheBottomSheet;)V
     .locals 0
 
-    .line 300
+    .line 303
     iput-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$5;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,17 +35,17 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 303
+    .line 306
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 304
+    .line 307
     iget-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$5;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     iget-object p2, p1, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->nestedSizeNotifierLayout:Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
 
     if-eqz p2, :cond_0
 
-    .line 305
+    .line 308
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->isPinnedToTop()Z
 
     move-result p2

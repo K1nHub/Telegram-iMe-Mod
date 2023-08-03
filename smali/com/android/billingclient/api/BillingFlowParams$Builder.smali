@@ -650,6 +650,22 @@
     return-object v5
 .end method
 
+.method public setObfuscatedAccountId(Ljava/lang/String;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/billingclient/api/BillingFlowParams$Builder;->zza:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public setObfuscatedProfileId(Ljava/lang/String;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/billingclient/api/BillingFlowParams$Builder;->zzb:Ljava/lang/String;
+
+    return-object p0
+.end method
+
 .method public setProductDetailsParamsList(Ljava/util/List;)Lcom/android/billingclient/api/BillingFlowParams$Builder;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

@@ -15,17 +15,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzaj extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzaj> CREATOR = new zzak();
-    @SafeParcelable.Field(getter = "getStartHour", m779id = 1)
+    @SafeParcelable.Field(getter = "getStartHour", m797id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getStartMinute", m779id = 2)
+    @SafeParcelable.Field(getter = "getStartMinute", m797id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getEndHour", m779id = 3)
+    @SafeParcelable.Field(getter = "getEndHour", m797id = 3)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getEndMinute", m779id = 4)
+    @SafeParcelable.Field(getter = "getEndMinute", m797id = 4)
     private final int zzd;
 
     @SafeParcelable.Constructor
-    public zzaj(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) int i3, @SafeParcelable.Param(m778id = 4) int i4) {
+    public zzaj(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) int i3, @SafeParcelable.Param(m796id = 4) int i4) {
         Preconditions.checkState(i >= 0 && i <= 23, "Start hour must be in range [0, 23].");
         Preconditions.checkState(i2 >= 0 && i2 <= 59, "Start minute must be in range [0, 59].");
         Preconditions.checkState(i3 >= 0 && i3 <= 23, "End hour must be in range [0, 23].");

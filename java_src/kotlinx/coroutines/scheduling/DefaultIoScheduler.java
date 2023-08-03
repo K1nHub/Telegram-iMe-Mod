@@ -14,7 +14,7 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
     public static final DefaultIoScheduler INSTANCE = new DefaultIoScheduler();
 
     /* renamed from: default  reason: not valid java name */
-    private static final CoroutineDispatcher f1922default;
+    private static final CoroutineDispatcher f1978default;
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public String toString() {
@@ -30,18 +30,18 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
         UnlimitedIoScheduler unlimitedIoScheduler = UnlimitedIoScheduler.INSTANCE;
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(64, SystemPropsKt.getAVAILABLE_PROCESSORS());
         systemProp$default = SystemPropsKt__SystemProps_commonKt.systemProp$default("kotlinx.coroutines.io.parallelism", coerceAtLeast, 0, 0, 12, (Object) null);
-        f1922default = unlimitedIoScheduler.limitedParallelism(systemProp$default);
+        f1978default = unlimitedIoScheduler.limitedParallelism(systemProp$default);
     }
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        mo1631dispatch(EmptyCoroutineContext.INSTANCE, runnable);
+        mo1650dispatch(EmptyCoroutineContext.INSTANCE, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1631dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        f1922default.mo1631dispatch(coroutineContext, runnable);
+    public void mo1650dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        f1978default.mo1650dispatch(coroutineContext, runnable);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
@@ -28,7 +28,7 @@ public final class EmptyView extends FrameLayout {
         Intrinsics.checkNotNullParameter(message, "message");
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_catalog_empty, 100, 100);
+        rLottieImageView.setAnimation(C3419R.raw.fork_catalog_empty, 100, 100);
         ViewExtKt.setHorizontalPadding(rLottieImageView, 32);
         this.animationView = rLottieImageView;
         LinearLayout linearLayout = new LinearLayout(context);

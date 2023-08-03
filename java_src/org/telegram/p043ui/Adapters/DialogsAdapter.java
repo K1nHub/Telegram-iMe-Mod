@@ -6,7 +6,6 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,9 +26,8 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -37,7 +35,6 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Adapters.DialogsAdapter;
 import org.telegram.p043ui.Cells.ArchiveHintCell;
@@ -53,7 +50,7 @@ import org.telegram.p043ui.Cells.ShadowSectionCell;
 import org.telegram.p043ui.Cells.TextCell;
 import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
 import org.telegram.p043ui.Cells.UserCell;
-import org.telegram.p043ui.Components.BlurredRecyclerView;
+import org.telegram.p043ui.Components.ArchiveHelp;
 import org.telegram.p043ui.Components.CombinedDrawable;
 import org.telegram.p043ui.Components.FlickerLoadingView;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -61,6 +58,8 @@ import org.telegram.p043ui.Components.ListView.AdapterWithDiffUtils;
 import org.telegram.p043ui.Components.PullForegroundDrawable;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.DialogsActivity;
+import org.telegram.p043ui.Stories.StoriesController;
+import org.telegram.p043ui.Stories.StoriesListPlaceProvider;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -100,9 +99,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     private DialogsActivity parentFragment;
     private DialogsPreloader preloader;
     private PullForegroundDrawable pullForegroundDrawable;
+    RecyclerListView recyclerListView;
     private TLRPC$RequestPeerType requestPeerType;
     private ArrayList<Long> selectedDialogs;
-    private boolean showArchiveHint;
     ArrayList<ItemInternal> itemInternals = new ArrayList<>();
     ArrayList<ItemInternal> oldItems = new ArrayList<>();
     int stableIdPointer = 10;
@@ -111,6 +110,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     public boolean isDataSetChanged() {
         return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void onArchiveSettingsClick() {
     }
 
     @Override // org.telegram.p043ui.Cells.DialogCell.DialogCellDelegate
@@ -122,9 +125,6 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     public void onCreateGroupForThisClick() {
-    }
-
-    public void setRecyclerListView(RecyclerListView recyclerListView) {
     }
 
     public void setFolderId(int i) {
@@ -142,7 +142,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         }
     }
 
-    private boolean isArchive() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean isArchive() {
         return this.folderId == 1;
     }
 
@@ -165,6 +166,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         this.requestPeerType = tLRPC$RequestPeerType;
     }
 
+    public void setRecyclerListView(RecyclerListView recyclerListView) {
+        this.recyclerListView = recyclerListView;
+    }
+
     public void setOpenedDialogId(long j) {
         this.openedDialogId = j;
     }
@@ -174,18 +179,17 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     public int fixPosition(int i) {
-        int i2;
         if (this.hasChatlistHint) {
             i--;
         }
         if (this.hasHints) {
             i -= MessagesController.getInstance(this.currentAccount).hintDialogs.size() + 2;
         }
-        return (this.showArchiveHint || (i2 = this.dialogsType) == 11 || i2 == 13) ? i - 2 : i2 == 12 ? i - 1 : i;
+        int i2 = this.dialogsType;
+        return (i2 == 11 || i2 == 13) ? i - 2 : i2 == 12 ? i - 1 : i;
     }
 
     public void setDialogsType(int i) {
-        this.showArchiveHint &= i == 0;
         this.dialogsType = i;
         notifyDataSetChanged();
     }
@@ -212,31 +216,28 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     public int findDialogPosition(long j) {
         for (int i = 0; i < this.itemInternals.size(); i++) {
-            if (this.itemInternals.get(i).dialog != null && this.itemInternals.get(i).dialog.f1521id == j) {
+            if (this.itemInternals.get(i).dialog != null && this.itemInternals.get(i).dialog.f1524id == j) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int fixScrollGap(RecyclerListView recyclerListView, int i, int i2, boolean z, boolean z2) {
-        int m54dp;
-        int itemCount = getItemCount() - i;
-        int m54dp2 = AndroidUtilities.m54dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
-        int paddingTop = (((recyclerListView.getPaddingTop() + i2) + (itemCount * m54dp2)) + itemCount) - 1;
-        int paddingTop2 = ((recyclerListView.getPaddingTop() + i2) - (i * m54dp2)) - i;
+    public int fixScrollGap(RecyclerListView recyclerListView, int i, int i2, boolean z, boolean z2, boolean z3, boolean z4) {
+        getItemCount();
+        int m72dp = AndroidUtilities.m72dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
+        recyclerListView.getPaddingTop();
+        int paddingTop = ((recyclerListView.getPaddingTop() + i2) - (i * m72dp)) - i;
         if (z2) {
-            m54dp = paddingTop - AndroidUtilities.m54dp(44);
-        } else {
-            m54dp = paddingTop + AndroidUtilities.m54dp(44);
+            AndroidUtilities.m72dp(81);
+        } else if (z3) {
+            AndroidUtilities.m72dp(44);
         }
         if (z) {
-            paddingTop2 += m54dp2;
+            paddingTop += m72dp;
         }
-        if (paddingTop2 > recyclerListView.getPaddingTop()) {
-            return (i2 + recyclerListView.getPaddingTop()) - paddingTop2;
-        }
-        return m54dp < recyclerListView.getMeasuredHeight() ? i2 + (recyclerListView.getMeasuredHeight() - m54dp) : i2;
+        int paddingTop2 = recyclerListView.getPaddingTop();
+        return paddingTop > paddingTop2 ? (i2 + paddingTop2) - paddingTop : i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -267,15 +268,17 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             boolean z = true;
             this.dialog = tLRPC$Dialog;
             if (tLRPC$Dialog != null) {
-                int i2 = dialogsAdapter.dialogsStableIds.get(tLRPC$Dialog.f1521id, -1);
+                int i2 = dialogsAdapter.dialogsStableIds.get(tLRPC$Dialog.f1524id, -1);
                 if (i2 >= 0) {
                     this.stableId = i2;
                 } else {
                     int i3 = dialogsAdapter.stableIdPointer;
                     dialogsAdapter.stableIdPointer = i3 + 1;
                     this.stableId = i3;
-                    dialogsAdapter.dialogsStableIds.put(tLRPC$Dialog.f1521id, i3);
+                    dialogsAdapter.dialogsStableIds.put(tLRPC$Dialog.f1524id, i3);
                 }
+            } else if (i == 19) {
+                this.stableId = 5;
             } else {
                 int i4 = dialogsAdapter.stableIdPointer;
                 dialogsAdapter.stableIdPointer = i4 + 1;
@@ -284,12 +287,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             if (tLRPC$Dialog != null) {
                 if (dialogsAdapter.dialogsType == 7 || dialogsAdapter.dialogsType == 8) {
                     MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(dialogsAdapter.currentAccount).selectedDialogFilter[dialogsAdapter.dialogsType == 8 ? (char) 1 : (char) 0];
-                    this.pinned = (dialogFilter == null || dialogFilter.pinnedDialogs.indexOfKey(tLRPC$Dialog.f1521id) < 0) ? false : z;
+                    this.pinned = (dialogFilter == null || dialogFilter.pinnedDialogs.indexOfKey(tLRPC$Dialog.f1524id) < 0) ? false : z;
                 } else {
                     this.pinned = tLRPC$Dialog.pinned;
                 }
                 this.isFolder = tLRPC$Dialog.isFolder;
-                this.isForumCell = MessagesController.getInstance(dialogsAdapter.currentAccount).isForum(tLRPC$Dialog.f1521id);
+                this.isForumCell = MessagesController.getInstance(dialogsAdapter.currentAccount).isForum(tLRPC$Dialog.f1524id);
             }
         }
 
@@ -304,9 +307,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         public ItemInternal(DialogsAdapter dialogsAdapter, int i) {
             super(i, true);
             this.emptyType = this.emptyType;
-            int i2 = dialogsAdapter.stableIdPointer;
-            dialogsAdapter.stableIdPointer = i2 + 1;
-            this.stableId = i2;
+            if (i == 10) {
+                this.stableId = 1;
+            } else if (this.viewType == 19) {
+                this.stableId = 5;
+            } else {
+                int i2 = dialogsAdapter.stableIdPointer;
+                dialogsAdapter.stableIdPointer = i2 + 1;
+                this.stableId = i2;
+            }
         }
 
         public ItemInternal(DialogsAdapter dialogsAdapter, int i, int i2) {
@@ -348,15 +357,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
             if (i == 0) {
                 TLRPC$Dialog tLRPC$Dialog3 = this.dialog;
-                return tLRPC$Dialog3 != null && (tLRPC$Dialog2 = itemInternal.dialog) != null && tLRPC$Dialog3.f1521id == tLRPC$Dialog2.f1521id && this.isFolder == itemInternal.isFolder && this.isForumCell == itemInternal.isForumCell && this.pinned == itemInternal.pinned;
+                return tLRPC$Dialog3 != null && (tLRPC$Dialog2 = itemInternal.dialog) != null && tLRPC$Dialog3.f1524id == tLRPC$Dialog2.f1524id && this.isFolder == itemInternal.isFolder && this.isForumCell == itemInternal.isForumCell && this.pinned == itemInternal.pinned;
             } else if (i == 14) {
                 TLRPC$Dialog tLRPC$Dialog4 = this.dialog;
-                return tLRPC$Dialog4 != null && (tLRPC$Dialog = itemInternal.dialog) != null && tLRPC$Dialog4.f1521id == tLRPC$Dialog.f1521id && tLRPC$Dialog4.isFolder == tLRPC$Dialog.isFolder;
+                return tLRPC$Dialog4 != null && (tLRPC$Dialog = itemInternal.dialog) != null && tLRPC$Dialog4.f1524id == tLRPC$Dialog.f1524id && tLRPC$Dialog4.isFolder == tLRPC$Dialog.isFolder;
             } else if (i == 4) {
                 TLRPC$RecentMeUrl tLRPC$RecentMeUrl = this.recentMeUrl;
                 return (tLRPC$RecentMeUrl == null || itemInternal.recentMeUrl == null || (str = tLRPC$RecentMeUrl.url) == null || !str.equals(str)) ? false : true;
             } else if (i != 6) {
-                return i != 5 || this.emptyType == itemInternal.emptyType;
+                return i == 5 ? this.emptyType == itemInternal.emptyType : i != 10;
             } else {
                 TLRPC$TL_contact tLRPC$TL_contact2 = this.contact;
                 return (tLRPC$TL_contact2 == null || (tLRPC$TL_contact = itemInternal.contact) == null || tLRPC$TL_contact2.user_id != tLRPC$TL_contact.user_id) ? false : true;
@@ -390,7 +399,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 try {
                     final int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
                     final MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
-                    Collections.sort(this.onlineContacts, new Comparator() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda3
+                    Collections.sort(this.onlineContacts, new Comparator() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda4
                         @Override // java.util.Comparator
                         public final int compare(Object obj, Object obj2) {
                             int lambda$sortOnlineContacts$0;
@@ -402,7 +411,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         notifyDataSetChanged();
                     }
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             }
         }
@@ -515,7 +524,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         this.hasHints = this.folderId == 0 && this.dialogsType == 0 && !this.isOnlySelect && !MessagesController.getInstance(this.currentAccount).hintDialogs.isEmpty();
     }
 
-    public void updateList(RecyclerListView recyclerListView, boolean z, float f) {
+    public void updateList(RecyclerListView recyclerListView, boolean z, float f, boolean z2) {
         this.oldItems.clear();
         this.oldItems.addAll(this.itemInternals);
         updateItemList();
@@ -534,15 +543,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
             }
             if (view != null) {
-                float top = (view.getTop() - recyclerListView.getPaddingTop()) + f;
-                if (z && i2 == 0) {
-                    if ((view.getTop() - recyclerListView.getPaddingTop()) + f < AndroidUtilities.m54dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72)) {
-                        i2 = 1;
-                        linearLayoutManager.scrollToPositionWithOffset(i2, (int) f);
-                    }
+                float top = view.getTop() - recyclerListView.getPaddingTop();
+                if (z2) {
+                    f = 0.0f;
                 }
-                f = top;
-                linearLayoutManager.scrollToPositionWithOffset(i2, (int) f);
+                if (z && i2 == 0 && ((recyclerListView.getPaddingTop() - view.getTop()) - view.getMeasuredHeight()) + f < BitmapDescriptorFactory.HUE_RED) {
+                    i2 = 1;
+                    top = f;
+                }
+                linearLayoutManager.scrollToPositionWithOffset(i2, (int) top);
             }
         }
         DiffUtil.calculateDiff(new DiffUtil.Callback() { // from class: org.telegram.ui.Adapters.DialogsAdapter.1
@@ -588,7 +597,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
         int itemViewType = viewHolder.getItemViewType();
-        return (itemViewType == 1 || itemViewType == 5 || itemViewType == 3 || itemViewType == 8 || itemViewType == 7 || itemViewType == 9 || itemViewType == 10 || itemViewType == 11 || itemViewType == 13 || itemViewType == 15 || itemViewType == 16) ? false : true;
+        return (itemViewType == 1 || itemViewType == 5 || itemViewType == 3 || itemViewType == 8 || itemViewType == 7 || itemViewType == 10 || itemViewType == 11 || itemViewType == 13 || itemViewType == 15 || itemViewType == 16 || itemViewType == 18 || itemViewType == 19) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -599,24 +608,25 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v10, types: [org.telegram.ui.Cells.ShadowSectionCell, android.view.View] */
-    /* JADX WARN: Type inference failed for: r0v11, types: [org.telegram.ui.Cells.ArchiveHintCell] */
-    /* JADX WARN: Type inference failed for: r0v12, types: [org.telegram.ui.Adapters.DialogsAdapter$LastEmptyView] */
-    /* JADX WARN: Type inference failed for: r0v13, types: [android.view.View, org.telegram.ui.Adapters.DialogsAdapter$4] */
-    /* JADX WARN: Type inference failed for: r0v14, types: [android.view.View, org.telegram.ui.Cells.HeaderCell] */
-    /* JADX WARN: Type inference failed for: r0v15, types: [org.telegram.ui.Cells.RequestPeerRequirementsCell] */
-    /* JADX WARN: Type inference failed for: r0v16, types: [org.telegram.ui.Adapters.DialogsAdapter$3] */
-    /* JADX WARN: Type inference failed for: r0v17, types: [org.telegram.ui.Cells.DialogsHintCell] */
-    /* JADX WARN: Type inference failed for: r0v18, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r0v19 */
-    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.Components.FlickerLoadingView] */
-    /* JADX WARN: Type inference failed for: r0v4, types: [android.widget.FrameLayout, org.telegram.ui.Cells.HeaderCell] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [android.widget.FrameLayout, org.telegram.ui.Adapters.DialogsAdapter$2] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [org.telegram.ui.Cells.DialogMeUrlCell] */
-    /* JADX WARN: Type inference failed for: r0v7, types: [org.telegram.ui.Cells.DialogsEmptyCell] */
-    /* JADX WARN: Type inference failed for: r0v8, types: [org.telegram.ui.Cells.UserCell] */
-    /* JADX WARN: Type inference failed for: r0v9, types: [android.view.View, org.telegram.ui.Cells.HeaderCell] */
-    /* JADX WARN: Type inference failed for: r2v5, types: [org.telegram.ui.Cells.DialogCell] */
+    /* JADX WARN: Type inference failed for: r3v10, types: [org.telegram.ui.Cells.ShadowSectionCell, android.view.View] */
+    /* JADX WARN: Type inference failed for: r3v11, types: [org.telegram.ui.Adapters.DialogsAdapter$LastEmptyView] */
+    /* JADX WARN: Type inference failed for: r3v12, types: [android.view.View, org.telegram.ui.Adapters.DialogsAdapter$4] */
+    /* JADX WARN: Type inference failed for: r3v13, types: [android.view.View, org.telegram.ui.Cells.HeaderCell] */
+    /* JADX WARN: Type inference failed for: r3v14, types: [org.telegram.ui.Cells.RequestPeerRequirementsCell] */
+    /* JADX WARN: Type inference failed for: r3v15, types: [org.telegram.ui.Adapters.DialogsAdapter$3] */
+    /* JADX WARN: Type inference failed for: r3v16, types: [org.telegram.ui.Cells.DialogsHintCell] */
+    /* JADX WARN: Type inference failed for: r3v17, types: [org.telegram.ui.Adapters.DialogsAdapter$5] */
+    /* JADX WARN: Type inference failed for: r3v18, types: [android.widget.FrameLayout, org.telegram.ui.Adapters.DialogsAdapter$LastEmptyView] */
+    /* JADX WARN: Type inference failed for: r3v19, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r3v20 */
+    /* JADX WARN: Type inference failed for: r3v3, types: [org.telegram.ui.Components.FlickerLoadingView] */
+    /* JADX WARN: Type inference failed for: r3v4, types: [android.widget.FrameLayout, org.telegram.ui.Cells.HeaderCell] */
+    /* JADX WARN: Type inference failed for: r3v5, types: [android.widget.FrameLayout, org.telegram.ui.Adapters.DialogsAdapter$2] */
+    /* JADX WARN: Type inference failed for: r3v6, types: [org.telegram.ui.Cells.DialogMeUrlCell] */
+    /* JADX WARN: Type inference failed for: r3v7, types: [org.telegram.ui.Cells.DialogsEmptyCell] */
+    /* JADX WARN: Type inference failed for: r3v8, types: [org.telegram.ui.Cells.UserCell] */
+    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View, org.telegram.ui.Cells.HeaderCell] */
+    /* JADX WARN: Type inference failed for: r5v6, types: [org.telegram.ui.Cells.DialogCell] */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view;
@@ -625,7 +635,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         switch (i) {
             case 0:
                 int i2 = this.dialogsType;
-                if (i2 == 2 || i2 == 15 || this.initialDialogsType == DialogsActivity.DIALOGS_TYPE_ALBUMS) {
+                if (i2 == 2 || i2 == 15 || DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
                     view = new ProfileSearchCell(this.mContext);
                 } else {
                     ?? dialogCell = new DialogCell(this.parentFragment, this.mContext, true, false, this.currentAccount, null);
@@ -652,18 +662,18 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     flickerLoadingView.setIgnoreHeightCheck(true);
                 }
                 if (i == 13) {
-                    flickerLoadingView.setItemsCount((int) ((AndroidUtilities.displaySize.y * 0.5f) / AndroidUtilities.m54dp(64)));
+                    flickerLoadingView.setItemsCount((int) ((AndroidUtilities.displaySize.y * 0.5f) / AndroidUtilities.m72dp(64)));
                     break;
                 }
                 break;
             case 2:
                 flickerLoadingView = new HeaderCell(this.mContext);
-                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3417R.string.RecentlyViewed));
+                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3419R.string.RecentlyViewed));
                 TextView textView = new TextView(this.mContext);
                 textView.setTextSize(1, 15.0f);
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
-                textView.setText(LocaleController.getString("RecentlyViewedHide", C3417R.string.RecentlyViewedHide));
+                textView.setText(LocaleController.getString("RecentlyViewedHide", C3419R.string.RecentlyViewedHide));
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
                 flickerLoadingView.addView(textView, LayoutHelper.createFrame(-1, -1, (LocaleController.isRTL ? 3 : 5) | 48, 17, 15, 17, 0));
                 textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda0
@@ -677,12 +687,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 flickerLoadingView = new FrameLayout(this, this.mContext) { // from class: org.telegram.ui.Adapters.DialogsAdapter.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(12), 1073741824));
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(12), 1073741824));
                     }
                 };
                 flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
                 View view3 = new View(this.mContext);
-                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 flickerLoadingView.addView(view3, LayoutHelper.createFrame(-1, -1));
                 break;
             case 4:
@@ -696,17 +706,24 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 break;
             case 7:
                 flickerLoadingView = new HeaderCell(this.mContext);
-                flickerLoadingView.setPadding(0, 0, 0, AndroidUtilities.m54dp(12));
+                flickerLoadingView.setPadding(0, 0, 0, AndroidUtilities.m72dp(12));
                 break;
             case 8:
                 flickerLoadingView = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable);
                 break;
             case 9:
-                flickerLoadingView = new ArchiveHintCell(this.mContext);
-                this.archiveHintCell = flickerLoadingView;
+            case 12:
+            default:
+                View textCell = new TextCell(this.mContext);
+                view2 = textCell;
+                if (this.dialogsType == 15) {
+                    textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                    view2 = textCell;
+                }
+                flickerLoadingView = view2;
                 break;
             case 10:
                 flickerLoadingView = new LastEmptyView(this.mContext);
@@ -733,10 +750,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     protected void onTextDraw() {
                         if (DialogsAdapter.this.arrowDrawable != null) {
                             Rect bounds = DialogsAdapter.this.arrowDrawable.getBounds();
-                            int m54dp = (int) (this.moveProgress * AndroidUtilities.m54dp(3));
+                            int m72dp = (int) (this.moveProgress * AndroidUtilities.m72dp(3));
                             this.originalX = bounds.left;
                             this.originalY = bounds.top;
-                            DialogsAdapter.this.arrowDrawable.setBounds(this.originalX + m54dp, this.originalY + AndroidUtilities.m54dp(1), this.originalX + m54dp + bounds.width(), this.originalY + AndroidUtilities.m54dp(1) + bounds.height());
+                            DialogsAdapter.this.arrowDrawable.setBounds(this.originalX + m72dp, this.originalY + AndroidUtilities.m72dp(1), this.originalX + m72dp + bounds.width(), this.originalY + AndroidUtilities.m72dp(1) + bounds.height());
                             long elapsedRealtime = SystemClock.elapsedRealtime();
                             long j = elapsedRealtime - this.lastUpdateTime;
                             if (j > 17) {
@@ -762,19 +779,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         }
                     }
                 };
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable2.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable2);
-                break;
-            case 12:
-            default:
-                View textCell = new TextCell(this.mContext);
-                view2 = textCell;
-                if (this.dialogsType == 15) {
-                    textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    view2 = textCell;
-                }
-                flickerLoadingView = view2;
                 break;
             case 14:
                 flickerLoadingView = new HeaderCell(this.mContext, Theme.key_graySectionText, 16, 0, false);
@@ -795,30 +802,47 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             case 17:
                 flickerLoadingView = new DialogsHintCell(this.mContext);
                 break;
+            case 18:
+                flickerLoadingView = new View(this, this.mContext) { // from class: org.telegram.ui.Adapters.DialogsAdapter.5
+                    @Override // android.view.View
+                    protected void onMeasure(int i4, int i5) {
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(81), 1073741824));
+                    }
+                };
+                break;
+            case 19:
+                flickerLoadingView = new LastEmptyView(this.mContext);
+                flickerLoadingView.addView(new ArchiveHelp(this.mContext, this.currentAccount, null, new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        DialogsAdapter.this.onArchiveSettingsClick();
+                    }
+                }, null), LayoutHelper.createFrame(-1, -1, 17, 0, -40, 0, 0));
+                break;
         }
-        flickerLoadingView.setLayoutParams(new RecyclerView.LayoutParams(-1, i == 5 ? -1 : -2));
+        flickerLoadingView.setLayoutParams(new RecyclerView.LayoutParams(-1, (i == 5 || i == 19) ? -1 : -2));
         return new RecyclerListView.Holder(flickerLoadingView);
     }
 
     public int dialogsEmptyType() {
+        if (DialogsActivity.isAlbumsDialogsType(this.dialogsType)) {
+            return (isArchive() ? EmptyCellType.ARCHIVE_ALBUMS : EmptyCellType.ALBUMS).m715id();
+        }
         int i = this.dialogsType;
-        if (i == DialogsActivity.DIALOGS_TYPE_ALBUMS) {
-            return (isArchive() ? EmptyCellType.ARCHIVE_ALBUMS : EmptyCellType.ALBUMS).m697id();
-        } else if (i == DialogsActivity.DIALOGS_TYPE_DRAFTS) {
-            return EmptyCellType.DRAFTS.m697id();
+        if (i == DialogsActivity.DIALOGS_TYPE_DRAFTS) {
+            return EmptyCellType.DRAFTS.m715id();
+        }
+        if (this.folderId == 2) {
+            return EmptyCellType.HIDDEN_CHATS.m715id();
+        }
+        if (i == 7 || i == 8 || (i == 0 && ForkTopicsController.getInstance(this.currentAccount).hasSelectedTopic(isArchive()))) {
+            return MessagesController.getInstance(this.currentAccount).isDialogsEndReached(this.folderId) ? 2 : 3;
+        } else if (this.folderId != 1) {
+            return this.onlineContacts != null ? 1 : 0;
+        } else if (this.dialogsType == 0) {
+            return EmptyCellType.ARCHIVE.m715id();
         } else {
-            if (this.folderId == 2) {
-                return EmptyCellType.HIDDEN_CHATS.m697id();
-            }
-            if (i == 7 || i == 8 || (i == 0 && ForkTopicsController.getInstance(this.currentAccount).hasSelectedTopic(isArchive()))) {
-                return MessagesController.getInstance(this.currentAccount).isDialogsEndReached(this.folderId) ? 2 : 3;
-            } else if (this.folderId != 1) {
-                return this.onlineContacts != null ? 1 : 0;
-            } else if (this.dialogsType == 0) {
-                return EmptyCellType.ARCHIVE.m697id();
-            } else {
-                return 2;
-            }
+            return 2;
         }
     }
 
@@ -836,11 +860,11 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             TLRPC$Dialog tLRPC$Dialog = (TLRPC$Dialog) getItem(i);
             TLRPC$Dialog tLRPC$Dialog2 = (TLRPC$Dialog) getItem(i + 1);
             int i2 = this.dialogsType;
-            if (i2 == 2 || i2 == 15 || this.initialDialogsType == DialogsActivity.DIALOGS_TYPE_ALBUMS) {
+            if (i2 == 2 || i2 == 15 || DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
                 ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
                 long dialogId = profileSearchCell.getDialogId();
-                if (tLRPC$Dialog.f1521id != 0) {
-                    tLRPC$Chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1521id));
+                if (tLRPC$Dialog.f1524id != 0) {
+                    tLRPC$Chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1524id));
                     if (tLRPC$Chat != null && tLRPC$Chat.migrated_to != null && (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(tLRPC$Chat.migrated_to.channel_id))) != null) {
                         tLRPC$Chat = chat;
                     }
@@ -849,34 +873,34 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 if (tLRPC$Chat != null) {
                     String str3 = tLRPC$Chat.title;
-                    if (this.initialDialogsType == DialogsActivity.DIALOGS_TYPE_ALBUMS) {
-                        lowerCase = LocaleController.getInternalString(C3417R.string.cloud_album).toLowerCase();
+                    if (DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
+                        lowerCase = LocaleController.getInternalString(C3419R.string.cloud_album).toLowerCase();
                     } else if (ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup) {
                         int i3 = tLRPC$Chat.participants_count;
                         if (i3 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Subscribers", i3);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("ChannelPrivate", C3417R.string.ChannelPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPrivate", C3419R.string.ChannelPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("ChannelPublic", C3417R.string.ChannelPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPublic", C3419R.string.ChannelPublic).toLowerCase();
                         }
                     } else {
                         int i4 = tLRPC$Chat.participants_count;
                         if (i4 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Members", i4);
                         } else if (tLRPC$Chat.has_geo) {
-                            lowerCase = LocaleController.getString("MegaLocation", C3417R.string.MegaLocation);
+                            lowerCase = LocaleController.getString("MegaLocation", C3419R.string.MegaLocation);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("MegaPrivate", C3417R.string.MegaPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPrivate", C3419R.string.MegaPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("MegaPublic", C3417R.string.MegaPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPublic", C3419R.string.MegaPublic).toLowerCase();
                         }
                     }
                     str2 = lowerCase;
                     str = str3;
                     tLRPC$User = tLRPC$Chat;
                 } else {
-                    TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1521id));
+                    TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1524id));
                     if (user != null) {
                         String userName = UserObject.getUserName(user);
                         if (UserObject.isReplyUser(user)) {
@@ -885,7 +909,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             tLRPC$User = user;
                         } else {
                             if (user.bot) {
-                                formatUserStatus = LocaleController.getString("Bot", C3417R.string.Bot);
+                                formatUserStatus = LocaleController.getString("Bot", C3419R.string.Bot);
                             } else {
                                 formatUserStatus = LocaleController.formatUserStatus(this.currentAccount, user);
                             }
@@ -908,9 +932,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 dialogCell.useSeparator = tLRPC$Dialog2 != null;
                 dialogCell.fullSeparator = (!tLRPC$Dialog.pinned || tLRPC$Dialog2 == null || tLRPC$Dialog2.pinned) ? false : true;
                 if (this.dialogsType == 0 && AndroidUtilities.isTablet()) {
-                    dialogCell.setDialogSelected(tLRPC$Dialog.f1521id == this.openedDialogId);
+                    dialogCell.setDialogSelected(tLRPC$Dialog.f1524id == this.openedDialogId);
                 }
-                dialogCell.setChecked(this.selectedDialogs.contains(Long.valueOf(tLRPC$Dialog.f1521id)), false);
+                dialogCell.setChecked(this.selectedDialogs.contains(Long.valueOf(tLRPC$Dialog.f1524id)), false);
                 dialogCell.setDialog(tLRPC$Dialog, this.dialogsType, this.folderId);
                 dialogCell.checkHeight();
                 boolean z = dialogCell.collapsed;
@@ -921,7 +945,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 DialogsPreloader dialogsPreloader = this.preloader;
                 if (dialogsPreloader != null && i < 10) {
-                    dialogsPreloader.add(tLRPC$Dialog.f1521id);
+                    dialogsPreloader.add(tLRPC$Dialog.f1524id);
                 }
             }
         } else if (itemViewType == 4) {
@@ -934,7 +958,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             dialogsEmptyCell.setType(dialogsEmptyType, this.isOnlySelect);
             int i6 = this.dialogsType;
             if (i6 != 7 && i6 != 8 && i6 == 0 && !ForkTopicsController.getInstance(this.currentAccount).hasSelectedTopic(isArchive()) && !isArchive() && !isHiddenChats()) {
-                dialogsEmptyCell.setOnUtyanAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda2
+                dialogsEmptyCell.setOnUtyanAnimationEndListener(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
                         DialogsAdapter.this.lambda$onBindViewHolder$2();
@@ -968,22 +992,22 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
             int i7 = this.dialogsType;
             if (i7 != 11 && i7 != 12 && i7 != 13) {
-                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3417R.string.ConnectingYourContacts : C3417R.string.YourContacts));
+                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3419R.string.ConnectingYourContacts : C3419R.string.YourContacts));
             } else if (i == 0) {
-                headerCell.setText(LocaleController.getString("ImportHeader", C3417R.string.ImportHeader));
+                headerCell.setText(LocaleController.getString("ImportHeader", C3419R.string.ImportHeader));
             } else {
-                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3417R.string.ImportHeaderContacts));
+                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3419R.string.ImportHeaderContacts));
             }
         } else if (itemViewType == 11) {
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3417R.string.TapOnThePencil));
+            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3419R.string.TapOnThePencil));
             if (this.arrowDrawable == null) {
-                Drawable drawable = this.mContext.getResources().getDrawable(C3417R.C3419drawable.arrow_newchat);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3419R.C3421drawable.arrow_newchat);
                 this.arrowDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4), PorterDuff.Mode.MULTIPLY));
             }
             TextView textView = textInfoPrivacyCell.getTextView();
-            textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
+            textView.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
             textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, this.arrowDrawable, (Drawable) null);
             textView.getLayoutParams().width = -2;
         } else if (itemViewType != 12) {
@@ -995,13 +1019,13 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     headerCell2.setBackgroundColor(Theme.getColor(Theme.key_graySection));
                     int i8 = ((DialogsActivity.DialogsHeader) getItem(i)).headerType;
                     if (i8 == 0) {
-                        headerCell2.setText(LocaleController.getString("MyChannels", C3417R.string.MyChannels));
+                        headerCell2.setText(LocaleController.getString("MyChannels", C3419R.string.MyChannels));
                         break;
                     } else if (i8 == 1) {
-                        headerCell2.setText(LocaleController.getString("MyGroups", C3417R.string.MyGroups));
+                        headerCell2.setText(LocaleController.getString("MyGroups", C3419R.string.MyGroups));
                         break;
                     } else if (i8 == 2) {
-                        headerCell2.setText(LocaleController.getString("FilterGroups", C3417R.string.FilterGroups));
+                        headerCell2.setText(LocaleController.getString("FilterGroups", C3419R.string.FilterGroups));
                         break;
                     }
                     break;
@@ -1028,12 +1052,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             TLRPC$RequestPeerType tLRPC$RequestPeerType = this.requestPeerType;
             if (tLRPC$RequestPeerType != null) {
                 if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3417R.string.CreateChannelForThis), C3417R.C3419drawable.msg_channel_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3419R.string.CreateChannelForThis), C3419R.C3421drawable.msg_channel_create, true);
                 } else {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3417R.string.CreateGroupForThis), C3417R.C3419drawable.msg_groups_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3419R.string.CreateGroupForThis), C3419R.C3421drawable.msg_groups_create, true);
                 }
             } else {
-                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3417R.string.CreateGroupForImport), C3417R.C3419drawable.msg_groups_create, this.dialogsCount != 0);
+                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3419R.string.CreateGroupForImport), C3419R.C3421drawable.msg_groups_create, this.dialogsCount != 0);
             }
             textCell.setIsInDialogs();
             textCell.setOffsetFromImage(75);
@@ -1079,16 +1103,16 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         int i3 = this.dialogsType;
         if (i3 == 7 || i3 == 8) {
             MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(this.currentAccount).selectedDialogFilter[this.dialogsType == 8 ? (char) 1 : (char) 0];
-            int i4 = dialogFilter.pinnedDialogs.get(tLRPC$Dialog.f1521id);
-            dialogFilter.pinnedDialogs.put(tLRPC$Dialog.f1521id, dialogFilter.pinnedDialogs.get(tLRPC$Dialog2.f1521id));
-            dialogFilter.pinnedDialogs.put(tLRPC$Dialog2.f1521id, i4);
+            int i4 = dialogFilter.pinnedDialogs.get(tLRPC$Dialog.f1524id);
+            dialogFilter.pinnedDialogs.put(tLRPC$Dialog.f1524id, dialogFilter.pinnedDialogs.get(tLRPC$Dialog2.f1524id));
+            dialogFilter.pinnedDialogs.put(tLRPC$Dialog2.f1524id, i4);
         } else {
             int i5 = tLRPC$Dialog.pinnedNum;
             tLRPC$Dialog.pinnedNum = tLRPC$Dialog2.pinnedNum;
             tLRPC$Dialog2.pinnedNum = i5;
         }
         Collections.swap(dialogsArray, fixPosition, fixPosition2);
-        updateList(recyclerListView, false, BitmapDescriptorFactory.HUE_RED);
+        updateList(recyclerListView, false, BitmapDescriptorFactory.HUE_RED, false);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1124,6 +1148,36 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     @Override // org.telegram.p043ui.Cells.DialogCell.DialogCellDelegate
     public boolean canClickButtonInside() {
         return this.selectedDialogs.isEmpty();
+    }
+
+    @Override // org.telegram.p043ui.Cells.DialogCell.DialogCellDelegate
+    public void openStory(DialogCell dialogCell, Runnable runnable) {
+        MessagesController.getInstance(this.currentAccount);
+        if (MessagesController.getInstance(this.currentAccount).getStoriesController().hasStories(dialogCell.getDialogId())) {
+            this.parentFragment.getOrCreateStoryViewer().doOnAnimationReady(runnable);
+            this.parentFragment.getOrCreateStoryViewer().open(this.parentFragment.getContext(), dialogCell.getDialogId(), StoriesListPlaceProvider.m24of((RecyclerListView) dialogCell.getParent()));
+        }
+    }
+
+    @Override // org.telegram.p043ui.Cells.DialogCell.DialogCellDelegate
+    public void showChatPreview(DialogCell dialogCell) {
+        this.parentFragment.showChatPreview(dialogCell);
+    }
+
+    @Override // org.telegram.p043ui.Cells.DialogCell.DialogCellDelegate
+    public void openHiddenStories() {
+        StoriesController storiesController = MessagesController.getInstance(this.currentAccount).getStoriesController();
+        if (storiesController.getHiddenList().isEmpty()) {
+            return;
+        }
+        boolean z = storiesController.getUnreadState(storiesController.getHiddenList().get(0).user_id) != 0;
+        ArrayList<Long> arrayList = new ArrayList<>();
+        for (int i = 0; i < storiesController.getHiddenList().size(); i++) {
+            if (!z || storiesController.getUnreadState(storiesController.getHiddenList().get(i).user_id) != 0) {
+                arrayList.add(Long.valueOf(storiesController.getHiddenList().get(i).user_id));
+            }
+        }
+        this.parentFragment.getOrCreateStoryViewer().open(this.mContext, null, arrayList, 0, null, null, StoriesListPlaceProvider.m23of(this.recyclerListView, true), false);
     }
 
     public void setIsTransitionSupport() {
@@ -1200,16 +1254,16 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             long longValue = this.preloadDialogsPool.remove(0).longValue();
             this.currentRequestCount++;
             this.loadingDialogs.add(Long.valueOf(longValue));
-            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C35981(longValue));
+            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C36041(longValue));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1 */
         /* loaded from: classes5.dex */
-        public class C35981 implements MessagesController.MessagesLoadedCallback {
+        public class C36041 implements MessagesController.MessagesLoadedCallback {
             final /* synthetic */ long val$dialog_id;
 
-            C35981(long j) {
+            C36041(long j) {
                 this.val$dialog_id = j;
             }
 
@@ -1219,7 +1273,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C35981.this.lambda$onMessagesLoaded$0(z, j);
+                        DialogsAdapter.DialogsPreloader.C36041.this.lambda$onMessagesLoaded$0(z, j);
                     }
                 });
             }
@@ -1250,7 +1304,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C35981.this.lambda$onError$1(j);
+                        DialogsAdapter.DialogsPreloader.C36041.this.lambda$onError$1(j);
                     }
                 });
             }
@@ -1305,80 +1359,77 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$LastEmptyView */
     /* loaded from: classes5.dex */
-    public class LastEmptyView extends View {
+    public class LastEmptyView extends FrameLayout {
         public boolean moving;
 
         public LastEmptyView(Context context) {
             super(context);
         }
 
-        @Override // android.view.View
-        protected void onMeasure(int i, int i2) {
-            int size = DialogsAdapter.this.itemInternals.size();
-            int i3 = 0;
-            boolean z = DialogsAdapter.this.dialogsType == 0 && MessagesController.getInstance(DialogsAdapter.this.currentAccount).dialogs_dict.get(DialogObject.makeFolderDialogId(1)) != null;
-            if (ForkTopicsController.getInstance(DialogsAdapter.this.currentAccount).hasSelectedTopic(DialogsAdapter.this.folderId == 1)) {
-                z = false;
-            }
-            View view = (View) getParent();
-            int i4 = view instanceof BlurredRecyclerView ? ((BlurredRecyclerView) view).blurTopPadding : 0;
-            int paddingTop = view.getPaddingTop() - i4;
-            if (size != 0 && (paddingTop != 0 || z)) {
-                int size2 = View.MeasureSpec.getSize(i2);
-                if (size2 == 0) {
-                    size2 = view.getMeasuredHeight();
-                }
-                if (size2 == 0) {
-                    size2 = (AndroidUtilities.displaySize.y - C3484ActionBar.getCurrentActionBarHeight()) - (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
-                }
-                int i5 = size2 - i4;
-                int m54dp = AndroidUtilities.m54dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
-                int i6 = 0;
-                for (int i7 = 0; i7 < size; i7++) {
-                    if (DialogsAdapter.this.itemInternals.get(i7).viewType == 0) {
-                        i6 = (!DialogsAdapter.this.itemInternals.get(i7).isForumCell || DialogsAdapter.this.collapsedView) ? i6 + m54dp : i6 + AndroidUtilities.m54dp(SharedConfig.useThreeLinesLayout ? 86 : 91);
-                    }
-                }
-                int i8 = i6 + (size - 1);
-                if (DialogsAdapter.this.onlineContacts != null) {
-                    i8 += (DialogsAdapter.this.onlineContacts.size() * AndroidUtilities.m54dp(58)) + (DialogsAdapter.this.onlineContacts.size() - 1) + AndroidUtilities.m54dp(52);
-                }
-                int i9 = z ? m54dp + 1 : 0;
-                if (i8 < i5) {
-                    int i10 = (i5 - i8) + i9;
-                    if (paddingTop == 0 || (i10 = i10 - AndroidUtilities.statusBarHeight) >= 0) {
-                        i3 = i10;
-                    }
-                } else {
-                    int i11 = i8 - i5;
-                    if (i11 < i9) {
-                        int i12 = i9 - i11;
-                        if (paddingTop != 0) {
-                            i12 -= AndroidUtilities.statusBarHeight;
-                        }
-                        if (i12 >= 0) {
-                            i3 = i12;
-                        }
-                    }
-                }
-            }
-            setMeasuredDimension(View.MeasureSpec.getSize(i), i3);
+        /* JADX WARN: Code restructure failed: missing block: B:106:0x01b9, code lost:
+            if (r6 != false) goto L89;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:94:0x0192, code lost:
+            if (r6 != false) goto L89;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:95:0x0194, code lost:
+            r13 = r13 - r7;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:111:0x01c0  */
+        /* JADX WARN: Removed duplicated region for block: B:114:0x01c9  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x0058  */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x005a  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0061  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x006c  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x0072  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x00d9  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x00df  */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x00f6  */
+        /* JADX WARN: Removed duplicated region for block: B:60:0x00f9  */
+        /* JADX WARN: Removed duplicated region for block: B:66:0x010a  */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x0145  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x016c  */
+        /* JADX WARN: Removed duplicated region for block: B:83:0x016e  */
+        /* JADX WARN: Removed duplicated region for block: B:85:0x0171  */
+        /* JADX WARN: Removed duplicated region for block: B:96:0x0196  */
+        @Override // android.widget.FrameLayout, android.view.View
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        protected void onMeasure(int r12, int r13) {
+            /*
+                Method dump skipped, instructions count: 474
+                To view this dump add '--comments-level debug' option
+            */
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Adapters.DialogsAdapter.LastEmptyView.onMeasure(int, int):void");
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x03a8 A[LOOP:3: B:168:0x03a8->B:177:0x03cf, LOOP_START, PHI: r4 
-      PHI: (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:167:0x03a6, B:177:0x03cf] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x03d1 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x03c2 A[LOOP:3: B:177:0x03c2->B:186:0x03e9, LOOP_START, PHI: r4 
+      PHI: (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:176:0x03c0, B:186:0x03e9] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x03eb A[ORIG_RETURN, RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updateItemList() {
         /*
-            Method dump skipped, instructions count: 1038
+            Method dump skipped, instructions count: 1076
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Adapters.DialogsAdapter.updateItemList():void");
+    }
+
+    public int getItemHeight(int i) {
+        int m72dp = AndroidUtilities.m72dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
+        if (this.itemInternals.get(i).viewType == 0) {
+            if (!this.itemInternals.get(i).isForumCell || this.collapsedView) {
+                return m72dp;
+            }
+            return AndroidUtilities.m72dp(SharedConfig.useThreeLinesLayout ? 86 : 91);
+        }
+        return 0;
     }
 }

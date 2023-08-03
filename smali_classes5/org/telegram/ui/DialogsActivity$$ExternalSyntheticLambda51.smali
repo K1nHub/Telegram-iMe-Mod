@@ -2,44 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:[Z
-
-.field public final synthetic f$1:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-.field public final synthetic f$2:Lorg/telegram/ui/Cells/CheckBoxCell;
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>([ZLorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$0:[Z
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$1:Lorg/telegram/ui/Cells/CheckBoxCell;
-
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$2:Lorg/telegram/ui/Cells/CheckBoxCell;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final onLongClick(Landroid/view/View;)Z
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$0:[Z
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$1:Lorg/telegram/ui/Cells/CheckBoxCell;
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$-TMQXggQ9vU32-FNYrdC1uzloYs(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)Z
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda51;->f$2:Lorg/telegram/ui/Cells/CheckBoxCell;
+    move-result p1
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$nf10QgWdTpLbDu4364HWx9zcf2M([ZLorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
-
-    return-void
+    return p1
 .end method

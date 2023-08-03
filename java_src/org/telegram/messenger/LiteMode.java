@@ -144,7 +144,7 @@ public class LiteMode {
                         PRESET_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList.get(1)).value;
                         PRESET_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList.get(2)).value;
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             }
@@ -157,7 +157,7 @@ public class LiteMode {
                         BATTERY_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(1)).value;
                         BATTERY_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(2)).value;
                     } catch (Exception e2) {
-                        FileLog.m49e(e2);
+                        FileLog.m67e(e2);
                     }
                 }
             }

@@ -32,10 +32,10 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;)V
     .locals 0
 
-    .line 485
+    .line 510
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 486
+    .line 511
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->giftOption:Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;)Lcom/android/billingclient/api/ProductDetails;
     .locals 0
 
-    .line 475
+    .line 500
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-object p0
@@ -55,7 +55,7 @@
 .method public getCurrency()Ljava/lang/String;
     .locals 1
 
-    .line 556
+    .line 581
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -70,7 +70,7 @@
 
     goto :goto_1
 
-    .line 559
+    .line 584
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -92,7 +92,7 @@
     :goto_0
     return-object v0
 
-    .line 557
+    .line 582
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->giftOption:Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;
@@ -105,12 +105,12 @@
 .method public getDiscount()I
     .locals 6
 
-    .line 506
+    .line 531
     iget v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->discount:I
 
     if-nez v0, :cond_1
 
-    .line 507
+    .line 532
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->getPricePerMonth()J
 
     move-result-wide v0
@@ -125,7 +125,7 @@
 
     return v0
 
-    .line 511
+    .line 536
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->pricePerMonthRegular:J
 
@@ -135,7 +135,7 @@
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 512
+    .line 537
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->getPricePerMonth()J
 
     move-result-wide v2
@@ -162,10 +162,10 @@
 
     const/4 v0, -0x1
 
-    .line 515
+    .line 540
     iput v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->discount:I
 
-    .line 519
+    .line 544
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->discount:I
 
@@ -175,7 +175,7 @@
 .method public getFormattedPrice()Ljava/lang/String;
     .locals 5
 
-    .line 541
+    .line 566
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -190,7 +190,7 @@
 
     goto :goto_1
 
-    .line 545
+    .line 570
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -222,7 +222,7 @@
     :goto_0
     return-object v0
 
-    .line 542
+    .line 567
     :cond_2
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
@@ -247,7 +247,7 @@
 .method public getFormattedPricePerMonth()Ljava/lang/String;
     .locals 5
 
-    .line 533
+    .line 558
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -262,7 +262,7 @@
 
     goto :goto_1
 
-    .line 537
+    .line 562
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -294,7 +294,7 @@
     :goto_0
     return-object v0
 
-    .line 534
+    .line 559
     :cond_2
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
@@ -319,7 +319,7 @@
 .method public getGooglePlayProductDetails()Lcom/android/billingclient/api/ProductDetails;
     .locals 1
 
-    .line 490
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-object v0
@@ -328,7 +328,7 @@
 .method public getMonths()I
     .locals 1
 
-    .line 502
+    .line 527
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->giftOption:Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;->months:I
@@ -339,7 +339,7 @@
 .method public getPrice()J
     .locals 2
 
-    .line 549
+    .line 574
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -354,7 +354,7 @@
 
     goto :goto_1
 
-    .line 552
+    .line 577
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -376,7 +376,7 @@
     :goto_0
     return-wide v0
 
-    .line 550
+    .line 575
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->giftOption:Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;
@@ -389,7 +389,7 @@
 .method public getPricePerMonth()J
     .locals 4
 
-    .line 523
+    .line 548
     iget-wide v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->pricePerMonth:J
 
     const-wide/16 v2, 0x0
@@ -398,7 +398,7 @@
 
     if-nez v0, :cond_0
 
-    .line 524
+    .line 549
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->getPrice()J
 
     move-result-wide v0
@@ -407,7 +407,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 526
+    .line 551
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->giftOption:Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;->months:I
@@ -418,7 +418,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->pricePerMonth:J
 
-    .line 529
+    .line 554
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->pricePerMonth:J
 
@@ -428,7 +428,7 @@
 .method public setGooglePlayProductDetails(Lcom/android/billingclient/api/ProductDetails;)V
     .locals 0
 
-    .line 494
+    .line 519
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-void
@@ -437,7 +437,7 @@
 .method public setPricePerMonthRegular(J)V
     .locals 0
 
-    .line 498
+    .line 523
     iput-wide p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;->pricePerMonthRegular:J
 
     return-void

@@ -25,7 +25,13 @@ public final class RemoteConfigRepositoryImpl implements RemoteConfigRepository 
     public Single<Result<Boolean>> getBoolean(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Single<Boolean> single = this.remoteConfigApi.getBoolean(key);
-        final RemoteConfigRepositoryImpl$getBoolean$1 remoteConfigRepositoryImpl$getBoolean$1 = RemoteConfigRepositoryImpl$getBoolean$1.INSTANCE;
+        final RemoteConfigRepositoryImpl$getBoolean$1 remoteConfigRepositoryImpl$getBoolean$1 = new Function1<Boolean, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.firebase.RemoteConfigRepositoryImpl$getBoolean$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Boolean it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.success(it);
+            }
+        };
         Single<R> map = single.map(new Function() { // from class: com.iMe.storage.data.repository.firebase.RemoteConfigRepositoryImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

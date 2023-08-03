@@ -346,12 +346,12 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
         int fusionMode;
 
         /* renamed from: id */
-        final long f539id;
+        final long f542id;
         final MergeObserver<T, U> parent;
         volatile SimpleQueue<U> queue;
 
         InnerObserver(MergeObserver<T, U> mergeObserver, long j) {
-            this.f539id = j;
+            this.f542id = j;
             this.parent = mergeObserver;
         }
 

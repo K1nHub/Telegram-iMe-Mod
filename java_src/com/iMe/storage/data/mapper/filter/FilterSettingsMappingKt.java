@@ -6,6 +6,7 @@ import com.iMe.storage.domain.model.filters.FilterIcon;
 import com.iMe.storage.domain.model.filters.FilterSettingsModel;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterSettingsMapping.kt */
@@ -17,7 +18,7 @@ public final class FilterSettingsMappingKt {
         int filterId = filterSettingsDb.getFilterId();
         FilterFab.Companion companion = FilterFab.Companion;
         set = CollectionsKt___CollectionsKt.toSet(filterSettingsDb.getFabs());
-        Set<FilterFab> mapNamesToEnums = companion.mapNamesToEnums(set);
+        SortedSet<FilterFab> mapNamesToEnums = companion.mapNamesToEnums(set);
         String icon = filterSettingsDb.getIcon();
         return new FilterSettingsModel(filterId, mapNamesToEnums, icon != null ? FilterIcon.valueOf(icon) : null);
     }

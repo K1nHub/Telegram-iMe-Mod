@@ -123,8 +123,8 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
 
     public boolean draw(Canvas canvas) {
         float f;
-        int m54dp = this.isLite ? 0 : AndroidUtilities.m54dp(4);
-        boolean z = this.cornerRadius != m54dp;
+        int m72dp = this.isLite ? 0 : AndroidUtilities.m72dp(4);
+        boolean z = this.cornerRadius != m72dp;
         if (this.mSelectionPaint == null) {
             Paint paint = new Paint(1);
             this.mSelectionPaint = paint;
@@ -140,8 +140,8 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
             this.mRippleAlpha = Color.alpha(this.color);
         }
         if (z) {
-            this.cornerRadius = m54dp;
-            if (m54dp <= 0) {
+            this.cornerRadius = m72dp;
+            if (m72dp <= 0) {
                 this.mSelectionPaint.setPathEffect(null);
                 this.mRipplePaint.setPathEffect(null);
             } else {
@@ -190,12 +190,12 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
         float f2 = 1.0f - min;
         this.mSelectionPaint.setAlpha((int) (this.mSelectionAlpha * 0.2f * Math.min(1.0f, 5.0f * interpolation) * f2));
         float f3 = 1.0f - f;
-        this.mSelectionPaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m54dp(5));
+        this.mSelectionPaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m72dp(5));
         for (int i3 = 0; i3 < this.mPathesCount; i3++) {
             canvas.drawPath(this.mPathes.get(i3), this.mSelectionPaint);
         }
         this.mRipplePaint.setAlpha((int) (this.mRippleAlpha * 0.8f * f2));
-        this.mRipplePaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m54dp(5));
+        this.mRipplePaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m72dp(5));
         int i4 = (interpolation > 1.0f ? 1 : (interpolation == 1.0f ? 0 : -1));
         if (i4 < 0) {
             float f4 = interpolation * this.mMaxRadius;
@@ -549,7 +549,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
             int lineForVertical = layout.getLineForVertical(paddingTop);
             float f = paddingLeft;
             int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f);
-            float lineLeft = getLayout().getLineLeft(lineForVertical);
+            float lineLeft = layout.getLineLeft(lineForVertical);
             if (lineLeft <= f && lineLeft + layout.getLineWidth(lineForVertical) >= f && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
                 ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                 if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
@@ -669,7 +669,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getPaddingLeft() + getTextWidth() + getPaddingRight(), getHeight());
                 this.linkBackgroundPaint.setColor(getLinkColor());
-                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.linkBackgroundPaint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), this.linkBackgroundPaint);
             }
             super.onDraw(canvas);
             if (isClickable() && this.links.draw(canvas)) {

@@ -61,6 +61,12 @@
     .end annotation
 .end field
 
+.field private clipGradient:Landroid/graphics/LinearGradient;
+
+.field private clipMatrix:Landroid/graphics/Matrix;
+
+.field private clipPaint:Landroid/graphics/Paint;
+
 .field delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 .field public inOutOffset:F
@@ -82,7 +88,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 647
+    .line 661
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$1;
 
     const-string v1, "offsetY"
@@ -91,7 +97,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/Bulletin$Layout;->IN_OUT_OFFSET_Y:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
 
-    .line 659
+    .line 673
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$2;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/Bulletin$Layout$2;-><init>(Ljava/lang/String;)V
@@ -104,10 +110,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 634
+    .line 648
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 613
+    .line 627
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -116,27 +122,27 @@
 
     const/4 p1, -0x2
 
-    .line 627
+    .line 641
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenWidth:I
 
     const/4 p1, 0x1
 
-    .line 629
+    .line 643
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenGravity:I
 
-    .line 635
+    .line 649
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const/16 p1, 0x30
 
-    .line 636
+    .line 650
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setMinimumHeight(I)V
 
-    .line 637
+    .line 651
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_background:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -145,12 +151,12 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->setBackground(I)V
 
-    .line 638
+    .line 652
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->updateSize()V
 
     const/16 p1, 0x8
 
-    .line 639
+    .line 653
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -171,7 +177,7 @@
 
     const/4 p1, 0x0
 
-    .line 640
+    .line 654
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -180,7 +186,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/Bulletin$Layout;II)V
     .locals 0
 
-    .line 611
+    .line 625
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$Layout;->setWideScreenParams(II)V
 
     return-void
@@ -189,7 +195,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Bulletin$Layout;Z)V
     .locals 0
 
-    .line 611
+    .line 625
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->setTop(Z)V
 
     return-void
@@ -198,7 +204,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/Components/Bulletin$Layout;)Z
     .locals 0
 
-    .line 611
+    .line 625
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
 
     return p0
@@ -207,7 +213,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/Components/Bulletin$Layout;Z)Z
     .locals 0
 
-    .line 611
+    .line 625
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->isNeedSwipeAlphaAnimation(Z)Z
 
     move-result p0
@@ -218,7 +224,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/Bulletin$Layout;F)V
     .locals 0
 
-    .line 611
+    .line 625
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->setInOutOffset(F)V
 
     return-void
@@ -227,7 +233,7 @@
 .method private isNeedSwipeAlphaAnimation(Z)Z
     .locals 4
 
-    .line 712
+    .line 726
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->isWideScreen()Z
 
     move-result v0
@@ -244,7 +250,7 @@
 
     goto :goto_0
 
-    .line 715
+    .line 729
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenGravity:I
 
@@ -279,7 +285,7 @@
 .method private isWideScreen()Z
     .locals 2
 
-    .line 689
+    .line 703
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -312,10 +318,10 @@
 .method private setInOutOffset(F)V
     .locals 0
 
-    .line 981
+    .line 995
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->inOutOffset:F
 
-    .line 982
+    .line 996
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->updatePosition()V
 
     return-void
@@ -324,10 +330,10 @@
 .method private setTop(Z)V
     .locals 0
 
-    .line 679
+    .line 693
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
 
-    .line 680
+    .line 694
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->updateSize()V
 
     return-void
@@ -336,14 +342,14 @@
 .method private setWideScreenParams(II)V
     .locals 2
 
-    .line 695
+    .line 709
     iget v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenWidth:I
 
     const/4 v1, 0x1
 
     if-eq v0, p1, :cond_0
 
-    .line 696
+    .line 710
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenWidth:I
 
     move p1, v1
@@ -353,13 +359,13 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 700
+    .line 714
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenGravity:I
 
     if-eq v0, p2, :cond_1
 
-    .line 701
+    .line 715
     iput p2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenGravity:I
 
     goto :goto_1
@@ -367,7 +373,7 @@
     :cond_1
     move v1, p1
 
-    .line 705
+    .line 719
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->isWideScreen()Z
 
@@ -377,7 +383,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 706
+    .line 720
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->updateSize()V
 
     :cond_2
@@ -387,14 +393,14 @@
 .method private updateSize()V
     .locals 5
 
-    .line 684
+    .line 698
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->isWideScreen()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 685
+    .line 699
     iget v1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->wideScreenWidth:I
 
     goto :goto_0
@@ -452,7 +458,7 @@
 .method public addCallback(Lorg/telegram/ui/Components/Bulletin$Layout$Callback;)V
     .locals 1
 
-    .line 797
+    .line 811
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -463,7 +469,7 @@
 .method public createTransition()Lorg/telegram/ui/Components/Bulletin$Layout$Transition;
     .locals 1
 
-    .line 853
+    .line 867
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Bulletin$Layout$SpringTransition;-><init>()V
@@ -472,149 +478,406 @@
 .end method
 
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 6
+    .locals 22
 
-    .line 987
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
+    move-object/from16 v0, p0
 
-    if-nez v0, :cond_0
+    move-object/from16 v8, p1
+
+    .line 1005
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
+
+    if-nez v1, :cond_0
 
     return-void
 
-    .line 990
+    .line 1008
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
 
-    const/16 v1, 0x8
+    const/16 v9, 0x8
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     sub-int/2addr v4, v5
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 1009
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->isTransitionRunning()Z
 
     move-result v1
 
-    sub-int/2addr v5, v1
+    if-eqz v1, :cond_7
 
-    invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
-    .line 991
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->isTransitionRunning()Z
+    if-eqz v1, :cond_7
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
-
-    if-eqz v0, :cond_1
-
-    .line 992
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    const/4 v0, 0x0
-
-    .line 993
-    iget-object v1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
+    .line 1010
+    iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     iget v2, v2, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
-    .line 995
     invoke-interface {v1, v2}, Lorg/telegram/ui/Components/Bulletin$Delegate;->getTopOffset(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getY()F
+
+    move-result v2
+
+    sub-float v10, v1, v2
+
+    .line 1011
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->getBottomOffset()F
 
     move-result v2
 
     sub-float/2addr v1, v2
 
-    .line 996
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getY()F
+
+    move-result v2
+
+    sub-float v11, v1, v2
+
+    .line 1012
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
+
+    iget v2, v2, Lorg/telegram/ui/Components/Bulletin;->tag:I
+
+    invoke-interface {v1, v2}, Lorg/telegram/ui/Components/Bulletin$Delegate;->clipWithGradient(I)Z
+
+    move-result v12
+
+    .line 1013
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 1014
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v8, v13, v10, v1, v11}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+
+    if-eqz v12, :cond_1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    .line 1016
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v1
+
+    int-to-float v4, v1
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v1
+
+    int-to-float v5, v1
+
+    const/16 v6, 0xff
+
+    const/16 v7, 0x1f
+
+    move-object/from16 v1, p1
+
+    invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+
+    .line 1018
+    :cond_1
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 1019
+    invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    if-eqz v12, :cond_6
+
+    .line 1021
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipPaint:Landroid/graphics/Paint;
+
+    if-nez v1, :cond_3
+
+    .line 1022
+    new-instance v1, Landroid/graphics/Paint;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
+
+    iput-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipPaint:Landroid/graphics/Paint;
+
+    .line 1023
+    new-instance v2, Landroid/graphics/PorterDuffXfermode;
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v3}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+
+    .line 1024
+    new-instance v1, Landroid/graphics/LinearGradient;
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    .line 997
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+    iget-boolean v3, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
 
-    move-result-object v3
+    const/4 v4, 0x2
 
-    check-cast v3, Landroid/view/View;
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+    new-array v3, v4, [I
 
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->getBottomOffset()F
-
-    move-result v4
-
-    sub-float/2addr v3, v4
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
-
-    move-result v4
-
-    sub-float/2addr v3, v4
-
-    .line 993
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
-
-    .line 999
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 1000
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
-
-    .line 1001
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 1002
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+    fill-array-data v3, :array_0
 
     goto :goto_0
 
-    .line 1004
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
+    :cond_2
+    new-array v3, v4, [I
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 1005
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    fill-array-data v3, :array_1
 
     :goto_0
+    move-object/from16 v19, v3
+
+    new-array v3, v4, [F
+
+    fill-array-data v3, :array_2
+
+    sget-object v21, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    move-object v14, v1
+
+    move/from16 v18, v2
+
+    move-object/from16 v20, v3
+
+    invoke-direct/range {v14 .. v21}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    iput-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipGradient:Landroid/graphics/LinearGradient;
+
+    .line 1025
+    new-instance v1, Landroid/graphics/Matrix;
+
+    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipMatrix:Landroid/graphics/Matrix;
+
+    .line 1026
+    iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipGradient:Landroid/graphics/LinearGradient;
+
+    invoke-virtual {v2, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
+
+    .line 1027
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipPaint:Landroid/graphics/Paint;
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipGradient:Landroid/graphics/LinearGradient;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 1029
+    :cond_3
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 1030
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipMatrix:Landroid/graphics/Matrix;
+
+    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
+
+    .line 1031
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipMatrix:Landroid/graphics/Matrix;
+
+    iget-boolean v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
+
+    if-eqz v2, :cond_4
+
+    move v2, v10
+
+    goto :goto_1
+
+    :cond_4
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    sub-float v2, v11, v2
+
+    :goto_1
+    invoke-virtual {v1, v13, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    .line 1032
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipGradient:Landroid/graphics/LinearGradient;
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipMatrix:Landroid/graphics/Matrix;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
+
+    .line 1033
+    iget-boolean v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
+
+    if-eqz v1, :cond_5
+
+    const/4 v2, 0x0
+
+    .line 1034
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v1
+
+    int-to-float v4, v1
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    add-float v5, v10, v1
+
+    iget-object v6, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v1, p1
+
+    move v3, v10
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    goto :goto_2
+
+    :cond_5
+    const/4 v2, 0x0
+
+    .line 1036
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    sub-float v3, v11, v1
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v1
+
+    int-to-float v4, v1
+
+    iget-object v6, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->clipPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v1, p1
+
+    move v5, v11
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 1038
+    :goto_2
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 1039
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 1041
+    :cond_6
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 1042
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    goto :goto_3
+
+    .line 1044
+    :cond_7
+    iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$Layout;->background:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 1045
+    invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    :goto_3
     return-void
+
+    :array_0
+    .array-data 4
+        -0x1000000
+        0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        -0x1000000
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 .method protected getAccessibilityText()Ljava/lang/CharSequence;
@@ -628,7 +891,7 @@
 .method public getBottomOffset()F
     .locals 2
 
-    .line 817
+    .line 831
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     if-eqz v0, :cond_0
@@ -651,7 +914,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 818
+    .line 832
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     iget v0, v0, Lorg/telegram/ui/Components/Bulletin;->lastBottomOffset:I
@@ -661,7 +924,7 @@
 
     return v0
 
-    .line 820
+    .line 834
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
@@ -687,7 +950,7 @@
 .method public getBulletin()Lorg/telegram/ui/Components/Bulletin;
     .locals 1
 
-    .line 730
+    .line 744
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     return-object v0
@@ -696,7 +959,7 @@
 .method protected getThemedColor(I)I
     .locals 1
 
-    .line 1010
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -709,7 +972,7 @@
 .method public isTransitionRunning()Z
     .locals 1
 
-    .line 624
+    .line 638
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->transitionRunningEnter:Z
 
     if-nez v0, :cond_1
@@ -736,10 +999,10 @@
 .method protected onAttach(Lorg/telegram/ui/Components/Bulletin;)V
     .locals 3
 
-    .line 739
+    .line 753
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
-    .line 740
+    .line 754
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -751,7 +1014,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 741
+    .line 755
     iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -773,10 +1036,10 @@
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    .line 674
+    .line 688
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 675
+    .line 689
     invoke-direct {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->updateSize()V
 
     return-void
@@ -787,10 +1050,10 @@
 
     const/4 v0, 0x0
 
-    .line 747
+    .line 761
     iput-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
-    .line 748
+    .line 762
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -802,7 +1065,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 749
+    .line 763
     iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -822,74 +1085,6 @@
 .end method
 
 .method protected onEnterTransitionEnd()V
-    .locals 3
-
-    .line 776
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    .line 777
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
-
-    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onEnterTransitionEnd(Lorg/telegram/ui/Components/Bulletin$Layout;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method protected onEnterTransitionStart()V
-    .locals 3
-
-    .line 769
-    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    .line 770
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
-
-    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onEnterTransitionStart(Lorg/telegram/ui/Components/Bulletin$Layout;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method protected onExitTransitionEnd()V
     .locals 3
 
     .line 790
@@ -913,7 +1108,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
 
-    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onExitTransitionEnd(Lorg/telegram/ui/Components/Bulletin$Layout;)V
+    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onEnterTransitionEnd(Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -923,7 +1118,7 @@
     return-void
 .end method
 
-.method protected onExitTransitionStart()V
+.method protected onEnterTransitionStart()V
     .locals 3
 
     .line 783
@@ -947,6 +1142,74 @@
 
     check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
 
+    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onEnterTransitionStart(Lorg/telegram/ui/Components/Bulletin$Layout;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method protected onExitTransitionEnd()V
+    .locals 3
+
+    .line 804
+    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    .line 805
+    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
+
+    invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onExitTransitionEnd(Lorg/telegram/ui/Components/Bulletin$Layout;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method protected onExitTransitionStart()V
+    .locals 3
+
+    .line 797
+    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    .line 798
+    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;
+
     invoke-interface {v2, p0}, Lorg/telegram/ui/Components/Bulletin$Layout$Callback;->onExitTransitionStart(Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     add-int/lit8 v1, v1, 0x1
@@ -960,7 +1223,7 @@
 .method protected onHide()V
     .locals 3
 
-    .line 762
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -972,7 +1235,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 763
+    .line 777
     iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -994,7 +1257,7 @@
 .method protected onShow()V
     .locals 3
 
-    .line 755
+    .line 769
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1006,7 +1269,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 756
+    .line 770
     iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1028,7 +1291,7 @@
 .method public removeCallback(Lorg/telegram/ui/Components/Bulletin$Layout$Callback;)V
     .locals 1
 
-    .line 801
+    .line 815
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->callbacks:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -1041,7 +1304,7 @@
 
     const/16 v0, 0xa
 
-    .line 644
+    .line 658
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1058,19 +1321,19 @@
 .method public updatePosition()V
     .locals 3
 
-    .line 806
+    .line 820
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 807
+    .line 821
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z
 
     if-eqz v2, :cond_1
 
-    .line 808
+    .line 822
     iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     if-eqz v2, :cond_0
@@ -1093,7 +1356,7 @@
 
     goto :goto_1
 
-    .line 810
+    .line 824
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->getBottomOffset()F
 
@@ -1105,7 +1368,7 @@
     :goto_1
     neg-float v0, v1
 
-    .line 813
+    .line 827
     iget v1, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->inOutOffset:F
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Bulletin$Layout;->top:Z

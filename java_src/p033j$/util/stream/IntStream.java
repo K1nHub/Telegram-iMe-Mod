@@ -19,31 +19,31 @@ import p033j$.wrappers.C3208a0;
 /* loaded from: classes2.dex */
 public interface IntStream extends InterfaceC3040g {
     /* renamed from: A */
-    InterfaceC2973U mo267A(C3203W c3203w);
+    InterfaceC2973U mo285A(C3203W c3203w);
 
     /* renamed from: C */
-    boolean mo266C(C3201U c3201u);
+    boolean mo284C(C3201U c3201u);
 
     /* renamed from: F */
-    boolean mo265F(C3201U c3201u);
+    boolean mo283F(C3201U c3201u);
 
     /* renamed from: I */
-    void mo264I(InterfaceC2826l interfaceC2826l);
+    void mo282I(InterfaceC2826l interfaceC2826l);
 
     /* renamed from: J */
-    Stream mo263J(InterfaceC2827m interfaceC2827m);
+    Stream mo281J(InterfaceC2827m interfaceC2827m);
 
     /* renamed from: N */
-    int mo262N(int i, InterfaceC2824j interfaceC2824j);
+    int mo280N(int i, InterfaceC2824j interfaceC2824j);
 
     /* renamed from: P */
-    IntStream mo261P(InterfaceC2827m interfaceC2827m);
+    IntStream mo279P(InterfaceC2827m interfaceC2827m);
 
     /* renamed from: U */
-    void mo260U(InterfaceC2826l interfaceC2826l);
+    void mo278U(InterfaceC2826l interfaceC2826l);
 
     /* renamed from: a0 */
-    C2843j mo259a0(InterfaceC2824j interfaceC2824j);
+    C2843j mo277a0(InterfaceC2824j interfaceC2824j);
 
     InterfaceC2973U asDoubleStream();
 
@@ -54,27 +54,27 @@ public interface IntStream extends InterfaceC3040g {
     Stream boxed();
 
     /* renamed from: c0 */
-    IntStream mo258c0(InterfaceC2826l interfaceC2826l);
+    IntStream mo276c0(InterfaceC2826l interfaceC2826l);
 
     long count();
 
     IntStream distinct();
 
     /* renamed from: f */
-    InterfaceC3030e1 mo257f(InterfaceC2828n interfaceC2828n);
+    InterfaceC3030e1 mo275f(InterfaceC2828n interfaceC2828n);
 
     C2843j findAny();
 
     C2843j findFirst();
 
     /* renamed from: h */
-    IntStream mo256h(C3201U c3201u);
+    IntStream mo274h(C3201U c3201u);
 
     @Override // p033j$.util.stream.InterfaceC3040g
     InterfaceC2848o.InterfaceC2849a iterator();
 
     /* renamed from: k0 */
-    Object mo255k0(InterfaceC2839y interfaceC2839y, InterfaceC2836v interfaceC2836v, BiConsumer biConsumer);
+    Object mo273k0(InterfaceC2839y interfaceC2839y, InterfaceC2836v interfaceC2836v, BiConsumer biConsumer);
 
     IntStream limit(long j);
 
@@ -86,7 +86,7 @@ public interface IntStream extends InterfaceC3040g {
     IntStream parallel();
 
     /* renamed from: q */
-    IntStream mo254q(C3208a0 c3208a0);
+    IntStream mo272q(C3208a0 c3208a0);
 
     @Override // 
     IntStream sequential();
@@ -105,5 +105,5 @@ public interface IntStream extends InterfaceC3040g {
     int[] toArray();
 
     /* renamed from: v */
-    boolean mo253v(C3201U c3201u);
+    boolean mo271v(C3201U c3201u);
 }

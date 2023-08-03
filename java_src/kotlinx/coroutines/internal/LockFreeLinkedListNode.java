@@ -112,7 +112,7 @@ public class LockFreeLinkedListNode {
     }
 
     /* renamed from: remove */
-    public boolean mo1630remove() {
+    public boolean mo1649remove() {
         return removeOrNext() == null;
     }
 
@@ -156,7 +156,7 @@ public class LockFreeLinkedListNode {
             if (lockFreeLinkedListNode == this) {
                 return null;
             }
-            if (lockFreeLinkedListNode.mo1630remove()) {
+            if (lockFreeLinkedListNode.mo1649remove()) {
                 return lockFreeLinkedListNode;
             }
             lockFreeLinkedListNode.helpRemove();

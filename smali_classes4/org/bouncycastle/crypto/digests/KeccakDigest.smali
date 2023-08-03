@@ -1632,7 +1632,7 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "outputLength not a multiple of 8"
+    const-string/jumbo p2, "outputLength not a multiple of 8"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

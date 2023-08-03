@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 0
 
-    .line 1324
+    .line 1325
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$5;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 1327
+    .line 1328
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$5;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->startAnimationRunnable:Ljava/lang/Runnable;
@@ -53,7 +53,7 @@
 
     goto :goto_0
 
-    .line 1330
+    .line 1331
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$5;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -61,7 +61,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->startAnimationRunnable:Ljava/lang/Runnable;
 
-    .line 1331
+    .line 1332
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2000(Lorg/telegram/ui/ActionBar/BottomSheet;)V
 
     :cond_1

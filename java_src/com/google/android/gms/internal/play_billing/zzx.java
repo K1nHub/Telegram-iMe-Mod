@@ -126,7 +126,7 @@ public abstract class zzx implements Map, Serializable, p033j$.util.Map {
 
     @Override // java.util.Map, p033j$.util.Map
     public /* synthetic */ Object replace(Object obj, Object obj2) {
-        return get(obj);
+        return Map.CC.$default$replace(this, obj, obj2);
     }
 
     @Override // java.util.Map, p033j$.util.Map

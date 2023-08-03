@@ -3,7 +3,12 @@ package androidx.arch.core.executor;
 import java.util.concurrent.Executor;
 /* loaded from: classes.dex */
 public class ArchTaskExecutor extends TaskExecutor {
-    private static final Executor sIOThreadExecutor = ArchTaskExecutor$$ExternalSyntheticLambda0.INSTANCE;
+    private static final Executor sIOThreadExecutor = new Executor() { // from class: androidx.arch.core.executor.ArchTaskExecutor$$ExternalSyntheticLambda0
+        @Override // java.util.concurrent.Executor
+        public final void execute(Runnable runnable) {
+            ArchTaskExecutor.lambda$static$1(runnable);
+        }
+    };
     private static volatile ArchTaskExecutor sInstance;
     private final TaskExecutor mDefaultTaskExecutor;
     private TaskExecutor mDelegate;

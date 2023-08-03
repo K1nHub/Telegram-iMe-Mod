@@ -18,20 +18,20 @@ public final class CompletionStateKt {
     }
 
     public static final <T> Object toState(Object obj, Function1<? super Throwable, Unit> function1) {
-        Throwable m1602exceptionOrNullimpl = Result.m1602exceptionOrNullimpl(obj);
-        if (m1602exceptionOrNullimpl == null) {
+        Throwable m1621exceptionOrNullimpl = Result.m1621exceptionOrNullimpl(obj);
+        if (m1621exceptionOrNullimpl == null) {
             return function1 != null ? new CompletedWithCancellation(obj, function1) : obj;
         }
-        return new CompletedExceptionally(m1602exceptionOrNullimpl, false, 2, null);
+        return new CompletedExceptionally(m1621exceptionOrNullimpl, false, 2, null);
     }
 
     public static final <T> Object toState(Object obj, CancellableContinuation<?> cancellableContinuation) {
-        Throwable m1602exceptionOrNullimpl = Result.m1602exceptionOrNullimpl(obj);
-        if (m1602exceptionOrNullimpl != null) {
+        Throwable m1621exceptionOrNullimpl = Result.m1621exceptionOrNullimpl(obj);
+        if (m1621exceptionOrNullimpl != null) {
             if (DebugKt.getRECOVER_STACK_TRACES() && (cancellableContinuation instanceof CoroutineStackFrame)) {
-                m1602exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m1602exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation);
+                m1621exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m1621exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation);
             }
-            obj = new CompletedExceptionally(m1602exceptionOrNullimpl, false, 2, null);
+            obj = new CompletedExceptionally(m1621exceptionOrNullimpl, false, 2, null);
         }
         return obj;
     }
@@ -43,9 +43,9 @@ public final class CompletionStateKt {
             if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
                 th = StackTraceRecoveryKt.recoverFromStackFrame(th, (CoroutineStackFrame) continuation);
             }
-            return Result.m1601constructorimpl(ResultKt.createFailure(th));
+            return Result.m1620constructorimpl(ResultKt.createFailure(th));
         }
         Result.Companion companion2 = Result.Companion;
-        return Result.m1601constructorimpl(obj);
+        return Result.m1620constructorimpl(obj);
     }
 }

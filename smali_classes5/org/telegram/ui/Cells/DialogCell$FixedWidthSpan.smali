@@ -22,10 +22,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 296
+    .line 324
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
-    .line 297
+    .line 325
     iput p1, p0, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;->width:I
 
     return-void
@@ -44,7 +44,7 @@
 
     if-nez p5, :cond_0
 
-    .line 303
+    .line 331
     invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object p5
@@ -52,7 +52,7 @@
     :cond_0
     if-eqz p5, :cond_1
 
-    .line 306
+    .line 334
     iget p1, p5, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     iget p2, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
@@ -61,19 +61,19 @@
 
     rsub-int/lit8 p1, p1, 0x1
 
-    .line 307
+    .line 335
     iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     const/4 p1, -0x1
 
-    .line 308
+    .line 336
     iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
     iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->top:I
 
-    .line 310
+    .line 338
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;->width:I
 

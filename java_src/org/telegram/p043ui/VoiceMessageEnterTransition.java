@@ -56,7 +56,7 @@ public class VoiceMessageEnterTransition implements MessageEnterTransitionContai
         Paint paint = new Paint(1);
         this.gradientPaint = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
         this.gradientShader = linearGradient;
         paint.setShader(linearGradient);
         this.messageId = chatMessageCell.getMessageObject().stableId;

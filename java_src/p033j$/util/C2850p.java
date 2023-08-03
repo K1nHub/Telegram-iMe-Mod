@@ -9,16 +9,16 @@ import p033j$.util.function.InterfaceC2831q;
 public final /* synthetic */ class C2850p implements InterfaceC2831q {
 
     /* renamed from: a */
-    public final /* synthetic */ Consumer f763a;
+    public final /* synthetic */ Consumer f766a;
 
     @Override // p033j$.util.function.InterfaceC2831q
     public final void accept(long j) {
-        this.f763a.accept(Long.valueOf(j));
+        this.f766a.accept(Long.valueOf(j));
     }
 
     @Override // p033j$.util.function.InterfaceC2831q
     /* renamed from: f */
-    public InterfaceC2831q mo140f(InterfaceC2831q interfaceC2831q) {
+    public InterfaceC2831q mo158f(InterfaceC2831q interfaceC2831q) {
         Objects.requireNonNull(interfaceC2831q);
         return new C2830p(this, interfaceC2831q);
     }

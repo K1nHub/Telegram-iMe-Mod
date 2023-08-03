@@ -83,7 +83,7 @@
 
     const-class v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;
 
-    const-string v1, "parkedWorkersStack"
+    const-string/jumbo v1, "parkedWorkersStack"
 
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 

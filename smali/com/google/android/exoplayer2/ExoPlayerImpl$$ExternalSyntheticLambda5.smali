@@ -8,22 +8,18 @@
 # instance fields
 .field public final synthetic f$0:I
 
-.field public final synthetic f$1:Lcom/google/android/exoplayer2/Player$PositionInfo;
-
-.field public final synthetic f$2:Lcom/google/android/exoplayer2/Player$PositionInfo;
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILcom/google/android/exoplayer2/Player$PositionInfo;Lcom/google/android/exoplayer2/Player$PositionInfo;)V
+.method public synthetic constructor <init>(II)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$0:I
 
-    iput-object p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/Player$PositionInfo;
-
-    iput-object p3, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$2:Lcom/google/android/exoplayer2/Player$PositionInfo;
+    iput p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$1:I
 
     return-void
 .end method
@@ -31,17 +27,15 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
 
     iget v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$0:I
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/Player$PositionInfo;
-
-    iget-object v2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$2:Lcom/google/android/exoplayer2/Player$PositionInfo;
+    iget v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda5;->f$1:I
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {v0, v1, v2, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$algpPrtD-ZKm0JDTv21lpQ8EQzI(ILcom/google/android/exoplayer2/Player$PositionInfo;Lcom/google/android/exoplayer2/Player$PositionInfo;Lcom/google/android/exoplayer2/Player$Listener;)V
+    invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$qnk3ZshQd9MCclGKdmLTUrHNtew(IILcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

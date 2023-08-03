@@ -140,7 +140,7 @@
     return-object v2
 
     :cond_2
-    const-string v1, "protocols"
+    const-string/jumbo v1, "protocols"
 
     .line 564
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -252,7 +252,7 @@
     return-object p1
 
     :cond_7
-    const-string v0, "protocolSelected"
+    const-string/jumbo v0, "protocolSelected"
 
     .line 577
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

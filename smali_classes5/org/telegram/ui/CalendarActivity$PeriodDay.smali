@@ -35,6 +35,16 @@
 
 .field startOffset:I
 
+.field storyItems:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field toSelProgress:F
 
 .field toSelSEProgress:F
@@ -46,20 +56,20 @@
 .method private constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 1250
+    .line 1443
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 1253
+    .line 1447
     iput p1, p0, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
-    .line 1254
+    .line 1448
     iput p1, p0, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
     const/4 p1, 0x1
 
-    .line 1256
+    .line 1450
     iput-boolean p1, p0, Lorg/telegram/ui/CalendarActivity$PeriodDay;->hasImage:Z
 
     return-void
@@ -68,7 +78,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CalendarActivity;Lorg/telegram/ui/CalendarActivity$1;)V
     .locals 0
 
-    .line 1250
+    .line 1443
     invoke-direct {p0, p1}, Lorg/telegram/ui/CalendarActivity$PeriodDay;-><init>(Lorg/telegram/ui/CalendarActivity;)V
 
     return-void

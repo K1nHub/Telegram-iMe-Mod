@@ -28,7 +28,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public Excluder m1124clone() {
+    public Excluder m1141clone() {
         try {
             return (Excluder) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -37,18 +37,18 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     }
 
     public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
-        Excluder m1124clone = m1124clone();
+        Excluder m1141clone = m1141clone();
         if (z) {
             ArrayList arrayList = new ArrayList(this.serializationStrategies);
-            m1124clone.serializationStrategies = arrayList;
+            m1141clone.serializationStrategies = arrayList;
             arrayList.add(exclusionStrategy);
         }
         if (z2) {
             ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
-            m1124clone.deserializationStrategies = arrayList2;
+            m1141clone.deserializationStrategies = arrayList2;
             arrayList2.add(exclusionStrategy);
         }
-        return m1124clone;
+        return m1141clone;
     }
 
     @Override // com.google.gson.TypeAdapterFactory
@@ -61,7 +61,6 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
             return new TypeAdapter<T>() { // from class: com.google.gson.internal.Excluder.1
                 private TypeAdapter<T> delegate;
 
-                /* JADX WARN: Type inference failed for: r2v1, types: [T, java.lang.Object] */
                 @Override // com.google.gson.TypeAdapter
                 public T read(JsonReader jsonReader) throws IOException {
                     if (z2) {
@@ -82,7 +81,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
                 private TypeAdapter<T> delegate() {
                     TypeAdapter<T> typeAdapter = this.delegate;
-                    if (typeAdapter != 0) {
+                    if (typeAdapter != null) {
                         return typeAdapter;
                     }
                     TypeAdapter<T> delegateAdapter = gson.getDelegateAdapter(Excluder.this, typeToken);

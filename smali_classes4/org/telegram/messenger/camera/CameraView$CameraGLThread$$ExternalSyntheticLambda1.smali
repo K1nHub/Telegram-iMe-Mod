@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/camera/CameraView$CameraGLThread;
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->$r8$lambda$YLPBDNkVFVSaZ8-ZTVRhzZ49BP0(Lorg/telegram/messenger/camera/CameraView$CameraGLThread;Landroid/graphics/SurfaceTexture;)V
+    invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->$r8$lambda$5JW7DrkEfu5n5ArS70CDw5bFOFM(Lorg/telegram/messenger/camera/CameraView$CameraGLThread;)V
 
     return-void
 .end method

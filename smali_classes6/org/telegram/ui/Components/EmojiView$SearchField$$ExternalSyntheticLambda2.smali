@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$7RJDc2igp0AakuFOHEI19Mah3lw(Lorg/telegram/ui/Components/EmojiView$SearchField;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$nlbgsOpWTnm83wudhu-vu9eZ8qI(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/view/View;)V
 
     return-void
 .end method

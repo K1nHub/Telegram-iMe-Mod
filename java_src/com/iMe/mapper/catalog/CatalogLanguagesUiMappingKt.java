@@ -7,6 +7,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LocaleController;
 /* compiled from: CatalogLanguagesUiMapping.kt */
@@ -26,7 +27,19 @@ public final class CatalogLanguagesUiMappingKt {
             localeInfo.serverIndex = (int) catalogLanguage.getId();
             arrayList.add(localeInfo);
         }
-        compareBy = ComparisonsKt__ComparisonsKt.compareBy(CatalogLanguagesUiMappingKt$mapToUI$2.INSTANCE, CatalogLanguagesUiMappingKt$mapToUI$3.INSTANCE);
+        compareBy = ComparisonsKt__ComparisonsKt.compareBy(new Function1<LocaleController.LocaleInfo, Comparable<?>>() { // from class: com.iMe.mapper.catalog.CatalogLanguagesUiMappingKt$mapToUI$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Comparable<?> invoke(LocaleController.LocaleInfo it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf(!Intrinsics.areEqual(it.name, LocaleController.getCurrentLanguageName()));
+            }
+        }, new Function1<LocaleController.LocaleInfo, Comparable<?>>() { // from class: com.iMe.mapper.catalog.CatalogLanguagesUiMappingKt$mapToUI$3
+            @Override // kotlin.jvm.functions.Function1
+            public final Comparable<?> invoke(LocaleController.LocaleInfo it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf(!Intrinsics.areEqual(it.name, "English"));
+            }
+        });
         sortedWith = CollectionsKt___CollectionsKt.sortedWith(arrayList, compareBy);
         return sortedWith;
     }

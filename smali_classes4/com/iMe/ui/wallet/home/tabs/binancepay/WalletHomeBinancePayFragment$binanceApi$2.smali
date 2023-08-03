@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentActivity"
+    const-string/jumbo v1, "parentActivity"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

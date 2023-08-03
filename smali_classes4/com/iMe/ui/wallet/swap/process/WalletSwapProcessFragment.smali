@@ -151,7 +151,7 @@
     .line 66
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;"
 
@@ -257,7 +257,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -461,7 +461,7 @@
 
     move-result-object v1
 
-    const-string v0, "parentActivity"
+    const-string/jumbo v0, "parentActivity"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -505,7 +505,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentActivity"
+    const-string/jumbo v1, "parentActivity"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1567,7 +1567,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentActivity"
+    const-string/jumbo v1, "parentActivity"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1933,7 +1933,7 @@
     .line 169
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
-    const-string v5, "onTokenSelected$lambda$5$lambda$4"
+    const-string/jumbo v5, "onTokenSelected$lambda$5$lambda$4"
 
     .line 170
     invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1983,7 +1983,7 @@
     .line 158
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
-    const-string v5, "onTokenSelected$lambda$5$lambda$3"
+    const-string/jumbo v5, "onTokenSelected$lambda$5$lambda$3"
 
     .line 159
     invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -3221,7 +3221,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    const-string v2, "parentLayout"
+    const-string/jumbo v2, "parentLayout"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3272,7 +3272,7 @@
 
     invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p3, "parentActivity"
+    const-string/jumbo p3, "parentActivity"
 
     .line 106
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -3481,7 +3481,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    const-string v2, "parentLayout"
+    const-string/jumbo v2, "parentLayout"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3590,7 +3590,7 @@
 
     move-result-object v1
 
-    const-string v0, "parentActivity"
+    const-string/jumbo v0, "parentActivity"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

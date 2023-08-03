@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/core/view/ContentInfoCompat$Compat;,
+        Landroidx/core/view/ContentInfoCompat$Compat31Impl;,
+        Landroidx/core/view/ContentInfoCompat$Builder;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompat31Impl;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompat;,
-        Landroidx/core/view/ContentInfoCompat$Builder;,
-        Landroidx/core/view/ContentInfoCompat$Compat31Impl;,
-        Landroidx/core/view/ContentInfoCompat$CompatImpl;,
-        Landroidx/core/view/ContentInfoCompat$Compat;
+        Landroidx/core/view/ContentInfoCompat$CompatImpl;
     }
 .end annotation
 

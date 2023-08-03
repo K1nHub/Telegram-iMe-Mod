@@ -113,10 +113,10 @@ public final class TelegramPreferenceMigrationManager {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v0 */
-    /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r3v21 */
     /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r5v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r5v11 */
     public static final void migrateUserPreferences(int i, SharedPreferences preferences) {
         boolean z;

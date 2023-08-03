@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
-    .line 242
+    .line 283
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 245
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$500(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Landroid/animation/ValueAnimator;
@@ -44,14 +44,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 246
+    .line 287
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$502(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 248
+    .line 289
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     const/4 v0, 0x0

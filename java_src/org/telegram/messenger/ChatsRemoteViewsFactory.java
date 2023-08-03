@@ -85,7 +85,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         r0 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:164:0x0413, code lost:
-        org.telegram.messenger.FileLog.m49e(r0);
+        org.telegram.messenger.FileLog.m67e(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x0262, code lost:
         if ((r0 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) != false) goto L55;

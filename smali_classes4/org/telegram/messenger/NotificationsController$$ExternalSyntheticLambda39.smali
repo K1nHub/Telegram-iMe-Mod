@@ -8,22 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/NotificationsController;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:J
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
+
+.field public final synthetic f$3:Ljava/util/ArrayList;
+
+.field public final synthetic f$4:Ljava/util/Collection;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/NotificationsController;ZJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/NotificationsController;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Ljava/util/Collection;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/messenger/NotificationsController;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$1:Ljava/util/ArrayList;
 
-    iput-wide p3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$2:J
+    iput-object p3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$2:Landroidx/collection/LongSparseArray;
+
+    iput-object p4, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$3:Ljava/util/ArrayList;
+
+    iput-object p5, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$4:Ljava/util/Collection;
 
     return-void
 .end method
@@ -31,15 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/messenger/NotificationsController;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$1:Ljava/util/ArrayList;
 
-    iget-wide v2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$2:J
+    iget-object v2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$2:Landroidx/collection/LongSparseArray;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$iYOSfz5VcZuzNxBfBzSgn5Z5Evw(Lorg/telegram/messenger/NotificationsController;ZJ)V
+    iget-object v3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$3:Ljava/util/ArrayList;
+
+    iget-object v4, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda39;->f$4:Ljava/util/Collection;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$ZYWtC7l_v3DKS66x9RbBKrNtU6Y(Lorg/telegram/messenger/NotificationsController;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Ljava/util/Collection;)V
 
     return-void
 .end method

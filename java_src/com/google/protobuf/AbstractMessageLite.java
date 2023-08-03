@@ -104,10 +104,10 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         public abstract BuilderType clone();
 
         /* renamed from: clone  reason: collision with other method in class */
-        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1125clone();
+        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1142clone();
 
         /* renamed from: clone  reason: collision with other method in class */
-        public abstract /* bridge */ /* synthetic */ Object mo1126clone() throws CloneNotSupportedException;
+        public abstract /* bridge */ /* synthetic */ Object mo1143clone() throws CloneNotSupportedException;
 
         protected abstract BuilderType internalMergeFrom(MessageType messagetype);
 
@@ -118,24 +118,24 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         public abstract BuilderType mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException;
 
         /* renamed from: mergeFrom  reason: collision with other method in class */
-        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1130mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException;
+        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1147mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException;
 
         /* renamed from: mergeFrom  reason: collision with other method in class */
-        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1134mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException;
+        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1151mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException;
 
         /* renamed from: mergeFrom  reason: collision with other method in class */
-        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1135mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException;
+        public abstract /* bridge */ /* synthetic */ MessageLite.Builder mo1152mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException;
 
         /* renamed from: mergeFrom */
-        public BuilderType m1129mergeFrom(CodedInputStream codedInputStream) throws IOException {
+        public BuilderType m1146mergeFrom(CodedInputStream codedInputStream) throws IOException {
             return mergeFrom(codedInputStream, ExtensionRegistryLite.getEmptyRegistry());
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1127mergeFrom(ByteString byteString) throws InvalidProtocolBufferException {
+        public BuilderType m1144mergeFrom(ByteString byteString) throws InvalidProtocolBufferException {
             try {
                 CodedInputStream newCodedInput = byteString.newCodedInput();
-                m1129mergeFrom(newCodedInput);
+                m1146mergeFrom(newCodedInput);
                 newCodedInput.checkLastTagWas(0);
                 return this;
             } catch (InvalidProtocolBufferException e) {
@@ -146,7 +146,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1128mergeFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        public BuilderType m1145mergeFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             try {
                 CodedInputStream newCodedInput = byteString.newCodedInput();
                 mergeFrom(newCodedInput, extensionRegistryLite);
@@ -160,25 +160,25 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1133mergeFrom(byte[] bArr) throws InvalidProtocolBufferException {
+        public BuilderType m1150mergeFrom(byte[] bArr) throws InvalidProtocolBufferException {
             return mergeFrom(bArr, 0, bArr.length);
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1136mergeFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        public BuilderType m1153mergeFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return mergeFrom(bArr, 0, bArr.length, extensionRegistryLite);
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1131mergeFrom(InputStream inputStream) throws IOException {
+        public BuilderType m1148mergeFrom(InputStream inputStream) throws IOException {
             CodedInputStream newInstance = CodedInputStream.newInstance(inputStream);
-            m1129mergeFrom(newInstance);
+            m1146mergeFrom(newInstance);
             newInstance.checkLastTagWas(0);
             return this;
         }
 
         /* renamed from: mergeFrom */
-        public BuilderType m1132mergeFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+        public BuilderType m1149mergeFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
             CodedInputStream newInstance = CodedInputStream.newInstance(inputStream);
             mergeFrom(newInstance, extensionRegistryLite);
             newInstance.checkLastTagWas(0);
@@ -241,7 +241,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
             if (read == -1) {
                 return false;
             }
-            m1132mergeFrom((InputStream) new LimitedInputStream(inputStream, CodedInputStream.readRawVarint32(read, inputStream)), extensionRegistryLite);
+            m1149mergeFrom((InputStream) new LimitedInputStream(inputStream, CodedInputStream.readRawVarint32(read, inputStream)), extensionRegistryLite);
             return true;
         }
 

@@ -14,7 +14,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.R$id;
 import androidx.core.p010os.BuildCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,7 +26,7 @@ public class AccessibilityNodeInfoCompat {
     public int mParentVirtualDescendantId = -1;
     private int mVirtualDescendantId = -1;
 
-    private static String getActionSymbolicName(int i) {
+    static String getActionSymbolicName(int i) {
         if (i != 1) {
             if (i != 2) {
                 switch (i) {
@@ -127,6 +126,10 @@ public class AccessibilityNodeInfoCompat {
         return "ACTION_FOCUS";
     }
 
+    @Deprecated
+    public void recycle() {
+    }
+
     /* loaded from: classes.dex */
     public static class AccessibilityActionCompat {
         public static final AccessibilityActionCompat ACTION_CLICK;
@@ -164,7 +167,7 @@ public class AccessibilityNodeInfoCompat {
             new AccessibilityActionCompat(131072, (CharSequence) null, AccessibilityViewCommand.SetSelectionArguments.class);
             ACTION_EXPAND = new AccessibilityActionCompat(262144, null);
             ACTION_COLLAPSE = new AccessibilityActionCompat(524288, null);
-            ACTION_DISMISS = new AccessibilityActionCompat(ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES, null);
+            ACTION_DISMISS = new AccessibilityActionCompat(1048576, null);
             new AccessibilityActionCompat(2097152, (CharSequence) null, AccessibilityViewCommand.SetTextArguments.class);
             int i = Build.VERSION.SDK_INT;
             new AccessibilityActionCompat(i >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_ON_SCREEN : null, 16908342, null, null, null);
@@ -278,6 +281,17 @@ public class AccessibilityNodeInfoCompat {
                 return obj2 == null ? accessibilityActionCompat.mAction == null : obj2.equals(accessibilityActionCompat.mAction);
             }
             return false;
+        }
+
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("AccessibilityActionCompat: ");
+            String actionSymbolicName = AccessibilityNodeInfoCompat.getActionSymbolicName(this.mId);
+            if (actionSymbolicName.equals("ACTION_UNKNOWN") && getLabel() != null) {
+                actionSymbolicName = getLabel().toString();
+            }
+            sb.append(actionSymbolicName);
+            return sb.toString();
         }
     }
 
@@ -434,10 +448,10 @@ public class AccessibilityNodeInfoCompat {
         if (Build.VERSION.SDK_INT < 19) {
             return new ArrayList();
         }
-        ArrayList<Integer> integerArrayList = this.mInfo.getExtras().getIntegerArrayList(str);
+        ArrayList<Integer> integerArrayList = Api19Impl.getExtras(this.mInfo).getIntegerArrayList(str);
         if (integerArrayList == null) {
             ArrayList<Integer> arrayList = new ArrayList<>();
-            this.mInfo.getExtras().putIntegerArrayList(str, arrayList);
+            Api19Impl.getExtras(this.mInfo).putIntegerArrayList(str, arrayList);
             return arrayList;
         }
         return integerArrayList;
@@ -668,10 +682,10 @@ public class AccessibilityNodeInfoCompat {
 
     private void clearExtrasSpans() {
         if (Build.VERSION.SDK_INT >= 19) {
-            this.mInfo.getExtras().remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY");
-            this.mInfo.getExtras().remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_END_KEY");
-            this.mInfo.getExtras().remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_FLAGS_KEY");
-            this.mInfo.getExtras().remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY");
+            Api19Impl.getExtras(this.mInfo).remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY");
+            Api19Impl.getExtras(this.mInfo).remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_END_KEY");
+            Api19Impl.getExtras(this.mInfo).remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_FLAGS_KEY");
+            Api19Impl.getExtras(this.mInfo).remove("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY");
         }
     }
 
@@ -709,7 +723,7 @@ public class AccessibilityNodeInfoCompat {
         if (BuildCompat.isAtLeastR()) {
             this.mInfo.setStateDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 19) {
-            this.mInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY", charSequence);
+            Api19Impl.getExtras(this.mInfo).putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY", charSequence);
         }
     }
 
@@ -718,13 +732,9 @@ public class AccessibilityNodeInfoCompat {
             return this.mInfo.getUniqueId();
         }
         if (Build.VERSION.SDK_INT >= 19) {
-            return this.mInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY");
+            return Api19Impl.getExtras(this.mInfo).getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY");
         }
         return null;
-    }
-
-    public void recycle() {
-        this.mInfo.recycle();
     }
 
     public String getViewIdResourceName() {
@@ -778,7 +788,7 @@ public class AccessibilityNodeInfoCompat {
         if (i >= 26) {
             this.mInfo.setHintText(charSequence);
         } else if (i >= 19) {
-            this.mInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.HINT_TEXT_KEY", charSequence);
+            Api19Impl.getExtras(this.mInfo).putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.HINT_TEXT_KEY", charSequence);
         }
     }
 
@@ -790,7 +800,7 @@ public class AccessibilityNodeInfoCompat {
 
     public Bundle getExtras() {
         if (Build.VERSION.SDK_INT >= 19) {
-            return this.mInfo.getExtras();
+            return Api19Impl.getExtras(this.mInfo);
         }
         return new Bundle();
     }
@@ -818,7 +828,7 @@ public class AccessibilityNodeInfoCompat {
         if (i >= 28) {
             this.mInfo.setPaneTitle(charSequence);
         } else if (i >= 19) {
-            this.mInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.PANE_TITLE_KEY", charSequence);
+            Api19Impl.getExtras(this.mInfo).putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.PANE_TITLE_KEY", charSequence);
         }
     }
 
@@ -855,7 +865,7 @@ public class AccessibilityNodeInfoCompat {
 
     public void setRoleDescription(CharSequence charSequence) {
         if (Build.VERSION.SDK_INT >= 19) {
-            this.mInfo.getExtras().putCharSequence("AccessibilityNodeInfo.roleDescription", charSequence);
+            Api19Impl.getExtras(this.mInfo).putCharSequence("AccessibilityNodeInfo.roleDescription", charSequence);
         }
     }
 
@@ -968,5 +978,13 @@ public class AccessibilityNodeInfoCompat {
     private boolean getBooleanProperty(int i) {
         Bundle extras = getExtras();
         return extras != null && (extras.getInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", 0) & i) == i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes.dex */
+    public static class Api19Impl {
+        public static Bundle getExtras(AccessibilityNodeInfo accessibilityNodeInfo) {
+            return accessibilityNodeInfo.getExtras();
+        }
     }
 }

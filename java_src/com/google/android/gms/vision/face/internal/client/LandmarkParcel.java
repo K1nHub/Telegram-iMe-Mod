@@ -14,18 +14,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 public final class LandmarkParcel extends AbstractSafeParcelable {
     @RecentlyNonNull
     public static final Parcelable.Creator<LandmarkParcel> CREATOR = new zzm();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final float zza;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final float zzb;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     public final int zzc;
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     private final int zzd;
 
     @SafeParcelable.Constructor
     @UsedByNative("wrapper.cc")
-    public LandmarkParcel(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) float f, @SafeParcelable.Param(m778id = 3) float f2, @SafeParcelable.Param(m778id = 4) int i2) {
+    public LandmarkParcel(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) float f, @SafeParcelable.Param(m796id = 3) float f2, @SafeParcelable.Param(m796id = 4) int i2) {
         this.zzd = i;
         this.zza = f;
         this.zzb = f2;

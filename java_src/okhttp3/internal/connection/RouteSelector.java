@@ -6,12 +6,15 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketAddress;
 import java.net.SocketException;
+import java.net.URI;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Address;
@@ -19,6 +22,7 @@ import okhttp3.Call;
 import okhttp3.EventListener;
 import okhttp3.HttpUrl;
 import okhttp3.Route;
+import okhttp3.internal.Util;
 /* compiled from: RouteSelector.kt */
 /* loaded from: classes4.dex */
 public final class RouteSelector {
@@ -82,13 +86,37 @@ public final class RouteSelector {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private final void resetNextProxy(HttpUrl httpUrl, Proxy proxy) {
-        RouteSelector$resetNextProxy$1 routeSelector$resetNextProxy$1 = new RouteSelector$resetNextProxy$1(this, proxy, httpUrl);
+    private final void resetNextProxy(final HttpUrl httpUrl, final Proxy proxy) {
+        Function0<List<? extends Proxy>> function0 = new Function0<List<? extends Proxy>>() { // from class: okhttp3.internal.connection.RouteSelector$resetNextProxy$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends Proxy> invoke() {
+                Address address;
+                List<? extends Proxy> listOf;
+                Proxy proxy2 = proxy;
+                if (proxy2 != null) {
+                    listOf = CollectionsKt__CollectionsJVMKt.listOf(proxy2);
+                    return listOf;
+                }
+                URI uri = httpUrl.uri();
+                if (uri.getHost() == null) {
+                    return Util.immutableListOf(Proxy.NO_PROXY);
+                }
+                address = RouteSelector.this.address;
+                List<Proxy> select = address.proxySelector().select(uri);
+                return select == null || select.isEmpty() ? Util.immutableListOf(Proxy.NO_PROXY) : Util.toImmutableList(select);
+            }
+        };
         this.eventListener.proxySelectStart(this.call, httpUrl);
-        List<? extends Proxy> invoke2 = routeSelector$resetNextProxy$1.invoke2();
-        this.proxies = invoke2;
+        List<? extends Proxy> invoke = function0.invoke();
+        this.proxies = invoke;
         this.nextProxyIndex = 0;
-        this.eventListener.proxySelectEnd(this.call, httpUrl, invoke2);
+        this.eventListener.proxySelectEnd(this.call, httpUrl, invoke);
     }
 
     private final boolean hasNextProxy() {

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$11;
-.super Landroidx/recyclerview/widget/GridLayoutManager;
+.super Landroid/widget/FrameLayout;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,55 +14,41 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;I)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 741
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$11;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
+    .line 743
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
+.method protected onMeasure(II)V
     .locals 1
 
-    .line 745
-    :try_start_0
-    new-instance p2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$11$1;
+    .line 746
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    move-result p2
 
-    move-result-object p1
+    const/16 v0, 0x24
 
-    const/4 v0, 0x2
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$11$1;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$11;Landroid/content/Context;I)V
+    move-result v0
 
-    .line 751
-    invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
+    add-int/2addr p2, v0
 
-    .line 752
-    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const/high16 v0, 0x40000000    # 2.0f
 
-    goto :goto_0
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    :catch_0
-    move-exception p1
+    move-result p2
 
-    .line 754
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    :goto_0
     return-void
 .end method

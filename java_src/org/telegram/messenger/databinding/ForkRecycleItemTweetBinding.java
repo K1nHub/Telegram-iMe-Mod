@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemTweetBinding implements ViewBinding {
     private final ConstraintLayout rootView;
@@ -30,7 +30,7 @@ public final class ForkRecycleItemTweetBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemTweetBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_tweet, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_tweet, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -38,49 +38,49 @@ public final class ForkRecycleItemTweetBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemTweetBinding bind(View view) {
-        int i = C3417R.C3420id.image_avatar;
+        int i = C3419R.C3422id.image_avatar;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3417R.C3420id.image_comments;
+            i = C3419R.C3422id.image_comments;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3417R.C3420id.image_like;
+                i = C3419R.C3422id.image_like;
                 AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView3 != null) {
-                    i = C3417R.C3420id.image_menu;
+                    i = C3419R.C3422id.image_menu;
                     ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
                     if (imageView != null) {
-                        i = C3417R.C3420id.image_retweets;
+                        i = C3419R.C3422id.image_retweets;
                         AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView4 != null) {
-                            i = C3417R.C3420id.image_share;
+                            i = C3419R.C3422id.image_share;
                             AppCompatImageView appCompatImageView5 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                             if (appCompatImageView5 != null) {
-                                i = C3417R.C3420id.linear_bottom_panel;
+                                i = C3419R.C3422id.linear_bottom_panel;
                                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                 if (linearLayout != null) {
-                                    i = C3417R.C3420id.recycler;
+                                    i = C3419R.C3422id.recycler;
                                     RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                                     if (recyclerView != null) {
-                                        i = C3417R.C3420id.text_comments_count;
+                                        i = C3419R.C3422id.text_comments_count;
                                         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView != null) {
-                                            i = C3417R.C3420id.text_likes_count;
+                                            i = C3419R.C3422id.text_likes_count;
                                             TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                             if (textView2 != null) {
-                                                i = C3417R.C3420id.text_name;
+                                                i = C3419R.C3422id.text_name;
                                                 TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                 if (textView3 != null) {
-                                                    i = C3417R.C3420id.text_nickname;
+                                                    i = C3419R.C3422id.text_nickname;
                                                     TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView4 != null) {
-                                                        i = C3417R.C3420id.text_post;
+                                                        i = C3419R.C3422id.text_post;
                                                         TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                         if (textView5 != null) {
-                                                            i = C3417R.C3420id.text_retweets_count;
+                                                            i = C3419R.C3422id.text_retweets_count;
                                                             TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                                             if (textView6 != null) {
-                                                                i = C3417R.C3420id.text_time;
+                                                                i = C3419R.C3422id.text_time;
                                                                 TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                 if (textView7 != null) {
                                                                     ConstraintLayout constraintLayout = (ConstraintLayout) view;

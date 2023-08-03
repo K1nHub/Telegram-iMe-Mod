@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/CalendarActivity$9;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "CalendarActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/CalendarActivity;->animateSelection()V
+    value = Lorg/telegram/ui/CalendarActivity;->getThemeDescriptions()Ljava/util/ArrayList;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,63 +25,31 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 1327
+    .line 1465
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$9;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 3
+.method public didSetColor()V
+    .locals 1
 
-    const/4 p1, 0x0
-
-    .line 1330
-    :goto_0
+    .line 1468
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$9;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4700(Lorg/telegram/ui/CalendarActivity;)V
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+    return-void
+.end method
 
-    move-result v0
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
 
-    if-ge p1, v0, :cond_0
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
-    .line 1331
-    iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$9;->this$0:Lorg/telegram/ui/CalendarActivity;
-
-    iget-object v0, v0, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/telegram/ui/CalendarActivity$MonthView;
-
-    .line 1332
-    iget-object v1, p0, Lorg/telegram/ui/CalendarActivity$9;->this$0:Lorg/telegram/ui/CalendarActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/CalendarActivity;->access$300(Lorg/telegram/ui/CalendarActivity;)I
-
-    move-result v1
-
-    iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$9;->this$0:Lorg/telegram/ui/CalendarActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/CalendarActivity;->access$400(Lorg/telegram/ui/CalendarActivity;)I
-
-    move-result v2
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$800(Lorg/telegram/ui/CalendarActivity$MonthView;II)V
-
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method

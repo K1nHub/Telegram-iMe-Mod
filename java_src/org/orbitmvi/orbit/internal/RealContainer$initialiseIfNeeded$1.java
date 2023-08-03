@@ -8,13 +8,13 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Lambda;
 import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1", m83f = "RealContainer.kt", m82l = {90}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1", m101f = "RealContainer.kt", m100l = {90}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
+public final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
@@ -38,31 +38,6 @@ final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements 
         return ((RealContainer$initialiseIfNeeded$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: RealContainer.kt */
-    /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1$1 */
-    /* loaded from: classes4.dex */
-    public static final class C33051 extends Lambda implements Function0<Unit> {
-        final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C33051(RealContainer<STATE, SIDE_EFFECT> realContainer) {
-            super(0);
-            this.this$0 = realContainer;
-        }
-
-        @Override // kotlin.jvm.functions.Function0
-        public /* bridge */ /* synthetic */ Unit invoke() {
-            invoke2();
-            return Unit.INSTANCE;
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final void invoke2() {
-            this.this$0.getSettings().getIdlingRegistry().close();
-        }
-    }
-
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended;
@@ -70,9 +45,26 @@ final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements 
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C33051 c33051 = new C33051(this.this$0);
+            final RealContainer<STATE, SIDE_EFFECT> realContainer = this.this$0;
+            Function0<Unit> function0 = new Function0<Unit>() { // from class: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1.1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    realContainer.getSettings().getIdlingRegistry().close();
+                }
+            };
             this.label = 1;
-            if (ProduceKt.awaitClose((ProducerScope) this.L$0, c33051, this) == coroutine_suspended) {
+            if (ProduceKt.awaitClose((ProducerScope) this.L$0, function0, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

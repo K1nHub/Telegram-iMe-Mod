@@ -14,9 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
@@ -55,15 +57,51 @@ public final class FloatingActionButton extends FrameLayout {
         Lazy lazy4;
         Lazy lazy5;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new FloatingActionButton$iconView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<RLottieImageView>() { // from class: com.iMe.fork.ui.view.FloatingActionButton$iconView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RLottieImageView invoke() {
+                RLottieImageView initIconView;
+                initIconView = FloatingActionButton.this.initIconView();
+                return initIconView;
+            }
+        });
         this.iconView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(FloatingActionButton$translationZDefault$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.fork.ui.view.FloatingActionButton$translationZDefault$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(4));
+            }
+        });
         this.translationZDefault$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(FloatingActionButton$translationZPressed$2.INSTANCE);
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.fork.ui.view.FloatingActionButton$translationZPressed$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(2));
+            }
+        });
         this.translationZPressed$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(FloatingActionButton$buttonSize$2.INSTANCE);
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.view.FloatingActionButton$buttonSize$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(56));
+            }
+        });
         this.buttonSize$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(FloatingActionButton$loadingAnimationSize$2.INSTANCE);
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.view.FloatingActionButton$loadingAnimationSize$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(24));
+            }
+        });
         this.loadingAnimationSize$delegate = lazy5;
         StateListAnimator stateListAnimator = new StateListAnimator();
         Property property = FrameLayout.TRANSLATION_Z;
@@ -121,7 +159,7 @@ public final class FloatingActionButton extends FrameLayout {
         RLottieImageView iconView = getIconView();
         if (this.isLoading) {
             iconView.setAutoRepeat(true);
-            iconView.setAnimation(C3417R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
+            iconView.setAnimation(C3419R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
             iconView.playAnimation();
             return;
         }

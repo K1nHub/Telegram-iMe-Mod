@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 448
+    .line 474
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert$1;)V
     .locals 0
 
-    .line 448
+    .line 474
     invoke-direct {p0}, Lorg/telegram/ui/Components/PollVotesAlert$Button;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$3802(Lorg/telegram/ui/Components/PollVotesAlert$Button;I)I
     .locals 0
 
-    .line 448
+    .line 474
     iput p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->votesCount:I
 
     return p1
@@ -53,7 +53,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/Components/PollVotesAlert$Button;)F
     .locals 0
 
-    .line 448
+    .line 474
     iget p0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->decimal:F
 
     return p0
@@ -62,7 +62,7 @@
 .method static synthetic access$3902(Lorg/telegram/ui/Components/PollVotesAlert$Button;F)F
     .locals 0
 
-    .line 448
+    .line 474
     iput p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->decimal:F
 
     return p1
@@ -71,7 +71,7 @@
 .method static synthetic access$3924(Lorg/telegram/ui/Components/PollVotesAlert$Button;F)F
     .locals 1
 
-    .line 448
+    .line 474
     iget v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->decimal:F
 
     sub-float/2addr v0, p1
@@ -84,7 +84,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
     .locals 0
 
-    .line 448
+    .line 474
     iget p0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->percent:I
 
     return p0
@@ -93,7 +93,7 @@
 .method static synthetic access$4002(Lorg/telegram/ui/Components/PollVotesAlert$Button;I)I
     .locals 0
 
-    .line 448
+    .line 474
     iput p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->percent:I
 
     return p1
@@ -102,7 +102,7 @@
 .method static synthetic access$4012(Lorg/telegram/ui/Components/PollVotesAlert$Button;I)I
     .locals 1
 
-    .line 448
+    .line 474
     iget v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Button;->percent:I
 
     add-int/2addr v0, p1

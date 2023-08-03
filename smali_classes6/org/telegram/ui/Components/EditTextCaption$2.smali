@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;Landroid/content/Context;)V
     .locals 0
 
-    .line 170
+    .line 171
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x40
 
-    .line 173
+    .line 174
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

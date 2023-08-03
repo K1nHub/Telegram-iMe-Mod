@@ -26,7 +26,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 333
+    .line 338
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,8 +37,8 @@
 .method public get(Lorg/telegram/ui/Components/UsersAlertBase;)Ljava/lang/Float;
     .locals 0
 
-    .line 341
-    invoke-static {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$200(Lorg/telegram/ui/Components/UsersAlertBase;)F
+    .line 346
+    invoke-static {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$400(Lorg/telegram/ui/Components/UsersAlertBase;)F
 
     move-result p1
 
@@ -52,7 +52,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 333
+    .line 338
     check-cast p1, Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/UsersAlertBase$3;->get(Lorg/telegram/ui/Components/UsersAlertBase;)Ljava/lang/Float;
@@ -65,7 +65,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 333
+    .line 338
     check-cast p1, Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/UsersAlertBase$3;->setValue(Lorg/telegram/ui/Components/UsersAlertBase;F)V
@@ -76,7 +76,7 @@
 .method public setValue(Lorg/telegram/ui/Components/UsersAlertBase;F)V
     .locals 0
 
-    .line 336
+    .line 341
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/UsersAlertBase;->setColorProgress(F)V
 
     return-void

@@ -161,7 +161,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/iMe/utils/base/SimpleBaseAdapter$BaseViewHolder;
     .locals 4
 
-    const-string p2, "parent"
+    const-string/jumbo p2, "parent"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

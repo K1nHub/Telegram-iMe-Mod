@@ -15,6 +15,7 @@ import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectTransactionArgs;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.utils.crypto.Convert;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
@@ -28,9 +29,13 @@ import java.math.BigInteger;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletConnectTransactionPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter */
@@ -58,9 +63,34 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         this.schedulersProvider = schedulersProvider;
         this.walletConnectInteractor = walletConnectInteractor;
         this.walletConnectManager = walletConnectManager;
-        lazy = LazyKt__LazyJVMKt.lazy(new WalletConnectTransactionPresenter$token$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TokenDetailed>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$token$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TokenDetailed invoke() {
+                WalletConnectTransactionScreenType walletConnectTransactionScreenType;
+                walletConnectTransactionScreenType = WalletConnectTransactionPresenter.this.screenType;
+                return walletConnectTransactionScreenType.getTransaction().getFeeToken();
+            }
+        });
         this.token$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new WalletConnectTransactionPresenter$amount$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<BigDecimal>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$amount$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final BigDecimal invoke() {
+                WalletConnectTransactionScreenType walletConnectTransactionScreenType;
+                walletConnectTransactionScreenType = WalletConnectTransactionPresenter.this.screenType;
+                return Convert.fromWei(walletConnectTransactionScreenType.getTransaction().getValue(), Convert.Unit.ETHER);
+            }
+        });
         this.amount$delegate = lazy2;
         this.selectedFee = new GasPriceItem(TransactionSpeedLevel.MEDIUM, getToken(), screenType.getTransaction().getTransactionParams().getMedium());
     }
@@ -78,10 +108,10 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     public final DialogModel getSendConfirmationDialogModel() {
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_ok_btn));
+            return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_amount_confirm_alert_ok_btn));
         }
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign) {
-            return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_connect_transaction_button_sign));
+            return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_connect_transaction_button_sign));
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -120,11 +150,59 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final void subscribeToTransactionProcessingWithResultsHandle(Observable<Result<String>> observable) {
-        Observable<Result<String>> observeOn = observable.observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = observable.observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "processingObservable\n   …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2246xc1738946(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2247xc1738947((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1479invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1479invoke(Result<? extends String> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    WalletConnectTransactionPresenter.this.onTransactionProcessingSuccess((String) ((Result.Success) result).getData());
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletConnectTransactionPresenter.this.resourceManager;
+                    ((WalletConnectTransactionView) WalletConnectTransactionPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -147,7 +225,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3419R.string.common_cancel), 6, null);
     }
 
     private final String getConfirmMessage() {
@@ -155,11 +233,11 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         ResourceManager resourceManager = this.resourceManager;
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            i = C3417R.string.wallet_amount_send_confirm_alert_description;
+            i = C3419R.string.wallet_amount_send_confirm_alert_description;
         } else if (!(walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3417R.string.wallet_connect_transaction_confirm_sign_description;
+            i = C3419R.string.wallet_connect_transaction_confirm_sign_description;
         }
         return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(getAmount().doubleValue()), Integer.valueOf(getToken().getDecimals())), getToken().getTicker());
     }

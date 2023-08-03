@@ -27,8 +27,8 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     private final String[] namesAndValues;
 
     /* renamed from: of */
-    public static final Headers m76of(String... strArr) {
-        return Companion.m75of(strArr);
+    public static final Headers m94of(String... strArr) {
+        return Companion.m93of(strArr);
     }
 
     private Headers(String[] strArr) {
@@ -83,7 +83,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         int size = size();
         Pair[] pairArr = new Pair[size];
         for (int i = 0; i < size; i++) {
-            pairArr[i] = TuplesKt.m85to(name(i), value(i));
+            pairArr[i] = TuplesKt.m103to(name(i), value(i));
         }
         return ArrayIteratorKt.iterator(pairArr);
     }
@@ -314,7 +314,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         /* renamed from: of */
-        public final Headers m75of(String... namesAndValues) {
+        public final Headers m93of(String... namesAndValues) {
             IntRange indices;
             IntProgression step;
             CharSequence trim;

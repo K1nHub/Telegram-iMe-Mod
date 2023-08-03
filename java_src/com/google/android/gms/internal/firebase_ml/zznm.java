@@ -19,7 +19,7 @@ public final class zznm {
             StringBuilder sb = new StringBuilder(valueOf.length() + 48);
             sb.append("Exception thrown when trying to get app version ");
             sb.append(valueOf);
-            gmsLogger.m787e("CommonUtils", sb.toString());
+            gmsLogger.m805e("CommonUtils", sb.toString());
             return "";
         }
     }

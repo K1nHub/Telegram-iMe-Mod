@@ -5,15 +5,17 @@ import java.util.ArrayList;
 /* loaded from: classes4.dex */
 public abstract class TLRPC$PhotoSize extends TLObject {
     public byte[] bytes;
+    public int gradientBottomColor;
+    public int gradientTopColor;
 
     /* renamed from: h */
-    public int f1545h;
+    public int f1549h;
     public TLRPC$FileLocation location;
     public int size;
     public String type;
 
     /* renamed from: w */
-    public int f1546w;
+    public int f1550w;
 
     public static TLRPC$PhotoSize TLdeserialize(long j, long j2, long j3, AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$PhotoSize tLRPC$TL_photoPathSize;
@@ -33,8 +35,8 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.type = abstractSerializedData2.readString(z2);
                         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
-                        this.f1546w = abstractSerializedData2.readInt32(z2);
-                        this.f1545h = abstractSerializedData2.readInt32(z2);
+                        this.f1550w = abstractSerializedData2.readInt32(z2);
+                        this.f1549h = abstractSerializedData2.readInt32(z2);
                         this.bytes = abstractSerializedData2.readByteArray(z2);
                     }
 
@@ -43,8 +45,8 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeString(this.type);
                         this.location.serializeToStream(abstractSerializedData2);
-                        abstractSerializedData2.writeInt32(this.f1546w);
-                        abstractSerializedData2.writeInt32(this.f1545h);
+                        abstractSerializedData2.writeInt32(this.f1550w);
+                        abstractSerializedData2.writeInt32(this.f1549h);
                         abstractSerializedData2.writeByteArray(this.bytes);
                     }
                 };
@@ -66,8 +68,8 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.type = abstractSerializedData2.readString(z2);
                         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
-                        this.f1546w = abstractSerializedData2.readInt32(z2);
-                        this.f1545h = abstractSerializedData2.readInt32(z2);
+                        this.f1550w = abstractSerializedData2.readInt32(z2);
+                        this.f1549h = abstractSerializedData2.readInt32(z2);
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         if (readInt32 != 481674261) {
                             if (z2) {
@@ -91,8 +93,8 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeString(this.type);
                         this.location.serializeToStream(abstractSerializedData2);
-                        abstractSerializedData2.writeInt32(this.f1546w);
-                        abstractSerializedData2.writeInt32(this.f1545h);
+                        abstractSerializedData2.writeInt32(this.f1550w);
+                        abstractSerializedData2.writeInt32(this.f1549h);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.sizes.size();
                         abstractSerializedData2.writeInt32(size);

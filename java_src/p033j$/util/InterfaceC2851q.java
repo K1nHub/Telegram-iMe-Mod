@@ -6,7 +6,7 @@ import p033j$.util.function.InterfaceC2831q;
 /* loaded from: classes2.dex */
 public interface InterfaceC2851q extends InterfaceC2848o {
     /* renamed from: d */
-    void mo142d(InterfaceC2831q interfaceC2831q);
+    void mo160d(InterfaceC2831q interfaceC2831q);
 
     void forEachRemaining(Consumer consumer);
 

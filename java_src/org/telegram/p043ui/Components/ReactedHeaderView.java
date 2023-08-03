@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -84,12 +84,12 @@ public class ReactedHeaderView extends FrameLayout {
         AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
         this.avatarsImageView = avatarsImageView;
         avatarsImageView.setStyle(11);
-        this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m54dp(22));
+        this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.m72dp(22));
         addView(this.avatarsImageView, LayoutHelper.createFrameRelatively(56.0f, -1.0f, 8388629, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
         ImageView imageView = new ImageView(context);
         this.iconView = imageView;
         addView(imageView, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388627, 11.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
-        Drawable mutate = ContextCompat.getDrawable(context, C3417R.C3419drawable.msg_reactions).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3419R.C3421drawable.msg_reactions).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon), PorterDuff.Mode.MULTIPLY));
         this.iconView.setImageDrawable(mutate);
         this.iconView.setVisibility(8);
@@ -109,12 +109,18 @@ public class ReactedHeaderView extends FrameLayout {
     /* loaded from: classes6.dex */
     public static class UserSeen {
         public int date;
-        public TLRPC$User user;
+        long dialogId;
+        public TLObject user;
 
-        public UserSeen(TLRPC$User tLRPC$User, int i) {
+        public UserSeen(TLObject tLObject, int i) {
             this.date = 0;
-            this.user = tLRPC$User;
+            this.user = tLObject;
             this.date = i;
+            if (tLObject instanceof TLRPC$User) {
+                this.dialogId = ((TLRPC$User) tLObject).f1675id;
+            } else if (tLObject instanceof TLRPC$Chat) {
+                this.dialogId = -((TLRPC$Chat) tLObject).f1518id;
+            }
         }
     }
 
@@ -182,7 +188,7 @@ public class ReactedHeaderView extends FrameLayout {
                 tLRPC$TL_channels_getParticipants.limit = MessagesController.getInstance(this.currentAccount).chatReadMarkSizeThreshold;
                 tLRPC$TL_channels_getParticipants.offset = 0;
                 tLRPC$TL_channels_getParticipants.filter = new TLRPC$TL_channelParticipantsRecent();
-                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(tLRPC$Chat.f1515id);
+                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(tLRPC$Chat.f1518id);
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.Components.ReactedHeaderView$$ExternalSyntheticLambda6
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -192,7 +198,7 @@ public class ReactedHeaderView extends FrameLayout {
                 return;
             }
             TLRPC$TL_messages_getFullChat tLRPC$TL_messages_getFullChat = new TLRPC$TL_messages_getFullChat();
-            tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1515id;
+            tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1518id;
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_messages_getFullChat, new RequestDelegate() { // from class: org.telegram.ui.Components.ReactedHeaderView$$ExternalSyntheticLambda7
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -213,7 +219,7 @@ public class ReactedHeaderView extends FrameLayout {
             while (true) {
                 if (i >= this.users.size()) {
                     break;
-                } else if (this.users.get(i).user.f1656id == userSeen.user.f1656id) {
+                } else if (MessageObject.getObjectPeerId(this.users.get(i).user) == MessageObject.getObjectPeerId(userSeen.user)) {
                     if (userSeen.date > 0) {
                         this.users.get(i).date = userSeen.date;
                     }
@@ -250,7 +256,7 @@ public class ReactedHeaderView extends FrameLayout {
             for (int i = 0; i < tLRPC$TL_channels_channelParticipants.users.size(); i++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_channels_channelParticipants.users.get(i);
                 MessagesController.getInstance(this.currentAccount).putUser(tLRPC$User, false);
-                int indexOf = list.indexOf(Long.valueOf(tLRPC$User.f1656id));
+                int indexOf = list.indexOf(Long.valueOf(tLRPC$User.f1675id));
                 if (!tLRPC$User.self && indexOf >= 0) {
                     list2.add(new UserSeen(tLRPC$User, ((Integer) list3.get(indexOf)).intValue()));
                 }
@@ -276,7 +282,7 @@ public class ReactedHeaderView extends FrameLayout {
             for (int i = 0; i < tLRPC$TL_messages_chatFull.users.size(); i++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_messages_chatFull.users.get(i);
                 MessagesController.getInstance(this.currentAccount).putUser(tLRPC$User, false);
-                int indexOf = list.indexOf(Long.valueOf(tLRPC$User.f1656id));
+                int indexOf = list.indexOf(Long.valueOf(tLRPC$User.f1675id));
                 if (!tLRPC$User.self && indexOf >= 0) {
                     list2.add(new UserSeen(tLRPC$User, ((Integer) list3.get(indexOf)).intValue()));
                 }
@@ -289,7 +295,7 @@ public class ReactedHeaderView extends FrameLayout {
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
         TLRPC$TL_messages_getMessageReactionsList tLRPC$TL_messages_getMessageReactionsList = new TLRPC$TL_messages_getMessageReactionsList();
         tLRPC$TL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(this.message.getDialogId());
-        tLRPC$TL_messages_getMessageReactionsList.f1606id = this.message.getId();
+        tLRPC$TL_messages_getMessageReactionsList.f1614id = this.message.getId();
         tLRPC$TL_messages_getMessageReactionsList.limit = 3;
         tLRPC$TL_messages_getMessageReactionsList.reaction = null;
         tLRPC$TL_messages_getMessageReactionsList.offset = null;
@@ -321,6 +327,7 @@ public class ReactedHeaderView extends FrameLayout {
         String formatPluralString;
         boolean z;
         boolean z2;
+        boolean z3;
         if (this.seenUsers.isEmpty() || this.seenUsers.size() < i) {
             formatPluralString = LocaleController.formatPluralString("ReactionsCount", i, new Object[0]);
         } else {
@@ -354,21 +361,43 @@ public class ReactedHeaderView extends FrameLayout {
         while (it.hasNext()) {
             TLRPC$User next = it.next();
             TLRPC$Peer tLRPC$Peer = this.message.messageOwner.from_id;
-            if (tLRPC$Peer != null && next.f1656id != tLRPC$Peer.user_id) {
+            if (tLRPC$Peer != null && next.f1675id != tLRPC$Peer.user_id) {
                 int i2 = 0;
                 while (true) {
                     if (i2 >= this.users.size()) {
-                        z2 = false;
+                        z3 = false;
                         break;
-                    } else if (this.users.get(i2).user.f1656id == next.f1656id) {
-                        z2 = true;
+                    } else if (this.users.get(i2).dialogId == next.f1675id) {
+                        z3 = true;
                         break;
                     } else {
                         i2++;
                     }
                 }
-                if (!z2) {
+                if (!z3) {
                     this.users.add(new UserSeen(next, 0));
+                }
+            }
+        }
+        Iterator<TLRPC$Chat> it2 = tLRPC$TL_messages_messageReactionsList.chats.iterator();
+        while (it2.hasNext()) {
+            TLRPC$Chat next2 = it2.next();
+            TLRPC$Peer tLRPC$Peer2 = this.message.messageOwner.from_id;
+            if (tLRPC$Peer2 != null && next2.f1518id != tLRPC$Peer2.user_id) {
+                int i3 = 0;
+                while (true) {
+                    if (i3 >= this.users.size()) {
+                        z2 = false;
+                        break;
+                    } else if (this.users.get(i3).dialogId == (-next2.f1518id)) {
+                        z2 = true;
+                        break;
+                    } else {
+                        i3++;
+                    }
+                }
+                if (!z2) {
+                    this.users.add(new UserSeen(next2, 0));
                 }
             }
         }
@@ -410,7 +439,7 @@ public class ReactedHeaderView extends FrameLayout {
             java.util.List<org.telegram.ui.Components.ReactedHeaderView$UserSeen> r5 = r6.users
             java.lang.Object r5 = r5.get(r0)
             org.telegram.ui.Components.ReactedHeaderView$UserSeen r5 = (org.telegram.p043ui.Components.ReactedHeaderView.UserSeen) r5
-            org.telegram.tgnet.TLRPC$User r5 = r5.user
+            org.telegram.tgnet.TLObject r5 = r5.user
             r3.setObject(r0, r4, r5)
             goto L36
         L2e:
@@ -432,18 +461,18 @@ public class ReactedHeaderView extends FrameLayout {
             r0 = r3
             goto L55
         L49:
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r4)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r4)
             goto L54
         L4e:
             r0 = 24
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
         L54:
             float r0 = (float) r0
         L55:
             org.telegram.ui.Components.AvatarsImageView r1 = r6.avatarsImageView
             boolean r5 = org.telegram.messenger.LocaleController.isRTL
             if (r5 == 0) goto L60
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r4)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r4)
             float r0 = (float) r0
         L60:
             r1.setTranslationX(r0)

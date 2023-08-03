@@ -24,7 +24,14 @@ import java.io.IOException;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtractor {
-    public static final ChunkExtractor.Factory FACTORY = BundledChunkExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ChunkExtractor.Factory FACTORY = new ChunkExtractor.Factory() { // from class: com.google.android.exoplayer2.source.chunk.BundledChunkExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.source.chunk.ChunkExtractor.Factory
+        public final ChunkExtractor createProgressiveMediaExtractor(int i, Format format, boolean z, List list, TrackOutput trackOutput, PlayerId playerId) {
+            ChunkExtractor lambda$static$0;
+            lambda$static$0 = BundledChunkExtractor.lambda$static$0(i, format, z, list, trackOutput, playerId);
+            return lambda$static$0;
+        }
+    };
     private static final PositionHolder POSITION_HOLDER = new PositionHolder();
     private final SparseArray<BindingTrackOutput> bindingTrackOutputs = new SparseArray<>();
     private long endTimeUs;
@@ -137,7 +144,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         private final DummyTrackOutput fakeTrackOutput = new DummyTrackOutput();
 
         /* renamed from: id */
-        private final int f210id;
+        private final int f212id;
         private final Format manifestFormat;
         public Format sampleFormat;
         private TrackOutput trackOutput;
@@ -156,7 +163,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         }
 
         public BindingTrackOutput(int i, int i2, Format format) {
-            this.f210id = i;
+            this.f212id = i;
             this.type = i2;
             this.manifestFormat = format;
         }
@@ -167,7 +174,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
                 return;
             }
             this.endTimeUs = j;
-            TrackOutput track = trackOutputProvider.track(this.f210id, this.type);
+            TrackOutput track = trackOutputProvider.track(this.f212id, this.type);
             this.trackOutput = track;
             Format format = this.sampleFormat;
             if (format != null) {

@@ -59,7 +59,7 @@ public final class SubripDecoder extends SimpleSubtitleDecoder {
                     Integer.parseInt(readLine);
                     String readLine2 = parsableByteArray.readLine(detectUtfCharset);
                     if (readLine2 == null) {
-                        Log.m796w(TAG, "Unexpected end");
+                        Log.m814w(TAG, "Unexpected end");
                         break;
                     }
                     Matcher matcher = SUBRIP_TIMING_LINE.matcher(readLine2);
@@ -90,10 +90,10 @@ public final class SubripDecoder extends SimpleSubtitleDecoder {
                         arrayList.add(buildCue(fromHtml, str));
                         arrayList.add(Cue.EMPTY);
                     } else {
-                        Log.m796w(TAG, "Skipping invalid timing: " + readLine2);
+                        Log.m814w(TAG, "Skipping invalid timing: " + readLine2);
                     }
                 } catch (NumberFormatException unused) {
-                    Log.m796w(TAG, "Skipping invalid index: " + readLine);
+                    Log.m814w(TAG, "Skipping invalid index: " + readLine);
                 }
             }
         }

@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$22;
-.super Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+.super Lorg/telegram/ui/Components/RadialProgressView;
 .source "ProfileActivity.java"
 
 
@@ -14,56 +14,59 @@
 .end annotation
 
 
+# instance fields
+.field private paint:Landroid/graphics/Paint;
+
+.field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4540
-    invoke-direct {p0, p2}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;-><init>(Landroid/content/Context;)V
+    .line 4671
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$22;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
+
+    .line 4672
+    new-instance p1, Landroid/graphics/Paint;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
+
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$22;->paint:Landroid/graphics/Paint;
+
+    const/high16 p2, 0x55000000
+
+    .line 4675
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 0
-
-    .line 4557
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
-
-    .line 4558
-    iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 4559
-    iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+.method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 4543
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .line 4680
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$22;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 4544
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$22;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
@@ -73,67 +76,65 @@
 
     if-eqz v0, :cond_0
 
-    .line 4545
-    sget v0, Lorg/telegram/messenger/R$string;->AccDescrProfilePicture:I
+    .line 4681
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$22;->paint:Landroid/graphics/Paint;
 
-    const-string v1, "AccDescrProfilePicture"
+    const/high16 v1, 0x42aa0000    # 85.0f
 
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$22;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
-
-    .line 4546
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_1
-
-    .line 4547
-    new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    const/16 v1, 0x10
-
-    sget v2, Lorg/telegram/messenger/R$string;->Open:I
-
-    const-string v3, "Open"
-
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;-><init>(ILjava/lang/CharSequence;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
-
-    .line 4548
-    new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    const/16 v1, 0x20
-
-    sget v2, Lorg/telegram/messenger/R$string;->AccDescrOpenInPhotoViewer:I
-
-    const-string v3, "AccDescrOpenInPhotoViewer"
-
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;-><init>(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getCurrentAlpha()F
 
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+    move-result v2
 
-    goto :goto_0
+    mul-float/2addr v2, v1
 
+    float-to-int v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 4682
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v1
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$22;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v2, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    .line 4684
     :cond_0
-    const/4 v0, 0x0
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RadialProgressView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 4551
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setVisibleToUser(Z)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method

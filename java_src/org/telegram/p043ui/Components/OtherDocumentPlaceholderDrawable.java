@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -84,13 +84,13 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
     }
 
     public OtherDocumentPlaceholderDrawable(Context context, View view, MessageObject messageObject) {
-        docPaint.setTextSize(AndroidUtilities.m54dp(14));
-        namePaint.setTextSize(AndroidUtilities.m54dp(19));
-        sizePaint.setTextSize(AndroidUtilities.m54dp(15));
-        buttonPaint.setTextSize(AndroidUtilities.m54dp(15));
-        percentPaint.setTextSize(AndroidUtilities.m54dp(15));
-        openPaint.setTextSize(AndroidUtilities.m54dp(15));
-        progressPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        docPaint.setTextSize(AndroidUtilities.m72dp(14));
+        namePaint.setTextSize(AndroidUtilities.m72dp(19));
+        sizePaint.setTextSize(AndroidUtilities.m72dp(15));
+        buttonPaint.setTextSize(AndroidUtilities.m72dp(15));
+        percentPaint.setTextSize(AndroidUtilities.m72dp(15));
+        openPaint.setTextSize(AndroidUtilities.m72dp(15));
+        progressPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.parentView = view;
         this.parentMessageObject = messageObject;
         this.TAG = DownloadController.getInstance(messageObject.currentAccount).generateObserverTag();
@@ -104,13 +104,13 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
             int lastIndexOf = this.fileName.lastIndexOf(46);
             String upperCase = lastIndexOf == -1 ? "" : this.fileName.substring(lastIndexOf + 1).toUpperCase();
             this.ext = upperCase;
-            if (((int) Math.ceil(docPaint.measureText(upperCase))) > AndroidUtilities.m54dp(40)) {
-                this.ext = TextUtils.ellipsize(this.ext, docPaint, AndroidUtilities.m54dp(40), TextUtils.TruncateAt.END).toString();
+            if (((int) Math.ceil(docPaint.measureText(upperCase))) > AndroidUtilities.m72dp(40)) {
+                this.ext = TextUtils.ellipsize(this.ext, docPaint, AndroidUtilities.m72dp(40), TextUtils.TruncateAt.END).toString();
             }
             this.thumbDrawable = context.getResources().getDrawable(AndroidUtilities.getThumbForNameOrMime(this.fileName, messageObject.getDocument().mime_type, true)).mutate();
             this.fileSize = AndroidUtilities.formatFileSize(document.size);
-            if (((int) Math.ceil(namePaint.measureText(this.fileName))) > AndroidUtilities.m54dp(320)) {
-                this.fileName = TextUtils.ellipsize(this.fileName, namePaint, AndroidUtilities.m54dp(320), TextUtils.TruncateAt.END).toString();
+            if (((int) Math.ceil(namePaint.measureText(this.fileName))) > AndroidUtilities.m72dp(320)) {
+                this.fileName = TextUtils.ellipsize(this.fileName, namePaint, AndroidUtilities.m72dp(320), TextUtils.TruncateAt.END).toString();
             }
         }
         checkFileExist();
@@ -134,7 +134,7 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         String string;
-        int m54dp;
+        int m72dp;
         TextPaint textPaint;
         String str;
         Rect bounds = getBounds();
@@ -143,41 +143,41 @@ public class OtherDocumentPlaceholderDrawable extends RecyclableDrawable impleme
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, width, height, paint);
-        int m54dp2 = (height - AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK)) / 2;
-        int m54dp3 = (width - AndroidUtilities.m54dp(48)) / 2;
-        this.thumbDrawable.setBounds(m54dp3, m54dp2, AndroidUtilities.m54dp(48) + m54dp3, AndroidUtilities.m54dp(48) + m54dp2);
+        int m72dp2 = (height - AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK)) / 2;
+        int m72dp3 = (width - AndroidUtilities.m72dp(48)) / 2;
+        this.thumbDrawable.setBounds(m72dp3, m72dp2, AndroidUtilities.m72dp(48) + m72dp3, AndroidUtilities.m72dp(48) + m72dp2);
         this.thumbDrawable.draw(canvas);
-        canvas.drawText(this.ext, (width - ((int) Math.ceil(docPaint.measureText(this.ext)))) / 2, AndroidUtilities.m54dp(31) + m54dp2, docPaint);
-        canvas.drawText(this.fileName, (width - ((int) Math.ceil(namePaint.measureText(this.fileName)))) / 2, AndroidUtilities.m54dp(96) + m54dp2, namePaint);
-        canvas.drawText(this.fileSize, (width - ((int) Math.ceil(sizePaint.measureText(this.fileSize)))) / 2, AndroidUtilities.m54dp(125) + m54dp2, sizePaint);
+        canvas.drawText(this.ext, (width - ((int) Math.ceil(docPaint.measureText(this.ext)))) / 2, AndroidUtilities.m72dp(31) + m72dp2, docPaint);
+        canvas.drawText(this.fileName, (width - ((int) Math.ceil(namePaint.measureText(this.fileName)))) / 2, AndroidUtilities.m72dp(96) + m72dp2, namePaint);
+        canvas.drawText(this.fileSize, (width - ((int) Math.ceil(sizePaint.measureText(this.fileSize)))) / 2, AndroidUtilities.m72dp(125) + m72dp2, sizePaint);
         if (this.loaded) {
-            string = LocaleController.getString("OpenFile", C3417R.string.OpenFile);
+            string = LocaleController.getString("OpenFile", C3419R.string.OpenFile);
             textPaint = openPaint;
-            m54dp = 0;
+            m72dp = 0;
         } else {
             if (this.loading) {
-                string = LocaleController.getString("Cancel", C3417R.string.Cancel).toUpperCase();
+                string = LocaleController.getString("Cancel", C3419R.string.Cancel).toUpperCase();
             } else {
-                string = LocaleController.getString("TapToDownload", C3417R.string.TapToDownload);
+                string = LocaleController.getString("TapToDownload", C3419R.string.TapToDownload);
             }
-            m54dp = AndroidUtilities.m54dp(28);
+            m72dp = AndroidUtilities.m72dp(28);
             textPaint = buttonPaint;
         }
-        canvas.drawText(string, (width - ((int) Math.ceil(textPaint.measureText(string)))) / 2, AndroidUtilities.m54dp(235) + m54dp2 + m54dp, textPaint);
+        canvas.drawText(string, (width - ((int) Math.ceil(textPaint.measureText(string)))) / 2, AndroidUtilities.m72dp(235) + m72dp2 + m72dp, textPaint);
         if (this.progressVisible) {
             if (this.progress != null) {
-                canvas.drawText(this.progress, (width - ((int) Math.ceil(percentPaint.measureText(str)))) / 2, AndroidUtilities.m54dp(210) + m54dp2, percentPaint);
+                canvas.drawText(this.progress, (width - ((int) Math.ceil(percentPaint.measureText(str)))) / 2, AndroidUtilities.m72dp(210) + m72dp2, percentPaint);
             }
-            int m54dp4 = (width - AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK)) / 2;
-            int m54dp5 = m54dp2 + AndroidUtilities.m54dp(232);
+            int m72dp4 = (width - AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK)) / 2;
+            int m72dp5 = m72dp2 + AndroidUtilities.m72dp(232);
             progressPaint.setColor(-10327179);
             progressPaint.setAlpha((int) (this.animatedAlphaValue * 255.0f));
-            float f = m54dp5;
-            canvas.drawRect(((int) (AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK) * this.animatedProgressValue)) + m54dp4, f, AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK) + m54dp4, AndroidUtilities.m54dp(2) + m54dp5, progressPaint);
+            float f = m72dp5;
+            canvas.drawRect(((int) (AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK) * this.animatedProgressValue)) + m72dp4, f, AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK) + m72dp4, AndroidUtilities.m72dp(2) + m72dp5, progressPaint);
             progressPaint.setColor(-1);
             progressPaint.setAlpha((int) (this.animatedAlphaValue * 255.0f));
-            float f2 = m54dp4;
-            canvas.drawRect(f2, f, f2 + (AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK) * this.animatedProgressValue), m54dp5 + AndroidUtilities.m54dp(2), progressPaint);
+            float f2 = m72dp4;
+            canvas.drawRect(f2, f, f2 + (AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK) * this.animatedProgressValue), m72dp5 + AndroidUtilities.m72dp(2), progressPaint);
             updateAnimation();
         }
         canvas.restore();

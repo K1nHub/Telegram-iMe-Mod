@@ -11,126 +11,126 @@ import p033j$.util.function.InterfaceC2839y;
 public abstract class AbstractC3039f4 implements InterfaceC2853s {
 
     /* renamed from: a */
-    final boolean f1028a;
+    final boolean f1031a;
 
     /* renamed from: b */
-    final AbstractC3151y2 f1029b;
+    final AbstractC3151y2 f1032b;
 
     /* renamed from: c */
-    private InterfaceC2839y f1030c;
+    private InterfaceC2839y f1033c;
 
     /* renamed from: d */
-    InterfaceC2853s f1031d;
+    InterfaceC2853s f1034d;
 
     /* renamed from: e */
-    InterfaceC3080m3 f1032e;
+    InterfaceC3080m3 f1035e;
 
     /* renamed from: f */
-    InterfaceC2817c f1033f;
+    InterfaceC2817c f1036f;
 
     /* renamed from: g */
-    long f1034g;
+    long f1037g;
 
     /* renamed from: h */
-    AbstractC3028e f1035h;
+    AbstractC3028e f1038h;
 
     /* renamed from: i */
-    boolean f1036i;
+    boolean f1039i;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3039f4(AbstractC3151y2 abstractC3151y2, InterfaceC2839y interfaceC2839y, boolean z) {
-        this.f1029b = abstractC3151y2;
-        this.f1030c = interfaceC2839y;
-        this.f1031d = null;
-        this.f1028a = z;
+        this.f1032b = abstractC3151y2;
+        this.f1033c = interfaceC2839y;
+        this.f1034d = null;
+        this.f1031a = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3039f4(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
-        this.f1029b = abstractC3151y2;
-        this.f1030c = null;
-        this.f1031d = interfaceC2853s;
-        this.f1028a = z;
+        this.f1032b = abstractC3151y2;
+        this.f1033c = null;
+        this.f1034d = interfaceC2853s;
+        this.f1031a = z;
     }
 
     /* renamed from: f */
-    private boolean m399f() {
-        boolean mo113b;
-        while (this.f1035h.count() == 0) {
-            if (!this.f1032e.mo296o()) {
-                C3010b c3010b = (C3010b) this.f1033f;
-                switch (c3010b.f964a) {
+    private boolean m417f() {
+        boolean mo131b;
+        while (this.f1038h.count() == 0) {
+            if (!this.f1035e.mo314o()) {
+                C3010b c3010b = (C3010b) this.f1036f;
+                switch (c3010b.f967a) {
                     case 4:
-                        C3093o4 c3093o4 = (C3093o4) c3010b.f965b;
-                        mo113b = c3093o4.f1031d.mo113b(c3093o4.f1032e);
+                        C3093o4 c3093o4 = (C3093o4) c3010b.f968b;
+                        mo131b = c3093o4.f1034d.mo131b(c3093o4.f1035e);
                         break;
                     case 5:
-                        C3105q4 c3105q4 = (C3105q4) c3010b.f965b;
-                        mo113b = c3105q4.f1031d.mo113b(c3105q4.f1032e);
+                        C3105q4 c3105q4 = (C3105q4) c3010b.f968b;
+                        mo131b = c3105q4.f1034d.mo131b(c3105q4.f1035e);
                         break;
                     case 6:
-                        C3117s4 c3117s4 = (C3117s4) c3010b.f965b;
-                        mo113b = c3117s4.f1031d.mo113b(c3117s4.f1032e);
+                        C3117s4 c3117s4 = (C3117s4) c3010b.f968b;
+                        mo131b = c3117s4.f1034d.mo131b(c3117s4.f1035e);
                         break;
                     default:
-                        C2928L4 c2928l4 = (C2928L4) c3010b.f965b;
-                        mo113b = c2928l4.f1031d.mo113b(c2928l4.f1032e);
+                        C2928L4 c2928l4 = (C2928L4) c3010b.f968b;
+                        mo131b = c2928l4.f1034d.mo131b(c2928l4.f1035e);
                         break;
                 }
-                if (mo113b) {
+                if (mo131b) {
                     continue;
                 }
             }
-            if (this.f1036i) {
+            if (this.f1039i) {
                 return false;
             }
-            this.f1032e.mo321m();
-            this.f1036i = true;
+            this.f1035e.mo339m();
+            this.f1039i = true;
         }
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a */
-    public final boolean m400a() {
-        AbstractC3028e abstractC3028e = this.f1035h;
+    public final boolean m418a() {
+        AbstractC3028e abstractC3028e = this.f1038h;
         if (abstractC3028e == null) {
-            if (this.f1036i) {
+            if (this.f1039i) {
                 return false;
             }
-            m398h();
-            mo325j();
-            this.f1034g = 0L;
-            this.f1032e.mo297n(this.f1031d.getExactSizeIfKnown());
-            return m399f();
+            m416h();
+            mo343j();
+            this.f1037g = 0L;
+            this.f1035e.mo315n(this.f1034d.getExactSizeIfKnown());
+            return m417f();
         }
-        long j = this.f1034g + 1;
-        this.f1034g = j;
+        long j = this.f1037g + 1;
+        this.f1037g = j;
         boolean z = j < abstractC3028e.count();
         if (z) {
             return z;
         }
-        this.f1034g = 0L;
-        this.f1035h.clear();
-        return m399f();
+        this.f1037g = 0L;
+        this.f1038h.clear();
+        return m417f();
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public final int characteristics() {
-        m398h();
-        int m417g = EnumC3027d4.m417g(this.f1029b.mo290s0()) & EnumC3027d4.f991f;
-        return (m417g & 64) != 0 ? (m417g & (-16449)) | (this.f1031d.characteristics() & 16448) : m417g;
+        m416h();
+        int m435g = EnumC3027d4.m435g(this.f1032b.mo308s0()) & EnumC3027d4.f994f;
+        return (m435g & 64) != 0 ? (m435g & (-16449)) | (this.f1034d.characteristics() & 16448) : m435g;
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public final long estimateSize() {
-        m398h();
-        return this.f1031d.estimateSize();
+        m416h();
+        return this.f1034d.estimateSize();
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public Comparator getComparator() {
-        if (AbstractC2780a.m605f(this, 4)) {
+        if (AbstractC2780a.m623f(this, 4)) {
             return null;
         }
         throw new IllegalStateException();
@@ -138,47 +138,47 @@ public abstract class AbstractC3039f4 implements InterfaceC2853s {
 
     @Override // p033j$.util.InterfaceC2853s
     public final long getExactSizeIfKnown() {
-        m398h();
-        if (EnumC3027d4.SIZED.m420d(this.f1029b.mo290s0())) {
-            return this.f1031d.getExactSizeIfKnown();
+        m416h();
+        if (EnumC3027d4.SIZED.m438d(this.f1032b.mo308s0())) {
+            return this.f1034d.getExactSizeIfKnown();
         }
         return -1L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: h */
-    public final void m398h() {
-        if (this.f1031d == null) {
-            this.f1031d = (InterfaceC2853s) this.f1030c.get();
-            this.f1030c = null;
+    public final void m416h() {
+        if (this.f1034d == null) {
+            this.f1034d = (InterfaceC2853s) this.f1033c.get();
+            this.f1033c = null;
         }
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 
     /* renamed from: j */
-    abstract void mo325j();
+    abstract void mo343j();
 
     /* renamed from: l */
-    abstract AbstractC3039f4 mo324l(InterfaceC2853s interfaceC2853s);
+    abstract AbstractC3039f4 mo342l(InterfaceC2853s interfaceC2853s);
 
     public final String toString() {
-        return String.format("%s[%s]", getClass().getName(), this.f1031d);
+        return String.format("%s[%s]", getClass().getName(), this.f1034d);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public InterfaceC2853s trySplit() {
-        if (!this.f1028a || this.f1036i) {
+        if (!this.f1031a || this.f1039i) {
             return null;
         }
-        m398h();
-        InterfaceC2853s trySplit = this.f1031d.trySplit();
+        m416h();
+        InterfaceC2853s trySplit = this.f1034d.trySplit();
         if (trySplit == null) {
             return null;
         }
-        return mo324l(trySplit);
+        return mo342l(trySplit);
     }
 }

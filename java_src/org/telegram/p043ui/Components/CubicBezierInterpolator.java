@@ -1,20 +1,24 @@
 package org.telegram.p043ui.Components;
 
 import android.graphics.PointF;
+import android.os.Build;
 import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.PathInterpolator;
+import androidx.core.graphics.PathParser;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.CubicBezierInterpolator */
 /* loaded from: classes6.dex */
 public class CubicBezierInterpolator implements Interpolator {
 
     /* renamed from: a */
-    protected PointF f1722a;
+    protected PointF f1742a;
 
     /* renamed from: b */
-    protected PointF f1723b;
+    protected PointF f1743b;
 
     /* renamed from: c */
-    protected PointF f1724c;
+    protected PointF f1744c;
     protected PointF end;
     protected PointF start;
     public static final CubicBezierInterpolator DEFAULT = new CubicBezierInterpolator(0.25d, 0.1d, 0.25d, 1.0d);
@@ -24,10 +28,18 @@ public class CubicBezierInterpolator implements Interpolator {
     public static final CubicBezierInterpolator EASE_BOTH = new CubicBezierInterpolator(0.42d, 0.0d, 0.58d, 1.0d);
     public static final CubicBezierInterpolator EASE_OUT_BACK = new CubicBezierInterpolator(0.34d, 1.56d, 0.64d, 1.0d);
 
+    static {
+        if (Build.VERSION.SDK_INT >= 21) {
+            new PathInterpolator(PathParser.createPathFromPathData("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        } else {
+            new LinearInterpolator();
+        }
+    }
+
     public CubicBezierInterpolator(PointF pointF, PointF pointF2) throws IllegalArgumentException {
-        this.f1722a = new PointF();
-        this.f1723b = new PointF();
-        this.f1724c = new PointF();
+        this.f1742a = new PointF();
+        this.f1743b = new PointF();
+        this.f1744c = new PointF();
         float f = pointF.x;
         if (f < BitmapDescriptorFactory.HUE_RED || f > 1.0f) {
             throw new IllegalArgumentException("startX value must be in the range [0, 1]");
@@ -54,14 +66,14 @@ public class CubicBezierInterpolator implements Interpolator {
     }
 
     protected float getBezierCoordinateY(float f) {
-        PointF pointF = this.f1724c;
+        PointF pointF = this.f1744c;
         PointF pointF2 = this.start;
         float f2 = pointF2.y * 3.0f;
         pointF.y = f2;
-        PointF pointF3 = this.f1723b;
+        PointF pointF3 = this.f1743b;
         float f3 = ((this.end.y - pointF2.y) * 3.0f) - f2;
         pointF3.y = f3;
-        PointF pointF4 = this.f1722a;
+        PointF pointF4 = this.f1742a;
         float f4 = (1.0f - pointF.y) - f3;
         pointF4.y = f4;
         return f * (pointF.y + ((pointF3.y + (f4 * f)) * f));
@@ -80,18 +92,18 @@ public class CubicBezierInterpolator implements Interpolator {
     }
 
     private float getXDerivate(float f) {
-        return this.f1724c.x + (f * ((this.f1723b.x * 2.0f) + (this.f1722a.x * 3.0f * f)));
+        return this.f1744c.x + (f * ((this.f1743b.x * 2.0f) + (this.f1742a.x * 3.0f * f)));
     }
 
     private float getBezierCoordinateX(float f) {
-        PointF pointF = this.f1724c;
+        PointF pointF = this.f1744c;
         PointF pointF2 = this.start;
         float f2 = pointF2.x * 3.0f;
         pointF.x = f2;
-        PointF pointF3 = this.f1723b;
+        PointF pointF3 = this.f1743b;
         float f3 = ((this.end.x - pointF2.x) * 3.0f) - f2;
         pointF3.x = f3;
-        PointF pointF4 = this.f1722a;
+        PointF pointF4 = this.f1742a;
         float f4 = (1.0f - pointF.x) - f3;
         pointF4.x = f4;
         return f * (pointF.x + ((pointF3.x + (f4 * f)) * f));

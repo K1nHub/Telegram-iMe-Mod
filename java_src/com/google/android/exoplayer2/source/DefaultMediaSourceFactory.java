@@ -214,7 +214,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
             mediaSourceArr[0] = createMediaSource;
             for (int i = 0; i < immutableList.size(); i++) {
                 if (this.useProgressiveMediaSourceForSubtitles) {
-                    final Format build2 = new Format.Builder().setSampleMimeType(immutableList.get(i).mimeType).setLanguage(immutableList.get(i).language).setSelectionFlags(immutableList.get(i).selectionFlags).setRoleFlags(immutableList.get(i).roleFlags).setLabel(immutableList.get(i).label).setId(immutableList.get(i).f184id).build();
+                    final Format build2 = new Format.Builder().setSampleMimeType(immutableList.get(i).mimeType).setLanguage(immutableList.get(i).language).setSelectionFlags(immutableList.get(i).selectionFlags).setRoleFlags(immutableList.get(i).roleFlags).setLabel(immutableList.get(i).label).setId(immutableList.get(i).f186id).build();
                     ProgressiveMediaSource.Factory factory = new ProgressiveMediaSource.Factory(this.dataSourceFactory, new ExtractorsFactory() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$$ExternalSyntheticLambda0
                         @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
                         public final Extractor[] createExtractors() {
@@ -283,17 +283,17 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         AdsLoader.Provider provider = this.adsLoaderProvider;
         AdViewProvider adViewProvider = this.adViewProvider;
         if (provider == null || adViewProvider == null) {
-            Log.m796w(TAG, "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
+            Log.m814w(TAG, "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
             return mediaSource;
         }
         AdsLoader adsLoader = provider.getAdsLoader(adsConfiguration);
         if (adsLoader == null) {
-            Log.m796w(TAG, "Playing media without ads, as no AdsLoader was provided.");
+            Log.m814w(TAG, "Playing media without ads, as no AdsLoader was provided.");
             return mediaSource;
         }
         DataSpec dataSpec = new DataSpec(adsConfiguration.adTagUri);
         Object obj = adsConfiguration.adsId;
-        return new AdsMediaSource(mediaSource, dataSpec, obj != null ? obj : ImmutableList.m741of((Uri) mediaItem.mediaId, mediaItem.localConfiguration.uri, adsConfiguration.adTagUri), this, adsLoader, adViewProvider);
+        return new AdsMediaSource(mediaSource, dataSpec, obj != null ? obj : ImmutableList.m759of((Uri) mediaItem.mediaId, mediaItem.localConfiguration.uri, adsConfiguration.adTagUri), this, adsLoader, adViewProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

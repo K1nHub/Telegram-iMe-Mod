@@ -14,26 +14,26 @@ public class C3014b3 extends AbstractC3032e3 {
 
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: G0 */
-    final boolean mo424G0() {
+    final boolean mo442G0() {
         throw new UnsupportedOperationException();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: H0 */
-    public final InterfaceC3080m3 mo283H0(int i, InterfaceC3080m3 interfaceC3080m3) {
+    public final InterfaceC3080m3 mo301H0(int i, InterfaceC3080m3 interfaceC3080m3) {
         throw new UnsupportedOperationException();
     }
 
     @Override // p033j$.util.stream.AbstractC3032e3, p033j$.util.stream.Stream
     /* renamed from: e */
-    public void mo242e(Consumer consumer) {
+    public void mo260e(Consumer consumer) {
         if (!isParallel()) {
-            m435J0().forEachRemaining(consumer);
+            m453J0().forEachRemaining(consumer);
             return;
         }
         Objects.requireNonNull(consumer);
-        m434x0(new C3083n0(consumer, true));
+        m452x0(new C3083n0(consumer, true));
     }
 
     @Override // p033j$.util.stream.AbstractC3032e3, p033j$.util.stream.Stream
@@ -41,7 +41,7 @@ public class C3014b3 extends AbstractC3032e3 {
         if (isParallel()) {
             super.forEach(consumer);
         } else {
-            m435J0().forEachRemaining(consumer);
+            m453J0().forEachRemaining(consumer);
         }
     }
 }

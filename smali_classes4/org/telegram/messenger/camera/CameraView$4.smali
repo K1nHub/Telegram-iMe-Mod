@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/camera/CameraView;->onFirstFrameRendered()V
+    value = Lorg/telegram/messenger/camera/CameraView;->onFirstFrameRendered(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/camera/CameraView;)V
     .locals 0
 
-    .line 1228
+    .line 1895
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$4;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1231
+    .line 1898
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1232
+    .line 1899
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$4;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;

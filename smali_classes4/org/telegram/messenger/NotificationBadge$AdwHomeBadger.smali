@@ -64,7 +64,7 @@
     .line 53
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "org.adw.launcher.counter.SEND"
+    const-string/jumbo v1, "org.adw.launcher.counter.SEND"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -128,9 +128,9 @@
         }
     .end annotation
 
-    const-string v0, "org.adw.launcher"
+    const-string/jumbo v0, "org.adw.launcher"
 
-    const-string v1, "org.adwfreak.launcher"
+    const-string/jumbo v1, "org.adwfreak.launcher"
 
     .line 64
     filled-new-array {v0, v1}, [Ljava/lang/String;

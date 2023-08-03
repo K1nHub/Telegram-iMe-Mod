@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.Components.CheckBoxSquare;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingSafeWithdrawalBinding implements ViewBinding {
@@ -36,7 +36,7 @@ public final class ForkContentStakingSafeWithdrawalBinding implements ViewBindin
     }
 
     public static ForkContentStakingSafeWithdrawalBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_staking_safe_withdrawal, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_content_staking_safe_withdrawal, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -44,16 +44,16 @@ public final class ForkContentStakingSafeWithdrawalBinding implements ViewBindin
     }
 
     public static ForkContentStakingSafeWithdrawalBinding bind(View view) {
-        int i = C3417R.C3420id.checkbox_safe_withdrawal;
+        int i = C3419R.C3422id.checkbox_safe_withdrawal;
         CheckBoxSquare checkBoxSquare = (CheckBoxSquare) ViewBindings.findChildViewById(view, i);
         if (checkBoxSquare != null) {
-            i = C3417R.C3420id.image_help;
+            i = C3419R.C3422id.image_help;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3417R.C3420id.linear_safe_withdrawal;
+                i = C3419R.C3422id.linear_safe_withdrawal;
                 LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) ViewBindings.findChildViewById(view, i);
                 if (linearLayoutCompat != null) {
-                    i = C3417R.C3420id.text_safe_withdrawal;
+                    i = C3419R.C3422id.text_safe_withdrawal;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
                         return new ForkContentStakingSafeWithdrawalBinding((LinearLayoutCompat) view, checkBoxSquare, appCompatImageView, linearLayoutCompat, appCompatTextView);

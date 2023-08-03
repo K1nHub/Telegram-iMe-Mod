@@ -889,11 +889,11 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     public static final class TrackId {
 
         /* renamed from: id */
-        public final int f207id;
+        public final int f209id;
         public final boolean isIcyTrack;
 
         public TrackId(int i, boolean z) {
-            this.f207id = i;
+            this.f209id = i;
             this.isIcyTrack = z;
         }
 
@@ -905,11 +905,11 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
                 return false;
             }
             TrackId trackId = (TrackId) obj;
-            return this.f207id == trackId.f207id && this.isIcyTrack == trackId.isIcyTrack;
+            return this.f209id == trackId.f209id && this.isIcyTrack == trackId.isIcyTrack;
         }
 
         public int hashCode() {
-            return (this.f207id * 31) + (this.isIcyTrack ? 1 : 0);
+            return (this.f209id * 31) + (this.isIcyTrack ? 1 : 0);
         }
     }
 

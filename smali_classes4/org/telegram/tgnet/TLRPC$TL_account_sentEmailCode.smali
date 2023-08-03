@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43654
+    .line 44406
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;
     .locals 1
 
-    .line 43661
+    .line 44413
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 43663
+    .line 44415
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 43668
+    .line 44420
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;-><init>()V
 
-    .line 43669
+    .line 44421
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 43674
+    .line 44426
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->email_pattern:Ljava/lang/String;
 
-    .line 43675
+    .line 44427
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 43679
+    .line 44431
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43680
+    .line 44432
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->email_pattern:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 43681
+    .line 44433
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->length:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

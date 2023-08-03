@@ -592,7 +592,7 @@
 
     move-result-object v0
 
-    const-string v1, "private fun checkTokensA\u2026y { autoDispose() }\n    }"
+    const-string/jumbo v1, "private fun checkTokensA\u2026y { autoDispose() }\n    }"
 
     .line 210
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

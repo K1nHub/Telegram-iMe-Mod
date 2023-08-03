@@ -3623,7 +3623,7 @@
 
     move-result v3
 
-    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 8150
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->firstNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -3643,7 +3643,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 8152
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->lastNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;

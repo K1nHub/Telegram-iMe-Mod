@@ -19,7 +19,7 @@ public class WebFile extends TLObject {
     public TLRPC$InputGeoPoint geo_point;
 
     /* renamed from: h */
-    public int f1494h;
+    public int f1497h;
     public TLRPC$InputWebFileLocation location;
     public String mime_type;
     public int msg_id;
@@ -29,7 +29,7 @@ public class WebFile extends TLObject {
     public String url;
 
     /* renamed from: w */
-    public int f1495w;
+    public int f1498w;
     public int zoom;
 
     public static WebFile createWithGeoPoint(TLRPC$GeoPoint tLRPC$GeoPoint, int i, int i2, int i3, int i4) {
@@ -46,10 +46,10 @@ public class WebFile extends TLObject {
         tLRPC$TL_inputWebFileGeoPointLocation.access_hash = j;
         tLRPC$TL_inputGeoPoint.lat = d;
         tLRPC$TL_inputGeoPoint._long = d2;
-        webFile.f1495w = i;
-        tLRPC$TL_inputWebFileGeoPointLocation.f1591w = i;
-        webFile.f1494h = i2;
-        tLRPC$TL_inputWebFileGeoPointLocation.f1590h = i2;
+        webFile.f1498w = i;
+        tLRPC$TL_inputWebFileGeoPointLocation.f1599w = i;
+        webFile.f1497h = i2;
+        tLRPC$TL_inputWebFileGeoPointLocation.f1598h = i2;
         webFile.zoom = i3;
         tLRPC$TL_inputWebFileGeoPointLocation.zoom = i3;
         webFile.scale = i4;

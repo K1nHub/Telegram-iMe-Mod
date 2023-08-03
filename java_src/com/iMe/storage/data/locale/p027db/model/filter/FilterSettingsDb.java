@@ -26,7 +26,7 @@ public final class FilterSettingsDb {
     public int hashCode() {
         int hashCode = ((this.filterId * 31) + this.fabs.hashCode()) * 31;
         String str = this.icon;
-        return ((hashCode + (str == null ? 0 : str.hashCode())) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId);
+        return ((hashCode + (str == null ? 0 : str.hashCode())) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId);
     }
 
     public String toString() {

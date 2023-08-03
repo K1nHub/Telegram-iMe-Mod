@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 2462
+    .line 2551
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;)V
@@ -59,7 +59,7 @@
 
     if-nez p2, :cond_0
 
-    .line 2480
+    .line 2569
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -86,13 +86,13 @@
 
     move v1, p2
 
-    .line 2487
+    .line 2576
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3500(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -102,12 +102,12 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2488
+    .line 2577
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3500(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -119,7 +119,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2489
+    .line 2578
     iget v3, v2, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/16 v4, 0xb
@@ -143,7 +143,7 @@
     :goto_1
     if-ltz v0, :cond_4
 
-    .line 2497
+    .line 2586
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -160,7 +160,7 @@
 
     goto :goto_2
 
-    .line 2499
+    .line 2588
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 

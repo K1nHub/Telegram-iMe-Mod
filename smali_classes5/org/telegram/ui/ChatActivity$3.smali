@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 749
+    .line 751
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$3;->val$onOpenSettingsAction:Lcom/iMe/fork/utils/Callbacks$Callback;
@@ -46,7 +46,7 @@
 .method public hasReplyingMessage()Z
     .locals 1
 
-    .line 760
+    .line 762
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->val$replyingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_0
@@ -65,15 +65,15 @@
 .method public openSettings()V
     .locals 1
 
-    .line 752
+    .line 754
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->val$onOpenSettingsAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 753
+    .line 755
     invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
-    .line 755
+    .line 757
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -93,14 +93,14 @@
 .method public replyMessage(Ljava/lang/String;)V
     .locals 2
 
-    .line 765
+    .line 767
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$3;->val$replyingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->showFieldPanelForReply(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 766
+    .line 768
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
@@ -109,12 +109,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 767
+    .line 769
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->finishFragment()V
 
-    .line 768
+    .line 770
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 769
+    .line 771
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$3;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -133,7 +133,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 770
+    .line 772
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
     :cond_1

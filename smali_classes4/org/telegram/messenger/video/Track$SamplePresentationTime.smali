@@ -26,13 +26,13 @@
 .method public constructor <init>(IJ)V
     .locals 0
 
-    .line 44
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 47
     iput p1, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->index:I
 
-    .line 46
+    .line 48
     iput-wide p2, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->presentationTime:J
 
     return-void
@@ -41,7 +41,7 @@
 .method static synthetic access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
     .locals 2
 
-    .line 38
+    .line 40
     iget-wide v0, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->presentationTime:J
 
     return-wide v0
@@ -50,7 +50,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
     .locals 0
 
-    .line 38
+    .line 40
     iget p0, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->index:I
 
     return p0
@@ -59,7 +59,7 @@
 .method static synthetic access$200(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
     .locals 2
 
-    .line 38
+    .line 40
     iget-wide v0, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->dt:J
 
     return-wide v0
@@ -68,7 +68,7 @@
 .method static synthetic access$202(Lorg/telegram/messenger/video/Track$SamplePresentationTime;J)J
     .locals 0
 
-    .line 38
+    .line 40
     iput-wide p1, p0, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->dt:J
 
     return-wide p1

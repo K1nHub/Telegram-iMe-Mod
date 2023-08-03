@@ -8,40 +8,40 @@ import p033j$.util.function.InterfaceC2827m;
 public abstract class AbstractC3145x2 {
 
     /* renamed from: a */
-    private static final InterfaceC2859A1 f1165a = new C3000Z1(null);
+    private static final InterfaceC2859A1 f1168a = new C3000Z1(null);
 
     /* renamed from: b */
-    private static final InterfaceC3138w1 f1166b = new C2990X1();
+    private static final InterfaceC3138w1 f1169b = new C2990X1();
 
     /* renamed from: c */
-    private static final InterfaceC3150y1 f1167c = new C2995Y1();
+    private static final InterfaceC3150y1 f1170c = new C2995Y1();
 
     /* renamed from: d */
-    private static final InterfaceC3126u1 f1168d = new C2985W1();
+    private static final InterfaceC3126u1 f1171d = new C2985W1();
 
     /* renamed from: e */
-    private static final int[] f1169e = new int[0];
+    private static final int[] f1172e = new int[0];
 
     /* renamed from: f */
-    private static final long[] f1170f = new long[0];
+    private static final long[] f1173f = new long[0];
 
     /* renamed from: g */
-    private static final double[] f1171g = new double[0];
+    private static final double[] f1174g = new double[0];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: d */
-    public static InterfaceC3114s1 m311d(long j, InterfaceC2827m interfaceC2827m) {
+    public static InterfaceC3114s1 m329d(long j, InterfaceC2827m interfaceC2827m) {
         return (j < 0 || j >= 2147483639) ? new C3121t2() : new C3013b2(j, interfaceC2827m);
     }
 
     /* renamed from: e */
-    public static InterfaceC2859A1 m310e(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z, InterfaceC2827m interfaceC2827m) {
-        long mo292q0 = abstractC3151y2.mo292q0(interfaceC2853s);
-        if (mo292q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
+    public static InterfaceC2859A1 m328e(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z, InterfaceC2827m interfaceC2827m) {
+        long mo310q0 = abstractC3151y2.mo310q0(interfaceC2853s);
+        if (mo310q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
             InterfaceC2859A1 interfaceC2859A1 = (InterfaceC2859A1) new C2901H1(abstractC3151y2, interfaceC2827m, interfaceC2853s).invoke();
-            return z ? m303l(interfaceC2859A1, interfaceC2827m) : interfaceC2859A1;
-        } else if (mo292q0 < 2147483639) {
-            Object[] objArr = (Object[]) interfaceC2827m.apply((int) mo292q0);
+            return z ? m321l(interfaceC2859A1, interfaceC2827m) : interfaceC2859A1;
+        } else if (mo310q0 < 2147483639) {
+            Object[] objArr = (Object[]) interfaceC2827m.apply((int) mo310q0);
             new C3109r2(interfaceC2853s, abstractC3151y2, objArr).invoke();
             return new C2877D1(objArr);
         } else {
@@ -50,13 +50,13 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: f */
-    public static InterfaceC3126u1 m309f(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
-        long mo292q0 = abstractC3151y2.mo292q0(interfaceC2853s);
-        if (mo292q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
+    public static InterfaceC3126u1 m327f(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
+        long mo310q0 = abstractC3151y2.mo310q0(interfaceC2853s);
+        if (mo310q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
             InterfaceC3126u1 interfaceC3126u1 = (InterfaceC3126u1) new C2901H1(abstractC3151y2, interfaceC2853s, 0).invoke();
-            return z ? m302m(interfaceC3126u1) : interfaceC3126u1;
-        } else if (mo292q0 < 2147483639) {
-            double[] dArr = new double[(int) mo292q0];
+            return z ? m320m(interfaceC3126u1) : interfaceC3126u1;
+        } else if (mo310q0 < 2147483639) {
+            double[] dArr = new double[(int) mo310q0];
             new C3091o2(interfaceC2853s, abstractC3151y2, dArr).invoke();
             return new C2970T1(dArr);
         } else {
@@ -65,13 +65,13 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: g */
-    public static InterfaceC3138w1 m308g(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
-        long mo292q0 = abstractC3151y2.mo292q0(interfaceC2853s);
-        if (mo292q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
+    public static InterfaceC3138w1 m326g(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
+        long mo310q0 = abstractC3151y2.mo310q0(interfaceC2853s);
+        if (mo310q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
             InterfaceC3138w1 interfaceC3138w1 = (InterfaceC3138w1) new C2901H1(abstractC3151y2, interfaceC2853s, 1).invoke();
-            return z ? m301n(interfaceC3138w1) : interfaceC3138w1;
-        } else if (mo292q0 < 2147483639) {
-            int[] iArr = new int[(int) mo292q0];
+            return z ? m319n(interfaceC3138w1) : interfaceC3138w1;
+        } else if (mo310q0 < 2147483639) {
+            int[] iArr = new int[(int) mo310q0];
             new C3097p2(interfaceC2853s, abstractC3151y2, iArr).invoke();
             return new C3019c2(iArr);
         } else {
@@ -80,13 +80,13 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: h */
-    public static InterfaceC3150y1 m307h(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
-        long mo292q0 = abstractC3151y2.mo292q0(interfaceC2853s);
-        if (mo292q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
+    public static InterfaceC3150y1 m325h(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, boolean z) {
+        long mo310q0 = abstractC3151y2.mo310q0(interfaceC2853s);
+        if (mo310q0 < 0 || !interfaceC2853s.hasCharacteristics(16384)) {
             InterfaceC3150y1 interfaceC3150y1 = (InterfaceC3150y1) new C2901H1(abstractC3151y2, interfaceC2853s, 2).invoke();
-            return z ? m300o(interfaceC3150y1) : interfaceC3150y1;
-        } else if (mo292q0 < 2147483639) {
-            long[] jArr = new long[(int) mo292q0];
+            return z ? m318o(interfaceC3150y1) : interfaceC3150y1;
+        } else if (mo310q0 < 2147483639) {
+            long[] jArr = new long[(int) mo310q0];
             new C3103q2(interfaceC2853s, abstractC3151y2, jArr).invoke();
             return new C3073l2(jArr);
         } else {
@@ -96,8 +96,8 @@ public abstract class AbstractC3145x2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: i */
-    public static InterfaceC2859A1 m306i(EnumC3033e4 enumC3033e4, InterfaceC2859A1 interfaceC2859A1, InterfaceC2859A1 interfaceC2859A12) {
-        int i = AbstractC2865B1.f780a[enumC3033e4.ordinal()];
+    public static InterfaceC2859A1 m324i(EnumC3033e4 enumC3033e4, InterfaceC2859A1 interfaceC2859A1, InterfaceC2859A1 interfaceC2859A12) {
+        int i = AbstractC2865B1.f783a[enumC3033e4.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -115,32 +115,32 @@ public abstract class AbstractC3145x2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j */
-    public static InterfaceC3096p1 m305j(long j) {
+    public static InterfaceC3096p1 m323j(long j) {
         return (j < 0 || j >= 2147483639) ? new C2980V1() : new C2975U1(j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: k */
-    public static InterfaceC2859A1 m304k(EnumC3033e4 enumC3033e4) {
-        int i = AbstractC2865B1.f780a[enumC3033e4.ordinal()];
+    public static InterfaceC2859A1 m322k(EnumC3033e4 enumC3033e4) {
+        int i = AbstractC2865B1.f783a[enumC3033e4.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
                     if (i == 4) {
-                        return f1168d;
+                        return f1171d;
                     }
                     throw new IllegalStateException("Unknown shape " + enumC3033e4);
                 }
-                return f1167c;
+                return f1170c;
             }
-            return f1166b;
+            return f1169b;
         }
-        return f1165a;
+        return f1168a;
     }
 
     /* renamed from: l */
-    public static InterfaceC2859A1 m303l(InterfaceC2859A1 interfaceC2859A1, InterfaceC2827m interfaceC2827m) {
-        if (interfaceC2859A1.mo320p() > 0) {
+    public static InterfaceC2859A1 m321l(InterfaceC2859A1 interfaceC2859A1, InterfaceC2827m interfaceC2827m) {
+        if (interfaceC2859A1.mo338p() > 0) {
             long count = interfaceC2859A1.count();
             if (count < 2147483639) {
                 Object[] objArr = (Object[]) interfaceC2827m.apply((int) count);
@@ -153,8 +153,8 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: m */
-    public static InterfaceC3126u1 m302m(InterfaceC3126u1 interfaceC3126u1) {
-        if (interfaceC3126u1.mo320p() > 0) {
+    public static InterfaceC3126u1 m320m(InterfaceC3126u1 interfaceC3126u1) {
+        if (interfaceC3126u1.mo338p() > 0) {
             long count = interfaceC3126u1.count();
             if (count < 2147483639) {
                 double[] dArr = new double[(int) count];
@@ -167,8 +167,8 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: n */
-    public static InterfaceC3138w1 m301n(InterfaceC3138w1 interfaceC3138w1) {
-        if (interfaceC3138w1.mo320p() > 0) {
+    public static InterfaceC3138w1 m319n(InterfaceC3138w1 interfaceC3138w1) {
+        if (interfaceC3138w1.mo338p() > 0) {
             long count = interfaceC3138w1.count();
             if (count < 2147483639) {
                 int[] iArr = new int[(int) count];
@@ -181,8 +181,8 @@ public abstract class AbstractC3145x2 {
     }
 
     /* renamed from: o */
-    public static InterfaceC3150y1 m300o(InterfaceC3150y1 interfaceC3150y1) {
-        if (interfaceC3150y1.mo320p() > 0) {
+    public static InterfaceC3150y1 m318o(InterfaceC3150y1 interfaceC3150y1) {
+        if (interfaceC3150y1.mo338p() > 0) {
             long count = interfaceC3150y1.count();
             if (count < 2147483639) {
                 long[] jArr = new long[(int) count];
@@ -196,13 +196,13 @@ public abstract class AbstractC3145x2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: p */
-    public static InterfaceC3102q1 m299p(long j) {
+    public static InterfaceC3102q1 m317p(long j) {
         return (j < 0 || j >= 2147483639) ? new C3031e2() : new C3025d2(j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: q */
-    public static InterfaceC3108r1 m298q(long j) {
+    public static InterfaceC3108r1 m316q(long j) {
         return (j < 0 || j >= 2147483639) ? new C3085n2() : new C3079m2(j);
     }
 }

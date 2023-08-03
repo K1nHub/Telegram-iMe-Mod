@@ -15,10 +15,10 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final Barcode[] zza(IObjectWrapper iObjectWrapper, zzs zzsVar) throws RemoteException {
-        Parcel m760a_ = m760a_();
-        zzd.zza(m760a_, iObjectWrapper);
-        zzd.zza(m760a_, zzsVar);
-        Parcel zza = zza(1, m760a_);
+        Parcel m778a_ = m778a_();
+        zzd.zza(m778a_, iObjectWrapper);
+        zzd.zza(m778a_, zzsVar);
+        Parcel zza = zza(1, m778a_);
         Barcode[] barcodeArr = (Barcode[]) zza.createTypedArray(Barcode.CREATOR);
         zza.recycle();
         return barcodeArr;
@@ -26,10 +26,10 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final Barcode[] zzb(IObjectWrapper iObjectWrapper, zzs zzsVar) throws RemoteException {
-        Parcel m760a_ = m760a_();
-        zzd.zza(m760a_, iObjectWrapper);
-        zzd.zza(m760a_, zzsVar);
-        Parcel zza = zza(2, m760a_);
+        Parcel m778a_ = m778a_();
+        zzd.zza(m778a_, iObjectWrapper);
+        zzd.zza(m778a_, zzsVar);
+        Parcel zza = zza(2, m778a_);
         Barcode[] barcodeArr = (Barcode[]) zza.createTypedArray(Barcode.CREATOR);
         zza.recycle();
         return barcodeArr;
@@ -37,6 +37,6 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final void zza() throws RemoteException {
-        zzb(3, m760a_());
+        zzb(3, m778a_());
     }
 }

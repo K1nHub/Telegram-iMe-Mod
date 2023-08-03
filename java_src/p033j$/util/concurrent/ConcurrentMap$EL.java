@@ -7,6 +7,14 @@ import p033j$.util.function.Function;
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ConcurrentMap$EL {
     public static /* synthetic */ Object computeIfAbsent(ConcurrentMap concurrentMap, Object obj, Function function) {
-        return concurrentMap instanceof InterfaceC2809b ? ((InterfaceC2809b) concurrentMap).computeIfAbsent(obj, function) : AbstractC2726d.m678a(concurrentMap, obj, function);
+        return concurrentMap instanceof InterfaceC2809b ? ((InterfaceC2809b) concurrentMap).computeIfAbsent(obj, function) : AbstractC2726d.m696a(concurrentMap, obj, function);
+    }
+
+    public static Object getOrDefault(ConcurrentMap concurrentMap, Object obj, Object obj2) {
+        if (concurrentMap instanceof InterfaceC2809b) {
+            return ((InterfaceC2809b) concurrentMap).getOrDefault(obj, obj2);
+        }
+        Object obj3 = concurrentMap.get(obj);
+        return obj3 != null ? obj3 : obj2;
     }
 }

@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda5;->f$2:Landroid/widget/EditText;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$JnDmwViDFOWWsMftSn-75lQqEnc(Lorg/telegram/ui/ContactsActivity;Lorg/telegram/tgnet/TLRPC$User;Landroid/widget/EditText;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$EXG1_W44PsaZ211bXufCsGvO45k(Lorg/telegram/ui/ContactsActivity;Lorg/telegram/tgnet/TLRPC$User;Landroid/widget/EditText;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

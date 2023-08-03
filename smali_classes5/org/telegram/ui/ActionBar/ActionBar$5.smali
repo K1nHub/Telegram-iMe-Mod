@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBar;Ljava/util/ArrayList;ZZ)V
     .locals 0
 
-    .line 1070
+    .line 1076
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$viewsToHide:Ljava/util/ArrayList;
@@ -51,7 +51,7 @@
 
     move v0, p1
 
-    .line 1073
+    .line 1079
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$viewsToHide:Ljava/util/ArrayList;
 
@@ -61,7 +61,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1074
+    .line 1080
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$viewsToHide:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -70,19 +70,19 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 1075
+    .line 1081
     iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$visible:Z
 
     if-eqz v2, :cond_0
 
     const/4 v2, 0x4
 
-    .line 1076
+    .line 1082
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v2, 0x0
 
-    .line 1077
+    .line 1083
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_1
@@ -90,7 +90,7 @@
     :cond_0
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 1079
+    .line 1085
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
     :goto_1
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 1083
+    .line 1089
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$visible:Z
 
@@ -110,10 +110,10 @@
 
     if-nez v0, :cond_3
 
-    .line 1084
+    .line 1090
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->access$400(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object v0
 
@@ -121,10 +121,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 1085
+    .line 1091
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->access$400(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object v0
 
@@ -132,11 +132,11 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1087
+    .line 1093
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$400(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
 
@@ -146,10 +146,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 1088
+    .line 1094
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$500(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$400(Lorg/telegram/ui/ActionBar/ActionBar;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
 
@@ -157,25 +157,25 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1092
+    .line 1098
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$1000(Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/Components/BackupImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$900(Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
 
     if-eqz p1, :cond_4
 
-    .line 1093
+    .line 1099
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->val$visible:Z
 
     if-nez p1, :cond_4
 
-    .line 1094
+    .line 1100
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$5;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$1000(Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/Components/BackupImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$900(Lorg/telegram/ui/ActionBar/ActionBar;)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
 

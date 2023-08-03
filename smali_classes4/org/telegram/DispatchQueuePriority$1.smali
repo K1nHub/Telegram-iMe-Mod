@@ -1,9 +1,6 @@
 .class Lorg/telegram/DispatchQueuePriority$1;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/ThreadPoolExecutor;
 .source "DispatchQueuePriority.java"
-
-# interfaces
-.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -16,76 +13,64 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Ljava/lang/Runnable;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/DispatchQueuePriority;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/DispatchQueuePriority;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/DispatchQueuePriority;IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+    .locals 7
 
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 27
+    iput-object p1, p0, Lorg/telegram/DispatchQueuePriority$1;->this$0:Lorg/telegram/DispatchQueuePriority;
+
+    move-object v0, p0
+
+    move v1, p2
+
+    move v2, p3
+
+    move-wide v3, p4
+
+    move-object v5, p6
+
+    move-object v6, p7
+
+    invoke-direct/range {v0 .. v6}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method protected beforeExecute(Ljava/lang/Thread;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 10
-    check-cast p1, Ljava/lang/Runnable;
+    .line 30
+    iget-object p1, p0, Lorg/telegram/DispatchQueuePriority$1;->this$0:Lorg/telegram/DispatchQueuePriority;
 
-    check-cast p2, Ljava/lang/Runnable;
+    invoke-static {p1}, Lorg/telegram/DispatchQueuePriority;->access$000(Lorg/telegram/DispatchQueuePriority;)Ljava/util/concurrent/CountDownLatch;
 
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/DispatchQueuePriority$1;->compare(Ljava/lang/Runnable;Ljava/lang/Runnable;)I
+    move-result-object p1
 
-    move-result p1
+    if-eqz p1, :cond_0
 
-    return p1
-.end method
-
-.method public compare(Ljava/lang/Runnable;Ljava/lang/Runnable;)I
-    .locals 2
-
-    .line 16
-    instance-of v0, p1, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 17
-    check-cast p1, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;
-
-    iget p1, p1, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;->priority:I
+    .line 33
+    :try_start_0
+    invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->await()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    :catch_0
+    move-exception p1
+
+    .line 35
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
     :cond_0
-    move p1, v1
-
-    .line 19
     :goto_0
-    instance-of v0, p2, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;
-
-    if-eqz v0, :cond_1
-
-    .line 20
-    check-cast p2, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;
-
-    iget v1, p2, Lorg/telegram/DispatchQueuePriority$PriorityRunnable;->priority:I
-
-    :cond_1
-    sub-int/2addr v1, p1
-
-    return v1
+    return-void
 .end method

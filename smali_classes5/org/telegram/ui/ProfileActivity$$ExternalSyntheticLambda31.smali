@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda31;->f$1:Lcom/iMe/feature/socialMedias/SocialNetwork;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$fzZt1W3Jd1OyWvT2D9CqKINpgzI(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/feature/socialMedias/SocialNetwork;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Y9KJNUOGqtJVoSOvrJJUXhMJVNY(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/feature/socialMedias/SocialNetwork;)V
 
     return-void
 .end method

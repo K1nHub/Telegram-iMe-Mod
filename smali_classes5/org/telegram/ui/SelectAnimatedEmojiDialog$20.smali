@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;
-.super Landroidx/recyclerview/widget/DiffUtil$Callback;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;->updateRows(ZZZ)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;->animateEmojiSelect(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,88 +17,63 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-.field final synthetic val$prevRowHashCodes:Ljava/util/ArrayList;
+.field final synthetic val$done:[Z
+
+.field final synthetic val$onDone:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Ljava/util/ArrayList;)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;[ZLjava/lang/Runnable;)V
     .locals 0
 
-    .line 3203
+    .line 1341
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$prevRowHashCodes:Ljava/util/ArrayList;
+    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$done:[Z
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
+    iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$onDone:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public areContentsTheSame(II)Z
-    .locals 0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    const/4 p1, 0x1
+    .line 1344
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    return p1
-.end method
+    const/4 v0, 0x0
 
-.method public areItemsTheSame(II)Z
-    .locals 1
+    invoke-static {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3502(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    .line 3216
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$prevRowHashCodes:Ljava/util/ArrayList;
+    .line 1345
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    move-result-object p1
+    .line 1346
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$done:[Z
 
-    check-cast p1, Ljava/lang/Long;
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    aget-boolean v1, p1, v0
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$6600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Ljava/util/ArrayList;
+    if-nez v1, :cond_0
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 1347
+    aput-boolean v1, p1, v0
 
-    move-result-object p2
+    .line 1348
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$onDone:Ljava/lang/Runnable;
 
-    invoke-virtual {p1, p2}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public getNewListSize()I
-    .locals 1
-
-    .line 3211
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$6600(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getOldListSize()I
-    .locals 1
-
-    .line 3206
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$20;->val$prevRowHashCodes:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    return v0
+    :cond_0
+    return-void
 .end method

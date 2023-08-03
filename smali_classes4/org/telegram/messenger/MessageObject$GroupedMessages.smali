@@ -70,24 +70,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 865
+    .line 921
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 869
+    .line 925
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
-    .line 870
+    .line 926
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
-    .line 871
+    .line 927
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -96,10 +96,10 @@
 
     const/16 v0, 0x320
 
-    .line 874
+    .line 930
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
-    .line 876
+    .line 932
     new-instance v0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     invoke-direct {v0}, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;-><init>()V
@@ -117,7 +117,7 @@
     :goto_0
     if-ge p2, p3, :cond_0
 
-    .line 902
+    .line 958
     aget v1, p1, p2
 
     add-float/2addr v0, v1
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 904
+    .line 960
     :cond_0
     iget p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
@@ -144,22 +144,22 @@
 
     move-object/from16 v0, p0
 
-    .line 908
+    .line 964
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 909
+    .line 965
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
     const/16 v1, 0x320
 
-    .line 911
+    .line 967
     iput v1, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
-    .line 914
+    .line 970
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -175,17 +175,17 @@
     :cond_0
     const v3, 0x444b8000    # 814.0f
 
-    .line 920
+    .line 976
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     const/4 v5, 0x0
 
-    .line 927
+    .line 983
     iput-boolean v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasSibling:Z
 
-    .line 929
+    .line 985
     iput-boolean v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasCaption:Z
 
     move v7, v5
@@ -203,7 +203,7 @@
 
     if-ge v7, v1, :cond_c
 
-    .line 932
+    .line 988
     iget-object v13, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v13, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -214,14 +214,14 @@
 
     if-nez v7, :cond_5
 
-    .line 934
+    .line 990
     invoke-virtual {v13}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v11
 
     if-nez v11, :cond_3
 
-    .line 935
+    .line 991
     iget-object v8, v13, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v14, v8, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -255,7 +255,7 @@
 
     if-nez v5, :cond_2
 
-    .line 938
+    .line 994
     invoke-static {v8}, Lorg/telegram/messenger/MessageObject;->getMedia(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     move-result-object v5
@@ -282,7 +282,7 @@
     :cond_3
     const/4 v8, 0x0
 
-    .line 940
+    .line 996
     :goto_1
     invoke-virtual {v13}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
@@ -296,11 +296,11 @@
 
     if-eqz v5, :cond_5
 
-    .line 941
+    .line 997
     :cond_4
     iput-boolean v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->isDocuments:Z
 
-    .line 944
+    .line 1000
     :cond_5
     iget-object v5, v13, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
@@ -312,7 +312,7 @@
 
     move-result-object v5
 
-    .line 945
+    .line 1001
     new-instance v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     invoke-direct {v6}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;-><init>()V
@@ -328,7 +328,7 @@
     :cond_6
     const/4 v14, 0x0
 
-    .line 946
+    .line 1002
     :goto_2
     iput-boolean v14, v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->last:Z
 
@@ -338,7 +338,7 @@
 
     goto :goto_3
 
-    .line 947
+    .line 1003
     :cond_7
     iget v14, v5, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
@@ -359,7 +359,7 @@
 
     const-string/jumbo v5, "w"
 
-    .line 950
+    .line 1006
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4
@@ -373,18 +373,18 @@
 
     const-string v5, "n"
 
-    .line 952
+    .line 1008
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4
 
     :cond_9
-    const-string v5, "q"
+    const-string/jumbo v5, "q"
 
-    .line 954
+    .line 1010
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 957
+    .line 1013
     :goto_4
     iget v5, v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
@@ -398,23 +398,23 @@
 
     move v10, v2
 
-    .line 963
+    .line 1019
     :cond_a
     iget-object v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v5, v13, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 964
+    .line 1020
     iget-object v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 966
+    .line 1022
     iget-object v5, v13, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
     if-eqz v5, :cond_b
 
-    .line 967
+    .line 1023
     iput-boolean v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasCaption:Z
 
     :cond_b
@@ -424,7 +424,7 @@
 
     goto/16 :goto_0
 
-    .line 970
+    .line 1026
     :cond_c
     iget-boolean v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->isDocuments:Z
 
@@ -439,7 +439,7 @@
     :goto_5
     if-ge v3, v1, :cond_f
 
-    .line 972
+    .line 1028
     iget-object v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -448,7 +448,7 @@
 
     check-cast v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 973
+    .line 1029
     iget v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     or-int/2addr v5, v7
@@ -459,7 +459,7 @@
 
     or-int/lit8 v5, v5, 0x4
 
-    .line 975
+    .line 1031
     iput v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     goto :goto_6
@@ -471,49 +471,49 @@
 
     or-int/lit8 v5, v5, 0x8
 
-    .line 977
+    .line 1033
     iput v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
-    .line 978
+    .line 1034
     iput-boolean v2, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->last:Z
 
-    .line 980
+    .line 1036
     :cond_e
     :goto_6
     iput-boolean v2, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->edge:Z
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 981
+    .line 1037
     iput v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     const/4 v5, 0x0
 
-    .line 982
+    .line 1038
     iput-byte v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minX:B
 
-    .line 983
+    .line 1039
     iput-byte v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxX:B
 
     int-to-byte v5, v3
 
-    .line 984
+    .line 1040
     iput-byte v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minY:B
 
-    .line 985
+    .line 1041
     iput-byte v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxY:B
 
-    .line 986
+    .line 1042
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 987
+    .line 1043
     iget v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     iput v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
     const/high16 v5, 0x42c80000    # 100.0f
 
-    .line 988
+    .line 1044
     iput v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
     add-int/lit8 v3, v3, 0x1
@@ -526,7 +526,7 @@
     :cond_10
     if-eqz v8, :cond_11
 
-    .line 994
+    .line 1050
     iget v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     add-int/lit8 v5, v5, -0x32
@@ -543,12 +543,12 @@
     :goto_7
     const/16 v8, 0x78
 
-    .line 998
+    .line 1054
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
-    .line 999
+    .line 1055
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -579,7 +579,7 @@
 
     const/16 v14, 0x28
 
-    .line 1000
+    .line 1056
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -618,7 +618,7 @@
 
     const/16 v14, 0x64
 
-    .line 1005
+    .line 1061
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -644,7 +644,7 @@
 
     if-ne v1, v3, :cond_18
 
-    .line 1009
+    .line 1065
     iget-object v6, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v7, 0x0
@@ -655,7 +655,7 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1010
+    .line 1066
     iget-object v7, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -664,14 +664,14 @@
 
     check-cast v7, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1011
+    .line 1067
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     const-string/jumbo v13, "ww"
 
-    .line 1012
+    .line 1068
     invoke-virtual {v4, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v14
@@ -706,7 +706,7 @@
 
     if-gez v9, :cond_14
 
-    .line 1013
+    .line 1069
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v8, v4
@@ -745,7 +745,7 @@
 
     const/16 v24, 0x0
 
-    .line 1014
+    .line 1070
     iget v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     const/16 v27, 0x7
@@ -762,7 +762,7 @@
 
     const/16 v24, 0x1
 
-    .line 1015
+    .line 1071
     iget v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     const/16 v27, 0xb
@@ -780,7 +780,7 @@
     :cond_13
     move/from16 v28, v11
 
-    .line 1016
+    .line 1072
     :cond_14
     invoke-virtual {v4, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -788,7 +788,7 @@
 
     if-nez v2, :cond_17
 
-    const-string v2, "qq"
+    const-string/jumbo v2, "qq"
 
     invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -798,7 +798,7 @@
 
     goto :goto_8
 
-    .line 1023
+    .line 1079
     :cond_15
     iget v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
@@ -836,7 +836,7 @@
 
     float-to-int v2, v2
 
-    .line 1024
+    .line 1080
     iget v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     sub-int/2addr v3, v2
@@ -852,7 +852,7 @@
     :cond_16
     int-to-float v4, v3
 
-    .line 1031
+    .line 1087
     iget v8, v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     div-float/2addr v4, v8
@@ -897,7 +897,7 @@
 
     move/from16 v26, v4
 
-    .line 1032
+    .line 1088
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x1
@@ -910,12 +910,12 @@
 
     move/from16 v25, v2
 
-    .line 1033
+    .line 1089
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     goto/16 :goto_a
 
-    .line 1017
+    .line 1073
     :cond_17
     :goto_8
     iget v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
@@ -926,7 +926,7 @@
 
     int-to-float v3, v2
 
-    .line 1018
+    .line 1074
     iget v4, v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     div-float v4, v3, v4
@@ -969,7 +969,7 @@
 
     move/from16 v26, v3
 
-    .line 1019
+    .line 1075
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x1
@@ -980,7 +980,7 @@
 
     move-object/from16 v20, v7
 
-    .line 1020
+    .line 1076
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     goto/16 :goto_a
@@ -992,7 +992,7 @@
 
     if-ne v1, v7, :cond_1c
 
-    .line 1037
+    .line 1093
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v7, 0x0
@@ -1003,7 +1003,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1038
+    .line 1094
     iget-object v9, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v10, 0x1
@@ -1014,7 +1014,7 @@
 
     check-cast v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1039
+    .line 1095
     iget-object v10, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v11, 0x2
@@ -1025,7 +1025,7 @@
 
     check-cast v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1040
+    .line 1096
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v4
@@ -1034,7 +1034,7 @@
 
     if-ne v4, v7, :cond_1a
 
-    .line 1041
+    .line 1097
     iget v2, v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
@@ -1067,7 +1067,7 @@
 
     int-to-float v4, v8
 
-    .line 1043
+    .line 1099
     iget v8, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v8, v8
@@ -1104,7 +1104,7 @@
 
     float-to-int v4, v4
 
-    .line 1045
+    .line 1101
     iget v8, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     const v11, 0x444b8000    # 814.0f
@@ -1145,7 +1145,7 @@
 
     move/from16 v34, v6
 
-    .line 1046
+    .line 1102
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v30, 0x1
@@ -1166,7 +1166,7 @@
 
     move/from16 v35, v7
 
-    .line 1048
+    .line 1104
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v30, 0x0
@@ -1185,10 +1185,10 @@
 
     move/from16 v35, v2
 
-    .line 1050
+    .line 1106
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    .line 1051
+    .line 1107
     iget v8, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     iput v8, v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
@@ -1205,14 +1205,14 @@
 
     aput v7, v12, v2
 
-    .line 1053
+    .line 1109
     iput-object v12, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->siblingHeights:[F
 
     if-eqz v28, :cond_19
 
     sub-int/2addr v8, v4
 
-    .line 1056
+    .line 1112
     iput v8, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     goto :goto_9
@@ -1220,19 +1220,19 @@
     :cond_19
     sub-int/2addr v8, v6
 
-    .line 1058
+    .line 1114
     iput v8, v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 1059
+    .line 1115
     iput v6, v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
-    .line 1061
+    .line 1117
     :goto_9
     iput-boolean v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasSibling:Z
 
     goto :goto_a
 
-    .line 1064
+    .line 1120
     :cond_1a
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
@@ -1264,7 +1264,7 @@
 
     const/16 v33, 0x0
 
-    .line 1065
+    .line 1121
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     const/16 v36, 0x7
@@ -1277,7 +1277,7 @@
 
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    .line 1067
+    .line 1123
     iget v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     const/4 v4, 0x2
@@ -1290,7 +1290,7 @@
 
     int-to-float v6, v3
 
-    .line 1068
+    .line 1124
     iget v7, v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     div-float v7, v6, v7
@@ -1338,7 +1338,7 @@
 
     move/from16 v35, v2
 
-    .line 1072
+    .line 1128
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v30, 0x1
@@ -1349,7 +1349,7 @@
 
     move-object/from16 v29, v10
 
-    .line 1073
+    .line 1129
     invoke-virtual/range {v29 .. v36}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     :goto_a
@@ -1357,7 +1357,7 @@
 
     goto/16 :goto_22
 
-    .line 1077
+    .line 1133
     :cond_1c
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
@@ -1369,7 +1369,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1078
+    .line 1134
     iget-object v10, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v11, 0x1
@@ -1380,7 +1380,7 @@
 
     check-cast v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1079
+    .line 1135
     iget-object v11, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     const/4 v12, 0x2
@@ -1391,7 +1391,7 @@
 
     check-cast v11, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1080
+    .line 1136
     iget-object v12, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1400,7 +1400,7 @@
 
     check-cast v12, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 1081
+    .line 1137
     invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v4
@@ -1411,7 +1411,7 @@
 
     if-ne v4, v9, :cond_1f
 
-    .line 1082
+    .line 1138
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v4, v4
@@ -1442,7 +1442,7 @@
 
     const/16 v24, 0x0
 
-    .line 1083
+    .line 1139
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     const/16 v27, 0x7
@@ -1455,7 +1455,7 @@
 
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    .line 1085
+    .line 1141
     iget v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v3, v3
@@ -1480,7 +1480,7 @@
 
     int-to-float v4, v8
 
-    .line 1086
+    .line 1142
     iget v6, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v6, v6
@@ -1501,7 +1501,7 @@
 
     float-to-int v6, v6
 
-    .line 1087
+    .line 1143
     iget v7, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     int-to-float v7, v7
@@ -1522,7 +1522,7 @@
 
     float-to-int v4, v4
 
-    .line 1088
+    .line 1144
     iget v7, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     sub-int/2addr v7, v6
@@ -1531,26 +1531,26 @@
 
     const/16 v8, 0x3a
 
-    .line 1089
+    .line 1145
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     if-ge v7, v9, :cond_1d
 
-    .line 1090
+    .line 1146
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     sub-int/2addr v9, v7
 
-    .line 1091
+    .line 1147
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
-    .line 1092
+    .line 1148
     div-int/lit8 v8, v9, 0x2
 
     sub-int/2addr v6, v8
@@ -1566,7 +1566,7 @@
 
     sub-float v2, v6, v2
 
-    .line 1095
+    .line 1151
     invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
@@ -1594,7 +1594,7 @@
 
     move/from16 v26, v2
 
-    .line 1100
+    .line 1156
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x1
@@ -1607,7 +1607,7 @@
 
     move/from16 v25, v7
 
-    .line 1101
+    .line 1157
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x2
@@ -1620,14 +1620,14 @@
 
     move/from16 v25, v4
 
-    .line 1102
+    .line 1158
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/4 v2, 0x2
 
     goto/16 :goto_22
 
-    .line 1105
+    .line 1161
     :cond_1f
     iget v2, v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
@@ -1663,7 +1663,7 @@
 
     int-to-float v9, v2
 
-    .line 1106
+    .line 1162
     iget v13, v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     div-float v13, v9, v13
@@ -1678,7 +1678,7 @@
 
     move-result v13
 
-    .line 1107
+    .line 1163
     iget v14, v11, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     div-float/2addr v9, v14
@@ -1699,7 +1699,7 @@
 
     sub-float/2addr v9, v8
 
-    .line 1109
+    .line 1165
     iget v14, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
     mul-float/2addr v4, v14
@@ -1740,7 +1740,7 @@
 
     move/from16 v25, v4
 
-    .line 1111
+    .line 1167
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x1
@@ -1757,7 +1757,7 @@
 
     move/from16 v26, v13
 
-    .line 1113
+    .line 1169
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
     const/16 v21, 0x0
@@ -1772,10 +1772,10 @@
 
     move/from16 v26, v8
 
-    .line 1115
+    .line 1171
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    .line 1116
+    .line 1172
     iget v6, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     iput v6, v11, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
@@ -1790,10 +1790,10 @@
 
     move/from16 v26, v9
 
-    .line 1118
+    .line 1174
     invoke-virtual/range {v20 .. v27}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    .line 1119
+    .line 1175
     iget v6, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     iput v6, v12, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
@@ -1802,7 +1802,7 @@
 
     sub-int/2addr v6, v2
 
-    .line 1122
+    .line 1178
     iput v6, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     goto :goto_b
@@ -1810,13 +1810,13 @@
     :cond_20
     sub-int/2addr v6, v4
 
-    .line 1124
+    .line 1180
     iput v6, v10, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 1125
+    .line 1181
     iput v4, v11, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
-    .line 1126
+    .line 1182
     iput v4, v12, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
     :goto_b
@@ -1834,10 +1834,10 @@
 
     aput v9, v2, v6
 
-    .line 1128
+    .line 1184
     iput-object v2, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->siblingHeights:[F
 
-    .line 1129
+    .line 1185
     iput-boolean v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasSibling:Z
 
     goto/16 :goto_a
@@ -1847,7 +1847,7 @@
 
     move v2, v15
 
-    .line 1134
+    .line 1190
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -1867,7 +1867,7 @@
 
     if-lez v10, :cond_22
 
-    .line 1137
+    .line 1193
     iget-object v10, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1891,7 +1891,7 @@
     :cond_22
     const/high16 v11, 0x3f800000    # 1.0f
 
-    .line 1139
+    .line 1195
     iget-object v10, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1913,7 +1913,7 @@
 
     const v12, 0x3fd9999a    # 1.7f
 
-    .line 1141
+    .line 1197
     aget v13, v4, v6
 
     invoke-static {v12, v13}, Ljava/lang/Math;->min(FF)F
@@ -1930,7 +1930,7 @@
 
     goto :goto_c
 
-    .line 1148
+    .line 1204
     :cond_23
     new-instance v6, Ljava/util/ArrayList;
 
@@ -1949,7 +1949,7 @@
 
     goto :goto_f
 
-    .line 1154
+    .line 1210
     :cond_24
     new-instance v12, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;
 
@@ -2014,7 +2014,7 @@
 
     goto :goto_13
 
-    .line 1163
+    .line 1219
     :cond_28
     new-instance v13, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;
 
@@ -2091,7 +2091,7 @@
 
     goto :goto_17
 
-    .line 1174
+    .line 1230
     :cond_2c
     new-instance v15, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;
 
@@ -2161,7 +2161,7 @@
 
     goto :goto_14
 
-    .line 1181
+    .line 1237
     :cond_30
     iget v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
@@ -2181,7 +2181,7 @@
 
     const/4 v12, 0x0
 
-    .line 1182
+    .line 1238
     :goto_18
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -2189,7 +2189,7 @@
 
     if-ge v10, v13, :cond_3b
 
-    .line 1183
+    .line 1239
     invoke-virtual {v6, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
@@ -2204,7 +2204,7 @@
 
     const/16 v21, 0x0
 
-    .line 1186
+    .line 1242
     :goto_19
     iget-object v3, v13, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
@@ -2212,19 +2212,19 @@
 
     if-ge v15, v7, :cond_32
 
-    .line 1187
+    .line 1243
     aget v7, v3, v15
 
     add-float v21, v21, v7
 
-    .line 1188
+    .line 1244
     aget v7, v3, v15
 
     cmpg-float v7, v7, v16
 
     if-gez v7, :cond_31
 
-    .line 1189
+    .line 1245
     aget v3, v3, v15
 
     move/from16 v16, v3
@@ -2237,12 +2237,12 @@
     :cond_32
     sub-float v21, v21, v2
 
-    .line 1193
+    .line 1249
     invoke-static/range {v21 .. v21}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
 
-    .line 1194
+    .line 1250
     iget-object v7, v13, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     array-length v15, v7
@@ -2255,7 +2255,7 @@
 
     const/4 v15, 0x0
 
-    .line 1195
+    .line 1251
     aget v2, v7, v15
 
     aget v15, v7, v9
@@ -2364,7 +2364,7 @@
 
     const/4 v6, 0x0
 
-    .line 1216
+    .line 1272
     :goto_1e
     iget-object v7, v11, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
@@ -2372,20 +2372,20 @@
 
     if-ge v2, v8, :cond_42
 
-    .line 1217
+    .line 1273
     aget v7, v7, v2
 
-    .line 1218
+    .line 1274
     iget-object v8, v11, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     aget v8, v8, v2
 
-    .line 1219
+    .line 1275
     iget v9, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->maxSizeWidth:I
 
     add-int/lit8 v10, v7, -0x1
 
-    .line 1221
+    .line 1277
     invoke-static {v3, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -2401,7 +2401,7 @@
     :goto_1f
     if-ge v6, v7, :cond_41
 
-    .line 1223
+    .line 1279
     aget v15, v4, v9
 
     mul-float/2addr v15, v8
@@ -2412,7 +2412,7 @@
 
     move/from16 v16, v3
 
-    .line 1226
+    .line 1282
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2434,7 +2434,7 @@
     :cond_3d
     const/4 v3, 0x0
 
-    .line 1231
+    .line 1287
     :goto_20
     iget-object v4, v11, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
@@ -2478,7 +2478,7 @@
 
     div-float v3, v8, v4
 
-    .line 1246
+    .line 1302
     invoke-static {v14, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v36
@@ -2512,14 +2512,14 @@
 
     const v4, 0x444b8000    # 814.0f
 
-    .line 1249
+    .line 1305
     iget v3, v13, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
     add-int/2addr v3, v12
 
     iput v3, v13, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
-    .line 1250
+    .line 1306
     iget v3, v13, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     add-int/2addr v3, v12
@@ -2545,7 +2545,7 @@
     :goto_23
     if-ge v3, v1, :cond_4f
 
-    .line 1256
+    .line 1312
     iget-object v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2556,19 +2556,19 @@
 
     if-eqz v28, :cond_45
 
-    .line 1258
+    .line 1314
     iget-byte v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minX:B
 
     if-nez v6, :cond_43
 
-    .line 1259
+    .line 1315
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     add-int/2addr v6, v5
 
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 1261
+    .line 1317
     :cond_43
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -2580,7 +2580,7 @@
 
     const/4 v6, 0x1
 
-    .line 1262
+    .line 1318
     iput-boolean v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->edge:Z
 
     move v7, v6
@@ -2595,7 +2595,7 @@
     :cond_45
     const/4 v7, 0x2
 
-    .line 1265
+    .line 1321
     iget-byte v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxX:B
 
     if-eq v6, v2, :cond_46
@@ -2606,7 +2606,7 @@
 
     if-eqz v6, :cond_47
 
-    .line 1266
+    .line 1322
     :cond_46
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
@@ -2614,7 +2614,7 @@
 
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 1268
+    .line 1324
     :cond_47
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -2624,10 +2624,10 @@
 
     if-eqz v6, :cond_48
 
-    .line 1269
+    .line 1325
     iput-boolean v7, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->edge:Z
 
-    .line 1272
+    .line 1328
     :cond_48
     :goto_24
     iget-object v6, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
@@ -2640,19 +2640,19 @@
 
     if-nez v28, :cond_4c
 
-    .line 1273
+    .line 1329
     invoke-static {v6}, Lorg/telegram/messenger/MessageObject;->access$000(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result v6
 
     if-eqz v6, :cond_4c
 
-    .line 1274
+    .line 1330
     iget-boolean v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->edge:Z
 
     if-eqz v6, :cond_4a
 
-    .line 1275
+    .line 1331
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     const/16 v8, 0x3e8
@@ -2661,10 +2661,10 @@
 
     add-int/lit8 v6, v6, 0x6c
 
-    .line 1276
+    .line 1332
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 1278
+    .line 1334
     :cond_49
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
@@ -2674,7 +2674,7 @@
 
     goto :goto_25
 
-    .line 1279
+    .line 1335
     :cond_4a
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -2684,7 +2684,7 @@
 
     if-eqz v6, :cond_4d
 
-    .line 1280
+    .line 1336
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     const/16 v9, 0x3e8
@@ -2693,12 +2693,12 @@
 
     add-int/lit8 v6, v6, -0x6c
 
-    .line 1281
+    .line 1337
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
     goto :goto_26
 
-    .line 1282
+    .line 1338
     :cond_4b
     iget v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
@@ -2706,7 +2706,7 @@
 
     add-int/lit8 v6, v6, 0x6c
 
-    .line 1283
+    .line 1339
     iput v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
     goto :goto_26
@@ -2731,7 +2731,7 @@
 .method public findMessageWithFlags(I)Lorg/telegram/messenger/MessageObject;
     .locals 3
 
-    .line 1295
+    .line 1351
     iget-object v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2748,13 +2748,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 1296
+    .line 1352
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject$GroupedMessages;->calculate()V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 1298
+    .line 1354
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
@@ -2764,7 +2764,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 1299
+    .line 1355
     iget-object v1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2773,7 +2773,7 @@
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 1300
+    .line 1356
     iget-object v2, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2784,7 +2784,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1301
+    .line 1357
     iget v2, v2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     and-int/2addr v2, p1
@@ -2809,7 +2809,7 @@
 
     const/4 v0, 0x5
 
-    .line 1291
+    .line 1347
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MessageObject$GroupedMessages;->findMessageWithFlags(I)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0

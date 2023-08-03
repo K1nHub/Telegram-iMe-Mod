@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
     .locals 0
 
-    .line 77
+    .line 88
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 80
+    .line 91
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$000(Lorg/telegram/ui/Components/EditTextEmoji;)Z
@@ -85,7 +85,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 82
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -103,7 +103,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 83
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$400(Lorg/telegram/ui/Components/EditTextEmoji;)Ljava/lang/Runnable;
@@ -112,7 +112,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 84
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$1;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$400(Lorg/telegram/ui/Components/EditTextEmoji;)Ljava/lang/Runnable;

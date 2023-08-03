@@ -431,7 +431,7 @@
     .line 640
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v2, "persistence_group"
+    const-string/jumbo v2, "persistence_group"
 
     .line 641
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -439,7 +439,7 @@
     .line 642
     iget-object v3, p0, Lcom/microsoft/appcenter/persistence/DatabasePersistence;->mDatabaseManager:Lcom/microsoft/appcenter/utils/storage/DatabaseManager;
 
-    const-string v4, "priority"
+    const-string/jumbo v4, "priority"
 
     invoke-virtual {v3, v0, v4, p1}, Lcom/microsoft/appcenter/utils/storage/DatabaseManager;->deleteTheOldestRecord(Ljava/util/Set;Ljava/lang/String;I)Landroid/content/ContentValues;
 
@@ -583,7 +583,7 @@
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    const-string v1, "persistence_group"
+    const-string/jumbo v1, "persistence_group"
 
     .line 261
     invoke-virtual {v0, v1, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -613,7 +613,7 @@
 
     move-result-object p0
 
-    const-string p1, "priority"
+    const-string/jumbo p1, "priority"
 
     invoke-virtual {v0, p1, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
@@ -795,7 +795,7 @@
 
     move-result-object v0
 
-    const-string v1, "persistence_group = ?"
+    const-string/jumbo v1, "persistence_group = ?"
 
     .line 437
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->appendWhere(Ljava/lang/CharSequence;)V
@@ -933,7 +933,7 @@
     .line 420
     iget-object v0, p0, Lcom/microsoft/appcenter/persistence/DatabasePersistence;->mDatabaseManager:Lcom/microsoft/appcenter/utils/storage/DatabaseManager;
 
-    const-string v2, "persistence_group"
+    const-string/jumbo v2, "persistence_group"
 
     invoke-virtual {v0, v2, p1}, Lcom/microsoft/appcenter/utils/storage/DatabaseManager;->delete(Ljava/lang/String;Ljava/lang/Object;)I
 
@@ -1292,7 +1292,7 @@
 
     move-result-object v5
 
-    const-string v0, "persistence_group = ?"
+    const-string/jumbo v0, "persistence_group = ?"
 
     .line 462
     invoke-virtual {v5, v0}, Landroid/database/sqlite/SQLiteQueryBuilder;->appendWhere(Ljava/lang/CharSequence;)V
@@ -1416,7 +1416,7 @@
     :try_start_0
     iget-object v0, v1, Lcom/microsoft/appcenter/persistence/DatabasePersistence;->mDatabaseManager:Lcom/microsoft/appcenter/utils/storage/DatabaseManager;
 
-    const-string v12, "priority DESC, oid"
+    const-string/jumbo v12, "priority DESC, oid"
 
     invoke-virtual {v0, v5, v11, v10, v12}, Lcom/microsoft/appcenter/utils/storage/DatabaseManager;->getCursor(Landroid/database/sqlite/SQLiteQueryBuilder;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 

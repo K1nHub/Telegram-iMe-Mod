@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda166;->f$0:Landroid/widget/LinearLayout;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$iVUW1M7cJtbQwHv2iJN3Ey1NfNg(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;II)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$GCmFosidNm0oHSqcpGG0zcSk8NI(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;II)V
 
     return-void
 .end method

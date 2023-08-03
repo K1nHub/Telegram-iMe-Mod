@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PagerSlidingTabStrip;Landroid/content/Context;I)V
     .locals 0
 
-    .line 140
+    .line 141
     iput-object p1, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/PagerSlidingTabStrip;
 
     iput p3, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip$2;->val$position:I
@@ -39,10 +39,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 143
+    .line 144
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/PagerSlidingTabStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/PagerSlidingTabStrip;)Landroidx/viewpager/widget/ViewPager;
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/PagerSlidingTabStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/PagerSlidingTabStrip;)Landroidx/viewpager/widget/ViewPager;
@@ -81,15 +81,15 @@
 .method public setSelected(Z)V
     .locals 4
 
-    .line 151
+    .line 152
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 152
+    .line 153
     invoke-virtual {p0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 153
+    .line 154
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 154
+    .line 155
     iget-object v1, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/PagerSlidingTabStrip;
 
     if-eqz p1, :cond_0
@@ -117,7 +117,7 @@
 
     const/16 v1, 0x1e
 
-    .line 155
+    .line 156
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v2

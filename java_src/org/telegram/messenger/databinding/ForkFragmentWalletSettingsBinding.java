@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletSettingsBinding implements ViewBinding {
     public final RecyclerView recycleSettings;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletSettingsBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSettingsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_settings, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_settings, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletSettingsBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSettingsBinding bind(View view) {
-        int i = C3417R.C3420id.recycle_settings;
+        int i = C3419R.C3422id.recycle_settings;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletSettingsBinding((FrameLayout) view, recyclerView);

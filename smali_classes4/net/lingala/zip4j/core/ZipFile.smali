@@ -133,7 +133,7 @@
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "r"
+    const-string/jumbo v3, "r"
 
     invoke-direct {v1, v2, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
     :try_end_0
@@ -379,7 +379,7 @@
     :cond_4
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "output path is null or invalid"
+    const-string/jumbo p2, "output path is null or invalid"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

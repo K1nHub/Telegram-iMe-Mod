@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda4;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->$r8$lambda$E7gJWZPUjiHHHR8X1K7O-9LtdGE(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->$r8$lambda$wvU0v6GZxfFulZly9ENIE8POqII(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;I)V
 
     return-void
 .end method

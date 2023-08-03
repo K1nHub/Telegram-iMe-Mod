@@ -81,7 +81,7 @@
     .line 1593
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5000(Lorg/telegram/ui/Components/StickerMasksAlert;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;I)I
 
     move-result p1
 
@@ -120,7 +120,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;Lorg/telegram/tgnet/TLRPC$Document;)V
+.method static synthetic access$4700(Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 0
 
     .line 1578
@@ -157,7 +157,7 @@
     .line 1607
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickerMasksAlert;->access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
 
     move-result v0
 

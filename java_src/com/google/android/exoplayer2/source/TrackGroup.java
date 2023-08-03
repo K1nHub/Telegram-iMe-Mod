@@ -19,12 +19,19 @@ public final class TrackGroup implements Bundleable {
     private int hashCode;
 
     /* renamed from: id */
-    public final String f208id;
+    public final String f210id;
     public final int length;
     public final int type;
     private static final String FIELD_FORMATS = Util.intToStringMaxRadix(0);
     private static final String FIELD_ID = Util.intToStringMaxRadix(1);
-    public static final Bundleable.Creator<TrackGroup> CREATOR = TrackGroup$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<TrackGroup> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.source.TrackGroup$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            TrackGroup lambda$static$0;
+            lambda$static$0 = TrackGroup.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     private static int normalizeRoleFlags(int i) {
         return i | 16384;
@@ -36,7 +43,7 @@ public final class TrackGroup implements Bundleable {
 
     public TrackGroup(String str, Format... formatArr) {
         Assertions.checkArgument(formatArr.length > 0);
-        this.f208id = str;
+        this.f210id = str;
         this.formats = formatArr;
         this.length = formatArr.length;
         int trackType = MimeTypes.getTrackType(formatArr[0].sampleMimeType);
@@ -68,7 +75,7 @@ public final class TrackGroup implements Bundleable {
 
     public int hashCode() {
         if (this.hashCode == 0) {
-            this.hashCode = ((527 + this.f208id.hashCode()) * 31) + Arrays.hashCode(this.formats);
+            this.hashCode = ((527 + this.f210id.hashCode()) * 31) + Arrays.hashCode(this.formats);
         }
         return this.hashCode;
     }
@@ -81,7 +88,7 @@ public final class TrackGroup implements Bundleable {
             return false;
         }
         TrackGroup trackGroup = (TrackGroup) obj;
-        return this.f208id.equals(trackGroup.f208id) && Arrays.equals(this.formats, trackGroup.formats);
+        return this.f210id.equals(trackGroup.f210id) && Arrays.equals(this.formats, trackGroup.formats);
     }
 
     @Override // com.google.android.exoplayer2.Bundleable
@@ -92,7 +99,7 @@ public final class TrackGroup implements Bundleable {
             arrayList.add(format.toBundle(true));
         }
         bundle.putParcelableArrayList(FIELD_FORMATS, arrayList);
-        bundle.putString(FIELD_ID, this.f208id);
+        bundle.putString(FIELD_ID, this.f210id);
         return bundle;
     }
 
@@ -101,7 +108,7 @@ public final class TrackGroup implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_FORMATS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m744of();
+            fromBundleList = ImmutableList.m762of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Format.CREATOR, parcelableArrayList);
         }
@@ -135,6 +142,6 @@ public final class TrackGroup implements Bundleable {
     }
 
     private static void logErrorMessage(String str, String str2, String str3, int i) {
-        Log.m799e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
+        Log.m817e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
     }
 }

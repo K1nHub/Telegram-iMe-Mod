@@ -7,8 +7,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ProgressView.kt */
 /* renamed from: com.iMe.ui.custom.ProgressView */
@@ -45,13 +47,44 @@ public final class ProgressView extends View {
         Lazy lazy3;
         Lazy lazy4;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(ProgressView$viewHeight$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ProgressView$viewHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(24));
+            }
+        });
         this.viewHeight$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(ProgressView$strokeWidth$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.custom.ProgressView$strokeWidth$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(6));
+            }
+        });
         this.strokeWidth$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ProgressView$strokePadding$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.custom.ProgressView$strokePadding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                float strokeWidth;
+                strokeWidth = ProgressView.this.getStrokeWidth();
+                return Float.valueOf(strokeWidth / 2);
+            }
+        });
         this.strokePadding$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(ProgressView$lineY$2.INSTANCE);
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.custom.ProgressView$lineY$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(15));
+            }
+        });
         this.lineY$delegate = lazy4;
         this.backgroundPaint = getBarPaint();
         this.progressPaint = getBarPaint();

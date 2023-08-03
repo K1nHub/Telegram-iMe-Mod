@@ -26,15 +26,15 @@
     .end annotation
 .end method
 
-.method public abstract sendWalletConnectCryptoTransaction(Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;
+.method public abstract sendWalletConnectCryptoTransaction(Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransactionBodyRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransactionBodyRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransactionBodyRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",

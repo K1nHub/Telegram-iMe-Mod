@@ -16,7 +16,7 @@ public final class zzik extends AbstractList<String> implements zzgi, RandomAcce
 
     @Override // com.google.android.gms.internal.mlkit_common.zzgi
     /* renamed from: a_ */
-    public final zzgi mo763a_() {
+    public final zzgi mo781a_() {
         return this;
     }
 

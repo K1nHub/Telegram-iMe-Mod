@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$2:Ljava/util/HashSet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;Ljava/util/ArrayList;Ljava/util/HashSet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$2:Lorg/telegram/tgnet/TLObject;
+    iput-object p3, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$2:Ljava/util/HashSet;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$2:Lorg/telegram/tgnet/TLObject;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher$$ExternalSyntheticLambda3;->f$2:Ljava/util/HashSet;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->$r8$lambda$A2eqp1hK_MwBDYucP6z_a53DZDc(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLObject;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->$r8$lambda$QWVGRu1b6dsMPxjiMUTX8v8A3g8(Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
     return-void
 .end method

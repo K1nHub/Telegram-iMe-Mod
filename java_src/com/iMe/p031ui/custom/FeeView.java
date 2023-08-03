@@ -25,10 +25,15 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentFeeBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -68,7 +73,27 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new FeeView$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.FeeView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resourceManager$delegate = lazy;
         ForkContentFeeBinding inflate = ForkContentFeeBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -173,18 +198,37 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         AppCompatTextView appCompatTextView = forkContentFeeBinding.textFeeValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3417R.string.wallet_swap_process_fee_price_value;
+        int i = C3419R.string.wallet_swap_process_fee_price_value;
         Double valueOf = Double.valueOf(gasPriceItem.getInfo().getFeeInFiat().getValue());
         TokenDetailed.Companion companion = TokenDetailed.Companion;
         appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(gasPriceItem.getInfo().getFee()), Integer.valueOf(gasPriceItem.getFeeToken().getDecimals())), gasPriceItem.getFeeToken().getTicker(), BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
-        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
+        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3419R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
     }
 
-    private final void showFeeDialog(DialogModel dialogModel, List<GasPriceItem> list, int i, Function1<? super GasPriceItem, Unit> function1) {
+    private final void showFeeDialog(DialogModel dialogModel, final List<GasPriceItem> list, int i, final Function1<? super GasPriceItem, Unit> function1) {
         AlertDialog createTwoLineSingleChooserDialog$default;
         BaseFragment baseFragment;
         BaseFragment baseFragment2 = this.fragment;
-        if (baseFragment2 == null || (createTwoLineSingleChooserDialog$default = DialogsFactoryKt.createTwoLineSingleChooserDialog$default(baseFragment2, getResourceManager(), dialogModel, null, null, list, i, new FeeView$showFeeDialog$dialog$1(list, function1, this), 12, null)) == null) {
+        if (baseFragment2 == null || (createTwoLineSingleChooserDialog$default = DialogsFactoryKt.createTwoLineSingleChooserDialog$default(baseFragment2, getResourceManager(), dialogModel, null, null, list, i, new Function1<Integer, Unit>() { // from class: com.iMe.ui.custom.FeeView$showFeeDialog$dialog$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke(num.intValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(int i2) {
+                GasPriceItem gasPriceItem = list.get(i2);
+                function1.invoke(gasPriceItem);
+                this.displayFee(gasPriceItem);
+            }
+        }, 12, null)) == null) {
             return;
         }
         MvpBottomSheet mvpBottomSheet = this.mvpBottomSheet;
@@ -201,8 +245,8 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
     private final void setupTexts() {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
-        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_price));
-        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_duration));
+        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3419R.string.wallet_swap_process_fee_price));
+        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3419R.string.wallet_swap_process_fee_duration));
     }
 
     /* compiled from: FeeView.kt */

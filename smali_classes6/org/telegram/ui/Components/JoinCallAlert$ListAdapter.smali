@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/JoinCallAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 675
+    .line 679
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 676
+    .line 680
     iput-object p2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->context:Landroid/content/Context;
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 681
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -73,7 +73,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 731
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -98,7 +98,7 @@
 
     if-lez v2, :cond_0
 
-    .line 735
+    .line 739
     iget-object v2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1400(Lorg/telegram/ui/Components/JoinCallAlert;)I
@@ -117,7 +117,7 @@
 
     move-result-object v2
 
-    .line 736
+    .line 740
     sget v4, Lorg/telegram/messenger/R$string;->VoipGroupPersonalAccount:I
 
     const-string v5, "VoipGroupPersonalAccount"
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 738
+    .line 742
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -152,7 +152,7 @@
 
     move-object v4, v3
 
-    .line 741
+    .line 745
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -166,12 +166,12 @@
 
     if-nez v5, :cond_2
 
-    .line 742
+    .line 746
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ShareDialogCell;
 
-    .line 743
+    .line 747
     iget-object p2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$500(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/tgnet/TLRPC$Peer;
@@ -193,13 +193,13 @@
 
     goto :goto_1
 
-    .line 745
+    .line 749
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 746
+    .line 750
     invoke-virtual {p0}, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->getItemCount()I
 
     move-result v0
@@ -218,9 +218,9 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 8
+    .locals 9
 
-    .line 697
+    .line 701
     iget-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$200(Lorg/telegram/ui/Components/JoinCallAlert;)I
@@ -231,7 +231,7 @@
 
     if-nez p1, :cond_0
 
-    .line 698
+    .line 702
     new-instance p1, Lorg/telegram/ui/Cells/ShareDialogCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->context:Landroid/content/Context;
@@ -240,7 +240,7 @@
 
     invoke-direct {p1, v0, p2, v1}, Lorg/telegram/ui/Cells/ShareDialogCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 699
+    .line 703
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/16 v0, 0x50
@@ -261,7 +261,7 @@
 
     goto :goto_1
 
-    .line 701
+    .line 705
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
@@ -291,11 +291,13 @@
     :goto_0
     move v7, p2
 
+    const/4 v8, 0x0
+
     move-object v2, p1
 
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;-><init>(Landroid/content/Context;IIZZ)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Cells/GroupCreateUserCell;-><init>(Landroid/content/Context;IIZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 703
+    .line 707
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -307,10 +309,10 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 7
 
-    .line 708
+    .line 712
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
-    .line 709
+    .line 713
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$500(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/tgnet/TLRPC$Peer;
@@ -321,7 +323,7 @@
 
     move-result-wide v0
 
-    .line 710
+    .line 714
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v2, p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
@@ -332,10 +334,10 @@
 
     if-eqz v2, :cond_3
 
-    .line 711
+    .line 715
     check-cast p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 712
+    .line 716
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->getObject()Ljava/lang/Object;
 
     move-result-object v2
@@ -344,12 +346,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 715
+    .line 719
     instance-of v5, v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v5, :cond_0
 
-    .line 716
+    .line 720
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -358,7 +360,7 @@
 
     goto :goto_0
 
-    .line 718
+    .line 722
     :cond_0
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
@@ -375,17 +377,17 @@
     :cond_2
     move v3, v4
 
-    .line 721
+    .line 725
     :goto_1
     invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
     goto :goto_3
 
-    .line 723
+    .line 727
     :cond_3
     check-cast p1, Lorg/telegram/ui/Cells/ShareDialogCell;
 
-    .line 724
+    .line 728
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ShareDialogCell;->getCurrentDialog()J
 
     move-result-wide v5
@@ -399,7 +401,7 @@
     :cond_4
     move v3, v4
 
-    .line 725
+    .line 729
     :goto_2
     invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Cells/ShareDialogCell;->setChecked(ZZ)V
 

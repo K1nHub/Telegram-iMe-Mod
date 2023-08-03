@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 786
+    .line 788
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$4;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
@@ -52,7 +52,7 @@
 .method public openSettings()V
     .locals 1
 
-    .line 789
+    .line 791
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$4;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$100(Lorg/telegram/ui/ChatActivity;)V
@@ -63,7 +63,7 @@
 .method public pasteResult(Ljava/lang/String;)V
     .locals 1
 
-    .line 794
+    .line 796
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {v0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

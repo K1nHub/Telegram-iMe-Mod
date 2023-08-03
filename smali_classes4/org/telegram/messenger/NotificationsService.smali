@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    const-string v1, "pushService"
+    const-string/jumbo v1, "pushService"
 
     const/4 v2, 0x1
 
@@ -60,7 +60,7 @@
     .line 38
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "org.telegram.start"
+    const-string/jumbo v1, "org.telegram.start"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 

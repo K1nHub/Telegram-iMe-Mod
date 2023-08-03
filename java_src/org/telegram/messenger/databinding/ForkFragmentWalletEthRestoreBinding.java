@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.backup.SecretWordsActionButton;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthRestoreBinding implements ViewBinding {
     private final ConstraintLayout rootView;
@@ -32,7 +32,7 @@ public final class ForkFragmentWalletEthRestoreBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthRestoreBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_eth_restore, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_eth_restore, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -41,27 +41,27 @@ public final class ForkFragmentWalletEthRestoreBinding implements ViewBinding {
 
     public static ForkFragmentWalletEthRestoreBinding bind(View view) {
         View findChildViewById;
-        int i = C3417R.C3420id.button_action;
+        int i = C3419R.C3422id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3417R.C3420id.button_scan_qr;
+            i = C3419R.C3422id.button_scan_qr;
             SecretWordsActionButton secretWordsActionButton = (SecretWordsActionButton) ViewBindings.findChildViewById(view, i);
             if (secretWordsActionButton != null) {
-                i = C3417R.C3420id.card_seed;
+                i = C3419R.C3422id.card_seed;
                 CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
                 if (cardView != null) {
-                    i = C3417R.C3420id.edit_seed;
+                    i = C3419R.C3422id.edit_seed;
                     AppCompatEditText appCompatEditText = (AppCompatEditText) ViewBindings.findChildViewById(view, i);
                     if (appCompatEditText != null) {
-                        i = C3417R.C3420id.frame_half_bg;
+                        i = C3419R.C3422id.frame_half_bg;
                         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                         if (frameLayout != null) {
-                            i = C3417R.C3420id.linear_input_wrapper;
+                            i = C3419R.C3422id.linear_input_wrapper;
                             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                             if (linearLayout != null) {
-                                i = C3417R.C3420id.text_title;
+                                i = C3419R.C3422id.text_title;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
-                                if (appCompatTextView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3417R.C3420id.view_tag))) != null) {
+                                if (appCompatTextView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3419R.C3422id.view_tag))) != null) {
                                     return new ForkFragmentWalletEthRestoreBinding((ConstraintLayout) view, actionButton, secretWordsActionButton, cardView, appCompatEditText, frameLayout, linearLayout, appCompatTextView, findChildViewById);
                                 }
                             }

@@ -25,7 +25,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.exoplayer2.p016ui.AspectRatioFrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -50,16 +50,19 @@ import org.telegram.tgnet.TLRPC$TL_messageService;
 /* renamed from: org.telegram.ui.PinchToZoomHelper */
 /* loaded from: classes5.dex */
 public class PinchToZoomHelper {
+    private ImageReceiver blurImage;
     Callback callback;
     private View child;
     private ImageReceiver childImage;
     ClipBoundsListener clipBoundsListener;
+    private float[] clipTopBottom;
     private float enterProgress;
     private float finishProgress;
     ValueAnimator finishTransition;
     float fragmentOffsetX;
     float fragmentOffsetY;
     private final ViewGroup fragmentView;
+    private ImageReceiver fullImage;
     private float fullImageHeight;
     private float fullImageWidth;
     private boolean hasMediaSpoiler;
@@ -70,11 +73,14 @@ public class PinchToZoomHelper {
     private boolean inOverlayMode;
     private boolean isHardwareVideo;
     boolean isInPinchToZoomTouchMode;
+    private final boolean isSimple;
+    private SpoilerEffect mediaSpoilerEffect;
     private MessageObject messageObject;
     private ZoomOverlayView overlayView;
     float parentOffsetX;
     float parentOffsetY;
     private final ViewGroup parentView;
+    private Path path;
     float pinchCenterX;
     float pinchCenterY;
     float pinchScale;
@@ -86,12 +92,7 @@ public class PinchToZoomHelper {
     private int pointerId1;
     private int pointerId2;
     private float progressToFullView;
-    private ImageReceiver fullImage = new ImageReceiver();
-    private ImageReceiver blurImage = new ImageReceiver();
-    private SpoilerEffect mediaSpoilerEffect = new SpoilerEffect();
-    private Path path = new Path();
-    private float[] spoilerRadii = new float[8];
-    private float[] clipTopBottom = new float[2];
+    private float[] spoilerRadii;
 
     /* renamed from: org.telegram.ui.PinchToZoomHelper$Callback */
     /* loaded from: classes5.dex */
@@ -137,14 +138,33 @@ public class PinchToZoomHelper {
     }
 
     public PinchToZoomHelper(ViewGroup viewGroup, ViewGroup viewGroup2) {
+        this.fullImage = new ImageReceiver();
+        this.blurImage = new ImageReceiver();
+        this.mediaSpoilerEffect = new SpoilerEffect();
+        this.path = new Path();
+        this.spoilerRadii = new float[8];
+        this.clipTopBottom = new float[2];
         this.parentView = viewGroup;
         this.fragmentView = viewGroup2;
+        this.isSimple = false;
+    }
+
+    public PinchToZoomHelper() {
+        this.fullImage = new ImageReceiver();
+        this.blurImage = new ImageReceiver();
+        this.mediaSpoilerEffect = new SpoilerEffect();
+        this.path = new Path();
+        this.spoilerRadii = new float[8];
+        this.clipTopBottom = new float[2];
+        this.parentView = null;
+        this.fragmentView = null;
+        this.isSimple = true;
     }
 
     public void startZoom(View view, ImageReceiver imageReceiver, MessageObject messageObject) {
         this.child = view;
         this.messageObject = messageObject;
-        if (this.overlayView == null) {
+        if (this.overlayView == null && !this.isSimple) {
             ZoomOverlayView zoomOverlayView = new ZoomOverlayView(this.parentView.getContext());
             this.overlayView = zoomOverlayView;
             zoomOverlayView.setFocusable(false);
@@ -164,73 +184,75 @@ public class PinchToZoomHelper {
             this.blurImage.onAttachedToWindow();
         }
         this.inOverlayMode = true;
-        this.parentView.addView(this.overlayView);
         this.finishProgress = 1.0f;
         this.progressToFullView = BitmapDescriptorFactory.HUE_RED;
-        this.hasMediaSpoiler = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
-        if (this.blurImage.getBitmap() != null) {
-            this.blurImage.getBitmap().recycle();
-            this.blurImage.setImageBitmap((Bitmap) null);
-        }
-        if (imageReceiver.getBitmap() != null && !imageReceiver.getBitmap().isRecycled() && this.hasMediaSpoiler) {
-            this.blurImage.setImageBitmap(Utilities.stackBlurBitmapMax(imageReceiver.getBitmap()));
-        }
-        setFullImage(messageObject);
-        this.imageX = imageReceiver.getImageX();
-        this.imageY = imageReceiver.getImageY();
-        this.imageHeight = imageReceiver.getImageHeight();
-        this.imageWidth = imageReceiver.getImageWidth();
-        this.fullImageHeight = imageReceiver.getBitmapHeight();
-        float bitmapWidth = imageReceiver.getBitmapWidth();
-        this.fullImageWidth = bitmapWidth;
-        float f = this.fullImageHeight;
-        float f2 = this.imageHeight;
-        float f3 = this.imageWidth;
-        if (f / bitmapWidth == f2 / f3) {
-            this.fullImageHeight = f2;
-            this.fullImageWidth = f3;
-        } else if (f / bitmapWidth < f2 / f3) {
-            this.fullImageWidth = (bitmapWidth / f) * f2;
-            this.fullImageHeight = f2;
-        } else {
-            this.fullImageHeight = (f / bitmapWidth) * f3;
-            this.fullImageWidth = f3;
-        }
-        if (messageObject != null && messageObject.isVideo() && MediaController.getInstance().isPlayingMessage(messageObject)) {
-            this.isHardwareVideo = true;
-            MediaController.getInstance().setTextureView(this.overlayView.videoTextureView, this.overlayView.aspectRatioFrameLayout, this.overlayView.videoPlayerContainer, true);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.overlayView.videoPlayerContainer.getLayoutParams();
-            this.overlayView.videoPlayerContainer.setTag(C3417R.C3420id.parent_tag, imageReceiver);
-            if (layoutParams.width != imageReceiver.getImageWidth() || layoutParams.height != imageReceiver.getImageHeight()) {
-                this.overlayView.aspectRatioFrameLayout.setResizeMode(3);
-                layoutParams.width = (int) imageReceiver.getImageWidth();
-                layoutParams.height = (int) imageReceiver.getImageHeight();
-                this.overlayView.videoPlayerContainer.setLayoutParams(layoutParams);
+        if (!this.isSimple) {
+            this.parentView.addView(this.overlayView);
+            this.hasMediaSpoiler = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
+            if (this.blurImage.getBitmap() != null) {
+                this.blurImage.getBitmap().recycle();
+                this.blurImage.setImageBitmap((Bitmap) null);
             }
-            this.overlayView.videoTextureView.setScaleX(1.0f);
-            this.overlayView.videoTextureView.setScaleY(1.0f);
-            if (this.callback != null) {
-                this.overlayView.backupImageView.setImageBitmap(this.callback.getCurrentTextureView().getBitmap((int) this.fullImageWidth, (int) this.fullImageHeight));
-                this.overlayView.backupImageView.setSize((int) this.fullImageWidth, (int) this.fullImageHeight);
-                this.overlayView.backupImageView.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius());
+            if (imageReceiver.getBitmap() != null && !imageReceiver.getBitmap().isRecycled() && this.hasMediaSpoiler) {
+                this.blurImage.setImageBitmap(Utilities.stackBlurBitmapMax(imageReceiver.getBitmap()));
             }
-            this.overlayView.videoPlayerContainer.setVisibility(0);
-        } else {
-            this.isHardwareVideo = false;
-            ImageReceiver imageReceiver4 = new ImageReceiver();
-            this.childImage = imageReceiver4;
-            imageReceiver4.onAttachedToWindow();
-            Drawable drawable = imageReceiver.getDrawable();
-            this.childImage.setImageBitmap(drawable);
-            if (drawable instanceof AnimatedFileDrawable) {
-                AnimatedFileDrawable animatedFileDrawable = (AnimatedFileDrawable) drawable;
-                animatedFileDrawable.addSecondParentView(this.overlayView);
-                animatedFileDrawable.setInvalidateParentViewWithSecond(true);
+            setFullImage(messageObject);
+            this.imageX = imageReceiver.getImageX();
+            this.imageY = imageReceiver.getImageY();
+            this.imageHeight = imageReceiver.getImageHeight();
+            this.imageWidth = imageReceiver.getImageWidth();
+            this.fullImageHeight = imageReceiver.getBitmapHeight();
+            float bitmapWidth = imageReceiver.getBitmapWidth();
+            this.fullImageWidth = bitmapWidth;
+            float f = this.fullImageHeight;
+            float f2 = this.imageHeight;
+            float f3 = this.imageWidth;
+            if (f / bitmapWidth == f2 / f3) {
+                this.fullImageHeight = f2;
+                this.fullImageWidth = f3;
+            } else if (f / bitmapWidth < f2 / f3) {
+                this.fullImageWidth = (bitmapWidth / f) * f2;
+                this.fullImageHeight = f2;
+            } else {
+                this.fullImageHeight = (f / bitmapWidth) * f3;
+                this.fullImageWidth = f3;
             }
-            this.childImage.setImageCoords(this.imageX, this.imageY, this.imageWidth, this.imageHeight);
-            this.childImage.setRoundRadius(imageReceiver.getRoundRadius());
-            this.fullImage.setRoundRadius(imageReceiver.getRoundRadius());
-            this.overlayView.videoPlayerContainer.setVisibility(8);
+            if (messageObject != null && messageObject.isVideo() && MediaController.getInstance().isPlayingMessage(messageObject)) {
+                this.isHardwareVideo = true;
+                MediaController.getInstance().setTextureView(this.overlayView.videoTextureView, this.overlayView.aspectRatioFrameLayout, this.overlayView.videoPlayerContainer, true);
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.overlayView.videoPlayerContainer.getLayoutParams();
+                this.overlayView.videoPlayerContainer.setTag(C3419R.C3422id.parent_tag, imageReceiver);
+                if (layoutParams.width != imageReceiver.getImageWidth() || layoutParams.height != imageReceiver.getImageHeight()) {
+                    this.overlayView.aspectRatioFrameLayout.setResizeMode(3);
+                    layoutParams.width = (int) imageReceiver.getImageWidth();
+                    layoutParams.height = (int) imageReceiver.getImageHeight();
+                    this.overlayView.videoPlayerContainer.setLayoutParams(layoutParams);
+                }
+                this.overlayView.videoTextureView.setScaleX(1.0f);
+                this.overlayView.videoTextureView.setScaleY(1.0f);
+                if (this.callback != null) {
+                    this.overlayView.backupImageView.setImageBitmap(this.callback.getCurrentTextureView().getBitmap((int) this.fullImageWidth, (int) this.fullImageHeight));
+                    this.overlayView.backupImageView.setSize((int) this.fullImageWidth, (int) this.fullImageHeight);
+                    this.overlayView.backupImageView.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius());
+                }
+                this.overlayView.videoPlayerContainer.setVisibility(0);
+            } else {
+                this.isHardwareVideo = false;
+                ImageReceiver imageReceiver4 = new ImageReceiver();
+                this.childImage = imageReceiver4;
+                imageReceiver4.onAttachedToWindow();
+                Drawable drawable = imageReceiver.getDrawable();
+                this.childImage.setImageBitmap(drawable);
+                if (drawable instanceof AnimatedFileDrawable) {
+                    AnimatedFileDrawable animatedFileDrawable = (AnimatedFileDrawable) drawable;
+                    animatedFileDrawable.addSecondParentView(this.overlayView);
+                    animatedFileDrawable.setInvalidateParentViewWithSecond(true);
+                }
+                this.childImage.setImageCoords(this.imageX, this.imageY, this.imageWidth, this.imageHeight);
+                this.childImage.setRoundRadius(imageReceiver.getRoundRadius());
+                this.fullImage.setRoundRadius(imageReceiver.getRoundRadius());
+                this.overlayView.videoPlayerContainer.setVisibility(8);
+            }
         }
         Callback callback = this.callback;
         if (callback != null) {
@@ -279,7 +301,7 @@ public class PinchToZoomHelper {
 
     public void finishZoom() {
         if (this.finishTransition == null && this.inOverlayMode) {
-            if (!updateViewsLocation()) {
+            if (!this.isSimple && !updateViewsLocation()) {
                 clear();
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, BitmapDescriptorFactory.HUE_RED);
@@ -390,6 +412,9 @@ public class PinchToZoomHelper {
     }
 
     public boolean zoomEnabled(View view, ImageReceiver imageReceiver) {
+        if (this.isSimple) {
+            return true;
+        }
         if (imageReceiver.getDrawable() instanceof AnimatedFileDrawable) {
             return !((AnimatedFileDrawable) imageReceiver.getDrawable()).isLoadingStream();
         }
@@ -418,7 +443,7 @@ public class PinchToZoomHelper {
                 frameLayout.setOutlineProvider(new ViewOutlineProvider(this, r5) { // from class: org.telegram.ui.PinchToZoomHelper.ZoomOverlayView.1
                     @Override // android.view.ViewOutlineProvider
                     public void getOutline(View view, Outline outline) {
-                        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(C3417R.C3420id.parent_tag);
+                        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(C3419R.C3422id.parent_tag);
                         if (imageReceiver != null) {
                             int[] roundRadius = imageReceiver.getRoundRadius();
                             int i = 0;
@@ -445,7 +470,7 @@ public class PinchToZoomHelper {
                     protected void onSizeChanged(int i, int i2, int i3, int i4) {
                         super.onSizeChanged(i, i2, i3, i4);
                         ZoomOverlayView.this.aspectPath.reset();
-                        ImageReceiver imageReceiver = (ImageReceiver) getTag(C3417R.C3420id.parent_tag);
+                        ImageReceiver imageReceiver = (ImageReceiver) getTag(C3419R.C3422id.parent_tag);
                         if (imageReceiver == null) {
                             float f = i / 2;
                             ZoomOverlayView.this.aspectPath.addCircle(f, i2 / 2, f, Path.Direction.CW);
@@ -456,7 +481,7 @@ public class PinchToZoomHelper {
                                 i5 = Math.max(i5, roundRadius[i6]);
                             }
                             this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, i, i2);
-                            ZoomOverlayView.this.aspectPath.addRoundRect(this.rect, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), Path.Direction.CW);
+                            ZoomOverlayView.this.aspectPath.addRoundRect(this.rect, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), Path.Direction.CW);
                         }
                         ZoomOverlayView.this.aspectPath.toggleInverseFillType();
                     }
@@ -791,9 +816,27 @@ public class PinchToZoomHelper {
     }
 
     public void invalidateViews() {
+        View view;
+        if (this.isSimple && (view = this.child) != null) {
+            view.invalidate();
+        }
         ZoomOverlayView zoomOverlayView = this.overlayView;
         if (zoomOverlayView != null) {
             zoomOverlayView.invalidate();
+        }
+    }
+
+    public void applyTransform(Canvas canvas) {
+        if (this.inOverlayMode) {
+            canvas.save();
+            float f = this.pinchScale;
+            float f2 = this.finishProgress;
+            float f3 = ((f * f2) + 1.0f) - f2;
+            canvas.scale(f3, f3, this.parentOffsetX + this.pinchCenterX, this.parentOffsetY + this.pinchCenterY);
+            float f4 = this.parentOffsetX;
+            float f5 = this.pinchTranslationX;
+            float f6 = this.finishProgress;
+            canvas.translate(f4 + (f5 * f6), this.parentOffsetY + (this.pinchTranslationY * f6));
         }
     }
 

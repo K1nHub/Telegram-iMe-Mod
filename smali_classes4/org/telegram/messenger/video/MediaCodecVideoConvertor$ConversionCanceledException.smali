@@ -22,12 +22,12 @@
 .method public constructor <init>(Lorg/telegram/messenger/video/MediaCodecVideoConvertor;)V
     .locals 0
 
-    .line 1083
+    .line 1240
     iput-object p1, p0, Lorg/telegram/messenger/video/MediaCodecVideoConvertor$ConversionCanceledException;->this$0:Lorg/telegram/messenger/video/MediaCodecVideoConvertor;
 
     const-string p1, "canceled conversion"
 
-    .line 1084
+    .line 1241
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     return-void

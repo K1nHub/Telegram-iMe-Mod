@@ -33,10 +33,10 @@
 
     return-object p0
 
-    :cond_0
-    const-string v0, "android.support.v4.app.INotificationSideChannel"
-
     .line 50
+    :cond_0
+    sget-object v0, Landroid/support/v4/app/INotificationSideChannel;->DESCRIPTOR:Ljava/lang/String;
+
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0

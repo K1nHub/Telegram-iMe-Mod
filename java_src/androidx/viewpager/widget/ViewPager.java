@@ -977,9 +977,8 @@ public class ViewPager extends ViewGroup {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.mFirstLayout = true;
     }
@@ -1085,6 +1084,7 @@ public class ViewPager extends ViewGroup {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0071  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x008e  */
     @Override // android.view.ViewGroup, android.view.View
@@ -1092,7 +1092,7 @@ public class ViewPager extends ViewGroup {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    protected void onLayout(boolean r19, int r20, int r21, int r22, int r23) {
+    public void onLayout(boolean r19, int r20, int r21, int r22, int r23) {
         /*
             Method dump skipped, instructions count: 284
             To view this dump add '--comments-level debug' option

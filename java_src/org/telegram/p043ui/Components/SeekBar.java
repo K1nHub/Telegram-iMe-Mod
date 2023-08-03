@@ -15,6 +15,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -52,7 +53,7 @@ public class SeekBar {
     private int thumbDX = 0;
     private boolean pressed = false;
     private RectF rect = new RectF();
-    private int lineHeight = AndroidUtilities.m54dp(2);
+    private int lineHeight = AndroidUtilities.m72dp(2);
     private float alpha = 1.0f;
     private float timestampsAppearing = BitmapDescriptorFactory.HUE_RED;
     private int currentTimestamp = -1;
@@ -92,8 +93,8 @@ public class SeekBar {
             paint = new Paint(1);
         }
         this.parentView = view;
-        thumbWidth = AndroidUtilities.m54dp(24);
-        this.currentRadius = AndroidUtilities.m54dp(6);
+        thumbWidth = AndroidUtilities.m72dp(24);
+        this.currentRadius = AndroidUtilities.m72dp(6);
     }
 
     public void setDelegate(SeekBarDelegate seekBarDelegate) {
@@ -246,24 +247,24 @@ public class SeekBar {
         paint.setColor(this.progressColor);
         drawProgressBar(canvas, this.rect, paint);
         paint.setColor(this.circleColor);
-        float m54dp = AndroidUtilities.m54dp(this.pressed ? 8 : 6);
-        if (this.currentRadius != m54dp) {
+        float m72dp = AndroidUtilities.m72dp(this.pressed ? 8 : 6);
+        if (this.currentRadius != m72dp) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.lastUpdateTime;
             if (elapsedRealtime > 18) {
                 elapsedRealtime = 16;
             }
             float f3 = this.currentRadius;
-            if (f3 < m54dp) {
-                float m54dp2 = f3 + (AndroidUtilities.m54dp(1) * (((float) elapsedRealtime) / 60.0f));
-                this.currentRadius = m54dp2;
-                if (m54dp2 > m54dp) {
-                    this.currentRadius = m54dp;
+            if (f3 < m72dp) {
+                float m72dp2 = f3 + (AndroidUtilities.m72dp(1) * (((float) elapsedRealtime) / 60.0f));
+                this.currentRadius = m72dp2;
+                if (m72dp2 > m72dp) {
+                    this.currentRadius = m72dp;
                 }
             } else {
-                float m54dp3 = f3 - (AndroidUtilities.m54dp(1) * (((float) elapsedRealtime) / 60.0f));
-                this.currentRadius = m54dp3;
-                if (m54dp3 < m54dp) {
-                    this.currentRadius = m54dp;
+                float m72dp3 = f3 - (AndroidUtilities.m72dp(1) * (((float) elapsedRealtime) / 60.0f));
+                this.currentRadius = m72dp3;
+                if (m72dp3 < m72dp) {
+                    this.currentRadius = m72dp;
                 }
             }
             View view = this.parentView;
@@ -299,7 +300,7 @@ public class SeekBar {
             return;
         }
         if (l == null) {
-            l = Long.valueOf(messageObject.getDuration() * 1000);
+            l = Long.valueOf(((long) messageObject.getDuration()) * 1000);
         }
         if (l == null || l.longValue() < 0) {
             clearTimestamps();
@@ -338,23 +339,30 @@ public class SeekBar {
             if (this.timestampLabelPaint == null) {
                 TextPaint textPaint = new TextPaint(1);
                 this.timestampLabelPaint = textPaint;
-                textPaint.setTextSize(AndroidUtilities.m54dp(12));
+                textPaint.setTextSize(AndroidUtilities.m72dp(12));
                 this.timestampLabelPaint.setColor(-1);
             }
             for (URLSpanNoUnderline uRLSpanNoUnderline : uRLSpanNoUnderlineArr) {
                 try {
                     if (uRLSpanNoUnderline != null && uRLSpanNoUnderline.getURL() != null && uRLSpanNoUnderline.label != null && uRLSpanNoUnderline.getURL().startsWith("audio?") && (parseInt = Utilities.parseInt((CharSequence) uRLSpanNoUnderline.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
                         float intValue = ((float) (parseInt.intValue() * 1000)) / ((float) l.longValue());
-                        Emoji.replaceEmoji(new SpannableStringBuilder(uRLSpanNoUnderline.label), this.timestampLabelPaint.getFontMetricsInt(), AndroidUtilities.m54dp(14), false);
+                        Emoji.replaceEmoji(new SpannableStringBuilder(uRLSpanNoUnderline.label), this.timestampLabelPaint.getFontMetricsInt(), AndroidUtilities.m72dp(14), false);
                         this.timestamps.add(new Pair<>(Float.valueOf(intValue), uRLSpanNoUnderline));
                     }
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             }
-            Collections.sort(this.timestamps, SeekBar$$ExternalSyntheticLambda0.INSTANCE);
+            Collections.sort(this.timestamps, new Comparator() { // from class: org.telegram.ui.Components.SeekBar$$ExternalSyntheticLambda0
+                @Override // java.util.Comparator
+                public final int compare(Object obj, Object obj2) {
+                    int lambda$updateTimestamps$0;
+                    lambda$updateTimestamps$0 = SeekBar.lambda$updateTimestamps$0((Pair) obj, (Pair) obj2);
+                    return lambda$updateTimestamps$0;
+                }
+            });
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
             this.timestamps = null;
             this.currentTimestamp = -1;
             this.timestampsAppearing = BitmapDescriptorFactory.HUE_RED;
@@ -388,18 +396,18 @@ public class SeekBar {
         float f4 = i2 / 2.0f;
         float f5 = this.width - (i2 / 2.0f);
         AndroidUtilities.rectTmp.set(rectF);
-        float m55dp = AndroidUtilities.m55dp(this.timestampsAppearing * 1.0f) / 2.0f;
+        float m73dp = AndroidUtilities.m73dp(this.timestampsAppearing * 1.0f) / 2.0f;
         if (tmpPath == null) {
             tmpPath = new Path();
         }
         tmpPath.reset();
-        float m54dp = AndroidUtilities.m54dp(4) / (f5 - f4);
+        float m72dp = AndroidUtilities.m72dp(4) / (f5 - f4);
         int i3 = 0;
         while (true) {
             if (i3 >= this.timestamps.size()) {
                 i3 = -1;
                 break;
-            } else if (((Float) this.timestamps.get(i3).first).floatValue() >= m54dp) {
+            } else if (((Float) this.timestamps.get(i3).first).floatValue() >= m72dp) {
                 break;
             } else {
                 i3++;
@@ -414,7 +422,7 @@ public class SeekBar {
             if (size < 0) {
                 i = -1;
                 break;
-            } else if (1.0f - ((Float) this.timestamps.get(size).first).floatValue() >= m54dp) {
+            } else if (1.0f - ((Float) this.timestamps.get(size).first).floatValue() >= m72dp) {
                 i = size + 1;
                 break;
             } else {
@@ -429,15 +437,15 @@ public class SeekBar {
             float f6 = BitmapDescriptorFactory.HUE_RED;
             float floatValue = i5 == i3 ? 0.0f : ((Float) this.timestamps.get(i5 - 1).first).floatValue();
             float floatValue2 = i5 == i ? 1.0f : ((Float) this.timestamps.get(i5).first).floatValue();
-            while (i5 != i && i5 != 0 && i5 < this.timestamps.size() - i4 && ((Float) this.timestamps.get(i5).first).floatValue() - floatValue <= m54dp) {
+            while (i5 != i && i5 != 0 && i5 < this.timestamps.size() - i4 && ((Float) this.timestamps.get(i5).first).floatValue() - floatValue <= m72dp) {
                 i5++;
                 floatValue2 = ((Float) this.timestamps.get(i5).first).floatValue();
             }
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(f4, f5, floatValue) + (i5 > 0 ? m55dp : 0.0f);
+            rectF2.left = AndroidUtilities.lerp(f4, f5, floatValue) + (i5 > 0 ? m73dp : 0.0f);
             float lerp = AndroidUtilities.lerp(f4, f5, floatValue2);
             if (i5 < i) {
-                f6 = m55dp;
+                f6 = m73dp;
             }
             float f7 = lerp - f6;
             rectF2.right = f7;
@@ -449,7 +457,7 @@ public class SeekBar {
             float f9 = rectF2.right;
             float f10 = rectF.left;
             if (f9 < f10) {
-                f = m55dp;
+                f = m73dp;
             } else {
                 if (rectF2.left < f10) {
                     rectF2.left = f10;
@@ -458,7 +466,7 @@ public class SeekBar {
                     tmpRadii = new float[8];
                 }
                 if (i5 == i3 || (i6 != 0 && rectF2.left >= rectF.left)) {
-                    f = m55dp;
+                    f = m73dp;
                     float[] fArr = tmpRadii;
                     fArr[7] = f2;
                     fArr[6] = f2;
@@ -471,7 +479,7 @@ public class SeekBar {
                     fArr[2] = f11;
                 } else if (i5 >= i) {
                     float[] fArr2 = tmpRadii;
-                    f = m55dp;
+                    f = m73dp;
                     float f12 = 0.7f * f2 * this.timestampsAppearing;
                     fArr2[7] = f12;
                     fArr2[6] = f12;
@@ -482,7 +490,7 @@ public class SeekBar {
                     fArr2[3] = f2;
                     fArr2[2] = f2;
                 } else {
-                    f = m55dp;
+                    f = m73dp;
                     float[] fArr3 = tmpRadii;
                     float f13 = this.timestampsAppearing * 0.7f * f2;
                     fArr3[5] = f13;
@@ -500,7 +508,7 @@ public class SeekBar {
                 }
             }
             i5++;
-            m55dp = f;
+            m73dp = f;
             i4 = 1;
         }
         canvas.drawPath(tmpPath, paint2);
@@ -529,7 +537,7 @@ public class SeekBar {
         }
         int i = thumbWidth;
         Math.abs((i / 2.0f) - (this.width - (i / 2.0f)));
-        AndroidUtilities.m54dp(66);
+        AndroidUtilities.m72dp(66);
         if (size != this.currentTimestamp) {
             if (this.pressed && (view = this.parentView) != null) {
                 try {

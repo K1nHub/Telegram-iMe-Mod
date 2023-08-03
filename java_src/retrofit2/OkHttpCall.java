@@ -32,7 +32,7 @@ public final class OkHttpCall<T> implements Call<T> {
 
     @Override // retrofit2.Call
     /* renamed from: clone */
-    public OkHttpCall<T> mo4108clone() {
+    public OkHttpCall<T> mo4276clone() {
         return new OkHttpCall<>(this.requestFactory, this.args, this.callFactory, this.responseConverter);
     }
 

@@ -104,7 +104,7 @@ public final class ImageViewExtKt {
                     public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                         Intrinsics.checkNotNullParameter(view, "view");
                         view.removeOnLayoutChangeListener(this);
-                        LoadingDrawable.this.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+                        LoadingDrawable.this.setRadiiDp(AndroidUtilities.m72dp(imageView.getHeight()));
                         ImageView imageView2 = imageView;
                         String str = url;
                         Context context2 = imageView2.getContext();
@@ -114,13 +114,13 @@ public final class ImageViewExtKt {
                 });
                 return;
             }
-            loadingDrawable.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+            loadingDrawable.setRadiiDp(AndroidUtilities.m72dp(imageView.getHeight()));
             Context context2 = imageView.getContext();
             Intrinsics.checkNotNullExpressionValue(context2, "context");
             loadFrom(imageView, url, context2, loadingDrawable, z);
             return;
         }
-        loadingDrawable.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+        loadingDrawable.setRadiiDp(AndroidUtilities.m72dp(imageView.getHeight()));
         Context context3 = imageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context3, "context");
         loadFrom(imageView, url, context3, loadingDrawable, z);

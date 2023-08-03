@@ -45,7 +45,7 @@
         }
     .end annotation
 
-    const-string v0, "protocols"
+    const-string/jumbo v0, "protocols"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,7 @@
         }
     .end annotation
 
-    const-string v0, "proxy"
+    const-string/jumbo v0, "proxy"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -163,7 +163,7 @@
     return-object v3
 
     :cond_2
-    const-string v2, "protocols"
+    const-string/jumbo v2, "protocols"
 
     .line 99
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -294,7 +294,7 @@
     return-object p1
 
     :cond_8
-    const-string v1, "protocolSelected"
+    const-string/jumbo v1, "protocolSelected"
 
     .line 114
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z

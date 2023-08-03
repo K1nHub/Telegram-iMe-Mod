@@ -12,16 +12,16 @@ import p033j$.util.function.Predicate;
 /* loaded from: classes2.dex */
 public final /* synthetic */ class Collection$EL {
     /* renamed from: a */
-    public static /* synthetic */ void m635a(Collection collection, Consumer consumer) {
+    public static /* synthetic */ void m653a(Collection collection, Consumer consumer) {
         if (collection instanceof InterfaceC2781b) {
             ((InterfaceC2781b) collection).forEach(consumer);
         } else {
-            AbstractC2780a.m610a(collection, consumer);
+            AbstractC2780a.m628a(collection, consumer);
         }
     }
 
     /* renamed from: b */
-    public static InterfaceC2853s m634b(Collection collection) {
+    public static InterfaceC2853s m652b(Collection collection) {
         if (collection instanceof InterfaceC2781b) {
             return ((InterfaceC2781b) collection).spliterator();
         }
@@ -47,6 +47,6 @@ public final /* synthetic */ class Collection$EL {
     }
 
     public static /* synthetic */ boolean removeIf(Collection collection, Predicate predicate) {
-        return collection instanceof InterfaceC2781b ? ((InterfaceC2781b) collection).mo556k(predicate) : AbstractC2780a.m603h(collection, predicate);
+        return collection instanceof InterfaceC2781b ? ((InterfaceC2781b) collection).mo574k(predicate) : AbstractC2780a.m621h(collection, predicate);
     }
 }

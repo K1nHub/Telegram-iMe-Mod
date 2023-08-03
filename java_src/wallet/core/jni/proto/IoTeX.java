@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class IoTeX {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ActionCoreOrBuilder extends MessageLiteOrBuilder {
         ActionCore.ActionCase getActionCase();
 
@@ -80,7 +80,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ActionOrBuilder extends MessageLiteOrBuilder {
         ActionCore getCore();
 
@@ -97,7 +97,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ContractCallOrBuilder extends MessageLiteOrBuilder {
         String getAmount();
 
@@ -116,7 +116,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         SigningInput.ActionCase getActionCase();
 
@@ -183,7 +183,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -196,7 +196,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface StakingOrBuilder extends MessageLiteOrBuilder {
         Staking.CandidateRegister getCandidateRegister();
 
@@ -243,7 +243,7 @@ public final class IoTeX {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         String getAmount();
 
@@ -268,7 +268,7 @@ public final class IoTeX {
     private IoTeX() {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         private static final Transfer DEFAULT_INSTANCE;
@@ -408,9 +408,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -494,7 +494,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -540,47 +540,47 @@ public final class IoTeX {
     }
 
     /* renamed from: wallet.core.jni.proto.IoTeX$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C69581 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72171 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1891xa1df5c61;
+        static final /* synthetic */ int[] f1947xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1891xa1df5c61 = iArr;
+            f1947xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1891xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1947xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Staking extends GeneratedMessageLite<Staking, Builder> implements StakingOrBuilder {
         public static final int CANDIDATEREGISTER_FIELD_NUMBER = 8;
         public static final int CANDIDATEUPDATE_FIELD_NUMBER = 9;
@@ -596,7 +596,7 @@ public final class IoTeX {
         private int messageCase_ = 0;
         private Object message_;
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface AddDepositOrBuilder extends MessageLiteOrBuilder {
             String getAmount();
 
@@ -613,7 +613,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface CandidateBasicInfoOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -634,7 +634,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface CandidateRegisterOrBuilder extends MessageLiteOrBuilder {
             boolean getAutoStake();
 
@@ -661,7 +661,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface ChangeCandidateOrBuilder extends MessageLiteOrBuilder {
             long getBucketIndex();
 
@@ -678,7 +678,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface CreateOrBuilder extends MessageLiteOrBuilder {
             boolean getAutoStake();
 
@@ -701,7 +701,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface ReclaimOrBuilder extends MessageLiteOrBuilder {
             long getBucketIndex();
 
@@ -714,7 +714,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface RestakeOrBuilder extends MessageLiteOrBuilder {
             boolean getAutoStake();
 
@@ -731,7 +731,7 @@ public final class IoTeX {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface TransferOwnershipOrBuilder extends MessageLiteOrBuilder {
             long getBucketIndex();
 
@@ -751,7 +751,7 @@ public final class IoTeX {
         private Staking() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Create extends GeneratedMessageLite<Create, Builder> implements CreateOrBuilder {
             public static final int AUTOSTAKE_FIELD_NUMBER = 4;
             public static final int CANDIDATENAME_FIELD_NUMBER = 1;
@@ -925,9 +925,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Create, Builder> implements CreateOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -1045,7 +1045,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Create();
                     case 2:
@@ -1090,7 +1090,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Reclaim extends GeneratedMessageLite<Reclaim, Builder> implements ReclaimOrBuilder {
             public static final int BUCKETINDEX_FIELD_NUMBER = 1;
             private static final Reclaim DEFAULT_INSTANCE;
@@ -1189,9 +1189,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Reclaim, Builder> implements ReclaimOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -1236,7 +1236,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Reclaim();
                     case 2:
@@ -1281,7 +1281,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class AddDeposit extends GeneratedMessageLite<AddDeposit, Builder> implements AddDepositOrBuilder {
             public static final int AMOUNT_FIELD_NUMBER = 2;
             public static final int BUCKETINDEX_FIELD_NUMBER = 1;
@@ -1409,9 +1409,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<AddDeposit, Builder> implements AddDepositOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -1484,7 +1484,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new AddDeposit();
                     case 2:
@@ -1529,7 +1529,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Restake extends GeneratedMessageLite<Restake, Builder> implements RestakeOrBuilder {
             public static final int AUTOSTAKE_FIELD_NUMBER = 3;
             public static final int BUCKETINDEX_FIELD_NUMBER = 1;
@@ -1662,9 +1662,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Restake, Builder> implements RestakeOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -1743,7 +1743,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Restake();
                     case 2:
@@ -1788,7 +1788,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class ChangeCandidate extends GeneratedMessageLite<ChangeCandidate, Builder> implements ChangeCandidateOrBuilder {
             public static final int BUCKETINDEX_FIELD_NUMBER = 1;
             public static final int CANDIDATENAME_FIELD_NUMBER = 2;
@@ -1916,9 +1916,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ChangeCandidate, Builder> implements ChangeCandidateOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -1991,7 +1991,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ChangeCandidate();
                     case 2:
@@ -2036,7 +2036,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class TransferOwnership extends GeneratedMessageLite<TransferOwnership, Builder> implements TransferOwnershipOrBuilder {
             public static final int BUCKETINDEX_FIELD_NUMBER = 1;
             private static final TransferOwnership DEFAULT_INSTANCE;
@@ -2164,9 +2164,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<TransferOwnership, Builder> implements TransferOwnershipOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -2239,7 +2239,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new TransferOwnership();
                     case 2:
@@ -2284,7 +2284,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class CandidateBasicInfo extends GeneratedMessageLite<CandidateBasicInfo, Builder> implements CandidateBasicInfoOrBuilder {
             private static final CandidateBasicInfo DEFAULT_INSTANCE;
             public static final int NAME_FIELD_NUMBER = 1;
@@ -2435,9 +2435,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<CandidateBasicInfo, Builder> implements CandidateBasicInfoOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -2532,7 +2532,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new CandidateBasicInfo();
                     case 2:
@@ -2577,7 +2577,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class CandidateRegister extends GeneratedMessageLite<CandidateRegister, Builder> implements CandidateRegisterOrBuilder {
             public static final int AUTOSTAKE_FIELD_NUMBER = 4;
             public static final int CANDIDATE_FIELD_NUMBER = 1;
@@ -2786,9 +2786,9 @@ public final class IoTeX {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<CandidateRegister, Builder> implements CandidateRegisterOrBuilder {
-                /* synthetic */ Builder(C69581 c69581) {
+                /* synthetic */ Builder(C72171 c72171) {
                     this();
                 }
 
@@ -2940,7 +2940,7 @@ public final class IoTeX {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+                switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new CandidateRegister();
                     case 2:
@@ -2985,7 +2985,7 @@ public final class IoTeX {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum MessageCase {
             STAKECREATE(1),
             STAKEUNSTAKE(2),
@@ -3459,9 +3459,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Staking, Builder> implements StakingOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -3789,7 +3789,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Staking();
                 case 2:
@@ -3834,7 +3834,7 @@ public final class IoTeX {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class ContractCall extends GeneratedMessageLite<ContractCall, Builder> implements ContractCallOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         public static final int CONTRACT_FIELD_NUMBER = 2;
@@ -3974,9 +3974,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ContractCall, Builder> implements ContractCallOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -4060,7 +4060,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ContractCall();
                 case 2:
@@ -4105,7 +4105,7 @@ public final class IoTeX {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int CALL_FIELD_NUMBER = 12;
         public static final int CANDIDATEREGISTER_FIELD_NUMBER = 47;
@@ -4136,7 +4136,7 @@ public final class IoTeX {
         private SigningInput() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum ActionCase {
             TRANSFER(10),
             CALL(12),
@@ -4785,9 +4785,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -5279,7 +5279,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -5324,7 +5324,7 @@ public final class IoTeX {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -5427,9 +5427,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -5474,7 +5474,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -5519,7 +5519,7 @@ public final class IoTeX {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class ActionCore extends GeneratedMessageLite<ActionCore, Builder> implements ActionCoreOrBuilder {
         public static final int CANDIDATEREGISTER_FIELD_NUMBER = 47;
         public static final int CANDIDATEUPDATE_FIELD_NUMBER = 48;
@@ -5548,7 +5548,7 @@ public final class IoTeX {
         private ActionCore() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum ActionCase {
             TRANSFER(10),
             EXECUTION(12),
@@ -6181,9 +6181,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ActionCore, Builder> implements ActionCoreOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -6658,7 +6658,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ActionCore();
                 case 2:
@@ -6703,7 +6703,7 @@ public final class IoTeX {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Action extends GeneratedMessageLite<Action, Builder> implements ActionOrBuilder {
         public static final int CORE_FIELD_NUMBER = 1;
         private static final Action DEFAULT_INSTANCE;
@@ -6841,9 +6841,9 @@ public final class IoTeX {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Action, Builder> implements ActionOrBuilder {
-            /* synthetic */ Builder(C69581 c69581) {
+            /* synthetic */ Builder(C72171 c72171) {
                 this();
             }
 
@@ -6922,7 +6922,7 @@ public final class IoTeX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69581.f1891xa1df5c61[method.ordinal()]) {
+            switch (C72171.f1947xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Action();
                 case 2:

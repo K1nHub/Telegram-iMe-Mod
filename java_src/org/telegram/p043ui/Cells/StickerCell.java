@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -36,6 +36,7 @@ public class StickerCell extends FrameLayout {
     private long lastUpdateTime;
     private Object parentObject;
     private PremiumLockIconView premiumIconView;
+    Theme.ResourcesProvider resourcesProvider;
     private float scale;
     private boolean scaled;
     private boolean showPremiumLock;
@@ -45,8 +46,9 @@ public class StickerCell extends FrameLayout {
         new AccelerateInterpolator(0.5f);
     }
 
-    public StickerCell(Context context) {
+    public StickerCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        this.resourcesProvider = resourcesProvider;
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
         backupImageView.setAspectFit(true);
@@ -55,14 +57,14 @@ public class StickerCell extends FrameLayout {
         setFocusable(true);
         PremiumLockIconView premiumLockIconView = new PremiumLockIconView(context, PremiumLockIconView.TYPE_STICKERS_PREMIUM_LOCKED);
         this.premiumIconView = premiumLockIconView;
-        premiumLockIconView.setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4));
+        premiumLockIconView.setPadding(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4));
         this.premiumIconView.setImageReceiver(this.imageView.getImageReceiver());
         addView(this.premiumIconView, LayoutHelper.createFrame(24, 24, 81, 0, 0, 0, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(76) + getPaddingLeft() + getPaddingRight(), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(78), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(76) + getPaddingLeft() + getPaddingRight(), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(78), 1073741824));
     }
 
     @Override // android.view.View
@@ -92,7 +94,7 @@ public class StickerCell extends FrameLayout {
         }
         if (tLRPC$Document != null) {
             TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document, Theme.key_windowBackgroundGray, 1.0f);
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document, Theme.key_windowBackgroundGray, 1.0f, 1.0f, this.resourcesProvider);
             if (MessageObject.canAutoplayAnimatedSticker(tLRPC$Document)) {
                 if (svgThumb != null) {
                     this.imageView.setImage(ImageLocation.getForDocument(tLRPC$Document), "80_80", (String) null, svgThumb, this.parentObject);
@@ -142,8 +144,8 @@ public class StickerCell extends FrameLayout {
             MessageObject.SendAnimationData sendAnimationData = new MessageObject.SendAnimationData();
             int[] iArr = new int[2];
             this.imageView.getLocationInWindow(iArr);
-            sendAnimationData.f1453x = imageReceiver.getCenterX() + iArr[0];
-            sendAnimationData.f1454y = imageReceiver.getCenterY() + iArr[1];
+            sendAnimationData.f1456x = imageReceiver.getCenterX() + iArr[0];
+            sendAnimationData.f1457y = imageReceiver.getCenterY() + iArr[1];
             sendAnimationData.width = imageReceiver.getImageWidth();
             sendAnimationData.height = imageReceiver.getImageHeight();
             return sendAnimationData;
@@ -201,9 +203,9 @@ public class StickerCell extends FrameLayout {
             }
         }
         if (str != null) {
-            accessibilityNodeInfo.setText(str + " " + LocaleController.getString("AttachSticker", C3417R.string.AttachSticker));
+            accessibilityNodeInfo.setText(str + " " + LocaleController.getString("AttachSticker", C3419R.string.AttachSticker));
         } else {
-            accessibilityNodeInfo.setText(LocaleController.getString("AttachSticker", C3417R.string.AttachSticker));
+            accessibilityNodeInfo.setText(LocaleController.getString("AttachSticker", C3419R.string.AttachSticker));
         }
         accessibilityNodeInfo.setEnabled(true);
     }
@@ -216,21 +218,21 @@ public class StickerCell extends FrameLayout {
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.premiumIconView.getLayoutParams();
         if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
-            int m54dp = AndroidUtilities.m54dp(24);
-            layoutParams.width = m54dp;
-            layoutParams.height = m54dp;
+            int m72dp = AndroidUtilities.m72dp(24);
+            layoutParams.width = m72dp;
+            layoutParams.height = m72dp;
             layoutParams.gravity = 81;
             layoutParams.rightMargin = 0;
             layoutParams.bottomMargin = 0;
-            this.premiumIconView.setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4));
+            this.premiumIconView.setPadding(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4));
         } else {
-            int m54dp2 = AndroidUtilities.m54dp(16);
-            layoutParams.width = m54dp2;
-            layoutParams.height = m54dp2;
+            int m72dp2 = AndroidUtilities.m72dp(16);
+            layoutParams.width = m72dp2;
+            layoutParams.height = m72dp2;
             layoutParams.gravity = 85;
-            layoutParams.bottomMargin = AndroidUtilities.m54dp(8);
-            layoutParams.rightMargin = AndroidUtilities.m54dp(8);
-            this.premiumIconView.setPadding(AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1));
+            layoutParams.bottomMargin = AndroidUtilities.m72dp(8);
+            layoutParams.rightMargin = AndroidUtilities.m72dp(8);
+            this.premiumIconView.setPadding(AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1));
         }
         this.premiumIconView.setLocked(!UserConfig.getInstance(UserConfig.selectedAccount).isPremium());
         AndroidUtilities.updateViewVisibilityAnimated(this.premiumIconView, this.showPremiumLock, 0.9f, z);

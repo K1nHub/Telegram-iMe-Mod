@@ -15,10 +15,11 @@ import com.iMe.storage.data.network.model.request.reaction.UrlButton;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -59,18 +60,96 @@ public final class MovingReactionCell extends FrameLayout {
         Lazy lazy6;
         Intrinsics.checkNotNullParameter(context, "context");
         this.linkIconShow = z;
-        lazy = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$linkImageView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$linkImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initLinkImageView;
+                initLinkImageView = MovingReactionCell.this.initLinkImageView();
+                return initLinkImageView;
+            }
+        });
         this.linkImageView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$deleteImageView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$deleteImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initDeleteImageView;
+                initDeleteImageView = MovingReactionCell.this.initDeleteImageView();
+                return initDeleteImageView;
+            }
+        });
         this.deleteImageView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$editText$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<MovingReactionCell$initEditText$1>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$editText$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final MovingReactionCell$initEditText$1 invoke() {
+                MovingReactionCell$initEditText$1 initEditText;
+                initEditText = MovingReactionCell.this.initEditText();
+                return initEditText;
+            }
+        });
         this.editText$delegate = lazy3;
         this.urlButton = new UrlButton(null, null, 3, null);
-        lazy4 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$valueTextView$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$valueTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initValueTextView;
+                initValueTextView = MovingReactionCell.this.initValueTextView();
+                return initValueTextView;
+            }
+        });
         this.valueTextView$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$moveImageView$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$moveImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initMoveImageView;
+                initMoveImageView = MovingReactionCell.this.initMoveImageView();
+                return initMoveImageView;
+            }
+        });
         this.moveImageView$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new MovingReactionCell$emojiTextView$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.MovingReactionCell$emojiTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initEmojiTextView;
+                initEmojiTextView = MovingReactionCell.this.initEmojiTextView();
+                return initEmojiTextView;
+            }
+        });
         this.emojiTextView$delegate = lazy6;
         setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         setupViews();
@@ -129,12 +208,12 @@ public final class MovingReactionCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(urlButton, "urlButton");
         this.urlButton = urlButton;
         if (urlButton.getTitle().length() == 0) {
-            getEditText().setHint(LocaleController.getInternalString(C3417R.string.chat_reaction_enter_the_title));
+            getEditText().setHint(LocaleController.getInternalString(C3419R.string.chat_reaction_enter_the_title));
         }
         TextView valueTextView = getValueTextView();
         String url = urlButton.getUrl();
         if (url.length() == 0) {
-            url = LocaleController.getInternalString(C3417R.string.chat_reaction_link_not_added);
+            url = LocaleController.getInternalString(C3419R.string.chat_reaction_link_not_added);
         }
         valueTextView.setText(url);
         getLinkImageView().setColorFilter(urlButton.getUrl().length() == 0 ? new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY) : new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
@@ -151,7 +230,7 @@ public final class MovingReactionCell extends FrameLayout {
 
     public final void setEmoji(String str, boolean z) {
         this.emojiValue = str;
-        getEmojiTextView().setText(Emoji.replaceEmoji(str, getEmojiTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(24), false));
+        getEmojiTextView().setText(Emoji.replaceEmoji(str, getEmojiTextView().getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(24), false));
         this.needDivider = z;
         setWillNotDraw(!z);
     }
@@ -163,19 +242,19 @@ public final class MovingReactionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(getValueTextView().getVisibility() == 0 ? 64.0f : 48.0f) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m73dp(getValueTextView().getVisibility() == 0 ? 64.0f : 48.0f) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.m55dp(62.0f), getMeasuredHeight() - 1.0f, getMeasuredWidth(), getMeasuredHeight() - 1.0f, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m73dp(62.0f), getMeasuredHeight() - 1.0f, getMeasuredWidth(), getMeasuredHeight() - 1.0f, Theme.dividerPaint);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r1v0, types: [com.iMe.fork.ui.view.MovingReactionCell$initEditText$1, android.widget.TextView, android.widget.EditText] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [org.telegram.ui.Components.EditTextEffects, com.iMe.fork.ui.view.MovingReactionCell$initEditText$1, android.widget.TextView, android.widget.EditText] */
     public final MovingReactionCell$initEditText$1 initEditText() {
         final Context context = getContext();
         ?? r1 = new EditTextBoldCursor(context) { // from class: com.iMe.fork.ui.view.MovingReactionCell$initEditText$1
@@ -195,7 +274,7 @@ public final class MovingReactionCell extends FrameLayout {
         r1.setBackground(null);
         r1.setImeOptions(r1.getImeOptions() | 268435456);
         r1.setInputType(r1.getInputType() | 16384);
-        r1.setHint(LocaleController.getInternalString(C3417R.string.chat_reaction_enter_the_title));
+        r1.setHint(LocaleController.getInternalString(C3419R.string.chat_reaction_enter_the_title));
         r1.setTextSize(1, 16.0f);
         r1.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         r1.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -209,7 +288,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3417R.C3419drawable.poll_reorder);
+        imageView.setImageResource(C3419R.C3421drawable.poll_reorder);
         return imageView;
     }
 
@@ -219,7 +298,7 @@ public final class MovingReactionCell extends FrameLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(8388611);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getInternalString(C3417R.string.chat_reaction_link_not_added));
+        textView.setText(LocaleController.getInternalString(C3419R.string.chat_reaction_link_not_added));
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView.setTextSize(1, 12.0f);
         return textView;
@@ -232,7 +311,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3417R.C3419drawable.delete);
+        imageView.setImageResource(C3419R.C3421drawable.delete);
         return imageView;
     }
 
@@ -244,7 +323,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(this.linkIconShow ? 0 : 8);
-        imageView.setImageResource(C3417R.C3419drawable.msg_link);
+        imageView.setImageResource(C3419R.C3421drawable.msg_link);
         return imageView;
     }
 

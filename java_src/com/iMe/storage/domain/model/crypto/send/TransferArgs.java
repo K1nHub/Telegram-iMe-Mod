@@ -1,6 +1,7 @@
 package com.iMe.storage.domain.model.crypto.send;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.crypto.TronBlockHeader;
 import java.math.BigInteger;
@@ -98,9 +99,9 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int doubleToLongBits = ((((((((((((Double.doubleToLongBits(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
+            int m718m = ((((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
             String str = this.contractAddress;
-            return doubleToLongBits + (str == null ? 0 : str.hashCode());
+            return m718m + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
@@ -211,9 +212,9 @@ public abstract class TransferArgs implements TransactionArgs {
 
         /* JADX WARN: Multi-variable type inference failed */
         public int hashCode() {
-            int doubleToLongBits = ((((Double.doubleToLongBits(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31;
+            int m718m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31;
             String str = this.message;
-            int hashCode = (((doubleToLongBits + (str == null ? 0 : str.hashCode())) * 31) + this.sendMode) * 31;
+            int hashCode = (((m718m + (str == null ? 0 : str.hashCode())) * 31) + this.sendMode) * 31;
             boolean z = this.isUnencrypted;
             int i = z;
             if (z != 0) {
@@ -322,9 +323,9 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int doubleToLongBits = ((((((Double.doubleToLongBits(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
+            int m718m = ((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
             String str = this.contractAddress;
-            return ((doubleToLongBits + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
+            return ((m718m + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
         }
 
         public String toString() {
@@ -426,7 +427,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            return (((((((((Double.doubleToLongBits(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode()) * 31) + this.byteFee.hashCode();
+            return (((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode()) * 31) + this.byteFee.hashCode();
         }
 
         public String toString() {

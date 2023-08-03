@@ -389,10 +389,10 @@
 
     const/4 v0, 0x0
 
-    .line 1400
+    .line 1401
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterReset:Z
 
-    .line 1405
+    .line 1406
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -403,14 +403,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1406
+    .line 1407
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodec()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1409
+    .line 1410
     new-instance v1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;
 
     invoke-direct {v1, p0, v0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;-><init>(Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;)V
@@ -426,7 +426,7 @@
 
     const/4 v0, 0x0
 
-    .line 1430
+    .line 1431
     iput-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->reportedVideoSize:Lcom/google/android/exoplayer2/video/VideoSize;
 
     return-void
@@ -439,12 +439,12 @@
 
     const/4 v1, 0x1
 
-    .line 1499
+    .line 1500
     invoke-virtual {p0, v0, v1}, Landroid/media/MediaFormat;->setFeatureEnabled(Ljava/lang/String;Z)V
 
     const-string v0, "audio-session-id"
 
-    .line 1500
+    .line 1501
     invoke-virtual {p0, v0, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     return-void
@@ -453,7 +453,7 @@
 .method private static deviceNeedsNoPostProcessWorkaround()Z
     .locals 2
 
-    .line 1723
+    .line 1724
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->MANUFACTURER:Ljava/lang/String;
 
     const-string v1, "NVIDIA"
@@ -468,7 +468,7 @@
 .method private static evaluateDeviceNeedsSetOutputSurfaceWorkaround()Z
     .locals 16
 
-    .line 1791
+    .line 1792
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
@@ -493,7 +493,7 @@
 
     if-gt v0, v1, :cond_8
 
-    .line 1798
+    .line 1799
     sget-object v11, Lcom/google/android/exoplayer2/util/Util;->DEVICE:Ljava/lang/String;
 
     invoke-virtual {v11}, Ljava/lang/String;->hashCode()I
@@ -649,7 +649,7 @@
 
     if-gt v0, v11, :cond_9
 
-    .line 1812
+    .line 1813
     sget-object v12, Lcom/google/android/exoplayer2/util/Util;->DEVICE:Ljava/lang/String;
 
     const-string v13, "HWEML"
@@ -662,7 +662,7 @@
 
     return v10
 
-    .line 1817
+    .line 1818
     :cond_9
     sget-object v12, Lcom/google/android/exoplayer2/util/Util;->MODEL:Ljava/lang/String;
 
@@ -830,7 +830,7 @@
 
     if-gt v0, v13, :cond_a0
 
-    .line 1852
+    .line 1853
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->DEVICE:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -3083,7 +3083,7 @@
     :goto_6
     packed-switch v1, :pswitch_data_2
 
-    .line 1997
+    .line 1998
     invoke-virtual {v12}, Ljava/lang/String;->hashCode()I
 
     const-string v0, "JSN-L21"
@@ -3449,10 +3449,10 @@
 .method public static getCodecMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
     .locals 9
 
-    .line 813
+    .line 814
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->width:I
 
-    .line 814
+    .line 815
     iget v1, p1, Lcom/google/android/exoplayer2/Format;->height:I
 
     const/4 v2, -0x1
@@ -3463,13 +3463,13 @@
 
     goto/16 :goto_4
 
-    .line 820
+    .line 821
     :cond_0
     iget-object v3, p1, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
 
     const-string v4, "video/dolby-vision"
 
-    .line 821
+    .line 822
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -3484,14 +3484,14 @@
 
     if-eqz v4, :cond_3
 
-    .line 829
+    .line 830
     invoke-static {p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Lcom/google/android/exoplayer2/Format;)Landroid/util/Pair;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    .line 831
+    .line 832
     iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
@@ -3516,7 +3516,7 @@
     :cond_2
     move-object v3, v6
 
-    .line 841
+    .line 842
     :cond_3
     :goto_0
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
@@ -3644,14 +3644,14 @@
     :pswitch_0
     mul-int/2addr v0, v1
 
-    .line 868
+    .line 869
     invoke-static {v0, v4}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
 
     move-result p0
 
     return p0
 
-    .line 856
+    .line 857
     :pswitch_1
     sget-object p1, Lcom/google/android/exoplayer2/util/Util;->MODEL:Ljava/lang/String;
 
@@ -3667,7 +3667,7 @@
 
     const-string v4, "Amazon"
 
-    .line 857
+    .line 858
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -3676,7 +3676,7 @@
 
     const-string v3, "KFSOWI"
 
-    .line 858
+    .line 859
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -3685,7 +3685,7 @@
 
     const-string v3, "AFTS"
 
-    .line 859
+    .line 860
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -3701,7 +3701,7 @@
     :cond_b
     const/16 p0, 0x10
 
-    .line 865
+    .line 866
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
     move-result p1
@@ -3716,7 +3716,7 @@
 
     mul-int/2addr p1, p0
 
-    .line 866
+    .line 867
     invoke-static {p1, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
 
     move-result p0
@@ -3732,12 +3732,12 @@
 
     mul-int/2addr v0, v1
 
-    .line 854
+    .line 855
     invoke-static {v0, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
 
     move-result p1
 
-    .line 852
+    .line 853
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p0
@@ -3747,7 +3747,7 @@
     :pswitch_3
     mul-int/2addr v0, v1
 
-    .line 848
+    .line 849
     invoke-static {v0, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
 
     move-result p0
@@ -3784,7 +3784,7 @@
 .method private static getCodecMaxSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)Landroid/graphics/Point;
     .locals 13
 
-    .line 1648
+    .line 1649
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->height:I
 
     iget v1, p1, Lcom/google/android/exoplayer2/Format;->width:I
@@ -3822,7 +3822,7 @@
 
     div-float/2addr v1, v5
 
-    .line 1652
+    .line 1653
     sget-object v5, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->STANDARD_LONG_EDGE_VIDEO_PX:[I
 
     array-length v6, v5
@@ -3846,7 +3846,7 @@
 
     goto :goto_7
 
-    .line 1657
+    .line 1658
     :cond_3
     sget v10, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -3871,16 +3871,16 @@
     :cond_5
     move v8, v9
 
-    .line 1659
+    .line 1660
     :goto_4
     invoke-virtual {p0, v7, v8}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->alignVideoSizeV21(II)Landroid/graphics/Point;
 
     move-result-object v7
 
-    .line 1662
+    .line 1663
     iget v8, p1, Lcom/google/android/exoplayer2/Format;->frameRate:F
 
-    .line 1663
+    .line 1664
     iget v9, v7, Landroid/graphics/Point;->x:I
 
     iget v10, v7, Landroid/graphics/Point;->y:I
@@ -3898,7 +3898,7 @@
     :cond_6
     const/16 v10, 0x10
 
-    .line 1669
+    .line 1670
     :try_start_0
     invoke-static {v8, v10}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
@@ -3906,7 +3906,7 @@
 
     mul-int/2addr v8, v10
 
-    .line 1670
+    .line 1671
     invoke-static {v9, v10}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
     move-result v9
@@ -3915,14 +3915,14 @@
 
     mul-int v10, v8, v9
 
-    .line 1671
+    .line 1672
     invoke-static {}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize()I
 
     move-result v11
 
     if-gt v10, v11, :cond_9
 
-    .line 1672
+    .line 1673
     new-instance p0, Landroid/graphics/Point;
 
     if-eqz v3, :cond_7
@@ -3942,7 +3942,7 @@
     :cond_8
     move v8, v9
 
-    .line 1674
+    .line 1675
     :goto_6
     invoke-direct {p0, p1, v8}, Landroid/graphics/Point;-><init>(II)V
     :try_end_0
@@ -4086,14 +4086,14 @@
 .method protected static getMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
     .locals 3
 
-    .line 1694
+    .line 1695
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->maxInputSize:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 1698
+    .line 1699
     iget-object p0, p1, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -4107,7 +4107,7 @@
     :goto_0
     if-ge v0, p0, :cond_0
 
-    .line 1700
+    .line 1701
     iget-object v2, p1, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4124,7 +4124,7 @@
 
     goto :goto_0
 
-    .line 1702
+    .line 1703
     :cond_0
     iget p0, p1, Lcom/google/android/exoplayer2/Format;->maxInputSize:I
 
@@ -4132,7 +4132,7 @@
 
     return p0
 
-    .line 1704
+    .line 1705
     :cond_1
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getCodecMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
@@ -4148,7 +4148,7 @@
 
     mul-int/lit8 p1, p1, 0x2
 
-    .line 1787
+    .line 1788
     div-int/2addr p0, p1
 
     return p0
@@ -4197,22 +4197,22 @@
 .method private maybeNotifyDroppedFrames()V
     .locals 6
 
-    .line 1457
+    .line 1458
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrames:I
 
     if-lez v0, :cond_0
 
-    .line 1458
+    .line 1459
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 1459
+    .line 1460
     iget-wide v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrameAccumulationStartTimeMs:J
 
     sub-long v2, v0, v2
 
-    .line 1460
+    .line 1461
     iget-object v4, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     iget v5, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrames:I
@@ -4221,10 +4221,10 @@
 
     const/4 v2, 0x0
 
-    .line 1461
+    .line 1462
     iput v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrames:I
 
-    .line 1462
+    .line 1463
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrameAccumulationStartTimeMs:J
 
     :cond_0
@@ -4234,12 +4234,12 @@
 .method private maybeNotifyVideoFrameProcessingOffset()V
     .locals 4
 
-    .line 1467
+    .line 1468
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->videoFrameProcessingOffsetCount:I
 
     if-eqz v0, :cond_0
 
-    .line 1468
+    .line 1469
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->totalVideoFrameProcessingOffsetUs:J
@@ -4248,12 +4248,12 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1470
+    .line 1471
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->totalVideoFrameProcessingOffsetUs:J
 
     const/4 v0, 0x0
 
-    .line 1471
+    .line 1472
     iput v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->videoFrameProcessingOffsetCount:I
 
     :cond_0
@@ -4263,7 +4263,7 @@
 .method private maybeNotifyVideoSizeChanged()V
     .locals 5
 
-    .line 1434
+    .line 1435
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentWidth:I
 
     const/4 v1, -0x1
@@ -4303,7 +4303,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1440
+    .line 1441
     :cond_1
     new-instance v0, Lcom/google/android/exoplayer2/video/VideoSize;
 
@@ -4319,7 +4319,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->reportedVideoSize:Lcom/google/android/exoplayer2/video/VideoSize;
 
-    .line 1446
+    .line 1447
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->videoSizeChanged(Lcom/google/android/exoplayer2/video/VideoSize;)V
@@ -4331,12 +4331,12 @@
 .method private maybeRenotifyRenderedFirstFrame()V
     .locals 2
 
-    .line 1424
+    .line 1425
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->haveReportedFirstFrameRenderedForCurrentSurface:Z
 
     if-eqz v0, :cond_0
 
-    .line 1425
+    .line 1426
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
@@ -4350,12 +4350,12 @@
 .method private maybeRenotifyVideoSizeChanged()V
     .locals 2
 
-    .line 1451
+    .line 1452
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->reportedVideoSize:Lcom/google/android/exoplayer2/video/VideoSize;
 
     if-eqz v0, :cond_0
 
-    .line 1452
+    .line 1453
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->videoSizeChanged(Lcom/google/android/exoplayer2/video/VideoSize;)V
@@ -4367,12 +4367,12 @@
 .method private notifyFrameMetadataListener(JJLcom/google/android/exoplayer2/Format;)V
     .locals 7
 
-    .line 1164
+    .line 1165
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameMetadataListener:Lcom/google/android/exoplayer2/video/VideoFrameMetadataListener;
 
     if-eqz v0, :cond_0
 
-    .line 1166
+    .line 1167
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodecOutputMediaFormat()Landroid/media/MediaFormat;
 
     move-result-object v6
@@ -4383,7 +4383,7 @@
 
     move-object v5, p5
 
-    .line 1165
+    .line 1166
     invoke-interface/range {v0 .. v6}, Lcom/google/android/exoplayer2/video/VideoFrameMetadataListener;->onVideoFrameAboutToBeRendered(JJLcom/google/android/exoplayer2/Format;Landroid/media/MediaFormat;)V
 
     :cond_0
@@ -4393,7 +4393,7 @@
 .method private onProcessedTunneledEndOfStream()V
     .locals 0
 
-    .line 1181
+    .line 1182
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->setPendingOutputEndOfStream()V
 
     return-void
@@ -4402,7 +4402,7 @@
 .method private releasePlaceholderSurface()V
     .locals 3
 
-    .line 1385
+    .line 1386
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
@@ -4411,14 +4411,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1386
+    .line 1387
     iput-object v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
-    .line 1388
+    .line 1389
     :cond_0
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/video/PlaceholderSurface;->release()V
 
-    .line 1389
+    .line 1390
     iput-object v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
     return-void
@@ -4427,17 +4427,17 @@
 .method private static setHdr10PlusInfoV29(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;[B)V
     .locals 2
 
-    .line 1487
+    .line 1488
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "hdr10-plus-info"
 
-    .line 1488
+    .line 1489
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 1489
+    .line 1490
     invoke-interface {p0, v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->setParameters(Landroid/os/Bundle;)V
 
     return-void
@@ -4446,7 +4446,7 @@
 .method private setJoiningDeadlineMs()V
     .locals 4
 
-    .line 1394
+    .line 1395
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->allowedJoiningTimeMs:J
 
     const-wide/16 v2, 0x0
@@ -4455,7 +4455,7 @@
 
     if-lez v0, :cond_0
 
-    .line 1395
+    .line 1396
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -4469,7 +4469,7 @@
     :cond_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    .line 1396
+    .line 1397
     :goto_0
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
@@ -4591,48 +4591,51 @@
     move-exception p1
 
     .line 696
+    invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
+
+    .line 697
     new-instance v0, Lcom/google/android/exoplayer2/video/SurfaceNotValidException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/video/SurfaceNotValidException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
 
-    .line 699
+    .line 700
     :cond_3
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->releaseCodec()V
 
-    .line 700
+    .line 701
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->maybeInitCodecOrBypass()V
 
     :cond_4
     :goto_2
     if-eqz p1, :cond_5
 
-    .line 703
+    .line 704
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
     if-eq p1, v1, :cond_5
 
-    .line 705
+    .line 706
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeRenotifyVideoSizeChanged()V
 
-    .line 707
+    .line 708
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->clearRenderedFirstFrame()V
 
     const/4 p1, 0x2
 
     if-ne v0, p1, :cond_7
 
-    .line 709
+    .line 710
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->setJoiningDeadlineMs()V
 
     goto :goto_3
 
-    .line 713
+    .line 714
     :cond_5
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->clearReportedVideoSize()V
 
-    .line 714
+    .line 715
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->clearRenderedFirstFrame()V
 
     goto :goto_3
@@ -4640,15 +4643,15 @@
     :cond_6
     if-eqz p1, :cond_7
 
-    .line 716
+    .line 717
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
     if-eq p1, v0, :cond_7
 
-    .line 719
+    .line 720
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeRenotifyVideoSizeChanged()V
 
-    .line 720
+    .line 721
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeRenotifyRenderedFirstFrame()V
 
     :cond_7
@@ -4659,7 +4662,7 @@
 .method private shouldUsePlaceholderSurface(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)Z
     .locals 2
 
-    .line 1377
+    .line 1378
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -4672,7 +4675,7 @@
 
     iget-object v0, p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
-    .line 1379
+    .line 1380
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecNeedsSetOutputSurfaceWorkaround(Ljava/lang/String;)Z
 
     move-result v0
@@ -4685,7 +4688,7 @@
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->context:Landroid/content/Context;
 
-    .line 1380
+    .line 1381
     invoke-static {p1}, Lcom/google/android/exoplayer2/video/PlaceholderSurface;->isSecureSupported(Landroid/content/Context;)Z
 
     move-result p1
@@ -4709,15 +4712,15 @@
 .method protected canReuseCodec(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;
     .locals 8
 
-    .line 772
+    .line 773
     invoke-virtual {p1, p2, p3}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->canReuseCodec(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;
 
     move-result-object v0
 
-    .line 774
+    .line 775
     iget v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;->discardReasons:I
 
-    .line 775
+    .line 776
     iget v2, p3, Lcom/google/android/exoplayer2/Format;->width:I
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecMaxValues:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;
@@ -4735,7 +4738,7 @@
     :cond_0
     or-int/lit16 v1, v1, 0x100
 
-    .line 778
+    .line 779
     :cond_1
     invoke-static {p1, p3}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
@@ -4752,7 +4755,7 @@
     :cond_2
     move v7, v1
 
-    .line 782
+    .line 783
     new-instance v1, Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
@@ -4763,7 +4766,7 @@
 
     goto :goto_0
 
-    .line 786
+    .line 787
     :cond_3
     iget p1, v0, Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;->result:I
 
@@ -4786,7 +4789,7 @@
 
     const-string v0, "OMX.google"
 
-    .line 1749
+    .line 1750
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p1
@@ -4797,19 +4800,19 @@
 
     return p1
 
-    .line 1753
+    .line 1754
     :cond_0
     const-class p1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
     monitor-enter p1
 
-    .line 1754
+    .line 1755
     :try_start_0
     sget-boolean v0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->evaluatedDeviceNeedsSetOutputSurfaceWorkaround:Z
 
     if-nez v0, :cond_1
 
-    .line 1755
+    .line 1756
     invoke-static {}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->evaluateDeviceNeedsSetOutputSurfaceWorkaround()Z
 
     move-result v0
@@ -4818,16 +4821,16 @@
 
     const/4 v0, 0x1
 
-    .line 1756
+    .line 1757
     sput-boolean v0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->evaluatedDeviceNeedsSetOutputSurfaceWorkaround:Z
 
-    .line 1758
+    .line 1759
     :cond_1
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1759
+    .line 1760
     sget-boolean p1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->deviceNeedsSetOutputSurfaceWorkaround:Z
 
     return p1
@@ -4835,7 +4838,7 @@
     :catchall_0
     move-exception v0
 
-    .line 1758
+    .line 1759
     :try_start_1
     monitor-exit p1
     :try_end_1
@@ -4847,7 +4850,7 @@
 .method protected createDecoderException(Ljava/lang/Throwable;Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)Lcom/google/android/exoplayer2/mediacodec/MediaCodecDecoderException;
     .locals 2
 
-    .line 1633
+    .line 1634
     new-instance v0, Lcom/google/android/exoplayer2/video/MediaCodecVideoDecoderException;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
@@ -4862,20 +4865,20 @@
 
     const-string p3, "dropVideoBuffer"
 
-    .line 1264
+    .line 1265
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     const/4 p3, 0x0
 
-    .line 1265
+    .line 1266
     invoke-interface {p1, p2, p3}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->releaseOutputBuffer(IZ)V
 
-    .line 1266
+    .line 1267
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
     const/4 p1, 0x1
 
-    .line 1267
+    .line 1268
     invoke-virtual {p0, p3, p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateDroppedBufferCounters(II)V
 
     return-void
@@ -4884,18 +4887,18 @@
 .method protected getCodecMaxValues(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;[Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;
     .locals 12
 
-    .line 1578
+    .line 1579
     iget v0, p2, Lcom/google/android/exoplayer2/Format;->width:I
 
-    .line 1579
+    .line 1580
     iget v1, p2, Lcom/google/android/exoplayer2/Format;->height:I
 
-    .line 1580
+    .line 1581
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
     move-result v2
 
-    .line 1581
+    .line 1582
     array-length v3, p3
 
     const/4 v4, 0x1
@@ -4906,7 +4909,7 @@
 
     if-eq v2, v5, :cond_0
 
-    .line 1585
+    .line 1586
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getCodecMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
     move-result p1
@@ -4921,12 +4924,12 @@
 
     float-to-int p2, p2
 
-    .line 1593
+    .line 1594
     invoke-static {p2, p1}, Ljava/lang/Math;->min(II)I
 
     move-result v2
 
-    .line 1596
+    .line 1597
     :cond_0
     new-instance p1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;
 
@@ -4934,7 +4937,7 @@
 
     return-object p1
 
-    .line 1599
+    .line 1600
     :cond_1
     array-length v3, p3
 
@@ -4949,7 +4952,7 @@
 
     aget-object v9, p3, v7
 
-    .line 1600
+    .line 1601
     iget-object v10, p2, Lcom/google/android/exoplayer2/Format;->colorInfo:Lcom/google/android/exoplayer2/video/ColorInfo;
 
     if-eqz v10, :cond_2
@@ -4958,7 +4961,7 @@
 
     if-nez v10, :cond_2
 
-    .line 1603
+    .line 1604
     invoke-virtual {v9}, Lcom/google/android/exoplayer2/Format;->buildUpon()Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v9
@@ -4973,7 +4976,7 @@
 
     move-result-object v9
 
-    .line 1605
+    .line 1606
     :cond_2
     invoke-virtual {p1, p2, v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->canReuseCodec(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;
 
@@ -4983,7 +4986,7 @@
 
     if-eqz v10, :cond_5
 
-    .line 1606
+    .line 1607
     iget v10, v9, Lcom/google/android/exoplayer2/Format;->width:I
 
     if-eq v10, v5, :cond_4
@@ -5006,19 +5009,19 @@
     :goto_2
     or-int/2addr v8, v11
 
-    .line 1608
+    .line 1609
     invoke-static {v0, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 1609
+    .line 1610
     iget v10, v9, Lcom/google/android/exoplayer2/Format;->height:I
 
     invoke-static {v1, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 1610
+    .line 1611
     invoke-static {p1, v9}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
     move-result v9
@@ -5035,7 +5038,7 @@
     :cond_6
     if-eqz v8, :cond_7
 
-    .line 1614
+    .line 1615
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5060,28 +5063,28 @@
 
     invoke-static {v4, p3}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1615
+    .line 1616
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getCodecMaxSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)Landroid/graphics/Point;
 
     move-result-object p3
 
     if-eqz p3, :cond_7
 
-    .line 1617
+    .line 1618
     iget v5, p3, Landroid/graphics/Point;->x:I
 
     invoke-static {v0, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 1618
+    .line 1619
     iget p3, p3, Landroid/graphics/Point;->y:I
 
     invoke-static {v1, p3}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 1623
+    .line 1624
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/Format;->buildUpon()Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object p2
@@ -5098,17 +5101,17 @@
 
     move-result-object p2
 
-    .line 1622
+    .line 1623
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getCodecMaxInputSize(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;)I
 
     move-result p1
 
-    .line 1620
+    .line 1621
     invoke-static {v2, p1}, Ljava/lang/Math;->max(II)I
 
     move-result v2
 
-    .line 1624
+    .line 1625
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5129,7 +5132,7 @@
 
     invoke-static {v4, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1627
+    .line 1628
     :cond_7
     new-instance p1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;
 
@@ -5141,7 +5144,7 @@
 .method protected getCodecNeedsEosPropagation()Z
     .locals 2
 
-    .line 732
+    .line 733
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunneling:Z
 
     if-eqz v0, :cond_0
@@ -5166,7 +5169,7 @@
 .method protected getCodecOperatingRateV23(FLcom/google/android/exoplayer2/Format;[Lcom/google/android/exoplayer2/Format;)F
     .locals 5
 
-    .line 881
+    .line 882
     array-length p2, p3
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -5180,14 +5183,14 @@
 
     aget-object v3, p3, v1
 
-    .line 882
+    .line 883
     iget v3, v3, Lcom/google/android/exoplayer2/Format;->frameRate:F
 
     cmpl-float v4, v3, v0
 
     if-eqz v4, :cond_0
 
-    .line 884
+    .line 885
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
@@ -5252,7 +5255,7 @@
 .method protected getMediaCodecConfiguration(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;Lcom/google/android/exoplayer2/Format;Landroid/media/MediaCrypto;F)Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Configuration;
     .locals 9
 
-    .line 742
+    .line 743
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
     if-eqz v0, :cond_0
@@ -5263,14 +5266,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 744
+    .line 745
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->releasePlaceholderSurface()V
 
-    .line 746
+    .line 747
     :cond_0
     iget-object v4, p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->codecMimeType:Ljava/lang/String;
 
-    .line 747
+    .line 748
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/BaseRenderer;->getStreamFormats()[Lcom/google/android/exoplayer2/Format;
 
     move-result-object v0
@@ -5281,10 +5284,10 @@
 
     iput-object v5, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecMaxValues:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;
 
-    .line 748
+    .line 749
     iget-boolean v7, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->deviceNeedsNoPostProcessWorkaround:Z
 
-    .line 755
+    .line 756
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunneling:Z
 
     if-eqz v0, :cond_1
@@ -5305,29 +5308,29 @@
 
     move v6, p4
 
-    .line 749
+    .line 750
     invoke-virtual/range {v2 .. v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMediaFormat(Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;FZI)Landroid/media/MediaFormat;
 
     move-result-object p4
 
-    .line 756
+    .line 757
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
     if-nez v0, :cond_4
 
-    .line 757
+    .line 758
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->shouldUsePlaceholderSurface(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 760
+    .line 761
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
     if-nez v0, :cond_2
 
-    .line 761
+    .line 762
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->context:Landroid/content/Context;
 
     iget-boolean v1, p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->secure:Z
@@ -5338,7 +5341,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
-    .line 763
+    .line 764
     :cond_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->placeholderSurface:Lcom/google/android/exoplayer2/video/PlaceholderSurface;
 
@@ -5346,7 +5349,7 @@
 
     goto :goto_1
 
-    .line 758
+    .line 759
     :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -5354,7 +5357,7 @@
 
     throw p1
 
-    .line 765
+    .line 766
     :cond_4
     :goto_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
@@ -5369,55 +5372,55 @@
 .method protected getMediaFormat(Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;FZI)Landroid/media/MediaFormat;
     .locals 2
 
-    .line 1526
+    .line 1527
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {v0}, Landroid/media/MediaFormat;-><init>()V
 
     const-string v1, "mime"
 
-    .line 1528
+    .line 1529
     invoke-virtual {v0, v1, p2}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1529
+    .line 1530
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->width:I
 
     const-string v1, "width"
 
     invoke-virtual {v0, v1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 1530
+    .line 1531
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->height:I
 
     const-string v1, "height"
 
     invoke-virtual {v0, v1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 1531
+    .line 1532
     iget-object p2, p1, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
 
     invoke-static {v0, p2}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->setCsdBuffers(Landroid/media/MediaFormat;Ljava/util/List;)V
 
-    .line 1533
+    .line 1534
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->frameRate:F
 
     const-string v1, "frame-rate"
 
     invoke-static {v0, v1, p2}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->maybeSetFloat(Landroid/media/MediaFormat;Ljava/lang/String;F)V
 
-    .line 1534
+    .line 1535
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->rotationDegrees:I
 
     const-string v1, "rotation-degrees"
 
     invoke-static {v0, v1, p2}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->maybeSetInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)V
 
-    .line 1535
+    .line 1536
     iget-object p2, p1, Lcom/google/android/exoplayer2/Format;->colorInfo:Lcom/google/android/exoplayer2/video/ColorInfo;
 
     invoke-static {v0, p2}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->maybeSetColorInfo(Landroid/media/MediaFormat;Lcom/google/android/exoplayer2/video/ColorInfo;)V
 
-    .line 1536
+    .line 1537
     iget-object p2, p1, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
 
     const-string v1, "video/dolby-vision"
@@ -5428,29 +5431,29 @@
 
     if-eqz p2, :cond_0
 
-    .line 1539
+    .line 1540
     invoke-static {p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Lcom/google/android/exoplayer2/Format;)Landroid/util/Pair;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1541
+    .line 1542
     iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 1542
+    .line 1543
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     const-string p2, "profile"
 
-    .line 1541
+    .line 1542
     invoke-static {v0, p2, p1}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->maybeSetInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)V
 
-    .line 1546
+    .line 1547
     :cond_0
     iget p1, p3, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->width:I
 
@@ -5458,21 +5461,21 @@
 
     invoke-virtual {v0, p2, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 1547
+    .line 1548
     iget p1, p3, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->height:I
 
     const-string p2, "max-height"
 
     invoke-virtual {v0, p2, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 1548
+    .line 1549
     iget p1, p3, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->inputSize:I
 
     const-string p2, "max-input-size"
 
     invoke-static {v0, p2, p1}, Lcom/google/android/exoplayer2/util/MediaFormatUtil;->maybeSetInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)V
 
-    .line 1551
+    .line 1552
     sget p1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 p2, 0x17
@@ -5483,7 +5486,7 @@
 
     const-string p1, "priority"
 
-    .line 1552
+    .line 1553
     invoke-virtual {v0, p1, p3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const/high16 p1, -0x40800000    # -1.0f
@@ -5494,7 +5497,7 @@
 
     const-string p1, "operating-rate"
 
-    .line 1554
+    .line 1555
     invoke-virtual {v0, p1, p4}, Landroid/media/MediaFormat;->setFloat(Ljava/lang/String;F)V
 
     :cond_1
@@ -5504,18 +5507,18 @@
 
     const-string p2, "no-post-process"
 
-    .line 1558
+    .line 1559
     invoke-virtual {v0, p2, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string p1, "auto-frc"
 
-    .line 1559
+    .line 1560
     invoke-virtual {v0, p1, p3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     :cond_2
     if-eqz p6, :cond_3
 
-    .line 1562
+    .line 1563
     invoke-static {v0, p6}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->configureTunnelingV21(Landroid/media/MediaFormat;I)V
 
     :cond_3
@@ -5533,7 +5536,7 @@
 .method protected getSurface()Landroid/view/Surface;
     .locals 1
 
-    .line 1763
+    .line 1764
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
     return-object v0
@@ -5547,14 +5550,14 @@
         }
     .end annotation
 
-    .line 996
+    .line 997
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecHandlesHdr10PlusOutOfBandMetadata:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 999
+    .line 1000
     :cond_0
     iget-object p1, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
@@ -5564,7 +5567,7 @@
 
     check-cast p1, Ljava/nio/ByteBuffer;
 
-    .line 1000
+    .line 1001
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -5573,34 +5576,34 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 1002
+    .line 1003
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v0
 
-    .line 1003
+    .line 1004
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
 
     move-result v1
 
-    .line 1004
+    .line 1005
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
 
     move-result v2
 
-    .line 1005
+    .line 1006
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v3
 
-    .line 1006
+    .line 1007
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v4
 
     const/4 v5, 0x0
 
-    .line 1007
+    .line 1008
     invoke-virtual {p1, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     const/16 v6, -0x4b
@@ -5623,7 +5626,7 @@
 
     if-ne v4, v0, :cond_2
 
-    .line 1015
+    .line 1016
     :cond_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
@@ -5631,13 +5634,13 @@
 
     new-array v0, v0, [B
 
-    .line 1016
+    .line 1017
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 1017
+    .line 1018
     invoke-virtual {p1, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1018
+    .line 1019
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodec()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;
 
     move-result-object p1
@@ -5847,7 +5850,7 @@
         }
     .end annotation
 
-    .line 1284
+    .line 1285
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/BaseRenderer;->skipSource(J)I
 
     move-result p1
@@ -5863,7 +5866,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 1291
+    .line 1292
     iget-object p3, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget v0, p3, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->skippedInputBufferCount:I
@@ -5872,7 +5875,7 @@
 
     iput v0, p3, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->skippedInputBufferCount:I
 
-    .line 1292
+    .line 1293
     iget p1, p3, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->skippedOutputBufferCount:I
 
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
@@ -5883,7 +5886,7 @@
 
     goto :goto_0
 
-    .line 1294
+    .line 1295
     :cond_1
     iget-object p3, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
@@ -5893,12 +5896,12 @@
 
     iput v0, p3, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->droppedToKeyframeCount:I
 
-    .line 1295
+    .line 1296
     iget p3, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
 
     invoke-virtual {p0, p1, p3}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateDroppedBufferCounters(II)V
 
-    .line 1298
+    .line 1299
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->flushOrReinitializeCodec()Z
 
@@ -5910,25 +5913,25 @@
 
     const/4 v0, 0x1
 
-    .line 1415
+    .line 1416
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterEnable:Z
 
-    .line 1416
+    .line 1417
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterReset:Z
 
     if-nez v1, :cond_0
 
-    .line 1417
+    .line 1418
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterReset:Z
 
-    .line 1418
+    .line 1419
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->renderedFirstFrame(Ljava/lang/Object;)V
 
-    .line 1419
+    .line 1420
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->haveReportedFirstFrameRenderedForCurrentSurface:Z
 
     :cond_0
@@ -5942,10 +5945,10 @@
 
     const-string v1, "Video codec error"
 
-    .line 912
+    .line 913
     invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 913
+    .line 914
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->videoCodecError(Ljava/lang/Exception;)V
@@ -5956,7 +5959,7 @@
 .method protected onCodecInitialized(Ljava/lang/String;Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Configuration;JJ)V
     .locals 6
 
-    .line 896
+    .line 897
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     move-object v1, p1
@@ -5967,14 +5970,14 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->decoderInitialized(Ljava/lang/String;JJ)V
 
-    .line 897
+    .line 898
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecNeedsSetOutputSurfaceWorkaround(Ljava/lang/String;)Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecNeedsSetOutputSurfaceWorkaround:Z
 
-    .line 899
+    .line 900
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodecInfo()Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
 
     move-result-object p1
@@ -5991,7 +5994,7 @@
 
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->codecHandlesHdr10PlusOutOfBandMetadata:Z
 
-    .line 900
+    .line 901
     sget p1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 p2, 0x17
@@ -6002,7 +6005,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 901
+    .line 902
     new-instance p1, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;
 
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodec()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;
@@ -6026,7 +6029,7 @@
 .method protected onCodecReleased(Ljava/lang/String;)V
     .locals 1
 
-    .line 907
+    .line 908
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->decoderReleased(Ljava/lang/String;)V
@@ -6158,12 +6161,12 @@
         }
     .end annotation
 
-    .line 920
+    .line 921
     invoke-super {p0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->onInputFormatChanged(Lcom/google/android/exoplayer2/FormatHolder;)Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;
 
     move-result-object v0
 
-    .line 921
+    .line 922
     iget-object v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->eventDispatcher:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/FormatHolder;->format:Lcom/google/android/exoplayer2/Format;
@@ -6176,43 +6179,43 @@
 .method protected onOutputFormatChanged(Lcom/google/android/exoplayer2/Format;Landroid/media/MediaFormat;)V
     .locals 6
 
-    .line 950
+    .line 951
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getCodec()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 953
+    .line 954
     iget v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->scalingMode:I
 
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->setVideoScalingMode(I)V
 
-    .line 955
+    .line 956
     :cond_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunneling:Z
 
     if-eqz v0, :cond_1
 
-    .line 956
+    .line 957
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->width:I
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentWidth:I
 
-    .line 957
+    .line 958
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->height:I
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentHeight:I
 
     goto :goto_3
 
-    .line 959
+    .line 960
     :cond_1
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "crop-right"
 
-    .line 961
+    .line 962
     invoke-virtual {p2, v0}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
@@ -6227,21 +6230,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 962
+    .line 963
     invoke-virtual {p2, v4}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 963
+    .line 964
     invoke-virtual {p2, v3}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 964
+    .line 965
     invoke-virtual {p2, v2}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
@@ -6258,7 +6261,7 @@
     :goto_0
     if-eqz v1, :cond_3
 
-    .line 967
+    .line 968
     invoke-virtual {p2, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
@@ -6276,7 +6279,7 @@
     :cond_3
     const-string v0, "width"
 
-    .line 968
+    .line 969
     invoke-virtual {p2, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
@@ -6286,7 +6289,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 971
+    .line 972
     invoke-virtual {p2, v3}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
@@ -6304,7 +6307,7 @@
     :cond_4
     const-string v0, "height"
 
-    .line 972
+    .line 973
     invoke-virtual {p2, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
@@ -6312,20 +6315,20 @@
     :goto_2
     iput v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentHeight:I
 
-    .line 974
+    .line 975
     :goto_3
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->pixelWidthHeightRatio:F
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentPixelWidthHeightRatio:F
 
-    .line 975
+    .line 976
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_6
 
-    .line 979
+    .line 980
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->rotationDegrees:I
 
     const/16 v1, 0x5a
@@ -6336,34 +6339,34 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 980
+    .line 981
     :cond_5
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentWidth:I
 
-    .line 981
+    .line 982
     iget v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentHeight:I
 
     iput v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentWidth:I
 
-    .line 982
+    .line 983
     iput v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentHeight:I
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     div-float/2addr v0, p2
 
-    .line 983
+    .line 984
     iput v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentPixelWidthHeightRatio:F
 
     goto :goto_4
 
-    .line 987
+    .line 988
     :cond_6
     iget p2, p1, Lcom/google/android/exoplayer2/Format;->rotationDegrees:I
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->currentUnappliedRotationDegrees:I
 
-    .line 989
+    .line 990
     :cond_7
     :goto_4
     iget-object p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameReleaseHelper:Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;
@@ -6425,15 +6428,15 @@
 .method protected onProcessedOutputBuffer(J)V
     .locals 0
 
-    .line 1187
+    .line 1188
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->onProcessedOutputBuffer(J)V
 
-    .line 1188
+    .line 1189
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunneling:Z
 
     if-nez p1, :cond_0
 
-    .line 1189
+    .line 1190
     iget p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
 
     add-int/lit8 p1, p1, -0x1
@@ -6447,10 +6450,10 @@
 .method protected onProcessedStreamChange()V
     .locals 0
 
-    .line 1195
+    .line 1196
     invoke-super {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->onProcessedStreamChange()V
 
-    .line 1196
+    .line 1197
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->clearRenderedFirstFrame()V
 
     return-void
@@ -6464,13 +6467,13 @@
         }
     .end annotation
 
-    .line 1172
+    .line 1173
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->updateOutputFormatForTime(J)V
 
-    .line 1173
+    .line 1174
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyVideoSizeChanged()V
 
-    .line 1174
+    .line 1175
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->renderedOutputBufferCount:I
@@ -6479,10 +6482,10 @@
 
     iput v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->renderedOutputBufferCount:I
 
-    .line 1175
+    .line 1176
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyRenderedFirstFrame()V
 
-    .line 1176
+    .line 1177
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->onProcessedOutputBuffer(J)V
 
     return-void
@@ -6496,19 +6499,19 @@
         }
     .end annotation
 
-    .line 938
+    .line 939
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunneling:Z
 
     if-nez v0, :cond_0
 
-    .line 939
+    .line 940
     iget v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
 
-    .line 941
+    .line 942
     :cond_0
     sget v1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -6518,7 +6521,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 944
+    .line 945
     iget-wide v0, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->onProcessedTunneledBuffer(J)V
@@ -6651,10 +6654,10 @@
 
     move-wide/from16 v0, p10
 
-    .line 1037
+    .line 1038
     invoke-static/range {p5 .. p5}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1039
+    .line 1040
     iget-wide v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->initialPositionUs:J
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
@@ -6663,10 +6666,10 @@
 
     if-nez v2, :cond_0
 
-    .line 1040
+    .line 1041
     iput-wide v7, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->initialPositionUs:J
 
-    .line 1043
+    .line 1044
     :cond_0
     iget-wide v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastBufferPresentationTimeUs:J
 
@@ -6674,15 +6677,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 1044
+    .line 1045
     iget-object v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameReleaseHelper:Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;
 
     invoke-virtual {v2, v0, v1}, Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;->onNextFrame(J)V
 
-    .line 1045
+    .line 1046
     iput-wide v0, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastBufferPresentationTimeUs:J
 
-    .line 1048
+    .line 1049
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getOutputStreamOffsetUs()J
 
@@ -6696,12 +6699,12 @@
 
     if-nez p13, :cond_2
 
-    .line 1052
+    .line 1053
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->skipOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
     return v13
 
-    .line 1057
+    .line 1058
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->getPlaybackSpeed()F
 
@@ -6709,7 +6712,7 @@
 
     float-to-double v14, v14
 
-    .line 1058
+    .line 1059
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/BaseRenderer;->getState()I
 
     move-result v4
@@ -6727,7 +6730,7 @@
     :cond_3
     move/from16 v4, v16
 
-    .line 1059
+    .line 1060
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -6751,7 +6754,7 @@
 
     sub-long/2addr v0, v14
 
-    .line 1070
+    .line 1071
     :cond_4
     iget-object v5, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
@@ -6759,17 +6762,17 @@
 
     if-ne v5, v14, :cond_6
 
-    .line 1072
+    .line 1073
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->isBufferLate(J)Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 1073
+    .line 1074
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->skipOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
-    .line 1074
+    .line 1075
     invoke-virtual {v6, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateVideoFrameProcessingOffsetCounters(J)V
 
     return v13
@@ -6777,27 +6780,27 @@
     :cond_5
     return v16
 
-    .line 1080
+    .line 1081
     :cond_6
     iget-wide v14, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
     sub-long v14, v17, v14
 
-    .line 1082
+    .line 1083
     iget-boolean v5, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterEnable:Z
 
     if-nez v5, :cond_7
 
     if-nez v4, :cond_8
 
-    .line 1083
+    .line 1084
     iget-boolean v5, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->mayRenderFirstFrameAfterEnableIfNotStarted:Z
 
     if-eqz v5, :cond_9
 
     goto :goto_1
 
-    .line 1084
+    .line 1085
     :cond_7
     iget-boolean v5, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderedFirstFrameAfterReset:Z
 
@@ -6816,7 +6819,7 @@
 
     move/from16 v5, v16
 
-    .line 1086
+    .line 1087
     :goto_2
     iget-wide v13, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
@@ -6836,7 +6839,7 @@
 
     move-wide/from16 v2, p10
 
-    .line 1090
+    .line 1091
     invoke-virtual {v6, v0, v1, v2, v3}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->shouldForceRenderOutputBuffer(JJ)Z
 
     move-result v2
@@ -6856,7 +6859,7 @@
 
     if-eqz v2, :cond_d
 
-    .line 1092
+    .line 1093
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v2
@@ -6869,10 +6872,10 @@
 
     move-object/from16 p13, p14
 
-    .line 1093
+    .line 1094
     invoke-direct/range {p8 .. p13}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->notifyFrameMetadataListener(JJLcom/google/android/exoplayer2/Format;)V
 
-    .line 1094
+    .line 1095
     sget v4, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     if-lt v4, v13, :cond_c
@@ -6887,16 +6890,16 @@
 
     move-wide/from16 p13, v2
 
-    .line 1095
+    .line 1096
     invoke-virtual/range {p8 .. p14}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderOutputBufferV21(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJJ)V
 
     goto :goto_4
 
-    .line 1097
+    .line 1098
     :cond_c
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
-    .line 1099
+    .line 1100
     :goto_4
     invoke-virtual {v6, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateVideoFrameProcessingOffsetCounters(J)V
 
@@ -6908,7 +6911,7 @@
     :cond_d
     if-eqz v4, :cond_15
 
-    .line 1103
+    .line 1104
     iget-wide v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->initialPositionUs:J
 
     cmp-long v2, v7, v2
@@ -6917,7 +6920,7 @@
 
     goto/16 :goto_9
 
-    .line 1108
+    .line 1109
     :cond_e
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -6927,7 +6930,7 @@
 
     add-long/2addr v0, v2
 
-    .line 1112
+    .line 1113
     iget-object v4, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameReleaseHelper:Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;
 
     invoke-virtual {v4, v0, v1}, Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;->adjustReleaseTime(J)J
@@ -6936,10 +6939,10 @@
 
     sub-long v0, v14, v2
 
-    .line 1113
+    .line 1114
     div-long v3, v0, v19
 
-    .line 1115
+    .line 1116
     iget-wide v0, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
     const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
@@ -6968,14 +6971,14 @@
 
     move/from16 v5, p13
 
-    .line 1116
+    .line 1117
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->shouldDropBuffersToKeyframe(JJZ)Z
 
     move-result v0
 
     if-eqz v0, :cond_10
 
-    .line 1117
+    .line 1118
     invoke-virtual {v6, v7, v8, v13}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeDropBuffersToKeyframe(JZ)Z
 
     move-result v0
@@ -6993,7 +6996,7 @@
 
     move/from16 v5, p13
 
-    .line 1119
+    .line 1120
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->shouldDropOutputBuffer(JJZ)Z
 
     move-result v0
@@ -7002,19 +7005,19 @@
 
     if-eqz v13, :cond_11
 
-    .line 1121
+    .line 1122
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->skipOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
     goto :goto_7
 
-    .line 1123
+    .line 1124
     :cond_11
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->dropOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
     :goto_7
     move-wide/from16 v0, v17
 
-    .line 1125
+    .line 1126
     invoke-virtual {v6, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateVideoFrameProcessingOffsetCounters(J)V
 
     goto :goto_5
@@ -7022,7 +7025,7 @@
     :cond_12
     move-wide/from16 v0, v17
 
-    .line 1129
+    .line 1130
     sget v2, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v3, 0x15
@@ -7043,7 +7046,7 @@
 
     move-object/from16 p13, p14
 
-    .line 1132
+    .line 1133
     invoke-direct/range {p8 .. p13}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->notifyFrameMetadataListener(JJLcom/google/android/exoplayer2/Format;)V
 
     move-object/from16 p9, p5
@@ -7054,10 +7057,10 @@
 
     move-wide/from16 p13, v14
 
-    .line 1133
+    .line 1134
     invoke-virtual/range {p8 .. p14}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderOutputBufferV21(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJJ)V
 
-    .line 1134
+    .line 1135
     invoke-virtual {v6, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateVideoFrameProcessingOffsetCounters(J)V
 
     goto/16 :goto_5
@@ -7079,7 +7082,7 @@
 
     sub-long v3, v0, v2
 
-    .line 1145
+    .line 1146
     :try_start_0
     div-long v3, v3, v19
 
@@ -7089,7 +7092,7 @@
 
     goto :goto_8
 
-    .line 1147
+    .line 1148
     :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -7109,13 +7112,13 @@
 
     move-object/from16 p13, p14
 
-    .line 1151
+    .line 1152
     invoke-direct/range {p8 .. p13}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->notifyFrameMetadataListener(JJLcom/google/android/exoplayer2/Format;)V
 
-    .line 1152
+    .line 1153
     invoke-virtual {v6, v9, v10, v11, v12}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->renderOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
 
-    .line 1153
+    .line 1154
     invoke-virtual {v6, v0, v1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->updateVideoFrameProcessingOffsetCounters(J)V
 
     goto/16 :goto_5
@@ -7128,23 +7131,23 @@
 .method protected renderOutputBuffer(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJ)V
     .locals 2
 
-    .line 1344
+    .line 1345
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyVideoSizeChanged()V
 
     const-string p3, "releaseOutputBuffer"
 
-    .line 1345
+    .line 1346
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     const/4 p3, 0x1
 
-    .line 1346
+    .line 1347
     invoke-interface {p1, p2, p3}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->releaseOutputBuffer(IZ)V
 
-    .line 1347
+    .line 1348
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
-    .line 1348
+    .line 1349
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -7155,7 +7158,7 @@
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
-    .line 1349
+    .line 1350
     iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget p2, p1, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->renderedOutputBufferCount:I
@@ -7166,10 +7169,10 @@
 
     const/4 p1, 0x0
 
-    .line 1350
+    .line 1351
     iput p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->consecutiveDroppedFrameCount:I
 
-    .line 1351
+    .line 1352
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyRenderedFirstFrame()V
 
     return-void
@@ -7178,21 +7181,21 @@
 .method protected renderOutputBufferV21(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;IJJ)V
     .locals 0
 
-    .line 1366
+    .line 1367
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyVideoSizeChanged()V
 
     const-string p3, "releaseOutputBuffer"
 
-    .line 1367
+    .line 1368
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
-    .line 1368
+    .line 1369
     invoke-interface {p1, p2, p5, p6}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->releaseOutputBuffer(IJ)V
 
-    .line 1369
+    .line 1370
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
-    .line 1370
+    .line 1371
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -7203,7 +7206,7 @@
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
-    .line 1371
+    .line 1372
     iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget p2, p1, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->renderedOutputBufferCount:I
@@ -7214,10 +7217,10 @@
 
     const/4 p1, 0x0
 
-    .line 1372
+    .line 1373
     iput p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->consecutiveDroppedFrameCount:I
 
-    .line 1373
+    .line 1374
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyRenderedFirstFrame()V
 
     return-void
@@ -7226,12 +7229,12 @@
 .method protected resetCodecStateForFlush()V
     .locals 1
 
-    .line 793
+    .line 794
     invoke-super {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->resetCodecStateForFlush()V
 
     const/4 v0, 0x0
 
-    .line 794
+    .line 795
     iput v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->buffersInCodecCount:I
 
     return-void
@@ -7240,7 +7243,7 @@
 .method protected setOutputSurfaceV23(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;Landroid/view/Surface;)V
     .locals 0
 
-    .line 1494
+    .line 1495
     invoke-interface {p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->setOutputSurface(Landroid/view/Surface;)V
 
     return-void
@@ -7254,10 +7257,10 @@
         }
     .end annotation
 
-    .line 800
+    .line 801
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->setPlaybackSpeed(FF)V
 
-    .line 801
+    .line 802
     iget-object p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameReleaseHelper:Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;
 
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;->onPlaybackSpeed(F)V
@@ -7268,7 +7271,7 @@
 .method protected shouldDropBuffersToKeyframe(JJZ)Z
     .locals 0
 
-    .line 1225
+    .line 1226
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->isBufferVeryLate(J)Z
 
     move-result p1
@@ -7291,7 +7294,7 @@
 .method protected shouldDropOutputBuffer(JJZ)Z
     .locals 0
 
-    .line 1210
+    .line 1211
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->isBufferLate(J)Z
 
     move-result p1
@@ -7314,7 +7317,7 @@
 .method protected shouldForceRenderOutputBuffer(JJ)Z
     .locals 0
 
-    .line 1239
+    .line 1240
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->isBufferLate(J)Z
 
     move-result p1
@@ -7341,7 +7344,7 @@
 .method protected shouldInitCodec(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)Z
     .locals 1
 
-    .line 726
+    .line 727
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->surface:Landroid/view/Surface;
 
     if-nez v0, :cond_1
@@ -7372,18 +7375,18 @@
 
     const-string p3, "skipVideoBuffer"
 
-    .line 1250
+    .line 1251
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     const/4 p3, 0x0
 
-    .line 1251
+    .line 1252
     invoke-interface {p1, p2, p3}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->releaseOutputBuffer(IZ)V
 
-    .line 1252
+    .line 1253
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
-    .line 1253
+    .line 1254
     iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget p2, p1, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->skippedOutputBufferCount:I
@@ -7686,7 +7689,7 @@
 .method protected updateDroppedBufferCounters(II)V
     .locals 2
 
-    .line 1312
+    .line 1313
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     iget v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->droppedInputBufferCount:I
@@ -7697,38 +7700,38 @@
 
     add-int/2addr p1, p2
 
-    .line 1314
+    .line 1315
     iget p2, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->droppedBufferCount:I
 
     add-int/2addr p2, p1
 
     iput p2, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->droppedBufferCount:I
 
-    .line 1315
+    .line 1316
     iget p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrames:I
 
     add-int/2addr p2, p1
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->droppedFrames:I
 
-    .line 1316
+    .line 1317
     iget p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->consecutiveDroppedFrameCount:I
 
     add-int/2addr p2, p1
 
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->consecutiveDroppedFrameCount:I
 
-    .line 1317
+    .line 1318
     iget p1, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->maxConsecutiveDroppedBufferCount:I
 
-    .line 1318
+    .line 1319
     invoke-static {p2, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     iput p1, v0, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->maxConsecutiveDroppedBufferCount:I
 
-    .line 1319
+    .line 1320
     iget p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maxDroppedFramesToNotify:I
 
     if-lez p1, :cond_0
@@ -7737,7 +7740,7 @@
 
     if-lt p2, p1, :cond_0
 
-    .line 1320
+    .line 1321
     invoke-direct {p0}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->maybeNotifyDroppedFrames()V
 
     :cond_0
@@ -7747,19 +7750,19 @@
 .method protected updateVideoFrameProcessingOffsetCounters(J)V
     .locals 2
 
-    .line 1330
+    .line 1331
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/decoder/DecoderCounters;->addVideoFrameProcessingOffset(J)V
 
-    .line 1331
+    .line 1332
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->totalVideoFrameProcessingOffsetUs:J
 
     add-long/2addr v0, p1
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->totalVideoFrameProcessingOffsetUs:J
 
-    .line 1332
+    .line 1333
     iget p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->videoFrameProcessingOffsetCount:I
 
     add-int/lit8 p1, p1, 0x1

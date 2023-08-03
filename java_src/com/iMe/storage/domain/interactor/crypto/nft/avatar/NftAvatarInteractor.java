@@ -22,7 +22,7 @@ public final class NftAvatarInteractor {
 
     public final Observable<Result<List<NftToken>>> getNftAvatars(String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<List<NftToken>>> subscribeOn = this.nftAvatarRepository.getNftAvatars(networkId).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<List<NftToken>>> subscribeOn = this.nftAvatarRepository.getNftAvatars(networkId).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "nftAvatarRepository\n    …(schedulersProvider.io())");
         return subscribeOn;
     }

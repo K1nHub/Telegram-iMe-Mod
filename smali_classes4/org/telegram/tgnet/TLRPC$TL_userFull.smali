@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = -0x6c1524ad
+.field public static constructor:I = 0x4fe1cc86
 
 
 # direct methods
@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 48029
+    .line 48787
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$UserFull;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 48033
+    .line 48791
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v2
 
-    .line 48034
+    .line 48792
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->blocked:Z
 
@@ -65,7 +65,7 @@
     :cond_1
     move v1, v2
 
-    .line 48035
+    .line 48793
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->phone_calls_available:Z
 
@@ -80,7 +80,7 @@
     :cond_2
     move v1, v2
 
-    .line 48036
+    .line 48794
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->phone_calls_private:Z
 
@@ -95,7 +95,7 @@
     :cond_3
     move v1, v2
 
-    .line 48037
+    .line 48795
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->can_pin_message:Z
 
@@ -110,7 +110,7 @@
     :cond_4
     move v1, v2
 
-    .line 48038
+    .line 48796
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->has_scheduled:Z
 
@@ -125,7 +125,7 @@
     :cond_5
     move v1, v2
 
-    .line 48039
+    .line 48797
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->video_calls_available:Z
 
@@ -142,50 +142,67 @@
     :cond_6
     move v1, v2
 
-    .line 48040
+    .line 48798
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->voice_messages_forbidden:Z
 
     const/high16 v1, 0x800000
 
-    and-int/2addr v0, v1
+    and-int/2addr v1, v0
 
-    if-eqz v0, :cond_7
+    if-eqz v1, :cond_7
 
-    move v0, v3
+    move v1, v3
 
     goto :goto_7
 
     :cond_7
+    move v1, v2
+
+    .line 48799
+    :goto_7
+    iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
+
+    const/high16 v1, 0x4000000
+
+    and-int/2addr v0, v1
+
+    if-eqz v0, :cond_8
+
+    move v0, v3
+
+    goto :goto_8
+
+    :cond_8
     move v0, v2
 
-    .line 48041
-    :goto_7
-    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
+    .line 48800
+    :goto_8
+    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories_pinned_available:Z
 
-    .line 48042
+    .line 48801
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->id:J
 
-    .line 48043
+    .line 48802
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
-    .line 48044
+    .line 48803
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->about:Ljava/lang/String;
 
-    .line 48046
-    :cond_8
+    .line 48805
+    :cond_9
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -196,16 +213,16 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->settings:Lorg/telegram/tgnet/TLRPC$TL_peerSettings;
 
-    .line 48047
+    .line 48806
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x200000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
-    .line 48048
+    .line 48807
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -216,15 +233,15 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->personal_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 48050
-    :cond_9
+    .line 48809
+    :cond_a
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
-    .line 48051
+    .line 48810
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -235,17 +252,17 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->profile_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 48053
-    :cond_a
+    .line 48812
+    :cond_b
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x400000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
-    .line 48054
+    .line 48813
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -256,8 +273,8 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 48056
-    :cond_b
+    .line 48815
+    :cond_c
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -268,14 +285,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
-    .line 48057
+    .line 48816
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
-    .line 48058
+    .line 48817
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -286,103 +303,103 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_info:Lorg/telegram/tgnet/TLRPC$BotInfo;
 
-    .line 48060
-    :cond_c
+    .line 48819
+    :cond_d
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x40
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
-    .line 48061
+    .line 48820
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->pinned_msg_id:I
 
-    .line 48063
-    :cond_d
+    .line 48822
+    :cond_e
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->common_chats_count:I
 
-    .line 48064
+    .line 48823
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit16 v0, v0, 0x800
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
-    .line 48065
+    .line 48824
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->folder_id:I
 
-    .line 48067
-    :cond_e
+    .line 48826
+    :cond_f
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit16 v0, v0, 0x4000
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
-    .line 48068
+    .line 48827
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->ttl_period:I
 
-    .line 48070
-    :cond_f
+    .line 48829
+    :cond_10
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const v1, 0x8000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
-    .line 48071
+    .line 48830
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->theme_emoticon:Ljava/lang/String;
 
-    .line 48073
-    :cond_10
+    .line 48832
+    :cond_11
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x10000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
-    .line 48074
+    .line 48833
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->private_forward_name:Ljava/lang/String;
 
-    .line 48076
-    :cond_11
+    .line 48835
+    :cond_12
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x20000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
-    .line 48077
+    .line 48836
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -393,17 +410,17 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_group_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 48079
-    :cond_12
+    .line 48838
+    :cond_13
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x40000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
-    .line 48080
+    .line 48839
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -414,31 +431,31 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_broadcast_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 48082
-    :cond_13
+    .line 48841
+    :cond_14
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x80000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
-    .line 48083
+    .line 48842
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     const v1, 0x1cb5c415
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_16
 
-    if-nez p2, :cond_14
+    if-nez p2, :cond_15
 
     return-void
 
-    .line 48086
-    :cond_14
+    .line 48845
+    :cond_15
     new-instance p1, Ljava/lang/RuntimeException;
 
     new-array p2, v3, [Ljava/lang/Object;
@@ -459,16 +476,16 @@
 
     throw p1
 
-    .line 48090
-    :cond_15
+    .line 48849
+    :cond_16
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
-    :goto_8
-    if-ge v2, v0, :cond_17
+    :goto_9
+    if-ge v2, v0, :cond_18
 
-    .line 48092
+    .line 48851
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -477,54 +494,75 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_17
 
     return-void
 
-    .line 48096
-    :cond_16
+    .line 48855
+    :cond_17
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->premium_gifts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 48099
-    :cond_17
+    .line 48858
+    :cond_18
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x1000000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
-    .line 48100
+    .line 48859
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     invoke-static {p1, v0, p2}, Lorg/telegram/tgnet/TLRPC$WallPaper;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$WallPaper;
 
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
+
+    .line 48861
+    :cond_19
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
+
+    const/high16 v1, 0x2000000
+
+    and-int/2addr v0, v1
+
+    if-eqz v0, :cond_1a
+
+    .line 48862
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
+    invoke-static {p1, v0, p2}, Lorg/telegram/tgnet/TLRPC$TL_userStories;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_userStories;
+
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
+    iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    :cond_18
+    :cond_1a
     return-void
 .end method
 
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 48105
+    .line 48867
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_userFull;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48106
+    .line 48868
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->blocked:Z
 
     if-eqz v0, :cond_0
@@ -543,7 +581,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48107
+    .line 48869
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->phone_calls_available:Z
 
     if-eqz v1, :cond_1
@@ -558,7 +596,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48108
+    .line 48870
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->phone_calls_private:Z
 
     if-eqz v1, :cond_2
@@ -573,7 +611,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48109
+    .line 48871
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->can_pin_message:Z
 
     if-eqz v1, :cond_3
@@ -588,7 +626,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48110
+    .line 48872
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->has_scheduled:Z
 
     if-eqz v1, :cond_4
@@ -603,7 +641,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48111
+    .line 48873
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->video_calls_available:Z
 
     if-eqz v1, :cond_5
@@ -618,7 +656,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48112
+    .line 48874
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->voice_messages_forbidden:Z
 
     if-eqz v1, :cond_6
@@ -637,7 +675,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48113
+    .line 48875
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->translations_disabled:Z
 
     if-eqz v1, :cond_7
@@ -656,227 +694,246 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 48114
+    .line 48876
+    iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories_pinned_available:Z
+
+    if-eqz v1, :cond_8
+
+    const/high16 v1, 0x4000000
+
+    or-int/2addr v0, v1
+
+    goto :goto_8
+
+    :cond_8
+    const v1, -0x4000001
+
+    and-int/2addr v0, v1
+
+    :goto_8
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
+
+    .line 48877
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48115
+    .line 48878
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 48116
+    .line 48879
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
-    .line 48117
+    .line 48880
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->about:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 48119
-    :cond_8
+    .line 48882
+    :cond_9
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->settings:Lorg/telegram/tgnet/TLRPC$TL_peerSettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_peerSettings;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48120
+    .line 48883
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x200000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
-    .line 48121
+    .line 48884
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->personal_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48123
-    :cond_9
+    .line 48886
+    :cond_a
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
-    .line 48124
+    .line 48887
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->profile_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48126
-    :cond_a
+    .line 48889
+    :cond_b
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x400000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
-    .line 48127
+    .line 48890
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48129
-    :cond_b
+    .line 48892
+    :cond_c
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48130
+    .line 48893
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
-    .line 48131
+    .line 48894
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_info:Lorg/telegram/tgnet/TLRPC$BotInfo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48133
-    :cond_c
+    .line 48896
+    :cond_d
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit8 v0, v0, 0x40
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
-    .line 48134
+    .line 48897
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->pinned_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48136
-    :cond_d
+    .line 48899
+    :cond_e
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->common_chats_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48137
+    .line 48900
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit16 v0, v0, 0x800
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
-    .line 48138
+    .line 48901
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->folder_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48140
-    :cond_e
+    .line 48903
+    :cond_f
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     and-int/lit16 v0, v0, 0x4000
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
-    .line 48141
+    .line 48904
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->ttl_period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48143
-    :cond_f
+    .line 48906
+    :cond_10
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const v1, 0x8000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
-    .line 48144
+    .line 48907
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->theme_emoticon:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 48146
-    :cond_10
+    .line 48909
+    :cond_11
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x10000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
-    .line 48147
+    .line 48910
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->private_forward_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 48149
-    :cond_11
+    .line 48912
+    :cond_12
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x20000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
-    .line 48150
+    .line 48913
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_group_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48152
-    :cond_12
+    .line 48915
+    :cond_13
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x40000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
-    .line 48153
+    .line 48916
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->bot_broadcast_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 48155
-    :cond_13
+    .line 48918
+    :cond_14
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x80000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     const v0, 0x1cb5c415
 
-    .line 48156
+    .line 48919
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 48157
+    .line 48920
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->premium_gifts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 48158
+    .line 48921
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
 
-    :goto_8
-    if-ge v1, v0, :cond_14
+    :goto_9
+    if-ge v1, v0, :cond_15
 
-    .line 48160
+    .line 48923
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->premium_gifts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -889,23 +946,38 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 48163
-    :cond_14
+    .line 48926
+    :cond_15
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v1, 0x1000000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
-    .line 48164
+    .line 48927
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    :cond_15
+    .line 48929
+    :cond_16
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
+
+    const/high16 v1, 0x2000000
+
+    and-int/2addr v0, v1
+
+    if-eqz v0, :cond_17
+
+    .line 48930
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_userStories;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+
+    :cond_17
     return-void
 .end method

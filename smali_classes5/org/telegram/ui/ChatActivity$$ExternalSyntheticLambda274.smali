@@ -6,16 +6,28 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$0:[J
+
+.field public final synthetic f$1:[Z
+
+.field public final synthetic f$2:Landroid/widget/ImageView;
+
+.field public final synthetic f$3:Landroid/widget/ImageView;
 
 
 # direct methods
-.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public synthetic constructor <init>([J[ZLandroid/widget/ImageView;Landroid/widget/ImageView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:[J
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$1:[Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$2:Landroid/widget/ImageView;
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$3:Landroid/widget/ImageView;
 
     return-void
 .end method
@@ -23,11 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:[J
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$U7QO11KIFwLPrF11p7UQ7mWjhhA([Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$1:[Z
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$2:Landroid/widget/ImageView;
+
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$3:Landroid/widget/ImageView;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$PZZ6wkQj12KVhoUQkjN76QD09xQ([J[ZLandroid/widget/ImageView;Landroid/widget/ImageView;)V
 
     return-void
 .end method

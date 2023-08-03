@@ -23,6 +23,10 @@ public final class UnsafeUtil {
     private static final boolean HAS_UNSAFE_ARRAY_OPERATIONS = supportsUnsafeArrayOperations();
     static final long BYTE_ARRAY_BASE_OFFSET = arrayBaseOffset(byte[].class);
 
+    static /* synthetic */ Field access$100() {
+        return bufferAddressField();
+    }
+
     static {
         arrayBaseOffset(boolean[].class);
         arrayIndexScale(boolean[].class);
@@ -243,8 +247,7 @@ public final class UnsafeUtil {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Field bufferAddressField() {
+    private static Field bufferAddressField() {
         Field field;
         if (!Android.isOnAndroidDevice() || (field = field(Buffer.class, "effectiveDirectAddress")) == null) {
             Field field2 = field(Buffer.class, "address");
@@ -372,7 +375,7 @@ public final class UnsafeUtil {
                 Class<?> cls = unsafe.getClass();
                 cls.getMethod("objectFieldOffset", Field.class);
                 cls.getMethod("getLong", Object.class, Long.TYPE);
-                return UnsafeUtil.bufferAddressField() != null;
+                return UnsafeUtil.access$100() != null;
             } catch (Throwable th) {
                 UnsafeUtil.logMissingMethod(th);
                 return false;

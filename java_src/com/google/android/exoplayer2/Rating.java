@@ -17,7 +17,14 @@ public abstract class Rating implements Bundleable {
     static final int RATING_TYPE_UNSET = -1;
     static final float RATING_UNSET = -1.0f;
     static final String FIELD_RATING_TYPE = Util.intToStringMaxRadix(0);
-    public static final Bundleable.Creator<Rating> CREATOR = Rating$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<Rating> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Rating$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            Rating fromBundle;
+            fromBundle = Rating.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     @Target({ElementType.TYPE_USE})
     @Documented

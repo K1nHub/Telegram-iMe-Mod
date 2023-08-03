@@ -68,7 +68,7 @@
 .method public abstract onAnimationStateChanged(Z)V
 .end method
 
-.method public abstract onBackPressed()V
+.method public abstract onBackPressed()Z
 .end method
 
 .method public abstract onCleanupEntities()V

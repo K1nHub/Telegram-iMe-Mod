@@ -7,7 +7,7 @@ class DefaultLogger implements Logger {
 
     @Override // org.solovyev.android.checkout.Logger
     /* renamed from: e */
-    public void mo58e(String str, String str2) {
+    public void mo76e(String str, String str2) {
         if (this.mEnabled) {
             Log.e(str, str2);
         }
@@ -15,7 +15,7 @@ class DefaultLogger implements Logger {
 
     @Override // org.solovyev.android.checkout.Logger
     /* renamed from: w */
-    public void mo56w(String str, String str2) {
+    public void mo74w(String str, String str2) {
         if (this.mEnabled) {
             Log.w(str, str2);
         }
@@ -23,7 +23,7 @@ class DefaultLogger implements Logger {
 
     @Override // org.solovyev.android.checkout.Logger
     /* renamed from: d */
-    public void mo59d(String str, String str2) {
+    public void mo77d(String str, String str2) {
         if (this.mEnabled) {
             Log.d(str, str2);
         }
@@ -31,7 +31,7 @@ class DefaultLogger implements Logger {
 
     @Override // org.solovyev.android.checkout.Logger
     /* renamed from: e */
-    public void mo57e(String str, String str2, Throwable th) {
+    public void mo75e(String str, String str2, Throwable th) {
         if (this.mEnabled) {
             Log.e(str, str2, th);
         }

@@ -1,7 +1,7 @@
 package org.telegram.p043ui.Components;
 
 import org.telegram.messenger.ChatObject;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* loaded from: classes6.dex */
 public interface ChatActivityInterface {
 
-    /* renamed from: org.telegram.ui.Components.ChatActivityInterface$-CC */
+    /* renamed from: org.telegram.ui.Components.ChatActivityInterface$-CC  reason: invalid class name */
     /* loaded from: classes6.dex */
     public final /* synthetic */ class CC {
         public static void $default$checkAndUpdateAvatar(ChatActivityInterface chatActivityInterface) {
@@ -41,7 +41,7 @@ public interface ChatActivityInterface {
 
     void checkAndUpdateAvatar();
 
-    C3484ActionBar getActionBar();
+    C3485ActionBar getActionBar();
 
     ChatAvatarContainer getAvatarContainer();
 

@@ -26,7 +26,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 647
+    .line 661
     invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method public bridge synthetic getValue(Ljava/lang/Object;)F
     .locals 0
 
-    .line 647
+    .line 661
     check-cast p1, Lorg/telegram/ui/Components/Bulletin$Layout;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout$1;->getValue(Lorg/telegram/ui/Components/Bulletin$Layout;)F
@@ -50,7 +50,7 @@
 .method public getValue(Lorg/telegram/ui/Components/Bulletin$Layout;)F
     .locals 0
 
-    .line 650
+    .line 664
     iget p1, p1, Lorg/telegram/ui/Components/Bulletin$Layout;->inOutOffset:F
 
     return p1
@@ -59,7 +59,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 647
+    .line 661
     check-cast p1, Lorg/telegram/ui/Components/Bulletin$Layout;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$Layout$1;->setValue(Lorg/telegram/ui/Components/Bulletin$Layout;F)V
@@ -70,7 +70,7 @@
 .method public setValue(Lorg/telegram/ui/Components/Bulletin$Layout;F)V
     .locals 0
 
-    .line 655
+    .line 669
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/Bulletin$Layout;->access$1800(Lorg/telegram/ui/Components/Bulletin$Layout;F)V
 
     return-void

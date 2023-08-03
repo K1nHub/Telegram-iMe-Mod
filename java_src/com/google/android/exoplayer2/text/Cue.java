@@ -65,7 +65,14 @@ public final class Cue implements Bundleable {
     private static final String FIELD_WINDOW_COLOR_SET = Util.intToStringMaxRadix(14);
     private static final String FIELD_VERTICAL_TYPE = Util.intToStringMaxRadix(15);
     private static final String FIELD_SHEAR_DEGREES = Util.intToStringMaxRadix(16);
-    public static final Bundleable.Creator<Cue> CREATOR = Cue$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<Cue> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.text.Cue$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            Cue fromBundle;
+            fromBundle = Cue.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented

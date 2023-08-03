@@ -278,7 +278,7 @@
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 3
 
-    const-string p2, "path"
+    const-string/jumbo p2, "path"
 
     .line 75
     invoke-virtual {p1, p2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;

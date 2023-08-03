@@ -16,11 +16,12 @@ import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.TuplesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$IntRef;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -69,24 +70,114 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         Intrinsics.checkNotNullParameter(activity, "activity");
         this.activity = activity;
         this.accountNum = i;
-        lazy = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$titleTextView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$titleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTitleTextView;
+                initTitleTextView = PromoSubscribeAlert.this.initTitleTextView();
+                return initTitleTextView;
+            }
+        });
         this.titleTextView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$subtitleTextView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$subtitleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSubtitleTextView;
+                initSubtitleTextView = PromoSubscribeAlert.this.initSubtitleTextView();
+                return initSubtitleTextView;
+            }
+        });
         this.subtitleTextView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$loadingView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$loadingView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initLoadingView;
+                initLoadingView = PromoSubscribeAlert.this.initLoadingView();
+                return initLoadingView;
+            }
+        });
         this.loadingView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$chatsView$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$chatsView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initChatsView;
+                initChatsView = PromoSubscribeAlert.this.initChatsView();
+                return initChatsView;
+            }
+        });
         this.chatsView$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$notShowAgainCheckBoxContainer$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$notShowAgainCheckBoxContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initNotShowAgainCheckBoxContainer;
+                initNotShowAgainCheckBoxContainer = PromoSubscribeAlert.this.initNotShowAgainCheckBoxContainer();
+                return initNotShowAgainCheckBoxContainer;
+            }
+        });
         this.notShowAgainCheckBoxContainer$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$notShowAgainCheckBox$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<CheckBoxSquare>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$notShowAgainCheckBox$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final CheckBoxSquare invoke() {
+                CheckBoxSquare initNotShowAgainCheckBox;
+                initNotShowAgainCheckBox = PromoSubscribeAlert.this.initNotShowAgainCheckBox();
+                return initNotShowAgainCheckBox;
+            }
+        });
         this.notShowAgainCheckBox$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$skipButton$2(this));
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$skipButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSkipButton;
+                initSkipButton = PromoSubscribeAlert.this.initSkipButton();
+                return initSkipButton;
+            }
+        });
         this.skipButton$delegate = lazy7;
         setTopHeight(166);
-        setTopImage(C3417R.C3419drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
-        int m55dp = AndroidUtilities.m55dp(30.0f);
-        setTopImagePaddings(0, m55dp, AndroidUtilities.m55dp(16.0f), m55dp);
+        setTopImage(C3419R.C3421drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
+        int m73dp = AndroidUtilities.m73dp(30.0f);
+        setTopImagePaddings(0, m73dp, AndroidUtilities.m73dp(16.0f), m73dp);
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         linearLayout.addView(getTitleTextView());
@@ -144,7 +235,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3417R.string.dialog_promo_subscribe_title));
+        textView.setText(LocaleController.getInternalString(C3419R.string.dialog_promo_subscribe_title));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
@@ -155,7 +246,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3417R.string.dialog_promo_subscribe_subtitle));
+        textView.setText(LocaleController.getInternalString(C3419R.string.dialog_promo_subscribe_subtitle));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView.setTextSize(1, 14.0f);
         return textView;
@@ -205,7 +296,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         LaunchActivity launchActivity = this$0.activity;
         Object tag = view.getTag();
         Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat");
-        launchActivity.lambda$runLinkRequest$84(new ChatActivity(BundleKt.bundleOf(TuplesKt.m85to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
+        launchActivity.lambda$runLinkRequest$87(new ChatActivity(BundleKt.bundleOf(TuplesKt.m103to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -214,7 +305,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         linearLayout.setGravity(17);
         linearLayout.addView(getNotShowAgainCheckBox(), LayoutHelper.createLinear(18, 18));
         TextView textView = new TextView(linearLayout.getContext());
-        textView.setText(LocaleController.getInternalString(C3417R.string.common_not_show_again));
+        textView.setText(LocaleController.getInternalString(C3419R.string.common_not_show_again));
         textView.setGravity(19);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 16.0f);
@@ -242,14 +333,14 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSkipButton() {
         TextView textView = new TextView(getContext());
-        String string = LocaleController.getString("Close", C3417R.string.Close);
+        String string = LocaleController.getString("Close", C3419R.string.Close);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Close\", R.string.Close)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         textView.setText(upperCase);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m55dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m73dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda1

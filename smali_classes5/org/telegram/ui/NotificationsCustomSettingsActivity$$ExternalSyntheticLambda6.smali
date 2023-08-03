@@ -20,9 +20,13 @@
 
 .field public final synthetic f$6:Ljava/util/ArrayList;
 
+.field public final synthetic f$7:Ljava/util/ArrayList;
+
+.field public final synthetic f$8:Ljava/util/ArrayList;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +45,17 @@
 
     iput-object p7, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$6:Ljava/util/ArrayList;
 
+    iput-object p8, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$7:Ljava/util/ArrayList;
+
+    iput-object p9, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$8:Ljava/util/ArrayList;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
@@ -63,7 +71,11 @@
 
     iget-object v6, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$6:Ljava/util/ArrayList;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$_zCXK3BppNMbQFJtvzAJhxxeAE0(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    iget-object v7, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$7:Ljava/util/ArrayList;
+
+    iget-object v8, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda6;->f$8:Ljava/util/ArrayList;
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$bhoot8UwNfnf2V64cfoMZYrGmHo(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
 .end method

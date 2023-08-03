@@ -50,7 +50,7 @@ public final class TwitterAccountData {
     }
 
     public int hashCode() {
-        return (((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.twitterId) * 31) + this.twitterUsername.hashCode()) * 31) + this.accessToken.hashCode()) * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.tokenValidUntil);
+        return (((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterId) * 31) + this.twitterUsername.hashCode()) * 31) + this.accessToken.hashCode()) * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.tokenValidUntil);
     }
 
     public String toString() {

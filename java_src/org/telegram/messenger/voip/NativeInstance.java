@@ -145,7 +145,7 @@ public class NativeInstance {
 
     public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, AudioLevelsCallback audioLevelsCallback) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("create new tgvoip instance, version " + str);
+            FileLog.m70d("create new tgvoip instance, version " + str);
         }
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.persistentStateFilePath = str2;
@@ -282,7 +282,7 @@ public class NativeInstance {
                 }
             });
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -312,7 +312,7 @@ public class NativeInstance {
         try {
             this.stopBarrier.await();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         return this.finalState;
     }

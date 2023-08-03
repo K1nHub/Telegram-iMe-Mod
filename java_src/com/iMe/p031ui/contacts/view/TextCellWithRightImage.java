@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -25,9 +26,22 @@ public final class TextCellWithRightImage extends TextCell {
         super(context, i, z);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        this.rightImageOffset = AndroidUtilities.m55dp(16.0f);
-        this.rightImageHeight = AndroidUtilities.m55dp(48.0f);
-        lazy = LazyKt__LazyJVMKt.lazy(new TextCellWithRightImage$rightImage$2(this));
+        this.rightImageOffset = AndroidUtilities.m73dp(16.0f);
+        this.rightImageHeight = AndroidUtilities.m73dp(48.0f);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.ui.contacts.view.TextCellWithRightImage$rightImage$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initRightImageView;
+                initRightImageView = TextCellWithRightImage.this.initRightImageView();
+                return initRightImageView;
+            }
+        });
         this.rightImage$delegate = lazy;
     }
 

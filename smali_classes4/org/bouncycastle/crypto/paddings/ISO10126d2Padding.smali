@@ -98,7 +98,7 @@
     :cond_0
     new-instance p1, Lorg/bouncycastle/crypto/InvalidCipherTextException;
 
-    const-string v0, "pad block corrupted"
+    const-string/jumbo v0, "pad block corrupted"
 
     invoke-direct {p1, v0}, Lorg/bouncycastle/crypto/InvalidCipherTextException;-><init>(Ljava/lang/String;)V
 

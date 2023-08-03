@@ -24,15 +24,15 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 24799
+    .line 24865
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 24800
+    .line 24866
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 24803
+    .line 24869
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->trackWidth:Z
 
     return-void
@@ -43,12 +43,12 @@
 .method protected createLayout(I)Z
     .locals 3
 
-    .line 24815
+    .line 24881
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->createLayout(I)Z
 
     move-result p1
 
-    .line 24816
+    .line 24882
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->trackWidth:Z
 
     if-eqz v0, :cond_0
@@ -59,7 +59,7 @@
 
     if-nez v0, :cond_0
 
-    .line 24817
+    .line 24883
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextWidth()I
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$46402(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 24818
+    .line 24884
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$46200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/NumberTextView;
@@ -85,7 +85,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 24819
+    .line 24885
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$46200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/NumberTextView;
@@ -109,7 +109,7 @@
 .method public getTrackWidth()Z
     .locals 1
 
-    .line 24810
+    .line 24876
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->trackWidth:Z
 
     return v0
@@ -118,7 +118,7 @@
 .method public setTrackWidth(Z)V
     .locals 0
 
-    .line 24806
+    .line 24872
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;->trackWidth:Z
 
     return-void

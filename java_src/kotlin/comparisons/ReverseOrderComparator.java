@@ -1,7 +1,6 @@
 package kotlin.comparisons;
 
 import java.util.Comparator;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 import p033j$.util.Comparator;
 import p033j$.util.function.Function;
@@ -15,9 +14,9 @@ final class ReverseOrderComparator implements Comparator<Comparable<? super Obje
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ Comparator thenComparing(Function function) {
-        Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparing(function));
-        return m632a;
+        Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparing(function));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
@@ -32,19 +31,23 @@ final class ReverseOrderComparator implements Comparator<Comparable<? super Obje
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Objects.requireNonNull(toDoubleFunction);
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingDouble(toDoubleFunction));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        java.util.Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparingInt(toIntFunction));
-        return m632a;
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingInt(toIntFunction));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        return Objects.requireNonNull(toLongFunction);
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingLong(toLongFunction));
+        return m650a;
     }
 
     private ReverseOrderComparator() {

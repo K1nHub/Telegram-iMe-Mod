@@ -12,11 +12,11 @@
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
+.field public final synthetic f$3:Lorg/telegram/messenger/MediaDataController;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MediaDataController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
+    iput-object p4, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$3:Lorg/telegram/messenger/MediaDataController;
 
     return-void
 .end method
@@ -43,9 +43,9 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
+    iget-object v3, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda26;->f$3:Lorg/telegram/messenger/MediaDataController;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$71-xWhF2N-ps-lm8D6vEgjTwL3w(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$qeNxHIvrdU_uk-5KQJK4Z57NEpk(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MediaDataController;)V
 
     return-void
 .end method

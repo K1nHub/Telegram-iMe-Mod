@@ -24,6 +24,14 @@
     return v0
 .end method
 
+.method public static $default$getReplyToStory(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public static $default$getSendAsPeers(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
     .locals 1
 
@@ -62,7 +70,7 @@
 
     const/4 v0, 0x0
 
-    .line 506
+    .line 546
     invoke-interface {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZIZ)V
 
     return-void
@@ -129,6 +137,12 @@
 .end method
 
 .method public static $default$sendGif(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;IJLjava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$sendMedia(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
     .locals 0
 
     return-void

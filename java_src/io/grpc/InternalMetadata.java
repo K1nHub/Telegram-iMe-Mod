@@ -18,7 +18,7 @@ public final class InternalMetadata {
         if (str != null && !str.isEmpty() && str.charAt(0) == ':') {
             z = true;
         }
-        return Metadata.Key.m683of(str, z, trustedAsciiMarshaller);
+        return Metadata.Key.m701of(str, z, trustedAsciiMarshaller);
     }
 
     public static Metadata newMetadata(byte[]... bArr) {

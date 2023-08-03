@@ -6,5 +6,5 @@ import java.util.function.LongToIntFunction;
 public abstract /* synthetic */ class AbstractC3234n0 implements LongToIntFunction {
 
     /* renamed from: a */
-    final /* synthetic */ C3232m0 f1278a;
+    final /* synthetic */ C3232m0 f1281a;
 }

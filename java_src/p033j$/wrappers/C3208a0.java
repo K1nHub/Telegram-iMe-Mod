@@ -6,22 +6,22 @@ import java.util.function.IntUnaryOperator;
 public final /* synthetic */ class C3208a0 {
 
     /* renamed from: a */
-    final /* synthetic */ IntUnaryOperator f1252a;
+    final /* synthetic */ IntUnaryOperator f1255a;
 
     private /* synthetic */ C3208a0(IntUnaryOperator intUnaryOperator) {
-        this.f1252a = intUnaryOperator;
+        this.f1255a = intUnaryOperator;
     }
 
     /* renamed from: b */
-    public static /* synthetic */ C3208a0 m151b(IntUnaryOperator intUnaryOperator) {
+    public static /* synthetic */ C3208a0 m169b(IntUnaryOperator intUnaryOperator) {
         if (intUnaryOperator == null) {
             return null;
         }
-        return intUnaryOperator instanceof AbstractC3210b0 ? ((AbstractC3210b0) intUnaryOperator).f1254a : new C3208a0(intUnaryOperator);
+        return intUnaryOperator instanceof AbstractC3210b0 ? ((AbstractC3210b0) intUnaryOperator).f1257a : new C3208a0(intUnaryOperator);
     }
 
     /* renamed from: a */
-    public int m152a(int i) {
-        return this.f1252a.applyAsInt(i);
+    public int m170a(int i) {
+        return this.f1255a.applyAsInt(i);
     }
 }

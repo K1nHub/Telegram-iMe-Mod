@@ -4,11 +4,15 @@ import com.iMe.bots.data.model.Response;
 import com.iMe.bots.domain.AigramBot;
 import com.iMe.bots.domain.ResourceFactory;
 import com.iMe.bots.domain.model.BotLanguage;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HolidaysBot.kt */
 /* loaded from: classes3.dex */
@@ -24,7 +28,12 @@ public final class HolidaysBot implements AigramBot {
         this.botId = "holidays";
         this.language = BotLanguage.RU;
         this.responseSource = factory.getHolidaysResponses(getBotId(), z);
-        lazy = LazyKt__LazyJVMKt.lazy(HolidaysBot$currentDateTag$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<String>() { // from class: com.iMe.bots.data.model.bot.HolidaysBot$currentDateTag$2
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                return new SimpleDateFormat("dd.MM", Locale.getDefault()).format(new Date());
+            }
+        });
         this.currentDateTag$delegate = lazy;
     }
 

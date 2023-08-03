@@ -1102,7 +1102,9 @@
 
     move-result v7
 
-    iput v7, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:I
+    int-to-double v10, v7
+
+    iput-wide v10, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
     .line 483
     iget-object v7, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->inlineResult:Lorg/telegram/tgnet/TLRPC$BotInlineResult;

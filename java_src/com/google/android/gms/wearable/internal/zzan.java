@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.api.internal.ListenerHolders;
 import com.google.android.gms.common.api.internal.RegistrationMethods;
@@ -82,7 +83,12 @@ public final class zzan extends CapabilityClient {
             }
         }
         Preconditions.checkArgument(z);
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzw((zzah) capabilityApi, asGoogleApiClient, i)), zzaj.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzw((zzah) capabilityApi, asGoogleApiClient, i)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzaj
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((CapabilityApi.GetAllCapabilitiesResult) result).getAllCapabilities();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.CapabilityClient
@@ -99,7 +105,12 @@ public final class zzan extends CapabilityClient {
             }
         }
         Preconditions.checkArgument(z);
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzv((zzah) capabilityApi, asGoogleApiClient, str, i)), zzai.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzv((zzah) capabilityApi, asGoogleApiClient, str, i)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzai
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((CapabilityApi.GetCapabilityResult) result).getCapability();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.CapabilityClient

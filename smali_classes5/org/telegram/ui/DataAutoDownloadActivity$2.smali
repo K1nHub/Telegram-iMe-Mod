@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DataAutoDownloadActivity;[Landroid/animation/AnimatorSet;)V
     .locals 0
 
-    .line 355
+    .line 361
     iput-object p2, p0, Lorg/telegram/ui/DataAutoDownloadActivity$2;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 358
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$2;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     const/4 v1, 0x0
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 359
+    .line 365
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$2;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     const/4 v0, 0x0

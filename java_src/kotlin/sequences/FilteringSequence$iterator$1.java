@@ -6,9 +6,10 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
+public final class FilteringSequence$iterator$1<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private final Iterator<T> iterator;
     private T nextItem;
     private int nextState;
@@ -33,12 +34,11 @@ public final class FilteringSequence$iterator$1 implements Iterator<T>, KMappedM
         this.nextState = -1;
     }
 
-    /* JADX WARN: Type inference failed for: r0v4, types: [T, java.lang.Object] */
     private final void calcNext() {
         Function1 function1;
         boolean z;
         while (this.iterator.hasNext()) {
-            ?? next = this.iterator.next();
+            T next = this.iterator.next();
             function1 = ((FilteringSequence) this.this$0).predicate;
             boolean booleanValue = ((Boolean) function1.invoke(next)).booleanValue();
             z = ((FilteringSequence) this.this$0).sendWhen;

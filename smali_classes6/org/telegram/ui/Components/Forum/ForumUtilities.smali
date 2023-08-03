@@ -1260,31 +1260,31 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long p4, v0, v3
+    cmp-long v0, v0, v3
 
-    if-eqz p4, :cond_5
+    if-eqz v0, :cond_5
 
     .line 61
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 62
-    iget-object p4, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    if-eqz p4, :cond_2
+    if-eqz v0, :cond_2
 
-    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
 
-    invoke-virtual {p4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getDocumentId()J
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getDocumentId()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    cmp-long p4, v0, v2
+    cmp-long v0, v1, v3
 
-    if-eqz p4, :cond_6
+    if-eqz v0, :cond_6
 
     .line 63
     :cond_2
-    new-instance p4, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    new-instance v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz p3, :cond_3
 
@@ -1296,11 +1296,11 @@
     const/16 p3, 0xa
 
     :goto_0
-    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
+    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
 
-    invoke-direct {p4, p3, v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
+    invoke-direct {v0, p3, v1, v2, v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
 
     if-eqz p2, :cond_4
 
@@ -1320,13 +1320,15 @@
     goto :goto_1
 
     :cond_4
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
+    invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
+
+    move-result-object p1
 
     :goto_1
-    invoke-virtual {p4, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 65
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
     goto :goto_2
 

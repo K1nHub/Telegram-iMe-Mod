@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1260
+    .line 1265
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 1263
+    .line 1268
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p2
@@ -40,12 +40,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 1265
+    .line 1270
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p2
 
-    .line 1266
+    .line 1271
     rem-int/2addr p2, p3
 
     const/4 p4, 0x0
@@ -70,7 +70,7 @@
 
     goto :goto_1
 
-    .line 1267
+    .line 1272
     :cond_1
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -81,7 +81,7 @@
 
     goto :goto_2
 
-    .line 1269
+    .line 1274
     :cond_2
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -89,7 +89,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 1270
+    .line 1275
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

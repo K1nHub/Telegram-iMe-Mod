@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* loaded from: classes.dex */
-final class zzek implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
+final class zzek<K, V> implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     private int pos;
     private Iterator<Map.Entry<K, V>> zzor;
     private final /* synthetic */ zzei zzos;
@@ -53,16 +54,16 @@ final class zzek implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     @Override // java.util.Iterator, p033j$.util.Iterator
     public final /* synthetic */ Object next() {
         List list;
-        Object obj;
+        Map.Entry<K, V> entry;
         if (zzdw().hasNext()) {
-            obj = zzdw().next();
+            entry = zzdw().next();
         } else {
             list = this.zzos.zzom;
             int i = this.pos - 1;
             this.pos = i;
-            obj = list.get(i);
+            entry = (Map.Entry<K, V>) list.get(i);
         }
-        return (Map.Entry) obj;
+        return entry;
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator

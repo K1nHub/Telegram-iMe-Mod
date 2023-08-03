@@ -33,6 +33,7 @@ import com.iMe.storage.data.manager.common.EnvironmentManager;
 import com.iMe.storage.data.utils.crypto.CryptoLibsLoader;
 import com.iMe.utils.debug.FileLogTree;
 import com.jakewharton.processphoenix.ProcessPhoenix;
+import io.reactivex.functions.Consumer;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.io.File;
 import org.koin.java.KoinJavaComponent;
@@ -80,6 +81,9 @@ public class ApplicationLoader extends Application implements BillingProvider {
 
     protected boolean isHuaweiBuild() {
         return false;
+    }
+
+    protected void logDualCameraInternal(boolean z, boolean z2) {
     }
 
     protected String onGetApplicationId() {
@@ -132,13 +136,18 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
         } catch (Exception e) {
             e.printStackTrace();
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
     private static void initDebugTools() {
         Timber.plant(new FileLogTree());
-        RxJavaPlugins.setErrorHandler(ApplicationLoader$$ExternalSyntheticLambda0.INSTANCE);
+        RxJavaPlugins.setErrorHandler(new Consumer() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                Timber.m6e((Throwable) obj);
+            }
+        });
     }
 
     private static FirebaseApp initGoogleServices() {
@@ -221,7 +230,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             file.mkdirs();
             return file;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return new File("/data/data/org.telegram.messenger/files".replace(BuildConfig.LIBRARY_PACKAGE_NAME, getApplicationId()));
         }
     }
@@ -275,7 +284,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("screen state = " + isScreenOn);
+                FileLog.m70d("screen state = " + isScreenOn);
             }
         } catch (Exception e4) {
             e4.printStackTrace();
@@ -297,7 +306,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         }
         ((ApplicationLoader) applicationContext).initPushServices();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("app initied");
+            FileLog.m70d("app initied");
         }
         MediaController.getInstance();
         for (int i3 = 0; i3 < 5; i3++) {
@@ -305,7 +314,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             DownloadController.getInstance(i3);
         }
         ChatThemeController.init();
-        BillingController.getInstance().startConnection();
+        BillingController.getInstance().lambda$onBillingServiceDisconnected$5();
     }
 
     @Override // android.app.Application
@@ -325,8 +334,8 @@ public class ApplicationLoader extends Application implements BillingProvider {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
             sb.append(elapsedRealtime);
-            FileLog.m52d(sb.toString());
-            FileLog.m52d("buildVersion = " + BuildVars.BUILD_VERSION);
+            FileLog.m70d(sb.toString());
+            FileLog.m70d("buildVersion = " + BuildVars.BUILD_VERSION);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -345,10 +354,15 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             };
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+                FileLog.m70d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
-            AndroidUtilities.runOnUIThread(ApplicationLoader$$ExternalSyntheticLambda2.INSTANCE);
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ApplicationLoader.startPushService();
+                }
+            });
             LauncherIconController.tryFixLauncherIconIfNeeded();
             ProxyRotationController.init();
             FlipperManager.start(this);
@@ -390,7 +404,12 @@ public class ApplicationLoader extends Application implements BillingProvider {
     }
 
     private void initPushServices() {
-        AndroidUtilities.runOnUIThread(ApplicationLoader$$ExternalSyntheticLambda1.INSTANCE, 1000L);
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                ApplicationLoader.lambda$initPushServices$0();
+            }
+        }, 1000L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -400,7 +419,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("No valid " + getPushProvider().getLogTitle() + " APK found.");
+            FileLog.m70d("No valid " + getPushProvider().getLogTitle() + " APK found.");
         }
         SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
         PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
@@ -410,7 +429,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             return GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == 0;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return true;
         }
     }
@@ -451,7 +470,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return false;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return false;
         }
     }
@@ -468,7 +487,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 return true;
             }
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         return false;
     }
@@ -482,7 +501,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             }
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         return false;
     }
@@ -506,7 +525,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             ensureCurrentNetworkGet(false);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         if (currentNetworkInfo == null) {
             return 0;
@@ -551,7 +570,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return true;
         }
     }
@@ -575,7 +594,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return true;
         }
     }
@@ -583,7 +602,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
     public static boolean isNetworkOnline() {
         boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
         if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
-            FileLog.m52d("network online mismatch");
+            FileLog.m70d("network online mismatch");
         }
         return isNetworkOnlineRealtime;
     }
@@ -598,5 +617,9 @@ public class ApplicationLoader extends Application implements BillingProvider {
 
     public static void appCenterLog(Throwable th) {
         applicationLoaderInstance.appCenterLogInternal(th);
+    }
+
+    public static void logDualCamera(boolean z, boolean z2) {
+        applicationLoaderInstance.logDualCameraInternal(z, z2);
     }
 }

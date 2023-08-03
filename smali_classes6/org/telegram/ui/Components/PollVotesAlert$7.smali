@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 861
+    .line 896
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$7;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 864
+    .line 899
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 865
+    .line 900
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$7;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$3600(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/ViewGroup;

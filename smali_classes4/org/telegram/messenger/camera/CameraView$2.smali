@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/camera/CameraView;)V
     .locals 0
 
-    .line 227
+    .line 225
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 230
+    .line 228
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 231
+    .line 229
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/messenger/camera/CameraView;->flipAnimator:Landroid/animation/ValueAnimator;
 
-    .line 232
+    .line 230
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
 
     move-result-object p1
@@ -54,7 +54,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setTranslationY(F)V
 
-    .line 233
+    .line 231
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -63,7 +63,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setRotationX(F)V
 
-    .line 234
+    .line 232
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -72,7 +72,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setRotationY(F)V
 
-    .line 235
+    .line 233
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setScaleX(F)V
 
-    .line 236
+    .line 234
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -92,7 +92,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setScaleY(F)V
 
-    .line 238
+    .line 236
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
@@ -101,31 +101,20 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setRotationY(F)V
 
-    .line 240
+    .line 238
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v0, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
 
     if-nez v0, :cond_0
 
-    .line 241
-    invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    .line 242
-    iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
-
     const/4 v0, 0x1
 
+    .line 240
     iput-boolean v0, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
 
-    .line 244
+    .line 242
     :cond_0
-    iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$2;->this$0:Lorg/telegram/messenger/camera/CameraView;
-
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

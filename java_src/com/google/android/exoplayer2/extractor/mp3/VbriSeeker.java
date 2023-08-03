@@ -6,9 +6,8 @@ import com.google.android.exoplayer2.extractor.SeekPoint;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class VbriSeeker implements Seeker {
+final class VbriSeeker implements Seeker {
     private static final String TAG = "VbriSeeker";
     private final long dataEndPosition;
     private final long durationUs;
@@ -62,7 +61,7 @@ public final class VbriSeeker implements Seeker {
         }
         long[] jArr3 = jArr;
         if (j != -1 && j != j4) {
-            Log.m796w(TAG, "VBRI data size mismatch: " + j + ", " + j4);
+            Log.m814w(TAG, "VBRI data size mismatch: " + j + ", " + j4);
         }
         return new VbriSeeker(jArr3, jArr2, scaleLargeTimestamp, j4);
     }

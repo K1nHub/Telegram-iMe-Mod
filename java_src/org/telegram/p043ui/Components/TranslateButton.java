@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -65,9 +65,9 @@ public class TranslateButton extends FrameLayout {
         AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, false);
         this.textView = animatedTextView;
         animatedTextView.setAnimationProperties(0.3f, 0L, 450L, CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.textView.setTextSize(AndroidUtilities.m54dp(15));
+        this.textView.setTextSize(AndroidUtilities.m72dp(15));
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.textView.setPadding(AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4), 0);
+        this.textView.setPadding(AndroidUtilities.m72dp(4), 0, AndroidUtilities.m72dp(4), 0);
         this.textView.setGravity(1);
         this.textView.setIgnoreRTL(!LocaleController.isRTL);
         AnimatedTextView animatedTextView2 = this.textView;
@@ -79,16 +79,16 @@ public class TranslateButton extends FrameLayout {
             }
         });
         addView(this.textView, LayoutHelper.createFrame(-1, -1));
-        Drawable mutate = getContext().getResources().getDrawable(C3417R.C3419drawable.msg_translate).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3419R.C3421drawable.msg_translate).mutate();
         this.translateDrawable = mutate;
-        mutate.setBounds(0, AndroidUtilities.m54dp(-8), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(12));
+        mutate.setBounds(0, AndroidUtilities.m72dp(-8), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(12));
         SpannableString spannableString = new SpannableString("x");
         this.translateIcon = spannableString;
         spannableString.setSpan(new ImageSpan(mutate, 0), 0, 1, 33);
         ImageView imageView = new ImageView(context);
         this.menuView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.menuView.setImageResource(C3417R.C3419drawable.msg_mini_customize);
+        this.menuView.setImageResource(C3419R.C3421drawable.msg_mini_customize);
         this.menuView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -127,7 +127,7 @@ public class TranslateButton extends FrameLayout {
         String formatString;
         String capitalFirst;
         final TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
-        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), C3417R.C3419drawable.popup_fixed_alert2, this.resourcesProvider, 1);
+        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), C3419R.C3421drawable.popup_fixed_alert2, this.resourcesProvider, 1);
         final ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
         actionBarPopupWindowLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground, this.resourcesProvider));
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -153,7 +153,7 @@ public class TranslateButton extends FrameLayout {
                 float f = this.alphaFloat.set(canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
                 if (f > BitmapDescriptorFactory.HUE_RED) {
                     if (this.topShadowDrawable == null) {
-                        this.topShadowDrawable = getContext().getResources().getDrawable(C3417R.C3419drawable.header_shadow);
+                        this.topShadowDrawable = getContext().getResources().getDrawable(C3419R.C3421drawable.header_shadow);
                     }
                     this.topShadowDrawable.setBounds(0, getScrollY(), getWidth(), getScrollY() + this.topShadowDrawable.getIntrinsicHeight());
                     this.topShadowDrawable.setAlpha((int) (f * 255.0f));
@@ -167,7 +167,7 @@ public class TranslateButton extends FrameLayout {
         actionBarPopupWindowLayout.swipeBackGravityRight = true;
         final int addViewToSwipeBack = actionBarPopupWindowLayout.addViewToSwipeBack(linearLayout);
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("TranslateTo", C3417R.string.TranslateTo), C3417R.C3419drawable.msg_translate);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("TranslateTo", C3419R.string.TranslateTo), C3419R.C3421drawable.msg_translate);
         actionBarMenuSubItem.setSubtext(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(translateController.getDialogTranslateTo(this.dialogId))));
         actionBarMenuSubItem.setItemHeight(56);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda1
@@ -178,7 +178,7 @@ public class TranslateButton extends FrameLayout {
         });
         actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
         ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
-        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("Back", C3417R.string.Back), C3417R.C3419drawable.ic_ab_back);
+        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("Back", C3419R.string.Back), C3419R.C3421drawable.ic_ab_back);
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -245,11 +245,11 @@ public class TranslateButton extends FrameLayout {
         if (languageName != null) {
             ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
             if (this.accusative[0]) {
-                formatString = LocaleController.formatString("DoNotTranslateLanguage", C3417R.string.DoNotTranslateLanguage, languageName);
+                formatString = LocaleController.formatString("DoNotTranslateLanguage", C3419R.string.DoNotTranslateLanguage, languageName);
             } else {
-                formatString = LocaleController.formatString("DoNotTranslateLanguageOther", C3417R.string.DoNotTranslateLanguageOther, languageName);
+                formatString = LocaleController.formatString("DoNotTranslateLanguageOther", C3419R.string.DoNotTranslateLanguageOther, languageName);
             }
-            actionBarMenuSubItem6.setTextAndIcon(formatString, C3417R.C3419drawable.msg_block2);
+            actionBarMenuSubItem6.setTextAndIcon(formatString, C3419R.C3421drawable.msg_block2);
             actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -259,7 +259,7 @@ public class TranslateButton extends FrameLayout {
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem6);
         }
         ActionBarMenuSubItem actionBarMenuSubItem7 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
-        actionBarMenuSubItem7.setTextAndIcon(LocaleController.getString("Hide", C3417R.string.Hide), C3417R.C3419drawable.msg_cancel);
+        actionBarMenuSubItem7.setTextAndIcon(LocaleController.getString("Hide", C3419R.string.Hide), C3419R.C3421drawable.msg_cancel);
         actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -271,12 +271,12 @@ public class TranslateButton extends FrameLayout {
         actionBarPopupWindow.setDismissAnimationDuration(220);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
-        actionBarPopupWindow.setAnimationStyle(C3417R.style.PopupContextAnimation);
+        actionBarPopupWindow.setAnimationStyle(C3419R.style.PopupContextAnimation);
         actionBarPopupWindow.setFocusable(true);
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.setSoftInputMode(0);
         ImageView imageView = this.menuView;
-        actionBarPopupWindow.showAsDropDown(imageView, 0, (-imageView.getMeasuredHeight()) - AndroidUtilities.m54dp(8));
+        actionBarPopupWindow.showAsDropDown(imageView, 0, (-imageView.getMeasuredHeight()) - AndroidUtilities.m72dp(8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -310,11 +310,11 @@ public class TranslateButton extends FrameLayout {
         translateController.checkRestrictedLanguagesUpdate();
         translateController.setHideTranslateDialog(this.dialogId, true);
         if (this.accusative[0]) {
-            formatString = LocaleController.formatString("AddedToDoNotTranslate", C3417R.string.AddedToDoNotTranslate, str2);
+            formatString = LocaleController.formatString("AddedToDoNotTranslate", C3419R.string.AddedToDoNotTranslate, str2);
         } else {
-            formatString = LocaleController.formatString("AddedToDoNotTranslateOther", C3417R.string.AddedToDoNotTranslateOther, str2);
+            formatString = LocaleController.formatString("AddedToDoNotTranslateOther", C3419R.string.AddedToDoNotTranslateOther, str2);
         }
-        BulletinFactory.m29of(this.fragment).createSimpleBulletin(C3417R.raw.msg_translate, TranslateAlert2.capitalFirst(AndroidUtilities.replaceTags(formatString)), LocaleController.getString("Settings", C3417R.string.Settings), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda8
+        BulletinFactory.m32of(this.fragment).createSimpleBulletin(C3419R.raw.msg_translate, TranslateAlert2.capitalFirst(AndroidUtilities.replaceTags(formatString)), LocaleController.getString("Settings", C3419R.string.Settings), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 TranslateButton.this.lambda$onMenuClick$6();
@@ -335,13 +335,13 @@ public class TranslateButton extends FrameLayout {
         translateController.setHideTranslateDialog(this.dialogId, true);
         TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
         if ((chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) ? false : false) {
-            string = LocaleController.getString("TranslationBarHiddenForChannel", C3417R.string.TranslationBarHiddenForChannel);
+            string = LocaleController.getString("TranslationBarHiddenForChannel", C3419R.string.TranslationBarHiddenForChannel);
         } else if (chat != null) {
-            string = LocaleController.getString("TranslationBarHiddenForGroup", C3417R.string.TranslationBarHiddenForGroup);
+            string = LocaleController.getString("TranslationBarHiddenForGroup", C3419R.string.TranslationBarHiddenForGroup);
         } else {
-            string = LocaleController.getString("TranslationBarHiddenForChat", C3417R.string.TranslationBarHiddenForChat);
+            string = LocaleController.getString("TranslationBarHiddenForChat", C3419R.string.TranslationBarHiddenForChat);
         }
-        BulletinFactory.m29of(this.fragment).createSimpleBulletin(C3417R.raw.msg_translate, AndroidUtilities.replaceTags(string), LocaleController.getString("Undo", C3417R.string.Undo), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda9
+        BulletinFactory.m32of(this.fragment).createSimpleBulletin(C3419R.raw.msg_translate, AndroidUtilities.replaceTags(string), LocaleController.getString("Undo", C3419R.string.Undo), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 TranslateButton.this.lambda$onMenuClick$8(translateController);
@@ -359,7 +359,7 @@ public class TranslateButton extends FrameLayout {
         String formatString;
         TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
         if (translateController.isTranslatingDialog(this.dialogId)) {
-            this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString("ShowOriginalButton", C3417R.string.ShowOriginalButton)));
+            this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString("ShowOriginalButton", C3419R.string.ShowOriginalButton)));
         } else {
             String dialogTranslateTo = translateController.getDialogTranslateTo(this.dialogId);
             if (dialogTranslateTo == null) {
@@ -367,12 +367,12 @@ public class TranslateButton extends FrameLayout {
             }
             String languageName = TranslateAlert2.languageName(dialogTranslateTo, this.accusative);
             if (this.accusative[0]) {
-                formatString = LocaleController.formatString("TranslateToButton", C3417R.string.TranslateToButton, languageName);
+                formatString = LocaleController.formatString("TranslateToButton", C3419R.string.TranslateToButton, languageName);
             } else {
-                formatString = LocaleController.formatString("TranslateToButtonOther", C3417R.string.TranslateToButtonOther, languageName);
+                formatString = LocaleController.formatString("TranslateToButtonOther", C3419R.string.TranslateToButtonOther, languageName);
             }
             this.textView.setText(TextUtils.concat(this.translateIcon, " ", formatString));
         }
-        this.menuView.setImageResource(UserConfig.getInstance(this.currentAccount).isPremium() ? C3417R.C3419drawable.msg_mini_customize : C3417R.C3419drawable.msg_close);
+        this.menuView.setImageResource(UserConfig.getInstance(this.currentAccount).isPremium() ? C3419R.C3421drawable.msg_mini_customize : C3419R.C3421drawable.msg_close);
     }
 }

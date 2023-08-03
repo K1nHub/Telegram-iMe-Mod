@@ -45,7 +45,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "org.bouncycastle.pqc.crypto.xmss.BDS"
+    const-string/jumbo v1, "org.bouncycastle.pqc.crypto.xmss.BDS"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -53,7 +53,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "org.bouncycastle.pqc.crypto.xmss.XMSSNode"
+    const-string/jumbo v1, "org.bouncycastle.pqc.crypto.xmss.XMSSNode"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -77,7 +77,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "org.bouncycastle.pqc.crypto.xmss.BDSTreeHash"
+    const-string/jumbo v1, "org.bouncycastle.pqc.crypto.xmss.BDSTreeHash"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 

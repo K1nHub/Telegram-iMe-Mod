@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
+.field public final synthetic f$1:I
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/ProfileActivity;
 
+    iput p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$1:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final applyAsInt(Ljava/lang/Object;)I
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$m5ThFS9NZm07vr1Z6kw3cJzFeKo(Lorg/telegram/ui/ProfileActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    iget v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$1:I
 
-    move-result-object v0
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$abI8cc0RjaygmLVDs0ULGbgCXxk(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Object;)I
 
-    return-object v0
+    move-result p1
+
+    return p1
 .end method

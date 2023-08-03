@@ -37,6 +37,8 @@
 
 .field public static final enum CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
+.field public static final enum CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
 .field public static final Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
 .field public static final enum MARK_ALL_READ:Lcom/iMe/storage/domain/model/filters/FilterFab;
@@ -50,7 +52,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
     .locals 3
 
-    const/16 v0, 0xa
+    const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/filters/FilterFab;
 
@@ -111,6 +113,12 @@
     sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
@@ -230,6 +238,17 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
+    .line 18
+    new-instance v0, Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    const-string v1, "CREATE_STORY"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterFab;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterFab;->$values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     move-result-object v0
@@ -285,7 +304,7 @@
     return-object p0
 .end method
 
-.method public static final mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+.method public static final mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -293,7 +312,7 @@
             "Ljava/util/Set<",
             "Ljava/lang/String;",
             ">;)",
-            "Ljava/util/Set<",
+            "Ljava/util/SortedSet<",
             "Lcom/iMe/storage/domain/model/filters/FilterFab;",
             ">;"
         }
@@ -301,7 +320,7 @@
 
     sget-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
-    invoke-virtual {v0, p0}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+    invoke-virtual {v0, p0}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
 
     move-result-object p0
 
@@ -341,7 +360,7 @@
 .method public final getOldPreferenceId()Ljava/lang/String;
     .locals 2
 
-    .line 19
+    .line 20
     sget-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I

@@ -493,9 +493,11 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v1
+    move-result-wide v1
+
+    double-to-int v1, v1
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->formatDuration(I)Ljava/lang/String;
 
@@ -822,9 +824,11 @@
     .line 192
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v2
+    move-result-wide v2
+
+    double-to-int v2, v2
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->formatShortDuration(I)Ljava/lang/String;
 

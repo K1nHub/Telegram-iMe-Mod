@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/FilterGLThread;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$J4osYD9BNfokqT1uFL-7DJCx2Cg(Lorg/telegram/ui/Components/FilterGLThread;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$Mav2Uv41s9sViWKGmhZRCKR-TOg(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     return-void
 .end method

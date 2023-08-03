@@ -157,7 +157,7 @@
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "r"
+    const-string/jumbo v3, "r"
 
     invoke-direct {v1, v2, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -393,7 +393,7 @@
     :try_start_0
     new-instance v1, Ljava/io/RandomAccessFile;
 
-    const-string v2, "r"
+    const-string/jumbo v2, "r"
 
     invoke-direct {v1, v0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1351,7 +1351,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    const-string v1, "r"
+    const-string/jumbo v1, "r"
 
     .line 111
     invoke-direct {p0, v1}, Lnet/lingala/zip4j/unzip/UnzipEngine;->createFileHandler(Ljava/lang/String;)Ljava/io/RandomAccessFile;
@@ -1846,7 +1846,7 @@
     .line 469
     new-instance v1, Ljava/io/RandomAccessFile;
 
-    const-string v2, "r"
+    const-string/jumbo v2, "r"
 
     invoke-direct {v1, v0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

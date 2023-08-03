@@ -29,19 +29,19 @@ public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T,
         long remaining;
 
         /* renamed from: sd */
-        final SequentialDisposable f543sd;
+        final SequentialDisposable f546sd;
         final ObservableSource<? extends T> source;
 
         RepeatObserver(Observer<? super T> observer, long j, SequentialDisposable sequentialDisposable, ObservableSource<? extends T> observableSource) {
             this.downstream = observer;
-            this.f543sd = sequentialDisposable;
+            this.f546sd = sequentialDisposable;
             this.source = observableSource;
             this.remaining = j;
         }
 
         @Override // io.reactivex.Observer
         public void onSubscribe(Disposable disposable) {
-            this.f543sd.replace(disposable);
+            this.f546sd.replace(disposable);
         }
 
         @Override // io.reactivex.Observer
@@ -70,7 +70,7 @@ public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T,
         void subscribeNext() {
             if (getAndIncrement() == 0) {
                 int i = 1;
-                while (!this.f543sd.isDisposed()) {
+                while (!this.f546sd.isDisposed()) {
                     this.source.subscribe(this);
                     i = addAndGet(-i);
                     if (i == 0) {

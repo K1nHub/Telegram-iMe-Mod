@@ -1,7 +1,7 @@
 package com.iMe.bots;
 /* loaded from: classes3.dex */
 public final class R$string {
-    public static final int bot_label_neuro = 2131827377;
-    public static final int bot_label_normal = 2131827378;
-    public static final int bot_title_recent = 2131827420;
+    public static final int bot_label_neuro = 2131827785;
+    public static final int bot_label_normal = 2131827786;
+    public static final int bot_title_recent = 2131827828;
 }

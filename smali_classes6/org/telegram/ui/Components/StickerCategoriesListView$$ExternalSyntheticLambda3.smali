@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
+.field public final synthetic f$0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
+    iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;->f$0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
+    iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;->f$0:I
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->$r8$lambda$MqAdec07K_nAydKUvDFQzTkT51A(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/view/View;I)V
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->$r8$lambda$MSZqkT7uQXahezyLl6tb11LF_to(ILorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
 
     return-void
 .end method

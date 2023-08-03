@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SavePasswordRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SavePasswordRequest> CREATOR = new zbl();
-    @SafeParcelable.Field(getter = "getSignInPassword", m779id = 1)
+    @SafeParcelable.Field(getter = "getSignInPassword", m797id = 1)
     private final SignInPassword zba;
-    @SafeParcelable.Field(getter = "getSessionId", m779id = 2)
+    @SafeParcelable.Field(getter = "getSessionId", m797id = 2)
     private final String zbb;
-    @SafeParcelable.Field(getter = "getTheme", m779id = 3)
+    @SafeParcelable.Field(getter = "getTheme", m797id = 3)
     private final int zbc;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -48,7 +48,7 @@ public class SavePasswordRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SavePasswordRequest(@SafeParcelable.Param(m778id = 1) SignInPassword signInPassword, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) int i) {
+    public SavePasswordRequest(@SafeParcelable.Param(m796id = 1) SignInPassword signInPassword, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) int i) {
         this.zba = (SignInPassword) Preconditions.checkNotNull(signInPassword);
         this.zbb = str;
         this.zbc = i;

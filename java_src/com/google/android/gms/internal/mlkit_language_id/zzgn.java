@@ -124,6 +124,6 @@ final class zzgn<E> extends zzdi<E> implements RandomAccess {
     static {
         zzgn<Object> zzgnVar = new zzgn<>(new Object[0], 0);
         zza = zzgnVar;
-        zzgnVar.mo762b_();
+        zzgnVar.mo780b_();
     }
 }

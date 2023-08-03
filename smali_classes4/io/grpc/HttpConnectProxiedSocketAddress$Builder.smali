@@ -80,7 +80,7 @@
 .method public setProxyAddress(Ljava/net/SocketAddress;)Lio/grpc/HttpConnectProxiedSocketAddress$Builder;
     .locals 1
 
-    const-string v0, "proxyAddress"
+    const-string/jumbo v0, "proxyAddress"
 
     .line 145
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

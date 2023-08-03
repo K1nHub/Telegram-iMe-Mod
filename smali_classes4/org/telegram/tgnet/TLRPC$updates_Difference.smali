@@ -69,38 +69,38 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 5731
+    .line 5880
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 5732
+    .line 5881
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$updates_Difference;->new_messages:Ljava/util/ArrayList;
 
-    .line 5733
+    .line 5882
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$updates_Difference;->new_encrypted_messages:Ljava/util/ArrayList;
 
-    .line 5734
+    .line 5883
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$updates_Difference;->other_updates:Ljava/util/ArrayList;
 
-    .line 5735
+    .line 5884
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$updates_Difference;->chats:Ljava/util/ArrayList;
 
-    .line 5736
+    .line 5885
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 5756
+    .line 5905
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updates_differenceEmpty;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 5753
+    .line 5902
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updates_differenceTooLong;
 
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 5747
+    .line 5896
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updates_difference;
 
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 5750
+    .line 5899
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updates_differenceSlice;
 
@@ -156,7 +156,7 @@
 
     goto :goto_1
 
-    .line 5760
+    .line 5909
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -186,7 +186,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 5763
+    .line 5912
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

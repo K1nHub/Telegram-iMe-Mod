@@ -18,6 +18,9 @@
 .method public abstract allowLayoutChanges()Z
 .end method
 
+.method public abstract clipWithGradient(I)Z
+.end method
+
 .method public abstract getBottomOffset(I)I
 .end method
 

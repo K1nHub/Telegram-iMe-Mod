@@ -3,6 +3,7 @@ package okhttp3.internal;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import okio.Buffer;
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: hostnames.kt */
 /* loaded from: classes4.dex */
 public final class HostnamesKt {
@@ -107,7 +108,7 @@ public final class HostnamesKt {
         int length = str.length();
         for (int i = 0; i < length; i++) {
             char charAt = str.charAt(i);
-            if (Intrinsics.compare(charAt, 31) <= 0 || Intrinsics.compare(charAt, 127) >= 0) {
+            if (Intrinsics.compare(charAt, 31) <= 0 || Intrinsics.compare(charAt, MessagesStorage.LAST_DB_VERSION) >= 0) {
                 return true;
             }
             indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) " #%/:?@[\\]", charAt, 0, false, 6, (Object) null);

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/GroupCreateUserCell;)V
     .locals 0
 
-    .line 167
+    .line 169
     iput-object p1, p0, Lorg/telegram/ui/Cells/GroupCreateUserCell$2;->this$0:Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 170
+    .line 172
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCreateUserCell$2;->this$0:Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     const/4 v0, 0x0

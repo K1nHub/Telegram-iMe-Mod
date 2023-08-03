@@ -63,7 +63,7 @@
     :cond_0
     new-instance p0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "path is null"
+    const-string/jumbo v0, "path is null"
 
     invoke-direct {p0, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -143,7 +143,7 @@
     :cond_1
     new-instance p0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "path is null"
+    const-string/jumbo v0, "path is null"
 
     invoke-direct {p0, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -175,7 +175,7 @@
 
     move-result p0
 
-    const-string v1, "output folder is not valid"
+    const-string/jumbo v1, "output folder is not valid"
 
     if-eqz p0, :cond_2
 
@@ -273,7 +273,7 @@
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "output path is null"
+    const-string/jumbo v1, "output path is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest()V
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$CUVu0fNnEFOvX1ZTCDd5SJBtzbo(Lorg/telegram/messenger/FileLoadOperation;)V
 
     return-void
 .end method

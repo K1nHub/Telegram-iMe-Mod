@@ -208,7 +208,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "priorResponse.body != null"
+    const-string/jumbo v0, "priorResponse.body != null"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -533,7 +533,7 @@
     :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "protocol == null"
+    const-string/jumbo v2, "protocol == null"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -718,7 +718,7 @@
 .method public protocol(Lokhttp3/Protocol;)Lokhttp3/Response$Builder;
     .locals 1
 
-    const-string v0, "protocol"
+    const-string/jumbo v0, "protocol"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

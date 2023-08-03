@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;)V
     .locals 0
 
-    .line 173
+    .line 175
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public can()Z
     .locals 1
 
-    .line 216
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$200(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
@@ -87,7 +87,7 @@
 .method public canSchedule()Z
     .locals 1
 
-    .line 230
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -140,7 +140,7 @@
 .method public editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
     .locals 1
 
-    .line 189
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -151,7 +151,7 @@
 
     return-void
 
-    .line 192
+    .line 194
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
@@ -161,7 +161,7 @@
 
     invoke-interface {v0, p1, p2, p3}, Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;->editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
 
-    .line 193
+    .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StickersAlert;->dismiss()V
@@ -172,7 +172,7 @@
 .method public editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
     .locals 1
 
-    .line 198
+    .line 200
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -183,7 +183,7 @@
 
     return-void
 
-    .line 201
+    .line 203
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
@@ -193,7 +193,7 @@
 
     invoke-interface {v0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;->editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
-    .line 202
+    .line 204
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StickersAlert;->dismiss()V
@@ -204,7 +204,7 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 265
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -215,7 +215,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 266
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -257,7 +257,7 @@
 .method public isInScheduleMode()Z
     .locals 1
 
-    .line 235
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -289,14 +289,24 @@
     return v0
 .end method
 
-.method public synthetic needCopy()Z
+.method public synthetic isStoryReply()Z
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$needCopy(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
+    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$isStoryReply(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public synthetic needCopy(Lorg/telegram/tgnet/TLRPC$Document;)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$needCopy(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Lorg/telegram/tgnet/TLRPC$Document;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public synthetic needMenu()Z
@@ -320,7 +330,7 @@
 .method public needRemove()Z
     .locals 1
 
-    .line 245
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$400(Lorg/telegram/ui/Components/StickersAlert;)Ljava/util/ArrayList;
@@ -353,7 +363,7 @@
 .method public needSend(I)Z
     .locals 0
 
-    .line 255
+    .line 257
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -390,7 +400,7 @@
 .method public remove(Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;)V
     .locals 1
 
-    .line 250
+    .line 252
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickersAlert;->access$500(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;)V
@@ -441,7 +451,7 @@
 .method public sendSticker(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;ZI)V
     .locals 10
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;
@@ -452,7 +462,7 @@
 
     return-void
 
-    .line 224
+    .line 226
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
@@ -482,7 +492,7 @@
 
     invoke-interface/range {v1 .. v9}, Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;->onStickerSelected(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;Lorg/telegram/messenger/MessageObject$SendAnimationData;ZZILjava/lang/String;)V
 
-    .line 225
+    .line 227
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StickersAlert;->dismiss()V
@@ -501,7 +511,7 @@
 .method public setKiklikoAvatar(Ljava/lang/String;)V
     .locals 1
 
-    .line 207
+    .line 209
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$1;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$100(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;

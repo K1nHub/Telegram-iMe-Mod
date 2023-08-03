@@ -180,7 +180,7 @@
 .method public final merge(Lokhttp3/internal/http2/Settings;)V
     .locals 2
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

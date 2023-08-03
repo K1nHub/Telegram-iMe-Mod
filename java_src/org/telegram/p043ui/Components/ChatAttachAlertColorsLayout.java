@@ -13,10 +13,10 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.WallpaperCell;
 import org.telegram.p043ui.Components.ChatAttachAlert;
@@ -54,12 +54,12 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
 
     public ChatAttachAlertColorsLayout(ChatAttachAlert chatAttachAlert, Context context, Theme.ResourcesProvider resourcesProvider) {
         super(chatAttachAlert, context, resourcesProvider);
-        this.itemSize = AndroidUtilities.m54dp(80);
+        this.itemSize = AndroidUtilities.m72dp(80);
         this.itemsPerRow = 3;
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertColorsLayout.1
             @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - AndroidUtilities.m54dp(80)) {
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - AndroidUtilities.m72dp(80)) {
                     return super.onTouchEvent(motionEvent);
                 }
                 return false;
@@ -67,7 +67,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
 
             @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - AndroidUtilities.m54dp(80)) {
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - AndroidUtilities.m72dp(80)) {
                     return super.onInterceptTouchEvent(motionEvent);
                 }
                 return false;
@@ -104,14 +104,14 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 RecyclerListView.Holder holder;
                 if (i == 0) {
-                    int m54dp = AndroidUtilities.m54dp(13);
+                    int m72dp = AndroidUtilities.m72dp(13);
                     ActionBarMenuItem actionBarMenuItem = ChatAttachAlertColorsLayout.this.parentAlert.selectedMenuItem;
-                    int m55dp = m54dp + (actionBarMenuItem != null ? AndroidUtilities.m55dp(actionBarMenuItem.getAlpha() * 26.0f) : 0);
+                    int m73dp = m72dp + (actionBarMenuItem != null ? AndroidUtilities.m73dp(actionBarMenuItem.getAlpha() * 26.0f) : 0);
                     int backgroundPaddingTop = ChatAttachAlertColorsLayout.this.parentAlert.getBackgroundPaddingTop();
-                    if (((ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m55dp) + backgroundPaddingTop >= C3484ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertColorsLayout.this.gridView.findViewHolderForAdapterPosition(0)) == null || holder.itemView.getTop() <= AndroidUtilities.m54dp(7)) {
+                    if (((ChatAttachAlertColorsLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m73dp) + backgroundPaddingTop >= C3485ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertColorsLayout.this.gridView.findViewHolderForAdapterPosition(0)) == null || holder.itemView.getTop() <= AndroidUtilities.m72dp(7)) {
                         return;
                     }
-                    ChatAttachAlertColorsLayout.this.gridView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m54dp(7));
+                    ChatAttachAlertColorsLayout.this.gridView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m72dp(7));
                 }
             }
         });
@@ -126,7 +126,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertColorsLayout.3.1
                     @Override // androidx.recyclerview.widget.LinearSmoothScroller
                     public int calculateDyToMakeVisible(View view, int i2) {
-                        return super.calculateDyToMakeVisible(view, i2) - (ChatAttachAlertColorsLayout.this.gridView.getPaddingTop() - AndroidUtilities.m54dp(7));
+                        return super.calculateDyToMakeVisible(view, i2) - (ChatAttachAlertColorsLayout.this.gridView.getPaddingTop() - AndroidUtilities.m72dp(7));
                     }
 
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -143,7 +143,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ChatAttachAlertColorsLayout.4
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
-                return ChatAttachAlertColorsLayout.this.itemSize + (i % ChatAttachAlertColorsLayout.this.itemsPerRow != ChatAttachAlertColorsLayout.this.itemsPerRow + (-1) ? AndroidUtilities.m54dp(5) : 0);
+                return ChatAttachAlertColorsLayout.this.itemSize + (i % ChatAttachAlertColorsLayout.this.itemsPerRow != ChatAttachAlertColorsLayout.this.itemsPerRow + (-1) ? AndroidUtilities.m72dp(5) : 0);
             }
         });
         this.gridView.setLayoutManager(this.layoutManager);
@@ -169,9 +169,9 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         View childAt = this.gridView.getChildAt(0);
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.gridView.findContainingViewHolder(childAt);
         int top = childAt.getTop();
-        int m54dp = AndroidUtilities.m54dp(7);
-        if (top < AndroidUtilities.m54dp(7) || holder == null || holder.getAdapterPosition() != 0) {
-            top = m54dp;
+        int m72dp = AndroidUtilities.m72dp(7);
+        if (top < AndroidUtilities.m72dp(7) || holder == null || holder.getAdapterPosition() != 0) {
+            top = m72dp;
         }
         this.gridView.setTopGlowOffset(top);
         return top;
@@ -179,7 +179,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m54dp(56);
+        return getListTopPadding() + AndroidUtilities.m72dp(56);
     }
 
     @Override // android.view.View
@@ -218,13 +218,13 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         L18:
             android.view.ViewGroup$LayoutParams r0 = r6.getLayoutParams()
             android.widget.FrameLayout$LayoutParams r0 = (android.widget.FrameLayout.LayoutParams) r0
-            int r1 = org.telegram.p043ui.ActionBar.C3484ActionBar.getCurrentActionBarHeight()
+            int r1 = org.telegram.p043ui.ActionBar.C3485ActionBar.getCurrentActionBarHeight()
             r0.topMargin = r1
             r0 = 12
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
             int r7 = r7 - r0
             r0 = 10
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
             int r7 = r7 - r0
             int r0 = r6.itemsPerRow
             int r7 = r7 / r0
@@ -238,7 +238,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             int r1 = r6.itemsPerRow
             int r1 = r1 * r7
             r2 = 5
-            int r3 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r3 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             int r4 = r6.itemsPerRow
             r5 = 1
             int r4 = r4 - r5
@@ -258,14 +258,14 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             int r0 = (int) r0
             int r7 = r7 * r0
             int r0 = r0 - r5
-            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             int r0 = r0 * r1
             int r7 = r7 + r0
             int r7 = r8 - r7
-            int r0 = org.telegram.p043ui.ActionBar.C3484ActionBar.getCurrentActionBarHeight()
+            int r0 = org.telegram.p043ui.ActionBar.C3485ActionBar.getCurrentActionBarHeight()
             int r7 = r7 - r0
             r0 = 60
-            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
             int r7 = r7 - r0
             r0 = 0
             java.lang.Math.max(r0, r7)
@@ -285,7 +285,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             int r7 = r8 * 2
         L9a:
             r8 = 52
-            int r8 = org.telegram.messenger.AndroidUtilities.m54dp(r8)
+            int r8 = org.telegram.messenger.AndroidUtilities.m72dp(r8)
             int r7 = r7 - r8
             if (r7 >= 0) goto La4
             goto La5
@@ -297,10 +297,10 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             if (r7 == r0) goto Lc1
             org.telegram.ui.Components.RecyclerListView r7 = r6.gridView
             r8 = 6
-            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r8)
-            int r8 = org.telegram.messenger.AndroidUtilities.m54dp(r8)
+            int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r8)
+            int r8 = org.telegram.messenger.AndroidUtilities.m72dp(r8)
             r2 = 48
-            int r2 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r2 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             r7.setPadding(r1, r0, r8, r2)
         Lc1:
             return
@@ -318,9 +318,10 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         this.adapter.notifyDataSetChanged();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.ChatAttachAlertColorsLayout$Adapter */
     /* loaded from: classes6.dex */
-    private class Adapter extends RecyclerListView.SelectionAdapter {
+    public class Adapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
         private final ArrayList<Object> wallpapers = new ArrayList<>();
 
@@ -373,7 +374,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
             this.parentAlert.actionBar.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        this.parentAlert.actionBar.setTitle(LocaleController.getString("SelectColor", C3417R.string.SelectColor));
+        this.parentAlert.actionBar.setTitle(LocaleController.getString("SelectColor", C3419R.string.SelectColor));
         this.layoutManager.scrollToPositionWithOffset(0, 0);
     }
 }

@@ -228,7 +228,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     public void releasePeriod(MediaPeriod mediaPeriod) {
         MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Assertions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod));
         mediaSourceHolder.mediaSource.releasePeriod(mediaPeriod);
-        mediaSourceHolder.activeMediaPeriodIds.remove(((MaskingMediaPeriod) mediaPeriod).f206id);
+        mediaSourceHolder.activeMediaPeriodIds.remove(((MaskingMediaPeriod) mediaPeriod).f208id);
         if (!this.mediaSourceByMediaPeriod.isEmpty()) {
             disableUnusedMediaSources();
         }

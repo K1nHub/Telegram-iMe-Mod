@@ -21,7 +21,7 @@ public final class ChapterFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f195ID = "CHAP";
+    public static final String f197ID = "CHAP";
     public final String chapterId;
     public final long endOffset;
     public final int endTimeMs;
@@ -35,7 +35,7 @@ public final class ChapterFrame extends Id3Frame {
     }
 
     public ChapterFrame(String str, int i, int i2, long j, long j2, Id3Frame[] id3FrameArr) {
-        super(f195ID);
+        super(f197ID);
         this.chapterId = str;
         this.startTimeMs = i;
         this.endTimeMs = i2;
@@ -45,7 +45,7 @@ public final class ChapterFrame extends Id3Frame {
     }
 
     ChapterFrame(Parcel parcel) {
-        super(f195ID);
+        super(f197ID);
         this.chapterId = (String) Util.castNonNull(parcel.readString());
         this.startTimeMs = parcel.readInt();
         this.endTimeMs = parcel.readInt();

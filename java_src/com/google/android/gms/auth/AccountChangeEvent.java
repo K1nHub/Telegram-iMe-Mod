@@ -12,22 +12,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class AccountChangeEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AccountChangeEvent> CREATOR = new zza();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     final long zzb;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     final String zzc;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     final int zzd;
-    @SafeParcelable.Field(m779id = 5)
+    @SafeParcelable.Field(m797id = 5)
     final int zze;
-    @SafeParcelable.Field(m779id = 6)
+    @SafeParcelable.Field(m797id = 6)
     final String zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AccountChangeEvent(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) long j, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) int i2, @SafeParcelable.Param(m778id = 5) int i3, @SafeParcelable.Param(m778id = 6) String str2) {
+    public AccountChangeEvent(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) long j, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) int i2, @SafeParcelable.Param(m796id = 5) int i3, @SafeParcelable.Param(m796id = 6) String str2) {
         this.zza = i;
         this.zzb = j;
         this.zzc = (String) Preconditions.checkNotNull(str);

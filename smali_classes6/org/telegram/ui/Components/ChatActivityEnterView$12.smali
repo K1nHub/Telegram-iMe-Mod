@@ -1,16 +1,25 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$12;
-.super Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
+.super Landroid/util/Property;
 .source "ChatActivityEnterView.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;-><init>(Landroid/app/Activity;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ChatActivity;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/util/Property<",
+        "Landroid/view/View;",
+        "Ljava/lang/Float;",
+        ">;"
+    }
 .end annotation
 
 
@@ -19,127 +28,78 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 2249
+    .line 1316
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 4
+.method public get(Landroid/view/View;)Ljava/lang/Float;
+    .locals 0
 
-    .line 2252
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
+    .line 1319
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 2253
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4200(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
 
-    move-result-object v0
+    move-result p1
 
-    if-eqz v0, :cond_0
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result-object p1
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$6100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/widget/LinearLayout;
+    return-object p1
+.end method
 
-    move-result-object v0
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    if-eqz v0, :cond_0
+    .line 1316
+    check-cast p1, Landroid/view/View;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->get(Landroid/view/View;)Ljava/lang/Float;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$6200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    move-result-object p1
 
-    move-result v0
+    return-object p1
+.end method
 
-    if-nez v0, :cond_0
+.method public set(Landroid/view/View;Ljava/lang/Float;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 1324
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$200(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    move-result v0
+    move-result p2
 
-    invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4202(Lorg/telegram/ui/Components/ChatActivityEnterView;F)F
 
-    move-result-object v0
+    .line 1325
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MediaDataController;->getUnreadStickerSets()Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4300(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    move-result v0
+    .line 1316
+    check-cast p1, Landroid/view/View;
 
-    if-nez v0, :cond_0
+    check-cast p2, Ljava/lang/Float;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->set(Landroid/view/View;Ljava/lang/Float;)V
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$6300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 2254
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    const/16 v1, 0x9
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 2255
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v1
-
-    div-int/lit8 v1, v1, 0x2
-
-    const/16 v2, 0x8
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    int-to-float v0, v0
-
-    int-to-float v1, v1
-
-    const/4 v2, 0x5
-
-    .line 2256
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$12;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$6300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    :cond_0
     return-void
 .end method

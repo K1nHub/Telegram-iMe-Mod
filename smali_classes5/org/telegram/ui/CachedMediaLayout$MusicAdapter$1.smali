@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 778
+    .line 808
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$1;->this$1:Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
@@ -37,14 +37,14 @@
 .method public onCheckBoxPressed()V
     .locals 4
 
-    .line 781
+    .line 811
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
-    .line 782
+    .line 812
     iget-object v1, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$1;->this$1:Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;

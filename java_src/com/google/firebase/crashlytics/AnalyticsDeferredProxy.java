@@ -80,12 +80,12 @@ public class AnalyticsDeferredProxy {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$2(Provider provider) {
-        Logger.getLogger().m728d("AnalyticsConnector now available.");
+        Logger.getLogger().m746d("AnalyticsConnector now available.");
         AnalyticsConnector analyticsConnector = (AnalyticsConnector) provider.get();
         CrashlyticsOriginAnalyticsEventLogger crashlyticsOriginAnalyticsEventLogger = new CrashlyticsOriginAnalyticsEventLogger(analyticsConnector);
         CrashlyticsAnalyticsListener crashlyticsAnalyticsListener = new CrashlyticsAnalyticsListener();
         if (subscribeToAnalyticsEvents(analyticsConnector, crashlyticsAnalyticsListener) != null) {
-            Logger.getLogger().m728d("Registered Firebase Analytics listener.");
+            Logger.getLogger().m746d("Registered Firebase Analytics listener.");
             BreadcrumbAnalyticsEventReceiver breadcrumbAnalyticsEventReceiver = new BreadcrumbAnalyticsEventReceiver();
             BlockingAnalyticsEventLogger blockingAnalyticsEventLogger = new BlockingAnalyticsEventLogger(crashlyticsOriginAnalyticsEventLogger, 500, TimeUnit.MILLISECONDS);
             synchronized (this) {
@@ -99,16 +99,16 @@ public class AnalyticsDeferredProxy {
             }
             return;
         }
-        Logger.getLogger().m720w("Could not register Firebase Analytics listener; a listener is already registered.");
+        Logger.getLogger().m738w("Could not register Firebase Analytics listener; a listener is already registered.");
     }
 
     private static AnalyticsConnector.AnalyticsConnectorHandle subscribeToAnalyticsEvents(AnalyticsConnector analyticsConnector, CrashlyticsAnalyticsListener crashlyticsAnalyticsListener) {
         AnalyticsConnector.AnalyticsConnectorHandle registerAnalyticsConnectorListener = analyticsConnector.registerAnalyticsConnectorListener("clx", crashlyticsAnalyticsListener);
         if (registerAnalyticsConnectorListener == null) {
-            Logger.getLogger().m728d("Could not register AnalyticsConnectorListener with Crashlytics origin.");
+            Logger.getLogger().m746d("Could not register AnalyticsConnectorListener with Crashlytics origin.");
             registerAnalyticsConnectorListener = analyticsConnector.registerAnalyticsConnectorListener(AppMeasurement.CRASH_ORIGIN, crashlyticsAnalyticsListener);
             if (registerAnalyticsConnectorListener != null) {
-                Logger.getLogger().m720w("A new version of the Google Analytics for Firebase SDK is now available. For improved performance and compatibility with Crashlytics, please update to the latest version.");
+                Logger.getLogger().m738w("A new version of the Google Analytics for Firebase SDK is now available. For improved performance and compatibility with Crashlytics, please update to the latest version.");
             }
         }
         return registerAnalyticsConnectorListener;

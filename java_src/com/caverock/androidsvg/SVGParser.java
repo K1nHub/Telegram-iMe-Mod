@@ -720,7 +720,7 @@ public class SVGParser {
                     return;
                 case 2:
                 case 3:
-                    m812g(attributes);
+                    m830g(attributes);
                     return;
                 case 4:
                     defs(attributes);
@@ -975,9 +975,9 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                svg.f121x = parseLength(trim);
+                svg.f123x = parseLength(trim);
             } else if (i2 == 2) {
-                svg.f122y = parseLength(trim);
+                svg.f124y = parseLength(trim);
             } else if (i2 == 3) {
                 SVG.Length parseLength = parseLength(trim);
                 svg.width = parseLength;
@@ -1492,7 +1492,7 @@ public class SVGParser {
     }
 
     /* renamed from: g */
-    private void m812g(Attributes attributes) throws SVGParseException {
+    private void m830g(Attributes attributes) throws SVGParseException {
         debug("<g>", new Object[0]);
         if (this.currentElement == null) {
             throw new SVGParseException("Invalid document. Root element must be <svg>");
@@ -1545,9 +1545,9 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                use.f145x = parseLength(trim);
+                use.f147x = parseLength(trim);
             } else if (i2 == 2) {
-                use.f146y = parseLength(trim);
+                use.f148y = parseLength(trim);
             } else if (i2 == 3) {
                 SVG.Length parseLength = parseLength(trim);
                 use.width = parseLength;
@@ -1588,9 +1588,9 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                image.f106x = parseLength(trim);
+                image.f108x = parseLength(trim);
             } else if (i2 == 2) {
-                image.f107y = parseLength(trim);
+                image.f109y = parseLength(trim);
             } else if (i2 == 3) {
                 SVG.Length parseLength = parseLength(trim);
                 image.width = parseLength;
@@ -1634,7 +1634,7 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 8) {
-                path.f114d = parsePath(trim);
+                path.f116d = parsePath(trim);
             } else if (i2 != 9) {
                 continue;
             } else {
@@ -1668,9 +1668,9 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                rect.f119x = parseLength(trim);
+                rect.f121x = parseLength(trim);
             } else if (i2 == 2) {
-                rect.f120y = parseLength(trim);
+                rect.f122y = parseLength(trim);
             } else if (i2 == 3) {
                 SVG.Length parseLength = parseLength(trim);
                 rect.width = parseLength;
@@ -1685,7 +1685,7 @@ public class SVGParser {
                 }
             } else if (i2 == 10) {
                 SVG.Length parseLength3 = parseLength(trim);
-                rect.f117rx = parseLength3;
+                rect.f119rx = parseLength3;
                 if (parseLength3.isNegative()) {
                     throw new SVGParseException("Invalid <rect> element. rx cannot be negative");
                 }
@@ -1693,7 +1693,7 @@ public class SVGParser {
                 continue;
             } else {
                 SVG.Length parseLength4 = parseLength(trim);
-                rect.f118ry = parseLength4;
+                rect.f120ry = parseLength4;
                 if (parseLength4.isNegative()) {
                     throw new SVGParseException("Invalid <rect> element. ry cannot be negative");
                 }
@@ -1722,14 +1722,14 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             switch (C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 12:
-                    circle.f99cx = parseLength(trim);
+                    circle.f101cx = parseLength(trim);
                     break;
                 case 13:
-                    circle.f100cy = parseLength(trim);
+                    circle.f102cy = parseLength(trim);
                     break;
                 case 14:
                     SVG.Length parseLength = parseLength(trim);
-                    circle.f101r = parseLength;
+                    circle.f103r = parseLength;
                     if (parseLength.isNegative()) {
                         throw new SVGParseException("Invalid <circle> element. r cannot be negative");
                     }
@@ -1760,23 +1760,23 @@ public class SVGParser {
             switch (C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 10:
                     SVG.Length parseLength = parseLength(trim);
-                    ellipse.f104rx = parseLength;
+                    ellipse.f106rx = parseLength;
                     if (parseLength.isNegative()) {
                         throw new SVGParseException("Invalid <ellipse> element. rx cannot be negative");
                     }
                     break;
                 case 11:
                     SVG.Length parseLength2 = parseLength(trim);
-                    ellipse.f105ry = parseLength2;
+                    ellipse.f107ry = parseLength2;
                     if (parseLength2.isNegative()) {
                         throw new SVGParseException("Invalid <ellipse> element. ry cannot be negative");
                     }
                     break;
                 case 12:
-                    ellipse.f102cx = parseLength(trim);
+                    ellipse.f104cx = parseLength(trim);
                     break;
                 case 13:
-                    ellipse.f103cy = parseLength(trim);
+                    ellipse.f105cy = parseLength(trim);
                     break;
             }
         }
@@ -1803,16 +1803,16 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             switch (C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 15:
-                    line.f108x1 = parseLength(trim);
+                    line.f110x1 = parseLength(trim);
                     break;
                 case 16:
-                    line.f110y1 = parseLength(trim);
+                    line.f112y1 = parseLength(trim);
                     break;
                 case 17:
-                    line.f109x2 = parseLength(trim);
+                    line.f111x2 = parseLength(trim);
                     break;
                 case 18:
-                    line.f111y2 = parseLength(trim);
+                    line.f113y2 = parseLength(trim);
                     break;
             }
         }
@@ -1902,13 +1902,13 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                textPositionedContainer.f135x = parseLengthList(trim);
+                textPositionedContainer.f137x = parseLengthList(trim);
             } else if (i2 == 2) {
-                textPositionedContainer.f136y = parseLengthList(trim);
+                textPositionedContainer.f138y = parseLengthList(trim);
             } else if (i2 == 19) {
-                textPositionedContainer.f133dx = parseLengthList(trim);
+                textPositionedContainer.f135dx = parseLengthList(trim);
             } else if (i2 == 20) {
-                textPositionedContainer.f134dy = parseLengthList(trim);
+                textPositionedContainer.f136dy = parseLengthList(trim);
             }
         }
     }
@@ -2203,16 +2203,16 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             switch (C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 15:
-                    svgLinearGradient.f124x1 = parseLength(trim);
+                    svgLinearGradient.f126x1 = parseLength(trim);
                     break;
                 case 16:
-                    svgLinearGradient.f126y1 = parseLength(trim);
+                    svgLinearGradient.f128y1 = parseLength(trim);
                     break;
                 case 17:
-                    svgLinearGradient.f125x2 = parseLength(trim);
+                    svgLinearGradient.f127x2 = parseLength(trim);
                     break;
                 case 18:
-                    svgLinearGradient.f127y2 = parseLength(trim);
+                    svgLinearGradient.f129y2 = parseLength(trim);
                     break;
             }
         }
@@ -2269,7 +2269,7 @@ public class SVGParser {
             goto L5b
         L2b:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r5.f132r = r1
+            r5.f134r = r1
             boolean r1 = r1.isNegative()
             if (r1 != 0) goto L38
             goto L5b
@@ -2280,19 +2280,19 @@ public class SVGParser {
             throw r5
         L40:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r5.f129cy = r1
+            r5.f131cy = r1
             goto L5b
         L47:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r5.f128cx = r1
+            r5.f130cx = r1
             goto L5b
         L4e:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r5.f131fy = r1
+            r5.f133fy = r1
             goto L5b
         L55:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r5.f130fx = r1
+            r5.f132fx = r1
         L5b:
             int r0 = r0 + 1
             goto L1
@@ -2572,11 +2572,11 @@ public class SVGParser {
             throw r6
         Lc2:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r6.f116y = r1
+            r6.f118y = r1
             goto Lcf
         Lc9:
             com.caverock.androidsvg.SVG$Length r1 = parseLength(r1)
-            r6.f115x = r1
+            r6.f117x = r1
         Lcf:
             int r0 = r0 + 1
             goto L1
@@ -2622,9 +2622,9 @@ public class SVGParser {
             String trim = attributes.getValue(i).trim();
             int i2 = C04651.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
-                mask.f112x = parseLength(trim);
+                mask.f114x = parseLength(trim);
             } else if (i2 == 2) {
-                mask.f113y = parseLength(trim);
+                mask.f115y = parseLength(trim);
             } else if (i2 == 3) {
                 SVG.Length parseLength = parseLength(trim);
                 mask.width = parseLength;
@@ -2975,7 +2975,7 @@ public class SVGParser {
         for (int i = 0; i < attributes.getLength(); i++) {
             String qName = attributes.getQName(i);
             if (qName.equals(TtmlNode.ATTR_ID) || qName.equals("xml:id")) {
-                svgElementBase.f123id = attributes.getValue(i).trim();
+                svgElementBase.f125id = attributes.getValue(i).trim();
                 return;
             } else if (qName.equals("xml:space")) {
                 String trim = attributes.getValue(i).trim();

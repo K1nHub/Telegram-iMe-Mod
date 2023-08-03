@@ -18,19 +18,19 @@ final class C2928L4 extends AbstractC3039f4 {
 
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public boolean mo113b(Consumer consumer) {
+    public boolean mo131b(Consumer consumer) {
         Object obj;
         Objects.requireNonNull(consumer);
-        boolean m400a = m400a();
-        if (m400a) {
-            C3009a4 c3009a4 = (C3009a4) this.f1035h;
-            long j = this.f1034g;
-            if (c3009a4.f1015c != 0) {
+        boolean m418a = m418a();
+        if (m418a) {
+            C3009a4 c3009a4 = (C3009a4) this.f1038h;
+            long j = this.f1037g;
+            if (c3009a4.f1018c != 0) {
                 if (j < c3009a4.count()) {
-                    for (int i = 0; i <= c3009a4.f1015c; i++) {
-                        long[] jArr = c3009a4.f1016d;
+                    for (int i = 0; i <= c3009a4.f1018c; i++) {
+                        long[] jArr = c3009a4.f1019d;
                         long j2 = jArr[i];
-                        Object[][] objArr = c3009a4.f963f;
+                        Object[][] objArr = c3009a4.f966f;
                         if (j < j2 + objArr[i].length) {
                             obj = objArr[i][(int) (j - jArr[i])];
                         }
@@ -38,41 +38,41 @@ final class C2928L4 extends AbstractC3039f4 {
                     throw new IndexOutOfBoundsException(Long.toString(j));
                 }
                 throw new IndexOutOfBoundsException(Long.toString(j));
-            } else if (j >= c3009a4.f1014b) {
+            } else if (j >= c3009a4.f1017b) {
                 throw new IndexOutOfBoundsException(Long.toString(j));
             } else {
-                obj = c3009a4.f962e[(int) j];
+                obj = c3009a4.f965e[(int) j];
             }
             consumer.accept(obj);
         }
-        return m400a;
+        return m418a;
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public void forEachRemaining(Consumer consumer) {
-        if (this.f1035h != null || this.f1036i) {
+        if (this.f1038h != null || this.f1039i) {
             do {
-            } while (mo113b(consumer));
+            } while (mo131b(consumer));
             return;
         }
         Objects.requireNonNull(consumer);
-        m398h();
-        this.f1029b.mo288u0(new C2922K4(consumer), this.f1031d);
-        this.f1036i = true;
+        m416h();
+        this.f1032b.mo306u0(new C2922K4(consumer), this.f1034d);
+        this.f1039i = true;
     }
 
     @Override // p033j$.util.stream.AbstractC3039f4
     /* renamed from: j */
-    void mo325j() {
+    void mo343j() {
         C3009a4 c3009a4 = new C3009a4();
-        this.f1035h = c3009a4;
-        this.f1032e = this.f1029b.mo287v0(new C2922K4(c3009a4));
-        this.f1033f = new C3010b(this);
+        this.f1038h = c3009a4;
+        this.f1035e = this.f1032b.mo305v0(new C2922K4(c3009a4));
+        this.f1036f = new C3010b(this);
     }
 
     @Override // p033j$.util.stream.AbstractC3039f4
     /* renamed from: l */
-    AbstractC3039f4 mo324l(InterfaceC2853s interfaceC2853s) {
-        return new C2928L4(this.f1029b, interfaceC2853s, this.f1028a);
+    AbstractC3039f4 mo342l(InterfaceC2853s interfaceC2853s) {
+        return new C2928L4(this.f1032b, interfaceC2853s, this.f1031a);
     }
 }

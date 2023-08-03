@@ -8,20 +8,20 @@ import sun.misc.Unsafe;
 abstract class AbstractC2810c {
 
     /* renamed from: a */
-    private static final Unsafe f729a;
+    private static final Unsafe f732a;
 
     static {
-        Field m542b = m542b();
-        m542b.setAccessible(true);
+        Field m560b = m560b();
+        m560b.setAccessible(true);
         try {
-            f729a = (Unsafe) m542b.get(null);
+            f732a = (Unsafe) m560b.get(null);
         } catch (IllegalAccessException e) {
             throw new Error("Couldn't get the Unsafe", e);
         }
     }
 
     /* renamed from: a */
-    public static final int m543a(Unsafe unsafe, Object obj, long j, int i) {
+    public static final int m561a(Unsafe unsafe, Object obj, long j, int i) {
         int intVolatile;
         do {
             intVolatile = unsafe.getIntVolatile(obj, j);
@@ -30,7 +30,7 @@ abstract class AbstractC2810c {
     }
 
     /* renamed from: b */
-    private static Field m542b() {
+    private static Field m560b() {
         Field[] declaredFields;
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
@@ -45,7 +45,7 @@ abstract class AbstractC2810c {
     }
 
     /* renamed from: c */
-    public static Unsafe m541c() {
-        return f729a;
+    public static Unsafe m559c() {
+        return f732a;
     }
 }

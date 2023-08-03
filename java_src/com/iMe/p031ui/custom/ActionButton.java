@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -44,13 +45,58 @@ public class ActionButton extends AppCompatTextView {
         Lazy lazy3;
         Lazy lazy4;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new ActionButton$buttonHeight$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ActionButton$buttonHeight$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(ActionButton.this.calculateButtonHeight());
+            }
+        });
         this.buttonHeight$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new ActionButton$cornerRadius$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ActionButton$cornerRadius$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(ActionButton.this.calculateCornerRadius());
+            }
+        });
         this.cornerRadius$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ActionButton$horizontalPadding$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ActionButton$horizontalPadding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(ActionButton.this.calculateHorizontalPadding());
+            }
+        });
         this.horizontalPadding$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new ActionButton$loadingDrawable$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<LoadingDrawable>() { // from class: com.iMe.ui.custom.ActionButton$loadingDrawable$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final LoadingDrawable invoke() {
+                LoadingDrawable initLoadingDrawable;
+                initLoadingDrawable = ActionButton.this.initLoadingDrawable();
+                return initLoadingDrawable;
+            }
+        });
         this.loadingDrawable$delegate = lazy4;
         this.originalText = "";
         setupView();
@@ -80,7 +126,7 @@ public class ActionButton extends AppCompatTextView {
     }
 
     public final void setForcedCustomHeight(int i) {
-        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m54dp(i));
+        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m72dp(i));
         invalidate();
     }
 
@@ -100,17 +146,17 @@ public class ActionButton extends AppCompatTextView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateCornerRadius() {
-        return AndroidUtilities.m54dp(4);
+        return AndroidUtilities.m72dp(4);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateHorizontalPadding() {
-        return AndroidUtilities.m54dp(34);
+        return AndroidUtilities.m72dp(34);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateButtonHeight() {
-        return AndroidUtilities.m54dp(42);
+        return AndroidUtilities.m72dp(42);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

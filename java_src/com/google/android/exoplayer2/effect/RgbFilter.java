@@ -53,7 +53,7 @@ public class RgbFilter implements RgbMatrix {
     public SingleFrameGlTextureProcessor toGlTextureProcessor(Context context, boolean z) throws FrameProcessingException {
         SingleFrameGlTextureProcessor create;
         checkForConsistentHdrSetting(z);
-        create = MatrixTextureProcessor.create(context, ImmutableList.m744of(), ImmutableList.m743of(this), z);
+        create = MatrixTextureProcessor.create(context, ImmutableList.m762of(), ImmutableList.m761of(this), z);
         return create;
     }
 }

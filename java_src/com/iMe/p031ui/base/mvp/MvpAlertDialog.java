@@ -10,6 +10,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
@@ -49,7 +50,20 @@ public abstract class MvpAlertDialog extends AlertDialog implements MvpDelegateH
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 Lazy lazy;
-                lazy = LazyKt__LazyJVMKt.lazy(new MvpAlertDialog$mvpBaseDelegate$1$context$2(MvpAlertDialog.this));
+                lazy = LazyKt__LazyJVMKt.lazy(new Function0<Context>() { // from class: com.iMe.ui.base.mvp.MvpAlertDialog$mvpBaseDelegate$1$context$2
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Can't rename method to resolve collision */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Context invoke() {
+                        Context context2 = MvpAlertDialog.this.getContext();
+                        Intrinsics.checkNotNullExpressionValue(context2, "this@MvpAlertDialog.context");
+                        return context2;
+                    }
+                });
                 this.context$delegate = lazy;
             }
 

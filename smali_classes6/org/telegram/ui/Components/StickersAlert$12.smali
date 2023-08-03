@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;[ILandroid/widget/TextView;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 1313
+    .line 1346
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$12;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/StickersAlert$12;->val$state:[I
@@ -62,7 +62,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 1321
+    .line 1354
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$12;->val$state:[I
 
     const/4 p2, 0x0
@@ -75,7 +75,7 @@
 
     return-void
 
-    .line 1324
+    .line 1357
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$12;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 

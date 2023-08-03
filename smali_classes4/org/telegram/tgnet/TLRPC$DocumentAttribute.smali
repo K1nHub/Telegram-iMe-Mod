@@ -6,7 +6,7 @@
 # instance fields
 .field public alt:Ljava/lang/String;
 
-.field public duration:I
+.field public duration:D
 
 .field public file_name:Ljava/lang/String;
 
@@ -18,7 +18,11 @@
 
 .field public mask_coords:Lorg/telegram/tgnet/TLRPC$TL_maskCoords;
 
+.field public nosound:Z
+
 .field public performer:Ljava/lang/String;
+
+.field public preload_prefix_size:I
 
 .field public round_message:Z
 
@@ -39,7 +43,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2096
+    .line 2098
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -54,7 +58,7 @@
 
     goto :goto_0
 
-    .line 2150
+    .line 2157
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeImageSize;
 
@@ -62,7 +66,7 @@
 
     goto :goto_0
 
-    .line 2123
+    .line 2130
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
@@ -70,7 +74,7 @@
 
     goto :goto_0
 
-    .line 2135
+    .line 2142
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo_layer65;
 
@@ -78,7 +82,7 @@
 
     goto :goto_0
 
-    .line 2117
+    .line 2121
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_layer55;
 
@@ -86,7 +90,7 @@
 
     goto :goto_0
 
-    .line 2129
+    .line 2136
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeFilename;
 
@@ -94,7 +98,7 @@
 
     goto :goto_0
 
-    .line 2126
+    .line 2133
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAnimated;
 
@@ -102,15 +106,15 @@
 
     goto :goto_0
 
-    .line 2132
+    .line 2124
     :sswitch_6
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo_layer159;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo_layer159;-><init>()V
 
     goto :goto_0
 
-    .line 2120
+    .line 2127
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio_old;
 
@@ -118,7 +122,7 @@
 
     goto :goto_0
 
-    .line 2156
+    .line 2163
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;
 
@@ -126,7 +130,7 @@
 
     goto :goto_0
 
-    .line 2141
+    .line 2148
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_old;
 
@@ -134,7 +138,7 @@
 
     goto :goto_0
 
-    .line 2138
+    .line 2145
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio_layer45;
 
@@ -142,24 +146,32 @@
 
     goto :goto_0
 
-    .line 2147
+    .line 2139
     :sswitch_b
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;-><init>()V
+
+    goto :goto_0
+
+    .line 2154
+    :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_old2;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_old2;-><init>()V
 
     goto :goto_0
 
-    .line 2153
-    :sswitch_c
+    .line 2160
+    :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
     goto :goto_0
 
-    .line 2144
-    :sswitch_d
+    .line 2151
+    :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeHasStickers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeHasStickers;-><init>()V
@@ -171,7 +183,7 @@
 
     goto :goto_1
 
-    .line 2160
+    .line 2167
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -201,7 +213,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 2163
+    .line 2170
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -211,9 +223,10 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x67fe2d09 -> :sswitch_d
-        -0x67ad063a -> :sswitch_c
-        -0x66b3677e -> :sswitch_b
+        -0x67fe2d09 -> :sswitch_e
+        -0x67ad063a -> :sswitch_d
+        -0x66b3677e -> :sswitch_c
+        -0x2c700e3e -> :sswitch_b
         -0x212de720 -> :sswitch_a
         -0x4f5a8d9 -> :sswitch_9
         -0x2eb6767 -> :sswitch_8

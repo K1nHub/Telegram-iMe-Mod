@@ -11,5 +11,5 @@ import io.reactivex.Observable;
 public interface WalletTransferDataSource extends SignTransactionDatasource<TransactionArgs> {
     Observable<Result<CryptoTransferMetadata>> getTransferMetadata(Token token, String str, String str2);
 
-    Observable<Result<Boolean>> transfer(TransactionArgs transactionArgs);
+    Observable<Result<Boolean>> transfer(TransactionArgs transactionArgs, String str);
 }

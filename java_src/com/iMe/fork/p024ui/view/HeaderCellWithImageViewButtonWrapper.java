@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -30,11 +31,24 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
         Lazy lazy;
         int i;
         ViewGroup.MarginLayoutParams marginLayoutParams;
-        int m53px;
+        int m71px;
         ViewGroup.MarginLayoutParams marginLayoutParams2;
         Intrinsics.checkNotNullParameter(headerCell, "headerCell");
         this.headerCell = headerCell;
-        lazy = LazyKt__LazyJVMKt.lazy(new HeaderCellWithImageViewButtonWrapper$imageView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<AppCompatImageView>() { // from class: com.iMe.fork.ui.view.HeaderCellWithImageViewButtonWrapper$imageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final AppCompatImageView invoke() {
+                AppCompatImageView initImageView;
+                initImageView = HeaderCellWithImageViewButtonWrapper.this.initImageView();
+                return initImageView;
+            }
+        });
         this.imageView$delegate = lazy;
         addView(headerCell);
         AppCompatImageView imageView = getImageView();
@@ -44,19 +58,19 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
             TextView textView = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
-            i = AndroidUtilities.m53px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
+            i = AndroidUtilities.m71px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
         } else {
             i = 0;
         }
         if (LocaleController.isRTL) {
-            m53px = 0;
+            m71px = 0;
         } else {
             TextView textView2 = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView2, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams2 = textView2.getLayoutParams();
-            m53px = AndroidUtilities.m53px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
+            m71px = AndroidUtilities.m71px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
         }
-        addView(imageView, LayoutHelper.createFrame(24, 24, i2, i, 0, m53px, 0));
+        addView(imageView, LayoutHelper.createFrame(24, 24, i2, i, 0, m71px, 0));
         setupColors();
     }
 
@@ -76,8 +90,8 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final AppCompatImageView initImageView() {
         AppCompatImageView appCompatImageView = new AppCompatImageView(getContext());
-        int m54dp = AndroidUtilities.m54dp(2);
-        appCompatImageView.setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(2);
+        appCompatImageView.setPadding(m72dp, m72dp, m72dp, m72dp);
         ViewExtKt.gone$default(appCompatImageView, false, 1, null);
         return appCompatImageView;
     }

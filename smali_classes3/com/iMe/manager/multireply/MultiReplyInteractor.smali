@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor\n+ 2 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 SparseArray.kt\nandroidx/core/util/SparseArrayKt\n*L\n1#1,102:1\n20#2:103\n13579#3:104\n13580#3:109\n76#4,4:105\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor\n*L\n33#1:103\n46#1:104\n46#1:109\n47#1:105,4\n*E\n"
+    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor\n+ 2 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 SparseArray.kt\nandroidx/core/util/SparseArrayKt\n*L\n1#1,101:1\n20#2:102\n13579#3:103\n13580#3:108\n76#4,4:104\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/iMe/manager/multireply/MultiReplyInteractor\n*L\n33#1:102\n47#1:103\n47#1:108\n48#1:104,4\n*E\n"
 .end annotation
 
 
@@ -54,7 +54,7 @@
 .method private final addUrlSpan(Landroid/text/SpannableString;Ljava/lang/String;II)V
     .locals 1
 
-    .line 87
+    .line 86
     :try_start_0
     new-instance v0, Lorg/telegram/ui/Components/URLSpanReplacement;
 
@@ -62,7 +62,7 @@
 
     const/16 p2, 0x21
 
-    .line 88
+    .line 87
     invoke-virtual {p1, v0, p3, p4, p2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -72,7 +72,7 @@
     :catch_0
     move-exception p1
 
-    .line 90
+    .line 89
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -93,7 +93,7 @@
 
     if-eqz p5, :cond_1
 
-    .line 85
+    .line 84
     invoke-virtual {p1}, Landroid/text/SpannableString;->length()I
 
     move-result p4
@@ -104,46 +104,10 @@
     return-void
 .end method
 
-.method private final addUserNameSpan(Landroid/text/SpannableString;Ljava/lang/String;)V
-    .locals 3
-
-    .line 96
-    :try_start_0
-    new-instance v0, Lorg/telegram/ui/Components/URLSpanUserMention;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p2, v1}, Lorg/telegram/ui/Components/URLSpanUserMention;-><init>(Ljava/lang/String;I)V
-
-    const/4 p2, 0x0
-
-    .line 97
-    invoke-virtual {p1}, Landroid/text/SpannableString;->length()I
-
-    move-result v1
-
-    const/16 v2, 0x21
-
-    invoke-virtual {p1, v0, p2, v1, v2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 99
-    invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-.end method
-
 .method private final buildMessageLink(Lorg/telegram/messenger/MessageObject;Lcom/iMe/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
     .locals 8
 
-    .line 80
+    .line 79
     new-instance v7, Landroid/text/SpannableString;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -166,7 +130,7 @@
 
     invoke-direct {v7, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 81
+    .line 80
     invoke-virtual {v7}, Landroid/text/SpannableString;->length()I
 
     move-result v0
@@ -221,12 +185,12 @@
 .method private final buildMultiReplyMessageForMessageObject(Lorg/telegram/messenger/MessageObject;Lcom/iMe/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
     .locals 7
 
-    .line 58
+    .line 59
     invoke-direct {p0, p1, p2}, Lcom/iMe/manager/multireply/MultiReplyInteractor;->buildMessageLink(Lorg/telegram/messenger/MessageObject;Lcom/iMe/manager/multireply/message/MessageLinkPattern;)Ljava/lang/CharSequence;
 
     move-result-object p2
 
-    .line 59
+    .line 60
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
 
     move-result v0
@@ -241,7 +205,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 60
+    .line 61
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -266,7 +230,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 62
+    .line 63
     invoke-direct {p0, p1}, Lcom/iMe/manager/multireply/MultiReplyInteractor;->buildSpannableStringUser(Lorg/telegram/tgnet/TLRPC$User;)Landroid/text/SpannableString;
 
     move-result-object p1
@@ -280,19 +244,19 @@
 
     aput-object p2, v0, v1
 
-    .line 61
+    .line 62
     invoke-static {v0}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1
 
     const-string p2, "concat(\n                \u2026messageLink\n            )"
 
-    .line 62
+    .line 63
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 
-    .line 66
+    .line 67
     :cond_1
     iget v0, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -318,7 +282,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 68
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/manager/multireply/MultiReplyInteractor;->buildSpannableStringChat(Lorg/telegram/tgnet/TLRPC$Chat;)Landroid/text/SpannableString;
 
     move-result-object p1
@@ -332,14 +296,14 @@
 
     aput-object p2, v0, v1
 
-    .line 67
+    .line 68
     invoke-static {v0}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1
 
     const-string p2, "concat(\n                \u2026    messageLink\n        )"
 
-    .line 68
+    .line 69
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -348,14 +312,16 @@
 .method private final buildSpannableStringChat(Lorg/telegram/tgnet/TLRPC$Chat;)Landroid/text/SpannableString;
     .locals 2
 
-    .line 77
+    .line 76
     new-instance v0, Landroid/text/SpannableString;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
+    invoke-static {p1}, Lcom/iMe/utils/extentions/model/telegram/UserExtKt;->getPrivacySafeName(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -373,9 +339,9 @@
 .end method
 
 .method private final buildSpannableStringUser(Lorg/telegram/tgnet/TLRPC$User;)Landroid/text/SpannableString;
-    .locals 3
+    .locals 2
 
-    .line 73
+    .line 74
     new-instance v0, Landroid/text/SpannableString;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -384,28 +350,19 @@
 
     invoke-static {p1}, Lcom/iMe/utils/extentions/model/telegram/UserExtKt;->getPrivacySafeName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x3a
+    const/16 p1, 0x3a
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
-
-    .line 74
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
     move-result-object p1
 
-    invoke-direct {p0, v0, p1}, Lcom/iMe/manager/multireply/MultiReplyInteractor;->addUserNameSpan(Landroid/text/SpannableString;Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     return-object v0
 .end method
@@ -519,7 +476,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 46
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -555,7 +512,7 @@
 
     check-cast v7, Lorg/telegram/messenger/MessageObject;
 
-    .line 48
+    .line 49
     invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v6, v6, 0x1

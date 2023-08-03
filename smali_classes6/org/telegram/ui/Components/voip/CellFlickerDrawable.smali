@@ -716,6 +716,22 @@
     return v0
 .end method
 
+.method public setAlpha(I)V
+    .locals 1
+
+    .line 180
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 181
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->paintOutline:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    return-void
+.end method
+
 .method public setColors(III)V
     .locals 22
 

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7374
+    .line 7535
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 7378
+    .line 7539
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -50,7 +50,7 @@
     :cond_0
     move p2, v0
 
-    .line 7379
+    .line 7540
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->apple_signin_allowed:Z
 
@@ -60,7 +60,7 @@
 
     move v0, v1
 
-    .line 7380
+    .line 7541
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
@@ -70,12 +70,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 7384
+    .line 7545
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSetUpEmailRequired;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 7385
+    .line 7546
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->apple_signin_allowed:Z
 
     if-eqz v0, :cond_0
@@ -94,7 +94,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    .line 7386
+    .line 7547
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
     if-eqz v1, :cond_1
@@ -109,7 +109,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    .line 7387
+    .line 7548
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

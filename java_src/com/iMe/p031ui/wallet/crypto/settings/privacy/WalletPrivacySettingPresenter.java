@@ -8,6 +8,7 @@ import com.iMe.storage.domain.interactor.crypto.level.AccountLevelInteractor;
 import com.iMe.storage.domain.interactor.crypto.permission.CryptoPermissionInteractor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
+import com.iMe.storage.domain.utils.extentions.ResultExtKt;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt;
@@ -22,12 +23,16 @@ import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter */
@@ -56,10 +61,32 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
         this.resourceManager = resourceManager;
     }
 
-    public final void savePrivacySettings(ArrayList<Long> prevAllowUsers, ArrayList<Long> allowUsers, int i, int i2, int i3, int i4) {
+    public final void savePrivacySettings(final ArrayList<Long> prevAllowUsers, final ArrayList<Long> allowUsers, final int i, final int i2, final int i3, final int i4) {
         Intrinsics.checkNotNullParameter(prevAllowUsers, "prevAllowUsers");
         Intrinsics.checkNotNullParameter(allowUsers, "allowUsers");
-        final WalletPrivacySettingPresenter$savePrivacySettings$action$1 walletPrivacySettingPresenter$savePrivacySettings$action$1 = new WalletPrivacySettingPresenter$savePrivacySettings$action$1(this, prevAllowUsers, allowUsers, i, i2, i3, i4);
+        final Function0<Unit> function0 = new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$savePrivacySettings$action$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Observable saveWalletAddressSettingsObservable;
+                Observable saveAccountRankSettingsObservable;
+                WalletPrivacySettingPresenter walletPrivacySettingPresenter = WalletPrivacySettingPresenter.this;
+                saveWalletAddressSettingsObservable = walletPrivacySettingPresenter.saveWalletAddressSettingsObservable(prevAllowUsers, allowUsers, i, i2);
+                saveAccountRankSettingsObservable = WalletPrivacySettingPresenter.this.saveAccountRankSettingsObservable(i3, i4);
+                walletPrivacySettingPresenter.saveSettings(saveWalletAddressSettingsObservable, saveAccountRankSettingsObservable);
+            }
+        };
         if (i != i2 && i2 == 0) {
             ((WalletPrivacySettingsView) getViewState()).showConfirmDialog(getEverybodyWarningDialogModel(), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -68,7 +95,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 }
             });
         } else {
-            walletPrivacySettingPresenter$savePrivacySettings$action$1.invoke();
+            function0.invoke();
         }
     }
 
@@ -89,7 +116,19 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     private final void loadPrivacySettings() {
         Observable<Result<CryptoWalletsInfo>> walletAddressSettingsObservable = getWalletAddressSettingsObservable();
         Observable<Result<Boolean>> accountRankSettingsObservable = getAccountRankSettingsObservable();
-        final WalletPrivacySettingPresenter$loadPrivacySettings$1 walletPrivacySettingPresenter$loadPrivacySettings$1 = WalletPrivacySettingPresenter$loadPrivacySettings$1.INSTANCE;
+        final WalletPrivacySettingPresenter$loadPrivacySettings$1 walletPrivacySettingPresenter$loadPrivacySettings$1 = new Function2<Result<? extends CryptoWalletsInfo>, Result<? extends Boolean>, Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$loadPrivacySettings$1
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> invoke(Result<? extends CryptoWalletsInfo> result, Result<? extends Boolean> result2) {
+                return invoke2((Result<CryptoWalletsInfo>) result, (Result<Boolean>) result2);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Pair<Result<CryptoWalletsInfo>, Result<Boolean>> invoke2(Result<CryptoWalletsInfo> walletAddressResult, Result<Boolean> accountRankResult) {
+                Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
+                Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
+                return TuplesKt.m103to(walletAddressResult, accountRankResult);
+            }
+        };
         Observable observeOn = Observable.zip(walletAddressSettingsObservable, accountRankSettingsObservable, new BiFunction() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.BiFunction
             public final Object apply(Object obj, Object obj2) {
@@ -97,11 +136,68 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 loadPrivacySettings$lambda$1 = WalletPrivacySettingPresenter.loadPrivacySettings$lambda$1(Function2.this, obj, obj2);
                 return loadPrivacySettings$lambda$1;
             }
-        }).observeOn(this.schedulersProvider.mo698ui());
+        }).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(getWalletAddressSett…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2193xca859c2b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2194xca859c2c((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$loadPrivacySettings$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> pair) {
+                m1464invoke(pair);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1464invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
+                int resolveAccessTypeBy;
+                int resolveAccessTypeBy2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> pair = it;
+                if (pair.getFirst().isSuccess() && pair.getSecond().isSuccess()) {
+                    CryptoWalletsInfo data = pair.getFirst().getData();
+                    Intrinsics.checkNotNull(data);
+                    List<Long> allowedUsers = data.getAllowedUsers();
+                    WalletPrivacySettingPresenter walletPrivacySettingPresenter = WalletPrivacySettingPresenter.this;
+                    CryptoWalletsInfo data2 = pair.getFirst().getData();
+                    Intrinsics.checkNotNull(data2);
+                    resolveAccessTypeBy = walletPrivacySettingPresenter.resolveAccessTypeBy(data2.isVisible());
+                    WalletPrivacySettingPresenter walletPrivacySettingPresenter2 = WalletPrivacySettingPresenter.this;
+                    Boolean data3 = pair.getSecond().getData();
+                    Intrinsics.checkNotNull(data3);
+                    resolveAccessTypeBy2 = walletPrivacySettingPresenter2.resolveAccessTypeBy(data3.booleanValue());
+                    ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessLoadPrivacySettings(allowedUsers, resolveAccessTypeBy, resolveAccessTypeBy2);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$loadPrivacySettings$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -114,7 +210,21 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void saveSettings(Observable<Result<Boolean>> observable, Observable<Result<Boolean>> observable2) {
-        final WalletPrivacySettingPresenter$saveSettings$1 walletPrivacySettingPresenter$saveSettings$1 = WalletPrivacySettingPresenter$saveSettings$1.INSTANCE;
+        final WalletPrivacySettingPresenter$saveSettings$1 walletPrivacySettingPresenter$saveSettings$1 = new Function2<Result<? extends Boolean>, Result<? extends Boolean>, List<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$1
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ List<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result, Result<? extends Boolean> result2) {
+                return invoke2((Result<Boolean>) result, (Result<Boolean>) result2);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final List<Result<Boolean>> invoke2(Result<Boolean> walletAddressResult, Result<Boolean> accountRankResult) {
+                List<Result<Boolean>> listOf;
+                Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
+                Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
+                listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Result[]{walletAddressResult, accountRankResult});
+                return listOf;
+            }
+        };
         Observable observeOn = Observable.zip(observable, observable2, new BiFunction() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.BiFunction
             public final Object apply(Object obj, Object obj2) {
@@ -122,11 +232,54 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 saveSettings$lambda$3 = WalletPrivacySettingPresenter.saveSettings$lambda$3(Function2.this, obj, obj2);
                 return saveSettings$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo698ui());
+        }).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(walletAddressObserva…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2196x708bde00(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2197x708bde01((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<List<? extends Result<? extends Boolean>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(List<? extends Result<? extends Boolean>> list) {
+                m1465invoke(list);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1465invoke(List<? extends Result<? extends Boolean>> it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                if (ResultExtKt.isAllSuccess(it)) {
+                    ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessSaveCryptoSettings();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -138,11 +291,27 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final Observable<Result<CryptoWalletsInfo>> getWalletAddressSettingsObservable() {
-        Observable<Result<CryptoWalletsInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<CryptoWalletsInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2192x78f2e5da((BaseView) viewState, this.resourceManager)));
+        final BaseView baseView = (BaseView) viewState;
+        final ResourceManager resourceManager = this.resourceManager;
+        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends CryptoWalletsInfo>, Result<? extends CryptoWalletsInfo>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$getWalletAddressSettingsObservable$$inlined$mapResultWithDefaultErrorHandle$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<? extends CryptoWalletsInfo> invoke(Result<? extends CryptoWalletsInfo> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (result instanceof Result.Error) {
+                    BaseView.this.showErrorToast((Result.Error) result, resourceManager);
+                }
+                return result;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
         return map;
     }
@@ -151,16 +320,77 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
         Observable scheduleIO = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.getLevelVisibility());
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable<Result<Boolean>> map = scheduleIO.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2191x14057a9c((BaseView) viewState, this.resourceManager)));
+        final BaseView baseView = (BaseView) viewState;
+        final ResourceManager resourceManager = this.resourceManager;
+        Observable<Result<Boolean>> map = scheduleIO.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$getAccountRankSettingsObservable$$inlined$mapResultWithDefaultErrorHandle$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<? extends Boolean> invoke(Result<? extends Boolean> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (result instanceof Result.Error) {
+                    BaseView.this.showErrorToast((Result.Error) result, resourceManager);
+                }
+                return result;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
         return map;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<Boolean>> saveWalletAddressSettingsObservable(ArrayList<Long> arrayList, ArrayList<Long> arrayList2, int i, int i2) {
+    public final Observable<Result<Boolean>> saveWalletAddressSettingsObservable(ArrayList<Long> arrayList, final ArrayList<Long> arrayList2, int i, final int i2) {
         Observable just = Observable.just(Boolean.valueOf((i == i2 && Intrinsics.areEqual(arrayList, arrayList2)) ? false : true));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-        final C2200x88ce73d4 c2200x88ce73d4 = new C2200x88ce73d4(this, i2, arrayList2);
+        final Function1<Boolean, ObservableSource<? extends Result<? extends Boolean>>> function1 = new Function1<Boolean, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveWalletAddressSettingsObservable$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<Boolean>> invoke(Boolean isNeedChange) {
+                CryptoPermissionInteractor cryptoPermissionInteractor;
+                SchedulersProvider schedulersProvider;
+                final ResourceManager resourceManager;
+                Intrinsics.checkNotNullParameter(isNeedChange, "isNeedChange");
+                if (!isNeedChange.booleanValue()) {
+                    Observable just2 = Observable.just(Result.Companion.success(Boolean.TRUE));
+                    Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                    return just2;
+                }
+                cryptoPermissionInteractor = WalletPrivacySettingPresenter.this.cryptoPermissionInteractor;
+                Observable<Result<Boolean>> manageCryptoPrivacySettings = cryptoPermissionInteractor.manageCryptoPrivacySettings(i2 == 0, arrayList2);
+                schedulersProvider = WalletPrivacySettingPresenter.this.schedulersProvider;
+                Observable<Result<Boolean>> observeOn = manageCryptoPrivacySettings.observeOn(schedulersProvider.mo716ui());
+                Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
+                T viewState = WalletPrivacySettingPresenter.this.getViewState();
+                Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                final BaseView baseView = (BaseView) viewState;
+                resourceManager = WalletPrivacySettingPresenter.this.resourceManager;
+                ObservableSource map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveWalletAddressSettingsObservable$1$invoke$$inlined$mapResultWithDefaultErrorHandle$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Result<? extends Boolean> invoke(Result<? extends Boolean> result) {
+                        Intrinsics.checkNotNullParameter(result, "result");
+                        if (result instanceof Result.Error) {
+                            BaseView.this.showErrorToast((Result.Error) result, resourceManager);
+                        }
+                        return result;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+                return map;
+            }
+        };
         Observable<Result<Boolean>> flatMap = just.flatMap(new Function() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -180,11 +410,56 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<Boolean>> saveAccountRankSettingsObservable(int i, int i2) {
+    public final Observable<Result<Boolean>> saveAccountRankSettingsObservable(int i, final int i2) {
         Observable just = Observable.just(Boolean.valueOf(i != i2));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         Observable scheduleIO = SchedulersExtKt.scheduleIO(just);
-        final C2199x1efe2092 c2199x1efe2092 = new C2199x1efe2092(this, i2);
+        final Function1<Boolean, ObservableSource<? extends Result<? extends Boolean>>> function1 = new Function1<Boolean, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveAccountRankSettingsObservable$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<Boolean>> invoke(Boolean isNeedChange) {
+                AccountLevelInteractor accountLevelInteractor;
+                SchedulersProvider schedulersProvider;
+                final ResourceManager resourceManager;
+                Intrinsics.checkNotNullParameter(isNeedChange, "isNeedChange");
+                if (!isNeedChange.booleanValue()) {
+                    Observable just2 = Observable.just(Result.Companion.success(Boolean.TRUE));
+                    Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                    return just2;
+                }
+                accountLevelInteractor = WalletPrivacySettingPresenter.this.accountLevelInteractor;
+                Observable<Result<Boolean>> changeLevelVisibility = accountLevelInteractor.changeLevelVisibility(i2 == 0);
+                schedulersProvider = WalletPrivacySettingPresenter.this.schedulersProvider;
+                Observable<Result<Boolean>> observeOn = changeLevelVisibility.observeOn(schedulersProvider.mo716ui());
+                Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
+                T viewState = WalletPrivacySettingPresenter.this.getViewState();
+                Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                final BaseView baseView = (BaseView) viewState;
+                resourceManager = WalletPrivacySettingPresenter.this.resourceManager;
+                ObservableSource map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveAccountRankSettingsObservable$1$invoke$$inlined$mapResultWithDefaultErrorHandle$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Result<? extends Boolean> invoke(Result<? extends Boolean> result) {
+                        Intrinsics.checkNotNullParameter(result, "result");
+                        if (result instanceof Result.Error) {
+                            BaseView.this.showErrorToast((Result.Error) result, resourceManager);
+                        }
+                        return result;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+                return map;
+            }
+        };
         Observable<Result<Boolean>> flatMap = scheduleIO.flatMap(new Function() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -204,6 +479,6 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3417R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3419R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.common_confirm));
     }
 }

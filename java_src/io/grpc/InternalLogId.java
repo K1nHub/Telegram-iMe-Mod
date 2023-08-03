@@ -9,7 +9,7 @@ public final class InternalLogId {
     private final String details;
 
     /* renamed from: id */
-    private final long f512id;
+    private final long f515id;
     private final String typeName;
 
     public static InternalLogId allocate(Class<?> cls, String str) {
@@ -29,11 +29,11 @@ public final class InternalLogId {
         Preconditions.checkArgument(!str.isEmpty(), "empty type");
         this.typeName = str;
         this.details = str2;
-        this.f512id = j;
+        this.f515id = j;
     }
 
     public long getId() {
-        return this.f512id;
+        return this.f515id;
     }
 
     public String toString() {
@@ -53,6 +53,6 @@ public final class InternalLogId {
     }
 
     public String shortName() {
-        return this.typeName + "<" + this.f512id + ">";
+        return this.typeName + "<" + this.f515id + ">";
     }
 }

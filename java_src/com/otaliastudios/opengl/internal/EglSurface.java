@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EglSurface {
 
     /* renamed from: native  reason: not valid java name */
-    private final EGLSurface f1921native;
+    private final EGLSurface f1977native;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EglSurface) && Intrinsics.areEqual(this.f1921native, ((EglSurface) obj).f1921native);
+        return (obj instanceof EglSurface) && Intrinsics.areEqual(this.f1977native, ((EglSurface) obj).f1977native);
     }
 
     public int hashCode() {
-        EGLSurface eGLSurface = this.f1921native;
+        EGLSurface eGLSurface = this.f1977native;
         if (eGLSurface == null) {
             return 0;
         }
@@ -25,14 +25,14 @@ public final class EglSurface {
     }
 
     public String toString() {
-        return "EglSurface(native=" + this.f1921native + ')';
+        return "EglSurface(native=" + this.f1977native + ')';
     }
 
     public EglSurface(EGLSurface eGLSurface) {
-        this.f1921native = eGLSurface;
+        this.f1977native = eGLSurface;
     }
 
     public final EGLSurface getNative() {
-        return this.f1921native;
+        return this.f1977native;
     }
 }

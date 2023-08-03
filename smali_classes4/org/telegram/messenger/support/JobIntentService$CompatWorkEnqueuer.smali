@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/support/JobIntentService$CompatWorkEnqueuer;->mContext:Landroid/content/Context;
 
-    const-string v0, "power"
+    const-string/jumbo v0, "power"
 
     .line 119
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;

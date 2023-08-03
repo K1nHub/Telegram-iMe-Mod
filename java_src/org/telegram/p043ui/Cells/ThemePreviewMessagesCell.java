@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.utils.Callbacks$Callback;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -68,7 +68,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
 
     public ThemePreviewMessagesCell(Context context, INavigationLayout iNavigationLayout, int i) {
         super(context);
-        int i2;
         MessageObject messageObject;
         MessageObject messageObject2;
         new Runnable() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$$ExternalSyntheticLambda0
@@ -79,73 +78,68 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         };
         this.cells = new ChatMessageCell[2];
         this.type = i;
-        int i3 = UserConfig.selectedAccount;
+        int i2 = UserConfig.selectedAccount;
         this.parentLayout = iNavigationLayout;
         setWillNotDraw(false);
         setOrientation(1);
-        setPadding(0, AndroidUtilities.m54dp(11), 0, AndroidUtilities.m54dp(11));
-        this.shadowDrawable = Theme.getThemedDrawableByKey(context, C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow);
+        setPadding(0, AndroidUtilities.m72dp(11), 0, AndroidUtilities.m72dp(11));
+        this.shadowDrawable = Theme.getThemedDrawableByKey(context, C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow);
         int currentTimeMillis = ((int) (System.currentTimeMillis() / 1000)) - 3600;
         if (i == 2) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-            tLRPC$TL_message.message = LocaleController.getString("DoubleTapPreviewMessage", C3417R.string.DoubleTapPreviewMessage);
+            tLRPC$TL_message.message = LocaleController.getString("DoubleTapPreviewMessage", C3419R.string.DoubleTapPreviewMessage);
             tLRPC$TL_message.date = currentTimeMillis + 60;
             tLRPC$TL_message.dialog_id = 1L;
             tLRPC$TL_message.flags = 259;
             TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
             tLRPC$TL_message.from_id = tLRPC$TL_peerUser;
             tLRPC$TL_peerUser.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
-            tLRPC$TL_message.f1539id = 1;
+            tLRPC$TL_message.f1542id = 1;
             tLRPC$TL_message.media = new TLRPC$TL_messageMediaEmpty();
             tLRPC$TL_message.out = false;
             TLRPC$TL_peerUser tLRPC$TL_peerUser2 = new TLRPC$TL_peerUser();
             tLRPC$TL_message.peer_id = tLRPC$TL_peerUser2;
             tLRPC$TL_peerUser2.user_id = 0L;
-            MessageObject messageObject3 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message, true, false);
-            messageObject3.resetLayout();
-            messageObject3.eventId = 1L;
-            messageObject3.customName = LocaleController.getString("DoubleTapPreviewSenderName", C3417R.string.DoubleTapPreviewSenderName);
-            messageObject3.customAvatarDrawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.dino_pic);
-            messageObject = messageObject3;
-            i2 = i3;
+            messageObject = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message, true, false);
+            messageObject.resetLayout();
+            messageObject.eventId = 1L;
+            messageObject.customName = LocaleController.getString("DoubleTapPreviewSenderName", C3419R.string.DoubleTapPreviewSenderName);
+            messageObject.customAvatarDrawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.dino_pic);
             messageObject2 = null;
         } else {
             TLRPC$TL_message tLRPC$TL_message2 = new TLRPC$TL_message();
             if (i == 0) {
-                tLRPC$TL_message2.message = LocaleController.getString("FontSizePreviewReply", C3417R.string.FontSizePreviewReply);
+                tLRPC$TL_message2.message = LocaleController.getString("FontSizePreviewReply", C3419R.string.FontSizePreviewReply);
             } else {
-                tLRPC$TL_message2.message = LocaleController.getString("NewThemePreviewReply", C3417R.string.NewThemePreviewReply);
+                tLRPC$TL_message2.message = LocaleController.getString("NewThemePreviewReply", C3419R.string.NewThemePreviewReply);
             }
             int indexOf = tLRPC$TL_message2.message.indexOf("👋");
             if (indexOf >= 0) {
                 TLRPC$TL_messageEntityCustomEmoji tLRPC$TL_messageEntityCustomEmoji = new TLRPC$TL_messageEntityCustomEmoji();
                 tLRPC$TL_messageEntityCustomEmoji.offset = indexOf;
                 tLRPC$TL_messageEntityCustomEmoji.length = 2;
-                i2 = i3;
                 tLRPC$TL_messageEntityCustomEmoji.document_id = 5386654653003864312L;
                 tLRPC$TL_message2.entities.add(tLRPC$TL_messageEntityCustomEmoji);
-            } else {
-                i2 = i3;
             }
-            int i4 = currentTimeMillis + 60;
-            tLRPC$TL_message2.date = i4;
+            int i3 = currentTimeMillis + 60;
+            tLRPC$TL_message2.date = i3;
             tLRPC$TL_message2.dialog_id = 1L;
             tLRPC$TL_message2.flags = 259;
             TLRPC$TL_peerUser tLRPC$TL_peerUser3 = new TLRPC$TL_peerUser();
             tLRPC$TL_message2.from_id = tLRPC$TL_peerUser3;
             tLRPC$TL_peerUser3.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
-            tLRPC$TL_message2.f1539id = 1;
+            tLRPC$TL_message2.f1542id = 1;
             tLRPC$TL_message2.media = new TLRPC$TL_messageMediaEmpty();
             tLRPC$TL_message2.out = true;
             TLRPC$TL_peerUser tLRPC$TL_peerUser4 = new TLRPC$TL_peerUser();
             tLRPC$TL_message2.peer_id = tLRPC$TL_peerUser4;
             tLRPC$TL_peerUser4.user_id = 0L;
-            MessageObject messageObject4 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message2, true, false);
+            MessageObject messageObject3 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message2, true, false);
             TLRPC$TL_message tLRPC$TL_message3 = new TLRPC$TL_message();
             if (i == 0) {
-                tLRPC$TL_message3.message = LocaleController.getString("FontSizePreviewLine2", C3417R.string.FontSizePreviewLine2);
+                tLRPC$TL_message3.message = LocaleController.getString("FontSizePreviewLine2", C3419R.string.FontSizePreviewLine2);
             } else {
-                String string = LocaleController.getString("NewThemePreviewLine3", C3417R.string.NewThemePreviewLine3);
+                String string = LocaleController.getString("NewThemePreviewLine3", C3419R.string.NewThemePreviewLine3);
                 StringBuilder sb = new StringBuilder(string);
                 int indexOf2 = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
@@ -174,26 +168,26 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             TLRPC$TL_peerUser tLRPC$TL_peerUser5 = new TLRPC$TL_peerUser();
             tLRPC$TL_message3.from_id = tLRPC$TL_peerUser5;
             tLRPC$TL_peerUser5.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
-            tLRPC$TL_message3.f1539id = 1;
+            tLRPC$TL_message3.f1542id = 1;
             tLRPC$TL_message3.media = new TLRPC$TL_messageMediaEmpty();
             tLRPC$TL_message3.out = true;
             TLRPC$TL_peerUser tLRPC$TL_peerUser6 = new TLRPC$TL_peerUser();
             tLRPC$TL_message3.peer_id = tLRPC$TL_peerUser6;
             tLRPC$TL_peerUser6.user_id = 0L;
-            MessageObject messageObject5 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message3, true, false);
-            messageObject5.resetLayout();
-            messageObject5.eventId = 1L;
+            messageObject = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message3, true, false);
+            messageObject.resetLayout();
+            messageObject.eventId = 1L;
             TLRPC$TL_message tLRPC$TL_message4 = new TLRPC$TL_message();
             if (i == 0) {
-                tLRPC$TL_message4.message = LocaleController.getString("FontSizePreviewLine1", C3417R.string.FontSizePreviewLine1);
+                tLRPC$TL_message4.message = LocaleController.getString("FontSizePreviewLine1", C3419R.string.FontSizePreviewLine1);
             } else {
-                tLRPC$TL_message4.message = LocaleController.getString("NewThemePreviewLine1", C3417R.string.NewThemePreviewLine1);
+                tLRPC$TL_message4.message = LocaleController.getString("NewThemePreviewLine1", C3419R.string.NewThemePreviewLine1);
             }
-            tLRPC$TL_message4.date = i4;
+            tLRPC$TL_message4.date = i3;
             tLRPC$TL_message4.dialog_id = 1L;
             tLRPC$TL_message4.flags = 265;
             tLRPC$TL_message4.from_id = new TLRPC$TL_peerUser();
-            tLRPC$TL_message4.f1539id = 1;
+            tLRPC$TL_message4.f1542id = 1;
             TLRPC$TL_messageReplyHeader tLRPC$TL_messageReplyHeader = new TLRPC$TL_messageReplyHeader();
             tLRPC$TL_message4.reply_to = tLRPC$TL_messageReplyHeader;
             tLRPC$TL_messageReplyHeader.reply_to_msg_id = 5;
@@ -202,61 +196,58 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             TLRPC$TL_peerUser tLRPC$TL_peerUser7 = new TLRPC$TL_peerUser();
             tLRPC$TL_message4.peer_id = tLRPC$TL_peerUser7;
             tLRPC$TL_peerUser7.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
-            MessageObject messageObject6 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message4, true, false);
+            messageObject2 = new MessageObject(UserConfig.selectedAccount, tLRPC$TL_message4, true, false);
             if (i == 0) {
-                messageObject6.customReplyName = LocaleController.getString("FontSizePreviewName", C3417R.string.FontSizePreviewName);
+                messageObject2.customReplyName = LocaleController.getString("FontSizePreviewName", C3419R.string.FontSizePreviewName);
             } else {
-                messageObject6.customReplyName = LocaleController.getString("NewThemePreviewName", C3417R.string.NewThemePreviewName);
+                messageObject2.customReplyName = LocaleController.getString("NewThemePreviewName", C3419R.string.NewThemePreviewName);
             }
-            messageObject6.eventId = 1L;
-            messageObject6.resetLayout();
-            messageObject6.replyMessageObject = messageObject4;
-            messageObject = messageObject5;
-            messageObject2 = messageObject6;
+            messageObject2.eventId = 1L;
+            messageObject2.resetLayout();
+            messageObject2.replyMessageObject = messageObject3;
         }
-        int i5 = 0;
+        int i4 = 0;
         while (true) {
             ChatMessageCell[] chatMessageCellArr = this.cells;
-            if (i5 >= chatMessageCellArr.length) {
+            if (i4 >= chatMessageCellArr.length) {
                 return;
             }
-            chatMessageCellArr[i5] = new ChatMessageCell(context, context, i2, i) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1
+            chatMessageCellArr[i4] = new ChatMessageCell(context, context, i) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1
                 private GestureDetector gestureDetector;
                 final /* synthetic */ Context val$context;
-                final /* synthetic */ int val$currentAccount;
                 final /* synthetic */ int val$type;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* renamed from: org.telegram.ui.Cells.ThemePreviewMessagesCell$1$1 */
                 /* loaded from: classes5.dex */
-                public class C38361 extends GestureDetector.SimpleOnGestureListener {
-                    C38361() {
+                public class C38471 extends GestureDetector.SimpleOnGestureListener {
+                    C38471() {
                     }
 
                     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
                     public boolean onDoubleTap(MotionEvent motionEvent) {
-                        if (MediaDataController.getInstance(C38351.this.val$currentAccount).getDoubleTapReaction() == null) {
+                        if (MediaDataController.getInstance(C38461.this.currentAccount).getDoubleTapReaction() == null) {
                             return false;
                         }
-                        boolean selectReaction = getMessageObject().selectReaction(ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(C38351.this.val$currentAccount).getDoubleTapReaction()), false, false);
-                        C38351 c38351 = C38351.this;
-                        c38351.setMessageObject(c38351.getMessageObject(), null, false, false);
+                        boolean selectReaction = getMessageObject().selectReaction(ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(C38461.this.currentAccount).getDoubleTapReaction()), false, false);
+                        C38461 c38461 = C38461.this;
+                        c38461.setMessageObject(c38461.getMessageObject(), null, false, false);
                         requestLayout();
                         ReactionsEffectOverlay.removeCurrent(false);
                         if (selectReaction) {
                             ThemePreviewMessagesCell themePreviewMessagesCell = ThemePreviewMessagesCell.this;
-                            ReactionsEffectOverlay.show(themePreviewMessagesCell.fragment, null, themePreviewMessagesCell.cells[1], null, motionEvent.getX(), motionEvent.getY(), ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(C38351.this.val$currentAccount).getDoubleTapReaction()), C38351.this.val$currentAccount, 0);
+                            ReactionsEffectOverlay.show(themePreviewMessagesCell.fragment, null, themePreviewMessagesCell.cells[1], null, motionEvent.getX(), motionEvent.getY(), ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(C38461.this.currentAccount).getDoubleTapReaction()), C38461.this.currentAccount, 0);
                             ReactionsEffectOverlay.startAnimation();
                         }
-                        getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC38371());
+                        getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC38481());
                         return true;
                     }
 
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* renamed from: org.telegram.ui.Cells.ThemePreviewMessagesCell$1$1$1 */
                     /* loaded from: classes5.dex */
-                    public class ViewTreeObserver$OnPreDrawListenerC38371 implements ViewTreeObserver.OnPreDrawListener {
-                        ViewTreeObserver$OnPreDrawListenerC38371() {
+                    public class ViewTreeObserver$OnPreDrawListenerC38481 implements ViewTreeObserver.OnPreDrawListener {
+                        ViewTreeObserver$OnPreDrawListenerC38481() {
                         }
 
                         @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -270,7 +261,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell$1$1$1$$ExternalSyntheticLambda0
                                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                    ThemePreviewMessagesCell.C38351.C38361.ViewTreeObserver$OnPreDrawListenerC38371.this.lambda$onPreDraw$0(valueAnimator);
+                                    ThemePreviewMessagesCell.C38461.C38471.ViewTreeObserver$OnPreDrawListenerC38481.this.lambda$onPreDraw$0(valueAnimator);
                                 }
                             });
                             ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.1.1.1.1
@@ -296,9 +287,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
 
                 {
                     this.val$context = context;
-                    this.val$currentAccount = i2;
                     this.val$type = i;
-                    this.gestureDetector = new GestureDetector(context, new C38361());
+                    this.gestureDetector = new GestureDetector(context, new C38471());
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell, android.view.View
@@ -310,7 +300,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 @Override // android.view.ViewGroup, android.view.View
                 protected void dispatchDraw(Canvas canvas) {
                     if (getAvatarImage() != null && getAvatarImage().getImageHeight() != BitmapDescriptorFactory.HUE_RED) {
-                        getAvatarImage().setImageCoords(getAvatarImage().getImageX(), (getMeasuredHeight() - getAvatarImage().getImageHeight()) - AndroidUtilities.m54dp(4), getAvatarImage().getImageWidth(), getAvatarImage().getImageHeight());
+                        getAvatarImage().setImageCoords(getAvatarImage().getImageX(), (getMeasuredHeight() - getAvatarImage().getImageHeight()) - AndroidUtilities.m72dp(4), getAvatarImage().getImageWidth(), getAvatarImage().getImageHeight());
                         getAvatarImage().setRoundRadius((int) (getAvatarImage().getImageHeight() / 2.0f));
                         getAvatarImage().draw(canvas);
                     } else if (this.val$type == 2) {
@@ -319,7 +309,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     super.dispatchDraw(canvas);
                 }
             };
-            this.cells[i5].setDelegate(new ChatMessageCell.ChatMessageCellDelegate(this) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.2
+            this.cells[i4].setDelegate(new ChatMessageCell.ChatMessageCellDelegate(this) { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.2
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
                     return ChatMessageCell.ChatMessageCellDelegate.CC.$default$canDrawOutboundsContent(this);
@@ -341,13 +331,13 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell, TLRPC$Chat tLRPC$Chat, int i6, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$didLongPressChannelAvatar(this, chatMessageCell, tLRPC$Chat, i6, f, f2);
+                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell, TLRPC$Chat tLRPC$Chat, int i5, float f, float f2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$didLongPressChannelAvatar(this, chatMessageCell, tLRPC$Chat, i5, f, f2);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressUserAvatar(ChatMessageCell chatMessageCell, TLRPC$User tLRPC$User, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$didLongPressUserAvatar(this, chatMessageCell, tLRPC$User, f, f2);
+                public /* synthetic */ boolean didLongPressUserAvatar(ChatMessageCell chatMessageCell, TLRPC$User tLRPC$User, float f, float f2, boolean z) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$didLongPressUserAvatar(this, chatMessageCell, tLRPC$User, f, f2, z);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -371,8 +361,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell, TLRPC$Chat tLRPC$Chat, int i6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressChannelAvatar(this, chatMessageCell, tLRPC$Chat, i6, f, f2);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell, TLRPC$Chat tLRPC$Chat, int i5, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressChannelAvatar(this, chatMessageCell, tLRPC$Chat, i5, f, f2);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -396,8 +386,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell, int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressHint(this, chatMessageCell, i6);
+                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell, int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressHint(this, chatMessageCell, i5);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -406,8 +396,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell, int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressInstantButton(this, chatMessageCell, i6);
+                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell, int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressInstantButton(this, chatMessageCell, i5);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -421,8 +411,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell, int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressReplyMessage(this, chatMessageCell, i6);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell, int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressReplyMessage(this, chatMessageCell, i5);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -461,13 +451,13 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell, ArrayList arrayList, int i6, int i7, int i8) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressVoteButtons(this, chatMessageCell, arrayList, i6, i7, i8);
+                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell, ArrayList arrayList, int i5, int i6, int i7) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didPressVoteButtons(this, chatMessageCell, arrayList, i5, i6, i7);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didStartVideoStream(MessageObject messageObject7) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didStartVideoStream(this, messageObject7);
+                public /* synthetic */ void didStartVideoStream(MessageObject messageObject4) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$didStartVideoStream(this, messageObject4);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -521,8 +511,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell, int i6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$isProgressLoading(this, chatMessageCell, i6);
+                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell, int i5) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$isProgressLoading(this, chatMessageCell, i5);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -541,13 +531,13 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needOpenWebView(MessageObject messageObject7, String str, String str2, String str3, String str4, int i6, int i7) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$needOpenWebView(this, messageObject7, str, str2, str3, str4, i6, i7);
+                public /* synthetic */ void needOpenWebView(MessageObject messageObject4, String str, String str2, String str3, String str4, int i5, int i6) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$needOpenWebView(this, messageObject4, str, str2, str3, str4, i5, i6);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean needPlayMessage(MessageObject messageObject7, boolean z) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$needPlayMessage(this, messageObject7, z);
+                public /* synthetic */ boolean needPlayMessage(MessageObject messageObject4, boolean z) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$needPlayMessage(this, messageObject4, z);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -556,13 +546,13 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needShowPremiumBulletin(int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$needShowPremiumBulletin(this, i6);
+                public /* synthetic */ void needShowPremiumBulletin(int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$needShowPremiumBulletin(this, i5);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean onAccessibilityAction(int i6, Bundle bundle) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$onAccessibilityAction(this, i6, bundle);
+                public /* synthetic */ boolean onAccessibilityAction(int i5, Bundle bundle) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$onAccessibilityAction(this, i5, bundle);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -576,8 +566,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void setShouldNotRepeatSticker(MessageObject messageObject7) {
-                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$setShouldNotRepeatSticker(this, messageObject7);
+                public /* synthetic */ void setShouldNotRepeatSticker(MessageObject messageObject4) {
+                    ChatMessageCell.ChatMessageCellDelegate.CC.$default$setShouldNotRepeatSticker(this, messageObject4);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -586,8 +576,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldRepeatSticker(MessageObject messageObject7) {
-                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$shouldRepeatSticker(this, messageObject7);
+                public /* synthetic */ boolean shouldRepeatSticker(MessageObject messageObject4) {
+                    return ChatMessageCell.ChatMessageCellDelegate.CC.$default$shouldRepeatSticker(this, messageObject4);
                 }
 
                 @Override // org.telegram.p043ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -601,14 +591,14 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 }
             });
             ChatMessageCell[] chatMessageCellArr2 = this.cells;
-            chatMessageCellArr2[i5].isChat = i == 2;
-            chatMessageCellArr2[i5].setFullyDraw(true);
-            MessageObject messageObject7 = i5 == 0 ? messageObject2 : messageObject;
-            if (messageObject7 != null) {
-                this.cells[i5].setMessageObject(messageObject7, null, false, false);
-                addView(this.cells[i5], LayoutHelper.createLinear(-1, -2));
+            chatMessageCellArr2[i4].isChat = i == 2;
+            chatMessageCellArr2[i4].setFullyDraw(true);
+            MessageObject messageObject4 = i4 == 0 ? messageObject2 : messageObject;
+            if (messageObject4 != null) {
+                this.cells[i4].setMessageObject(messageObject4, null, false, false);
+                addView(this.cells[i4], LayoutHelper.createLinear(-1, -2));
             }
-            i5++;
+            i4++;
         }
     }
 

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/provider/FontsContractCompat$FontRequestCallback;,
+        Landroidx/core/provider/FontsContractCompat$FontInfo;,
         Landroidx/core/provider/FontsContractCompat$FontFamilyResult;,
-        Landroidx/core/provider/FontsContractCompat$FontInfo;
+        Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
     }
 .end annotation
 

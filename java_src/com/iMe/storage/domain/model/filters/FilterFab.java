@@ -6,8 +6,10 @@ import com.iMe.storage.data.utils.extentions.GsonExtKt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsJvmKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -23,7 +25,8 @@ public enum FilterFab {
     MUSIC,
     ALBUMS,
     CREATE_ALBUM,
-    CLEAR_DRAFTS;
+    CLEAR_DRAFTS,
+    CREATE_STORY;
     
     public static final Companion Companion = new Companion(null);
 
@@ -74,7 +77,7 @@ public enum FilterFab {
         return Companion.mapEnumsToNames(set);
     }
 
-    public static final Set<FilterFab> mapNamesToEnums(Set<String> set) {
+    public static final SortedSet<FilterFab> mapNamesToEnums(Set<String> set) {
         return Companion.mapNamesToEnums(set);
     }
 
@@ -195,9 +198,9 @@ public enum FilterFab {
             return mutableSet;
         }
 
-        public final Set<FilterFab> mapNamesToEnums(Set<String> set) {
+        public final SortedSet<FilterFab> mapNamesToEnums(Set<String> set) {
             List list;
-            Set<FilterFab> mutableSet;
+            SortedSet<FilterFab> sortedSet;
             int collectionSizeOrDefault;
             if (set != null) {
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(set, 10);
@@ -211,8 +214,8 @@ public enum FilterFab {
             if (list == null) {
                 list = CollectionsKt__CollectionsKt.emptyList();
             }
-            mutableSet = CollectionsKt___CollectionsKt.toMutableSet(list);
-            return mutableSet;
+            sortedSet = CollectionsKt___CollectionsJvmKt.toSortedSet(list);
+            return sortedSet;
         }
     }
 }

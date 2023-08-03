@@ -28,7 +28,7 @@ public abstract class Representation {
     public abstract RangedUri getIndexUri();
 
     public static Representation newInstance(long j, Format format, List<BaseUrl> list, SegmentBase segmentBase) {
-        return newInstance(j, format, list, segmentBase, null, ImmutableList.m744of(), ImmutableList.m744of(), null);
+        return newInstance(j, format, list, segmentBase, null, ImmutableList.m762of(), ImmutableList.m762of(), null);
     }
 
     public static Representation newInstance(long j, Format format, List<BaseUrl> list, SegmentBase segmentBase, List<Descriptor> list2, List<Descriptor> list3, List<Descriptor> list4, String str) {
@@ -72,7 +72,7 @@ public abstract class Representation {
         public final Uri uri;
 
         public static SingleSegmentRepresentation newInstance(long j, Format format, String str, long j2, long j3, long j4, long j5, List<Descriptor> list, String str2, long j6) {
-            return new SingleSegmentRepresentation(j, format, ImmutableList.m743of(new BaseUrl(str)), new SegmentBase.SingleSegmentBase(new RangedUri(null, j2, (j3 - j2) + 1), 1L, 0L, j4, (j5 - j4) + 1), list, ImmutableList.m744of(), ImmutableList.m744of(), str2, j6);
+            return new SingleSegmentRepresentation(j, format, ImmutableList.m761of(new BaseUrl(str)), new SegmentBase.SingleSegmentBase(new RangedUri(null, j2, (j3 - j2) + 1), 1L, 0L, j4, (j5 - j4) + 1), list, ImmutableList.m762of(), ImmutableList.m762of(), str2, j6);
         }
 
         public SingleSegmentRepresentation(long j, Format format, List<BaseUrl> list, SegmentBase.SingleSegmentBase singleSegmentBase, List<Descriptor> list2, List<Descriptor> list3, List<Descriptor> list4, String str, long j2) {

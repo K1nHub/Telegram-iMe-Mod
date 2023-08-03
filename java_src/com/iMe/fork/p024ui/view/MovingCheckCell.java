@@ -19,7 +19,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -130,9 +130,9 @@ public final class MovingCheckCell extends FrameLayout {
         int i;
         ImageView imageView = this.moveIconView;
         if (z) {
-            i = C3417R.C3419drawable.chats_pin;
+            i = C3419R.C3421drawable.chats_pin;
         } else {
-            i = C3417R.C3419drawable.list_reorder;
+            i = C3419R.C3421drawable.list_reorder;
         }
         imageView.setImageResource(i);
         ViewExtKt.gone(this.checkBox, z);
@@ -140,7 +140,7 @@ public final class MovingCheckCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.subtitleView.getVisibility() == 0 ? 64 : 48) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.subtitleView.getVisibility() == 0 ? 64 : 48) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.View
@@ -148,7 +148,7 @@ public final class MovingCheckCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
             float measuredHeight = getMeasuredHeight() - 1.0f;
-            canvas.drawLine(AndroidUtilities.m54dp(60), measuredHeight, getMeasuredWidth(), measuredHeight, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m72dp(60), measuredHeight, getMeasuredWidth(), measuredHeight, Theme.dividerPaint);
         }
     }
 
@@ -158,7 +158,7 @@ public final class MovingCheckCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3417R.C3419drawable.list_reorder);
+        imageView.setImageResource(C3419R.C3421drawable.list_reorder);
         return imageView;
     }
 
@@ -220,7 +220,7 @@ public final class MovingCheckCell extends FrameLayout {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-            layoutParams2.leftMargin = AndroidUtilities.m54dp(108);
+            layoutParams2.leftMargin = AndroidUtilities.m72dp(108);
             view.setLayoutParams(layoutParams2);
         }
     }
@@ -231,7 +231,7 @@ public final class MovingCheckCell extends FrameLayout {
         Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
         layoutParams2.height = z ? -1 : -2;
-        layoutParams2.topMargin = z ? 0 : AndroidUtilities.m54dp(10);
+        layoutParams2.topMargin = z ? 0 : AndroidUtilities.m72dp(10);
         linearLayout.setLayoutParams(layoutParams2);
     }
 

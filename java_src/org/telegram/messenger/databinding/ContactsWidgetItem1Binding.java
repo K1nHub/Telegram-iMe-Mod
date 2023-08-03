@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ContactsWidgetItem1Binding implements ViewBinding {
     private final FrameLayout rootView;
@@ -27,7 +27,7 @@ public final class ContactsWidgetItem1Binding implements ViewBinding {
     }
 
     public static ContactsWidgetItem1Binding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.contacts_widget_item_1, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.contacts_widget_item_1, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,16 +36,16 @@ public final class ContactsWidgetItem1Binding implements ViewBinding {
 
     public static ContactsWidgetItem1Binding bind(View view) {
         FrameLayout frameLayout = (FrameLayout) view;
-        int i = C3417R.C3420id.contacts_widget_item_avatar1;
+        int i = C3419R.C3422id.contacts_widget_item_avatar1;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3417R.C3420id.contacts_widget_item_badge1;
+            i = C3419R.C3422id.contacts_widget_item_badge1;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3417R.C3420id.contacts_widget_item_badge_bg1;
+                i = C3419R.C3422id.contacts_widget_item_badge_bg1;
                 FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout2 != null) {
-                    i = C3417R.C3420id.contacts_widget_item_text1;
+                    i = C3419R.C3422id.contacts_widget_item_text1;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
                         return new ContactsWidgetItem1Binding(frameLayout, frameLayout, imageView, textView, frameLayout2, textView2);

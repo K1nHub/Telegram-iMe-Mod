@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda2;->f$1:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->$r8$lambda$24n6tFiGEOsPvjnFUcYWeFHT3DE(Lcom/iMe/fork/controller/ForkTopicsController;Lcom/iMe/storage/domain/model/topics/TopicModel;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->$r8$lambda$dV-WnQXtokKBPbv_My27_WScSaM(Lcom/iMe/fork/controller/ForkTopicsController;Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
 .end method

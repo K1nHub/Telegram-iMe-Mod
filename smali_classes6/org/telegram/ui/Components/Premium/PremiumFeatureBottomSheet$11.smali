@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;)V
     .locals 0
 
-    .line 680
+    .line 688
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$11;->val$premiumAppIconsPreviewView:Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 683
+    .line 691
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$11;->val$premiumAppIconsPreviewView:Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;

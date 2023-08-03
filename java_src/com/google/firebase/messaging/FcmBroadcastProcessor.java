@@ -28,7 +28,12 @@ public class FcmBroadcastProcessor {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
         }
-        return getServiceConnection(context, "com.google.firebase.MESSAGING_EVENT").sendIntent(intent).continueWith(FcmBroadcastProcessor$$ExternalSyntheticLambda4.INSTANCE, FcmBroadcastProcessor$$ExternalSyntheticLambda1.INSTANCE);
+        return getServiceConnection(context, "com.google.firebase.MESSAGING_EVENT").sendIntent(intent).continueWith(FcmBroadcastProcessor$$ExternalSyntheticLambda4.INSTANCE, new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda1
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                return FcmBroadcastProcessor.lambda$bindToMessagingService$3(task);
+            }
+        });
     }
 
     private static WithinAppServiceConnection getServiceConnection(Context context, String str) {
@@ -54,7 +59,12 @@ public class FcmBroadcastProcessor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ Task lambda$startMessagingService$2(Context context, Intent intent, Task task) throws Exception {
-        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent).continueWith(FcmBroadcastProcessor$$ExternalSyntheticLambda4.INSTANCE, FcmBroadcastProcessor$$ExternalSyntheticLambda2.INSTANCE) : task;
+        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent).continueWith(FcmBroadcastProcessor$$ExternalSyntheticLambda4.INSTANCE, new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda2
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task2) {
+                return FcmBroadcastProcessor.lambda$startMessagingService$1(task2);
+            }
+        }) : task;
     }
 
     @KeepForSdk

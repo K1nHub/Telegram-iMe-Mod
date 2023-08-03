@@ -20,7 +20,12 @@ public final class zzaf extends zzgo {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzaf(zzfv zzfvVar) {
         super(zzfvVar);
-        this.zzb = zzad.zza;
+        this.zzb = new zzae() { // from class: com.google.android.gms.measurement.internal.zzad
+            @Override // com.google.android.gms.measurement.internal.zzae
+            public final String zza(String str, String str2) {
+                return null;
+            }
+        };
     }
 
     public static final long zzA() {

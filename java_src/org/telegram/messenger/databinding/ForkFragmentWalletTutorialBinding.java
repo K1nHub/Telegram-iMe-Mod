@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.WrapContentViewPager;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     public final ActionButton buttonAction;
@@ -34,7 +34,7 @@ public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletTutorialBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_tutorial, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_tutorial, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,13 +42,13 @@ public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletTutorialBinding bind(View view) {
-        int i = C3417R.C3420id.button_action;
+        int i = C3419R.C3422id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3417R.C3420id.dots_indicator_tutorial;
+            i = C3419R.C3422id.dots_indicator_tutorial;
             DotsIndicator dotsIndicator = (DotsIndicator) ViewBindings.findChildViewById(view, i);
             if (dotsIndicator != null) {
-                i = C3417R.C3420id.view_pager_tutorial;
+                i = C3419R.C3422id.view_pager_tutorial;
                 WrapContentViewPager wrapContentViewPager = (WrapContentViewPager) ViewBindings.findChildViewById(view, i);
                 if (wrapContentViewPager != null) {
                     return new ForkFragmentWalletTutorialBinding((NestedScrollView) view, actionButton, dotsIndicator, wrapContentViewPager);

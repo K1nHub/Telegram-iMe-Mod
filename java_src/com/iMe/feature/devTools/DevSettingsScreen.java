@@ -3,6 +3,9 @@ package com.iMe.feature.devTools;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.ViewModelStoreOwner;
+import androidx.lifecycle.viewmodel.CreationExtras;
 import com.iMe.common.viewBinding.FragmentViewBindingDelegate;
 import com.iMe.feature.devTools.DevSideEffects;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -11,12 +14,16 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
+import org.koin.android.ext.android.AndroidKoinScopeExtKt;
+import org.koin.androidx.viewmodel.GetViewModelKt;
+import org.koin.core.qualifier.Qualifier;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkDevSettingsScreenBinding;
 import timber.log.Timber;
 /* compiled from: DevSettingsScreen.kt */
@@ -27,10 +34,44 @@ public final class DevSettingsScreen extends Fragment {
     private final Lazy viewModel$delegate;
 
     public DevSettingsScreen() {
-        super(C3417R.layout.fork_dev_settings_screen);
+        super(C3419R.layout.fork_dev_settings_screen);
         Lazy lazy;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkDevSettingsScreenBinding.class, this);
-        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new DevSettingsScreen$special$$inlined$viewModel$default$2(this, null, new DevSettingsScreen$special$$inlined$viewModel$default$1(this), null, null));
+        final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.iMe.feature.devTools.DevSettingsScreen$special$$inlined$viewModel$default$1
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Fragment invoke() {
+                return Fragment.this;
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new Function0<DevViewModel>() { // from class: com.iMe.feature.devTools.DevSettingsScreen$special$$inlined$viewModel$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            /* JADX WARN: Type inference failed for: r0v3, types: [com.iMe.feature.devTools.DevViewModel, androidx.lifecycle.ViewModel] */
+            @Override // kotlin.jvm.functions.Function0
+            public final DevViewModel invoke() {
+                CreationExtras defaultViewModelCreationExtras;
+                Fragment fragment = Fragment.this;
+                Qualifier qualifier = r2;
+                Function0 function02 = function0;
+                Function0 function03 = r4;
+                Function0 function04 = r5;
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function02.invoke()).getViewModelStore();
+                if (function03 == null || (defaultViewModelCreationExtras = (CreationExtras) function03.invoke()) == null) {
+                    defaultViewModelCreationExtras = fragment.getDefaultViewModelCreationExtras();
+                    Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "this.defaultViewModelCreationExtras");
+                }
+                return GetViewModelKt.resolveViewModel$default(Reflection.getOrCreateKotlinClass(DevViewModel.class), viewModelStore, null, defaultViewModelCreationExtras, qualifier, AndroidKoinScopeExtKt.getKoinScope(fragment), function04, 4, null);
+            }
+        });
         this.viewModel$delegate = lazy;
     }
 

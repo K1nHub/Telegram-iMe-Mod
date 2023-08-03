@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFragment> {
 
     /* renamed from: id */
-    private final int f365id;
+    private final int f368id;
     private final TabbedFragmentPage<WalletHomeTabFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFr
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f365id;
+        return this.f368id;
     }
 
     public final TabbedFragmentPage<WalletHomeTabFragment> getPage() {
@@ -68,7 +68,7 @@ public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFr
     public WalletHomeNavigationTab(int i, TabbedFragmentPage<WalletHomeTabFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f365id = i;
+        this.f368id = i;
         this.page = page;
     }
 }

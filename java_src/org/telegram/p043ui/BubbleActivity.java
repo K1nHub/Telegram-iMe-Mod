@@ -11,7 +11,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -81,16 +81,16 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3417R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3419R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3417R.style.Theme_TMessages);
+            setTheme(C3419R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3417R.C3419drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3419R.C3421drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         super.onCreate(bundle);
@@ -118,7 +118,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         PasscodeView passcodeView = new PasscodeView(this);
         this.passcodeView = passcodeView;
         this.drawerLayoutContainer.addView(passcodeView, LayoutHelper.createFrame(-1, -1));
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.closeOtherAppActivities, this);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.actionBarLayout.removeAllFragments();
         handleIntent(getIntent(), false, bundle != null, false, UserConfig.selectedAccount, 0);
     }
@@ -157,7 +157,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         }
         this.drawerLayoutContainer.setAllowOpenDrawer(true, false);
         this.actionBarLayout.showLastFragment();
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.passcodeDismissed, passcodeView);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, passcodeView);
     }
 
     private boolean handleIntent(Intent intent, boolean z, boolean z2, boolean z3, int i, int i2) {
@@ -197,7 +197,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
             finish();
             return false;
         }
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.closeChats, Long.valueOf(this.dialogId));
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(this.dialogId));
         this.actionBarLayout.removeAllFragments();
         this.actionBarLayout.addFragmentToStack(chatActivity);
         AccountInstance.getInstance(this.currentAccount).getNotificationsController().setOpenedInBubble(this.dialogId, true);
@@ -298,11 +298,11 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
                     if (BubbleActivity.this.lockRunnable == this) {
                         if (AndroidUtilities.needShowPasscode(true)) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m52d("lock app");
+                                FileLog.m70d("lock app");
                             }
                             BubbleActivity.this.showPasscodeActivity();
                         } else if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m52d("didn't pass lock check");
+                            FileLog.m70d("didn't pass lock check");
                         }
                         BubbleActivity.this.lockRunnable = null;
                     }

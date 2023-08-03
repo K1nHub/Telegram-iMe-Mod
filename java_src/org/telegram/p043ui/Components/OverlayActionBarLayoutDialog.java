@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -60,7 +60,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
     }
 
     public OverlayActionBarLayoutDialog(Context context, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3417R.style.TransparentDialog);
+        super(context, C3419R.style.TransparentDialog);
         this.resourcesProvider = resourcesProvider;
         INavigationLayout newLayout = INavigationLayout.CC.newLayout(context);
         this.actionBarLayout = newLayout;
@@ -122,8 +122,8 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         if (!AndroidUtilities.isTablet() || AndroidUtilities.isInMultiwindow || AndroidUtilities.isSmallTablet()) {
             return;
         }
-        iArr[0] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m54dp(530), View.MeasureSpec.getSize(iArr[0])), 1073741824);
-        iArr[1] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m54dp(528), View.MeasureSpec.getSize(iArr[1])), 1073741824);
+        iArr[0] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m72dp(530), View.MeasureSpec.getSize(iArr[0])), 1073741824);
+        iArr[1] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m72dp(528), View.MeasureSpec.getSize(iArr[1])), 1073741824);
     }
 
     @Override // android.app.Dialog
@@ -136,7 +136,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         } else if (i >= 21) {
             window.addFlags(-2147417856);
         }
-        window.setWindowAnimations(C3417R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3419R.style.DialogNoAnimation);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.gravity = 51;
@@ -153,7 +153,14 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         }
         this.frameLayout.setSystemUiVisibility(1280);
         if (i >= 21) {
-            this.frameLayout.setOnApplyWindowInsetsListener(OverlayActionBarLayoutDialog$$ExternalSyntheticLambda0.INSTANCE);
+            this.frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.OverlayActionBarLayoutDialog$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnApplyWindowInsetsListener
+                public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                    WindowInsets lambda$onCreate$1;
+                    lambda$onCreate$1 = OverlayActionBarLayoutDialog.lambda$onCreate$1(view, windowInsets);
+                    return lambda$onCreate$1;
+                }
+            });
         }
         if (i >= 26) {
             AndroidUtilities.setLightNavigationBar(window, ColorUtils.calculateLuminance(Theme.getColor(Theme.key_windowBackgroundWhite, null, true)) >= 0.9d);

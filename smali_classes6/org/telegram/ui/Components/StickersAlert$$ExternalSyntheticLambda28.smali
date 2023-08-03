@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/MessagesStorage$StringCallback;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final run(Ljava/lang/String;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$AzrjLLLOldgUTOYEVtoYoBG5vwc(Lorg/telegram/ui/Components/StickersAlert;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$bKbUAEfoRRPHRpJ9fGTcGE7qfOU(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)V
 
     return-void
 .end method

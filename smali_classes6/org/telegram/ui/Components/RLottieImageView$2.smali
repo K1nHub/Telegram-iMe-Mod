@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RLottieImageView;II)V
     .locals 0
 
-    .line 175
+    .line 176
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->this$0:Lorg/telegram/ui/Components/RLottieImageView;
 
     iput p2, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->val$w:I
@@ -43,10 +43,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 179
+    .line 180
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
-    .line 180
+    .line 181
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -65,7 +65,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 181
+    .line 182
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -84,7 +84,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 182
+    .line 183
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
@@ -103,7 +103,7 @@
 
     add-int/2addr v3, v4
 
-    .line 183
+    .line 184
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v4
@@ -122,10 +122,10 @@
 
     add-int/2addr v4, v5
 
-    .line 179
+    .line 180
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 185
+    .line 186
     iget-object v1, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->this$0:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/RLottieImageView;->access$000(Lorg/telegram/ui/Components/RLottieImageView;)Lorg/telegram/messenger/ImageReceiver;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(Landroid/graphics/Rect;)V
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->this$0:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieImageView;->access$000(Lorg/telegram/ui/Components/RLottieImageView;)Lorg/telegram/messenger/ImageReceiver;
@@ -157,7 +157,7 @@
 .method public setAlpha(I)V
     .locals 2
 
-    .line 191
+    .line 192
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->this$0:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieImageView;->access$000(Lorg/telegram/ui/Components/RLottieImageView;)Lorg/telegram/messenger/ImageReceiver;
@@ -178,7 +178,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 196
+    .line 197
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView$2;->this$0:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieImageView;->access$000(Lorg/telegram/ui/Components/RLottieImageView;)Lorg/telegram/messenger/ImageReceiver;

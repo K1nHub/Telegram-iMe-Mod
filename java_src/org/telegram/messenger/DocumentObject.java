@@ -35,7 +35,7 @@ public class DocumentObject {
             if (tLRPC$WallPaper instanceof TLRPC$TL_wallPaper) {
                 TLRPC$Document tLRPC$Document = ((TLRPC$TL_wallPaper) tLRPC$WallPaper).document;
                 this.wallpaper = tLRPC$Document;
-                this.f1523id = tLRPC$Document.f1523id;
+                this.f1526id = tLRPC$Document.f1526id;
                 this.access_hash = tLRPC$Document.access_hash;
                 this.file_reference = tLRPC$Document.file_reference;
                 this.user_id = tLRPC$Document.user_id;
@@ -47,11 +47,11 @@ public class DocumentObject {
                 this.version = tLRPC$Document.version;
                 this.dc_id = tLRPC$Document.dc_id;
                 this.key = tLRPC$Document.key;
-                this.f1524iv = tLRPC$Document.f1524iv;
+                this.f1527iv = tLRPC$Document.f1527iv;
                 this.attributes = tLRPC$Document.attributes;
                 return;
             }
-            this.f1523id = -2147483648L;
+            this.f1526id = -2147483648L;
             this.dc_id = Integer.MIN_VALUE;
         }
     }
@@ -66,8 +66,8 @@ public class DocumentObject {
             if (tLRPC$PhotoSize instanceof TLRPC$TL_photoPathSize) {
                 tLRPC$TL_photoPathSize = (TLRPC$TL_photoPathSize) tLRPC$PhotoSize;
             } else {
-                i2 = tLRPC$PhotoSize.f1546w;
-                i3 = tLRPC$PhotoSize.f1545h;
+                i2 = tLRPC$PhotoSize.f1550w;
+                i3 = tLRPC$PhotoSize.f1549h;
             }
             if (tLRPC$TL_photoPathSize != null && i2 != 0 && i3 != 0) {
                 SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tLRPC$TL_photoPathSize.svgPath, i2, i3);
@@ -95,13 +95,13 @@ public class DocumentObject {
             svgDrawable.setupGradient(i, f2, false);
             return svgDrawable;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return null;
         }
     }
 
     public static SvgHelper.SvgDrawable getSvgThumb(TLRPC$Document tLRPC$Document, int i, float f) {
-        return getSvgThumb(tLRPC$Document, i, f, 1.0f);
+        return getSvgThumb(tLRPC$Document, i, f, 1.0f, null);
     }
 
     public static SvgHelper.SvgDrawable getSvgRectThumb(int i, float f) {
@@ -117,7 +117,7 @@ public class DocumentObject {
         return svgDrawable;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC$Document tLRPC$Document, int i, float f, float f2) {
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC$Document tLRPC$Document, int i, float f, float f2, Theme.ResourcesProvider resourcesProvider) {
         int i2;
         int i3;
         TLRPC$DocumentAttribute tLRPC$DocumentAttribute;
@@ -147,12 +147,12 @@ public class DocumentObject {
                     }
                     i5++;
                 }
-                int i6 = tLRPC$DocumentAttribute.f1526w;
-                int i7 = tLRPC$DocumentAttribute.f1525h;
+                int i6 = tLRPC$DocumentAttribute.f1529w;
+                int i7 = tLRPC$DocumentAttribute.f1528h;
                 i2 = i6;
                 i3 = i7;
                 if (i2 != 0 && i3 != 0 && (svgDrawable = SvgHelper.getDrawableByPath(((TLRPC$TL_photoPathSize) tLRPC$PhotoSize).svgPath, (int) (i2 * f2), (int) (i3 * f2))) != null) {
-                    svgDrawable.setupGradient(i, f, false);
+                    svgDrawable.setupGradient(i, resourcesProvider, f, false);
                 }
             } else {
                 i4++;

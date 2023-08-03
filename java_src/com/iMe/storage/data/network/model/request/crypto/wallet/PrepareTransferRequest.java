@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class PrepareTransferRequest {
 
     /* renamed from: to */
-    private final String f372to;
+    private final String f375to;
     private final TokenRequest token;
     private final String value;
 
@@ -17,7 +17,7 @@ public final class PrepareTransferRequest {
             tokenRequest = prepareTransferRequest.token;
         }
         if ((i & 2) != 0) {
-            str = prepareTransferRequest.f372to;
+            str = prepareTransferRequest.f375to;
         }
         if ((i & 4) != 0) {
             str2 = prepareTransferRequest.value;
@@ -30,7 +30,7 @@ public final class PrepareTransferRequest {
     }
 
     public final String component2() {
-        return this.f372to;
+        return this.f375to;
     }
 
     public final String component3() {
@@ -48,27 +48,27 @@ public final class PrepareTransferRequest {
         }
         if (obj instanceof PrepareTransferRequest) {
             PrepareTransferRequest prepareTransferRequest = (PrepareTransferRequest) obj;
-            return Intrinsics.areEqual(this.token, prepareTransferRequest.token) && Intrinsics.areEqual(this.f372to, prepareTransferRequest.f372to) && Intrinsics.areEqual(this.value, prepareTransferRequest.value);
+            return Intrinsics.areEqual(this.token, prepareTransferRequest.token) && Intrinsics.areEqual(this.f375to, prepareTransferRequest.f375to) && Intrinsics.areEqual(this.value, prepareTransferRequest.value);
         }
         return false;
     }
 
     public int hashCode() {
         int hashCode = this.token.hashCode() * 31;
-        String str = this.f372to;
+        String str = this.f375to;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.value;
         return hashCode2 + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
-        return "PrepareTransferRequest(token=" + this.token + ", to=" + this.f372to + ", value=" + this.value + ')';
+        return "PrepareTransferRequest(token=" + this.token + ", to=" + this.f375to + ", value=" + this.value + ')';
     }
 
     public PrepareTransferRequest(TokenRequest token, String str, String str2) {
         Intrinsics.checkNotNullParameter(token, "token");
         this.token = token;
-        this.f372to = str;
+        this.f375to = str;
         this.value = str2;
     }
 
@@ -81,7 +81,7 @@ public final class PrepareTransferRequest {
     }
 
     public final String getTo() {
-        return this.f372to;
+        return this.f375to;
     }
 
     public final String getValue() {

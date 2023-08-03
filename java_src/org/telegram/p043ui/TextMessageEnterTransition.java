@@ -125,7 +125,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         this.crossfade = false;
         int height = chatActivityEnterView.getEditField().getLayout().getHeight();
         TextPaint textPaint2 = Theme.chat_msgTextPaint;
-        int m54dp = AndroidUtilities.m54dp(20);
+        int m72dp = AndroidUtilities.m72dp(20);
         if (chatMessageCell.getMessageObject().getEmojiOnlyCount() != 0) {
             boolean z = chatMessageCell.getMessageObject().emojiOnlyCount == chatMessageCell.getMessageObject().animatedEmojiCount;
             switch (Math.max(chatMessageCell.getMessageObject().emojiOnlyCount, chatMessageCell.getMessageObject().animatedEmojiCount)) {
@@ -182,7 +182,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             }
             textPaint2 = textPaint;
             if (textPaint2 != null) {
-                m54dp = (int) (textPaint2.getTextSize() + AndroidUtilities.m54dp(4));
+                m72dp = (int) (textPaint2.getTextSize() + AndroidUtilities.m72dp(4));
             }
         }
         boolean z2 = (charSequence instanceof Spannable) && (spans = ((Spannable) charSequence).getSpans(0, charSequence.length(), Object.class)) != null && spans.length > 0;
@@ -198,7 +198,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                 i = 0;
             }
             AnimatedEmojiSpan.cloneSpans(charSequence);
-            charSequence = Emoji.replaceEmoji(editText, textPaint2.getFontMetricsInt(), m54dp, false);
+            charSequence = Emoji.replaceEmoji(editText, textPaint2.getFontMetricsInt(), m72dp, false);
         } else {
             i = 0;
         }
@@ -213,7 +213,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         this.animatedEmojiStack = AnimatedEmojiSpan.update(2, (View) null, this.animatedEmojiStack, this.layout);
         float y = chatActivityEnterView.getY() + chatActivityEnterView.getEditField().getY() + ((View) chatActivityEnterView.getEditField().getParent()).getY() + ((View) chatActivityEnterView.getEditField().getParent().getParent()).getY();
         this.fromStartX = chatActivityEnterView.getX() + chatActivityEnterView.getEditField().getX() + ((View) chatActivityEnterView.getEditField().getParent()).getX() + ((View) chatActivityEnterView.getEditField().getParent().getParent()).getX();
-        this.fromStartY = ((AndroidUtilities.m54dp(10) + y) - chatActivityEnterView.getEditField().getScrollY()) + i;
+        this.fromStartY = ((AndroidUtilities.m72dp(10) + y) - chatActivityEnterView.getEditField().getScrollY()) + i;
         this.toXOffset = BitmapDescriptorFactory.HUE_RED;
         float f = Float.MAX_VALUE;
         for (int i5 = 0; i5 < this.layout.getLineCount(); i5++) {
@@ -226,9 +226,9 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             this.toXOffset = f;
         }
         this.scaleY = height / (this.layout.getHeight() * this.scaleFrom);
-        this.drawableFromTop = AndroidUtilities.m54dp(4) + y;
+        this.drawableFromTop = AndroidUtilities.m72dp(4) + y;
         if (this.enterView.isTopViewVisible()) {
-            this.drawableFromTop -= AndroidUtilities.m54dp(12);
+            this.drawableFromTop -= AndroidUtilities.m72dp(12);
         }
         this.drawableFromBottom = y + chatActivityEnterView.getEditField().getMeasuredHeight();
         MessageObject.TextLayoutBlock textLayoutBlock = chatMessageCell.getMessageObject().textLayoutBlocks.get(0);
@@ -324,13 +324,13 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             ((View) replyObjectTextView.getParent().getParent().getParent()).getY();
             this.replayFromColor = chatActivity.getReplyNameTextView().getTextColor();
             this.replayObjectFromColor = chatActivity.getReplyObjectTextView().getTextColor();
-            this.drawableFromTop -= AndroidUtilities.m54dp(46);
+            this.drawableFromTop -= AndroidUtilities.m72dp(46);
         }
         this.gradientMatrix = new Matrix();
         Paint paint = new Paint(1);
         this.gradientPaint = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(12), (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 0, -16777216, Shader.TileMode.CLAMP);
         this.gradientShader = linearGradient;
         this.gradientPaint.setShader(linearGradient);
         this.messageId = chatMessageCell.getMessageObject().stableId;

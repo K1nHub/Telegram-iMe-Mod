@@ -124,7 +124,7 @@ public class GLIconSettingsView extends LinearLayout {
                 }) { // from class: org.telegram.ui.GLIconSettingsView.3.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(300), 1073741824));
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(300), 1073741824));
                     }
                 };
                 colorPicker.setColor(gLIconRenderer.star.specColor, 0);
@@ -239,7 +239,7 @@ public class GLIconSettingsView extends LinearLayout {
                 }) { // from class: org.telegram.ui.GLIconSettingsView.6.2
                     @Override // android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i4, int i5) {
-                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(300), 1073741824));
+                        super.onMeasure(i4, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(300), 1073741824));
                     }
                 };
                 colorPicker.setColor(gLIconRenderer.star.normalSpecColor, 0);

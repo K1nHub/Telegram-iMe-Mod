@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewGroupKt;
+import com.iMe.p031ui.base.mvp.view.ICustomMvpView;
 import com.iMe.p031ui.base.mvp.view.MvpFrameLayout;
 import com.iMe.p031ui.custom.backup.BackupWordView;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -14,6 +15,8 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -25,10 +28,13 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.java.KoinJavaComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
@@ -49,16 +55,12 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
 
     @Override // com.iMe.p031ui.base.mvp.view.MvpFrameLayout, org.koin.core.component.KoinComponent
     public /* bridge */ /* synthetic */ Koin getKoin() {
-        Koin koin;
-        koin = KoinJavaComponent.getKoin();
-        return koin;
+        return ICustomMvpView.CC.$default$getKoin(this);
     }
 
     @Override // com.iMe.p031ui.base.mvp.view.MvpFrameLayout, com.iMe.p031ui.base.mvp.view.ICustomMvpView, moxy.MvpDelegateHolder
     public /* bridge */ /* synthetic */ MvpDelegate<T> getMvpDelegate() {
-        MvpDelegate<T> mMvpDelegate;
-        mMvpDelegate = getMMvpDelegate();
-        return mMvpDelegate;
+        return ICustomMvpView.CC.$default$getMvpDelegate(this);
     }
 
     public /* synthetic */ BackupWordSwitcher(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -70,11 +72,65 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        BackupWordSwitcher$presenter$2 backupWordSwitcher$presenter$2 = new BackupWordSwitcher$presenter$2(this);
+        Function0<BackupWordSwitcherPresenter> function0 = new Function0<BackupWordSwitcherPresenter>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final BackupWordSwitcherPresenter invoke() {
+                Lazy lazy2;
+                final BackupWordSwitcher backupWordSwitcher = BackupWordSwitcher.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BackupWordSwitcherPresenter>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.custom.backup.switcher.BackupWordSwitcherPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final BackupWordSwitcherPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(BackupWordSwitcherPresenter.class), qualifier, function02);
+                    }
+                });
+                return (BackupWordSwitcherPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, BackupWordSwitcherPresenter.class.getName() + ".presenter", backupWordSwitcher$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new BackupWordSwitcher$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, BackupWordSwitcherPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy;
         ForkContentWordSwitcherBinding inflate = ForkContentWordSwitcherBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -106,14 +162,20 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         ForkContentWordSwitcherBinding forkContentWordSwitcherBinding = this.binding;
         ConstraintLayout constraintLayout = forkContentWordSwitcherBinding.constraintWords;
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(9.0f));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m73dp(9.0f));
         gradientDrawable.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
+        gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
         constraintLayout.setBackground(gradientDrawable);
         forkContentWordSwitcherBinding.textTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         ConstraintLayout constraintWords = forkContentWordSwitcherBinding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintWords, "constraintWords");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), C2045xbf3f1d4f.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$applyColors$lambda$2$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof BackupWordView);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordView backupWordView : filter) {
             backupWordView.applyColors();
@@ -144,7 +206,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
 
     @Override // com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3419R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     @Override // com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
@@ -153,7 +215,13 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         Intrinsics.checkNotNullParameter(words, "words");
         ConstraintLayout constraintLayout = this.binding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintLayout, "binding.constraintWords");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), BackupWordSwitcher$setupBackupWords$$inlined$filterIsInstance$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$setupBackupWords$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof BackupWordView);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         int i = 0;
         for (Object obj : filter) {
@@ -198,7 +266,13 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         Sequence<BackupWordView> filter;
         ConstraintLayout constraintLayout = this.binding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintLayout, "binding.constraintWords");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), BackupWordSwitcher$setupListeners$$inlined$filterIsInstance$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$setupListeners$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof BackupWordView);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordView backupWordView : filter) {
             setupListenerFor(backupWordView);

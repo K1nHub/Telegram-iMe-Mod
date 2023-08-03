@@ -517,7 +517,7 @@
 
     move-result-object p1
 
-    const-string v0, "private fun getWalletBal\u2026     .autoDispose()\n    }"
+    const-string/jumbo v0, "private fun getWalletBal\u2026     .autoDispose()\n    }"
 
     .line 117
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -634,7 +634,7 @@
 
     move-result-object p1
 
-    const-string v0, "private fun getWalletTra\u2026     .autoDispose()\n    }"
+    const-string/jumbo v0, "private fun getWalletTra\u2026     .autoDispose()\n    }"
 
     .line 171
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

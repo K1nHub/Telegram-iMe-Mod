@@ -142,7 +142,7 @@
 
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."
+    const-string/jumbo v2, "onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

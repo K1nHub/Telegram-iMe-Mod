@@ -14,22 +14,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzdb extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzdb> CREATOR = new zzdc();
-    @SafeParcelable.Field(getter = "getType", m779id = 1)
+    @SafeParcelable.Field(getter = "getType", m797id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getOldBinderReceiver", m779id = 2)
+    @SafeParcelable.Field(getter = "getOldBinderReceiver", m797id = 2)
     private final IBinder zzb;
-    @SafeParcelable.Field(getter = "getBinderReceiver", m779id = 3)
+    @SafeParcelable.Field(getter = "getBinderReceiver", m797id = 3)
     private final IBinder zzc;
-    @SafeParcelable.Field(getter = "getPendingIntentReceiver", m779id = 4)
+    @SafeParcelable.Field(getter = "getPendingIntentReceiver", m797id = 4)
     private final PendingIntent zzd;
-    @SafeParcelable.Field(getter = "getModuleId", m779id = 5)
+    @SafeParcelable.Field(getter = "getModuleId", m797id = 5)
     private final String zze;
-    @SafeParcelable.Field(getter = "getListenerId", m779id = 6)
+    @SafeParcelable.Field(getter = "getListenerId", m797id = 6)
     private final String zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzdb(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) IBinder iBinder, @SafeParcelable.Param(m778id = 3) IBinder iBinder2, @SafeParcelable.Param(m778id = 4) PendingIntent pendingIntent, @SafeParcelable.Param(m778id = 5) String str, @SafeParcelable.Param(m778id = 6) String str2) {
+    public zzdb(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) IBinder iBinder, @SafeParcelable.Param(m796id = 3) IBinder iBinder2, @SafeParcelable.Param(m796id = 4) PendingIntent pendingIntent, @SafeParcelable.Param(m796id = 5) String str, @SafeParcelable.Param(m796id = 6) String str2) {
         this.zza = i;
         this.zzb = iBinder;
         this.zzc = iBinder2;

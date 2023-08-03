@@ -86,7 +86,7 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -114,7 +114,7 @@ import org.telegram.p043ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -163,9 +163,10 @@ import org.telegram.tgnet.TLRPC$User;
 public class ChatAttachAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, BottomSheet.BottomSheetDelegateInterface {
     public final Property<AttachAlertLayout, Float> ATTACH_ALERT_LAYOUT_TRANSLATION;
     private final Property<ChatAttachAlert, Float> ATTACH_ALERT_PROGRESS;
-    public C3484ActionBar actionBar;
+    public C3485ActionBar actionBar;
     private AnimatorSet actionBarAnimation;
     private View actionBarShadow;
+    public boolean allowEnterCaption;
     protected boolean allowOrder;
     protected boolean allowPassConfirmationAlert;
     private SpringAnimation appearSpringAnimation;
@@ -174,7 +175,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private ChatAttachAlertAudioLayout audioLayout;
     protected int avatarPicker;
     protected boolean avatarSearch;
-    protected BaseFragment baseFragment;
+    final BaseFragment baseFragment;
     private float baseSelectedTextViewTranslationY;
     private LongSparseArray<ChatAttachAlertBotWebViewLayout> botAttachLayouts;
     private boolean botButtonProgressWasVisible;
@@ -206,7 +207,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private int currentLimit;
     float currentPanTranslationY;
     protected ChatAttachViewDelegate delegate;
+    public boolean destroyed;
+    private long dialogId;
     private ChatAttachAlertDocumentLayout documentLayout;
+    private ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate documentsDelegate;
     private boolean documentsEnabled;
     public ActionBarMenuItem doneItem;
     protected MessageObject editingMessageObject;
@@ -353,7 +357,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         i3 = 0;
                     }
                     photoEntry = new MediaController.PhotoEntry(0, next.getId(), 0L, absolutePath, 0, true, i3, i4, 0L);
-                    photoEntry.duration = next.getDuration();
+                    photoEntry.duration = (int) next.getDuration();
                     photoEntry.thumbPath = file3.getAbsolutePath();
                 } else {
                     try {
@@ -488,7 +492,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     public float getClipLayoutBottom() {
-        return this.frameLayout2.getMeasuredHeight() - ((this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m54dp(84)) * (1.0f - this.frameLayout2.getAlpha()));
+        return this.frameLayout2.getMeasuredHeight() - ((this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m72dp(84)) * (1.0f - this.frameLayout2.getAlpha()));
     }
 
     public void showBotLayout(long j) {
@@ -499,9 +503,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if ((this.botAttachLayouts.get(j) == null || !Objects.equals(str, this.botAttachLayouts.get(j).getStartCommand()) || this.botAttachLayouts.get(j).needReload()) && (this.baseFragment instanceof ChatActivity)) {
             ChatAttachAlertBotWebViewLayout chatAttachAlertBotWebViewLayout = new ChatAttachAlertBotWebViewLayout(this, getContext(), this.resourcesProvider);
             this.botAttachLayouts.put(j, chatAttachAlertBotWebViewLayout);
-            this.botAttachLayouts.get(j).setDelegate(new C43881(chatAttachAlertBotWebViewLayout, str));
+            this.botAttachLayouts.get(j).setDelegate(new C44091(chatAttachAlertBotWebViewLayout, str));
             MessageObject replyingMessageObject = ((ChatActivity) this.baseFragment).getChatActivityEnterView().getReplyingMessageObject();
-            this.botAttachLayouts.get(j).requestWebView(this.currentAccount, ((ChatActivity) this.baseFragment).getDialogId(), j, false, replyingMessageObject != null ? replyingMessageObject.messageOwner.f1539id : 0, str);
+            this.botAttachLayouts.get(j).requestWebView(this.currentAccount, ((ChatActivity) this.baseFragment).getDialogId(), j, false, replyingMessageObject != null ? replyingMessageObject.messageOwner.f1542id : 0, str);
         }
         if (this.botAttachLayouts.get(j) != null) {
             this.botAttachLayouts.get(j).disallowSwipeOffsetAnimation();
@@ -511,7 +515,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$1 */
     /* loaded from: classes6.dex */
-    public class C43881 implements BotWebViewContainer.Delegate {
+    public class C44091 implements BotWebViewContainer.Delegate {
         private ValueAnimator botButtonAnimator;
         final /* synthetic */ String val$startCommand;
         final /* synthetic */ ChatAttachAlertBotWebViewLayout val$webViewLayout;
@@ -531,7 +535,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             BotWebViewContainer.Delegate.CC.$default$onWebAppReady(this);
         }
 
-        C43881(ChatAttachAlertBotWebViewLayout chatAttachAlertBotWebViewLayout, String str) {
+        C44091(ChatAttachAlertBotWebViewLayout chatAttachAlertBotWebViewLayout, String str) {
             ChatAttachAlert.this = r1;
             this.val$webViewLayout = chatAttachAlertBotWebViewLayout;
             this.val$startCommand = str;
@@ -553,7 +557,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatAttachAlert.C43881.lambda$onCloseRequested$0(runnable);
+                    ChatAttachAlert.C44091.lambda$onCloseRequested$0(runnable);
                 }
             }, 150L);
         }
@@ -573,7 +577,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ChatAttachAlert.C43881.this.lambda$onWebAppSetActionBarColor$1(color, themedColor, valueAnimator);
+                    ChatAttachAlert.C44091.this.lambda$onWebAppSetActionBarColor$1(color, themedColor, valueAnimator);
                 }
             });
             duration.start();
@@ -609,7 +613,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda4
                     @Override // org.telegram.p043ui.PaymentFormActivity.PaymentFormCallback
                     public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
-                        ChatAttachAlert.C43881.lambda$onWebAppOpenInvoice$2(OverlayActionBarLayoutDialog.this, chatAttachAlertBotWebViewLayout, str, invoiceStatus);
+                        ChatAttachAlert.C44091.lambda$onWebAppOpenInvoice$2(OverlayActionBarLayoutDialog.this, chatAttachAlertBotWebViewLayout, str, invoiceStatus);
                     }
                 });
                 paymentFormActivity.setResourcesProvider(((BottomSheet) ChatAttachAlert.this).resourcesProvider);
@@ -648,6 +652,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             bundle.putInt("dialogsType", 14);
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("allowGroups", list.contains("groups"));
+            bundle.putBoolean("allowLegacyGroups", list.contains("groups"));
+            bundle.putBoolean("allowMegagroups", list.contains("groups"));
             bundle.putBoolean("allowUsers", list.contains("users"));
             bundle.putBoolean("allowChannels", list.contains("channels"));
             bundle.putBoolean("allowBots", list.contains("bots"));
@@ -657,7 +663,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 @Override // org.telegram.p043ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment, Callbacks$Callback1 callbacks$Callback1) {
                     boolean lambda$onWebAppSwitchInlineQuery$3;
-                    lambda$onWebAppSwitchInlineQuery$3 = ChatAttachAlert.C43881.this.lambda$onWebAppSwitchInlineQuery$3(tLRPC$User, str, overlayActionBarLayoutDialog, dialogsActivity2, arrayList, charSequence, z, topicsFragment, callbacks$Callback1);
+                    lambda$onWebAppSwitchInlineQuery$3 = ChatAttachAlert.C44091.this.lambda$onWebAppSwitchInlineQuery$3(tLRPC$User, str, overlayActionBarLayoutDialog, dialogsActivity2, arrayList, charSequence, z, topicsFragment, callbacks$Callback1);
                     return lambda$onWebAppSwitchInlineQuery$3;
                 }
             });
@@ -717,12 +723,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                ChatAttachAlert.C43881.this.lambda$onSetupMainButton$4(valueAnimator2);
+                                ChatAttachAlert.C44091.this.lambda$onSetupMainButton$4(valueAnimator2);
                             }
                         });
                         this.botButtonAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlert.1.1
                             {
-                                C43881.this = this;
+                                C44091.this = this;
                             }
 
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -730,9 +736,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                 if (z) {
                                     ChatAttachAlert.this.botMainButtonTextView.setAlpha(BitmapDescriptorFactory.HUE_RED);
                                     ChatAttachAlert.this.botMainButtonTextView.setVisibility(0);
-                                    int m54dp = AndroidUtilities.m54dp(36);
+                                    int m72dp = AndroidUtilities.m72dp(36);
                                     for (int i3 = 0; i3 < ChatAttachAlert.this.botAttachLayouts.size(); i3++) {
-                                        ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i3)).setMeasureOffsetY(m54dp);
+                                        ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i3)).setMeasureOffsetY(m72dp);
                                     }
                                     return;
                                 }
@@ -747,12 +753,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                 } else {
                                     ChatAttachAlert.this.buttonsRecyclerView.setVisibility(8);
                                 }
-                                int m54dp = z ? AndroidUtilities.m54dp(36) : 0;
+                                int m72dp = z ? AndroidUtilities.m72dp(36) : 0;
                                 for (int i3 = 0; i3 < ChatAttachAlert.this.botAttachLayouts.size(); i3++) {
-                                    ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i3)).setMeasureOffsetY(m54dp);
+                                    ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i3)).setMeasureOffsetY(m72dp);
                                 }
-                                if (C43881.this.botButtonAnimator == animator) {
-                                    C43881.this.botButtonAnimator = null;
+                                if (C44091.this.botButtonAnimator == animator) {
+                                    C44091.this.botButtonAnimator = null;
                                 }
                             }
                         });
@@ -771,7 +777,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         }
                         animate.alpha(f).scaleX(z3 ? 1.0f : 0.1f).scaleY(z3 ? 1.0f : 0.1f).setDuration(250L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlert.1.2
                             {
-                                C43881.this = this;
+                                C44091.this = this;
                             }
 
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -792,7 +798,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             ChatAttachAlert.this.buttonsRecyclerView.setAlpha(1.0f - floatValue);
             ChatAttachAlert.this.botMainButtonTextView.setAlpha(floatValue);
-            ChatAttachAlert.this.botMainButtonOffsetY = floatValue * AndroidUtilities.m54dp(36);
+            ChatAttachAlert.this.botMainButtonOffsetY = floatValue * AndroidUtilities.m72dp(36);
             ChatAttachAlert.this.shadow.setTranslationY(ChatAttachAlert.this.botMainButtonOffsetY);
             ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
             chatAttachAlert.buttonsRecyclerView.setTranslationY(chatAttachAlert.botMainButtonOffsetY);
@@ -800,7 +806,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // org.telegram.p043ui.Components.BotWebViewContainer.Delegate
         public void onSetBackButtonVisible(boolean z) {
-            AndroidUtilities.updateImageViewImageAnimated(ChatAttachAlert.this.actionBar.getBackButton(), z ? C3417R.C3419drawable.ic_ab_back : C3417R.C3419drawable.ic_close_white);
+            AndroidUtilities.updateImageViewImageAnimated(ChatAttachAlert.this.actionBar.getBackButton(), z ? C3419R.C3421drawable.ic_ab_back : C3419R.C3421drawable.ic_close_white);
         }
     }
 
@@ -839,6 +845,22 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
     }
 
+    public void presentFragment(PhotoPickerActivity photoPickerActivity) {
+        BaseFragment baseFragment = this.baseFragment;
+        if (baseFragment != null) {
+            baseFragment.presentFragment(photoPickerActivity);
+            return;
+        }
+        BaseFragment lastFragment = LaunchActivity.getLastFragment();
+        if (lastFragment != null) {
+            lastFragment.presentFragment(photoPickerActivity);
+        }
+    }
+
+    public void setDialogId(long j) {
+        this.dialogId = j;
+    }
+
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$ChatAttachViewDelegate */
     /* loaded from: classes6.dex */
     public interface ChatAttachViewDelegate {
@@ -855,6 +877,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         void onWallpaperSelected(Object obj);
 
         void openAvatarsSearch();
+
+        void sendAudio(ArrayList<MessageObject> arrayList, CharSequence charSequence, boolean z, int i);
 
         /* renamed from: org.telegram.ui.Components.ChatAttachAlert$ChatAttachViewDelegate$-CC */
         /* loaded from: classes6.dex */
@@ -873,6 +897,13 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
 
             public static void $default$openAvatarsSearch(ChatAttachViewDelegate chatAttachViewDelegate) {
+            }
+
+            public static void $default$sendAudio(ChatAttachViewDelegate chatAttachViewDelegate, ArrayList arrayList, CharSequence charSequence, boolean z, int i) {
+            }
+
+            public static void $default$doOnIdle(ChatAttachViewDelegate _this, Runnable runnable) {
+                runnable.run();
             }
         }
     }
@@ -1031,7 +1062,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         public int getButtonsHideOffset() {
-            return AndroidUtilities.m54dp(needsActionBar() != 0 ? 12 : 17);
+            return AndroidUtilities.m72dp(needsActionBar() != 0 ? 12 : 17);
         }
 
         public int getThemedColor(int i) {
@@ -1083,7 +1114,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setTextColor(r10.getThemedColor(Theme.key_dialogTextGray2));
             this.textView.setTextSize(1, 12.0f);
-            this.textView.setLineSpacing(-AndroidUtilities.m54dp(2), 1.0f);
+            this.textView.setLineSpacing(-AndroidUtilities.m72dp(2), 1.0f);
             this.textView.setImportantForAccessibility(2);
             addView(this.textView, LayoutHelper.createFrame(-1, -2, 51, 0, 62, 0, 0));
         }
@@ -1146,7 +1177,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(84), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(84), 1073741824));
         }
 
         public void setTextAndIcon(int i, CharSequence charSequence, RLottieDrawable rLottieDrawable, int i2, int i3) {
@@ -1161,17 +1192,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             float scaleX = this.imageView.getScaleX() + (this.checkedState * 0.06f);
-            float m54dp = AndroidUtilities.m54dp(23) * scaleX;
+            float m72dp = AndroidUtilities.m72dp(23) * scaleX;
             float left = this.imageView.getLeft() + (this.imageView.getMeasuredWidth() / 2.0f);
             float top = this.imageView.getTop() + (this.imageView.getMeasuredWidth() / 2.0f);
             ChatAttachAlert.this.attachButtonPaint.setColor(ChatAttachAlert.this.getThemedColor(this.backgroundKey));
             ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.STROKE);
-            ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.m54dp(3) * scaleX);
+            ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.m72dp(3) * scaleX);
             ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
-            canvas.drawCircle(left, top, m54dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
+            canvas.drawCircle(left, top, m72dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
             ChatAttachAlert.this.attachButtonPaint.setAlpha(255);
             ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(left, top, m54dp - (AndroidUtilities.m54dp(5) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
+            canvas.drawCircle(left, top, m72dp - (AndroidUtilities.m72dp(5) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
         }
     }
 
@@ -1198,14 +1229,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             setWillNotDraw(false);
             setFocusable(true);
             setFocusableInTouchMode(true);
-            C44161 c44161 = new C44161(context, r10);
-            this.imageView = c44161;
-            c44161.setRoundRadius(AndroidUtilities.m54dp(25));
+            C44371 c44371 = new C44371(context, r10);
+            this.imageView = c44371;
+            c44371.setRoundRadius(AndroidUtilities.m72dp(25));
             addView(this.imageView, LayoutHelper.createFrame(46, 46, 49, 0, 9, 0, 0));
             if (Build.VERSION.SDK_INT >= 21) {
                 View view = new View(context);
                 this.selector = view;
-                view.setBackground(Theme.createSelectorDrawable(r10.getThemedColor(Theme.key_dialogButtonSelector), 1, AndroidUtilities.m54dp(23)));
+                view.setBackground(Theme.createSelectorDrawable(r10.getThemedColor(Theme.key_dialogButtonSelector), 1, AndroidUtilities.m72dp(23)));
                 addView(this.selector, LayoutHelper.createFrame(46, 46, 49, 0, 9, 0, 0));
             }
             TextView textView = new TextView(context);
@@ -1221,12 +1252,22 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.ChatAttachAlert$AttachBotButton$1 */
         /* loaded from: classes6.dex */
-        public class C44161 extends BackupImageView {
+        public class C44371 extends BackupImageView {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C44161(Context context, ChatAttachAlert chatAttachAlert) {
+            C44371(Context context, ChatAttachAlert chatAttachAlert) {
                 super(context);
                 AttachBotButton.this = r1;
-                this.imageReceiver.setDelegate(ChatAttachAlert$AttachBotButton$1$$ExternalSyntheticLambda0.INSTANCE);
+                this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$AttachBotButton$1$$ExternalSyntheticLambda0
+                    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+                    public final void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+                        ChatAttachAlert.AttachBotButton.C44371.lambda$new$0(imageReceiver, z, z2, z3);
+                    }
+
+                    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+                    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+                        ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver);
+                    }
+                });
             }
 
             public static /* synthetic */ void lambda$new$0(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
@@ -1259,7 +1300,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(ChatAttachAlert.this.attachItemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(100), 1073741824));
         }
 
         public void setCheckedState(float f) {
@@ -1272,25 +1313,25 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         private void updateMargins() {
-            ((ViewGroup.MarginLayoutParams) this.nameTextView.getLayoutParams()).topMargin = AndroidUtilities.m54dp(this.attachMenuBot != null ? 62 : 60);
-            ((ViewGroup.MarginLayoutParams) this.imageView.getLayoutParams()).topMargin = AndroidUtilities.m54dp(this.attachMenuBot != null ? 11 : 9);
+            ((ViewGroup.MarginLayoutParams) this.nameTextView.getLayoutParams()).topMargin = AndroidUtilities.m72dp(this.attachMenuBot != null ? 62 : 60);
+            ((ViewGroup.MarginLayoutParams) this.imageView.getLayoutParams()).topMargin = AndroidUtilities.m72dp(this.attachMenuBot != null ? 11 : 9);
         }
 
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.attachMenuBot != null) {
                 float scaleX = this.imageView.getScaleX() + (this.checkedState * 0.06f);
-                float m54dp = AndroidUtilities.m54dp(23) * scaleX;
+                float m72dp = AndroidUtilities.m72dp(23) * scaleX;
                 float left = this.imageView.getLeft() + (this.imageView.getMeasuredWidth() / 2.0f);
                 float top = this.imageView.getTop() + (this.imageView.getMeasuredWidth() / 2.0f);
                 ChatAttachAlert.this.attachButtonPaint.setColor(this.iconBackgroundColor);
                 ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.STROKE);
-                ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.m54dp(3) * scaleX);
+                ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.m72dp(3) * scaleX);
                 ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
-                canvas.drawCircle(left, top, m54dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
+                canvas.drawCircle(left, top, m72dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
                 ChatAttachAlert.this.attachButtonPaint.setAlpha(255);
                 ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
-                canvas.drawCircle(left, top, m54dp - (AndroidUtilities.m54dp(5) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
+                canvas.drawCircle(left, top, m72dp - (AndroidUtilities.m72dp(5) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
             }
         }
 
@@ -1301,7 +1342,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         void updateCheckedState(boolean z) {
-            boolean z2 = this.attachMenuBot != null && (-this.currentUser.f1656id) == ChatAttachAlert.this.selectedId;
+            boolean z2 = this.attachMenuBot != null && (-this.currentUser.f1675id) == ChatAttachAlert.this.selectedId;
             Boolean bool = this.checked;
             if (bool != null && bool.booleanValue() == z2 && z) {
                 return;
@@ -1451,7 +1492,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.imageView.getImageReceiver().setAllowStartLottieAnimation(false);
                 this.imageView.setImage(ImageLocation.getForDocument(tLRPC$Document), String.valueOf(tLRPC$TL_attachMenuBot.bot_id), z ? "tgs" : "svg", DocumentObject.getSvgThumb(tLRPC$Document, Theme.key_windowBackgroundGray, 1.0f), tLRPC$TL_attachMenuBot);
             }
-            this.imageView.setSize(AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28));
+            this.imageView.setSize(AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(28));
             this.imageView.setColorFilter(new PorterDuffColorFilter(ChatAttachAlert.this.getThemedColor(Theme.key_chat_attachIcon), PorterDuff.Mode.SRC_IN));
             this.attachMenuBot = tLRPC$TL_attachMenuBot;
             this.selector.setVisibility(8);
@@ -1513,7 +1554,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         ChatAttachAlert chatAttachAlert2 = ChatAttachAlert.this;
                         chatAttachAlert2.updateSelectedPosition((chatAttachAlert2.nextAttachLayout == ChatAttachAlert.this.pollLayout || ChatAttachAlert.this.nextAttachLayout == ChatAttachAlert.this.walletLayout || ChatAttachAlert.this.nextAttachLayout == ChatAttachAlert.this.templatesLayout) ? 1 : 0);
                     }
-                    ChatAttachAlert.this.nextAttachLayout.setTranslationY(AndroidUtilities.m54dp(78) * f);
+                    ChatAttachAlert.this.nextAttachLayout.setTranslationY(AndroidUtilities.m72dp(78) * f);
                     ChatAttachAlert.this.currentAttachLayout.onHideShowProgress(1.0f - Math.min(1.0f, f / 0.7f));
                     ChatAttachAlert.this.currentAttachLayout.onContainerTranslationUpdated(ChatAttachAlert.this.currentPanTranslationY);
                 }
@@ -1547,7 +1588,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.plainTextEnabled = true;
         this.maxSelectedPhotos = -1;
         this.allowOrder = true;
-        this.attachItemSize = AndroidUtilities.m54dp(85);
+        this.attachItemSize = AndroidUtilities.m72dp(85);
         new DecelerateInterpolator();
         this.scrollOffsetY = new int[2];
         this.attachButtonPaint = new Paint(1);
@@ -1623,9 +1664,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.attachMenuBotsDidLoad);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
         this.exclusionRects.add(this.exclustionRect);
-        C44073 c44073 = new C44073(context, z);
-        this.sizeNotifierFrameLayout = c44073;
-        c44073.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert.4
+        C44283 c44283 = new C44283(context, z);
+        this.sizeNotifierFrameLayout = c44283;
+        c44283.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert.4
             {
                 ChatAttachAlert.this = this;
             }
@@ -1645,7 +1686,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         ViewGroup viewGroup = this.containerView;
         int i3 = this.backgroundPaddingLeft;
         viewGroup.setPadding(i3, 0, i3, 0);
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlert.5
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlert.5
             {
                 ChatAttachAlert.this = this;
             }
@@ -1664,10 +1705,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                     float f2 = 1.0f - f;
                                     ChatAttachAlert.this.buttonsRecyclerView.setAlpha(f2);
                                     ChatAttachAlert.this.shadow.setAlpha(f2);
-                                    ChatAttachAlert.this.buttonsRecyclerView.setTranslationY(AndroidUtilities.m54dp(44) * f);
+                                    ChatAttachAlert.this.buttonsRecyclerView.setTranslationY(AndroidUtilities.m72dp(44) * f);
                                 }
-                                ChatAttachAlert.this.frameLayout2.setTranslationY(AndroidUtilities.m54dp(48) * f);
-                                ChatAttachAlert.this.shadow.setTranslationY((AndroidUtilities.m54dp(84) * f) + ChatAttachAlert.this.botMainButtonOffsetY);
+                                ChatAttachAlert.this.frameLayout2.setTranslationY(AndroidUtilities.m72dp(48) * f);
+                                ChatAttachAlert.this.shadow.setTranslationY((AndroidUtilities.m72dp(84) * f) + ChatAttachAlert.this.botMainButtonOffsetY);
                             } else if (ChatAttachAlert.this.currentAttachLayout == null) {
                                 float f3 = f != BitmapDescriptorFactory.HUE_RED ? 0.0f : 1.0f;
                                 if (ChatAttachAlert.this.buttonsRecyclerView.getAlpha() != f3) {
@@ -1679,25 +1720,25 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
             }
         };
-        this.actionBar = c3484ActionBar;
+        this.actionBar = c3485ActionBar;
         int i4 = Theme.key_dialogBackground;
-        c3484ActionBar.setBackgroundColor(getThemedColor(i4));
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        C3484ActionBar c3484ActionBar2 = this.actionBar;
+        c3485ActionBar.setBackgroundColor(getThemedColor(i4));
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        C3485ActionBar c3485ActionBar2 = this.actionBar;
         int i5 = Theme.key_dialogTextBlack;
-        c3484ActionBar2.setItemsColor(getThemedColor(i5), false);
-        C3484ActionBar c3484ActionBar3 = this.actionBar;
+        c3485ActionBar2.setItemsColor(getThemedColor(i5), false);
+        C3485ActionBar c3485ActionBar3 = this.actionBar;
         int i6 = Theme.key_dialogButtonSelector;
-        c3484ActionBar3.setItemsBackgroundColor(getThemedColor(i6), false);
+        c3485ActionBar3.setItemsBackgroundColor(getThemedColor(i6), false);
         this.actionBar.setTitleColor(getThemedColor(i5));
         this.actionBar.setOccupyStatusBar(false);
         this.actionBar.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ChatAttachAlert.6
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ChatAttachAlert.6
             {
                 ChatAttachAlert.this = this;
             }
 
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i7) {
                 if (i7 == -1) {
                     if (ChatAttachAlert.this.currentAttachLayout.onBackPressed()) {
@@ -1712,8 +1753,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, null, 0, getThemedColor(i5), false, resourcesProvider);
         this.selectedMenuItem = actionBarMenuItem;
         actionBarMenuItem.setLongClickEnabled(false);
-        this.selectedMenuItem.setIcon(C3417R.C3419drawable.ic_ab_other);
-        this.selectedMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        this.selectedMenuItem.setIcon(C3419R.C3421drawable.ic_ab_other);
+        this.selectedMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
         this.selectedMenuItem.setVisibility(4);
         this.selectedMenuItem.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.selectedMenuItem.setSubMenuOpenSide(2);
@@ -1723,8 +1764,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.lambda$new$4(i7);
             }
         });
-        this.selectedMenuItem.setAdditionalYOffset(AndroidUtilities.m54dp(72));
-        this.selectedMenuItem.setTranslationX(AndroidUtilities.m54dp(6));
+        this.selectedMenuItem.setAdditionalYOffset(AndroidUtilities.m72dp(72));
+        this.selectedMenuItem.setTranslationX(AndroidUtilities.m72dp(6));
         this.selectedMenuItem.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i6), 6));
         this.selectedMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
@@ -1735,9 +1776,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         ActionBarMenuItem actionBarMenuItem2 = new ActionBarMenuItem(context, null, 0, getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader), true, resourcesProvider);
         this.doneItem = actionBarMenuItem2;
         actionBarMenuItem2.setLongClickEnabled(false);
-        this.doneItem.setText(LocaleController.getString("Create", C3417R.string.Create).toUpperCase());
+        this.doneItem.setText(LocaleController.getString("Create", C3419R.string.Create).toUpperCase());
         this.doneItem.setVisibility(4);
-        this.doneItem.setTranslationX(-AndroidUtilities.m54dp(12));
+        this.doneItem.setTranslationX(-AndroidUtilities.m72dp(12));
         this.doneItem.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i6), 3));
         this.doneItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
@@ -1745,21 +1786,23 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.lambda$new$6(view);
             }
         });
-        ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, null, 0, getThemedColor(i5), false, resourcesProvider);
-        this.searchItem = actionBarMenuItem3;
-        actionBarMenuItem3.setLongClickEnabled(false);
-        this.searchItem.setIcon(C3417R.C3419drawable.ic_ab_search);
-        this.searchItem.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
-        this.searchItem.setVisibility(4);
-        this.searchItem.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        this.searchItem.setTranslationX(-AndroidUtilities.m54dp(42));
-        this.searchItem.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i6), 6));
-        this.searchItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda12
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                ChatAttachAlert.this.lambda$new$7(z2, view);
-            }
-        });
+        if (baseFragment != null) {
+            ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, null, 0, getThemedColor(i5), false, resourcesProvider);
+            this.searchItem = actionBarMenuItem3;
+            actionBarMenuItem3.setLongClickEnabled(false);
+            this.searchItem.setIcon(C3419R.C3421drawable.ic_ab_search);
+            this.searchItem.setContentDescription(LocaleController.getString("Search", C3419R.string.Search));
+            this.searchItem.setVisibility(4);
+            this.searchItem.setAlpha(BitmapDescriptorFactory.HUE_RED);
+            this.searchItem.setTranslationX(-AndroidUtilities.m72dp(42));
+            this.searchItem.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i6), 6));
+            this.searchItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda12
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    ChatAttachAlert.this.lambda$new$7(z2, view);
+                }
+            });
+        }
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.ChatAttachAlert.8
             {
                 ChatAttachAlert.this = this;
@@ -1811,7 +1854,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.selectedTextView.setEllipsize(TextUtils.TruncateAt.END);
         this.selectedView.addView(this.selectedTextView, LayoutHelper.createLinear(-2, -2, 16));
         this.selectedArrowImageView = new ImageView(context);
-        Drawable mutate = getContext().getResources().getDrawable(C3417R.C3419drawable.attach_arrow_right).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3419R.C3421drawable.attach_arrow_right).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i5), PorterDuff.Mode.MULTIPLY));
         this.selectedArrowImageView.setImageDrawable(mutate);
         this.selectedArrowImageView.setVisibility(8);
@@ -1823,7 +1866,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         linearLayout2.setOrientation(0);
         this.mediaPreviewView.setGravity(16);
         ImageView imageView = new ImageView(context);
-        Drawable mutate2 = getContext().getResources().getDrawable(C3417R.C3419drawable.attach_arrow_left).mutate();
+        Drawable mutate2 = getContext().getResources().getDrawable(C3419R.C3421drawable.attach_arrow_left).mutate();
         mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i5), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate2);
         this.mediaPreviewView.addView(imageView, LayoutHelper.createLinear(-2, -2, 16, 0, 1, 4, 0));
@@ -1833,7 +1876,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.mediaPreviewTextView.setTextSize(1, 16.0f);
         this.mediaPreviewTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.mediaPreviewTextView.setGravity(19);
-        this.mediaPreviewTextView.setText(LocaleController.getString("AttachMediaPreview", C3417R.string.AttachMediaPreview));
+        this.mediaPreviewTextView.setText(LocaleController.getString("AttachMediaPreview", C3419R.string.AttachMediaPreview));
         this.mediaPreviewView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.mediaPreviewView.addView(this.mediaPreviewTextView, LayoutHelper.createLinear(-2, -2, 16));
         this.headerView.addView(this.mediaPreviewView, LayoutHelper.createFrame(-2, -1));
@@ -1848,7 +1891,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.containerView.addView(this.headerView, LayoutHelper.createFrame(-1, -2, 51, 23, 0, 48, 0));
         this.containerView.addView(this.actionBar, LayoutHelper.createFrame(-1, -2));
         this.containerView.addView(this.selectedMenuItem, LayoutHelper.createFrame(48, 48, 53));
-        this.containerView.addView(this.searchItem, LayoutHelper.createFrame(48, 48, 53));
+        ActionBarMenuItem actionBarMenuItem4 = this.searchItem;
+        if (actionBarMenuItem4 != null) {
+            this.containerView.addView(actionBarMenuItem4, LayoutHelper.createFrame(48, 48, 53));
+        }
         this.containerView.addView(this.doneItem, LayoutHelper.createFrame(-2, 48, 53));
         View view = new View(context);
         this.actionBarShadow = view;
@@ -1857,7 +1903,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.containerView.addView(this.actionBarShadow, LayoutHelper.createFrame(-1, 1));
         View view2 = new View(context);
         this.shadow = view2;
-        view2.setBackgroundResource(C3417R.C3419drawable.attach_shadow);
+        view2.setBackgroundResource(C3419R.C3421drawable.attach_shadow);
         this.shadow.getBackground().setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         this.containerView.addView(this.shadow, LayoutHelper.createFrame(-1, 2, 83, 0, 0, 0, 84));
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.ChatAttachAlert.9
@@ -1908,8 +1954,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.botMainButtonTextView.setSingleLine();
         this.botMainButtonTextView.setGravity(17);
         this.botMainButtonTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        int m54dp = AndroidUtilities.m54dp(16);
-        this.botMainButtonTextView.setPadding(m54dp, 0, m54dp, 0);
+        int m72dp = AndroidUtilities.m72dp(16);
+        this.botMainButtonTextView.setPadding(m72dp, 0, m72dp, 0);
         this.botMainButtonTextView.setTextSize(1, 14.0f);
         this.botMainButtonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
@@ -1920,19 +1966,26 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.containerView.addView(this.botMainButtonTextView, LayoutHelper.createFrame(-1, 48, 83));
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.botProgressView = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.m54dp(18));
+        radialProgressView.setSize(AndroidUtilities.m72dp(18));
         this.botProgressView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.botProgressView.setScaleX(0.1f);
         this.botProgressView.setScaleY(0.1f);
         this.botProgressView.setVisibility(8);
         this.containerView.addView(this.botProgressView, LayoutHelper.createFrame(28, 28, 85, 0, 0, 10, 10));
-        C439110 c439110 = new C439110(context, z);
-        this.frameLayout2 = c439110;
-        c439110.setWillNotDraw(false);
+        C441210 c441210 = new C441210(context, z);
+        this.frameLayout2 = c441210;
+        c441210.setWillNotDraw(false);
         this.frameLayout2.setVisibility(4);
         this.frameLayout2.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.containerView.addView(this.frameLayout2, LayoutHelper.createFrame(-1, -2, 83));
-        this.frameLayout2.setOnTouchListener(ChatAttachAlert$$ExternalSyntheticLambda14.INSTANCE);
+        this.frameLayout2.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda14
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view3, MotionEvent motionEvent) {
+                boolean lambda$new$15;
+                lambda$new$15 = ChatAttachAlert.lambda$new$15(view3, motionEvent);
+                return lambda$new$15;
+            }
+        });
         NumberTextView numberTextView = new NumberTextView(context);
         this.captionLimitView = numberTextView;
         numberTextView.setVisibility(8);
@@ -1942,14 +1995,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         numberTextView.setCenterAlign(true);
         this.frameLayout2.addView(numberTextView, LayoutHelper.createFrame(56, 20, 85, 3, 0, 14, 78));
         this.currentLimit = MessagesController.getInstance(UserConfig.selectedAccount).getCaptionMaxLengthLimit();
-        this.commentTextView = new C439211(context, this.sizeNotifierFrameLayout, null, 1, true, resourcesProvider);
+        this.commentTextView = new C441311(context, this.sizeNotifierFrameLayout, null, 1, true, resourcesProvider);
         if (isForwardingEditor()) {
-            this.commentTextView.setHint(LocaleController.getString("Caption", C3417R.string.Caption));
+            this.commentTextView.setHint(LocaleController.getString("Caption", C3419R.string.Caption));
         } else {
-            this.commentTextView.setHint(LocaleController.getString("AddCaption", C3417R.string.AddCaption));
+            this.commentTextView.setHint(LocaleController.getString("AddCaption", C3419R.string.AddCaption));
         }
         this.commentTextView.onResume();
-        this.commentTextView.getEditText().addTextChangedListener(new C439312());
+        this.commentTextView.getEditText().addTextChangedListener(new C441412());
         this.frameLayout2.addView(this.commentTextView, LayoutHelper.createFrame(-1, -2, 83, 0, 0, 84, 0));
         this.frameLayout2.setClipChildren(false);
         this.commentTextView.setClipChildren(false);
@@ -1982,26 +2035,26 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.writeButtonContainer.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.containerView.addView(this.writeButtonContainer, LayoutHelper.createFrame(60, 60, 85, 0, 0, 6, 10));
         this.writeButton = new ImageView(context);
-        int m54dp2 = AndroidUtilities.m54dp(56);
+        int m72dp2 = AndroidUtilities.m72dp(56);
         int i7 = Theme.key_dialogFloatingButton;
         int themedColor = getThemedColor(i7);
         int i8 = Build.VERSION.SDK_INT;
-        this.writeButtonDrawable = Theme.createSimpleSelectorCircleDrawable(m54dp2, themedColor, getThemedColor(i8 >= 21 ? Theme.key_dialogFloatingButtonPressed : i7));
+        this.writeButtonDrawable = Theme.createSimpleSelectorCircleDrawable(m72dp2, themedColor, getThemedColor(i8 >= 21 ? Theme.key_dialogFloatingButtonPressed : i7));
         if (i8 < 21) {
-            Drawable mutate3 = context.getResources().getDrawable(C3417R.C3419drawable.floating_shadow_profile).mutate();
+            Drawable mutate3 = context.getResources().getDrawable(C3419R.C3421drawable.floating_shadow_profile).mutate();
             mutate3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             i = 0;
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate3, this.writeButtonDrawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
+            combinedDrawable.setIconSize(AndroidUtilities.m72dp(56), AndroidUtilities.m72dp(56));
             this.writeButtonDrawable = combinedDrawable;
         } else {
             i = 0;
         }
         this.writeButton.setBackgroundDrawable(this.writeButtonDrawable);
         if (isForwardingEditor()) {
-            this.writeButton.setImageResource(C3417R.C3419drawable.floating_check);
+            this.writeButton.setImageResource(C3419R.C3421drawable.floating_check);
         } else {
-            this.writeButton.setImageResource(C3417R.C3419drawable.attach_send);
+            this.writeButton.setImageResource(C3419R.C3421drawable.attach_send);
         }
         this.writeButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogFloatingIcon), PorterDuff.Mode.MULTIPLY));
         this.writeButton.setImportantForAccessibility(2);
@@ -2010,7 +2063,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             this.writeButton.setOutlineProvider(new ViewOutlineProvider(this) { // from class: org.telegram.ui.Components.ChatAttachAlert.14
                 @Override // android.view.ViewOutlineProvider
                 public void getOutline(View view3, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
+                    outline.setOval(0, 0, AndroidUtilities.m72dp(56), AndroidUtilities.m72dp(56));
                 }
             });
         }
@@ -2029,7 +2082,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 return lambda$new$22;
             }
         });
-        this.textPaint.setTextSize(AndroidUtilities.m54dp(12));
+        this.textPaint.setTextSize(AndroidUtilities.m72dp(12));
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         View view3 = new View(context) { // from class: org.telegram.ui.Components.ChatAttachAlert.16
             {
@@ -2040,7 +2093,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             protected void onDraw(Canvas canvas) {
                 String format = String.format("%d", Integer.valueOf(Math.max(1, ChatAttachAlert.this.currentAttachLayout.getSelectedItemsCount())));
                 int ceil = (int) Math.ceil(ChatAttachAlert.this.textPaint.measureText(format));
-                int max = Math.max(AndroidUtilities.m54dp(16) + ceil, AndroidUtilities.m54dp(24));
+                int max = Math.max(AndroidUtilities.m72dp(16) + ceil, AndroidUtilities.m72dp(24));
                 int measuredWidth = getMeasuredWidth() / 2;
                 int themedColor2 = ChatAttachAlert.this.getThemedColor(Theme.key_dialogRoundCheckBoxCheck);
                 ChatAttachAlert.this.textPaint.setColor(ColorUtils.setAlphaComponent(themedColor2, (int) (Color.alpha(themedColor2) * ((ChatAttachAlert.this.sendButtonEnabledProgress * 0.42d) + 0.58d))));
@@ -2049,11 +2102,11 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 int i10 = measuredWidth - i9;
                 int i11 = i9 + measuredWidth;
                 ChatAttachAlert.this.rect.set(i10, BitmapDescriptorFactory.HUE_RED, i11, getMeasuredHeight());
-                canvas.drawRoundRect(ChatAttachAlert.this.rect, AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(12), ChatAttachAlert.this.paint);
+                canvas.drawRoundRect(ChatAttachAlert.this.rect, AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(12), ChatAttachAlert.this.paint);
                 ChatAttachAlert.this.paint.setColor(ChatAttachAlert.this.getThemedColor(Theme.key_dialogRoundCheckBox));
-                ChatAttachAlert.this.rect.set(i10 + AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), i11 - AndroidUtilities.m54dp(2), getMeasuredHeight() - AndroidUtilities.m54dp(2));
-                canvas.drawRoundRect(ChatAttachAlert.this.rect, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), ChatAttachAlert.this.paint);
-                canvas.drawText(format, measuredWidth - (ceil / 2), AndroidUtilities.m55dp(16.2f), ChatAttachAlert.this.textPaint);
+                ChatAttachAlert.this.rect.set(i10 + AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), i11 - AndroidUtilities.m72dp(2), getMeasuredHeight() - AndroidUtilities.m72dp(2));
+                canvas.drawRoundRect(ChatAttachAlert.this.rect, AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10), ChatAttachAlert.this.paint);
+                canvas.drawText(format, measuredWidth - (ceil / 2), AndroidUtilities.m73dp(16.2f), ChatAttachAlert.this.textPaint);
             }
         };
         this.selectedCountView = view3;
@@ -2078,7 +2131,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$3 */
     /* loaded from: classes6.dex */
-    public class C44073 extends SizeNotifierFrameLayout {
+    public class C44283 extends SizeNotifierFrameLayout {
         AdjustPanLayoutHelper adjustPanLayoutHelper;
         private boolean ignoreLayout;
         private float initialTranslationY;
@@ -2087,7 +2140,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         final /* synthetic */ boolean val$forceDarkTheme;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C44073(Context context, boolean z) {
+        C44283(Context context, boolean z) {
             super(context);
             ChatAttachAlert.this = r1;
             this.val$forceDarkTheme = z;
@@ -2095,6 +2148,11 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 @Override // org.telegram.p043ui.Components.Bulletin.Delegate
                 public /* synthetic */ boolean allowLayoutChanges() {
                     return Bulletin.Delegate.CC.$default$allowLayoutChanges(this);
+                }
+
+                @Override // org.telegram.p043ui.Components.Bulletin.Delegate
+                public /* synthetic */ boolean clipWithGradient(int i) {
+                    return Bulletin.Delegate.CC.$default$clipWithGradient(this, i);
                 }
 
                 @Override // org.telegram.p043ui.Components.Bulletin.Delegate
@@ -2118,18 +2176,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
 
                 {
-                    C44073.this = this;
+                    C44283.this = this;
                 }
 
                 @Override // org.telegram.p043ui.Components.Bulletin.Delegate
                 public int getBottomOffset(int i) {
-                    return (C44073.this.getHeight() - ChatAttachAlert.this.frameLayout2.getTop()) + AndroidUtilities.m54dp(52);
+                    return (C44283.this.getHeight() - ChatAttachAlert.this.frameLayout2.getTop()) + AndroidUtilities.m72dp(52);
                 }
             };
             this.rect = new RectF();
             this.adjustPanLayoutHelper = new AdjustPanLayoutHelper(this) { // from class: org.telegram.ui.Components.ChatAttachAlert.3.2
                 {
-                    C44073.this = this;
+                    C44283.this = this;
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:32:0x005d  */
@@ -2143,15 +2201,15 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     /*
                         r4 = this;
                         super.onTransitionStart(r5, r6)
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         int r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$3800(r0)
                         r1 = 0
                         if (r0 <= 0) goto L37
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         int r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$3800(r0)
-                        org.telegram.ui.Components.ChatAttachAlert$3 r2 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r2 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r2 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         int[] r3 = r2.scrollOffsetY
                         r3 = r3[r1]
@@ -2160,7 +2218,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         int r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$3800(r2)
                         float r0 = (float) r0
                         org.telegram.p043ui.Components.ChatAttachAlert.access$3902(r2, r0)
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         int[] r2 = r0.scrollOffsetY
                         r2 = r2[r1]
@@ -2168,50 +2226,50 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         org.telegram.p043ui.Components.ChatAttachAlert.access$4002(r0, r2)
                         goto L40
                     L37:
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         r2 = -1082130432(0xffffffffbf800000, float:-1.0)
                         org.telegram.p043ui.Components.ChatAttachAlert.access$3902(r0, r2)
                     L40:
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         r0.invalidate()
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         org.telegram.ui.Components.ChatAttachAlert$AttachAlertLayout r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$000(r0)
                         boolean r0 = r0 instanceof org.telegram.p043ui.Components.ChatAttachAlertBotWebViewLayout
                         if (r0 == 0) goto L88
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         boolean r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$600(r0)
                         if (r0 != 0) goto L88
                         if (r5 == 0) goto L74
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         android.view.View r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$1200(r0)
                         r1 = 8
                         r0.setVisibility(r1)
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         org.telegram.ui.Components.RecyclerListView r0 = r0.buttonsRecyclerView
                         r0.setVisibility(r1)
                         goto L88
                     L74:
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         android.view.View r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$1200(r0)
                         r0.setVisibility(r1)
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         org.telegram.ui.Components.RecyclerListView r0 = r0.buttonsRecyclerView
                         r0.setVisibility(r1)
                     L88:
-                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44073.this
+                        org.telegram.ui.Components.ChatAttachAlert$3 r0 = org.telegram.p043ui.Components.ChatAttachAlert.C44283.this
                         org.telegram.ui.Components.ChatAttachAlert r0 = org.telegram.p043ui.Components.ChatAttachAlert.this
                         org.telegram.ui.Components.ChatAttachAlert$AttachAlertLayout r0 = org.telegram.p043ui.Components.ChatAttachAlert.access$000(r0)
                         r0.onPanTransitionStart(r5, r6)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C44073.C44092.onTransitionStart(boolean, int):void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C44283.C44302.onTransitionStart(boolean, int):void");
                 }
 
                 @Override // org.telegram.p043ui.ActionBar.AdjustPanLayoutHelper
@@ -2225,9 +2283,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     if (!(ChatAttachAlert.this.currentAttachLayout instanceof ChatAttachAlertBotWebViewLayout) || ChatAttachAlert.this.botButtonWasVisible) {
                         return;
                     }
-                    int m54dp = ((BottomSheet) ChatAttachAlert.this).keyboardVisible ? AndroidUtilities.m54dp(84) : 0;
+                    int m72dp = ((BottomSheet) ChatAttachAlert.this).keyboardVisible ? AndroidUtilities.m72dp(84) : 0;
                     for (int i = 0; i < ChatAttachAlert.this.botAttachLayouts.size(); i++) {
-                        ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i)).setMeasureOffsetY(m54dp);
+                        ((ChatAttachAlertBotWebViewLayout) ChatAttachAlert.this.botAttachLayouts.valueAt(i)).setMeasureOffsetY(m72dp);
                     }
                 }
 
@@ -2244,14 +2302,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     ChatAttachAlert chatAttachAlert4 = ChatAttachAlert.this;
                     chatAttachAlert4.selectedMenuItem.setTranslationY(chatAttachAlert4.currentPanTranslationY);
                     ChatAttachAlert chatAttachAlert5 = ChatAttachAlert.this;
-                    chatAttachAlert5.searchItem.setTranslationY(chatAttachAlert5.currentPanTranslationY);
+                    ActionBarMenuItem actionBarMenuItem = chatAttachAlert5.searchItem;
+                    if (actionBarMenuItem != null) {
+                        actionBarMenuItem.setTranslationY(chatAttachAlert5.currentPanTranslationY);
+                    }
                     ChatAttachAlert chatAttachAlert6 = ChatAttachAlert.this;
                     chatAttachAlert6.doneItem.setTranslationY(chatAttachAlert6.currentPanTranslationY);
                     ChatAttachAlert.this.actionBarShadow.setTranslationY(ChatAttachAlert.this.currentPanTranslationY);
                     ChatAttachAlert.this.updateSelectedPosition(0);
                     ChatAttachAlert chatAttachAlert7 = ChatAttachAlert.this;
                     chatAttachAlert7.setCurrentPanTranslationY(chatAttachAlert7.currentPanTranslationY);
-                    C44073.this.invalidate();
+                    C44283.this.invalidate();
                     ChatAttachAlert.this.frameLayout2.invalidate();
                     ChatAttachAlert.this.updateCommentTextViewPosition();
                     if (ChatAttachAlert.this.currentAttachLayout != null) {
@@ -2308,17 +2369,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             getPaddingTop();
             int size2 = View.MeasureSpec.getSize(i) - (((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft * 2);
             if (AndroidUtilities.isTablet()) {
-                ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.m54dp(3));
+                ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.m72dp(3));
             } else {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x > point.y) {
                     ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(0);
                 } else {
-                    ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.m54dp(3));
+                    ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.m72dp(3));
                 }
             }
-            ((FrameLayout.LayoutParams) ChatAttachAlert.this.actionBarShadow.getLayoutParams()).topMargin = C3484ActionBar.getCurrentActionBarHeight();
-            ((FrameLayout.LayoutParams) ChatAttachAlert.this.doneItem.getLayoutParams()).height = C3484ActionBar.getCurrentActionBarHeight();
+            ((FrameLayout.LayoutParams) ChatAttachAlert.this.actionBarShadow.getLayoutParams()).topMargin = C3485ActionBar.getCurrentActionBarHeight();
+            ((FrameLayout.LayoutParams) ChatAttachAlert.this.doneItem.getLayoutParams()).height = C3485ActionBar.getCurrentActionBarHeight();
             this.ignoreLayout = true;
             int min = (int) (size2 / Math.min(4.5f, ChatAttachAlert.this.buttonsAdapter.getItemCount()));
             if (ChatAttachAlert.this.attachItemSize != min) {
@@ -2326,7 +2387,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatAttachAlert.C44073.this.lambda$onMeasure$0();
+                        ChatAttachAlert.C44283.this.lambda$onMeasure$0();
                     }
                 });
             }
@@ -2343,12 +2404,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             int size2 = View.MeasureSpec.getSize(i2);
             setMeasuredDimension(size, size2);
             int i3 = size - (((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft * 2);
-            if (!ChatAttachAlert.this.commentTextView.isWaitingForKeyboardOpen() && AndroidUtilities.m54dp(20) >= 0 && !ChatAttachAlert.this.commentTextView.isPopupShowing() && !ChatAttachAlert.this.commentTextView.isAnimatePopupClosing()) {
+            if (!ChatAttachAlert.this.commentTextView.isWaitingForKeyboardOpen() && AndroidUtilities.m72dp(20) >= 0 && !ChatAttachAlert.this.commentTextView.isPopupShowing() && !ChatAttachAlert.this.commentTextView.isAnimatePopupClosing()) {
                 this.ignoreLayout = true;
                 ChatAttachAlert.this.commentTextView.hideEmojiView();
                 this.ignoreLayout = false;
             }
-            if (AndroidUtilities.m54dp(20) >= 0) {
+            if (AndroidUtilities.m72dp(20) >= 0) {
                 int emojiPadding = ((BottomSheet) ChatAttachAlert.this).keyboardVisible ? 0 : ChatAttachAlert.this.commentTextView.getEmojiPadding();
                 if (!AndroidUtilities.isInMultiwindow) {
                     size2 -= emojiPadding;
@@ -2371,7 +2432,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(getPaddingTop() + size2, 1073741824));
                         } else if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
                             if (AndroidUtilities.isTablet()) {
-                                childAt.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m54dp(AndroidUtilities.isTablet() ? 200 : 320), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
+                                childAt.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.m72dp(AndroidUtilities.isTablet() ? 200 : 320), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop()), 1073741824));
                             } else {
                                 childAt.measure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) + getPaddingTop(), 1073741824));
                             }
@@ -2400,7 +2461,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 Method dump skipped, instructions count: 312
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C44073.onLayout(boolean, int, int, int, int):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C44283.onLayout(boolean, int, int, int, int):void");
         }
 
         @Override // android.view.View, android.view.ViewParent
@@ -2413,8 +2474,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
         private void drawChildBackground(Canvas canvas, View view) {
             int i;
-            float m54dp;
-            int m54dp2;
+            float m72dp;
+            int m72dp2;
             float f;
             int themedColor;
             float f2;
@@ -2426,19 +2487,19 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 int alpha2 = (int) (view.getAlpha() * 255.0f);
                 AttachAlertLayout attachAlertLayout = (AttachAlertLayout) view;
                 int needsActionBar = attachAlertLayout.needsActionBar();
-                int m54dp3 = AndroidUtilities.m54dp(13);
+                int m72dp3 = AndroidUtilities.m72dp(13);
                 FrameLayout frameLayout = ChatAttachAlert.this.headerView;
-                int m55dp = m54dp3 + (frameLayout != null ? AndroidUtilities.m55dp(frameLayout.getAlpha() * 26.0f) : 0);
-                int scrollOffsetY = (ChatAttachAlert.this.getScrollOffsetY(0) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) - m55dp;
+                int m73dp = m72dp3 + (frameLayout != null ? AndroidUtilities.m73dp(frameLayout.getAlpha() * 26.0f) : 0);
+                int scrollOffsetY = (ChatAttachAlert.this.getScrollOffsetY(0) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) - m73dp;
                 if (((BottomSheet) ChatAttachAlert.this).currentSheetAnimationType == 1 || ChatAttachAlert.this.viewChangeAnimator != null) {
                     scrollOffsetY = (int) (scrollOffsetY + view.getTranslationY());
                 }
-                int m54dp4 = AndroidUtilities.m54dp(20) + scrollOffsetY;
-                int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(45) + ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
+                int m72dp4 = AndroidUtilities.m72dp(20) + scrollOffsetY;
+                int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(45) + ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
                 if (needsActionBar == 0) {
                     i = ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
                 } else {
-                    i = C3484ActionBar.getCurrentActionBarHeight();
+                    i = C3485ActionBar.getCurrentActionBarHeight();
                 }
                 if (needsActionBar == 2) {
                     if (scrollOffsetY < i) {
@@ -2447,27 +2508,27 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     f = 1.0f;
                 } else {
                     if (((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY < i) {
-                        float f3 = m55dp;
+                        float f3 = m73dp;
                         if (attachAlertLayout != ChatAttachAlert.this.locationLayout) {
                             if (attachAlertLayout == ChatAttachAlert.this.pollLayout || attachAlertLayout == ChatAttachAlert.this.walletLayout || attachAlertLayout == ChatAttachAlert.this.templatesLayout) {
-                                m54dp = f3 - AndroidUtilities.m54dp(3);
-                                float min = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m54dp);
-                                int i2 = (int) ((i - m54dp) * min);
+                                m72dp = f3 - AndroidUtilities.m72dp(3);
+                                float min = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m72dp);
+                                int i2 = (int) ((i - m72dp) * min);
                                 scrollOffsetY -= i2;
-                                m54dp4 -= i2;
+                                m72dp4 -= i2;
                                 measuredHeight += i2;
                                 f = 1.0f - min;
                             } else {
-                                m54dp2 = AndroidUtilities.m54dp(4);
+                                m72dp2 = AndroidUtilities.m72dp(4);
                             }
                         } else {
-                            m54dp2 = AndroidUtilities.m54dp(11);
+                            m72dp2 = AndroidUtilities.m72dp(11);
                         }
-                        m54dp = f3 + m54dp2;
-                        float min2 = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m54dp);
-                        int i22 = (int) ((i - m54dp) * min2);
+                        m72dp = f3 + m72dp2;
+                        float min2 = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m72dp);
+                        int i22 = (int) ((i - m72dp) * min2);
                         scrollOffsetY -= i22;
-                        m54dp4 -= i22;
+                        m72dp4 -= i22;
                         measuredHeight += i22;
                         f = 1.0f - min2;
                     }
@@ -2476,7 +2537,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (Build.VERSION.SDK_INT >= 21 && !ChatAttachAlert.this.inBubbleMode) {
                     int i3 = AndroidUtilities.statusBarHeight;
                     scrollOffsetY += i3;
-                    m54dp4 += i3;
+                    m72dp4 += i3;
                     measuredHeight -= i3;
                 }
                 if (ChatAttachAlert.this.currentAttachLayout.hasCustomBackground()) {
@@ -2490,13 +2551,13 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (needsActionBar == 2) {
                     Theme.dialogs_onlineCirclePaint.setColor(themedColor);
                     Theme.dialogs_onlineCirclePaint.setAlpha(alpha2);
-                    this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m54dp(24));
+                    this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m72dp(24));
                     canvas.save();
                     RectF rectF = this.rect;
                     float f4 = rectF.left;
                     float f5 = rectF.top;
                     canvas.clipRect(f4, f5, rectF.right, (rectF.height() / 2.0f) + f5);
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
                     canvas.restore();
                     f2 = 1.0f;
                 } else {
@@ -2505,19 +2566,19 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (f != f2 && needsActionBar != 2) {
                     Theme.dialogs_onlineCirclePaint.setColor(themedColor);
                     Theme.dialogs_onlineCirclePaint.setAlpha(alpha2);
-                    this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m54dp(24));
+                    this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m72dp(24));
                     canvas.save();
                     RectF rectF2 = this.rect;
                     float f6 = rectF2.left;
                     float f7 = rectF2.top;
                     canvas.clipRect(f6, f7, rectF2.right, (rectF2.height() / 2.0f) + f7);
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
                     canvas.restore();
                 }
                 FrameLayout frameLayout2 = ChatAttachAlert.this.headerView;
                 if ((frameLayout2 == null || frameLayout2.getAlpha() != 1.0f) && f != BitmapDescriptorFactory.HUE_RED) {
-                    int m54dp5 = AndroidUtilities.m54dp(36);
-                    this.rect.set((getMeasuredWidth() - m54dp5) / 2, m54dp4, (getMeasuredWidth() + m54dp5) / 2, m54dp4 + AndroidUtilities.m54dp(4));
+                    int m72dp5 = AndroidUtilities.m72dp(36);
+                    this.rect.set((getMeasuredWidth() - m72dp5) / 2, m72dp4, (getMeasuredWidth() + m72dp5) / 2, m72dp4 + AndroidUtilities.m72dp(4));
                     if (needsActionBar == 2) {
                         themedColor2 = 536870912;
                         alpha = f;
@@ -2529,7 +2590,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     int alpha3 = Color.alpha(themedColor2);
                     Theme.dialogs_onlineCirclePaint.setColor(themedColor2);
                     Theme.dialogs_onlineCirclePaint.setAlpha((int) (alpha3 * alpha * f * view.getAlpha()));
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
                 }
                 canvas.restore();
             }
@@ -2538,8 +2599,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         @Override // android.view.ViewGroup
         protected boolean drawChild(Canvas canvas, View view, long j) {
             int i;
-            float m54dp;
-            int m54dp2;
+            float m72dp;
+            int m72dp2;
             float f;
             int themedColor;
             int themedColor2;
@@ -2552,20 +2613,20 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 int alpha2 = (int) (view.getAlpha() * 255.0f);
                 AttachAlertLayout attachAlertLayout = (AttachAlertLayout) view;
                 int needsActionBar = attachAlertLayout.needsActionBar();
-                int m54dp3 = AndroidUtilities.m54dp(13);
+                int m72dp3 = AndroidUtilities.m72dp(13);
                 FrameLayout frameLayout2 = ChatAttachAlert.this.headerView;
-                int m55dp = m54dp3 + (frameLayout2 != null ? AndroidUtilities.m55dp(frameLayout2.getAlpha() * 26.0f) : 0);
+                int m73dp = m72dp3 + (frameLayout2 != null ? AndroidUtilities.m73dp(frameLayout2.getAlpha() * 26.0f) : 0);
                 ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
-                int scrollOffsetY = (chatAttachAlert.getScrollOffsetY(attachAlertLayout == chatAttachAlert.currentAttachLayout ? 0 : 1) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) - m55dp;
+                int scrollOffsetY = (chatAttachAlert.getScrollOffsetY(attachAlertLayout == chatAttachAlert.currentAttachLayout ? 0 : 1) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) - m73dp;
                 if (((BottomSheet) ChatAttachAlert.this).currentSheetAnimationType == 1 || ChatAttachAlert.this.viewChangeAnimator != null) {
                     scrollOffsetY = (int) (scrollOffsetY + view.getTranslationY());
                 }
-                int m54dp4 = AndroidUtilities.m54dp(20) + scrollOffsetY;
-                int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(45) + ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
+                int m72dp4 = AndroidUtilities.m72dp(20) + scrollOffsetY;
+                int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(45) + ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
                 if (needsActionBar == 0) {
                     i = ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop;
                 } else {
-                    i = C3484ActionBar.getCurrentActionBarHeight();
+                    i = C3485ActionBar.getCurrentActionBarHeight();
                 }
                 if (needsActionBar == 2) {
                     if (scrollOffsetY < i) {
@@ -2574,27 +2635,27 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     f = 1.0f;
                 } else {
                     if (((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY < i) {
-                        float f2 = m55dp;
+                        float f2 = m73dp;
                         if (attachAlertLayout != ChatAttachAlert.this.locationLayout) {
                             if (attachAlertLayout == ChatAttachAlert.this.pollLayout || attachAlertLayout == ChatAttachAlert.this.walletLayout || attachAlertLayout == ChatAttachAlert.this.templatesLayout) {
-                                m54dp = f2 - AndroidUtilities.m54dp(3);
-                                float min = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m54dp);
-                                int i3 = (int) ((i - m54dp) * min);
+                                m72dp = f2 - AndroidUtilities.m72dp(3);
+                                float min = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m72dp);
+                                int i3 = (int) ((i - m72dp) * min);
                                 scrollOffsetY -= i3;
-                                m54dp4 -= i3;
+                                m72dp4 -= i3;
                                 measuredHeight += i3;
                                 f = 1.0f - min;
                             } else {
-                                m54dp2 = AndroidUtilities.m54dp(4);
+                                m72dp2 = AndroidUtilities.m72dp(4);
                             }
                         } else {
-                            m54dp2 = AndroidUtilities.m54dp(11);
+                            m72dp2 = AndroidUtilities.m72dp(11);
                         }
-                        m54dp = f2 + m54dp2;
-                        float min2 = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m54dp);
-                        int i32 = (int) ((i - m54dp) * min2);
+                        m72dp = f2 + m72dp2;
+                        float min2 = Math.min(1.0f, ((i - scrollOffsetY) - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop) / m72dp);
+                        int i32 = (int) ((i - m72dp) * min2);
                         scrollOffsetY -= i32;
-                        m54dp4 -= i32;
+                        m72dp4 -= i32;
                         measuredHeight += i32;
                         f = 1.0f - min2;
                     }
@@ -2603,7 +2664,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (Build.VERSION.SDK_INT >= 21 && !ChatAttachAlert.this.inBubbleMode) {
                     int i4 = AndroidUtilities.statusBarHeight;
                     scrollOffsetY += i4;
-                    m54dp4 += i4;
+                    m72dp4 += i4;
                     measuredHeight -= i4;
                 }
                 if (ChatAttachAlert.this.currentAttachLayout.hasCustomBackground()) {
@@ -2619,13 +2680,13 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     if (needsActionBar == 2) {
                         Theme.dialogs_onlineCirclePaint.setColor(themedColor);
                         Theme.dialogs_onlineCirclePaint.setAlpha(alpha2);
-                        this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m54dp(24));
+                        this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m72dp(24));
                         canvas.save();
                         RectF rectF = this.rect;
                         float f3 = rectF.left;
                         float f4 = rectF.top;
                         canvas.clipRect(f3, f4, rectF.right, (rectF.height() / 2.0f) + f4);
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                        canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
                         canvas.restore();
                     }
                 }
@@ -2638,7 +2699,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         Point point = AndroidUtilities.displaySize;
                         i2 = point.x > point.y ? 6 : 12;
                     }
-                    canvas.clipRect(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, (int) (ChatAttachAlert.this.baseSelectedTextViewTranslationY + AndroidUtilities.statusBarHeight + ChatAttachAlert.this.headerView.getHeight() + AndroidUtilities.m55dp(i2 * ChatAttachAlert.this.headerView.getAlpha())), getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, getMeasuredHeight());
+                    canvas.clipRect(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, (int) (ChatAttachAlert.this.baseSelectedTextViewTranslationY + AndroidUtilities.statusBarHeight + ChatAttachAlert.this.headerView.getHeight() + AndroidUtilities.m73dp(i2 * ChatAttachAlert.this.headerView.getAlpha())), getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, getMeasuredHeight());
                 }
                 boolean drawChild = super.drawChild(canvas, view, j);
                 if (z2) {
@@ -2648,19 +2709,19 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     if (f != 1.0f && needsActionBar != 2) {
                         Theme.dialogs_onlineCirclePaint.setColor(themedColor);
                         Theme.dialogs_onlineCirclePaint.setAlpha(alpha2);
-                        this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m54dp(24));
+                        this.rect.set(((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY, getMeasuredWidth() - ((BottomSheet) ChatAttachAlert.this).backgroundPaddingLeft, ((BottomSheet) ChatAttachAlert.this).backgroundPaddingTop + scrollOffsetY + AndroidUtilities.m72dp(24));
                         canvas.save();
                         RectF rectF2 = this.rect;
                         float f5 = rectF2.left;
                         float f6 = rectF2.top;
                         canvas.clipRect(f5, f6, rectF2.right, (rectF2.height() / 2.0f) + f6);
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                        canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
                         canvas.restore();
                     }
                     FrameLayout frameLayout3 = ChatAttachAlert.this.headerView;
                     if ((frameLayout3 == null || frameLayout3.getAlpha() != 1.0f) && f != BitmapDescriptorFactory.HUE_RED) {
-                        int m54dp5 = AndroidUtilities.m54dp(36);
-                        this.rect.set((getMeasuredWidth() - m54dp5) / 2, m54dp4, (getMeasuredWidth() + m54dp5) / 2, m54dp4 + AndroidUtilities.m54dp(4));
+                        int m72dp5 = AndroidUtilities.m72dp(36);
+                        this.rect.set((getMeasuredWidth() - m72dp5) / 2, m72dp4, (getMeasuredWidth() + m72dp5) / 2, m72dp4 + AndroidUtilities.m72dp(4));
                         if (needsActionBar == 2) {
                             themedColor2 = 536870912;
                             alpha = f;
@@ -2672,7 +2733,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         int alpha3 = Color.alpha(themedColor2);
                         Theme.dialogs_onlineCirclePaint.setColor(themedColor2);
                         Theme.dialogs_onlineCirclePaint.setAlpha((int) (alpha3 * alpha * f * view.getAlpha()));
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+                        canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
                     }
                 }
                 canvas.restore();
@@ -2700,10 +2761,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         private int getCurrentTop() {
             ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
             int i = chatAttachAlert.scrollOffsetY[0] - (((BottomSheet) chatAttachAlert).backgroundPaddingTop * 2);
-            int m54dp = AndroidUtilities.m54dp(13);
+            int m72dp = AndroidUtilities.m72dp(13);
             FrameLayout frameLayout = ChatAttachAlert.this.headerView;
-            int m55dp = (i - (m54dp + (frameLayout != null ? AndroidUtilities.m55dp(frameLayout.getAlpha() * 26.0f) : 0))) + AndroidUtilities.m54dp(20);
-            return (Build.VERSION.SDK_INT < 21 || ChatAttachAlert.this.inBubbleMode) ? m55dp : m55dp + AndroidUtilities.statusBarHeight;
+            int m73dp = (i - (m72dp + (frameLayout != null ? AndroidUtilities.m73dp(frameLayout.getAlpha() * 26.0f) : 0))) + AndroidUtilities.m72dp(20);
+            return (Build.VERSION.SDK_INT < 21 || ChatAttachAlert.this.inBubbleMode) ? m73dp : m73dp + AndroidUtilities.statusBarHeight;
         }
 
         @Override // org.telegram.p043ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
@@ -2860,112 +2921,111 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     public /* synthetic */ void lambda$new$11(Theme.ResourcesProvider resourcesProvider, View view, int i) {
         BaseFragment baseFragment = this.baseFragment;
-        if (baseFragment == null || baseFragment.getParentActivity() == null) {
-            return;
-        }
-        if (view instanceof AttachButton) {
-            int intValue = ((Integer) view.getTag()).intValue();
-            if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET) {
-                openWalletLayout();
-            } else if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_BINANCE) {
-                openBinanceScreen();
-            } else if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_TEMPLATES) {
-                openTemplatesLayout();
-            } else if (intValue == 1) {
-                if (!this.photosEnabled && !this.videosEnabled) {
-                    ChatAttachRestrictedLayout chatAttachRestrictedLayout = new ChatAttachRestrictedLayout(1, this, getContext(), resourcesProvider);
-                    this.restrictedLayout = chatAttachRestrictedLayout;
-                    showLayout(chatAttachRestrictedLayout);
-                }
-                showLayout(this.photoLayout);
-            } else if (intValue == 3) {
-                if (Build.VERSION.SDK_INT >= 23 && this.baseFragment.getParentActivity().checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                    this.baseFragment.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    return;
-                }
-                openAudioLayout(true);
-            } else if (intValue == 4) {
-                if (Build.VERSION.SDK_INT >= 23 && this.baseFragment.getParentActivity().checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                    this.baseFragment.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    return;
-                }
-                openDocumentsLayout(true);
-            } else if (intValue == 5) {
-                if (Build.VERSION.SDK_INT >= 23 && this.plainTextEnabled && this.baseFragment.getParentActivity().checkSelfPermission("android.permission.READ_CONTACTS") != 0) {
-                    this.baseFragment.getParentActivity().requestPermissions(new String[]{"android.permission.READ_CONTACTS"}, 5);
-                    return;
-                }
-                openContactsLayout();
-            } else if (intValue == 6) {
-                if (!AndroidUtilities.isMapsInstalled(this.baseFragment)) {
-                    return;
-                }
-                if (!this.plainTextEnabled) {
-                    ChatAttachRestrictedLayout chatAttachRestrictedLayout2 = new ChatAttachRestrictedLayout(6, this, getContext(), resourcesProvider);
-                    this.restrictedLayout = chatAttachRestrictedLayout2;
-                    showLayout(chatAttachRestrictedLayout2);
-                } else {
-                    if (this.locationLayout == null) {
-                        AttachAlertLayout[] attachAlertLayoutArr = this.layouts;
-                        ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), resourcesProvider);
-                        this.locationLayout = chatAttachAlertLocationLayout;
-                        attachAlertLayoutArr[5] = chatAttachAlertLocationLayout;
-                        chatAttachAlertLocationLayout.setDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda42
-                            @Override // org.telegram.p043ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
-                            public final void didSelectLocation(TLRPC$MessageMedia tLRPC$MessageMedia, int i2, boolean z, int i3, String str) {
-                                ChatAttachAlert.this.lambda$new$9(tLRPC$MessageMedia, i2, z, i3, str);
-                            }
-                        });
+        if (baseFragment == null || baseFragment.getParentActivity() != null) {
+            if (view instanceof AttachButton) {
+                int intValue = ((Integer) view.getTag()).intValue();
+                if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET) {
+                    openWalletLayout();
+                } else if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_BINANCE) {
+                    openBinanceScreen();
+                } else if (intValue == IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_TEMPLATES) {
+                    openTemplatesLayout();
+                } else if (intValue == 1) {
+                    if (!this.photosEnabled && !this.videosEnabled) {
+                        ChatAttachRestrictedLayout chatAttachRestrictedLayout = new ChatAttachRestrictedLayout(1, this, getContext(), resourcesProvider);
+                        this.restrictedLayout = chatAttachRestrictedLayout;
+                        showLayout(chatAttachRestrictedLayout);
                     }
-                    showLayout(this.locationLayout);
-                }
-            } else if (intValue == 9) {
-                if (!this.pollsEnabled) {
-                    ChatAttachRestrictedLayout chatAttachRestrictedLayout3 = new ChatAttachRestrictedLayout(9, this, getContext(), resourcesProvider);
-                    this.restrictedLayout = chatAttachRestrictedLayout3;
-                    showLayout(chatAttachRestrictedLayout3);
-                } else {
-                    if (this.pollLayout == null) {
-                        AttachAlertLayout[] attachAlertLayoutArr2 = this.layouts;
-                        ChatAttachAlertPollLayout chatAttachAlertPollLayout = new ChatAttachAlertPollLayout(this, getContext(), resourcesProvider);
-                        this.pollLayout = chatAttachAlertPollLayout;
-                        attachAlertLayoutArr2[1] = chatAttachAlertPollLayout;
-                        chatAttachAlertPollLayout.setDelegate(new ChatAttachAlertPollLayout.PollCreateActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda43
-                            @Override // org.telegram.p043ui.Components.ChatAttachAlertPollLayout.PollCreateActivityDelegate
-                            public final void sendPoll(TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, HashMap hashMap, boolean z, int i2, String str) {
-                                ChatAttachAlert.this.lambda$new$10(tLRPC$TL_messageMediaPoll, hashMap, z, i2, str);
-                            }
-                        });
+                    showLayout(this.photoLayout);
+                } else if (intValue == 3) {
+                    if (Build.VERSION.SDK_INT >= 23 && getContext().checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                        AndroidUtilities.findActivity(getContext()).requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                        return;
                     }
-                    showLayout(this.pollLayout);
+                    openAudioLayout(true);
+                } else if (intValue == 4) {
+                    if (Build.VERSION.SDK_INT >= 23 && getContext().checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                        AndroidUtilities.findActivity(getContext()).requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                        return;
+                    }
+                    openDocumentsLayout(true);
+                } else if (intValue == 5) {
+                    if (Build.VERSION.SDK_INT >= 23 && this.plainTextEnabled && getContext().checkSelfPermission("android.permission.READ_CONTACTS") != 0) {
+                        AndroidUtilities.findActivity(getContext()).requestPermissions(new String[]{"android.permission.READ_CONTACTS"}, 5);
+                        return;
+                    }
+                    openContactsLayout();
+                } else if (intValue == 6) {
+                    if (!AndroidUtilities.isMapsInstalled(this.baseFragment)) {
+                        return;
+                    }
+                    if (!this.plainTextEnabled) {
+                        ChatAttachRestrictedLayout chatAttachRestrictedLayout2 = new ChatAttachRestrictedLayout(6, this, getContext(), resourcesProvider);
+                        this.restrictedLayout = chatAttachRestrictedLayout2;
+                        showLayout(chatAttachRestrictedLayout2);
+                    } else {
+                        if (this.locationLayout == null) {
+                            AttachAlertLayout[] attachAlertLayoutArr = this.layouts;
+                            ChatAttachAlertLocationLayout chatAttachAlertLocationLayout = new ChatAttachAlertLocationLayout(this, getContext(), resourcesProvider);
+                            this.locationLayout = chatAttachAlertLocationLayout;
+                            attachAlertLayoutArr[5] = chatAttachAlertLocationLayout;
+                            chatAttachAlertLocationLayout.setDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda42
+                                @Override // org.telegram.p043ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
+                                public final void didSelectLocation(TLRPC$MessageMedia tLRPC$MessageMedia, int i2, boolean z, int i3, String str) {
+                                    ChatAttachAlert.this.lambda$new$9(tLRPC$MessageMedia, i2, z, i3, str);
+                                }
+                            });
+                        }
+                        showLayout(this.locationLayout);
+                    }
+                } else if (intValue == 9) {
+                    if (!this.pollsEnabled) {
+                        ChatAttachRestrictedLayout chatAttachRestrictedLayout3 = new ChatAttachRestrictedLayout(9, this, getContext(), resourcesProvider);
+                        this.restrictedLayout = chatAttachRestrictedLayout3;
+                        showLayout(chatAttachRestrictedLayout3);
+                    } else {
+                        if (this.pollLayout == null) {
+                            AttachAlertLayout[] attachAlertLayoutArr2 = this.layouts;
+                            ChatAttachAlertPollLayout chatAttachAlertPollLayout = new ChatAttachAlertPollLayout(this, getContext(), resourcesProvider);
+                            this.pollLayout = chatAttachAlertPollLayout;
+                            attachAlertLayoutArr2[1] = chatAttachAlertPollLayout;
+                            chatAttachAlertPollLayout.setDelegate(new ChatAttachAlertPollLayout.PollCreateActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda43
+                                @Override // org.telegram.p043ui.Components.ChatAttachAlertPollLayout.PollCreateActivityDelegate
+                                public final void sendPoll(TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, HashMap hashMap, boolean z, int i2, String str) {
+                                    ChatAttachAlert.this.lambda$new$10(tLRPC$TL_messageMediaPoll, hashMap, z, i2, str);
+                                }
+                            });
+                        }
+                        showLayout(this.pollLayout);
+                    }
+                } else {
+                    this.delegate.didPressedButton(((Integer) view.getTag()).intValue(), true, true, 0, false, null, false);
                 }
-            } else {
-                this.delegate.didPressedButton(((Integer) view.getTag()).intValue(), true, true, 0, false, null, false);
-            }
-            int left = view.getLeft();
-            int right = view.getRight();
-            int m54dp = AndroidUtilities.m54dp(10);
-            int i2 = left - m54dp;
-            if (i2 < 0) {
-                this.buttonsRecyclerView.smoothScrollBy(i2, 0);
-            } else {
-                int i3 = right + m54dp;
-                if (i3 > this.buttonsRecyclerView.getMeasuredWidth()) {
-                    RecyclerListView recyclerListView = this.buttonsRecyclerView;
-                    recyclerListView.smoothScrollBy(i3 - recyclerListView.getMeasuredWidth(), 0);
+                int left = view.getLeft();
+                int right = view.getRight();
+                int m72dp = AndroidUtilities.m72dp(10);
+                int i2 = left - m72dp;
+                if (i2 < 0) {
+                    this.buttonsRecyclerView.smoothScrollBy(i2, 0);
+                } else {
+                    int i3 = right + m72dp;
+                    if (i3 > this.buttonsRecyclerView.getMeasuredWidth()) {
+                        RecyclerListView recyclerListView = this.buttonsRecyclerView;
+                        recyclerListView.smoothScrollBy(i3 - recyclerListView.getMeasuredWidth(), 0);
+                    }
+                }
+            } else if (view instanceof AttachBotButton) {
+                AttachBotButton attachBotButton = (AttachBotButton) view;
+                if (attachBotButton.attachMenuBot != null) {
+                    showBotLayout(attachBotButton.attachMenuBot.bot_id);
+                } else {
+                    this.delegate.didSelectBot(attachBotButton.currentUser);
+                    dismiss();
                 }
             }
-        } else if (view instanceof AttachBotButton) {
-            AttachBotButton attachBotButton = (AttachBotButton) view;
-            if (attachBotButton.attachMenuBot != null) {
-                showBotLayout(attachBotButton.attachMenuBot.bot_id);
-            } else {
-                this.delegate.didSelectBot(attachBotButton.currentUser);
-                dismiss();
+            if (view.getX() + view.getWidth() >= this.buttonsRecyclerView.getMeasuredWidth() - AndroidUtilities.m72dp(32)) {
+                this.buttonsRecyclerView.smoothScrollBy((int) (view.getWidth() * 1.5f), 0);
             }
-        }
-        if (view.getX() + view.getWidth() >= this.buttonsRecyclerView.getMeasuredWidth() - AndroidUtilities.m54dp(32)) {
-            this.buttonsRecyclerView.smoothScrollBy((int) (view.getWidth() * 1.5f), 0);
         }
     }
 
@@ -2984,8 +3044,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     public /* synthetic */ boolean lambda$new$13(final View view, int i) {
-        BaseFragment baseFragment = this.baseFragment;
-        if ((baseFragment instanceof ChatActivity) && (view instanceof AttachButton)) {
+        if ((this.baseFragment instanceof ChatActivity) && (view instanceof AttachButton)) {
             dismiss();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
@@ -2997,7 +3056,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
         if (view instanceof AttachBotButton) {
             AttachBotButton attachBotButton = (AttachBotButton) view;
-            if (baseFragment != null && attachBotButton.currentUser != null) {
+            if (!this.destroyed && attachBotButton.currentUser != null) {
                 onLongClickBotButton(attachBotButton.attachMenuBot, attachBotButton.currentUser);
                 return true;
             }
@@ -3025,19 +3084,19 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$10 */
     /* loaded from: classes6.dex */
-    public class C439110 extends FrameLayout {
+    public class C441210 extends FrameLayout {
         private int color;
 
         /* renamed from: p */
-        private final Paint f1709p;
+        private final Paint f1729p;
         final /* synthetic */ boolean val$forceDarkTheme;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C439110(Context context, boolean z) {
+        C441210(Context context, boolean z) {
             super(context);
             ChatAttachAlert.this = r1;
             this.val$forceDarkTheme = z;
-            this.f1709p = new Paint();
+            this.f1729p = new Paint();
         }
 
         @Override // android.view.View
@@ -3060,7 +3119,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.topBackgroundAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$10$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ChatAttachAlert.C439110.this.lambda$onDraw$0(valueAnimator);
+                        ChatAttachAlert.C441210.this.lambda$onDraw$0(valueAnimator);
                     }
                 });
                 ChatAttachAlert.this.topBackgroundAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -3068,9 +3127,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.topBackgroundAnimator.start();
                 ChatAttachAlert.this.chatActivityEnterViewAnimateFromTop = BitmapDescriptorFactory.HUE_RED;
             }
-            float measuredHeight = (ChatAttachAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m54dp(84)) * (1.0f - getAlpha());
+            float measuredHeight = (ChatAttachAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m72dp(84)) * (1.0f - getAlpha());
             View view = ChatAttachAlert.this.shadow;
-            float f = (-(ChatAttachAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m54dp(84))) + ChatAttachAlert.this.captionEditTextTopOffset;
+            float f = (-(ChatAttachAlert.this.frameLayout2.getMeasuredHeight() - AndroidUtilities.m72dp(84))) + ChatAttachAlert.this.captionEditTextTopOffset;
             ChatAttachAlert chatAttachAlert3 = ChatAttachAlert.this;
             view.setTranslationY(f + chatAttachAlert3.currentPanTranslationY + chatAttachAlert3.bottomPannelTranslation + measuredHeight + ChatAttachAlert.this.botMainButtonOffsetY);
             if (ChatAttachAlert.this.currentAttachLayout.hasCustomBackground()) {
@@ -3080,9 +3139,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
             if (this.color != themedColor) {
                 this.color = themedColor;
-                this.f1709p.setColor(themedColor);
+                this.f1729p.setColor(themedColor);
             }
-            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, ChatAttachAlert.this.captionEditTextTopOffset, getMeasuredWidth(), getMeasuredHeight(), this.f1709p);
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, ChatAttachAlert.this.captionEditTextTopOffset, getMeasuredWidth(), getMeasuredHeight(), this.f1729p);
         }
 
         public /* synthetic */ void lambda$onDraw$0(ValueAnimator valueAnimator) {
@@ -3102,14 +3161,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$11 */
     /* loaded from: classes6.dex */
-    public class C439211 extends EditTextEmoji {
+    public class C441311 extends EditTextEmoji {
         private ValueAnimator messageEditTextAnimator;
         private int messageEditTextPredrawHeigth;
         private int messageEditTextPredrawScrollY;
         private boolean shouldAnimateEditTextWithBounds;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C439211(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, BaseFragment baseFragment, int i, boolean z, Theme.ResourcesProvider resourcesProvider) {
+        C441311(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, BaseFragment baseFragment, int i, boolean z, Theme.ResourcesProvider resourcesProvider) {
             super(context, sizeNotifierFrameLayout, baseFragment, i, z, resourcesProvider);
             ChatAttachAlert.this = r8;
         }
@@ -3137,7 +3196,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$11$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ChatAttachAlert.C439211.this.lambda$dispatchDraw$0(editText, valueAnimator);
+                        ChatAttachAlert.C441311.this.lambda$dispatchDraw$0(editText, valueAnimator);
                     }
                 });
                 ValueAnimator valueAnimator = this.messageEditTextAnimator;
@@ -3204,14 +3263,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$12 */
     /* loaded from: classes6.dex */
-    public class C439312 implements TextWatcher {
+    public class C441412 implements TextWatcher {
         private boolean processChange;
 
         @Override // android.text.TextWatcher
         public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
 
-        C439312() {
+        C441412() {
             ChatAttachAlert.this = r1;
         }
 
@@ -3234,7 +3293,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 Method dump skipped, instructions count: 379
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C439312.afterTextChanged(android.text.Editable):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C441412.afterTextChanged(android.text.Editable):void");
         }
 
         public /* synthetic */ void lambda$afterTextChanged$0(ValueAnimator valueAnimator) {
@@ -3357,18 +3416,36 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     public /* synthetic */ boolean lambda$new$22(final Theme.ResourcesProvider resourcesProvider, View view) {
+        long j;
+        ChatActivity chatActivity;
+        TLRPC$User user;
         int i;
+        int[] iArr;
+        int i2;
+        int i3;
         AttachAlertLayout attachAlertLayout;
-        BaseFragment baseFragment = this.baseFragment;
+        Theme.ResourcesProvider resourcesProvider2 = resourcesProvider;
+        long j2 = this.dialogId;
         boolean z = false;
-        if ((baseFragment instanceof ChatActivity) && this.editingMessageObject == null && this.currentLimit - this.codepointCount >= 0) {
-            final ChatActivity chatActivity = (ChatActivity) baseFragment;
-            chatActivity.getCurrentChat();
-            TLRPC$User currentUser = chatActivity.getCurrentUser();
-            if (chatActivity.isInScheduleMode() || chatActivity.isTemplatesChannel(true, false)) {
-                return false;
+        if ((j2 != 0 || (this.baseFragment instanceof ChatActivity)) && this.editingMessageObject == null && this.currentLimit - this.codepointCount >= 0) {
+            BaseFragment baseFragment = this.baseFragment;
+            boolean z2 = true;
+            if (baseFragment instanceof ChatActivity) {
+                ChatActivity chatActivity2 = (ChatActivity) baseFragment;
+                chatActivity2.getCurrentChat();
+                TLRPC$User currentUser = chatActivity2.getCurrentUser();
+                if (chatActivity2.isInScheduleMode() || chatActivity2.isTemplatesChannel(true, false)) {
+                    return false;
+                }
+                user = currentUser;
+                chatActivity = chatActivity2;
+                j = chatActivity2.getDialogId();
+            } else {
+                j = j2;
+                chatActivity = null;
+                user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j2));
             }
-            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), resourcesProvider);
+            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), resourcesProvider2);
             this.sendPopupLayout = actionBarPopupWindowLayout;
             actionBarPopupWindowLayout.setAnimationEnabled(false);
             this.sendPopupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlert.15
@@ -3398,78 +3475,97 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
             });
             this.sendPopupLayout.setShownFromBottom(false);
+            int i4 = 2;
             this.itemCells = new ActionBarMenuSubItem[2];
-            int i2 = 3;
-            int[] iArr = {IdFabric$Menu.REACTIONS, IdFabric$Menu.TRANSLATE, 0, 1};
+            int i5 = 4;
+            int i6 = 3;
+            int[] iArr2 = {IdFabric$Menu.REACTIONS, IdFabric$Menu.TRANSLATE, 0, 1};
             this.itemCells = new ActionBarMenuSubItem[4];
             final String trim = this.commentTextView.getText().toString().trim();
-            int i3 = 0;
-            for (int i4 = 4; i3 < i4; i4 = 4) {
-                final int i5 = iArr[i3];
-                int i6 = IdFabric$Menu.REACTIONS;
-                boolean z2 = (i5 != i6 ? i5 != IdFabric$Menu.TRANSLATE || (SharedConfig.isTranslateInSendPopupEnabled && !trim.isEmpty()) : SharedConfig.isReactionsInSendPopupEnabled && (((attachAlertLayout = this.currentAttachLayout) == this.photoLayout || attachAlertLayout == this.documentLayout || attachAlertLayout == this.audioLayout) && attachAlertLayout.getSelectedItemsCount() == 1)) ? z : true;
-                if (i5 != 0 ? !(i5 != 1 || !UserObject.isUserSelf(currentUser)) : !(chatActivity.canScheduleMessage() && this.currentAttachLayout.canScheduleMessages())) {
-                    z2 = true;
+            int i7 = 0;
+            while (i7 < i5) {
+                final int i8 = iArr2[i7];
+                int i9 = IdFabric$Menu.REACTIONS;
+                boolean z3 = (i8 != i9 ? i8 != IdFabric$Menu.TRANSLATE || (SharedConfig.isTranslateInSendPopupEnabled && !trim.isEmpty()) : SharedConfig.isReactionsInSendPopupEnabled && (((attachAlertLayout = this.currentAttachLayout) == this.photoLayout || attachAlertLayout == this.documentLayout || attachAlertLayout == this.audioLayout) && attachAlertLayout.getSelectedItemsCount() == z2)) ? z : z2;
+                if (i8 != 0 ? !(i8 != z2 || !UserObject.isUserSelf(user)) : !((chatActivity == null || chatActivity.canScheduleMessage()) && this.currentAttachLayout.canScheduleMessages())) {
+                    z3 = z2;
                 }
-                if (z2) {
-                    i = i3;
+                if (z3) {
+                    i = i7;
+                    iArr = iArr2;
+                    i3 = i4;
+                    i2 = 4;
                 } else {
                     ActionBarMenuSubItem[] actionBarMenuSubItemArr = this.itemCells;
                     Context context = getContext();
-                    boolean z3 = i3 == 0 ? true : z;
-                    if (i3 == 1) {
-                        z = true;
+                    if (i7 == 0) {
+                        z = z2;
                     }
-                    actionBarMenuSubItemArr[i3] = new ActionBarMenuSubItem(context, z3, z, resourcesProvider);
-                    this.itemCells[i3].updateSelectorBackground(i3 == 0, i3 == i2);
-                    if (i5 == i6) {
-                        this.itemCells[i3].setTextAndIcon(LocaleController.getInternalString(C3417R.string.sending_settings_send_add_reactions), C3417R.C3419drawable.fork_ic_reactions);
-                    } else if (i5 == IdFabric$Menu.TRANSLATE) {
-                        this.itemCells[i3].setTextAndIcon(LocaleController.getInternalString(C3417R.string.chat_long_action_translate), C3417R.C3419drawable.msg_translate);
-                    } else if (i5 == 0) {
-                        if (UserObject.isUserSelf(currentUser)) {
-                            this.itemCells[i3].setTextAndIcon(LocaleController.getString("SetReminder", C3417R.string.SetReminder), C3417R.C3419drawable.msg_calendar2);
+                    if (i7 != z2) {
+                        z2 = false;
+                    }
+                    actionBarMenuSubItemArr[i7] = new ActionBarMenuSubItem(context, z, z2, resourcesProvider2);
+                    this.itemCells[i7].updateSelectorBackground(i7 == 0, i7 == i6);
+                    if (i8 == i9) {
+                        this.itemCells[i7].setTextAndIcon(LocaleController.getInternalString(C3419R.string.sending_settings_send_add_reactions), C3419R.C3421drawable.fork_ic_reactions);
+                    } else if (i8 == IdFabric$Menu.TRANSLATE) {
+                        this.itemCells[i7].setTextAndIcon(LocaleController.getInternalString(C3419R.string.chat_long_action_translate), C3419R.C3421drawable.msg_translate);
+                    } else if (i8 == 0) {
+                        if (UserObject.isUserSelf(user)) {
+                            this.itemCells[i7].setTextAndIcon(LocaleController.getString("SetReminder", C3419R.string.SetReminder), C3419R.C3421drawable.msg_calendar2);
                         } else {
-                            this.itemCells[i3].setTextAndIcon(LocaleController.getString("ScheduleMessage", C3417R.string.ScheduleMessage), C3417R.C3419drawable.msg_calendar2);
+                            this.itemCells[i7].setTextAndIcon(LocaleController.getString("ScheduleMessage", C3419R.string.ScheduleMessage), C3419R.C3421drawable.msg_calendar2);
                         }
-                    } else if (i5 == 1) {
+                    } else if (i8 == 1) {
                         if (ToolsController.getInstance(this.currentAccount).isSilentSendingEnabledForDialog(chatActivity.getDialogId())) {
-                            this.itemCells[i3].setTextAndIcon(LocaleController.getInternalString(C3417R.string.send_with_sound), C3417R.C3419drawable.input_notify_on);
+                            this.itemCells[i7].setTextAndIcon(LocaleController.getInternalString(C3419R.string.send_with_sound), C3419R.C3421drawable.input_notify_on);
                         } else {
-                            this.itemCells[i3].setTextAndIcon(LocaleController.getString("SendWithoutSound", C3417R.string.SendWithoutSound), C3417R.C3419drawable.input_notify_off);
+                            this.itemCells[i7].setTextAndIcon(LocaleController.getString("SendWithoutSound", C3419R.string.SendWithoutSound), C3419R.C3421drawable.input_notify_off);
                         }
                     }
-                    this.itemCells[i3].setMinimumWidth(AndroidUtilities.m54dp(196));
-                    this.sendPopupLayout.addView((View) this.itemCells[i3], LayoutHelper.createLinear(-1, 48));
-                    i = i3;
-                    this.itemCells[i3].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda10
+                    this.itemCells[i7].setMinimumWidth(AndroidUtilities.m72dp(196));
+                    this.sendPopupLayout.addView((View) this.itemCells[i7], LayoutHelper.createLinear(-1, 48));
+                    ActionBarMenuSubItem actionBarMenuSubItem = this.itemCells[i7];
+                    i = i7;
+                    final ChatActivity chatActivity3 = chatActivity;
+                    iArr = iArr2;
+                    i2 = 4;
+                    final long j3 = j;
+                    i3 = 2;
+                    actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda10
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            ChatAttachAlert.this.lambda$new$21(i5, chatActivity, trim, resourcesProvider, view2);
+                            ChatAttachAlert.this.lambda$new$21(i8, chatActivity3, trim, j3, resourcesProvider, view2);
                         }
                     });
                 }
-                i3 = i + 1;
-                i2 = 3;
+                i7 = i + 1;
+                i4 = i3;
+                i5 = i2;
+                iArr2 = iArr;
+                i6 = 3;
                 z = false;
+                z2 = true;
+                resourcesProvider2 = resourcesProvider;
             }
+            int i10 = i4;
             this.sendPopupLayout.setupRadialSelectors(getThemedColor(Theme.key_dialogButtonSelector));
             ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.sendPopupLayout, -2, -2);
             this.sendPopupWindow = actionBarPopupWindow;
             actionBarPopupWindow.setAnimationEnabled(false);
-            this.sendPopupWindow.setAnimationStyle(C3417R.style.PopupContextAnimation2);
+            this.sendPopupWindow.setAnimationStyle(C3419R.style.PopupContextAnimation2);
             this.sendPopupWindow.setOutsideTouchable(true);
             this.sendPopupWindow.setClippingEnabled(true);
-            this.sendPopupWindow.setInputMethodMode(2);
+            this.sendPopupWindow.setInputMethodMode(i10);
             this.sendPopupWindow.setSoftInputMode(0);
             this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
-            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
+            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE));
             this.sendPopupWindow.setFocusable(true);
-            int[] iArr2 = new int[2];
-            view.getLocationInWindow(iArr2);
-            this.sendPopupWindow.showAtLocation(view, 51, ((iArr2[0] + view.getMeasuredWidth()) - this.sendPopupLayout.getMeasuredWidth()) + AndroidUtilities.m54dp(8), (iArr2[1] - this.sendPopupLayout.getMeasuredHeight()) - AndroidUtilities.m54dp(2));
+            int[] iArr3 = new int[i10];
+            view.getLocationInWindow(iArr3);
+            this.sendPopupWindow.showAtLocation(view, 51, ((iArr3[0] + view.getMeasuredWidth()) - this.sendPopupLayout.getMeasuredWidth()) + AndroidUtilities.m72dp(8), (iArr3[1] - this.sendPopupLayout.getMeasuredHeight()) - AndroidUtilities.m72dp(i10));
             this.sendPopupWindow.dimBehind();
-            view.performHapticFeedback(3, 2);
+            view.performHapticFeedback(3, i10);
             return false;
         }
         return false;
@@ -3482,7 +3578,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
     }
 
-    public /* synthetic */ void lambda$new$21(int i, ChatActivity chatActivity, String str, Theme.ResourcesProvider resourcesProvider, View view) {
+    public /* synthetic */ void lambda$new$21(int i, ChatActivity chatActivity, String str, long j, Theme.ResourcesProvider resourcesProvider, View view) {
         ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
         if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
             this.sendPopupWindow.dismiss();
@@ -3496,16 +3592,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             attachAlertLayout.sendSelectedItems(false, 0, null, true, true);
             dismiss();
         } else if (i == IdFabric$Menu.TRANSLATE) {
-            TranslateAlert createTranslateOutgoingDialog = chatActivity.createTranslateOutgoingDialog(str, new Callbacks$Callback1() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda19
-                @Override // com.iMe.fork.utils.Callbacks$Callback1
-                public final void invoke(Object obj) {
-                    ChatAttachAlert.this.lambda$new$19((String) obj);
-                }
-            });
-            this.translationDialog = createTranslateOutgoingDialog;
-            createTranslateOutgoingDialog.show();
+            if (chatActivity != null) {
+                TranslateAlert createTranslateOutgoingDialog = chatActivity.createTranslateOutgoingDialog(str, new Callbacks$Callback1() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda19
+                    @Override // com.iMe.fork.utils.Callbacks$Callback1
+                    public final void invoke(Object obj) {
+                        ChatAttachAlert.this.lambda$new$19((String) obj);
+                    }
+                });
+                this.translationDialog = createTranslateOutgoingDialog;
+                createTranslateOutgoingDialog.show();
+            }
         } else if (i == 0) {
-            AlertsCreator.createScheduleDatePickerDialog(getContext(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda38
+            AlertsCreator.createScheduleDatePickerDialog(getContext(), j, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda38
                 @Override // org.telegram.p043ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                 public final void didSelectDate(boolean z, int i2, String str2) {
                     ChatAttachAlert.this.lambda$new$20(z, i2, str2);
@@ -3579,7 +3677,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     private void showCaptionLimitBulletin(final BaseFragment baseFragment) {
         if ((baseFragment instanceof ChatActivity) && ChatObject.isChannelAndNotMegaGroup(((ChatActivity) baseFragment).getCurrentChat())) {
-            BulletinFactory.m30of(this.sizeNotifierFrameLayout, this.resourcesProvider).createCaptionLimitBulletin(MessagesController.getInstance(this.currentAccount).captionLengthLimitPremium, new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda29
+            BulletinFactory.m33of(this.sizeNotifierFrameLayout, this.resourcesProvider).createCaptionLimitBulletin(MessagesController.getInstance(this.currentAccount).captionLengthLimitPremium, new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatAttachAlert.this.lambda$showCaptionLimitBulletin$23(baseFragment);
@@ -3609,12 +3707,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     public void onLongClickBotButton(final TLRPC$TL_attachMenuBot tLRPC$TL_attachMenuBot, final TLRPC$User tLRPC$User) {
         String userName = tLRPC$TL_attachMenuBot != null ? tLRPC$TL_attachMenuBot.short_name : UserObject.getUserName(tLRPC$User);
-        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3417R.string.BotRemoveFromMenuTitle)).setMessage(AndroidUtilities.replaceTags(tLRPC$TL_attachMenuBot != null ? LocaleController.formatString("BotRemoveFromMenu", C3417R.string.BotRemoveFromMenu, userName) : LocaleController.formatString("BotRemoveInlineFromMenu", C3417R.string.BotRemoveInlineFromMenu, userName))).setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda4
+        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3419R.string.BotRemoveFromMenuTitle)).setMessage(AndroidUtilities.replaceTags(tLRPC$TL_attachMenuBot != null ? LocaleController.formatString("BotRemoveFromMenu", C3419R.string.BotRemoveFromMenu, userName) : LocaleController.formatString("BotRemoveInlineFromMenu", C3419R.string.BotRemoveInlineFromMenu, userName))).setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ChatAttachAlert.this.lambda$onLongClickBotButton$26(tLRPC$TL_attachMenuBot, tLRPC$User, dialogInterface, i);
             }
-        }).setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null).show();
+        }).setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null).show();
     }
 
     public /* synthetic */ void lambda$onLongClickBotButton$26(final TLRPC$TL_attachMenuBot tLRPC$TL_attachMenuBot, TLRPC$User tLRPC$User, DialogInterface dialogInterface, int i) {
@@ -3630,7 +3728,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }, 66);
             return;
         }
-        MediaDataController.getInstance(this.currentAccount).removeInline(tLRPC$User.f1656id);
+        MediaDataController.getInstance(this.currentAccount).removeInline(tLRPC$User.f1675id);
     }
 
     public /* synthetic */ void lambda$onLongClickBotButton$25(final TLRPC$TL_attachMenuBot tLRPC$TL_attachMenuBot, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -3730,7 +3828,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         } else {
             ChatAttachRestrictedLayout chatAttachRestrictedLayout = this.restrictedLayout;
             if (attachAlertLayout == chatAttachRestrictedLayout) {
-                i = chatAttachRestrictedLayout.f1711id;
+                i = chatAttachRestrictedLayout.f1731id;
             } else {
                 if (attachAlertLayout == this.photoLayout) {
                     j = 1;
@@ -3788,7 +3886,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     ((AttachBotButton) childAt).updateCheckedState(true);
                 }
             }
-            int firstOffset = (this.currentAttachLayout.getFirstOffset() - AndroidUtilities.m54dp(11)) - this.scrollOffsetY[0];
+            int firstOffset = (this.currentAttachLayout.getFirstOffset() - AndroidUtilities.m72dp(11)) - this.scrollOffsetY[0];
             this.nextAttachLayout = attachAlertLayout;
             if (Build.VERSION.SDK_INT >= 20) {
                 this.container.setLayerType(2, null);
@@ -3830,16 +3928,16 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             } else if (!(this.currentAttachLayout instanceof ChatAttachAlertPhotoLayoutPreview) && !(this.nextAttachLayout instanceof ChatAttachAlertPhotoLayoutPreview)) {
                 AnimatorSet animatorSet = new AnimatorSet();
                 this.nextAttachLayout.setAlpha(BitmapDescriptorFactory.HUE_RED);
-                this.nextAttachLayout.setTranslationY(AndroidUtilities.m54dp(78));
+                this.nextAttachLayout.setTranslationY(AndroidUtilities.m72dp(78));
                 AttachAlertLayout attachAlertLayout5 = this.currentAttachLayout;
                 Property property = View.TRANSLATION_Y;
-                float[] fArr = {AndroidUtilities.m54dp(78) + firstOffset};
-                C3484ActionBar c3484ActionBar = this.actionBar;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(attachAlertLayout5, property, fArr), ObjectAnimator.ofFloat(this.currentAttachLayout, this.ATTACH_ALERT_LAYOUT_TRANSLATION, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(c3484ActionBar, View.ALPHA, c3484ActionBar.getAlpha(), BitmapDescriptorFactory.HUE_RED));
+                float[] fArr = {AndroidUtilities.m72dp(78) + firstOffset};
+                C3485ActionBar c3485ActionBar = this.actionBar;
+                animatorSet.playTogether(ObjectAnimator.ofFloat(attachAlertLayout5, property, fArr), ObjectAnimator.ofFloat(this.currentAttachLayout, this.ATTACH_ALERT_LAYOUT_TRANSLATION, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(c3485ActionBar, View.ALPHA, c3485ActionBar.getAlpha(), BitmapDescriptorFactory.HUE_RED));
                 animatorSet.setDuration(180L);
                 animatorSet.setStartDelay(20L);
                 animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                animatorSet.addListener(new C439917(runnable));
+                animatorSet.addListener(new C442017(runnable));
                 this.viewChangeAnimator = animatorSet;
                 animatorSet.start();
             } else {
@@ -3896,10 +3994,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlert$17 */
     /* loaded from: classes6.dex */
-    public class C439917 extends AnimatorListenerAdapter {
+    public class C442017 extends AnimatorListenerAdapter {
         final /* synthetic */ Runnable val$onEnd;
 
-        C439917(Runnable runnable) {
+        C442017(Runnable runnable) {
             ChatAttachAlert.this = r1;
             this.val$onEnd = runnable;
         }
@@ -3913,14 +4011,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$17$$ExternalSyntheticLambda1
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                 public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                    ChatAttachAlert.C439917.this.lambda$onAnimationEnd$0(dynamicAnimation, f, f2);
+                    ChatAttachAlert.C442017.this.lambda$onAnimationEnd$0(dynamicAnimation, f, f2);
                 }
             });
             final Runnable runnable = this.val$onEnd;
             springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$17$$ExternalSyntheticLambda0
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                    ChatAttachAlert.C439917.this.lambda$onAnimationEnd$1(runnable, dynamicAnimation, z, f, f2);
+                    ChatAttachAlert.C442017.this.lambda$onAnimationEnd$1(runnable, dynamicAnimation, z, f, f2);
                 }
             });
             ChatAttachAlert.this.viewChangeAnimator = springAnimation;
@@ -3976,7 +4074,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 r1.invalidate()
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C439917.lambda$onAnimationEnd$0(androidx.dynamicanimation.animation.DynamicAnimation, float, float):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.C442017.lambda$onAnimationEnd$0(androidx.dynamicanimation.animation.DynamicAnimation, float, float):void");
         }
 
         public /* synthetic */ void lambda$onAnimationEnd$1(Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
@@ -4021,8 +4119,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.mediaPreviewView.setAlpha(f5);
         float f6 = 1.0f - f5;
         this.selectedView.setAlpha(f6);
-        this.selectedView.setTranslationX(f5 * (-AndroidUtilities.m54dp(16)));
-        this.mediaPreviewView.setTranslationX(f6 * AndroidUtilities.m54dp(16));
+        this.selectedView.setTranslationX(f5 * (-AndroidUtilities.m72dp(16)));
+        this.mediaPreviewView.setTranslationX(f6 * AndroidUtilities.m72dp(16));
     }
 
     public /* synthetic */ void lambda$showLayout$29(boolean z, Runnable runnable, DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
@@ -4047,7 +4145,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (z) {
             if (this.canOpenPreview) {
                 if (this.photoPreviewLayout == null) {
-                    ChatAttachAlertPhotoLayoutPreview chatAttachAlertPhotoLayoutPreview = new ChatAttachAlertPhotoLayoutPreview(this, getContext(), this.parentThemeDelegate);
+                    Context context = getContext();
+                    Theme.ResourcesProvider resourcesProvider = this.parentThemeDelegate;
+                    if (resourcesProvider == null) {
+                        resourcesProvider = this.resourcesProvider;
+                    }
+                    ChatAttachAlertPhotoLayoutPreview chatAttachAlertPhotoLayoutPreview = new ChatAttachAlertPhotoLayoutPreview(this, context, resourcesProvider);
                     this.photoPreviewLayout = chatAttachAlertPhotoLayoutPreview;
                     chatAttachAlertPhotoLayoutPreview.bringToFront();
                 }
@@ -4127,7 +4230,15 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     public /* synthetic */ void lambda$openAudioLayout$32(ArrayList arrayList, CharSequence charSequence, boolean z, int i, String str, boolean z2, boolean z3) {
-        ((ChatActivity) this.baseFragment).sendAudio(arrayList, charSequence, z, i, str, z2, z3);
+        BaseFragment baseFragment = this.baseFragment;
+        if (baseFragment != null && (baseFragment instanceof ChatActivity)) {
+            ((ChatActivity) baseFragment).sendAudio(arrayList, charSequence, z, i, str, z2, z3);
+            return;
+        }
+        ChatAttachViewDelegate chatAttachViewDelegate = this.delegate;
+        if (chatAttachViewDelegate != null) {
+            chatAttachViewDelegate.sendAudio(arrayList, charSequence, z, i);
+        }
     }
 
     public void openColorsLayout() {
@@ -4157,6 +4268,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             this.restrictedLayout = chatAttachRestrictedLayout;
             showLayout(chatAttachRestrictedLayout);
         }
+        boolean z2 = false;
         if (this.documentLayout == null) {
             int i = this.isSoundPicker ? 2 : 0;
             AttachAlertLayout[] attachAlertLayoutArr = this.layouts;
@@ -4169,27 +4281,39 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
 
                 @Override // org.telegram.p043ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
-                public void didSelectFiles(ArrayList<String> arrayList, String str, ArrayList<MessageObject> arrayList2, boolean z2, int i2, String str2, boolean z3, boolean z4) {
+                public void didSelectFiles(ArrayList<String> arrayList, String str, ArrayList<MessageObject> arrayList2, boolean z3, int i2, String str2, boolean z4, boolean z5) {
+                    if (ChatAttachAlert.this.documentsDelegate != null) {
+                        ChatAttachAlert.this.documentsDelegate.didSelectFiles(arrayList, str, arrayList2, z3, i2, str2, z4, z5);
+                        return;
+                    }
                     BaseFragment baseFragment = ChatAttachAlert.this.baseFragment;
                     if (baseFragment instanceof ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate) {
-                        ((ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate) baseFragment).didSelectFiles(arrayList, str, arrayList2, z2, i2, str2, z3, z4);
+                        ((ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate) baseFragment).didSelectFiles(arrayList, str, arrayList2, z3, i2, str2, z4, z5);
                     } else if (baseFragment instanceof PassportActivity) {
-                        ((PassportActivity) baseFragment).didSelectFiles(arrayList, str, z2, i2);
+                        ((PassportActivity) baseFragment).didSelectFiles(arrayList, str, z3, i2);
                     }
                 }
 
                 @Override // org.telegram.p043ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
-                public void didSelectPhotos(ArrayList<SendMessagesHelper.SendingMediaInfo> arrayList, boolean z2, int i2, String str, boolean z3) {
+                public void didSelectPhotos(ArrayList<SendMessagesHelper.SendingMediaInfo> arrayList, boolean z3, int i2, String str, boolean z4) {
+                    if (ChatAttachAlert.this.documentsDelegate != null) {
+                        ChatAttachAlert.this.documentsDelegate.didSelectPhotos(arrayList, z3, i2, str, z4);
+                        return;
+                    }
                     BaseFragment baseFragment = ChatAttachAlert.this.baseFragment;
                     if (baseFragment instanceof ChatActivity) {
-                        ((ChatActivity) baseFragment).didSelectPhotos(arrayList, z2, i2, str, z3);
+                        ((ChatActivity) baseFragment).didSelectPhotos(arrayList, z3, i2, str, z4);
                     } else if (baseFragment instanceof PassportActivity) {
-                        ((PassportActivity) baseFragment).didSelectPhotos(arrayList, z2, i2);
+                        ((PassportActivity) baseFragment).didSelectPhotos(arrayList, z3, i2);
                     }
                 }
 
                 @Override // org.telegram.p043ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
                 public void startDocumentSelectActivity() {
+                    if (ChatAttachAlert.this.documentsDelegate != null) {
+                        ChatAttachAlert.this.documentsDelegate.startDocumentSelectActivity();
+                        return;
+                    }
                     BaseFragment baseFragment = ChatAttachAlert.this.baseFragment;
                     if (baseFragment instanceof ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate) {
                         ((ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate) baseFragment).startDocumentSelectActivity();
@@ -4215,12 +4339,16 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             chatAttachAlertDocumentLayout2.setMaxSelectedFiles(i2);
         } else {
             this.documentLayout.setMaxSelectedFiles(this.maxSelectedPhotos);
-            this.documentLayout.setCanSelectOnlyImageFiles(!this.isSoundPicker);
+            ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout3 = this.documentLayout;
+            if (!this.isSoundPicker && !this.allowEnterCaption) {
+                z2 = true;
+            }
+            chatAttachAlertDocumentLayout3.setCanSelectOnlyImageFiles(z2);
         }
-        ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout3 = this.documentLayout;
-        chatAttachAlertDocumentLayout3.isSoundPicker = this.isSoundPicker;
+        ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout4 = this.documentLayout;
+        chatAttachAlertDocumentLayout4.isSoundPicker = this.isSoundPicker;
         if (z) {
-            showLayout(chatAttachAlertDocumentLayout3);
+            showLayout(chatAttachAlertDocumentLayout4);
         }
     }
 
@@ -4291,12 +4419,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 FrameLayout frameLayout5 = this.frameLayout2;
                 Property property8 = View.TRANSLATION_Y;
                 float[] fArr8 = new float[1];
-                fArr8[0] = z ? 0.0f : AndroidUtilities.m54dp(48);
+                fArr8[0] = z ? 0.0f : AndroidUtilities.m72dp(48);
                 arrayList.add(ObjectAnimator.ofFloat(frameLayout5, property8, fArr8));
                 View view4 = this.shadow;
                 Property property9 = View.TRANSLATION_Y;
                 float[] fArr9 = new float[1];
-                fArr9[0] = z ? AndroidUtilities.m54dp(36) : AndroidUtilities.m54dp(84);
+                fArr9[0] = z ? AndroidUtilities.m72dp(36) : AndroidUtilities.m72dp(84);
                 arrayList.add(ObjectAnimator.ofFloat(view4, property9, fArr9));
                 View view5 = this.shadow;
                 Property property10 = View.ALPHA;
@@ -4310,18 +4438,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 RecyclerListView recyclerListView = this.buttonsRecyclerView;
                 Property property11 = View.TRANSLATION_Y;
                 float[] fArr11 = new float[1];
-                fArr11[0] = z ? AndroidUtilities.m54dp(36) : 0.0f;
+                fArr11[0] = z ? AndroidUtilities.m72dp(36) : 0.0f;
                 arrayList.add(ObjectAnimator.ofFloat(recyclerListView, property11, fArr11));
                 View view6 = this.shadow;
                 Property property12 = View.TRANSLATION_Y;
                 float[] fArr12 = new float[1];
                 if (z) {
-                    f = AndroidUtilities.m54dp(36);
+                    f = AndroidUtilities.m72dp(36);
                 }
                 fArr12[0] = f;
                 arrayList.add(ObjectAnimator.ofFloat(view6, property12, fArr12));
             } else if (!this.isSoundPicker) {
-                this.shadow.setTranslationY(AndroidUtilities.m54dp(36) + this.botMainButtonOffsetY);
+                this.shadow.setTranslationY(AndroidUtilities.m72dp(36) + this.botMainButtonOffsetY);
                 View view7 = this.shadow;
                 Property property13 = View.ALPHA;
                 float[] fArr13 = new float[1];
@@ -4378,8 +4506,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             this.selectedCountView.setScaleY(z ? 1.0f : 0.2f);
             this.selectedCountView.setAlpha(z ? 1.0f : 0.0f);
             if (this.actionBar.getTag() != null) {
-                this.frameLayout2.setTranslationY(z ? 0.0f : AndroidUtilities.m54dp(48));
-                this.shadow.setTranslationY((z ? AndroidUtilities.m54dp(36) : AndroidUtilities.m54dp(84)) + this.botMainButtonOffsetY);
+                this.frameLayout2.setTranslationY(z ? 0.0f : AndroidUtilities.m72dp(48));
+                this.shadow.setTranslationY((z ? AndroidUtilities.m72dp(36) : AndroidUtilities.m72dp(84)) + this.botMainButtonOffsetY);
                 View view8 = this.shadow;
                 if (z) {
                     f = 1.0f;
@@ -4390,13 +4518,13 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (attachAlertLayout == null || attachAlertLayout.shouldHideBottomButtons()) {
                     RecyclerListView recyclerListView2 = this.buttonsRecyclerView;
                     if (z) {
-                        f = AndroidUtilities.m54dp(36);
+                        f = AndroidUtilities.m72dp(36);
                     }
                     recyclerListView2.setTranslationY(f);
                 }
-                this.shadow.setTranslationY((z ? AndroidUtilities.m54dp(36) : 0) + this.botMainButtonOffsetY);
+                this.shadow.setTranslationY((z ? AndroidUtilities.m72dp(36) : 0) + this.botMainButtonOffsetY);
             } else {
-                this.shadow.setTranslationY(AndroidUtilities.m54dp(36) + this.botMainButtonOffsetY);
+                this.shadow.setTranslationY(AndroidUtilities.m72dp(36) + this.botMainButtonOffsetY);
                 View view9 = this.shadow;
                 if (z) {
                     f = 1.0f;
@@ -4517,7 +4645,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ((BottomSheet) ChatAttachAlert.this).currentSheetAnimationType = 0;
             }
         });
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
         setNavBarAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -4557,7 +4685,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             attributes.flags &= -1025;
             getWindow().setAttributes(attributes);
         }
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
     }
 
     public /* synthetic */ void lambda$onCustomOpenAnimation$36(Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
@@ -4660,8 +4788,11 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         actionBarMenuItem.setPopupItemsColor(getThemedColor(i2), false);
         this.selectedMenuItem.setPopupItemsColor(getThemedColor(i2), true);
         this.selectedMenuItem.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-        this.searchItem.setIconColor(getThemedColor(this.forceDarkTheme ? Theme.key_voipgroup_actionBarItems : Theme.key_dialogTextBlack));
-        Theme.setDrawableColor(this.searchItem.getBackground(), getThemedColor(this.forceDarkTheme ? Theme.key_voipgroup_actionBarItemsSelector : Theme.key_dialogButtonSelector));
+        ActionBarMenuItem actionBarMenuItem2 = this.searchItem;
+        if (actionBarMenuItem2 != null) {
+            actionBarMenuItem2.setIconColor(getThemedColor(this.forceDarkTheme ? Theme.key_voipgroup_actionBarItems : Theme.key_dialogTextBlack));
+            Theme.setDrawableColor(this.searchItem.getBackground(), getThemedColor(this.forceDarkTheme ? Theme.key_voipgroup_actionBarItemsSelector : Theme.key_dialogButtonSelector));
+        }
         this.commentTextView.updateColors();
         if (this.sendPopupLayout != null) {
             int i3 = 0;
@@ -4792,117 +4923,36 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         return this.scrollOffsetY[i];
     }
 
-    public void updateSelectedPosition(int i) {
-        int m54dp;
-        int m54dp2;
-        float f;
-        int i2;
-        float f2;
-        ChatAttachAlertPollLayout chatAttachAlertPollLayout;
-        ChatAttachAlertWalletLayout chatAttachAlertWalletLayout;
-        ChatAttachAlertTemplatesLayout chatAttachAlertTemplatesLayout;
-        int i3;
-        AttachAlertLayout attachAlertLayout = i == 0 ? this.currentAttachLayout : this.nextAttachLayout;
-        if (attachAlertLayout == null || attachAlertLayout.getVisibility() != 0) {
-            return;
-        }
-        int scrollOffsetY = getScrollOffsetY(i);
-        int i4 = scrollOffsetY - this.backgroundPaddingTop;
-        if (attachAlertLayout == this.pollLayout || attachAlertLayout == this.walletLayout || attachAlertLayout == this.templatesLayout) {
-            m54dp = i4 - AndroidUtilities.m54dp(13);
-            m54dp2 = AndroidUtilities.m54dp(11);
-        } else {
-            m54dp = i4 - AndroidUtilities.m54dp(39);
-            m54dp2 = AndroidUtilities.m54dp(43);
-        }
-        float f3 = m54dp2;
-        if (this.backgroundPaddingTop + m54dp < C3484ActionBar.getCurrentActionBarHeight()) {
-            f = Math.min(1.0f, ((C3484ActionBar.getCurrentActionBarHeight() - m54dp) - this.backgroundPaddingTop) / f3);
-            this.cornerRadius = 1.0f - f;
-        } else {
-            this.cornerRadius = 1.0f;
-            f = 0.0f;
-        }
-        if (AndroidUtilities.isTablet()) {
-            i2 = 16;
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            i2 = point.x > point.y ? 6 : 12;
-        }
-        float m55dp = this.actionBar.getAlpha() != BitmapDescriptorFactory.HUE_RED ? 0.0f : AndroidUtilities.m55dp((1.0f - this.headerView.getAlpha()) * 26.0f);
-        if (this.menuShowed && this.avatarPicker == 0) {
-            ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout = this.documentLayout;
-            if (chatAttachAlertDocumentLayout != null && attachAlertLayout == chatAttachAlertDocumentLayout) {
-                i2 -= 4;
-            }
-            this.selectedMenuItem.setTranslationY((scrollOffsetY - AndroidUtilities.m55dp((i2 * f) + 37.0f)) + m55dp + this.currentPanTranslationY);
-            if (this.selectedMenuItem.getTranslationY() < AndroidUtilities.m54dp(4)) {
-                this.selectedMenuItem.setTranslationY(AndroidUtilities.m54dp(4));
-            }
-        } else {
-            ChatAttachAlertDocumentLayout chatAttachAlertDocumentLayout2 = this.documentLayout;
-            if (chatAttachAlertDocumentLayout2 != null && attachAlertLayout == chatAttachAlertDocumentLayout2) {
-                i2--;
-            }
-            this.selectedMenuItem.setTranslationY(((C3484ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m54dp(4)) - AndroidUtilities.m54dp(i2 + 37)) + this.currentPanTranslationY);
-        }
-        if (this.isPhotoPicker && this.openTransitionFinished) {
-            AttachAlertLayout attachAlertLayout2 = this.nextAttachLayout;
-            if (attachAlertLayout2 != null && this.currentAttachLayout != null) {
-                f2 = Math.min(attachAlertLayout2.getTranslationY(), this.currentAttachLayout.getTranslationY());
-            } else if (attachAlertLayout2 != null) {
-                f2 = attachAlertLayout2.getTranslationY();
-            }
-            this.searchItem.setTranslationY(((C3484ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m54dp(4)) - AndroidUtilities.m54dp(i2 + 37)) + this.currentPanTranslationY);
-            FrameLayout frameLayout = this.headerView;
-            float m55dp2 = (scrollOffsetY - AndroidUtilities.m55dp((i2 * f) + 25.0f)) + m55dp + this.currentPanTranslationY + f2;
-            this.baseSelectedTextViewTranslationY = m55dp2;
-            frameLayout.setTranslationY(m55dp2);
-            chatAttachAlertPollLayout = this.pollLayout;
-            if (!(chatAttachAlertPollLayout == null && attachAlertLayout == chatAttachAlertPollLayout) && (((chatAttachAlertWalletLayout = this.walletLayout) == null || attachAlertLayout != chatAttachAlertWalletLayout) && ((chatAttachAlertTemplatesLayout = this.templatesLayout) == null || attachAlertLayout != chatAttachAlertTemplatesLayout))) {
-                return;
-            }
-            if (AndroidUtilities.isTablet()) {
-                i3 = 63;
-            } else {
-                Point point2 = AndroidUtilities.displaySize;
-                i3 = point2.x > point2.y ? 53 : 59;
-            }
-            AttachAlertLayout attachAlertLayout3 = this.walletLayout;
-            if ((attachAlertLayout3 == null || attachAlertLayout != attachAlertLayout3) && ((attachAlertLayout3 = this.templatesLayout) == null || attachAlertLayout != attachAlertLayout3)) {
-                attachAlertLayout3 = this.pollLayout;
-            }
-            this.doneItem.setTranslationY(Math.max((float) BitmapDescriptorFactory.HUE_RED, (attachAlertLayout3.getTranslationY() + scrollOffsetY) - AndroidUtilities.m55dp((i3 * f) + 7.0f)) + this.currentPanTranslationY);
-            return;
-        }
-        f2 = 0.0f;
-        this.searchItem.setTranslationY(((C3484ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m54dp(4)) - AndroidUtilities.m54dp(i2 + 37)) + this.currentPanTranslationY);
-        FrameLayout frameLayout2 = this.headerView;
-        float m55dp22 = (scrollOffsetY - AndroidUtilities.m55dp((i2 * f) + 25.0f)) + m55dp + this.currentPanTranslationY + f2;
-        this.baseSelectedTextViewTranslationY = m55dp22;
-        frameLayout2.setTranslationY(m55dp22);
-        chatAttachAlertPollLayout = this.pollLayout;
-        if (chatAttachAlertPollLayout == null) {
-        }
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0120  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public void updateSelectedPosition(int r10) {
+        /*
+            Method dump skipped, instructions count: 421
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.updateSelectedPosition(int):void");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x0051, code lost:
-        if (((org.telegram.p043ui.ChatActivity) r10.baseFragment).allowSendPhotos() != false) goto L126;
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x0055, code lost:
+        if (((org.telegram.p043ui.ChatActivity) r10.baseFragment).allowSendPhotos() != false) goto L24;
      */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x007e  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0091  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x015a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updateActionBarVisibility(final boolean r11, boolean r12) {
         /*
-            Method dump skipped, instructions count: 429
+            Method dump skipped, instructions count: 434
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.updateActionBarVisibility(boolean, boolean):void");
@@ -4960,7 +5010,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             int r8 = r8.topMargin
         L40:
             r1 = 11
-            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r1)
+            int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r1)
             int r8 = r8 - r1
             int r0 = r0 + r8
             org.telegram.ui.Components.ChatAttachAlert$AttachAlertLayout r8 = r6.currentAttachLayout
@@ -5009,18 +5059,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.updateLayout(org.telegram.ui.Components.ChatAttachAlert$AttachAlertLayout, boolean, int):void");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:188:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x012d  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0171  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void updateCountButton(int r19) {
         /*
-            Method dump skipped, instructions count: 477
+            Method dump skipped, instructions count: 485
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlert.updateCountButton(int):void");
@@ -5032,9 +5082,6 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     public void init() {
         AttachAlertLayout attachAlertLayout;
-        if (this.baseFragment == null) {
-            return;
-        }
         this.botButtonWasVisible = false;
         this.botButtonProgressWasVisible = false;
         this.botMainButtonOffsetY = BitmapDescriptorFactory.HUE_RED;
@@ -5064,6 +5111,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             } else {
                 this.pollsEnabled = currentUser != null && currentUser.bot;
             }
+        } else if (this.allowEnterCaption) {
+            this.commentTextView.setVisibility(0);
         } else {
             this.commentTextView.setVisibility(4);
         }
@@ -5145,7 +5194,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.reloadInlineHints);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.attachMenuBotsDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        this.baseFragment = null;
+        this.destroyed = true;
         EditTextEmoji editTextEmoji = this.commentTextView;
         if (editTextEmoji != null) {
             editTextEmoji.onDestroy();
@@ -5164,7 +5213,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             MediaController.loadGalleryPhotosAlbums(0);
         }
         this.currentAttachLayout.onOpenAnimationEnd();
-        AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString("AccDescrAttachButton", C3417R.string.AccDescrAttachButton));
+        AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString("AccDescrAttachButton", C3419R.string.AccDescrAttachButton));
         this.openTransitionFinished = true;
     }
 
@@ -5185,9 +5234,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.shadow.setVisibility(8);
             }
             if (this.avatarPicker == 2) {
-                this.selectedTextView.setText(LocaleController.getString("ChoosePhotoOrVideo", C3417R.string.ChoosePhotoOrVideo));
+                this.selectedTextView.setText(LocaleController.getString("ChoosePhotoOrVideo", C3419R.string.ChoosePhotoOrVideo));
             } else {
-                this.selectedTextView.setText(LocaleController.getString("ChoosePhoto", C3417R.string.ChoosePhoto));
+                this.selectedTextView.setText(LocaleController.getString("ChoosePhoto", C3419R.string.ChoosePhoto));
             }
         } else {
             this.typeButtonsAvailable = true;
@@ -5206,7 +5255,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.isSoundPicker = true;
         this.buttonsRecyclerView.setVisibility(8);
         this.shadow.setVisibility(8);
-        this.selectedTextView.setText(LocaleController.getString("ChoosePhotoOrVideo", C3417R.string.ChoosePhotoOrVideo));
+        this.selectedTextView.setText(LocaleController.getString("ChoosePhotoOrVideo", C3419R.string.ChoosePhotoOrVideo));
     }
 
     public void setMaxSelectedPhotos(int i, boolean z) {
@@ -5290,33 +5339,33 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             AttachButton attachButton = (AttachButton) viewHolder.itemView;
             if (i == this.walletButton) {
                 int i5 = IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET;
-                attachButton.setTextAndIcon(i5, LocaleController.getInternalString(C3417R.string.drawer_wallet_item_title), Theme.chat_attachButtonDrawables[6], Theme.key_chat_attachWalletBackground, Theme.key_chat_attachWalletText);
+                attachButton.setTextAndIcon(i5, LocaleController.getInternalString(C3419R.string.drawer_wallet_item_title), Theme.chat_attachButtonDrawables[6], Theme.key_chat_attachWalletBackground, Theme.key_chat_attachWalletText);
                 attachButton.setTag(Integer.valueOf(i5));
             } else if (i == this.binanceButton) {
                 int i6 = IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_BINANCE;
-                attachButton.setTextAndIcon(i6, LocaleController.getInternalString(C3417R.string.wallet_binance_attach_title), Theme.chat_attachButtonDrawables[7], Theme.key_chat_attachBinanceBackground, Theme.key_chat_attachBinanceText);
+                attachButton.setTextAndIcon(i6, LocaleController.getInternalString(C3419R.string.wallet_binance_attach_title), Theme.chat_attachButtonDrawables[7], Theme.key_chat_attachBinanceBackground, Theme.key_chat_attachBinanceText);
                 attachButton.setTag(Integer.valueOf(i6));
             } else if (i == this.templatesButton) {
                 int i7 = IdFabric$CustomType.CHAT_ATTACH_ALERT_WALLET_TEMPLATES;
-                attachButton.setTextAndIcon(i7, LocaleController.getInternalString(C3417R.string.chat_templates), Theme.chat_attachButtonDrawables[8], Theme.key_chat_attachTemplatesBackground, Theme.key_chat_attachTemplatesText);
+                attachButton.setTextAndIcon(i7, LocaleController.getInternalString(C3419R.string.chat_templates), Theme.chat_attachButtonDrawables[8], Theme.key_chat_attachTemplatesBackground, Theme.key_chat_attachTemplatesText);
                 attachButton.setTag(Integer.valueOf(i7));
             } else if (i == this.galleryButton) {
-                attachButton.setTextAndIcon(1, LocaleController.getString("ChatGallery", C3417R.string.ChatGallery), Theme.chat_attachButtonDrawables[0], Theme.key_chat_attachGalleryBackground, Theme.key_chat_attachGalleryText);
+                attachButton.setTextAndIcon(1, LocaleController.getString("ChatGallery", C3419R.string.ChatGallery), Theme.chat_attachButtonDrawables[0], Theme.key_chat_attachGalleryBackground, Theme.key_chat_attachGalleryText);
                 attachButton.setTag(1);
             } else if (i == this.documentButton) {
-                attachButton.setTextAndIcon(4, LocaleController.getString("ChatDocument", C3417R.string.ChatDocument), Theme.chat_attachButtonDrawables[2], Theme.key_chat_attachFileBackground, Theme.key_chat_attachFileText);
+                attachButton.setTextAndIcon(4, LocaleController.getString("ChatDocument", C3419R.string.ChatDocument), Theme.chat_attachButtonDrawables[2], Theme.key_chat_attachFileBackground, Theme.key_chat_attachFileText);
                 attachButton.setTag(4);
             } else if (i == this.locationButton) {
-                attachButton.setTextAndIcon(6, LocaleController.getString("ChatLocation", C3417R.string.ChatLocation), Theme.chat_attachButtonDrawables[4], Theme.key_chat_attachLocationBackground, Theme.key_chat_attachLocationText);
+                attachButton.setTextAndIcon(6, LocaleController.getString("ChatLocation", C3419R.string.ChatLocation), Theme.chat_attachButtonDrawables[4], Theme.key_chat_attachLocationBackground, Theme.key_chat_attachLocationText);
                 attachButton.setTag(6);
             } else if (i == this.musicButton) {
-                attachButton.setTextAndIcon(3, LocaleController.getString("AttachMusic", C3417R.string.AttachMusic), Theme.chat_attachButtonDrawables[1], Theme.key_chat_attachAudioBackground, Theme.key_chat_attachAudioText);
+                attachButton.setTextAndIcon(3, LocaleController.getString("AttachMusic", C3419R.string.AttachMusic), Theme.chat_attachButtonDrawables[1], Theme.key_chat_attachAudioBackground, Theme.key_chat_attachAudioText);
                 attachButton.setTag(3);
             } else if (i == this.pollButton) {
-                attachButton.setTextAndIcon(9, LocaleController.getString("Poll", C3417R.string.Poll), Theme.chat_attachButtonDrawables[5], Theme.key_chat_attachPollBackground, Theme.key_chat_attachPollText);
+                attachButton.setTextAndIcon(9, LocaleController.getString("Poll", C3419R.string.Poll), Theme.chat_attachButtonDrawables[5], Theme.key_chat_attachPollBackground, Theme.key_chat_attachPollText);
                 attachButton.setTag(9);
             } else if (i == this.contactButton) {
-                attachButton.setTextAndIcon(5, LocaleController.getString("AttachContact", C3417R.string.AttachContact), Theme.chat_attachButtonDrawables[3], Theme.key_chat_attachContactBackground, Theme.key_chat_attachContactText);
+                attachButton.setTextAndIcon(5, LocaleController.getString("AttachContact", C3419R.string.AttachContact), Theme.chat_attachButtonDrawables[3], Theme.key_chat_attachContactBackground, Theme.key_chat_attachContactText);
                 attachButton.setTag(5);
             }
         }
@@ -5353,31 +5402,36 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 int i = 0 + 1;
                 this.buttonsCount = i;
                 this.galleryButton = 0;
-                this.buttonsCount = i + 1;
+                int i2 = i + 1;
+                this.buttonsCount = i2;
                 this.documentButton = i;
+                if (chatAttachAlert.allowEnterCaption) {
+                    this.buttonsCount = i2 + 1;
+                    this.musicButton = i2;
+                }
             } else {
                 MessageObject messageObject = chatAttachAlert.editingMessageObject;
                 if (messageObject != null) {
                     if ((messageObject.isMusic() || ChatAttachAlert.this.editingMessageObject.isDocument()) && ChatAttachAlert.this.editingMessageObject.hasValidGroupId()) {
                         if (ChatAttachAlert.this.editingMessageObject.isMusic()) {
-                            int i2 = this.buttonsCount;
-                            this.buttonsCount = i2 + 1;
-                            this.musicButton = i2;
-                        } else {
                             int i3 = this.buttonsCount;
                             this.buttonsCount = i3 + 1;
-                            this.documentButton = i3;
+                            this.musicButton = i3;
+                        } else {
+                            int i4 = this.buttonsCount;
+                            this.buttonsCount = i4 + 1;
+                            this.documentButton = i4;
                         }
                     } else {
-                        int i4 = this.buttonsCount;
-                        int i5 = i4 + 1;
-                        this.buttonsCount = i5;
-                        this.galleryButton = i4;
+                        int i5 = this.buttonsCount;
                         int i6 = i5 + 1;
                         this.buttonsCount = i6;
-                        this.documentButton = i5;
-                        this.buttonsCount = i6 + 1;
-                        this.musicButton = i6;
+                        this.galleryButton = i5;
+                        int i7 = i6 + 1;
+                        this.buttonsCount = i7;
+                        this.documentButton = i6;
+                        this.buttonsCount = i7 + 1;
+                        this.musicButton = i7;
                     }
                 } else {
                     ChatActivity chatActivity = (ChatActivity) baseFragment;
@@ -5386,9 +5440,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     if (set == null) {
                         return;
                     }
-                    int i7 = this.buttonsCount;
-                    this.buttonsCount = i7 + 1;
-                    this.galleryButton = i7;
+                    int i8 = this.buttonsCount;
+                    this.buttonsCount = i8 + 1;
+                    this.galleryButton = i8;
                     if (ChatAttachAlert.this.photosEnabled || ChatAttachAlert.this.videosEnabled) {
                         BaseFragment baseFragment2 = ChatAttachAlert.this.baseFragment;
                         if ((baseFragment2 instanceof ChatActivity) && !((ChatActivity) baseFragment2).isInScheduleMode() && !((ChatActivity) ChatAttachAlert.this.baseFragment).isSecretChat()) {
@@ -5408,54 +5462,54 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         }
                     }
                     if (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.DOCUMENTS)) {
-                        int i8 = this.buttonsCount;
-                        this.buttonsCount = i8 + 1;
-                        this.documentButton = i8;
-                    }
-                    if (chatActivity.isAllowTemplates(false) && (SharedConfig.selectedTemplatesMode == TemplatesMode.ATTACH || (SharedConfig.selectedTemplatesMode == TemplatesMode.OVAL && dialogType == DialogType.BOT))) {
                         int i9 = this.buttonsCount;
                         this.buttonsCount = i9 + 1;
-                        this.templatesButton = i9;
+                        this.documentButton = i9;
+                    }
+                    if (chatActivity.isAllowTemplates(false) && (SharedConfig.selectedTemplatesMode == TemplatesMode.ATTACH || (SharedConfig.selectedTemplatesMode == TemplatesMode.OVAL && dialogType == DialogType.BOT))) {
+                        int i10 = this.buttonsCount;
+                        this.buttonsCount = i10 + 1;
+                        this.templatesButton = i10;
                     }
                     if (chatActivity.isNeedToShowWallet()) {
                         if (set.contains(ChatAttachAlertButton.WALLET)) {
-                            int i10 = this.buttonsCount;
-                            this.buttonsCount = i10 + 1;
-                            this.walletButton = i10;
-                        }
-                        if (set.contains(ChatAttachAlertButton.BINANCE)) {
                             int i11 = this.buttonsCount;
                             this.buttonsCount = i11 + 1;
-                            this.binanceButton = i11;
+                            this.walletButton = i11;
+                        }
+                        if (set.contains(ChatAttachAlertButton.BINANCE)) {
+                            int i12 = this.buttonsCount;
+                            this.buttonsCount = i12 + 1;
+                            this.binanceButton = i12;
                         }
                     }
                     if (ChatAttachAlert.this.plainTextEnabled && (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.GEO))) {
-                        int i12 = this.buttonsCount;
-                        this.buttonsCount = i12 + 1;
-                        this.locationButton = i12;
+                        int i13 = this.buttonsCount;
+                        this.buttonsCount = i13 + 1;
+                        this.locationButton = i13;
                     }
                     if (!ChatAttachAlert.this.pollsEnabled) {
                         if (ChatAttachAlert.this.plainTextEnabled && (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.CONTACT))) {
-                            int i13 = this.buttonsCount;
-                            this.buttonsCount = i13 + 1;
-                            this.contactButton = i13;
+                            int i14 = this.buttonsCount;
+                            this.buttonsCount = i14 + 1;
+                            this.contactButton = i14;
                         }
                     } else if (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.POLL)) {
-                        int i14 = this.buttonsCount;
-                        this.buttonsCount = i14 + 1;
-                        this.pollButton = i14;
-                    }
-                    if (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.MUSIC)) {
                         int i15 = this.buttonsCount;
                         this.buttonsCount = i15 + 1;
-                        this.musicButton = i15;
+                        this.pollButton = i15;
+                    }
+                    if (chatActivity.isCloud() || set.contains(ChatAttachAlertButton.MUSIC)) {
+                        int i16 = this.buttonsCount;
+                        this.buttonsCount = i16 + 1;
+                        this.musicButton = i16;
                     }
                     BaseFragment baseFragment3 = ChatAttachAlert.this.baseFragment;
                     TLRPC$User currentUser = baseFragment3 instanceof ChatActivity ? ((ChatActivity) baseFragment3).getCurrentUser() : null;
                     if (currentUser != null && currentUser.bot && set.contains(ChatAttachAlertButton.CONTACT)) {
-                        int i16 = this.buttonsCount;
-                        this.buttonsCount = i16 + 1;
-                        this.contactButton = i16;
+                        int i17 = this.buttonsCount;
+                        this.buttonsCount = i17 + 1;
+                        this.contactButton = i17;
                     }
                 }
             }
@@ -5577,17 +5631,21 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             AndroidUtilities.hideKeyboard(editTextEmoji.getEditText());
         }
         this.botAttachLayouts.clear();
-        if (!this.allowPassConfirmationAlert && this.baseFragment != null && this.currentAttachLayout.getSelectedItemsCount() > 0 && !this.isPhotoPicker) {
+        BaseFragment baseFragment = this.baseFragment;
+        if (baseFragment == null) {
+            baseFragment = LaunchActivity.getLastFragment();
+        }
+        if (!this.allowPassConfirmationAlert && baseFragment != null && this.currentAttachLayout.getSelectedItemsCount() > 0 && !this.isPhotoPicker) {
             if (this.confirmationAlertShown) {
                 return;
             }
             this.confirmationAlertShown = true;
-            AlertDialog create = new AlertDialog.Builder(this.baseFragment.getParentActivity(), this.parentThemeDelegate).setTitle(LocaleController.getString("DiscardSelectionAlertTitle", C3417R.string.DiscardSelectionAlertTitle)).setMessage(LocaleController.getString("DiscardSelectionAlertMessage", C3417R.string.DiscardSelectionAlertMessage)).setPositiveButton(LocaleController.getString("PassportDiscard", C3417R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda3
+            AlertDialog create = new AlertDialog.Builder(baseFragment.getParentActivity(), this.resourcesProvider).setTitle(LocaleController.getString("DiscardSelectionAlertTitle", C3419R.string.DiscardSelectionAlertTitle)).setMessage(LocaleController.getString("DiscardSelectionAlertMessage", C3419R.string.DiscardSelectionAlertMessage)).setPositiveButton(LocaleController.getString("PassportDiscard", C3419R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     ChatAttachAlert.this.lambda$dismiss$40(dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda2
+            }).setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
                     ChatAttachAlert.this.lambda$dismiss$41(dialogInterface);
@@ -5623,8 +5681,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.lambda$dismiss$43(i2);
             }
         });
-        if (this.baseFragment != null) {
-            AndroidUtilities.setLightStatusBar(getWindow(), this.baseFragment.isLightStatusBar());
+        if (baseFragment != null) {
+            AndroidUtilities.setLightStatusBar(getWindow(), baseFragment.isLightStatusBar());
         }
         this.captionLimitBulletinShown = false;
         super.dismiss();
@@ -5681,5 +5739,13 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     public ChatAttachAlertDocumentLayout getDocumentLayout() {
         return this.documentLayout;
+    }
+
+    public void setAllowEnterCaption(boolean z) {
+        this.allowEnterCaption = z;
+    }
+
+    public void setDocumentsDelegate(ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate documentSelectActivityDelegate) {
+        this.documentsDelegate = documentSelectActivityDelegate;
     }
 }

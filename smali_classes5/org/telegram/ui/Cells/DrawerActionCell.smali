@@ -120,6 +120,15 @@
 
 
 # virtual methods
+.method public getImageView()Landroid/widget/ImageView;
+    .locals 1
+
+    .line 151
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerActionCell;->imageView:Landroid/widget/ImageView;
+
+    return-object v0
+.end method
+
 .method protected onAttachedToWindow()V
     .locals 2
 
@@ -462,25 +471,25 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 152
+    .line 156
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Button"
 
-    .line 153
+    .line 157
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/16 v0, 0x10
 
-    .line 154
+    .line 158
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     const/16 v0, 0x20
 
-    .line 155
+    .line 159
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 156
+    .line 160
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerActionCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -489,7 +498,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 157
+    .line 161
     const-class v0, Landroid/widget/TextView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

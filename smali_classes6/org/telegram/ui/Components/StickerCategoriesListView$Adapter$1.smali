@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 516
+    .line 526
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter$1;->this$1:Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,14 +35,14 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 519
+    .line 529
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     if-gtz p1, :cond_0
 
-    .line 521
+    .line 531
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -53,7 +53,7 @@
 
     move-result p1
 
-    .line 523
+    .line 533
     :cond_0
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -67,12 +67,12 @@
 
     sub-int/2addr v0, v2
 
-    .line 524
+    .line 534
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter$1;->this$1:Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->this$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
-    .line 527
+    .line 537
     invoke-static {v2}, Lorg/telegram/ui/Components/StickerCategoriesListView;->access$700(Lorg/telegram/ui/Components/StickerCategoriesListView;)I
 
     move-result v3
@@ -103,7 +103,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter$1;->this$1:Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;
 
-    .line 528
+    .line 538
     invoke-virtual {v4}, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;->getItemCount()I
 
     move-result v4
@@ -140,7 +140,7 @@
 
     float-to-int p1, p1
 
-    .line 526
+    .line 536
     invoke-static {v3, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -151,12 +151,12 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 525
+    .line 535
     invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 524
+    .line 534
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void

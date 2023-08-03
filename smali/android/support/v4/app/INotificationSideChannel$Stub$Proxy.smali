@@ -58,10 +58,10 @@
 
     move-result-object v0
 
-    :try_start_0
-    const-string v1, "android.support.v4.app.INotificationSideChannel"
-
     .line 150
+    :try_start_0
+    sget-object v1, Landroid/support/v4/app/INotificationSideChannel;->DESCRIPTOR:Ljava/lang/String;
+
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 151
@@ -113,10 +113,10 @@
 
     move-result-object v0
 
-    :try_start_0
-    const-string v1, "android.support.v4.app.INotificationSideChannel"
-
     .line 165
+    :try_start_0
+    sget-object v1, Landroid/support/v4/app/INotificationSideChannel;->DESCRIPTOR:Ljava/lang/String;
+
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 166
@@ -162,10 +162,10 @@
 
     move-result-object v0
 
-    :try_start_0
-    const-string v1, "android.support.v4.app.INotificationSideChannel"
-
     .line 134
+    :try_start_0
+    sget-object v1, Landroid/support/v4/app/INotificationSideChannel;->DESCRIPTOR:Ljava/lang/String;
+
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 135

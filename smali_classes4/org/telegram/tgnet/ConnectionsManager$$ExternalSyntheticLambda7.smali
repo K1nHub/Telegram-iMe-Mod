@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda7;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$xRaskL1Zhp-DZYbVRxKYKOLsbyA(IZI)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$DL3LLWxjwbagXPNuqq_A7dSUxV4(IZI)V
 
     return-void
 .end method

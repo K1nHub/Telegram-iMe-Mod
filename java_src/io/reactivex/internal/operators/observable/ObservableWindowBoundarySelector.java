@@ -52,7 +52,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         final AtomicLong windows;
 
         /* renamed from: ws */
-        final List<UnicastSubject<T>> f551ws;
+        final List<UnicastSubject<T>> f554ws;
 
         @Override // io.reactivex.internal.observers.QueueDrainObserver, io.reactivex.internal.util.ObservableQueueDrain
         public void accept(Observer<? super Observable<T>> observer, Object obj) {
@@ -68,7 +68,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
             this.close = function;
             this.bufferSize = i;
             this.resources = new CompositeDisposable();
-            this.f551ws = new ArrayList();
+            this.f554ws = new ArrayList();
             atomicLong.lazySet(1L);
         }
 
@@ -90,7 +90,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         @Override // io.reactivex.Observer
         public void onNext(T t) {
             if (fastEnter()) {
-                for (UnicastSubject<T> unicastSubject : this.f551ws) {
+                for (UnicastSubject<T> unicastSubject : this.f554ws) {
                     unicastSubject.onNext(t);
                 }
                 if (leave(-1) == 0) {
@@ -166,7 +166,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         void drainLoop() {
             MpscLinkedQueue mpscLinkedQueue = (MpscLinkedQueue) this.queue;
             Observer<? super V> observer = this.downstream;
-            List<UnicastSubject<T>> list = this.f551ws;
+            List<UnicastSubject<T>> list = this.f554ws;
             int i = 1;
             while (true) {
                 boolean z = this.done;
@@ -189,10 +189,10 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
                 } else if (!z2) {
                     if (poll instanceof WindowOperation) {
                         WindowOperation windowOperation = (WindowOperation) poll;
-                        UnicastSubject<T> unicastSubject3 = windowOperation.f552w;
+                        UnicastSubject<T> unicastSubject3 = windowOperation.f555w;
                         if (unicastSubject3 != null) {
                             if (list.remove(unicastSubject3)) {
-                                windowOperation.f552w.onComplete();
+                                windowOperation.f555w.onComplete();
                                 if (this.windows.decrementAndGet() == 0) {
                                     disposeBoundary();
                                     return;
@@ -240,7 +240,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
 
         void close(OperatorWindowBoundaryCloseObserver<T, V> operatorWindowBoundaryCloseObserver) {
             this.resources.delete(operatorWindowBoundaryCloseObserver);
-            this.queue.offer(new WindowOperation(operatorWindowBoundaryCloseObserver.f550w, null));
+            this.queue.offer(new WindowOperation(operatorWindowBoundaryCloseObserver.f553w, null));
             if (enter()) {
                 drainLoop();
             }
@@ -253,10 +253,10 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         final B open;
 
         /* renamed from: w */
-        final UnicastSubject<T> f552w;
+        final UnicastSubject<T> f555w;
 
         WindowOperation(UnicastSubject<T> unicastSubject, B b) {
-            this.f552w = unicastSubject;
+            this.f555w = unicastSubject;
             this.open = b;
         }
     }
@@ -292,11 +292,11 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         final WindowBoundaryMainObserver<T, ?, V> parent;
 
         /* renamed from: w */
-        final UnicastSubject<T> f550w;
+        final UnicastSubject<T> f553w;
 
         OperatorWindowBoundaryCloseObserver(WindowBoundaryMainObserver<T, ?, V> windowBoundaryMainObserver, UnicastSubject<T> unicastSubject) {
             this.parent = windowBoundaryMainObserver;
-            this.f550w = unicastSubject;
+            this.f553w = unicastSubject;
         }
 
         @Override // io.reactivex.Observer

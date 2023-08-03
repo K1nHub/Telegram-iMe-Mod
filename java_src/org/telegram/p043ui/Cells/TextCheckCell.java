@@ -184,13 +184,17 @@ public class TextCheckCell extends FrameLayout {
         this.checkBox.setIcon(i);
     }
 
+    public Switch getCheckBox() {
+        return this.checkBox;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
         if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
         }
     }
 
@@ -205,8 +209,8 @@ public class TextCheckCell extends FrameLayout {
         setWillNotDraw(!z);
     }
 
-    public void setTextAndCheck(String str, boolean z, boolean z2) {
-        this.textView.setText(str);
+    public void setTextAndCheck(CharSequence charSequence, boolean z, boolean z2) {
+        this.textView.setText(charSequence);
         this.isMultiline = false;
         this.checkBox.setVisibility(0);
         this.checkBox.setChecked(z, this.attached);
@@ -291,7 +295,7 @@ public class TextCheckCell extends FrameLayout {
             this.valueTextView.setMaxLines(0);
             this.valueTextView.setSingleLine(false);
             this.valueTextView.setEllipsize(null);
-            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(11));
+            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m72dp(11));
         } else {
             this.valueTextView.setLines(1);
             this.valueTextView.setMaxLines(1);
@@ -301,7 +305,7 @@ public class TextCheckCell extends FrameLayout {
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
         layoutParams.height = -2;
-        layoutParams.topMargin = AndroidUtilities.m54dp(10);
+        layoutParams.topMargin = AndroidUtilities.m72dp(10);
         this.textView.setLayoutParams(layoutParams);
         setWillNotDraw(true ^ z3);
     }
@@ -387,7 +391,7 @@ public class TextCheckCell extends FrameLayout {
     public void setAnimationProgress(float f) {
         this.animationProgress = f;
         float lastTouchX = getLastTouchX();
-        this.checkBox.setOverrideColorProgress(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m54dp(40)) * this.animationProgress);
+        this.checkBox.setOverrideColorProgress(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m72dp(40)) * this.animationProgress);
     }
 
     public void setBackgroundColorAnimatedReverse(final int i) {
@@ -423,7 +427,7 @@ public class TextCheckCell extends FrameLayout {
 
     private float getLastTouchX() {
         if (this.isAnimatingToThumbInsteadOfTouch) {
-            return LocaleController.isRTL ? AndroidUtilities.m54dp(22) : getMeasuredWidth() - AndroidUtilities.m54dp(42);
+            return LocaleController.isRTL ? AndroidUtilities.m72dp(22) : getMeasuredWidth() - AndroidUtilities.m72dp(42);
         }
         return this.lastTouchX;
     }
@@ -434,12 +438,12 @@ public class TextCheckCell extends FrameLayout {
         int switchDividerX;
         int measuredHeight;
         if (this.drawSwitchDivider) {
-            int m54dp = AndroidUtilities.m54dp(this.height / 3);
-            canvas.drawRect(getSwitchDividerX(), (getMeasuredHeight() - m54dp) / 2, switchDividerX + 2, measuredHeight + m54dp, Theme.dividerPaint);
+            int m72dp = AndroidUtilities.m72dp(this.height / 3);
+            canvas.drawRect(getSwitchDividerX(), (getMeasuredHeight() - m72dp) / 2, switchDividerX + 2, measuredHeight + m72dp, Theme.dividerPaint);
         }
         if (this.animatedColorBackground != 0) {
             float lastTouchX = getLastTouchX();
-            canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m54dp(40)) * this.animationProgress, this.animationPaint);
+            canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m72dp(40)) * this.animationProgress, this.animationPaint);
         }
         if (this.needDivider) {
             ImageView imageView = this.imageView;
@@ -452,9 +456,9 @@ public class TextCheckCell extends FrameLayout {
                 return;
             }
             if (!LocaleController.isRTL) {
-                f = AndroidUtilities.m54dp(20);
+                f = AndroidUtilities.m72dp(20);
             }
-            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -495,14 +499,14 @@ public class TextCheckCell extends FrameLayout {
             this.imageView = rLottieImageView;
             rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.imageView, LayoutHelper.createFrame(29, 29, (LocaleController.isRTL ? 5 : 3) | 16, 19, 0, 19, 0));
-            this.padding = AndroidUtilities.m54dp(65);
+            this.padding = AndroidUtilities.m72dp(65);
             ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).leftMargin = LocaleController.isRTL ? 70 : this.padding;
             ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).rightMargin = LocaleController.isRTL ? this.padding : 70;
         }
         this.imageView.setVisibility(0);
-        this.imageView.setPadding(AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2));
+        this.imageView.setPadding(AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2));
         this.imageView.setImageResource(i2);
         this.imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(9), i));
+        this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m72dp(9), i));
     }
 }

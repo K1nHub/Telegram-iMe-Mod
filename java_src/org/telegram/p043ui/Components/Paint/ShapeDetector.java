@@ -51,26 +51,26 @@ public class ShapeDetector {
     public static class Point {
 
         /* renamed from: x */
-        public double f1752x;
+        public double f1773x;
 
         /* renamed from: y */
-        public double f1753y;
+        public double f1774y;
 
         public Point(double d, double d2) {
             set(d, d2);
         }
 
         public void set(double d, double d2) {
-            this.f1752x = d;
-            this.f1753y = d2;
+            this.f1773x = d;
+            this.f1774y = d2;
         }
 
         public double distance(double d, double d2) {
-            return Math.sqrt(Math.pow(d - this.f1752x, 2.0d) + Math.pow(d2 - this.f1753y, 2.0d));
+            return Math.sqrt(Math.pow(d - this.f1773x, 2.0d) + Math.pow(d2 - this.f1774y, 2.0d));
         }
 
         public double distance(Point point) {
-            return distance(point.f1752x, point.f1753y);
+            return distance(point.f1773x, point.f1774y);
         }
     }
 
@@ -197,14 +197,14 @@ public class ShapeDetector {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$parseTemplates$0() {
-        C49241 c49241;
+        C49601 c49601;
         char c;
         String string;
         char c2;
         try {
             InputStream open = ApplicationLoader.applicationContext.getAssets().open("shapes.dat");
             while (true) {
-                c49241 = null;
+                c49601 = null;
                 c = 0;
                 if (open.available() <= 5) {
                     break;
@@ -243,12 +243,12 @@ public class ShapeDetector {
                     }
                     i2++;
                     c = c2;
-                    c49241 = null;
+                    c49601 = null;
                 }
             }
             open.close();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -270,7 +270,7 @@ public class ShapeDetector {
             ArrayList<Point> fullClone = fullClone(resample);
             rotate(fullClone, indicativeAngle(fullClone));
             Point centroid = centroid(fullClone);
-            translate(fullClone, -centroid.f1752x, -centroid.f1753y);
+            translate(fullClone, -centroid.f1773x, -centroid.f1774y);
             scale(fullClone, 250.0d);
             Point centroid2 = centroid(fullClone);
             double d = Double.MAX_VALUE;
@@ -354,7 +354,7 @@ public class ShapeDetector {
                 double d4 = (pathLength - d2) / distance;
                 i2 = i3;
                 d = pathLength;
-                Point point = new Point(arrayList.get(i5).f1752x + ((arrayList.get(i4).f1752x - arrayList.get(i5).f1752x) * d4), arrayList.get(i5).f1753y + (d4 * (arrayList.get(i4).f1753y - arrayList.get(i5).f1753y)));
+                Point point = new Point(arrayList.get(i5).f1773x + ((arrayList.get(i4).f1773x - arrayList.get(i5).f1773x) * d4), arrayList.get(i5).f1774y + (d4 * (arrayList.get(i4).f1774y - arrayList.get(i5).f1774y)));
                 arrayList2.add(point);
                 arrayList.add(i4, point);
                 d2 = 0.0d;
@@ -415,12 +415,12 @@ public class ShapeDetector {
         int i = 0;
         while (i < min) {
             Point point3 = arrayList.get(i);
-            double d3 = point3.f1752x;
+            double d3 = point3.f1773x;
             int i2 = i;
-            double d4 = point2.f1752x;
-            double d5 = point3.f1753y;
+            double d4 = point2.f1773x;
+            double d5 = point3.f1774y;
             int i3 = min;
-            double d6 = point2.f1753y;
+            double d6 = point2.f1774y;
             double d7 = cos;
             d2 += arrayList2.get(i).distance((((d3 - d4) * cos) - ((d5 - d6) * sin)) + d4, ((d3 - d4) * sin) + ((d5 - d6) * d7) + d6);
             i = i2 + 1;
@@ -435,7 +435,7 @@ public class ShapeDetector {
         ArrayList<Point> arrayList2 = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
             Point point = arrayList.get(i);
-            arrayList2.add(new Point(point.f1752x, point.f1753y));
+            arrayList2.add(new Point(point.f1773x, point.f1774y));
         }
         return arrayList2;
     }
@@ -443,8 +443,8 @@ public class ShapeDetector {
     private void translate(ArrayList<Point> arrayList, double d, double d2) {
         for (int i = 0; i < arrayList.size(); i++) {
             Point point = arrayList.get(i);
-            point.f1752x += d;
-            point.f1753y += d2;
+            point.f1773x += d;
+            point.f1774y += d2;
         }
     }
 
@@ -454,8 +454,8 @@ public class ShapeDetector {
         double d3 = boundingBox.bottom - boundingBox.top;
         for (int i = 0; i < arrayList.size(); i++) {
             Point point = arrayList.get(i);
-            point.f1752x *= d / d2;
-            point.f1753y *= d / d3;
+            point.f1773x *= d / d2;
+            point.f1774y *= d / d3;
         }
     }
 
@@ -469,13 +469,13 @@ public class ShapeDetector {
         int i = 0;
         while (i < arrayList.size()) {
             Point point2 = arrayList.get(i);
-            double d2 = point2.f1752x;
-            double d3 = point.f1752x;
-            double d4 = point2.f1753y;
+            double d2 = point2.f1773x;
+            double d3 = point.f1773x;
+            double d4 = point2.f1774y;
             int i2 = i;
-            double d5 = point.f1753y;
-            point2.f1753y = ((d2 - d3) * sin) + ((d4 - d5) * cos) + d5;
-            point2.f1752x = (((d2 - d3) * cos) - ((d4 - d5) * sin)) + d3;
+            double d5 = point.f1774y;
+            point2.f1774y = ((d2 - d3) * sin) + ((d4 - d5) * cos) + d5;
+            point2.f1773x = (((d2 - d3) * cos) - ((d4 - d5) * sin)) + d3;
             i = i2 + 1;
         }
     }
@@ -484,12 +484,12 @@ public class ShapeDetector {
         if (arrayList.size() <= 0) {
             return null;
         }
-        double d = arrayList.get(0).f1752x;
-        double d2 = arrayList.get(0).f1753y;
+        double d = arrayList.get(0).f1773x;
+        double d2 = arrayList.get(0).f1774y;
         RectD rectD = new RectD(d, d2, d, d2);
         for (int i = 1; i < arrayList.size(); i++) {
             Point point = arrayList.get(i);
-            rectD.union(point.f1752x, point.f1753y);
+            rectD.union(point.f1773x, point.f1774y);
         }
         return rectD;
     }
@@ -498,17 +498,17 @@ public class ShapeDetector {
         Point point = new Point(0.0d, 0.0d);
         for (int i = 0; i < arrayList.size(); i++) {
             Point point2 = arrayList.get(i);
-            point.f1752x += point2.f1752x;
-            point.f1753y += point2.f1753y;
+            point.f1773x += point2.f1773x;
+            point.f1774y += point2.f1774y;
         }
-        point.f1752x /= arrayList.size();
-        point.f1753y /= arrayList.size();
+        point.f1773x /= arrayList.size();
+        point.f1774y /= arrayList.size();
         return point;
     }
 
     private double indicativeAngle(ArrayList<Point> arrayList) {
         Point centroid = centroid(arrayList);
-        return Math.atan2(centroid.f1753y - arrayList.get(0).f1753y, centroid.f1752x - arrayList.get(0).f1752x);
+        return Math.atan2(centroid.f1774y - arrayList.get(0).f1774y, centroid.f1773x - arrayList.get(0).f1773x);
     }
 
     private double pathLength(ArrayList<Point> arrayList) {
@@ -562,23 +562,23 @@ public class ShapeDetector {
             Point point = arrayList.get(findAnglePoint2);
             Point point2 = arrayList.get(findAnglePoint2 / 2);
             Point point3 = arrayList.get(0);
-            shape.centerX = (float) point.f1752x;
-            shape.centerY = (float) point.f1753y;
-            shape.middleX = (float) point2.f1752x;
-            shape.middleY = (float) point2.f1753y;
-            shape.radiusX = (float) point3.f1752x;
-            shape.radiusY = (float) point3.f1753y;
+            shape.centerX = (float) point.f1773x;
+            shape.centerY = (float) point.f1774y;
+            shape.middleX = (float) point2.f1773x;
+            shape.middleY = (float) point2.f1774y;
+            shape.radiusX = (float) point3.f1773x;
+            shape.radiusY = (float) point3.f1774y;
             shape.arrowTriangleLength = 16.0f;
         } else {
             Point centroid = centroid(arrayList);
-            shape.centerX = (float) centroid.f1752x;
-            shape.centerY = (float) centroid.f1753y;
+            shape.centerX = (float) centroid.f1773x;
+            shape.centerY = (float) centroid.f1774y;
             RectD boundingBox = boundingBox(arrayList);
             shape.radiusX = ((float) (boundingBox.right - boundingBox.left)) / 2.0f;
             shape.radiusY = ((float) (boundingBox.bottom - boundingBox.top)) / 2.0f;
             if (i == 2 && (findAnglePoint = findAnglePoint(arrayList, 1)) > 0) {
                 Point point4 = arrayList.get(findAnglePoint);
-                shape.rotation = (float) Math.atan2(point4.f1753y - shape.centerY, point4.f1752x - shape.centerX);
+                shape.rotation = (float) Math.atan2(point4.f1774y - shape.centerY, point4.f1773x - shape.centerX);
             }
         }
         return shape;
@@ -614,9 +614,9 @@ public class ShapeDetector {
                     }
                     Point point = template.points.get(i3);
                     sb.append("[");
-                    sb.append(Math.round(point.f1752x));
+                    sb.append(Math.round(point.f1773x));
                     sb.append(",");
-                    sb.append(Math.round(point.f1753y));
+                    sb.append(Math.round(point.f1774y));
                     sb.append("]");
                 }
                 sb.append("],\n\t\t\"freq\": ");
@@ -634,7 +634,7 @@ public class ShapeDetector {
         String string = this.preferences.getString("moretemplates", null);
         String str = string == null ? "" + template2.shapeType : string + "|" + template2.shapeType;
         for (int i4 = 0; i4 < arrayList.size(); i4++) {
-            str = str + "," + Math.round(((Point) arrayList.get(i4)).f1752x) + "," + Math.round(((Point) arrayList.get(i4)).f1753y);
+            str = str + "," + Math.round(((Point) arrayList.get(i4)).f1773x) + "," + Math.round(((Point) arrayList.get(i4)).f1774y);
         }
         this.preferences.edit().putString("moretemplates", str).apply();
     }

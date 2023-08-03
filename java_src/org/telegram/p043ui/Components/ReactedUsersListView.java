@@ -9,7 +9,6 @@ import android.os.Build;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,21 +21,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.Components.AnimatedEmojiDrawable;
+import org.telegram.p043ui.Cells.ReactedUserHolderView;
 import org.telegram.p043ui.Components.ReactedHeaderView;
 import org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$InputStickerSet;
 import org.telegram.tgnet.TLRPC$MessagePeerReaction;
 import org.telegram.tgnet.TLRPC$Reaction;
@@ -45,10 +41,12 @@ import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_messagePeerReaction;
 import org.telegram.tgnet.TLRPC$TL_messages_getMessageReactionsList;
 import org.telegram.tgnet.TLRPC$TL_messages_messageReactionsList;
+import org.telegram.tgnet.TLRPC$TL_peerChat;
 import org.telegram.tgnet.TLRPC$TL_peerUser;
 import org.telegram.tgnet.TLRPC$TL_reactionCustomEmoji;
 import org.telegram.tgnet.TLRPC$User;
 import p033j$.util.Comparator;
+import p033j$.util.function.ToIntFunction;
 /* renamed from: org.telegram.ui.Components.ReactedUsersListView */
 /* loaded from: classes6.dex */
 public class ReactedUsersListView extends FrameLayout {
@@ -119,7 +117,7 @@ public class ReactedUsersListView extends FrameLayout {
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         this.listView.setLayoutManager(linearLayoutManager);
         if (z) {
-            this.listView.setPadding(0, 0, 0, AndroidUtilities.m54dp(8));
+            this.listView.setPadding(0, 0, 0, AndroidUtilities.m72dp(8));
             this.listView.setClipToPadding(false);
         }
         if (Build.VERSION.SDK_INT >= 29) {
@@ -131,7 +129,7 @@ public class ReactedUsersListView extends FrameLayout {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i2) {
                 FrameLayout reactedUserHolderView;
                 if (i2 == 0) {
-                    reactedUserHolderView = new ReactedUserHolderView(i, context);
+                    reactedUserHolderView = new ReactedUserHolderView(ReactedUserHolderView.STYLE_DEFAULT, i, context, null);
                 } else {
                     ReactedUsersListView reactedUsersListView = ReactedUsersListView.this;
                     MessageContainsEmojiButton messageContainsEmojiButton = reactedUsersListView.messageContainsEmojiButton;
@@ -194,7 +192,7 @@ public class ReactedUsersListView extends FrameLayout {
                 if (ReactedUsersListView.this.customReactionsEmoji.isEmpty() || (messageContainsEmojiButton = ReactedUsersListView.this.messageContainsEmojiButton) == null) {
                     return 0;
                 }
-                return messageContainsEmojiButton.getMeasuredHeight() + AndroidUtilities.m54dp(8);
+                return messageContainsEmojiButton.getMeasuredHeight() + AndroidUtilities.m72dp(8);
             }
         };
         this.loadingView = flickerLoadingView;
@@ -229,15 +227,14 @@ public class ReactedUsersListView extends FrameLayout {
         List<TLRPC$MessagePeerReaction> list2 = this.userReactions;
         if (list2 != null && !list2.isEmpty()) {
             for (ReactedHeaderView.UserSeen userSeen : list) {
-                TLRPC$User tLRPC$User = userSeen.user;
-                if (tLRPC$User != null && userSeen.date > 0) {
+                if (userSeen.user != null && userSeen.date > 0) {
                     int i = 0;
                     while (true) {
                         if (i >= this.userReactions.size()) {
                             break;
                         }
                         TLRPC$MessagePeerReaction tLRPC$MessagePeerReaction = this.userReactions.get(i);
-                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && tLRPC$MessagePeerReaction.peer_id.user_id == tLRPC$User.f1656id) {
+                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && MessageObject.getPeerId(tLRPC$MessagePeerReaction.peer_id) == userSeen.dialogId) {
                             tLRPC$MessagePeerReaction.date = userSeen.date;
                             tLRPC$MessagePeerReaction.dateIsSeen = true;
                             break;
@@ -249,12 +246,19 @@ public class ReactedUsersListView extends FrameLayout {
         }
         ArrayList arrayList = new ArrayList(list.size());
         for (ReactedHeaderView.UserSeen userSeen2 : list) {
-            if (this.peerReactionMap.get(userSeen2.user.f1656id) == null) {
+            if (this.peerReactionMap.get(userSeen2.dialogId) == null) {
                 TLRPC$TL_messagePeerReaction tLRPC$TL_messagePeerReaction = new TLRPC$TL_messagePeerReaction();
                 tLRPC$TL_messagePeerReaction.reaction = null;
-                TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
-                tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerUser;
-                tLRPC$TL_peerUser.user_id = userSeen2.user.f1656id;
+                TLObject tLObject = userSeen2.user;
+                if (tLObject instanceof TLRPC$User) {
+                    TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
+                    tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerUser;
+                    tLRPC$TL_peerUser.user_id = ((TLRPC$User) userSeen2.user).f1675id;
+                } else if (tLObject instanceof TLRPC$Chat) {
+                    TLRPC$TL_peerChat tLRPC$TL_peerChat = new TLRPC$TL_peerChat();
+                    tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerChat;
+                    tLRPC$TL_peerChat.chat_id = ((TLRPC$Chat) userSeen2.user).f1518id;
+                }
                 tLRPC$TL_messagePeerReaction.date = userSeen2.date;
                 tLRPC$TL_messagePeerReaction.dateIsSeen = true;
                 ArrayList<TLRPC$MessagePeerReaction> arrayList2 = new ArrayList<>();
@@ -265,7 +269,14 @@ public class ReactedUsersListView extends FrameLayout {
         }
         this.userReactions.isEmpty();
         this.userReactions.addAll(arrayList);
-        Collections.sort(this.userReactions, Comparator.CC.comparingInt(ReactedUsersListView$$ExternalSyntheticLambda3.INSTANCE));
+        Collections.sort(this.userReactions, Comparator.CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda3
+            @Override // p033j$.util.function.ToIntFunction
+            public final int applyAsInt(Object obj) {
+                int lambda$setSeenUsers$1;
+                lambda$setSeenUsers$1 = ReactedUsersListView.lambda$setSeenUsers$1((TLRPC$MessagePeerReaction) obj);
+                return lambda$setSeenUsers$1;
+            }
+        }));
         this.adapter.notifyDataSetChanged();
         updateHeight();
         return this;
@@ -295,7 +306,7 @@ public class ReactedUsersListView extends FrameLayout {
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
         TLRPC$TL_messages_getMessageReactionsList tLRPC$TL_messages_getMessageReactionsList = new TLRPC$TL_messages_getMessageReactionsList();
         tLRPC$TL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(this.message.getDialogId());
-        tLRPC$TL_messages_getMessageReactionsList.f1606id = this.message.getId();
+        tLRPC$TL_messages_getMessageReactionsList.f1614id = this.message.getId();
         tLRPC$TL_messages_getMessageReactionsList.limit = getLoadCount();
         TLRPC$Reaction tLRPC$Reaction = this.filter;
         tLRPC$TL_messages_getMessageReactionsList.reaction = tLRPC$Reaction;
@@ -371,7 +382,14 @@ public class ReactedUsersListView extends FrameLayout {
                 this.customReactionsEmoji.addAll(hashSet);
                 updateCustomReactionsButton();
             }
-            Collections.sort(this.userReactions, Comparator.CC.comparingInt(ReactedUsersListView$$ExternalSyntheticLambda4.INSTANCE));
+            Collections.sort(this.userReactions, Comparator.CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda4
+                @Override // p033j$.util.function.ToIntFunction
+                public final int applyAsInt(Object obj) {
+                    int lambda$load$2;
+                    lambda$load$2 = ReactedUsersListView.lambda$load$2((TLRPC$MessagePeerReaction) obj);
+                    return lambda$load$2;
+                }
+            }));
             this.adapter.notifyDataSetChanged();
             if (!this.isLoaded) {
                 ValueAnimator duration = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f).setDuration(150L);
@@ -426,9 +444,9 @@ public class ReactedUsersListView extends FrameLayout {
         HashSet hashSet = new HashSet();
         for (int i = 0; i < this.customReactionsEmoji.size(); i++) {
             TLRPC$InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(AnimatedEmojiDrawable.findDocument(this.currentAccount, this.customReactionsEmoji.get(i).documentId));
-            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1538id))) {
+            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1541id))) {
                 arrayList.add(inputStickerSet);
-                hashSet.add(Long.valueOf(inputStickerSet.f1538id));
+                hashSet.add(Long.valueOf(inputStickerSet.f1541id));
             }
         }
         if (MessagesController.getInstance(this.currentAccount).premiumLocked) {
@@ -447,133 +465,21 @@ public class ReactedUsersListView extends FrameLayout {
             if (size == 0) {
                 size = this.predictiveCount;
             }
-            int m54dp = AndroidUtilities.m54dp(size * 50);
+            int m72dp = AndroidUtilities.m72dp(size * 50);
             MessageContainsEmojiButton messageContainsEmojiButton = this.messageContainsEmojiButton;
             if (messageContainsEmojiButton != null) {
-                m54dp += messageContainsEmojiButton.getMeasuredHeight() + AndroidUtilities.m54dp(8);
+                m72dp += messageContainsEmojiButton.getMeasuredHeight() + AndroidUtilities.m72dp(8);
             }
             if (this.listView.getMeasuredHeight() != 0) {
-                m54dp = Math.min(this.listView.getMeasuredHeight(), m54dp);
+                m72dp = Math.min(this.listView.getMeasuredHeight(), m72dp);
             }
-            this.onHeightChangedListener.onHeightChanged(this, m54dp);
+            this.onHeightChangedListener.onHeightChanged(this, m72dp);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getLoadCount() {
         return this.filter == null ? 100 : 50;
-    }
-
-    /* renamed from: org.telegram.ui.Components.ReactedUsersListView$ReactedUserHolderView */
-    /* loaded from: classes6.dex */
-    private static final class ReactedUserHolderView extends FrameLayout {
-        private static final MessageSeenCheckDrawable reactDrawable;
-        private static final MessageSeenCheckDrawable seenDrawable;
-        AvatarDrawable avatarDrawable;
-        BackupImageView avatarView;
-        int currentAccount;
-        View overlaySelectorView;
-        BackupImageView reactView;
-        AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable rightDrawable;
-        SimpleTextView subtitleView;
-        SimpleTextView titleView;
-
-        static {
-            int i = C3417R.C3419drawable.msg_mini_checks;
-            int i2 = Theme.key_windowBackgroundWhiteGrayText;
-            seenDrawable = new MessageSeenCheckDrawable(i, i2);
-            reactDrawable = new MessageSeenCheckDrawable(C3417R.C3419drawable.msg_reactions, i2, 16, 16, 5.66f);
-        }
-
-        ReactedUserHolderView(int i, Context context) {
-            super(context);
-            this.avatarDrawable = new AvatarDrawable();
-            this.currentAccount = i;
-            setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(50)));
-            BackupImageView backupImageView = new BackupImageView(context);
-            this.avatarView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.m54dp(34));
-            addView(this.avatarView, LayoutHelper.createFrameRelatively(34.0f, 34.0f, 8388627, 10.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
-            SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Components.ReactedUsersListView.ReactedUserHolderView.1
-                @Override // org.telegram.p043ui.ActionBar.SimpleTextView
-                public boolean setText(CharSequence charSequence) {
-                    return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false));
-                }
-            };
-            this.titleView = simpleTextView;
-            NotificationCenter.listenEmojiLoading(simpleTextView);
-            this.titleView.setTextSize(16);
-            this.titleView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
-            this.titleView.setEllipsizeByGradient(true);
-            this.titleView.setImportantForAccessibility(2);
-            this.titleView.setRightPadding(AndroidUtilities.m54dp(30));
-            SimpleTextView simpleTextView2 = this.titleView;
-            boolean z = LocaleController.isRTL;
-            float f = BitmapDescriptorFactory.HUE_RED;
-            simpleTextView2.setTranslationX(z ? AndroidUtilities.m54dp(30) : 0.0f);
-            this.titleView.setRightDrawableOutside(true);
-            addView(this.titleView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 55, 55.0f, 5.33f, 12.0f, BitmapDescriptorFactory.HUE_RED));
-            this.rightDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, AndroidUtilities.m54dp(18));
-            this.titleView.setDrawablePadding(AndroidUtilities.m54dp(3));
-            this.titleView.setRightDrawable(this.rightDrawable);
-            SimpleTextView simpleTextView3 = new SimpleTextView(context);
-            this.subtitleView = simpleTextView3;
-            simpleTextView3.setTextSize(13);
-            this.subtitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
-            this.subtitleView.setEllipsizeByGradient(true);
-            this.subtitleView.setImportantForAccessibility(2);
-            this.subtitleView.setTranslationX(LocaleController.isRTL ? AndroidUtilities.m54dp(30) : f);
-            addView(this.subtitleView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 55, 55.0f, 19.0f, 20.0f, BitmapDescriptorFactory.HUE_RED));
-            BackupImageView backupImageView2 = new BackupImageView(context);
-            this.reactView = backupImageView2;
-            addView(backupImageView2, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388629, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 12.0f, BitmapDescriptorFactory.HUE_RED));
-            View view = new View(context);
-            this.overlaySelectorView = view;
-            view.setBackground(Theme.getSelectorDrawable(false));
-            addView(this.overlaySelectorView, LayoutHelper.createFrame(-1, -1));
-        }
-
-        /* JADX WARN: Removed duplicated region for block: B:29:0x00be  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        void setUserReaction(org.telegram.tgnet.TLRPC$MessagePeerReaction r14) {
-            /*
-                Method dump skipped, instructions count: 422
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ReactedUsersListView.ReactedUserHolderView.setUserReaction(org.telegram.tgnet.TLRPC$MessagePeerReaction):void");
-        }
-
-        @Override // android.widget.FrameLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
-        }
-
-        @Override // android.view.View
-        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            accessibilityNodeInfo.setEnabled(true);
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onAttachedToWindow() {
-            super.onAttachedToWindow();
-            AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.rightDrawable;
-            if (swapAnimatedEmojiDrawable != null) {
-                swapAnimatedEmojiDrawable.attach();
-            }
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onDetachedFromWindow() {
-            super.onDetachedFromWindow();
-            AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.rightDrawable;
-            if (swapAnimatedEmojiDrawable != null) {
-                swapAnimatedEmojiDrawable.detach();
-            }
-        }
     }
 
     public ReactedUsersListView setOnProfileSelectedListener(OnProfileSelectedListener onProfileSelectedListener) {
@@ -614,22 +520,22 @@ public class ReactedUsersListView extends FrameLayout {
                         if (recyclerListView.getAdapter().getItemCount() == recyclerListView.getChildCount()) {
                             int childCount = recyclerListView.getChildCount();
                             for (int i5 = 0; i5 < childCount; i5++) {
-                                recyclerListView.getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), 0), i2);
+                                recyclerListView.getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), 0), i2);
                                 if (recyclerListView.getChildAt(i5).getMeasuredWidth() > i3) {
                                     i3 = recyclerListView.getChildAt(i5).getMeasuredWidth();
                                 }
                             }
-                            i3 += AndroidUtilities.m54dp(16);
+                            i3 += AndroidUtilities.m72dp(16);
                         }
                     }
                 }
             }
             int size = View.MeasureSpec.getSize(i);
-            if (size < AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK)) {
-                size = AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK);
+            if (size < AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK)) {
+                size = AndroidUtilities.m72dp((int) PsExtractor.VIDEO_STREAM_MASK);
             }
-            if (size > AndroidUtilities.m54dp(280)) {
-                size = AndroidUtilities.m54dp(280);
+            if (size > AndroidUtilities.m72dp(280)) {
+                size = AndroidUtilities.m72dp(280);
             }
             if (size < 0) {
                 size = 0;

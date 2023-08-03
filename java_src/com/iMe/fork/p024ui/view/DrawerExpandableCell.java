@@ -13,9 +13,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
@@ -34,9 +35,35 @@ public final class DrawerExpandableCell extends FrameLayout {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNull(context);
-        lazy = LazyKt__LazyJVMKt.lazy(new DrawerExpandableCell$textView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.DrawerExpandableCell$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTextView;
+                initTextView = DrawerExpandableCell.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new DrawerExpandableCell$arrowView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.DrawerExpandableCell$arrowView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initArrowView;
+                initArrowView = DrawerExpandableCell.this.initArrowView();
+                return initArrowView;
+            }
+        });
         this.arrowView$delegate = lazy2;
         addView(getTextView(), LayoutHelper.createFrame(-1, -1, 51, 19, 0, 16, 0));
         addView(getArrowView(), LayoutHelper.createFrame(59, 48, 85));
@@ -60,7 +87,7 @@ public final class DrawerExpandableCell extends FrameLayout {
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
             textView.setCompoundDrawablesWithIntrinsicBounds(mutate, (Drawable) null, (Drawable) null, (Drawable) null);
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
@@ -74,7 +101,7 @@ public final class DrawerExpandableCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -89,7 +116,7 @@ public final class DrawerExpandableCell extends FrameLayout {
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.singleLine(textView);
         textView.setGravity(19);
-        textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(29));
+        textView.setCompoundDrawablePadding(AndroidUtilities.m72dp(29));
         textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
         textView.setTextSize(1, 15.0f);
         return textView;
@@ -100,7 +127,7 @@ public final class DrawerExpandableCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3417R.C3419drawable.msg_expand);
+        imageView.setImageResource(C3419R.C3421drawable.msg_expand);
         return imageView;
     }
 

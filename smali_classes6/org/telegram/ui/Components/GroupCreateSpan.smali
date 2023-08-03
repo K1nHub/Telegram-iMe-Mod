@@ -34,6 +34,10 @@
 
 .field private rect:Landroid/graphics/RectF;
 
+.field private resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+.field private small:Z
+
 .field private textWidth:I
 
 .field private textX:F
@@ -69,14 +73,46 @@
 
     const/4 v0, 0x0
 
-    .line 82
+    .line 84
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;)V
-    .locals 26
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 92
+    invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 6
+
+    const/4 v4, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v5, p4
+
+    .line 96
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 29
 
     move-object/from16 v0, p0
 
@@ -84,121 +120,141 @@
 
     move-object/from16 v2, p3
 
-    .line 90
+    move/from16 v3, p4
+
+    .line 100
     invoke-direct/range {p0 .. p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     .line 69
-    new-instance v3, Landroid/graphics/RectF;
+    new-instance v4, Landroid/graphics/RectF;
 
-    invoke-direct {v3}, Landroid/graphics/RectF;-><init>()V
+    invoke-direct {v4}, Landroid/graphics/RectF;-><init>()V
 
-    iput-object v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->rect:Landroid/graphics/RectF;
+    iput-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->rect:Landroid/graphics/RectF;
 
-    const/16 v3, 0x8
+    const/16 v4, 0x8
 
-    new-array v4, v3, [I
+    new-array v5, v4, [I
 
     .line 79
-    iput-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
+    iput-object v5, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
-    .line 92
-    iput-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->currentContact:Lorg/telegram/messenger/ContactsController$Contact;
-
-    .line 93
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    sget v5, Lorg/telegram/messenger/R$drawable;->delete:I
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 94
-    sget-object v4, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
-
-    const/16 v5, 0xe
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setTextSize(F)V
+    move-object/from16 v5, p5
 
     .line 101
-    new-instance v4, Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-direct {v4}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
-
-    iput-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/16 v5, 0x14
+    iput-object v5, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     .line 102
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
+    iput-boolean v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
     .line 104
-    instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+    iput-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->currentContact:Lorg/telegram/messenger/ContactsController$Contact;
 
-    const/16 v5, 0xa
+    .line 105
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    const/16 v6, 0xc
+    move-result-object v5
 
-    const/4 v7, 0x2
+    sget v6, Lorg/telegram/messenger/R$drawable;->delete:I
 
-    const/4 v8, 0x0
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    const v9, 0x3f4ccccd    # 0.8f
+    move-result-object v5
 
-    const/4 v10, 0x0
+    iput-object v5, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v4, :cond_0
+    .line 106
+    sget-object v5, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
-    .line 107
+    if-eqz v3, :cond_0
+
+    const/16 v6, 0xd
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v6, 0xe
+
+    :goto_0
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    .line 113
+    new-instance v5, Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-direct {v5}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
+
+    iput-object v5, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/16 v6, 0x14
+
+    .line 114
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
+
+    .line 116
+    instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+
+    const/16 v6, 0xa
+
+    const/16 v7, 0xc
+
+    const/4 v8, 0x2
+
+    const/4 v9, 0x0
+
+    const v10, 0x3f4ccccd    # 0.8f
+
+    const/16 v11, 0x20
+
+    const/4 v12, 0x0
+
+    if-eqz v5, :cond_1
+
+    .line 119
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 108
+    .line 120
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const/16 v3, 0x64
+    const/16 v4, 0x64
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 109
+    .line 121
     check-cast v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 110
+    .line 122
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
-    int-to-long v2, v2
+    int-to-long v4, v2
 
-    invoke-static {v2, v3}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
+    invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    iput-wide v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->encryptedChatId:J
+    iput-wide v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->encryptedChatId:J
 
-    .line 111
+    .line 123
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
 
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
+    iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
@@ -210,156 +266,156 @@
 
     move-result-object v1
 
-    :goto_0
-    move-object/from16 v16, v10
+    :goto_1
+    move-object v13, v12
 
-    goto/16 :goto_6
+    move-object/from16 v19, v13
 
-    .line 113
-    :cond_0
-    instance-of v4, v1, Ljava/lang/String;
+    goto/16 :goto_7
 
-    const/4 v11, 0x1
+    .line 125
+    :cond_1
+    instance-of v5, v1, Ljava/lang/String;
 
-    if-eqz v4, :cond_2
+    const/4 v13, 0x1
 
-    .line 116
+    if-eqz v5, :cond_3
+
+    .line 128
     check-cast v1, Ljava/lang/String;
 
-    .line 117
+    .line 129
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    const/4 v2, -0x1
-
-    .line 118
+    .line 130
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v4
+    move-result v5
 
-    const/4 v9, 0x7
+    const/4 v10, 0x7
 
-    const/4 v12, 0x6
+    const/4 v14, 0x6
 
-    const/4 v13, 0x5
+    const/4 v15, 0x5
 
-    const/4 v14, 0x4
+    const/4 v2, 0x4
 
-    sparse-switch v4, :sswitch_data_0
+    sparse-switch v5, :sswitch_data_0
 
-    goto :goto_1
+    goto :goto_2
 
     :sswitch_0
-    const-string v4, "channels"
+    const-string v5, "channels"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    const/4 v11, 0x3
+    const/4 v13, 0x3
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_1
-    const-string v4, "muted"
+    const-string v5, "muted"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v13
+    move v13, v15
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_2
-    const-string v4, "read"
+    const-string v5, "read"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v12
+    move v13, v14
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_3
-    const-string v4, "bots"
+    const-string v5, "bots"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v14
+    move v13, v2
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_4
-    const-string v4, "contacts"
+    const-string v5, "contacts"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v8
+    move v13, v9
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_5
-    const-string v4, "non_contacts"
+    const-string v5, "non_contacts"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_6
-    const-string v4, "groups"
+    const-string v5, "groups"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v7
+    move v13, v8
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_7
-    const-string v4, "archived"
+    const-string v5, "archived"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    move v11, v9
+    move v13, v10
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_1
-    :goto_1
-    move v11, v2
-
+    :cond_2
     :goto_2
-    packed-switch v11, :pswitch_data_0
+    const/4 v13, -0x1
 
-    .line 156
+    :goto_3
+    packed-switch v13, :pswitch_data_0
+
+    .line 168
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v2, 0xb
@@ -368,10 +424,10 @@
 
     const-wide v1, -0x7ffffffffffffff9L    # -3.5E-323
 
-    .line 157
+    .line 169
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 158
+    .line 170
     sget v1, Lorg/telegram/messenger/R$string;->FilterArchived:I
 
     const-string v2, "FilterArchived"
@@ -380,20 +436,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 150
+    .line 162
     :pswitch_0
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide v1, -0x7ffffffffffffffaL    # -3.0E-323
 
-    .line 151
+    .line 163
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 152
+    .line 164
     sget v1, Lorg/telegram/messenger/R$string;->FilterRead:I
 
     const-string v2, "FilterRead"
@@ -402,9 +458,9 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 145
+    .line 157
     :pswitch_1
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -414,10 +470,10 @@
 
     const-wide v1, -0x7ffffffffffffffbL    # -2.5E-323
 
-    .line 146
+    .line 158
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 147
+    .line 159
     sget v1, Lorg/telegram/messenger/R$string;->FilterMuted:I
 
     const-string v2, "FilterMuted"
@@ -426,20 +482,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 140
+    .line 152
     :pswitch_2
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide v1, -0x7ffffffffffffffcL    # -2.0E-323
 
-    .line 141
+    .line 153
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 142
+    .line 154
     sget v1, Lorg/telegram/messenger/R$string;->FilterBots:I
 
     const-string v2, "FilterBots"
@@ -448,20 +504,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 135
+    .line 147
     :pswitch_3
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide v1, -0x7ffffffffffffffdL    # -1.5E-323
 
-    .line 136
+    .line 148
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 137
+    .line 149
     sget v1, Lorg/telegram/messenger/R$string;->FilterChannels:I
 
     const-string v2, "FilterChannels"
@@ -470,20 +526,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 130
+    .line 142
     :pswitch_4
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v12}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v14}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide v1, -0x7ffffffffffffffeL    # -1.0E-323
 
-    .line 131
+    .line 143
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 132
+    .line 144
     sget v1, Lorg/telegram/messenger/R$string;->FilterGroups:I
 
     const-string v2, "FilterGroups"
@@ -492,20 +548,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 125
+    .line 137
     :pswitch_5
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v15}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    .line 126
+    .line 138
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 127
+    .line 139
     sget v1, Lorg/telegram/messenger/R$string;->FilterNonContacts:I
 
     const-string v2, "FilterNonContacts"
@@ -514,20 +570,20 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 120
+    .line 132
     :pswitch_6
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v1, v14}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    .line 121
+    .line 133
     iput-wide v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 122
+    .line 134
     sget v1, Lorg/telegram/messenger/R$string;->FilterContacts:I
 
     const-string v2, "FilterContacts"
@@ -536,30 +592,30 @@
 
     move-result-object v1
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 161
-    :cond_2
-    instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$User;
+    .line 173
+    :cond_3
+    instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$User;
 
-    if-eqz v3, :cond_5
+    if-eqz v4, :cond_7
 
-    .line 162
+    .line 174
     check-cast v1, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 163
-    iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    .line 175
+    iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    iput-wide v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
+    iput-wide v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 164
+    .line 176
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    .line 165
+    .line 177
     sget v1, Lorg/telegram/messenger/R$string;->RepliesTitle:I
 
     const-string v2, "RepliesTitle"
@@ -568,30 +624,30 @@
 
     move-result-object v1
 
-    .line 166
+    .line 178
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 167
+    .line 179
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    :goto_3
-    move-object v2, v10
+    :goto_4
+    move-object v2, v12
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 170
-    :cond_3
+    .line 182
+    :cond_4
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
-    .line 171
+    .line 183
     sget v1, Lorg/telegram/messenger/R$string;->SavedMessages:I
 
     const-string v2, "SavedMessages"
@@ -600,272 +656,329 @@
 
     move-result-object v1
 
-    .line 172
+    .line 184
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 173
+    .line 185
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v2, v11}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    invoke-virtual {v2, v13}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 177
-    :cond_4
+    .line 189
+    :cond_5
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 178
+    .line 190
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 179
-    invoke-static {v1, v11}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
-
-    move-result-object v3
-
-    move-object v10, v3
-
-    move-object/from16 v25, v2
-
-    move-object v2, v1
-
-    move-object/from16 v1, v25
-
-    :goto_4
-    move-object/from16 v16, v2
-
-    goto :goto_6
-
-    .line 182
-    :cond_5
-    instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    if-eqz v3, :cond_8
-
-    .line 183
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$Chat;
-
-    .line 184
-    sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    invoke-static {v2, v3, v4}, Lorg/telegram/messenger/ChatObject;->isTemplatesChat(IJ)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    .line 187
-    iget-object v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
-
-    .line 188
-    iget-object v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/16 v4, 0x65
-
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-
-    goto :goto_5
-
-    .line 190
-    :cond_6
-    iget-object v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
-
-    .line 191
-    :goto_5
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    neg-long v3, v3
-
-    iput-wide v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
-
     .line 192
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
+    invoke-virtual {v2, v11}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v4
+
+    if-ltz v4, :cond_6
 
     .line 193
-    invoke-static {v1, v11}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-virtual {v2, v9, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 195
+    :cond_6
+    invoke-static {v1, v13}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v4
 
-    if-eqz v2, :cond_7
+    move-object v12, v4
 
-    .line 197
+    move-object/from16 v28, v2
+
+    move-object v2, v1
+
+    move-object/from16 v1, v28
+
+    :goto_5
+    move-object/from16 v19, v2
+
+    move-object v13, v12
+
+    goto :goto_7
+
+    .line 198
+    :cond_7
+    instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    if-eqz v4, :cond_a
+
+    .line 199
+    check-cast v1, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    .line 200
+    sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    invoke-static {v2, v4, v5}, Lorg/telegram/messenger/ChatObject;->isTemplatesChat(IJ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    .line 203
+    iget-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v4, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
+
+    .line 204
+    iget-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/16 v5, 0x65
+
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+
+    goto :goto_6
+
+    .line 206
+    :cond_8
+    iget-object v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
+
+    .line 207
+    :goto_6
+    iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v4, v4
+
+    iput-wide v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
+
+    .line 208
+    iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
+
+    .line 209
+    invoke-static {v1, v13}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
+
+    move-result-object v5
+
+    if-eqz v2, :cond_9
+
+    .line 213
     sget v1, Lorg/telegram/messenger/R$string;->chat_templates:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    goto :goto_3
-
-    :cond_7
-    move-object v2, v1
-
-    move-object v1, v3
-
-    move-object v10, v4
-
     goto :goto_4
 
-    .line 203
-    :cond_8
+    :cond_9
+    move-object v2, v1
+
+    move-object v1, v4
+
+    move-object v12, v5
+
+    goto :goto_5
+
+    .line 219
+    :cond_a
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    iget-object v9, v2, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
+    iget-object v10, v2, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
-    iget-object v11, v2, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
+    iget-object v13, v2, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
 
-    invoke-virtual {v1, v3, v4, v9, v11}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v4, v5, v10, v13}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 204
+    .line 220
     iget v1, v2, Lorg/telegram/messenger/ContactsController$Contact;->contact_id:I
 
-    int-to-long v3, v1
+    int-to-long v4, v1
 
-    iput-wide v3, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
+    iput-wide v4, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
-    .line 205
+    .line 221
     iget-object v1, v2, Lorg/telegram/messenger/ContactsController$Contact;->key:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->key:Ljava/lang/String;
 
-    .line 206
+    .line 222
     iget-object v1, v2, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_b
 
-    .line 207
+    .line 223
     iget-object v1, v2, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 209
-    :cond_9
+    .line 225
+    :cond_b
     iget-object v1, v2, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    .line 215
-    :goto_6
+    .line 231
+    :goto_7
     new-instance v2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v2}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    const/16 v3, 0x10
+    const/16 v4, 0x10
 
-    .line 216
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
-
-    .line 217
-    iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {v2, v0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
-
-    .line 218
-    iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
-
-    const/16 v3, 0x20
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    const/4 v11, 0x0
-
-    invoke-virtual {v2, v11, v11, v4, v9}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
-
-    .line 221
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_a
-
-    const/16 v2, 0x16e
-
-    .line 222
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    div-int/2addr v2, v7
-
-    goto :goto_7
-
-    .line 224
-    :cond_a
-    sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
-
-    iget v4, v2, Landroid/graphics/Point;->x:I
-
-    iget v2, v2, Landroid/graphics/Point;->y:I
-
-    invoke-static {v4, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v2
-
-    const/16 v4, 0xa4
-
+    .line 232
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    sub-int/2addr v2, v4
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    div-int/2addr v2, v7
+    .line 233
+    iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 227
-    :goto_7
-    invoke-virtual {v1, v5, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v2, v0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
+
+    .line 234
+    iget-object v2, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    const/16 v4, 0x1c
+
+    if-eqz v3, :cond_c
+
+    move v5, v4
+
+    goto :goto_8
+
+    :cond_c
+    move v5, v11
+
+    :goto_8
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    if-eqz v3, :cond_d
+
+    move v10, v4
+
+    goto :goto_9
+
+    :cond_d
+    move v10, v11
+
+    :goto_9
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    int-to-float v10, v10
+
+    const/4 v12, 0x0
+
+    invoke-virtual {v2, v12, v12, v5, v10}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+
+    .line 237
+    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f
+
+    if-eqz v3, :cond_e
+
+    goto :goto_a
+
+    :cond_e
+    move v4, v11
+
+    :goto_a
+    rsub-int v2, v4, 0x212
+
+    add-int/lit8 v2, v2, -0x12
+
+    add-int/lit8 v2, v2, -0x72
+
+    .line 238
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    div-int/2addr v2, v8
+
+    goto :goto_c
+
+    .line 240
+    :cond_f
+    sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+
+    iget v5, v2, Landroid/graphics/Point;->x:I
+
+    iget v2, v2, Landroid/graphics/Point;->y:I
+
+    invoke-static {v5, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    if-eqz v3, :cond_10
+
+    goto :goto_b
+
+    :cond_10
+    move v4, v11
+
+    :goto_b
+    add-int/lit8 v4, v4, 0x12
+
+    add-int/lit8 v4, v4, 0x72
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    sub-int/2addr v2, v3
+
+    div-int/2addr v2, v8
+
+    .line 243
+    :goto_c
+    invoke-virtual {v1, v6, v11}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 229
+    .line 245
     sget-object v3, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v3}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v3
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    invoke-static {v1, v3, v4, v8}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
+    invoke-static {v1, v3, v4, v9}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 230
+    .line 246
     sget-object v3, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
     int-to-float v2, v2
@@ -874,40 +987,40 @@
 
     invoke-static {v1, v3, v2, v4}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
 
-    move-result-object v18
+    move-result-object v21
 
-    .line 231
+    .line 247
     new-instance v1, Landroid/text/StaticLayout;
 
-    sget-object v19, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
+    sget-object v22, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
-    const/16 v20, 0x3e8
+    const/16 v23, 0x3e8
 
-    sget-object v21, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+    sget-object v24, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    const/high16 v22, 0x3f800000    # 1.0f
+    const/high16 v25, 0x3f800000    # 1.0f
 
-    const/16 v23, 0x0
+    const/16 v26, 0x0
 
-    const/16 v24, 0x0
+    const/16 v27, 0x0
 
-    move-object/from16 v17, v1
+    move-object/from16 v20, v1
 
-    invoke-direct/range {v17 .. v24}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
+    invoke-direct/range {v20 .. v27}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
-    .line 232
+    .line 248
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v1
 
-    if-lez v1, :cond_b
+    if-lez v1, :cond_11
 
-    .line 233
+    .line 249
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->getLineWidth(I)F
+    invoke-virtual {v1, v9}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
 
@@ -921,10 +1034,10 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->textWidth:I
 
-    .line 234
+    .line 250
     iget-object v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->getLineLeft(I)F
+    invoke-virtual {v1, v9}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v1
 
@@ -932,29 +1045,31 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->textX:F
 
-    .line 236
-    :cond_b
-    iget-object v9, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+    .line 252
+    :cond_11
+    iget-object v12, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    iget-object v12, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+    iget-object v15, v0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const-wide/16 v13, 0x0
+    const-wide/16 v16, 0x0
 
-    const/4 v15, 0x0
+    const/16 v18, 0x0
 
-    const/16 v17, 0x1
+    const/16 v20, 0x1
 
-    const-string v11, "50_50"
+    const-string v14, "50_50"
 
-    invoke-virtual/range {v9 .. v17}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
+    invoke-virtual/range {v12 .. v20}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 237
+    .line 253
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/GroupCreateSpan;->updateColors()V
 
-    .line 239
+    .line 255
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -985,7 +1100,7 @@
 
     const/4 v0, 0x0
 
-    .line 86
+    .line 88
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/messenger/ContactsController$Contact;)V
 
     return-void
@@ -996,7 +1111,7 @@
 .method public cancelDeleteAnimation()V
     .locals 2
 
-    .line 272
+    .line 288
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
     if-nez v0, :cond_0
@@ -1006,17 +1121,17 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 275
+    .line 291
     iput-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
-    .line 276
+    .line 292
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->lastUpdateTime:J
 
-    .line 277
+    .line 293
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1025,7 +1140,7 @@
 .method public getContact()Lorg/telegram/messenger/ContactsController$Contact;
     .locals 1
 
-    .line 289
+    .line 305
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->currentContact:Lorg/telegram/messenger/ContactsController$Contact;
 
     return-object v0
@@ -1052,7 +1167,7 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 285
+    .line 301
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->key:Ljava/lang/String;
 
     return-object v0
@@ -1061,7 +1176,7 @@
 .method public getUid()J
     .locals 2
 
-    .line 281
+    .line 297
     iget-wide v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
     return-wide v0
@@ -1070,16 +1185,16 @@
 .method public isDeleting()Z
     .locals 1
 
-    .line 259
+    .line 275
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
     return v0
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 13
 
-    .line 299
+    .line 315
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1103,13 +1218,13 @@
 
     if-eqz v0, :cond_6
 
-    .line 300
+    .line 316
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 301
+    .line 317
     iget-wide v5, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->lastUpdateTime:J
 
     sub-long/2addr v3, v5
@@ -1129,7 +1244,7 @@
     :cond_2
     move-wide v3, v5
 
-    .line 305
+    .line 321
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
@@ -1137,7 +1252,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 306
+    .line 322
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     long-to-float v3, v3
@@ -1152,12 +1267,12 @@
 
     if-ltz v0, :cond_5
 
-    .line 308
+    .line 324
     iput v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     goto :goto_0
 
-    .line 311
+    .line 327
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
@@ -1173,19 +1288,19 @@
 
     if-gez v0, :cond_5
 
-    .line 313
+    .line 329
     iput v2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    .line 316
+    .line 332
     :cond_5
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 318
+    .line 334
     :cond_6
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 319
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1194,8 +1309,20 @@
 
     int-to-float v3, v3
 
-    const/16 v4, 0x20
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
+    const/16 v5, 0x20
+
+    if-eqz v4, :cond_7
+
+    const/16 v4, 0x1c
+
+    goto :goto_1
+
+    :cond_7
+    move v4, v5
+
+    :goto_1
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1204,276 +1331,388 @@
 
     invoke-virtual {v0, v2, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 320
+    .line 336
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     const/4 v4, 0x6
 
-    aget v5, v3, v4
+    aget v6, v3, v4
 
-    const/4 v6, 0x7
+    const/4 v7, 0x7
 
-    aget v6, v3, v6
-
-    aget v4, v3, v4
-
-    sub-int/2addr v6, v4
-
-    int-to-float v4, v6
-
-    iget v6, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
-
-    mul-float/2addr v4, v6
-
-    float-to-int v4, v4
-
-    add-int/2addr v5, v4
-
-    const/4 v4, 0x0
-
-    aget v7, v3, v4
-
-    const/4 v8, 0x1
-
-    aget v8, v3, v8
-
-    aget v4, v3, v4
-
-    sub-int/2addr v8, v4
-
-    int-to-float v4, v8
-
-    mul-float/2addr v4, v6
-
-    float-to-int v4, v4
-
-    add-int/2addr v7, v4
-
-    const/4 v4, 0x2
+    aget v7, v3, v7
 
     aget v8, v3, v4
 
-    const/4 v9, 0x3
+    sub-int/2addr v7, v8
 
-    aget v9, v3, v9
+    int-to-float v7, v7
 
-    aget v4, v3, v4
+    iget v8, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    sub-int/2addr v9, v4
+    mul-float/2addr v7, v8
 
-    int-to-float v4, v9
+    float-to-int v7, v7
 
-    mul-float/2addr v4, v6
+    add-int/2addr v6, v7
 
-    float-to-int v4, v4
+    const/4 v7, 0x0
 
-    add-int/2addr v8, v4
+    aget v9, v3, v7
 
-    const/4 v4, 0x4
-
-    aget v9, v3, v4
-
-    const/4 v10, 0x5
+    const/4 v10, 0x1
 
     aget v10, v3, v10
 
-    aget v3, v3, v4
+    aget v7, v3, v7
 
-    sub-int/2addr v10, v3
+    sub-int/2addr v10, v7
 
-    int-to-float v3, v10
+    int-to-float v7, v10
 
-    mul-float/2addr v3, v6
+    mul-float/2addr v7, v8
+
+    float-to-int v7, v7
+
+    add-int/2addr v9, v7
+
+    const/4 v7, 0x2
+
+    aget v10, v3, v7
+
+    const/4 v11, 0x3
+
+    aget v11, v3, v11
+
+    aget v7, v3, v7
+
+    sub-int/2addr v11, v7
+
+    int-to-float v7, v11
+
+    mul-float/2addr v7, v8
+
+    float-to-int v7, v7
+
+    add-int/2addr v10, v7
+
+    const/4 v7, 0x4
+
+    aget v11, v3, v7
+
+    const/4 v12, 0x5
+
+    aget v12, v3, v12
+
+    aget v3, v3, v7
+
+    sub-int/2addr v12, v3
+
+    int-to-float v3, v12
+
+    mul-float/2addr v3, v8
 
     float-to-int v3, v3
 
-    add-int/2addr v9, v3
+    add-int/2addr v11, v3
 
-    invoke-static {v5, v7, v8, v9}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v6, v9, v10, v11}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 321
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->rect:Landroid/graphics/RectF;
 
-    const/16 v3, 0x10
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
+    const/16 v6, 0xe
+
+    const/16 v7, 0x10
+
+    if-eqz v3, :cond_8
+
+    move v3, v6
+
+    goto :goto_2
+
+    :cond_8
+    move v3, v7
+
+    :goto_2
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget-boolean v8, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    move-result v5
+    if-eqz v8, :cond_9
 
-    int-to-float v5, v5
+    move v8, v6
 
-    sget-object v6, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
+    goto :goto_3
 
-    invoke-virtual {p1, v0, v4, v5, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    :cond_9
+    move v8, v7
 
-    .line 322
+    :goto_3
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    sget-object v9, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v3, v8, v9}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 338
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_a
 
-    .line 323
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 325
-    :cond_7
+    .line 341
+    :cond_a
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
     cmpl-float v0, v0, v2
 
-    if-eqz v0, :cond_8
+    const/16 v2, 0x9
 
-    .line 326
+    if-eqz v0, :cond_12
+
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor()I
 
     move-result v0
 
-    .line 327
+    .line 343
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v2, v2
+    int-to-float v3, v3
 
-    const/high16 v4, 0x437f0000    # 255.0f
+    const/high16 v8, 0x437f0000    # 255.0f
 
-    div-float/2addr v2, v4
+    div-float/2addr v3, v8
 
-    .line 328
-    sget-object v5, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
+    .line 344
+    sget-object v9, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v9, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 329
+    .line 345
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
-    iget v5, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
+    iget v9, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    mul-float/2addr v5, v4
+    mul-float/2addr v9, v8
 
-    mul-float/2addr v5, v2
+    mul-float/2addr v9, v3
 
-    float-to-int v2, v5
+    float-to-int v3, v9
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 330
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 346
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    move-result v0
+    if-eqz v0, :cond_b
 
-    int-to-float v0, v0
+    move v0, v6
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    goto :goto_4
 
-    move-result v2
+    :cond_b
+    move v0, v7
 
-    int-to-float v2, v2
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    sget-object v6, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v2, v5, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    .line 331
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    const/high16 v0, 0x42340000    # 45.0f
-
-    .line 332
-    iget v2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
-
-    sub-float/2addr v1, v2
-
-    mul-float/2addr v1, v0
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    :goto_4
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    move-result v2
+    if-eqz v3, :cond_c
 
-    int-to-float v2, v2
+    move v3, v6
 
-    invoke-virtual {p1, v1, v0, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
+    goto :goto_5
 
-    .line 333
-    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
+    :cond_c
+    move v3, v7
 
-    const/16 v1, 0xb
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    const/16 v3, 0x15
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
+    :goto_5
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    invoke-virtual {v0, v2, v1, v5, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    int-to-float v3, v3
 
-    .line 334
+    iget-boolean v9, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
+
+    if-eqz v9, :cond_d
+
+    goto :goto_6
+
+    :cond_d
+    move v6, v7
+
+    :goto_6
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    sget-object v9, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v3, v6, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    .line 347
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    const/high16 v0, 0x42340000    # 45.0f
+
+    .line 348
+    iget v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
+
+    sub-float/2addr v1, v3
+
+    mul-float/2addr v1, v0
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    invoke-virtual {p1, v1, v0, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
+
+    .line 349
+    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
+
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
+
+    const/16 v3, 0xb
+
+    if-eqz v1, :cond_e
+
+    move v1, v2
+
+    goto :goto_7
+
+    :cond_e
+    move v1, v3
+
+    :goto_7
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
+
+    if-eqz v6, :cond_f
+
+    move v3, v2
+
+    :cond_f
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
+
+    const/16 v7, 0x13
+
+    const/16 v9, 0x15
+
+    if-eqz v6, :cond_10
+
+    move v6, v7
+
+    goto :goto_8
+
+    :cond_10
+    move v6, v9
+
+    :goto_8
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    iget-boolean v10, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
+
+    if-eqz v10, :cond_11
+
+    goto :goto_9
+
+    :cond_11
+    move v7, v9
+
+    :goto_9
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-virtual {v0, v1, v3, v6, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    mul-float/2addr v1, v4
+    mul-float/2addr v1, v8
 
     float-to-int v1, v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 335
+    .line 351
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 336
+    .line 352
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 338
-    :cond_8
+    .line 354
+    :cond_12
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->textX:F
 
-    const/16 v1, 0x29
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    if-eqz v1, :cond_13
+
+    const/16 v5, 0x1a
+
+    :cond_13
+    add-int/2addr v5, v2
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
@@ -1481,9 +1720,17 @@
 
     add-float/2addr v0, v1
 
-    const/16 v1, 0x8
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    if-eqz v1, :cond_14
+
+    goto :goto_a
+
+    :cond_14
+    const/16 v4, 0x8
+
+    :goto_a
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
@@ -1491,21 +1738,25 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 339
+    .line 355
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
-    .line 340
+    .line 356
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
-    .line 341
+    .line 357
     sget-object v2, Lorg/telegram/ui/Components/GroupCreateSpan;->textPaint:Landroid/text/TextPaint;
 
     iget v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
@@ -1516,12 +1767,12 @@
 
     invoke-virtual {v2, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 343
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 344
+    .line 360
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1530,10 +1781,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 349
+    .line 365
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 350
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->nameLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -1542,7 +1793,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 351
+    .line 367
     invoke-virtual {p0}, Lorg/telegram/ui/Components/GroupCreateSpan;->isDeleting()Z
 
     move-result v0
@@ -1555,7 +1806,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 352
+    .line 368
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CLICK:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -1581,21 +1832,40 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 0
+    .locals 1
 
-    const/16 p1, 0x39
+    .line 310
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
-    .line 294
+    const/16 p2, 0x20
+
+    if-eqz p1, :cond_0
+
+    const/16 p1, 0x14
+
+    goto :goto_0
+
+    :cond_0
+    move p1, p2
+
+    :goto_0
+    add-int/lit8 p1, p1, 0x19
+
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    iget p2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->textWidth:I
+    iget v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->textWidth:I
 
-    add-int/2addr p1, p2
+    add-int/2addr p1, v0
 
-    const/16 p2, 0x20
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->small:Z
 
+    if-eqz v0, :cond_1
+
+    const/16 p2, 0x1c
+
+    :cond_1
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1608,7 +1878,7 @@
 .method public startDeleteAnimation()V
     .locals 2
 
-    .line 263
+    .line 279
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
     if-eqz v0, :cond_0
@@ -1618,17 +1888,17 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 266
+    .line 282
     iput-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleting:Z
 
-    .line 267
+    .line 283
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->lastUpdateTime:J
 
-    .line 268
+    .line 284
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1637,28 +1907,32 @@
 .method public updateColors()V
     .locals 6
 
-    .line 243
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarDrawable;->getColor()I
 
     move-result v0
 
-    .line 244
+    .line 260
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v2, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
-    .line 245
+    .line 261
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanDelete:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
-    .line 246
+    .line 262
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v1}, Landroid/graphics/Color;->red(I)I
@@ -1669,7 +1943,7 @@
 
     aput v4, v3, v5
 
-    .line 247
+    .line 263
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v0}, Landroid/graphics/Color;->red(I)I
@@ -1680,7 +1954,7 @@
 
     aput v4, v3, v5
 
-    .line 248
+    .line 264
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v1}, Landroid/graphics/Color;->green(I)I
@@ -1691,7 +1965,7 @@
 
     aput v4, v3, v5
 
-    .line 249
+    .line 265
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v0}, Landroid/graphics/Color;->green(I)I
@@ -1702,7 +1976,7 @@
 
     aput v4, v3, v5
 
-    .line 250
+    .line 266
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v1}, Landroid/graphics/Color;->blue(I)I
@@ -1713,7 +1987,7 @@
 
     aput v4, v3, v5
 
-    .line 251
+    .line 267
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v0}, Landroid/graphics/Color;->blue(I)I
@@ -1724,7 +1998,7 @@
 
     aput v4, v3, v5
 
-    .line 252
+    .line 268
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
@@ -1735,7 +2009,7 @@
 
     aput v4, v3, v5
 
-    .line 253
+    .line 269
     iget-object v3, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->colors:[I
 
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
@@ -1746,7 +2020,7 @@
 
     aput v0, v3, v4
 
-    .line 254
+    .line 270
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -1757,7 +2031,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 255
+    .line 271
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateSpan;->backPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V

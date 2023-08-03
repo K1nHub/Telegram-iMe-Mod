@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 import com.iMe.p031ui.base.mvp.view.ICustomMvpView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.MvpDelegate;
 import org.koin.core.Koin;
@@ -43,7 +44,17 @@ public class MvpFrameLayout extends FrameLayout implements ICustomMvpView<MvpFra
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new MvpFrameLayout$mMvpDelegate$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<MvpDelegate<MvpFrameLayout>>() { // from class: com.iMe.ui.base.mvp.view.MvpFrameLayout$mMvpDelegate$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final MvpDelegate<MvpFrameLayout> invoke() {
+                return new MvpDelegate<>(MvpFrameLayout.this);
+            }
+        });
         this.mMvpDelegate$delegate = lazy;
     }
 

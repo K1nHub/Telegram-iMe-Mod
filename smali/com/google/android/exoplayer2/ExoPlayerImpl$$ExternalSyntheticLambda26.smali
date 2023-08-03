@@ -37,7 +37,7 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/Player$Listener;->onSeekProcessed()V
+    invoke-static {p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$mmvudecqiJgKISRfILg_QG9WU-M(Lcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

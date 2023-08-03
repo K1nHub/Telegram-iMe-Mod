@@ -14,47 +14,47 @@ import p033j$.wrappers.C3208a0;
 class C2888F0 extends AbstractC3044g3 {
 
     /* renamed from: b */
-    public final /* synthetic */ int f816b = 0;
+    public final /* synthetic */ int f819b = 0;
 
     /* renamed from: c */
-    final /* synthetic */ Object f817c;
+    final /* synthetic */ Object f820c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2917K c2917k, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2917k;
+        this.f820c = c2917k;
     }
 
     @Override // p033j$.util.stream.InterfaceC3068k3, p033j$.util.stream.InterfaceC3080m3
     public void accept(int i) {
-        switch (this.f816b) {
+        switch (this.f819b) {
             case 0:
-                this.f1039a.accept(i);
+                this.f1042a.accept(i);
                 return;
             case 1:
-                ((InterfaceC2826l) ((C2929M) this.f817c).f871m).accept(i);
-                this.f1039a.accept(i);
+                ((InterfaceC2826l) ((C2929M) this.f820c).f874m).accept(i);
+                this.f1042a.accept(i);
                 return;
             case 2:
-                this.f1039a.accept(i);
+                this.f1042a.accept(i);
                 return;
             case 3:
-                this.f1039a.accept(((C3208a0) ((C2929M) this.f817c).f871m).m152a(i));
+                this.f1042a.accept(((C3208a0) ((C2929M) this.f820c).f874m).m170a(i));
                 return;
             case 4:
-                this.f1039a.accept((InterfaceC3080m3) ((InterfaceC2827m) ((C2923L) this.f817c).f866m).apply(i));
+                this.f1042a.accept((InterfaceC3080m3) ((InterfaceC2827m) ((C2923L) this.f820c).f869m).apply(i));
                 return;
             case 5:
-                this.f1039a.accept(((InterfaceC2828n) ((C2935N) this.f817c).f882m).applyAsLong(i));
+                this.f1042a.accept(((InterfaceC2828n) ((C2935N) this.f820c).f885m).applyAsLong(i));
                 return;
             case 6:
-                this.f1039a.accept(((C3203W) ((C2917K) this.f817c).f858m).m158a(i));
+                this.f1042a.accept(((C3203W) ((C2917K) this.f820c).f861m).m176a(i));
                 return;
             case 7:
-                IntStream intStream = (IntStream) ((InterfaceC2827m) ((C2929M) this.f817c).f871m).apply(i);
+                IntStream intStream = (IntStream) ((InterfaceC2827m) ((C2929M) this.f820c).f874m).apply(i);
                 if (intStream != null) {
                     try {
-                        intStream.sequential().mo260U(new C2864B0(this));
+                        intStream.sequential().mo278U(new C2864B0(this));
                     } catch (Throwable th) {
                         try {
                             intStream.close();
@@ -70,8 +70,8 @@ class C2888F0 extends AbstractC3044g3 {
                 }
                 return;
             default:
-                if (((C3201U) ((C2929M) this.f817c).f871m).m160b(i)) {
-                    this.f1039a.accept(i);
+                if (((C3201U) ((C2929M) this.f820c).f874m).m178b(i)) {
+                    this.f1042a.accept(i);
                     return;
                 }
                 return;
@@ -80,16 +80,16 @@ class C2888F0 extends AbstractC3044g3 {
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     /* renamed from: n */
-    public void mo297n(long j) {
-        switch (this.f816b) {
+    public void mo315n(long j) {
+        switch (this.f819b) {
             case 7:
-                this.f1039a.mo297n(-1L);
+                this.f1042a.mo315n(-1L);
                 return;
             case 8:
-                this.f1039a.mo297n(-1L);
+                this.f1042a.mo315n(-1L);
                 return;
             default:
-                this.f1039a.mo297n(j);
+                this.f1042a.mo315n(j);
                 return;
         }
     }
@@ -97,48 +97,48 @@ class C2888F0 extends AbstractC3044g3 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2923L c2923l, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2923l;
+        this.f820c = c2923l;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2929M c2929m, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2929m;
+        this.f820c = c2929m;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2929M c2929m, InterfaceC3080m3 interfaceC3080m3, AbstractC2723a abstractC2723a) {
         super(interfaceC3080m3);
-        this.f817c = c2929m;
+        this.f820c = c2929m;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2929M c2929m, InterfaceC3080m3 interfaceC3080m3, AbstractC2724b abstractC2724b) {
         super(interfaceC3080m3);
-        this.f817c = c2929m;
+        this.f820c = c2929m;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2929M c2929m, InterfaceC3080m3 interfaceC3080m3, AbstractC2725c abstractC2725c) {
         super(interfaceC3080m3);
-        this.f817c = c2929m;
+        this.f820c = c2929m;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2935N c2935n, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2935n;
+        this.f820c = c2935n;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2941O c2941o, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2941o;
+        this.f820c = c2941o;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2888F0(C2894G0 c2894g0, InterfaceC3080m3 interfaceC3080m3) {
         super(interfaceC3080m3);
-        this.f817c = c2894g0;
+        this.f820c = c2894g0;
     }
 }

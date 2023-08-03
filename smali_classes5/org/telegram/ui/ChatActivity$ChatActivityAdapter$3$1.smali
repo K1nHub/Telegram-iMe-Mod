@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;)V
     .locals 0
 
-    .line 31582
+    .line 31720
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->val$cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 9
 
-    .line 31585
+    .line 31723
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;->val$messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAlpha(F)V
 
-    .line 31586
+    .line 31724
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;->val$messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -61,14 +61,14 @@
 
     iput-boolean v1, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->ignoreAlpha:Z
 
-    .line 31587
+    .line 31725
     new-instance p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$1;
 
     const-string v2, "alpha"
 
     invoke-direct {p1, p0, v2}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$1;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;Ljava/lang/String;)V
 
-    .line 31599
+    .line 31737
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -77,7 +77,7 @@
 
     new-array v3, v3, [Landroid/animation/Animator;
 
-    .line 31600
+    .line 31738
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->val$cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -90,7 +90,7 @@
 
     aput v8, v7, v1
 
-    .line 31601
+    .line 31739
     invoke-static {v4, v5, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -105,36 +105,36 @@
 
     aput v0, v5, v1
 
-    .line 31602
+    .line 31740
     invoke-static {v4, p1, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v3, v6
 
-    .line 31600
+    .line 31738
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 v0, 0x64
 
-    .line 31604
+    .line 31742
     invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 31605
+    .line 31743
     new-instance p1, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {p1}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 31606
+    .line 31744
     new-instance p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;)V
 
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 31616
+    .line 31754
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
     return-void

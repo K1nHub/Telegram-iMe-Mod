@@ -14,10 +14,11 @@ import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -48,11 +49,49 @@ public final class ImageRadioCell extends FrameLayout {
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
         this.dialog = z;
-        lazy = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$imageView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<AppCompatImageView>() { // from class: com.iMe.fork.ui.view.ImageRadioCell$imageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final AppCompatImageView invoke() {
+                AppCompatImageView initImageView;
+                initImageView = ImageRadioCell.this.initImageView();
+                return initImageView;
+            }
+        });
         this.imageView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$textView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.ImageRadioCell$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTextView;
+                initTextView = ImageRadioCell.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$radioButton$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<RadioButton>() { // from class: com.iMe.fork.ui.view.ImageRadioCell$radioButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RadioButton invoke() {
+                RadioButton initRadioButton;
+                initRadioButton = ImageRadioCell.this.initRadioButton();
+                return initRadioButton;
+            }
+        });
         this.radioButton$delegate = lazy3;
         addView(getImageView(), LayoutHelper.createFrame(30, 30, 8388627, i, 0, i, 0));
         addView(getTextView(), LayoutHelper.createFrame(-1, -1, 51, i + 30 + 11, 0, i, 0));
@@ -86,7 +125,7 @@ public final class ImageRadioCell extends FrameLayout {
 
     public final void setImageUrl(String imageUrl) {
         Intrinsics.checkNotNullParameter(imageUrl, "imageUrl");
-        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3417R.C3419drawable.fork_bg_white_circle), false, 4, null);
+        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3419R.C3421drawable.fork_bg_white_circle), false, 4, null);
     }
 
     public final void setTextColor(int i) {
@@ -99,10 +138,10 @@ public final class ImageRadioCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(34);
-        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(22), 1073741824));
-        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(30), 1073741824));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(50) + (this.needDivider ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m72dp(34);
+        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(22), 1073741824));
+        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(30), 1073741824));
         getTextView().measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
     }
 
@@ -110,7 +149,7 @@ public final class ImageRadioCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -148,7 +187,7 @@ public final class ImageRadioCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final RadioButton initRadioButton() {
         RadioButton radioButton = new RadioButton(getContext());
-        radioButton.setSize(AndroidUtilities.m54dp(20));
+        radioButton.setSize(AndroidUtilities.m72dp(20));
         if (this.dialog) {
             radioButton.setColor(Theme.getColor(Theme.key_dialogRadioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
         } else {

@@ -18,10 +18,10 @@
 # static fields
 .field private static fetcher:Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;
 
-.field public static search:Lorg/telegram/messenger/Fetcher;
+.field public static search:Lorg/telegram/messenger/CacheFetcher;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lorg/telegram/messenger/Fetcher<",
+            "Lorg/telegram/messenger/CacheFetcher<",
             "Ljava/lang/String;",
             "Lorg/telegram/tgnet/TLRPC$TL_emojiList;",
             ">;"
@@ -111,6 +111,22 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$-O6TEDT7YtBCFuhWTEKV0dRscXw(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$new$3([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$-Th6ISUeG13uYRnFrfcYeUMpzfI(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$updateCategoriesShown$5(Landroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$MSZqkT7uQXahezyLl6tb11LF_to(ILorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
     .locals 0
 
@@ -127,18 +143,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$buRhssDJED39jMBmKaM2G9RmgDk(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+.method public static synthetic $r8$lambda$PKc3QwOnauVJkoM7aUyQqrqzGFM(Lorg/telegram/ui/Components/StickerCategoriesListView;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$new$2([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$scrollToSelected$4(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$zu7CKYPsSHKWJxPU4VvqR-Rg-Ec(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$edPxqHLfSRrmTERF1ki3l9mD4gQ(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;J)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$updateCategoriesShown$3(Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/StickerCategoriesListView;->lambda$new$2([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;J)V
 
     return-void
 .end method
@@ -146,7 +162,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 62
+    .line 63
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;
 
     const/4 v1, 0x0
@@ -155,14 +171,14 @@
 
     sput-object v0, Lorg/telegram/ui/Components/StickerCategoriesListView;->fetcher:Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;
 
-    .line 63
+    .line 64
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiSearch;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView$1;)V
 
-    sput-object v0, Lorg/telegram/ui/Components/StickerCategoriesListView;->search:Lorg/telegram/messenger/Fetcher;
+    sput-object v0, Lorg/telegram/ui/Components/StickerCategoriesListView;->search:Lorg/telegram/messenger/CacheFetcher;
 
-    .line 77
+    .line 78
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -175,29 +191,29 @@
 
     const/4 v0, 0x0
 
-    .line 111
+    .line 112
     invoke-direct {p0, p1, v0, p2, p3}, Lorg/telegram/ui/Components/StickerCategoriesListView;-><init>(Landroid/content/Context;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 4
+    .locals 5
 
-    .line 119
+    .line 121
     invoke-direct {p0, p1, p4}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/high16 p4, 0x40d00000    # 6.5f
 
-    .line 60
+    .line 61
     iput p4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->shownButtonsAtStart:F
 
     const/4 p4, 0x0
 
-    .line 64
+    .line 65
     iput-object p4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
-    .line 69
+    .line 70
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -208,12 +224,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 70
+    .line 71
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v0, p0, v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
-    .line 79
+    .line 80
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -224,34 +240,34 @@
 
     const/4 v0, -0x1
 
-    .line 92
+    .line 93
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
 
     const/4 v0, 0x0
 
-    .line 253
+    .line 263
     iput v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
-    .line 255
+    .line 265
     iput-boolean v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShouldShow:Z
 
-    .line 380
+    .line 390
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
-    const-wide/16 v2, 0x15e
+    const-wide/16 v3, 0x15e
 
-    invoke-direct {v0, p0, v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
+    invoke-direct {v0, p0, v3, v4, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 381
+    .line 391
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
-    invoke-direct {v0, p0, v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
+    invoke-direct {v0, p0, v3, v4, v1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedIndex:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 437
+    .line 447
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -272,7 +288,7 @@
 
     const/4 v0, 0x2
 
-    .line 122
+    .line 124
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -281,7 +297,7 @@
 
     invoke-virtual {p0, v1, v1, v0, v1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 124
+    .line 126
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;
 
     invoke-direct {v0, p0, p4}, Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;Lorg/telegram/ui/Components/StickerCategoriesListView$1;)V
@@ -290,7 +306,7 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 125
+    .line 127
     new-instance p4, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {p4, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
@@ -299,38 +315,57 @@
 
     invoke-virtual {p0, p4}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 126
+    .line 128
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->setOrientation(I)V
 
+    const/16 p1, 0xf
+
+    .line 130
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorRadius(I)V
+
     .line 131
-    iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedPaint:Landroid/graphics/Paint;
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorType(I)V
 
-    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+    .line 132
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p4
 
-    invoke-virtual {p1, p4}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
 
     .line 133
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
+    iget-object p4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
+
+    move-result p1
+
+    invoke-virtual {p4, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 135
-    new-instance p1, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
+    .line 137
+    new-instance p1, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda5;
+
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 137
+    .line 139
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 138
+    .line 140
     sget-object p1, Lorg/telegram/ui/Components/StickerCategoriesListView;->fetcher:Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;
 
     sget p4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -339,11 +374,11 @@
 
     move-result-object p3
 
-    new-instance v2, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda2;
+    new-instance v2, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda4;
 
-    invoke-direct {v2, p0, p2, v0, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;J)V
+    invoke-direct {v2, p0, p2, v0, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;J)V
 
-    invoke-virtual {p1, p4, p3, v2}, Lorg/telegram/messenger/Fetcher;->fetch(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-virtual {p1, p4, p3, v2}, Lorg/telegram/messenger/CacheFetcher;->fetch(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method
@@ -351,7 +386,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/Components/StickerCategoriesListView;)I
     .locals 0
 
-    .line 50
+    .line 51
     iget p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
 
     return p0
@@ -360,7 +395,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Components/StickerCategoriesListView;)F
     .locals 0
 
-    .line 50
+    .line 51
     iget p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
     return p0
@@ -369,7 +404,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/StickerCategoriesListView;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -378,7 +413,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 50
+    .line 51
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -387,7 +422,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/StickerCategoriesListView;F)V
     .locals 0
 
-    .line 50
+    .line 51
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setCategoriesShownT(F)V
 
     return-void
@@ -396,7 +431,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/StickerCategoriesListView;)Landroid/view/View;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->paddingView:Landroid/view/View;
 
     return-object p0
@@ -405,7 +440,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/view/View;)Landroid/view/View;
     .locals 0
 
-    .line 50
+    .line 51
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->paddingView:Landroid/view/View;
 
     return-object p1
@@ -414,7 +449,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/Components/StickerCategoriesListView;I)I
     .locals 0
 
-    .line 50
+    .line 51
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->paddingWidth:I
 
     return p1
@@ -423,7 +458,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/StickerCategoriesListView;)I
     .locals 0
 
-    .line 50
+    .line 51
     iget p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->dontOccupyWidth:I
 
     return p0
@@ -432,7 +467,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/StickerCategoriesListView;)F
     .locals 0
 
-    .line 50
+    .line 51
     iget p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->shownButtonsAtStart:F
 
     return p0
@@ -441,7 +476,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/StickerCategoriesListView;)[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     return-object p0
@@ -450,7 +485,7 @@
 .method private drawSelectedHighlight(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 439
+    .line 449
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
@@ -473,7 +508,7 @@
 
     move-result v0
 
-    .line 440
+    .line 450
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
 
     if-ltz v1, :cond_1
@@ -507,7 +542,7 @@
 
     float-to-double v2, v1
 
-    .line 446
+    .line 456
     invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v4
@@ -520,7 +555,7 @@
 
     move-result v4
 
-    .line 447
+    .line 457
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -537,7 +572,7 @@
 
     move-object v6, v5
 
-    .line 451
+    .line 461
     :goto_2
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -545,12 +580,12 @@
 
     if-ge v3, v7, :cond_6
 
-    .line 452
+    .line 462
     invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 453
+    .line 463
     invoke-virtual {p0, v7}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v8
@@ -576,7 +611,7 @@
 
     goto :goto_2
 
-    .line 467
+    .line 477
     :cond_6
     :goto_3
     iget-object v3, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedPaint:Landroid/graphics/Paint;
@@ -585,7 +620,7 @@
 
     move-result v3
 
-    .line 468
+    .line 478
     iget-object v7, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedPaint:Landroid/graphics/Paint;
 
     int-to-float v8, v3
@@ -617,18 +652,18 @@
 
     div-float v0, v1, v0
 
-    .line 471
+    .line 481
     :goto_4
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rect1:Landroid/graphics/RectF;
 
     invoke-direct {p0, v5, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getChildBounds(Landroid/view/View;Landroid/graphics/RectF;)V
 
-    .line 472
+    .line 482
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rect2:Landroid/graphics/RectF;
 
     invoke-direct {p0, v6, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getChildBounds(Landroid/view/View;Landroid/graphics/RectF;)V
 
-    .line 473
+    .line 483
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rect1:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rect2:Landroid/graphics/RectF;
@@ -637,7 +672,7 @@
 
     invoke-static {v1, v2, v0, v4}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 479
+    .line 489
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rect3:Landroid/graphics/RectF;
 
     const/16 v1, 0xf
@@ -658,7 +693,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 481
+    .line 491
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedPaint:Landroid/graphics/Paint;
 
@@ -670,7 +705,7 @@
 .method private getChildBounds(Landroid/view/View;Landroid/graphics/RectF;)V
     .locals 4
 
-    .line 485
+    .line 495
     invoke-virtual {p1}, Landroid/view/View;->getRight()I
 
     move-result v0
@@ -687,7 +722,7 @@
 
     div-float/2addr v0, v1
 
-    .line 486
+    .line 496
     invoke-virtual {p1}, Landroid/view/View;->getBottom()I
 
     move-result v2
@@ -702,7 +737,7 @@
 
     div-float/2addr v2, v1
 
-    .line 487
+    .line 497
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -721,7 +756,7 @@
 
     sub-float/2addr v3, v1
 
-    .line 488
+    .line 498
     instance-of v1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v1, :cond_0
@@ -748,7 +783,7 @@
 
     add-float/2addr v2, v3
 
-    .line 489
+    .line 499
     invoke-virtual {p2, p1, v1, v0, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
     return-void
@@ -824,16 +859,14 @@
 .method private synthetic lambda$new$1(Landroid/view/View;I)V
     .locals 0
 
-    .line 135
+    .line 137
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->onItemClick(ILandroid/view/View;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$2([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+.method private synthetic lambda$new$2([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;J)V
     .locals 5
-
-    if-eqz p4, :cond_4
 
     const/4 v0, 0x0
 
@@ -843,12 +876,12 @@
 
     goto :goto_0
 
-    .line 140
+    .line 143
     :cond_0
     array-length v1, p1
 
     :goto_0
-    iget-object v2, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
+    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -864,13 +897,13 @@
 
     if-eqz p1, :cond_1
 
-    .line 143
+    .line 146
     :goto_1
     array-length v2, p1
 
     if-ge v1, v2, :cond_1
 
-    .line 144
+    .line 147
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     aget-object v3, p1, v1
@@ -884,9 +917,9 @@
     :cond_1
     move p1, v0
 
-    .line 147
+    .line 150
     :goto_2
-    iget-object v2, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
+    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -894,12 +927,12 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 148
+    .line 151
     iget-object v2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     add-int v3, v1, p1
 
-    iget-object v4, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
+    iget-object v4, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -917,7 +950,7 @@
 
     goto :goto_2
 
-    .line 150
+    .line 153
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->adapter:Lorg/telegram/ui/Components/StickerCategoriesListView$Adapter;
 
@@ -925,17 +958,17 @@
 
     const/4 p1, 0x0
 
-    .line 151
+    .line 154
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setCategoriesShownT(F)V
 
-    .line 152
+    .line 155
     iget-boolean p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShouldShow:Z
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    sub-long/2addr v1, p2
+    sub-long/2addr v1, p3
 
     const-wide/16 p2, 0x10
 
@@ -948,7 +981,39 @@
     :cond_3
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->updateCategoriesShown(ZZ)V
 
-    :cond_4
+    return-void
+.end method
+
+.method private synthetic lambda$new$3([Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;JLorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;)V
+    .locals 7
+
+    if-eqz p4, :cond_0
+
+    .line 142
+    new-instance v6, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda2;
+
+    move-object v0, v6
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p4
+
+    move-wide v4, p2
+
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;J)V
+
+    .line 157
+    sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v6}, Lorg/telegram/messenger/NotificationCenter;->doOnIdle(Ljava/lang/Runnable;)V
+
+    :cond_0
     return-void
 .end method
 
@@ -957,14 +1022,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 97
+    .line 98
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->groups:Ljava/util/ArrayList;
 
     if-nez p1, :cond_0
 
     goto :goto_1
 
-    .line 100
+    .line 101
     :cond_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -983,7 +1048,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;
 
-    .line 101
+    .line 102
     invoke-static {p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getDocumentFetcher(I)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;
 
     move-result-object v1
@@ -1001,10 +1066,21 @@
     return-void
 .end method
 
-.method private synthetic lambda$updateCategoriesShown$3(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$scrollToSelected$4(I)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 206
+    invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrolled(II)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$updateCategoriesShown$5(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 274
+    .line 284
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1122,18 +1198,18 @@
 .method public static preload(II)V
     .locals 2
 
-    .line 96
+    .line 97
     sget-object v0, Lorg/telegram/ui/Components/StickerCategoriesListView;->fetcher:Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    new-instance v1, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda1;-><init>(I)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda3;-><init>(I)V
 
-    invoke-virtual {v0, p0, p1, v1}, Lorg/telegram/messenger/Fetcher;->fetch(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-virtual {v0, p0, p1, v1}, Lorg/telegram/messenger/CacheFetcher;->fetch(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method
@@ -1141,12 +1217,12 @@
 .method private setCategoriesShownT(F)V
     .locals 5
 
-    .line 292
+    .line 302
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
     const/4 v0, 0x0
 
-    .line 294
+    .line 304
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1154,22 +1230,22 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 295
+    .line 305
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 296
+    .line 306
     instance-of v2, v1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v2, :cond_1
 
-    .line 297
+    .line 307
     invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v2
 
-    .line 298
+    .line 308
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
@@ -1200,7 +1276,7 @@
 
     if-lez v4, :cond_0
 
-    .line 299
+    .line 309
     invoke-virtual {v1}, Landroid/view/View;->getAlpha()F
 
     move-result v4
@@ -1209,21 +1285,21 @@
 
     if-gtz v3, :cond_0
 
-    .line 300
+    .line 310
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->play()V
 
-    .line 302
+    .line 312
     :cond_0
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 303
+    .line 313
     invoke-virtual {v1, v2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 304
+    .line 314
     invoke-virtual {v1, v2}, Landroid/view/View;->setScaleY(F)V
 
     :cond_1
@@ -1231,7 +1307,7 @@
 
     goto :goto_0
 
-    .line 308
+    .line 318
     :cond_2
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
@@ -1243,14 +1319,14 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 497
+    .line 507
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 498
+    .line 508
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1263,7 +1339,7 @@
 
     move-result-object v0
 
-    .line 499
+    .line 509
     instance-of v1, v0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v1, :cond_0
@@ -1283,7 +1359,7 @@
 
     return p1
 
-    .line 503
+    .line 513
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1295,7 +1371,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 386
+    .line 396
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->backgroundPaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1310,7 +1386,7 @@
 
     move v4, v2
 
-    .line 390
+    .line 400
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1318,17 +1394,17 @@
 
     if-ge v4, v5, :cond_1
 
-    .line 391
+    .line 401
     invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 392
+    .line 402
     instance-of v6, v5, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v6, :cond_0
 
-    .line 393
+    .line 403
     invoke-virtual {v5}, Landroid/view/View;->getLeft()I
 
     move-result v6
@@ -1337,7 +1413,7 @@
 
     move-result v0
 
-    .line 394
+    .line 404
     invoke-virtual {v5}, Landroid/view/View;->getRight()I
 
     move-result v5
@@ -1356,7 +1432,7 @@
 
     int-to-float v0, v0
 
-    .line 399
+    .line 409
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v4
@@ -1383,7 +1459,7 @@
 
     int-to-float v3, v3
 
-    .line 400
+    .line 410
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v4
@@ -1412,7 +1488,7 @@
 
     int-to-float v7, v3
 
-    .line 407
+    .line 417
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v0
@@ -1425,7 +1501,7 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 408
+    .line 418
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -1438,10 +1514,10 @@
 
     const/16 v4, 0xff
 
-    .line 409
+    .line 419
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 410
+    .line 420
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -1456,26 +1532,26 @@
 
     invoke-virtual {v0, v3, v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 411
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 416
+    .line 426
     :cond_2
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->drawSelectedHighlight(Landroid/graphics/Canvas;)V
 
-    .line 418
+    .line 428
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 420
+    .line 430
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_4
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    .line 421
+    .line 431
     iget-object v4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v5, -0x1
@@ -1510,7 +1586,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 422
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
@@ -1519,7 +1595,7 @@
 
     if-lez v0, :cond_4
 
-    .line 423
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -1532,7 +1608,7 @@
 
     invoke-virtual {v0, v2, v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 424
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -1541,10 +1617,19 @@
     return-void
 .end method
 
+.method public getCategoryIndex()I
+    .locals 1
+
+    .line 245
+    iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
+
+    return v0
+.end method
+
 .method public getSelectedCategory()Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
     .locals 3
 
-    .line 232
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     if-eqz v0, :cond_1
@@ -1559,7 +1644,7 @@
 
     goto :goto_0
 
-    .line 235
+    .line 241
     :cond_0
     aget-object v0, v0, v1
 
@@ -1572,23 +1657,10 @@
     return-object v0
 .end method
 
-.method public getSelectorColor(I)Ljava/lang/Integer;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    .line 159
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public isCategoriesShown()Z
     .locals 2
 
-    .line 312
+    .line 322
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -1611,7 +1683,7 @@
 .method public isScrolledIntoOccupiedWidth()Z
     .locals 1
 
-    .line 365
+    .line 375
     iget-boolean v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrolledIntoOccupiedWidth:Z
 
     return v0
@@ -1622,7 +1694,7 @@
 
     const/16 v0, 0x4004
 
-    .line 591
+    .line 601
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -1645,10 +1717,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 240
+    .line 250
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onAttachedToWindow()V
 
-    .line 241
+    .line 251
     iget-boolean v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShouldShow:Z
 
     const/4 v1, 0x0
@@ -1661,15 +1733,15 @@
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    .line 246
+    .line 256
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 248
+    .line 258
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->paddingView:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 249
+    .line 259
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
     :cond_0
@@ -1679,10 +1751,10 @@
 .method public onScrolled(II)V
     .locals 4
 
-    .line 317
+    .line 327
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
 
-    .line 321
+    .line 331
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
@@ -1693,12 +1765,12 @@
 
     if-lez p1, :cond_2
 
-    .line 322
+    .line 332
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 323
+    .line 333
     instance-of v1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v1, :cond_0
@@ -1707,7 +1779,7 @@
 
     goto :goto_1
 
-    .line 327
+    .line 337
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getRight()I
 
@@ -1732,23 +1804,23 @@
 
     move p2, p1
 
-    .line 330
+    .line 340
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrolledIntoOccupiedWidth:Z
 
     if-eq v1, p2, :cond_5
 
-    .line 331
+    .line 341
     iput-boolean p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrolledIntoOccupiedWidth:Z
 
-    .line 332
+    .line 342
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrollIntoOccupiedWidth:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v1, :cond_4
 
     if-eqz p2, :cond_3
 
-    .line 333
+    .line 343
     invoke-direct {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getScrollToStartWidth()I
 
     move-result p2
@@ -1772,7 +1844,7 @@
 
     invoke-interface {v1, p2}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 335
+    .line 345
     :cond_4
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
@@ -1781,12 +1853,12 @@
     :cond_5
     if-eqz v1, :cond_6
 
-    .line 336
+    .line 346
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrollIntoOccupiedWidth:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz p2, :cond_6
 
-    .line 337
+    .line 347
     invoke-direct {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getScrollToStartWidth()I
 
     move-result v1
@@ -1809,33 +1881,78 @@
 
     invoke-interface {p2, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 339
+    .line 349
     :cond_6
     :goto_2
     iget-boolean p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrolledFully:Z
 
     if-eq p2, p1, :cond_8
 
-    .line 340
+    .line 350
     iput-boolean p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrolledFully:Z
 
-    .line 341
+    .line 351
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrollFully:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz p2, :cond_7
 
-    .line 342
+    .line 352
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     invoke-interface {p2, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 344
+    .line 354
     :cond_7
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_8
+    return-void
+.end method
+
+.method public scrollToSelected()V
+    .locals 4
+
+    .line 204
+    invoke-direct {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getScrollToStartWidth()I
+
+    move-result v0
+
+    neg-int v0, v0
+
+    iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->dontOccupyWidth:I
+
+    const/4 v2, 0x0
+
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
+
+    const/16 v3, 0x22
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    mul-int/2addr v1, v3
+
+    add-int/2addr v0, v1
+
+    .line 205
+    invoke-virtual {p0, v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
+
+    .line 206
+    new-instance v1, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;I)V
+
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
+
     return-void
 .end method
 
@@ -1861,21 +1978,23 @@
 .method public selectCategory(I)V
     .locals 5
 
-    .line 217
+    .line 223
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
 
     const/4 v1, 0x1
 
     if-gez v0, :cond_0
 
-    .line 218
+    if-ltz p1, :cond_0
+
+    .line 224
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedIndex:Lorg/telegram/ui/Components/AnimatedFloat;
 
     int-to-float v2, p1
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 220
+    .line 226
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
 
@@ -1883,7 +2002,7 @@
 
     move v0, p1
 
-    .line 221
+    .line 227
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1891,22 +2010,22 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 222
+    .line 228
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 223
+    .line 229
     instance-of v3, v2, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     if-eqz v3, :cond_2
 
-    .line 224
+    .line 230
     invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v3
 
-    .line 225
+    .line 231
     check-cast v2, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     iget v4, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectedCategoryIndex:I
@@ -1930,7 +2049,7 @@
 
     goto :goto_0
 
-    .line 228
+    .line 234
     :cond_3
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
@@ -1940,14 +2059,14 @@
 .method public selectCategory(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
     .locals 3
 
-    .line 205
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 206
+    .line 212
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
@@ -1955,7 +2074,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 207
+    .line 213
     aget-object v1, v1, v0
 
     if-ne v1, p1, :cond_0
@@ -1970,7 +2089,7 @@
     :cond_1
     const/4 v0, -0x1
 
-    .line 213
+    .line 219
     :goto_1
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectCategory(I)V
 
@@ -1980,12 +2099,12 @@
 .method public setBackgroundColor(I)V
     .locals 3
 
-    .line 370
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 371
+    .line 381
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -1994,13 +2113,13 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 373
+    .line 383
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 374
+    .line 384
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2021,7 +2140,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->leftBoundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 375
+    .line 385
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -2030,7 +2149,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 376
+    .line 386
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2051,7 +2170,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->rightBoundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 377
+    .line 387
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -2066,7 +2185,7 @@
 .method public setDontOccupyWidth(I)V
     .locals 0
 
-    .line 349
+    .line 359
     iput p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->dontOccupyWidth:I
 
     return-void
@@ -2083,7 +2202,7 @@
         }
     .end annotation
 
-    .line 361
+    .line 371
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onCategoryClick:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -2100,7 +2219,7 @@
         }
     .end annotation
 
-    .line 357
+    .line 367
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrollFully:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -2117,7 +2236,7 @@
         }
     .end annotation
 
-    .line 353
+    .line 363
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->onScrollIntoOccupiedWidth:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -2135,10 +2254,10 @@
 .method public updateCategoriesShown(ZZ)V
     .locals 4
 
-    .line 257
+    .line 267
     iput-boolean p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShouldShow:Z
 
-    .line 258
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     const/4 v1, 0x0
@@ -2147,7 +2266,7 @@
 
     move p1, v1
 
-    .line 262
+    .line 272
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
@@ -2159,18 +2278,18 @@
 
     return-void
 
-    .line 266
+    .line 276
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_2
 
-    .line 267
+    .line 277
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 268
+    .line 278
     iput-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     :cond_2
@@ -2184,7 +2303,7 @@
 
     new-array p2, p2, [F
 
-    .line 272
+    .line 282
     iget v3, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
     aput v3, p2, v1
@@ -2207,14 +2326,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
-    .line 273
+    .line 283
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/StickerCategoriesListView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 276
+    .line 286
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/StickerCategoriesListView$1;
@@ -2223,14 +2342,14 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 283
+    .line 293
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 284
+    .line 294
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
@@ -2253,7 +2372,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 285
+    .line 295
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -2268,7 +2387,7 @@
     :cond_6
     move v0, v2
 
-    .line 287
+    .line 297
     :goto_2
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setCategoriesShownT(F)V
 

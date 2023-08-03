@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Cells/UserCell$1;
-.super Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;
+.super Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 .source "UserCell.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/UserCell;->update(I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/Cells/UserCell;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,42 +14,31 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Cells/UserCell;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/UserCell;Landroid/graphics/drawable/Drawable;II)V
+.method constructor <init>(Lorg/telegram/ui/Cells/UserCell;Z)V
     .locals 0
 
-    .line 523
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;-><init>(Landroid/graphics/drawable/Drawable;II)V
+    .line 114
+    iput-object p1, p0, Lorg/telegram/ui/Cells/UserCell$1;->this$0:Lorg/telegram/ui/Cells/UserCell;
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 2
+.method public openStory(JLjava/lang/Runnable;)V
+    .locals 1
 
-    .line 526
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    .line 117
+    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell$1;->this$0:Lorg/telegram/ui/Cells/UserCell;
 
-    const/4 v0, 0x1
-
-    .line 527
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 528
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$WrapSizeDrawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 529
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Cells/UserCell;->openStory(JLjava/lang/Runnable;)V
 
     return-void
 .end method

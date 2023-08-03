@@ -12,15 +12,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class StreetViewPanoramaLocation extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaLocation> CREATOR = new zzr();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final StreetViewPanoramaLink[] links;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     public final String panoId;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final LatLng position;
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaLocation(@SafeParcelable.Param(m778id = 2) StreetViewPanoramaLink[] streetViewPanoramaLinkArr, @SafeParcelable.Param(m778id = 3) LatLng latLng, @SafeParcelable.Param(m778id = 4) String str) {
+    public StreetViewPanoramaLocation(@SafeParcelable.Param(m796id = 2) StreetViewPanoramaLink[] streetViewPanoramaLinkArr, @SafeParcelable.Param(m796id = 3) LatLng latLng, @SafeParcelable.Param(m796id = 4) String str) {
         this.links = streetViewPanoramaLinkArr;
         this.position = latLng;
         this.panoId = str;

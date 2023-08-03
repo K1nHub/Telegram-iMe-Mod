@@ -1,6 +1,7 @@
 package com.iMe.p031ui.adapter.provider;
 
 import android.os.Parcelable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -11,8 +12,15 @@ import com.iMe.model.wallet.home.BannerItem;
 import com.iMe.p031ui.wallet.home.adapter.BannersRecycleAdapter;
 import com.iMe.p031ui.wallet.home.adapter.diff.BannerSlideDiffCallback;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
+import com.iMe.utils.extentions.common.RecycleViewExtKt;
+import com.iMe.utils.extentions.common.ViewExtKt;
+import com.iMe.utils.listeners.OnSnapPositionChangeListener;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import org.telegram.p043ui.ActionBar.Theme;
+import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
 /* compiled from: BannerProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BannerProvider */
 /* loaded from: classes.dex */
@@ -33,7 +41,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
         Intrinsics.checkNotNullParameter(bannersRecycleAdapter, "bannersRecycleAdapter");
         this.bannersRecycleAdapter = bannersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.BANNERS;
-        this.layoutId = C3417R.layout.fork_recycle_item_wallet_banners;
+        this.layoutId = C3419R.layout.fork_recycle_item_wallet_banners;
         this.bannerSnapHelper = new PagerSnapHelper();
         this.bannersDiffCallback = new BannerSlideDiffCallback();
     }
@@ -59,15 +67,78 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3417R.C3420id.recycle_banners)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3419R.C3422id.recycle_banners)).getLayoutManager();
             this.bannerScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
-    public void convert(BaseViewHolder helper, BannerItem item) {
+    public void convert(final BaseViewHolder helper, final BannerItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3417R.C3420id.recycle_banners, new BannerProvider$convert$1(this, item)), C3417R.C3420id.banner_slide_indicator, new BannerProvider$convert$2(helper));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3419R.C3422id.recycle_banners, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(RecyclerView recyclerView) {
+                invoke2(recyclerView);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(RecyclerView applyForView) {
+                Parcelable parcelable;
+                BannerSlideDiffCallback bannerSlideDiffCallback;
+                PagerSnapHelper pagerSnapHelper;
+                Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(applyForView.getContext(), 0, false);
+                BannerProvider bannerProvider = BannerProvider.this;
+                linearLayoutManager.setInitialPrefetchItemCount(4);
+                parcelable = bannerProvider.bannerScrollState;
+                RecycleViewExtKt.restoreScrollState(linearLayoutManager, parcelable);
+                applyForView.setLayoutManager(linearLayoutManager);
+                BannersRecycleAdapter bannersRecycleAdapter = BannerProvider.this.getBannersRecycleAdapter();
+                BannerItem bannerItem = item;
+                BannerProvider bannerProvider2 = BannerProvider.this;
+                bannersRecycleAdapter.setNewInstance(bannerItem.getItems());
+                bannerSlideDiffCallback = bannerProvider2.bannersDiffCallback;
+                bannersRecycleAdapter.setDiffCallback(bannerSlideDiffCallback);
+                bannersRecycleAdapter.setOnItemClickListener(bannerProvider2.getBannerOnItemClickListener());
+                applyForView.setAdapter(bannersRecycleAdapter);
+                pagerSnapHelper = BannerProvider.this.bannerSnapHelper;
+                final BannerProvider bannerProvider3 = BannerProvider.this;
+                RecycleViewExtKt.attachSnapHelperWithListener$default(applyForView, pagerSnapHelper, null, new OnSnapPositionChangeListener() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$1.3
+                    @Override // com.iMe.utils.listeners.OnSnapPositionChangeListener
+                    public void onSnapPositionChange(int i) {
+                        BannerProvider.this.getBannersRecycleAdapter().animateNewBanner(i);
+                    }
+                }, 2, null);
+                RecycleViewExtKt.preventScrollByParent(applyForView);
+            }
+        }), C3419R.C3422id.banner_slide_indicator, new Function1<ScrollingPagerIndicator, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(ScrollingPagerIndicator scrollingPagerIndicator) {
+                invoke2(scrollingPagerIndicator);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(ScrollingPagerIndicator applyForView) {
+                Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
+                applyForView.attachToRecyclerView((RecyclerView) BaseViewHolder.this.getView(C3419R.C3422id.recycle_banners));
+                int i = Theme.key_chats_actionBackground;
+                applyForView.setSelectedDotColor(Theme.getColor(i));
+                applyForView.setDotColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));
+            }
+        });
     }
 }

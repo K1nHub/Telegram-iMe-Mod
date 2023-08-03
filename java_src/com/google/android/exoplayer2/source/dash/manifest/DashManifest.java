@@ -89,7 +89,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
                 }
             } else {
                 Period period = getPeriod(i);
-                arrayList.add(new Period(period.f214id, period.startMs - j2, copyAdaptationSets(period.adaptationSets, linkedList), period.eventStreams));
+                arrayList.add(new Period(period.f216id, period.startMs - j2, copyAdaptationSets(period.adaptationSets, linkedList), period.eventStreams));
             }
             i++;
         }
@@ -116,7 +116,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
                     break;
                 }
             } while (poll.groupIndex == i2);
-            arrayList.add(new AdaptationSet(adaptationSet.f212id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
+            arrayList.add(new AdaptationSet(adaptationSet.f214id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
         } while (poll.periodIndex == i);
         linkedList.addFirst(poll);
         return arrayList;

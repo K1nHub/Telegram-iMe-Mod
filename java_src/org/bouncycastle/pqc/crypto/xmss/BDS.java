@@ -18,7 +18,7 @@ public final class BDS implements Serializable {
     private int index;
 
     /* renamed from: k */
-    private int f1424k;
+    private int f1427k;
     private Map<Integer, XMSSNode> keep;
     private transient int maxIndex;
     private Map<Integer, LinkedList<XMSSNode>> retain;
@@ -33,7 +33,7 @@ public final class BDS implements Serializable {
     public BDS(BDS bds) {
         this.wotsPlus = new WOTSPlus(bds.wotsPlus.getParams());
         this.treeHeight = bds.treeHeight;
-        this.f1424k = bds.f1424k;
+        this.f1427k = bds.f1427k;
         this.root = bds.root;
         ArrayList arrayList = new ArrayList();
         this.authenticationPath = arrayList;
@@ -58,7 +58,7 @@ public final class BDS implements Serializable {
     private BDS(BDS bds, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         this.wotsPlus = new WOTSPlus(new WOTSPlusParameters(aSN1ObjectIdentifier));
         this.treeHeight = bds.treeHeight;
-        this.f1424k = bds.f1424k;
+        this.f1427k = bds.f1427k;
         this.root = bds.root;
         ArrayList arrayList = new ArrayList();
         this.authenticationPath = arrayList;
@@ -84,7 +84,7 @@ public final class BDS implements Serializable {
     private BDS(BDS bds, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
         this.wotsPlus = new WOTSPlus(bds.wotsPlus.getParams());
         this.treeHeight = bds.treeHeight;
-        this.f1424k = bds.f1424k;
+        this.f1427k = bds.f1427k;
         this.root = bds.root;
         ArrayList arrayList = new ArrayList();
         this.authenticationPath = arrayList;
@@ -111,7 +111,7 @@ public final class BDS implements Serializable {
         this.wotsPlus = wOTSPlus;
         this.treeHeight = i;
         this.maxIndex = i3;
-        this.f1424k = i2;
+        this.f1427k = i2;
         if (i2 <= i && i2 >= 2) {
             int i4 = i - i2;
             if (i4 % 2 == 0) {
@@ -182,10 +182,10 @@ public final class BDS implements Serializable {
                 if (height == 1) {
                     this.authenticationPath.add(lTree);
                 }
-                if (height == 3 && lTree.getHeight() < this.treeHeight - this.f1424k) {
+                if (height == 3 && lTree.getHeight() < this.treeHeight - this.f1427k) {
                     this.treeHashInstances.get(lTree.getHeight()).setNode(lTree);
                 }
-                if (height >= 3 && (height & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1424k && lTree.getHeight() <= this.treeHeight - 2) {
+                if (height >= 3 && (height & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1427k && lTree.getHeight() <= this.treeHeight - 2) {
                     if (this.retain.get(Integer.valueOf(lTree.getHeight())) == null) {
                         LinkedList<XMSSNode> linkedList = new LinkedList<>();
                         linkedList.add(lTree);
@@ -235,7 +235,7 @@ public final class BDS implements Serializable {
             this.authenticationPath.set(calculateTau, new XMSSNode(randomizeHash.getHeight() + 1, randomizeHash.getValue()));
             this.keep.remove(Integer.valueOf(i2));
             for (int i3 = 0; i3 < calculateTau; i3++) {
-                if (i3 < this.treeHeight - this.f1424k) {
+                if (i3 < this.treeHeight - this.f1427k) {
                     list = this.authenticationPath;
                     removeFirst = this.treeHashInstances.get(i3).getTailNode();
                 } else {
@@ -244,7 +244,7 @@ public final class BDS implements Serializable {
                 }
                 list.set(i3, removeFirst);
             }
-            int min = Math.min(calculateTau, this.treeHeight - this.f1424k);
+            int min = Math.min(calculateTau, this.treeHeight - this.f1427k);
             for (int i4 = 0; i4 < min; i4++) {
                 int i5 = this.index + 1 + ((1 << i4) * 3);
                 if (i5 < (1 << this.treeHeight)) {
@@ -252,7 +252,7 @@ public final class BDS implements Serializable {
                 }
             }
         }
-        for (int i6 = 0; i6 < ((this.treeHeight - this.f1424k) >> 1); i6++) {
+        for (int i6 = 0; i6 < ((this.treeHeight - this.f1427k) >> 1); i6++) {
             BDSTreeHash bDSTreeHashInstanceForUpdate = getBDSTreeHashInstanceForUpdate();
             if (bDSTreeHashInstanceForUpdate != null) {
                 bDSTreeHashInstanceForUpdate.update(this.stack, this.wotsPlus, bArr, bArr2, oTSHashAddress);

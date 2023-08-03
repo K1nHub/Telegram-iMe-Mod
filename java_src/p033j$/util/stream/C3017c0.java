@@ -6,7 +6,7 @@ import p033j$.util.function.InterfaceC2839y;
 public final /* synthetic */ class C3017c0 implements InterfaceC2839y {
 
     /* renamed from: a */
-    public static final /* synthetic */ C3017c0 f979a = new C3017c0();
+    public static final /* synthetic */ C3017c0 f982a = new C3017c0();
 
     private /* synthetic */ C3017c0() {
     }

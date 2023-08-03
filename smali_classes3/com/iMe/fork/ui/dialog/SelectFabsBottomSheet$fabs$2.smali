@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 38
+    .line 37
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$fabs$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 38
+    .line 37
     sget-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->getFabsList()Ljava/util/List;

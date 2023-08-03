@@ -19,6 +19,7 @@ import com.iMe.p031ui.wallet.home.tabs.WalletHomeTabFragment;
 import com.iMe.p031ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment;
 import com.iMe.p031ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment;
 import com.iMe.p031ui.wallet.home.tabs.services.WalletHomeServicesFragment;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -29,6 +30,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -36,9 +38,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.qualifier.StringQualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -83,14 +92,97 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     public WalletHomeFragment() {
         Lazy lazy;
         Lazy lazy2;
-        WalletHomeFragment$presenter$2 walletHomeFragment$presenter$2 = new WalletHomeFragment$presenter$2(this);
+        Function0<WalletHomePresenter> function0 = new Function0<WalletHomePresenter>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletHomePresenter invoke() {
+                Lazy lazy3;
+                final WalletHomeFragment walletHomeFragment = WalletHomeFragment.this;
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletHomePresenter>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.WalletHomePresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletHomePresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletHomePresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletHomePresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomePresenter.class.getName() + ".presenter", walletHomeFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletHomeFragment$special$$inlined$inject$default$1(this, NavigationModuleKt.getCOMMON_TABS_NAVIGATOR(), WalletHomeFragment$homeNavigationRouter$2.INSTANCE));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomePresenter.class.getName() + ".presenter", function0);
+        final StringQualifier common_tabs_navigator = NavigationModuleKt.getCOMMON_TABS_NAVIGATOR();
+        final WalletHomeFragment$homeNavigationRouter$2 walletHomeFragment$homeNavigationRouter$2 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$homeNavigationRouter$2
+            @Override // kotlin.jvm.functions.Function0
+            public final ParametersHolder invoke() {
+                return ParametersHolderKt.parametersOf(Boolean.TRUE);
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<NavigationRouter<WalletHomeTabFragment>>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.navigation.common.router.base.NavigationRouter<com.iMe.ui.wallet.home.tabs.WalletHomeTabFragment>] */
+            @Override // kotlin.jvm.functions.Function0
+            public final NavigationRouter<WalletHomeTabFragment> invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = common_tabs_navigator;
+                Function0<? extends ParametersHolder> function02 = walletHomeFragment$homeNavigationRouter$2;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(NavigationRouter.class), qualifier, function02);
+            }
+        });
         this.homeNavigationRouter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeFragment$binding$2(this), 1, (Object) null);
-        lazy2 = LazyKt__LazyJVMKt.lazy(new WalletHomeFragment$pageTabs$2(this));
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletHomeBinding>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletHomeBinding invoke() {
+                return ForkFragmentWalletHomeBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeFragment.this));
+            }
+        }, 1, (Object) null);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<List<WalletHomeNavigationTab>>() { // from class: com.iMe.ui.wallet.home.WalletHomeFragment$pageTabs$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<WalletHomeNavigationTab> invoke() {
+                List<WalletHomeNavigationTab> initPageTabs;
+                initPageTabs = WalletHomeFragment.this.initPageTabs();
+                return initPageTabs;
+            }
+        });
         this.pageTabs$delegate = lazy2;
     }
 
@@ -211,7 +303,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         TabbedViewPager tabbedViewPager = getBinding().walletHomeViewPager;
         tabbedViewPager.init(this);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m55dp(2.0f));
+        tabsView.setElevation(AndroidUtilities.m73dp(2.0f));
         tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
@@ -248,7 +340,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     /* JADX INFO: Access modifiers changed from: private */
     public final List<WalletHomeNavigationTab> initPageTabs() {
         List<WalletHomeNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3417R.C3420id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.wallet_home_navigation_crypto), C3417R.C3419drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3417R.C3420id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.wallet_home_navigation_binance_pay), C3417R.C3419drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3417R.C3420id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.wallet_home_navigation_services), C3417R.C3419drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3419R.C3422id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3419R.string.wallet_home_navigation_crypto), C3419R.C3421drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3419R.C3422id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3419R.string.wallet_home_navigation_binance_pay), C3419R.C3421drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3419R.C3422id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3419R.string.wallet_home_navigation_services), C3419R.C3421drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
         for (WalletHomeNavigationTab walletHomeNavigationTab : mutableListOf) {
             walletHomeNavigationTab.getPage().getFragment().setParentView(this);
         }

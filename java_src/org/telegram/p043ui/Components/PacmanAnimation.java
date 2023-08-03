@@ -27,7 +27,7 @@ public class PacmanAnimation {
 
     public PacmanAnimation(View view) {
         this.edgePaint.setStyle(Paint.Style.STROKE);
-        this.edgePaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.edgePaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.parentView = view;
     }
 
@@ -82,27 +82,27 @@ public class PacmanAnimation {
             boolean z = this.ghostWalk;
             this.currentGhostWalk = z;
             if (z) {
-                this.ghostPath.moveTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(24));
-                this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(24));
+                this.ghostPath.moveTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(24));
+                this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(24));
                 this.ghostPath.arcTo(this.rect, 180.0f, 180.0f, false);
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(35), AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(21), AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(35), AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(21), AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(7), AndroidUtilities.m72dp(43));
             } else {
-                this.ghostPath.moveTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(24));
-                this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(24));
+                this.ghostPath.moveTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(24));
+                this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(24));
                 this.ghostPath.arcTo(this.rect, 180.0f, 180.0f, false);
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(35), AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(21), AndroidUtilities.m54dp(50));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(43));
-                this.ghostPath.lineTo(AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(35), AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(28), AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(21), AndroidUtilities.m72dp(50));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(43));
+                this.ghostPath.lineTo(AndroidUtilities.m72dp(7), AndroidUtilities.m72dp(50));
             }
             this.ghostPath.close();
         }
@@ -116,31 +116,31 @@ public class PacmanAnimation {
         }
         canvas.drawPath(this.ghostPath, this.paint);
         this.paint.setColor(-1);
-        this.rect.set(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(28));
+        this.rect.set(AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(28));
         canvas.drawOval(this.rect, this.paint);
-        this.rect.set(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(36), AndroidUtilities.m54dp(28));
+        this.rect.set(AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(36), AndroidUtilities.m72dp(28));
         canvas.drawOval(this.rect, this.paint);
         this.paint.setColor(-16777216);
-        this.rect.set(AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(19), AndroidUtilities.m54dp(24));
+        this.rect.set(AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(18), AndroidUtilities.m72dp(19), AndroidUtilities.m72dp(24));
         canvas.drawOval(this.rect, this.paint);
-        this.rect.set(AndroidUtilities.m54dp(30), AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(35), AndroidUtilities.m54dp(24));
+        this.rect.set(AndroidUtilities.m72dp(30), AndroidUtilities.m72dp(18), AndroidUtilities.m72dp(35), AndroidUtilities.m72dp(24));
         canvas.drawOval(this.rect, this.paint);
     }
 
     public void draw(Canvas canvas, int i) {
-        int m54dp;
+        int m72dp;
         int i2;
-        int m54dp2 = AndroidUtilities.m54dp(110);
-        int m54dp3 = AndroidUtilities.m54dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
-        float measuredWidth = ((this.parentView.getMeasuredWidth() + m54dp) * this.translationProgress) - ((AndroidUtilities.m54dp(62) * 3) + m54dp2);
-        int i3 = m54dp2 / 2;
+        int m72dp2 = AndroidUtilities.m72dp(110);
+        int m72dp3 = AndroidUtilities.m72dp(SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72);
+        float measuredWidth = ((this.parentView.getMeasuredWidth() + m72dp) * this.translationProgress) - ((AndroidUtilities.m72dp(62) * 3) + m72dp2);
+        int i3 = m72dp2 / 2;
         this.paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        int i4 = m54dp3 / 2;
+        int i4 = m72dp3 / 2;
         float f = measuredWidth + i3;
         canvas.drawRect(BitmapDescriptorFactory.HUE_RED, i - i4, f, i + i4 + 1, this.paint);
         this.paint.setColor(-69120);
-        float f2 = measuredWidth + m54dp2;
-        this.rect.set(measuredWidth, i - i3, f2, i2 + m54dp2);
+        float f2 = measuredWidth + m72dp2;
+        this.rect.set(measuredWidth, i - i3, f2, i2 + m72dp2);
         float f3 = this.progress;
         int i5 = (int) (f3 < 0.5f ? (1.0f - (f3 / 0.5f)) * 35.0f : ((f3 - 0.5f) * 35.0f) / 0.5f);
         float f4 = i5;
@@ -148,12 +148,12 @@ public class PacmanAnimation {
         canvas.drawArc(this.rect, f4, f5, true, this.edgePaint);
         canvas.drawArc(this.rect, f4, f5, true, this.paint);
         this.paint.setColor(-16777216);
-        canvas.drawCircle(f - AndroidUtilities.m54dp(8), i2 + (m54dp2 / 4), AndroidUtilities.m54dp(8), this.paint);
+        canvas.drawCircle(f - AndroidUtilities.m72dp(8), i2 + (m72dp2 / 4), AndroidUtilities.m72dp(8), this.paint);
         canvas.save();
-        canvas.translate(f2 + AndroidUtilities.m54dp(20), i - AndroidUtilities.m54dp(25));
+        canvas.translate(f2 + AndroidUtilities.m72dp(20), i - AndroidUtilities.m72dp(25));
         for (int i6 = 0; i6 < 3; i6++) {
             drawGhost(canvas, i6);
-            canvas.translate(AndroidUtilities.m54dp(62), BitmapDescriptorFactory.HUE_RED);
+            canvas.translate(AndroidUtilities.m72dp(62), BitmapDescriptorFactory.HUE_RED);
         }
         canvas.restore();
         if (this.translationProgress >= 1.0f) {

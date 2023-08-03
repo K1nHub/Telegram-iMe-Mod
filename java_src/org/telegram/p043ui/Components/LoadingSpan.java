@@ -15,14 +15,18 @@ public class LoadingSpan extends ReplacementSpan {
     public int yOffset;
 
     public LoadingSpan(View view, int i) {
-        this(view, i, AndroidUtilities.m54dp(2));
+        this(view, i, AndroidUtilities.m72dp(2));
     }
 
     public LoadingSpan(View view, int i, int i2) {
+        this(view, i, i2, null);
+    }
+
+    public LoadingSpan(View view, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
         this.view = view;
         this.size = i;
         this.yOffset = i2;
-        LoadingDrawable loadingDrawable = new LoadingDrawable(null);
+        LoadingDrawable loadingDrawable = new LoadingDrawable(resourcesProvider);
         this.drawable = loadingDrawable;
         loadingDrawable.setRadiiDp(4.0f);
     }
@@ -39,7 +43,12 @@ public class LoadingSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         if (paint != null) {
-            this.drawable.setColors(Theme.multAlpha(paint.getColor(), 0.1f), Theme.multAlpha(paint.getColor(), 0.25f));
+            LoadingDrawable loadingDrawable = this.drawable;
+            if (loadingDrawable.color1 == null && loadingDrawable.color2 == null) {
+                loadingDrawable.setColors(Theme.multAlpha(paint.getColor(), 0.1f), Theme.multAlpha(paint.getColor(), 0.25f));
+            }
+        }
+        if (paint != null) {
             this.drawable.setAlpha(paint.getAlpha());
         }
         return this.size;
@@ -48,7 +57,7 @@ public class LoadingSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         int i6 = (int) f;
-        this.drawable.setBounds(i6, i3 + this.yOffset, this.size + i6, (i5 - AndroidUtilities.m54dp(2)) + this.yOffset);
+        this.drawable.setBounds(i6, i3 + this.yOffset, this.size + i6, (i5 - AndroidUtilities.m72dp(2)) + this.yOffset);
         this.drawable.draw(canvas);
         View view = this.view;
         if (view != null) {

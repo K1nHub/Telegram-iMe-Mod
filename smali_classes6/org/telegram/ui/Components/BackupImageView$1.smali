@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BackupImageView;)V
     .locals 0
 
-    .line 372
+    .line 380
     iput-object p1, p0, Lorg/telegram/ui/Components/BackupImageView$1;->this$0:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 375
+    .line 383
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView$1;->this$0:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;

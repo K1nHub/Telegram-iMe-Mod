@@ -2,40 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Landroid/view/animation/Interpolator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectCloudDialog(J)V
-    .locals 1
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$oJJc0JDOt6EVxJ7o-bqbTe61EWI(Lorg/telegram/ui/Components/SharedMediaLayout;J)V
-
-    return-void
-.end method
-
-.method public synthetic onAlbumCreatorOpened()V
+.method public final getInterpolation(F)F
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$U_Jaqw8_YiFexlDmBfP7Nns03V8(F)F
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

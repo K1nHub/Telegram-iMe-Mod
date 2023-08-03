@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 1279
+    .line 1377
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
@@ -35,13 +35,13 @@
 .method public onInitializeAccessibilityNodeInfo(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 0
 
-    .line 1306
+    .line 1404
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onInitializeAccessibilityNodeInfo(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
-    .line 1307
+    .line 1405
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$3900(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Z
 
     move-result p1
 
@@ -49,7 +49,7 @@
 
     const/4 p1, 0x0
 
-    .line 1308
+    .line 1406
     invoke-virtual {p3, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setVisibleToUser(Z)V
 
     :cond_0
@@ -59,7 +59,7 @@
 .method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
     .locals 0
 
-    .line 1282
+    .line 1380
     new-instance p2, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$3$1;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -68,10 +68,10 @@
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$3$1;-><init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$3;Landroid/content/Context;)V
 
-    .line 1300
+    .line 1398
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 1301
+    .line 1399
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     return-void

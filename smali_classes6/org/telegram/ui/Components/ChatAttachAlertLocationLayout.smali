@@ -682,7 +682,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 451
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I

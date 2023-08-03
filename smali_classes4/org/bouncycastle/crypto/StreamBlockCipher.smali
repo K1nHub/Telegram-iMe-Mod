@@ -73,7 +73,7 @@
     :cond_1
     new-instance p1, Lorg/bouncycastle/crypto/OutputLengthException;
 
-    const-string p2, "output buffer too short"
+    const-string/jumbo p2, "output buffer too short"
 
     invoke-direct {p1, p2}, Lorg/bouncycastle/crypto/OutputLengthException;-><init>(Ljava/lang/String;)V
 

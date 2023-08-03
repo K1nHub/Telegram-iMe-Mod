@@ -229,7 +229,7 @@ public class EmojiThemes {
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(theme);
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
             if (themeAccent != null) {
-                themeInfo2.setCurrentAccentId(themeAccent.f1672id);
+                themeInfo2.setCurrentAccentId(themeAccent.f1691id);
             }
             themeInfo = themeInfo2;
         } else {
@@ -286,7 +286,7 @@ public class EmojiThemes {
             TLRPC$TL_theme tlTheme = getTlTheme(i2);
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(settingsIndex))));
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
-            themeInfo2.setCurrentAccentId(themeAccent.f1672id);
+            themeInfo2.setCurrentAccentId(themeAccent.f1691id);
             themeInfo = themeInfo2;
         } else {
             SparseArray<Theme.ThemeAccent> sparseArray = themeInfo.themeAccentsMap;
@@ -333,7 +333,7 @@ public class EmojiThemes {
     public void loadWallpaper(int i, ResultCallback<Pair<Long, Bitmap>> resultCallback) {
         TLRPC$WallPaper wallpaper = getWallpaper(i);
         if (wallpaper != null) {
-            loadWallpaperImage(getTlTheme(i).f1647id, wallpaper, resultCallback);
+            loadWallpaperImage(getTlTheme(i).f1663id, wallpaper, resultCallback);
         } else if (resultCallback != null) {
             resultCallback.onComplete(null);
         }
@@ -409,14 +409,14 @@ public class EmojiThemes {
             }
             return;
         }
-        final long j = getTlTheme(i).f1647id;
+        final long j = getTlTheme(i).f1663id;
         Bitmap wallpaperThumbBitmap = ChatThemeController.getWallpaperThumbBitmap(j);
         final File wallpaperThumbFile = getWallpaperThumbFile(j);
         if (wallpaperThumbBitmap == null && wallpaperThumbFile.exists() && wallpaperThumbFile.length() > 0) {
             try {
                 wallpaperThumbBitmap = BitmapFactory.decodeFile(wallpaperThumbFile.getAbsolutePath());
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         if (wallpaperThumbBitmap != null) {
@@ -487,7 +487,7 @@ public class EmojiThemes {
             bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
             fileOutputStream.close();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 

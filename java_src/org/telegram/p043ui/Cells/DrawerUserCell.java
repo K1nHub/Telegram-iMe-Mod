@@ -15,7 +15,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.ForkCommonController;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -59,7 +59,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void addMuteButton() {
         ImageView imageView = new ImageView(getContext());
         this.muteButton = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.msg_unmute);
+        imageView.setImageResource(C3419R.C3421drawable.msg_unmute);
         this.muteButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.muteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
         this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DrawerUserCell$$ExternalSyntheticLambda0
@@ -82,9 +82,9 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
             toast.cancel();
         }
         if (getForkCommonController().isAccountMuted()) {
-            string = LocaleController.getString("NotificationsMutedHint", C3417R.string.NotificationsMutedHint);
+            string = LocaleController.getString("NotificationsMutedHint", C3419R.string.NotificationsMutedHint);
         } else {
-            string = LocaleController.getString("NotificationsUnmutedHint", C3417R.string.NotificationsUnmutedHint);
+            string = LocaleController.getString("NotificationsUnmutedHint", C3419R.string.NotificationsUnmutedHint);
         }
         Toast makeText = Toast.makeText(ApplicationLoader.applicationContext, string, 0);
         this.currentMuteToast = makeText;
@@ -94,7 +94,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void updateMuteButtonIcon() {
         ImageView imageView = this.muteButton;
         if (imageView != null) {
-            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3417R.C3419drawable.msg_mute : C3417R.C3419drawable.msg_unmute);
+            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3419R.C3421drawable.msg_mute : C3419R.C3421drawable.msg_unmute);
         }
     }
 
@@ -107,20 +107,20 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
         this.rect = new RectF();
         this.customType = i;
         if (isActionBarAccountSwitchType()) {
-            setPadding(0, AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4));
+            setPadding(0, AndroidUtilities.m72dp(4), 0, AndroidUtilities.m72dp(4));
         } else {
             addMuteButton();
         }
         AvatarDrawable avatarDrawable = new AvatarDrawable();
         this.avatarDrawable = avatarDrawable;
-        avatarDrawable.setTextSize(AndroidUtilities.m54dp(20));
+        avatarDrawable.setTextSize(AndroidUtilities.m72dp(20));
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(18));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(18));
         addView(this.imageView, LayoutHelper.createFrame(36, 36, 51, 14, 6, 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.textView = simpleTextView;
-        simpleTextView.setPadding(0, AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4));
+        simpleTextView.setPadding(0, AndroidUtilities.m72dp(4), 0, AndroidUtilities.m72dp(4));
         this.textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
         this.textView.setTextSize(15);
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -128,14 +128,14 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
         this.textView.setGravity(19);
         this.textView.setEllipsizeByGradient(24);
         addView(this.textView, LayoutHelper.createFrame(-1, -2, 19, 72, 0, (isActionBarAccountSwitchType() ? 0 : 42) + 14, 0));
-        AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.m54dp(20));
+        AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.m72dp(20));
         this.status = swapAnimatedEmojiDrawable;
         this.textView.setRightDrawable(swapAnimatedEmojiDrawable);
         GroupCreateCheckBox groupCreateCheckBox = new GroupCreateCheckBox(context);
         this.checkBox = groupCreateCheckBox;
         groupCreateCheckBox.setChecked(true, false);
         this.checkBox.setCheckScale(0.9f);
-        this.checkBox.setInnerRadDiff(AndroidUtilities.m55dp(1.5f));
+        this.checkBox.setInnerRadDiff(AndroidUtilities.m73dp(1.5f));
         this.checkBox.setColorKeysOverrides(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter, Theme.key_chats_menuBackground);
         addView(this.checkBox, LayoutHelper.createFrame(18, 18, 51, 37, 27, 0, 0));
         setWillNotDraw(false);
@@ -143,17 +143,18 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(isActionBarAccountSwitchType() ? 56 : 48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(isActionBarAccountSwitchType() ? 56 : 48), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
         ImageView imageView = this.muteButton;
         if (imageView != null) {
             imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         }
+        this.textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
+        this.status.attach();
         for (int i = 0; i < 5; i++) {
             NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
             NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.updateInterfaces);
@@ -164,6 +165,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     @Override // android.view.ViewGroup, android.view.View
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        this.status.detach();
         for (int i = 0; i < 5; i++) {
             NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
             NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.updateInterfaces);
@@ -201,7 +203,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
         this.avatarDrawable.setInfo(currentUser);
         CharSequence formatName = ContactsController.formatName(currentUser.first_name, currentUser.last_name);
         try {
-            formatName = Emoji.replaceEmoji(formatName, this.textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
+            formatName = Emoji.replaceEmoji(formatName, this.textView.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(20), false);
         } catch (Exception unused) {
         }
         this.textView.setText(formatName);
@@ -209,11 +211,11 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
         boolean isShowPremiumStatusEnabled = ForkCommonController.getInstance(i).isShowPremiumStatusEnabled();
         Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
         if (isShowPremiumStatusEnabled && emojiStatusDocumentId != null) {
-            this.textView.setDrawablePadding(AndroidUtilities.m54dp(4));
+            this.textView.setDrawablePadding(AndroidUtilities.m72dp(4));
             this.status.set(emojiStatusDocumentId.longValue(), true);
             this.textView.setRightDrawableOutside(true);
         } else if (isShowPremiumBadgeEnabled && MessagesController.getInstance(i).isPremiumUser(currentUser)) {
-            this.textView.setDrawablePadding(AndroidUtilities.m54dp(6));
+            this.textView.setDrawablePadding(AndroidUtilities.m72dp(6));
             this.status.set(PremiumGradient.getInstance().premiumStarDrawableMini, true);
             this.textView.setRightDrawableOutside(true);
         } else {
@@ -243,21 +245,21 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
             return;
         }
         String format = String.format("%d", Integer.valueOf(mainUnreadCount));
-        int m55dp = AndroidUtilities.m55dp(isActionBarAccountSwitchType() ? 16.5f : 12.5f);
+        int m73dp = AndroidUtilities.m73dp(isActionBarAccountSwitchType() ? 16.5f : 12.5f);
         int ceil = (int) Math.ceil(Theme.dialogs_countTextPaint.measureText(format));
-        int max = Math.max(AndroidUtilities.m54dp(10), ceil);
-        int measuredWidth = (getMeasuredWidth() - max) - AndroidUtilities.m54dp(25);
+        int max = Math.max(AndroidUtilities.m72dp(10), ceil);
+        int measuredWidth = (getMeasuredWidth() - max) - AndroidUtilities.m72dp(25);
         if (this.muteButton != null) {
-            measuredWidth -= AndroidUtilities.m54dp(42);
+            measuredWidth -= AndroidUtilities.m72dp(42);
         }
-        int m55dp2 = measuredWidth - AndroidUtilities.m55dp(5.5f);
-        this.rect.set(m55dp2, m55dp, m55dp2 + max + AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(23) + m55dp);
+        int m73dp2 = measuredWidth - AndroidUtilities.m73dp(5.5f);
+        this.rect.set(m73dp2, m73dp, m73dp2 + max + AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(23) + m73dp);
         RectF rectF = this.rect;
         float f = AndroidUtilities.density;
         canvas.drawRoundRect(rectF, f * 11.5f, f * 11.5f, Theme.dialogs_countPaint);
         RectF rectF2 = this.rect;
-        canvas.drawText(format, rectF2.left + ((rectF2.width() - ceil) / 2.0f), m55dp + AndroidUtilities.m54dp(16), Theme.dialogs_countTextPaint);
-        this.textView.setRightPadding(max + AndroidUtilities.m54dp(26));
+        canvas.drawText(format, rectF2.left + ((rectF2.width() - ceil) / 2.0f), m73dp + AndroidUtilities.m72dp(16), Theme.dialogs_countTextPaint);
+        this.textView.setRightPadding(max + AndroidUtilities.m72dp(26));
     }
 
     @Override // android.view.View

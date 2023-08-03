@@ -253,17 +253,17 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1930wallet;
+        public final Wallet f1986wallet;
 
         OpenCreateWalletScreenCommand(CreateWalletIntroView$$State createWalletIntroView$$State, Wallet wallet2, String str) {
             super("openCreateWalletScreen", OneExecutionStateStrategy.class);
-            this.f1930wallet = wallet2;
+            this.f1986wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletIntroView createWalletIntroView) {
-            createWalletIntroView.openCreateWalletScreen(this.f1930wallet, this.password);
+            createWalletIntroView.openCreateWalletScreen(this.f1986wallet, this.password);
         }
     }
 
@@ -274,17 +274,17 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1929wallet;
+        public final Wallet f1985wallet;
 
         OpenAddWalletScreenCommand(CreateWalletIntroView$$State createWalletIntroView$$State, Wallet wallet2, String str) {
             super("openAddWalletScreen", OneExecutionStateStrategy.class);
-            this.f1929wallet = wallet2;
+            this.f1985wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletIntroView createWalletIntroView) {
-            createWalletIntroView.openAddWalletScreen(this.f1929wallet, this.password);
+            createWalletIntroView.openAddWalletScreen(this.f1985wallet, this.password);
         }
     }
 

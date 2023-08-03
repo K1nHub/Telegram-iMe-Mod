@@ -186,7 +186,7 @@ public class DefaultDrmSession implements DrmSession {
     @Override // com.google.android.exoplayer2.drm.DrmSession
     public void acquire(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         if (this.referenceCount < 0) {
-            Log.m800e(TAG, "Session reference count less than zero: " + this.referenceCount);
+            Log.m818e(TAG, "Session reference count less than zero: " + this.referenceCount);
             this.referenceCount = 0;
         }
         if (eventDispatcher != null) {
@@ -213,7 +213,7 @@ public class DefaultDrmSession implements DrmSession {
     public void release(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         int i = this.referenceCount;
         if (i <= 0) {
-            Log.m800e(TAG, "release() called on a session that's already fully released.");
+            Log.m818e(TAG, "release() called on a session that's already fully released.");
             return;
         }
         int i2 = i - 1;
@@ -317,10 +317,15 @@ public class DefaultDrmSession implements DrmSession {
                     return;
                 }
                 this.state = 4;
-                dispatchEvent(DefaultDrmSession$$ExternalSyntheticLambda4.INSTANCE);
+                dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda4
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj) {
+                        ((DrmSessionEventListener.EventDispatcher) obj).drmKeysRestored();
+                    }
+                });
                 return;
             }
-            Log.m802d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
+            Log.m820d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
             postKeyRequest(bArr, 2, z);
         }
     }
@@ -364,7 +369,12 @@ public class DefaultDrmSession implements DrmSession {
                 byte[] bArr = (byte[]) obj2;
                 if (this.mode == 3) {
                     this.mediaDrm.provideKeyResponse((byte[]) Util.castNonNull(this.offlineLicenseKeySetId), bArr);
-                    dispatchEvent(DefaultDrmSession$$ExternalSyntheticLambda3.INSTANCE);
+                    dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda3
+                        @Override // com.google.android.exoplayer2.util.Consumer
+                        public final void accept(Object obj3) {
+                            ((DrmSessionEventListener.EventDispatcher) obj3).drmKeysRemoved();
+                        }
+                    });
                     return;
                 }
                 byte[] provideKeyResponse = this.mediaDrm.provideKeyResponse(this.sessionId, bArr);
@@ -373,7 +383,12 @@ public class DefaultDrmSession implements DrmSession {
                     this.offlineLicenseKeySetId = provideKeyResponse;
                 }
                 this.state = 4;
-                dispatchEvent(DefaultDrmSession$$ExternalSyntheticLambda2.INSTANCE);
+                dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda2
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj3) {
+                        ((DrmSessionEventListener.EventDispatcher) obj3).drmKeysLoaded();
+                    }
+                });
             } catch (Exception e) {
                 onKeysError(e, true);
             }
@@ -397,7 +412,7 @@ public class DefaultDrmSession implements DrmSession {
 
     private void onError(final Exception exc, int i) {
         this.lastException = new DrmSession.DrmSessionException(exc, DrmUtil.getErrorCodeForMediaDrmException(exc, i));
-        Log.m799e(TAG, "DRM session error", exc);
+        Log.m817e(TAG, "DRM session error", exc);
         dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda1
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
@@ -478,7 +493,7 @@ public class DefaultDrmSession implements DrmSession {
                     return;
                 }
             } catch (Exception e2) {
-                Log.m795w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
+                Log.m813w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
                 bArr = e2;
             }
             DefaultDrmSession.this.loadErrorHandlingPolicy.onLoadTaskConcluded(requestTask.taskId);

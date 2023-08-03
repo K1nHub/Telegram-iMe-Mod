@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/util/ListenerSet$IterationFinishedEvent;
+.implements Lcom/google/android/exoplayer2/util/ListenerSet$Event;
 
 
-# instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/ExoPlayerImpl;
+# static fields
+.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/ExoPlayerImpl;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;-><init>()V
+
+    sput-object v0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;->INSTANCE:Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;->f$0:Lcom/google/android/exoplayer2/ExoPlayerImpl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Lcom/google/android/exoplayer2/util/FlagSet;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda27;->f$0:Lcom/google/android/exoplayer2/ExoPlayerImpl;
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 0
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$FaN7Odt_OJn5xWFlmhnR2OmiNMg(Lcom/google/android/exoplayer2/ExoPlayerImpl;Lcom/google/android/exoplayer2/Player$Listener;Lcom/google/android/exoplayer2/util/FlagSet;)V
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/Player$Listener;->onSeekProcessed()V
 
     return-void
 .end method

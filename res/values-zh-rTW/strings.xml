@@ -4114,12 +4114,6 @@ Telegram 團隊"</string>
     <string name="SponsoredMessageAlertText">與其他應用程式不同，Telegram 從不使用您的私人數據來投放廣告。沒有任何用戶的數據會為了顯示廣告而被蒐集或分析，而且每個人在頻道上看到的贊助商訊息都是一樣的。我們相信，每個人都擁有隱私權，而科技平台應該重視這點。</string>
     <string name="SponsoredMessageAlertTitle">贊助商訊息</string>
     <string name="SponsoredMessageInfo">什麼是贊助商訊息？</string>
-    <string name="SponsoredMessageInfoDescription1">與其他應用程式不同，Telegram 從不使用您的私人數據來投放廣告。Telegram 上的贊助商訊息完全是基於公開頻道其所顯示的主題。這意味著不會挖掘或分析用戶數據來顯示廣告，並且每個在 Telegram 上瀏覽某頻道的用戶所看到的贊助商訊息都是一樣的。</string>
-    <string name="SponsoredMessageInfoDescription2">與其他應用程式不同，Telegram 不會在您點擊贊助商訊息時追蹤您，也不會根據您的活動來描述您。除此之外，我們也會避免贊助商訊息中有外部連結，藉以確保我們的用戶不會被第三方所監視。我們相信，每個人都擁有隱私權，而科技平台應該重視這點。</string>
-    <string name="SponsoredMessageInfoDescription3">Telegram 為數億用戶提供免費且無限制的服務，這涉及大量的伺服器和流量成本。為了保持獨立並忠於自己的價值觀，在考慮用戶隱私的情況下，Telegram 開發了一種付費可宣傳訊息的工具。我們歡迎可信賴的廣告刊登者：</string>
-    <string name="SponsoredMessageInfoDescription4">"贊助商訊息目前處於測試模式。一旦完全啟用並使 Telegram 可以支付其基本費用，我們將開始分享廣告收入給顯示贊助商訊息的公開頻道擁有者。
-
-線上廣告不應再等同於濫用用戶隱私。讓我們一起重新定義一家科技公司應該如何運作。"</string>
     <string name="Start">確定</string>
     <string name="StartDayAt">MMMd日 HH:mm 開始</string>
     <string name="StartDayYearAt">yyyy年MMMd日 HH:mm 開始</string>
@@ -5104,6 +5098,13 @@ Telegram 更新到最新版本。"</string>
     <string name="brvah_load_complete">按一下來載入更多內容</string>
     <string name="brvah_load_end">沒有更多資料</string>
     <string name="brvah_load_failed">載入更多內容失敗。按一下來重新載入</string>
+    <string name="call_notification_answer_action">接聽</string>
+    <string name="call_notification_answer_video_action">視訊</string>
+    <string name="call_notification_decline_action">拒接</string>
+    <string name="call_notification_hang_up_action">掛斷</string>
+    <string name="call_notification_incoming_text">來電</string>
+    <string name="call_notification_ongoing_text">通話中</string>
+    <string name="call_notification_screening_text">正在過濾來電</string>
     <string name="catalog_all">全部</string>
     <string name="catalog_all_languages">所有語言</string>
     <string name="catalog_categories">類別</string>

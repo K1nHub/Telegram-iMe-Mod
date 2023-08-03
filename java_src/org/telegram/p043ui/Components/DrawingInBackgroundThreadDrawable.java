@@ -100,7 +100,7 @@ public class DrawingInBackgroundThreadDrawable implements NotificationCenter.Not
                 goto L71
             L68:
                 r0 = move-exception
-                org.telegram.messenger.FileLog.m49e(r0)
+                org.telegram.messenger.FileLog.m67e(r0)
                 org.telegram.ui.Components.DrawingInBackgroundThreadDrawable r0 = org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.this
                 r1 = 1
                 r0.error = r1
@@ -110,7 +110,7 @@ public class DrawingInBackgroundThreadDrawable implements NotificationCenter.Not
                 org.telegram.messenger.AndroidUtilities.runOnUIThread(r0)
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC46141.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC46371.run():void");
         }
     };
     Runnable uiFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.DrawingInBackgroundThreadDrawable.2

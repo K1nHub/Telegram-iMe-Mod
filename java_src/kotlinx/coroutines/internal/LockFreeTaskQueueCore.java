@@ -72,7 +72,7 @@ public final class LockFreeTaskQueueCore<E> {
                 lockFreeTaskQueueCore.array.set(lockFreeTaskQueueCore.mask & i, obj);
                 i++;
             } else {
-                lockFreeTaskQueueCore._state = Companion.m79wo(j, 1152921504606846976L);
+                lockFreeTaskQueueCore._state = Companion.m97wo(j, 1152921504606846976L);
                 return lockFreeTaskQueueCore;
             }
         }
@@ -100,7 +100,7 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         /* renamed from: wo */
-        public final long m79wo(long j, long j2) {
+        public final long m97wo(long j, long j2) {
             return j & (~j2);
         }
 
@@ -108,11 +108,11 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         public final long updateHead(long j, int i) {
-            return m79wo(j, 1073741823L) | (i << 0);
+            return m97wo(j, 1073741823L) | (i << 0);
         }
 
         public final long updateTail(long j, int i) {
-            return m79wo(j, 1152921503533105152L) | (i << 30);
+            return m97wo(j, 1152921503533105152L) | (i << 30);
         }
     }
 

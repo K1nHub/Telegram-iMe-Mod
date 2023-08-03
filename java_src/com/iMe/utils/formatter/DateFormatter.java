@@ -61,7 +61,7 @@ public final class DateFormatter {
         HashMap<String, HashMap<DateType, SimpleDateFormat>> hashMap = availableLocalesFormatter;
         HashMap<DateType, SimpleDateFormat> hashMap2 = hashMap.get(str);
         if (hashMap2 == null) {
-            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m85to(dateType, INSTANCE.createFormatFor(dateType, str)));
+            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m103to(dateType, INSTANCE.createFormatFor(dateType, str)));
             hashMap.put(str, hashMap2);
         }
         HashMap<DateType, SimpleDateFormat> hashMap3 = hashMap2;
@@ -79,6 +79,19 @@ public final class DateFormatter {
         return simpleDateFormat;
     }
 
+    /* JADX WARN: Enum visitor error
+    jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ISO uses external variables
+    	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
+    	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByField(EnumVisitor.java:368)
+    	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByWrappedInsn(EnumVisitor.java:333)
+    	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:318)
+    	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:258)
+    	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInvoke(EnumVisitor.java:289)
+    	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+    	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+    	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+     */
+    /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* compiled from: DateFormatter.kt */
     /* loaded from: classes4.dex */
     public static final class DateType {
@@ -103,7 +116,6 @@ public final class DateFormatter {
         }
 
         private DateType(String str, int i, String str2, TimeZone timeZone) {
-            super(str, i);
             this.format = str2;
             this.timeZone = timeZone;
         }

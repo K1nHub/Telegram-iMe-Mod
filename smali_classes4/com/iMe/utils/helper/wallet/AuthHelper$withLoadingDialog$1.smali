@@ -65,10 +65,10 @@
 .method private static final invoke$lambda$0(Lio/reactivex/disposables/Disposable;)V
     .locals 0
 
-    .line 240
+    .line 241
     invoke-interface {p0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
-    .line 241
+    .line 242
     sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     invoke-static {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->access$onAuthFlowFinished(Lcom/iMe/utils/helper/wallet/AuthHelper;)V
@@ -81,7 +81,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 238
+    .line 239
     check-cast p1, Lio/reactivex/disposables/Disposable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper$withLoadingDialog$1;->invoke(Lio/reactivex/disposables/Disposable;)V
@@ -94,7 +94,7 @@
 .method public final invoke(Lio/reactivex/disposables/Disposable;)V
     .locals 2
 
-    .line 239
+    .line 240
     invoke-static {}, Lcom/iMe/utils/helper/wallet/AuthHelper;->access$getDelegate$p()Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     move-result-object v0

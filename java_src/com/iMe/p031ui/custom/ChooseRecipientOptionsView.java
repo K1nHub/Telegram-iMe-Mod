@@ -16,12 +16,19 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletChooseRecipientOptionsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -66,20 +73,94 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
         Lazy lazy5;
         Lazy lazy6;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new ChooseRecipientOptionsView$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resourceManager$delegate = lazy;
         ForkContentWalletChooseRecipientOptionsBinding inflate = ForkContentWalletChooseRecipientOptionsBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
         this.binding = inflate;
-        lazy2 = LazyKt__LazyJVMKt.lazy(ChooseRecipientOptionsView$iconSize$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$iconSize$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m72dp(16));
+            }
+        });
         this.iconSize$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new ChooseRecipientOptionsView$iconPadding$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$iconPadding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3419R.dimen.margin_half_small));
+            }
+        });
         this.iconPadding$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new ChooseRecipientOptionsView$cornerSize$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$cornerSize$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3419R.dimen.new_label_corner_radius));
+            }
+        });
         this.cornerSize$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new ChooseRecipientOptionsView$backgroundColor$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$backgroundColor$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                int colorWithDefaultAlpha;
+                colorWithDefaultAlpha = ChooseRecipientOptionsView.this.getColorWithDefaultAlpha(Theme.key_chats_actionBackground);
+                return Integer.valueOf(colorWithDefaultAlpha);
+            }
+        });
         this.backgroundColor$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new ChooseRecipientOptionsView$backgroundPressedColor$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$backgroundPressedColor$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                int colorWithDefaultAlpha;
+                colorWithDefaultAlpha = ChooseRecipientOptionsView.this.getColorWithDefaultAlpha(Theme.key_chats_actionPressedBackground);
+                return Integer.valueOf(colorWithDefaultAlpha);
+            }
+        });
         this.backgroundPressedColor$delegate = lazy6;
         setupView();
     }
@@ -189,17 +270,17 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
     private final void setupViews() {
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
         TextView setupViews$lambda$10$lambda$7 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
-        setupViews$lambda$10$lambda$7.setText(LocaleController.getString("Contacts", C3417R.string.Contacts));
+        setupViews$lambda$10$lambda$7.setText(LocaleController.getString("Contacts", C3419R.string.Contacts));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$7, "setupViews$lambda$10$lambda$7");
-        setSizedStartIcon(setupViews$lambda$10$lambda$7, C3417R.C3419drawable.fork_drawer_social_telegram);
+        setSizedStartIcon(setupViews$lambda$10$lambda$7, C3419R.C3421drawable.fork_drawer_social_telegram);
         TextView setupViews$lambda$10$lambda$8 = forkContentWalletChooseRecipientOptionsBinding.textTwitter;
-        setupViews$lambda$10$lambda$8.setText(getResourceManager().getString(C3417R.string.drawer_social_network_twitter));
+        setupViews$lambda$10$lambda$8.setText(getResourceManager().getString(C3419R.string.drawer_social_network_twitter));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$8, "setupViews$lambda$10$lambda$8");
-        setSizedStartIcon(setupViews$lambda$10$lambda$8, C3417R.C3419drawable.fork_drawer_social_twitter);
+        setSizedStartIcon(setupViews$lambda$10$lambda$8, C3419R.C3421drawable.fork_drawer_social_twitter);
         TextView setupViews$lambda$10$lambda$9 = forkContentWalletChooseRecipientOptionsBinding.textQr;
-        setupViews$lambda$10$lambda$9.setText(getResourceManager().getString(C3417R.string.wallet_backup_secret_words_qr_title));
+        setupViews$lambda$10$lambda$9.setText(getResourceManager().getString(C3419R.string.wallet_backup_secret_words_qr_title));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$9, "setupViews$lambda$10$lambda$9");
-        setSizedStartIcon(setupViews$lambda$10$lambda$9, C3417R.C3419drawable.msg_qrcode);
+        setSizedStartIcon(setupViews$lambda$10$lambda$9, C3419R.C3421drawable.msg_qrcode);
     }
 
     private final void setSizedStartIcon(TextView textView, int i) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public abstract class zzue extends zzto {
     private static final Logger logger = Logger.getLogger(zzue.class.getName());
@@ -340,7 +341,7 @@ public abstract class zzue extends zzto {
                         byte[] bArr = this.buffer;
                         int i2 = this.position;
                         this.position = i2 + 1;
-                        bArr[i2] = (byte) ((i & 127) | 128);
+                        bArr[i2] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                         i >>>= 7;
                     } catch (IndexOutOfBoundsException e) {
                         throw new zza(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -431,7 +432,7 @@ public abstract class zzue extends zzto {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    zzxs.zza(bArr, i, (byte) ((((int) j) & 127) | 128));
+                    zzxs.zza(bArr, i, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -445,7 +446,7 @@ public abstract class zzue extends zzto {
                     byte[] bArr3 = this.buffer;
                     int i3 = this.position;
                     this.position = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) j) & 127) | 128);
+                    bArr3[i3] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zza(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);

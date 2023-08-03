@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletAttachTransactionsBinding implements ViewBinding {
     private final GlobalStateLayout rootView;
@@ -26,7 +26,7 @@ public final class ForkRecycleItemWalletAttachTransactionsBinding implements Vie
     }
 
     public static ForkRecycleItemWalletAttachTransactionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_attach_transactions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_attach_transactions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,7 +35,7 @@ public final class ForkRecycleItemWalletAttachTransactionsBinding implements Vie
 
     public static ForkRecycleItemWalletAttachTransactionsBinding bind(View view) {
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) view;
-        int i = C3417R.C3420id.recycle_transactions;
+        int i = C3419R.C3422id.recycle_transactions;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkRecycleItemWalletAttachTransactionsBinding(globalStateLayout, globalStateLayout, recyclerView);

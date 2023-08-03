@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -33,6 +33,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -143,7 +144,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             }
         };
         this.thumbImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(4));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(4));
         if (i == 1) {
             View view3 = this.thumbImageView;
             boolean z5 = LocaleController.isRTL;
@@ -204,7 +205,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             boolean z10 = LocaleController.isRTL;
             addView(view7, LayoutHelper.createFrame(-1, -2, (z10 ? 5 : 3) | 48, z10 ? 8 : 72, 5, z10 ? 72 : 8, 0));
         }
-        this.statusDrawable = new RLottieDrawable(C3417R.raw.download_arrow, "download_arrow", AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14), true, null);
+        this.statusDrawable = new RLottieDrawable(C3419R.raw.download_arrow, "download_arrow", AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(14), true, null);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.statusImageView = rLottieImageView;
         rLottieImageView.setAnimation(this.statusDrawable);
@@ -229,6 +230,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         this.dateTextView.setSingleLine(true);
         this.dateTextView.setEllipsize(TextUtils.TruncateAt.END);
         this.dateTextView.setGravity(16 | (LocaleController.isRTL ? 5 : 3));
+        NotificationCenter.listenEmojiLoading(this.dateTextView);
         if (i == 1) {
             this.dateTextView.setTextSize(1, 13.0f);
             View view10 = this.dateTextView;
@@ -246,7 +248,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         View view12 = this.progressView;
         boolean z15 = LocaleController.isRTL;
         addView(view12, LayoutHelper.createFrame(-1, 2, (z15 ? 5 : 3) | 48, z15 ? 0 : 72, 54, z15 ? 72 : 0, 0));
-        CheckBox2 checkBox2 = new CheckBox2(context, 21);
+        CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider);
         this.checkBox = checkBox2;
         checkBox2.setVisibility(4);
         this.checkBox.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
@@ -296,17 +298,17 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                     this.thumbImageView.setImage(str4, "42_42", null);
                 }
             } else {
-                CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(42), i);
-                if (i == C3417R.C3419drawable.files_storage) {
+                CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m72dp(42), i);
+                if (i == C3419R.C3421drawable.files_storage) {
                     i2 = Theme.key_chat_attachLocationBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3417R.C3419drawable.files_gallery) {
+                } else if (i == C3419R.C3421drawable.files_gallery) {
                     i2 = Theme.key_chat_attachContactBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3417R.C3419drawable.files_music) {
+                } else if (i == C3419R.C3421drawable.files_music) {
                     i2 = Theme.key_chat_attachAudioBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3417R.C3419drawable.files_internal) {
+                } else if (i == C3419R.C3421drawable.files_internal) {
                     i2 = Theme.key_chat_attachGalleryBackground;
                     i3 = Theme.key_chat_attachIcon;
                 } else {
@@ -436,7 +438,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             }
             String documentFileName = (messageObject.isVideo() || (messageObject.messageOwner.media instanceof TLRPC$TL_messageMediaPhoto) || MessageObject.isGifDocument(document)) ? null : FileLoader.getDocumentFileName(document);
             if (TextUtils.isEmpty(documentFileName) && (str = document.mime_type) != null) {
-                documentFileName = str.startsWith("video") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3417R.string.AttachGif) : LocaleController.getString("AttachVideo", C3417R.string.AttachVideo) : document.mime_type.startsWith("image") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3417R.string.AttachGif) : LocaleController.getString("AttachPhoto", C3417R.string.AttachPhoto) : document.mime_type.startsWith("audio") ? LocaleController.getString("AttachAudio", C3417R.string.AttachAudio) : LocaleController.getString("AttachDocument", C3417R.string.AttachDocument);
+                documentFileName = str.startsWith("video") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3419R.string.AttachGif) : LocaleController.getString("AttachVideo", C3419R.string.AttachVideo) : document.mime_type.startsWith("image") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3419R.string.AttachGif) : LocaleController.getString("AttachPhoto", C3419R.string.AttachPhoto) : document.mime_type.startsWith("audio") ? LocaleController.getString("AttachAudio", C3419R.string.AttachAudio) : LocaleController.getString("AttachDocument", C3419R.string.AttachDocument);
             }
             if (str4 == null) {
                 str4 = documentFileName;
@@ -523,11 +525,11 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             format = String.format(Locale.ENGLISH, "%s / %s", AndroidUtilities.formatFileSize(j2), AndroidUtilities.formatFileSize(this.message.getDocument().size));
         }
         if (this.viewType == 2) {
-            this.dateTextView.setText(new SpannableStringBuilder().append((CharSequence) format).append(' ').append((CharSequence) this.dotSpan).append(' ').append(FilteredSearchView.createFromInfoString(this.message)));
+            this.dateTextView.setText(new SpannableStringBuilder().append((CharSequence) format).append(' ').append((CharSequence) this.dotSpan).append(' ').append(FilteredSearchView.createFromInfoString(this.message, true, 2, this.dateTextView.getPaint())));
             this.rightDateTextView.setText(LocaleController.stringForMessageListDate(this.message.messageOwner.date));
             return;
         }
-        this.dateTextView.setText(String.format("%s, %s", format, LocaleController.formatString("formatDateAtTime", C3417R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(new Date(j)), LocaleController.getInstance().formatterDay.format(new Date(j)))));
+        this.dateTextView.setText(String.format("%s, %s", format, LocaleController.formatString("formatDateAtTime", C3419R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(new Date(j)), LocaleController.getInstance().formatterDay.format(new Date(j)))));
     }
 
     public void updateFileExistIcon(boolean z) {
@@ -548,8 +550,8 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                 this.progressView.setVisibility(4);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.dateTextView.getLayoutParams();
                 if (layoutParams != null) {
-                    layoutParams.leftMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : 72);
-                    layoutParams.rightMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 72 : 8);
+                    layoutParams.leftMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : 72);
+                    layoutParams.rightMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 72 : 8);
                     this.dateTextView.requestLayout();
                 }
                 this.loading = false;
@@ -571,8 +573,8 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             }
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.dateTextView.getLayoutParams();
             if (layoutParams2 != null) {
-                layoutParams2.leftMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : 86);
-                layoutParams2.rightMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 86 : 8);
+                layoutParams2.leftMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : 86);
+                layoutParams2.rightMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 86 : 8);
                 this.dateTextView.requestLayout();
             }
             if (this.loading) {
@@ -594,8 +596,8 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         this.statusImageView.setVisibility(4);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.dateTextView.getLayoutParams();
         if (layoutParams3 != null) {
-            layoutParams3.leftMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : 72);
-            layoutParams3.rightMargin = AndroidUtilities.m54dp(LocaleController.isRTL ? 72 : 8);
+            layoutParams3.leftMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : 72);
+            layoutParams3.rightMargin = AndroidUtilities.m72dp(LocaleController.isRTL ? 72 : 8);
             this.dateTextView.requestLayout();
         }
         DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
@@ -621,19 +623,19 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
     protected void onMeasure(int i, int i2) {
         int i3 = this.viewType;
         if (i3 == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64) + (this.needDivider ? 1 : 0), 1073741824));
         } else if (i3 == 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(56), 1073741824));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824));
-            int m54dp = AndroidUtilities.m54dp(34) + this.nameTextView.getMeasuredHeight() + (this.needDivider ? 1 : 0);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(56), 1073741824));
+            int m72dp = AndroidUtilities.m72dp(34) + this.nameTextView.getMeasuredHeight() + (this.needDivider ? 1 : 0);
             if (this.caption != null && this.captionTextView != null && this.message.hasHighlightedWords()) {
                 this.ignoreRequestLayout = true;
                 this.captionTextView.setText(AndroidUtilities.ellipsizeCenterEnd(this.caption, this.message.highlightedWords.get(0), this.captionTextView.getMeasuredWidth(), this.captionTextView.getPaint(), TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
                 this.ignoreRequestLayout = false;
-                m54dp += this.captionTextView.getMeasuredHeight() + AndroidUtilities.m54dp(3);
+                m72dp += this.captionTextView.getMeasuredHeight() + AndroidUtilities.m72dp(3);
             }
-            setMeasuredDimension(getMeasuredWidth(), m54dp);
+            setMeasuredDimension(getMeasuredWidth(), m72dp);
         }
     }
 
@@ -651,12 +653,12 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         super.onLayout(z, i, i2, i3, i4);
         if (this.viewType != 1) {
             if (this.nameTextView.getLineCount() > 1 || ((textView = this.captionTextView) != null && textView.getVisibility() == 0)) {
-                int measuredHeight = this.nameTextView.getMeasuredHeight() - AndroidUtilities.m54dp(22);
+                int measuredHeight = this.nameTextView.getMeasuredHeight() - AndroidUtilities.m72dp(22);
                 TextView textView2 = this.captionTextView;
                 if (textView2 != null && textView2.getVisibility() == 0) {
                     TextView textView3 = this.captionTextView;
                     textView3.layout(textView3.getLeft(), this.captionTextView.getTop() + measuredHeight, this.captionTextView.getRight(), this.captionTextView.getBottom() + measuredHeight);
-                    measuredHeight += this.captionTextView.getMeasuredHeight() + AndroidUtilities.m54dp(3);
+                    measuredHeight += this.captionTextView.getMeasuredHeight() + AndroidUtilities.m72dp(3);
                 }
                 AnimatedEmojiSpan.TextViewEmojis textViewEmojis = this.dateTextView;
                 textViewEmojis.layout(textViewEmojis.getLeft(), this.dateTextView.getTop() + measuredHeight, this.dateTextView.getRight(), this.dateTextView.getBottom() + measuredHeight);
@@ -740,7 +742,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                     this.showReorderIconProgress = f + 0.10666667f;
                     invalidate();
                     this.showReorderIconProgress = Utilities.clamp(this.showReorderIconProgress, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
-                    int measuredWidth = (getMeasuredWidth() - AndroidUtilities.m54dp(12)) - Theme.dialogs_reorderDrawable.getIntrinsicWidth();
+                    int measuredWidth = (getMeasuredWidth() - AndroidUtilities.m72dp(12)) - Theme.dialogs_reorderDrawable.getIntrinsicWidth();
                     int measuredHeight = (getMeasuredHeight() - Theme.dialogs_reorderDrawable.getIntrinsicHeight()) >> 1;
                     canvas.save();
                     float f2 = this.showReorderIconProgress;
@@ -759,7 +761,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                 }
             }
             this.showReorderIconProgress = Utilities.clamp(this.showReorderIconProgress, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
-            int measuredWidth2 = (getMeasuredWidth() - AndroidUtilities.m54dp(12)) - Theme.dialogs_reorderDrawable.getIntrinsicWidth();
+            int measuredWidth2 = (getMeasuredWidth() - AndroidUtilities.m72dp(12)) - Theme.dialogs_reorderDrawable.getIntrinsicWidth();
             int measuredHeight2 = (getMeasuredHeight() - Theme.dialogs_reorderDrawable.getIntrinsicHeight()) >> 1;
             canvas.save();
             float f22 = this.showReorderIconProgress;
@@ -773,7 +775,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
 
     private void drawDivider(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.m54dp(72), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m72dp(72), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, Theme.getThemePaint("paintDivider", this.resourcesProvider));
         }
     }
 

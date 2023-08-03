@@ -138,7 +138,7 @@ public final class ExoplayerCuesDecoder implements SubtitleDecoder {
 
         @Override // com.google.android.exoplayer2.text.Subtitle
         public List<Cue> getCues(long j) {
-            return j >= this.timeUs ? this.cues : ImmutableList.m744of();
+            return j >= this.timeUs ? this.cues : ImmutableList.m762of();
         }
     }
 }

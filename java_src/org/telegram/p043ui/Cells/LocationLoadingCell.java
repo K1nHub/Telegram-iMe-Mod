@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -29,7 +29,7 @@ public class LocationLoadingCell extends FrameLayout {
         addView(radialProgressView, LayoutHelper.createFrame(-2, -2, 17));
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.location_empty);
+        imageView.setImageResource(C3419R.C3421drawable.location_empty);
         this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         addView(this.imageView, LayoutHelper.createFrame(-2, -2, 17, 0, 0, 0, 24));
         TextView textView = new TextView(context);
@@ -38,13 +38,13 @@ public class LocationLoadingCell extends FrameLayout {
         this.textView.setGravity(17);
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setTextSize(1, 17.0f);
-        this.textView.setText(LocaleController.getString("NoPlacesFound", C3417R.string.NoPlacesFound));
+        this.textView.setText(LocaleController.getString("NoPlacesFound", C3419R.string.NoPlacesFound));
         addView(this.textView, LayoutHelper.createFrame(-2, -2, 17, 0, 34, 0, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m54dp(56) * 2.5f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m72dp(56) * 2.5f), 1073741824));
     }
 
     public void setLoading(boolean z) {

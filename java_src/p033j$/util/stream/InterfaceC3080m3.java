@@ -11,11 +11,11 @@ interface InterfaceC3080m3 extends Consumer {
     void accept(long j);
 
     /* renamed from: m */
-    void mo321m();
+    void mo339m();
 
     /* renamed from: n */
-    void mo297n(long j);
+    void mo315n(long j);
 
     /* renamed from: o */
-    boolean mo296o();
+    boolean mo314o();
 }

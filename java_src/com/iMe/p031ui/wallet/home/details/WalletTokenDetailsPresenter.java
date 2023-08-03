@@ -6,6 +6,7 @@ import com.iMe.i_staking.StakingInteractor;
 import com.iMe.manager.common.FeatureAvailableManager$Token;
 import com.iMe.manager.wallet.create.WalletCreateManager;
 import com.iMe.manager.wallet.create.WalletCreateManagerView;
+import com.iMe.mapper.staking.StakingDetailedMetadataUiMappingKt;
 import com.iMe.mapper.wallet.TokenUiMappingKt;
 import com.iMe.mapper.wallet.select.SelectableMappingKt;
 import com.iMe.model.staking.StakingAnnualPercentageMode;
@@ -45,6 +46,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import com.iMe.utils.extentions.model.wallet.BinanceTokenBalanceExtKt;
 import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.extentions.p032rx.SchedulersExtKt;
 import com.iMe.utils.formatter.BalanceFormatter;
@@ -59,13 +61,16 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
+import timber.log.Timber;
 /* compiled from: WalletTokenDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter */
@@ -124,9 +129,40 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         this.schedulersProvider = schedulersProvider;
         this.stakingInteractor = stakingInteractor;
         this.walletCreateManager = walletCreateManager;
-        lazy = LazyKt__LazyJVMKt.lazy(new WalletTokenDetailsPresenter$token$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TokenDetailed>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$token$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TokenDetailed invoke() {
+                TokenDetailsArgs tokenDetailsArgs;
+                TokenDetailed resolveToken;
+                WalletTokenDetailsPresenter walletTokenDetailsPresenter = WalletTokenDetailsPresenter.this;
+                tokenDetailsArgs = walletTokenDetailsPresenter.args;
+                resolveToken = walletTokenDetailsPresenter.resolveToken(tokenDetailsArgs);
+                return resolveToken;
+            }
+        });
         this.token$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new WalletTokenDetailsPresenter$horizontalActionButtonItems$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends HorizontalActionButtonItem>>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$horizontalActionButtonItems$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends HorizontalActionButtonItem> invoke() {
+                TokenDetailsArgs tokenDetailsArgs;
+                List<? extends HorizontalActionButtonItem> resolveAvailableTokenActions;
+                WalletTokenDetailsPresenter walletTokenDetailsPresenter = WalletTokenDetailsPresenter.this;
+                tokenDetailsArgs = walletTokenDetailsPresenter.args;
+                resolveAvailableTokenActions = walletTokenDetailsPresenter.resolveAvailableTokenActions(tokenDetailsArgs);
+                return resolveAvailableTokenActions;
+            }
+        });
         this.horizontalActionButtonItems$delegate = lazy2;
     }
 
@@ -169,7 +205,55 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     }
 
     public final void changeRankVisibility(boolean z) {
-        Disposable subscribe = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.changeLevelVisibility(z)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2267x3dbc88cf(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2268x3dbc88d0((BaseView) getViewState())));
+        Observable scheduleIO = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.changeLevelVisibility(z));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = scheduleIO.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$changeRankVisibility$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1491invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1491invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Error) {
+                    resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    return;
+                }
+                Timber.m9d("changeRankVisibility result skipped: " + result, new Object[0]);
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$changeRankVisibility$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -178,7 +262,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         List listOf;
         Intrinsics.checkNotNullParameter(token, "token");
         String totalBalanceText = BinanceTokenBalanceExtKt.getTotalBalanceText(token);
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3417R.string.binance_token_details_distribution_spot), Theme.key_statisticChartLine_blue, token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3417R.string.binance_token_details_distribution_margin), Theme.key_statisticChartLine_golden, token.getMargin().getTotal())});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3419R.string.binance_token_details_distribution_spot), Theme.key_statisticChartLine_blue, token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3419R.string.binance_token_details_distribution_margin), Theme.key_statisticChartLine_golden, token.getMargin().getTotal())});
         ((WalletTokenDetailsView) getViewState()).showStatisticDialog(new StatisticDiagramModel(totalBalanceText, listOf));
     }
 
@@ -232,9 +316,71 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     public final void loadStakingDetailedMetadata() {
         TokenDetailsArgs tokenDetailsArgs = this.args;
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Staking) {
-            Observable<Result<StakingDetailedMetadata>> observeOn = this.stakingInteractor.getStakingDetails(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails().getId()).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<StakingDetailedMetadata>> observeOn = this.stakingInteractor.getStakingDetails(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails().getId()).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2273xdf270a35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2274xdf270a36(null)));
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingDetailedMetadata>, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$loadStakingDetailedMetadata$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingDetailedMetadata> result) {
+                    m1494invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1494invoke(Result<? extends StakingDetailedMetadata> it) {
+                    ResourceManager resourceManager;
+                    RxEventBus rxEventBus;
+                    TokenDetailsArgs tokenDetailsArgs2;
+                    TokenDetailsArgs tokenDetailsArgs3;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends StakingDetailedMetadata> result = it;
+                    if (result instanceof Result.Success) {
+                        rxEventBus = WalletTokenDetailsPresenter.this.rxEventBus;
+                        rxEventBus.publish(DomainRxEvents.RefreshTransactions.INSTANCE);
+                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(false);
+                        Result.Success success = (Result.Success) result;
+                        WalletTokenDetailsPresenter.this.stakingMetadata = (StakingDetailedMetadata) success.getData();
+                        tokenDetailsArgs2 = WalletTokenDetailsPresenter.this.args;
+                        ((TokenDetailsArgs.Staking) tokenDetailsArgs2).setStakingDetails(StakingDetailedMetadataUiMappingKt.mapToUi((StakingDetailedMetadata) success.getData()));
+                        WalletTokenDetailsPresenter walletTokenDetailsPresenter = WalletTokenDetailsPresenter.this;
+                        tokenDetailsArgs3 = walletTokenDetailsPresenter.args;
+                        walletTokenDetailsPresenter.setupStakingDetailsScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs3).getStakingDetails());
+                        WalletTokenDetailsPresenter.this.setupHorizontalActionButtons();
+                    } else if (result instanceof Result.Loading) {
+                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(true);
+                    } else if (result instanceof Result.Error) {
+                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(false);
+                        resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
+                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$loadStakingDetailedMetadata$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView = BaseView.this;
+                    if (baseView != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -255,14 +401,41 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
             z = false;
         }
         if ((i & 2) != 0) {
-            callbacks$Callback1 = WalletTokenDetailsPresenter$$ExternalSyntheticLambda2.INSTANCE;
+            callbacks$Callback1 = new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda2
+                @Override // com.iMe.fork.utils.Callbacks$Callback1
+                public final void invoke(Object obj2) {
+                    WalletTokenDetailsPresenter.loadAccountLevelInfo$lambda$3((AccountLevelInformation) obj2);
+                }
+            };
         }
         walletTokenDetailsPresenter.loadAccountLevelInfo(z, callbacks$Callback1);
     }
 
-    private final void loadAccountLevelInfo(boolean z, Callbacks$Callback1<AccountLevelInformation> callbacks$Callback1) {
+    private final void loadAccountLevelInfo(final boolean z, final Callbacks$Callback1<AccountLevelInformation> callbacks$Callback1) {
         Observable scheduleIO = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelInformation$default(this.accountLevelInteractor, 0L, 1, null));
-        final WalletTokenDetailsPresenter$loadAccountLevelInfo$2 walletTokenDetailsPresenter$loadAccountLevelInfo$2 = new WalletTokenDetailsPresenter$loadAccountLevelInfo$2(z, this);
+        final Function1<Observable<Result<? extends AccountLevelInformation>>, ObservableSource<Result<? extends AccountLevelInformation>>> function1 = new Function1<Observable<Result<? extends AccountLevelInformation>>, ObservableSource<Result<? extends AccountLevelInformation>>>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<Result<? extends AccountLevelInformation>> invoke(Observable<Result<? extends AccountLevelInformation>> observable) {
+                return invoke2((Observable<Result<AccountLevelInformation>>) observable);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<Result<AccountLevelInformation>> invoke2(Observable<Result<AccountLevelInformation>> observable) {
+                Intrinsics.checkNotNullParameter(observable, "observable");
+                if (z) {
+                    T viewState = this.getViewState();
+                    Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                    return RxExtKt.withLoadingDialog$default((Observable) observable, (BaseView) viewState, false, 2, (Object) null);
+                }
+                return observable;
+            }
+        };
         Observable compose = scheduleIO.compose(new ObservableTransformer() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda4
             @Override // io.reactivex.ObservableTransformer
             public final ObservableSource apply(Observable observable) {
@@ -272,7 +445,58 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
             }
         });
         Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAccountL…     .autoDispose()\n    }");
-        Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2271xfd1058cc(this, callbacks$Callback1, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2272xfd1058cd((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends AccountLevelInformation>, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevelInformation> result) {
+                m1493invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1493invoke(Result<? extends AccountLevelInformation> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends AccountLevelInformation> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    WalletTokenDetailsPresenter.this.accountLevelInformation = (AccountLevelInformation) success.getData();
+                    WalletTokenDetailsPresenter.this.setupRankBadge();
+                    callbacks$Callback1.invoke(success.getData());
+                } else if ((result instanceof Result.Error) && z) {
+                    resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -344,13 +568,13 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         Number parseFormattedString2 = balanceFormatter.parseFormattedString(stakingDetailsItem.getFormattedAPR());
         if (NumberExtKt.isZero(parseFormattedString) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APY) {
             str = stakingDetailsItem.getFormattedAPY() + '%';
-            string = this.resourceManager.getString(C3417R.string.staking_details_apy);
+            string = this.resourceManager.getString(C3419R.string.staking_details_apy);
         } else if (NumberExtKt.isZero(parseFormattedString2) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APR) {
             str = stakingDetailsItem.getFormattedAPR() + '%';
-            string = this.resourceManager.getString(C3417R.string.staking_details_apr);
+            string = this.resourceManager.getString(C3419R.string.staking_details_apr);
         } else {
-            str = this.resourceManager.getString(C3417R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
-            string = this.resourceManager.getString(C3417R.string.staking_details_apy_apr);
+            str = this.resourceManager.getString(C3419R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
+            string = this.resourceManager.getString(C3419R.string.staking_details_apy_apr);
         }
         String str3 = str;
         String str4 = string;
@@ -362,7 +586,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 createUSDValue$default2 = FiatValue.Companion.createUSDValue$default(FiatValue.Companion, 0.0d, 1, null);
             }
             copy2 = createEmptyBalanceFor.copy((r16 & 1) != 0 ? createEmptyBalanceFor.total : orZero, (r16 & 2) != 0 ? createEmptyBalanceFor.totalInFiat : createUSDValue$default2, (r16 & 4) != 0 ? createEmptyBalanceFor.rateToFiat : null, (r16 & 8) != 0 ? createEmptyBalanceFor.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? createEmptyBalanceFor.token : null);
-            str2 = this.resourceManager.getString(C3417R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy2), TokenBalanceExtKt.getDollarsBalanceText(copy2));
+            str2 = this.resourceManager.getString(C3419R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy2), TokenBalanceExtKt.getDollarsBalanceText(copy2));
         } else {
             str2 = "-";
         }
@@ -389,9 +613,53 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2269x72f8ed61(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2270x72f8ed62(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents domainRxEvents) {
+                m1492invoke(domainRxEvents);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1492invoke(DomainRxEvents it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                DomainRxEvents domainRxEvents = it;
+                if (domainRxEvents instanceof DomainRxEvents.StakingProgrammesRefresh) {
+                    WalletTokenDetailsPresenter.this.loadStakingDetailedMetadata();
+                } else if (domainRxEvents instanceof DomainRxEvents.TokensSettingsChanged) {
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).removeSelfFromStackImmediately();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -411,7 +679,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final List<HorizontalActionButtonItem> resolveAvailableTokenActions(TokenDetailsArgs tokenDetailsArgs) {
+    public final List<HorizontalActionButtonItem> resolveAvailableTokenActions(final TokenDetailsArgs tokenDetailsArgs) {
         List<HorizontalActionButtonItem> listOf;
         StakingRules rules;
         StakingRules rules2;
@@ -423,40 +691,216 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Binance) {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr = new HorizontalActionButtonItem[3];
             TokenDetailsArgs.Binance binance = (TokenDetailsArgs.Binance) tokenDetailsArgs;
-            horizontalActionButtonItemArr[0] = binance.getToken().getConvertible() ? new HorizontalActionButtonItem(C3417R.C3419drawable.fork_ic_exchange_27, this.resourceManager.getString(C3417R.string.wallet_token_details_transactions_swap), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$1(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr[1] = binance.getToken().getReplenishNetworksIds().isEmpty() ^ true ? new HorizontalActionButtonItem(C3417R.C3419drawable.fork_ic_buy_28, this.resourceManager.getString(C3417R.string.wallet_token_details_action_buy), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$2(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr[2] = binance.getToken().getReceivable() ? new HorizontalActionButtonItem(C3417R.C3419drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3417R.string.wallet_token_details_action_receive), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$3(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr[0] = binance.getToken().getConvertible() ? new HorizontalActionButtonItem(C3419R.C3421drawable.fork_ic_exchange_27, this.resourceManager.getString(C3419R.string.wallet_token_details_transactions_swap), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startBinanceSwapScreen(((TokenDetailsArgs.Binance) tokenDetailsArgs).getToken());
+                }
+            }, 4, null) : null;
+            horizontalActionButtonItemArr[1] = binance.getToken().getReplenishNetworksIds().isEmpty() ^ true ? new HorizontalActionButtonItem(C3419R.C3421drawable.fork_ic_buy_28, this.resourceManager.getString(C3419R.string.wallet_token_details_action_buy), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startBinanceReplenishScreen(((TokenDetailsArgs.Binance) tokenDetailsArgs).getToken());
+                }
+            }, 4, null) : null;
+            horizontalActionButtonItemArr[2] = binance.getToken().getReceivable() ? new HorizontalActionButtonItem(C3419R.C3421drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3419R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$3
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startBinanceReceiveScreen(((TokenDetailsArgs.Binance) tokenDetailsArgs).getToken());
+                }
+            }, 4, null) : null;
             listOfNotNull2 = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) horizontalActionButtonItemArr);
             return listOfNotNull2;
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Crypto) {
-            TokenDetailed token = ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance().getToken();
+            final TokenDetailed token = ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance().getToken();
             HorizontalActionButtonItem[] horizontalActionButtonItemArr2 = new HorizontalActionButtonItem[3];
-            horizontalActionButtonItemArr2[0] = new HorizontalActionButtonItem(C3417R.C3419drawable.msg_send, this.resourceManager.getString(C3417R.string.wallet_token_details_details_action_send), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$1(this, token), 4, null);
-            horizontalActionButtonItemArr2[1] = isBuyAvailable(token.getNetworkId()) ? new HorizontalActionButtonItem(C3417R.C3419drawable.fork_ic_buy_28, this.resourceManager.getString(C3417R.string.wallet_token_details_action_buy), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$2(this, token), 4, null) : null;
-            horizontalActionButtonItemArr2[2] = new HorizontalActionButtonItem(C3417R.C3419drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3417R.string.wallet_token_details_action_receive), false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$3(this, token), 4, null);
+            horizontalActionButtonItemArr2[0] = new HorizontalActionButtonItem(C3419R.C3421drawable.msg_send, this.resourceManager.getString(C3419R.string.wallet_token_details_details_action_send), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startSendScreen(token.getNetworkId());
+                }
+            }, 4, null);
+            horizontalActionButtonItemArr2[1] = isBuyAvailable(token.getNetworkId()) ? new HorizontalActionButtonItem(C3419R.C3421drawable.fork_ic_buy_28, this.resourceManager.getString(C3419R.string.wallet_token_details_action_buy), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startBuyScreen(token.getNetworkId());
+                }
+            }, 4, null) : null;
+            horizontalActionButtonItemArr2[2] = new HorizontalActionButtonItem(C3419R.C3421drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3419R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$3
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.startReceiveScreen(token.getAvatarUrl());
+                }
+            }, 4, null);
             listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) horizontalActionButtonItemArr2);
             return listOfNotNull;
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Staking) {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr3 = new HorizontalActionButtonItem[4];
-            int i = C3417R.C3419drawable.fork_ic_buy_28;
-            String string = this.resourceManager.getString(C3417R.string.staking_details_replenish);
+            int i = C3419R.C3421drawable.fork_ic_buy_28;
+            String string = this.resourceManager.getString(C3419R.string.staking_details_replenish);
             StakingDetailedMetadata stakingDetailedMetadata = this.stakingMetadata;
-            horizontalActionButtonItemArr3[0] = new HorizontalActionButtonItem(i, string, (stakingDetailedMetadata == null || (rules3 = stakingDetailedMetadata.getRules()) == null || !rules3.getCanDeposit()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$5(this, tokenDetailsArgs));
-            int i2 = C3417R.C3419drawable.fork_ic_ask_transfer;
-            String string2 = this.resourceManager.getString(C3417R.string.staking_details_claim);
+            horizontalActionButtonItemArr3[0] = new HorizontalActionButtonItem(i, string, (stakingDetailedMetadata == null || (rules3 = stakingDetailedMetadata.getRules()) == null || !rules3.getCanDeposit()) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$5
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletTokenDetailsPresenter.this.openStakingReplenishCheckingAccountLevel(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails());
+                }
+            });
+            int i2 = C3419R.C3421drawable.fork_ic_ask_transfer;
+            String string2 = this.resourceManager.getString(C3419R.string.staking_details_claim);
             StakingDetailedMetadata stakingDetailedMetadata2 = this.stakingMetadata;
-            horizontalActionButtonItemArr3[1] = new HorizontalActionButtonItem(i2, string2, (stakingDetailedMetadata2 == null || (stats = stakingDetailedMetadata2.getStats()) == null || !stats.isParticipated()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$6(this, tokenDetailsArgs));
-            int i3 = C3417R.C3419drawable.fork_ic_withdraw;
-            String string3 = this.resourceManager.getString(C3417R.string.staking_details_withdraw);
+            horizontalActionButtonItemArr3[1] = new HorizontalActionButtonItem(i2, string2, (stakingDetailedMetadata2 == null || (stats = stakingDetailedMetadata2.getStats()) == null || !stats.isParticipated()) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$6
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).openStakingProfitScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails());
+                }
+            });
+            int i3 = C3419R.C3421drawable.fork_ic_withdraw;
+            String string3 = this.resourceManager.getString(C3419R.string.staking_details_withdraw);
             StakingDetailedMetadata stakingDetailedMetadata3 = this.stakingMetadata;
-            horizontalActionButtonItemArr3[2] = new HorizontalActionButtonItem(i3, string3, (stakingDetailedMetadata3 == null || (rules2 = stakingDetailedMetadata3.getRules()) == null || (!rules2.getCanWithdrawSafely() && !rules2.getCanWithdrawImmediately())) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$8(this, tokenDetailsArgs));
-            int i4 = C3417R.C3419drawable.fork_wallet_staking_dashboard_calculator;
-            String string4 = this.resourceManager.getString(C3417R.string.staking_dashboard_calculator);
+            horizontalActionButtonItemArr3[2] = new HorizontalActionButtonItem(i3, string3, (stakingDetailedMetadata3 == null || (rules2 = stakingDetailedMetadata3.getRules()) == null || (!rules2.getCanWithdrawSafely() && !rules2.getCanWithdrawImmediately())) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$8
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).openStakingWithdrawScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails());
+                }
+            });
+            int i4 = C3419R.C3421drawable.fork_wallet_staking_dashboard_calculator;
+            String string4 = this.resourceManager.getString(C3419R.string.staking_dashboard_calculator);
             StakingDetailedMetadata stakingDetailedMetadata4 = this.stakingMetadata;
             if (stakingDetailedMetadata4 == null || (rules = stakingDetailedMetadata4.getRules()) == null || !rules.getCanDeposit()) {
                 z = false;
             }
-            horizontalActionButtonItemArr3[3] = new HorizontalActionButtonItem(i4, string4, z, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$9(this, tokenDetailsArgs));
+            horizontalActionButtonItemArr3[3] = new HorizontalActionButtonItem(i4, string4, z, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$9
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    StakingDetailedMetadata stakingDetailedMetadata5;
+                    StakingDetailsItem stakingDetails;
+                    stakingDetailedMetadata5 = WalletTokenDetailsPresenter.this.stakingMetadata;
+                    if (stakingDetailedMetadata5 == null || (stakingDetails = StakingDetailedMetadataUiMappingKt.mapToUi(stakingDetailedMetadata5)) == null) {
+                        stakingDetails = ((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails();
+                    }
+                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).openStakingCalculatorScreen(stakingDetails);
+                }
+            });
             listOf = CollectionsKt__CollectionsKt.listOf((Object[]) horizontalActionButtonItemArr3);
             return listOf;
         } else {

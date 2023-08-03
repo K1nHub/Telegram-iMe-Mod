@@ -12,11 +12,9 @@
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$Chat;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,15 +25,13 @@
 
     iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda351;->f$2:Lorg/telegram/tgnet/TLRPC$User;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda351;->f$3:Lorg/telegram/tgnet/TLRPC$Chat;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 6
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda351;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -43,13 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda351;->f$2:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda351;->f$3:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-object v4, p1
-
-    move-object v5, p2
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Z_e7ePAivISI8eslinUI7oSzPuc(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$NnGWg2TNKZCmjbUy4JbO_OxC-Oo(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

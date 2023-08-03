@@ -121,14 +121,24 @@
     return v0
 .end method
 
-.method public synthetic needCopy()Z
+.method public synthetic isStoryReply()Z
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$needCopy(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
+    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$isStoryReply(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public synthetic needCopy(Lorg/telegram/tgnet/TLRPC$Document;)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$needCopy(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Lorg/telegram/tgnet/TLRPC$Document;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public needMenu()Z

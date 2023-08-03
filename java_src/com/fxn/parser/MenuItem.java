@@ -17,7 +17,7 @@ public final class MenuItem {
     private float icon_size;
 
     /* renamed from: id */
-    private final int f179id;
+    private final int f181id;
     private int tabBackground;
     private final CharSequence title;
     private float title_size;
@@ -29,14 +29,14 @@ public final class MenuItem {
         }
         if (obj instanceof MenuItem) {
             MenuItem menuItem = (MenuItem) obj;
-            return this.f179id == menuItem.f179id && Intrinsics.areEqual(this.title, menuItem.title) && this.icon == menuItem.icon && this.enabled == menuItem.enabled && this.iconColor == menuItem.iconColor && this.checked == menuItem.checked;
+            return this.f181id == menuItem.f181id && Intrinsics.areEqual(this.title, menuItem.title) && this.icon == menuItem.icon && this.enabled == menuItem.enabled && this.iconColor == menuItem.iconColor && this.checked == menuItem.checked;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.f179id * 31) + this.title.hashCode()) * 31) + this.icon) * 31;
+        int hashCode = ((((this.f181id * 31) + this.title.hashCode()) * 31) + this.icon) * 31;
         boolean z = this.enabled;
         int i = z;
         if (z != 0) {
@@ -48,12 +48,12 @@ public final class MenuItem {
     }
 
     public String toString() {
-        return "MenuItem(id=" + this.f179id + ", title=" + ((Object) this.title) + ", icon=" + this.icon + ", enabled=" + this.enabled + ", iconColor=" + this.iconColor + ", checked=" + this.checked + ')';
+        return "MenuItem(id=" + this.f181id + ", title=" + ((Object) this.title) + ", icon=" + this.icon + ", enabled=" + this.enabled + ", iconColor=" + this.iconColor + ", checked=" + this.checked + ')';
     }
 
     public MenuItem(int i, CharSequence title, int i2, boolean z, int i3, boolean z2) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f179id = i;
+        this.f181id = i;
         this.title = title;
         this.icon = i2;
         this.enabled = z;
@@ -68,7 +68,7 @@ public final class MenuItem {
     }
 
     public final int getId() {
-        return this.f179id;
+        return this.f181id;
     }
 
     public final CharSequence getTitle() {

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContentPreviewViewer$2;Landroid/view/View;II)V
     .locals 0
 
-    .line 563
+    .line 569
     iput-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2$2;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 566
+    .line 572
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 567
+    .line 573
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$2;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -49,10 +49,10 @@
 
     const/4 v1, 0x0
 
-    .line 568
+    .line 574
     invoke-static {v0, v1}, Lorg/telegram/ui/ContentPreviewViewer;->access$1202(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 569
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$2;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 570
+    .line 576
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$2;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;

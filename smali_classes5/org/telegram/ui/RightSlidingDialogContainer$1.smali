@@ -83,7 +83,7 @@
     .line 130
     iget-object p1, p0, Lorg/telegram/ui/RightSlidingDialogContainer$1;->this$0:Lorg/telegram/ui/RightSlidingDialogContainer;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished()V
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished(Z)V
 
     return-void
 .end method

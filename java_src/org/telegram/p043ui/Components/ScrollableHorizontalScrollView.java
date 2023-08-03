@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -32,13 +33,13 @@ public class ScrollableHorizontalScrollView extends HorizontalScrollView {
         if (getChildCount() <= 0) {
             return false;
         }
-        int m54dp = AndroidUtilities.m54dp(50);
-        if (i < getScrollX() + m54dp) {
-            measuredWidth = i - m54dp;
-        } else if (i2 <= getScrollX() + (getMeasuredWidth() - m54dp)) {
+        int m72dp = AndroidUtilities.m72dp(50);
+        if (i < getScrollX() + m72dp) {
+            measuredWidth = i - m72dp;
+        } else if (i2 <= getScrollX() + (getMeasuredWidth() - m72dp)) {
             return false;
         } else {
-            measuredWidth = (i2 - getMeasuredWidth()) + m54dp;
+            measuredWidth = (i2 - getMeasuredWidth()) + m72dp;
         }
         scrollTo(MathUtils.clamp(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
         return true;
@@ -124,5 +125,13 @@ public class ScrollableHorizontalScrollView extends HorizontalScrollView {
                 emojiTabButton.updateVisibilityInbounds(z2, z);
             }
         }
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
+            motionEvent.getAction();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

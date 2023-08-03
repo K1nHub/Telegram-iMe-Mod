@@ -14,15 +14,15 @@ public class Thread implements Model {
     private List<StackFrame> frames;
 
     /* renamed from: id */
-    private long f461id;
+    private long f464id;
     private String name;
 
     public long getId() {
-        return this.f461id;
+        return this.f464id;
     }
 
     public void setId(long id) {
-        this.f461id = id;
+        this.f464id = id;
     }
 
     public String getName() {
@@ -63,7 +63,7 @@ public class Thread implements Model {
             return false;
         }
         Thread thread = (Thread) o;
-        if (this.f461id != thread.f461id) {
+        if (this.f464id != thread.f464id) {
             return false;
         }
         String str = this.name;
@@ -76,7 +76,7 @@ public class Thread implements Model {
     }
 
     public int hashCode() {
-        long j = this.f461id;
+        long j = this.f464id;
         int i = ((int) (j ^ (j >>> 32))) * 31;
         String str = this.name;
         int hashCode = (i + (str != null ? str.hashCode() : 0)) * 31;

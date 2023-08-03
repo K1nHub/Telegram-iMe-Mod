@@ -35,7 +35,7 @@ public final class KeyedHashFunctions {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: F */
-    public byte[] m62F(byte[] bArr, byte[] bArr2) {
+    public byte[] m80F(byte[] bArr, byte[] bArr2) {
         int length = bArr.length;
         int i = this.digestSize;
         if (length == i) {
@@ -49,7 +49,7 @@ public final class KeyedHashFunctions {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: H */
-    public byte[] m61H(byte[] bArr, byte[] bArr2) {
+    public byte[] m79H(byte[] bArr, byte[] bArr2) {
         int length = bArr.length;
         int i = this.digestSize;
         if (length == i) {

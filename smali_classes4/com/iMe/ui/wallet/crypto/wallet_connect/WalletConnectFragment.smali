@@ -82,7 +82,7 @@
     .line 50
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;"
 
@@ -164,7 +164,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "presenter"
+    const-string/jumbo v4, "presenter"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -502,7 +502,7 @@
 
     move-result-object v3
 
-    const-string v2, "parentActivity"
+    const-string/jumbo v2, "parentActivity"
 
     invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -984,7 +984,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentActivity"
+    const-string/jumbo v1, "parentActivity"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1448,7 +1448,7 @@
 .method public onRequestPermissionsResultFragment(I[Ljava/lang/String;[I)V
     .locals 2
 
-    const-string v0, "permissions"
+    const-string/jumbo v0, "permissions"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1599,7 +1599,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    const-string v2, "parentLayout"
+    const-string/jumbo v2, "parentLayout"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1650,7 +1650,7 @@
 
     invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p3, "parentActivity"
+    const-string/jumbo p3, "parentActivity"
 
     .line 88
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

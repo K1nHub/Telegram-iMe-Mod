@@ -47,7 +47,12 @@ public final class zzbb extends com.google.android.play.core.listener.zzc<AssetP
                 this.zza.zzb("Corrupt bundle received from broadcast.", new Object[0]);
                 return;
             }
-            final AssetPackState zzc = AssetPackState.zzc(bundleExtra, stringArrayList.get(0), this.zzg, this.zzj, zzbd.zza);
+            final AssetPackState zzc = AssetPackState.zzc(bundleExtra, stringArrayList.get(0), this.zzg, this.zzj, new zzbe() { // from class: com.google.android.play.core.assetpacks.zzbd
+                @Override // com.google.android.play.core.assetpacks.zzbe
+                public final int zza(int i, String str) {
+                    return i;
+                }
+            });
             this.zza.zza("ListenerRegistryBroadcastReceiver.onReceive: %s", zzc);
             PendingIntent pendingIntent = (PendingIntent) bundleExtra.getParcelable("confirmation_intent");
             if (pendingIntent != null) {

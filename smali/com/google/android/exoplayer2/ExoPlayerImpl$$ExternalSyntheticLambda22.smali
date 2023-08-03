@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;
+.field public final synthetic f$0:Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;)V
+.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/audio/AudioAttributes;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda22;->f$0:Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda22;->f$0:Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
     return-void
 .end method
@@ -25,11 +25,11 @@
 .method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda22;->f$0:Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda22;->f$0:Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$-WBngl4De8sjkk-X-v8fJ5kqblA(Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;Lcom/google/android/exoplayer2/Player$Listener;)V
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$cBuHNsZypGkQ1KYotO__eto6EPQ(Lcom/google/android/exoplayer2/audio/AudioAttributes;Lcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

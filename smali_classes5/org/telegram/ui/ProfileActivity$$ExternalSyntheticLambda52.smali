@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run(Z)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda52;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$8u7VxtQbwW9jZle70DSj8080C3Y(Lorg/telegram/ui/ProfileActivity;Z)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$m5ThFS9NZm07vr1Z6kw3cJzFeKo(Lorg/telegram/ui/ProfileActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

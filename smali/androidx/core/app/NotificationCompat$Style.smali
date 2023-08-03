@@ -28,12 +28,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 2542
+    .line 2726
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2550
+    .line 2734
     iput-boolean v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryTextSet:Z
 
     return-void
@@ -44,19 +44,19 @@
 .method public addCompatExtras(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 2642
+    .line 2826
     iget-boolean v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryTextSet:Z
 
     if-eqz v0, :cond_0
 
-    .line 2643
+    .line 2827
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryText:Ljava/lang/CharSequence;
 
     const-string v1, "android.summaryText"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2645
+    .line 2829
     :cond_0
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$Style;->mBigContentTitle:Ljava/lang/CharSequence;
 
@@ -64,10 +64,10 @@
 
     const-string v1, "android.title.big"
 
-    .line 2646
+    .line 2830
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2648
+    .line 2832
     :cond_1
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$Style;->getClassName()Ljava/lang/String;
 
@@ -77,7 +77,7 @@
 
     const-string v1, "androidx.core.app.extra.COMPAT_TEMPLATE"
 
-    .line 2650
+    .line 2834
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
@@ -117,17 +117,17 @@
 .method public setBuilder(Landroidx/core/app/NotificationCompat$Builder;)V
     .locals 1
 
-    .line 2556
+    .line 2740
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$Style;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
     if-eq v0, p1, :cond_0
 
-    .line 2557
+    .line 2741
     iput-object p1, p0, Landroidx/core/app/NotificationCompat$Style;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
     if-eqz p1, :cond_0
 
-    .line 2559
+    .line 2743
     invoke-virtual {p1, p0}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_0

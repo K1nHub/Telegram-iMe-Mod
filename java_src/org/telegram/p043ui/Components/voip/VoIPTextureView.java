@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -148,13 +148,13 @@ public class VoIPTextureView extends FrameLayout {
         ImageView imageView2 = new ImageView(getContext());
         this.screencastImage = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.screencastImage.setImageResource(C3417R.C3419drawable.screencast_big);
+        this.screencastImage.setImageResource(C3419R.C3421drawable.screencast_big);
         this.screencastView.addView(this.screencastImage, LayoutHelper.createFrame(82, 82, 17, 0, 0, 0, 60));
         TextView textView = new TextView(getContext());
         this.screencastText = textView;
-        textView.setText(LocaleController.getString("VoipVideoScreenSharing", C3417R.string.VoipVideoScreenSharing));
+        textView.setText(LocaleController.getString("VoipVideoScreenSharing", C3419R.string.VoipVideoScreenSharing));
         this.screencastText.setGravity(17);
-        this.screencastText.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
+        this.screencastText.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
         this.screencastText.setTextColor(-1);
         this.screencastText.setTextSize(1, 15.0f);
         this.screencastText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -210,7 +210,7 @@ public class VoIPTextureView extends FrameLayout {
             float f4 = f3 - f2;
             this.screencastImage.setScaleX(f4);
             this.screencastImage.setScaleY(f4);
-            this.screencastImage.setTranslationY(AndroidUtilities.m54dp(60) * f);
+            this.screencastImage.setTranslationY(AndroidUtilities.m72dp(60) * f);
         }
     }
 

@@ -10,7 +10,7 @@ public final class WalletAirdropMetadata {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: default  reason: not valid java name */
-    private static final WalletAirdropMetadata f1917default = new WalletAirdropMetadata(false, 0, "", AirdropStatus.UNKNOWN, AirdropDisplayStatus.UNKNOWN);
+    private static final WalletAirdropMetadata f1973default = new WalletAirdropMetadata(false, 0, "", AirdropStatus.UNKNOWN, AirdropDisplayStatus.UNKNOWN);
     private final String airdropRequestId;
     private final AirdropStatus airdropStatus;
     private final AirdropDisplayStatus alertStatus;
@@ -116,7 +116,7 @@ public final class WalletAirdropMetadata {
         }
 
         public final WalletAirdropMetadata getDefault() {
-            return WalletAirdropMetadata.f1917default;
+            return WalletAirdropMetadata.f1973default;
         }
     }
 }

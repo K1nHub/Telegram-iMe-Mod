@@ -23,7 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class MediaParserChunkExtractor implements ChunkExtractor {
-    public static final ChunkExtractor.Factory FACTORY = MediaParserChunkExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ChunkExtractor.Factory FACTORY = new ChunkExtractor.Factory() { // from class: com.google.android.exoplayer2.source.chunk.MediaParserChunkExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.source.chunk.ChunkExtractor.Factory
+        public final ChunkExtractor createProgressiveMediaExtractor(int i, Format format, boolean z, List list, TrackOutput trackOutput, PlayerId playerId) {
+            ChunkExtractor lambda$static$0;
+            lambda$static$0 = MediaParserChunkExtractor.lambda$static$0(i, format, z, list, trackOutput, playerId);
+            return lambda$static$0;
+        }
+    };
     private static final String TAG = "MediaPrsrChunkExtractor";
     private final DummyTrackOutput dummyTrackOutput;
     private final InputReaderAdapterV30 inputReaderAdapter;
@@ -39,7 +46,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         if (!MimeTypes.isText(format.containerMimeType)) {
             return new MediaParserChunkExtractor(i, format, list, playerId);
         }
-        Log.m796w(TAG, "Ignoring an unsupported text track.");
+        Log.m814w(TAG, "Ignoring an unsupported text track.");
         return null;
     }
 

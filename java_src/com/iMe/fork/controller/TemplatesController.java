@@ -20,7 +20,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Pair;
@@ -34,14 +33,20 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
@@ -56,6 +61,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Message;
 import org.telegram.tgnet.TLRPC$TL_channels_getMessages;
 import org.telegram.tgnet.TLRPC$TL_error;
+import org.telegram.tgnet.TLRPC$TL_messageEmpty;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_Messages;
 import p033j$.util.concurrent.ConcurrentHashMap;
@@ -96,7 +102,27 @@ public final class TemplatesController extends BaseController implements KoinCom
     public TemplatesController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new TemplatesController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<TemplatesDao>() { // from class: com.iMe.fork.controller.TemplatesController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.data.locale.db.dao.main.TemplatesDao, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final TemplatesDao invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(TemplatesDao.class), qualifier, function0);
+            }
+        });
         this.dao$delegate = lazy;
         this.templatesChannelId = TelegramPreferenceKeys.User.Default.templatesChannelId();
         this.templates = new LinkedHashMap();
@@ -134,8 +160,8 @@ public final class TemplatesController extends BaseController implements KoinCom
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TemplatesDb templatesDb : allTemplatesForUser) {
-            Pair m85to = TuplesKt.m85to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.templates = mutableMap;
@@ -150,7 +176,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                 this.templates.clear();
                 TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
                 tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(this.templatesChannelId);
-                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1557id;
+                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1562id;
                 List<TemplateModel> templates = backup.getTemplates();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(templates, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
@@ -184,19 +210,29 @@ public final class TemplatesController extends BaseController implements KoinCom
             ArrayList<TLRPC$User> arrayList2 = tLRPC$messages_Messages.users;
             Intrinsics.checkNotNullExpressionValue(arrayList2, "response.users");
             for (TLRPC$User tLRPC$User : arrayList2) {
-                longSparseArray.put(tLRPC$User.f1656id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1675id, tLRPC$User);
             }
             LongSparseArray longSparseArray2 = new LongSparseArray();
             ArrayList<TLRPC$Chat> arrayList3 = tLRPC$messages_Messages.chats;
             Intrinsics.checkNotNullExpressionValue(arrayList3, "response.chats");
             for (TLRPC$Chat tLRPC$Chat : arrayList3) {
-                longSparseArray2.put(tLRPC$Chat.f1515id, tLRPC$Chat);
+                longSparseArray2.put(tLRPC$Chat.f1518id, tLRPC$Chat);
             }
             ArrayList<TLRPC$Message> arrayList4 = tLRPC$messages_Messages.messages;
             Intrinsics.checkNotNullExpressionValue(arrayList4, "response.messages");
             asSequence = CollectionsKt___CollectionsKt.asSequence(arrayList4);
-            filterNot = SequencesKt___SequencesKt.filterNot(asSequence, TemplatesController$restoreBackup$1$3.INSTANCE);
-            map = SequencesKt___SequencesKt.map(filterNot, TemplatesController$restoreBackup$1$4.INSTANCE);
+            filterNot = SequencesKt___SequencesKt.filterNot(asSequence, new Function1<TLRPC$Message, Boolean>() { // from class: com.iMe.fork.controller.TemplatesController$restoreBackup$1$3
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(TLRPC$Message tLRPC$Message) {
+                    return Boolean.valueOf(tLRPC$Message instanceof TLRPC$TL_messageEmpty);
+                }
+            });
+            map = SequencesKt___SequencesKt.map(filterNot, new Function1<TLRPC$Message, Integer>() { // from class: com.iMe.fork.controller.TemplatesController$restoreBackup$1$4
+                @Override // kotlin.jvm.functions.Function1
+                public final Integer invoke(TLRPC$Message tLRPC$Message) {
+                    return Integer.valueOf(tLRPC$Message.f1542id);
+                }
+            });
             CollectionsKt__MutableCollectionsKt.addAll(arrayList, map);
         }
         List<TemplateModel> templates = backup.getTemplates();
@@ -210,7 +246,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList5, 10);
         ArrayList arrayList6 = new ArrayList(collectionSizeOrDefault);
         for (TemplateModel templateModel : arrayList5) {
-            arrayList6.add(TuplesKt.m85to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList6.add(TuplesKt.m103to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map2, arrayList6);
         this$0.getDao().restoreBackup(this$0.getUserConfig().clientUserId, arrayList5);
@@ -225,7 +261,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void restoreBackup$lambda$8$lambda$7(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     public final boolean checkValidTemplatesChat(long j) {
@@ -356,7 +392,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void markAsSent$lambda$16(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -377,7 +413,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void convertToTemplate$lambda$21(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     public final void renameTemplate(List<Integer> messageIds, String newName) {
@@ -426,7 +462,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void renameTemplate$lambda$25(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     public final void incrementUsageRating(List<? extends MessageObject> messages) {
@@ -473,7 +509,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void incrementUsageRating$lambda$29(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     public final void clearAllTemplates() {
@@ -501,7 +537,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void clearAllTemplates$lambda$31(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -514,7 +550,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void removeTemplates$lambda$34(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
+        this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     public final List<Integer> getTemplateMessageIds(int i) {
@@ -570,14 +606,26 @@ public final class TemplatesController extends BaseController implements KoinCom
             return (TemplatesController) tmp0.invoke(obj);
         }
 
-        public final TemplatesController getInstance(int i) {
+        public final TemplatesController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = TemplatesController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final TemplatesController$Companion$getInstance$1 templatesController$Companion$getInstance$1 = new TemplatesController$Companion$getInstance$1(i);
+            final Function1<Integer, TemplatesController> function1 = new Function1<Integer, TemplatesController>() { // from class: com.iMe.fork.controller.TemplatesController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final TemplatesController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new TemplatesController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.TemplatesController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -589,7 +637,7 @@ public final class TemplatesController extends BaseController implements KoinCom
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
@@ -611,7 +659,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList, 10);
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
         for (TemplateModel templateModel : arrayList) {
-            arrayList2.add(TuplesKt.m85to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList2.add(TuplesKt.m103to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map, arrayList2);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.TemplatesController$$ExternalSyntheticLambda11

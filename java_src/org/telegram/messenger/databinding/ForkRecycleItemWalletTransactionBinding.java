@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
 import com.iMe.p031ui.custom.TimeWithClockView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletTransactionBinding implements ViewBinding {
     private final LinearLayout rootView;
@@ -31,7 +31,7 @@ public final class ForkRecycleItemWalletTransactionBinding implements ViewBindin
     }
 
     public static ForkRecycleItemWalletTransactionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_transaction, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_transaction, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,32 +39,32 @@ public final class ForkRecycleItemWalletTransactionBinding implements ViewBindin
     }
 
     public static ForkRecycleItemWalletTransactionBinding bind(View view) {
-        int i = C3417R.C3420id.barrier_amount_end;
+        int i = C3419R.C3422id.barrier_amount_end;
         Barrier barrier = (Barrier) ViewBindings.findChildViewById(view, i);
         if (barrier != null) {
-            i = C3417R.C3420id.constraint_layout_transaction_root;
+            i = C3419R.C3422id.constraint_layout_transaction_root;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
-                i = C3417R.C3420id.image_staking_icon;
+                i = C3419R.C3422id.image_staking_icon;
                 AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView != null) {
-                    i = C3417R.C3420id.image_transaction_type_icon;
+                    i = C3419R.C3422id.image_transaction_type_icon;
                     AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView2 != null) {
                         LinearLayout linearLayout = (LinearLayout) view;
-                        i = C3417R.C3420id.text_amount;
+                        i = C3419R.C3422id.text_amount;
                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView != null) {
-                            i = C3417R.C3420id.text_date;
+                            i = C3419R.C3422id.text_date;
                             TimeWithClockView timeWithClockView = (TimeWithClockView) ViewBindings.findChildViewById(view, i);
                             if (timeWithClockView != null) {
-                                i = C3417R.C3420id.text_status;
+                                i = C3419R.C3422id.text_status;
                                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView2 != null) {
-                                    i = C3417R.C3420id.text_transaction_type_title;
+                                    i = C3419R.C3422id.text_transaction_type_title;
                                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView3 != null) {
-                                        i = C3417R.C3420id.view_divider;
+                                        i = C3419R.C3422id.view_divider;
                                         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                                         if (dividerView != null) {
                                             return new ForkRecycleItemWalletTransactionBinding(linearLayout, barrier, constraintLayout, appCompatImageView, appCompatImageView2, linearLayout, appCompatTextView, timeWithClockView, appCompatTextView2, appCompatTextView3, dividerView);

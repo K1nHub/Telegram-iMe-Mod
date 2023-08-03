@@ -180,7 +180,7 @@
 .end method
 
 .method private sendMessage(Lorg/telegram/messenger/AccountInstance;Ljava/lang/CharSequence;JII)V
-    .locals 24
+    .locals 23
 
     move/from16 v7, p5
 
@@ -233,7 +233,7 @@
 
     invoke-direct {v1, v2, v0, v5, v5}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    move-object v12, v1
+    move-object v11, v1
 
     goto :goto_0
 
@@ -242,31 +242,33 @@
 
     const/4 v0, 0x0
 
-    move-object v12, v0
+    move-object v11, v0
 
     .line 82
     :goto_0
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/AccountInstance;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v8
+    move-result-object v0
 
     invoke-interface/range {p2 .. p2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
+
+    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
+    const/4 v14, 0x1
 
-    const/4 v15, 0x1
+    const/4 v15, 0x0
 
     const/16 v16, 0x0
 
     const/16 v17, 0x0
 
-    const/16 v18, 0x0
+    const/16 v18, 0x1
 
-    const/16 v19, 0x1
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
@@ -274,11 +276,13 @@
 
     const/16 v22, 0x0
 
-    const/16 v23, 0x0
+    move-wide/from16 v9, p3
 
-    move-wide/from16 v10, p3
+    invoke-static/range {v8 .. v22}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    invoke-virtual/range {v8 .. v23}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     if-nez v7, :cond_1
 

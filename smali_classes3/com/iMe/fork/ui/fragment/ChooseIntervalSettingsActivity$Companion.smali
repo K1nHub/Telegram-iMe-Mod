@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 284
+    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,23 +37,10 @@
 .method public final newInstanceForAutoBackupSettings()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
     .locals 2
 
-    .line 286
+    .line 272
     new-instance v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;->AUTO_BACKUP:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
-
-    invoke-direct {v0, v1}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;)V
-
-    return-object v0
-.end method
-
-.method public final newInstanceForAutoUpdateTopicsCatalogSettings()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
-    .locals 2
-
-    .line 289
-    new-instance v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
-
-    sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;->AUTO_UPDATE_TOPICS_CATALOG:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     invoke-direct {v0, v1}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;)V
 

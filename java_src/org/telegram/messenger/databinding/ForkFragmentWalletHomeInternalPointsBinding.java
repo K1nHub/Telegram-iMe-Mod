@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.SlopSwipeRefreshLayout;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletHomeInternalPointsBinding implements ViewBinding {
     private final SlopSwipeRefreshLayout rootView;
@@ -26,7 +26,7 @@ public final class ForkFragmentWalletHomeInternalPointsBinding implements ViewBi
     }
 
     public static ForkFragmentWalletHomeInternalPointsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_home_internal_points, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_home_internal_points, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -34,7 +34,7 @@ public final class ForkFragmentWalletHomeInternalPointsBinding implements ViewBi
     }
 
     public static ForkFragmentWalletHomeInternalPointsBinding bind(View view) {
-        int i = C3417R.C3420id.recycle_wallet_home_services_dashboard;
+        int i = C3419R.C3422id.recycle_wallet_home_services_dashboard;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletHomeInternalPointsBinding((SlopSwipeRefreshLayout) view, recyclerView);

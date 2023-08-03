@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -102,11 +102,11 @@ public class AvatarConstructorPreviewCell extends FrameLayout {
                     TLRPC$StickerSetCovered tLRPC$StickerSetCovered = featuredEmojiSets.get(i2);
                     TLRPC$Document tLRPC$Document = tLRPC$StickerSetCovered.cover;
                     if (tLRPC$Document != null) {
-                        this.emojiList.document_id.add(Long.valueOf(tLRPC$Document.f1523id));
+                        this.emojiList.document_id.add(Long.valueOf(tLRPC$Document.f1526id));
                     } else if (tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetFullCovered) {
                         TLRPC$TL_stickerSetFullCovered tLRPC$TL_stickerSetFullCovered = (TLRPC$TL_stickerSetFullCovered) tLRPC$StickerSetCovered;
                         if (!tLRPC$TL_stickerSetFullCovered.documents.isEmpty()) {
-                            this.emojiList.document_id.add(Long.valueOf(tLRPC$TL_stickerSetFullCovered.documents.get(0).f1523id));
+                            this.emojiList.document_id.add(Long.valueOf(tLRPC$TL_stickerSetFullCovered.documents.get(0).f1526id));
                         }
                     }
                 }
@@ -114,7 +114,7 @@ public class AvatarConstructorPreviewCell extends FrameLayout {
                 for (int i3 = 0; i3 < stickerSets.size(); i3++) {
                     TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet = stickerSets.get(i3);
                     if (!tLRPC$TL_messages_stickerSet.documents.isEmpty()) {
-                        this.emojiList.document_id.add(Long.valueOf(tLRPC$TL_messages_stickerSet.documents.get(Math.abs(Utilities.fastRandom.nextInt() % tLRPC$TL_messages_stickerSet.documents.size())).f1523id));
+                        this.emojiList.document_id.add(Long.valueOf(tLRPC$TL_messages_stickerSet.documents.get(Math.abs(Utilities.fastRandom.nextInt() % tLRPC$TL_messages_stickerSet.documents.size())).f1526id));
                     }
                 }
             }
@@ -144,7 +144,7 @@ public class AvatarConstructorPreviewCell extends FrameLayout {
         this.textView.setTextColor(Theme.getColor(Theme.key_avatar_text));
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setGravity(17);
-        this.textView.setText(LocaleController.getString("UseEmoji", C3417R.string.UseEmoji));
+        this.textView.setText(LocaleController.getString("UseEmoji", C3419R.string.UseEmoji));
         addView(this.textView, LayoutHelper.createFrame(-1, 28, 80, 10, 10, 10, 10));
     }
 

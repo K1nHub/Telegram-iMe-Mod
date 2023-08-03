@@ -23,18 +23,29 @@ import java.util.TreeSet;
 /* loaded from: classes.dex */
 public class ApiFeatureRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ApiFeatureRequest> CREATOR = new zac();
-    private static final Comparator zaa = zab.zaa;
-    @SafeParcelable.Field(getter = "getApiFeatures", m779id = 1)
+    private static final Comparator zaa = new Comparator() { // from class: com.google.android.gms.common.moduleinstall.internal.zab
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            Feature feature = (Feature) obj;
+            Feature feature2 = (Feature) obj2;
+            Parcelable.Creator<ApiFeatureRequest> creator = ApiFeatureRequest.CREATOR;
+            if (!feature.getName().equals(feature2.getName())) {
+                return feature.getName().compareTo(feature2.getName());
+            }
+            return (feature.getVersion() > feature2.getVersion() ? 1 : (feature.getVersion() == feature2.getVersion() ? 0 : -1));
+        }
+    };
+    @SafeParcelable.Field(getter = "getApiFeatures", m797id = 1)
     private final List zab;
-    @SafeParcelable.Field(getter = "getIsUrgent", m779id = 2)
+    @SafeParcelable.Field(getter = "getIsUrgent", m797id = 2)
     private final boolean zac;
-    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m779id = 3)
+    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m797id = 3)
     private final String zad;
-    @SafeParcelable.Field(getter = "getCallingPackage", m779id = 4)
+    @SafeParcelable.Field(getter = "getCallingPackage", m797id = 4)
     private final String zae;
 
     @SafeParcelable.Constructor
-    public ApiFeatureRequest(@SafeParcelable.Param(m778id = 1) List list, @SafeParcelable.Param(m778id = 2) boolean z, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2) {
+    public ApiFeatureRequest(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) boolean z, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2) {
         Preconditions.checkNotNull(list);
         this.zab = list;
         this.zac = z;

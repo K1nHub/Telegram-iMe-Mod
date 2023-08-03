@@ -89,7 +89,7 @@
     :cond_0
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "one of the input parameters is null in AESDecryptor Constructor"
+    const-string/jumbo p2, "one of the input parameters is null in AESDecryptor Constructor"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

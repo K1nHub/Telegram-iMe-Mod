@@ -22,7 +22,7 @@
 .method public getPolicyName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "pick_first"
+    const-string/jumbo v0, "pick_first"
 
     return-object v0
 .end method

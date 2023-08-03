@@ -442,7 +442,7 @@
 
     move-result-object v0
 
-    const-string v1, "publisher\n              \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "publisher\n              \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -527,7 +527,7 @@
 
     move-result-object v0
 
-    const-string v1, "private fun loadAccountL\u2026     .autoDispose()\n    }"
+    const-string/jumbo v1, "private fun loadAccountL\u2026     .autoDispose()\n    }"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -609,7 +609,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "p0"
+    const-string/jumbo v0, "p0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

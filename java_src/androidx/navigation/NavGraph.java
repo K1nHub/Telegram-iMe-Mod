@@ -12,6 +12,7 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
@@ -295,7 +296,17 @@ public class NavGraph extends NavDestination implements Iterable<NavDestination>
         public final NavDestination findStartDestination(NavGraph navGraph) {
             Sequence generateSequence;
             Intrinsics.checkNotNullParameter(navGraph, "<this>");
-            generateSequence = SequencesKt__SequencesKt.generateSequence(navGraph.findNode(navGraph.getStartDestinationId()), NavGraph$Companion$findStartDestination$1.INSTANCE);
+            generateSequence = SequencesKt__SequencesKt.generateSequence(navGraph.findNode(navGraph.getStartDestinationId()), new Function1<NavDestination, NavDestination>() { // from class: androidx.navigation.NavGraph$Companion$findStartDestination$1
+                @Override // kotlin.jvm.functions.Function1
+                public final NavDestination invoke(NavDestination it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    if (it instanceof NavGraph) {
+                        NavGraph navGraph2 = (NavGraph) it;
+                        return navGraph2.findNode(navGraph2.getStartDestinationId());
+                    }
+                    return null;
+                }
+            });
             return (NavDestination) SequencesKt.last(generateSequence);
         }
     }

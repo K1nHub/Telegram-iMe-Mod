@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n216#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
+    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,58:1\n1855#2,2:59\n216#3,4:61\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n24#1:59,2\n31#1:61,4\n*E\n"
 .end annotation
 
 
@@ -35,37 +35,31 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 18
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
-.method private final createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Landroid/widget/ImageView;
+.method private final createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Lorg/telegram/ui/Components/RLottieImageView;
     .locals 2
 
-    .line 47
-    new-instance v0, Landroid/widget/ImageView;
+    .line 48
+    new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    .line 48
+    .line 49
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    const/4 v1, 0x0
-
-    .line 49
-    invoke-static {p1, v1}, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt;->iconResId(Lcom/iMe/storage/domain/model/filters/FilterFab;Z)I
-
-    move-result p1
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+    .line 50
+    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt;->bindMini(Lcom/iMe/storage/domain/model/filters/FilterFab;Lorg/telegram/ui/Components/RLottieImageView;)V
 
     return-object v0
 .end method
@@ -88,8 +82,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 23
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->removeAllViews()V
+
+    .line 24
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->reversed(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p1
 
     .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -109,15 +108,15 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 24
+    .line 25
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result v1
 
     mul-int/lit8 v7, v1, 0x18
 
-    .line 25
-    invoke-direct {p0, v0}, Lcom/iMe/fork/ui/view/FabsView;->createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Landroid/widget/ImageView;
+    .line 26
+    invoke-direct {p0, v0}, Lcom/iMe/fork/ui/view/FabsView;->createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
 
@@ -169,12 +168,12 @@
 
     const-string v3, "null cannot be cast to non-null type android.widget.ImageView"
 
-    .line 31
+    .line 32
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 32
+    .line 33
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
@@ -189,17 +188,17 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 33
+    .line 34
     new-instance v3, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v3}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     const/4 v4, 0x1
 
-    .line 34
+    .line 35
     invoke-virtual {v3, v4}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
-    .line 35
+    .line 36
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -212,7 +211,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    .line 36
+    .line 37
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -223,7 +222,7 @@
 
     const/16 v4, 0x24
 
-    .line 37
+    .line 38
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -234,7 +233,7 @@
 
     invoke-virtual {v3, v5, v4}, Landroid/graphics/drawable/GradientDrawable;->setSize(II)V
 
-    .line 33
+    .line 34
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     add-int/lit8 v1, v1, 0x1

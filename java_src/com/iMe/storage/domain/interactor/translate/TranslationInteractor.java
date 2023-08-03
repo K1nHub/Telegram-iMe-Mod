@@ -24,13 +24,13 @@ public final class TranslationInteractor {
     public final Observable<Result<Translation>> translate(String text, String targetLanguage, String str) {
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(targetLanguage, "targetLanguage");
-        Observable<Result<Translation>> subscribeOn = this.translationRepository.translate(text, str, targetLanguage).startWith((Observable<Result<Translation>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Translation>> subscribeOn = this.translationRepository.translate(text, str, targetLanguage).startWith((Observable<Result<Translation>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "translationRepository\n  …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<List<TranslationLanguage>>> languages() {
-        Observable<Result<List<TranslationLanguage>>> subscribeOn = this.translationRepository.languages().startWith((Observable<Result<List<TranslationLanguage>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<List<TranslationLanguage>>> subscribeOn = this.translationRepository.languages().startWith((Observable<Result<List<TranslationLanguage>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "translationRepository\n  …(schedulersProvider.io())");
         return subscribeOn;
     }

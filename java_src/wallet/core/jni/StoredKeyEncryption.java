@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum StoredKeyEncryption {
     AES128CTR(0),
     AES128CBC(1),

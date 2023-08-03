@@ -283,3 +283,6 @@
 
 .method public abstract setWakeMode(I)V
 .end method
+
+.method public abstract setWorkerQueue(Lorg/telegram/messenger/DispatchQueue;)V
+.end method

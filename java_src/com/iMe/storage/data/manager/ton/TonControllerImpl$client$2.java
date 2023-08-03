@@ -20,6 +20,11 @@ final class TonControllerImpl$client$2 extends Lambda implements Function0<Clien
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Client invoke() {
-        return Client.create(TonControllerImpl$client$2$$ExternalSyntheticLambda0.INSTANCE, null, null);
+        return Client.create(new Client.ResultHandler() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$client$2$$ExternalSyntheticLambda0
+            @Override // drinkless.org.ton.Client.ResultHandler
+            public final void onResult(TonApi.Object object) {
+                TonControllerImpl$client$2.invoke$lambda$0(object);
+            }
+        }, null, null);
     }
 }

@@ -27,12 +27,27 @@ public final class TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2 exten
     }
 
     @Override // kotlin.jvm.functions.Function1
-    public final ObservableSource<? extends Pair<Result<Boolean>, FoundTokenItem>> invoke(FoundTokenItem foundTokenItem) {
+    public final ObservableSource<? extends Pair<Result<Boolean>, FoundTokenItem>> invoke(final FoundTokenItem foundTokenItem) {
         WalletInteractor walletInteractor;
         Intrinsics.checkNotNullParameter(foundTokenItem, "foundTokenItem");
         walletInteractor = this.this$0.walletInteractor;
         Observable<Result<Boolean>> tokenVisibility = walletInteractor.setTokenVisibility(FoundTokenUiMappingKt.mapToIndexedToken(foundTokenItem), !foundTokenItem.isEnabled());
-        final C23571 c23571 = new C23571(foundTokenItem);
+        final Function1<Result<? extends Boolean>, Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem>> function1 = new Function1<Result<? extends Boolean>, Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2.1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> invoke(Result<? extends Boolean> result) {
+                return invoke2((Result<Boolean>) result);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Pair<Result<Boolean>, FoundTokenItem> invoke2(Result<Boolean> it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return TuplesKt.m103to(it, FoundTokenItem.this);
+            }
+        };
         return tokenVisibility.map(new Function() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -41,31 +56,6 @@ public final class TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2 exten
                 return invoke$lambda$0;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: TokenFamilyPresenter.kt */
-    /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2$1 */
-    /* loaded from: classes4.dex */
-    public static final class C23571 extends Lambda implements Function1<Result<? extends Boolean>, Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem>> {
-        final /* synthetic */ FoundTokenItem $foundTokenItem;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23571(FoundTokenItem foundTokenItem) {
-            super(1);
-            this.$foundTokenItem = foundTokenItem;
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> invoke(Result<? extends Boolean> result) {
-            return invoke2((Result<Boolean>) result);
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final Pair<Result<Boolean>, FoundTokenItem> invoke2(Result<Boolean> it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return TuplesKt.m85to(it, this.$foundTokenItem);
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

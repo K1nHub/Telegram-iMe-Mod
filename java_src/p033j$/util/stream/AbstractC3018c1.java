@@ -10,7 +10,7 @@ public abstract class AbstractC3018c1 extends AbstractC3024d1 {
 
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: G0 */
-    final boolean mo424G0() {
+    final boolean mo442G0() {
         return false;
     }
 

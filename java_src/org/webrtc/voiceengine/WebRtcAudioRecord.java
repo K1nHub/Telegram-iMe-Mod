@@ -161,7 +161,7 @@ public class WebRtcAudioRecord {
                             WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.this;
                             webRtcAudioRecord.nativeDataIsRecorded(read, webRtcAudioRecord.nativeAudioRecord);
                         } catch (UnsatisfiedLinkError e) {
-                            FileLog.m49e(e);
+                            FileLog.m67e(e);
                             this.keepAlive = false;
                         }
                     }
@@ -355,7 +355,7 @@ public class WebRtcAudioRecord {
         try {
             audioRecord.stop();
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
         releaseAudioResources(true);
     }
@@ -398,7 +398,7 @@ public class WebRtcAudioRecord {
         try {
             this.audioRecord.stop();
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
         releaseAudioResources(false);
         return true;

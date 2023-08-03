@@ -19,6 +19,7 @@ import com.iMe.p031ui.catalog.tabs.all.adapter.diff.CategoriesPreviewsDiffCallba
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
 import com.iMe.p031ui.custom.state.GlobalStateView;
 import com.iMe.storage.domain.model.catalog.ChatType;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -26,7 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -34,6 +38,12 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentCatalogAllBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -59,16 +69,92 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
         LoadMoreView.CC.$default$resetLoadMore(this);
     }
 
-    public CatalogAllFragment(ChatType chatType) {
+    public CatalogAllFragment(final ChatType chatType) {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(chatType, "chatType");
-        CatalogAllFragment$presenter$2 catalogAllFragment$presenter$2 = new CatalogAllFragment$presenter$2(this, chatType);
+        Function0<CatalogAllPresenter> function0 = new Function0<CatalogAllPresenter>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogAllPresenter invoke() {
+                Lazy lazy2;
+                final CatalogAllFragment catalogAllFragment = CatalogAllFragment.this;
+                final ChatType chatType2 = chatType;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(ChatType.this);
+                    }
+                };
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CatalogAllPresenter>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.catalog.tabs.all.CatalogAllPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CatalogAllPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogAllPresenter.class), qualifier, function03);
+                    }
+                });
+                return (CatalogAllPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogAllPresenter.class.getName() + ".presenter", catalogAllFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CatalogAllFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogAllPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CatalogAllCategoriesRecycleAdapter>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.catalog.tabs.all.adapter.CatalogAllCategoriesRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogAllCategoriesRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogAllCategoriesRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.categoriesRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CatalogAllFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentCatalogAllBinding>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentCatalogAllBinding invoke() {
+                return ForkFragmentCatalogAllBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CatalogAllFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -227,7 +313,24 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
     }
 
     private final void setupLoadMore(CatalogAllCategoriesRecycleAdapter catalogAllCategoriesRecycleAdapter) {
-        catalogAllCategoriesRecycleAdapter.getCategoryWithCampaignsProvider().setOnLoadMoreChannels(new CatalogAllFragment$setupLoadMore$1$1(this));
+        catalogAllCategoriesRecycleAdapter.getCategoryWithCampaignsProvider().setOnLoadMoreChannels(new Function1<Long, Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$setupLoadMore$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
+                invoke(l.longValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(long j) {
+                CatalogAllPresenter presenter;
+                presenter = CatalogAllFragment.this.getPresenter();
+                presenter.onChannelLoadMore(j);
+            }
+        });
         BaseLoadMoreModule loadMoreModule = catalogAllCategoriesRecycleAdapter.getLoadMoreModule();
         loadMoreModule.setPreLoadNumber(5);
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$$ExternalSyntheticLambda1
@@ -249,9 +352,46 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
     }
 
     private final void setupListeners() {
-        getCategoriesRecycleAdapter().getCategoryWithCampaignsProvider().setOnChannelItemClick(new CatalogAllFragment$setupListeners$1$1(this));
+        getCategoriesRecycleAdapter().getCategoryWithCampaignsProvider().setOnChannelItemClick(new Function1<CampaignItem, Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(CampaignItem campaignItem) {
+                invoke2(campaignItem);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(CampaignItem it) {
+                CatalogAllPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = CatalogAllFragment.this.getPresenter();
+                presenter.onChannelClick(it);
+            }
+        });
         ForkFragmentCatalogAllBinding binding = getBinding();
-        binding.globalStateLayout.setRetryButtonClickListener(new CatalogAllFragment$setupListeners$2$1(this));
+        binding.globalStateLayout.setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$setupListeners$2$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                CatalogAllPresenter presenter;
+                presenter = CatalogAllFragment.this.getPresenter();
+                presenter.loadCategoriesPreviews();
+            }
+        });
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {

@@ -3,6 +3,7 @@ package com.google.android.play.core.assetpacks;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import com.google.android.play.core.tasks.Task;
@@ -35,7 +36,12 @@ public final class zzaw implements zzy {
             Context zza2 = com.google.android.play.core.internal.zzce.zza(context);
             com.google.android.play.core.internal.zzag zzagVar = zza;
             Intent intent = zzb;
-            zzz zzzVar = zzz.zza;
+            zzz zzzVar = new com.google.android.play.core.internal.zzan() { // from class: com.google.android.play.core.assetpacks.zzz
+                @Override // com.google.android.play.core.internal.zzan
+                public final Object zza(IBinder iBinder) {
+                    return com.google.android.play.core.internal.zzt.zzb(iBinder);
+                }
+            };
             this.zzf = new com.google.android.play.core.internal.zzas<>(zza2, zzagVar, "AssetPackService", intent, zzzVar, null);
             this.zzg = new com.google.android.play.core.internal.zzas<>(com.google.android.play.core.internal.zzce.zza(context), zzagVar, "AssetPackService-keepAlive", intent, zzzVar, null);
         }

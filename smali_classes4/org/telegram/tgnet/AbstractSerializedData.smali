@@ -24,6 +24,9 @@
 .method public abstract readBool(Z)Z
 .end method
 
+.method public abstract readByte(Z)B
+.end method
+
 .method public abstract readByteArray(Z)[B
 .end method
 
@@ -37,6 +40,9 @@
 .end method
 
 .method public abstract readDouble(Z)D
+.end method
+
+.method public abstract readFloat(Z)F
 .end method
 
 .method public abstract readInt32(Z)I
@@ -79,6 +85,9 @@
 .end method
 
 .method public abstract writeDouble(D)V
+.end method
+
+.method public abstract writeFloat(F)V
 .end method
 
 .method public abstract writeInt32(I)V

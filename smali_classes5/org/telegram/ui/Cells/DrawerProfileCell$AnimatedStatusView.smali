@@ -44,23 +44,23 @@
 .method public constructor <init>(Landroid/content/Context;II)V
     .locals 0
 
-    .line 426
+    .line 458
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 424
+    .line 456
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
-    .line 427
+    .line 459
     iput p2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->stateSize:I
 
-    .line 428
+    .line 460
     iput p3, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->effectsSize:I
 
-    .line 429
+    .line 461
     iput p3, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->renderedEffectsSize:I
 
     return-void
@@ -69,7 +69,7 @@
 .method private detach()V
     .locals 3
 
-    .line 499
+    .line 531
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -78,7 +78,7 @@
 
     if-nez v0, :cond_2
 
-    .line 500
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -97,32 +97,32 @@
 
     move-result-object v1
 
-    .line 501
+    .line 533
     instance-of v2, v1, Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v2, :cond_1
 
-    .line 502
+    .line 534
     check-cast v1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
     goto :goto_0
 
-    .line 503
+    .line 535
     :cond_1
     instance-of v2, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     if-eqz v2, :cond_0
 
-    .line 504
+    .line 536
     check-cast v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     invoke-virtual {v1, p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->removeView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 508
+    .line 540
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
@@ -138,12 +138,12 @@
 
     if-nez p1, :cond_0
 
-    .line 513
+    .line 545
     invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->detach()V
 
     return-void
 
-    .line 519
+    .line 551
     :cond_0
     iget-object v0, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
@@ -151,7 +151,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 520
+    .line 552
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -178,7 +178,7 @@
     :goto_0
     if-nez v0, :cond_3
 
-    .line 523
+    .line 555
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iget-wide v3, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
@@ -189,14 +189,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 525
+    .line 557
     invoke-static {v2, v1}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    .line 527
+    .line 559
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -230,15 +230,15 @@
 
     if-eqz v8, :cond_4
 
-    .line 532
+    .line 564
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
-    .line 533
+    .line 565
     invoke-virtual {p1, p0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 534
+    .line 566
     iget v1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animationUniq:I
 
     add-int/lit8 v2, v1, 0x1
@@ -251,7 +251,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/ImageReceiver;->setUniqKeyPrefix(Ljava/lang/String;)V
 
-    .line 535
+    .line 567
     iget-object v1, v8, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->around_animation:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -292,18 +292,18 @@
 
     invoke-virtual/range {v3 .. v9}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 536
+    .line 568
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAutoRepeat(I)V
 
-    .line 537
+    .line 569
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 538
+    .line 570
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 539
+    .line 571
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_3
@@ -313,7 +313,7 @@
 
     if-nez v1, :cond_5
 
-    .line 543
+    .line 575
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iget-wide v3, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
@@ -324,7 +324,7 @@
 
     goto :goto_2
 
-    .line 545
+    .line 577
     :cond_5
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -332,13 +332,13 @@
 
     move-result-object p1
 
-    .line 547
+    .line 579
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->color:Ljava/lang/Integer;
 
     if-eqz v1, :cond_6
 
-    .line 548
+    .line 580
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->color:Ljava/lang/Integer;
@@ -353,7 +353,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 550
+    .line 582
     :cond_6
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->canOverrideColor()Z
 
@@ -365,15 +365,15 @@
 
     move-result-object p1
 
-    .line 551
+    .line 583
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->setView(Landroid/view/View;)V
 
-    .line 552
+    .line 584
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 553
+    .line 585
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :goto_3
@@ -383,14 +383,14 @@
 .method public dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 458
+    .line 490
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->renderedEffectsSize:I
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 459
+    .line 491
     iget v1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->effectsSize:I
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -399,7 +399,7 @@
 
     const/4 v2, 0x0
 
-    .line 460
+    .line 492
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
@@ -409,24 +409,24 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 461
+    .line 493
     iget-object v3, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 462
+    .line 494
     instance-of v4, v3, Lorg/telegram/messenger/ImageReceiver;
 
     const/high16 v5, 0x40000000    # 2.0f
 
     if-eqz v4, :cond_0
 
-    .line 463
+    .line 495
     check-cast v3, Lorg/telegram/messenger/ImageReceiver;
 
-    .line 465
+    .line 497
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -437,7 +437,7 @@
 
     div-float/2addr v4, v5
 
-    .line 466
+    .line 498
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
@@ -450,24 +450,24 @@
 
     int-to-float v5, v1
 
-    .line 464
+    .line 496
     invoke-virtual {v3, v4, v6, v5, v5}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 470
+    .line 502
     invoke-virtual {v3, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     goto :goto_1
 
-    .line 475
+    .line 507
     :cond_0
     instance-of v4, v3, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     if-eqz v4, :cond_1
 
-    .line 476
+    .line 508
     check-cast v3, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
-    .line 478
+    .line 510
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -480,7 +480,7 @@
 
     float-to-int v4, v4
 
-    .line 479
+    .line 511
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
@@ -493,7 +493,7 @@
 
     float-to-int v6, v6
 
-    .line 480
+    .line 512
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
@@ -506,7 +506,7 @@
 
     float-to-int v7, v7
 
-    .line 481
+    .line 513
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v8
@@ -519,23 +519,23 @@
 
     float-to-int v5, v8
 
-    .line 477
+    .line 509
     invoke-virtual {v3, v4, v6, v7, v5}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->setBounds(IIII)V
 
-    .line 483
+    .line 515
     invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->draw(Landroid/graphics/Canvas;)V
 
-    .line 484
+    .line 516
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->done()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 485
+    .line 517
     invoke-virtual {v3, p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->removeView(Landroid/view/View;)V
 
-    .line 486
+    .line 518
     iget-object v4, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -553,10 +553,10 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 494
+    .line 526
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 495
+    .line 527
     invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->detach()V
 
     return-void
@@ -565,14 +565,14 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 440
+    .line 472
     iget p1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->renderedEffectsSize:I
 
     iget p2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->stateSize:I
 
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->effectsSize:I
 
-    .line 441
+    .line 473
     invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
@@ -597,7 +597,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->effectsSize:I
 
-    .line 442
+    .line 474
     invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
@@ -614,7 +614,7 @@
 
     move-result p2
 
-    .line 440
+    .line 472
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void
@@ -623,21 +623,21 @@
 .method public setColor(I)V
     .locals 4
 
-    .line 559
+    .line 591
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->color:Ljava/lang/Integer;
 
-    .line 560
+    .line 592
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
     invoke-direct {v0, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 561
+    .line 593
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -646,7 +646,7 @@
 
     const/4 p1, 0x0
 
-    .line 562
+    .line 594
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
@@ -656,32 +656,32 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 563
+    .line 595
     iget-object v2, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animations:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 564
+    .line 596
     instance-of v3, v2, Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v3, :cond_0
 
-    .line 565
+    .line 597
     check-cast v2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v2, v0}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     goto :goto_1
 
-    .line 566
+    .line 598
     :cond_0
     instance-of v3, v2, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     if-eqz v3, :cond_1
 
-    .line 567
+    .line 599
     check-cast v2, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -701,7 +701,7 @@
 .method public translate(FF)V
     .locals 2
 
-    .line 448
+    .line 480
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -716,7 +716,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 449
+    .line 481
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p1
@@ -741,7 +741,7 @@
 .method public translateY2(F)V
     .locals 1
 
-    .line 453
+    .line 485
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->y1:F
 
     iput p1, p0, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->y2:F

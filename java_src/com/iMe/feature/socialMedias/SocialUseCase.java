@@ -29,10 +29,29 @@ public final class SocialUseCase {
         this.walletSessionRepository = walletSessionRepository;
     }
 
-    public final Observable<Result<SocialDomain>> getAllSocials(ProfileData profileData) {
+    public final Observable<Result<SocialDomain>> getAllSocials(final ProfileData profileData) {
         Intrinsics.checkNotNullParameter(profileData, "profileData");
         Observable<Result<SocialDomain>> allSocial = this.socialRepository.getAllSocial(profileData);
-        final SocialUseCase$getAllSocials$1 socialUseCase$getAllSocials$1 = new SocialUseCase$getAllSocials$1(this, profileData);
+        final Function1<Result<? extends SocialDomain>, ObservableSource<? extends Result<? extends SocialDomain>>> function1 = new Function1<Result<? extends SocialDomain>, ObservableSource<? extends Result<? extends SocialDomain>>>() { // from class: com.iMe.feature.socialMedias.SocialUseCase$getAllSocials$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Result<SocialDomain>> invoke2(Result<SocialDomain> it) {
+                Observable updateSocialAccess;
+                Intrinsics.checkNotNullParameter(it, "it");
+                updateSocialAccess = SocialUseCase.this.updateSocialAccess(profileData, it);
+                return updateSocialAccess;
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Result<? extends SocialDomain>> invoke(Result<? extends SocialDomain> result) {
+                return invoke2((Result<SocialDomain>) result);
+            }
+        };
         Observable flatMap = allSocial.flatMap(new Function() { // from class: com.iMe.feature.socialMedias.SocialUseCase$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -60,10 +79,27 @@ public final class SocialUseCase {
         return this.socialRepository.logoutSocial(this.profileRepository.getCurrentProfile(), socialNetwork);
     }
 
-    public final Observable<Result<SocialAuthDomain>> startSocialAuth(SocialType socialType, long j) {
+    public final Observable<Result<SocialAuthDomain>> startSocialAuth(final SocialType socialType, final long j) {
         Intrinsics.checkNotNullParameter(socialType, "socialType");
         Observable<Result<SessionTokens>> refreshToken = this.walletSessionRepository.refreshToken();
-        final SocialUseCase$startSocialAuth$1 socialUseCase$startSocialAuth$1 = new SocialUseCase$startSocialAuth$1(this, j, socialType);
+        final Function1<Result<? extends SessionTokens>, ObservableSource<? extends Result<? extends SocialAuthDomain>>> function1 = new Function1<Result<? extends SessionTokens>, ObservableSource<? extends Result<? extends SocialAuthDomain>>>() { // from class: com.iMe.feature.socialMedias.SocialUseCase$startSocialAuth$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Result<SocialAuthDomain>> invoke2(Result<SessionTokens> it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return SocialUseCase.this.getSocialAuthData(it.getData(), j, socialType);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Result<? extends SocialAuthDomain>> invoke(Result<? extends SessionTokens> result) {
+                return invoke2((Result<SessionTokens>) result);
+            }
+        };
         Observable flatMap = refreshToken.flatMap(new Function() { // from class: com.iMe.feature.socialMedias.SocialUseCase$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

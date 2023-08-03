@@ -125,6 +125,14 @@ public class AnimatedFloat {
         return set(f, false);
     }
 
+    public float set(boolean z) {
+        return set(z ? 1.0f : BitmapDescriptorFactory.HUE_RED, false);
+    }
+
+    public float set(boolean z, boolean z2) {
+        return set(z ? 1.0f : BitmapDescriptorFactory.HUE_RED, z2);
+    }
+
     public float set(float f, boolean z) {
         if (z || this.transitionDuration <= 0 || this.firstSet) {
             this.targetValue = f;
@@ -162,6 +170,14 @@ public class AnimatedFloat {
             }
         }
         return this.value;
+    }
+
+    public void setDuration(long j) {
+        this.transitionDuration = j;
+    }
+
+    public long getDuration() {
+        return this.transitionDuration;
     }
 
     public boolean isInProgress() {

@@ -30,7 +30,7 @@ public final class Handshake {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public Handshake(TlsVersion tlsVersion, CipherSuite cipherSuite, List<? extends Certificate> localCertificates, Function0<? extends List<? extends Certificate>> peerCertificatesFn) {
+    public Handshake(TlsVersion tlsVersion, CipherSuite cipherSuite, List<? extends Certificate> localCertificates, final Function0<? extends List<? extends Certificate>> peerCertificatesFn) {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(tlsVersion, "tlsVersion");
         Intrinsics.checkNotNullParameter(cipherSuite, "cipherSuite");
@@ -39,7 +39,23 @@ public final class Handshake {
         this.tlsVersion = tlsVersion;
         this.cipherSuite = cipherSuite;
         this.localCertificates = localCertificates;
-        lazy = LazyKt__LazyJVMKt.lazy(new Handshake$peerCertificates$2(peerCertificatesFn));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends Certificate>>() { // from class: okhttp3.Handshake$peerCertificates$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends Certificate> invoke() {
+                List<? extends Certificate> emptyList;
+                try {
+                    return (List) Function0.this.invoke();
+                } catch (SSLPeerUnverifiedException unused) {
+                    emptyList = CollectionsKt__CollectionsKt.emptyList();
+                    return emptyList;
+                }
+            }
+        });
         this.peerCertificates$delegate = lazy;
     }
 
@@ -122,7 +138,7 @@ public final class Handshake {
         }
 
         public final Handshake get(SSLSession handshake) throws IOException {
-            List<Certificate> emptyList;
+            final List<Certificate> emptyList;
             Intrinsics.checkNotNullParameter(handshake, "$this$handshake");
             String cipherSuite = handshake.getCipherSuite();
             if (cipherSuite == null) {
@@ -146,7 +162,18 @@ public final class Handshake {
             } catch (SSLPeerUnverifiedException unused) {
                 emptyList = CollectionsKt__CollectionsKt.emptyList();
             }
-            return new Handshake(forJavaName2, forJavaName, toImmutableList(handshake.getLocalCertificates()), new Handshake$Companion$handshake$1(emptyList));
+            return new Handshake(forJavaName2, forJavaName, toImmutableList(handshake.getLocalCertificates()), new Function0<List<? extends Certificate>>() { // from class: okhttp3.Handshake$Companion$handshake$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public final List<? extends Certificate> invoke() {
+                    return emptyList;
+                }
+            });
         }
 
         private final List<Certificate> toImmutableList(Certificate[] certificateArr) {
@@ -163,7 +190,19 @@ public final class Handshake {
             Intrinsics.checkNotNullParameter(cipherSuite, "cipherSuite");
             Intrinsics.checkNotNullParameter(peerCertificates, "peerCertificates");
             Intrinsics.checkNotNullParameter(localCertificates, "localCertificates");
-            return new Handshake(tlsVersion, cipherSuite, Util.toImmutableList(localCertificates), new Handshake$Companion$get$1(Util.toImmutableList(peerCertificates)));
+            final List immutableList = Util.toImmutableList(peerCertificates);
+            return new Handshake(tlsVersion, cipherSuite, Util.toImmutableList(localCertificates), new Function0<List<? extends Certificate>>() { // from class: okhttp3.Handshake$Companion$get$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public final List<? extends Certificate> invoke() {
+                    return immutableList;
+                }
+            });
         }
     }
 }

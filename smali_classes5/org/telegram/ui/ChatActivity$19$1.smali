@@ -43,7 +43,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$19;Z)V
     .locals 0
 
-    .line 4819
+    .line 4845
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$19$1;->val$canDeleteHistory:Z
@@ -56,7 +56,7 @@
 .method private synthetic lambda$run$0(ZZ)V
     .locals 1
 
-    .line 4825
+    .line 4851
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 
     iget-object p2, p2, Lorg/telegram/ui/ChatActivity$19;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -75,7 +75,7 @@
 
     if-lt p2, v0, :cond_0
 
-    .line 4825
+    .line 4851
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 
     iget-object v0, p2, Lorg/telegram/ui/ChatActivity$19;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 4827
+    .line 4853
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 
@@ -131,7 +131,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4822
+    .line 4848
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$19;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -144,7 +144,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4823
+    .line 4849
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 4831
+    .line 4857
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$19$1;->this$1:Lorg/telegram/ui/ChatActivity$19;
 

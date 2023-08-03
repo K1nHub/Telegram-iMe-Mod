@@ -586,7 +586,7 @@
 
     move-result v9
 
-    invoke-virtual {v7, v9}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 101
     iget-object v7, v0, Lorg/telegram/ui/ChangeBioActivity;->firstNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;

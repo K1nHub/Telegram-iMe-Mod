@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.icing;
 
 import java.io.IOException;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 /* loaded from: classes.dex */
@@ -84,7 +85,7 @@ public final class zzck extends zzcm {
                 byte[] bArr = this.zzb;
                 int i3 = this.zzd;
                 this.zzd = i3 + 1;
-                bArr[i3] = (byte) ((i & 127) | 128);
+                bArr[i3] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                 i >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzcl(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zzd), Integer.valueOf(this.zzc), 1), e);
@@ -230,7 +231,7 @@ public final class zzck extends zzcm {
                     byte[] bArr = this.zzb;
                     int i = this.zzd;
                     this.zzd = i + 1;
-                    bArr[i] = (byte) ((((int) j) & 127) | 128);
+                    bArr[i] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzcl(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zzd), Integer.valueOf(this.zzc), 1), e);
@@ -246,7 +247,7 @@ public final class zzck extends zzcm {
             byte[] bArr3 = this.zzb;
             int i3 = this.zzd;
             this.zzd = i3 + 1;
-            zzfn.zzp(bArr3, i3, (byte) ((((int) j) & 127) | 128));
+            zzfn.zzp(bArr3, i3, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
             j >>>= 7;
         }
         byte[] bArr4 = this.zzb;

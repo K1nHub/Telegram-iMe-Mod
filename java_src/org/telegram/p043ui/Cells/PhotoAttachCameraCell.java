@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PhotoAttachCameraCell */
@@ -33,15 +33,15 @@ public class PhotoAttachCameraCell extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.imageView = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setImageResource(C3417R.C3419drawable.instant_camera);
+        this.imageView.setImageResource(C3419R.C3421drawable.instant_camera);
         addView(this.imageView, LayoutHelper.createFrame(80, 80));
         setFocusable(true);
-        this.itemSize = AndroidUtilities.m54dp(0);
+        this.itemSize = AndroidUtilities.m72dp(0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m72dp(5), 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m72dp(5), 1073741824));
     }
 
     public void setItemSize(int i) {
@@ -76,7 +76,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
         if (bitmap != null) {
             this.backgroundView.setImageBitmap(bitmap);
         } else {
-            this.backgroundView.setImageResource(C3417R.C3419drawable.icplaceholder);
+            this.backgroundView.setImageResource(C3419R.C3421drawable.icplaceholder);
         }
     }
 

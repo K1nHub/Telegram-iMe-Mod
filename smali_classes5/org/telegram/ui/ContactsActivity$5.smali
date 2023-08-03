@@ -19,27 +19,33 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/content/Context;IZLandroidx/collection/LongSparseArray;IZ)V
-    .locals 7
+.method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;IZLandroidx/collection/LongSparseArray;IZ)V
+    .locals 9
 
-    .line 776
-    iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
+    move-object v8, p0
+
+    move-object v0, p1
+
+    .line 747
+    iput-object v0, v8, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     move-object v0, p0
 
     move-object v1, p2
 
-    move v2, p3
+    move-object v2, p3
 
     move v3, p4
 
-    move-object v4, p5
+    move v4, p5
 
-    move v5, p6
+    move-object v5, p6
 
-    move v6, p7
+    move/from16 v6, p7
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Adapters/ContactsAdapter;-><init>(Landroid/content/Context;IZLandroidx/collection/LongSparseArray;IZ)V
+    move/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Adapters/ContactsAdapter;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;IZLandroidx/collection/LongSparseArray;IZ)V
 
     return-void
 .end method
@@ -49,7 +55,7 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 780
+    .line 751
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -62,13 +68,13 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
 
-    .line 781
+    .line 752
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->reCreateDelegates()V
 
-    .line 783
+    .line 754
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->notifyDataSetChanged()V
 
-    .line 784
+    .line 755
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -89,12 +95,12 @@
 
     if-ne v0, p0, :cond_3
 
-    .line 785
+    .line 756
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getItemCount()I
 
     move-result v0
 
-    .line 786
+    .line 757
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1700(Lorg/telegram/ui/ContactsActivity;)Z
@@ -107,7 +113,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 789
+    .line 760
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -128,7 +134,7 @@
 
     goto :goto_2
 
-    .line 792
+    .line 763
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 

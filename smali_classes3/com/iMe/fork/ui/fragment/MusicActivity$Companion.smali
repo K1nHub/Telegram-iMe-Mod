@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 484
+    .line 483
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method public static final synthetic access$isContentViewType(Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;I)Z
     .locals 0
 
-    .line 484
+    .line 483
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;->isContentViewType(I)Z
 
     move-result p0

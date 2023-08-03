@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;)V
     .locals 0
 
-    .line 828
+    .line 863
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,12 +39,12 @@
 
     const/16 p1, 0xd
 
-    .line 840
+    .line 875
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 841
+    .line 876
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1500(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -61,7 +61,7 @@
 
     sub-int/2addr p2, p1
 
-    .line 842
+    .line 877
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$3500(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -90,7 +90,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 843
+    .line 878
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -101,7 +101,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    .line 844
+    .line 879
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -116,7 +116,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 845
+    .line 880
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
@@ -131,7 +131,7 @@
 
     if-le v0, v2, :cond_0
 
-    .line 846
+    .line 881
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -159,7 +159,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 831
+    .line 866
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -174,7 +174,7 @@
 
     return-void
 
-    .line 834
+    .line 869
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$6;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 

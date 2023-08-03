@@ -24,10 +24,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
-    .line 1107
+    .line 1148
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1103
+    .line 1144
     new-instance p1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -38,7 +38,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$MultiLineLayout;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 1104
+    .line 1145
     new-instance p2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -63,7 +63,7 @@
 
     const/high16 v7, 0x41000000    # 8.0f
 
-    .line 1108
+    .line 1149
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -72,12 +72,12 @@
 
     const p1, 0x800003
 
-    .line 1110
+    .line 1151
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 p1, 0x8
 
-    .line 1111
+    .line 1152
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -90,7 +90,7 @@
 
     invoke-virtual {p2, v1, v0, v1, p1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1112
+    .line 1153
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -103,10 +103,10 @@
 
     const/high16 v0, 0x41700000    # 15.0f
 
-    .line 1113
+    .line 1154
     invoke-virtual {p2, p1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1114
+    .line 1155
     sget-object p1, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
@@ -125,7 +125,7 @@
 
     const/4 v6, 0x0
 
-    .line 1115
+    .line 1156
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -140,7 +140,7 @@
 .method public getAccessibilityText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 1119
+    .line 1160
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$MultiLineLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;

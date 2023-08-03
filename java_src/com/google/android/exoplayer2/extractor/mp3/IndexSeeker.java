@@ -4,9 +4,8 @@ import com.google.android.exoplayer2.extractor.SeekMap;
 import com.google.android.exoplayer2.extractor.SeekPoint;
 import com.google.android.exoplayer2.util.LongArray;
 import com.google.android.exoplayer2.util.Util;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class IndexSeeker implements Seeker {
+final class IndexSeeker implements Seeker {
     static final long MIN_TIME_BETWEEN_POINTS_US = 100000;
     private final long dataEndPosition;
     private long durationUs;

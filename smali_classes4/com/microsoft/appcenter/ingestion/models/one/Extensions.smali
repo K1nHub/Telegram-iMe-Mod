@@ -589,7 +589,7 @@
     invoke-virtual {p0, v1}, Lcom/microsoft/appcenter/ingestion/models/one/Extensions;->setMetadata(Lcom/microsoft/appcenter/ingestion/models/one/MetadataExtension;)V
 
     :cond_0
-    const-string v0, "protocol"
+    const-string/jumbo v0, "protocol"
 
     .line 284
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -664,7 +664,7 @@
     invoke-virtual {p0, v1}, Lcom/microsoft/appcenter/ingestion/models/one/Extensions;->setDevice(Lcom/microsoft/appcenter/ingestion/models/one/DeviceExtension;)V
 
     :cond_3
-    const-string v0, "os"
+    const-string/jumbo v0, "os"
 
     .line 305
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -996,7 +996,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "protocol"
+    const-string/jumbo v0, "protocol"
 
     .line 352
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;
@@ -1077,7 +1077,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v0, "os"
+    const-string/jumbo v0, "os"
 
     .line 373
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;

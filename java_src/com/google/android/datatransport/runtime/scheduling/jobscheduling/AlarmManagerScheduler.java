@@ -52,12 +52,12 @@ public class AlarmManagerScheduler implements WorkScheduler {
         intent.setData(builder.build());
         intent.putExtra("attemptNumber", i);
         if (!z && isJobServiceOn(intent)) {
-            Logging.m809d("AlarmManagerScheduler", "Upload for context %s is already scheduled. Returning...", transportContext);
+            Logging.m827d("AlarmManagerScheduler", "Upload for context %s is already scheduled. Returning...", transportContext);
             return;
         }
         long nextCallTime = this.eventStore.getNextCallTime(transportContext);
         long scheduleDelay = this.config.getScheduleDelay(transportContext.getPriority(), nextCallTime, i);
-        Logging.m808d("AlarmManagerScheduler", "Scheduling upload for context %s in %dms(Backend next call timestamp %d). Attempt %d", transportContext, Long.valueOf(scheduleDelay), Long.valueOf(nextCallTime), Integer.valueOf(i));
+        Logging.m826d("AlarmManagerScheduler", "Scheduling upload for context %s in %dms(Backend next call timestamp %d). Attempt %d", transportContext, Long.valueOf(scheduleDelay), Long.valueOf(nextCallTime), Integer.valueOf(i));
         this.alarmManager.set(3, this.clock.getTime() + scheduleDelay, PendingIntent.getBroadcast(this.context, 0, intent, 0));
     }
 }

@@ -74,6 +74,10 @@ public class CachedContentIndex {
         void storeIncremental(HashMap<String, CachedContent> hashMap) throws IOException;
     }
 
+    static /* synthetic */ Cipher access$000() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        return getCipher();
+    }
+
     public static boolean isIndexFile(String str) {
         return str.startsWith(FILE_NAME_ATOMIC);
     }
@@ -147,7 +151,7 @@ public class CachedContentIndex {
     }
 
     public int assignIdForKey(String str) {
-        return getOrAdd(str).f223id;
+        return getOrAdd(str).f225id;
     }
 
     public String getKeyForId(int i) {
@@ -158,7 +162,7 @@ public class CachedContentIndex {
         CachedContent cachedContent = this.keyToContent.get(str);
         if (cachedContent != null && cachedContent.isEmpty() && cachedContent.isFullyUnlocked()) {
             this.keyToContent.remove(str);
-            int i = cachedContent.f223id;
+            int i = cachedContent.f225id;
             boolean z = this.newIds.get(i);
             this.storage.onRemove(cachedContent, z);
             if (z) {
@@ -204,8 +208,7 @@ public class CachedContentIndex {
         return cachedContent;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Cipher getCipher() throws NoSuchPaddingException, NoSuchAlgorithmException {
+    private static Cipher getCipher() throws NoSuchPaddingException, NoSuchAlgorithmException {
         if (Util.SDK_INT == 18) {
             try {
                 return Cipher.getInstance("AES/CBC/PKCS5PADDING", "BC");
@@ -289,7 +292,7 @@ public class CachedContentIndex {
             if (bArr != null) {
                 Assertions.checkArgument(bArr.length == 16);
                 try {
-                    cipher = CachedContentIndex.getCipher();
+                    cipher = CachedContentIndex.access$000();
                     secretKeySpec = new SecretKeySpec(bArr, "AES");
                 } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
                     throw new IllegalStateException(e);
@@ -391,7 +394,7 @@ public class CachedContentIndex {
                         for (int i2 = 0; i2 < readInt2; i2++) {
                             CachedContent readCachedContent = readCachedContent(readInt, dataInputStream);
                             hashMap.put(readCachedContent.key, readCachedContent);
-                            sparseArray.put(readCachedContent.f223id, readCachedContent.key);
+                            sparseArray.put(readCachedContent.f225id, readCachedContent.key);
                             i += hashCachedContent(readCachedContent, readInt);
                         }
                         int readInt3 = dataInputStream.readInt();
@@ -477,7 +480,7 @@ public class CachedContentIndex {
         private int hashCachedContent(CachedContent cachedContent, int i) {
             int i2;
             int hashCode;
-            int hashCode2 = (cachedContent.f223id * 31) + cachedContent.key.hashCode();
+            int hashCode2 = (cachedContent.f225id * 31) + cachedContent.key.hashCode();
             if (i < 2) {
                 long contentLength = ContentMetadata.CC.getContentLength(cachedContent.getMetadata());
                 i2 = hashCode2 * 31;
@@ -505,7 +508,7 @@ public class CachedContentIndex {
         }
 
         private void writeCachedContent(CachedContent cachedContent, DataOutputStream dataOutputStream) throws IOException {
-            dataOutputStream.writeInt(cachedContent.f223id);
+            dataOutputStream.writeInt(cachedContent.f225id);
             dataOutputStream.writeUTF(cachedContent.key);
             CachedContentIndex.writeContentMetadata(cachedContent.getMetadata(), dataOutputStream);
         }
@@ -569,7 +572,7 @@ public class CachedContentIndex {
                 while (cursor.moveToNext()) {
                     CachedContent cachedContent = new CachedContent(cursor.getInt(0), (String) Assertions.checkNotNull(cursor.getString(1)), CachedContentIndex.readContentMetadata(new DataInputStream(new ByteArrayInputStream(cursor.getBlob(2)))));
                     hashMap.put(cachedContent.key, cachedContent);
-                    sparseArray.put(cachedContent.f223id, cachedContent.key);
+                    sparseArray.put(cachedContent.f225id, cachedContent.key);
                 }
                 cursor.close();
             } catch (SQLiteException e) {
@@ -622,15 +625,15 @@ public class CachedContentIndex {
 
         @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0670Storage
         public void onUpdate(CachedContent cachedContent) {
-            this.pendingUpdates.put(cachedContent.f223id, cachedContent);
+            this.pendingUpdates.put(cachedContent.f225id, cachedContent);
         }
 
         @Override // com.google.android.exoplayer2.upstream.cache.CachedContentIndex.InterfaceC0670Storage
         public void onRemove(CachedContent cachedContent, boolean z) {
             if (z) {
-                this.pendingUpdates.delete(cachedContent.f223id);
+                this.pendingUpdates.delete(cachedContent.f225id);
             } else {
-                this.pendingUpdates.put(cachedContent.f223id, null);
+                this.pendingUpdates.put(cachedContent.f225id, null);
             }
         }
 
@@ -653,7 +656,7 @@ public class CachedContentIndex {
             CachedContentIndex.writeContentMetadata(cachedContent.getMetadata(), new DataOutputStream(byteArrayOutputStream));
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             ContentValues contentValues = new ContentValues();
-            contentValues.put("id", Integer.valueOf(cachedContent.f223id));
+            contentValues.put("id", Integer.valueOf(cachedContent.f225id));
             contentValues.put(COLUMN_KEY, cachedContent.key);
             contentValues.put("metadata", byteArray);
             sQLiteDatabase.replaceOrThrow((String) Assertions.checkNotNull(this.tableName), null, contentValues);

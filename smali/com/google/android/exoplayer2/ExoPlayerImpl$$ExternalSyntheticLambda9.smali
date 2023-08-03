@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/MediaMetadata;
+.field public final synthetic f$0:Lcom/google/android/exoplayer2/MediaItem;
+
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/MediaMetadata;)V
+.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/MediaItem;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$0:Lcom/google/android/exoplayer2/MediaMetadata;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$0:Lcom/google/android/exoplayer2/MediaItem;
+
+    iput p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$1:I
 
     return-void
 .end method
@@ -23,13 +27,15 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$0:Lcom/google/android/exoplayer2/MediaMetadata;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$0:Lcom/google/android/exoplayer2/MediaItem;
+
+    iget v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda9;->f$1:I
 
     check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$gxZyoFETB7c7E7EoPjPOW1X1BrY(Lcom/google/android/exoplayer2/MediaMetadata;Lcom/google/android/exoplayer2/Player$Listener;)V
+    invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$kGyD8wJ-zq1Xdi0qkdvChl0sF3I(Lcom/google/android/exoplayer2/MediaItem;ILcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

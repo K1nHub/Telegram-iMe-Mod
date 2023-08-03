@@ -27,7 +27,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer */
@@ -55,6 +55,8 @@ public class DrawerLayoutContainer extends FrameLayout {
     private Object lastInsets;
     private boolean maybeStartTracking;
     private int minDrawerMargin;
+    private View navigationBar;
+    private Paint navigationBarPaint;
     private INavigationLayout parentActionBarLayout;
     private BitmapDrawable previewBlurDrawable;
     private PreviewForegroundDrawable previewForegroundDrawable;
@@ -75,6 +77,7 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     public DrawerLayoutContainer(Context context) {
         super(context);
+        this.navigationBarPaint = new Paint();
         this.rect = new Rect();
         this.scrimPaint = new Paint();
         this.backgroundPaint = new Paint();
@@ -96,7 +99,7 @@ public class DrawerLayoutContainer extends FrameLayout {
             });
             setSystemUiVisibility(1280);
         }
-        this.shadowLeft = getResources().getDrawable(C3417R.C3419drawable.menu_shadow);
+        this.shadowLeft = getResources().getDrawable(C3419R.C3421drawable.menu_shadow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -451,10 +454,10 @@ public class DrawerLayoutContainer extends FrameLayout {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01a3, code lost:
-        if (r9 != r8.drawerLayout.getMeasuredWidth()) goto L115;
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x01bb, code lost:
+        if (r9 != r8.drawerLayout.getMeasuredWidth()) goto L119;
      */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0228  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -462,7 +465,7 @@ public class DrawerLayoutContainer extends FrameLayout {
     */
     public boolean onTouchEvent(android.view.MotionEvent r9) {
         /*
-            Method dump skipped, instructions count: 579
+            Method dump skipped, instructions count: 603
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.ActionBar.DrawerLayoutContainer.onTouchEvent(android.view.MotionEvent):boolean");
@@ -530,7 +533,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                             childAt.layout(-childAt.getMeasuredWidth(), layoutParams.topMargin + getPaddingTop(), 0, layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
                         }
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             }
@@ -588,12 +591,27 @@ public class DrawerLayoutContainer extends FrameLayout {
                     if (i6 <= 0) {
                         i6 = View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, 1073741824);
                     }
+                    if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).storyViewerAttached()) {
+                        childAt.forceLayout();
+                    }
                     childAt.measure(makeMeasureSpec, i6);
                 } else {
                     childAt.setPadding(0, 0, 0, 0);
                     childAt.measure(FrameLayout.getChildMeasureSpec(i, this.minDrawerMargin + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), FrameLayout.getChildMeasureSpec(i2, layoutParams.topMargin + layoutParams.bottomMargin, layoutParams.height));
                 }
             }
+        }
+        View view = this.navigationBar;
+        if (view != null) {
+            if (view.getParent() == null) {
+                ((FrameLayout) AndroidUtilities.findActivity(getContext()).getWindow().getDecorView()).addView(this.navigationBar);
+            }
+            if (this.navigationBar.getLayoutParams().height == AndroidUtilities.navigationBarHeight && ((FrameLayout.LayoutParams) this.navigationBar.getLayoutParams()).topMargin == View.MeasureSpec.getSize(i2)) {
+                return;
+            }
+            this.navigationBar.getLayoutParams().height = AndroidUtilities.navigationBarHeight;
+            ((FrameLayout.LayoutParams) this.navigationBar.getLayoutParams()).topMargin = View.MeasureSpec.getSize(i2);
+            this.navigationBar.requestLayout();
         }
     }
 
@@ -641,7 +659,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                     }
                 }
                 if (i != 0) {
-                    canvas.clipRect(i - AndroidUtilities.m54dp(1), 0, width, getHeight());
+                    canvas.clipRect(i - AndroidUtilities.m72dp(1), 0, width, getHeight());
                 }
                 i2 = i3;
             } else {
@@ -655,7 +673,7 @@ public class DrawerLayoutContainer extends FrameLayout {
                     canvas.drawRect(i, BitmapDescriptorFactory.HUE_RED, width, getHeight(), this.scrimPaint);
                 }
             } else if (this.shadowLeft != null) {
-                float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(this.drawerPosition / AndroidUtilities.m54dp(20), 1.0f));
+                float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(this.drawerPosition / AndroidUtilities.m72dp(20), 1.0f));
                 if (max != BitmapDescriptorFactory.HUE_RED) {
                     this.shadowLeft.setBounds((int) this.drawerPosition, view.getTop(), ((int) this.drawerPosition) + this.shadowLeft.getIntrinsicWidth(), view.getBottom());
                     this.shadowLeft.setAlpha((int) (max * 255.0f));
@@ -700,6 +718,29 @@ public class DrawerLayoutContainer extends FrameLayout {
         return false;
     }
 
+    public void setNavigationBarColor(int i) {
+        this.navigationBarPaint.setColor(i);
+        View view = this.navigationBar;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    public int getNavigationBarColor() {
+        return this.navigationBarPaint.getColor();
+    }
+
+    public View createNavigationBar() {
+        this.navigationBar = new View(getContext()) { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.3
+            @Override // android.view.View
+            protected void onDraw(Canvas canvas) {
+                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight(), DrawerLayoutContainer.this.navigationBarPaint);
+            }
+        };
+        this.navigationBarPaint.setColor(-16777216);
+        return this.navigationBar;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer$PreviewForegroundDrawable */
     /* loaded from: classes5.dex */
@@ -719,12 +760,12 @@ public class DrawerLayoutContainer extends FrameLayout {
         public PreviewForegroundDrawable() {
             GradientDrawable gradientDrawable = new GradientDrawable();
             this.topDrawable = gradientDrawable;
-            gradientDrawable.setStroke(AndroidUtilities.m54dp(1), Theme.getColor(Theme.key_actionBarDefault));
-            gradientDrawable.setCornerRadius(AndroidUtilities.m54dp(6));
+            gradientDrawable.setStroke(AndroidUtilities.m72dp(1), Theme.getColor(Theme.key_actionBarDefault));
+            gradientDrawable.setCornerRadius(AndroidUtilities.m72dp(6));
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             this.bottomDrawable = gradientDrawable2;
             gradientDrawable2.setStroke(1, Theme.getColor(Theme.key_divider));
-            gradientDrawable2.setCornerRadius(AndroidUtilities.m54dp(6));
+            gradientDrawable2.setCornerRadius(AndroidUtilities.m72dp(6));
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -733,11 +774,11 @@ public class DrawerLayoutContainer extends FrameLayout {
             canvas.save();
             int i = bounds.left;
             int i2 = bounds.top;
-            canvas.clipRect(i, i2, bounds.right, C3484ActionBar.getCurrentActionBarHeight() + i2);
+            canvas.clipRect(i, i2, bounds.right, C3485ActionBar.getCurrentActionBarHeight() + i2);
             this.topDrawable.draw(canvas);
             canvas.restore();
             canvas.save();
-            canvas.clipRect(bounds.left, bounds.top + C3484ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
+            canvas.clipRect(bounds.left, bounds.top + C3485ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
             this.bottomDrawable.draw(canvas);
             canvas.restore();
         }

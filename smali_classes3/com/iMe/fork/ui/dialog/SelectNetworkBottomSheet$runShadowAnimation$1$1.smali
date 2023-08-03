@@ -28,7 +28,7 @@
 
     iput-boolean p2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->$show:Z
 
-    .line 266
+    .line 261
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 277
+    .line 272
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Landroid/animation/AnimatorSet;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 278
+    .line 273
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 268
+    .line 263
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Landroid/animation/AnimatorSet;
@@ -103,14 +103,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 269
+    .line 264
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->$show:Z
 
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 270
+    .line 265
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getTopShadow(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Landroid/view/View;
@@ -123,7 +123,7 @@
 
     invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 272
+    .line 267
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 

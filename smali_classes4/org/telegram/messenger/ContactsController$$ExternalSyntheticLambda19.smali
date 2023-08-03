@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$EiUMol7VIU7sncrnmRSDi65IQ8s(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$tP_ljapGd-Ca-_SEYnQrlXj4o50(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;)V
 
     return-void
 .end method

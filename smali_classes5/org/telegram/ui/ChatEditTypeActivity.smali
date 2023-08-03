@@ -4592,7 +4592,7 @@
 
     move-result v4
 
-    invoke-virtual {v0, v4}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 392
     iget-object v0, v8, Lorg/telegram/ui/ChatEditTypeActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4679,7 +4679,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 418
     iget-object v0, v8, Lorg/telegram/ui/ChatEditTypeActivity;->usernameTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -5235,7 +5235,7 @@
 
     iget-boolean v2, v8, Lorg/telegram/ui/ChatEditTypeActivity;->isSaveRestricted:Z
 
-    invoke-virtual {v0, v1, v2, v12}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v0, v1, v2, v12}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 601
     iget-object v0, v8, Lorg/telegram/ui/ChatEditTypeActivity;->saveRestrictCell:Lorg/telegram/ui/Cells/TextCheckCell;

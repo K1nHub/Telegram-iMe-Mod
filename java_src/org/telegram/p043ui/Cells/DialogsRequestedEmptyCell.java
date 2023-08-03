@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -52,7 +52,7 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
                 Paint paint = new Paint(1);
                 this.paint = paint;
                 paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                this.paint.setShadowLayer(AndroidUtilities.m55dp(1.33f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m55dp(0.33f), 503316480);
+                this.paint.setShadowLayer(AndroidUtilities.m73dp(1.33f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m73dp(0.33f), 503316480);
             }
 
             @Override // android.widget.LinearLayout, android.view.View
@@ -66,13 +66,13 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
                 super.onMeasure(i, i2);
                 this.path.rewind();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(6), getMeasuredWidth() - AndroidUtilities.m54dp(12), getMeasuredHeight() - AndroidUtilities.m54dp(12));
-                this.path.addRoundRect(rectF, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), Path.Direction.CW);
+                rectF.set(AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(6), getMeasuredWidth() - AndroidUtilities.m72dp(12), getMeasuredHeight() - AndroidUtilities.m72dp(12));
+                this.path.addRoundRect(rectF, AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10), Path.Direction.CW);
             }
         };
         linearLayout.setWillNotDraw(false);
         linearLayout.setOrientation(1);
-        linearLayout.setPadding(AndroidUtilities.m54dp(32), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(32), AndroidUtilities.m54dp(32));
+        linearLayout.setPadding(AndroidUtilities.m72dp(32), AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(32), AndroidUtilities.m72dp(32));
         BackupImageView backupImageView = new BackupImageView(context);
         this.stickerView = backupImageView;
         backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda1
@@ -103,7 +103,7 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
         this.buttonView.setTextSize(1, 14.0f);
         this.buttonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         this.buttonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.buttonView.setPadding(AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14));
+        this.buttonView.setPadding(AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(14), AndroidUtilities.m72dp(14));
         this.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsRequestedEmptyCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -127,18 +127,18 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
 
     public void set(TLRPC$RequestPeerType tLRPC$RequestPeerType) {
         if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3417R.string.NoSuchChannels));
-            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3417R.string.NoSuchChannelsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3419R.string.NoSuchChannels));
+            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3419R.string.NoSuchChannelsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3417R.string.CreateChannelForThis));
+            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3419R.string.CreateChannelForThis));
         } else if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeChat) {
-            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3417R.string.NoSuchGroups));
-            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3417R.string.NoSuchGroupsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3419R.string.NoSuchGroups));
+            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3419R.string.NoSuchGroupsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3417R.string.CreateGroupForThis));
+            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3419R.string.CreateGroupForThis));
         } else {
-            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3417R.string.NoSuchUsers));
-            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3417R.string.NoSuchUsersInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3419R.string.NoSuchUsers));
+            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3419R.string.NoSuchUsersInfo));
             this.buttonView.setVisibility(8);
         }
     }

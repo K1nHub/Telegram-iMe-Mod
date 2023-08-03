@@ -155,6 +155,13 @@
     <string name="brvah_load_complete">Натисніть, щоб завантажити більше</string>
     <string name="brvah_load_end">Більше немає даних</string>
     <string name="brvah_load_failed">Не вдалося завантажити більше. Натисніть, щоб перезавантажити</string>
+    <string name="call_notification_answer_action">Відповісти</string>
+    <string name="call_notification_answer_video_action">Відео</string>
+    <string name="call_notification_decline_action">Відхилити</string>
+    <string name="call_notification_hang_up_action">Завершити</string>
+    <string name="call_notification_incoming_text">Вхідний виклик</string>
+    <string name="call_notification_ongoing_text">Активний виклик</string>
+    <string name="call_notification_screening_text">Вхідний виклик (Фільтр)</string>
     <string name="catalog_all">Усе</string>
     <string name="catalog_all_languages">Всі мови</string>
     <string name="catalog_categories">Категорії</string>
@@ -955,7 +962,7 @@
     <string name="settings_interface_wide_posts_in_channel">Широкі пости в каналах</string>
     <string name="settings_multi_panel_item_title">Мультипанель в чатах</string>
     <string name="settings_neurobots_item_title">Налаштування нейроботів</string>
-    <string name="settings_proxy_button_in_toolbar">Кнопка проксі</string>
+    <string name="settings_proxy_button_in_toolbar">Кнопка проксі у тулбарі</string>
     <string name="settings_reactions_enable_hint">Увімкніть цей параметр, щоб відображати функції реакцій у чатах</string>
     <string name="settings_revoke_by_default">Видалити у співрозмовника</string>
     <string name="settings_section_passcode_archive">Пароль Архіву</string>

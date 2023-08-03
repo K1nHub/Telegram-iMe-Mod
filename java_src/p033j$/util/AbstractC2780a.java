@@ -23,7 +23,7 @@ import p033j$.util.stream.Stream;
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class AbstractC2780a {
     /* renamed from: a */
-    public static void m610a(Collection collection, Consumer consumer) {
+    public static void m628a(Collection collection, Consumer consumer) {
         Objects.requireNonNull(consumer);
         for (Object obj : collection) {
             consumer.accept(obj);
@@ -31,46 +31,46 @@ public abstract /* synthetic */ class AbstractC2780a {
     }
 
     /* renamed from: b */
-    public static void m609b(InterfaceC2853s.InterfaceC2854a interfaceC2854a, Consumer consumer) {
+    public static void m627b(InterfaceC2853s.InterfaceC2854a interfaceC2854a, Consumer consumer) {
         if (consumer instanceof InterfaceC2820f) {
-            interfaceC2854a.mo132e((InterfaceC2820f) consumer);
-        } else if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2854a.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
+            interfaceC2854a.mo150e((InterfaceC2820f) consumer);
+        } else if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2854a.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
             throw null;
         } else {
             Objects.requireNonNull(consumer);
-            interfaceC2854a.mo132e(new C2845l(consumer));
+            interfaceC2854a.mo150e(new C2845l(consumer));
         }
     }
 
     /* renamed from: c */
-    public static void m608c(InterfaceC2853s.InterfaceC2855b interfaceC2855b, Consumer consumer) {
+    public static void m626c(InterfaceC2853s.InterfaceC2855b interfaceC2855b, Consumer consumer) {
         if (consumer instanceof InterfaceC2826l) {
-            interfaceC2855b.mo125c((InterfaceC2826l) consumer);
-        } else if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2855b.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
+            interfaceC2855b.mo143c((InterfaceC2826l) consumer);
+        } else if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2855b.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
             throw null;
         } else {
             Objects.requireNonNull(consumer);
-            interfaceC2855b.mo125c(new C2847n(consumer));
+            interfaceC2855b.mo143c(new C2847n(consumer));
         }
     }
 
     /* renamed from: d */
-    public static void m607d(InterfaceC2853s.InterfaceC2856c interfaceC2856c, Consumer consumer) {
+    public static void m625d(InterfaceC2853s.InterfaceC2856c interfaceC2856c, Consumer consumer) {
         if (consumer instanceof InterfaceC2831q) {
-            interfaceC2856c.mo119d((InterfaceC2831q) consumer);
-        } else if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2856c.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
+            interfaceC2856c.mo137d((InterfaceC2831q) consumer);
+        } else if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2856c.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
             throw null;
         } else {
             Objects.requireNonNull(consumer);
-            interfaceC2856c.mo119d(new C2850p(consumer));
+            interfaceC2856c.mo137d(new C2850p(consumer));
         }
     }
 
     /* renamed from: e */
-    public static long m606e(InterfaceC2853s interfaceC2853s) {
+    public static long m624e(InterfaceC2853s interfaceC2853s) {
         if ((interfaceC2853s.characteristics() & 64) == 0) {
             return -1L;
         }
@@ -78,19 +78,19 @@ public abstract /* synthetic */ class AbstractC2780a {
     }
 
     /* renamed from: f */
-    public static boolean m605f(InterfaceC2853s interfaceC2853s, int i) {
+    public static boolean m623f(InterfaceC2853s interfaceC2853s, int i) {
         return (interfaceC2853s.characteristics() & i) == i;
     }
 
     /* renamed from: g */
-    public static Stream m604g(Collection collection) {
-        return AbstractC3090o1.m335y(Collection$EL.m634b(collection), true);
+    public static Stream m622g(Collection collection) {
+        return AbstractC3090o1.m353y(Collection$EL.m652b(collection), true);
     }
 
     /* renamed from: h */
-    public static boolean m603h(Collection collection, Predicate predicate) {
-        if (DesugarCollections.f620a.isInstance(collection)) {
-            return DesugarCollections.m629c(collection, predicate);
+    public static boolean m621h(Collection collection, Predicate predicate) {
+        if (DesugarCollections.f623a.isInstance(collection)) {
+            return DesugarCollections.m647c(collection, predicate);
         }
         Objects.requireNonNull(predicate);
         boolean z = false;
@@ -105,83 +105,83 @@ public abstract /* synthetic */ class AbstractC2780a {
     }
 
     /* renamed from: i */
-    public static Stream m602i(Collection collection) {
-        return AbstractC3090o1.m335y(Collection$EL.m634b(collection), false);
+    public static Stream m620i(Collection collection) {
+        return AbstractC3090o1.m353y(Collection$EL.m652b(collection), false);
     }
 
     /* renamed from: j */
-    public static boolean m601j(InterfaceC2853s.InterfaceC2854a interfaceC2854a, Consumer consumer) {
+    public static boolean m619j(InterfaceC2853s.InterfaceC2854a interfaceC2854a, Consumer consumer) {
         if (consumer instanceof InterfaceC2820f) {
-            return interfaceC2854a.mo131k((InterfaceC2820f) consumer);
+            return interfaceC2854a.mo149k((InterfaceC2820f) consumer);
         }
-        if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2854a.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
+        if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2854a.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return interfaceC2854a.mo131k(new C2845l(consumer));
+        return interfaceC2854a.mo149k(new C2845l(consumer));
     }
 
     /* renamed from: k */
-    public static boolean m600k(InterfaceC2853s.InterfaceC2855b interfaceC2855b, Consumer consumer) {
+    public static boolean m618k(InterfaceC2853s.InterfaceC2855b interfaceC2855b, Consumer consumer) {
         if (consumer instanceof InterfaceC2826l) {
-            return interfaceC2855b.mo124g((InterfaceC2826l) consumer);
+            return interfaceC2855b.mo142g((InterfaceC2826l) consumer);
         }
-        if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2855b.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+        if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2855b.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return interfaceC2855b.mo124g(new C2847n(consumer));
+        return interfaceC2855b.mo142g(new C2847n(consumer));
     }
 
     /* renamed from: l */
-    public static boolean m599l(InterfaceC2853s.InterfaceC2856c interfaceC2856c, Consumer consumer) {
+    public static boolean m617l(InterfaceC2853s.InterfaceC2856c interfaceC2856c, Consumer consumer) {
         if (consumer instanceof InterfaceC2831q) {
-            return interfaceC2856c.mo118i((InterfaceC2831q) consumer);
+            return interfaceC2856c.mo136i((InterfaceC2831q) consumer);
         }
-        if (AbstractC2779K.f649a) {
-            AbstractC2779K.m612a(interfaceC2856c.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+        if (AbstractC2779K.f652a) {
+            AbstractC2779K.m630a(interfaceC2856c.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return interfaceC2856c.mo118i(new C2850p(consumer));
+        return interfaceC2856c.mo136i(new C2850p(consumer));
     }
 
     /* renamed from: m */
-    public static Optional m598m(Optional optional) {
+    public static Optional m616m(Optional optional) {
         if (optional == null) {
             return null;
         }
-        return optional.isPresent() ? Optional.m611of(optional.get()) : Optional.empty();
+        return optional.isPresent() ? Optional.m629of(optional.get()) : Optional.empty();
     }
 
     /* renamed from: n */
-    public static C2842i m597n(OptionalDouble optionalDouble) {
+    public static C2842i m615n(OptionalDouble optionalDouble) {
         if (optionalDouble == null) {
             return null;
         }
-        return optionalDouble.isPresent() ? C2842i.m532d(optionalDouble.getAsDouble()) : C2842i.m535a();
+        return optionalDouble.isPresent() ? C2842i.m550d(optionalDouble.getAsDouble()) : C2842i.m553a();
     }
 
     /* renamed from: o */
-    public static C2843j m596o(OptionalInt optionalInt) {
+    public static C2843j m614o(OptionalInt optionalInt) {
         if (optionalInt == null) {
             return null;
         }
-        return optionalInt.isPresent() ? C2843j.m528d(optionalInt.getAsInt()) : C2843j.m531a();
+        return optionalInt.isPresent() ? C2843j.m546d(optionalInt.getAsInt()) : C2843j.m549a();
     }
 
     /* renamed from: p */
-    public static C2844k m595p(OptionalLong optionalLong) {
+    public static C2844k m613p(OptionalLong optionalLong) {
         if (optionalLong == null) {
             return null;
         }
-        return optionalLong.isPresent() ? C2844k.m524d(optionalLong.getAsLong()) : C2844k.m527a();
+        return optionalLong.isPresent() ? C2844k.m542d(optionalLong.getAsLong()) : C2844k.m545a();
     }
 
     /* renamed from: q */
-    public static Optional m594q(Optional optional) {
+    public static Optional m612q(Optional optional) {
         if (optional == null) {
             return null;
         }
@@ -189,38 +189,38 @@ public abstract /* synthetic */ class AbstractC2780a {
     }
 
     /* renamed from: r */
-    public static OptionalDouble m593r(C2842i c2842i) {
+    public static OptionalDouble m611r(C2842i c2842i) {
         if (c2842i == null) {
             return null;
         }
-        return c2842i.m533c() ? OptionalDouble.of(c2842i.m534b()) : OptionalDouble.empty();
+        return c2842i.m551c() ? OptionalDouble.of(c2842i.m552b()) : OptionalDouble.empty();
     }
 
     /* renamed from: s */
-    public static OptionalInt m592s(C2843j c2843j) {
+    public static OptionalInt m610s(C2843j c2843j) {
         if (c2843j == null) {
             return null;
         }
-        return c2843j.m529c() ? OptionalInt.of(c2843j.m530b()) : OptionalInt.empty();
+        return c2843j.m547c() ? OptionalInt.of(c2843j.m548b()) : OptionalInt.empty();
     }
 
     /* renamed from: t */
-    public static OptionalLong m591t(C2844k c2844k) {
+    public static OptionalLong m609t(C2844k c2844k) {
         if (c2844k == null) {
             return null;
         }
-        return c2844k.m525c() ? OptionalLong.of(c2844k.m526b()) : OptionalLong.empty();
+        return c2844k.m543c() ? OptionalLong.of(c2844k.m544b()) : OptionalLong.empty();
     }
 
     /* renamed from: u */
-    public static boolean m590u(Object obj, Object obj2) {
+    public static boolean m608u(Object obj, Object obj2) {
         return obj == obj2 || (obj != null && obj.equals(obj2));
     }
 
     /* renamed from: v */
-    public static void m589v(List list, Comparator comparator) {
-        if (DesugarCollections.f621b.isInstance(list)) {
-            DesugarCollections.m628d(list, comparator);
+    public static void m607v(List list, Comparator comparator) {
+        if (DesugarCollections.f624b.isInstance(list)) {
+            DesugarCollections.m646d(list, comparator);
             return;
         }
         Object[] array = list.toArray();

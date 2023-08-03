@@ -434,7 +434,7 @@
 .method public rangeEquals(ILokio/ByteString;II)Z
     .locals 6
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -554,7 +554,7 @@
 .method public rangeEquals(I[BII)Z
     .locals 6
 
-    const-string v0, "other"
+    const-string/jumbo v0, "other"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

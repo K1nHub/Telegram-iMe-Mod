@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/PollCreateActivity$PollCreateActivityDelegate;
+.implements Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
 
 
 # instance fields
@@ -22,22 +22,20 @@
 
 
 # virtual methods
-.method public final sendPoll(Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;Ljava/util/HashMap;ZILjava/lang/String;)V
-    .locals 6
+.method public final didSelectUsers(Ljava/util/ArrayList;I)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda333;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    move-object v1, p1
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Blb7FVriq9_IbUDO6PoMYrV3F7E(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;I)V
 
-    move-object v2, p2
+    return-void
+.end method
 
-    move v3, p3
+.method public synthetic needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
+    .locals 0
 
-    move v4, p4
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$rmM0f6Uswuhmq9_jow2BVyrrWfs(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;Ljava/util/HashMap;ZILjava/lang/String;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate$-CC;->$default$needAddBot(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

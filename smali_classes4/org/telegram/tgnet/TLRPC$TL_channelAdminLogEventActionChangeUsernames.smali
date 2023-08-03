@@ -39,17 +39,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 43381
+    .line 44127
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ChannelAdminLogEventAction;-><init>()V
 
-    .line 43384
+    .line 44130
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->prev_value:Ljava/util/ArrayList;
 
-    .line 43385
+    .line 44131
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -64,7 +64,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 43388
+    .line 44134
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -83,7 +83,7 @@
 
     return-void
 
-    .line 43391
+    .line 44137
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -103,7 +103,7 @@
 
     throw p1
 
-    .line 43395
+    .line 44141
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -114,7 +114,7 @@
     :goto_0
     if-ge v5, v0, :cond_2
 
-    .line 43397
+    .line 44143
     iget-object v6, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->prev_value:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 43400
+    .line 44146
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -139,7 +139,7 @@
 
     return-void
 
-    .line 43403
+    .line 44149
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -159,7 +159,7 @@
 
     throw p1
 
-    .line 43407
+    .line 44153
     :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -168,7 +168,7 @@
     :goto_1
     if-ge v4, v0, :cond_5
 
-    .line 43409
+    .line 44155
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->new_value:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -188,17 +188,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 43414
+    .line 44160
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 43415
+    .line 44161
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43416
+    .line 44162
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->prev_value:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -211,7 +211,7 @@
 
     move v2, v1
 
-    .line 43417
+    .line 44163
     :goto_0
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->prev_value:Ljava/util/ArrayList;
 
@@ -221,7 +221,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 43418
+    .line 44164
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->prev_value:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -236,11 +236,11 @@
 
     goto :goto_0
 
-    .line 43420
+    .line 44166
     :cond_0
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43421
+    .line 44167
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->new_value:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -249,7 +249,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43422
+    .line 44168
     :goto_1
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->new_value:Ljava/util/ArrayList;
 
@@ -259,7 +259,7 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 43423
+    .line 44169
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;->new_value:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

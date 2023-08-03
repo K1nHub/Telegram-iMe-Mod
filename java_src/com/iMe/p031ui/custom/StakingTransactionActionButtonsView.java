@@ -11,9 +11,11 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -39,7 +41,13 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(StakingTransactionActionButtonsView$cornerRadius$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.StakingTransactionActionButtonsView$cornerRadius$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m73dp(4.0f));
+            }
+        });
         this.cornerRadius$delegate = lazy;
         ForkContentStakingTransactionActionsBinding inflate = ForkContentStakingTransactionActionsBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -123,8 +131,8 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.setForcedCustomHeight(36);
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3417R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3417R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3419R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3419R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 .source "LPhotoPaintView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;-><init>(Landroid/content/Context;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;-><init>(Landroid/content/Context;Landroid/app/Activity;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;Lorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private path:Landroid/graphics/Path;
+
 .field final synthetic this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
 
@@ -22,372 +24,180 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
     .locals 0
 
-    .line 723
+    .line 763
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;-><init>(Landroid/content/Context;)V
 
-    const/4 p1, 0x0
+    .line 764
+    new-instance p1, Landroid/graphics/Path;
 
-    .line 725
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->path:Landroid/graphics/Path;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public draw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 739
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
-
-    .line 741
+    .line 768
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1300(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/LinearLayout;->getAlpha()F
-
-    move-result v1
-
-    const/high16 v2, 0x42cc0000    # 102.0f
-
-    mul-float/2addr v1, v2
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
-
-    move-result v2
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    sub-float/2addr v3, v2
-
-    mul-float/2addr v1, v3
-
-    float-to-int v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 743
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
-
-    move-result-object v0
-
+    .line 769
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->getTypefaceCellBounds(Landroid/graphics/RectF;)V
-
-    .line 744
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTop()I
-
-    move-result v0
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/LinearLayout;->getTop()I
+    .line 770
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v2
 
-    add-int/2addr v0, v2
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getLeft()I
 
-    int-to-float v0, v0
+    move-result v3
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/FrameLayout;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationY()F
-
-    move-result v2
-
-    add-float/2addr v0, v2
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/LinearLayout;->getTranslationY()F
-
-    move-result v2
-
-    add-float/2addr v0, v2
-
-    .line 745
-    iget v2, v1, Landroid/graphics/RectF;->left:F
+    sub-int/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
+    invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
 
-    move-result-object v3
+    move-result v3
 
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getLeft()I
+    const/4 v4, 0x0
+
+    invoke-static {v2, v4, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    .line 771
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getTop()I
+
+    move-result v3
+
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getTop()I
+
+    move-result v5
+
+    sub-int/2addr v3, v5
+
+    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+
+    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
+
+    move-result v5
+
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
+    .line 772
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getRight()I
 
     move-result v4
 
-    invoke-static {v2, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getLeft()I
 
-    move-result v2
+    move-result v5
 
-    iget v3, v1, Landroid/graphics/RectF;->top:F
+    sub-int/2addr v4, v5
 
-    add-float/2addr v3, v0
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    move-result v5
 
-    .line 746
-    invoke-static {v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    move-result-object v4
+    invoke-static {v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
 
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->getTop()I
+    move-result v6
+
+    invoke-static {v4, v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getTranslationY()F
-
-    move-result v5
-
-    sub-float/2addr v4, v5
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
-
-    move-result v5
-
-    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v3
-
-    iget v4, v1, Landroid/graphics/RectF;->right:F
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    .line 747
-    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getRight()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
-
-    move-result v6
-
-    invoke-static {v4, v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v4
-
-    iget v5, v1, Landroid/graphics/RectF;->bottom:F
-
-    add-float/2addr v0, v5
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    .line 748
-    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getBottom()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/ViewGroup;->getTranslationY()F
-
-    move-result v6
-
-    sub-float/2addr v5, v6
-
-    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
-
-    move-result v6
-
-    invoke-static {v0, v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    .line 773
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getBottom()I
 
     move-result v0
 
-    .line 745
-    invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getTop()I
 
-    .line 749
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    move-result v5
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
+    sub-int/2addr v0, v5
 
-    move-result v0
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getHeight()I
 
-    const/16 v2, 0x20
+    move-result v5
 
-    const/16 v3, 0x10
+    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v2, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
+    invoke-static {v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
 
-    move-result v0
+    move-result v6
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v0, v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 751
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    .line 769
+    invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
+    .line 776
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->path:Landroid/graphics/Path;
 
-    move-result-object v2
+    invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    invoke-virtual {v2}, Landroid/graphics/Paint;->getAlpha()I
+    .line 777
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->path:Landroid/graphics/Path;
+
+    const/16 v2, 0x20
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 752
-    iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    int-to-float v2, v2
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
+    sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    move-result-object v3
+    invoke-virtual {v0, v1, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    int-to-float v4, v2
+    .line 779
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
+    .line 780
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->path:Landroid/graphics/Path;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    move-result v5
+    .line 781
+    invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
-    mul-float/2addr v4, v5
-
-    float-to-int v4, v4
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 753
-    iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v1, v0, v0, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    .line 754
-    iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 756
-    iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v1, v0, v0, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    .line 782
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    .line 730
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 731
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2300(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    .line 734
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
 .end method

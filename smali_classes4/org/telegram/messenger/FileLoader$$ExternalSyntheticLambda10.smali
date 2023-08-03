@@ -39,7 +39,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda10;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$gCZqWdZkr1YAL5qaThJRGTYOPIk(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$Document;Z)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$C76Xq7eLiqrIB5v6Hk0lM73g5yY(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
     return-void
 .end method

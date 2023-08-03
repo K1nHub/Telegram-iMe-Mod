@@ -168,7 +168,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         if (this.savedIds.isEmpty()) {
             return null;
         }
-        return BundleKt.bundleOf(TuplesKt.m85to("androidx-nav-fragment:navigator:savedIds", new ArrayList(this.savedIds)));
+        return BundleKt.bundleOf(TuplesKt.m103to("androidx-nav-fragment:navigator:savedIds", new ArrayList(this.savedIds)));
     }
 
     @Override // androidx.navigation.Navigator

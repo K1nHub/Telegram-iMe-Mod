@@ -207,7 +207,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
             bArr = Util.EMPTY_BYTE_ARRAY;
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id", download.request.f203id);
+        contentValues.put("id", download.request.f205id);
         contentValues.put(COLUMN_MIME_TYPE, download.request.mimeType);
         contentValues.put(COLUMN_URI, download.request.uri.toString());
         contentValues.put(COLUMN_STREAM_KEYS, encodeStreamKeys(download.request.streamKeys));
@@ -353,7 +353,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
 
         @Override // com.google.android.exoplayer2.offline.DownloadCursor
         public /* synthetic */ boolean isLast() {
-            return getCount();
+            return DownloadCursor.CC.$default$isLast(this);
         }
 
         @Override // com.google.android.exoplayer2.offline.DownloadCursor

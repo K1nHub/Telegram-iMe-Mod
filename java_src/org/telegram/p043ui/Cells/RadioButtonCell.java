@@ -27,7 +27,7 @@ public class RadioButtonCell extends FrameLayout {
         super(context);
         RadioButton radioButton = new RadioButton(context);
         this.radioButton = radioButton;
-        radioButton.setSize(AndroidUtilities.m54dp(20));
+        radioButton.setSize(AndroidUtilities.m72dp(20));
         if (z) {
             this.radioButton.setColor(Theme.getColor(Theme.key_dialogRadioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
         } else {
@@ -63,7 +63,7 @@ public class RadioButtonCell extends FrameLayout {
         this.valueTextView.setLines(0);
         this.valueTextView.setMaxLines(0);
         this.valueTextView.setSingleLine(false);
-        this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(12));
+        this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m72dp(12));
         TextView textView4 = this.valueTextView;
         boolean z4 = LocaleController.isRTL;
         addView(textView4, LayoutHelper.createFrame(-2, -2, (z4 ? 5 : 3) | 48, z4 ? 17 : 61, 35, z4 ? 61 : 17, 0));
@@ -88,7 +88,7 @@ public class RadioButtonCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.m54dp(LocaleController.isRTL ? 0 : 60), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.m54dp(LocaleController.isRTL ? 60 : 0), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.m72dp(LocaleController.isRTL ? 0 : 60), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.m72dp(LocaleController.isRTL ? 60 : 0), getHeight() - 1, Theme.dividerPaint);
         }
     }
 

@@ -9,12 +9,14 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -42,7 +44,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public ChatCopyPartBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r4, java.lang.String r5) {
+    public ChatCopyPartBottomSheetDialog(final org.telegram.p043ui.ActionBar.BaseFragment r4, java.lang.String r5) {
         /*
             r3 = this;
             java.lang.String r0 = "fragment"
@@ -59,11 +61,11 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$special$$inlined$inject$default$1 r0 = new com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$special$$inlined$inject$default$1
             r2 = 0
-            r0.<init>(r3, r2, r2)
+            r0.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r0)
             r3.resourceManager$delegate = r5
             com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$binding$2 r5 = new com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$binding$2
-            r5.<init>(r4)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r4 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r3, r2, r5, r1, r2)
             r3.binding$delegate = r4
             r4 = 0
@@ -104,14 +106,31 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupTexts() {
         ForkChatCopyContentLayoutBinding binding = getBinding();
-        binding.buttonClose.setText(getResourceManager().getString(C3417R.string.common_close));
+        binding.buttonClose.setText(getResourceManager().getString(C3419R.string.common_close));
         binding.textMessage.setText(this.message);
     }
 
     private final void setupListeners() {
         AppCompatTextView appCompatTextView = getBinding().buttonClose;
         Intrinsics.checkNotNullExpressionValue(appCompatTextView, "binding.buttonClose");
-        ViewExtKt.safeThrottledClick$default(appCompatTextView, 0L, new ChatCopyPartBottomSheetDialog$setupListeners$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(appCompatTextView, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$setupListeners$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                ChatCopyPartBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* compiled from: ChatCopyPartBottomSheetDialog.kt */

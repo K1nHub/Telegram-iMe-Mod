@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import com.iMe.p031ui.custom.StakingDashboardView;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemStakingDashboardBinding implements ViewBinding {
     private final StakingDashboardView rootView;
@@ -25,7 +25,7 @@ public final class ForkRecycleItemStakingDashboardBinding implements ViewBinding
     }
 
     public static ForkRecycleItemStakingDashboardBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_staking_dashboard, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_staking_dashboard, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+.field public final synthetic f$2:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JLorg/telegram/tgnet/TLRPC$Photo;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JLorg/telegram/messenger/MessagesStorage$IntCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$2:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda117;->f$2:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$wW-AJy2_dbdVEmZgUYBVQGEigto(Lorg/telegram/messenger/MessagesStorage;JLorg/telegram/tgnet/TLRPC$Photo;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$edeRxDv9oMS0GJ_-bX8m4iTMz30(Lorg/telegram/messenger/MessagesStorage;JLorg/telegram/messenger/MessagesStorage$IntCallback;)V
 
     return-void
 .end method

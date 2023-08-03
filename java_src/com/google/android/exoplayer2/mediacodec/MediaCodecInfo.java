@@ -306,11 +306,11 @@ public final class MediaCodecInfo {
     }
 
     private void logNoSupport(String str) {
-        Log.m802d(TAG, "NoSupport [" + str + "] [" + this.name + ", " + this.mimeType + "] [" + Util.DEVICE_DEBUG_INFO + "]");
+        Log.m820d(TAG, "NoSupport [" + str + "] [" + this.name + ", " + this.mimeType + "] [" + Util.DEVICE_DEBUG_INFO + "]");
     }
 
     private void logAssumedSupport(String str) {
-        Log.m802d(TAG, "AssumedSupport [" + str + "] [" + this.name + ", " + this.mimeType + "] [" + Util.DEVICE_DEBUG_INFO + "]");
+        Log.m820d(TAG, "AssumedSupport [" + str + "] [" + this.name + ", " + this.mimeType + "] [" + Util.DEVICE_DEBUG_INFO + "]");
     }
 
     private static int adjustMaxInputChannelCount(String str, String str2, int i) {
@@ -323,7 +323,7 @@ public final class MediaCodecInfo {
         } else {
             i2 = MimeTypes.AUDIO_E_AC3.equals(str2) ? 16 : 30;
         }
-        Log.m796w(TAG, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
+        Log.m814w(TAG, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
         return i2;
     }
 

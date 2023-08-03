@@ -38,7 +38,7 @@ public class PhotoEditRadioCell extends FrameLayout {
         linearLayout.setOrientation(0);
         for (int i = 0; i < this.tintShadowColors.length; i++) {
             RadioButton radioButton = new RadioButton(context);
-            radioButton.setSize(AndroidUtilities.m54dp(20));
+            radioButton.setSize(AndroidUtilities.m72dp(20));
             radioButton.setTag(Integer.valueOf(i));
             this.tintButtonsContainer.addView(radioButton, LayoutHelper.createLinear(0, -1, 1.0f / this.tintShadowColors.length));
             radioButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.PhotoEditRadioCell$$ExternalSyntheticLambda0
@@ -93,7 +93,7 @@ public class PhotoEditRadioCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(40), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(40), 1073741824));
     }
 
     public void setIconAndTextAndValue(String str, int i, int i2) {

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
     .locals 0
 
-    .line 141
+    .line 142
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public get()F
     .locals 3
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
@@ -51,7 +51,7 @@
 
     if-nez v0, :cond_0
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)I
@@ -68,7 +68,7 @@
 
     return v0
 
-    .line 148
+    .line 149
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -104,7 +104,7 @@
 .method public set(F)V
     .locals 3
 
-    .line 153
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)I
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setWeight(Ljava/lang/String;F)V
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Swatch;
@@ -146,7 +146,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 155
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$200(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Swatch;

@@ -90,7 +90,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     private boolean codecNeedsMonoChannelCountWorkaround;
     private boolean codecNeedsSosFlushWorkaround;
     private float codecOperatingRate;
-    private MediaFormat codecOutputMediaFormat;
+    public MediaFormat codecOutputMediaFormat;
     private boolean codecOutputMediaFormatChanged;
     private boolean codecReceivedBuffers;
     private boolean codecReceivedEos;
@@ -429,7 +429,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         }
         int i = this.pendingOutputStreamOffsetCount;
         if (i == this.pendingOutputStreamOffsetsUs.length) {
-            Log.m796w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
+            Log.m814w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
         } else {
             this.pendingOutputStreamOffsetCount = i + 1;
         }
@@ -609,7 +609,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 try {
                     updateDrmSessionV23();
                 } catch (ExoPlaybackException e) {
-                    Log.m795w(TAG, "Failed to update the DRM session, releasing the codec instead.", e);
+                    Log.m813w(TAG, "Failed to update the DRM session, releasing the codec instead.", e);
                     releaseCodec();
                     return true;
                 }
@@ -759,7 +759,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             java.lang.String r4 = "MediaCodecRenderer"
             if (r2 != r0) goto L73
             java.lang.String r3 = "Preferred decoder instantiation failed. Sleeping for 50ms then retrying."
-            com.google.android.exoplayer2.util.Log.m796w(r4, r3)     // Catch: java.lang.Exception -> L74
+            com.google.android.exoplayer2.util.Log.m814w(r4, r3)     // Catch: java.lang.Exception -> L74
             r5 = 50
             java.lang.Thread.sleep(r5)     // Catch: java.lang.Exception -> L74
             r7.initCodec(r2, r8)     // Catch: java.lang.Exception -> L74
@@ -774,7 +774,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             r5.append(r6)
             r5.append(r2)
             java.lang.String r5 = r5.toString()
-            com.google.android.exoplayer2.util.Log.m795w(r4, r5, r3)
+            com.google.android.exoplayer2.util.Log.m813w(r4, r5, r3)
             java.util.ArrayDeque<com.google.android.exoplayer2.mediacodec.MediaCodecInfo> r4 = r7.availableCodecInfos
             r4.removeFirst()
             com.google.android.exoplayer2.mediacodec.MediaCodecRenderer$DecoderInitializationException r4 = new com.google.android.exoplayer2.mediacodec.MediaCodecRenderer$DecoderInitializationException
@@ -814,7 +814,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         if (decoderInfos.isEmpty() && z) {
             decoderInfos = getDecoderInfos(this.mediaCodecSelector, this.inputFormat, false);
             if (!decoderInfos.isEmpty()) {
-                Log.m796w(TAG, "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos + ".");
+                Log.m814w(TAG, "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos + ".");
             }
         }
         return decoderInfos;
@@ -847,7 +847,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             TraceUtil.endSection();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (!mediaCodecInfo.isFormatSupported(this.inputFormat)) {
-                Log.m796w(TAG, Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(this.inputFormat), str));
+                Log.m814w(TAG, Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(this.inputFormat), str));
             }
             this.codecInfo = mediaCodecInfo;
             this.codecOperatingRate = f;

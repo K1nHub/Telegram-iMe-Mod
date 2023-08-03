@@ -24,13 +24,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 1692
+    .line 1909
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 1693
+    .line 1910
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1690
+    .line 1907
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -47,10 +47,30 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 1698
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    .line 1916
+    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 1699
+    invoke-static {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$3100(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, -0x1
+
+    const/16 v1, 0x1e
+
+    .line 1917
+    invoke-static {v0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 1919
+    :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -77,12 +97,13 @@
 
     move-result v0
 
-    .line 1700
+    .line 1921
+    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1702
+    .line 1923
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -93,7 +114,7 @@
 
     div-float/2addr v0, v1
 
-    .line 1703
+    .line 1924
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -104,12 +125,12 @@
 
     const/4 v3, 0x0
 
-    .line 1704
+    .line 1925
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1706
+    .line 1927
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -126,14 +147,14 @@
 
     div-float/2addr v4, v1
 
-    .line 1708
+    .line 1929
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->expandSize()F
 
     move-result v1
 
-    .line 1709
+    .line 1930
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v6, v2, v4
@@ -150,10 +171,10 @@
 
     invoke-virtual {v5, v6, v7, v8, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1710
+    .line 1931
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1711
+    .line 1932
     invoke-virtual {v3}, Landroid/view/View;->getScaleX()F
 
     move-result v6
@@ -164,26 +185,26 @@
 
     invoke-virtual {p1, v6, v3, v2, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1712
+    .line 1933
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v5, v4, v4, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1713
+    .line 1934
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1715
+    .line 1936
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 1716
+    .line 1937
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1717
+    .line 1938
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1718
+    .line 1939
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

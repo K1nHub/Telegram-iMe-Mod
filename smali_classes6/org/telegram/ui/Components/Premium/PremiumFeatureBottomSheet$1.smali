@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 102
+    .line 103
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 105
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Z
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 106
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -55,7 +55,7 @@
 
     goto :goto_0
 
-    .line 108
+    .line 109
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -73,7 +73,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->contentHeight:I
 
-    .line 110
+    .line 111
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 

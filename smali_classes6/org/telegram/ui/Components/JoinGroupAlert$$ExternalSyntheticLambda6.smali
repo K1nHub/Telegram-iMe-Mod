@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Components/JoinGroupAlert;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+    invoke-static {v0}, Lorg/telegram/ui/Components/JoinGroupAlert;->$r8$lambda$8tBrcXG2FAP9Bs-5swlEtBGri-Q(Lorg/telegram/ui/Components/JoinGroupAlert;)V
 
     return-void
 .end method

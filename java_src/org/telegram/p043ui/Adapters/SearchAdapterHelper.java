@@ -5,6 +5,7 @@ import androidx.collection.LongSparseArray;
 import com.iMe.fork.controller.HiddenChatsController;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
@@ -20,6 +21,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.p043ui.Adapters.DialogsSearchAdapter;
+import org.telegram.p043ui.Adapters.SearchAdapterHelper;
 import org.telegram.p043ui.Components.ShareAlert;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -201,11 +203,11 @@ public class SearchAdapterHelper {
                 LongSparseArray longSparseArray2 = new LongSparseArray();
                 for (int i3 = 0; i3 < tLRPC$TL_contacts_found.chats.size(); i3++) {
                     TLRPC$Chat tLRPC$Chat3 = tLRPC$TL_contacts_found.chats.get(i3);
-                    longSparseArray.put(tLRPC$Chat3.f1515id, tLRPC$Chat3);
+                    longSparseArray.put(tLRPC$Chat3.f1518id, tLRPC$Chat3);
                 }
                 for (int i4 = 0; i4 < tLRPC$TL_contacts_found.users.size(); i4++) {
                     TLRPC$User tLRPC$User3 = tLRPC$TL_contacts_found.users.get(i4);
-                    longSparseArray2.put(tLRPC$User3.f1656id, tLRPC$User3);
+                    longSparseArray2.put(tLRPC$User3.f1675id, tLRPC$User3);
                 }
                 int i5 = 0;
                 while (true) {
@@ -241,7 +243,7 @@ public class SearchAdapterHelper {
                         }
                         if (this.topicMode) {
                             if (tLRPC$Chat2 != null) {
-                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat2.f1515id);
+                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat2.f1518id);
                                 i2 = i6;
                             } else if (tLRPC$User2 == null) {
                                 i2 = i6;
@@ -252,7 +254,7 @@ public class SearchAdapterHelper {
                                 j2 = 0;
                             } else {
                                 i2 = i6;
-                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User2.f1656id);
+                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User2.f1675id);
                             }
                             if (tLRPC$Dialog2 != null) {
                                 if (tLRPC$Dialog2.folder_id != this.topicModeFilterFolderId) {
@@ -264,13 +266,13 @@ public class SearchAdapterHelper {
                             i2 = i6;
                         }
                         if (tLRPC$Chat2 != null) {
-                            if (!hiddenChatsController.isChatHidden(-tLRPC$Chat2.f1515id) && z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat2)) && (this.allowGlobalResults || !ChatObject.isNotInChat(tLRPC$Chat2)))) {
+                            if (!hiddenChatsController.isChatHidden(-tLRPC$Chat2.f1518id) && z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat2)) && (this.allowGlobalResults || !ChatObject.isNotInChat(tLRPC$Chat2)))) {
                                 this.globalSearch.add(tLRPC$Chat2);
-                                this.globalSearchMap.put(-tLRPC$Chat2.f1515id, tLRPC$Chat2);
+                                this.globalSearchMap.put(-tLRPC$Chat2.f1518id, tLRPC$Chat2);
                             }
-                        } else if (tLRPC$User2 != null && !hiddenChatsController.isChatHidden(tLRPC$User2.f1656id) && ((!this.isCrossForward || tLRPC$User2.f1656id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User2.bot) && ((z4 || !tLRPC$User2.self) && (this.allowGlobalResults || i5 != 1 || tLRPC$User2.contact))))) {
+                        } else if (tLRPC$User2 != null && !hiddenChatsController.isChatHidden(tLRPC$User2.f1675id) && ((!this.isCrossForward || tLRPC$User2.f1675id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User2.bot) && ((z4 || !tLRPC$User2.self) && (this.allowGlobalResults || i5 != 1 || tLRPC$User2.contact))))) {
                             this.globalSearch.add(tLRPC$User2);
-                            this.globalSearchMap.put(tLRPC$User2.f1656id, tLRPC$User2);
+                            this.globalSearchMap.put(tLRPC$User2.f1675id, tLRPC$User2);
                         }
                         i6 = i2 + 1;
                         j2 = 0;
@@ -296,10 +298,10 @@ public class SearchAdapterHelper {
                         }
                         if (this.topicMode) {
                             if (tLRPC$Chat != null) {
-                                tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat.f1515id);
+                                tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat.f1518id);
                             } else if (tLRPC$User != null) {
                                 if (!UserObject.isUserSelf(tLRPC$User) && !UserObject.isReplyUser(tLRPC$User) && !MessagesController.isSupportUser(tLRPC$User)) {
-                                    tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User.f1656id);
+                                    tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User.f1675id);
                                 }
                             } else {
                                 tLRPC$Dialog = null;
@@ -310,13 +312,13 @@ public class SearchAdapterHelper {
                             }
                         }
                         if (tLRPC$Chat != null) {
-                            if (!hiddenChatsController.isChatHidden(-tLRPC$Chat.f1515id) && z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat)) && (-tLRPC$Chat.f1515id) != j)) {
+                            if (!hiddenChatsController.isChatHidden(-tLRPC$Chat.f1518id) && z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat)) && (-tLRPC$Chat.f1518id) != j)) {
                                 this.localServerSearch.add(tLRPC$Chat);
-                                this.globalSearchMap.put(-tLRPC$Chat.f1515id, tLRPC$Chat);
+                                this.globalSearchMap.put(-tLRPC$Chat.f1518id, tLRPC$Chat);
                             }
-                        } else if (tLRPC$User != null && !hiddenChatsController.isChatHidden(tLRPC$User.f1656id) && ((!this.isCrossForward || tLRPC$User.f1656id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User.bot) && ((z4 || !tLRPC$User.self) && tLRPC$User.f1656id != j)))) {
+                        } else if (tLRPC$User != null && !hiddenChatsController.isChatHidden(tLRPC$User.f1675id) && ((!this.isCrossForward || tLRPC$User.f1675id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User.bot) && ((z4 || !tLRPC$User.self) && tLRPC$User.f1675id != j)))) {
                             this.localServerSearch.add(tLRPC$User);
-                            this.globalSearchMap.put(tLRPC$User.f1656id, tLRPC$User);
+                            this.globalSearchMap.put(tLRPC$User.f1675id, tLRPC$User);
                         }
                     }
                 }
@@ -371,7 +373,7 @@ public class SearchAdapterHelper {
             if (tLRPC$User != null) {
                 this.globalSearch.remove(tLRPC$User);
                 this.localServerSearch.remove(tLRPC$User);
-                this.globalSearchMap.remove(tLRPC$User.f1656id);
+                this.globalSearchMap.remove(tLRPC$User.f1675id);
             }
         }
     }
@@ -412,7 +414,14 @@ public class SearchAdapterHelper {
                 hashMap.put(hashtagObject.hashtag, hashtagObject);
             }
             queryFinalized.dispose();
-            Collections.sort(arrayList, SearchAdapterHelper$$ExternalSyntheticLambda5.INSTANCE);
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Adapters.SearchAdapterHelper$$ExternalSyntheticLambda5
+                @Override // java.util.Comparator
+                public final int compare(Object obj, Object obj2) {
+                    int lambda$loadRecentHashtags$4;
+                    lambda$loadRecentHashtags$4 = SearchAdapterHelper.lambda$loadRecentHashtags$4((SearchAdapterHelper.HashtagObject) obj, (SearchAdapterHelper.HashtagObject) obj2);
+                    return lambda$loadRecentHashtags$4;
+                }
+            });
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.SearchAdapterHelper$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -420,7 +429,7 @@ public class SearchAdapterHelper {
                 }
             });
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -473,26 +482,26 @@ public class SearchAdapterHelper {
                 }
                 if (obj instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) obj;
-                    TLRPC$User tLRPC$User2 = (TLRPC$User) this.globalSearchMap.get(tLRPC$User.f1656id);
+                    TLRPC$User tLRPC$User2 = (TLRPC$User) this.globalSearchMap.get(tLRPC$User.f1675id);
                     if (tLRPC$User2 != null) {
                         this.globalSearch.remove(tLRPC$User2);
                         this.localServerSearch.remove(tLRPC$User2);
-                        this.globalSearchMap.remove(tLRPC$User2.f1656id);
+                        this.globalSearchMap.remove(tLRPC$User2.f1675id);
                     }
-                    TLObject tLObject = this.groupSearchMap.get(tLRPC$User.f1656id);
+                    TLObject tLObject = this.groupSearchMap.get(tLRPC$User.f1675id);
                     if (tLObject != null) {
                         this.groupSearch.remove(tLObject);
-                        this.groupSearchMap.remove(tLRPC$User.f1656id);
+                        this.groupSearchMap.remove(tLRPC$User.f1675id);
                     }
-                    TLObject tLObject2 = this.phoneSearchMap.get(tLRPC$User.f1656id);
+                    TLObject tLObject2 = this.phoneSearchMap.get(tLRPC$User.f1675id);
                     if (tLObject2 != null) {
                         this.phonesSearch.remove(tLObject2);
-                        this.phoneSearchMap.remove(tLRPC$User.f1656id);
+                        this.phoneSearchMap.remove(tLRPC$User.f1675id);
                     }
-                } else if ((obj instanceof TLRPC$Chat) && (tLRPC$Chat = (TLRPC$Chat) this.globalSearchMap.get(-((TLRPC$Chat) obj).f1515id)) != null) {
+                } else if ((obj instanceof TLRPC$Chat) && (tLRPC$Chat = (TLRPC$Chat) this.globalSearchMap.get(-((TLRPC$Chat) obj).f1518id)) != null) {
                     this.globalSearch.remove(tLRPC$Chat);
                     this.localServerSearch.remove(tLRPC$Chat);
-                    this.globalSearchMap.remove(-tLRPC$Chat.f1515id);
+                    this.globalSearchMap.remove(-tLRPC$Chat.f1518id);
                 }
                 i++;
             }
@@ -512,7 +521,7 @@ public class SearchAdapterHelper {
                 if (tLRPC$User != null) {
                     this.globalSearch.remove(tLRPC$User);
                     this.localServerSearch.remove(tLRPC$User);
-                    this.globalSearchMap.remove(tLRPC$User.f1656id);
+                    this.globalSearchMap.remove(tLRPC$User.f1675id);
                 }
             }
         }
@@ -524,7 +533,7 @@ public class SearchAdapterHelper {
                 if (tLRPC$User2 != null) {
                     this.globalSearch.remove(tLRPC$User2);
                     this.localServerSearch.remove(tLRPC$User2);
-                    this.globalSearchMap.remove(tLRPC$User2.f1656id);
+                    this.globalSearchMap.remove(tLRPC$User2.f1675id);
                 }
             }
         }
@@ -606,7 +615,7 @@ public class SearchAdapterHelper {
             }
             MessagesStorage.getInstance(this.currentAccount).getDatabase().commitTransaction();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -664,7 +673,7 @@ public class SearchAdapterHelper {
         try {
             MessagesStorage.getInstance(this.currentAccount).getDatabase().executeFast("DELETE FROM hashtag_recent_v2 WHERE 1").stepThis().dispose();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 

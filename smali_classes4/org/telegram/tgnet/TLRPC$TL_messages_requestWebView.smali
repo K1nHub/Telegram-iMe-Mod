@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = -0x3785ac4
+.field public static constructor:I = 0x269dc2c1
 
 
 # instance fields
@@ -18,7 +18,7 @@
 
 .field public platform:Ljava/lang/String;
 
-.field public reply_to_msg_id:I
+.field public reply_to:Lorg/telegram/tgnet/TLRPC$InputReplyTo;
 
 .field public send_as:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
@@ -41,7 +41,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 65531
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -151,9 +150,9 @@
 
     if-eqz v0, :cond_5
 
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_requestWebView;->reply_to_msg_id:I
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_requestWebView;->reply_to:Lorg/telegram/tgnet/TLRPC$InputReplyTo;
 
-    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_requestWebView;->flags:I

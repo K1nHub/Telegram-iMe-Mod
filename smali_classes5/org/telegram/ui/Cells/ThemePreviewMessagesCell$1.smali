@@ -21,13 +21,11 @@
 
 .field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic val$currentAccount:I
-
 .field final synthetic val$type:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;Landroid/content/Context;Landroid/content/Context;II)V
+.method constructor <init>(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;Landroid/content/Context;Landroid/content/Context;I)V
     .locals 0
 
     .line 190
@@ -35,9 +33,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$context:Landroid/content/Context;
 
-    iput p4, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$currentAccount:I
-
-    iput p5, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$type:I
+    iput p4, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$type:I
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;)V
 

@@ -12,7 +12,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Ljava/lang/Long;",
+            "Lorg/telegram/tgnet/TLRPC$Peer;",
             ">;"
         }
     .end annotation
@@ -47,24 +47,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4885
+    .line 4923
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 4889
+    .line 4927
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
 
-    .line 4891
+    .line 4929
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->recent_voters:Ljava/util/ArrayList;
 
-    .line 4893
+    .line 4931
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -83,32 +83,40 @@
 
     goto :goto_0
 
-    .line 4899
+    .line 4949
     :sswitch_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer108;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer108;-><init>()V
-
-    goto :goto_0
-
-    .line 4908
-    :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults;-><init>()V
 
     goto :goto_0
 
-    .line 4902
+    .line 4937
+    :sswitch_1
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer108;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer108;-><init>()V
+
+    goto :goto_0
+
+    .line 4946
     :sswitch_2
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer158;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer158;-><init>()V
+
+    goto :goto_0
+
+    .line 4940
+    :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer111;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer111;-><init>()V
 
     goto :goto_0
 
-    .line 4905
-    :sswitch_3
+    .line 4943
+    :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer131;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer131;-><init>()V
@@ -120,7 +128,7 @@
 
     goto :goto_1
 
-    .line 4912
+    .line 4953
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -150,7 +158,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 4915
+    .line 4956
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -160,9 +168,10 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x45233e5d -> :sswitch_3
-        -0x378fdb5e -> :sswitch_2
-        -0x2347d15d -> :sswitch_1
-        0x5755785a -> :sswitch_0
+        -0x45233e5d -> :sswitch_4
+        -0x378fdb5e -> :sswitch_3
+        -0x2347d15d -> :sswitch_2
+        0x5755785a -> :sswitch_1
+        0x7adf2420 -> :sswitch_0
     .end sparse-switch
 .end method

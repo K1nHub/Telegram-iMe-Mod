@@ -103,6 +103,16 @@ public class BillingFlowParams {
             throw new IllegalArgumentException("Details of the products must be provided.");
         }
 
+        public Builder setObfuscatedAccountId(String str) {
+            this.zza = str;
+            return this;
+        }
+
+        public Builder setObfuscatedProfileId(String str) {
+            this.zzb = str;
+            return this;
+        }
+
         public Builder setProductDetailsParamsList(List<ProductDetailsParams> list) {
             this.zzc = new ArrayList(list);
             return this;
@@ -115,7 +125,7 @@ public class BillingFlowParams {
 
         /* synthetic */ Builder(zzav zzavVar) {
             SubscriptionUpdateParams.Builder newBuilder = SubscriptionUpdateParams.newBuilder();
-            newBuilder.zzb = true;
+            SubscriptionUpdateParams.Builder.zza(newBuilder);
             this.zzf = newBuilder;
         }
     }
@@ -188,6 +198,11 @@ public class BillingFlowParams {
             private int zzc = 0;
 
             /* synthetic */ Builder(zzay zzayVar) {
+            }
+
+            static /* synthetic */ Builder zza(Builder builder) {
+                builder.zzb = true;
+                return builder;
             }
 
             public SubscriptionUpdateParams build() {

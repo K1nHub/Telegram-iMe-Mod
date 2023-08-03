@@ -37,7 +37,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
         return (SmallSortedMap<FieldDescriptorType, Object>) new SmallSortedMap<FieldDescriptorType, Object>(i) { // from class: com.google.protobuf.SmallSortedMap.1
             @Override // com.google.protobuf.SmallSortedMap, java.util.AbstractMap, java.util.Map
             public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
-                return super.put((C12101) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
+                return super.put((C12101<FieldDescriptorType>) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
             }
 
             @Override // com.google.protobuf.SmallSortedMap
@@ -49,9 +49,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
                             arrayEntryAt.setValue(Collections.unmodifiableList((List) arrayEntryAt.getValue()));
                         }
                     }
-                    Iterator it = getOverflowEntries().iterator();
-                    while (it.hasNext()) {
-                        Map.Entry entry = (Map.Entry) it.next();
+                    for (Map.Entry<FieldDescriptorType, Object> entry : getOverflowEntries()) {
                         if (((FieldSet.FieldDescriptorLite) entry.getKey()).isRepeated()) {
                             entry.setValue(Collections.unmodifiableList((List) entry.getValue()));
                         }

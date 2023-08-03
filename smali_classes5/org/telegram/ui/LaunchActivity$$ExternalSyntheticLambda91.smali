@@ -2,44 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/GenericProvider;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/StoryViewer;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Ljava/lang/Void;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$S2dtpo9QANVBDNzdK8nzEC5IFtU(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$UvL4mu0WtMORKkIPIGmbmpSnltw(Lorg/telegram/ui/Stories/StoryViewer;)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

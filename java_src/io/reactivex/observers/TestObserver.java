@@ -12,7 +12,7 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
     private final Observer<? super T> downstream;
 
     /* renamed from: qd */
-    private QueueDisposable<T> f561qd;
+    private QueueDisposable<T> f564qd;
     private final AtomicReference<Disposable> upstream;
 
     /* loaded from: classes4.dex */
@@ -59,7 +59,7 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
             int i = this.initialFusionMode;
             if (i != 0 && (disposable instanceof QueueDisposable)) {
                 QueueDisposable<T> queueDisposable = (QueueDisposable) disposable;
-                this.f561qd = queueDisposable;
+                this.f564qd = queueDisposable;
                 int requestFusion = queueDisposable.requestFusion(i);
                 this.establishedFusionMode = requestFusion;
                 if (requestFusion == 1) {
@@ -67,7 +67,7 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
                     Thread.currentThread();
                     while (true) {
                         try {
-                            T poll = this.f561qd.poll();
+                            T poll = this.f564qd.poll();
                             if (poll != null) {
                                 this.values.add(poll);
                             } else {
@@ -105,14 +105,14 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
         }
         while (true) {
             try {
-                T poll = this.f561qd.poll();
+                T poll = this.f564qd.poll();
                 if (poll == null) {
                     return;
                 }
                 this.values.add(poll);
             } catch (Throwable th) {
                 this.errors.add(th);
-                this.f561qd.dispose();
+                this.f564qd.dispose();
                 return;
             }
         }

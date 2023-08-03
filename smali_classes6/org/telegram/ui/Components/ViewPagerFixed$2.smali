@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/ViewPagerFixed$2;
-.super Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ViewPagerFixed.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ViewPagerFixed;->createTabsView(ZILorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    value = Lorg/telegram/ui/Components/ViewPagerFixed;->scrollToPosition(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,41 +19,96 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/content/Context;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed;)V
     .locals 0
 
-    .line 155
+    .line 219
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;-><init>(Landroid/content/Context;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public selectTab(IIF)V
-    .locals 2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 4
 
-    .line 158
-    invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectTab(IIF)V
+    .line 222
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    .line 159
-    iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+    iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    const/4 v1, 0x1
 
-    cmpg-float p3, p3, v1
+    aget-object v0, v0, v1
 
-    if-gtz p3, :cond_0
+    const/4 v2, 0x0
 
-    goto :goto_0
+    if-eqz v0, :cond_0
 
+    .line 223
+    invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$100(Lorg/telegram/ui/Components/ViewPagerFixed;)V
+
+    .line 224
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$200(Lorg/telegram/ui/Components/ViewPagerFixed;)[I
+
+    move-result-object p1
+
+    aget p1, p1, v1
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    iget-object v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+
+    aget-object v3, v3, v1
+
+    invoke-virtual {v0, p1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 225
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
+
+    .line 226
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+
+    const/4 v0, 0x0
+
+    aget-object p1, p1, v0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
+
+    .line 227
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+
+    aput-object v2, p1, v1
+
+    .line 229
     :cond_0
-    move p1, p2
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    :goto_0
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabPageSelected(I)V
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$302(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+
+    .line 230
+    iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabAnimationUpdate()V
 
     return-void
 .end method

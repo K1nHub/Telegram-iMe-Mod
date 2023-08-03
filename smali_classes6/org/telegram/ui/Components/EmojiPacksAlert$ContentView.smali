@@ -49,6 +49,8 @@
 
 .field private path:Landroid/graphics/Path;
 
+.field private final statusBarT:Lorg/telegram/ui/Components/AnimatedFloat;
+
 .field final synthetic this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
 .field unusedArrays:Ljava/util/ArrayList;
@@ -86,22 +88,22 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;Landroid/content/Context;)V
-    .locals 0
+    .locals 7
 
-    .line 551
+    .line 577
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    .line 552
+    .line 578
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 555
+    .line 581
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->paint:Landroid/graphics/Paint;
 
-    .line 556
+    .line 582
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -110,43 +112,60 @@
 
     const/4 p1, 0x0
 
-    .line 557
+    .line 583
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lastOpen:Ljava/lang/Boolean;
 
-    .line 559
+    .line 585
     new-instance p1, Landroid/util/SparseArray;
 
     invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
-    .line 560
+    .line 586
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
-    .line 561
+    .line 587
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    .line 562
+    .line 588
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedArrays:Ljava/util/ArrayList;
 
-    .line 563
+    .line 589
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
+
+    .line 591
+    new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
+
+    sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0x15e
+
+    move-object v0, p1
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JJLandroid/animation/TimeInterpolator;)V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->statusBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     return-void
 .end method
@@ -154,7 +173,7 @@
 .method private getAnimatedEmojiSpans()[Lorg/telegram/ui/Components/AnimatedEmojiSpan;
     .locals 4
 
-    .line 711
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -169,7 +188,7 @@
 
     return-object v0
 
-    .line 714
+    .line 742
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -183,7 +202,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
-    .line 715
+    .line 743
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -197,7 +216,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 716
+    .line 744
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -208,12 +227,12 @@
 
     move-result-object v2
 
-    .line 717
+    .line 745
     instance-of v3, v2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     if-eqz v3, :cond_1
 
-    .line 718
+    .line 746
     check-cast v2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
@@ -232,20 +251,20 @@
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 21
+    .locals 20
 
     move-object/from16 v0, p0
 
     move-object/from16 v8, p1
 
-    .line 567
+    .line 595
     iget-boolean v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->attached:Z
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 570
+    .line 598
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->paint:Landroid/graphics/Paint;
 
@@ -253,109 +272,41 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2100(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 571
+    .line 599
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->paint:Landroid/graphics/Paint;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->applyDefaultShadow(Landroid/graphics/Paint;)V
 
-    .line 572
+    .line 600
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
-    .line 573
+    .line 601
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2200(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2300(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2102(Lorg/telegram/ui/Components/EmojiPacksAlert;F)F
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2202(Lorg/telegram/ui/Components/EmojiPacksAlert;F)F
 
     move-result v1
 
-    .line 575
-    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Ljava/lang/Float;
-
-    move-result-object v2
-
-    const/4 v9, 0x0
-
-    if-eqz v2, :cond_1
-
-    .line 577
-    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Ljava/lang/Float;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
+    .line 608
+    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->statusBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getY()F
-
-    move-result v3
-
-    add-float/2addr v3, v1
-
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2500(Lorg/telegram/ui/Components/EmojiPacksAlert;)F
-
-    move-result v4
-
-    invoke-static {v2, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v2
-
-    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getY()F
-
-    move-result v3
-
-    sub-float/2addr v2, v3
-
-    sub-float v1, v2, v1
-
-    move/from16 v20, v2
-
-    move v2, v1
-
-    move/from16 v1, v20
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v9
-
-    .line 580
-    :goto_0
-    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
 
     move-result-object v3
 
@@ -365,215 +316,203 @@
 
     int-to-float v3, v3
 
-    sub-float v3, v1, v3
+    cmpg-float v3, v1, v3
 
-    const/16 v4, 0x20
+    const/4 v9, 0x1
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/4 v10, 0x0
 
-    move-result v4
+    if-gtz v3, :cond_1
 
-    int-to-float v4, v4
+    move v3, v9
 
-    div-float/2addr v3, v4
+    goto :goto_0
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    :cond_1
+    move v3, v10
 
-    invoke-static {v3, v9, v10}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    :goto_0
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(Z)F
+
+    move-result v2
+
+    const/4 v11, 0x0
+
+    .line 609
+    invoke-static {v1, v11, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+
+    move-result v1
+
+    const/high16 v12, 0x3f800000    # 1.0f
+
+    sub-float v3, v12, v2
+
+    const/high16 v4, 0x41600000    # 14.0f
+
+    mul-float/2addr v3, v4
+
+    .line 610
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
 
-    sub-float v3, v10, v3
+    int-to-float v3, v3
 
-    .line 581
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->getPaddingTop()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float/2addr v4, v3
-
-    sub-float/2addr v1, v4
-
-    sub-float v4, v10, v3
-
-    const/high16 v5, 0x41600000    # 14.0f
-
-    mul-float/2addr v4, v5
-
-    .line 582
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    .line 583
-    sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    .line 611
+    sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
-    move-result v7
+    move-result v6
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
-    move-result v11
+    move-result v7
 
-    sub-int/2addr v7, v11
+    sub-int/2addr v6, v7
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getBottom()I
 
-    move-result v11
+    move-result v7
 
-    int-to-float v11, v11
+    int-to-float v7, v7
 
-    add-float/2addr v11, v4
+    add-float/2addr v7, v3
 
-    invoke-virtual {v5, v6, v1, v7, v11}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v4, v5, v1, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 584
-    iget-object v6, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->path:Landroid/graphics/Path;
+    .line 612
+    iget-object v5, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->path:Landroid/graphics/Path;
 
-    sget-object v7, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+    sget-object v6, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    invoke-virtual {v6, v5, v4, v4, v7}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
+    invoke-virtual {v5, v4, v3, v3, v6}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 585
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->path:Landroid/graphics/Path;
+    .line 613
+    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->path:Landroid/graphics/Path;
 
-    iget-object v6, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->paint:Landroid/graphics/Paint;
+    iget-object v5, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v4, v6}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v8, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    const/high16 v4, 0x3f400000    # 0.75f
+    const/high16 v3, 0x3f000000    # 0.5f
 
-    cmpl-float v3, v3, v4
+    cmpl-float v2, v2, v3
 
-    const/4 v11, 0x1
+    if-lez v2, :cond_2
 
-    const/4 v12, 0x0
-
-    if-lez v3, :cond_2
-
-    move v3, v11
+    move v2, v9
 
     goto :goto_1
 
     :cond_2
-    move v3, v12
+    move v2, v10
 
-    .line 588
+    .line 616
     :goto_1
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lastOpen:Ljava/lang/Boolean;
+    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lastOpen:Ljava/lang/Boolean;
 
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    if-eq v3, v4, :cond_4
-
-    .line 589
-    :cond_3
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lastOpen:Ljava/lang/Boolean;
+    if-eqz v3, :cond_3
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v3
 
-    invoke-static {v4, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2900(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)V
+    if-eq v2, v3, :cond_4
 
-    .line 592
+    .line 617
+    :cond_3
+    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lastOpen:Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2500(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)V
+
+    .line 620
     :cond_4
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v4, v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    invoke-static {v3, v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2600(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 593
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    .line 621
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const/16 v4, 0x14
+    const/16 v3, 0x14
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    div-float v4, v1, v4
-
-    invoke-static {v4, v9, v10}, Landroidx/core/math/MathUtils;->clamp(FFF)F
-
-    move-result v4
-
-    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v6}, Landroid/graphics/Paint;->getAlpha()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v4, v6
-
-    float-to-int v4, v4
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    const/16 v3, 0x24
-
-    .line 594
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    const/16 v4, 0xa
+    int-to-float v3, v3
 
-    .line 595
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    div-float v3, v1, v3
 
-    move-result v4
+    invoke-static {v3, v11, v12}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
-    int-to-float v4, v4
+    move-result v3
 
-    add-float v13, v1, v4
+    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    .line 596
+    invoke-virtual {v5}, Landroid/graphics/Paint;->getAlpha()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    mul-float/2addr v3, v5
+
+    float-to-int v3, v3
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    const/16 v2, 0x24
+
+    .line 622
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    const/16 v3, 0xa
+
+    .line 623
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    add-float v13, v1, v3
+
+    .line 624
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v1, v2
 
     const/4 v14, 0x2
 
@@ -583,27 +522,27 @@
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v4
+    move-result v3
 
-    add-int/2addr v4, v3
+    add-int/2addr v3, v2
 
-    div-int/2addr v4, v14
+    div-int/2addr v3, v14
 
-    int-to-float v3, v4
+    int-to-float v2, v3
 
-    const/4 v4, 0x4
+    const/4 v3, 0x4
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
-    add-float/2addr v6, v13
+    add-float/2addr v5, v13
 
-    invoke-virtual {v5, v1, v13, v3, v6}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v4, v1, v13, v2, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 597
+    .line 625
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -612,52 +551,52 @@
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v5, v1, v3, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v4, v1, v2, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 599
+    .line 627
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
 
     move-result-object v1
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v11}, Lorg/telegram/ui/Components/RecyclerListView;->canScrollVertically(I)Z
+    invoke-virtual {v2, v9}, Lorg/telegram/ui/Components/RecyclerListView;->canScrollVertically(I)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/widget/TextView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/widget/TextView;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v2}, Landroid/widget/TextView;->getVisibility()I
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_6
+    if-nez v2, :cond_6
 
     :cond_5
-    move v4, v12
+    move v3, v10
 
     :cond_6
-    invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 600
+    .line 628
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -666,10 +605,10 @@
 
     if-eqz v1, :cond_16
 
-    .line 601
+    .line 629
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 602
+    .line 630
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -682,23 +621,21 @@
 
     int-to-float v1, v1
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+    iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getTop()I
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getY()F
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    add-float/2addr v2, v11
 
-    add-float/2addr v3, v2
+    invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-virtual {v8, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 603
+    .line 631
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -719,13 +656,13 @@
 
     move-result v2
 
-    invoke-virtual {v8, v12, v12, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
+    invoke-virtual {v8, v10, v10, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 604
+    .line 632
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -772,9 +709,9 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    move v1, v12
+    move v1, v10
 
-    .line 606
+    .line 634
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -784,7 +721,7 @@
 
     if-ge v1, v2, :cond_7
 
-    .line 607
+    .line 635
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -793,10 +730,10 @@
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 608
+    .line 636
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 609
+    .line 637
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -805,15 +742,15 @@
 
     goto :goto_2
 
-    .line 611
+    .line 639
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->clear()V
 
-    move v1, v12
+    move v1, v10
 
-    .line 612
+    .line 640
     :goto_3
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -827,7 +764,7 @@
 
     if-ge v1, v2, :cond_e
 
-    .line 613
+    .line 641
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -838,19 +775,19 @@
 
     move-result-object v2
 
-    .line 614
+    .line 642
     instance-of v3, v2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     if-eqz v3, :cond_d
 
-    .line 615
+    .line 643
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->updatePressedProgress()V
 
-    .line 616
+    .line 644
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/util/LongSparseArray;
@@ -859,9 +796,9 @@
 
     if-nez v4, :cond_8
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    .line 619
+    .line 647
     :cond_8
     iget-object v3, v3, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -869,13 +806,13 @@
 
     goto :goto_5
 
-    .line 623
+    .line 651
     :cond_9
     invoke-virtual {v3}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->getDocumentId()J
 
     move-result-wide v3
 
-    .line 624
+    .line 652
     iget-object v5, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/util/LongSparseArray;
@@ -892,13 +829,21 @@
 
     goto :goto_5
 
-    .line 628
+    .line 656
     :cond_a
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
+    iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
+
+    move-result-object v4
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 630
+    .line 658
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
@@ -913,7 +858,7 @@
 
     if-nez v3, :cond_c
 
-    .line 632
+    .line 660
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -922,14 +867,14 @@
 
     if-nez v3, :cond_b
 
-    .line 633
+    .line 661
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    sub-int/2addr v4, v11
+    sub-int/2addr v4, v9
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -939,13 +884,13 @@
 
     goto :goto_4
 
-    .line 635
+    .line 663
     :cond_b
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 637
+    .line 665
     :goto_4
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -955,7 +900,7 @@
 
     invoke-virtual {v4, v5, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 639
+    .line 667
     :cond_c
     check-cast v2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
@@ -963,11 +908,11 @@
 
     goto :goto_5
 
-    .line 641
+    .line 669
     :cond_d
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 642
+    .line 670
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v3
@@ -982,10 +927,10 @@
 
     invoke-virtual {v8, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 643
+    .line 671
     invoke-virtual {v2, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 644
+    .line 672
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :goto_5
@@ -993,32 +938,32 @@
 
     goto/16 :goto_3
 
-    .line 648
+    .line 676
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 649
+    .line 677
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 650
+    .line 678
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 652
+    .line 680
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v16
 
-    move v7, v12
+    move v7, v10
 
-    .line 653
+    .line 681
     :goto_6
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -1030,7 +975,7 @@
 
     if-ge v7, v1, :cond_13
 
-    .line 654
+    .line 682
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v7}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1039,14 +984,14 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    .line 655
-    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 683
+    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/view/View;
 
-    .line 656
+    .line 684
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1057,9 +1002,9 @@
 
     move-result v4
 
-    move v5, v12
+    move v5, v10
 
-    .line 658
+    .line 686
     :goto_7
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
@@ -1069,7 +1014,7 @@
 
     if-ge v5, v6, :cond_10
 
-    .line 659
+    .line 687
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1082,7 +1027,7 @@
 
     if-ne v6, v4, :cond_f
 
-    .line 660
+    .line 688
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1091,7 +1036,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;
 
-    .line 661
+    .line 689
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -1107,7 +1052,7 @@
     :goto_8
     if-nez v2, :cond_12
 
-    .line 666
+    .line 694
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1116,14 +1061,14 @@
 
     if-nez v2, :cond_11
 
-    .line 667
+    .line 695
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    sub-int/2addr v5, v11
+    sub-int/2addr v5, v9
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -1133,7 +1078,7 @@
 
     goto :goto_9
 
-    .line 669
+    .line 697
     :cond_11
     new-instance v2, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;
 
@@ -1141,29 +1086,29 @@
 
     const/4 v5, 0x7
 
-    .line 670
+    .line 698
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->setLayerNum(I)V
 
-    .line 672
+    .line 700
     :goto_9
     iput v4, v2, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;->position:I
 
-    .line 673
+    .line 701
     invoke-virtual {v2}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->onAttachToWindow()V
 
-    .line 675
+    .line 703
     :cond_12
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 676
+    .line 704
     iput-object v1, v2, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    .line 677
+    .line 705
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 678
+    .line 706
     invoke-virtual {v3}, Landroid/view/View;->getY()F
 
     move-result v1
@@ -1176,9 +1121,9 @@
 
     add-float/2addr v1, v4
 
-    invoke-virtual {v8, v9, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v11, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 679
+    .line 707
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v5
@@ -1207,14 +1152,14 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;->draw(Landroid/graphics/Canvas;JIIF)V
 
-    .line 680
+    .line 708
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     add-int/lit8 v7, v19, 0x1
 
     goto/16 :goto_6
 
-    .line 683
+    .line 711
     :cond_13
     :goto_a
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
@@ -1223,9 +1168,9 @@
 
     move-result v1
 
-    if-ge v12, v1, :cond_15
+    if-ge v10, v1, :cond_15
 
-    .line 684
+    .line 712
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1236,12 +1181,12 @@
 
     if-ge v1, v3, :cond_14
 
-    .line 685
+    .line 713
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -1249,10 +1194,10 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 686
+    .line 714
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1260,10 +1205,10 @@
 
     iput-object v2, v1, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    .line 687
+    .line 715
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1273,11 +1218,11 @@
 
     goto :goto_b
 
-    .line 690
+    .line 718
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1286,23 +1231,23 @@
     invoke-virtual {v1}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->onDetachFromWindow()V
 
     :goto_b
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_a
 
-    .line 693
+    .line 721
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 694
+    .line 722
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 695
+    .line 723
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 697
+    .line 725
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1313,11 +1258,11 @@
 
     move-result v1
 
-    cmpg-float v1, v1, v10
+    cmpg-float v1, v1, v12
 
     if-gez v1, :cond_16
 
-    .line 698
+    .line 726
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -1326,7 +1271,7 @@
 
     float-to-int v2, v13
 
-    .line 699
+    .line 727
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v3
@@ -1337,15 +1282,15 @@
 
     const/16 v3, 0x10
 
-    .line 700
+    .line 728
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    .line 701
+    .line 729
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     move-result-object v4
 
@@ -1359,18 +1304,18 @@
 
     move-result v5
 
-    sub-float/2addr v10, v5
+    sub-float/2addr v12, v5
 
-    mul-float/2addr v10, v15
+    mul-float/2addr v12, v15
 
-    float-to-int v5, v10
+    float-to-int v5, v12
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setAlpha(I)V
 
-    .line 702
+    .line 730
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     move-result-object v4
 
@@ -1384,19 +1329,19 @@
 
     invoke-virtual {v4, v5, v6, v1, v2}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setBounds(IIII)V
 
-    .line 703
+    .line 731
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     move-result-object v1
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/CircularProgressDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 704
+    .line 732
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 707
+    .line 735
     :cond_16
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -1406,7 +1351,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 730
+    .line 758
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1419,7 +1364,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2200(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2300(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
 
     move-result v1
 
@@ -1437,12 +1382,12 @@
 
     if-gez v0, :cond_0
 
-    .line 731
+    .line 759
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 733
+    .line 761
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1454,12 +1399,12 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 848
+    .line 876
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     const/4 v0, 0x1
 
-    .line 849
+    .line 877
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->attached:Z
 
     return-void
@@ -1468,17 +1413,17 @@
 .method protected onDetachedFromWindow()V
     .locals 3
 
-    .line 854
+    .line 882
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 855
+    .line 883
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->attached:Z
 
     move v1, v0
 
-    .line 856
+    .line 884
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
@@ -1488,7 +1433,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 857
+    .line 885
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1503,7 +1448,7 @@
 
     goto :goto_0
 
-    .line 859
+    .line 887
     :cond_0
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
@@ -1514,7 +1459,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 860
+    .line 888
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1529,13 +1474,13 @@
 
     goto :goto_1
 
-    .line 862
+    .line 890
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 863
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/util/LongSparseArray;
@@ -1550,7 +1495,7 @@
 .method public updateEmojiDrawables()V
     .locals 4
 
-    .line 725
+    .line 753
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->getAnimatedEmojiSpans()[Lorg/telegram/ui/Components/AnimatedEmojiSpan;

@@ -65,7 +65,7 @@
 
     move-object v8, p1
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$ZCpZvSu0qKYflHK-JOAnxn9HxK8([IJIILandroid/content/SharedPreferences;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;Landroid/view/View;)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$93SbrBM0FhqJ5-kF9v19Y8INvxs([IJIILandroid/content/SharedPreferences;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;Landroid/view/View;)V
 
     return-void
 .end method

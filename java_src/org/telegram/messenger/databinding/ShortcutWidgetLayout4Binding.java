@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ShortcutWidgetLayout4Binding implements ViewBinding {
     private final LinearLayout rootView;
@@ -27,7 +27,7 @@ public final class ShortcutWidgetLayout4Binding implements ViewBinding {
     }
 
     public static ShortcutWidgetLayout4Binding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.shortcut_widget_layout_4, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.shortcut_widget_layout_4, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ShortcutWidgetLayout4Binding implements ViewBinding {
     }
 
     public static ShortcutWidgetLayout4Binding bind(View view) {
-        int i = C3417R.C3420id.empty_view;
+        int i = C3419R.C3422id.empty_view;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3417R.C3420id.list_view;
+            i = C3419R.C3422id.list_view;
             ListView listView = (ListView) ViewBindings.findChildViewById(view, i);
             if (listView != null) {
                 return new ShortcutWidgetLayout4Binding((LinearLayout) view, textView, listView);

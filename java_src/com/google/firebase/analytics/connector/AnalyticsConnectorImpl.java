@@ -15,10 +15,12 @@ import com.google.firebase.analytics.connector.internal.zzc;
 import com.google.firebase.analytics.connector.internal.zze;
 import com.google.firebase.analytics.connector.internal.zzg;
 import com.google.firebase.events.Event;
+import com.google.firebase.events.EventHandler;
 import com.google.firebase.events.Subscriber;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@19.0.2 */
 /* loaded from: classes3.dex */
@@ -138,7 +140,17 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                 if (zzc == null) {
                     Bundle bundle = new Bundle(1);
                     if (firebaseApp.isDefaultApp()) {
-                        subscriber.subscribe(DataCollectionDefaultChange.class, zzb.zza, zza.zza);
+                        subscriber.subscribe(DataCollectionDefaultChange.class, new Executor() { // from class: com.google.firebase.analytics.connector.zzb
+                            @Override // java.util.concurrent.Executor
+                            public final void execute(Runnable runnable) {
+                                runnable.run();
+                            }
+                        }, new EventHandler() { // from class: com.google.firebase.analytics.connector.zza
+                            @Override // com.google.firebase.events.EventHandler
+                            public final void handle(Event event) {
+                                AnalyticsConnectorImpl.zza(event);
+                            }
+                        });
                         bundle.putBoolean("dataCollectionDefaultEnabled", firebaseApp.isDataCollectionDefaultEnabled());
                     }
                     zzc = new AnalyticsConnectorImpl(zzee.zzg(context, null, null, null, bundle).zzd());

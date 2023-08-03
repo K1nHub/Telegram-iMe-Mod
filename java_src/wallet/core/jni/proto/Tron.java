@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Tron {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface BlockHeaderOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -39,7 +39,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface DelegateResourceContractOrBuilder extends MessageLiteOrBuilder {
         long getBalance();
 
@@ -64,7 +64,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface FreezeBalanceContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -89,7 +89,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface FreezeBalanceV2ContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -108,7 +108,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -123,7 +123,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -144,7 +144,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionOrBuilder extends MessageLiteOrBuilder {
         BlockHeader getBlockHeader();
 
@@ -225,7 +225,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransferAssetContractOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -248,7 +248,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransferContractOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -267,7 +267,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TransferTRC20ContractOrBuilder extends MessageLiteOrBuilder {
         ByteString getAmount();
 
@@ -290,7 +290,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface TriggerSmartContractOrBuilder extends MessageLiteOrBuilder {
         long getCallTokenValue();
 
@@ -315,7 +315,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface UnDelegateResourceContractOrBuilder extends MessageLiteOrBuilder {
         long getBalance();
 
@@ -338,7 +338,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface UnfreezeAssetContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -351,7 +351,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface UnfreezeBalanceContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -372,7 +372,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface UnfreezeBalanceV2ContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -391,7 +391,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VoteAssetContractOrBuilder extends MessageLiteOrBuilder {
         int getCount();
 
@@ -416,7 +416,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VoteWitnessContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -437,7 +437,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface WithdrawBalanceContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -450,7 +450,7 @@ public final class Tron {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface WithdrawExpireUnfreezeContractOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -469,7 +469,7 @@ public final class Tron {
     private Tron() {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TransferContract extends GeneratedMessageLite<TransferContract, Builder> implements TransferContractOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         private static final TransferContract DEFAULT_INSTANCE;
@@ -608,9 +608,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferContract, Builder> implements TransferContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -694,7 +694,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferContract();
                 case 2:
@@ -740,47 +740,47 @@ public final class Tron {
     }
 
     /* renamed from: wallet.core.jni.proto.Tron$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C69861 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72451 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1913xa1df5c61;
+        static final /* synthetic */ int[] f1969xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1913xa1df5c61 = iArr;
+            f1969xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1913xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TransferAssetContract extends GeneratedMessageLite<TransferAssetContract, Builder> implements TransferAssetContractOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 4;
         public static final int ASSET_NAME_FIELD_NUMBER = 1;
@@ -948,9 +948,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferAssetContract, Builder> implements TransferAssetContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -1062,7 +1062,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferAssetContract();
                 case 2:
@@ -1107,7 +1107,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TransferTRC20Contract extends GeneratedMessageLite<TransferTRC20Contract, Builder> implements TransferTRC20ContractOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 4;
         public static final int CONTRACT_ADDRESS_FIELD_NUMBER = 1;
@@ -1276,9 +1276,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferTRC20Contract, Builder> implements TransferTRC20ContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -1390,7 +1390,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferTRC20Contract();
                 case 2:
@@ -1435,7 +1435,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class FreezeBalanceContract extends GeneratedMessageLite<FreezeBalanceContract, Builder> implements FreezeBalanceContractOrBuilder {
         private static final FreezeBalanceContract DEFAULT_INSTANCE;
         public static final int FROZEN_BALANCE_FIELD_NUMBER = 2;
@@ -1620,9 +1620,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FreezeBalanceContract, Builder> implements FreezeBalanceContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -1751,7 +1751,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FreezeBalanceContract();
                 case 2:
@@ -1796,7 +1796,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class FreezeBalanceV2Contract extends GeneratedMessageLite<FreezeBalanceV2Contract, Builder> implements FreezeBalanceV2ContractOrBuilder {
         private static final FreezeBalanceV2Contract DEFAULT_INSTANCE;
         public static final int FROZEN_BALANCE_FIELD_NUMBER = 2;
@@ -1935,9 +1935,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FreezeBalanceV2Contract, Builder> implements FreezeBalanceV2ContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -2021,7 +2021,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FreezeBalanceV2Contract();
                 case 2:
@@ -2066,7 +2066,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class UnfreezeBalanceV2Contract extends GeneratedMessageLite<UnfreezeBalanceV2Contract, Builder> implements UnfreezeBalanceV2ContractOrBuilder {
         private static final UnfreezeBalanceV2Contract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -2205,9 +2205,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnfreezeBalanceV2Contract, Builder> implements UnfreezeBalanceV2ContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -2291,7 +2291,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UnfreezeBalanceV2Contract();
                 case 2:
@@ -2336,7 +2336,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class WithdrawExpireUnfreezeContract extends GeneratedMessageLite<WithdrawExpireUnfreezeContract, Builder> implements WithdrawExpireUnfreezeContractOrBuilder {
         private static final WithdrawExpireUnfreezeContract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -2429,9 +2429,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawExpireUnfreezeContract, Builder> implements WithdrawExpireUnfreezeContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -2470,7 +2470,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawExpireUnfreezeContract();
                 case 2:
@@ -2515,7 +2515,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class DelegateResourceContract extends GeneratedMessageLite<DelegateResourceContract, Builder> implements DelegateResourceContractOrBuilder {
         public static final int BALANCE_FIELD_NUMBER = 3;
         private static final DelegateResourceContract DEFAULT_INSTANCE;
@@ -2700,9 +2700,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DelegateResourceContract, Builder> implements DelegateResourceContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -2831,7 +2831,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DelegateResourceContract();
                 case 2:
@@ -2876,7 +2876,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class UnDelegateResourceContract extends GeneratedMessageLite<UnDelegateResourceContract, Builder> implements UnDelegateResourceContractOrBuilder {
         public static final int BALANCE_FIELD_NUMBER = 3;
         private static final UnDelegateResourceContract DEFAULT_INSTANCE;
@@ -3044,9 +3044,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnDelegateResourceContract, Builder> implements UnDelegateResourceContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -3158,7 +3158,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UnDelegateResourceContract();
                 case 2:
@@ -3203,7 +3203,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class UnfreezeBalanceContract extends GeneratedMessageLite<UnfreezeBalanceContract, Builder> implements UnfreezeBalanceContractOrBuilder {
         private static final UnfreezeBalanceContract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -3354,9 +3354,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnfreezeBalanceContract, Builder> implements UnfreezeBalanceContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -3451,7 +3451,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UnfreezeBalanceContract();
                 case 2:
@@ -3496,7 +3496,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class UnfreezeAssetContract extends GeneratedMessageLite<UnfreezeAssetContract, Builder> implements UnfreezeAssetContractOrBuilder {
         private static final UnfreezeAssetContract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -3589,9 +3589,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnfreezeAssetContract, Builder> implements UnfreezeAssetContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -3630,7 +3630,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UnfreezeAssetContract();
                 case 2:
@@ -3675,7 +3675,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class VoteAssetContract extends GeneratedMessageLite<VoteAssetContract, Builder> implements VoteAssetContractOrBuilder {
         public static final int COUNT_FIELD_NUMBER = 5;
         private static final VoteAssetContract DEFAULT_INSTANCE;
@@ -3864,9 +3864,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<VoteAssetContract, Builder> implements VoteAssetContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -3989,7 +3989,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new VoteAssetContract();
                 case 2:
@@ -4034,7 +4034,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class VoteWitnessContract extends GeneratedMessageLite<VoteWitnessContract, Builder> implements VoteWitnessContractOrBuilder {
         private static final VoteWitnessContract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -4045,7 +4045,7 @@ public final class Tron {
         private String ownerAddress_ = "";
         private Internal.ProtobufList<Vote> votes_ = GeneratedMessageLite.emptyProtobufList();
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface VoteOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -4063,7 +4063,7 @@ public final class Tron {
         private VoteWitnessContract() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Vote extends GeneratedMessageLite<Vote, Builder> implements VoteOrBuilder {
             private static final Vote DEFAULT_INSTANCE;
             private static volatile Parser<Vote> PARSER = null;
@@ -4173,9 +4173,9 @@ public final class Tron {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes6.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Vote, Builder> implements VoteOrBuilder {
-                /* synthetic */ Builder(C69861 c69861) {
+                /* synthetic */ Builder(C72451 c72451) {
                     this();
                 }
 
@@ -4231,7 +4231,7 @@ public final class Tron {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+                switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Vote();
                     case 2:
@@ -4443,9 +4443,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<VoteWitnessContract, Builder> implements VoteWitnessContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -4570,7 +4570,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new VoteWitnessContract();
                 case 2:
@@ -4615,7 +4615,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class WithdrawBalanceContract extends GeneratedMessageLite<WithdrawBalanceContract, Builder> implements WithdrawBalanceContractOrBuilder {
         private static final WithdrawBalanceContract DEFAULT_INSTANCE;
         public static final int OWNER_ADDRESS_FIELD_NUMBER = 1;
@@ -4708,9 +4708,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawBalanceContract, Builder> implements WithdrawBalanceContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -4749,7 +4749,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawBalanceContract();
                 case 2:
@@ -4794,7 +4794,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TriggerSmartContract extends GeneratedMessageLite<TriggerSmartContract, Builder> implements TriggerSmartContractOrBuilder {
         public static final int CALL_TOKEN_VALUE_FIELD_NUMBER = 5;
         public static final int CALL_VALUE_FIELD_NUMBER = 3;
@@ -4985,9 +4985,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TriggerSmartContract, Builder> implements TriggerSmartContractOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -5122,7 +5122,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TriggerSmartContract();
                 case 2:
@@ -5167,7 +5167,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class BlockHeader extends GeneratedMessageLite<BlockHeader, Builder> implements BlockHeaderOrBuilder {
         private static final BlockHeader DEFAULT_INSTANCE;
         public static final int NUMBER_FIELD_NUMBER = 7;
@@ -5340,9 +5340,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<BlockHeader, Builder> implements BlockHeaderOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -5455,7 +5455,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new BlockHeader();
                 case 2:
@@ -5500,7 +5500,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Transaction extends GeneratedMessageLite<Transaction, Builder> implements TransactionOrBuilder {
         public static final int BLOCK_HEADER_FIELD_NUMBER = 3;
         private static final Transaction DEFAULT_INSTANCE;
@@ -5533,7 +5533,7 @@ public final class Tron {
         private Transaction() {
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum ContractOneofCase {
             TRANSFER(10),
             TRANSFER_ASSET(11),
@@ -6341,9 +6341,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -6960,7 +6960,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -7005,7 +7005,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         private static volatile Parser<SigningInput> PARSER = null;
@@ -7122,9 +7122,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -7186,7 +7186,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -7231,7 +7231,7 @@ public final class Tron {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ID_FIELD_NUMBER = 1;
@@ -7402,9 +7402,9 @@ public final class Tron {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C69861 c69861) {
+            /* synthetic */ Builder(C72451 c72451) {
                 this();
             }
 
@@ -7511,7 +7511,7 @@ public final class Tron {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C69861.f1913xa1df5c61[method.ordinal()]) {
+            switch (C72451.f1969xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

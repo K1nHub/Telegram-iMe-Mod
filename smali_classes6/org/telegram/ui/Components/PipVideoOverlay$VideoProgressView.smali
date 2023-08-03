@@ -26,13 +26,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/PipVideoOverlay;Landroid/content/Context;)V
     .locals 2
 
-    .line 1168
+    .line 1170
     iput-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    .line 1169
+    .line 1171
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1166
+    .line 1168
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -45,28 +45,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
-    .line 1171
+    .line 1173
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
 
     const/4 p2, -0x1
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1172
+    .line 1174
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1173
+    .line 1175
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 1174
+    .line 1176
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
 
     const/4 p2, 0x2
@@ -79,7 +79,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1175
+    .line 1177
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
@@ -90,7 +90,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1176
+    .line 1178
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
@@ -109,21 +109,21 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1177
+    .line 1179
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1178
+    .line 1180
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 1179
+    .line 1181
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->bufferPaint:Landroid/graphics/Paint;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -142,10 +142,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 1184
+    .line 1186
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1186
+    .line 1188
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$5000(Lorg/telegram/ui/Components/PipVideoOverlay;)Z
@@ -177,7 +177,7 @@
     :cond_0
     return-void
 
-    .line 1190
+    .line 1192
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -185,7 +185,7 @@
 
     const/16 v1, 0xa
 
-    .line 1192
+    .line 1194
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -196,7 +196,7 @@
 
     int-to-float v0, v0
 
-    .line 1195
+    .line 1197
     iget-object v2, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$5100(Lorg/telegram/ui/Components/PipVideoOverlay;)F
@@ -209,7 +209,7 @@
 
     add-int/2addr v2, v1
 
-    .line 1196
+    .line 1198
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v3
@@ -224,7 +224,7 @@
 
     int-to-float v3, v3
 
-    .line 1197
+    .line 1199
     iget-object v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$5200(Lorg/telegram/ui/Components/PipVideoOverlay;)F
@@ -239,7 +239,7 @@
 
     int-to-float v5, v1
 
-    .line 1198
+    .line 1200
     iget-object v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$5200(Lorg/telegram/ui/Components/PipVideoOverlay;)F
@@ -265,7 +265,7 @@
 
     int-to-float v7, v2
 
-    .line 1200
+    .line 1202
     iget-object v9, p0, Lorg/telegram/ui/Components/PipVideoOverlay$VideoProgressView;->progressPaint:Landroid/graphics/Paint;
 
     move-object v4, p1

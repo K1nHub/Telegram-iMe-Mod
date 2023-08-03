@@ -18,15 +18,15 @@ public final class zzu extends zzbz {
     private static final HashMap zzc;
     @SafeParcelable.Indicator
     final Set zza;
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zzb;
-    @SafeParcelable.Field(getter = "getInfo", m779id = 2)
+    @SafeParcelable.Field(getter = "getInfo", m797id = 2)
     private zzw zzd;
-    @SafeParcelable.Field(getter = "getSignature", m779id = 3)
+    @SafeParcelable.Field(getter = "getSignature", m797id = 3)
     private String zze;
-    @SafeParcelable.Field(getter = "getPackageName", m779id = 4)
+    @SafeParcelable.Field(getter = "getPackageName", m797id = 4)
     private String zzf;
-    @SafeParcelable.Field(getter = "getId", m779id = 5)
+    @SafeParcelable.Field(getter = "getId", m797id = 5)
     private String zzg;
 
     static {
@@ -120,7 +120,7 @@ public final class zzu extends zzbz {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzu(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) zzw zzwVar, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2, @SafeParcelable.Param(m778id = 5) String str3) {
+    public zzu(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) zzw zzwVar, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2, @SafeParcelable.Param(m796id = 5) String str3) {
         this.zza = set;
         this.zzb = i;
         this.zzd = zzwVar;

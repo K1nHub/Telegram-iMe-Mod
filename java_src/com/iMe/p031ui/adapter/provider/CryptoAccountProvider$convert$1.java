@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -38,7 +38,7 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3417R.C3419drawable.ic_ab_other);
+        applyForView.setIcon(C3419R.C3421drawable.ic_ab_other);
         applyForView.setIconColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setCircleRippleBackground(applyForView);
         this.this$0.setupMenuItems(applyForView, this.$item.getNetworkType(), this.$item.getAddress());
@@ -59,7 +59,7 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
                 CryptoAccountProvider$convert$1.invoke$lambda$1(CryptoAccountProvider.this, i);
             }
         });
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

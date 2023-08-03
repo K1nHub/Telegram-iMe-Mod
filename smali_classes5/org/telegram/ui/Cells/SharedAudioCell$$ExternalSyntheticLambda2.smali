@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$xBkzTN6WEI4TT6qoeOIwY28fFQM(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+    check-cast p1, Landroid/net/Uri;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$Wgqnd-PR8SFDRWzX32fe-km1h-k(Lorg/telegram/ui/Cells/SharedAudioCell;Landroid/net/Uri;)V
 
     return-void
 .end method

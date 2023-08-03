@@ -32,23 +32,23 @@
 .method public constructor <init>(Lorg/telegram/ui/PrivacyControlActivity;Landroid/content/Context;)V
     .locals 9
 
-    .line 329
+    .line 330
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 318
+    .line 319
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)V
 
     const/4 v0, 0x0
 
-    .line 331
+    .line 332
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 332
+    .line 333
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 334
+    .line 335
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
@@ -61,7 +61,7 @@
 
     const/16 v1, 0xb
 
-    .line 335
+    .line 336
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -72,7 +72,7 @@
 
     invoke-virtual {p0, v0, v2, v0, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 337
+    .line 338
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -85,7 +85,7 @@
 
     add-int/lit16 v1, v1, -0xe10
 
-    .line 339
+    .line 340
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$100(Lorg/telegram/ui/PrivacyControlActivity;)I
 
     move-result v2
@@ -114,12 +114,12 @@
 
     move-result-object v2
 
-    .line 341
+    .line 342
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 342
+    .line 343
     sget v4, Lorg/telegram/messenger/R$string;->PrivacyForwardsMessageLine:I
 
     const-string v5, "PrivacyForwardsMessageLine"
@@ -132,20 +132,20 @@
 
     add-int/lit8 v1, v1, 0x3c
 
-    .line 343
+    .line 344
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v4, 0x1
 
-    .line 344
+    .line 345
     iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v1, 0x105
 
-    .line 345
+    .line 346
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 346
+    .line 347
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -154,17 +154,17 @@
 
     const/4 v1, 0x1
 
-    .line 347
+    .line 348
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 348
+    .line 349
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;-><init>()V
 
     iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
-    .line 349
+    .line 350
     iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -175,24 +175,24 @@
 
     iput-object v2, v6, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
 
-    .line 350
+    .line 351
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 351
+    .line 352
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 352
+    .line 353
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 353
+    .line 354
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$200(Lorg/telegram/ui/PrivacyControlActivity;)I
 
     move-result v6
@@ -207,7 +207,7 @@
 
     iput-wide v6, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 354
+    .line 355
     new-instance v2, Lorg/telegram/messenger/MessageObject;
 
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$300(Lorg/telegram/ui/PrivacyControlActivity;)I
@@ -218,35 +218,35 @@
 
     iput-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 355
+    .line 356
     iput-wide v4, v2, Lorg/telegram/messenger/MessageObject;->eventId:J
 
-    .line 356
+    .line 357
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->resetLayout()V
 
-    .line 358
+    .line 359
     new-instance v2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {v2, p2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 359
+    .line 360
     new-instance v3, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$1;
 
     invoke-direct {v3, p0, p1}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$1;-><init>(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;Lorg/telegram/ui/PrivacyControlActivity;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
-    .line 362
+    .line 363
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-boolean v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
-    .line 363
+    .line 364
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setFullyDraw(Z)V
 
-    .line 364
+    .line 365
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -255,7 +255,7 @@
 
     invoke-virtual {p1, v2, v3, v0, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
-    .line 365
+    .line 366
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v0, -0x1
@@ -268,7 +268,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 367
+    .line 368
     new-instance p1, Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {p1, p2, v1, v1}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
@@ -287,7 +287,7 @@
 
     const/4 v8, 0x0
 
-    .line 368
+    .line 369
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
@@ -300,7 +300,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/messenger/MessageObject;
     .locals 0
 
-    .line 316
+    .line 317
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     return-object p0
@@ -309,7 +309,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/ui/Components/HintView;
     .locals 0
 
-    .line 316
+    .line 317
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->hintView:Lorg/telegram/ui/Components/HintView;
 
     return-object p0
@@ -318,7 +318,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell;
     .locals 0
 
-    .line 316
+    .line 317
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-object p0
@@ -329,10 +329,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 373
+    .line 374
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 374
+    .line 375
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->hintView:Lorg/telegram/ui/Components/HintView;
 
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -361,10 +361,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 455
+    .line 456
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 456
+    .line 457
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
@@ -375,20 +375,20 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 426
+    .line 427
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 427
+    .line 428
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
     if-eqz v0, :cond_0
 
-    .line 428
+    .line 429
     invoke-interface {v0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;->dispose()V
 
     const/4 v0, 0x0
 
-    .line 429
+    .line 430
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
     :cond_0
@@ -398,36 +398,36 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 379
+    .line 380
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 380
+    .line 381
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq v1, v0, :cond_1
 
-    .line 381
+    .line 382
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
     if-eqz v1, :cond_0
 
-    .line 382
+    .line 383
     invoke-interface {v1}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;->dispose()V
 
     const/4 v1, 0x0
 
-    .line 383
+    .line 384
     iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
-    .line 385
+    .line 386
     :cond_0
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 387
+    .line 388
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -447,16 +447,16 @@
 
     goto/16 :goto_1
 
-    .line 394
+    .line 395
     :cond_2
     instance-of v1, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v1, :cond_4
 
-    .line 395
+    .line 396
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 396
+    .line 397
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getTileModeX()Landroid/graphics/Shader$TileMode;
 
     move-result-object v0
@@ -465,20 +465,20 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 397
+    .line 398
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 398
+    .line 399
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     div-float/2addr v0, v1
 
-    .line 399
+    .line 400
     invoke-virtual {p1, v0, v0}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 400
+    .line 401
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -517,13 +517,13 @@
 
     goto :goto_0
 
-    .line 402
+    .line 403
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 403
+    .line 404
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -542,7 +542,7 @@
 
     int-to-float v3, v0
 
-    .line 404
+    .line 405
     iget-object v4, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -553,12 +553,12 @@
 
     div-float/2addr v3, v4
 
-    .line 405
+    .line 406
     invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    .line 406
+    .line 407
     iget-object v3, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -577,7 +577,7 @@
 
     double-to-int v3, v3
 
-    .line 407
+    .line 408
     iget-object v4, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -596,7 +596,7 @@
 
     double-to-int v1, v4
 
-    .line 408
+    .line 409
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -607,20 +607,20 @@
 
     sub-int/2addr v0, v1
 
-    .line 409
+    .line 410
     div-int/lit8 v0, v0, 0x2
 
-    .line 410
+    .line 411
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 411
+    .line 412
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
 
     invoke-virtual {p1, v2, v2, v3, v5}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 412
+    .line 413
     iget-object v5, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v3, v4
@@ -629,24 +629,24 @@
 
     invoke-virtual {v5, v4, v0, v3, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 414
+    .line 415
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 415
+    .line 416
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_2
 
-    .line 417
+    .line 418
     :cond_4
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     goto :goto_2
 
-    .line 388
+    .line 389
     :cond_5
     :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -659,14 +659,14 @@
 
     invoke-virtual {v0, v2, v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 389
+    .line 390
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     if-eqz v1, :cond_6
 
-    .line 390
+    .line 391
     check-cast v0, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->drawExactBoundsSize(Landroid/graphics/Canvas;Landroid/view/View;)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
@@ -677,11 +677,11 @@
 
     goto :goto_2
 
-    .line 392
+    .line 393
     :cond_6
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 420
+    .line 421
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -695,7 +695,7 @@
 
     invoke-virtual {v0, v2, v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 421
+    .line 422
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V

@@ -3,7 +3,7 @@ package p033j$.time.format;
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class AbstractC2752s {
     /* renamed from: a */
-    public static /* synthetic */ void m642a(int i, String str) {
+    public static /* synthetic */ void m660a(int i, String str) {
         if (i == 0) {
             throw new NullPointerException(str);
         }

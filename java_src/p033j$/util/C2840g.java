@@ -20,7 +20,7 @@ public class C2840g implements InterfaceC2826l {
     }
 
     /* renamed from: b */
-    public void m537b(C2840g c2840g) {
+    public void m555b(C2840g c2840g) {
         this.count += c2840g.count;
         this.sum += c2840g.sum;
         this.min = Math.min(this.min, c2840g.min);
@@ -29,7 +29,7 @@ public class C2840g implements InterfaceC2826l {
 
     @Override // p033j$.util.function.InterfaceC2826l
     /* renamed from: l */
-    public InterfaceC2826l mo165l(InterfaceC2826l interfaceC2826l) {
+    public InterfaceC2826l mo183l(InterfaceC2826l interfaceC2826l) {
         Objects.requireNonNull(interfaceC2826l);
         return new C2825k(this, interfaceC2826l);
     }

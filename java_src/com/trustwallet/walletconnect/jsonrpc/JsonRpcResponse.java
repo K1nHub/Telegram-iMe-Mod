@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class JsonRpcResponse<T> {
 
     /* renamed from: id */
-    private final long f471id;
+    private final long f474id;
     private final String jsonrpc;
     private final T result;
 
@@ -18,25 +18,25 @@ public final class JsonRpcResponse<T> {
         }
         if (obj instanceof JsonRpcResponse) {
             JsonRpcResponse jsonRpcResponse = (JsonRpcResponse) obj;
-            return Intrinsics.areEqual(this.jsonrpc, jsonRpcResponse.jsonrpc) && this.f471id == jsonRpcResponse.f471id && Intrinsics.areEqual(this.result, jsonRpcResponse.result);
+            return Intrinsics.areEqual(this.jsonrpc, jsonRpcResponse.jsonrpc) && this.f474id == jsonRpcResponse.f474id && Intrinsics.areEqual(this.result, jsonRpcResponse.result);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f471id)) * 31;
+        int hashCode = ((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f474id)) * 31;
         T t = this.result;
         return hashCode + (t == null ? 0 : t.hashCode());
     }
 
     public String toString() {
-        return "JsonRpcResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f471id + ", result=" + this.result + ')';
+        return "JsonRpcResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f474id + ", result=" + this.result + ')';
     }
 
     public JsonRpcResponse(String jsonrpc, long j, T t) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
         this.jsonrpc = jsonrpc;
-        this.f471id = j;
+        this.f474id = j;
         this.result = t;
     }
 

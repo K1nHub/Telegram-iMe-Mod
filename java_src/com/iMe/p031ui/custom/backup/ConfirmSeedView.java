@@ -10,6 +10,7 @@ import com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcher;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
@@ -54,7 +55,13 @@ public final class ConfirmSeedView extends FrameLayout {
         Sequence<BackupWordSwitcher> filter;
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
         Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), ConfirmSeedView$applyColors$$inlined$filterIsInstance$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.ConfirmSeedView$applyColors$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof BackupWordSwitcher);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordSwitcher backupWordSwitcher : filter) {
             backupWordSwitcher.applyColors();
@@ -72,7 +79,13 @@ public final class ConfirmSeedView extends FrameLayout {
         chunked = CollectionsKt___CollectionsKt.chunked(list, calcSeedPartSize(list));
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
         Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof BackupWordSwitcher);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         int i = 0;
         for (Object obj : filter) {

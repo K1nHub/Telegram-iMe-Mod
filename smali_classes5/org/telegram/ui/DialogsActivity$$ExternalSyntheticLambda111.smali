@@ -10,11 +10,15 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:I
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Lorg/telegram/ui/TopicsFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;JZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;JIZLorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +27,11 @@
 
     iput-wide p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$1:J
 
-    iput-boolean p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:Z
+    iput p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:I
+
+    iput-boolean p5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$3:Z
+
+    iput-object p6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$4:Lorg/telegram/ui/TopicsFragment;
 
     return-void
 .end method
@@ -31,15 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$1:J
 
-    iget-boolean v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:Z
+    iget v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:I
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$rDp1p0D7fFLXYXFdWDggBxgNxdw(Lorg/telegram/ui/DialogsActivity;JZ)V
+    iget-boolean v4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$3:Z
+
+    iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$4:Lorg/telegram/ui/TopicsFragment;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$J9oN-7w_muQ_VPR2or0JAfHNso0(Lorg/telegram/ui/DialogsActivity;JIZLorg/telegram/ui/TopicsFragment;)V
 
     return-void
 .end method

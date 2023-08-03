@@ -150,7 +150,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public ImmutableList<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
-        return ImmutableList.m744of();
+        return ImmutableList.m762of();
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod

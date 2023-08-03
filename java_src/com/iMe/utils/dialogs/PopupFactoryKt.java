@@ -31,8 +31,8 @@ public final class PopupFactoryKt {
         final ListPopupWindow listPopupWindow = new ListPopupWindow(view.getContext());
         listPopupWindow.setWidth(AndroidUtilities.displaySize.x / 2);
         listPopupWindow.setAnchorView(view);
-        int m54dp = AndroidUtilities.m54dp(6);
-        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m54dp, m54dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
+        int m72dp = AndroidUtilities.m72dp(6);
+        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m72dp, m72dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
         if (num != null) {
             listPopupWindow.setVerticalOffset(num.intValue());
         }
@@ -51,7 +51,6 @@ public final class PopupFactoryKt {
         return listPopupWindow;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void createPopupWithOptions$lambda$1$lambda$0(Function2 onSelected, List options, ListPopupWindow this_apply, AdapterView adapterView, View view, int i, long j) {
         Intrinsics.checkNotNullParameter(onSelected, "$onSelected");
         Intrinsics.checkNotNullParameter(options, "$options");

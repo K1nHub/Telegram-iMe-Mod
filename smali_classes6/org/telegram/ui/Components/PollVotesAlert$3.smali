@@ -26,17 +26,17 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 588
+    .line 614
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 590
+    .line 616
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
-    .line 591
+    .line 617
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -53,12 +53,12 @@
 
     const/16 v0, 0xd
 
-    .line 660
+    .line 686
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 661
+    .line 687
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1500(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -75,7 +75,7 @@
 
     sub-int/2addr v1, v0
 
-    .line 662
+    .line 688
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1800(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -88,7 +88,7 @@
 
     int-to-float v1, v1
 
-    .line 663
+    .line 689
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -106,14 +106,14 @@
     :cond_0
     const/16 v2, 0x14
 
-    .line 665
+    .line 691
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     add-int/2addr v2, v1
 
-    .line 667
+    .line 693
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v3
@@ -134,7 +134,7 @@
 
     add-int/2addr v3, v4
 
-    .line 670
+    .line 696
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2000(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -153,7 +153,7 @@
 
     if-ge v4, v5, :cond_1
 
-    .line 671
+    .line 697
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -162,7 +162,7 @@
 
     int-to-float v0, v0
 
-    .line 672
+    .line 698
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v4
@@ -185,7 +185,7 @@
 
     move-result v4
 
-    .line 673
+    .line 699
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v5
@@ -211,7 +211,7 @@
     :cond_1
     move v0, v7
 
-    .line 682
+    .line 708
     :goto_0
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -219,14 +219,14 @@
 
     if-lt v4, v5, :cond_2
 
-    .line 683
+    .line 709
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v1, v4
 
     add-int/2addr v2, v4
 
-    .line 687
+    .line 713
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
@@ -242,7 +242,7 @@
 
     invoke-virtual {v4, v5, v1, v8, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 688
+    .line 714
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2200(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/drawable/Drawable;
@@ -255,7 +255,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 691
+    .line 717
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -266,7 +266,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 692
+    .line 718
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
@@ -321,7 +321,7 @@
 
     invoke-virtual {v3, v4, v5, v8, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 693
+    .line 719
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     const/16 v3, 0xc
@@ -355,12 +355,12 @@
 
     const/16 v1, 0x24
 
-    .line 698
+    .line 724
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 699
+    .line 725
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -397,24 +397,24 @@
 
     invoke-virtual {v3, v4, v8, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 700
+    .line 726
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 701
+    .line 727
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
 
-    .line 702
+    .line 728
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 703
+    .line 729
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     int-to-float v2, v2
@@ -427,7 +427,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 704
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -446,7 +446,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 707
+    .line 733
     :cond_4
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
@@ -456,7 +456,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    .line 708
+    .line 734
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1600(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -507,12 +507,12 @@
 
     move-result v0
 
-    .line 709
+    .line 735
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 710
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PollVotesAlert;->access$2700(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -553,7 +553,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 638
+    .line 664
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -608,7 +608,7 @@
 
     if-nez v0, :cond_0
 
-    .line 639
+    .line 665
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -617,7 +617,7 @@
 
     return p1
 
-    .line 642
+    .line 668
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -629,10 +629,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 632
+    .line 658
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 633
+    .line 659
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     const/4 p2, 0x0
@@ -645,12 +645,12 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 595
+    .line 621
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 596
+    .line 622
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v2, 0x1
@@ -669,10 +669,10 @@
 
     if-nez v1, :cond_0
 
-    .line 597
+    .line 623
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
-    .line 598
+    .line 624
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$700(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -689,10 +689,10 @@
 
     invoke-virtual {p0, v1, v4, v5, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 599
+    .line 625
     iput-boolean v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
-    .line 601
+    .line 627
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
@@ -700,7 +700,7 @@
 
     sub-int v1, v0, v1
 
-    .line 603
+    .line 629
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -713,14 +713,14 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 604
+    .line 630
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v5
 
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 606
+    .line 632
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PollVotesAlert;->access$900(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/View;
@@ -733,14 +733,14 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 607
+    .line 633
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v5
 
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 609
+    .line 635
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1000(Lorg/telegram/ui/Components/PollVotesAlert;)I
@@ -759,7 +759,7 @@
 
     add-int/2addr v4, v5
 
-    .line 610
+    .line 636
     iget-object v5, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1100(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
@@ -779,7 +779,7 @@
 
     if-nez v6, :cond_1
 
-    .line 613
+    .line 639
     iget-object v8, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1300(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/widget/TextView;
@@ -806,7 +806,7 @@
 
     invoke-virtual {v8, v7, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 614
+    .line 640
     iget-object v7, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {v7}, Lorg/telegram/ui/Components/PollVotesAlert;->access$1300(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/widget/TextView;
@@ -821,7 +821,7 @@
 
     goto :goto_1
 
-    .line 616
+    .line 642
     :cond_1
     iget-object v7, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
@@ -835,7 +835,7 @@
 
     const/16 v8, 0x20
 
-    .line 617
+    .line 643
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -866,7 +866,7 @@
 
     goto :goto_2
 
-    .line 620
+    .line 646
     :cond_3
     div-int/lit8 p2, v1, 0x5
 
@@ -883,7 +883,7 @@
 
     add-int/2addr v1, p2
 
-    .line 621
+    .line 647
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -896,10 +896,10 @@
 
     if-eq p2, v1, :cond_4
 
-    .line 622
+    .line 648
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
-    .line 623
+    .line 649
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -910,7 +910,7 @@
 
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setPinnedSectionOffsetY(I)V
 
-    .line 624
+    .line 650
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert;->access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -919,10 +919,10 @@
 
     invoke-virtual {p2, v3, v1, v3, v3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 625
+    .line 651
     iput-boolean v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
-    .line 627
+    .line 653
     :cond_4
     invoke-static {v0, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -936,7 +936,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 647
+    .line 673
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -965,14 +965,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 652
+    .line 678
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 655
+    .line 681
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

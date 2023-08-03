@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 35
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$checkBox$2;->invoke()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/CheckBox2;
     .locals 1
 
-    .line 35
+    .line 40
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell$checkBox$2;->this$0:Lcom/iMe/fork/ui/view/CircleCheckCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->access$initCheckBox(Lcom/iMe/fork/ui/view/CircleCheckCell;)Lorg/telegram/ui/Components/CheckBox2;

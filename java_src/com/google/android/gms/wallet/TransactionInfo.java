@@ -11,11 +11,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class TransactionInfo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TransactionInfo> CREATOR = new zzao();
-    @SafeParcelable.Field(m779id = 1)
+    @SafeParcelable.Field(m797id = 1)
     int zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     String zzb;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     String zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -87,7 +87,7 @@ public final class TransactionInfo extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public TransactionInfo(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2) {
+    public TransactionInfo(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2) {
         this.zza = i;
         this.zzb = str;
         this.zzc = str2;

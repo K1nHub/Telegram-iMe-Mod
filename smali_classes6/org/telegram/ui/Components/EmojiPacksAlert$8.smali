@@ -34,7 +34,7 @@
 
     move-object v0, p1
 
-    .line 1398
+    .line 1426
     iput-object v0, v8, Lorg/telegram/ui/Components/EmojiPacksAlert$8;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     move-object v0, p0
@@ -61,7 +61,7 @@
 .method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
     .locals 9
 
-    .line 1403
+    .line 1431
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$8;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1404
+    .line 1432
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$8;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -90,7 +90,7 @@
 
     goto :goto_1
 
-    .line 1405
+    .line 1433
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$8;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1406
+    .line 1434
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$8;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -125,7 +125,7 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    .line 1411
+    .line 1439
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v0
@@ -136,7 +136,7 @@
 
     const/4 v0, 0x0
 
-    .line 1412
+    .line 1440
     invoke-virtual {p1, v0}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -160,7 +160,7 @@
 
     const/16 v4, 0x35
 
-    .line 1414
+    .line 1442
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -199,7 +199,7 @@
         }
     .end annotation
 
-    .line 1401
+    .line 1429
     new-instance p3, Lorg/telegram/ui/Components/EmojiPacksAlert$8$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert$8$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert$8;Landroidx/collection/LongSparseArray;I)V

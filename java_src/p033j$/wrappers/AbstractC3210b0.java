@@ -6,13 +6,13 @@ import java.util.function.IntUnaryOperator;
 public abstract /* synthetic */ class AbstractC3210b0 implements IntUnaryOperator {
 
     /* renamed from: a */
-    final /* synthetic */ C3208a0 f1254a;
+    final /* synthetic */ C3208a0 f1257a;
 
     /* renamed from: a */
-    public static /* synthetic */ IntUnaryOperator m149a(C3208a0 c3208a0) {
+    public static /* synthetic */ IntUnaryOperator m167a(C3208a0 c3208a0) {
         if (c3208a0 == null) {
             return null;
         }
-        return c3208a0.f1252a;
+        return c3208a0.f1255a;
     }
 }

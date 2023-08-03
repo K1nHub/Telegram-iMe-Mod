@@ -46,7 +46,7 @@
         }
     .end annotation
 
-    const-string v0, "onStakingSelectedAction"
+    const-string/jumbo v0, "onStakingSelectedAction"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

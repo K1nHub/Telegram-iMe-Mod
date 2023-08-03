@@ -23,7 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -65,7 +65,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
             r4.fragment = r5
             r4.item = r6
             com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$presenter$2 r5 = new com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$presenter$2
-            r5.<init>(r4)
+            r5.<init>()
             moxy.ktx.MoxyKtxDelegate r6 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r0 = r4.getMvpDelegate()
             java.lang.String r2 = "mvpDelegate"
@@ -85,11 +85,11 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$special$$inlined$inject$default$1 r6 = new com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
-            r6.<init>(r4, r0, r0)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r4.resourceManager$delegate = r5
             com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$binding$2 r5 = new com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$binding$2
-            r5.<init>(r4)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r5 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r4, r0, r5, r1, r0)
             r4.binding$delegate = r5
             r5 = 0
@@ -119,7 +119,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
 
     @Override // com.iMe.manager.wallet.WalletLinkClickableView
     public void actionOpenProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m85to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m103to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -203,13 +203,30 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3417R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3419R.string.common_ok));
     }
 
     private final void setupListeners() {
         AppCompatTextView textActionCancel = getBinding().textActionCancel;
         Intrinsics.checkNotNullExpressionValue(textActionCancel, "textActionCancel");
-        ViewExtKt.safeThrottledClick$default(textActionCancel, 0L, new WalletNotificationDetailsBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(textActionCancel, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletNotificationDetailsBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */

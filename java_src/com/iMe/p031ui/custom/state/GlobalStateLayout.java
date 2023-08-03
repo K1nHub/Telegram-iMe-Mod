@@ -14,12 +14,18 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RLottieImageView;
@@ -55,9 +61,49 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        this.retryButtonClickListener = GlobalStateLayout$retryButtonClickListener$1.INSTANCE;
-        this.emptyButtonClickListener = GlobalStateLayout$emptyButtonClickListener$1.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new GlobalStateLayout$special$$inlined$inject$default$1(this, null, null));
+        this.retryButtonClickListener = new Function0<Unit>() { // from class: com.iMe.ui.custom.state.GlobalStateLayout$retryButtonClickListener$1
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+        };
+        this.emptyButtonClickListener = new Function0<Unit>() { // from class: com.iMe.ui.custom.state.GlobalStateLayout$emptyButtonClickListener$1
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.state.GlobalStateLayout$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resourceManager$delegate = lazy;
         setupStates();
     }
@@ -155,16 +201,16 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     }
 
     private final View configureProgressState(View view) {
-        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3417R.C3420id.image_state_animation);
+        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3419R.C3422id.image_state_animation);
         int i = Theme.key_chats_actionBackground;
         rLottieImageView.setLayerColor("Shape Layer 1", ViewExtKt.withAlpha(Theme.getColor(i), 55));
         rLottieImageView.setLayerColor("Shape Layer 2", Theme.getColor(i));
-        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3417R.C3420id.text_state_title);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3419R.C3422id.text_state_title);
         if (appCompatTextView != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView, "findViewById<AppCompatTe…w>(R.id.text_state_title)");
             ViewExtKt.gone$default(appCompatTextView, false, 1, null);
         }
-        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3417R.C3420id.text_state_description);
+        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3419R.C3422id.text_state_description);
         if (appCompatTextView2 != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "findViewById<AppCompatTe…d.text_state_description)");
             ViewExtKt.gone$default(appCompatTextView2, false, 1, null);
@@ -172,25 +218,50 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
         return view;
     }
 
-    private final View getStateView(GlobalState globalState) {
-        View inflate = LayoutInflater.from(getContext()).inflate(C3417R.layout.fork_content_global_state_layout, (ViewGroup) null);
-        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3417R.C3420id.image_state_animation);
+    private final View getStateView(final GlobalState globalState) {
+        View inflate = LayoutInflater.from(getContext()).inflate(C3419R.layout.fork_content_global_state_layout, (ViewGroup) null);
+        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3419R.C3422id.image_state_animation);
         rLottieImageView.setAutoRepeat(true);
         rLottieImageView.setAnimation(globalState.getIcon(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        AppCompatTextView getStateView$lambda$6$lambda$3 = (AppCompatTextView) inflate.findViewById(C3417R.C3420id.text_state_title);
+        AppCompatTextView getStateView$lambda$6$lambda$3 = (AppCompatTextView) inflate.findViewById(C3419R.C3422id.text_state_title);
         getStateView$lambda$6$lambda$3.setText(getResourceManager().getString(globalState.getTitle()));
         getStateView$lambda$6$lambda$3.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         Intrinsics.checkNotNullExpressionValue(getStateView$lambda$6$lambda$3, "getStateView$lambda$6$lambda$3");
         ViewExtKt.withMediumTypeface(getStateView$lambda$6$lambda$3);
-        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3417R.C3420id.text_state_description);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3419R.C3422id.text_state_description);
         appCompatTextView.setText(getResourceManager().getString(globalState.getDescription()));
         appCompatTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray2));
-        AppCompatButton getStateView$lambda$6$lambda$5 = (AppCompatButton) inflate.findViewById(C3417R.C3420id.button_retry);
-        getStateView$lambda$6$lambda$5.setText(getResourceManager().getString(Intrinsics.areEqual(globalState, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState, GlobalState.Empty.CustomTokens.INSTANCE) ? C3417R.string.token_search_empty_result_add_token : C3417R.string.common_retry));
+        AppCompatButton getStateView$lambda$6$lambda$5 = (AppCompatButton) inflate.findViewById(C3419R.C3422id.button_retry);
+        getStateView$lambda$6$lambda$5.setText(getResourceManager().getString(Intrinsics.areEqual(globalState, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState, GlobalState.Empty.CustomTokens.INSTANCE) ? C3419R.string.token_search_empty_result_add_token : C3419R.string.common_retry));
         Intrinsics.checkNotNullExpressionValue(getStateView$lambda$6$lambda$5, "getStateView$lambda$6$lambda$5");
         ViewExtKt.setRippleBackground$default(getStateView$lambda$6$lambda$5, false, 1, null);
         getStateView$lambda$6$lambda$5.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
-        ViewExtKt.safeThrottledClick$default(getStateView$lambda$6$lambda$5, 0L, new GlobalStateLayout$getStateView$1$4$1(globalState, this), 1, null);
+        ViewExtKt.safeThrottledClick$default(getStateView$lambda$6$lambda$5, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.custom.state.GlobalStateLayout$getStateView$1$4$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                GlobalState globalState2 = GlobalState.this;
+                if (Intrinsics.areEqual(globalState2, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState2, GlobalState.Empty.CustomTokens.INSTANCE)) {
+                    this.getEmptyButtonClickListener().invoke();
+                    return;
+                }
+                if (Intrinsics.areEqual(globalState2, GlobalState.NoInternet.INSTANCE) ? true : Intrinsics.areEqual(globalState2, GlobalState.Unexpected.INSTANCE)) {
+                    this.getRetryButtonClickListener().invoke();
+                }
+            }
+        }, 1, null);
         Intrinsics.checkNotNullExpressionValue(inflate, "from(context)\n          …          }\n            }");
         return inflate;
     }
@@ -198,7 +269,7 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void startAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3417R.C3420id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3419R.C3422id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.playAnimation();
@@ -207,14 +278,14 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void stopAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3417R.C3420id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3419R.C3422id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.stopAnimation();
     }
 
     private final View hideActionButton(View view) {
-        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3417R.C3420id.button_retry);
+        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3419R.C3422id.button_retry);
         if (appCompatButton != null) {
             ViewExtKt.gone$default(appCompatButton, false, 1, null);
         }

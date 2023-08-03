@@ -19,12 +19,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.Components.AlertsCreator;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SettingsHelpBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet */
@@ -54,23 +55,170 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         Intrinsics.checkNotNullParameter(fragment, "fragment");
         this.fragment = fragment;
-        lazy = LazyKt__LazyJVMKt.lazy(new SettingsHelpBottomSheet$rootView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ScrollView>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ScrollView invoke() {
+                ScrollView initRootView;
+                initRootView = SettingsHelpBottomSheet.this.initRootView();
+                return initRootView;
+            }
+        });
         this.rootView$delegate = lazy;
         Pair[] pairArr = new Pair[8];
-        pairArr[0] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_support_item_title), new SettingsHelpBottomSheet$items$1(this));
-        pairArr[1] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_group_item_title), new SettingsHelpBottomSheet$items$2(this));
-        pairArr[2] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_lime_group_item_title), new SettingsHelpBottomSheet$items$3(this));
-        pairArr[3] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_channel_item_title), new SettingsHelpBottomSheet$items$4(this));
-        pairArr[4] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_faq_item_title), new SettingsHelpBottomSheet$items$5(this));
-        pairArr[5] = TuplesKt.m85to(LocaleController.getString("PrivacyPolicy", C3417R.string.PrivacyPolicy), new SettingsHelpBottomSheet$items$6(this));
+        pairArr[0] = TuplesKt.m103to(LocaleController.getInternalString(C3419R.string.settings_help_alert_support_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/imemessenger");
+            }
+        });
+        pairArr[1] = TuplesKt.m103to(LocaleController.getInternalString(C3419R.string.settings_help_alert_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/ime_ai");
+            }
+        });
+        pairArr[2] = TuplesKt.m103to(LocaleController.getInternalString(C3419R.string.settings_help_alert_lime_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/imelime");
+            }
+        });
+        pairArr[3] = TuplesKt.m103to(LocaleController.getInternalString(C3419R.string.settings_help_alert_channel_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$4
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3419R.string.settings_help_alert_channel_username));
+            }
+        });
+        pairArr[4] = TuplesKt.m103to(LocaleController.getInternalString(C3419R.string.settings_help_alert_faq_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$5
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3419R.string.settings_help_alert_faq_url));
+            }
+        });
+        pairArr[5] = TuplesKt.m103to(LocaleController.getString("PrivacyPolicy", C3419R.string.PrivacyPolicy), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$6
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3419R.string.PrivacyPolicyUrl));
+            }
+        });
         ScreenType screenType2 = ScreenType.COMMON_SETTINGS;
-        pairArr[6] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("AskAQuestion", C3417R.string.AskAQuestion), new SettingsHelpBottomSheet$items$7(this)) : null;
-        pairArr[7] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("TelegramFeatures", C3417R.string.TelegramFeatures), new SettingsHelpBottomSheet$items$8(this)) : null;
+        pairArr[6] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("AskAQuestion", C3419R.string.AskAQuestion), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$7
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                BaseFragment baseFragment;
+                BaseFragment baseFragment2;
+                BaseFragment baseFragment3;
+                baseFragment = SettingsHelpBottomSheet.this.fragment;
+                baseFragment2 = SettingsHelpBottomSheet.this.fragment;
+                baseFragment3 = SettingsHelpBottomSheet.this.fragment;
+                baseFragment.showDialog(AlertsCreator.createSupportAlert(baseFragment2, baseFragment3.getResourceProvider()));
+            }
+        }) : null;
+        pairArr[7] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("TelegramFeatures", C3419R.string.TelegramFeatures), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$8
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getString("TelegramFeaturesUrl", C3419R.string.TelegramFeaturesUrl));
+            }
+        }) : null;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) pairArr);
         this.items = listOfNotNull;
         setApplyBottomPadding(false);
         setCustomView(getRootView());
-        setTitle(LocaleController.getString("SettingsHelp", C3417R.string.SettingsHelp), true);
+        setTitle(LocaleController.getString("SettingsHelp", C3419R.string.SettingsHelp), true);
     }
 
     private final ScrollView getRootView() {
@@ -156,9 +304,9 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
     public final AlertDialog createSocialNetworkAlert(final DrawerSocialNetwork drawerSocialNetwork) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getInternalString(drawerSocialNetwork.getTitleResId()));
-        String string = LocaleController.getString("Open", C3417R.string.Open);
+        String string = LocaleController.getString("Open", C3419R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
-        String string2 = LocaleController.getString("CopyLink", C3417R.string.CopyLink);
+        String string2 = LocaleController.getString("CopyLink", C3419R.string.CopyLink);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"CopyLink\", R.string.CopyLink)");
         builder.setItems(new CharSequence[]{string, string2}, new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -178,7 +326,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         } else if (i != 1) {
         } else {
             AndroidUtilities.addToClipboard(socialNetwork.url());
-            String string = LocaleController.getString("LinkCopied", C3417R.string.LinkCopied);
+            String string = LocaleController.getString("LinkCopied", C3419R.string.LinkCopied);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
             ContextExtKt.toast(string);
         }

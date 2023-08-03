@@ -36,10 +36,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 490
+    .line 520
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 479
+    .line 509
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -50,12 +50,12 @@
 
     const-wide/16 v1, -0x1
 
-    .line 480
+    .line 510
     iput-wide v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->lastTime:J
 
     const/16 v1, 0xe
 
-    .line 491
+    .line 521
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 492
+    .line 522
     sget v0, Lorg/telegram/messenger/R$drawable;->tooltip_arrow:I
 
     invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -75,7 +75,7 @@
 
     const/4 p1, 0x5
 
-    .line 493
+    .line 523
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -92,12 +92,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 494
+    .line 524
     invoke-virtual {p0}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->updateColors()V
 
     const/4 p1, 0x0
 
-    .line 495
+    .line 525
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->setTime(I)V
 
     return-void
@@ -108,14 +108,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 516
+    .line 546
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 519
+    .line 549
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show:Z
 
@@ -127,7 +127,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 520
+    .line 550
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
     cmpl-float v4, v0, v2
@@ -136,23 +136,23 @@
 
     add-float/2addr v0, v1
 
-    .line 521
+    .line 551
     iput v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
     cmpl-float v0, v0, v2
 
     if-lez v0, :cond_1
 
-    .line 522
+    .line 552
     iput v2, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
-    .line 523
+    .line 553
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 
-    .line 526
+    .line 556
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
@@ -162,21 +162,21 @@
 
     sub-float/2addr v0, v1
 
-    .line 527
+    .line 557
     iput v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_3
 
-    .line 528
+    .line 558
     iput v3, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
-    .line 529
+    .line 559
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 531
+    .line 561
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
@@ -190,7 +190,7 @@
     :goto_0
     const/high16 v0, 0x437f0000    # 255.0f
 
-    .line 535
+    .line 565
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
     const/high16 v4, 0x3f000000    # 0.5f
@@ -211,10 +211,10 @@
 
     float-to-int v0, v1
 
-    .line 537
+    .line 567
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 538
+    .line 568
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->scale:F
 
     iget v4, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->cx:F
@@ -227,7 +227,7 @@
 
     invoke-virtual {p1, v1, v1, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 539
+    .line 569
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->cx:F
 
     iget-object v4, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
@@ -246,12 +246,12 @@
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 541
+    .line 571
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     const/16 v4, 0x8
 
-    .line 542
+    .line 572
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -262,7 +262,7 @@
 
     iget-object v7, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
-    .line 543
+    .line 573
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getWidth()I
 
     move-result v7
@@ -291,15 +291,15 @@
 
     float-to-int v4, v4
 
-    .line 541
+    .line 571
     invoke-virtual {v1, v5, v6, v7, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 545
+    .line 575
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
-    .line 546
+    .line 576
     invoke-virtual {v4}, Landroid/text/StaticLayout;->getWidth()I
 
     move-result v4
@@ -334,7 +334,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
-    .line 547
+    .line 577
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getWidth()I
 
     move-result v6
@@ -375,47 +375,47 @@
 
     add-int/2addr v7, v8
 
-    .line 545
+    .line 575
     invoke-virtual {v1, v4, v5, v6, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 549
+    .line 579
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 550
+    .line 580
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 551
+    .line 581
     iget-object v1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 553
+    .line 583
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 554
+    .line 584
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 555
+    .line 585
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
 
     invoke-virtual {p1, v3, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 556
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 557
+    .line 587
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -424,10 +424,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 508
+    .line 538
     iget-object p2, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipLayout:Landroid/text/StaticLayout;
 
-    .line 509
+    .line 539
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result p2
@@ -450,7 +450,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 508
+    .line 538
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -463,10 +463,10 @@
 .method public setCx(F)V
     .locals 0
 
-    .line 567
+    .line 597
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->cx:F
 
-    .line 568
+    .line 598
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -477,22 +477,22 @@
 
     int-to-long v0, p1
 
-    .line 499
+    .line 529
     iget-wide v2, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->lastTime:J
 
     cmp-long v2, v0, v2
 
     if-eqz v2, :cond_0
 
-    .line 500
+    .line 530
     iput-wide v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->lastTime:J
 
-    .line 501
+    .line 531
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->formatShortDuration(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 502
+    .line 532
     new-instance p1, Landroid/text/StaticLayout;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipPaint:Landroid/text/TextPaint;
@@ -524,10 +524,10 @@
 .method public show(Z)V
     .locals 0
 
-    .line 572
+    .line 602
     iput-boolean p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->show:Z
 
-    .line 573
+    .line 603
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -536,7 +536,7 @@
 .method public updateColors()V
     .locals 4
 
-    .line 561
+    .line 591
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintText:I
@@ -549,7 +549,7 @@
 
     const/4 v0, 0x5
 
-    .line 562
+    .line 592
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -566,7 +566,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 563
+    .line 593
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$TimeHintView;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;

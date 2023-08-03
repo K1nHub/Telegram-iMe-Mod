@@ -38,7 +38,7 @@
     .line 194
     iget-object v0, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;->this$1:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;
 
-    iget v0, v0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$currentAccount:I
+    iget v0, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
@@ -64,7 +64,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;->this$1:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;
 
-    iget v2, v2, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$currentAccount:I
+    iget v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
@@ -132,7 +132,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;->this$1:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;
 
-    iget p1, p1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$currentAccount:I
+    iget p1, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
@@ -148,7 +148,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;->this$1:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;
 
-    iget v9, p1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$currentAccount:I
+    iget v9, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->currentAccount:I
 
     const/4 v10, 0x0
 

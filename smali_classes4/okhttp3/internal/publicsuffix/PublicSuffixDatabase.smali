@@ -246,7 +246,7 @@
     move v5, v2
 
     :goto_3
-    const-string v6, "publicSuffixListBytes"
+    const-string/jumbo v6, "publicSuffixListBytes"
 
     const/4 v7, 0x0
 
@@ -348,7 +348,7 @@
 
     if-nez v10, :cond_9
 
-    const-string v11, "publicSuffixExceptionListBytes"
+    const-string/jumbo v11, "publicSuffixExceptionListBytes"
 
     invoke-static {v11}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
@@ -528,7 +528,7 @@
     .line 210
     const-class v0, Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;
 
-    const-string v1, "publicsuffixes.gz"
+    const-string/jumbo v1, "publicsuffixes.gz"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 

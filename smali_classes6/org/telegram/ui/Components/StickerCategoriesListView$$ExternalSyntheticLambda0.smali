@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->$r8$lambda$zu7CKYPsSHKWJxPU4VvqR-Rg-Ec(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->$r8$lambda$-Th6ISUeG13uYRnFrfcYeUMpzfI(Lorg/telegram/ui/Components/StickerCategoriesListView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

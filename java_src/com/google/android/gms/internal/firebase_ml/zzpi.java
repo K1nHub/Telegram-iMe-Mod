@@ -25,19 +25,19 @@ public final class zzpi implements zzoo {
         File file2 = new File(zzc, String.valueOf(zzom.zzb(zzc) + 1));
         if (file.renameTo(file2)) {
             gmsLogger3 = zzpd.zzass;
-            gmsLogger3.m789d("RemoteModelFileManager", "Rename to serving model successfully");
+            gmsLogger3.m807d("RemoteModelFileManager", "Rename to serving model successfully");
             file2.setExecutable(false);
             file2.setWritable(false);
             return file2;
         }
         gmsLogger = zzpd.zzass;
-        gmsLogger.m789d("RemoteModelFileManager", "Rename to serving model failed, remove the temp file.");
+        gmsLogger.m807d("RemoteModelFileManager", "Rename to serving model failed, remove the temp file.");
         if (file.delete()) {
             return null;
         }
         gmsLogger2 = zzpd.zzass;
         String valueOf = String.valueOf(file.getAbsolutePath());
-        gmsLogger2.m789d("RemoteModelFileManager", valueOf.length() != 0 ? "Failed to delete the temp file: ".concat(valueOf) : new String("Failed to delete the temp file: "));
+        gmsLogger2.m807d("RemoteModelFileManager", valueOf.length() != 0 ? "Failed to delete the temp file: ".concat(valueOf) : new String("Failed to delete the temp file: "));
         return null;
     }
 }

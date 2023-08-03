@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.BigActionButton;
 import com.iMe.p031ui.custom.DetailsIconCellView;
 import com.iMe.p031ui.custom.ImageHeaderView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletConnectSwitchNetworkBinding implements ViewBinding {
@@ -37,7 +37,7 @@ public final class ForkContentWalletConnectSwitchNetworkBinding implements ViewB
     }
 
     public static ForkContentWalletConnectSwitchNetworkBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_wallet_connect_switch_network, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_content_wallet_connect_switch_network, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -45,16 +45,16 @@ public final class ForkContentWalletConnectSwitchNetworkBinding implements ViewB
     }
 
     public static ForkContentWalletConnectSwitchNetworkBinding bind(View view) {
-        int i = C3417R.C3420id.button_change_network;
+        int i = C3419R.C3422id.button_change_network;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3417R.C3420id.button_close;
+            i = C3419R.C3422id.button_close;
             ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
             if (actionBarMenuItem != null) {
-                i = C3417R.C3420id.view_header;
+                i = C3419R.C3422id.view_header;
                 ImageHeaderView imageHeaderView = (ImageHeaderView) ViewBindings.findChildViewById(view, i);
                 if (imageHeaderView != null) {
-                    i = C3417R.C3420id.view_network_cell;
+                    i = C3419R.C3422id.view_network_cell;
                     DetailsIconCellView detailsIconCellView = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                     if (detailsIconCellView != null) {
                         return new ForkContentWalletConnectSwitchNetworkBinding((ConstraintLayout) view, bigActionButton, actionBarMenuItem, imageHeaderView, detailsIconCellView);

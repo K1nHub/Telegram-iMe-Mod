@@ -70,7 +70,7 @@ public final class zzqn {
         } catch (FileNotFoundException e) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(uri.toString());
-            gmsLogger.m786e("MLKitImageUtils", valueOf.length() != 0 ? "Could not open file: ".concat(valueOf) : new String("Could not open file: "), e);
+            gmsLogger.m804e("MLKitImageUtils", valueOf.length() != 0 ? "Could not open file: ".concat(valueOf) : new String("Could not open file: "), e);
             throw e;
         }
     }
@@ -132,7 +132,7 @@ public final class zzqn {
             r4.append(r6)
             java.lang.String r6 = r4.toString()
             java.lang.String r3 = "MLKitImageUtils"
-            r2.m786e(r3, r6, r5)
+            r2.m804e(r3, r6, r5)
             r2 = r0
         L5f:
             if (r2 != 0) goto L62

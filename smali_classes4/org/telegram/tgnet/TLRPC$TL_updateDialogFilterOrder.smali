@@ -29,10 +29,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 34115
+    .line 34813
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 34118
+    .line 34816
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 34121
+    .line 34819
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -62,7 +62,7 @@
 
     return-void
 
-    .line 34124
+    .line 34822
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -86,7 +86,7 @@
 
     throw p1
 
-    .line 34128
+    .line 34826
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -95,7 +95,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 34130
+    .line 34828
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -119,24 +119,24 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 34135
+    .line 34833
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 34136
+    .line 34834
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34137
+    .line 34835
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 34138
+    .line 34836
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -144,7 +144,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 34140
+    .line 34838
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

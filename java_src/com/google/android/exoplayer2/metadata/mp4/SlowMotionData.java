@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaMetadata;
 import com.google.android.exoplayer2.metadata.Metadata;
+import com.google.android.exoplayer2.metadata.mp4.SlowMotionData;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.base.Objects;
@@ -53,7 +54,14 @@ public final class SlowMotionData implements Metadata.Entry {
 
     /* loaded from: classes.dex */
     public static final class Segment implements Parcelable {
-        public static final Comparator<Segment> BY_START_THEN_END_THEN_DIVISOR = SlowMotionData$Segment$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Comparator<Segment> BY_START_THEN_END_THEN_DIVISOR = new Comparator() { // from class: com.google.android.exoplayer2.metadata.mp4.SlowMotionData$Segment$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$static$0;
+                lambda$static$0 = SlowMotionData.Segment.lambda$static$0((SlowMotionData.Segment) obj, (SlowMotionData.Segment) obj2);
+                return lambda$static$0;
+            }
+        };
         public static final Parcelable.Creator<Segment> CREATOR = new Parcelable.Creator<Segment>() { // from class: com.google.android.exoplayer2.metadata.mp4.SlowMotionData.Segment.1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator

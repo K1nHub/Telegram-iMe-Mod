@@ -12,11 +12,10 @@ import org.orbitmvi.orbit.Container;
 import org.orbitmvi.orbit.ContainerHost;
 import org.orbitmvi.orbit.idling.SimpleIdlingExtensionsKt;
 import org.orbitmvi.orbit.syntax.ContainerContext;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SimpleSyntaxExtensions.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1", m83f = "SimpleSyntaxExtensions.kt", m82l = {72}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1", m101f = "SimpleSyntaxExtensions.kt", m100l = {72}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ boolean $registerIdling;
     final /* synthetic */ ContainerHost<STATE, SIDE_EFFECT> $this_intent;
     final /* synthetic */ Function2<SimpleSyntax<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $transformer;
@@ -43,11 +42,12 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX INFO: Add missing generic type declarations: [SIDE_EFFECT, STATE] */
     /* compiled from: SimpleSyntaxExtensions.kt */
-    @DebugMetadata(m84c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1", m83f = "SimpleSyntaxExtensions.kt", m82l = {73}, m81m = "invokeSuspend")
+    @DebugMetadata(m102c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1", m101f = "SimpleSyntaxExtensions.kt", m100l = {73}, m99m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C33071 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
+    public static final class C33071<SIDE_EFFECT, STATE> extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
         final /* synthetic */ boolean $registerIdling;
         final /* synthetic */ Function2<SimpleSyntax<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $transformer;
         private /* synthetic */ Object L$0;
@@ -69,13 +69,17 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
         }
 
         @Override // kotlin.jvm.functions.Function2
+        public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+            return invoke((ContainerContext) ((ContainerContext) obj), continuation);
+        }
+
         public final Object invoke(ContainerContext<STATE, SIDE_EFFECT> containerContext, Continuation<? super Unit> continuation) {
             return ((C33071) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: SimpleSyntaxExtensions.kt */
-        @DebugMetadata(m84c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1$1", m83f = "SimpleSyntaxExtensions.kt", m82l = {74}, m81m = "invokeSuspend")
+        @DebugMetadata(m102c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1$1", m101f = "SimpleSyntaxExtensions.kt", m100l = {74}, m99m = "invokeSuspend")
         /* renamed from: org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1$1 */
         /* loaded from: classes4.dex */
         public static final class C33081 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
@@ -98,6 +102,10 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
             }
 
             @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+                return invoke((ContainerContext) ((ContainerContext) obj), continuation);
+            }
+
             public final Object invoke(ContainerContext<STATE, SIDE_EFFECT> containerContext, Continuation<? super Unit> continuation) {
                 return ((C33081) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
             }
@@ -110,7 +118,7 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     Function2<SimpleSyntax<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> function2 = this.$transformer;
-                    SimpleSyntax simpleSyntax = new SimpleSyntax((ContainerContext) this.L$0);
+                    SimpleSyntax<STATE, SIDE_EFFECT> simpleSyntax = new SimpleSyntax<>((ContainerContext) this.L$0);
                     this.label = 1;
                     if (function2.invoke(simpleSyntax, this) == coroutine_suspended) {
                         return coroutine_suspended;

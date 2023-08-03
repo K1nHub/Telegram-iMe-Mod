@@ -26,16 +26,16 @@
 .method private constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Ljava/lang/String;ILorg/telegram/ui/CachedMediaLayout$BaseAdapter;)V
     .locals 0
 
-    .line 460
+    .line 475
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 461
+    .line 476
     iput-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$Page;->title:Ljava/lang/String;
 
-    .line 462
+    .line 477
     iput p3, p0, Lorg/telegram/ui/CachedMediaLayout$Page;->type:I
 
-    .line 463
+    .line 478
     iput-object p4, p0, Lorg/telegram/ui/CachedMediaLayout$Page;->adapter:Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;
 
     return-void
@@ -44,7 +44,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Ljava/lang/String;ILorg/telegram/ui/CachedMediaLayout$BaseAdapter;Lorg/telegram/ui/CachedMediaLayout$1;)V
     .locals 0
 
-    .line 455
+    .line 470
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/CachedMediaLayout$Page;-><init>(Lorg/telegram/ui/CachedMediaLayout;Ljava/lang/String;ILorg/telegram/ui/CachedMediaLayout$BaseAdapter;)V
 
     return-void

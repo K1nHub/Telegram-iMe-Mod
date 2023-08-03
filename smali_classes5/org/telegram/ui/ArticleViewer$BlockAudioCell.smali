@@ -2023,7 +2023,9 @@
     if-eqz v3, :cond_3
 
     .line 6790
-    iget v1, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:I
+    iget-wide v0, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
+
+    double-to-int v1, v0
 
     goto :goto_1
 

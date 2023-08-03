@@ -36,7 +36,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         SpecialEffectsController.Operation operation2 = null;
         for (SpecialEffectsController.Operation operation3 : list) {
             SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(operation3.getFragment().mView);
-            int i = C016910.f43xe493b431[operation3.getFinalState().ordinal()];
+            int i = C016910.f45xe493b431[operation3.getFinalState().ordinal()];
             if (i == 1 || i == 2 || i == 3) {
                 if (from == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
                     operation = operation3;
@@ -125,25 +125,25 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     static /* synthetic */ class C016910 {
 
         /* renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State */
-        static final /* synthetic */ int[] f43xe493b431;
+        static final /* synthetic */ int[] f45xe493b431;
 
         static {
             int[] iArr = new int[SpecialEffectsController.Operation.State.values().length];
-            f43xe493b431 = iArr;
+            f45xe493b431 = iArr;
             try {
                 iArr[SpecialEffectsController.Operation.State.GONE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f43xe493b431[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
+                f45xe493b431[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f43xe493b431[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
+                f45xe493b431[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f43xe493b431[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
+                f45xe493b431[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
         }

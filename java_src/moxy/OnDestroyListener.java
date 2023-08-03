@@ -1,7 +1,14 @@
 package moxy;
+
+import moxy.OnDestroyListener;
 /* loaded from: classes4.dex */
 public interface OnDestroyListener {
-    public static final OnDestroyListener EMPTY = OnDestroyListener$$ExternalSyntheticLambda0.INSTANCE;
+    public static final OnDestroyListener EMPTY = new OnDestroyListener() { // from class: moxy.OnDestroyListener$$ExternalSyntheticLambda0
+        @Override // moxy.OnDestroyListener
+        public final void onDestroy() {
+            OnDestroyListener.CC.lambda$static$0();
+        }
+    };
 
     /* renamed from: moxy.OnDestroyListener$-CC  reason: invalid class name */
     /* loaded from: classes4.dex */

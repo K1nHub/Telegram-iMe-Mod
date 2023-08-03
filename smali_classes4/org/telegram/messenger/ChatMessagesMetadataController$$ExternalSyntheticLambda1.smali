@@ -2,32 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/ChatMessagesMetadataController;
 
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ChatMessagesMetadataController;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/ChatMessagesMetadataController;
 
+    iput-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/messenger/MessageObject;
+
+    iput-wide p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$2:J
+
+    iput-object p5, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
+.method public final run()V
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/ChatMessagesMetadataController;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ChatMessagesMetadataController;->$r8$lambda$tD6Pxm4sd1tNkjYGzxrj6y0mNqU(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v1, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/messenger/MessageObject;
+
+    iget-wide v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$2:J
+
+    iget-object v4, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ChatMessagesMetadataController;->$r8$lambda$Jg5v8ZEvgS5-XxCm9NV6eLj2dV0(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
 
     return-void
 .end method

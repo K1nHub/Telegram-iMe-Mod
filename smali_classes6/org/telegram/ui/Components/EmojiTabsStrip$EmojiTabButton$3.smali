@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateSelect(ZZ)V
+    value = Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateLock(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,17 @@
 # instance fields
 .field final synthetic this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
-.field final synthetic val$selected:Z
+.field final synthetic val$enable:Z
 
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;Z)V
     .locals 0
 
-    .line 1240
+    .line 1214
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->val$selected:Z
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->val$enable:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -37,77 +37,24 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 1
 
-    .line 1243
+    .line 1217
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->val$enable:Z
+
+    if-nez p1, :cond_0
+
+    .line 1218
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
-    iget-object v0, p1, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
-
-    iget-boolean v0, v0, Lorg/telegram/ui/Components/EmojiTabsStrip;->updateButtonDrawables:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->access$1400(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    .line 1244
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->val$selected:Z
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->access$1500(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    .line 1249
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_1
-
-    .line 1245
-    :cond_1
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->access$1300(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    const/16 v0, 0x8
 
-    .line 1246
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$3;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v0, p1, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$800(Lorg/telegram/ui/Components/EmojiTabsStrip;)I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    invoke-static {v0, v1, v1}, Lorg/telegram/ui/ActionBar/Theme;->createRadSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_2
-    :goto_1
+    :cond_0
     return-void
 .end method

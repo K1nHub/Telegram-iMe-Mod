@@ -149,7 +149,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     @Override // com.google.android.exoplayer2.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
         MaskingMediaPeriod maskingMediaPeriod = (MaskingMediaPeriod) mediaPeriod;
-        MediaSource.MediaPeriodId mediaPeriodId = maskingMediaPeriod.f206id;
+        MediaSource.MediaPeriodId mediaPeriodId = maskingMediaPeriod.f208id;
         if (mediaPeriodId.isAd()) {
             AdMediaSourceHolder adMediaSourceHolder = (AdMediaSourceHolder) Assertions.checkNotNull(this.adMediaSourceHolders[mediaPeriodId.adGroupIndex][mediaPeriodId.adIndexInAdGroup]);
             adMediaSourceHolder.releaseMediaPeriod(maskingMediaPeriod);
@@ -388,11 +388,11 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         private Uri adUri;
 
         /* renamed from: id */
-        private final MediaSource.MediaPeriodId f209id;
+        private final MediaSource.MediaPeriodId f211id;
         private Timeline timeline;
 
         public AdMediaSourceHolder(MediaSource.MediaPeriodId mediaPeriodId) {
-            this.f209id = mediaPeriodId;
+            this.f211id = mediaPeriodId;
         }
 
         public void initializeWithMediaSource(MediaSource mediaSource, Uri uri) {
@@ -403,7 +403,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 maskingMediaPeriod.setMediaSource(mediaSource);
                 maskingMediaPeriod.setPrepareListener(new AdPrepareListener(uri));
             }
-            AdsMediaSource.this.prepareChildSource(this.f209id, mediaSource);
+            AdsMediaSource.this.prepareChildSource(this.f211id, mediaSource);
         }
 
         public MediaPeriod createMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
@@ -427,7 +427,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
                 Object uidOfPeriod = timeline.getUidOfPeriod(0);
                 for (int i = 0; i < this.activeMediaPeriods.size(); i++) {
                     MaskingMediaPeriod maskingMediaPeriod = this.activeMediaPeriods.get(i);
-                    maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, maskingMediaPeriod.f206id.windowSequenceNumber));
+                    maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, maskingMediaPeriod.f208id.windowSequenceNumber));
                 }
             }
             this.timeline = timeline;
@@ -445,7 +445,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
         public void release() {
             if (hasMediaSource()) {
-                AdsMediaSource.this.releaseChildSource(this.f209id);
+                AdsMediaSource.this.releaseChildSource(this.f211id);
             }
         }
 

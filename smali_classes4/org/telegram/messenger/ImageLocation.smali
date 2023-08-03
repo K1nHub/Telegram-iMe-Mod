@@ -1243,7 +1243,7 @@
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$VideoSize;->type:Ljava/lang/String;
 
-    const-string v2, "p"
+    const-string/jumbo v2, "p"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

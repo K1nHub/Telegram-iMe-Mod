@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletCardIconTitleSubtitleBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkRecycleItemWalletCardIconTitleSubtitleBinding implements 
     }
 
     public static ForkRecycleItemWalletCardIconTitleSubtitleBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_card_icon_title_subtitle, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_card_icon_title_subtitle, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,17 +36,17 @@ public final class ForkRecycleItemWalletCardIconTitleSubtitleBinding implements 
     }
 
     public static ForkRecycleItemWalletCardIconTitleSubtitleBinding bind(View view) {
-        int i = C3417R.C3420id.card_root;
+        int i = C3419R.C3422id.card_root;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;
-            i = C3417R.C3420id.image_icon;
+            i = C3419R.C3422id.image_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3417R.C3420id.text_subtitle;
+                i = C3419R.C3422id.text_subtitle;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3417R.C3420id.text_title;
+                    i = C3419R.C3422id.text_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkRecycleItemWalletCardIconTitleSubtitleBinding(frameLayout, cardView, frameLayout, appCompatImageView, appCompatTextView, appCompatTextView2);

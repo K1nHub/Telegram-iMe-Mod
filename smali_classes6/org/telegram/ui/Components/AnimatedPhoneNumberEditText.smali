@@ -862,7 +862,7 @@
     .locals 1
 
     .line 123
-    invoke-super {p0, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 125
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;->textPaint:Landroid/text/TextPaint;

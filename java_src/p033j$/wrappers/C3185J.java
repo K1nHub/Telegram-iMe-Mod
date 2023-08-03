@@ -6,22 +6,22 @@ import java.util.function.DoubleUnaryOperator;
 public final /* synthetic */ class C3185J {
 
     /* renamed from: a */
-    final /* synthetic */ DoubleUnaryOperator f1229a;
+    final /* synthetic */ DoubleUnaryOperator f1232a;
 
     private /* synthetic */ C3185J(DoubleUnaryOperator doubleUnaryOperator) {
-        this.f1229a = doubleUnaryOperator;
+        this.f1232a = doubleUnaryOperator;
     }
 
     /* renamed from: b */
-    public static /* synthetic */ C3185J m207b(DoubleUnaryOperator doubleUnaryOperator) {
+    public static /* synthetic */ C3185J m225b(DoubleUnaryOperator doubleUnaryOperator) {
         if (doubleUnaryOperator == null) {
             return null;
         }
-        return doubleUnaryOperator instanceof AbstractC3187K ? ((AbstractC3187K) doubleUnaryOperator).f1231a : new C3185J(doubleUnaryOperator);
+        return doubleUnaryOperator instanceof AbstractC3187K ? ((AbstractC3187K) doubleUnaryOperator).f1234a : new C3185J(doubleUnaryOperator);
     }
 
     /* renamed from: a */
-    public double m208a(double d) {
-        return this.f1229a.applyAsDouble(d);
+    public double m226a(double d) {
+        return this.f1232a.applyAsDouble(d);
     }
 }

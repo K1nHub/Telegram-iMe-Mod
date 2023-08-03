@@ -454,7 +454,7 @@
 
     move-result v5
 
-    invoke-virtual {v0, v5}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 547
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setMaxLines(I)V

@@ -5,11 +5,14 @@ import android.content.DialogInterface;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
+import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.ImageReceiver;
@@ -97,14 +100,36 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
             return createDialog(new FullscreenContentDialog(context, Integer.valueOf(i), null, -1, title, description, buttonText), callbacks$Callback);
         }
 
-        private final AlertDialog createDialog(FullscreenContentDialog fullscreenContentDialog, Callbacks$Callback callbacks$Callback) {
+        private final AlertDialog createDialog(FullscreenContentDialog fullscreenContentDialog, final Callbacks$Callback callbacks$Callback) {
             ActionButton actionButton;
-            AlertDialog dialog = fullscreenContentDialog.create();
+            final AlertDialog dialog = fullscreenContentDialog.create();
             Intrinsics.checkNotNullExpressionValue(dialog, "createDialog$lambda$0");
             DialogsFactoryKt.setBottomGravity(dialog);
             ForkFullscreenContentAlertBinding forkFullscreenContentAlertBinding = fullscreenContentDialog.binding;
             if (forkFullscreenContentAlertBinding != null && (actionButton = forkFullscreenContentAlertBinding.buttonAction) != null) {
-                ViewExtKt.safeThrottledClick$default(actionButton, 0L, new FullscreenContentDialog$Companion$createDialog$1(dialog, callbacks$Callback), 1, null);
+                ViewExtKt.safeThrottledClick$default(actionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.dialog.FullscreenContentDialog$Companion$createDialog$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                        invoke2(view);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        AlertDialog.this.dismiss();
+                        Callbacks$Callback callbacks$Callback2 = callbacks$Callback;
+                        if (callbacks$Callback2 != null) {
+                            callbacks$Callback2.invoke();
+                        }
+                    }
+                }, 1, null);
             }
             Intrinsics.checkNotNullExpressionValue(dialog, "dialog");
             return dialog;

@@ -9,7 +9,7 @@ public final class NetworkResponse {
     private final ExplorerResponse explorer;
 
     /* renamed from: id */
-    private final String f386id;
+    private final String f389id;
     private final String logo;
     private final String logoSmall;
     private final String name;
@@ -17,7 +17,7 @@ public final class NetworkResponse {
     private final String shortName;
 
     public final String component1() {
-        return this.f386id;
+        return this.f389id;
     }
 
     public final String component2() {
@@ -70,19 +70,19 @@ public final class NetworkResponse {
         }
         if (obj instanceof NetworkResponse) {
             NetworkResponse networkResponse = (NetworkResponse) obj;
-            return Intrinsics.areEqual(this.f386id, networkResponse.f386id) && Intrinsics.areEqual(this.platform, networkResponse.platform) && Intrinsics.areEqual(this.name, networkResponse.name) && Intrinsics.areEqual(this.shortName, networkResponse.shortName) && Intrinsics.areEqual(this.color, networkResponse.color) && Intrinsics.areEqual(this.explorer, networkResponse.explorer) && Intrinsics.areEqual(this.chainId, networkResponse.chainId) && Intrinsics.areEqual(this.logo, networkResponse.logo) && Intrinsics.areEqual(this.logoSmall, networkResponse.logoSmall);
+            return Intrinsics.areEqual(this.f389id, networkResponse.f389id) && Intrinsics.areEqual(this.platform, networkResponse.platform) && Intrinsics.areEqual(this.name, networkResponse.name) && Intrinsics.areEqual(this.shortName, networkResponse.shortName) && Intrinsics.areEqual(this.color, networkResponse.color) && Intrinsics.areEqual(this.explorer, networkResponse.explorer) && Intrinsics.areEqual(this.chainId, networkResponse.chainId) && Intrinsics.areEqual(this.logo, networkResponse.logo) && Intrinsics.areEqual(this.logoSmall, networkResponse.logoSmall);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((this.f386id.hashCode() * 31) + this.platform.hashCode()) * 31) + this.name.hashCode()) * 31) + this.shortName.hashCode()) * 31) + this.color.hashCode()) * 31) + this.explorer.hashCode()) * 31;
+        int hashCode = ((((((((((this.f389id.hashCode() * 31) + this.platform.hashCode()) * 31) + this.name.hashCode()) * 31) + this.shortName.hashCode()) * 31) + this.color.hashCode()) * 31) + this.explorer.hashCode()) * 31;
         Long l = this.chainId;
         return ((((hashCode + (l == null ? 0 : l.hashCode())) * 31) + this.logo.hashCode()) * 31) + this.logoSmall.hashCode();
     }
 
     public String toString() {
-        return "NetworkResponse(id=" + this.f386id + ", platform=" + this.platform + ", name=" + this.name + ", shortName=" + this.shortName + ", color=" + this.color + ", explorer=" + this.explorer + ", chainId=" + this.chainId + ", logo=" + this.logo + ", logoSmall=" + this.logoSmall + ')';
+        return "NetworkResponse(id=" + this.f389id + ", platform=" + this.platform + ", name=" + this.name + ", shortName=" + this.shortName + ", color=" + this.color + ", explorer=" + this.explorer + ", chainId=" + this.chainId + ", logo=" + this.logo + ", logoSmall=" + this.logoSmall + ')';
     }
 
     public NetworkResponse(String id, String platform, String name, String shortName, String color, ExplorerResponse explorer, Long l, String logo, String logoSmall) {
@@ -94,7 +94,7 @@ public final class NetworkResponse {
         Intrinsics.checkNotNullParameter(explorer, "explorer");
         Intrinsics.checkNotNullParameter(logo, "logo");
         Intrinsics.checkNotNullParameter(logoSmall, "logoSmall");
-        this.f386id = id;
+        this.f389id = id;
         this.platform = platform;
         this.name = name;
         this.shortName = shortName;
@@ -106,7 +106,7 @@ public final class NetworkResponse {
     }
 
     public final String getId() {
-        return this.f386id;
+        return this.f389id;
     }
 
     public final String getPlatform() {
@@ -242,7 +242,7 @@ public final class NetworkResponse {
             private final String token;
 
             /* renamed from: tx */
-            private final String f387tx;
+            private final String f390tx;
 
             public static /* synthetic */ PathTemplateResponse copy$default(PathTemplateResponse pathTemplateResponse, String str, String str2, String str3, int i, Object obj) {
                 if ((i & 1) != 0) {
@@ -252,7 +252,7 @@ public final class NetworkResponse {
                     str2 = pathTemplateResponse.token;
                 }
                 if ((i & 4) != 0) {
-                    str3 = pathTemplateResponse.f387tx;
+                    str3 = pathTemplateResponse.f390tx;
                 }
                 return pathTemplateResponse.copy(str, str2, str3);
             }
@@ -266,7 +266,7 @@ public final class NetworkResponse {
             }
 
             public final String component3() {
-                return this.f387tx;
+                return this.f390tx;
             }
 
             public final PathTemplateResponse copy(String address, String token, String tx) {
@@ -282,17 +282,17 @@ public final class NetworkResponse {
                 }
                 if (obj instanceof PathTemplateResponse) {
                     PathTemplateResponse pathTemplateResponse = (PathTemplateResponse) obj;
-                    return Intrinsics.areEqual(this.address, pathTemplateResponse.address) && Intrinsics.areEqual(this.token, pathTemplateResponse.token) && Intrinsics.areEqual(this.f387tx, pathTemplateResponse.f387tx);
+                    return Intrinsics.areEqual(this.address, pathTemplateResponse.address) && Intrinsics.areEqual(this.token, pathTemplateResponse.token) && Intrinsics.areEqual(this.f390tx, pathTemplateResponse.f390tx);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((this.address.hashCode() * 31) + this.token.hashCode()) * 31) + this.f387tx.hashCode();
+                return (((this.address.hashCode() * 31) + this.token.hashCode()) * 31) + this.f390tx.hashCode();
             }
 
             public String toString() {
-                return "PathTemplateResponse(address=" + this.address + ", token=" + this.token + ", tx=" + this.f387tx + ')';
+                return "PathTemplateResponse(address=" + this.address + ", token=" + this.token + ", tx=" + this.f390tx + ')';
             }
 
             public PathTemplateResponse(String address, String token, String tx) {
@@ -301,7 +301,7 @@ public final class NetworkResponse {
                 Intrinsics.checkNotNullParameter(tx, "tx");
                 this.address = address;
                 this.token = token;
-                this.f387tx = tx;
+                this.f390tx = tx;
             }
 
             public final String getAddress() {
@@ -313,7 +313,7 @@ public final class NetworkResponse {
             }
 
             public final String getTx() {
-                return this.f387tx;
+                return this.f390tx;
             }
         }
     }

@@ -195,7 +195,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         LbHelperImpl lbHelperImpl = this.lbHelper;
         if (lbHelperImpl != null) {
-            lbHelperImpl.f516lb.shutdown();
+            lbHelperImpl.f519lb.shutdown();
             this.lbHelper = null;
         }
         this.subchannelPicker = null;
@@ -216,7 +216,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Exiting idle mode");
         LbHelperImpl lbHelperImpl = new LbHelperImpl();
-        lbHelperImpl.f516lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
+        lbHelperImpl.f519lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
         this.lbHelper = lbHelperImpl;
         this.nameResolver.start((NameResolver.Listener2) new NameResolverListener(lbHelperImpl, this.nameResolver));
         this.nameResolverStarted = true;
@@ -655,7 +655,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         ManagedChannelImpl.this.subchannelPicker.requestConnection();
                     }
                     if (ManagedChannelImpl.this.lbHelper != null) {
-                        ManagedChannelImpl.this.lbHelper.f516lb.requestConnection();
+                        ManagedChannelImpl.this.lbHelper.f519lb.requestConnection();
                     }
                 }
             });
@@ -779,7 +779,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     public class LbHelperImpl extends LoadBalancer.Helper {
 
         /* renamed from: lb */
-        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f516lb;
+        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f519lb;
 
         private LbHelperImpl() {
         }
@@ -904,7 +904,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         if (serviceConfigHolder != r4) {
                             attributes = attributes.toBuilder().set(GrpcAttributes.NAME_RESOLVER_SERVICE_CONFIG, serviceConfigHolder.rawServiceConfig).build();
                         }
-                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f516lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
+                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f519lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
                         if (tryHandleResolvedAddresses.isOk()) {
                             return;
                         }
@@ -941,7 +941,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             if (this.helper != ManagedChannelImpl.this.lbHelper) {
                 return;
             }
-            this.helper.f516lb.handleNameResolutionError(status);
+            this.helper.f519lb.handleNameResolutionError(status);
             scheduleExponentialBackOffInSyncContext();
         }
 

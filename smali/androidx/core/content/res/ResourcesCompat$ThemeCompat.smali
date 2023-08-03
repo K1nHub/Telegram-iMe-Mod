@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;,
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;,
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;
     }
 .end annotation
 

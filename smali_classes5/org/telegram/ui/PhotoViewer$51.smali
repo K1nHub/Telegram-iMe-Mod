@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 9235
+    .line 9238
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
@@ -35,10 +35,10 @@
 .method public pause()V
     .locals 2
 
-    .line 9244
+    .line 9247
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 9245
+    .line 9248
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2500(Lorg/telegram/ui/PhotoViewer;)I
@@ -47,12 +47,12 @@
 
     if-nez v0, :cond_0
 
-    .line 9246
+    .line 9249
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;Z)V
 
     :cond_0
     return-void
@@ -61,15 +61,15 @@
 .method public play()V
     .locals 2
 
-    .line 9238
+    .line 9241
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 9239
+    .line 9242
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;Z)V
 
     return-void
 .end method
@@ -77,10 +77,10 @@
 .method public seekTo(J)V
     .locals 1
 
-    .line 9252
+    .line 9255
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 9253
+    .line 9256
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1800(Lorg/telegram/ui/PhotoViewer;)Z
@@ -89,10 +89,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 9254
+    .line 9257
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$51;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$23900(Lorg/telegram/ui/PhotoViewer;J)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;J)V
 
     :cond_0
     return-void

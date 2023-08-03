@@ -1280,7 +1280,9 @@
     .line 616
     iget v10, v3, Lorg/telegram/messenger/MediaController$AudioEntry;->duration:I
 
-    iput v10, v9, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:I
+    int-to-double v10, v10
+
+    iput-wide v10, v9, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
     .line 617
     iget-object v10, v3, Lorg/telegram/messenger/MediaController$AudioEntry;->title:Ljava/lang/String;

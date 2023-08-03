@@ -9,10 +9,9 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* renamed from: com.google.android.exoplayer2.extractor.ts.UserDataReader */
 /* loaded from: classes.dex */
-public final class UserDataReader {
+final class UserDataReader {
     private static final int USER_DATA_START_CODE = 434;
     private final List<Format> closedCaptionFormats;
     private final TrackOutput[] outputs;

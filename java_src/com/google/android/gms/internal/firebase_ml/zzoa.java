@@ -41,7 +41,7 @@ public final class zzoa {
         if (firebaseApp.getApplicationContext() instanceof Application) {
             BackgroundDetector.initialize((Application) firebaseApp.getApplicationContext());
         } else {
-            zzasz.m787e("ModelResourceManager", "No valid Application available and auto-manage cannot work");
+            zzasz.m805e("ModelResourceManager", "No valid Application available and auto-manage cannot work");
         }
         BackgroundDetector.getInstance().addListener(new zznz(this));
         if (BackgroundDetector.getInstance().readCurrentStateIfPossible(true)) {
@@ -52,9 +52,9 @@ public final class zzoa {
     public final synchronized void zza(zznx zznxVar) {
         Preconditions.checkNotNull(zznxVar, "Model source can not be null");
         GmsLogger gmsLogger = zzasz;
-        gmsLogger.m789d("ModelResourceManager", "Add auto-managed model resource");
+        gmsLogger.m807d("ModelResourceManager", "Add auto-managed model resource");
         if (this.zzatw.contains(zznxVar)) {
-            gmsLogger.m785i("ModelResourceManager", "The model resource is already registered.");
+            gmsLogger.m803i("ModelResourceManager", "The model resource is already registered.");
             return;
         }
         this.zzatw.add(zznxVar);
@@ -86,7 +86,7 @@ public final class zzoa {
         StringBuilder sb = new StringBuilder(62);
         sb.append("Rescheduling modelResource release after: ");
         sb.append(j);
-        gmsLogger.m783v("ModelResourceManager", sb.toString());
+        gmsLogger.m801v("ModelResourceManager", sb.toString());
         this.zzatu.zza(zze, j);
     }
 

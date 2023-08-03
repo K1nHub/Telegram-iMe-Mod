@@ -131,7 +131,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
             long r4 = r4.getPreparePositionUs()
             com.google.android.exoplayer2.source.MaskingMediaSource$MaskingTimeline r6 = r14.timeline
             com.google.android.exoplayer2.source.MaskingMediaPeriod r7 = r14.unpreparedMaskingMediaPeriod
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r7 = r7.f206id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r7 = r7.f208id
             java.lang.Object r7 = r7.periodUid
             com.google.android.exoplayer2.Timeline$Period r8 = r14.period
             r6.getPeriodByUid(r7, r8)
@@ -170,7 +170,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
             com.google.android.exoplayer2.source.MaskingMediaPeriod r15 = r14.unpreparedMaskingMediaPeriod
             if (r15 == 0) goto Lae
             r14.setPreparePositionOverrideToUnpreparedMaskingPeriod(r3)
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r15 = r15.f206id
+            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r15 = r15.f208id
             java.lang.Object r0 = r15.periodUid
             java.lang.Object r0 = r14.getInternalPeriodUid(r0)
             com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r15 = r15.copyWithPeriodUid(r0)
@@ -209,7 +209,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
 
     private void setPreparePositionOverrideToUnpreparedMaskingPeriod(long j) {
         MaskingMediaPeriod maskingMediaPeriod = this.unpreparedMaskingMediaPeriod;
-        int indexOfPeriod = this.timeline.getIndexOfPeriod(maskingMediaPeriod.f206id.periodUid);
+        int indexOfPeriod = this.timeline.getIndexOfPeriod(maskingMediaPeriod.f208id.periodUid);
         if (indexOfPeriod == -1) {
             return;
         }

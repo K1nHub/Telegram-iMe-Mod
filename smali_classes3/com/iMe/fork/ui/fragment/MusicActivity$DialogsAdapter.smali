@@ -48,7 +48,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 430
+    .line 429
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -71,7 +71,7 @@
         }
     .end annotation
 
-    .line 434
+    .line 433
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->musicTab:Lcom/iMe/ui/music/MusicTab;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -90,7 +90,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 437
+    .line 436
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getBots$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Ljava/util/List;
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 436
+    .line 435
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 435
+    .line 434
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
@@ -126,7 +126,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 443
+    .line 442
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getParallelLoading$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Z
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 444
+    .line 443
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->getDialogs()Ljava/util/List;
 
@@ -170,7 +170,7 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 448
+    .line 447
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getParallelLoading$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Z
@@ -183,7 +183,7 @@
 
     goto :goto_0
 
-    .line 449
+    .line 448
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->getDialogs()Ljava/util/List;
 
@@ -199,7 +199,7 @@
 
     goto :goto_0
 
-    .line 450
+    .line 449
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->PROFILE_SEARCH:I
 
@@ -214,7 +214,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 479
+    .line 478
     sget-object v0, Lcom/iMe/fork/ui/fragment/MusicActivity;->Companion:Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -235,10 +235,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 465
+    .line 464
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 466
+    .line 465
     instance-of v1, v0, Lorg/telegram/ui/Cells/DialogsEmptyCell;
 
     const/4 v2, 0x0
@@ -261,13 +261,13 @@
 
     goto :goto_1
 
-    .line 467
+    .line 466
     :cond_0
     instance-of v0, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
     if-eqz v0, :cond_3
 
-    .line 468
+    .line 467
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->getDialogs()Ljava/util/List;
 
     move-result-object v0
@@ -288,7 +288,7 @@
 
     if-lez v3, :cond_1
 
-    .line 469
+    .line 468
     iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -325,7 +325,7 @@
     :goto_0
     move-object v5, v3
 
-    .line 470
+    .line 469
     iget-object v3, p0, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lcom/iMe/fork/ui/fragment/MusicActivity;
 
     invoke-static {v3}, Lcom/iMe/fork/ui/fragment/MusicActivity;->access$getCountsMap$p(Lcom/iMe/fork/ui/fragment/MusicActivity;)Landroid/util/LongSparseArray;
@@ -354,7 +354,7 @@
 
     move-result-object v8
 
-    .line 471
+    .line 470
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "holder.itemView"
@@ -373,10 +373,10 @@
 
     move-object v4, p1
 
-    .line 472
+    .line 471
     invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
-    .line 473
+    .line 472
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->getDialogs()Ljava/util/List;
 
     move-result-object v0
@@ -400,7 +400,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 430
+    .line 429
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/MusicActivity$DialogsAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -415,7 +415,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 454
+    .line 453
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LOADING_CELL:I
 
     const/4 v0, -0x2
@@ -428,7 +428,7 @@
 
     invoke-direct {p1, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 455
+    .line 454
     new-instance v1, Lorg/telegram/ui/Cells/LoadingCell;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -447,7 +447,7 @@
 
     goto :goto_0
 
-    .line 457
+    .line 456
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DIALOGS_EMPTY_CELL:I
 
@@ -461,7 +461,7 @@
 
     goto :goto_0
 
-    .line 458
+    .line 457
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
@@ -469,7 +469,7 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/Cells/ProfileSearchCell;-><init>(Landroid/content/Context;)V
 
-    .line 460
+    .line 459
     :goto_0
     sget-object v1, Lcom/iMe/fork/ui/fragment/MusicActivity;->Companion:Lcom/iMe/fork/ui/fragment/MusicActivity$Companion;
 
@@ -486,7 +486,7 @@
     :cond_2
     move v0, v1
 
-    .line 461
+    .line 460
     :goto_1
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -494,7 +494,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 453
+    .line 452
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

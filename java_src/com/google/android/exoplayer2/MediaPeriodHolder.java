@@ -36,7 +36,7 @@ final class MediaPeriodHolder {
         this.rendererPositionOffsetUs = j;
         this.trackSelector = trackSelector;
         this.mediaSourceList = mediaSourceList;
-        MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodInfo.f186id;
+        MediaSource.MediaPeriodId mediaPeriodId = mediaPeriodInfo.f188id;
         this.uid = mediaPeriodId.periodUid;
         this.info = mediaPeriodInfo;
         this.trackGroups = TrackGroupArray.EMPTY;
@@ -116,7 +116,7 @@ final class MediaPeriodHolder {
 
     public TrackSelectorResult selectTracks(float f, Timeline timeline) throws ExoPlaybackException {
         ExoTrackSelection[] exoTrackSelectionArr;
-        TrackSelectorResult selectTracks = this.trackSelector.selectTracks(this.rendererCapabilities, getTrackGroups(), this.info.f186id, timeline);
+        TrackSelectorResult selectTracks = this.trackSelector.selectTracks(this.rendererCapabilities, getTrackGroups(), this.info.f188id, timeline);
         for (ExoTrackSelection exoTrackSelection : selectTracks.selections) {
             if (exoTrackSelection != null) {
                 exoTrackSelection.onPlaybackSpeed(f);
@@ -288,7 +288,7 @@ final class MediaPeriodHolder {
                 mediaSourceList.releasePeriod(mediaPeriod);
             }
         } catch (RuntimeException e) {
-            Log.m799e(TAG, "Period release failed.", e);
+            Log.m817e(TAG, "Period release failed.", e);
         }
     }
 }

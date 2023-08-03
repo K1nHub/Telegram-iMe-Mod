@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
@@ -70,7 +70,7 @@ public class ManageChatUserCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(23));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(23));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z2 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z2 ? 5 : 3) | 48, z2 ? 0 : i + 7, 8, z2 ? i + 7 : 0, 0));
@@ -95,7 +95,7 @@ public class ManageChatUserCell extends FrameLayout {
             this.optionsButton = imageView;
             imageView.setFocusable(false);
             this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
-            this.optionsButton.setImageResource(C3417R.C3419drawable.ic_ab_other);
+            this.optionsButton.setImageResource(C3419R.C3421drawable.ic_ab_other);
             this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu, resourcesProvider), PorterDuff.Mode.MULTIPLY));
             this.optionsButton.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.optionsButton, LayoutHelper.createFrame(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
@@ -105,7 +105,7 @@ public class ManageChatUserCell extends FrameLayout {
                     ManageChatUserCell.this.lambda$new$0(view);
                 }
             });
-            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3417R.string.AccDescrUserOptions));
+            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3419R.string.AccDescrUserOptions));
         }
     }
 
@@ -199,13 +199,13 @@ public class ManageChatUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public long getUserId() {
         Object obj = this.currentObject;
         if (obj instanceof TLRPC$User) {
-            return ((TLRPC$User) obj).f1656id;
+            return ((TLRPC$User) obj).f1675id;
         }
         return 0L;
     }
@@ -268,7 +268,7 @@ public class ManageChatUserCell extends FrameLayout {
             if (i >= 0) {
                 Theme.dividerExtraPaint.setColor(Theme.getColor(i, this.resourcesProvider));
             }
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(68) : 0), getMeasuredHeight() - 1, this.dividerColor >= 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(68) : 0), getMeasuredHeight() - 1, this.dividerColor >= 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
         }
     }
 }

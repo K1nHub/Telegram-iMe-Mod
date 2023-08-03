@@ -25,7 +25,7 @@
 .method constructor <init>(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
-    .line 1004
+    .line 1005
     iput-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method dispatchUpdate(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;)V
     .locals 4
 
-    .line 1049
+    .line 1050
     iget v0, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
 
     const/4 v1, 0x1
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 1061
+    .line 1062
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 1057
+    .line 1058
     :cond_1
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 1054
+    .line 1055
     :cond_2
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 1051
+    .line 1052
     :cond_3
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -122,7 +122,7 @@
 .method public findViewHolder(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 3
 
-    .line 1007
+    .line 1008
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 v1, 0x1
@@ -137,7 +137,7 @@
 
     return-object v0
 
-    .line 1013
+    .line 1014
     :cond_0
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -160,12 +160,12 @@
 .method public markViewHoldersUpdated(IILjava/lang/Object;)V
     .locals 1
 
-    .line 1039
+    .line 1040
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView;->viewRangeUpdate(IILjava/lang/Object;)V
 
-    .line 1040
+    .line 1041
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 p2, 0x1
@@ -178,12 +178,12 @@
 .method public offsetPositionsForAdd(II)V
     .locals 1
 
-    .line 1073
+    .line 1074
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForInsert(II)V
 
-    .line 1074
+    .line 1075
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 p2, 0x1
@@ -196,12 +196,12 @@
 .method public offsetPositionsForMove(II)V
     .locals 1
 
-    .line 1079
+    .line 1080
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForMove(II)V
 
-    .line 1081
+    .line 1082
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 p2, 0x1
@@ -214,19 +214,19 @@
 .method public offsetPositionsForRemovingInvisible(II)V
     .locals 2
 
-    .line 1024
+    .line 1025
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForRemove(IIZ)V
 
-    .line 1025
+    .line 1026
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     iput-boolean v1, p1, Landroidx/recyclerview/widget/RecyclerView;->mItemsAddedOrRemoved:Z
 
-    .line 1026
+    .line 1027
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView;->mState:Landroidx/recyclerview/widget/RecyclerView$State;
 
     iget v0, p1, Landroidx/recyclerview/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
@@ -241,14 +241,14 @@
 .method public offsetPositionsForRemovingLaidOutOrNewView(II)V
     .locals 2
 
-    .line 1032
+    .line 1033
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->offsetPositionRecordsForRemove(IIZ)V
 
-    .line 1033
+    .line 1034
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
     const/4 p2, 0x1
@@ -261,7 +261,7 @@
 .method public onDispatchFirstPass(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;)V
     .locals 0
 
-    .line 1045
+    .line 1046
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$6;->dispatchUpdate(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;)V
 
     return-void
@@ -270,7 +270,7 @@
 .method public onDispatchSecondPass(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;)V
     .locals 0
 
-    .line 1068
+    .line 1069
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$6;->dispatchUpdate(Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;)V
 
     return-void

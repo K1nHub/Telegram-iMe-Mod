@@ -21,7 +21,7 @@ import androidx.core.util.Consumer;
 import androidx.core.util.Preconditions;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -156,17 +156,17 @@ public class AvatarPreviewer {
         }
 
         static {
-            MenuItem menuItem = new MenuItem("OPEN_PROFILE", 0, "OpenProfile", C3417R.string.OpenProfile, C3417R.C3419drawable.msg_openprofile);
+            MenuItem menuItem = new MenuItem("OPEN_PROFILE", 0, "OpenProfile", C3419R.string.OpenProfile, C3419R.C3421drawable.msg_openprofile);
             OPEN_PROFILE = menuItem;
-            MenuItem menuItem2 = new MenuItem("OPEN_CHANNEL", 1, "OpenChannel2", C3417R.string.OpenChannel2, C3417R.C3419drawable.msg_channel);
+            MenuItem menuItem2 = new MenuItem("OPEN_CHANNEL", 1, "OpenChannel2", C3419R.string.OpenChannel2, C3419R.C3421drawable.msg_channel);
             OPEN_CHANNEL = menuItem2;
-            int i = C3417R.string.OpenGroup2;
-            int i2 = C3417R.C3419drawable.msg_discussion;
+            int i = C3419R.string.OpenGroup2;
+            int i2 = C3419R.C3421drawable.msg_discussion;
             MenuItem menuItem3 = new MenuItem("OPEN_GROUP", 2, "OpenGroup2", i, i2);
             OPEN_GROUP = menuItem3;
-            MenuItem menuItem4 = new MenuItem("SEND_MESSAGE", 3, "SendMessage", C3417R.string.SendMessage, i2);
+            MenuItem menuItem4 = new MenuItem("SEND_MESSAGE", 3, "SendMessage", C3419R.string.SendMessage, i2);
             SEND_MESSAGE = menuItem4;
-            MenuItem menuItem5 = new MenuItem("MENTION", 4, "Mention", C3417R.string.Mention, C3417R.C3419drawable.msg_mention);
+            MenuItem menuItem5 = new MenuItem("MENTION", 4, "Mention", C3419R.string.Mention, C3419R.C3421drawable.msg_mention);
             MENTION = menuItem5;
             $VALUES = new MenuItem[]{menuItem, menuItem2, menuItem3, menuItem4, menuItem5};
         }
@@ -193,14 +193,14 @@ public class AvatarPreviewer {
         private final ImageLocation videoLocation;
 
         /* renamed from: of */
-        public static Data m33of(TLRPC$User tLRPC$User, int i, MenuItem... menuItemArr) {
+        public static Data m37of(TLRPC$User tLRPC$User, int i, MenuItem... menuItemArr) {
             ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(tLRPC$User, 0);
             ImageLocation forUserOrChat2 = ImageLocation.getForUserOrChat(tLRPC$User, 1);
             return new Data(forUserOrChat, forUserOrChat2, null, null, (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC$TL_photoStrippedSize)) ? null : "b", null, null, tLRPC$User, menuItemArr, new UserInfoLoadTask(tLRPC$User, i));
         }
 
         /* renamed from: of */
-        public static Data m32of(TLRPC$UserFull tLRPC$UserFull, MenuItem... menuItemArr) {
+        public static Data m36of(TLRPC$UserFull tLRPC$UserFull, MenuItem... menuItemArr) {
             ImageLocation imageLocation;
             String str;
             ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(tLRPC$UserFull.user, 0);
@@ -224,14 +224,14 @@ public class AvatarPreviewer {
         }
 
         /* renamed from: of */
-        public static Data m35of(TLRPC$Chat tLRPC$Chat, int i, MenuItem... menuItemArr) {
+        public static Data m39of(TLRPC$Chat tLRPC$Chat, int i, MenuItem... menuItemArr) {
             ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(tLRPC$Chat, 0);
             ImageLocation forUserOrChat2 = ImageLocation.getForUserOrChat(tLRPC$Chat, 1);
             return new Data(forUserOrChat, forUserOrChat2, null, null, (forUserOrChat2 == null || !(forUserOrChat2.photoSize instanceof TLRPC$TL_photoStrippedSize)) ? null : "b", null, null, tLRPC$Chat, menuItemArr, new ChatInfoLoadTask(tLRPC$Chat, i));
         }
 
         /* renamed from: of */
-        public static Data m34of(TLRPC$Chat tLRPC$Chat, TLRPC$ChatFull tLRPC$ChatFull, MenuItem... menuItemArr) {
+        public static Data m38of(TLRPC$Chat tLRPC$Chat, TLRPC$ChatFull tLRPC$ChatFull, MenuItem... menuItemArr) {
             ImageLocation imageLocation;
             String str;
             ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(tLRPC$Chat, 0);
@@ -278,7 +278,7 @@ public class AvatarPreviewer {
 
         @Override // org.telegram.p043ui.AvatarPreviewer.InfoLoadTask
         protected void onReceiveNotification(Object... objArr) {
-            if (((Long) objArr[0]).longValue() == ((TLRPC$User) this.argument).f1656id) {
+            if (((Long) objArr[0]).longValue() == ((TLRPC$User) this.argument).f1675id) {
                 onResult((TLRPC$UserFull) objArr[1]);
             }
         }
@@ -294,13 +294,13 @@ public class AvatarPreviewer {
 
         @Override // org.telegram.p043ui.AvatarPreviewer.InfoLoadTask
         protected void load() {
-            MessagesController.getInstance(UserConfig.selectedAccount).loadFullChat(((TLRPC$Chat) this.argument).f1515id, this.classGuid, false);
+            MessagesController.getInstance(UserConfig.selectedAccount).loadFullChat(((TLRPC$Chat) this.argument).f1518id, this.classGuid, false);
         }
 
         @Override // org.telegram.p043ui.AvatarPreviewer.InfoLoadTask
         protected void onReceiveNotification(Object... objArr) {
             TLRPC$ChatFull tLRPC$ChatFull = (TLRPC$ChatFull) objArr[0];
-            if (tLRPC$ChatFull == null || tLRPC$ChatFull.f1516id != ((TLRPC$Chat) this.argument).f1515id) {
+            if (tLRPC$ChatFull == null || tLRPC$ChatFull.f1519id != ((TLRPC$Chat) this.argument).f1518id) {
                 return;
             }
             onResult(tLRPC$ChatFull);
@@ -392,7 +392,7 @@ public class AvatarPreviewer {
 
         public Layout(Context context, Callback callback) {
             super(context);
-            this.radialProgressSize = AndroidUtilities.m55dp(64.0f);
+            this.radialProgressSize = AndroidUtilities.m73dp(64.0f);
             new Rect();
             this.interpolator = new AccelerateDecelerateInterpolator();
             this.backgroundDrawable = new ColorDrawable(1895825408);
@@ -404,14 +404,14 @@ public class AvatarPreviewer {
             setFitsSystemWindows(true);
             imageReceiver.setAspectFit(true);
             imageReceiver.setInvalidateAll(true);
-            imageReceiver.setRoundRadius(AndroidUtilities.m54dp(6));
+            imageReceiver.setRoundRadius(AndroidUtilities.m72dp(6));
             imageReceiver.setParentView(this);
             RadialProgress2 radialProgress2 = new RadialProgress2(this);
             this.radialProgress = radialProgress2;
             radialProgress2.setOverrideAlpha(BitmapDescriptorFactory.HUE_RED);
             radialProgress2.setIcon(10, false, false);
             radialProgress2.setColors(1107296256, 1107296256, -1, -1);
-            this.arrowDrawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.preview_arrow);
+            this.arrowDrawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.preview_arrow);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -455,7 +455,7 @@ public class AvatarPreviewer {
                         if (this.downY < BitmapDescriptorFactory.HUE_RED) {
                             this.downY = motionEvent.getY();
                         } else {
-                            float max = Math.max(-1.0f, Math.min((float) BitmapDescriptorFactory.HUE_RED, (motionEvent.getY() - this.downY) / AndroidUtilities.m54dp(56)));
+                            float max = Math.max(-1.0f, Math.min((float) BitmapDescriptorFactory.HUE_RED, (motionEvent.getY() - this.downY) / AndroidUtilities.m72dp(56)));
                             this.moveProgress = max;
                             if (max == -1.0f) {
                                 performHapticFeedback(0);
@@ -550,25 +550,25 @@ public class AvatarPreviewer {
                 return;
             }
             this.backgroundDrawable.setBounds(0, 0, width, height);
-            int m54dp = AndroidUtilities.m54dp(8);
+            int m72dp = AndroidUtilities.m72dp(8);
             if (Build.VERSION.SDK_INT >= 21) {
-                int stableInsetLeft = this.insets.getStableInsetLeft() + m54dp;
-                i2 = this.insets.getStableInsetRight() + m54dp;
-                i = m54dp + Math.max(this.insets.getStableInsetTop(), this.insets.getStableInsetBottom());
-                m54dp = stableInsetLeft;
+                int stableInsetLeft = this.insets.getStableInsetLeft() + m72dp;
+                i2 = this.insets.getStableInsetRight() + m72dp;
+                i = m72dp + Math.max(this.insets.getStableInsetTop(), this.insets.getStableInsetBottom());
+                m72dp = stableInsetLeft;
             } else {
-                i = m54dp;
+                i = m72dp;
                 i2 = i;
             }
             int intrinsicWidth = this.arrowDrawable.getIntrinsicWidth();
             int intrinsicHeight = this.arrowDrawable.getIntrinsicHeight();
-            int m54dp2 = AndroidUtilities.m54dp(24);
-            int i3 = width - (i2 + m54dp);
+            int m72dp2 = AndroidUtilities.m72dp(24);
+            int i3 = width - (i2 + m72dp);
             int i4 = height - (i * 2);
             int min = Math.min(i3, i4);
             int i5 = intrinsicHeight / 2;
-            int i6 = m54dp2 + i5;
-            int i7 = ((i3 - min) / 2) + m54dp;
+            int i6 = m72dp2 + i5;
+            int i7 = ((i3 - min) / 2) + m72dp;
             int i8 = ((i4 - min) / 2) + i + (i3 > i4 ? i6 : 0);
             this.imageReceiver.setImageCoords(i7, i8, min, min - (i3 > i4 ? i6 : 0));
             int centerX = (int) this.imageReceiver.getCenterX();
@@ -577,7 +577,7 @@ public class AvatarPreviewer {
             int i9 = this.radialProgressSize;
             radialProgress2.setProgressRect(centerX - (i9 / 2), centerY - (i9 / 2), centerX + (i9 / 2), centerY + (i9 / 2));
             int i10 = i7 + (min / 2);
-            int i11 = i8 - m54dp2;
+            int i11 = i8 - m72dp2;
             int i12 = intrinsicWidth / 2;
             this.arrowDrawable.setBounds(i10 - i12, i11 - i5, i10 + i12, i11 + i5);
         }
@@ -641,9 +641,9 @@ public class AvatarPreviewer {
                 return;
             }
             if (obj instanceof TLRPC$UserFull) {
-                setData(Data.m32of((TLRPC$UserFull) obj, data.menuItems));
+                setData(Data.m36of((TLRPC$UserFull) obj, data.menuItems));
             } else if (obj instanceof TLRPC$ChatFull) {
-                setData(Data.m34of((TLRPC$Chat) data.infoLoadTask.argument, (TLRPC$ChatFull) obj, data.menuItems));
+                setData(Data.m38of((TLRPC$Chat) data.infoLoadTask.argument, (TLRPC$ChatFull) obj, data.menuItems));
             }
         }
 

@@ -17,8 +17,9 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: WalletLinkClickableManager.kt */
 /* loaded from: classes3.dex */
 public final class WalletLinkClickableManager {
@@ -75,10 +76,52 @@ public final class WalletLinkClickableManager {
     }
 
     private final void setupClickableLink() {
-        String linkedText = this.clickableItem.getLinkedText();
+        final String linkedText = this.clickableItem.getLinkedText();
         WalletLinkClickableView walletLinkClickableView = this.viewState;
         if (walletLinkClickableView != null) {
-            walletLinkClickableView.setupMessageClickableLink(this.clickableItem.getMessageText(this.resourceManager), linkedText, new WalletLinkClickableManager$setupClickableLink$1(this, linkedText));
+            walletLinkClickableView.setupMessageClickableLink(this.clickableItem.getMessageText(this.resourceManager), linkedText, new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$setupClickableLink$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    WalletLinkClickableView walletLinkClickableView2;
+                    ClickableItem clickableItem;
+                    String[] alertOptionsByType;
+                    walletLinkClickableView2 = WalletLinkClickableManager.this.viewState;
+                    if (walletLinkClickableView2 != null) {
+                        WalletLinkClickableManager walletLinkClickableManager = WalletLinkClickableManager.this;
+                        String str = linkedText;
+                        clickableItem = walletLinkClickableManager.clickableItem;
+                        alertOptionsByType = walletLinkClickableManager.getAlertOptionsByType(str, clickableItem.getLinkedTextType());
+                        final WalletLinkClickableManager walletLinkClickableManager2 = WalletLinkClickableManager.this;
+                        walletLinkClickableView2.showClickableTextDialog(alertOptionsByType, new Function1<Integer, Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$setupClickableLink$1.1
+                            {
+                                super(1);
+                            }
+
+                            @Override // kotlin.jvm.functions.Function1
+                            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                                invoke(num.intValue());
+                                return Unit.INSTANCE;
+                            }
+
+                            public final void invoke(int i) {
+                                WalletLinkClickableManager.this.resolveIndexOfAlertAction(i);
+                            }
+                        });
+                    }
+                }
+            });
         }
     }
 
@@ -102,14 +145,48 @@ public final class WalletLinkClickableManager {
         this.dialogsOptions.get(i).getSecond().invoke();
     }
 
-    private final String[] getUserIdAlertOptions(long j) {
+    private final String[] getUserIdAlertOptions(final long j) {
         List mutableListOf;
         List filterNotNull;
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[2];
-        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
-        pairArr[1] = TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
+        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m103to(this.resourceManager.getString(C3419R.string.wallet_user_id_dialog_go_to_profile_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Unit invoke() {
+                WalletLinkClickableView walletLinkClickableView;
+                walletLinkClickableView = WalletLinkClickableManager.this.viewState;
+                if (walletLinkClickableView != null) {
+                    walletLinkClickableView.actionOpenProfileScreen(j);
+                    return Unit.INSTANCE;
+                }
+                return null;
+            }
+        }) : null;
+        pairArr[1] = TuplesKt.m103to(this.resourceManager.getString(C3419R.string.wallet_user_id_dialog_copy_id_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Unit invoke() {
+                WalletLinkClickableView walletLinkClickableView;
+                walletLinkClickableView = WalletLinkClickableManager.this.viewState;
+                if (walletLinkClickableView != null) {
+                    walletLinkClickableView.actionCopyToClipboard(String.valueOf(j));
+                    return Unit.INSTANCE;
+                }
+                return null;
+            }
+        });
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -123,12 +200,29 @@ public final class WalletLinkClickableManager {
         return (String[]) arrayList.toArray(new String[0]);
     }
 
-    private final String[] getAddressAlertOptions(String str) {
+    private final String[] getAddressAlertOptions(final String str) {
         List mutableListOf;
         List filterNotNull;
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(TuplesKt.m103to(this.resourceManager.getString(C3419R.string.wallet_token_details_action_copy_address), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getAddressAlertOptions$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Unit invoke() {
+                WalletLinkClickableView walletLinkClickableView;
+                walletLinkClickableView = WalletLinkClickableManager.this.viewState;
+                if (walletLinkClickableView != null) {
+                    walletLinkClickableView.actionCopyToClipboard(str);
+                    return Unit.INSTANCE;
+                }
+                return null;
+            }
+        }));
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
         this.dialogsOptions = mutableList;

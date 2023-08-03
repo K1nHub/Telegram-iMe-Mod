@@ -80,7 +80,7 @@ public interface ExoTrackSelection extends TrackSelection {
 
         public Definition(TrackGroup trackGroup, int[] iArr, int i) {
             if (iArr.length == 0) {
-                Log.m799e(TAG, "Empty tracks are not allowed", new IllegalArgumentException());
+                Log.m817e(TAG, "Empty tracks are not allowed", new IllegalArgumentException());
             }
             this.group = trackGroup;
             this.tracks = iArr;

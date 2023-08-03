@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BackDrawable;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.ShadowSectionCell;
 import org.telegram.p043ui.Cells.TextCell;
@@ -30,6 +30,7 @@ import org.telegram.p043ui.NotificationsSettingsActivity;
 import org.telegram.p043ui.ProfileNotificationsActivity;
 import org.telegram.p043ui.TopicsFragment;
 import org.telegram.p043ui.TopicsNotifySettingsFragments;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_account_updateNotifySettings;
 import org.telegram.tgnet.TLRPC$TL_error;
@@ -60,15 +61,15 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.TopicsNotifySettingsFragments.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.TopicsNotifySettingsFragments.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TopicsNotifySettingsFragments.this.finishFragment();
                 }
             }
         });
-        this.actionBar.setTitle(LocaleController.getString(C3417R.string.NotificationsExceptions));
+        this.actionBar.setTitle(LocaleController.getString(C3419R.string.NotificationsExceptions));
         this.recyclerListView = new RecyclerListView(context);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDelayAnimations(false);
@@ -79,7 +80,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
         Adapter adapter = new Adapter();
         this.adapter = adapter;
         recyclerListView.setAdapter(adapter);
-        this.recyclerListView.setOnItemClickListener(new C67802());
+        this.recyclerListView.setOnItemClickListener(new C70392());
         frameLayout.addView(this.recyclerListView);
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return this.fragmentView;
@@ -88,8 +89,8 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.TopicsNotifySettingsFragments$2 */
     /* loaded from: classes5.dex */
-    public class C67802 implements RecyclerListView.OnItemClickListener {
-        C67802() {
+    public class C70392 implements RecyclerListView.OnItemClickListener {
+        C70392() {
         }
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
@@ -103,7 +104,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
                 topicsFragment.setOnTopicSelectedListener(new TopicsFragment.OnTopicSelectedListener() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$2$$ExternalSyntheticLambda2
                     @Override // org.telegram.p043ui.TopicsFragment.OnTopicSelectedListener
                     public final void onTopicSelected(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
-                        TopicsNotifySettingsFragments.C67802.this.lambda$onItemClick$1(tLRPC$TL_forumTopic);
+                        TopicsNotifySettingsFragments.C70392.this.lambda$onItemClick$1(tLRPC$TL_forumTopic);
                     }
                 });
                 TopicsNotifySettingsFragments.this.presentFragment(topicsFragment);
@@ -112,23 +113,23 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
                 TLRPC$TL_forumTopic tLRPC$TL_forumTopic = TopicsNotifySettingsFragments.this.items.get(i).topic;
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("dialog_id", TopicsNotifySettingsFragments.this.dialogId);
-                bundle2.putInt("topic_id", tLRPC$TL_forumTopic.f1568id);
+                bundle2.putInt("topic_id", tLRPC$TL_forumTopic.f1575id);
                 bundle2.putBoolean("exception", false);
                 ProfileNotificationsActivity profileNotificationsActivity = new ProfileNotificationsActivity(bundle2);
-                profileNotificationsActivity.setDelegate(new C67811(tLRPC$TL_forumTopic));
+                profileNotificationsActivity.setDelegate(new C70401(tLRPC$TL_forumTopic));
                 TopicsNotifySettingsFragments.this.presentFragment(profileNotificationsActivity);
             }
             if (TopicsNotifySettingsFragments.this.items.get(i).viewType == 4) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(TopicsNotifySettingsFragments.this.getParentActivity());
-                builder.setTitle(LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3417R.string.NotificationsDeleteAllExceptionTitle));
-                builder.setMessage(LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3417R.string.NotificationsDeleteAllExceptionAlert));
-                builder.setPositiveButton(LocaleController.getString("Delete", C3417R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$2$$ExternalSyntheticLambda0
+                builder.setTitle(LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3419R.string.NotificationsDeleteAllExceptionTitle));
+                builder.setMessage(LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3419R.string.NotificationsDeleteAllExceptionAlert));
+                builder.setPositiveButton(LocaleController.getString("Delete", C3419R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$2$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
-                        TopicsNotifySettingsFragments.C67802.this.lambda$onItemClick$2(dialogInterface, i2);
+                        TopicsNotifySettingsFragments.C70392.this.lambda$onItemClick$2(dialogInterface, i2);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null);
                 AlertDialog create = builder.create();
                 TopicsNotifySettingsFragments.this.showDialog(create);
                 TextView textView = (TextView) create.getButton(-1);
@@ -142,13 +143,13 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
         public /* synthetic */ void lambda$onItemClick$1(final TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", TopicsNotifySettingsFragments.this.dialogId);
-            bundle.putInt("topic_id", tLRPC$TL_forumTopic.f1568id);
+            bundle.putInt("topic_id", tLRPC$TL_forumTopic.f1575id);
             bundle.putBoolean("exception", true);
             ProfileNotificationsActivity profileNotificationsActivity = new ProfileNotificationsActivity(bundle);
             profileNotificationsActivity.setDelegate(new ProfileNotificationsActivity.ProfileNotificationsActivityDelegate() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$2$$ExternalSyntheticLambda1
                 @Override // org.telegram.p043ui.ProfileNotificationsActivity.ProfileNotificationsActivityDelegate
                 public final void didCreateNewException(NotificationsSettingsActivity.NotificationException notificationException) {
-                    TopicsNotifySettingsFragments.C67802.this.lambda$onItemClick$0(tLRPC$TL_forumTopic, notificationException);
+                    TopicsNotifySettingsFragments.C70392.this.lambda$onItemClick$0(tLRPC$TL_forumTopic, notificationException);
                 }
 
                 @Override // org.telegram.p043ui.ProfileNotificationsActivity.ProfileNotificationsActivityDelegate
@@ -161,39 +162,39 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$0(TLRPC$TL_forumTopic tLRPC$TL_forumTopic, NotificationsSettingsActivity.NotificationException notificationException) {
-            TopicsNotifySettingsFragments.this.exceptionsTopics.add(Integer.valueOf(tLRPC$TL_forumTopic.f1568id));
+            TopicsNotifySettingsFragments.this.exceptionsTopics.add(Integer.valueOf(tLRPC$TL_forumTopic.f1575id));
             TopicsNotifySettingsFragments.this.updateRows();
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.TopicsNotifySettingsFragments$2$1 */
         /* loaded from: classes5.dex */
-        public class C67811 implements ProfileNotificationsActivity.ProfileNotificationsActivityDelegate {
+        public class C70401 implements ProfileNotificationsActivity.ProfileNotificationsActivityDelegate {
             final /* synthetic */ TLRPC$TL_forumTopic val$topic;
 
             @Override // org.telegram.p043ui.ProfileNotificationsActivity.ProfileNotificationsActivityDelegate
             public void didCreateNewException(NotificationsSettingsActivity.NotificationException notificationException) {
             }
 
-            C67811(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
+            C70401(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
                 this.val$topic = tLRPC$TL_forumTopic;
             }
 
             @Override // org.telegram.p043ui.ProfileNotificationsActivity.ProfileNotificationsActivityDelegate
             public void didRemoveException(long j) {
-                TopicsNotifySettingsFragments.this.removeException(this.val$topic.f1568id);
+                TopicsNotifySettingsFragments.this.removeException(this.val$topic.f1575id);
                 final TLRPC$TL_forumTopic tLRPC$TL_forumTopic = this.val$topic;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$2$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsNotifySettingsFragments.C67802.C67811.this.lambda$didRemoveException$0(tLRPC$TL_forumTopic);
+                        TopicsNotifySettingsFragments.C70392.C70401.this.lambda$didRemoveException$0(tLRPC$TL_forumTopic);
                     }
                 }, 300L);
             }
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$didRemoveException$0(TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
-                TopicsNotifySettingsFragments.this.exceptionsTopics.remove(Integer.valueOf(tLRPC$TL_forumTopic.f1568id));
+                TopicsNotifySettingsFragments.this.exceptionsTopics.remove(Integer.valueOf(tLRPC$TL_forumTopic.f1575id));
                 TopicsNotifySettingsFragments.this.updateRows();
             }
         }
@@ -218,7 +219,12 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
         tLRPC$TL_inputNotifyForumTopic.peer = getMessagesController().getInputPeer(this.dialogId);
         tLRPC$TL_inputNotifyForumTopic.top_msg_id = i;
         tLRPC$TL_account_updateNotifySettings.peer = tLRPC$TL_inputNotifyForumTopic;
-        getConnectionsManager().sendRequest(tLRPC$TL_account_updateNotifySettings, TopicsNotifySettingsFragments$$ExternalSyntheticLambda0.INSTANCE);
+        getConnectionsManager().sendRequest(tLRPC$TL_account_updateNotifySettings, new RequestDelegate() { // from class: org.telegram.ui.TopicsNotifySettingsFragments$$ExternalSyntheticLambda0
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+                TopicsNotifySettingsFragments.lambda$removeException$0(tLObject, tLRPC$TL_error);
+            }
+        });
     }
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
@@ -244,7 +250,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
         if (topics != null) {
             int i2 = 0;
             while (i < topics.size()) {
-                if (this.exceptionsTopics.contains(Integer.valueOf(topics.get(i).f1568id))) {
+                if (this.exceptionsTopics.contains(Integer.valueOf(topics.get(i).f1575id))) {
                     this.items.add(new Item(2, topics.get(i)));
                     i2 = 1;
                 }
@@ -280,7 +286,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
             View view2;
             if (i == 1) {
                 TextCell textCell = new TextCell(viewGroup.getContext());
-                textCell.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3417R.string.NotificationsAddAnException), C3417R.C3419drawable.msg_contact_add, true);
+                textCell.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3419R.string.NotificationsAddAnException), C3419R.C3421drawable.msg_contact_add, true);
                 textCell.setColors(Theme.key_windowBackgroundWhiteBlueIcon, Theme.key_windowBackgroundWhiteBlueButton);
                 textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = textCell;
@@ -292,7 +298,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
                 view = new ShadowSectionCell(viewGroup.getContext());
             } else if (i == 4) {
                 TextCell textCell2 = new TextCell(viewGroup.getContext());
-                textCell2.setText(LocaleController.getString("NotificationsDeleteAllException", C3417R.string.NotificationsDeleteAllException), false);
+                textCell2.setText(LocaleController.getString("NotificationsDeleteAllException", C3419R.string.NotificationsDeleteAllException), false);
                 textCell2.setColors(-1, Theme.key_text_RedRegular);
                 textCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = textCell2;
@@ -360,7 +366,7 @@ public class TopicsNotifySettingsFragments extends BaseFragment {
                 return false;
             }
             TLRPC$TL_forumTopic tLRPC$TL_forumTopic2 = this.topic;
-            return tLRPC$TL_forumTopic2 == null || (tLRPC$TL_forumTopic = item.topic) == null || tLRPC$TL_forumTopic2.f1568id == tLRPC$TL_forumTopic.f1568id;
+            return tLRPC$TL_forumTopic2 == null || (tLRPC$TL_forumTopic = item.topic) == null || tLRPC$TL_forumTopic2.f1575id == tLRPC$TL_forumTopic.f1575id;
         }
     }
 }

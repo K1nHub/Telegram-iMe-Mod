@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.flv;
 
+import android.net.Uri;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -15,9 +16,24 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 /* loaded from: classes.dex */
 public final class FlvExtractor implements Extractor {
-    public static final ExtractorsFactory FACTORY = FlvExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.flv.FlvExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = FlvExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final int FLV_HEADER_SIZE = 9;
     private static final int FLV_TAG = 4607062;
     private static final int FLV_TAG_HEADER_SIZE = 11;

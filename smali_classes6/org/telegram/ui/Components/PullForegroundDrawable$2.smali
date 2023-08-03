@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
     .locals 0
 
-    .line 562
+    .line 620
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$2;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 565
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable$2;->this$0:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->doNotShow()V

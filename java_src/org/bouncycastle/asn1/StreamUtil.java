@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.channels.FileChannel;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public class StreamUtil {
@@ -40,7 +41,7 @@ public class StreamUtil {
             do {
                 i >>= 7;
                 i2--;
-                bArr[i2] = (byte) ((i & 127) | 128);
+                bArr[i2] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
             } while (i > 127);
             return 1 + (5 - i2);
         }

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = -0x15a04332
+.field public static constructor:I = -0x4f27e57d
 
 
 # instance fields
@@ -16,7 +16,7 @@
 
 .field public query_id:J
 
-.field public reply_to_msg_id:I
+.field public reply_to:Lorg/telegram/tgnet/TLRPC$InputReplyTo;
 
 .field public send_as:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
@@ -95,9 +95,9 @@
 
     if-eqz v0, :cond_1
 
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_prolongWebView;->reply_to_msg_id:I
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_prolongWebView;->reply_to:Lorg/telegram/tgnet/TLRPC$InputReplyTo;
 
-    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_prolongWebView;->flags:I

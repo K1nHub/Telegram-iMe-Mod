@@ -181,7 +181,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             } catch (AudioSink.WriteException e5) {
                 throw createRendererException(e5, e5.format, e5.isRecoverable, PlaybackException.ERROR_CODE_AUDIO_TRACK_WRITE_FAILED);
             } catch (DecoderException e6) {
-                Log.m799e(TAG, "Audio codec error", e6);
+                Log.m817e(TAG, "Audio codec error", e6);
                 this.eventDispatcher.audioCodecError(e6);
                 throw createRendererException(e6, this.inputFormat, 4003);
             }
@@ -427,7 +427,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         }
         int i = this.pendingOutputStreamOffsetCount;
         if (i == this.pendingOutputStreamOffsetsUs.length) {
-            Log.m796w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
+            Log.m814w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
         } else {
             this.pendingOutputStreamOffsetCount = i + 1;
         }
@@ -474,7 +474,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             this.eventDispatcher.decoderInitialized(this.decoder.getName(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
             this.decoderCounters.decoderInitCount++;
         } catch (DecoderException e) {
-            Log.m799e(TAG, "Audio codec error", e);
+            Log.m817e(TAG, "Audio codec error", e);
             this.eventDispatcher.audioCodecError(e);
             throw createRendererException(e, this.inputFormat, 4001);
         } catch (OutOfMemoryError e2) {
@@ -596,7 +596,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
         @Override // com.google.android.exoplayer2.audio.AudioSink.Listener
         public void onAudioSinkError(Exception exc) {
-            Log.m799e(DecoderAudioRenderer.TAG, "Audio sink error", exc);
+            Log.m817e(DecoderAudioRenderer.TAG, "Audio sink error", exc);
             DecoderAudioRenderer.this.eventDispatcher.audioSinkError(exc);
         }
     }

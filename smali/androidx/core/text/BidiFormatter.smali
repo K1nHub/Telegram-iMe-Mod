@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;,
-        Landroidx/core/text/BidiFormatter$Builder;
+        Landroidx/core/text/BidiFormatter$Builder;,
+        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;
     }
 .end annotation
 

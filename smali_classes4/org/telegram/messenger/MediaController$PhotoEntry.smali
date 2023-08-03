@@ -25,6 +25,10 @@
 
 .field public emojiMarkup:Lorg/telegram/tgnet/TLRPC$VideoSize;
 
+.field public gradientBottomColor:I
+
+.field public gradientTopColor:I
+
 .field public hasSpoiler:Z
 
 .field public height:I
@@ -54,42 +58,42 @@
 .method public constructor <init>(IIJLjava/lang/String;IZIIJ)V
     .locals 0
 
-    .line 406
+    .line 501
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;-><init>()V
 
-    .line 407
+    .line 502
     iput p1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->bucketId:I
 
-    .line 408
+    .line 503
     iput p2, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
 
-    .line 409
+    .line 504
     iput-wide p3, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->dateTaken:J
 
-    .line 410
+    .line 505
     iput-object p5, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
-    .line 411
+    .line 506
     iput p8, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->width:I
 
-    .line 412
+    .line 507
     iput p9, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->height:I
 
-    .line 413
+    .line 508
     iput-wide p10, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->size:J
 
     if-eqz p7, :cond_0
 
-    .line 415
+    .line 510
     iput p6, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
     goto :goto_0
 
-    .line 417
+    .line 512
     :cond_0
     iput p6, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    .line 419
+    .line 514
     :goto_0
     iput-boolean p7, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
@@ -101,10 +105,10 @@
 .method public copyFrom(Lorg/telegram/messenger/MediaController$MediaEditState;)V
     .locals 1
 
-    .line 436
+    .line 531
     invoke-super {p0, p1}, Lorg/telegram/messenger/MediaController$MediaEditState;->copyFrom(Lorg/telegram/messenger/MediaController$MediaEditState;)V
 
-    .line 437
+    .line 532
     instance-of v0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v0, :cond_0
@@ -131,7 +135,7 @@
 .method public getPath()Ljava/lang/String;
     .locals 1
 
-    .line 442
+    .line 537
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     return-object v0
@@ -140,17 +144,17 @@
 .method public reset()V
     .locals 2
 
-    .line 447
+    .line 542
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v0, :cond_0
 
-    .line 448
+    .line 543
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 449
+    .line 544
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
@@ -161,16 +165,16 @@
 
     const/4 v0, 0x0
 
-    .line 450
+    .line 545
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 453
+    .line 548
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
-    .line 454
+    .line 549
     invoke-super {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;->reset()V
 
     return-void
@@ -179,10 +183,10 @@
 .method public setOrientation(II)Lorg/telegram/messenger/MediaController$PhotoEntry;
     .locals 0
 
-    .line 429
+    .line 524
     iput p1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    .line 430
+    .line 525
     iput p2, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
 
     return-object p0
@@ -201,7 +205,7 @@
         }
     .end annotation
 
-    .line 423
+    .line 518
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -212,7 +216,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    .line 424
+    .line 519
     iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;

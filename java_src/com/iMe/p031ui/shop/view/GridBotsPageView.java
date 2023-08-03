@@ -25,6 +25,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
@@ -69,7 +70,7 @@ public final class GridBotsPageView extends FrameLayout {
         botsCategoriesAdapter.setHasStableIds(true);
         this.recyclerAdapter = botsCategoriesAdapter;
         this.recycler.setClipToPadding(false);
-        this.recycler.setPadding(0, AndroidUtilities.m55dp(14.0f), 0, 0);
+        this.recycler.setPadding(0, AndroidUtilities.m73dp(14.0f), 0, 0);
         this.recycler.setVerticalScrollBarEnabled(true);
         this.recycler.setItemAnimator(null);
         this.recycler.setInstantClick(true);
@@ -122,22 +123,88 @@ public final class GridBotsPageView extends FrameLayout {
                 subscribeToContent$lambda$1 = GridBotsPageView.subscribeToContent$lambda$1(GridBotsPageView.this, (List) obj, (List) obj2);
                 return subscribeToContent$lambda$1;
             }
-        }).subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
-        final GridBotsPageView$subscribeToContent$2 gridBotsPageView$subscribeToContent$2 = new GridBotsPageView$subscribeToContent$2(this);
+        }).subscribeOn(Schedulers.m697io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.ui.shop.view.GridBotsPageView$subscribeToContent$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Disposable disposable2) {
+                invoke2(disposable2);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Disposable disposable2) {
+                RecyclerListView recyclerListView;
+                ProgressBar progressBar;
+                recyclerListView = GridBotsPageView.this.recycler;
+                recyclerListView.setVisibility(8);
+                progressBar = GridBotsPageView.this.progress;
+                progressBar.setVisibility(0);
+            }
+        };
         Observable doOnSubscribe = observeOn.doOnSubscribe(new Consumer() { // from class: com.iMe.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 GridBotsPageView.subscribeToContent$lambda$2(Function1.this, obj);
             }
         });
-        final GridBotsPageView$subscribeToContent$3 gridBotsPageView$subscribeToContent$3 = new GridBotsPageView$subscribeToContent$3(this);
+        final Function1<List<Object>, Unit> function12 = new Function1<List<Object>, Unit>() { // from class: com.iMe.ui.shop.view.GridBotsPageView$subscribeToContent$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(List<Object> list) {
+                invoke2(list);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(List<Object> content) {
+                ProgressBar progressBar;
+                RecyclerListView recyclerListView;
+                BotsCategoriesAdapter botsCategoriesAdapter;
+                RecyclerListView recyclerListView2;
+                ProgressBar progressBar2;
+                progressBar = GridBotsPageView.this.progress;
+                if (progressBar.getVisibility() != 8) {
+                    progressBar2 = GridBotsPageView.this.progress;
+                    progressBar2.setVisibility(8);
+                }
+                recyclerListView = GridBotsPageView.this.recycler;
+                if (recyclerListView.getVisibility() != 0) {
+                    recyclerListView2 = GridBotsPageView.this.recycler;
+                    recyclerListView2.setVisibility(0);
+                }
+                botsCategoriesAdapter = GridBotsPageView.this.recyclerAdapter;
+                Intrinsics.checkNotNullExpressionValue(content, "content");
+                botsCategoriesAdapter.setContent(content);
+            }
+        };
         Consumer consumer = new Consumer() { // from class: com.iMe.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 GridBotsPageView.subscribeToContent$lambda$3(Function1.this, obj);
             }
         };
-        final GridBotsPageView$subscribeToContent$4 gridBotsPageView$subscribeToContent$4 = GridBotsPageView$subscribeToContent$4.INSTANCE;
+        final GridBotsPageView$subscribeToContent$4 gridBotsPageView$subscribeToContent$4 = new Function1<Throwable, Unit>() { // from class: com.iMe.ui.shop.view.GridBotsPageView$subscribeToContent$4
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable t) {
+                Intrinsics.checkNotNullParameter(t, "t");
+                t.printStackTrace();
+            }
+        };
         Disposable subscribe = doOnSubscribe.subscribe(consumer, new Consumer() { // from class: com.iMe.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {

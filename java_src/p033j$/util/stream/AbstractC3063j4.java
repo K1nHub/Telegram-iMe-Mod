@@ -4,9 +4,9 @@ package p033j$.util.stream;
 abstract class AbstractC3063j4 extends AbstractC3075l4 {
 
     /* renamed from: b */
-    int f1057b;
+    int f1060b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: b */
-    public abstract void mo385b(Object obj, long j);
+    public abstract void mo403b(Object obj, long j);
 }

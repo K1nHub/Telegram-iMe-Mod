@@ -18,7 +18,14 @@ public final class AudioAttributes implements Bundleable {
     private static final String FIELD_USAGE = Util.intToStringMaxRadix(2);
     private static final String FIELD_ALLOWED_CAPTURE_POLICY = Util.intToStringMaxRadix(3);
     private static final String FIELD_SPATIALIZATION_BEHAVIOR = Util.intToStringMaxRadix(4);
-    public static final Bundleable.Creator<AudioAttributes> CREATOR = AudioAttributes$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<AudioAttributes> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.audio.AudioAttributes$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            AudioAttributes lambda$static$0;
+            lambda$static$0 = AudioAttributes.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     /* loaded from: classes.dex */
     public static final class AudioAttributesV21 {

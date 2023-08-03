@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-final class zzlj implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
+final class zzlj<K, V> implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     private int zza;
     private Iterator<Map.Entry<K, V>> zzb;
     private final /* synthetic */ zzlh zzc;
@@ -55,7 +56,7 @@ final class zzlj implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     public final /* synthetic */ Object next() {
         List list;
         if (zza().hasNext()) {
-            return (Map.Entry) zza().next();
+            return zza().next();
         }
         list = this.zzc.zzb;
         int i = this.zza - 1;

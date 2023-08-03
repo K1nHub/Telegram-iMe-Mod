@@ -252,7 +252,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "qemu.hw.mainkeys"
+    const-string/jumbo v3, "qemu.hw.mainkeys"
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -262,7 +262,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "qemu.sf.fake_camera"
+    const-string/jumbo v3, "qemu.sf.fake_camera"
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -272,7 +272,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "qemu.sf.lcd_density"
+    const-string/jumbo v3, "qemu.sf.lcd_density"
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -845,7 +845,7 @@
     .line 283
     iget-object v0, p0, Lorg/telegram/messenger/EmuDetector;->mContext:Landroid/content/Context;
 
-    const-string v1, "phone"
+    const-string/jumbo v1, "phone"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1001,7 +1001,7 @@
     .line 296
     iget-object v0, p0, Lorg/telegram/messenger/EmuDetector;->mContext:Landroid/content/Context;
 
-    const-string v1, "phone"
+    const-string/jumbo v1, "phone"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1219,7 +1219,7 @@
     .line 308
     iget-object v0, p0, Lorg/telegram/messenger/EmuDetector;->mContext:Landroid/content/Context;
 
-    const-string v1, "phone"
+    const-string/jumbo v1, "phone"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1325,7 +1325,7 @@
     .line 270
     iget-object v0, p0, Lorg/telegram/messenger/EmuDetector;->mContext:Landroid/content/Context;
 
-    const-string v1, "phone"
+    const-string/jumbo v1, "phone"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

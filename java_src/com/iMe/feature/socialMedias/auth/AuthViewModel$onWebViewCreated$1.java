@@ -5,15 +5,11 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
-import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m84c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1", m83f = "AuthViewModel.kt", m82l = {23, 24, 26}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1", m101f = "AuthViewModel.kt", m100l = {23, 24, 26}, m99m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class AuthViewModel$onWebViewCreated$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ SocialAuthDomain $socialAuthDomain;
@@ -85,7 +81,7 @@ public final class AuthViewModel$onWebViewCreated$1 extends SuspendLambda implem
             java.lang.String r1 = r1.name()
             java.lang.String r1 = com.iMe.utils.extentions.common.StringExtKt.capitalizeOnlyFirstSymbol(r1)
             com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1$1 r5 = new com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1$1
-            r5.<init>(r1)
+            r5.<init>()
             r6.L$0 = r7
             r6.label = r4
             java.lang.Object r1 = org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt.reduce(r7, r5, r6)
@@ -121,25 +117,5 @@ public final class AuthViewModel$onWebViewCreated$1 extends SuspendLambda implem
             return r7
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1.invokeSuspend(java.lang.Object):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: AuthViewModel.kt */
-    /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1$1 */
-    /* loaded from: classes3.dex */
-    public static final class C14701 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        final /* synthetic */ String $title;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14701(String str) {
-            super(1);
-            this.$title = str;
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final AuthState invoke(SimpleContext<AuthState> reduce) {
-            Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
-            return AuthState.copy$default(reduce.getState(), this.$title, null, true, 2, null);
-        }
     }
 }

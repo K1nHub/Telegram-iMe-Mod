@@ -4900,7 +4900,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v0, v3, v1, v1}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {v2, v0, v3, v1, v1}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 1977
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -6989,7 +6989,7 @@
 .end method
 
 .method private updateProxyButton(ZZ)V
-    .locals 6
+    .locals 5
 
     .line 8930
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
@@ -7039,76 +7039,56 @@
     .line 8939
     invoke-interface {p2, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
-
-    const-string v2, "proxy_enabled"
+    const-string v0, "proxy_enabled"
 
     .line 8940
-    invoke-interface {p2, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p2
-
-    const/4 v2, 0x1
-
-    if-eqz p2, :cond_2
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    move p2, v2
-
-    goto :goto_0
-
-    :cond_2
-    move p2, v1
 
     .line 8941
-    :goto_0
     iget v0, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
-    const/4 v4, 0x3
+    const/4 v3, 0x3
 
     .line 8944
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyButtonView:Landroid/widget/ImageView;
 
-    iget v5, p0, Lorg/telegram/ui/LoginActivity;->activityMode:I
+    iget v4, p0, Lorg/telegram/ui/LoginActivity;->activityMode:I
 
-    if-nez v5, :cond_3
+    if-nez v4, :cond_2
 
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity;->isSearchByTelType()Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_3
+    if-nez v4, :cond_2
 
-    move v5, v1
+    move v4, v1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
-    const/16 v5, 0x8
+    :cond_2
+    const/16 v4, 0x8
 
-    :goto_1
-    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+    :goto_0
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 8945
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
 
-    iget v5, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
+    iget v4, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
 
-    if-eq v5, v4, :cond_4
+    if-eq v4, v3, :cond_3
 
-    if-ne v5, v3, :cond_5
+    if-ne v4, v2, :cond_4
+
+    :cond_3
+    const/4 v1, 0x1
 
     :cond_4
-    move v1, v2
-
-    :cond_5
     invoke-virtual {v0, p2, v1, p1}, Lorg/telegram/ui/Components/ProxyDrawable;->setConnected(ZZZ)V
 
     return-void

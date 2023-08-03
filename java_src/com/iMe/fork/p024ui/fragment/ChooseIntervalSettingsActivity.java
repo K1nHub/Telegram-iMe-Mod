@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.fork.controller.BackupController;
-import com.iMe.fork.controller.ForkTopicsController;
 import com.iMe.fork.enums.Interval;
 import com.iMe.fork.p024ui.fragment.ChooseIntervalSettingsActivity;
 import com.iMe.p031ui.base.mvp.MvpFragment;
@@ -21,14 +20,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -57,8 +57,7 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
     /* renamed from: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$Type */
     /* loaded from: classes3.dex */
     public enum Type {
-        AUTO_BACKUP,
-        AUTO_UPDATE_TOPICS_CATALOG
+        AUTO_BACKUP
     }
 
     /* compiled from: ChooseIntervalSettingsActivity.kt */
@@ -73,20 +72,12 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
                 iArr[Type.AUTO_BACKUP.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
-            try {
-                iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
     public static final ChooseIntervalSettingsActivity newInstanceForAutoBackupSettings() {
         return Companion.newInstanceForAutoBackupSettings();
-    }
-
-    public static final ChooseIntervalSettingsActivity newInstanceForAutoUpdateTopicsCatalogSettings() {
-        return Companion.newInstanceForAutoUpdateTopicsCatalogSettings();
     }
 
     @Override // com.iMe.p031ui.base.mvp.MvpFragment
@@ -100,9 +91,45 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
     public ChooseIntervalSettingsActivity(Type type) {
         Intrinsics.checkNotNullParameter(type, "type");
         this.type = type;
-        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new ChooseIntervalSettingsActivity$rootView$2(this), 1, (Object) null);
-        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new ChooseIntervalSettingsActivity$listView$2(this), 1, (Object) null);
-        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new ChooseIntervalSettingsActivity$listAdapter$2(this), 1, (Object) null);
+        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initRootView;
+                initRootView = ChooseIntervalSettingsActivity.this.initRootView();
+                return initRootView;
+            }
+        }, 1, (Object) null);
+        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = ChooseIntervalSettingsActivity.this.initListView();
+                return initListView;
+            }
+        }, 1, (Object) null);
+        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ChooseIntervalSettingsActivity.ListAdapter invoke() {
+                return new ChooseIntervalSettingsActivity.ListAdapter();
+            }
+        }, 1, (Object) null);
     }
 
     private final FrameLayout getRootView() {
@@ -129,11 +156,8 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
     @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
-        int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i == 1) {
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
             getBackupController().saveConfig();
-        } else if (i == 2) {
-            getTopicsController().saveConfig();
         }
         super.onFragmentDestroy();
     }
@@ -141,35 +165,30 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class, ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class, ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        int i;
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i2 == 1) {
-            i = C3417R.string.backup_settings_header;
-        } else if (i2 != 2) {
-            throw new NoWhenBranchMatchedException();
-        } else {
-            i = C3417R.string.topics_catalog;
-        }
-        c3484ActionBar.setTitle(LocaleController.getInternalString(i));
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i3) {
-                if (i3 == -1) {
-                    ChooseIntervalSettingsActivity.this.finishFragment();
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
+            c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.backup_settings_header));
+            c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
+                @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
+                public void onItemClick(int i) {
+                    if (i == -1) {
+                        ChooseIntervalSettingsActivity.this.finishFragment();
+                    }
                 }
-            }
-        });
+            });
+            return;
+        }
+        throw new NoWhenBranchMatchedException();
     }
 
     private final void setupListeners() {
@@ -220,40 +239,26 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean isMainSwitchEnabled() {
-        int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i != 1) {
-            if (i == 2) {
-                return getTopicsController().isAutoUpdateTopicsCatalogEnabled();
-            }
-            throw new NoWhenBranchMatchedException();
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
+            return getBackupController().isAutoBackupEnabled();
         }
-        return getBackupController().isAutoBackupEnabled();
+        throw new NoWhenBranchMatchedException();
     }
 
     private final void toggleEnabled() {
-        int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i == 1) {
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
             BackupController backupController = getBackupController();
             backupController.setAutoBackupEnabled(true ^ backupController.isAutoBackupEnabled());
             backupController.resetLastAutoBackupTime();
-        } else if (i != 2) {
-        } else {
-            ForkTopicsController topicsController = getTopicsController();
-            topicsController.setAutoUpdateTopicsCatalogEnabled(true ^ topicsController.isAutoUpdateTopicsCatalogEnabled());
-            topicsController.resetLastAutoUpdateCatalogTime();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Interval getSelectedInterval() {
-        int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i != 1) {
-            if (i == 2) {
-                return getTopicsController().getSelectedAutoUpdateTopicsCatalogInterval();
-            }
-            throw new NoWhenBranchMatchedException();
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
+            return getBackupController().getSelectedAutoBackupInterval();
         }
-        return getBackupController().getSelectedAutoBackupInterval();
+        throw new NoWhenBranchMatchedException();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -263,16 +268,10 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setInterval(Interval interval) {
-        int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
-        if (i == 1) {
+        if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
             BackupController backupController = getBackupController();
             backupController.setSelectedAutoBackupInterval(interval);
             backupController.resetLastAutoBackupTime();
-        } else if (i != 2) {
-        } else {
-            ForkTopicsController topicsController = getTopicsController();
-            topicsController.setSelectedAutoUpdateTopicsCatalogInterval(interval);
-            topicsController.resetLastAutoUpdateCatalogTime();
         }
     }
 
@@ -293,10 +292,6 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
                 try {
                     iArr[Type.AUTO_BACKUP.ordinal()] = 1;
                 } catch (NoSuchFieldError unused) {
-                }
-                try {
-                    iArr[Type.AUTO_UPDATE_TOPICS_CATALOG.ordinal()] = 2;
-                } catch (NoSuchFieldError unused2) {
                 }
                 $EnumSwitchMapping$0 = iArr;
             }
@@ -394,55 +389,40 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
-            int i2;
-            int i3;
-            int i4;
             Intrinsics.checkNotNullParameter(holder, "holder");
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                int i5 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
-                if (i5 == 1) {
-                    i4 = C3417R.string.backup_settings_save_auto;
-                } else if (i5 != 2) {
-                    throw new NoWhenBranchMatchedException();
-                } else {
-                    i4 = C3417R.string.topics_catalog_update_auto;
+                if (WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()] == 1) {
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.backup_settings_save_auto), ChooseIntervalSettingsActivity.this.isMainSwitchEnabled(), false);
+                    return;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(i4), ChooseIntervalSettingsActivity.this.isMainSwitchEnabled(), false);
+                throw new NoWhenBranchMatchedException();
             } else if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
-                int i6 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
-                if (i6 == 1) {
-                    i3 = C3417R.string.backup_auto_settings_interval_chooser_header;
-                } else if (i6 != 2) {
-                    throw new NoWhenBranchMatchedException();
-                } else {
-                    i3 = C3417R.string.topics_catalog_auto_update_settings_interval_chooser_header;
+                if (WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()] == 1) {
+                    headerCell.setText(LocaleController.getInternalString(C3419R.string.backup_auto_settings_interval_chooser_header));
+                    return;
                 }
-                headerCell.setText(LocaleController.getInternalString(i3));
+                throw new NoWhenBranchMatchedException();
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                 ChooseIntervalSettingsActivity chooseIntervalSettingsActivity = ChooseIntervalSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (chooseIntervalSettingsActivity.isMainSwitchEnabled()) {
                     textInfoPrivacyCell.setText(null);
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
-                int i7 = WhenMappings.$EnumSwitchMapping$0[chooseIntervalSettingsActivity.getType().ordinal()];
-                if (i7 == 1) {
-                    i2 = C3417R.string.backup_auto_settings_enable_item_hint;
-                } else if (i7 != 2) {
-                    throw new NoWhenBranchMatchedException();
-                } else {
-                    i2 = C3417R.string.topics_catalog_auto_update_settings_enable_item_hint;
+                if (WhenMappings.$EnumSwitchMapping$0[chooseIntervalSettingsActivity.getType().ordinal()] == 1) {
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3419R.string.backup_auto_settings_enable_item_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setFixedSize(0);
+                    return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(i2));
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                textInfoPrivacyCell.setFixedSize(0);
+                throw new NoWhenBranchMatchedException();
             }
         }
 
@@ -466,10 +446,6 @@ public final class ChooseIntervalSettingsActivity extends MvpFragment {
 
         public final ChooseIntervalSettingsActivity newInstanceForAutoBackupSettings() {
             return new ChooseIntervalSettingsActivity(Type.AUTO_BACKUP);
-        }
-
-        public final ChooseIntervalSettingsActivity newInstanceForAutoUpdateTopicsCatalogSettings() {
-            return new ChooseIntervalSettingsActivity(Type.AUTO_UPDATE_TOPICS_CATALOG);
         }
     }
 }

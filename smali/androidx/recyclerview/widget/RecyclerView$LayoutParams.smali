@@ -28,10 +28,10 @@
 .method public constructor <init>(II)V
     .locals 0
 
-    .line 11611
+    .line 11631
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 11599
+    .line 11619
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -40,12 +40,12 @@
 
     const/4 p1, 0x1
 
-    .line 11600
+    .line 11620
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mInsetsDirty:Z
 
     const/4 p1, 0x0
 
-    .line 11604
+    .line 11624
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mPendingInvalidate:Z
 
     return-void
@@ -54,10 +54,10 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    .line 11607
+    .line 11627
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 11599
+    .line 11619
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -66,12 +66,12 @@
 
     const/4 p1, 0x1
 
-    .line 11600
+    .line 11620
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mInsetsDirty:Z
 
     const/4 p1, 0x0
 
-    .line 11604
+    .line 11624
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mPendingInvalidate:Z
 
     return-void
@@ -80,10 +80,10 @@
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .locals 0
 
-    .line 11619
+    .line 11639
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 11599
+    .line 11619
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -92,12 +92,12 @@
 
     const/4 p1, 0x1
 
-    .line 11600
+    .line 11620
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mInsetsDirty:Z
 
     const/4 p1, 0x0
 
-    .line 11604
+    .line 11624
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mPendingInvalidate:Z
 
     return-void
@@ -106,10 +106,10 @@
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .locals 0
 
-    .line 11615
+    .line 11635
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 11599
+    .line 11619
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -118,12 +118,12 @@
 
     const/4 p1, 0x1
 
-    .line 11600
+    .line 11620
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mInsetsDirty:Z
 
     const/4 p1, 0x0
 
-    .line 11604
+    .line 11624
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mPendingInvalidate:Z
 
     return-void
@@ -132,10 +132,10 @@
 .method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)V
     .locals 0
 
-    .line 11623
+    .line 11643
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 11599
+    .line 11619
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -144,12 +144,12 @@
 
     const/4 p1, 0x1
 
-    .line 11600
+    .line 11620
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mInsetsDirty:Z
 
     const/4 p1, 0x0
 
-    .line 11604
+    .line 11624
     iput-boolean p1, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mPendingInvalidate:Z
 
     return-void
@@ -160,7 +160,7 @@
 .method public getViewAdapterPosition()I
     .locals 1
 
-    .line 11695
+    .line 11715
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     if-nez v0, :cond_0
@@ -181,7 +181,7 @@
 .method public getViewLayoutPosition()I
     .locals 1
 
-    .line 11683
+    .line 11703
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     if-nez v0, :cond_0
@@ -202,7 +202,7 @@
 .method public isItemChanged()Z
     .locals 1
 
-    .line 11665
+    .line 11685
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isUpdated()Z
@@ -215,7 +215,7 @@
 .method public isItemRemoved()Z
     .locals 1
 
-    .line 11654
+    .line 11674
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isRemoved()Z
@@ -228,7 +228,7 @@
 .method public isViewInvalid()Z
     .locals 1
 
-    .line 11643
+    .line 11663
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->mViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isInvalid()Z

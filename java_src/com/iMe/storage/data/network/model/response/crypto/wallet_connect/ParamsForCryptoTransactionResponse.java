@@ -12,7 +12,7 @@ public final class ParamsForCryptoTransactionResponse {
     private final String networkType;
 
     /* renamed from: to */
-    private final String f389to;
+    private final String f392to;
     private final TransactionParamsResponse.EVM transactionParams;
     private final String value;
 
@@ -21,7 +21,7 @@ public final class ParamsForCryptoTransactionResponse {
             str = paramsForCryptoTransactionResponse.from;
         }
         if ((i & 2) != 0) {
-            str2 = paramsForCryptoTransactionResponse.f389to;
+            str2 = paramsForCryptoTransactionResponse.f392to;
         }
         String str6 = str2;
         if ((i & 4) != 0) {
@@ -51,7 +51,7 @@ public final class ParamsForCryptoTransactionResponse {
     }
 
     public final String component2() {
-        return this.f389to;
+        return this.f392to;
     }
 
     public final String component3() {
@@ -91,17 +91,17 @@ public final class ParamsForCryptoTransactionResponse {
         }
         if (obj instanceof ParamsForCryptoTransactionResponse) {
             ParamsForCryptoTransactionResponse paramsForCryptoTransactionResponse = (ParamsForCryptoTransactionResponse) obj;
-            return Intrinsics.areEqual(this.from, paramsForCryptoTransactionResponse.from) && Intrinsics.areEqual(this.f389to, paramsForCryptoTransactionResponse.f389to) && Intrinsics.areEqual(this.value, paramsForCryptoTransactionResponse.value) && Intrinsics.areEqual(this.data, paramsForCryptoTransactionResponse.data) && Intrinsics.areEqual(this.transactionParams, paramsForCryptoTransactionResponse.transactionParams) && Intrinsics.areEqual(this.networkType, paramsForCryptoTransactionResponse.networkType) && Intrinsics.areEqual(this.feeToken, paramsForCryptoTransactionResponse.feeToken);
+            return Intrinsics.areEqual(this.from, paramsForCryptoTransactionResponse.from) && Intrinsics.areEqual(this.f392to, paramsForCryptoTransactionResponse.f392to) && Intrinsics.areEqual(this.value, paramsForCryptoTransactionResponse.value) && Intrinsics.areEqual(this.data, paramsForCryptoTransactionResponse.data) && Intrinsics.areEqual(this.transactionParams, paramsForCryptoTransactionResponse.transactionParams) && Intrinsics.areEqual(this.networkType, paramsForCryptoTransactionResponse.networkType) && Intrinsics.areEqual(this.feeToken, paramsForCryptoTransactionResponse.feeToken);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((this.from.hashCode() * 31) + this.f389to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.feeToken.hashCode();
+        return (((((((((((this.from.hashCode() * 31) + this.f392to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.feeToken.hashCode();
     }
 
     public String toString() {
-        return "ParamsForCryptoTransactionResponse(from=" + this.from + ", to=" + this.f389to + ", value=" + this.value + ", data=" + this.data + ", transactionParams=" + this.transactionParams + ", networkType=" + this.networkType + ", feeToken=" + this.feeToken + ')';
+        return "ParamsForCryptoTransactionResponse(from=" + this.from + ", to=" + this.f392to + ", value=" + this.value + ", data=" + this.data + ", transactionParams=" + this.transactionParams + ", networkType=" + this.networkType + ", feeToken=" + this.feeToken + ')';
     }
 
     public ParamsForCryptoTransactionResponse(String from, String to, String value, String data, TransactionParamsResponse.EVM transactionParams, String networkType, TokenDetailedResponse feeToken) {
@@ -113,7 +113,7 @@ public final class ParamsForCryptoTransactionResponse {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         this.from = from;
-        this.f389to = to;
+        this.f392to = to;
         this.value = value;
         this.data = data;
         this.transactionParams = transactionParams;
@@ -126,7 +126,7 @@ public final class ParamsForCryptoTransactionResponse {
     }
 
     public final String getTo() {
-        return this.f389to;
+        return this.f392to;
     }
 
     public final String getValue() {

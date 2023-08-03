@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/graphics/drawable/shapes/Shape;)V
     .locals 0
 
-    .line 285
+    .line 286
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$2;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {p0, p2}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
@@ -35,10 +35,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 288
+    .line 289
     invoke-super {p0, p1}, Landroid/graphics/drawable/ShapeDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 289
+    .line 290
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$2;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, 0x1

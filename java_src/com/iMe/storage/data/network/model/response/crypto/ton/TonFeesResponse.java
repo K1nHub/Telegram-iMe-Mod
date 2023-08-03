@@ -1,4 +1,6 @@
 package com.iMe.storage.data.network.model.response.crypto.ton;
+
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 /* compiled from: TonFeesResponse.kt */
 /* loaded from: classes3.dex */
 public final class TonFeesResponse {
@@ -48,7 +50,7 @@ public final class TonFeesResponse {
     }
 
     public int hashCode() {
-        return (((Float.floatToIntBits(this.duration) * 31) + Double.doubleToLongBits(this.fee)) * 31) + Double.doubleToLongBits(this.feeInDollars);
+        return (((Float.floatToIntBits(this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.fee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.feeInDollars);
     }
 
     public String toString() {

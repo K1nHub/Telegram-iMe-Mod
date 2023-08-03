@@ -2,7 +2,7 @@ package wallet.core.jni.proto;
 
 import com.google.protobuf.ExtensionRegistryLite;
 import com.google.protobuf.Internal;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Common {
     public static void registerAllExtensions(ExtensionRegistryLite registry) {
     }
@@ -10,7 +10,7 @@ public final class Common {
     private Common() {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum SigningError implements Internal.EnumLite {
         OK(0),
         Error_general(1),
@@ -146,7 +146,7 @@ public final class Common {
             return SigningErrorVerifier.INSTANCE;
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         private static final class SigningErrorVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new SigningErrorVerifier();
 

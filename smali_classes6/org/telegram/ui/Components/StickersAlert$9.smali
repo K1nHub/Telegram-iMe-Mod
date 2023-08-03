@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 830
+    .line 863
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$9;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 833
+    .line 866
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$9;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$700(Lorg/telegram/ui/Components/StickersAlert;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 836
+    .line 869
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlinx.coroutines.DebugKt;
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: WorkQueue.kt */
 /* loaded from: classes4.dex */
 public final class WorkQueue {
@@ -55,7 +56,7 @@ public final class WorkQueue {
         if (getBufferSize$kotlinx_coroutines_core() == 127) {
             return task;
         }
-        int i = this.producerIndex & 127;
+        int i = this.producerIndex & MessagesStorage.LAST_DB_VERSION;
         while (this.buffer.get(i) != null) {
             Thread.yield();
         }
@@ -106,7 +107,7 @@ public final class WorkQueue {
         int i = workQueue.producerIndex;
         AtomicReferenceArray<Task> atomicReferenceArray = workQueue.buffer;
         for (int i2 = workQueue.consumerIndex; i2 != i; i2++) {
-            int i3 = i2 & 127;
+            int i3 = i2 & MessagesStorage.LAST_DB_VERSION;
             if (workQueue.blockingTasksInBuffer == 0) {
                 break;
             }
@@ -169,7 +170,7 @@ public final class WorkQueue {
             if (i - this.producerIndex == 0) {
                 return null;
             }
-            int i2 = i & 127;
+            int i2 = i & MessagesStorage.LAST_DB_VERSION;
             if (consumerIndex$FU.compareAndSet(this, i, i + 1) && (andSet = this.buffer.getAndSet(i2, null)) != null) {
                 decrementIfBlocking(andSet);
                 return andSet;

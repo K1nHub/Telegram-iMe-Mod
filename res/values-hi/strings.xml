@@ -149,6 +149,13 @@
     <string name="brvah_load_complete">अधिक लोड करने के लिए क्लिक करें</string>
     <string name="brvah_load_end">कोई और डेटा नहीं</string>
     <string name="brvah_load_failed">और लोड होना विफल रहा. पुनः लोड करने के लिए क्लिक करें</string>
+    <string name="call_notification_answer_action">जवाब दें</string>
+    <string name="call_notification_answer_video_action">वीडियो</string>
+    <string name="call_notification_decline_action">अस्वीकार करें</string>
+    <string name="call_notification_hang_up_action">कॉल काटें</string>
+    <string name="call_notification_incoming_text">आने वाला (इनकमिंग) कॉल</string>
+    <string name="call_notification_ongoing_text">पहले से जारी कॉल</string>
+    <string name="call_notification_screening_text">इनकमिंग कॉल को स्क्रीन किया जा रहा है</string>
     <string name="catalog_all">सभी</string>
     <string name="catalog_all_languages">सभी भाषाएँ</string>
     <string name="catalog_categories">श्रेणियाँ</string>
@@ -944,7 +951,7 @@
     <string name="settings_interface_wide_posts_in_channel">चैनलों में विस्तृत पोस्ट</string>
     <string name="settings_multi_panel_item_title">चैट में बहु-पैनल</string>
     <string name="settings_neurobots_item_title">न्यूरोबॉट्स सेटिंग्स</string>
-    <string name="settings_proxy_button_in_toolbar">प्रॉक्सी बटन</string>
+    <string name="settings_proxy_button_in_toolbar">टूलबार में प्रॉक्सी बटन</string>
     <string name="settings_reactions_enable_hint">चैट में प्रतिक्रियाओं की कार्यक्षमता प्रदर्शित करने के लिए इसे चालू करें</string>
     <string name="settings_section_passcode_archive">संग्रह में पासकोड</string>
     <string name="settings_section_passcode_cloud">क्लाउड में पासकोड</string>

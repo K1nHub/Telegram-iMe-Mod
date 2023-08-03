@@ -1,0 +1,70 @@
+.class Lorg/telegram/ui/Stories/StoryViewer$9;
+.super Landroid/animation/AnimatorListenerAdapter;
+.source "StoryViewer.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Stories/StoryViewer;->cancelSwipeToReply()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+
+# direct methods
+.method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
+    .locals 0
+
+    .line 1541
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 1544
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyBackAnimator:Landroid/animation/ValueAnimator;
+
+    const/4 v0, 0x0
+
+    .line 1545
+    iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
+
+    .line 1546
+    iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyProgress:F
+
+    .line 1549
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
+
+    if-eqz p1, :cond_0
+
+    .line 1550
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 1552
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+
+    :cond_0
+    return-void
+.end method

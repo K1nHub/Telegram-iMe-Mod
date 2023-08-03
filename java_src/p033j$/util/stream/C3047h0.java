@@ -6,8 +6,8 @@ import p033j$.util.Optional;
 final class C3047h0 extends AbstractC3053i0 {
     @Override // p033j$.util.function.InterfaceC2839y
     public Object get() {
-        if (this.f1047a) {
-            return Optional.m611of(this.f1048b);
+        if (this.f1050a) {
+            return Optional.m629of(this.f1051b);
         }
         return null;
     }

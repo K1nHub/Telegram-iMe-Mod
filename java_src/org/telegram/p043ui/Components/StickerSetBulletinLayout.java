@@ -13,10 +13,6 @@ import org.telegram.tgnet.TLRPC$Document;
 /* renamed from: org.telegram.ui.Components.StickerSetBulletinLayout */
 /* loaded from: classes6.dex */
 public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
-    public StickerSetBulletinLayout(Context context, TLObject tLObject, int i) {
-        this(context, tLObject, 1, i, null, null);
-    }
-
     public StickerSetBulletinLayout(Context context, TLObject tLObject, int i, TLRPC$Document tLRPC$Document, Theme.ResourcesProvider resourcesProvider) {
         this(context, tLObject, 1, i, tLRPC$Document, resourcesProvider);
     }
@@ -50,7 +46,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$0(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$84(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$87(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
         }
     }
 
@@ -58,7 +54,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$1(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$84(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$87(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
         }
     }
 }

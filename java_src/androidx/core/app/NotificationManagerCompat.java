@@ -3,6 +3,7 @@ package androidx.core.app;
 import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
+import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -82,7 +83,7 @@ public final class NotificationManagerCompat {
     public boolean areNotificationsEnabled() {
         int i = Build.VERSION.SDK_INT;
         if (i >= 24) {
-            return this.mNotificationManager.areNotificationsEnabled();
+            return Api24Impl.areNotificationsEnabled(this.mNotificationManager);
         }
         if (i >= 19) {
             AppOpsManager appOpsManager = (AppOpsManager) this.mContext.getSystemService("appops");
@@ -102,13 +103,13 @@ public final class NotificationManagerCompat {
 
     public void createNotificationChannel(NotificationChannel notificationChannel) {
         if (Build.VERSION.SDK_INT >= 26) {
-            this.mNotificationManager.createNotificationChannel(notificationChannel);
+            Api26Impl.createNotificationChannel(this.mNotificationManager, notificationChannel);
         }
     }
 
     public NotificationChannel getNotificationChannel(String str) {
         if (Build.VERSION.SDK_INT >= 26) {
-            return this.mNotificationManager.getNotificationChannel(str);
+            return Api26Impl.getNotificationChannel(this.mNotificationManager, str);
         }
         return null;
     }
@@ -436,6 +437,65 @@ public final class NotificationManagerCompat {
 
         public String toString() {
             return "CancelTask[packageName:" + this.packageName + ", id:" + this.f36id + ", tag:" + this.tag + ", all:" + this.all + "]";
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api24Impl {
+        static boolean areNotificationsEnabled(NotificationManager notificationManager) {
+            return notificationManager.areNotificationsEnabled();
+        }
+
+        static int getImportance(NotificationManager notificationManager) {
+            return notificationManager.getImportance();
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api26Impl {
+        static void createNotificationChannel(NotificationManager notificationManager, NotificationChannel notificationChannel) {
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        static NotificationChannel getNotificationChannel(NotificationManager notificationManager, String str) {
+            return notificationManager.getNotificationChannel(str);
+        }
+
+        static void createNotificationChannels(NotificationManager notificationManager, List<NotificationChannel> list) {
+            notificationManager.createNotificationChannels(list);
+        }
+
+        static List<NotificationChannel> getNotificationChannels(NotificationManager notificationManager) {
+            return notificationManager.getNotificationChannels();
+        }
+
+        static void createNotificationChannelGroup(NotificationManager notificationManager, NotificationChannelGroup notificationChannelGroup) {
+            notificationManager.createNotificationChannelGroup(notificationChannelGroup);
+        }
+
+        static void createNotificationChannelGroups(NotificationManager notificationManager, List<NotificationChannelGroup> list) {
+            notificationManager.createNotificationChannelGroups(list);
+        }
+
+        static List<NotificationChannelGroup> getNotificationChannelGroups(NotificationManager notificationManager) {
+            return notificationManager.getNotificationChannelGroups();
+        }
+
+        static void deleteNotificationChannel(NotificationManager notificationManager, String str) {
+            notificationManager.deleteNotificationChannel(str);
+        }
+
+        static void deleteNotificationChannelGroup(NotificationManager notificationManager, String str) {
+            notificationManager.deleteNotificationChannelGroup(str);
+        }
+
+        static String getId(NotificationChannel notificationChannel) {
+            return notificationChannel.getId();
+        }
+
+        static String getId(NotificationChannelGroup notificationChannelGroup) {
+            return notificationChannelGroup.getId();
         }
     }
 }

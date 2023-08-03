@@ -51,14 +51,14 @@ public final class DialogFragmentNavigator extends Navigator<Destination> {
         this.observer = new LifecycleEventObserver() { // from class: androidx.navigation.fragment.DialogFragmentNavigator$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                DialogFragmentNavigator.m867observer$lambda3(DialogFragmentNavigator.this, lifecycleOwner, event);
+                DialogFragmentNavigator.m885observer$lambda3(DialogFragmentNavigator.this, lifecycleOwner, event);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: observer$lambda-3  reason: not valid java name */
-    public static final void m867observer$lambda3(DialogFragmentNavigator this$0, LifecycleOwner source, Lifecycle.Event event) {
+    public static final void m885observer$lambda3(DialogFragmentNavigator this$0, LifecycleOwner source, Lifecycle.Event event) {
         NavBackStackEntry navBackStackEntry;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(source, "source");
@@ -182,14 +182,14 @@ public final class DialogFragmentNavigator extends Navigator<Destination> {
         this.fragmentManager.addFragmentOnAttachListener(new FragmentOnAttachListener() { // from class: androidx.navigation.fragment.DialogFragmentNavigator$$ExternalSyntheticLambda0
             @Override // androidx.fragment.app.FragmentOnAttachListener
             public final void onAttachFragment(FragmentManager fragmentManager, Fragment fragment) {
-                DialogFragmentNavigator.m868onAttach$lambda5(DialogFragmentNavigator.this, fragmentManager, fragment);
+                DialogFragmentNavigator.m886onAttach$lambda5(DialogFragmentNavigator.this, fragmentManager, fragment);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onAttach$lambda-5  reason: not valid java name */
-    public static final void m868onAttach$lambda5(DialogFragmentNavigator this$0, FragmentManager fragmentManager, Fragment childFragment) {
+    public static final void m886onAttach$lambda5(DialogFragmentNavigator this$0, FragmentManager fragmentManager, Fragment childFragment) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(fragmentManager, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(childFragment, "childFragment");

@@ -269,7 +269,7 @@ final class WebvttCssParser {
     private static void parseFontSize(String str, WebvttCssStyle webvttCssStyle) {
         Matcher matcher = FONT_SIZE_PATTERN.matcher(Ascii.toLowerCase(str));
         if (!matcher.matches()) {
-            Log.m796w(TAG, "Invalid font-size: '" + str + "'.");
+            Log.m814w(TAG, "Invalid font-size: '" + str + "'.");
             return;
         }
         String str2 = (String) Assertions.checkNotNull(matcher.group(2));

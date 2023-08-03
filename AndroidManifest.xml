@@ -99,7 +99,7 @@
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
     <permission android:name="com.iMe.android.web.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
     <uses-permission android:name="com.iMe.android.web.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
-    <application android:allowAudioPlaybackCapture="true" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="org.telegram.messenger.BackupAgent" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:icon="@mipmap/fork_launcher_rocket_round" android:label="Telegram" android:largeHeap="true" android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity" android:name="org.telegram.messenger.ApplicationLoaderImpl" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/Theme.TMessages.Start">
+    <application android:allowAudioPlaybackCapture="true" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="org.telegram.messenger.BackupAgent" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:icon="@mipmap/fork_launcher_rocket_round" android:label="iMe Direct" android:largeHeap="true" android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity" android:name="org.telegram.messenger.ApplicationLoaderImpl" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/Theme.TMessages.Start">
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM"/>
         <service android:exported="true" android:name="org.telegram.messenger.GcmPushListenerService">
             <intent-filter>
@@ -563,6 +563,7 @@
         <service android:enabled="true" android:exported="true" android:name="org.telegram.messenger.NotificationsService"/>
         <service android:exported="false" android:name="org.telegram.messenger.NotificationRepeat"/>
         <service android:enabled="true" android:exported="true" android:name="org.telegram.messenger.VideoEncodingService"/>
+        <service android:enabled="true" android:exported="true" android:name="org.telegram.ui.Stories.recorder.StoryUploadingService"/>
         <service android:enabled="true" android:exported="true" android:name="org.telegram.messenger.ImportingService"/>
         <service android:enabled="true" android:exported="true" android:foregroundServiceType="location" android:name="org.telegram.messenger.LocationSharingService"/>
         <service android:enabled="true" android:foregroundServiceType="camera|mediaPlayback|mediaProjection|microphone" android:name="org.telegram.messenger.voip.VoIPService"/>

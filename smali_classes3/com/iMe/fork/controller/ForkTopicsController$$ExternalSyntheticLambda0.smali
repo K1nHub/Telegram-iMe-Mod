@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/controller/ForkTopicsController$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/fork/controller/ForkTopicsController;
 
-    invoke-static {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->$r8$lambda$5kDQ2lIG4tG3T2Zju6gPozKZzs8(Lcom/iMe/fork/controller/ForkTopicsController;)V
+    invoke-static {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->$r8$lambda$bOjPTe5BxZC8Ghl8u0U0ix2qutE(Lcom/iMe/fork/controller/ForkTopicsController;)V
 
     return-void
 .end method

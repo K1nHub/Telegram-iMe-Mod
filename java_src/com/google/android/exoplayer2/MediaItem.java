@@ -3,6 +3,7 @@ package com.google.android.exoplayer2;
 import android.net.Uri;
 import android.os.Bundle;
 import com.google.android.exoplayer2.Bundleable;
+import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
@@ -35,7 +36,14 @@ public final class MediaItem implements Bundleable {
     private static final String FIELD_MEDIA_METADATA = Util.intToStringMaxRadix(2);
     private static final String FIELD_CLIPPING_PROPERTIES = Util.intToStringMaxRadix(3);
     private static final String FIELD_REQUEST_METADATA = Util.intToStringMaxRadix(4);
-    public static final Bundleable.Creator<MediaItem> CREATOR = MediaItem$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<MediaItem> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            MediaItem fromBundle;
+            fromBundle = MediaItem.fromBundle(bundle);
+            return fromBundle;
+        }
+    };
 
     public static MediaItem fromUri(String str) {
         return new Builder().setUri(str).build();
@@ -65,7 +73,7 @@ public final class MediaItem implements Bundleable {
             this.clippingConfiguration = new ClippingConfiguration.Builder();
             this.drmConfiguration = new DrmConfiguration.Builder();
             this.streamKeys = Collections.emptyList();
-            this.subtitleConfigurations = ImmutableList.m744of();
+            this.subtitleConfigurations = ImmutableList.m762of();
             this.liveConfiguration = new LiveConfiguration.Builder();
             this.requestMetadata = RequestMetadata.EMPTY;
         }
@@ -172,7 +180,7 @@ public final class MediaItem implements Bundleable {
         public Builder setDrmLicenseRequestHeaders(Map<String, String> map) {
             DrmConfiguration.Builder builder = this.drmConfiguration;
             if (map == null) {
-                map = ImmutableMap.m737of();
+                map = ImmutableMap.m755of();
             }
             builder.setLicenseRequestHeaders(map);
             return this;
@@ -212,7 +220,7 @@ public final class MediaItem implements Bundleable {
         public Builder setDrmSessionForClearTypes(List<Integer> list) {
             DrmConfiguration.Builder builder = this.drmConfiguration;
             if (list == null) {
-                list = ImmutableList.m744of();
+                list = ImmutableList.m762of();
             }
             builder.setForcedSessionTrackTypes(list);
             return this;
@@ -242,7 +250,7 @@ public final class MediaItem implements Bundleable {
 
         @Deprecated
         public Builder setSubtitles(List<Subtitle> list) {
-            this.subtitleConfigurations = list != null ? ImmutableList.copyOf((Collection) list) : ImmutableList.m744of();
+            this.subtitleConfigurations = list != null ? ImmutableList.copyOf((Collection) list) : ImmutableList.m762of();
             return this;
         }
 
@@ -376,14 +384,14 @@ public final class MediaItem implements Bundleable {
 
             public Builder(UUID uuid) {
                 this.scheme = uuid;
-                this.licenseRequestHeaders = ImmutableMap.m737of();
-                this.forcedSessionTrackTypes = ImmutableList.m744of();
+                this.licenseRequestHeaders = ImmutableMap.m755of();
+                this.forcedSessionTrackTypes = ImmutableList.m762of();
             }
 
             @Deprecated
             private Builder() {
-                this.licenseRequestHeaders = ImmutableMap.m737of();
-                this.forcedSessionTrackTypes = ImmutableList.m744of();
+                this.licenseRequestHeaders = ImmutableMap.m755of();
+                this.forcedSessionTrackTypes = ImmutableList.m762of();
             }
 
             private Builder(DrmConfiguration drmConfiguration) {
@@ -445,13 +453,13 @@ public final class MediaItem implements Bundleable {
             }
 
             public Builder setForceSessionsForAudioAndVideoTracks(boolean z) {
-                ImmutableList m744of;
+                ImmutableList m762of;
                 if (z) {
-                    m744of = ImmutableList.m742of(2, 1);
+                    m762of = ImmutableList.m760of(2, 1);
                 } else {
-                    m744of = ImmutableList.m744of();
+                    m762of = ImmutableList.m762of();
                 }
-                setForcedSessionTrackTypes(m744of);
+                setForcedSessionTrackTypes(m762of);
                 return this;
             }
 
@@ -648,7 +656,14 @@ public final class MediaItem implements Bundleable {
         private static final String FIELD_MAX_OFFSET_MS = Util.intToStringMaxRadix(2);
         private static final String FIELD_MIN_PLAYBACK_SPEED = Util.intToStringMaxRadix(3);
         private static final String FIELD_MAX_PLAYBACK_SPEED = Util.intToStringMaxRadix(4);
-        public static final Bundleable.Creator<LiveConfiguration> CREATOR = MediaItem$LiveConfiguration$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<LiveConfiguration> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$LiveConfiguration$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                MediaItem.LiveConfiguration lambda$static$0;
+                lambda$static$0 = MediaItem.LiveConfiguration.lambda$static$0(bundle);
+                return lambda$static$0;
+            }
+        };
 
         /* loaded from: classes.dex */
         public static final class Builder {
@@ -782,7 +797,7 @@ public final class MediaItem implements Bundleable {
     public static class SubtitleConfiguration {
 
         /* renamed from: id */
-        public final String f184id;
+        public final String f186id;
         public final String label;
         public final String language;
         public final String mimeType;
@@ -794,7 +809,7 @@ public final class MediaItem implements Bundleable {
         public static final class Builder {
 
             /* renamed from: id */
-            private String f185id;
+            private String f187id;
             private String label;
             private String language;
             private String mimeType;
@@ -813,7 +828,7 @@ public final class MediaItem implements Bundleable {
                 this.selectionFlags = subtitleConfiguration.selectionFlags;
                 this.roleFlags = subtitleConfiguration.roleFlags;
                 this.label = subtitleConfiguration.label;
-                this.f185id = subtitleConfiguration.f184id;
+                this.f187id = subtitleConfiguration.f186id;
             }
 
             public Builder setUri(Uri uri) {
@@ -847,7 +862,7 @@ public final class MediaItem implements Bundleable {
             }
 
             public Builder setId(String str) {
-                this.f185id = str;
+                this.f187id = str;
                 return this;
             }
 
@@ -868,7 +883,7 @@ public final class MediaItem implements Bundleable {
             this.selectionFlags = i;
             this.roleFlags = i2;
             this.label = str3;
-            this.f184id = str4;
+            this.f186id = str4;
         }
 
         private SubtitleConfiguration(Builder builder) {
@@ -878,7 +893,7 @@ public final class MediaItem implements Bundleable {
             this.selectionFlags = builder.selectionFlags;
             this.roleFlags = builder.roleFlags;
             this.label = builder.label;
-            this.f184id = builder.f185id;
+            this.f186id = builder.f187id;
         }
 
         public Builder buildUpon() {
@@ -891,7 +906,7 @@ public final class MediaItem implements Bundleable {
             }
             if (obj instanceof SubtitleConfiguration) {
                 SubtitleConfiguration subtitleConfiguration = (SubtitleConfiguration) obj;
-                return this.uri.equals(subtitleConfiguration.uri) && Util.areEqual(this.mimeType, subtitleConfiguration.mimeType) && Util.areEqual(this.language, subtitleConfiguration.language) && this.selectionFlags == subtitleConfiguration.selectionFlags && this.roleFlags == subtitleConfiguration.roleFlags && Util.areEqual(this.label, subtitleConfiguration.label) && Util.areEqual(this.f184id, subtitleConfiguration.f184id);
+                return this.uri.equals(subtitleConfiguration.uri) && Util.areEqual(this.mimeType, subtitleConfiguration.mimeType) && Util.areEqual(this.language, subtitleConfiguration.language) && this.selectionFlags == subtitleConfiguration.selectionFlags && this.roleFlags == subtitleConfiguration.roleFlags && Util.areEqual(this.label, subtitleConfiguration.label) && Util.areEqual(this.f186id, subtitleConfiguration.f186id);
             }
             return false;
         }
@@ -904,7 +919,7 @@ public final class MediaItem implements Bundleable {
             int hashCode3 = (((((hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31) + this.selectionFlags) * 31) + this.roleFlags) * 31;
             String str3 = this.label;
             int hashCode4 = (hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31;
-            String str4 = this.f184id;
+            String str4 = this.f186id;
             return hashCode4 + (str4 != null ? str4.hashCode() : 0);
         }
     }
@@ -945,7 +960,14 @@ public final class MediaItem implements Bundleable {
         private static final String FIELD_RELATIVE_TO_LIVE_WINDOW = Util.intToStringMaxRadix(2);
         private static final String FIELD_RELATIVE_TO_DEFAULT_POSITION = Util.intToStringMaxRadix(3);
         private static final String FIELD_STARTS_AT_KEY_FRAME = Util.intToStringMaxRadix(4);
-        public static final Bundleable.Creator<ClippingProperties> CREATOR = MediaItem$ClippingConfiguration$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<ClippingProperties> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$ClippingConfiguration$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                MediaItem.ClippingProperties lambda$static$0;
+                lambda$static$0 = MediaItem.ClippingConfiguration.lambda$static$0(bundle);
+                return lambda$static$0;
+            }
+        };
 
         /* loaded from: classes.dex */
         public static final class Builder {
@@ -1088,7 +1110,14 @@ public final class MediaItem implements Bundleable {
         private static final String FIELD_MEDIA_URI = Util.intToStringMaxRadix(0);
         private static final String FIELD_SEARCH_QUERY = Util.intToStringMaxRadix(1);
         private static final String FIELD_EXTRAS = Util.intToStringMaxRadix(2);
-        public static final Bundleable.Creator<RequestMetadata> CREATOR = MediaItem$RequestMetadata$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<RequestMetadata> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.MediaItem$RequestMetadata$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                MediaItem.RequestMetadata lambda$static$0;
+                lambda$static$0 = MediaItem.RequestMetadata.lambda$static$0(bundle);
+                return lambda$static$0;
+            }
+        };
 
         /* loaded from: classes.dex */
         public static final class Builder {

@@ -1329,7 +1329,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v1, "open"
+    const-string/jumbo v1, "open"
 
     .line 686
     invoke-virtual {p1, v1, v0}, Lio/grpc/internal/InsightBuilder;->appendKeyValue(Ljava/lang/String;Ljava/lang/Object;)Lio/grpc/internal/InsightBuilder;

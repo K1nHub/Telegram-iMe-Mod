@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;I)V
     .locals 0
 
-    .line 333
+    .line 334
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
     iput p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->val$toY:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 336
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 337
+    .line 338
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setScrollY(I)V
 
-    .line 339
+    .line 340
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
@@ -77,7 +77,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 340
+    .line 341
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
     const/4 v0, 0x0

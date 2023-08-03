@@ -49,7 +49,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;)V
     .locals 0
 
-    .line 621
+    .line 630
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->val$query:Ljava/lang/String;
@@ -68,7 +68,7 @@
 .method private synthetic lambda$run$0(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;)V
     .locals 1
 
-    .line 642
+    .line 651
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1200(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/lang/String;
@@ -98,10 +98,10 @@
 
     if-nez p2, :cond_1
 
-    .line 647
+    .line 656
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
 
-    .line 648
+    .line 657
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -110,7 +110,7 @@
 
     if-nez p2, :cond_1
 
-    .line 649
+    .line 658
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -119,25 +119,25 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 650
+    .line 659
     invoke-virtual {p4, p2, v0}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 651
+    .line 660
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;->users:Ljava/util/ArrayList;
 
     const/4 p4, 0x1
 
-    invoke-virtual {p5, p3, p1, p4, p4}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {p5, p3, p1, p4, p4}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     move-object p1, p2
 
-    .line 654
+    .line 663
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1300(Lorg/telegram/ui/Adapters/MentionsAdapter;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 655
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1402(Lorg/telegram/ui/Adapters/MentionsAdapter;I)I
@@ -150,7 +150,7 @@
 .method private synthetic lambda$run$1(Ljava/lang/String;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 641
+    .line 650
     new-instance v7, Lorg/telegram/ui/Adapters/MentionsAdapter$4$$ExternalSyntheticLambda0;
 
     move-object v0, v7
@@ -179,7 +179,7 @@
 .method public run()V
     .locals 7
 
-    .line 624
+    .line 633
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1000(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/lang/Runnable;
@@ -190,7 +190,7 @@
 
     return-void
 
-    .line 627
+    .line 636
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
@@ -198,7 +198,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1002(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 628
+    .line 637
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$000(Lorg/telegram/ui/Adapters/MentionsAdapter;)Lorg/telegram/tgnet/TLRPC$User;
@@ -217,7 +217,7 @@
 
     goto :goto_0
 
-    .line 634
+    .line 643
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
@@ -225,7 +225,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1202(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 635
+    .line 644
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->val$messagesController:Lorg/telegram/messenger/MessagesController;
 
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -238,12 +238,12 @@
 
     move-result-object v0
 
-    .line 636
+    .line 645
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v1, :cond_2
 
-    .line 637
+    .line 646
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
@@ -252,13 +252,13 @@
 
     goto :goto_1
 
-    .line 639
+    .line 648
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;-><init>()V
 
-    .line 640
+    .line 649
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1200(Lorg/telegram/ui/Adapters/MentionsAdapter;)Ljava/lang/String;
@@ -267,7 +267,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;->username:Ljava/lang/String;
 
-    .line 641
+    .line 650
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->access$1500(Lorg/telegram/ui/Adapters/MentionsAdapter;)I
@@ -296,7 +296,7 @@
 
     goto :goto_1
 
-    .line 629
+    .line 638
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -309,7 +309,7 @@
 
     return-void
 
-    .line 632
+    .line 641
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$4;->this$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 

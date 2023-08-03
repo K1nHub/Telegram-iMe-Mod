@@ -83,7 +83,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$User;",
+            "Lorg/telegram/tgnet/TLObject;",
             ">;"
         }
     .end annotation
@@ -102,17 +102,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;Lorg/telegram/tgnet/TLRPC$ReactionCount;Z)V
     .locals 9
 
-    .line 530
+    .line 539
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 499
+    .line 508
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawImage:Z
 
-    .line 508
+    .line 517
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
@@ -121,25 +121,25 @@
 
     if-eqz p2, :cond_0
 
-    .line 532
+    .line 541
     iget-object p2, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    .line 534
+    .line 543
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-nez p2, :cond_1
 
-    .line 535
+    .line 544
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 537
+    .line 546
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
@@ -147,7 +147,7 @@
 
     if-nez p2, :cond_2
 
-    .line 538
+    .line 547
     new-instance p2, Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget-object v2, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->parentView:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -158,51 +158,51 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    .line 540
+    .line 549
     :cond_2
     iput-object p3, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->reactionCount:Lorg/telegram/tgnet/TLRPC$ReactionCount;
 
-    .line 541
+    .line 550
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 542
+    .line 551
     invoke-static {p2}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     move-result-object p2
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    .line 543
+    .line 552
     iget p2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
     iput p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->count:I
 
-    .line 544
+    .line 553
     iget-boolean v2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->chosen:Z
 
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosen:Z
 
-    .line 545
+    .line 554
     iput p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->realCount:I
 
-    .line 546
+    .line 555
     iget p2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->chosen_order:I
 
     iput p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosenOrder:I
 
-    .line 547
+    .line 556
     iput-boolean p4, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSmall:Z
 
-    .line 548
+    .line 557
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     instance-of p4, p2, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     if-eqz p4, :cond_3
 
-    .line 549
+    .line 558
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;->emoticon:Ljava/lang/String;
@@ -211,13 +211,13 @@
 
     goto :goto_0
 
-    .line 550
+    .line 559
     :cond_3
     instance-of p4, p2, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
 
     if-eqz p4, :cond_6
 
-    .line 551
+    .line 560
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
 
     iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;->document_id:J
@@ -228,7 +228,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->key:Ljava/lang/String;
 
-    .line 555
+    .line 564
     :goto_0
     iget p2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
@@ -238,41 +238,41 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->countText:Ljava/lang/String;
 
-    .line 556
+    .line 565
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p4, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->parentView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p2, p4}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 557
+    .line 566
     iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$ReactionCount;->chosen:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSelected:Z
 
-    .line 558
+    .line 567
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->updateVisibility:Z
 
-    .line 559
+    .line 568
     iput-boolean v0, p2, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->shortFormat:Z
 
-    .line 561
+    .line 570
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     const/4 p3, 0x3
 
     if-eqz p2, :cond_5
 
-    .line 562
+    .line 571
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     iget-object p4, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     if-eqz p4, :cond_4
 
-    .line 563
+    .line 572
     iget p1, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -297,7 +297,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 566
+    .line 575
     iget-object p1, v7, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
@@ -308,7 +308,7 @@
 
     move-result-object v5
 
-    .line 567
+    .line 576
     iget-object v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p1, v7, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->center_icon:Lorg/telegram/tgnet/TLRPC$Document;
@@ -327,7 +327,7 @@
 
     goto :goto_1
 
-    .line 569
+    .line 578
     :cond_4
     iget-wide v2, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
@@ -337,7 +337,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 570
+    .line 579
     new-instance p2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget p1, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->currentAccount:I
@@ -350,7 +350,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    .line 574
+    .line 583
     :cond_5
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -369,7 +369,7 @@
 
     invoke-virtual {p1, p2, p4}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setSize(II)V
 
-    .line 575
+    .line 584
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$300()Landroid/text/TextPaint;
@@ -378,28 +378,28 @@
 
     iput-object p2, p1, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->textPaint:Landroid/text/TextPaint;
 
-    .line 576
+    .line 585
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->count:I
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setCount(IZ)V
 
-    .line 577
+    .line 586
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     const/4 p2, 0x2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->setType(I)V
 
-    .line 578
+    .line 587
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iput p3, p1, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->gravity:I
 
     return-void
 
-    .line 553
+    .line 562
     :cond_6
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -413,7 +413,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;)Lorg/telegram/tgnet/TLRPC$ReactionCount;
     .locals 0
 
-    .line 487
+    .line 496
     iget-object p0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->reactionCount:Lorg/telegram/tgnet/TLRPC$ReactionCount;
 
     return-object p0
@@ -422,7 +422,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;)Z
     .locals 0
 
-    .line 487
+    .line 496
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSmall:Z
 
     return p0
@@ -431,7 +431,7 @@
 .method private drawImage(Landroid/graphics/Canvas;F)V
     .locals 8
 
-    .line 686
+    .line 695
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
@@ -445,7 +445,7 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 687
+    .line 696
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
@@ -457,7 +457,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 688
+    .line 697
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     iget v3, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->lastDrawnTextColor:I
@@ -470,7 +470,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 690
+    .line 699
     :cond_1
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawImage:Z
 
@@ -514,7 +514,7 @@
 
     if-nez v1, :cond_9
 
-    .line 691
+    .line 700
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
@@ -530,7 +530,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 694
+    .line 703
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v5
@@ -559,17 +559,17 @@
 
     if-eqz v5, :cond_4
 
-    .line 698
+    .line 707
     invoke-virtual {v1, p2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
     cmpg-float p2, p2, v3
 
     if-gtz p2, :cond_6
 
-    .line 700
+    .line 709
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 701
+    .line 710
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->animatedReactions:Ljava/util/HashMap;
@@ -580,7 +580,7 @@
 
     goto :goto_3
 
-    .line 704
+    .line 713
     :cond_4
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -598,7 +598,7 @@
 
     if-nez p2, :cond_6
 
-    .line 706
+    .line 715
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getAlpha()F
 
     move-result p2
@@ -611,10 +611,10 @@
 
     if-gtz v2, :cond_5
 
-    .line 708
+    .line 717
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 709
+    .line 718
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->animatedReactions:Ljava/util/HashMap;
@@ -625,11 +625,11 @@
 
     goto :goto_2
 
-    .line 711
+    .line 720
     :cond_5
     invoke-virtual {v1, p2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 713
+    .line 722
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
@@ -639,7 +639,7 @@
 
     move v2, v4
 
-    .line 716
+    .line 725
     :cond_6
     :goto_3
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
@@ -682,7 +682,7 @@
 
     invoke-virtual {v1, p2, v3, v6, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 717
+    .line 726
     invoke-virtual {v1, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     goto :goto_4
@@ -693,23 +693,23 @@
     :goto_4
     if-eqz v2, :cond_8
 
-    .line 720
+    .line 729
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 722
+    .line 731
     :cond_8
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->lastImageDrawn:Z
 
     goto :goto_5
 
-    .line 724
+    .line 733
     :cond_9
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 725
+    .line 734
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 726
+    .line 735
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->lastImageDrawn:Z
 
     :goto_5
@@ -719,7 +719,7 @@
 .method private updateColors(F)V
     .locals 4
 
-    .line 681
+    .line 690
     iget v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->fromTextColor:I
 
     iget v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->textColor:I
@@ -740,7 +740,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->lastDrawnTextColor:I
 
-    .line 682
+    .line 691
     iget v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->fromBackgroundColor:I
 
     iget v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->backgroundColor:I
@@ -769,30 +769,30 @@
 .method public attach()V
     .locals 2
 
-    .line 757
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 758
+    .line 767
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 760
+    .line 769
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 761
+    .line 770
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->onAttachedToWindow()V
 
-    .line 763
+    .line 772
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_2
 
-    .line 764
+    .line 773
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->parentView:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -806,30 +806,30 @@
 .method public detach()V
     .locals 2
 
-    .line 769
+    .line 778
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 770
+    .line 779
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 772
+    .line 781
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 773
+    .line 782
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->onDetachedFromWindow()V
 
-    .line 775
+    .line 784
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_2
 
-    .line 776
+    .line 785
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->parentView:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -851,7 +851,7 @@
 
     move/from16 v3, p3
 
-    .line 583
+    .line 592
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v4, :cond_0
@@ -865,7 +865,7 @@
     :cond_0
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 584
+    .line 593
     :goto_0
     iget-boolean v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSmall:Z
 
@@ -875,10 +875,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 585
+    .line 594
     invoke-virtual {v4, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 586
+    .line 595
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawingImageRect:Landroid/graphics/Rect;
 
     const/16 v5, 0xe
@@ -893,26 +893,26 @@
 
     invoke-virtual {v2, v6, v6, v7, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 587
+    .line 596
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawingImageRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(Landroid/graphics/Rect;)V
 
-    .line 588
+    .line 597
     invoke-virtual {v4, v6}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 589
+    .line 598
     invoke-direct {v0, v1, v3}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawImage(Landroid/graphics/Canvas;F)V
 
     return-void
 
-    .line 593
+    .line 602
     :cond_1
     iget-boolean v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosen:Z
 
     if-eqz v5, :cond_6
 
-    .line 594
+    .line 603
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -941,7 +941,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->backgroundColor:I
 
-    .line 595
+    .line 604
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -970,7 +970,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->textColor:I
 
-    .line 596
+    .line 605
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -999,7 +999,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->serviceTextColor:I
 
-    .line 597
+    .line 606
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -1026,7 +1026,7 @@
 
     goto :goto_7
 
-    .line 599
+    .line 608
     :cond_6
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
@@ -1056,7 +1056,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->textColor:I
 
-    .line 600
+    .line 609
     iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -1085,7 +1085,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->backgroundColor:I
 
-    .line 601
+    .line 610
     invoke-static {v5}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v7
@@ -1104,7 +1104,7 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->backgroundColor:I
 
-    .line 602
+    .line 611
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_serviceText:I
 
     iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
@@ -1117,14 +1117,14 @@
 
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->serviceTextColor:I
 
-    .line 603
+    .line 612
     iput v6, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->serviceBackgroundColor:I
 
-    .line 605
+    .line 614
     :goto_7
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->updateColors(F)V
 
-    .line 606
+    .line 615
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$300()Landroid/text/TextPaint;
 
     move-result-object v5
@@ -1133,7 +1133,7 @@
 
     invoke-virtual {v5, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 607
+    .line 616
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$400()Landroid/graphics/Paint;
 
     move-result-object v5
@@ -1148,7 +1148,7 @@
 
     if-eqz v7, :cond_9
 
-    .line 611
+    .line 620
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$300()Landroid/text/TextPaint;
 
     move-result-object v7
@@ -1169,7 +1169,7 @@
 
     invoke-virtual {v7, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 612
+    .line 621
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$400()Landroid/graphics/Paint;
 
     move-result-object v7
@@ -1193,10 +1193,10 @@
     :cond_9
     if-eqz v4, :cond_a
 
-    .line 615
+    .line 624
     invoke-virtual {v4, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 618
+    .line 627
     :cond_a
     iget v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->width:I
 
@@ -1204,7 +1204,7 @@
 
     if-eqz v8, :cond_b
 
-    .line 619
+    .line 628
     iget v8, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animationType:I
 
     const/4 v9, 0x3
@@ -1215,7 +1215,7 @@
 
     mul-float/2addr v7, v2
 
-    .line 620
+    .line 629
     iget v8, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animateFromWidth:I
 
     int-to-float v8, v8
@@ -1228,7 +1228,7 @@
 
     float-to-int v7, v7
 
-    .line 622
+    .line 631
     :cond_b
     sget-object v8, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -1242,7 +1242,7 @@
 
     invoke-virtual {v8, v10, v10, v7, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 623
+    .line 632
     iget v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->height:I
 
     int-to-float v7, v7
@@ -1251,7 +1251,7 @@
 
     div-float/2addr v7, v9
 
-    .line 624
+    .line 633
     iget-object v11, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget v12, v11, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->drawServiceShaderBackground:F
@@ -1262,20 +1262,20 @@
 
     const-string v12, "paintChatActionBackground"
 
-    .line 625
+    .line 634
     invoke-static {v11, v12}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$500(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v11
 
-    .line 626
+    .line 635
     sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
-    .line 627
+    .line 636
     invoke-virtual {v11}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v13
 
-    .line 628
+    .line 637
     invoke-virtual {v12}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v14
@@ -1284,7 +1284,7 @@
 
     mul-float/2addr v15, v3
 
-    .line 629
+    .line 638
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget v10, v10, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->drawServiceShaderBackground:F
@@ -1299,7 +1299,7 @@
 
     mul-float/2addr v10, v3
 
-    .line 630
+    .line 639
     iget-object v15, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget v15, v15, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->drawServiceShaderBackground:F
@@ -1310,10 +1310,10 @@
 
     invoke-virtual {v12, v10}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 631
+    .line 640
     invoke-virtual {v1, v8, v7, v7, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 632
+    .line 641
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$600(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;)Z
@@ -1322,17 +1322,17 @@
 
     if-eqz v10, :cond_c
 
-    .line 633
+    .line 642
     invoke-virtual {v1, v8, v7, v7, v12}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 635
+    .line 644
     :cond_c
     invoke-virtual {v11, v13}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 636
+    .line 645
     invoke-virtual {v12, v14}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 638
+    .line 647
     :cond_d
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
@@ -1344,7 +1344,7 @@
 
     if-eqz p4, :cond_e
 
-    .line 639
+    .line 648
     iget-object v10, v10, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->parentView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v10, v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentBackgroundDrawable(Z)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
@@ -1353,14 +1353,14 @@
 
     if-eqz v10, :cond_e
 
-    .line 641
+    .line 650
     invoke-virtual {v10}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v10
 
     invoke-virtual {v1, v8, v7, v7, v10}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 644
+    .line 653
     :cond_e
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$400()Landroid/graphics/Paint;
 
@@ -1374,26 +1374,26 @@
 
     if-eqz v4, :cond_10
 
-    .line 648
+    .line 657
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v10, :cond_f
 
     const/16 v6, 0x18
 
-    .line 649
+    .line 658
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     const/4 v10, 0x6
 
-    .line 650
+    .line 659
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
-    .line 651
+    .line 660
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1402,23 +1402,23 @@
 
     goto :goto_8
 
-    .line 653
+    .line 662
     :cond_f
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    .line 654
+    .line 663
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
-    .line 655
+    .line 664
     invoke-virtual {v4, v6}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     move v6, v10
 
-    .line 657
+    .line 666
     :goto_8
     iget v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->height:I
 
@@ -1430,7 +1430,7 @@
 
     float-to-int v9, v10
 
-    .line 658
+    .line 667
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawingImageRect:Landroid/graphics/Rect;
 
     add-int v12, v11, v6
@@ -1439,15 +1439,15 @@
 
     invoke-virtual {v10, v11, v9, v12, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 659
+    .line 668
     iget-object v6, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawingImageRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v6}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(Landroid/graphics/Rect;)V
 
-    .line 660
+    .line 669
     invoke-direct {v0, v1, v3}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->drawImage(Landroid/graphics/Canvas;F)V
 
-    .line 663
+    .line 672
     :cond_10
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
@@ -1465,11 +1465,11 @@
 
     if-eqz v4, :cond_12
 
-    .line 664
+    .line 673
     :cond_11
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 665
+    .line 674
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1492,26 +1492,26 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 666
+    .line 675
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 667
+    .line 676
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 670
+    .line 679
     :cond_12
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     if-eqz v4, :cond_13
 
-    .line 671
+    .line 680
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v4, 0xa
 
-    .line 672
+    .line 681
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1534,22 +1534,22 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 673
+    .line 682
     iget-object v4, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/AvatarsDrawable;->setAlpha(F)V
 
-    .line 674
+    .line 683
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Components/AvatarsDrawable;->setTransitionProgress(F)V
 
-    .line 675
+    .line 684
     iget-object v2, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AvatarsDrawable;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 676
+    .line 685
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_13
@@ -1562,31 +1562,31 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$User;",
+            "Lorg/telegram/tgnet/TLObject;",
             ">;)V"
         }
     .end annotation
 
-    .line 731
+    .line 740
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->users:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_4
 
-    .line 733
+    .line 742
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->access$700()Ljava/util/Comparator;
 
     move-result-object v0
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 734
+    .line 743
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 735
+    .line 744
     new-instance v0, Lorg/telegram/ui/Components/AvatarsDrawable;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
@@ -1599,22 +1599,22 @@
 
     const-wide/16 v2, 0xfa
 
-    .line 736
+    .line 745
     iput-wide v2, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->transitionDuration:J
 
-    .line 737
+    .line 746
     sget-object v2, Landroidx/recyclerview/widget/ChatListItemAnimator;->DEFAULT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     const/16 v2, 0x14
 
-    .line 738
+    .line 747
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarsDrawable;->setSize(I)V
 
-    .line 739
+    .line 748
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     const/16 v2, 0x64
@@ -1625,7 +1625,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->width:I
 
-    .line 740
+    .line 749
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     iget v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->height:I
@@ -1634,14 +1634,14 @@
 
     const/16 v2, 0x16
 
-    .line 741
+    .line 750
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarsDrawable;->setAvatarsTextSize(I)V
 
-    .line 743
+    .line 752
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
@@ -1649,7 +1649,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 744
+    .line 753
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->onAttachedToWindow()V
@@ -1657,7 +1657,7 @@
     :cond_1
     move v0, v1
 
-    .line 746
+    .line 755
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1671,7 +1671,7 @@
 
     goto :goto_1
 
-    .line 750
+    .line 759
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
@@ -1691,7 +1691,7 @@
 
     goto :goto_0
 
-    .line 752
+    .line 761
     :cond_3
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;

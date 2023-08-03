@@ -893,7 +893,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v3, v4, v6, v7, v7}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {v3, v4, v6, v7, v7}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 220
     new-instance v3, Landroidx/collection/LongSparseArray;

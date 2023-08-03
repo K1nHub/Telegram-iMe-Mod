@@ -130,16 +130,16 @@ public class BlurBehindDrawable {
                 if (this.blurredBitmapTmp[i] == null || this.parentView.getMeasuredWidth() != this.lastW || this.parentView.getMeasuredHeight() != this.lastH) {
                     int measuredHeight = this.parentView.getMeasuredHeight();
                     int measuredWidth = this.parentView.getMeasuredWidth();
-                    int m54dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(200);
-                    this.toolbarH = m54dp;
+                    int m72dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m72dp(200);
+                    this.toolbarH = m72dp;
                     if (i == 0) {
-                        measuredHeight = m54dp;
+                        measuredHeight = m72dp;
                     }
                     try {
                         this.blurredBitmapTmp[i] = Bitmap.createBitmap((int) (measuredWidth / 6.0f), (int) (measuredHeight / 6.0f), Bitmap.Config.ARGB_8888);
                         this.blurCanvas[i] = new Canvas(this.blurredBitmapTmp[i]);
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BlurBehindDrawable$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -302,18 +302,18 @@ public class BlurBehindDrawable {
             int measuredHeight = this.parentView.getMeasuredHeight();
             int measuredWidth = this.parentView.getMeasuredWidth();
             if (measuredHeight != 0 && measuredWidth != 0) {
-                int m54dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(200);
-                this.toolbarH = m54dp;
+                int m72dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m72dp(200);
+                this.toolbarH = m72dp;
                 if (i != 0) {
-                    m54dp = measuredHeight;
+                    m72dp = measuredHeight;
                 }
-                if (bitmapArr[i] == null || bitmapArr[i].getHeight() != m54dp || bitmapArr[i].getWidth() != this.parentView.getMeasuredWidth()) {
+                if (bitmapArr[i] == null || bitmapArr[i].getHeight() != m72dp || bitmapArr[i].getWidth() != this.parentView.getMeasuredWidth()) {
                     DispatchQueue dispatchQueue = this.queue;
                     if (dispatchQueue != null) {
                         dispatchQueue.cleanupQueue();
                     }
                     int i2 = (int) (measuredWidth / 6.0f);
-                    this.blurredBitmapTmp[i] = Bitmap.createBitmap(i2, (int) (m54dp / 6.0f), Bitmap.Config.ARGB_8888);
+                    this.blurredBitmapTmp[i] = Bitmap.createBitmap(i2, (int) (m72dp / 6.0f), Bitmap.Config.ARGB_8888);
                     if (i == 1) {
                         this.blurredBitmapTmp[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                     }
@@ -399,7 +399,7 @@ public class BlurBehindDrawable {
                         BlurBehindDrawable.this.backgroundBitmapCanvas[i2] = new Canvas(BlurBehindDrawable.this.backgroundBitmap[i2]);
                         BlurBehindDrawable.this.backgroundBitmapCanvas[i2].scale(i / BlurBehindDrawable.this.blurredBitmapTmp[i2].getWidth(), i3 / BlurBehindDrawable.this.blurredBitmapTmp[i2].getHeight());
                     } catch (Throwable th) {
-                        FileLog.m49e(th);
+                        FileLog.m67e(th);
                     }
                 }
                 if (i2 == 1) {

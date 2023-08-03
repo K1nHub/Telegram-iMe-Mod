@@ -225,7 +225,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             this.timeline.getPeriod(0, period, z);
             long positionInWindowUs = period.getPositionInWindowUs() - this.startUs;
             long j = this.durationUs;
-            return period.set(period.f188id, period.uid, 0, j == C0480C.TIME_UNSET ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
+            return period.set(period.f190id, period.uid, 0, j == C0480C.TIME_UNSET ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
         }
     }
 }

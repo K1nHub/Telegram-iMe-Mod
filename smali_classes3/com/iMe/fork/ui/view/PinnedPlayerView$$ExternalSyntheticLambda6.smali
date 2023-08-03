@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;->f$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;->f$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->$r8$lambda$r9EOV82Z4v4OueGzck0wL7k-22Y(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
+    invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->updatePinnedPlayerVisible()V
 
     return-void
 .end method

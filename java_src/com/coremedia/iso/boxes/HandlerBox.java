@@ -22,13 +22,13 @@ public class HandlerBox extends AbstractFullBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_5 = null;
 
     /* renamed from: a */
-    private long f176a;
+    private long f178a;
 
     /* renamed from: b */
-    private long f177b;
+    private long f179b;
 
     /* renamed from: c */
-    private long f178c;
+    private long f180c;
     private String handlerType;
     private String name;
     private long shouldBeZeroButAppleWritesHereSomeValue;
@@ -107,9 +107,9 @@ public class HandlerBox extends AbstractFullBox {
         parseVersionAndFlags(byteBuffer);
         this.shouldBeZeroButAppleWritesHereSomeValue = IsoTypeReader.readUInt32(byteBuffer);
         this.handlerType = IsoTypeReader.read4cc(byteBuffer);
-        this.f176a = IsoTypeReader.readUInt32(byteBuffer);
-        this.f177b = IsoTypeReader.readUInt32(byteBuffer);
-        this.f178c = IsoTypeReader.readUInt32(byteBuffer);
+        this.f178a = IsoTypeReader.readUInt32(byteBuffer);
+        this.f179b = IsoTypeReader.readUInt32(byteBuffer);
+        this.f180c = IsoTypeReader.readUInt32(byteBuffer);
         if (byteBuffer.remaining() > 0) {
             String readString = IsoTypeReader.readString(byteBuffer, byteBuffer.remaining());
             this.name = readString;
@@ -130,9 +130,9 @@ public class HandlerBox extends AbstractFullBox {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeUInt32(byteBuffer, this.shouldBeZeroButAppleWritesHereSomeValue);
         byteBuffer.put(IsoFile.fourCCtoBytes(this.handlerType));
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f176a);
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f177b);
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f178c);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f178a);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f179b);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f180c);
         String str = this.name;
         if (str != null) {
             byteBuffer.put(Utf8.convert(str));

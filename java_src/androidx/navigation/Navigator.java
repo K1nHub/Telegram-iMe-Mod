@@ -8,7 +8,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.ListIterator;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
@@ -69,13 +71,36 @@ public abstract class Navigator<D extends NavDestination> {
         this.isAttached = true;
     }
 
-    public void navigate(List<NavBackStackEntry> entries, NavOptions navOptions, Extras extras) {
+    public void navigate(List<NavBackStackEntry> entries, final NavOptions navOptions, final Extras extras) {
         Sequence asSequence;
         Sequence map;
         Sequence<NavBackStackEntry> filterNotNull;
         Intrinsics.checkNotNullParameter(entries, "entries");
         asSequence = CollectionsKt___CollectionsKt.asSequence(entries);
-        map = SequencesKt___SequencesKt.map(asSequence, new Navigator$navigate$1(this, navOptions, extras));
+        map = SequencesKt___SequencesKt.map(asSequence, new Function1<NavBackStackEntry, NavBackStackEntry>(this) { // from class: androidx.navigation.Navigator$navigate$1
+            final /* synthetic */ Navigator<D> this$0;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final NavBackStackEntry invoke(NavBackStackEntry backStackEntry) {
+                NavDestination navigate;
+                Intrinsics.checkNotNullParameter(backStackEntry, "backStackEntry");
+                NavDestination destination = backStackEntry.getDestination();
+                if (!(destination instanceof NavDestination)) {
+                    destination = null;
+                }
+                if (destination != null && (navigate = this.this$0.navigate(destination, backStackEntry.getArguments(), navOptions, extras)) != null) {
+                    return Intrinsics.areEqual(navigate, destination) ? backStackEntry : this.this$0.getState().createBackStackEntry(navigate, navigate.addInDefaultArgs(backStackEntry.getArguments()));
+                }
+                return null;
+            }
+        });
         filterNotNull = SequencesKt___SequencesKt.filterNotNull(map);
         for (NavBackStackEntry navBackStackEntry : filterNotNull) {
             getState().push(navBackStackEntry);
@@ -92,7 +117,19 @@ public abstract class Navigator<D extends NavDestination> {
         if (destination == null) {
             return;
         }
-        navigate(destination, null, NavOptionsBuilderKt.navOptions(Navigator$onLaunchSingleTop$1.INSTANCE), null);
+        navigate(destination, null, NavOptionsBuilderKt.navOptions(new Function1<NavOptionsBuilder, Unit>() { // from class: androidx.navigation.Navigator$onLaunchSingleTop$1
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(NavOptionsBuilder navOptionsBuilder) {
+                invoke2(navOptionsBuilder);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(NavOptionsBuilder navOptions) {
+                Intrinsics.checkNotNullParameter(navOptions, "$this$navOptions");
+                navOptions.setLaunchSingleTop(true);
+            }
+        }), null);
         getState().onLaunchSingleTop(backStackEntry);
     }
 

@@ -66,7 +66,7 @@
     .line 41
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;"
 
@@ -155,7 +155,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -358,7 +358,7 @@
 
     move-result-object v1
 
-    const-string v0, "parentActivity"
+    const-string/jumbo v0, "parentActivity"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -612,7 +612,7 @@
 
     move-result-object v0
 
-    const-string v1, "publisher\n              \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "publisher\n              \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1010,7 +1010,7 @@
         }
     .end annotation
 
-    const-string v0, "pages"
+    const-string/jumbo v0, "pages"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

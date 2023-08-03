@@ -658,7 +658,7 @@
         }
     .end annotation
 
-    const-string v0, "parentFragment"
+    const-string/jumbo v0, "parentFragment"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -666,7 +666,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "positiveClickListener"
+    const-string/jumbo v0, "positiveClickListener"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -727,7 +727,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     const/4 v2, 0x1
 

@@ -41,12 +41,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: StakingProgrammesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter */
@@ -145,9 +148,9 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
         stakingProgrammesPresenter.loadStakingProgrammes(z, z2);
     }
 
-    public final void loadStakingProgrammes(boolean z, boolean z2) {
+    public final void loadStakingProgrammes(final boolean z, final boolean z2) {
         Long l;
-        boolean z3 = (z || z2) ? false : true;
+        final boolean z3 = (z || z2) ? false : true;
         if (this.stakingTabType == StakingTabType.PARTICIPATED) {
             l = this.lastItemIdByFilterType.get(this.selectedFilterType);
         } else {
@@ -157,9 +160,72 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
             ((StakingProgrammesView) getViewState()).onLoadMoreComplete();
             return;
         }
-        Observable<Result<StakingProgrammes>> observeOn = getProgrammesObservable(l).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<StakingProgrammes>> observeOn = getProgrammesObservable(l).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getProgrammesObservable(…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2400x899d4c1(z2, this, z, z3)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2401x899d4c2(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingProgrammes>, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingProgrammes> result) {
+                m1551invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1551invoke(Result<? extends StakingProgrammes> it) {
+                RxEventBus rxEventBus;
+                StakingTabType stakingTabType;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends StakingProgrammes> result = it;
+                if (z2) {
+                    rxEventBus = this.rxEventBus;
+                    stakingTabType = this.stakingTabType;
+                    rxEventBus.publish(new DomainRxEvents.StakingTabRefreshStateChanged(stakingTabType, result instanceof Result.Loading));
+                }
+                if (result instanceof Result.Success) {
+                    StakingProgrammes stakingProgrammes = (StakingProgrammes) ((Result.Success) result).getData();
+                    this.onProgrammesDataObtained(stakingProgrammes.getProgrammes(), stakingProgrammes.getTotal(), z3);
+                } else if (result instanceof Result.Loading) {
+                    if (z) {
+                        this.renderGlobalStateItemsList(GlobalState.Progress.INSTANCE);
+                    }
+                } else if (result instanceof Result.Error) {
+                    if (z3) {
+                        ((StakingProgrammesView) this.getViewState()).onLoadMoreError();
+                    } else if (((Result.Error) result).getError().isNoConnectionStatus()) {
+                        this.renderGlobalStateItemsList(GlobalState.NoInternet.INSTANCE);
+                    } else {
+                        this.renderGlobalStateItemsList(GlobalState.Unexpected.INSTANCE);
+                    }
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         this.stakingProgrammesLoadingDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
@@ -307,7 +373,7 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
         }
         if (this.items.isEmpty()) {
             List<BaseNode> list2 = this.items;
-            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3417R.string.staking_programmes_count, Integer.valueOf(i)), C3417R.C3419drawable.fork_ic_sort_28), getFiltersListItem()});
+            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3419R.string.staking_programmes_count, Integer.valueOf(i)), C3419R.C3421drawable.fork_ic_sort_28), getFiltersListItem()});
             list2.addAll(listOfNotNull);
         }
         this.stakingProgrammes.addAll(list);
@@ -342,13 +408,62 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
     public final void renderGlobalStateItemsList(GlobalState globalState) {
         List listOfNotNull;
         List<BaseNode> mutableList;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3417R.string.staking_list_header), C3417R.C3419drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState)});
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3419R.string.staking_list_header), C3419R.C3421drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState)});
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) listOfNotNull);
         ((StakingProgrammesView) getViewState()).renderItems(mutableList);
     }
 
-    private final void loadAccountLevelAndOpenStaking(StakingDetailsItem stakingDetailsItem) {
-        Disposable subscribe = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2398x98688320(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2399x98688321((BaseView) getViewState())));
+    private final void loadAccountLevelAndOpenStaking(final StakingDetailsItem stakingDetailsItem) {
+        Observable scheduleIO = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = scheduleIO.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends AccountLevel>, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$loadAccountLevelAndOpenStaking$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevel> result) {
+                m1550invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1550invoke(Result<? extends AccountLevel> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends AccountLevel> result = it;
+                if (result instanceof Result.Success) {
+                    StakingProgrammesPresenter.this.openStakingCheckingAccountLevel(stakingDetailsItem, (AccountLevel) ((Result.Success) result).getData());
+                } else if (result instanceof Result.Error) {
+                    resourceManager = StakingProgrammesPresenter.this.resourceManager;
+                    ((StakingProgrammesView) StakingProgrammesPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$loadAccountLevelAndOpenStaking$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -364,9 +479,48 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingProgrammesRefresh.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingProgrammesRefresh.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2396xee2d436d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2397xee2d436e(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.StakingProgrammesRefresh, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingProgrammesRefresh stakingProgrammesRefresh) {
+                m1549invoke(stakingProgrammesRefresh);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1549invoke(DomainRxEvents.StakingProgrammesRefresh it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                StakingProgrammesPresenter.reload$default(StakingProgrammesPresenter.this, false, 1, null);
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -14,7 +14,12 @@ final class SpannedData<V> {
     }
 
     public SpannedData() {
-        this(SpannedData$$ExternalSyntheticLambda0.INSTANCE);
+        this(new Consumer() { // from class: com.google.android.exoplayer2.source.SpannedData$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.util.Consumer
+            public final void accept(Object obj) {
+                SpannedData.lambda$new$0(obj);
+            }
+        });
     }
 
     public SpannedData(Consumer<V> consumer) {

@@ -1,13 +1,13 @@
 package org.telegram.tgnet;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_messages_requestWebView extends TLObject {
-    public static int constructor = -58219204;
+    public static int constructor = 647873217;
     public TLRPC$InputUser bot;
     public int flags;
     public boolean from_bot_menu;
     public TLRPC$InputPeer peer;
     public String platform;
-    public int reply_to_msg_id;
+    public TLRPC$InputReplyTo reply_to;
     public TLRPC$InputPeer send_as;
     public boolean silent;
     public String start_param;
@@ -40,7 +40,7 @@ public class TLRPC$TL_messages_requestWebView extends TLObject {
         }
         abstractSerializedData.writeString(this.platform);
         if ((this.flags & 1) != 0) {
-            abstractSerializedData.writeInt32(this.reply_to_msg_id);
+            this.reply_to.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 8192) != 0) {
             this.send_as.serializeToStream(abstractSerializedData);

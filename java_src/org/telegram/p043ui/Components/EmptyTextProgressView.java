@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -52,7 +52,7 @@ public class EmptyTextProgressView extends FrameLayout {
         this.progressView = view;
         LinearLayout linearLayout = new LinearLayout(context);
         this.textViewLayout = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.m54dp(20), 0, AndroidUtilities.m54dp(20), 0);
+        linearLayout.setPadding(AndroidUtilities.m72dp(20), 0, AndroidUtilities.m72dp(20), 0);
         this.textViewLayout.setGravity(1);
         this.textViewLayout.setClipChildren(false);
         this.textViewLayout.setClipToPadding(false);
@@ -68,12 +68,19 @@ public class EmptyTextProgressView extends FrameLayout {
         textView.setTextSize(1, 20.0f);
         this.textView.setTextColor(getThemedColor(Theme.key_emptyListPlaceholder));
         this.textView.setGravity(1);
-        this.textView.setText(LocaleController.getString("NoResult", C3417R.string.NoResult));
+        this.textView.setText(LocaleController.getString("NoResult", C3419R.string.NoResult));
         this.textViewLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 17));
         addView(this.textViewLayout, LayoutHelper.createFrame(-2, -2));
         AndroidUtilities.updateViewVisibilityAnimated(this.textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(view, false, 1.0f, false);
-        setOnTouchListener(EmptyTextProgressView$$ExternalSyntheticLambda0.INSTANCE);
+        setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.EmptyTextProgressView$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view2, MotionEvent motionEvent) {
+                boolean lambda$new$0;
+                lambda$new$0 = EmptyTextProgressView.lambda$new$0(view2, motionEvent);
+                return lambda$new$0;
+            }
+        });
     }
 
     public void showProgress() {
@@ -123,7 +130,7 @@ public class EmptyTextProgressView extends FrameLayout {
             mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_emptyListPlaceholder), PorterDuff.Mode.MULTIPLY));
         }
         this.textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        this.textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(1));
+        this.textView.setCompoundDrawablePadding(AndroidUtilities.m72dp(1));
     }
 
     public void setTextSize(int i) {
@@ -157,7 +164,7 @@ public class EmptyTextProgressView extends FrameLayout {
                 } else {
                     int i8 = this.showAtPos;
                     if (i8 == 2) {
-                        measuredHeight = (AndroidUtilities.m54dp(100) - childAt.getMeasuredHeight()) / 2;
+                        measuredHeight = (AndroidUtilities.m72dp(100) - childAt.getMeasuredHeight()) / 2;
                         paddingTop = getPaddingTop();
                     } else if (i8 == 1) {
                         measuredHeight = ((i6 / 2) - childAt.getMeasuredHeight()) / 2;

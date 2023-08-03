@@ -11,6 +11,7 @@ import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.NalUnitUtil;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 final class RtpH265Reader implements RtpPayloadReader {
     private static final int FU_PAYLOAD_OFFSET = 3;
@@ -103,14 +104,14 @@ final class RtpH265Reader implements RtpPayloadReader {
         boolean z2 = (b & 64) > 0;
         if (z) {
             this.fragmentedSampleSizeBytes += writeStartCode();
-            parsableByteArray.getData()[1] = (byte) ((i3 << 1) & 127);
+            parsableByteArray.getData()[1] = (byte) ((i3 << 1) & MessagesStorage.LAST_DB_VERSION);
             parsableByteArray.getData()[2] = (byte) i2;
             this.fuScratchBuffer.reset(parsableByteArray.getData());
             this.fuScratchBuffer.setPosition(1);
         } else {
             int i4 = (this.previousSequenceNumber + 1) % RtpPacket.MAX_SEQUENCE_NUMBER;
             if (i != i4) {
-                Log.m796w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
+                Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
                 return;
             } else {
                 this.fuScratchBuffer.reset(parsableByteArray.getData());

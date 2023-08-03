@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Objects;
 import kotlin.KotlinNothingValueException;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.p034io.CloseableKt;
@@ -82,8 +83,7 @@ public final class DiskLruCache implements Closeable, Flushable {
         this.maxSize = j;
         this.lruEntries = new LinkedHashMap<>(0, 0.75f, true);
         this.cleanupQueue = taskRunner.newQueue();
-        final String str = Util.okHttpName + " Cache";
-        this.cleanupTask = new Task(str) { // from class: okhttp3.internal.cache.DiskLruCache$cleanupTask$1
+        this.cleanupTask = new Task(Util.okHttpName + " Cache") { // from class: okhttp3.internal.cache.DiskLruCache$cleanupTask$1
             @Override // okhttp3.internal.concurrent.Task
             public long runOnce() {
                 boolean z;
@@ -174,7 +174,36 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     private final BufferedSink newJournalWriter() throws FileNotFoundException {
-        return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new DiskLruCache$newJournalWriter$faultHidingSink$1(this)));
+        return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new Function1<IOException, Unit>() { // from class: okhttp3.internal.cache.DiskLruCache$newJournalWriter$faultHidingSink$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(IOException iOException) {
+                invoke2(iOException);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(IOException it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                DiskLruCache diskLruCache = DiskLruCache.this;
+                if (!Util.assertionsEnabled || Thread.holdsLock(diskLruCache)) {
+                    DiskLruCache.this.hasJournalErrors = true;
+                    return;
+                }
+                StringBuilder sb = new StringBuilder();
+                sb.append("Thread ");
+                Thread currentThread = Thread.currentThread();
+                Intrinsics.checkNotNullExpressionValue(currentThread, "Thread.currentThread()");
+                sb.append(currentThread.getName());
+                sb.append(" MUST hold lock on ");
+                sb.append(diskLruCache);
+                throw new AssertionError(sb.toString());
+            }
+        }));
     }
 
     private final void readJournalLine(String str) throws IOException {
@@ -450,7 +479,6 @@ public final class DiskLruCache implements Closeable, Flushable {
         TaskQueue.schedule$default(this.cleanupQueue, this.cleanupTask, 0L, 2, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public final boolean journalRebuildRequired() {
         int i = this.redundantOpCount;
         return i >= 2000 && i >= this.lruEntries.size();
@@ -711,7 +739,27 @@ public final class DiskLruCache implements Closeable, Flushable {
                     zArr[i] = true;
                 }
                 try {
-                    return new FaultHidingSink(this.this$0.getFileSystem$okhttp().sink(this.entry.getDirtyFiles$okhttp().get(i)), new DiskLruCache$Editor$newSink$$inlined$synchronized$lambda$1(this, i));
+                    return new FaultHidingSink(this.this$0.getFileSystem$okhttp().sink(this.entry.getDirtyFiles$okhttp().get(i)), new Function1<IOException, Unit>(i) { // from class: okhttp3.internal.cache.DiskLruCache$Editor$newSink$$inlined$synchronized$lambda$1
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public /* bridge */ /* synthetic */ Unit invoke(IOException iOException) {
+                            invoke2(iOException);
+                            return Unit.INSTANCE;
+                        }
+
+                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                        public final void invoke2(IOException it) {
+                            Intrinsics.checkNotNullParameter(it, "it");
+                            synchronized (DiskLruCache.Editor.this.this$0) {
+                                DiskLruCache.Editor.this.detach$okhttp();
+                                Unit unit = Unit.INSTANCE;
+                            }
+                        }
+                    });
                 } catch (FileNotFoundException unused) {
                     return Okio.blackhole();
                 }

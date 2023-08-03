@@ -652,7 +652,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/crashes/ingestion/models/AbstractErrorLog;->setId(Ljava/util/UUID;)V
 
-    const-string v0, "processId"
+    const-string/jumbo v0, "processId"
 
     .line 280
     invoke-static {p1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->readInteger(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Integer;
@@ -661,7 +661,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/crashes/ingestion/models/AbstractErrorLog;->setProcessId(Ljava/lang/Integer;)V
 
-    const-string v0, "processName"
+    const-string/jumbo v0, "processName"
 
     const/4 v1, 0x0
 
@@ -672,7 +672,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/crashes/ingestion/models/AbstractErrorLog;->setProcessName(Ljava/lang/String;)V
 
-    const-string v0, "parentProcessId"
+    const-string/jumbo v0, "parentProcessId"
 
     .line 282
     invoke-static {p1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->readInteger(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Integer;
@@ -681,7 +681,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/crashes/ingestion/models/AbstractErrorLog;->setParentProcessId(Ljava/lang/Integer;)V
 
-    const-string v0, "parentProcessName"
+    const-string/jumbo v0, "parentProcessName"
 
     .line 283
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -946,7 +946,7 @@
 
     move-result-object v0
 
-    const-string v1, "processId"
+    const-string/jumbo v1, "processId"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -955,7 +955,7 @@
 
     move-result-object v0
 
-    const-string v1, "processName"
+    const-string/jumbo v1, "processName"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -964,7 +964,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentProcessId"
+    const-string/jumbo v1, "parentProcessId"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -973,7 +973,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentProcessName"
+    const-string/jumbo v1, "parentProcessName"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

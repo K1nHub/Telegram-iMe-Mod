@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 1
 
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$bottomShadow$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->access$initShadow(Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;)Landroid/view/View;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 41
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$bottomShadow$2;->invoke()Landroid/view/View;
 
     move-result-object v0

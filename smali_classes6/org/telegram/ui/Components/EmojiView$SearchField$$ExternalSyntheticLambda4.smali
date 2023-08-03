@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    check-cast p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$xg1tSP5-Zgcfcc0Y1-fCWbhyu8E(Lorg/telegram/ui/Components/EmojiView$SearchField;Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$63rQ90qnA4cYOsg7NUOllLBpvQY(Lorg/telegram/ui/Components/EmojiView$SearchField;Ljava/lang/Integer;)V
 
     return-void
 .end method

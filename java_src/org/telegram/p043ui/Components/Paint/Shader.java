@@ -17,7 +17,7 @@ public class Shader {
         CompilationResult compileShader = compileShader(35633, str);
         if (compileShader.status == 0) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("Vertex shader compilation failed");
+                FileLog.m69e("Vertex shader compilation failed");
             }
             destroyShader(compileShader.shader, 0, this.program);
             return;
@@ -25,7 +25,7 @@ public class Shader {
         CompilationResult compileShader2 = compileShader(35632, str2);
         if (compileShader2.status == 0) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m51e("Fragment shader compilation failed");
+                FileLog.m69e("Fragment shader compilation failed");
             }
             destroyShader(compileShader.shader, compileShader2.shader, this.program);
             return;
@@ -83,7 +83,7 @@ public class Shader {
         int[] iArr = new int[1];
         GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
         if (iArr[0] == 0 && BuildVars.LOGS_ENABLED) {
-            FileLog.m51e(GLES20.glGetShaderInfoLog(glCreateShader));
+            FileLog.m69e(GLES20.glGetShaderInfoLog(glCreateShader));
         }
         return new CompilationResult(glCreateShader, iArr[0]);
     }
@@ -93,7 +93,7 @@ public class Shader {
         int[] iArr = new int[1];
         GLES20.glGetProgramiv(i, 35714, iArr, 0);
         if (iArr[0] == 0 && BuildVars.LOGS_ENABLED) {
-            FileLog.m51e(GLES20.glGetProgramInfoLog(i));
+            FileLog.m69e(GLES20.glGetProgramInfoLog(i));
         }
         return iArr[0];
     }

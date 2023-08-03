@@ -1,6 +1,5 @@
 package p033j$.util.stream;
 
-import java.util.Objects;
 import p033j$.util.C2842i;
 import p033j$.util.function.Predicate;
 /* renamed from: j$.util.stream.W */
@@ -8,14 +7,14 @@ import p033j$.util.function.Predicate;
 public final /* synthetic */ class C2983W implements Predicate {
 
     /* renamed from: a */
-    public static final /* synthetic */ C2983W f935a = new C2983W();
+    public static final /* synthetic */ C2983W f938a = new C2983W();
 
     private /* synthetic */ C2983W() {
     }
 
     @Override // p033j$.util.function.Predicate
     public /* synthetic */ Predicate and(Predicate predicate) {
-        return Objects.requireNonNull(predicate);
+        return Predicate.CC.$default$and(this, predicate);
     }
 
     @Override // p033j$.util.function.Predicate
@@ -25,12 +24,12 @@ public final /* synthetic */ class C2983W implements Predicate {
 
     @Override // p033j$.util.function.Predicate
     /* renamed from: or */
-    public /* synthetic */ Predicate mo23or(Predicate predicate) {
-        return Objects.requireNonNull(predicate);
+    public /* synthetic */ Predicate mo25or(Predicate predicate) {
+        return Predicate.CC.$default$or(this, predicate);
     }
 
     @Override // p033j$.util.function.Predicate
     public final boolean test(Object obj) {
-        return ((C2842i) obj).m533c();
+        return ((C2842i) obj).m551c();
     }
 }

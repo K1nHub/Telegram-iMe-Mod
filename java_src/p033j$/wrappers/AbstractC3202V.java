@@ -6,13 +6,13 @@ import java.util.function.IntPredicate;
 public abstract /* synthetic */ class AbstractC3202V implements IntPredicate {
 
     /* renamed from: a */
-    final /* synthetic */ C3201U f1246a;
+    final /* synthetic */ C3201U f1249a;
 
     /* renamed from: a */
-    public static /* synthetic */ IntPredicate m159a(C3201U c3201u) {
+    public static /* synthetic */ IntPredicate m177a(C3201U c3201u) {
         if (c3201u == null) {
             return null;
         }
-        return c3201u.f1245a;
+        return c3201u.f1248a;
     }
 }

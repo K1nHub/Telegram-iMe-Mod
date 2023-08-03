@@ -15,10 +15,13 @@ import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: EnterWalletPasswordPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter */
@@ -55,35 +58,187 @@ public final class EnterWalletPasswordPresenter extends BasePresenter<EnterWalle
             ((EnterWalletPasswordView) getViewState()).showRestoreWalletScreen(this.cryptoAccessManager.getLastLoggedInAddress(this.cryptoPreferenceHelper.getCurrentBlockchainType()));
         } else if (i != 1) {
         } else {
-            ((EnterWalletPasswordView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
+            ((EnterWalletPasswordView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3419R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3419R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
         }
     }
 
-    public final void validatePassword(String password) {
+    public final void validatePassword(final String password) {
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidPasswordForWallet(password, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidPasswordForWallet(password, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2161x376f1f3c(this, password)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2162x376f1f3d((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$validatePassword$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1448invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1448invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                ResourceManager resourceManager2;
+                CryptoAccessManager cryptoAccessManager;
+                CryptoPreferenceHelper cryptoPreferenceHelper;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    EnterWalletPasswordView enterWalletPasswordView = (EnterWalletPasswordView) EnterWalletPasswordPresenter.this.getViewState();
+                    if (((Boolean) ((Result.Success) result).getData()).booleanValue()) {
+                        String str = password;
+                        cryptoAccessManager = EnterWalletPasswordPresenter.this.cryptoAccessManager;
+                        cryptoPreferenceHelper = EnterWalletPasswordPresenter.this.cryptoPreferenceHelper;
+                        enterWalletPasswordView.onSuccessUnlockWallet(str, cryptoAccessManager.getLastLoggedInAddress(cryptoPreferenceHelper.getCurrentBlockchainType()));
+                        return;
+                    }
+                    resourceManager2 = EnterWalletPasswordPresenter.this.resourceManager;
+                    enterWalletPasswordView.showToast(resourceManager2.getString(C3419R.string.wallet_enter_eth_password_validation_error));
+                    enterWalletPasswordView.onWalletPinCodeError();
+                } else if (result instanceof Result.Error) {
+                    resourceManager = EnterWalletPasswordPresenter.this.resourceManager;
+                    ((EnterWalletPasswordView) EnterWalletPasswordPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$validatePassword$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void deleteWallets() {
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.deleteAllWallets().observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.deleteAllWallets().observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2157x3099948a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2158x3099948b((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$deleteWallets$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1446invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1446invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    ((EnterWalletPasswordView) EnterWalletPasswordPresenter.this.getViewState()).onSuccessDeleteWallet();
+                } else if (result instanceof Result.Error) {
+                    resourceManager = EnterWalletPasswordPresenter.this.resourceManager;
+                    ((EnterWalletPasswordView) EnterWalletPasswordPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$deleteWallets$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void subscribeOnRxEvents(Runnable onEventAction) {
+    public final void subscribeOnRxEvents(final Runnable onEventAction) {
         Intrinsics.checkNotNullParameter(onEventAction, "onEventAction");
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2159x3b75c083(onEventAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2160x3b75c084(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
+                m1447invoke(cryptoEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1447invoke(DomainRxEvents.CryptoEvent it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                DomainRxEvents.CryptoEvent cryptoEvent = it;
+                if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRecreateWalletByPassword.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletRestored.INSTANCE)) {
+                    onEventAction.run();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

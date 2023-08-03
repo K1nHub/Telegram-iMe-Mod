@@ -9,10 +9,11 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
@@ -38,14 +39,52 @@ public final class TemplatesHeaderCell extends LinearLayout {
         Lazy lazy2;
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new TemplatesHeaderCell$headerTextView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.TemplatesHeaderCell$headerTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initHeaderTextView;
+                initHeaderTextView = TemplatesHeaderCell.this.initHeaderTextView();
+                return initHeaderTextView;
+            }
+        });
         this.headerTextView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TemplatesHeaderCell$sortButton$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ActionBarMenuItem>() { // from class: com.iMe.fork.ui.view.TemplatesHeaderCell$sortButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ActionBarMenuItem invoke() {
+                ActionBarMenuItem initSortButton;
+                initSortButton = TemplatesHeaderCell.this.initSortButton();
+                return initSortButton;
+            }
+        });
         this.sortButton$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TemplatesHeaderCell$createButton$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.TemplatesHeaderCell$createButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initCreateButton;
+                initCreateButton = TemplatesHeaderCell.this.initCreateButton();
+                return initCreateButton;
+            }
+        });
         this.createButton$delegate = lazy3;
-        int m54dp = AndroidUtilities.m54dp(8);
-        setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(8);
+        setPadding(m72dp, m72dp, m72dp, m72dp);
         setGravity(16);
         addView(getHeaderTextView(), LayoutHelper.createLinear(0, -2, 1.0f, 16, 8, 0, 0, 0));
         addView(getSortButton(), LayoutHelper.createLinear(36, 36, 16, 8, 0, 8, 0));
@@ -68,12 +107,12 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3417R.string.chat_templates : C3417R.string.chat_templates_list_header));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3419R.string.chat_templates : C3419R.string.chat_templates_list_header));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
         headerTextView.setTextColor(Theme.getColor(i2));
         ActionBarMenuItem sortButton = getSortButton();
         sortButton.setVisibility(i > 1 ? 0 : 8);
-        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(48), 0, Theme.getColor(Theme.key_listSelector)));
+        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m72dp(48), 0, Theme.getColor(Theme.key_listSelector)));
         sortButton.setIconColor(Theme.getColor(i2));
         TextView createButton = getCreateButton();
         ViewExtKt.setRippleBackground(createButton, true);
@@ -103,8 +142,8 @@ public final class TemplatesHeaderCell extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ActionBarMenuItem initSortButton() {
         final ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m54dp(10));
-        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m54dp(10));
+        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m72dp(10));
+        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m72dp(10));
         actionBarMenuItem.setLongClickEnabled(false);
         actionBarMenuItem.setShowSubmenuByMove(false);
         actionBarMenuItem.setShowedFromBottom(true);
@@ -146,7 +185,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3417R.string.Create);
+        String string = LocaleController.getString("Create", C3419R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

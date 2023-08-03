@@ -32,24 +32,24 @@
 .method public constructor <init>(Lorg/telegram/ui/DataAutoDownloadActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 642
+    .line 651
     iput-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 643
+    .line 652
     iput-object p2, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
 .end method
 
 .method private synthetic lambda$onCreateViewHolder$0(I)V
-    .locals 5
+    .locals 4
 
-    .line 813
+    .line 837
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1800(Lorg/telegram/ui/DataAutoDownloadActivity;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1900(Lorg/telegram/ui/DataAutoDownloadActivity;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -59,112 +59,81 @@
 
     check-cast p1, Lorg/telegram/messenger/DownloadController$Preset;
 
-    .line 814
+    .line 838
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1900(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2000(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 815
+    .line 839
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2002(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2102(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
 
     goto :goto_0
 
-    .line 816
+    .line 840
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2100(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
-
-    move-result-object v0
-
-    if-ne p1, v0, :cond_1
-
-    .line 817
-    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {p1, v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2002(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
-
-    goto :goto_0
-
-    .line 818
-    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2200(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
 
     move-result-object v0
 
+    if-ne p1, v0, :cond_1
+
+    .line 841
+    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {p1, v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2102(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
+
+    goto :goto_0
+
+    .line 842
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2300(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
+
+    move-result-object v0
+
     if-ne p1, v0, :cond_2
 
-    .line 819
+    .line 843
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     const/4 v0, 0x2
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2002(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2102(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
 
     goto :goto_0
 
-    .line 821
+    .line 845
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2002(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
+    const/4 v0, 0x3
 
-    .line 823
+    invoke-static {p1, v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2102(Lorg/telegram/ui/DataAutoDownloadActivity;I)I
+
+    .line 847
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result p1
 
     if-nez p1, :cond_3
 
-    .line 824
-    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
-
-    move-result p1
-
-    invoke-static {p1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
-
-    move-result v0
-
-    iput v0, p1, Lorg/telegram/messenger/DownloadController;->currentMobilePreset:I
-
-    goto :goto_1
-
-    .line 825
-    :cond_3
-    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
-
-    move-result p1
-
-    if-ne p1, v3, :cond_4
-
-    .line 826
+    .line 848
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2400(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -177,16 +146,25 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
-    iput v0, p1, Lorg/telegram/messenger/DownloadController;->currentWifiPreset:I
+    iput v0, p1, Lorg/telegram/messenger/DownloadController;->currentMobilePreset:I
 
     goto :goto_1
 
-    .line 828
-    :cond_4
+    .line 849
+    :cond_3
+    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result p1
+
+    if-ne p1, v2, :cond_4
+
+    .line 850
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2500(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -199,17 +177,39 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v0
+
+    iput v0, p1, Lorg/telegram/messenger/DownloadController;->currentWifiPreset:I
+
+    goto :goto_1
+
+    .line 852
+    :cond_4
+    iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
     iput v0, p1, Lorg/telegram/messenger/DownloadController;->currentRoamingPreset:I
 
-    .line 830
+    .line 854
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2700(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result p1
 
@@ -221,28 +221,28 @@
 
     move-result-object p1
 
-    .line 831
+    .line 855
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2700(Lorg/telegram/ui/DataAutoDownloadActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2800(Lorg/telegram/ui/DataAutoDownloadActivity;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v4, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+    iget-object v3, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
-    move-result v4
+    move-result v3
 
-    invoke-interface {p1, v0, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1, v0, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 832
+    .line 856
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 833
+    .line 857
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result p1
 
@@ -253,12 +253,14 @@
     invoke-virtual {p1}, Lorg/telegram/messenger/DownloadController;->checkAutodownloadSettings()V
 
     :goto_2
-    if-ge v2, v1, :cond_6
+    const/4 p1, 0x4
 
-    .line 835
+    if-ge v1, p1, :cond_6
+
+    .line 859
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$2900(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$3000(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
@@ -268,7 +270,7 @@
 
     move-result v0
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -276,33 +278,33 @@
 
     if-eqz p1, :cond_5
 
-    .line 837
+    .line 861
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$3000(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$3100(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;
 
     move-result-object v0
 
-    iget-object v4, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+    iget-object v3, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
-    move-result v4
+    move-result v3
 
-    add-int/2addr v4, v2
+    add-int/2addr v3, v1
 
-    invoke-virtual {v0, p1, v4}, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+    invoke-virtual {v0, p1, v3}, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
     :cond_5
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 840
+    .line 864
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {p1, v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$3102(Lorg/telegram/ui/DataAutoDownloadActivity;Z)Z
+    invoke-static {p1, v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$3202(Lorg/telegram/ui/DataAutoDownloadActivity;Z)Z
 
     return-void
 .end method
@@ -312,7 +314,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 648
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -325,7 +327,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 862
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -338,11 +340,11 @@
 
     return p1
 
-    .line 864
+    .line 888
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1700(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
@@ -352,7 +354,7 @@
 
     return p1
 
-    .line 866
+    .line 890
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
@@ -372,11 +374,11 @@
 
     goto :goto_1
 
-    .line 868
+    .line 892
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1700(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
@@ -386,7 +388,7 @@
 
     return p1
 
-    .line 870
+    .line 894
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
@@ -406,7 +408,15 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v0
+
+    if-eq p1, v0, :cond_5
+
+    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
@@ -435,12 +445,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 784
+    .line 808
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 785
+    .line 809
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -459,7 +469,15 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v0
+
+    if-eq p1, v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v0
 
@@ -481,7 +499,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 16
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -489,7 +507,7 @@
 
     move/from16 v2, p2
 
-    .line 653
+    .line 662
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v3
@@ -498,33 +516,35 @@
 
     const/4 v5, 0x1
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_21
 
     const/4 v6, 0x2
 
-    if-eq v3, v6, :cond_1c
+    if-eq v3, v6, :cond_1f
 
     const/4 v7, 0x3
 
-    if-eq v3, v7, :cond_1b
+    if-eq v3, v7, :cond_1e
 
-    const/4 v8, 0x4
+    const/4 v8, -0x1
 
-    if-eq v3, v8, :cond_7
+    const/4 v9, 0x4
+
+    if-eq v3, v9, :cond_7
 
     const/4 v7, 0x5
 
     if-eq v3, v7, :cond_0
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 749
+    .line 773
     :cond_0
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 750
+    .line 774
     iget-object v3, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1400(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -533,7 +553,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 751
+    .line 775
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadAudioInfo:I
 
     const-string v3, "AutoDownloadAudioInfo"
@@ -544,7 +564,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 752
+    .line 776
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -557,15 +577,15 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 753
+    .line 777
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 754
+    .line 778
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 755
+    .line 779
     :cond_1
     iget-object v3, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
@@ -573,20 +593,18 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_21
+    if-ne v2, v3, :cond_24
 
-    .line 756
+    .line 780
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v2
 
-    const/4 v3, -0x1
+    if-ne v2, v8, :cond_5
 
-    if-ne v2, v3, :cond_5
-
-    .line 757
+    .line 781
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -599,16 +617,16 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 758
+    .line 782
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 759
+    .line 783
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadOnMobileDataInfo:I
 
     const-string v3, "AutoDownloadOnMobileDataInfo"
@@ -621,17 +639,17 @@
 
     goto :goto_0
 
-    .line 760
+    .line 784
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v2
 
     if-ne v2, v5, :cond_3
 
-    .line 761
+    .line 785
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadOnWiFiDataInfo:I
 
     const-string v3, "AutoDownloadOnWiFiDataInfo"
@@ -644,17 +662,17 @@
 
     goto :goto_0
 
-    .line 762
+    .line 786
     :cond_3
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v2
 
     if-ne v2, v6, :cond_4
 
-    .line 763
+    .line 787
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadOnRoamingDataInfo:I
 
     const-string v3, "AutoDownloadOnRoamingDataInfo"
@@ -665,14 +683,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 765
+    .line 789
     :cond_4
     :goto_0
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 767
+    .line 791
     :cond_5
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
@@ -688,41 +706,44 @@
 
     const/4 v2, 0x0
 
-    .line 768
+    .line 792
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 v2, 0xc
 
-    .line 769
+    .line 793
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 770
+    .line 794
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x13
 
     if-lt v2, v3, :cond_6
 
-    .line 771
-    invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
+    .line 795
+    invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 773
+    .line 797
     :cond_6
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 679
+    .line 688
     :cond_7
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    move-object v9, v1
+    move-object v10, v1
 
-    check-cast v9, Lorg/telegram/ui/Cells/NotificationsCheckCell;
+    check-cast v10, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    .line 683
+    .line 692
+    invoke-virtual {v10, v5}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setDrawLine(Z)V
+
+    .line 693
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -731,7 +752,7 @@
 
     if-ne v2, v1, :cond_8
 
-    .line 684
+    .line 694
     sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadPhotos:I
 
     const-string v3, "AutoDownloadPhotos"
@@ -740,13 +761,13 @@
 
     move-result-object v1
 
-    move-object v10, v1
+    move-object v11, v1
 
-    move v3, v5
+    move v8, v5
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 686
+    .line 696
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
@@ -756,7 +777,7 @@
 
     if-ne v2, v1, :cond_9
 
-    .line 687
+    .line 697
     sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadVideos:I
 
     const-string v3, "AutoDownloadVideos"
@@ -765,14 +786,38 @@
 
     move-result-object v1
 
-    move-object v10, v1
+    move-object v11, v1
 
-    move v3, v8
+    move v8, v9
+
+    goto :goto_2
+
+    .line 699
+    :cond_9
+    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v1
+
+    if-ne v2, v1, :cond_a
+
+    .line 700
+    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadStories:I
+
+    const-string v3, "AutoDownloadStories"
+
+    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 702
+    invoke-virtual {v10, v4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setDrawLine(Z)V
 
     goto :goto_1
 
-    .line 690
-    :cond_9
+    .line 704
+    :cond_a
     sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadFiles:I
 
     const-string v3, "AutoDownloadFiles"
@@ -781,24 +826,25 @@
 
     move-result-object v1
 
-    const/16 v3, 0x8
+    const/16 v8, 0x8
 
-    move-object v10, v1
-
-    .line 693
     :goto_1
-    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+    move-object v11, v1
 
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
-
-    move-result v1
-
-    if-nez v1, :cond_a
-
-    .line 694
+    .line 707
+    :goto_2
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v1
+
+    if-nez v1, :cond_b
+
+    .line 708
+    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v1
 
@@ -810,22 +856,22 @@
 
     move-result-object v1
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 695
-    :cond_a
+    .line 709
+    :cond_b
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$900(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v1
 
-    if-ne v1, v5, :cond_b
+    if-ne v1, v5, :cond_c
 
-    .line 696
+    .line 710
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1000(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v1
 
@@ -837,13 +883,13 @@
 
     move-result-object v1
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 698
-    :cond_b
+    .line 712
+    :cond_c
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1200(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v1
 
@@ -855,201 +901,207 @@
 
     move-result-object v1
 
-    .line 700
-    :goto_2
-    iget-object v11, v1, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
+    .line 714
+    :goto_3
+    iget-object v3, v1, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
 
-    invoke-static {v3}, Lorg/telegram/messenger/DownloadController;->typeToIndex(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/DownloadController;->typeToIndex(I)I
 
     move-result v12
 
-    aget-wide v12, v11, v12
-
-    .line 703
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    move v14, v4
-
-    move v15, v14
-
-    .line 704
-    :goto_3
-    iget-object v4, v1, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
-
-    array-length v8, v4
-
-    if-ge v14, v8, :cond_12
-
-    .line 705
-    aget v4, v4, v14
-
-    and-int/2addr v4, v3
-
-    if-eqz v4, :cond_11
-
-    .line 706
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_c
-
-    const-string v4, ", "
-
-    .line 707
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_c
-    if-eqz v14, :cond_10
-
-    if-eq v14, v5, :cond_f
-
-    if-eq v14, v6, :cond_e
-
-    if-eq v14, v7, :cond_d
-
-    goto :goto_4
-
-    .line 720
-    :cond_d
-    sget v4, Lorg/telegram/messenger/R$string;->AutoDownloadChannels:I
-
-    const-string v8, "AutoDownloadChannels"
-
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_4
+    aget-wide v12, v3, v12
 
     .line 717
-    :cond_e
-    sget v4, Lorg/telegram/messenger/R$string;->AutoDownloadGroups:I
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v8, "AutoDownloadGroups"
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    .line 718
+    iget-object v14, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    move-result-object v4
+    invoke-static {v14}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v14
 
-    goto :goto_4
+    const-string v15, "AutoDownloadOff"
 
-    .line 714
-    :cond_f
-    sget v4, Lorg/telegram/messenger/R$string;->AutoDownloadPm:I
+    if-ne v2, v14, :cond_e
 
-    const-string v8, "AutoDownloadPm"
+    .line 719
+    iget-boolean v1, v1, Lorg/telegram/messenger/DownloadController$Preset;->preloadStories:Z
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    if-eqz v1, :cond_d
 
-    move-result-object v4
+    .line 720
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v6, Lorg/telegram/messenger/R$string;->AutoDownloadOn:I
 
-    goto :goto_4
+    new-array v7, v5, [Ljava/lang/Object;
 
-    .line 711
-    :cond_10
-    sget v4, Lorg/telegram/messenger/R$string;->AutoDownloadContacts:I
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v8, "AutoDownloadContacts"
+    move-result-object v3
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    aput-object v3, v7, v4
 
-    move-result-object v4
+    const-string v3, "AutoDownloadOn"
 
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object v12, v1
+
+    move v4, v5
+
+    goto/16 :goto_8
+
+    .line 723
+    :cond_d
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    sget v6, Lorg/telegram/messenger/R$string;->AutoDownloadOff:I
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v7, v4
+
+    invoke-static {v15, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     :goto_4
-    add-int/lit8 v15, v15, 0x1
+    move-object v12, v1
 
+    goto/16 :goto_8
+
+    :cond_e
+    move v14, v4
+
+    .line 727
+    :goto_5
+    iget-object v9, v1, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
+
+    array-length v7, v9
+
+    if-ge v14, v7, :cond_15
+
+    .line 728
+    aget v7, v9, v14
+
+    and-int/2addr v7, v8
+
+    if-eqz v7, :cond_14
+
+    .line 729
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v7
+
+    if-eqz v7, :cond_f
+
+    const-string v7, ", "
+
+    .line 730
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_f
+    if-eqz v14, :cond_13
+
+    if-eq v14, v5, :cond_12
+
+    if-eq v14, v6, :cond_11
+
+    const/4 v7, 0x3
+
+    if-eq v14, v7, :cond_10
+
+    goto :goto_6
+
+    .line 743
+    :cond_10
+    sget v9, Lorg/telegram/messenger/R$string;->AutoDownloadChannels:I
+
+    const-string v7, "AutoDownloadChannels"
+
+    invoke-static {v7, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_6
+
+    .line 740
     :cond_11
+    sget v7, Lorg/telegram/messenger/R$string;->AutoDownloadGroups:I
+
+    const-string v9, "AutoDownloadGroups"
+
+    invoke-static {v9, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_6
+
+    .line 737
+    :cond_12
+    sget v7, Lorg/telegram/messenger/R$string;->AutoDownloadPm:I
+
+    const-string v9, "AutoDownloadPm"
+
+    invoke-static {v9, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_6
+
+    .line 734
+    :cond_13
+    sget v7, Lorg/telegram/messenger/R$string;->AutoDownloadContacts:I
+
+    const-string v9, "AutoDownloadContacts"
+
+    invoke-static {v9, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_6
+    add-int/lit8 v4, v4, 0x1
+
+    :cond_14
     add-int/lit8 v14, v14, 0x1
 
-    const/4 v8, 0x4
+    const/4 v7, 0x3
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_12
-    const/4 v4, 0x4
+    :cond_15
+    const/4 v7, 0x4
 
-    if-ne v15, v4, :cond_14
+    if-ne v4, v7, :cond_17
 
     const/4 v1, 0x0
 
-    .line 727
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+    .line 750
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 728
-    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
-
-    move-result v1
-
-    if-ne v2, v1, :cond_13
-
-    .line 729
-    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadOnAllChats:I
-
-    const-string v3, "AutoDownloadOnAllChats"
-
-    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    .line 731
-    :cond_13
-    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadUpToOnAllChats:I
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    invoke-static {v12, v13}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v6, 0x0
-
-    aput-object v4, v3, v6
-
-    const-string v4, "AutoDownloadUpToOnAllChats"
-
-    invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    :cond_14
-    if-nez v15, :cond_15
-
-    .line 734
-    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadOff:I
-
-    const-string v3, "AutoDownloadOff"
-
-    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    .line 736
-    :cond_15
+    .line 751
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
@@ -1058,152 +1110,215 @@
 
     if-ne v2, v1, :cond_16
 
-    .line 737
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 752
+    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadOnAllChats:I
 
-    sget v3, Lorg/telegram/messenger/R$string;->AutoDownloadOnFor:I
+    const-string v6, "AutoDownloadOnAllChats"
 
-    new-array v4, v5, [Ljava/lang/Object;
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v6
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x0
+    goto :goto_7
 
-    aput-object v6, v4, v7
-
-    const-string v6, "AutoDownloadOnFor"
-
-    invoke-static {v6, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    goto :goto_5
-
+    .line 754
     :cond_16
-    const/4 v7, 0x0
+    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadUpToOnAllChats:I
 
-    .line 739
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    sget v3, Lorg/telegram/messenger/R$string;->AutoDownloadOnUpToFor:I
-
-    new-array v4, v6, [Ljava/lang/Object;
+    new-array v6, v5, [Ljava/lang/Object;
 
     invoke-static {v12, v13}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    aput-object v6, v4, v7
+    const/4 v8, 0x0
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput-object v7, v6, v8
 
-    move-result-object v6
+    const-string v7, "AutoDownloadUpToOnAllChats"
 
-    aput-object v6, v4, v5
+    invoke-static {v7, v1, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v6, "AutoDownloadOnUpToFor"
+    move-result-object v1
 
-    invoke-static {v6, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    :goto_5
-    move-object v11, v1
-
-    .line 742
-    :goto_6
-    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1200(Lorg/telegram/ui/DataAutoDownloadActivity;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    if-eqz v15, :cond_17
-
-    move v1, v5
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_7
 
     :cond_17
-    const/4 v1, 0x0
+    if-nez v4, :cond_18
 
-    .line 743
+    .line 757
+    sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadOff:I
+
+    invoke-static {v15, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     :goto_7
-    invoke-virtual {v9, v1}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
-
-    :cond_18
-    if-eqz v15, :cond_19
-
-    move v12, v5
+    move-object v12, v3
 
     goto :goto_8
 
-    :cond_19
-    const/4 v12, 0x0
-
-    :goto_8
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    .line 745
+    .line 759
+    :cond_18
     iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$600(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v1
 
-    if-eq v2, v1, :cond_1a
+    if-ne v2, v1, :cond_19
 
-    move v15, v5
+    .line 760
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    sget v6, Lorg/telegram/messenger/R$string;->AutoDownloadOnFor:I
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v8, 0x0
+
+    aput-object v3, v7, v8
+
+    const-string v3, "AutoDownloadOnFor"
+
+    invoke-static {v3, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    goto/16 :goto_4
+
+    :cond_19
+    const/4 v8, 0x0
+
+    .line 762
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    sget v7, Lorg/telegram/messenger/R$string;->AutoDownloadOnUpToFor:I
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    invoke-static {v12, v13}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v6, v8
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v6, v5
+
+    const-string v3, "AutoDownloadOnUpToFor"
+
+    invoke-static {v3, v7, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    goto/16 :goto_4
+
+    .line 766
+    :goto_8
+    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$1300(Lorg/telegram/ui/DataAutoDownloadActivity;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1b
+
+    if-eqz v4, :cond_1a
+
+    move v1, v5
 
     goto :goto_9
 
     :cond_1a
-    const/4 v15, 0x0
+    const/4 v1, 0x0
 
+    .line 767
     :goto_9
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZIZZ)V
+    invoke-virtual {v10, v1}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_c
-
-    .line 674
     :cond_1b
+    if-eqz v4, :cond_1c
+
+    move v13, v5
+
+    goto :goto_a
+
+    :cond_1c
+    const/4 v13, 0x0
+
+    :goto_a
+    const/4 v14, 0x0
+
+    const/4 v15, 0x1
+
+    .line 769
+    iget-object v1, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$800(Lorg/telegram/ui/DataAutoDownloadActivity;)I
+
+    move-result v1
+
+    if-eq v2, v1, :cond_1d
+
+    move/from16 v16, v5
+
+    goto :goto_b
+
+    :cond_1d
+    const/16 v16, 0x0
+
+    :goto_b
+    invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZIZZ)V
+
+    goto/16 :goto_e
+
+    .line 683
+    :cond_1e
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Components/SlideChooseView;
 
-    .line 675
+    .line 684
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$500(Lorg/telegram/ui/DataAutoDownloadActivity;Lorg/telegram/ui/Components/SlideChooseView;)V
 
-    goto/16 :goto_c
+    goto/16 :goto_e
 
-    .line 665
-    :cond_1c
+    .line 674
+    :cond_1f
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 666
+    .line 675
     iget-object v3, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$300(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v3
 
-    if-ne v2, v3, :cond_1d
+    if-ne v2, v3, :cond_20
 
-    .line 667
+    .line 676
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadDataUsage:I
 
     const-string v3, "AutoDownloadDataUsage"
@@ -1214,19 +1329,19 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_c
+    goto :goto_e
 
-    .line 668
-    :cond_1d
+    .line 677
+    :cond_20
     iget-object v3, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$400(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v3
 
-    if-ne v2, v3, :cond_21
+    if-ne v2, v3, :cond_24
 
-    .line 669
+    .line 678
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadTypes:I
 
     const-string v3, "AutoDownloadTypes"
@@ -1237,27 +1352,27 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_c
+    goto :goto_e
 
-    .line 655
-    :cond_1e
+    .line 664
+    :cond_21
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 656
+    .line 665
     iget-object v3, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$100(Lorg/telegram/ui/DataAutoDownloadActivity;)I
 
     move-result v3
 
-    if-ne v2, v3, :cond_21
+    if-ne v2, v3, :cond_24
 
-    .line 657
+    .line 666
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Cells/TextCheckCell;->setDrawCheckRipple(Z)V
 
-    .line 658
+    .line 667
     sget v2, Lorg/telegram/messenger/R$string;->AutoDownloadMedia:I
 
     const-string v3, "AutoDownloadMedia"
@@ -1276,9 +1391,9 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
-    .line 659
+    .line 668
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$200(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
@@ -1287,23 +1402,23 @@
 
     iget-boolean v2, v2, Lorg/telegram/messenger/DownloadController$Preset;->enabled:Z
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_22
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
-    goto :goto_a
+    goto :goto_c
 
-    :cond_1f
+    :cond_22
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
-    :goto_a
+    :goto_c
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 660
+    .line 669
     iget-object v2, v0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/DataAutoDownloadActivity;->access$200(Lorg/telegram/ui/DataAutoDownloadActivity;)Lorg/telegram/messenger/DownloadController$Preset;
@@ -1312,24 +1427,24 @@
 
     iget-boolean v2, v2, Lorg/telegram/messenger/DownloadController$Preset;->enabled:Z
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_23
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
-    goto :goto_b
+    goto :goto_d
 
-    :cond_20
+    :cond_23
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
-    :goto_b
+    :goto_d
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setBackgroundColor(I)V
 
-    :cond_21
-    :goto_c
+    :cond_24
+    :goto_e
     return-void
 .end method
 
@@ -1354,14 +1469,14 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 852
+    .line 876
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 853
+    .line 877
     iget-object p2, p0, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -1376,7 +1491,7 @@
 
     goto :goto_0
 
-    .line 846
+    .line 870
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
@@ -1384,7 +1499,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 847
+    .line 871
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1395,7 +1510,7 @@
 
     goto :goto_0
 
-    .line 810
+    .line 834
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/SlideChooseView;
 
@@ -1403,14 +1518,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/SlideChooseView;-><init>(Landroid/content/Context;)V
 
-    .line 812
+    .line 836
     new-instance p2, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DataAutoDownloadActivity$ListAdapter;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SlideChooseView;->setCallback(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
 
-    .line 842
+    .line 866
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1421,7 +1536,7 @@
 
     goto :goto_0
 
-    .line 805
+    .line 829
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -1429,7 +1544,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 806
+    .line 830
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1440,7 +1555,7 @@
 
     goto :goto_0
 
-    .line 801
+    .line 825
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -1450,7 +1565,7 @@
 
     goto :goto_0
 
-    .line 793
+    .line 817
     :cond_4
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -1458,7 +1573,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 794
+    .line 818
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundCheckText:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
@@ -1475,7 +1590,7 @@
 
     const-string p2, "fonts/rmedium.ttf"
 
-    .line 795
+    .line 819
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p2
@@ -1484,10 +1599,10 @@
 
     const/16 p2, 0x38
 
-    .line 796
+    .line 820
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setHeight(I)V
 
-    .line 856
+    .line 880
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -1499,7 +1614,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 857
+    .line 881
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

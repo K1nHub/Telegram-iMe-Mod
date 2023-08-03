@@ -961,7 +961,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 Format format = trackGroup.getFormat(i2);
                 formatArr[i2] = format.copyWithCryptoType(this.drmSessionManager.getCryptoType(format));
             }
-            trackGroupArr[i] = new TrackGroup(trackGroup.f208id, formatArr);
+            trackGroupArr[i] = new TrackGroup(trackGroup.f210id, formatArr);
         }
         return new TrackGroupArray(trackGroupArr);
     }
@@ -1009,7 +1009,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
             codecsCorrespondingToMimeType = MimeTypes.getCodecsCorrespondingToMimeType(format.codecs, format2.sampleMimeType);
             str = format2.sampleMimeType;
         }
-        Format.Builder codecs = format2.buildUpon().setId(format.f182id).setLabel(format.label).setLanguage(format.language).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setCodecs(codecsCorrespondingToMimeType);
+        Format.Builder codecs = format2.buildUpon().setId(format.f184id).setLabel(format.label).setLanguage(format.language).setSelectionFlags(format.selectionFlags).setRoleFlags(format.roleFlags).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setCodecs(codecsCorrespondingToMimeType);
         if (trackType == 2) {
             codecs.setWidth(format.width).setHeight(format.height).setFrameRate(format.frameRate);
         }
@@ -1049,7 +1049,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
     }
 
     private static DummyTrackOutput createFakeTrackOutput(int i, int i2) {
-        Log.m796w(TAG, "Unmapped track with id " + i + " of type " + i2);
+        Log.m814w(TAG, "Unmapped track with id " + i + " of type " + i2);
         return new DummyTrackOutput();
     }
 
@@ -1201,12 +1201,12 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 if (MimeTypes.APPLICATION_EMSG.equals(this.format.sampleMimeType)) {
                     EventMessage decode = this.emsgDecoder.decode(sampleAndTrimBuffer);
                     if (!emsgContainsExpectedWrappedFormat(decode)) {
-                        Log.m796w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
+                        Log.m814w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
                         return;
                     }
                     sampleAndTrimBuffer = new ParsableByteArray((byte[]) Assertions.checkNotNull(decode.getWrappedMetadataBytes()));
                 } else {
-                    Log.m796w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
+                    Log.m814w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
                     return;
                 }
             }

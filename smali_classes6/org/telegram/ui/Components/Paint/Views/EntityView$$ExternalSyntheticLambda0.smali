@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->$r8$lambda$PzboxVsQK9X7twGgdeV5C-EKFWc(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->$r8$lambda$1x9T4JFh1TcMqP8i3i8G8U0E4u8(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

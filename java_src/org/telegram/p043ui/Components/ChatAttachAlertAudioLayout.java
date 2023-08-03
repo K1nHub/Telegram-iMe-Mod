@@ -35,7 +35,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -155,7 +155,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             @Override // org.telegram.p043ui.Components.SearchField
             public void processTouchEvent(MotionEvent motionEvent) {
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ChatAttachAlertAudioLayout.this.parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.m54dp(58));
+                obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ChatAttachAlertAudioLayout.this.parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.m72dp(58));
                 ChatAttachAlertAudioLayout.this.listView.dispatchTouchEvent(obtain);
                 obtain.recycle();
             }
@@ -166,14 +166,14 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             }
         };
         this.searchField = searchField;
-        searchField.setHint(LocaleController.getString("SearchMusic", C3417R.string.SearchMusic));
+        searchField.setHint(LocaleController.getString("SearchMusic", C3419R.string.SearchMusic));
         this.frameLayout.addView(this.searchField, LayoutHelper.createFrame(-1, -1, 51));
-        this.searchField.setPadding(0, 0, AndroidUtilities.m54dp(40), 0);
+        this.searchField.setPadding(0, 0, AndroidUtilities.m72dp(40), 0);
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, null, 0, getThemedColor(Theme.key_dialogTextBlack), false, resourcesProvider);
         this.otherItem = actionBarMenuItem;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_ab_other);
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        actionBarMenuItem.setIcon(C3419R.C3421drawable.ic_ab_other);
+        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
         actionBarMenuItem.setSubMenuOpenSide(2);
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda4
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
@@ -181,15 +181,15 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 ChatAttachAlertAudioLayout.this.lambda$new$0(i);
             }
         });
-        actionBarMenuItem.setAdditionalYOffset(AndroidUtilities.m54dp(-8));
+        actionBarMenuItem.setAdditionalYOffset(AndroidUtilities.m72dp(-8));
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatAttachAlertAudioLayout.this.lambda$new$1(view);
             }
         });
-        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getSendWithoutGroupingSubItemId(), LocaleController.getString("SendWithoutGrouping", C3417R.string.SendWithoutGrouping));
-        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getOpenInSubItemId(), C3417R.C3419drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3417R.string.OpenInExternalApp));
+        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getSendWithoutGroupingSubItemId(), LocaleController.getString("SendWithoutGrouping", C3419R.string.SendWithoutGrouping));
+        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getOpenInSubItemId(), C3419R.C3421drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3419R.string.OpenInExternalApp));
         this.frameLayout.addView(actionBarMenuItem, LayoutHelper.createFrame(36, 36, 53, 0, 11, 9, 0));
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.progressView = emptyTextProgressView;
@@ -201,10 +201,17 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         this.emptyView.setGravity(17);
         this.emptyView.setVisibility(8);
         addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
-        this.emptyView.setOnTouchListener(ChatAttachAlertAudioLayout$$ExternalSyntheticLambda1.INSTANCE);
+        this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$new$2;
+                lambda$new$2 = ChatAttachAlertAudioLayout.lambda$new$2(view, motionEvent);
+                return lambda$new$2;
+            }
+        });
         ImageView imageView = new ImageView(context);
         this.emptyImageView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.music_empty);
+        imageView.setImageResource(C3419R.C3421drawable.music_empty);
         this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(context);
@@ -214,31 +221,31 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         this.emptyTitleTextView.setGravity(17);
         this.emptyTitleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.emptyTitleTextView.setTextSize(1, 17.0f);
-        this.emptyTitleTextView.setPadding(AndroidUtilities.m54dp(40), 0, AndroidUtilities.m54dp(40), 0);
+        this.emptyTitleTextView.setPadding(AndroidUtilities.m72dp(40), 0, AndroidUtilities.m72dp(40), 0);
         this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
         TextView textView2 = new TextView(context);
         this.emptySubtitleTextView = textView2;
         textView2.setTextColor(getThemedColor(i));
         this.emptySubtitleTextView.setGravity(17);
         this.emptySubtitleTextView.setTextSize(1, 15.0f);
-        this.emptySubtitleTextView.setPadding(AndroidUtilities.m54dp(40), 0, AndroidUtilities.m54dp(40), 0);
+        this.emptySubtitleTextView.setPadding(AndroidUtilities.m72dp(40), 0, AndroidUtilities.m72dp(40), 0);
         this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout.2
             @Override // org.telegram.p043ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(float f, float f2) {
-                return f2 >= ((float) ((ChatAttachAlertAudioLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.m54dp(30)) + ((Build.VERSION.SDK_INT < 21 || ChatAttachAlertAudioLayout.this.parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
+                return f2 >= ((float) ((ChatAttachAlertAudioLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.m72dp(30)) + ((Build.VERSION.SDK_INT < 21 || ChatAttachAlertAudioLayout.this.parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
             }
         };
         this.listView = recyclerListView;
         recyclerListView.setClipToPadding(false);
         RecyclerListView recyclerListView2 = this.listView;
-        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(getContext(), 1, false, AndroidUtilities.m54dp(9), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout.3
+        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(getContext(), 1, false, AndroidUtilities.m72dp(9), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout.3
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i2) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout.3.1
                     @Override // androidx.recyclerview.widget.LinearSmoothScroller
                     public int calculateDyToMakeVisible(View view, int i3) {
-                        return super.calculateDyToMakeVisible(view, i3) - (ChatAttachAlertAudioLayout.this.listView.getPaddingTop() - AndroidUtilities.m54dp(7));
+                        return super.calculateDyToMakeVisible(view, i3) - (ChatAttachAlertAudioLayout.this.listView.getPaddingTop() - AndroidUtilities.m72dp(7));
                     }
 
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -285,7 +292,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         });
         this.searchAdapter = new SearchAdapter(context);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
-        layoutParams.topMargin = AndroidUtilities.m54dp(58);
+        layoutParams.topMargin = AndroidUtilities.m72dp(58);
         View view = new View(context);
         this.shadow = view;
         view.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
@@ -358,10 +365,10 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             this.emptyView.setVisibility(8);
         } else {
             if (this.listView.getAdapter() == this.searchAdapter) {
-                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFound", C3417R.string.NoAudioFound));
+                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFound", C3419R.string.NoAudioFound));
             } else {
-                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFiles", C3417R.string.NoAudioFiles));
-                this.emptySubtitleTextView.setText(LocaleController.getString("NoAudioFilesInfo", C3417R.string.NoAudioFilesInfo));
+                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFiles", C3419R.string.NoAudioFiles));
+                this.emptySubtitleTextView.setText(LocaleController.getString("NoAudioFilesInfo", C3419R.string.NoAudioFilesInfo));
             }
             this.currentEmptyView = this.emptyView;
             this.progressView.setVisibility(8);
@@ -393,7 +400,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         }
         View childAt = this.listView.getChildAt(0);
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.m54dp(8);
+        int top = childAt.getTop() - AndroidUtilities.m72dp(8);
         int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
         if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
             runShadowAnimation(false);
@@ -402,12 +409,12 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             top = i;
         }
         this.frameLayout.setTranslationY(top);
-        return top + AndroidUtilities.m54dp(12);
+        return top + AndroidUtilities.m72dp(12);
     }
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m54dp(4);
+        return getListTopPadding() + AndroidUtilities.m72dp(4);
     }
 
     @Override // android.view.View
@@ -439,8 +446,8 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onPreMeasure(int i, int i2) {
         int i3;
-        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.m54dp(20)) {
-            i3 = AndroidUtilities.m54dp(8);
+        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.m72dp(20)) {
+            i3 = AndroidUtilities.m72dp(8);
             this.parentAlert.setAllowNestedScroll(false);
         } else {
             if (!AndroidUtilities.isTablet()) {
@@ -455,7 +462,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         }
         if (this.listView.getPaddingTop() != i3) {
             this.ignoreLayout = true;
-            this.listView.setPadding(0, i3, 0, AndroidUtilities.m54dp(48));
+            this.listView.setPadding(0, i3, 0, AndroidUtilities.m72dp(48));
             this.ignoreLayout = false;
         }
     }
@@ -558,7 +565,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     }
 
     private void showErrorBox(String str) {
-        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString("AppName", C3417R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null).show();
+        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString("AppName", C3419R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), null).show();
     }
 
     private void onItemClick(View view) {
@@ -566,8 +573,8 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             SharedAudioCell sharedAudioCell = (SharedAudioCell) view;
             MediaController.AudioEntry audioEntry = (MediaController.AudioEntry) sharedAudioCell.getTag();
             boolean z = false;
-            if (this.selectedAudios.indexOfKey(audioEntry.f1449id) >= 0) {
-                this.selectedAudios.remove(audioEntry.f1449id);
+            if (this.selectedAudios.indexOfKey(audioEntry.f1452id) >= 0) {
+                this.selectedAudios.remove(audioEntry.f1452id);
                 this.selectedAudiosOrder.remove(audioEntry);
                 sharedAudioCell.setChecked(false, true);
             } else {
@@ -575,11 +582,11 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                     int size = this.selectedAudios.size();
                     int i = this.maxSelectedFiles;
                     if (size >= i) {
-                        showErrorBox(LocaleController.formatString("PassportUploadMaxReached", C3417R.string.PassportUploadMaxReached, LocaleController.formatPluralString("Files", i, new Object[0])));
+                        showErrorBox(LocaleController.formatString("PassportUploadMaxReached", C3419R.string.PassportUploadMaxReached, LocaleController.formatPluralString("Files", i, new Object[0])));
                         return;
                     }
                 }
-                this.selectedAudios.put(audioEntry.f1449id, audioEntry);
+                this.selectedAudios.put(audioEntry.f1452id, audioEntry);
                 this.selectedAudiosOrder.add(audioEntry);
                 sharedAudioCell.setChecked(true, true);
                 z = true;
@@ -630,7 +637,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             int i = -2000000000;
             while (query.moveToNext()) {
                 MediaController.AudioEntry audioEntry = new MediaController.AudioEntry();
-                audioEntry.f1449id = query.getInt(0);
+                audioEntry.f1452id = query.getInt(0);
                 audioEntry.author = query.getString(1);
                 audioEntry.title = query.getString(2);
                 audioEntry.path = query.getString(3);
@@ -639,7 +646,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 File file = new File(audioEntry.path);
                 TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
                 tLRPC$TL_message.out = true;
-                tLRPC$TL_message.f1539id = i;
+                tLRPC$TL_message.f1542id = i;
                 tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
                 TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
                 tLRPC$TL_message.from_id = tLRPC$TL_peerUser;
@@ -657,7 +664,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 tLRPC$TL_message.flags |= 768;
                 String fileExtension = FileLoader.getFileExtension(file);
                 TLRPC$Document tLRPC$Document = tLRPC$TL_message.media.document;
-                tLRPC$Document.f1523id = 0L;
+                tLRPC$Document.f1526id = 0L;
                 tLRPC$Document.access_hash = 0L;
                 tLRPC$Document.file_reference = new byte[0];
                 tLRPC$Document.date = tLRPC$TL_message.date;
@@ -685,7 +692,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             }
             query.close();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
@@ -744,7 +751,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 view = sharedAudioCell;
             } else if (i == 1) {
                 view = new View(this.mContext);
-                view.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(56)));
+                view.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m72dp(56)));
             } else {
                 view = new View(this.mContext);
             }
@@ -759,7 +766,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 SharedAudioCell sharedAudioCell = (SharedAudioCell) viewHolder.itemView;
                 sharedAudioCell.setTag(audioEntry);
                 sharedAudioCell.setMessageObject(audioEntry.messageObject, i2 != ChatAttachAlertAudioLayout.this.audioEntries.size() - 1);
-                sharedAudioCell.setChecked(ChatAttachAlertAudioLayout.this.selectedAudios.indexOfKey(audioEntry.f1449id) >= 0, false);
+                sharedAudioCell.setChecked(ChatAttachAlertAudioLayout.this.selectedAudios.indexOfKey(audioEntry.f1452id) >= 0, false);
             }
         }
 
@@ -886,7 +893,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 ChatAttachAlertAudioLayout.this.listView.setAdapter(ChatAttachAlertAudioLayout.this.searchAdapter);
             }
             if (ChatAttachAlertAudioLayout.this.listView.getAdapter() == ChatAttachAlertAudioLayout.this.searchAdapter) {
-                ChatAttachAlertAudioLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoAudioFoundInfo", C3417R.string.NoAudioFoundInfo, str)));
+                ChatAttachAlertAudioLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoAudioFoundInfo", C3419R.string.NoAudioFoundInfo, str)));
             }
             this.searchResult = arrayList;
             notifyDataSetChanged();
@@ -925,7 +932,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 view = sharedAudioCell;
             } else if (i == 1) {
                 view = new View(this.mContext);
-                view.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(56)));
+                view.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m72dp(56)));
             } else {
                 view = new View(this.mContext);
             }
@@ -940,7 +947,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 SharedAudioCell sharedAudioCell = (SharedAudioCell) viewHolder.itemView;
                 sharedAudioCell.setTag(audioEntry);
                 sharedAudioCell.setMessageObject(audioEntry.messageObject, i2 != this.searchResult.size() - 1);
-                sharedAudioCell.setChecked(ChatAttachAlertAudioLayout.this.selectedAudios.indexOfKey(audioEntry.f1449id) >= 0, false);
+                sharedAudioCell.setChecked(ChatAttachAlertAudioLayout.this.selectedAudios.indexOfKey(audioEntry.f1452id) >= 0, false);
             }
         }
 

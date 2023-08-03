@@ -12,52 +12,52 @@ import p033j$.util.function.Consumer;
 public class C2967S3 implements InterfaceC2853s {
 
     /* renamed from: a */
-    int f918a;
+    int f921a;
 
     /* renamed from: b */
-    final int f919b;
+    final int f922b;
 
     /* renamed from: c */
-    int f920c;
+    int f923c;
 
     /* renamed from: d */
-    final int f921d;
+    final int f924d;
 
     /* renamed from: e */
-    Object[] f922e;
+    Object[] f925e;
 
     /* renamed from: f */
-    final /* synthetic */ C3009a4 f923f;
+    final /* synthetic */ C3009a4 f926f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2967S3(C3009a4 c3009a4, int i, int i2, int i3, int i4) {
-        this.f923f = c3009a4;
-        this.f918a = i;
-        this.f919b = i2;
-        this.f920c = i3;
-        this.f921d = i4;
-        Object[][] objArr = c3009a4.f963f;
-        this.f922e = objArr == null ? c3009a4.f962e : objArr[i];
+        this.f926f = c3009a4;
+        this.f921a = i;
+        this.f922b = i2;
+        this.f923c = i3;
+        this.f924d = i4;
+        Object[][] objArr = c3009a4.f966f;
+        this.f925e = objArr == null ? c3009a4.f965e : objArr[i];
     }
 
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public boolean mo113b(Consumer consumer) {
+    public boolean mo131b(Consumer consumer) {
         Objects.requireNonNull(consumer);
-        int i = this.f918a;
-        int i2 = this.f919b;
-        if (i < i2 || (i == i2 && this.f920c < this.f921d)) {
-            Object[] objArr = this.f922e;
-            int i3 = this.f920c;
-            this.f920c = i3 + 1;
+        int i = this.f921a;
+        int i2 = this.f922b;
+        if (i < i2 || (i == i2 && this.f923c < this.f924d)) {
+            Object[] objArr = this.f925e;
+            int i3 = this.f923c;
+            this.f923c = i3 + 1;
             consumer.accept(objArr[i3]);
-            if (this.f920c == this.f922e.length) {
-                this.f920c = 0;
-                int i4 = this.f918a + 1;
-                this.f918a = i4;
-                Object[][] objArr2 = this.f923f.f963f;
-                if (objArr2 != null && i4 <= this.f919b) {
-                    this.f922e = objArr2[i4];
+            if (this.f923c == this.f925e.length) {
+                this.f923c = 0;
+                int i4 = this.f921a + 1;
+                this.f921a = i4;
+                Object[][] objArr2 = this.f926f.f966f;
+                if (objArr2 != null && i4 <= this.f922b) {
+                    this.f925e = objArr2[i4];
                 }
             }
             return true;
@@ -72,29 +72,29 @@ public class C2967S3 implements InterfaceC2853s {
 
     @Override // p033j$.util.InterfaceC2853s
     public long estimateSize() {
-        int i = this.f918a;
-        int i2 = this.f919b;
+        int i = this.f921a;
+        int i2 = this.f922b;
         if (i == i2) {
-            return this.f921d - this.f920c;
+            return this.f924d - this.f923c;
         }
-        long[] jArr = this.f923f.f1016d;
-        return ((jArr[i2] + this.f921d) - jArr[i]) - this.f920c;
+        long[] jArr = this.f926f.f1019d;
+        return ((jArr[i2] + this.f924d) - jArr[i]) - this.f923c;
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public void forEachRemaining(Consumer consumer) {
         int i;
         Objects.requireNonNull(consumer);
-        int i2 = this.f918a;
-        int i3 = this.f919b;
-        if (i2 < i3 || (i2 == i3 && this.f920c < this.f921d)) {
-            int i4 = this.f920c;
+        int i2 = this.f921a;
+        int i3 = this.f922b;
+        if (i2 < i3 || (i2 == i3 && this.f923c < this.f924d)) {
+            int i4 = this.f923c;
             while (true) {
-                i = this.f919b;
+                i = this.f922b;
                 if (i2 >= i) {
                     break;
                 }
-                Object[] objArr = this.f923f.f963f[i2];
+                Object[] objArr = this.f926f.f966f[i2];
                 while (i4 < objArr.length) {
                     consumer.accept(objArr[i4]);
                     i4++;
@@ -102,14 +102,14 @@ public class C2967S3 implements InterfaceC2853s {
                 i4 = 0;
                 i2++;
             }
-            Object[] objArr2 = this.f918a == i ? this.f922e : this.f923f.f963f[i];
-            int i5 = this.f921d;
+            Object[] objArr2 = this.f921a == i ? this.f925e : this.f926f.f966f[i];
+            int i5 = this.f924d;
             while (i4 < i5) {
                 consumer.accept(objArr2[i4]);
                 i4++;
             }
-            this.f918a = this.f919b;
-            this.f920c = this.f921d;
+            this.f921a = this.f922b;
+            this.f923c = this.f924d;
         }
     }
 
@@ -120,37 +120,37 @@ public class C2967S3 implements InterfaceC2853s {
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ long getExactSizeIfKnown() {
-        return AbstractC2780a.m606e(this);
+        return AbstractC2780a.m624e(this);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public InterfaceC2853s trySplit() {
-        int i = this.f918a;
-        int i2 = this.f919b;
+        int i = this.f921a;
+        int i2 = this.f922b;
         if (i < i2) {
-            C3009a4 c3009a4 = this.f923f;
+            C3009a4 c3009a4 = this.f926f;
             int i3 = i2 - 1;
-            C2967S3 c2967s3 = new C2967S3(c3009a4, i, i3, this.f920c, c3009a4.f963f[i3].length);
-            int i4 = this.f919b;
-            this.f918a = i4;
-            this.f920c = 0;
-            this.f922e = this.f923f.f963f[i4];
+            C2967S3 c2967s3 = new C2967S3(c3009a4, i, i3, this.f923c, c3009a4.f966f[i3].length);
+            int i4 = this.f922b;
+            this.f921a = i4;
+            this.f923c = 0;
+            this.f925e = this.f926f.f966f[i4];
             return c2967s3;
         } else if (i == i2) {
-            int i5 = this.f921d;
-            int i6 = this.f920c;
+            int i5 = this.f924d;
+            int i6 = this.f923c;
             int i7 = (i5 - i6) / 2;
             if (i7 == 0) {
                 return null;
             }
-            InterfaceC2853s m614m = AbstractC2777I.m614m(this.f922e, i6, i6 + i7, 1040);
-            this.f920c += i7;
-            return m614m;
+            InterfaceC2853s m632m = AbstractC2777I.m632m(this.f925e, i6, i6 + i7, 1040);
+            this.f923c += i7;
+            return m632m;
         } else {
             return null;
         }

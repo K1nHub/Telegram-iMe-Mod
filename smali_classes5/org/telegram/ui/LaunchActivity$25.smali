@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;ZLorg/telegram/ui/Components/RLottieImageView;)V
     .locals 0
 
-    .line 6872
+    .line 6950
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/LaunchActivity$25;->val$toDark:Z
@@ -43,21 +43,21 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 6875
+    .line 6953
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/LaunchActivity;->access$2602(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 6876
+    .line 6954
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 6877
+    .line 6955
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
@@ -66,7 +66,7 @@
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 6878
+    .line 6956
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6879
+    .line 6957
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/ImageView;
@@ -86,7 +86,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6880
+    .line 6958
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2800(Lorg/telegram/ui/LaunchActivity;)Landroid/view/View;
@@ -95,7 +95,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6881
+    .line 6959
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -108,17 +108,17 @@
 
     invoke-virtual {p1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 6882
+    .line 6960
     iget-boolean p1, p0, Lorg/telegram/ui/LaunchActivity$25;->val$toDark:Z
 
     if-nez p1, :cond_0
 
-    .line 6883
+    .line 6961
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->val$darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 6885
+    .line 6963
     :cond_0
     sput-boolean v1, Lorg/telegram/ui/Cells/DrawerProfileCell;->switchingTheme:Z
 

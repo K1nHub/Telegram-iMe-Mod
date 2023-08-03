@@ -141,130 +141,146 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0orbB8ib9acfWorbdXkpvb2pUW4(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
+.method public static synthetic $r8$lambda$2FRRbte4yPe5fw-P-Kl6CKPRLnk(Lorg/telegram/tgnet/ConnectionsManager;II)V
     .locals 0
 
-    invoke-direct/range {p0 .. p21}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequestInternal$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$discardConnection$0(II)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$1BAyGrtsm20rrljn6qSGB_eMK_0(ILorg/telegram/tgnet/TLRPC$TL_config;)V
+.method public static synthetic $r8$lambda$5PHFQHvg0PhqXTeNYyWE-KtdFyM(Lorg/telegram/tgnet/ConnectionsManager;Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUpdateConfig$14(ILorg/telegram/tgnet/TLRPC$TL_config;)V
+    invoke-direct {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$setIsUpdating$17(Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9Vse89oolDYmbG1WyOyBgIVV_wM(I)V
+.method public static synthetic $r8$lambda$BC27P3U69IeFe2E9yt9Ze-faDe4(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUpdate$6(I)V
+    invoke-direct/range {p0 .. p10}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequest$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$DOps-W_CltynUV8BHr4jufp3EPY(Lorg/telegram/tgnet/ConnectionsManager;I)V
+.method public static synthetic $r8$lambda$CXRL-ENWcGimcJi4wXW3Xu62Chc(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$cancelRequestsForGuid$4(I)V
+    invoke-static/range {p0 .. p5}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequestInternal$3(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$E-SK7mlbfOrnS2s_b2p5563FHxI(Ljava/lang/String;J)V
+.method public static synthetic $r8$lambda$DL3LLWxjwbagXPNuqq_A7dSUxV4(IZI)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$getHostByName$13(Ljava/lang/String;J)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onRequestNewServerIpAndPort$12(IZI)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Fi_A2RVOj2JPMAhACRWsXmCsfTY(I)V
+.method public static synthetic $r8$lambda$L80VwH3loAbMHp7YNnSPmf4P_nk(I)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onSessionCreated$7(I)V
+    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUpdate$8(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$JqQuGtNk6IPys4oe4I5NpaHB9C0(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
+.method public static synthetic $r8$lambda$MLBoVAHFHcSCYU6qZOt5bvpcYac(Lorg/telegram/tgnet/ConnectionsManager;I)V
     .locals 0
 
-    invoke-direct/range {p0 .. p10}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequest$0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
+    invoke-direct {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$cancelRequestsForGuid$6(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QsdQtYEAfTrPZcwAL-lNqBcBTB0(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
+.method public static synthetic $r8$lambda$O50XcZkfiER5Hj1_XPTZnFr9vyk(Lorg/telegram/tgnet/ConnectionsManager;I)V
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequestInternal$1(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
+    invoke-direct {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$failNotRunningRequest$1(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$T_DYjk9m7K6UOgIPdUrsnfMDYB0(I)V
+.method public static synthetic $r8$lambda$cMYsLOUGOUTuekpCRC7avujXDog(I)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onLogout$9(I)V
+    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onSessionCreated$9(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$crAFhXlJVgOyGWNQA9iSFHQIlOg(II)V
+.method public static synthetic $r8$lambda$hZKuRu03_J1UirWThkzgZPjI-ck(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onRequestNewServerIpAndPort$11(II)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$cancelRequest$5(IZ)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dEaswJ8pPZMDMYhhOQMAEbe5VRI(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
+.method public static synthetic $r8$lambda$iJoltYzXeUlIRyLFNTC3yafFlkw(Ljava/lang/String;J)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$cancelRequest$3(IZ)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$getHostByName$15(Ljava/lang/String;J)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$hmO3xgQKgjqYa6HUPdt2v205cTs(Lorg/telegram/tgnet/ConnectionsManager;Z)V
+.method public static synthetic $r8$lambda$lW6aaU3v8KhJam5VJVylh6Vr8zA(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$setIsUpdating$15(Z)V
+    invoke-direct/range {p0 .. p21}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$sendRequestInternal$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$juOFtMs7IKdfO-qmCmTAhBBtUtM(II)V
+.method public static synthetic $r8$lambda$lWJdAXZqjGazKKTW-vSkdaasoSg(I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onConnectionStateChanged$8(II)V
+    invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onLogout$11(I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$o9WXWGmhPh9A0qvX85TsvyJVxd8(ILorg/telegram/tgnet/TLObject;)V
+.method public static synthetic $r8$lambda$nR_3_f1chEmfmXt19ckDRX1RY5I(ILorg/telegram/tgnet/TLRPC$TL_config;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUnparsedMessageReceived$5(ILorg/telegram/tgnet/TLObject;)V
+    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUpdateConfig$16(ILorg/telegram/tgnet/TLRPC$TL_config;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qTitoSiPgkKwJzUyrcTFnnYGFuU()V
+.method public static synthetic $r8$lambda$qEmTC68guSlw99MDPMvQUiCKgFw()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onProxyError$12()V
+    invoke-static {}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onProxyError$14()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xRaskL1Zhp-DZYbVRxKYKOLsbyA(IZI)V
+.method public static synthetic $r8$lambda$sHFiLpXesJPzC1k4ew1S5AQAueY(ILorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onRequestNewServerIpAndPort$10(IZI)V
+    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onUnparsedMessageReceived$7(ILorg/telegram/tgnet/TLObject;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$uaNSZQM2JvGJSWQhSMAZ7Ppvgjw(II)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onConnectionStateChanged$10(II)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$yzMVymK07ZIgHTCvQy2QvFIMvDo(II)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->lambda$onRequestNewServerIpAndPort$13(II)V
 
     return-void
 .end method
@@ -272,14 +288,14 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    .line 119
+    .line 118
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/tgnet/ConnectionsManager;->resolvingHostnameTasks:Ljava/util/HashMap;
 
-    .line 122
+    .line 121
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
@@ -294,7 +310,7 @@
 
     const/4 v2, 0x4
 
-    .line 123
+    .line 122
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
@@ -313,10 +329,10 @@
 
     add-int/lit8 v5, v0, 0x1
 
-    .line 124
+    .line 123
     sput v5, Lorg/telegram/tgnet/ConnectionsManager;->MAXIMUM_POOL_SIZE:I
 
-    .line 126
+    .line 125
     new-instance v9, Ljava/util/concurrent/LinkedBlockingQueue;
 
     const/16 v0, 0x80
@@ -325,14 +341,14 @@
 
     sput-object v9, Lorg/telegram/tgnet/ConnectionsManager;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
 
-    .line 127
+    .line 126
     new-instance v10, Lorg/telegram/tgnet/ConnectionsManager$1;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/ConnectionsManager$1;-><init>()V
 
     sput-object v10, Lorg/telegram/tgnet/ConnectionsManager;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 138
+    .line 137
     new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
     sget-object v8, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
@@ -343,27 +359,27 @@
 
     invoke-direct/range {v3 .. v10}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    .line 139
+    .line 138
     invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
 
-    .line 140
+    .line 139
     sput-object v0, Lorg/telegram/tgnet/ConnectionsManager;->DNS_THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 165
+    .line 176
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/tgnet/ConnectionsManager;->dnsCache:Ljava/util/HashMap;
 
-    .line 167
+    .line 178
     sput v1, Lorg/telegram/tgnet/ConnectionsManager;->lastClassGuid:I
 
     const/4 v0, 0x5
 
     new-array v0, v0, [Lorg/telegram/tgnet/ConnectionsManager;
 
-    .line 169
+    .line 180
     sput-object v0, Lorg/telegram/tgnet/ConnectionsManager;->Instance:[Lorg/telegram/tgnet/ConnectionsManager;
 
     return-void
@@ -384,10 +400,10 @@
 
     const-string v4, "en"
 
-    .line 184
+    .line 195
     invoke-direct/range {p0 .. p1}, Lorg/telegram/messenger/BaseController;-><init>(I)V
 
-    .line 110
+    .line 109
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -396,17 +412,17 @@
 
     const/4 v5, 0x1
 
-    .line 111
+    .line 110
     iput-boolean v5, v13, Lorg/telegram/tgnet/ConnectionsManager;->appPaused:Z
 
-    .line 114
+    .line 113
     new-instance v6, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v6, v5}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     iput-object v6, v13, Lorg/telegram/tgnet/ConnectionsManager;->lastRequestToken:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 185
+    .line 196
     iget v5, v13, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->native_getConnectionState(I)I
@@ -415,14 +431,14 @@
 
     iput v5, v13, Lorg/telegram/tgnet/ConnectionsManager;->connectionState:I
 
-    .line 191
+    .line 202
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v5
 
     if-eqz v0, :cond_0
 
-    .line 193
+    .line 204
     new-instance v6, Ljava/io/File;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -441,25 +457,25 @@
 
     invoke-direct {v6, v5, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 194
+    .line 205
     invoke-virtual {v6}, Ljava/io/File;->mkdirs()Z
 
     move-object v5, v6
 
-    .line 196
+    .line 207
     :cond_0
     invoke-virtual {v5}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 197
+    .line 208
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/tgnet/ConnectionsManager;->isPushConnectionEnabled()Z
 
     move-result v16
 
     const/4 v0, 0x0
 
-    .line 199
+    .line 210
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getSystemLocaleStringIso639()Ljava/lang/String;
 
@@ -469,7 +485,7 @@
 
     move-result-object v5
 
-    .line 200
+    .line 211
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getLocaleStringIso639()Ljava/lang/String;
 
     move-result-object v6
@@ -478,7 +494,7 @@
 
     move-result-object v6
 
-    .line 201
+    .line 212
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -495,7 +511,7 @@
 
     move-result-object v7
 
-    .line 202
+    .line 213
     sget-object v8, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -512,7 +528,7 @@
 
     move-result-object v8
 
-    .line 203
+    .line 214
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -537,12 +553,12 @@
 
     move-result-object v8
 
-    .line 204
+    .line 215
     sget-boolean v10, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v10, :cond_1
 
-    .line 205
+    .line 216
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -559,13 +575,13 @@
 
     goto :goto_0
 
-    .line 206
+    .line 217
     :cond_1
     sget-boolean v10, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v10, :cond_2
 
-    .line 207
+    .line 218
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -580,7 +596,7 @@
 
     move-result-object v8
 
-    .line 209
+    .line 220
     :cond_2
     :goto_0
     new-instance v10, Ljava/lang/StringBuilder;
@@ -607,7 +623,7 @@
 
     goto :goto_1
 
-    .line 215
+    .line 226
     :catch_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -633,7 +649,7 @@
 
     move-object v5, v4
 
-    .line 217
+    .line 228
     :goto_1
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -652,7 +668,7 @@
     :cond_3
     move-object v11, v5
 
-    .line 220
+    .line 231
     :goto_2
     invoke-virtual {v7}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -671,7 +687,7 @@
     :cond_4
     move-object v4, v7
 
-    .line 223
+    .line 234
     :goto_3
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -685,7 +701,7 @@
 
     move-object v6, v2
 
-    .line 226
+    .line 237
     :cond_5
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -702,24 +718,24 @@
     :cond_6
     move-object v5, v1
 
-    .line 229
+    .line 240
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/messenger/UserConfig;->loadConfig()V
 
-    .line 230
+    .line 241
     invoke-direct/range {p0 .. p0}, Lorg/telegram/tgnet/ConnectionsManager;->getRegId()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 231
+    .line 242
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCertificateSHA256Fingerprint()Ljava/lang/String;
 
     move-result-object v17
 
-    .line 233
+    .line 244
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v1
@@ -740,14 +756,14 @@
 
     div-int/lit16 v7, v1, 0x3e8
 
-    .line 235
+    .line 246
     iget v1, v13, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     const-string v2, "mainconfig"
 
     if-nez v1, :cond_7
 
-    .line 236
+    .line 247
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -756,7 +772,7 @@
 
     goto :goto_4
 
-    .line 238
+    .line 249
     :cond_7
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -781,17 +797,17 @@
     :goto_4
     const-string v2, "forceTryIpV6"
 
-    .line 240
+    .line 251
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
     iput-boolean v0, v13, Lorg/telegram/tgnet/ConnectionsManager;->forceTryIpV6:Z
 
-    .line 241
+    .line 252
     sget v1, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const/16 v2, 0x9e
+    const/16 v2, 0xa0
 
     sget v3, Lorg/telegram/messenger/BuildVars;->APP_ID:I
 
@@ -829,7 +845,7 @@
 .method static synthetic access$000()Ljava/util/HashMap;
     .locals 1
 
-    .line 63
+    .line 62
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->dnsCache:Ljava/util/HashMap;
 
     return-object v0
@@ -838,7 +854,7 @@
 .method static synthetic access$100()Ljava/util/HashMap;
     .locals 1
 
-    .line 63
+    .line 62
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->resolvingHostnameTasks:Ljava/util/HashMap;
 
     return-object v0
@@ -847,7 +863,7 @@
 .method static synthetic access$202(Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
     .locals 0
 
-    .line 63
+    .line 62
     sput-object p0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     return-object p0
@@ -856,7 +872,7 @@
 .method public static generateClassGuid()I
     .locals 2
 
-    .line 812
+    .line 825
     sget v0, Lorg/telegram/tgnet/ConnectionsManager;->lastClassGuid:I
 
     add-int/lit8 v1, v0, 0x1
@@ -869,7 +885,7 @@
 .method public static getHostByName(Ljava/lang/String;J)V
     .locals 1
 
-    .line 706
+    .line 717
     new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda8;-><init>(Ljava/lang/String;J)V
@@ -882,28 +898,28 @@
 .method public static getInitFlags()I
     .locals 1
 
-    .line 639
+    .line 650
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0}, Lorg/telegram/messenger/EmuDetector;->with(Landroid/content/Context;)Lorg/telegram/messenger/EmuDetector;
 
     move-result-object v0
 
-    .line 640
+    .line 651
     invoke-virtual {v0}, Lorg/telegram/messenger/EmuDetector;->detect()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 641
+    .line 652
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "detected emu"
 
-    .line 642
+    .line 653
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
@@ -921,32 +937,32 @@
 .method public static getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
     .locals 3
 
-    .line 171
+    .line 182
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->Instance:[Lorg/telegram/tgnet/ConnectionsManager;
 
     aget-object v1, v0, p0
 
     if-nez v1, :cond_1
 
-    .line 173
+    .line 184
     const-class v2, Lorg/telegram/tgnet/ConnectionsManager;
 
     monitor-enter v2
 
-    .line 174
+    .line 185
     :try_start_0
     aget-object v1, v0, p0
 
     if-nez v1, :cond_0
 
-    .line 176
+    .line 187
     new-instance v1, Lorg/telegram/tgnet/ConnectionsManager;
 
     invoke-direct {v1, p0}, Lorg/telegram/tgnet/ConnectionsManager;-><init>(I)V
 
     aput-object v1, v0, p0
 
-    .line 178
+    .line 189
     :cond_0
     monitor-exit v2
 
@@ -969,10 +985,10 @@
 .method private getRegId()Ljava/lang/String;
     .locals 3
 
-    .line 245
+    .line 256
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->pushString:Ljava/lang/String;
 
-    .line 246
+    .line 257
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -985,7 +1001,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 247
+    .line 258
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1000,7 +1016,7 @@
 
     move-result-object v0
 
-    .line 249
+    .line 260
     :cond_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1016,10 +1032,10 @@
 
     if-nez v1, :cond_1
 
-    .line 250
+    .line 261
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->pushStringStatus:Ljava/lang/String;
 
-    .line 252
+    .line 263
     :cond_1
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1027,7 +1043,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 253
+    .line 264
     sget v0, Lorg/telegram/messenger/SharedConfig;->pushType:I
 
     const/4 v1, 0x2
@@ -1041,7 +1057,7 @@
     :cond_2
     const-string v0, "HUAWEI"
 
-    .line 254
+    .line 265
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1075,10 +1091,10 @@
     return-object v0
 .end method
 
-.method private synthetic lambda$cancelRequest$3(IZ)V
+.method private synthetic lambda$cancelRequest$5(IZ)V
     .locals 1
 
-    .line 399
+    .line 410
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->native_cancelRequest(IIZ)V
@@ -1086,10 +1102,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$cancelRequestsForGuid$4(I)V
+.method private synthetic lambda$cancelRequestsForGuid$6(I)V
     .locals 1
 
-    .line 409
+    .line 420
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->native_cancelRequestsForGuid(II)V
@@ -1097,10 +1113,32 @@
     return-void
 .end method
 
-.method private static synthetic lambda$getHostByName$13(Ljava/lang/String;J)V
+.method private synthetic lambda$discardConnection$0(II)V
+    .locals 1
+
+    .line 151
+    iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->native_discardConnection(III)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$failNotRunningRequest$1(I)V
+    .locals 1
+
+    .line 157
+    iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+
+    invoke-static {v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->native_failNotRunningRequest(II)V
+
+    return-void
+.end method
+
+.method private static synthetic lambda$getHostByName$15(Ljava/lang/String;J)V
     .locals 5
 
-    .line 707
+    .line 718
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->dnsCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1111,7 +1149,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 708
+    .line 719
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -1126,7 +1164,7 @@
 
     if-gez v1, :cond_0
 
-    .line 709
+    .line 720
     invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager$ResolvedDomain;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -1135,7 +1173,7 @@
 
     goto :goto_1
 
-    .line 711
+    .line 722
     :cond_0
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->resolvingHostnameTasks:Ljava/util/HashMap;
 
@@ -1147,12 +1185,12 @@
 
     if-nez v0, :cond_1
 
-    .line 713
+    .line 724
     new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$ResolveHostByNameTask;
 
     invoke-direct {v0, p0}, Lorg/telegram/tgnet/ConnectionsManager$ResolveHostByNameTask;-><init>(Ljava/lang/String;)V
 
-    .line 715
+    .line 726
     :try_start_0
     sget-object v1, Lorg/telegram/tgnet/ConnectionsManager;->DNS_THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
@@ -1178,7 +1216,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 721
+    .line 732
     sget-object v1, Lorg/telegram/tgnet/ConnectionsManager;->resolvingHostnameTasks:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1188,17 +1226,17 @@
     :catchall_0
     move-exception v0
 
-    .line 717
+    .line 728
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const-string v0, ""
 
-    .line 718
+    .line 729
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_onHostNameResolved(Ljava/lang/String;JLjava/lang/String;)V
 
     return-void
 
-    .line 723
+    .line 734
     :cond_1
     :goto_0
     invoke-virtual {v0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager$ResolveHostByNameTask;->addAddress(J)V
@@ -1207,17 +1245,17 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onConnectionStateChanged$8(II)V
+.method private static synthetic lambda$onConnectionStateChanged$10(II)V
     .locals 1
 
-    .line 622
+    .line 633
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
     iput p1, v0, Lorg/telegram/tgnet/ConnectionsManager;->connectionState:I
 
-    .line 623
+    .line 634
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
@@ -1237,15 +1275,15 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onLogout$9(I)V
+.method private static synthetic lambda$onLogout$11(I)V
     .locals 4
 
-    .line 629
+    .line 640
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
 
-    .line 630
+    .line 641
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -1260,14 +1298,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 631
+    .line 642
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->clearConfig()V
 
-    .line 632
+    .line 643
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -1280,10 +1318,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onProxyError$12()V
+.method private static synthetic lambda$onProxyError$14()V
     .locals 5
 
-    .line 702
+    .line 713
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1309,10 +1347,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onRequestNewServerIpAndPort$10(IZI)V
+.method private static synthetic lambda$onRequestNewServerIpAndPort$12(IZI)V
     .locals 4
 
-    .line 661
+    .line 672
     sget-object v0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     if-nez v0, :cond_9
@@ -1342,7 +1380,7 @@
 
     goto/16 :goto_1
 
-    .line 667
+    .line 678
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1362,23 +1400,23 @@
 
     if-ne p0, v2, :cond_3
 
-    .line 669
+    .line 680
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p0, :cond_2
 
     const-string/jumbo p0, "start mozilla txt task"
 
-    .line 670
+    .line 681
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 672
+    .line 683
     :cond_2
     new-instance p0, Lorg/telegram/tgnet/ConnectionsManager$MozillaDnsLoadTask;
 
     invoke-direct {p0, p2}, Lorg/telegram/tgnet/ConnectionsManager$MozillaDnsLoadTask;-><init>(I)V
 
-    .line 673
+    .line 684
     sget-object p2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v2, v2, [Ljava/lang/Void;
@@ -1391,7 +1429,7 @@
 
     invoke-virtual {p0, p2, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 674
+    .line 685
     sput-object p0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_0
@@ -1399,23 +1437,23 @@
     :cond_3
     if-ne p0, v1, :cond_5
 
-    .line 676
+    .line 687
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p0, :cond_4
 
     const-string/jumbo p0, "start google txt task"
 
-    .line 677
+    .line 688
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 679
+    .line 690
     :cond_4
     new-instance p0, Lorg/telegram/tgnet/ConnectionsManager$GoogleDnsLoadTask;
 
     invoke-direct {p0, p2}, Lorg/telegram/tgnet/ConnectionsManager$GoogleDnsLoadTask;-><init>(I)V
 
-    .line 680
+    .line 691
     sget-object p2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v2, v2, [Ljava/lang/Void;
@@ -1428,7 +1466,7 @@
 
     invoke-virtual {p0, p2, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 681
+    .line 692
     sput-object p0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_0
@@ -1436,23 +1474,23 @@
     :cond_5
     if-ne p0, v0, :cond_7
 
-    .line 683
+    .line 694
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p0, :cond_6
 
     const-string/jumbo p0, "start dns txt task"
 
-    .line 684
+    .line 695
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 686
+    .line 697
     :cond_6
     new-instance p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;
 
     invoke-direct {p0, p2}, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;-><init>(I)V
 
-    .line 687
+    .line 698
     sget-object p2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v2, v2, [Ljava/lang/Void;
@@ -1465,12 +1503,12 @@
 
     invoke-virtual {p0, p2, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 688
+    .line 699
     sput-object p0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_0
 
-    .line 690
+    .line 701
     :cond_7
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -1478,16 +1516,16 @@
 
     const-string/jumbo p0, "start firebase task"
 
-    .line 691
+    .line 702
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 693
+    .line 704
     :cond_8
     new-instance p0, Lorg/telegram/tgnet/ConnectionsManager$FirebaseTask;
 
     invoke-direct {p0, p2}, Lorg/telegram/tgnet/ConnectionsManager$FirebaseTask;-><init>(I)V
 
-    .line 694
+    .line 705
     sget-object p2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v2, v2, [Ljava/lang/Void;
@@ -1500,20 +1538,20 @@
 
     invoke-virtual {p0, p2, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 695
+    .line 706
     sput-object p0, Lorg/telegram/tgnet/ConnectionsManager;->currentTask:Landroid/os/AsyncTask;
 
     :goto_0
     return-void
 
-    .line 662
+    .line 673
     :cond_9
     :goto_1
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_a
 
-    .line 663
+    .line 674
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1570,15 +1608,15 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onRequestNewServerIpAndPort$11(II)V
+.method private static synthetic lambda$onRequestNewServerIpAndPort$13(II)V
     .locals 3
 
-    .line 659
+    .line 670
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnline()Z
 
     move-result v0
 
-    .line 660
+    .line 671
     sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda7;
@@ -1590,10 +1628,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onSessionCreated$7(I)V
+.method private static synthetic lambda$onSessionCreated$9(I)V
     .locals 0
 
-    .line 617
+    .line 628
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
@@ -1607,10 +1645,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onUnparsedMessageReceived$5(ILorg/telegram/tgnet/TLObject;)V
+.method private static synthetic lambda$onUnparsedMessageReceived$7(ILorg/telegram/tgnet/TLObject;)V
     .locals 1
 
-    .line 601
+    .line 612
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
@@ -1628,10 +1666,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onUpdate$6(I)V
+.method private static synthetic lambda$onUpdate$8(I)V
     .locals 0
 
-    .line 613
+    .line 624
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
@@ -1645,10 +1683,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$onUpdateConfig$14(ILorg/telegram/tgnet/TLRPC$TL_config;)V
+.method private static synthetic lambda$onUpdateConfig$16(ILorg/telegram/tgnet/TLRPC$TL_config;)V
     .locals 0
 
-    .line 742
+    .line 753
     invoke-static {p0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object p0
@@ -1662,21 +1700,21 @@
     return-void
 .end method
 
-.method private synthetic lambda$sendRequest$0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
+.method private synthetic lambda$sendRequest$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
     .locals 0
 
-    .line 317
+    .line 328
     invoke-direct/range {p0 .. p10}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequestInternal(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
 
     return-void
 .end method
 
-.method private static synthetic lambda$sendRequestInternal$1(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
+.method private static synthetic lambda$sendRequestInternal$3(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    .line 380
+    .line 391
     invoke-interface {p0, p1, p2}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     goto :goto_0
@@ -1684,57 +1722,59 @@
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 382
+    .line 393
     invoke-interface {p3, p1, p2, p4, p5}, Lorg/telegram/tgnet/RequestDelegateTimestamp;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;J)V
 
     :cond_1
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 385
+    .line 396
     invoke-virtual {p1}, Lorg/telegram/tgnet/TLObject;->freeResources()V
 
     :cond_2
     return-void
 .end method
 
-.method private synthetic lambda$sendRequestInternal$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
+.method private synthetic lambda$sendRequestInternal$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJIJILjava/lang/String;IJJ)V
     .locals 12
 
     move-object v1, p0
 
     move-object v0, p1
 
-    move-object/from16 v2, p16
+    move/from16 v2, p15
 
-    const-wide/16 v3, 0x0
+    move-object/from16 v3, p16
 
-    cmp-long v3, p13, v3
+    const-wide/16 v4, 0x0
 
-    const/4 v4, 0x0
+    cmp-long v4, p13, v4
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    if-eqz v3, :cond_1
+    const/4 v6, 0x1
 
-    .line 342
+    if-eqz v4, :cond_1
+
+    .line 353
     :try_start_0
     invoke-static/range {p13 .. p14}, Lorg/telegram/tgnet/NativeByteBuffer;->wrap(J)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v2
 
-    .line 343
-    iput-boolean v5, v2, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
+    .line 354
+    iput-boolean v6, v2, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 345
+    .line 356
     :try_start_1
-    invoke-virtual {v2, v5}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
+    invoke-virtual {v2, v6}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v3
 
-    invoke-virtual {p1, v2, v3, v5}, Lorg/telegram/tgnet/TLObject;->deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
+    invoke-virtual {p1, v2, v3, v6}, Lorg/telegram/tgnet/TLObject;->deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v2
     :try_end_1
@@ -1742,25 +1782,25 @@
 
     move-object v11, v2
 
-    move-object v10, v4
+    move-object v10, v5
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    .line 347
+    .line 358
     :try_start_2
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-nez v2, :cond_0
 
-    .line 350
+    .line 361
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->fatal(Ljava/lang/Throwable;)V
 
     return-void
 
-    .line 348
+    .line 359
     :cond_0
     throw v0
 
@@ -1770,48 +1810,50 @@
     goto/16 :goto_1
 
     :cond_1
-    if-eqz v2, :cond_3
+    if-eqz v3, :cond_3
 
-    .line 354
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_error;
+    .line 365
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_error;-><init>()V
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_error;-><init>()V
 
-    move/from16 v6, p15
+    .line 366
+    iput v2, v4, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
-    .line 355
-    iput v6, v3, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
+    .line 367
+    iput-object v3, v4, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 356
-    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
+    .line 368
+    sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 357
-    sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_2
+    const/16 v3, -0x7d0
 
-    .line 358
+    if-eq v2, v3, :cond_2
+
+    .line 369
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v6, " got error "
+    const-string v3, " got error "
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v6, v3, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
+    iget v3, v4, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v6, " "
+    const-string v3, " "
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
+    iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1820,18 +1862,18 @@
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     :cond_2
-    move-object v10, v3
+    move-object v10, v4
 
-    move-object v11, v4
+    move-object v11, v5
 
     goto :goto_0
 
     :cond_3
-    move-object v10, v4
+    move-object v10, v5
 
     move-object v11, v10
 
-    .line 361
+    .line 372
     :goto_0
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
@@ -1865,12 +1907,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 362
+    .line 373
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_4
 
-    .line 363
+    .line 374
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1893,11 +1935,11 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 365
+    .line 376
     :cond_4
-    invoke-virtual {p0, v5}, Lorg/telegram/tgnet/ConnectionsManager;->cleanup(Z)V
+    invoke-virtual {p0, v6}, Lorg/telegram/tgnet/ConnectionsManager;->cleanup(Z)V
 
-    .line 366
+    .line 377
     invoke-virtual/range {p0 .. p9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     return-void
@@ -1907,16 +1949,16 @@
 
     move/from16 v2, p17
 
-    .line 370
+    .line 381
     iput v2, v11, Lorg/telegram/tgnet/TLObject;->networkType:I
 
-    .line 372
+    .line 383
     :cond_6
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_7
 
-    .line 373
+    .line 384
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1952,13 +1994,13 @@
 
     move/from16 v9, p12
 
-    .line 375
+    .line 386
     invoke-static/range {v2 .. v9}, Lorg/telegram/messenger/FileLog;->dumpResponseAndRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;JJI)V
 
-    .line 378
+    .line 389
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v2, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda13;
+    new-instance v2, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda15;
 
     move-object/from16 p4, v2
 
@@ -1972,7 +2014,7 @@
 
     move-wide/from16 p9, p18
 
-    invoke-direct/range {p4 .. p10}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
+    invoke-direct/range {p4 .. p10}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/RequestDelegateTimestamp;J)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
     :try_end_2
@@ -1980,7 +2022,7 @@
 
     goto :goto_2
 
-    .line 389
+    .line 400
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -1988,28 +2030,28 @@
     return-void
 .end method
 
-.method private synthetic lambda$setIsUpdating$15(Z)V
+.method private synthetic lambda$setIsUpdating$17(Z)V
     .locals 2
 
-    .line 817
+    .line 830
     iget-boolean v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->isUpdating:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 820
+    .line 833
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->isUpdating:Z
 
-    .line 821
+    .line 834
     iget p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->connectionState:I
 
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_1
 
-    .line 822
+    .line 835
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
@@ -2051,6 +2093,12 @@
 .end method
 
 .method public static native native_cleanUp(IZ)V
+.end method
+
+.method public static native native_discardConnection(III)V
+.end method
+
+.method public static native native_failNotRunningRequest(II)V
 .end method
 
 .method public static native native_getConnectionState(I)I
@@ -2128,7 +2176,7 @@
 .method public static onBytesReceived(III)V
     .locals 3
 
-    .line 730
+    .line 741
     :try_start_0
     invoke-static {p2}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
 
@@ -2147,7 +2195,7 @@
     :catch_0
     move-exception p0
 
-    .line 732
+    .line 743
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2157,7 +2205,7 @@
 .method public static onBytesSent(III)V
     .locals 3
 
-    .line 651
+    .line 662
     :try_start_0
     invoke-static {p2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
@@ -2180,7 +2228,7 @@
     :catch_0
     move-exception p0
 
-    .line 653
+    .line 664
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2190,10 +2238,10 @@
 .method public static onConnectionStateChanged(II)V
     .locals 1
 
-    .line 621
-    new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda4;
+    .line 632
+    new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p1, p0}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda4;-><init>(II)V
+    invoke-direct {v0, p1, p0}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda3;-><init>(II)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2203,7 +2251,7 @@
 .method public static onInternalPushReceived(I)V
     .locals 0
 
-    .line 750
+    .line 761
     invoke-static {}, Lorg/telegram/messenger/KeepAliveJob;->startJob()V
 
     return-void
@@ -2212,7 +2260,7 @@
 .method public static onLogout(I)V
     .locals 1
 
-    .line 628
+    .line 639
     new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda2;-><init>(I)V
@@ -2225,8 +2273,8 @@
 .method public static onProxyError()V
     .locals 1
 
-    .line 702
-    sget-object v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda14;
+    .line 713
+    sget-object v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda16;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2236,12 +2284,12 @@
 .method public static onRequestNewServerIpAndPort(II)V
     .locals 2
 
-    .line 658
+    .line 669
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda3;
+    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda3;-><init>(II)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda4;-><init>(II)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -2251,7 +2299,7 @@
 .method public static onSessionCreated(I)V
     .locals 2
 
-    .line 617
+    .line 628
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda1;
@@ -2266,7 +2314,7 @@
 .method public static onUnparsedMessageReceived(JIJ)V
     .locals 2
 
-    .line 591
+    .line 602
     :try_start_0
     invoke-static {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->wrap(J)Lorg/telegram/tgnet/NativeByteBuffer;
 
@@ -2274,15 +2322,15 @@
 
     const/4 p1, 0x1
 
-    .line 592
+    .line 603
     iput-boolean p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
 
-    .line 593
+    .line 604
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v0
 
-    .line 594
+    .line 605
     invoke-static {}, Lorg/telegram/tgnet/TLClassStore;->Instance()Lorg/telegram/tgnet/TLClassStore;
 
     move-result-object v1
@@ -2291,20 +2339,20 @@
 
     move-result-object p0
 
-    .line 595
+    .line 606
     invoke-static {p0, p3, p4}, Lorg/telegram/messenger/FileLog;->dumpUnparsedMessage(Lorg/telegram/tgnet/TLObject;J)V
 
-    .line 596
+    .line 607
     instance-of p3, p0, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-eqz p3, :cond_1
 
-    .line 597
+    .line 608
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 598
+    .line 609
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2321,11 +2369,11 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 600
+    .line 611
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/KeepAliveJob;->finishJob()V
 
-    .line 601
+    .line 612
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p3, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda5;
@@ -2336,7 +2384,7 @@
 
     goto :goto_0
 
-    .line 603
+    .line 614
     :cond_1
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -2348,7 +2396,7 @@
 
     const/4 p2, 0x0
 
-    .line 604
+    .line 615
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p3
@@ -2368,7 +2416,7 @@
     :catch_0
     move-exception p0
 
-    .line 608
+    .line 619
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -2379,7 +2427,7 @@
 .method public static onUpdate(I)V
     .locals 2
 
-    .line 613
+    .line 624
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda0;
@@ -2394,7 +2442,7 @@
 .method public static onUpdateConfig(JI)V
     .locals 1
 
-    .line 738
+    .line 749
     :try_start_0
     invoke-static {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->wrap(J)Lorg/telegram/tgnet/NativeByteBuffer;
 
@@ -2402,10 +2450,10 @@
 
     const/4 p1, 0x1
 
-    .line 739
+    .line 750
     iput-boolean p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
 
-    .line 740
+    .line 751
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v0
@@ -2416,7 +2464,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 742
+    .line 753
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda6;
@@ -2432,7 +2480,7 @@
     :catch_0
     move-exception p0
 
-    .line 745
+    .line 756
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -2445,12 +2493,12 @@
 
     move-object/from16 v0, p1
 
-    .line 323
+    .line 334
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_0
 
-    .line 324
+    .line 335
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2480,7 +2528,7 @@
     :cond_0
     move/from16 v15, p10
 
-    .line 327
+    .line 338
     :goto_0
     :try_start_0
     new-instance v1, Lorg/telegram/tgnet/NativeByteBuffer;
@@ -2491,15 +2539,15 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 328
+    .line 339
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 329
+    .line 340
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/tgnet/TLObject;->freeResources()V
 
     const-wide/16 v2, 0x0
 
-    .line 332
+    .line 343
     sget-boolean v4, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v4, :cond_1
@@ -2508,7 +2556,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 333
+    .line 344
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -2518,12 +2566,12 @@
 
     move-wide v12, v2
 
-    .line 336
+    .line 347
     iget v11, v14, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     iget-wide v9, v1, Lorg/telegram/tgnet/NativeByteBuffer;->address:J
 
-    new-instance v16, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda15;
+    new-instance v16, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda17;
 
     move-object/from16 v1, v16
 
@@ -2553,7 +2601,7 @@
 
     move/from16 v14, p10
 
-    invoke-direct/range {v1 .. v14}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJI)V
+    invoke-direct/range {v1 .. v14}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZJI)V
 
     move v3, v0
 
@@ -2584,7 +2632,7 @@
     :catch_0
     move-exception v0
 
-    .line 393
+    .line 404
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -2598,7 +2646,7 @@
 
     const/16 v1, 0x2d
 
-    .line 480
+    .line 491
     invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object p0
@@ -2614,7 +2662,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 482
+    .line 493
     invoke-static {v0, p0}, Lorg/telegram/tgnet/ConnectionsManager;->native_setLangCode(ILjava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1
@@ -2659,7 +2707,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 768
+    .line 779
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -2678,7 +2726,7 @@
 
     move-object v6, p5
 
-    .line 769
+    .line 780
     invoke-static/range {v1 .. v6}, Lorg/telegram/tgnet/ConnectionsManager;->native_setProxySettings(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
@@ -2696,16 +2744,16 @@
 
     move v1, v0
 
-    .line 771
+    .line 782
     invoke-static/range {v1 .. v6}, Lorg/telegram/tgnet/ConnectionsManager;->native_setProxySettings(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 773
+    .line 784
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v1
 
-    .line 774
+    .line 785
     invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v2
@@ -2716,7 +2764,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 775
+    .line 786
     invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -2737,7 +2785,7 @@
 .method public static setRegId(Ljava/lang/String;ILjava/lang/String;)V
     .locals 2
 
-    .line 488
+    .line 499
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -2748,7 +2796,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 489
+    .line 500
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2763,7 +2811,7 @@
 
     move-result-object p0
 
-    .line 491
+    .line 502
     :cond_0
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2782,7 +2830,7 @@
     :cond_1
     move-object p2, p0
 
-    .line 494
+    .line 505
     :goto_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2803,7 +2851,7 @@
     :cond_2
     const-string p0, "HUAWEI"
 
-    .line 496
+    .line 507
     :goto_1
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -2843,7 +2891,7 @@
 
     if-ge v0, p0, :cond_4
 
-    .line 499
+    .line 510
     invoke-static {v0, p2}, Lorg/telegram/tgnet/ConnectionsManager;->native_setRegId(ILjava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1
@@ -2861,7 +2909,7 @@
 
     const/16 v1, 0x2d
 
-    .line 504
+    .line 515
     invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object p0
@@ -2877,7 +2925,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 506
+    .line 517
     invoke-static {v0, p0}, Lorg/telegram/tgnet/ConnectionsManager;->native_setSystemLangCode(ILjava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1
@@ -2893,7 +2941,7 @@
 .method public applyDatacenterAddress(ILjava/lang/String;I)V
     .locals 1
 
-    .line 418
+    .line 429
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1, p2, p3}, Lorg/telegram/tgnet/ConnectionsManager;->native_applyDatacenterAddress(IILjava/lang/String;I)V
@@ -2904,7 +2952,7 @@
 .method public bindRequestToGuid(II)V
     .locals 1
 
-    .line 414
+    .line 425
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->native_bindRequestToGuid(III)V
@@ -2915,12 +2963,12 @@
 .method public cancelRequest(IZ)V
     .locals 2
 
-    .line 398
+    .line 409
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda10;
+    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;
 
-    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
+    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -2930,7 +2978,7 @@
 .method public cancelRequestsForGuid(I)V
     .locals 2
 
-    .line 408
+    .line 419
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda9;
@@ -2945,17 +2993,17 @@
 .method public checkConnection()V
     .locals 4
 
-    .line 433
+    .line 444
     invoke-virtual {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getIpStrategy()B
 
     move-result v0
 
-    .line 434
+    .line 445
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_0
 
-    .line 435
+    .line 446
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2972,13 +3020,13 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 437
+    .line 448
     :cond_0
     iget v1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_setIpStrategy(IB)V
 
-    .line 438
+    .line 449
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnline()Z
@@ -3001,7 +3049,7 @@
 .method public checkProxy(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/RequestTimeDelegate;)J
     .locals 8
 
-    .line 533
+    .line 544
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -3054,7 +3102,7 @@
     :cond_4
     move-object v6, p5
 
-    .line 548
+    .line 559
     :goto_3
     iget v1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -3072,7 +3120,7 @@
 .method public cleanup(Z)V
     .locals 1
 
-    .line 404
+    .line 415
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->native_cleanUp(IZ)V
@@ -3080,10 +3128,40 @@
     return-void
 .end method
 
+.method public discardConnection(II)V
+    .locals 2
+
+    .line 150
+    sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda11;
+
+    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/tgnet/ConnectionsManager;II)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method public failNotRunningRequest(I)V
+    .locals 2
+
+    .line 156
+    sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda10;
+
+    invoke-direct {v1, p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/tgnet/ConnectionsManager;I)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
 .method public getConnectionState()I
     .locals 2
 
-    .line 422
+    .line 433
     iget v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->connectionState:I
 
     const/4 v1, 0x3
@@ -3103,7 +3181,7 @@
 .method public getCurrentDatacenterId()I
     .locals 1
 
-    .line 277
+    .line 288
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_getCurrentDatacenterId(I)I
@@ -3116,7 +3194,7 @@
 .method public getCurrentTime()I
     .locals 1
 
-    .line 273
+    .line 284
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_getCurrentTime(I)I
@@ -3129,7 +3207,7 @@
 .method public getCurrentTimeMillis()J
     .locals 2
 
-    .line 269
+    .line 280
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_getCurrentTimeMillis(I)J
@@ -3142,7 +3220,7 @@
 .method protected getIpStrategy()B
     .locals 10
 
-    .line 829
+    .line 842
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -3153,19 +3231,19 @@
 
     return v1
 
-    .line 832
+    .line 845
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_7
 
-    .line 835
+    .line 848
     :try_start_0
     invoke-static {}, Ljava/net/NetworkInterface;->getNetworkInterfaces()Ljava/util/Enumeration;
 
     move-result-object v0
 
-    .line 836
+    .line 849
     :cond_1
     :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
@@ -3174,14 +3252,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 837
+    .line 850
     invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/net/NetworkInterface;
 
-    .line 838
+    .line 851
     invoke-virtual {v2}, Ljava/net/NetworkInterface;->isUp()Z
 
     move-result v3
@@ -3206,13 +3284,13 @@
 
     goto :goto_0
 
-    .line 841
+    .line 854
     :cond_2
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v3, :cond_3
 
-    .line 842
+    .line 855
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3229,7 +3307,7 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 844
+    .line 857
     :cond_3
     invoke-virtual {v2}, Ljava/net/NetworkInterface;->getInterfaceAddresses()Ljava/util/List;
 
@@ -3237,7 +3315,7 @@
 
     move v3, v1
 
-    .line 845
+    .line 858
     :goto_1
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -3245,24 +3323,24 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 846
+    .line 859
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/net/InterfaceAddress;
 
-    .line 847
+    .line 860
     invoke-virtual {v4}, Ljava/net/InterfaceAddress;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v4
 
-    .line 848
+    .line 861
     sget-boolean v5, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v5, :cond_4
 
-    .line 849
+    .line 862
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3283,7 +3361,7 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 851
+    .line 864
     :cond_4
     invoke-virtual {v4}, Ljava/net/InetAddress;->isLinkLocalAddress()Z
 
@@ -3305,7 +3383,7 @@
 
     goto :goto_2
 
-    .line 854
+    .line 867
     :cond_5
     sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -3313,7 +3391,7 @@
 
     const-string v4, "address is good"
 
-    .line 855
+    .line 868
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -3327,10 +3405,10 @@
     :catchall_0
     move-exception v0
 
-    .line 860
+    .line 873
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 865
+    .line 878
     :cond_7
     :try_start_1
     invoke-static {}, Ljava/net/NetworkInterface;->getNetworkInterfaces()Ljava/util/Enumeration;
@@ -3343,7 +3421,7 @@
 
     move v4, v3
 
-    .line 869
+    .line 882
     :cond_8
     :goto_3
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
@@ -3354,14 +3432,14 @@
 
     if-eqz v5, :cond_e
 
-    .line 870
+    .line 883
     invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/net/NetworkInterface;
 
-    .line 871
+    .line 884
     invoke-virtual {v5}, Ljava/net/NetworkInterface;->isUp()Z
 
     move-result v7
@@ -3376,7 +3454,7 @@
 
     goto :goto_3
 
-    .line 874
+    .line 887
     :cond_9
     invoke-virtual {v5}, Ljava/net/NetworkInterface;->getInterfaceAddresses()Ljava/util/List;
 
@@ -3384,7 +3462,7 @@
 
     move v7, v1
 
-    .line 875
+    .line 888
     :goto_4
     invoke-interface {v5}, Ljava/util/List;->size()I
 
@@ -3392,19 +3470,19 @@
 
     if-ge v7, v8, :cond_8
 
-    .line 876
+    .line 889
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Ljava/net/InterfaceAddress;
 
-    .line 877
+    .line 890
     invoke-virtual {v8}, Ljava/net/InterfaceAddress;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v8
 
-    .line 878
+    .line 891
     invoke-virtual {v8}, Ljava/net/InetAddress;->isLinkLocalAddress()Z
 
     move-result v9
@@ -3425,7 +3503,7 @@
 
     goto :goto_5
 
-    .line 881
+    .line 894
     :cond_a
     instance-of v9, v8, Ljava/net/Inet6Address;
 
@@ -3435,20 +3513,20 @@
 
     goto :goto_5
 
-    .line 883
+    .line 896
     :cond_b
     instance-of v9, v8, Ljava/net/Inet4Address;
 
     if-eqz v9, :cond_d
 
-    .line 884
+    .line 897
     invoke-virtual {v8}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     move-result-object v8
 
     const-string v9, "192.0.0."
 
-    .line 885
+    .line 898
     invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v8
@@ -3471,7 +3549,7 @@
     :cond_e
     if-eqz v2, :cond_11
 
-    .line 894
+    .line 907
     iget-boolean v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->forceTryIpV6:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
@@ -3495,7 +3573,7 @@
     :catchall_1
     move-exception v0
 
-    .line 905
+    .line 918
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_11
@@ -3505,7 +3583,7 @@
 .method public getPauseTime()J
     .locals 2
 
-    .line 529
+    .line 540
     iget-wide v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->lastPauseTime:J
 
     return-wide v0
@@ -3514,7 +3592,7 @@
 .method public getTimeDifference()I
     .locals 1
 
-    .line 281
+    .line 292
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_getTimeDifference(I)I
@@ -3529,7 +3607,7 @@
 
     move-object/from16 v0, p0
 
-    .line 446
+    .line 457
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v2, "mainconfig"
@@ -3540,48 +3618,48 @@
 
     move-result-object v1
 
-    const-string v2, "proxy_ip"
+    const-string/jumbo v2, "proxy_ip"
 
     const-string v4, ""
 
-    .line 447
+    .line 458
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v2, "proxy_user"
+    const-string/jumbo v2, "proxy_user"
 
-    .line 448
+    .line 459
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    const-string v2, "proxy_pass"
+    const-string/jumbo v2, "proxy_pass"
 
-    .line 449
+    .line 460
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
-    const-string v2, "proxy_secret"
+    const-string/jumbo v2, "proxy_secret"
 
-    .line 450
+    .line 461
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    const-string v2, "proxy_port"
+    const-string/jumbo v2, "proxy_port"
 
     const/16 v5, 0x438
 
-    .line 451
+    .line 462
     invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v7
 
-    const-string v2, "proxy_enabled"
+    const-string/jumbo v2, "proxy_enabled"
 
-    .line 453
+    .line 464
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
@@ -3594,12 +3672,12 @@
 
     if-nez v1, :cond_0
 
-    .line 454
+    .line 465
     iget v5, v0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static/range {v5 .. v10}, Lorg/telegram/tgnet/ConnectionsManager;->native_setProxySettings(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 458
+    .line 469
     :cond_0
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -3635,7 +3713,7 @@
     :cond_1
     move-object/from16 v18, v1
 
-    .line 467
+    .line 478
     :goto_1
     :try_start_1
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -3661,7 +3739,7 @@
     :cond_2
     move-object/from16 v19, v1
 
-    .line 475
+    .line 486
     :goto_3
     iget v5, v0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -3709,7 +3787,7 @@
 
     invoke-static/range {v5 .. v26}, Lorg/telegram/tgnet/ConnectionsManager;->native_init(IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJZZII)V
 
-    .line 476
+    .line 487
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/tgnet/ConnectionsManager;->checkConnection()V
 
     return-void
@@ -3718,14 +3796,14 @@
 .method public isPushConnectionEnabled()Z
     .locals 3
 
-    .line 260
+    .line 271
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalNotificationsSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string v1, "pushConnection"
+    const-string/jumbo v1, "pushConnection"
 
-    .line 261
+    .line 272
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v2
@@ -3734,14 +3812,14 @@
 
     const/4 v2, 0x1
 
-    .line 262
+    .line 273
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
     return v0
 
-    .line 264
+    .line 275
     :cond_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -3763,7 +3841,7 @@
 .method public isTestBackend()Z
     .locals 1
 
-    .line 517
+    .line 528
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_isTestBackend(I)I
@@ -3786,7 +3864,7 @@
 .method public resumeNetworkMaybe()V
     .locals 2
 
-    .line 521
+    .line 532
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     const/4 v1, 0x1
@@ -3803,7 +3881,7 @@
 
     const/4 v1, 0x0
 
-    .line 285
+    .line 296
     invoke-virtual {p0, p1, p2, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/QuickAckDelegate;I)I
 
     move-result p1
@@ -3834,7 +3912,7 @@
 
     move v6, p3
 
-    .line 289
+    .line 300
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result p1
@@ -3865,7 +3943,7 @@
 
     move v8, p4
 
-    .line 293
+    .line 304
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result p1
@@ -3896,7 +3974,7 @@
 
     move v6, p4
 
-    .line 301
+    .line 312
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result p1
@@ -3927,7 +4005,7 @@
 
     move/from16 v9, p8
 
-    .line 305
+    .line 316
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result v0
@@ -3940,17 +4018,17 @@
 
     move-object/from16 v12, p0
 
-    .line 315
+    .line 326
     iget-object v0, v12, Lorg/telegram/tgnet/ConnectionsManager;->lastRequestToken:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
     move-result v13
 
-    .line 316
+    .line 327
     sget-object v14, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v15, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda11;
+    new-instance v15, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda13;
 
     move-object v0, v15
 
@@ -3976,7 +4054,7 @@
 
     move v11, v13
 
-    invoke-direct/range {v0 .. v11}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
+    invoke-direct/range {v0 .. v11}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
 
     invoke-virtual {v14, v15}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -4006,7 +4084,7 @@
 
     move v8, p4
 
-    .line 297
+    .line 308
     invoke-virtual/range {v0 .. v9}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result p1
@@ -4019,7 +4097,7 @@
 
     move-object v11, p0
 
-    .line 309
+    .line 320
     iget-object v0, v11, Lorg/telegram/tgnet/ConnectionsManager;->lastRequestToken:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -4048,7 +4126,7 @@
 
     move v10, v12
 
-    .line 310
+    .line 321
     invoke-direct/range {v0 .. v10}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequestInternal(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/RequestDelegateTimestamp;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZI)V
 
     return v12
@@ -4061,15 +4139,15 @@
 
     if-nez p2, :cond_3
 
-    .line 553
+    .line 564
     iput-boolean p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appPaused:Z
 
-    .line 554
+    .line 565
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_0
 
-    .line 555
+    .line 566
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4089,7 +4167,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 558
+    .line 569
     iget p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
     add-int/lit8 p1, p1, -0x1
@@ -4098,7 +4176,7 @@
 
     goto :goto_0
 
-    .line 560
+    .line 571
     :cond_1
     iget p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
@@ -4106,13 +4184,13 @@
 
     iput p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
-    .line 562
+    .line 573
     :goto_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 563
+    .line 574
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4131,16 +4209,16 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 565
+    .line 576
     :cond_2
     iget p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
     if-gez p1, :cond_3
 
-    .line 566
+    .line 577
     iput v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
-    .line 569
+    .line 580
     :cond_3
     iget p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appResumeCount:I
 
@@ -4148,21 +4226,21 @@
 
     if-nez p1, :cond_5
 
-    .line 570
+    .line 581
     iget-wide p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->lastPauseTime:J
 
     cmp-long p1, p1, v1
 
     if-nez p1, :cond_4
 
-    .line 571
+    .line 582
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
 
     iput-wide p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->lastPauseTime:J
 
-    .line 573
+    .line 584
     :cond_4
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -4170,7 +4248,7 @@
 
     goto :goto_1
 
-    .line 575
+    .line 586
     :cond_5
     iget-boolean p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->appPaused:Z
 
@@ -4178,7 +4256,7 @@
 
     return-void
 
-    .line 578
+    .line 589
     :cond_6
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -4186,10 +4264,10 @@
 
     const-string/jumbo p1, "reset app pause time"
 
-    .line 579
+    .line 590
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 581
+    .line 592
     :cond_7
     iget-wide p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->lastPauseTime:J
 
@@ -4211,18 +4289,18 @@
 
     if-lez p1, :cond_8
 
-    .line 582
+    .line 593
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getContactsController()Lorg/telegram/messenger/ContactsController;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ContactsController;->checkContacts()V
 
-    .line 584
+    .line 595
     :cond_8
     iput-wide v1, p0, Lorg/telegram/tgnet/ConnectionsManager;->lastPauseTime:J
 
-    .line 585
+    .line 596
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_resumeNetwork(IZ)V
@@ -4234,15 +4312,15 @@
 .method public setForceTryIpV6(Z)V
     .locals 1
 
-    .line 144
+    .line 143
     iget-boolean v0, p0, Lorg/telegram/tgnet/ConnectionsManager;->forceTryIpV6:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 145
+    .line 144
     iput-boolean p1, p0, Lorg/telegram/tgnet/ConnectionsManager;->forceTryIpV6:Z
 
-    .line 146
+    .line 145
     invoke-virtual {p0}, Lorg/telegram/tgnet/ConnectionsManager;->checkConnection()V
 
     :cond_0
@@ -4252,10 +4330,10 @@
 .method public setIsUpdating(Z)V
     .locals 1
 
-    .line 816
-    new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;
+    .line 829
+    new-instance v0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda14;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Z)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/tgnet/ConnectionsManager;Z)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -4265,7 +4343,7 @@
 .method public setPushConnectionEnabled(Z)V
     .locals 1
 
-    .line 442
+    .line 453
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->native_setPushConnectionEnabled(IZ)V
@@ -4276,7 +4354,7 @@
 .method public setUserId(J)V
     .locals 1
 
-    .line 429
+    .line 440
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1, p2}, Lorg/telegram/tgnet/ConnectionsManager;->native_setUserId(IJ)V
@@ -4287,12 +4365,12 @@
 .method public switchBackend(Z)V
     .locals 2
 
-    .line 511
+    .line 522
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 512
+    .line 523
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -4305,7 +4383,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 513
+    .line 524
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0, p1}, Lorg/telegram/tgnet/ConnectionsManager;->native_switchBackend(IZ)V
@@ -4316,7 +4394,7 @@
 .method public updateDcSettings()V
     .locals 1
 
-    .line 525
+    .line 536
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->native_updateDcSettings(I)V

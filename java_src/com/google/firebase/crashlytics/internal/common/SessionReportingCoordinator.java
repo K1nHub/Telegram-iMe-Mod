@@ -24,6 +24,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
@@ -53,13 +54,13 @@ public class SessionReportingCoordinator {
 
     public void persistFatalEvent(Throwable th, Thread thread, String str, long j) {
         Logger logger = Logger.getLogger();
-        logger.m722v("Persisting fatal event for session " + str);
+        logger.m740v("Persisting fatal event for session " + str);
         persistEvent(th, thread, str, AppMeasurement.CRASH_ORIGIN, j, true);
     }
 
     public void persistNonFatalEvent(Throwable th, Thread thread, String str, long j) {
         Logger logger = Logger.getLogger();
-        logger.m722v("Persisting non-fatal event for session " + str);
+        logger.m740v("Persisting non-fatal event for session " + str);
         persistEvent(th, thread, str, "error", j, false);
     }
 
@@ -67,7 +68,7 @@ public class SessionReportingCoordinator {
         if (applicationExitInfo.getTimestamp() >= this.reportPersistence.getStartTimestampMillis(str) && applicationExitInfo.getReason() == 6) {
             CrashlyticsReport.Session.Event captureAnrEventData = this.dataCapture.captureAnrEventData(convertApplicationExitInfo(applicationExitInfo));
             Logger logger = Logger.getLogger();
-            logger.m728d("Persisting anr for session " + str);
+            logger.m746d("Persisting anr for session " + str);
             this.reportPersistence.persistEvent(addLogsAndCustomKeysToEvent(captureAnrEventData, logFileManager, userMetadata), str, true);
         }
     }
@@ -125,7 +126,7 @@ public class SessionReportingCoordinator {
         if (logString != null) {
             builder.setLog(CrashlyticsReport.Session.Event.Log.builder().setContent(logString).build());
         } else {
-            Logger.getLogger().m722v("No log data to include with this event.");
+            Logger.getLogger().m740v("No log data to include with this event.");
         }
         List<CrashlyticsReport.CustomAttribute> sortedCustomAttributes = getSortedCustomAttributes(userMetadata.getCustomKeys());
         List<CrashlyticsReport.CustomAttribute> sortedCustomAttributes2 = getSortedCustomAttributes(userMetadata.getInternalKeys());
@@ -144,11 +145,11 @@ public class SessionReportingCoordinator {
         if (task.isSuccessful()) {
             CrashlyticsReportWithSessionId result = task.getResult();
             Logger logger = Logger.getLogger();
-            logger.m728d("Crashlytics report successfully enqueued to DataTransport: " + result.getSessionId());
+            logger.m746d("Crashlytics report successfully enqueued to DataTransport: " + result.getSessionId());
             this.reportPersistence.deleteFinalizedReport(result.getSessionId());
             return true;
         }
-        Logger.getLogger().m719w("Crashlytics report could not be enqueued to DataTransport", task.getException());
+        Logger.getLogger().m737w("Crashlytics report could not be enqueued to DataTransport", task.getException());
         return false;
     }
 
@@ -158,7 +159,14 @@ public class SessionReportingCoordinator {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             arrayList.add(CrashlyticsReport.CustomAttribute.builder().setKey(entry.getKey()).setValue(entry.getValue()).build());
         }
-        Collections.sort(arrayList, SessionReportingCoordinator$$ExternalSyntheticLambda1.INSTANCE);
+        Collections.sort(arrayList, new Comparator() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda1
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$getSortedCustomAttributes$0;
+                lambda$getSortedCustomAttributes$0 = SessionReportingCoordinator.lambda$getSortedCustomAttributes$0((CrashlyticsReport.CustomAttribute) obj, (CrashlyticsReport.CustomAttribute) obj2);
+                return lambda$getSortedCustomAttributes$0;
+            }
+        });
         return arrayList;
     }
 
@@ -173,7 +181,7 @@ public class SessionReportingCoordinator {
             str = convertInputStreamToString(applicationExitInfo.getTraceInputStream());
         } catch (IOException | NullPointerException e) {
             Logger logger = Logger.getLogger();
-            logger.m720w("Could not get input trace in application exit info: " + applicationExitInfo.toString() + " Error: " + e);
+            logger.m738w("Could not get input trace in application exit info: " + applicationExitInfo.toString() + " Error: " + e);
             str = null;
         }
         return CrashlyticsReport.ApplicationExitInfo.builder().setImportance(applicationExitInfo.getImportance()).setProcessName(applicationExitInfo.getProcessName()).setReasonCode(applicationExitInfo.getReason()).setTimestamp(applicationExitInfo.getTimestamp()).setPid(applicationExitInfo.getPid()).setPss(applicationExitInfo.getPss()).setRss(applicationExitInfo.getRss()).setTraceFile(str).build();

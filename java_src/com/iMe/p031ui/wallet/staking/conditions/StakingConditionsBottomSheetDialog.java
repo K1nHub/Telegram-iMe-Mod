@@ -12,13 +12,15 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingConditionsBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -47,7 +49,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public StakingConditionsBottomSheetDialog(com.iMe.model.staking.StakingDetailsItem r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
+    public StakingConditionsBottomSheetDialog(final com.iMe.model.staking.StakingDetailsItem r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r4 = this;
             java.lang.String r0 = "stakingDetails"
@@ -61,7 +63,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
             r4.<init>(r0, r1)
             r4.fragment = r6
             com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$presenter$2 r6 = new com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$presenter$2
-            r6.<init>(r4, r5)
+            r6.<init>()
             moxy.ktx.MoxyKtxDelegate r5 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r0 = r4.getMvpDelegate()
             java.lang.String r2 = "mvpDelegate"
@@ -81,11 +83,11 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$special$$inlined$inject$default$1 r6 = new com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
-            r6.<init>(r4, r0, r0)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r4.resourceManager$delegate = r5
             com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$binding$2 r5 = new com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$binding$2
-            r5.<init>(r4)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r5 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r4, r0, r5, r1, r0)
             r4.binding$delegate = r5
             r5 = 0
@@ -130,15 +132,15 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         viewHeader.setupViewData((r13 & 1) != 0 ? null : iconUrl, (r13 & 2) != 0 ? null : null, (r13 & 4) != 0 ? null : networkIconUrl, name, author);
-        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3417R.string.staking_details_apy_apr), annualPercentage, C3417R.C3419drawable.fork_ic_percent, true);
-        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_start), startDate, C3417R.C3419drawable.fork_ic_start, true);
-        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_completion), completionDate, C3417R.C3419drawable.fork_ic_done_24, true);
-        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_compound_threshold), compoundThreshold, C3417R.C3419drawable.fork_ic_donations_24, true);
-        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3417R.C3419drawable.fork_ic_transactions_24, true);
-        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3417R.C3419drawable.fork_ic_ask_transfer_24, true);
+        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3419R.string.staking_details_apy_apr), annualPercentage, C3419R.C3421drawable.fork_ic_percent, true);
+        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3419R.string.staking_conditions_start), startDate, C3419R.C3421drawable.fork_ic_start, true);
+        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3419R.string.staking_conditions_completion), completionDate, C3419R.C3421drawable.fork_ic_done_24, true);
+        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3419R.string.staking_conditions_compound_threshold), compoundThreshold, C3419R.C3421drawable.fork_ic_donations_24, true);
+        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3419R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3419R.C3421drawable.fork_ic_transactions_24, true);
+        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3419R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3419R.C3421drawable.fork_ic_ask_transfer_24, true);
         DetailsIconCellView viewFinishedFeeCell = binding.viewFinishedFeeCell;
         Intrinsics.checkNotNullExpressionValue(viewFinishedFeeCell, "viewFinishedFeeCell");
-        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3417R.string.staking_conditions_end_output), finishedFeeText, C3417R.C3419drawable.fork_ic_end_24, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3419R.string.staking_conditions_end_output), finishedFeeText, C3419R.C3421drawable.fork_ic_end_24, false, 8, null);
     }
 
     private final void setupColors() {
@@ -148,17 +150,34 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         binding.viewStartDateCell.setupColors();
         binding.viewCompletionDateCell.setupColors();
         binding.viewThresholdCell.setupColors();
-        binding.buttonOk.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_featuredStickers_addButton), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
+        binding.buttonOk.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), Theme.getColor(Theme.key_featuredStickers_addButton), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonOk.setText(LocaleController.getString("OK", C3417R.string.OK));
+        getBinding().buttonOk.setText(LocaleController.getString("OK", C3419R.string.OK));
     }
 
     private final void setupListeners() {
         BigActionButton bigActionButton = getBinding().buttonOk;
         Intrinsics.checkNotNullExpressionValue(bigActionButton, "binding.buttonOk");
-        ViewExtKt.safeThrottledClick$default(bigActionButton, 0L, new StakingConditionsBottomSheetDialog$setupListeners$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(bigActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$setupListeners$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                StakingConditionsBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* compiled from: StakingConditionsBottomSheetDialog.kt */

@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 9813
+    .line 9814
     invoke-direct {p0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$ListenerAdapter;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onSizeReady(II)V
     .locals 4
 
-    .line 9816
+    .line 9817
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -60,7 +60,7 @@
     :goto_1
     if-ne v0, v2, :cond_2
 
-    .line 9819
+    .line 9820
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1

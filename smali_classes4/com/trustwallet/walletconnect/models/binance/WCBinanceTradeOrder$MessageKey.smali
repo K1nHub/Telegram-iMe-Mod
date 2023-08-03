@@ -128,7 +128,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "ordertype"
+    const-string/jumbo v3, "ordertype"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -141,7 +141,7 @@
 
     const/4 v2, 0x2
 
-    const-string v3, "price"
+    const-string/jumbo v3, "price"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -154,7 +154,7 @@
 
     const/4 v2, 0x3
 
-    const-string v3, "quantity"
+    const-string/jumbo v3, "quantity"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

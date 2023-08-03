@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
@@ -47,7 +47,7 @@ public class GroupCallInvitedCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z ? 5 : 3) | 48, z ? 0 : 11, 6, z ? 11 : 0, 0));
@@ -65,16 +65,16 @@ public class GroupCallInvitedCell extends FrameLayout {
         simpleTextView3.setTextSize(15);
         this.statusTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         this.statusTextView.setTextColor(Theme.getColor(this.grayIconColor));
-        this.statusTextView.setText(LocaleController.getString("Invited", C3417R.string.Invited));
+        this.statusTextView.setText(LocaleController.getString("Invited", C3419R.string.Invited));
         SimpleTextView simpleTextView4 = this.statusTextView;
         boolean z3 = LocaleController.isRTL;
         addView(simpleTextView4, LayoutHelper.createFrame(-1, 20, (z3 ? 5 : 3) | 48, z3 ? 54 : 67, 32, z3 ? 67 : 54, 0));
         ImageView imageView = new ImageView(context);
         this.muteButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.muteButton.setImageResource(C3417R.C3419drawable.msg_invited);
+        this.muteButton.setImageResource(C3419R.C3421drawable.msg_invited);
         this.muteButton.setImportantForAccessibility(2);
-        this.muteButton.setPadding(0, 0, AndroidUtilities.m54dp(4), 0);
+        this.muteButton.setPadding(0, 0, AndroidUtilities.m72dp(4), 0);
         this.muteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(this.grayIconColor), PorterDuff.Mode.MULTIPLY));
         addView(this.muteButton, LayoutHelper.createFrame(48, -1, (LocaleController.isRTL ? 3 : 5) | 16, 6, 0, 6, 0));
         setWillNotDraw(false);
@@ -117,13 +117,13 @@ public class GroupCallInvitedCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(58), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(58), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(68) : 0), getMeasuredHeight() - 1, this.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(68), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(68) : 0), getMeasuredHeight() - 1, this.dividerPaint);
         }
         super.dispatchDraw(canvas);
     }

@@ -52,7 +52,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
             walletConnectInteractor = this.this$0.walletConnectInteractor;
             Completable deleteWalletConnectSession = walletConnectInteractor.deleteWalletConnectSession(this.$sessionStoreItem.getSession().getKey());
             schedulersProvider = this.this$0.schedulersProvider;
-            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo698ui());
+            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo716ui());
             final WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
             final WCSessionStoreItem wCSessionStoreItem = this.$sessionStoreItem;
             Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda0
@@ -61,7 +61,25 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
                     WalletConnectManagerImpl$setupClientListeners$1$1.invoke$lambda$0(WalletConnectManagerImpl.this, wCSessionStoreItem);
                 }
             };
-            final C18382 c18382 = new C18382(this.this$0);
+            final WalletConnectManagerImpl walletConnectManagerImpl2 = this.this$0;
+            final Function1<Throwable, Unit> function1 = new Function1<Throwable, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1.2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    PublishSubject publishSubject;
+                    publishSubject = WalletConnectManagerImpl.this.errorsSubject;
+                    publishSubject.onNext(th);
+                }
+            };
             Disposable subscribe = observeOn.subscribe(action, new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
@@ -71,33 +89,6 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
             Intrinsics.checkNotNullExpressionValue(subscribe, "private fun setupClientL…        }\n        }\n    }");
             compositeDisposable = this.this$0.subscriptions;
             RxExtKt.autoDispose(subscribe, compositeDisposable);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: WalletConnectManagerImpl.kt */
-    /* renamed from: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$2 */
-    /* loaded from: classes3.dex */
-    public static final class C18382 extends Lambda implements Function1<Throwable, Unit> {
-        final /* synthetic */ WalletConnectManagerImpl this$0;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C18382(WalletConnectManagerImpl walletConnectManagerImpl) {
-            super(1);
-            this.this$0 = walletConnectManagerImpl;
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-            invoke2(th);
-            return Unit.INSTANCE;
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final void invoke2(Throwable th) {
-            PublishSubject publishSubject;
-            publishSubject = this.this$0.errorsSubject;
-            publishSubject.onNext(th);
         }
     }
 

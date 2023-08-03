@@ -22,7 +22,7 @@ public final class ReactionInteractor {
 
     public final Observable<Result<ReactionMessageResult>> prepareLikeMessage(ReactionRequestData data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        Observable<Result<ReactionMessageResult>> subscribeOn = this.repository.prepareLikeMessage(data).startWith((Observable<Result<ReactionMessageResult>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<ReactionMessageResult>> subscribeOn = this.repository.prepareLikeMessage(data).startWith((Observable<Result<ReactionMessageResult>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "repository.prepareLikeMe…(schedulersProvider.io())");
         return subscribeOn;
     }

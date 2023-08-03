@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 0
 
-    .line 369
+    .line 394
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->val$progressRef:Ljava/util/concurrent/atomic/AtomicReference;
@@ -39,7 +39,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 372
+    .line 397
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->discountView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
@@ -48,7 +48,7 @@
 
     if-nez v0, :cond_0
 
-    .line 373
+    .line 398
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->discountView:Landroid/widget/TextView;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 374
+    .line 399
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -124,7 +124,7 @@
 
     const/4 v1, 0x6
 
-    .line 375
+    .line 400
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -149,7 +149,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 378
+    .line 403
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->val$progressRef:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -163,7 +163,7 @@
 
     move-result v0
 
-    .line 379
+    .line 404
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -178,7 +178,7 @@
 
     move-result v1
 
-    .line 380
+    .line 405
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -197,7 +197,7 @@
 
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 381
+    .line 406
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/16 v2, 0x14
@@ -242,7 +242,7 @@
 
     invoke-virtual {v0, v3, v5, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 382
+    .line 407
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -271,7 +271,7 @@
 
     const/16 v2, 0xc
 
-    .line 383
+    .line 408
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -296,7 +296,7 @@
 
     invoke-virtual {p1, v0, v3, v2, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 384
+    .line 409
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;->this$1:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 386
+    .line 411
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void

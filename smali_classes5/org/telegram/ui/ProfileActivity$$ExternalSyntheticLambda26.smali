@@ -2,34 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/core/util/Consumer;
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda26;->f$0:Ljava/util/ArrayList;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final onDismiss()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda26;->f$0:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$StwATAqixn9j893yuVyQ2msHAAk(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$TmJFea87a4uZwL9hSZ7dA8EO6QI(Lorg/telegram/ui/ProfileActivity;)V
 
     return-void
 .end method

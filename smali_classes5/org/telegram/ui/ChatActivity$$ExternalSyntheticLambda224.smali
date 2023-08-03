@@ -12,13 +12,13 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:Z
+.field public final synthetic f$3:Landroid/text/style/CharacterStyle;
 
-.field public final synthetic f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+.field public final synthetic f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IILandroid/text/style/CharacterStyle;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,9 +29,9 @@
 
     iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$2:I
 
-    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$3:Z
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$3:Landroid/text/style/CharacterStyle;
 
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
@@ -47,11 +47,11 @@
 
     iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$2:I
 
-    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$3:Z
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$3:Landroid/text/style/CharacterStyle;
 
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda224;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$C9LCOMRfCsp-sLW-NU8H7YVlsmY(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$GQyoAgcjyx-ZjDcTu7_UrD6gvz4(Lorg/telegram/ui/ChatActivity;IILandroid/text/style/CharacterStyle;Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
     return-void
 .end method

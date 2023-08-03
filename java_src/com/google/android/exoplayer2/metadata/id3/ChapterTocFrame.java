@@ -21,7 +21,7 @@ public final class ChapterTocFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f196ID = "CTOC";
+    public static final String f198ID = "CTOC";
     public final String[] children;
     public final String elementId;
     public final boolean isOrdered;
@@ -29,7 +29,7 @@ public final class ChapterTocFrame extends Id3Frame {
     private final Id3Frame[] subFrames;
 
     public ChapterTocFrame(String str, boolean z, boolean z2, String[] strArr, Id3Frame[] id3FrameArr) {
-        super(f196ID);
+        super(f198ID);
         this.elementId = str;
         this.isRoot = z;
         this.isOrdered = z2;
@@ -38,7 +38,7 @@ public final class ChapterTocFrame extends Id3Frame {
     }
 
     ChapterTocFrame(Parcel parcel) {
-        super(f196ID);
+        super(f198ID);
         this.elementId = (String) Util.castNonNull(parcel.readString());
         this.isRoot = parcel.readByte() != 0;
         this.isOrdered = parcel.readByte() != 0;

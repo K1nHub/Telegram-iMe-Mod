@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CreateWalletView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CreateWalletView extends BaseView {
     void addNewWallet(Wallet wallet2, String str);
 

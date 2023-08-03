@@ -198,7 +198,7 @@ public abstract class SegmentBase {
             UrlTemplate urlTemplate = this.initializationTemplate;
             if (urlTemplate != null) {
                 Format format = representation.format;
-                return new RangedUri(urlTemplate.buildUri(format.f182id, 0L, format.bitrate, 0L), 0L, -1L);
+                return new RangedUri(urlTemplate.buildUri(format.f184id, 0L, format.bitrate, 0L), 0L, -1L);
             }
             return super.getInitialization(representation);
         }
@@ -215,7 +215,7 @@ public abstract class SegmentBase {
             long j3 = j2;
             UrlTemplate urlTemplate = this.mediaTemplate;
             Format format = representation.format;
-            return new RangedUri(urlTemplate.buildUri(format.f182id, j, format.bitrate, j3), 0L, -1L);
+            return new RangedUri(urlTemplate.buildUri(format.f184id, j, format.bitrate, j3), 0L, -1L);
         }
 
         @Override // com.google.android.exoplayer2.source.dash.manifest.SegmentBase.MultiSegmentBase

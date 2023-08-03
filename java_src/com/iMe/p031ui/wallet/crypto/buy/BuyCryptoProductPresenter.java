@@ -1,12 +1,15 @@
 package com.iMe.p031ui.wallet.crypto.buy;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.iMe.mapper.crypto.CryptoQuotesToCryptoBuyItemUiMappingKt;
 import com.iMe.model.wallet.crypto.buy.CryptoBuyFooterItem;
 import com.iMe.model.wallet.crypto.buy.CryptoBuyItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.interactor.crypto.simplex.SimplexInteractor;
+import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.billing.CryptoProduct;
+import com.iMe.storage.domain.model.crypto.simplex.BuyingCryptoQuote;
 import com.iMe.storage.domain.model.crypto.simplex.DigitalCurrency;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
@@ -19,13 +22,18 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: BuyCryptoProductPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter */
@@ -48,7 +56,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         this.resourceManager = resourceManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.schedulersProvider = schedulersProvider;
-        resourceManager.getString(C3417R.string.common_dash);
+        resourceManager.getString(C3419R.string.common_dash);
     }
 
     public final void loadAvailableProducts() {
@@ -56,8 +64,24 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         if (tokenDetailed == null) {
             return;
         }
-        Observable observeOn = SimplexInteractor.getAllAvailablePurchasesQuotes$default(this.simplexInteractor, null, DigitalCurrency.Companion.map(tokenDetailed.getTicker()), this.cryptoPreferenceHelper.getNetworkId(), 1, null).observeOn(this.schedulersProvider.mo698ui());
-        final BuyCryptoProductPresenter$loadAvailableProducts$1 buyCryptoProductPresenter$loadAvailableProducts$1 = new BuyCryptoProductPresenter$loadAvailableProducts$1(this);
+        Observable observeOn = SimplexInteractor.getAllAvailablePurchasesQuotes$default(this.simplexInteractor, null, DigitalCurrency.Companion.map(tokenDetailed.getTicker()), this.cryptoPreferenceHelper.getNetworkId(), 1, null).observeOn(this.schedulersProvider.mo716ui());
+        final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$loadAvailableProducts$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Disposable disposable) {
+                invoke2(disposable);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Disposable disposable) {
+                ((BuyCryptoProductView) BuyCryptoProductPresenter.this.getViewState()).showRefreshLoading(true);
+            }
+        };
         Observable doFinally = observeOn.doOnSubscribe(new Consumer() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
@@ -70,7 +94,65 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "fun loadAvailableProduct…     .autoDispose()\n    }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2126xb529d506(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2127xb529d507((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<BuyingCryptoQuote>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<BuyingCryptoQuote>> result) {
+                m1431invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1431invoke(Result<? extends List<BuyingCryptoQuote>> it) {
+                ResourceManager resourceManager;
+                TokenDetailed tokenDetailed2;
+                List sortedWith;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<BuyingCryptoQuote>> result = it;
+                if (result instanceof Result.Success) {
+                    tokenDetailed2 = BuyCryptoProductPresenter.this.initToken;
+                    sortedWith = CollectionsKt___CollectionsKt.sortedWith(CryptoQuotesToCryptoBuyItemUiMappingKt.mapToUI((List) ((Result.Success) result).getData(), tokenDetailed2), new Comparator() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$loadAvailableProducts$lambda$3$$inlined$sortedBy$1
+                        @Override // java.util.Comparator
+                        public final int compare(T t, T t2) {
+                            int compareValues;
+                            compareValues = ComparisonsKt__ComparisonsKt.compareValues(((CryptoBuyItem) t).getProduct(), ((CryptoBuyItem) t2).getProduct());
+                            return compareValues;
+                        }
+                    });
+                    BuyCryptoProductPresenter.this.setupUiItems((CryptoBuyItem[]) sortedWith.toArray(new CryptoBuyItem[0]));
+                } else if (result instanceof Result.Error) {
+                    resourceManager = BuyCryptoProductPresenter.this.resourceManager;
+                    ((BuyCryptoProductView) BuyCryptoProductPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -99,7 +181,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         List<BaseNode> mutableListOf;
         SpreadBuilder spreadBuilder = new SpreadBuilder(2);
         spreadBuilder.addSpread(cryptoBuyItemArr);
-        spreadBuilder.add(new CryptoBuyFooterItem(C3417R.string.wallet_crypto_buy_footer_title, C3417R.string.wallet_crypto_buy_footer_description));
+        spreadBuilder.add(new CryptoBuyFooterItem(C3419R.string.wallet_crypto_buy_footer_title, C3419R.string.wallet_crypto_buy_footer_description));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
         ((BuyCryptoProductView) getViewState()).showUiItems(mutableListOf);
     }

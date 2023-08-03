@@ -18,6 +18,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class DefaultBandwidthMeter implements BandwidthMeter, TransferListener {
     private static final int BYTES_TRANSFERRED_FOR_ESTIMATE = 524288;
@@ -46,12 +47,12 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     private int streamCount;
     private long totalBytesTransferred;
     private long totalElapsedTimeMs;
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_WIFI = ImmutableList.m739of(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_2G = ImmutableList.m739of(1400000L, 990000L, 730000L, 510000L, 230000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_3G = ImmutableList.m739of(2100000L, 1400000L, 1000000L, 890000L, 640000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_4G = ImmutableList.m739of(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_NSA = ImmutableList.m739of(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_SA = ImmutableList.m739of(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_WIFI = ImmutableList.m757of(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_2G = ImmutableList.m757of(1400000L, 990000L, 730000L, 510000L, 230000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_3G = ImmutableList.m757of(2100000L, 1400000L, 1000000L, 890000L, 640000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_4G = ImmutableList.m757of(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_NSA = ImmutableList.m757of(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_SA = ImmutableList.m757of(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
 
     @Override // com.google.android.exoplayer2.upstream.BandwidthMeter
     public /* synthetic */ long getTimeToFirstByteEstimateUs() {
@@ -150,7 +151,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
 
     @Deprecated
     public DefaultBandwidthMeter() {
-        this(null, ImmutableMap.m737of(), 2000, Clock.DEFAULT, false);
+        this(null, ImmutableMap.m755of(), 2000, Clock.DEFAULT, false);
     }
 
     private DefaultBandwidthMeter(Context context, Map<Integer, Long> map, int i, Clock clock, boolean z) {
@@ -1976,7 +1977,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{3, 3, 3, 2, 2, 2};
             case '}':
                 return new int[]{1, 1, 4, 2, 0, 2};
-            case 127:
+            case MessagesStorage.LAST_DB_VERSION /* 127 */:
             case 212:
             case 237:
                 return new int[]{3, 2, 4, 3, 2, 2};

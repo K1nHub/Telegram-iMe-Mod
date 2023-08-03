@@ -17,7 +17,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     private MediaPeriod.Callback callback;
 
     /* renamed from: id */
-    public final MediaSource.MediaPeriodId f206id;
+    public final MediaSource.MediaPeriodId f208id;
     private PrepareListener listener;
     private MediaPeriod mediaPeriod;
     private MediaSource mediaSource;
@@ -40,7 +40,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     }
 
     public MaskingMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        this.f206id = mediaPeriodId;
+        this.f208id = mediaPeriodId;
         this.allocator = allocator;
         this.preparePositionUs = j;
     }
@@ -111,7 +111,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
                 return;
             }
             this.notifiedPrepareError = true;
-            prepareListener.onPrepareError(this.f206id, e);
+            prepareListener.onPrepareError(this.f208id, e);
         }
     }
 
@@ -190,7 +190,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onPrepared(this);
         PrepareListener prepareListener = this.listener;
         if (prepareListener != null) {
-            prepareListener.onPrepareComplete(this.f206id);
+            prepareListener.onPrepareComplete(this.f208id);
         }
     }
 

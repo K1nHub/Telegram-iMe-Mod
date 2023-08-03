@@ -29,13 +29,14 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -79,36 +80,103 @@ public final class TokenListsBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(onInfoClickAction, "onInfoClickAction");
         this.tokenLists = tokenLists;
         this.onInfoClickAction = onInfoClickAction;
-        lazy = LazyKt__LazyJVMKt.lazy(TokenListsBottomSheet$actionBarHeight$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBarHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(C3485ActionBar.getCurrentActionBarHeight());
+            }
+        });
         this.actionBarHeight$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TokenListsBottomSheet$topShadow$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$topShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = TokenListsBottomSheet.this.initShadow();
+                return initShadow;
+            }
+        });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TokenListsBottomSheet$actionBar$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3485ActionBar>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBar$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final C3485ActionBar invoke() {
+                C3485ActionBar initActionBar;
+                initActionBar = TokenListsBottomSheet.this.initActionBar();
+                return initActionBar;
+            }
+        });
         this.actionBar$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new TokenListsBottomSheet$underlay$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$underlay$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initUnderlay;
+                initUnderlay = TokenListsBottomSheet.this.initUnderlay();
+                return initUnderlay;
+            }
+        });
         this.underlay$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new TokenListsBottomSheet$listView$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = TokenListsBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new TokenListsBottomSheet$listAdapter$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TokenListsBottomSheet.ListAdapter invoke() {
+                return new TokenListsBottomSheet.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy6;
-        final int m53px = AndroidUtilities.m53px(getActionBarHeight());
+        final int m71px = AndroidUtilities.m71px(getActionBarHeight());
         final RootView rootView = new RootView();
         rootView.setWillNotDraw(false);
-        rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m53px, 0, 0));
-        rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m53px, 0, 0));
-        rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m53px, 48));
-        C3484ActionBar actionBar = getActionBar();
+        rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
+        rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
+        rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m71px, 48));
+        C3485ActionBar actionBar = getActionBar();
         if (!ViewCompat.isLaidOut(actionBar) || actionBar.isLayoutRequested()) {
             actionBar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$_init_$lambda$1$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
                 public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                     Intrinsics.checkNotNullParameter(view, "view");
                     view.removeOnLayoutChangeListener(this);
-                    TokenListsBottomSheet.RootView.this.addView(this.getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m53px, 0, 0));
+                    TokenListsBottomSheet.RootView.this.addView(this.getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m71px, 0, 0));
                 }
             });
         } else {
-            rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m53px, 0, 0));
+            rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m71px, 0, 0));
         }
         this.containerView = rootView;
         setupListeners();
@@ -123,8 +191,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
         return (View) this.topShadow$delegate.getValue();
     }
 
-    private final C3484ActionBar getActionBar() {
-        return (C3484ActionBar) this.actionBar$delegate.getValue();
+    private final C3485ActionBar getActionBar() {
+        return (C3485ActionBar) this.actionBar$delegate.getValue();
     }
 
     private final FrameLayout getUnderlay() {
@@ -142,17 +210,17 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3484ActionBar initActionBar() {
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(getContext());
-        c3484ActionBar.setOccupyStatusBar(false);
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.token_lists_title));
-        c3484ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3417R.C3419drawable.msg_info);
-        c3484ActionBar.setBackgroundColor(0);
+    public final C3485ActionBar initActionBar() {
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(getContext());
+        c3485ActionBar.setOccupyStatusBar(false);
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.token_lists_title));
+        c3485ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3419R.C3421drawable.msg_info);
+        c3485ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3484ActionBar.setTitleColor(getThemedColor(i));
-        c3484ActionBar.setItemsColor(getThemedColor(i), false);
-        return c3484ActionBar;
+        c3485ActionBar.setTitleColor(getThemedColor(i));
+        c3485ActionBar.setItemsColor(getThemedColor(i), false);
+        return c3485ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -193,8 +261,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     private final void setupListeners() {
-        getActionBar().setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        getActionBar().setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 Callbacks$Callback callbacks$Callback;
                 if (i == -1) {
@@ -337,13 +405,13 @@ public final class TokenListsBottomSheet extends BottomSheet {
             TokenListsBottomSheet.this.ignoreLayout = true;
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
             TokenListsBottomSheet.this.ignoreLayout = false;
-            TokenListsBottomSheet.this.itemWidth = AndroidUtilities.m53px(View.MeasureSpec.getSize(i)) - 12;
+            TokenListsBottomSheet.this.itemWidth = AndroidUtilities.m71px(View.MeasureSpec.getSize(i)) - 12;
             ViewExtKt.setHorizontalPadding(this, 6);
-            int m54dp = AndroidUtilities.m54dp(62) + (((int) Math.ceil(TokenListsBottomSheet.this.tokenLists.size())) * AndroidUtilities.m54dp(56)) + ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int m72dp = AndroidUtilities.m72dp(62) + (((int) Math.ceil(TokenListsBottomSheet.this.tokenLists.size())) * AndroidUtilities.m72dp(56)) + ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
-            int i3 = ((double) m54dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m54dp < size) {
-                i3 -= size - m54dp;
+            int i3 = ((double) m72dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m72dp < size) {
+                i3 -= size - m72dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop;
@@ -353,8 +421,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
                 TokenListsBottomSheet.this.getListView().setPadding(0, i3, 0, 0);
                 TokenListsBottomSheet.this.ignoreLayout = false;
             }
-            this.fullHeight = m54dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
+            this.fullHeight = m72dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m72dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -381,12 +449,12 @@ public final class TokenListsBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m54dp = (TokenListsBottomSheet.this.scrollOffsetY - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
-            int m54dp2 = (TokenListsBottomSheet.this.scrollOffsetY - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop;
+            int m72dp = (TokenListsBottomSheet.this.scrollOffsetY - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m72dp(6);
+            int m72dp2 = (TokenListsBottomSheet.this.scrollOffsetY - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m72dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(15) + ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m54dp2 + i2;
-            int i4 = m54dp + i2;
+            int i3 = m72dp2 + i2;
+            int i4 = m72dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + i3;
@@ -410,13 +478,13 @@ public final class TokenListsBottomSheet extends BottomSheet {
             ((BottomSheet) TokenListsBottomSheet.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(TokenListsBottomSheet.this.getThemedColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) TokenListsBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m72dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m54dp3 = AndroidUtilities.m54dp(36);
-            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            int m72dp3 = AndroidUtilities.m72dp(36);
+            this.rect.set((getMeasuredWidth() - m72dp3) / 2.0f, i4, (getMeasuredWidth() + m72dp3) / 2.0f, i4 + AndroidUtilities.m72dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(TokenListsBottomSheet.this.getThemedColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int themedColor = TokenListsBottomSheet.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
@@ -453,7 +521,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
             Intrinsics.checkNotNullExpressionValue(context, "context");
             ImageTextCheckCell imageTextCheckCell = new ImageTextCheckCell(context, null, 0, 6, null);
             TokenListsBottomSheet tokenListsBottomSheet = TokenListsBottomSheet.this;
-            imageTextCheckCell.setCustomCheckResId(C3417R.C3419drawable.fork_ic_verified);
+            imageTextCheckCell.setCustomCheckResId(C3419R.C3421drawable.fork_ic_verified);
             imageTextCheckCell.setLayoutParams(LayoutHelper.createRecycler(tokenListsBottomSheet.itemWidth, -2));
             return new RecyclerListView.Holder(imageTextCheckCell);
         }

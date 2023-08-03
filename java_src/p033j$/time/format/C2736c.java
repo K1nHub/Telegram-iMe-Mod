@@ -8,14 +8,14 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 public class C2736c {
 
     /* renamed from: a */
-    private static final Comparator f574a;
+    private static final Comparator f577a;
 
     /* renamed from: b */
-    public static final /* synthetic */ int f575b = 0;
+    public static final /* synthetic */ int f578b = 0;
 
     static {
         new ConcurrentHashMap(16, 0.75f, 2);
-        f574a = new C2737d(1);
+        f577a = new C2737d(1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

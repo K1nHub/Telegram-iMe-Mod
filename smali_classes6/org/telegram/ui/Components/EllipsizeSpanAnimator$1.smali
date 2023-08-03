@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EllipsizeSpanAnimator;Landroid/view/View;)V
     .locals 0
 
-    .line 32
+    .line 34
     iput-object p1, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->this$0:Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->val$parentView:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 33
+    .line 35
     new-instance p1, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1$1;-><init>(Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;)V
@@ -48,14 +48,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 48
+    .line 50
     iget-object p1, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->this$0:Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
 
     iget-boolean p1, p1, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->attachedToWindow:Z
 
     if-eqz p1, :cond_0
 
-    .line 49
+    .line 51
     iget-object p1, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->val$parentView:Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator$1;->restarter:Ljava/lang/Runnable;

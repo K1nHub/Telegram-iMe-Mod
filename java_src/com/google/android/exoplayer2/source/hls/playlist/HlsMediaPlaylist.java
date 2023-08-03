@@ -82,7 +82,7 @@ public final class HlsMediaPlaylist extends HlsPlaylist {
         public final String title;
 
         public Segment(String str, long j, long j2, String str2, String str3) {
-            this(str, null, "", 0L, -1, C0480C.TIME_UNSET, null, str2, str3, j, j2, false, ImmutableList.m744of());
+            this(str, null, "", 0L, -1, C0480C.TIME_UNSET, null, str2, str3, j, j2, false, ImmutableList.m762of());
         }
 
         public Segment(String str, Segment segment, String str2, long j, int i, long j2, DrmInitData drmInitData, String str3, String str4, long j3, long j4, boolean z, List<Part> list) {

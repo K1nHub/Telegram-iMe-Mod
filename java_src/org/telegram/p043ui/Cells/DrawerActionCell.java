@@ -67,13 +67,13 @@ public class DrawerActionCell extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        int m54dp;
+        int m72dp;
         if (this.isRectIconType) {
             this.rectIconBackgroundPaint.setColor(Theme.getColor(Theme.key_chats_actionBackground));
             float x = this.imageView.getX() + (this.imageView.getMeasuredWidth() / 2.0f);
             float y = this.imageView.getY() + (this.imageView.getMeasuredHeight() / 2.0f);
-            float m54dp2 = AndroidUtilities.m54dp(30) / 2.0f;
-            this.rect.set(x - m54dp2, y - m54dp2, x + m54dp2, y + m54dp2);
+            float m72dp2 = AndroidUtilities.m72dp(30) / 2.0f;
+            this.rect.set(x - m72dp2, y - m72dp2, x + m72dp2, y + m72dp2);
             RectF rectF = this.rect;
             float f = AndroidUtilities.density;
             canvas.drawRoundRect(rectF, f * 11.5f, f * 11.5f, this.rectIconBackgroundPaint);
@@ -82,9 +82,9 @@ public class DrawerActionCell extends FrameLayout {
         if (this.currentId == 8) {
             Set<String> set = MessagesController.getInstance(UserConfig.selectedAccount).pendingSuggestions;
             if (set.contains("VALIDATE_PHONE_NUMBER") || set.contains("VALIDATE_PASSWORD")) {
-                int m55dp = AndroidUtilities.m55dp(12.5f);
-                int m54dp3 = AndroidUtilities.m54dp(9);
-                this.rect.set((LocaleController.isRTL ? AndroidUtilities.m54dp(25) + m54dp3 : (getMeasuredWidth() - m54dp3) - AndroidUtilities.m54dp(25)) - AndroidUtilities.m55dp(5.5f), m55dp, m54dp + m54dp3 + AndroidUtilities.m54dp(14), m55dp + AndroidUtilities.m54dp(23));
+                int m73dp = AndroidUtilities.m73dp(12.5f);
+                int m72dp3 = AndroidUtilities.m72dp(9);
+                this.rect.set((LocaleController.isRTL ? AndroidUtilities.m72dp(25) + m72dp3 : (getMeasuredWidth() - m72dp3) - AndroidUtilities.m72dp(25)) - AndroidUtilities.m73dp(5.5f), m73dp, m72dp + m72dp3 + AndroidUtilities.m72dp(14), m73dp + AndroidUtilities.m72dp(23));
                 Theme.chat_docBackPaint.setColor(Theme.getColor(Theme.key_chats_archiveBackground));
                 RectF rectF2 = this.rect;
                 float f2 = AndroidUtilities.density;
@@ -99,7 +99,7 @@ public class DrawerActionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -117,7 +117,7 @@ public class DrawerActionCell extends FrameLayout {
             this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(z ? Theme.key_chats_actionIcon : Theme.key_chats_menuItemIcon), PorterDuff.Mode.SRC_IN));
             this.imageView.setImageResource(i2);
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
@@ -126,8 +126,12 @@ public class DrawerActionCell extends FrameLayout {
             this.textView.setText(str);
             this.imageView.setImageResource(i);
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
+    }
+
+    public ImageView getImageView() {
+        return this.imageView;
     }
 
     @Override // android.view.View

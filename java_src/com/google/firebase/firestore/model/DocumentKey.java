@@ -12,7 +12,12 @@ public final class DocumentKey implements Comparable<DocumentKey> {
     private final ResourcePath path;
 
     static {
-        DocumentKey$$ExternalSyntheticLambda0 documentKey$$ExternalSyntheticLambda0 = DocumentKey$$ExternalSyntheticLambda0.INSTANCE;
+        DocumentKey$$ExternalSyntheticLambda0 documentKey$$ExternalSyntheticLambda0 = new Comparator() { // from class: com.google.firebase.firestore.model.DocumentKey$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                return ((DocumentKey) obj).compareTo((DocumentKey) obj2);
+            }
+        };
         COMPARATOR = documentKey$$ExternalSyntheticLambda0;
         EMPTY_KEY_SET = new ImmutableSortedSet<>(Collections.emptyList(), documentKey$$ExternalSyntheticLambda0);
     }

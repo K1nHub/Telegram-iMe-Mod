@@ -8,17 +8,17 @@ public final class ReactionMessageResult {
     @SerializedName("likeMessageId")
 
     /* renamed from: id */
-    private final String f374id;
+    private final String f377id;
 
     public static /* synthetic */ ReactionMessageResult copy$default(ReactionMessageResult reactionMessageResult, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = reactionMessageResult.f374id;
+            str = reactionMessageResult.f377id;
         }
         return reactionMessageResult.copy(str);
     }
 
     public final String component1() {
-        return this.f374id;
+        return this.f377id;
     }
 
     public final ReactionMessageResult copy(String id) {
@@ -30,23 +30,23 @@ public final class ReactionMessageResult {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ReactionMessageResult) && Intrinsics.areEqual(this.f374id, ((ReactionMessageResult) obj).f374id);
+        return (obj instanceof ReactionMessageResult) && Intrinsics.areEqual(this.f377id, ((ReactionMessageResult) obj).f377id);
     }
 
     public int hashCode() {
-        return this.f374id.hashCode();
+        return this.f377id.hashCode();
     }
 
     public String toString() {
-        return "ReactionMessageResult(id=" + this.f374id + ')';
+        return "ReactionMessageResult(id=" + this.f377id + ')';
     }
 
     public ReactionMessageResult(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        this.f374id = id;
+        this.f377id = id;
     }
 
     public final String getId() {
-        return this.f374id;
+        return this.f377id;
     }
 }

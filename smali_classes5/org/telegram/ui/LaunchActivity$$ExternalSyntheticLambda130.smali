@@ -2,66 +2,70 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$PhonebookShareAlertDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:Ljava/lang/CharSequence;
+
+.field public final synthetic f$5:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$User;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;ILjava/lang/CharSequence;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$1:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$1:Lorg/telegram/ui/ChatActivity;
 
-    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$2:I
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$2:Ljava/util/ArrayList;
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iput p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$4:Ljava/lang/CharSequence;
+
+    iput-boolean p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$5:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 11
+.method public final didSelectContact(Lorg/telegram/tgnet/TLRPC$User;ZILjava/lang/String;)V
+    .locals 10
 
-    move-object v0, p0
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$1:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$1:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$2:Ljava/util/ArrayList;
 
-    iget v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$2:I
+    iget v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$3:I
 
-    iget-object v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$4:Ljava/lang/CharSequence;
 
-    move-object v5, p1
+    iget-boolean v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda130;->f$5:Z
 
-    move-object v6, p2
+    move-object v6, p1
 
-    move-object v7, p3
+    move v7, p2
 
-    move v8, p4
+    move v8, p3
 
-    move-object/from16 v9, p5
+    move-object v9, p4
 
-    move-object/from16 v10, p6
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$IRonGGrkU-C02Hegc7iRxLOKIZM(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;ILjava/lang/CharSequence;ZLorg/telegram/tgnet/TLRPC$User;ZILjava/lang/String;)V
 
-    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$IQrWHK48alpajFSFSpXZjUdA1Fc(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-
-    move-result v1
-
-    return v1
+    return-void
 .end method

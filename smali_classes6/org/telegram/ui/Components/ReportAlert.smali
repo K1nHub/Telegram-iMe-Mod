@@ -52,20 +52,28 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 6
 
-    const/4 v0, 0x0
+    const/4 v4, 0x0
 
-    const/4 v1, 0x0
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
 
     .line 40
-    invoke-direct {p0, p1, p2, v0, v1}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;IZLjava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;IZLjava/lang/String;)V
+.method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;)V
     .locals 21
 
     move-object/from16 v0, p0
@@ -74,160 +82,162 @@
 
     move/from16 v2, p2
 
-    move/from16 v3, p3
+    move-object/from16 v3, p3
 
-    move-object/from16 v4, p4
+    move/from16 v4, p4
 
-    const/4 v5, 0x1
+    move-object/from16 v5, p5
+
+    const/4 v6, 0x1
 
     .line 110
-    invoke-direct {v0, v1, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {v0, v1, v6, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     .line 111
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
     .line 112
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
     .line 114
-    new-instance v7, Landroid/widget/ScrollView;
+    new-instance v8, Landroid/widget/ScrollView;
 
-    invoke-direct {v7, v1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
     .line 115
-    invoke-virtual {v7, v5}, Landroid/widget/ScrollView;->setFillViewport(Z)V
+    invoke-virtual {v8, v6}, Landroid/widget/ScrollView;->setFillViewport(Z)V
 
     .line 116
-    invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     .line 118
-    new-instance v8, Landroid/widget/FrameLayout;
+    new-instance v9, Landroid/widget/FrameLayout;
 
-    invoke-direct {v8, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v9, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const/4 v9, -0x1
+    const/4 v10, -0x1
 
-    const/4 v10, -0x2
+    const/4 v11, -0x2
 
-    const/16 v11, 0x33
+    const/16 v12, 0x33
 
     .line 119
-    invoke-static {v9, v10, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v10, v11, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v9
+    move-result-object v10
 
-    invoke-virtual {v7, v8, v9}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v8, v9, v10}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 121
-    new-instance v7, Lorg/telegram/ui/Components/RLottieImageView;
+    new-instance v8, Lorg/telegram/ui/Components/RLottieImageView;
 
-    invoke-direct {v7, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    const/16 v9, 0x78
+    const/16 v10, 0x78
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
     .line 124
-    invoke-virtual {v7, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
+    invoke-virtual {v8, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
     .line 125
-    sget v10, Lorg/telegram/messenger/R$raw;->fork_template_name_input:I
+    sget v11, Lorg/telegram/messenger/R$raw;->fork_template_name_input:I
 
-    invoke-virtual {v7, v10, v9, v9}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v8, v11, v10, v10}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     goto :goto_0
 
     .line 127
     :cond_0
-    sget v10, Lorg/telegram/messenger/R$raw;->report_police:I
+    sget v11, Lorg/telegram/messenger/R$raw;->report_police:I
 
-    invoke-virtual {v7, v10, v9, v9}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v8, v11, v10, v10}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 128
     :goto_0
-    invoke-virtual {v7}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
-
-    const/16 v11, 0xa0
+    invoke-virtual {v8}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     const/16 v12, 0xa0
 
-    const/16 v13, 0x31
+    const/16 v13, 0xa0
 
-    const/16 v14, 0x11
+    const/16 v14, 0x31
 
-    const/16 v15, 0xe
+    const/16 v15, 0x11
 
-    const/16 v16, 0x11
+    const/16 v16, 0xe
 
-    const/16 v17, 0x0
+    const/16 v17, 0x11
+
+    const/16 v18, 0x0
 
     .line 129
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v7, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 131
-    new-instance v9, Landroid/widget/TextView;
-
-    invoke-direct {v9, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const-string v10, "fonts/rmedium.ttf"
-
-    .line 132
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v10
 
-    invoke-virtual {v9, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v9, v8, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/high16 v10, 0x41c00000    # 24.0f
+    .line 131
+    new-instance v10, Landroid/widget/TextView;
+
+    invoke-direct {v10, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const-string v11, "fonts/rmedium.ttf"
+
+    .line 132
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    const/high16 v11, 0x41c00000    # 24.0f
 
     .line 133
-    invoke-virtual {v9, v5, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v10, v6, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 134
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
-    move-result v10
+    move-result v11
 
-    invoke-virtual {v9, v10}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const/4 v10, 0x5
+    const/4 v11, 0x5
 
-    const/4 v11, 0x6
+    const/4 v12, 0x6
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     .line 138
-    sget v12, Lorg/telegram/messenger/R$string;->EditName:I
+    sget v13, Lorg/telegram/messenger/R$string;->EditName:I
 
-    const-string v13, "EditName"
+    const-string v14, "EditName"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     .line 140
     :cond_1
-    sget v12, Lorg/telegram/messenger/R$string;->create_chat_template:I
+    sget v13, Lorg/telegram/messenger/R$string;->create_chat_template:I
 
-    invoke-static {v12}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
@@ -235,444 +245,446 @@
     if-nez v2, :cond_3
 
     .line 144
-    sget v12, Lorg/telegram/messenger/R$string;->ReportTitleSpam:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportTitleSpam:I
 
-    const-string v13, "ReportTitleSpam"
+    const-string v14, "ReportTitleSpam"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     :cond_3
-    if-ne v2, v11, :cond_4
+    if-ne v2, v12, :cond_4
 
     .line 146
-    sget v12, Lorg/telegram/messenger/R$string;->ReportTitleFake:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportTitleFake:I
 
-    const-string v13, "ReportTitleFake"
+    const-string v14, "ReportTitleFake"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     :cond_4
-    if-ne v2, v5, :cond_5
+    if-ne v2, v6, :cond_5
 
     .line 148
-    sget v12, Lorg/telegram/messenger/R$string;->ReportTitleViolence:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportTitleViolence:I
 
-    const-string v13, "ReportTitleViolence"
+    const-string v14, "ReportTitleViolence"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     :cond_5
-    const/4 v12, 0x2
+    const/4 v13, 0x2
 
-    if-ne v2, v12, :cond_6
+    if-ne v2, v13, :cond_6
 
     .line 150
-    sget v12, Lorg/telegram/messenger/R$string;->ReportTitleChild:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportTitleChild:I
 
-    const-string v13, "ReportTitleChild"
+    const-string v14, "ReportTitleChild"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     :cond_6
-    if-ne v2, v10, :cond_7
+    if-ne v2, v11, :cond_7
 
     .line 152
-    sget v12, Lorg/telegram/messenger/R$string;->ReportTitlePornography:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportTitlePornography:I
 
-    const-string v13, "ReportTitlePornography"
+    const-string v14, "ReportTitlePornography"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     :cond_7
-    const/16 v12, 0x64
+    const/16 v13, 0x64
 
-    if-ne v2, v12, :cond_8
+    if-ne v2, v13, :cond_8
 
     .line 154
-    sget v12, Lorg/telegram/messenger/R$string;->ReportChat:I
+    sget v13, Lorg/telegram/messenger/R$string;->ReportChat:I
 
-    const-string v13, "ReportChat"
+    const-string v14, "ReportChat"
 
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_8
     :goto_1
-    const/4 v13, -0x2
-
     const/4 v14, -0x2
 
-    const/16 v15, 0x31
+    const/4 v15, -0x2
 
-    const/16 v16, 0x11
-
-    const/16 v17, 0xc5
-
-    const/16 v18, 0x11
-
-    const/16 v19, 0x0
-
-    .line 156
-    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v12
-
-    invoke-virtual {v8, v9, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 158
-    new-instance v9, Landroid/widget/TextView;
-
-    invoke-direct {v9, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    const/high16 v12, 0x41600000    # 14.0f
-
-    .line 159
-    invoke-virtual {v9, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    .line 160
-    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
-
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v12
-
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 161
-    invoke-virtual {v9, v5}, Landroid/widget/TextView;->setGravity(I)V
-
-    if-eqz v3, :cond_9
-
-    .line 164
-    sget v12, Lorg/telegram/messenger/R$string;->chat_template_name_info:I
-
-    invoke-static {v12}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_2
-
-    .line 166
-    :cond_9
-    sget v12, Lorg/telegram/messenger/R$string;->ReportInfo:I
-
-    const-string v13, "ReportInfo"
-
-    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v9, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :goto_2
-    const/4 v13, -0x2
-
-    const/4 v14, -0x2
-
-    const/16 v15, 0x31
-
-    const/16 v16, 0x1e
-
-    const/16 v17, 0xeb
-
-    const/16 v18, 0x1e
-
-    const/16 v19, 0x2c
-
-    .line 167
-    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v12
-
-    invoke-virtual {v8, v9, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 169
-    new-instance v9, Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-direct {v9, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
-
-    iput-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/high16 v12, 0x41900000    # 18.0f
-
-    .line 170
-    invoke-virtual {v9, v5, v12}, Landroid/widget/EditText;->setTextSize(IF)V
-
-    .line 171
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
-
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v12
-
-    invoke-virtual {v9, v12}, Landroid/widget/EditText;->setHintTextColor(I)V
-
-    .line 172
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
-
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v13
-
-    invoke-virtual {v9, v13}, Landroid/widget/EditText;->setTextColor(I)V
-
-    .line 173
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v9, v13}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 174
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
-
-    invoke-virtual {v0, v14}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
-
-    move-result v14
-
-    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
-
-    invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
-
-    move-result v15
-
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
-
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
-
-    move-result v10
-
-    invoke-virtual {v9, v14, v15, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
-
-    .line 175
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v9, v5}, Landroid/widget/EditText;->setMaxLines(I)V
-
-    .line 176
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v9, v5}, Landroid/widget/EditText;->setLines(I)V
-
-    .line 177
-    iget-object v9, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v9, v6, v6, v6, v6}, Landroid/widget/EditText;->setPadding(IIII)V
-
-    .line 178
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v6, v5}, Landroid/widget/EditText;->setSingleLine(Z)V
-
-    .line 179
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v9, :cond_a
-
-    const/4 v10, 0x5
-
-    goto :goto_3
-
-    :cond_a
-    const/4 v10, 0x3
-
-    :goto_3
-    invoke-virtual {v6, v10}, Landroid/widget/EditText;->setGravity(I)V
-
-    .line 180
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const v9, 0x2c001
-
-    invoke-virtual {v6, v9}, Landroid/widget/EditText;->setInputType(I)V
-
-    .line 181
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v6, v11}, Landroid/widget/EditText;->setImeOptions(I)V
-
-    if-eqz v3, :cond_c
-
-    if-eqz v4, :cond_b
-
-    .line 185
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v6, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 186
-    iget-object v6, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual/range {p4 .. p4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
-
-    .line 188
-    :cond_b
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    new-instance v6, Lorg/telegram/ui/Components/ReportAlert$1;
-
-    invoke-direct {v6, v0, v7}, Lorg/telegram/ui/Components/ReportAlert$1;-><init>(Lorg/telegram/ui/Components/ReportAlert;Lorg/telegram/ui/Components/RLottieImageView;)V
-
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 201
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget v6, Lorg/telegram/messenger/R$string;->chat_template_name_hint:I
-
-    invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-
-    goto :goto_4
-
-    .line 203
-    :cond_c
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    sget v6, Lorg/telegram/messenger/R$string;->ReportHint:I
-
-    const-string v7, "ReportHint"
-
-    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-
-    .line 204
-    :goto_4
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
-
-    .line 205
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/16 v6, 0x14
-
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
-
-    .line 206
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/high16 v6, 0x3fc00000    # 1.5f
-
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
-
-    .line 207
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    new-instance v6, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda1;
-
-    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ReportAlert;)V
-
-    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
-
-    .line 214
-    iget-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/4 v14, -0x1
-
-    const/16 v15, 0x24
-
-    const/16 v16, 0x33
+    const/16 v16, 0x31
 
     const/16 v17, 0x11
 
-    const/16 v18, 0x131
+    const/16 v18, 0xc5
 
     const/16 v19, 0x11
 
     const/16 v20, 0x0
 
+    .line 156
     invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v6
+    move-result-object v13
 
-    invoke-virtual {v8, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v10, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 158
+    new-instance v10, Landroid/widget/TextView;
+
+    invoke-direct {v10, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const/high16 v13, 0x41600000    # 14.0f
+
+    .line 159
+    invoke-virtual {v10, v6, v13}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 160
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v13
+
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 161
+    invoke-virtual {v10, v6}, Landroid/widget/TextView;->setGravity(I)V
+
+    if-eqz v4, :cond_9
+
+    .line 164
+    sget v13, Lorg/telegram/messenger/R$string;->chat_template_name_info:I
+
+    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_2
+
+    .line 166
+    :cond_9
+    sget v13, Lorg/telegram/messenger/R$string;->ReportInfo:I
+
+    const-string v14, "ReportInfo"
+
+    invoke-static {v14, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_2
+    const/4 v14, -0x2
+
+    const/4 v15, -0x2
+
+    const/16 v16, 0x31
+
+    const/16 v17, 0x1e
+
+    const/16 v18, 0xeb
+
+    const/16 v19, 0x1e
+
+    const/16 v20, 0x2c
+
+    .line 167
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v13
+
+    invoke-virtual {v9, v10, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 169
+    new-instance v10, Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-direct {v10, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+
+    iput-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/high16 v13, 0x41900000    # 18.0f
+
+    .line 170
+    invoke-virtual {v10, v6, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+
+    .line 171
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v13
+
+    invoke-virtual {v10, v13}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 172
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v14
+
+    invoke-virtual {v10, v14}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
+
+    .line 173
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/4 v14, 0x0
+
+    invoke-virtual {v10, v14}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 174
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
+
+    invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v15
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
+
+    invoke-virtual {v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v11
+
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {v0, v14}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v14
+
+    invoke-virtual {v10, v15, v11, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
+
+    .line 175
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v10, v6}, Landroid/widget/EditText;->setMaxLines(I)V
+
+    .line 176
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v10, v6}, Landroid/widget/EditText;->setLines(I)V
+
+    .line 177
+    iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v10, v7, v7, v7, v7}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 178
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v7, v6}, Landroid/widget/EditText;->setSingleLine(Z)V
+
+    .line 179
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v10, :cond_a
+
+    const/4 v11, 0x5
+
+    goto :goto_3
+
+    :cond_a
+    const/4 v11, 0x3
+
+    :goto_3
+    invoke-virtual {v7, v11}, Landroid/widget/EditText;->setGravity(I)V
+
+    .line 180
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const v10, 0x2c001
+
+    invoke-virtual {v7, v10}, Landroid/widget/EditText;->setInputType(I)V
+
+    .line 181
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v7, v12}, Landroid/widget/EditText;->setImeOptions(I)V
+
+    if-eqz v4, :cond_c
+
+    if-eqz v5, :cond_b
+
+    .line 185
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v7, v5}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 186
+    iget-object v7, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual/range {p5 .. p5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    invoke-virtual {v7, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
+
+    .line 188
+    :cond_b
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    new-instance v7, Lorg/telegram/ui/Components/ReportAlert$1;
+
+    invoke-direct {v7, v0, v8}, Lorg/telegram/ui/Components/ReportAlert$1;-><init>(Lorg/telegram/ui/Components/ReportAlert;Lorg/telegram/ui/Components/RLottieImageView;)V
+
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 201
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget v7, Lorg/telegram/messenger/R$string;->chat_template_name_hint:I
+
+    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+
+    goto :goto_4
+
+    .line 203
+    :cond_c
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    sget v7, Lorg/telegram/messenger/R$string;->ReportHint:I
+
+    const-string v8, "ReportHint"
+
+    invoke-static {v8, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+
+    .line 204
+    :goto_4
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result v7
+
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+
+    .line 205
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/16 v7, 0x14
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+
+    .line 206
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/high16 v7, 0x3fc00000    # 1.5f
+
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+
+    .line 207
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    new-instance v7, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda1;
+
+    invoke-direct {v7, v0}, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ReportAlert;)V
+
+    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+
+    .line 214
+    iget-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/4 v10, -0x1
+
+    const/16 v11, 0x24
+
+    const/16 v12, 0x33
+
+    const/16 v13, 0x11
+
+    const/16 v14, 0x131
+
+    const/16 v15, 0x11
+
+    const/16 v16, 0x0
+
+    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v7
+
+    invoke-virtual {v9, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 216
-    new-instance v4, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
+    new-instance v5, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v1, v3}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v4, v0, Lorg/telegram/ui/Components/ReportAlert;->clearButton:Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
+    iput-object v5, v0, Lorg/telegram/ui/Components/ReportAlert;->clearButton:Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
+
+    const/4 v1, 0x0
 
     .line 217
-    invoke-virtual {v4, v13}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    if-eqz v3, :cond_d
+    if-eqz v4, :cond_d
 
     .line 220
     iget-object v1, v0, Lorg/telegram/ui/Components/ReportAlert;->clearButton:Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
-    sget v4, Lorg/telegram/messenger/R$string;->Done:I
+    sget v3, Lorg/telegram/messenger/R$string;->Done:I
 
-    const-string v6, "Done"
+    const-string v5, "Done"
 
-    invoke-static {v6, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_5
 
@@ -680,15 +692,15 @@
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Components/ReportAlert;->clearButton:Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
-    sget v4, Lorg/telegram/messenger/R$string;->ReportSend:I
+    sget v3, Lorg/telegram/messenger/R$string;->ReportSend:I
 
-    const-string v6, "ReportSend"
+    const-string v5, "ReportSend"
 
-    invoke-static {v6, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 223
     :goto_5
@@ -698,37 +710,37 @@
 
     move-result-object v1
 
-    new-instance v4, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda0;
+    new-instance v3, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4, v0, v3, v2}, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReportAlert;ZI)V
+    invoke-direct {v3, v0, v4, v2}, Lorg/telegram/ui/Components/ReportAlert$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReportAlert;ZI)V
 
-    invoke-virtual {v1, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 236
     iget-object v1, v0, Lorg/telegram/ui/Components/ReportAlert;->clearButton:Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
-    const/4 v9, -0x1
+    const/4 v10, -0x1
 
-    const/16 v10, 0x32
+    const/16 v11, 0x32
 
-    const/16 v11, 0x33
+    const/16 v12, 0x33
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    const/16 v13, 0x165
-
-    const/4 v14, 0x0
+    const/16 v14, 0x165
 
     const/4 v15, 0x0
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v16, 0x0
+
+    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
-    invoke-virtual {v8, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 237
-    iput-boolean v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->smoothKeyboardAnimationEnabled:Z
+    iput-boolean v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->smoothKeyboardAnimationEnabled:Z
 
     return-void
 .end method

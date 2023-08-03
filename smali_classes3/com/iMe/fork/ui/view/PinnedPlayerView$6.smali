@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getContentDescription()Ljava/lang/CharSequence;
-    .locals 8
+    .locals 11
 
     .line 280
     new-instance v0, Ljava/lang/StringBuilder;
@@ -96,11 +96,15 @@
 
     iget-object v5, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$6;->this$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
-    invoke-static {v5}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)I
+    invoke-static {v5}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)D
 
-    move-result v5
+    move-result-wide v7
 
-    div-int/lit8 v5, v5, 0x3c
+    const-wide/high16 v9, 0x404e000000000000L    # 60.0
+
+    div-double/2addr v7, v9
+
+    double-to-int v5, v7
 
     new-array v7, v2, [Ljava/lang/Object;
 
@@ -114,11 +118,13 @@
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$6;->this$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
-    invoke-static {v1}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)I
+    invoke-static {v1}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)D
 
-    move-result v1
+    move-result-wide v4
 
-    rem-int/lit8 v1, v1, 0x3c
+    rem-double/2addr v4, v9
+
+    double-to-int v1, v4
 
     new-array v4, v2, [Ljava/lang/Object;
 

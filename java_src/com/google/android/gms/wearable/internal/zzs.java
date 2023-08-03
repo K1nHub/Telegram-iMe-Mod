@@ -12,13 +12,13 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzt();
-    @SafeParcelable.Field(m779id = 1)
+    @SafeParcelable.Field(m797id = 1)
     public final boolean zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final List zzb;
 
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m778id = 1) boolean z, @SafeParcelable.Param(m778id = 2) List list) {
+    public zzs(@SafeParcelable.Param(m796id = 1) boolean z, @SafeParcelable.Param(m796id = 2) List list) {
         this.zza = z;
         this.zzb = list;
     }

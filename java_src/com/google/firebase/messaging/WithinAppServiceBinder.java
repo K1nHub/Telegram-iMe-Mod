@@ -7,16 +7,15 @@ import android.util.Log;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.WithinAppServiceConnection;
-/* JADX INFO: Access modifiers changed from: package-private */
+import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 /* loaded from: classes3.dex */
-public class WithinAppServiceBinder extends Binder {
+class WithinAppServiceBinder extends Binder {
     private final IntentHandler intentHandler;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
     /* loaded from: classes3.dex */
-    public interface IntentHandler {
+    interface IntentHandler {
         Task<Void> handle(Intent intent);
     }
 
@@ -33,7 +32,12 @@ public class WithinAppServiceBinder extends Binder {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "service received new intent via bind strategy");
         }
-        this.intentHandler.handle(bindRequest.intent).addOnCompleteListener(WithinAppServiceBinder$$ExternalSyntheticLambda1.INSTANCE, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceBinder$$ExternalSyntheticLambda0
+        this.intentHandler.handle(bindRequest.intent).addOnCompleteListener(new Executor() { // from class: com.google.firebase.messaging.WithinAppServiceBinder$$ExternalSyntheticLambda1
+            @Override // java.util.concurrent.Executor
+            public final void execute(Runnable runnable) {
+                runnable.run();
+            }
+        }, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceBinder$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
                 WithinAppServiceConnection.BindRequest.this.finish();

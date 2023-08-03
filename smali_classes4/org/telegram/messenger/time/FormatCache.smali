@@ -351,7 +351,7 @@
         }
     .end annotation
 
-    const-string v0, "pattern must not be null"
+    const-string/jumbo v0, "pattern must not be null"
 
     .line 71
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

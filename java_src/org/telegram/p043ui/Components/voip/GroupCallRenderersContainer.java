@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -37,7 +37,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p043ui.ActionBar.BackDrawable;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AlertsCreator;
 import org.telegram.p043ui.Components.AvatarsImageView;
@@ -169,7 +169,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
         ImageView imageView = new ImageView(this, context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.2
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3484ActionBar.getCurrentActionBarHeight(), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3485ActionBar.getCurrentActionBarHeight(), 1073741824));
             }
         };
         this.backButton = imageView;
@@ -177,7 +177,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
         backDrawable.setColor(-1);
         imageView.setImageDrawable(backDrawable);
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        imageView.setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
+        imageView.setPadding(AndroidUtilities.m72dp(16), 0, AndroidUtilities.m72dp(16), 0);
         imageView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(-1, 55)));
         View view = new View(context);
         this.topShadowView = view;
@@ -209,11 +209,11 @@ public class GroupCallRenderersContainer extends FrameLayout {
 
             @Override // android.widget.ImageView, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3484ActionBar.getCurrentActionBarHeight(), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(C3485ActionBar.getCurrentActionBarHeight(), 1073741824));
             }
         };
         this.pinButton = imageView2;
-        final Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(20), 0, ColorUtils.setAlphaComponent(-1, 100));
+        final Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(20), 0, ColorUtils.setAlphaComponent(-1, 100));
         View view3 = new View(context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.4
             @Override // android.view.View
             protected void drawableStateChanged() {
@@ -236,7 +236,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
             protected void dispatchDraw(Canvas canvas) {
                 float measuredWidth = (GroupCallRenderersContainer.this.pinTextView.getMeasuredWidth() * (1.0f - GroupCallRenderersContainer.this.pinDrawable.getProgress())) + (GroupCallRenderersContainer.this.unpinTextView.getMeasuredWidth() * GroupCallRenderersContainer.this.pinDrawable.getProgress());
                 canvas.save();
-                createSimpleSelectorRoundRectDrawable.setBounds(0, 0, AndroidUtilities.m54dp(50) + ((int) measuredWidth), getMeasuredHeight());
+                createSimpleSelectorRoundRectDrawable.setBounds(0, 0, AndroidUtilities.m72dp(50) + ((int) measuredWidth), getMeasuredHeight());
                 createSimpleSelectorRoundRectDrawable.draw(canvas);
                 super.dispatchDraw(canvas);
             }
@@ -250,34 +250,34 @@ public class GroupCallRenderersContainer extends FrameLayout {
         });
         createSimpleSelectorRoundRectDrawable.setCallback(this.pinContainer);
         addView(this.pinContainer);
-        CrossOutDrawable crossOutDrawable = new CrossOutDrawable(context, C3417R.C3419drawable.msg_pin_filled, -1);
+        CrossOutDrawable crossOutDrawable = new CrossOutDrawable(context, C3419R.C3421drawable.msg_pin_filled, -1);
         this.pinDrawable = crossOutDrawable;
-        crossOutDrawable.setOffsets(-AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(1));
+        crossOutDrawable.setOffsets(-AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(1));
         imageView2.setImageDrawable(this.pinDrawable);
-        imageView2.setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
+        imageView2.setPadding(AndroidUtilities.m72dp(16), 0, AndroidUtilities.m72dp(16), 0);
         addView(imageView2, LayoutHelper.createFrame(56, -1, 51));
         TextView textView = new TextView(context);
         this.pinTextView = textView;
         textView.setTextColor(-1);
         this.pinTextView.setTextSize(1, 15.0f);
         this.pinTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.pinTextView.setText(LocaleController.getString("CallVideoPin", C3417R.string.CallVideoPin));
+        this.pinTextView.setText(LocaleController.getString("CallVideoPin", C3419R.string.CallVideoPin));
         TextView textView2 = new TextView(context);
         this.unpinTextView = textView2;
         textView2.setTextColor(-1);
         this.unpinTextView.setTextSize(1, 15.0f);
         this.unpinTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.unpinTextView.setText(LocaleController.getString("CallVideoUnpin", C3417R.string.CallVideoUnpin));
+        this.unpinTextView.setText(LocaleController.getString("CallVideoUnpin", C3419R.string.CallVideoUnpin));
         addView(this.pinTextView, LayoutHelper.createFrame(-2, -2, 51));
         addView(this.unpinTextView, LayoutHelper.createFrame(-2, -2, 51));
         ImageView imageView3 = new ImageView(context);
         this.pipView = imageView3;
         imageView3.setVisibility(4);
         this.pipView.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        this.pipView.setImageResource(C3417R.C3419drawable.ic_goinline);
-        this.pipView.setContentDescription(LocaleController.getString(C3417R.string.AccDescrPipMode));
-        int m54dp = AndroidUtilities.m54dp(4);
-        this.pipView.setPadding(m54dp, m54dp, m54dp, m54dp);
+        this.pipView.setImageResource(C3419R.C3421drawable.ic_goinline);
+        this.pipView.setContentDescription(LocaleController.getString(C3419R.string.AccDescrPipMode));
+        int m72dp = AndroidUtilities.m72dp(4);
+        this.pipView.setPadding(m72dp, m72dp, m72dp, m72dp);
         this.pipView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(-1, 55)));
         this.pipView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
@@ -286,7 +286,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
             }
         });
         addView(this.pipView, LayoutHelper.createFrame(32, 32, 53, 12, 12, 12, 12));
-        final Drawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m54dp(18), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), 204));
+        final Drawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m72dp(18), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_voipgroup_listViewBackground), 204));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.GroupCallRenderersContainer.5
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
@@ -331,7 +331,7 @@ public class GroupCallRenderersContainer extends FrameLayout {
                 }
             };
             this.undoView[i].setHideAnimationType(2);
-            this.undoView[i].setAdditionalTranslationY(AndroidUtilities.m54dp(10));
+            this.undoView[i].setAdditionalTranslationY(AndroidUtilities.m72dp(10));
             addView(this.undoView[i], LayoutHelper.createFrame(-1, -2, 80, 16, 0, 0, 8));
         }
         this.pinContainer.setVisibility(8);
@@ -380,10 +380,10 @@ public class GroupCallRenderersContainer extends FrameLayout {
             this.isTablet = z;
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.backButton.getLayoutParams();
             layoutParams.gravity = z ? 85 : 51;
-            layoutParams.rightMargin = z ? AndroidUtilities.m54dp(328) : 0;
-            layoutParams.bottomMargin = z ? -AndroidUtilities.m54dp(8) : 0;
+            layoutParams.rightMargin = z ? AndroidUtilities.m72dp(328) : 0;
+            layoutParams.bottomMargin = z ? -AndroidUtilities.m72dp(8) : 0;
             if (this.isTablet) {
-                this.backButton.setImageDrawable(ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.msg_calls_minimize));
+                this.backButton.setImageDrawable(ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.msg_calls_minimize));
                 return;
             }
             BackDrawable backDrawable = new BackDrawable(false);
@@ -1104,24 +1104,24 @@ public class GroupCallRenderersContainer extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (GroupCallActivity.isTabletMode) {
-            ((ViewGroup.MarginLayoutParams) this.topShadowView.getLayoutParams()).rightMargin = AndroidUtilities.m54dp(328);
+            ((ViewGroup.MarginLayoutParams) this.topShadowView.getLayoutParams()).rightMargin = AndroidUtilities.m72dp(328);
         } else if (GroupCallActivity.isLandscapeMode) {
-            ((ViewGroup.MarginLayoutParams) this.topShadowView.getLayoutParams()).rightMargin = isRtmpStream() ? 0 : AndroidUtilities.m54dp(90);
+            ((ViewGroup.MarginLayoutParams) this.topShadowView.getLayoutParams()).rightMargin = isRtmpStream() ? 0 : AndroidUtilities.m72dp(90);
         } else {
             ((ViewGroup.MarginLayoutParams) this.topShadowView.getLayoutParams()).rightMargin = 0;
         }
         this.rightShadowView.setVisibility((!GroupCallActivity.isLandscapeMode || GroupCallActivity.isTabletMode) ? 8 : 0);
-        this.pinContainer.getLayoutParams().height = AndroidUtilities.m54dp(40);
+        this.pinContainer.getLayoutParams().height = AndroidUtilities.m72dp(40);
         this.pinTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 0), i2);
         this.unpinTextView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 0), i2);
-        this.pinContainer.getLayoutParams().width = AndroidUtilities.m54dp(46) + (!this.hasPinnedVideo ? this.pinTextView : this.unpinTextView).getMeasuredWidth();
-        ((ViewGroup.MarginLayoutParams) this.speakingMembersToast.getLayoutParams()).rightMargin = GroupCallActivity.isLandscapeMode ? AndroidUtilities.m54dp(45) : 0;
+        this.pinContainer.getLayoutParams().width = AndroidUtilities.m72dp(46) + (!this.hasPinnedVideo ? this.pinTextView : this.unpinTextView).getMeasuredWidth();
+        ((ViewGroup.MarginLayoutParams) this.speakingMembersToast.getLayoutParams()).rightMargin = GroupCallActivity.isLandscapeMode ? AndroidUtilities.m72dp(45) : 0;
         for (int i3 = 0; i3 < 2; i3++) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.undoView[i3].getLayoutParams();
             if (this.isTablet) {
-                marginLayoutParams.rightMargin = AndroidUtilities.m54dp(344);
+                marginLayoutParams.rightMargin = AndroidUtilities.m72dp(344);
             } else {
-                marginLayoutParams.rightMargin = GroupCallActivity.isLandscapeMode ? AndroidUtilities.m54dp(180) : 0;
+                marginLayoutParams.rightMargin = GroupCallActivity.isLandscapeMode ? AndroidUtilities.m72dp(180) : 0;
             }
         }
         super.onMeasure(i, i2);
@@ -1239,15 +1239,15 @@ public class GroupCallRenderersContainer extends FrameLayout {
         this.speakingMembersText.setText(spannableStringBuilder2);
         if (i4 != 0) {
             if (i4 == 1) {
-                i2 = AndroidUtilities.m54dp(40);
+                i2 = AndroidUtilities.m72dp(40);
             } else if (i4 == 2) {
-                i2 = AndroidUtilities.m54dp(64);
+                i2 = AndroidUtilities.m72dp(64);
             } else {
-                i2 = AndroidUtilities.m54dp(88);
+                i2 = AndroidUtilities.m72dp(88);
             }
         }
         ((FrameLayout.LayoutParams) this.speakingMembersText.getLayoutParams()).leftMargin = i2;
-        ((FrameLayout.LayoutParams) this.speakingMembersText.getLayoutParams()).rightMargin = AndroidUtilities.m54dp(16);
+        ((FrameLayout.LayoutParams) this.speakingMembersText.getLayoutParams()).rightMargin = AndroidUtilities.m72dp(16);
         this.showSpeakingMembersToast = z3;
         invalidate();
         while (i4 < 3) {

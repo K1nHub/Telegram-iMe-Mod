@@ -35,7 +35,7 @@ public class ShareTopicCell extends FrameLayout {
         setWillNotDraw(false);
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(28));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(28));
         addView(this.imageView, LayoutHelper.createFrame(56, 56, 49, 0, 7, 0, 0));
         TextView textView = new TextView(context);
         this.nameTextView = textView;
@@ -46,19 +46,19 @@ public class ShareTopicCell extends FrameLayout {
         this.nameTextView.setLines(2);
         this.nameTextView.setEllipsize(TextUtils.TruncateAt.END);
         addView(this.nameTextView, LayoutHelper.createFrame(-1, -2, 51, 6, 66, 6, 0));
-        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2)));
+        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(103), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(103), 1073741824));
     }
 
     public void setTopic(TLRPC$Dialog tLRPC$Dialog, TLRPC$TL_forumTopic tLRPC$TL_forumTopic, boolean z, CharSequence charSequence) {
         if (tLRPC$Dialog == null) {
             return;
         }
-        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1521id));
+        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1524id));
         if (charSequence != null) {
             this.nameTextView.setText(charSequence);
         } else if (chat != null) {
@@ -80,9 +80,9 @@ public class ShareTopicCell extends FrameLayout {
             combinedDrawable.setFullsize(true);
             this.imageView.setImageDrawable(combinedDrawable);
         }
-        this.imageView.setRoundRadius(AndroidUtilities.m54dp((chat == null || !chat.forum || z) ? 28 : 16));
-        this.currentDialog = tLRPC$Dialog.f1521id;
-        this.currentTopic = tLRPC$TL_forumTopic.f1568id;
+        this.imageView.setRoundRadius(AndroidUtilities.m72dp((chat == null || !chat.forum || z) ? 28 : 16));
+        this.currentDialog = tLRPC$Dialog.f1524id;
+        this.currentTopic = tLRPC$TL_forumTopic.f1575id;
     }
 
     public long getCurrentDialog() {

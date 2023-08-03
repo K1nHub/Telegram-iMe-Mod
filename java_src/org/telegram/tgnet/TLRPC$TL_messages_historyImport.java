@@ -4,7 +4,7 @@ public class TLRPC$TL_messages_historyImport extends TLObject {
     public static int constructor = 375566091;
 
     /* renamed from: id */
-    public long f1612id;
+    public long f1620id;
 
     public static TLRPC$TL_messages_historyImport TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         if (constructor != i) {
@@ -20,12 +20,12 @@ public class TLRPC$TL_messages_historyImport extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1612id = abstractSerializedData.readInt64(z);
+        this.f1620id = abstractSerializedData.readInt64(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1612id);
+        abstractSerializedData.writeInt64(this.f1620id);
     }
 }

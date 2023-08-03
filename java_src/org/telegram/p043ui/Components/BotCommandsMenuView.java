@@ -25,7 +25,7 @@ import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -63,7 +63,7 @@ public class BotCommandsMenuView extends View {
     public void setTemplatesMode(boolean z, final ChatActivity chatActivity) {
         this.isTemplatesMode = z;
         if (z) {
-            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.fork_templates);
+            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.fork_templates);
             setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.BotCommandsMenuView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
@@ -108,21 +108,22 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3417R.raw.bot_webview_sheet_to_cross;
-        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
+        int i = C3419R.raw.bot_webview_sheet_to_cross;
+        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
                 super.invalidateSelf();
                 BotCommandsMenuView.this.invalidate();
             }
 
+            /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.RLottieDrawable
-            protected void invalidateInternal() {
+            public void invalidateInternal() {
                 super.invalidateInternal();
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3417R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3419R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -131,10 +132,10 @@ public class BotCommandsMenuView extends View {
         menuDrawable.setCallback(this);
         textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         menuDrawable.setRoundCap();
-        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(16), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
+        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(16), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3417R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3419R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -177,7 +178,7 @@ public class BotCommandsMenuView extends View {
         int size = (View.MeasureSpec.getSize(i) + View.MeasureSpec.getSize(i2)) << 16;
         if (this.lastSize != size || this.menuTextLayout == null) {
             this.backDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.textPaint.setTextSize(AndroidUtilities.m54dp(15));
+            this.textPaint.setTextSize(AndroidUtilities.m72dp(15));
             this.lastSize = size;
             if (isTemplatesMode()) {
                 this.menuText = "";
@@ -185,12 +186,12 @@ public class BotCommandsMenuView extends View {
             int measureText = (int) this.textPaint.measureText(this.menuText);
             this.menuTextLayout = StaticLayoutEx.createStaticLayout(this.menuText, this.textPaint, measureText, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, measureText, 1);
         }
-        onTranslationChanged((this.menuTextLayout.getWidth() + AndroidUtilities.m54dp(4)) * this.expandProgress);
-        int m54dp = AndroidUtilities.m54dp(40);
+        onTranslationChanged((this.menuTextLayout.getWidth() + AndroidUtilities.m72dp(4)) * this.expandProgress);
+        int m72dp = AndroidUtilities.m72dp(40);
         if (this.expanded) {
-            m54dp += this.menuTextLayout.getWidth() + AndroidUtilities.m54dp(4);
+            m72dp += this.menuTextLayout.getWidth() + AndroidUtilities.m72dp(4);
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(m54dp, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(m72dp, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(32), 1073741824));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0048  */
@@ -214,7 +215,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3417R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3419R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);
@@ -393,11 +394,11 @@ public class BotCommandsMenuView extends View {
         public BotCommandView(Context context) {
             super(context);
             setOrientation(0);
-            setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
+            setPadding(AndroidUtilities.m72dp(16), 0, AndroidUtilities.m72dp(16), 0);
             TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Components.BotCommandsMenuView.BotCommandView.1
                 @Override // android.widget.TextView
                 public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), bufferType);
+                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(14), false), bufferType);
                 }
             };
             this.description = textView;
@@ -409,7 +410,7 @@ public class BotCommandsMenuView extends View {
             this.description.setTag(Integer.valueOf(i));
             this.description.setLines(1);
             this.description.setEllipsize(TextUtils.TruncateAt.END);
-            addView(this.description, LayoutHelper.createLinear(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.m54dp(8), 0));
+            addView(this.description, LayoutHelper.createLinear(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.m72dp(8), 0));
             TextView textView3 = new TextView(context);
             this.command = textView3;
             textView3.setTextSize(1, 14.0f);
@@ -422,7 +423,7 @@ public class BotCommandsMenuView extends View {
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(36), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(36), 1073741824));
         }
 
         public String getCommand() {

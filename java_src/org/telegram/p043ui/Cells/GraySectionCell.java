@@ -48,9 +48,9 @@ public class GraySectionCell extends FrameLayout {
             }
         };
         this.rightTextView = animatedTextView;
-        animatedTextView.setPadding(AndroidUtilities.m54dp(2), 0, AndroidUtilities.m54dp(2), 0);
+        animatedTextView.setPadding(AndroidUtilities.m72dp(2), 0, AndroidUtilities.m72dp(2), 0);
         this.rightTextView.setAnimationProperties(1.0f, 0L, 400L, CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.rightTextView.setTextSize(AndroidUtilities.m54dp(14));
+        this.rightTextView.setTextSize(AndroidUtilities.m72dp(14));
         this.rightTextView.setTextColor(getThemedColor(i));
         this.rightTextView.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(this.rightTextView, LayoutHelper.createFrame(-2, -1, (LocaleController.isRTL ? 3 : 5) | 48, 16, 0, 16, 0));
@@ -59,7 +59,7 @@ public class GraySectionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(32), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(32), 1073741824));
     }
 
     public void setTextColor(int i) {
@@ -72,8 +72,8 @@ public class GraySectionCell extends FrameLayout {
         return this.textView.getText();
     }
 
-    public void setText(String str) {
-        this.textView.setText(str);
+    public void setText(CharSequence charSequence) {
+        this.textView.setText(charSequence);
         this.rightTextView.setVisibility(8);
         this.rightTextView.setOnClickListener(null);
     }
@@ -91,6 +91,18 @@ public class GraySectionCell extends FrameLayout {
 
     public void setRightText(String str, boolean z) {
         this.rightTextView.setText(str, true, z);
+        this.rightTextView.setVisibility(0);
+    }
+
+    public void setRightText(String str, View.OnClickListener onClickListener) {
+        this.rightTextView.setText(str, false);
+        this.rightTextView.setOnClickListener(onClickListener);
+        this.rightTextView.setVisibility(0);
+    }
+
+    public void setRightText(String str, boolean z, View.OnClickListener onClickListener) {
+        this.rightTextView.setText(str, true, z);
+        this.rightTextView.setOnClickListener(onClickListener);
         this.rightTextView.setVisibility(0);
     }
 

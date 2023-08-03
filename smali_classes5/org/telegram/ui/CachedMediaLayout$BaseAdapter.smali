@@ -32,17 +32,17 @@
 .method protected constructor <init>(Lorg/telegram/ui/CachedMediaLayout;I)V
     .locals 0
 
-    .line 474
+    .line 489
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 472
+    .line 487
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
-    .line 475
+    .line 490
     iput p2, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->type:I
 
     return-void
@@ -53,7 +53,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 485
+    .line 500
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -66,7 +66,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 480
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

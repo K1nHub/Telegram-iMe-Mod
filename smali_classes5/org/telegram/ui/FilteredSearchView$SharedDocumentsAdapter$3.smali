@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;Lorg/telegram/ui/Cells/SharedAudioCell;Lorg/telegram/messenger/MessageObject;Z)V
     .locals 0
 
-    .line 1428
+    .line 1446
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->val$sharedAudioCell:Lorg/telegram/ui/Cells/SharedAudioCell;
@@ -50,7 +50,7 @@
 .method public onPreDraw()Z
     .locals 4
 
-    .line 1431
+    .line 1449
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->val$sharedAudioCell:Lorg/telegram/ui/Cells/SharedAudioCell;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1432
+    .line 1450
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1433
+    .line 1451
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->set(IJ)V
 
-    .line 1434
+    .line 1452
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->val$sharedAudioCell:Lorg/telegram/ui/Cells/SharedAudioCell;
 
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter;
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 1436
+    .line 1454
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedDocumentsAdapter$3;->val$sharedAudioCell:Lorg/telegram/ui/Cells/SharedAudioCell;
 

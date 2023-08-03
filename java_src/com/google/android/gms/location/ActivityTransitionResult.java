@@ -18,12 +18,12 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public class ActivityTransitionResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionResult> CREATOR = new zzi();
-    @SafeParcelable.Field(getter = "getTransitionEvents", m779id = 1)
+    @SafeParcelable.Field(getter = "getTransitionEvents", m797id = 1)
     private final List zza;
-    @SafeParcelable.Field(getter = "getExtras", m779id = 2)
+    @SafeParcelable.Field(getter = "getExtras", m797id = 2)
     private Bundle zzb;
 
-    public ActivityTransitionResult(@SafeParcelable.Param(m778id = 1) List<ActivityTransitionEvent> list) {
+    public ActivityTransitionResult(@SafeParcelable.Param(m796id = 1) List<ActivityTransitionEvent> list) {
         this.zzb = null;
         Preconditions.checkNotNull(list, "transitionEvents list can't be null.");
         if (!list.isEmpty()) {
@@ -77,7 +77,7 @@ public class ActivityTransitionResult extends AbstractSafeParcelable {
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public ActivityTransitionResult(@SafeParcelable.Param(m778id = 1) List list, @SafeParcelable.Param(m778id = 2) Bundle bundle) {
+    public ActivityTransitionResult(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) Bundle bundle) {
         this(list);
         this.zzb = bundle;
     }

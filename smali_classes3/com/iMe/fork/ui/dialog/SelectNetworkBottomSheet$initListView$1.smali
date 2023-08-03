@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$initListView$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 137
+    .line 139
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 139
+    .line 141
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$initListView$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Z
@@ -44,7 +44,7 @@
 
     if-nez v0, :cond_0
 
-    .line 140
+    .line 142
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 
     :cond_0

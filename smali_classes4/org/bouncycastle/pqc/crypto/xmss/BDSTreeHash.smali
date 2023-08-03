@@ -205,7 +205,7 @@
         }
     .end annotation
 
-    const-string v0, "otsHashAddress == null"
+    const-string/jumbo v0, "otsHashAddress == null"
 
     invoke-static {p5, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

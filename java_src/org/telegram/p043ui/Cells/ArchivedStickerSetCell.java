@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -65,21 +65,21 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             this.currentButton = progressButton;
-            progressButton.setText(LocaleController.getString("Add", C3417R.string.Add));
+            progressButton.setText(LocaleController.getString("Add", C3419R.string.Add));
             progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             progressButton.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
             progressButton.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
             addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 18.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
-            int m54dp = AndroidUtilities.m54dp(60);
+            int m72dp = AndroidUtilities.m72dp(60);
             ProgressButton progressButton2 = new ProgressButton(context);
             this.deleteButton = progressButton2;
             progressButton2.setAllCaps(false);
-            progressButton2.setMinWidth(m54dp);
-            progressButton2.setMinimumWidth(m54dp);
+            progressButton2.setMinWidth(m72dp);
+            progressButton2.setMinimumWidth(m72dp);
             progressButton2.setTextSize(1, 14.0f);
             int i = Theme.key_featuredStickers_removeButtonText;
             progressButton2.setTextColor(Theme.getColor(i));
-            progressButton2.setText(LocaleController.getString("StickersRemove", C3417R.string.StickersRemove));
+            progressButton2.setText(LocaleController.getString("StickersRemove", C3419R.string.StickersRemove));
             progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(i)));
             progressButton2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             ViewHelper.setPadding(progressButton2, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED);
@@ -133,7 +133,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(64) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.ViewGroup
@@ -181,7 +181,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             while (true) {
                 if (i < arrayList.size()) {
                     TLRPC$Document tLRPC$Document2 = arrayList.get(i);
-                    if (tLRPC$Document2 != null && tLRPC$Document2.f1523id == j) {
+                    if (tLRPC$Document2 != null && tLRPC$Document2.f1526id == j) {
                         tLRPC$Document = tLRPC$Document2;
                         break;
                     }

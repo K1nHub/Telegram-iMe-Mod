@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Crop/CropView;ZZZZ)V
     .locals 0
 
-    .line 697
+    .line 695
     iput-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->val$fast:Z
@@ -51,19 +51,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 700
+    .line 698
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/Crop/CropView;->access$2302(Lorg/telegram/ui/Components/Crop/CropView;Z)Z
 
-    .line 702
+    .line 700
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->val$fast:Z
 
     if-nez p1, :cond_0
 
-    .line 703
+    .line 701
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Crop/CropView$3;->val$allowScale:Z

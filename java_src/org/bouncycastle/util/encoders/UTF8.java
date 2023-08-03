@@ -1,6 +1,7 @@
 package org.bouncycastle.util.encoders;
 
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public class UTF8 {
     private static final short[] firstUnitTable = new short[128];
@@ -22,7 +23,7 @@ public class UTF8 {
         fill(bArr2, 112, 112, (byte) 8);
         fill(bArr2, 113, 115, (byte) 9);
         fill(bArr2, 116, 116, (byte) 10);
-        fill(bArr2, 117, 127, (byte) 0);
+        fill(bArr2, 117, MessagesStorage.LAST_DB_VERSION, (byte) 0);
         fill(bArr, 0, bArr.length - 1, (byte) -2);
         fill(bArr, 8, 11, (byte) -1);
         fill(bArr, 24, 27, (byte) 0);

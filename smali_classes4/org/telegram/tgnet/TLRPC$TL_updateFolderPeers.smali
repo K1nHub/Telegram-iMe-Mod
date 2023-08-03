@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 32939
+    .line 33637
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 32942
+    .line 33640
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 32947
+    .line 33645
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -66,7 +66,7 @@
 
     return-void
 
-    .line 32950
+    .line 33648
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -90,7 +90,7 @@
 
     throw p1
 
-    .line 32954
+    .line 33652
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -99,7 +99,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 32956
+    .line 33654
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -112,7 +112,7 @@
 
     return-void
 
-    .line 32960
+    .line 33658
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->folder_peers:Ljava/util/ArrayList;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 32962
+    .line 33660
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -130,7 +130,7 @@
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->pts:I
 
-    .line 32963
+    .line 33661
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -143,24 +143,24 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 32967
+    .line 33665
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 32968
+    .line 33666
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32969
+    .line 33667
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->folder_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 32970
+    .line 33668
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -168,7 +168,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 32972
+    .line 33670
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->folder_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -183,13 +183,13 @@
 
     goto :goto_0
 
-    .line 32974
+    .line 33672
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32975
+    .line 33673
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;->pts_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

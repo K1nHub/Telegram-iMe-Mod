@@ -41,7 +41,7 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
     }
 
     public DefaultTsPayloadReaderFactory(int i) {
-        this(i, ImmutableList.m744of());
+        this(i, ImmutableList.m762of());
     }
 
     public DefaultTsPayloadReaderFactory(int i, List<Format> list) {

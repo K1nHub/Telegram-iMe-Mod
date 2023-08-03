@@ -11,14 +11,14 @@ import com.google.android.gms.common.internal.zat;
 /* loaded from: classes3.dex */
 public final class zai extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zai> CREATOR = new zaj();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getResolveAccountRequest", m779id = 2)
+    @SafeParcelable.Field(getter = "getResolveAccountRequest", m797id = 2)
     final zat zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zai(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) zat zatVar) {
+    public zai(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) zat zatVar) {
         this.zaa = i;
         this.zab = zatVar;
     }

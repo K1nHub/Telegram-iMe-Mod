@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)V
     .locals 0
 
-    .line 60
+    .line 65
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -41,7 +41,7 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 67
+    .line 72
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$000(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Landroid/graphics/RectF;
@@ -60,7 +60,7 @@
 
     move-result p1
 
-    .line 68
+    .line 73
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$100(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Z
@@ -69,19 +69,19 @@
 
     if-eq v0, p1, :cond_1
 
-    .line 69
+    .line 74
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$102(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;Z)Z
 
-    .line 70
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     if-eqz p1, :cond_1
 
-    .line 72
+    .line 77
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -116,10 +116,10 @@
 
     const/4 p1, 0x0
 
-    .line 73
+    .line 78
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->startedY:Z
 
-    .line 76
+    .line 81
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -133,7 +133,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 1
 
-    .line 81
+    .line 86
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$100(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Z
@@ -142,14 +142,14 @@
 
     if-eqz p3, :cond_2
 
-    .line 82
+    .line 87
     iget-boolean p3, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->startedY:Z
 
     const/4 p4, 0x1
 
     if-nez p3, :cond_0
 
-    .line 83
+    .line 88
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p3
@@ -162,10 +162,10 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->startDeltaY:F
 
-    .line 84
+    .line 89
     iput-boolean p4, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->startedY:Z
 
-    .line 86
+    .line 91
     :cond_0
     iget p3, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->startWeight:F
 
@@ -229,7 +229,7 @@
 
     move-result p1
 
-    .line 87
+    .line 92
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -238,7 +238,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 88
+    .line 93
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$200(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 90
+    .line 95
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -259,7 +259,7 @@
 
     iput p1, p2, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 92
+    .line 97
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -269,7 +269,7 @@
 
     invoke-virtual {p2, p1, p4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 93
+    .line 98
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->access$700(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;)Ljava/lang/Runnable;
@@ -278,12 +278,12 @@
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 94
+    .line 99
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 96
+    .line 101
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$1;->this$0:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 

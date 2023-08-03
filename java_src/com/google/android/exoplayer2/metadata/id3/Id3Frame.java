@@ -7,7 +7,7 @@ import com.google.android.exoplayer2.metadata.Metadata;
 public abstract class Id3Frame implements Metadata.Entry {
 
     /* renamed from: id */
-    public final String f199id;
+    public final String f201id;
 
     @Override // android.os.Parcelable
     public int describeContents() {
@@ -30,10 +30,10 @@ public abstract class Id3Frame implements Metadata.Entry {
     }
 
     public Id3Frame(String str) {
-        this.f199id = str;
+        this.f201id = str;
     }
 
     public String toString() {
-        return this.f199id;
+        return this.f201id;
     }
 }

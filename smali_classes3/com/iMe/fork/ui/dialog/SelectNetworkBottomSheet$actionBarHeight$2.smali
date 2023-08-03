@@ -58,7 +58,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 1
 
-    .line 55
+    .line 57
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 55
+    .line 57
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$actionBarHeight$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

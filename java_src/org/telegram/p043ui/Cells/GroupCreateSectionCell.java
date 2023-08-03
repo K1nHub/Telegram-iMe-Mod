@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -22,7 +22,7 @@ public class GroupCreateSectionCell extends FrameLayout {
     public GroupCreateSectionCell(Context context) {
         super(context);
         setBackgroundColor(Theme.getColor(Theme.key_graySection));
-        Drawable drawable = getResources().getDrawable(C3417R.C3419drawable.shadowdown);
+        Drawable drawable = getResources().getDrawable(C3419R.C3421drawable.shadowdown);
         this.drawable = drawable;
         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_groupcreate_sectionShadow), PorterDuff.Mode.MULTIPLY));
         TextView textView = new TextView(getContext());
@@ -36,12 +36,12 @@ public class GroupCreateSectionCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(40), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(40), 1073741824));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        this.drawable.setBounds(0, getMeasuredHeight() - AndroidUtilities.m54dp(3), getMeasuredWidth(), getMeasuredHeight());
+        this.drawable.setBounds(0, getMeasuredHeight() - AndroidUtilities.m72dp(3), getMeasuredWidth(), getMeasuredHeight());
         this.drawable.draw(canvas);
     }
 

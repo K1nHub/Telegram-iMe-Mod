@@ -131,7 +131,7 @@
     move p1, p7
 
     :goto_1
-    const-string p8, "passThrough should imply buffer is null"
+    const-string/jumbo p8, "passThrough should imply buffer is null"
 
     .line 1008
     invoke-static {p1, p8}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
@@ -152,7 +152,7 @@
     move p1, p7
 
     :goto_3
-    const-string p8, "passThrough should imply winningSubstream != null"
+    const-string/jumbo p8, "passThrough should imply winningSubstream != null"
 
     .line 1009
     invoke-static {p1, p8}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
@@ -196,7 +196,7 @@
     move p1, p7
 
     :goto_5
-    const-string p2, "passThrough should imply winningSubstream is drained"
+    const-string/jumbo p2, "passThrough should imply winningSubstream is drained"
 
     .line 1012
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V

@@ -21,6 +21,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -30,7 +31,7 @@ import java.util.Set;
 public final class SQLiteMutationQueue implements MutationQueue {
 
     /* renamed from: db */
-    private final SQLitePersistence f256db;
+    private final SQLitePersistence f258db;
     private ByteString lastStreamToken;
     private int nextBatchId;
     private final LocalSerializer serializer;
@@ -38,7 +39,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteMutationQueue(SQLitePersistence sQLitePersistence, LocalSerializer localSerializer, User user) {
-        this.f256db = sQLitePersistence;
+        this.f258db = sQLitePersistence;
         this.serializer = localSerializer;
         this.uid = user.isAuthenticated() ? user.getUid() : "";
         this.lastStreamToken = WriteStream.EMPTY_STREAM_TOKEN;
@@ -47,7 +48,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     @Override // com.google.firebase.firestore.local.MutationQueue
     public void start() {
         loadNextBatchIdAcrossAllUsers();
-        if (this.f256db.query("SELECT last_stream_token FROM mutation_queues WHERE uid = ?").binding(this.uid).first(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda1
+        if (this.f258db.query("SELECT last_stream_token FROM mutation_queues WHERE uid = ?").binding(this.uid).first(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda1
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteMutationQueue.this.lambda$start$0((Cursor) obj);
@@ -64,7 +65,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
 
     private void loadNextBatchIdAcrossAllUsers() {
         final ArrayList arrayList = new ArrayList();
-        this.f256db.query("SELECT uid FROM mutation_queues").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda7
+        this.f258db.query("SELECT uid FROM mutation_queues").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda7
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteMutationQueue.lambda$loadNextBatchIdAcrossAllUsers$1(arrayList, (Cursor) obj);
@@ -73,7 +74,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
         this.nextBatchId = 0;
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            this.f256db.query("SELECT MAX(batch_id) FROM mutations WHERE uid = ?").binding((String) it.next()).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda0
+            this.f258db.query("SELECT MAX(batch_id) FROM mutations WHERE uid = ?").binding((String) it.next()).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda0
                 @Override // com.google.firebase.firestore.util.Consumer
                 public final void accept(Object obj) {
                     SQLiteMutationQueue.this.lambda$loadNextBatchIdAcrossAllUsers$2((Cursor) obj);
@@ -94,7 +95,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     }
 
     public boolean isEmpty() {
-        return this.f256db.query("SELECT batch_id FROM mutations WHERE uid = ? LIMIT 1").binding(this.uid).isEmpty();
+        return this.f258db.query("SELECT batch_id FROM mutations WHERE uid = ? LIMIT 1").binding(this.uid).isEmpty();
     }
 
     @Override // com.google.firebase.firestore.local.MutationQueue
@@ -115,12 +116,12 @@ public final class SQLiteMutationQueue implements MutationQueue {
     }
 
     private void writeMutationQueueMetadata() {
-        this.f256db.execute("INSERT OR REPLACE INTO mutation_queues (uid, last_acknowledged_batch_id, last_stream_token) VALUES (?, ?, ?)", this.uid, -1, this.lastStreamToken.toByteArray());
+        this.f258db.execute("INSERT OR REPLACE INTO mutation_queues (uid, last_acknowledged_batch_id, last_stream_token) VALUES (?, ?, ?)", this.uid, -1, this.lastStreamToken.toByteArray());
     }
 
     @Override // com.google.firebase.firestore.local.MutationQueue
     public MutationBatch lookupMutationBatch(final int i) {
-        return (MutationBatch) this.f256db.query("SELECT SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? AND batch_id = ?").binding(1000000, this.uid, Integer.valueOf(i)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda9
+        return (MutationBatch) this.f258db.query("SELECT SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? AND batch_id = ?").binding(1000000, this.uid, Integer.valueOf(i)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda9
             @Override // com.google.firebase.firestore.util.Function
             public final Object apply(Object obj) {
                 MutationBatch lambda$lookupMutationBatch$3;
@@ -137,7 +138,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
 
     @Override // com.google.firebase.firestore.local.MutationQueue
     public MutationBatch getNextMutationBatchAfterBatchId(int i) {
-        return (MutationBatch) this.f256db.query("SELECT batch_id, SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? AND batch_id >= ? ORDER BY batch_id ASC LIMIT 1").binding(1000000, this.uid, Integer.valueOf(i + 1)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda8
+        return (MutationBatch) this.f258db.query("SELECT batch_id, SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? AND batch_id >= ? ORDER BY batch_id ASC LIMIT 1").binding(1000000, this.uid, Integer.valueOf(i + 1)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda8
             @Override // com.google.firebase.firestore.util.Function
             public final Object apply(Object obj) {
                 MutationBatch lambda$getNextMutationBatchAfterBatchId$4;
@@ -155,7 +156,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     @Override // com.google.firebase.firestore.local.MutationQueue
     public List<MutationBatch> getAllMutationBatches() {
         final ArrayList arrayList = new ArrayList();
-        this.f256db.query("SELECT batch_id, SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? ORDER BY batch_id ASC").binding(1000000, this.uid).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda3
+        this.f258db.query("SELECT batch_id, SUBSTR(mutations, 1, ?) FROM mutations WHERE uid = ? ORDER BY batch_id ASC").binding(1000000, this.uid).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda3
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteMutationQueue.this.lambda$getAllMutationBatches$6(arrayList, (Cursor) obj);
@@ -173,7 +174,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     public List<MutationBatch> getAllMutationBatchesAffectingDocumentKey(DocumentKey documentKey) {
         String encode = EncodedPath.encode(documentKey.getPath());
         final ArrayList arrayList = new ArrayList();
-        this.f256db.query("SELECT m.batch_id, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path = ? AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id").binding(1000000, this.uid, encode).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda2
+        this.f258db.query("SELECT m.batch_id, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path = ? AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id").binding(1000000, this.uid, encode).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda2
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteMutationQueue.this.lambda$getAllMutationBatchesAffectingDocumentKey$7(arrayList, (Cursor) obj);
@@ -193,7 +194,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
         for (DocumentKey documentKey : iterable) {
             arrayList.add(EncodedPath.encode(documentKey.getPath()));
         }
-        SQLitePersistence.LongQuery longQuery = new SQLitePersistence.LongQuery(this.f256db, "SELECT DISTINCT dm.batch_id, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path IN (", Arrays.asList(1000000, this.uid), arrayList, ") AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id");
+        SQLitePersistence.LongQuery longQuery = new SQLitePersistence.LongQuery(this.f258db, "SELECT DISTINCT dm.batch_id, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path IN (", Arrays.asList(1000000, this.uid), arrayList, ") AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id");
         final ArrayList arrayList2 = new ArrayList();
         final HashSet hashSet = new HashSet();
         while (longQuery.hasMoreSubqueries()) {
@@ -205,7 +206,14 @@ public final class SQLiteMutationQueue implements MutationQueue {
             });
         }
         if (longQuery.getSubqueriesPerformed() > 1) {
-            Collections.sort(arrayList2, SQLiteMutationQueue$$ExternalSyntheticLambda10.INSTANCE);
+            Collections.sort(arrayList2, new Comparator() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda10
+                @Override // java.util.Comparator
+                public final int compare(Object obj, Object obj2) {
+                    int lambda$getAllMutationBatchesAffectingDocumentKeys$9;
+                    lambda$getAllMutationBatchesAffectingDocumentKeys$9 = SQLiteMutationQueue.lambda$getAllMutationBatchesAffectingDocumentKeys$9((MutationBatch) obj, (MutationBatch) obj2);
+                    return lambda$getAllMutationBatchesAffectingDocumentKeys$9;
+                }
+            });
         }
         return arrayList2;
     }
@@ -233,7 +241,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
         String encode = EncodedPath.encode(path);
         String prefixSuccessor = EncodedPath.prefixSuccessor(encode);
         final ArrayList arrayList = new ArrayList();
-        this.f256db.query("SELECT dm.batch_id, dm.path, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path >= ? AND dm.path < ? AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id").binding(1000000, this.uid, encode, prefixSuccessor).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda4
+        this.f258db.query("SELECT dm.batch_id, dm.path, SUBSTR(m.mutations, 1, ?) FROM document_mutations dm, mutations m WHERE dm.uid = ? AND dm.path >= ? AND dm.path < ? AND dm.uid = m.uid AND dm.batch_id = m.batch_id ORDER BY dm.batch_id").binding(1000000, this.uid, encode, prefixSuccessor).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda4
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteMutationQueue.this.lambda$getAllMutationBatchesAffectingQuery$10(arrayList, length, (Cursor) obj);
@@ -253,14 +261,14 @@ public final class SQLiteMutationQueue implements MutationQueue {
 
     @Override // com.google.firebase.firestore.local.MutationQueue
     public void removeMutationBatch(MutationBatch mutationBatch) {
-        SQLiteStatement prepare = this.f256db.prepare("DELETE FROM mutations WHERE uid = ? AND batch_id = ?");
-        SQLiteStatement prepare2 = this.f256db.prepare("DELETE FROM document_mutations WHERE uid = ? AND path = ? AND batch_id = ?");
+        SQLiteStatement prepare = this.f258db.prepare("DELETE FROM mutations WHERE uid = ? AND batch_id = ?");
+        SQLiteStatement prepare2 = this.f258db.prepare("DELETE FROM document_mutations WHERE uid = ? AND path = ? AND batch_id = ?");
         int batchId = mutationBatch.getBatchId();
-        Assert.hardAssert(this.f256db.execute(prepare, this.uid, Integer.valueOf(batchId)) != 0, "Mutation batch (%s, %d) did not exist", this.uid, Integer.valueOf(mutationBatch.getBatchId()));
+        Assert.hardAssert(this.f258db.execute(prepare, this.uid, Integer.valueOf(batchId)) != 0, "Mutation batch (%s, %d) did not exist", this.uid, Integer.valueOf(mutationBatch.getBatchId()));
         for (Mutation mutation : mutationBatch.getMutations()) {
             DocumentKey key = mutation.getKey();
-            this.f256db.execute(prepare2, this.uid, EncodedPath.encode(key.getPath()), Integer.valueOf(batchId));
-            this.f256db.getReferenceDelegate().removeMutationReference(key);
+            this.f258db.execute(prepare2, this.uid, EncodedPath.encode(key.getPath()), Integer.valueOf(batchId));
+            this.f258db.getReferenceDelegate().removeMutationReference(key);
         }
     }
 
@@ -268,7 +276,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     public void performConsistencyCheck() {
         if (isEmpty()) {
             final ArrayList arrayList = new ArrayList();
-            this.f256db.query("SELECT path FROM document_mutations WHERE uid = ?").binding(this.uid).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda6
+            this.f258db.query("SELECT path FROM document_mutations WHERE uid = ?").binding(this.uid).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteMutationQueue$$ExternalSyntheticLambda6
                 @Override // com.google.firebase.firestore.util.Consumer
                 public final void accept(Object obj) {
                     SQLiteMutationQueue.lambda$performConsistencyCheck$11(arrayList, (Cursor) obj);
@@ -290,7 +298,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
             }
             BlobAccumulator blobAccumulator = new BlobAccumulator(bArr);
             while (blobAccumulator.more) {
-                this.f256db.query("SELECT SUBSTR(mutations, ?, ?) FROM mutations WHERE uid = ? AND batch_id = ?").binding(Integer.valueOf((blobAccumulator.numChunks() * 1000000) + 1), 1000000, this.uid, Integer.valueOf(i)).first(blobAccumulator);
+                this.f258db.query("SELECT SUBSTR(mutations, ?, ?) FROM mutations WHERE uid = ? AND batch_id = ?").binding(Integer.valueOf((blobAccumulator.numChunks() * 1000000) + 1), 1000000, this.uid, Integer.valueOf(i)).first(blobAccumulator);
             }
             return this.serializer.decodeMutationBatch(WriteBatch.parseFrom(blobAccumulator.result()));
         } catch (InvalidProtocolBufferException e) {

@@ -4,15 +4,11 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
-import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m84c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1", m83f = "AuthViewModel.kt", m82l = {54, 55, 56, 57}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1", m101f = "AuthViewModel.kt", m100l = {54, 55, 56, 57}, m99m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -33,24 +29,6 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(SimpleSyntax<AuthState, AuthSideEffects> simpleSyntax, Continuation<? super Unit> continuation) {
         return ((AuthViewModel$onMenuResetClicked$1) create(simpleSyntax, continuation)).invokeSuspend(Unit.INSTANCE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: AuthViewModel.kt */
-    /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 */
-    /* loaded from: classes3.dex */
-    public static final class C14661 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        public static final C14661 INSTANCE = new C14661();
-
-        C14661() {
-            super(1);
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final AuthState invoke(SimpleContext<AuthState> reduce) {
-            Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
-            return AuthState.copy$default(reduce.getState(), null, null, true, 3, null);
-        }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0066 A[RETURN] */
@@ -101,7 +79,59 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
             java.lang.Object r7 = r6.L$0
             r1 = r7
             org.orbitmvi.orbit.syntax.simple.SimpleSyntax r1 = (org.orbitmvi.orbit.syntax.simple.SimpleSyntax) r1
-            com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 r7 = com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.INSTANCE
+            com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 r7 = new kotlin.jvm.functions.Function1<org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.auth.AuthState>, com.iMe.feature.socialMedias.auth.AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.1
+                static {
+                    /*
+                        com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 r0 = new com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1
+                        r0.<init>()
+                        
+                        // error: 0x0005: SPUT  (r0 I:com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1) com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.1.INSTANCE com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.<clinit>():void");
+                }
+
+                {
+                    /*
+                        r1 = this;
+                        r0 = 1
+                        r1.<init>(r0)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.<init>():void");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final com.iMe.feature.socialMedias.auth.AuthState invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.auth.AuthState> r7) {
+                    /*
+                        r6 = this;
+                        java.lang.String r0 = "$this$reduce"
+                        kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, r0)
+                        java.lang.Object r7 = r7.getState()
+                        r0 = r7
+                        com.iMe.feature.socialMedias.auth.AuthState r0 = (com.iMe.feature.socialMedias.auth.AuthState) r0
+                        r1 = 0
+                        r2 = 0
+                        r3 = 1
+                        r4 = 3
+                        r5 = 0
+                        com.iMe.feature.socialMedias.auth.AuthState r7 = com.iMe.feature.socialMedias.auth.AuthState.copy$default(r0, r1, r2, r3, r4, r5)
+                        return r7
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.auth.AuthState");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ com.iMe.feature.socialMedias.auth.AuthState invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.auth.AuthState> r1) {
+                    /*
+                        r0 = this;
+                        org.orbitmvi.orbit.syntax.simple.SimpleContext r1 = (org.orbitmvi.orbit.syntax.simple.SimpleContext) r1
+                        com.iMe.feature.socialMedias.auth.AuthState r1 = r0.invoke(r1)
+                        return r1
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.invoke(java.lang.Object):java.lang.Object");
+                }
+            }
             r6.L$0 = r1
             r6.label = r5
             java.lang.Object r7 = org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt.reduce(r1, r7, r6)

@@ -30,7 +30,7 @@
 .method public abstract didLongPressChannelAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$Chat;IFF)Z
 .end method
 
-.method public abstract didLongPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FF)Z
+.method public abstract didLongPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FFZ)Z
 .end method
 
 .method public abstract didPressAdditionalSideButton(Lorg/telegram/ui/Cells/ChatMessageCell;)V

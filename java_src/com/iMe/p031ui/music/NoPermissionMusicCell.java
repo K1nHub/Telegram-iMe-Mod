@@ -1,6 +1,8 @@
 package com.iMe.p031ui.music;
 
 import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -9,7 +11,11 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3419R;
+import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -30,18 +36,82 @@ public final class NoPermissionMusicCell extends LinearLayout {
     private final int titleColor;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public NoPermissionMusicCell(Activity context) {
+    public NoPermissionMusicCell(final Activity context) {
         super(context);
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
         Lazy lazy4;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new NoPermissionMusicCell$noPermissionImageView$2(context, this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.ui.music.NoPermissionMusicCell$noPermissionImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                int i;
+                int i2;
+                ImageView imageView = new ImageView(context);
+                NoPermissionMusicCell noPermissionMusicCell = this;
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                i = noPermissionMusicCell.iconColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
+                int m73dp = AndroidUtilities.m73dp(100.0f);
+                i2 = noPermissionMusicCell.iconCircleColor;
+                imageView.setBackground(Theme.createCircleDrawable(m73dp, Theme.getColor(i2)));
+                imageView.setImageResource(C3419R.C3421drawable.fork_music_device_no_storage_permission);
+                return imageView;
+            }
+        });
         this.noPermissionImageView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new NoPermissionMusicCell$noPermissionTitle$2(context, this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.ui.music.NoPermissionMusicCell$noPermissionTitle$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                int i;
+                TextView textView = new TextView(context);
+                NoPermissionMusicCell noPermissionMusicCell = this;
+                textView.setGravity(17);
+                textView.setText(LocaleController.getInternalString(C3419R.string.music_device_no_permission_title));
+                textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                i = noPermissionMusicCell.titleColor;
+                textView.setTextColor(Theme.getColor(i));
+                textView.setTextSize(1, 20.0f);
+                return textView;
+            }
+        });
         this.noPermissionTitle$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new NoPermissionMusicCell$noPermissionSubtitle$2(context, this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.ui.music.NoPermissionMusicCell$noPermissionSubtitle$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                int i;
+                TextView textView = new TextView(context);
+                NoPermissionMusicCell noPermissionMusicCell = this;
+                textView.setGravity(17);
+                textView.setText(LocaleController.getInternalString(C3419R.string.music_device_no_permission_subtitle));
+                i = noPermissionMusicCell.subtitleColor;
+                textView.setTextColor(Theme.getColor(i));
+                textView.setTextSize(1, 14.0f);
+                return textView;
+            }
+        });
         this.noPermissionSubtitle$delegate = lazy3;
         lazy4 = LazyKt__LazyJVMKt.lazy(new NoPermissionMusicCell$requestButton$2(context, this));
         this.requestButton$delegate = lazy4;

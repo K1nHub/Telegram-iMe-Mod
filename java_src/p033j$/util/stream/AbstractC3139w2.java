@@ -6,46 +6,46 @@ import java.util.concurrent.CountedCompleter;
 abstract class AbstractC3139w2 extends CountedCompleter {
 
     /* renamed from: a */
-    protected final InterfaceC2859A1 f1159a;
+    protected final InterfaceC2859A1 f1162a;
 
     /* renamed from: b */
-    protected final int f1160b;
+    protected final int f1163b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3139w2(InterfaceC2859A1 interfaceC2859A1, int i) {
-        this.f1159a = interfaceC2859A1;
-        this.f1160b = i;
+        this.f1162a = interfaceC2859A1;
+        this.f1163b = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbstractC3139w2(AbstractC3139w2 abstractC3139w2, InterfaceC2859A1 interfaceC2859A1, int i) {
         super(abstractC3139w2);
-        this.f1159a = interfaceC2859A1;
-        this.f1160b = i;
+        this.f1162a = interfaceC2859A1;
+        this.f1163b = i;
     }
 
     /* renamed from: a */
-    abstract void mo316a();
+    abstract void mo334a();
 
     /* renamed from: b */
-    abstract AbstractC3139w2 mo315b(int i, int i2);
+    abstract AbstractC3139w2 mo333b(int i, int i2);
 
     @Override // java.util.concurrent.CountedCompleter
     public void compute() {
         AbstractC3139w2 abstractC3139w2 = this;
-        while (abstractC3139w2.f1159a.mo320p() != 0) {
-            abstractC3139w2.setPendingCount(abstractC3139w2.f1159a.mo320p() - 1);
+        while (abstractC3139w2.f1162a.mo338p() != 0) {
+            abstractC3139w2.setPendingCount(abstractC3139w2.f1162a.mo338p() - 1);
             int i = 0;
             int i2 = 0;
-            while (i < abstractC3139w2.f1159a.mo320p() - 1) {
-                AbstractC3139w2 mo315b = abstractC3139w2.mo315b(i, abstractC3139w2.f1160b + i2);
-                i2 = (int) (i2 + mo315b.f1159a.count());
-                mo315b.fork();
+            while (i < abstractC3139w2.f1162a.mo338p() - 1) {
+                AbstractC3139w2 mo333b = abstractC3139w2.mo333b(i, abstractC3139w2.f1163b + i2);
+                i2 = (int) (i2 + mo333b.f1162a.count());
+                mo333b.fork();
                 i++;
             }
-            abstractC3139w2 = abstractC3139w2.mo315b(i, abstractC3139w2.f1160b + i2);
+            abstractC3139w2 = abstractC3139w2.mo333b(i, abstractC3139w2.f1163b + i2);
         }
-        abstractC3139w2.mo316a();
+        abstractC3139w2.mo334a();
         abstractC3139w2.propagateCompletion();
     }
 }

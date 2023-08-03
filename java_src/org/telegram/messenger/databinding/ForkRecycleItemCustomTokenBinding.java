@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
 import com.iMe.p031ui.custom.TickerView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemCustomTokenBinding implements ViewBinding {
     private final ConstraintLayout rootView;
@@ -29,7 +29,7 @@ public final class ForkRecycleItemCustomTokenBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemCustomTokenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_custom_token, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_custom_token, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -38,22 +38,22 @@ public final class ForkRecycleItemCustomTokenBinding implements ViewBinding {
 
     public static ForkRecycleItemCustomTokenBinding bind(View view) {
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        int i = C3417R.C3420id.divider_horizontal;
+        int i = C3419R.C3422id.divider_horizontal;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
-            i = C3417R.C3420id.image_network_icon;
+            i = C3419R.C3422id.image_network_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3417R.C3420id.image_token_icon;
+                i = C3419R.C3422id.image_token_icon;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3417R.C3420id.text_address;
+                    i = C3419R.C3422id.text_address;
                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView != null) {
-                        i = C3417R.C3420id.text_name;
+                        i = C3419R.C3422id.text_name;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView2 != null) {
-                            i = C3417R.C3420id.text_ticker;
+                            i = C3419R.C3422id.text_ticker;
                             TickerView tickerView = (TickerView) ViewBindings.findChildViewById(view, i);
                             if (tickerView != null) {
                                 return new ForkRecycleItemCustomTokenBinding(constraintLayout, constraintLayout, dividerView, appCompatImageView, appCompatImageView2, textView, textView2, tickerView);

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 3996
+    .line 4034
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;
     .locals 1
 
-    .line 4005
+    .line 4043
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -47,7 +47,7 @@
 
     return-object p0
 
-    .line 4007
+    .line 4045
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +73,13 @@
 
     throw p0
 
-    .line 4012
+    .line 4050
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;-><init>()V
 
-    .line 4013
+    .line 4051
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,28 +90,28 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 4018
+    .line 4056
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->user_id:J
 
-    .line 4019
+    .line 4057
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->deleted:I
 
-    .line 4020
+    .line 4058
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->kicked:I
 
-    .line 4021
+    .line 4059
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -124,27 +124,27 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 4025
+    .line 4063
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4026
+    .line 4064
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->user_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 4027
+    .line 4065
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->deleted:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4028
+    .line 4066
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->kicked:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4029
+    .line 4067
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopAdmin;->banned:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

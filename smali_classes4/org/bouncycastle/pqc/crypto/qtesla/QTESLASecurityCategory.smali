@@ -14,7 +14,7 @@
 
     if-ne p0, v0, :cond_0
 
-    const-string p0, "qTESLA-p-III"
+    const-string/jumbo p0, "qTESLA-p-III"
 
     return-object p0
 
@@ -40,7 +40,7 @@
     throw v0
 
     :cond_1
-    const-string p0, "qTESLA-p-I"
+    const-string/jumbo p0, "qTESLA-p-I"
 
     return-object p0
 .end method

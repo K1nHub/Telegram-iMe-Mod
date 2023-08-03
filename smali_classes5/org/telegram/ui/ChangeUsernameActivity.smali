@@ -1806,7 +1806,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {p2, p1, v1, v0, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
+    invoke-virtual {p2, p1, v1, v0, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
     .line 1390
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I

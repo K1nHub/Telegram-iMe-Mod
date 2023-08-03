@@ -23,7 +23,7 @@ public class zzb implements IInterface {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: a_ */
-    public final Parcel m760a_() {
+    public final Parcel m778a_() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.zzb);
         return obtain;

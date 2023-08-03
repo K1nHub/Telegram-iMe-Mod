@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkProfileSocialCellBinding implements ViewBinding {
     public final TextView buttonAdd;
@@ -32,21 +32,21 @@ public final class ForkProfileSocialCellBinding implements ViewBinding {
 
     public static ForkProfileSocialCellBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup) {
         Objects.requireNonNull(viewGroup, "parent");
-        layoutInflater.inflate(C3417R.layout.fork_profile_social_cell, viewGroup);
+        layoutInflater.inflate(C3419R.layout.fork_profile_social_cell, viewGroup);
         return bind(viewGroup);
     }
 
     public static ForkProfileSocialCellBinding bind(View view) {
-        int i = C3417R.C3420id.buttonAdd;
+        int i = C3419R.C3422id.buttonAdd;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3417R.C3420id.linearImages;
+            i = C3419R.C3422id.linearImages;
             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout != null) {
-                i = C3417R.C3420id.textSubTitle;
+                i = C3419R.C3422id.textSubTitle;
                 TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView2 != null) {
-                    i = C3417R.C3420id.textTitle;
+                    i = C3419R.C3422id.textTitle;
                     TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView3 != null) {
                         return new ForkProfileSocialCellBinding(view, textView, linearLayout, textView2, textView3);

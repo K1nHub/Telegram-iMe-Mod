@@ -1,5 +1,6 @@
 package com.iMe.model.statistic;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StatisticDiagramModel.kt */
@@ -116,7 +117,7 @@ public final class StatisticDiagramModel {
         }
 
         public int hashCode() {
-            return (((this.name.hashCode() * 31) + this.colorKey) * 31) + Double.doubleToLongBits(this.value);
+            return (((this.name.hashCode() * 31) + this.colorKey) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.value);
         }
 
         public String toString() {

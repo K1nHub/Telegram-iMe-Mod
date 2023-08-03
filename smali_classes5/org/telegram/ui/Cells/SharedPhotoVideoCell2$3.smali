@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;Z)V
     .locals 0
 
-    .line 547
+    .line 624
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$3;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$3;->val$checked:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 550
+    .line 627
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$3;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->animator:Landroid/animation/ValueAnimator;
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 551
+    .line 628
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$3;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$3;->val$checked:Z
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x0
 
-    .line 552
+    .line 629
     iput-object v0, p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->animator:Landroid/animation/ValueAnimator;
 
     :cond_1

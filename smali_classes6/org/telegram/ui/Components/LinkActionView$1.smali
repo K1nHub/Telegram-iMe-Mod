@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 540
+    .line 537
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/LinkActionView$1;->val$finalContainer:Landroid/widget/FrameLayout;
@@ -41,10 +41,10 @@
 
     const/high16 v0, 0x33000000
 
-    .line 544
+    .line 541
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 545
+    .line 542
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -55,14 +55,16 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/LinkActionView;->point:[F
+    invoke-static {v3}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;)[F
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
+    move-result-object v3
 
-    .line 546
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/LinkActionView;->access$500(Lorg/telegram/ui/Components/LinkActionView;Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
+
+    .line 543
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 547
+    .line 544
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -101,10 +103,12 @@
 
     const/4 v2, 0x0
 
-    .line 549
+    .line 546
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    iget-object v4, v4, Lorg/telegram/ui/Components/LinkActionView;->point:[F
+    invoke-static {v4}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;)[F
+
+    move-result-object v4
 
     aget v4, v4, v3
 
@@ -126,21 +130,29 @@
 
     invoke-virtual {p1, v2, v4, v0, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 551
+    .line 548
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    iget-object v0, v0, Lorg/telegram/ui/Components/LinkActionView;->point:[F
+    invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;)[F
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    aget v1, v0, v1
+    aget v0, v0, v1
 
-    aget v0, v0, v3
+    iget-object v1, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-static {v1}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;)[F
 
-    .line 553
+    move-result-object v1
+
+    aget v1, v1, v3
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -149,7 +161,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 554
+    .line 551
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

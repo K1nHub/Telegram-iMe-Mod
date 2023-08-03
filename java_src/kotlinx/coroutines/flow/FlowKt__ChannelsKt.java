@@ -4,10 +4,9 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.channels.ReceiveChannel;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Channels.kt */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class FlowKt__ChannelsKt {
+final /* synthetic */ class FlowKt__ChannelsKt {
     public static final <T> Object emitAll(FlowCollector<? super T> flowCollector, ReceiveChannel<? extends T> receiveChannel, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
         Object emitAllImpl$FlowKt__ChannelsKt = emitAllImpl$FlowKt__ChannelsKt(flowCollector, receiveChannel, true, continuation);
@@ -77,7 +76,7 @@ public final /* synthetic */ class FlowKt__ChannelsKt {
             kotlinx.coroutines.flow.FlowCollector r9 = (kotlinx.coroutines.flow.FlowCollector) r9
             kotlin.ResultKt.throwOnFailure(r10)     // Catch: java.lang.Throwable -> L55
             kotlinx.coroutines.channels.ChannelResult r10 = (kotlinx.coroutines.channels.ChannelResult) r10     // Catch: java.lang.Throwable -> L55
-            java.lang.Object r10 = r10.m1623unboximpl()     // Catch: java.lang.Throwable -> L55
+            java.lang.Object r10 = r10.m1642unboximpl()     // Catch: java.lang.Throwable -> L55
             goto L6f
         L55:
             r9 = move-exception
@@ -90,7 +89,7 @@ public final /* synthetic */ class FlowKt__ChannelsKt {
             r0.L$1 = r8     // Catch: java.lang.Throwable -> L98
             r0.Z$0 = r9     // Catch: java.lang.Throwable -> L98
             r0.label = r4     // Catch: java.lang.Throwable -> L98
-            java.lang.Object r10 = r8.mo1613receiveCatchingJP2dKIU(r0)     // Catch: java.lang.Throwable -> L98
+            java.lang.Object r10 = r8.mo1632receiveCatchingJP2dKIU(r0)     // Catch: java.lang.Throwable -> L98
             if (r10 != r1) goto L6c
             return r1
         L6c:
@@ -99,9 +98,9 @@ public final /* synthetic */ class FlowKt__ChannelsKt {
             r7 = r6
         L6f:
             r2 = 0
-            boolean r5 = kotlinx.coroutines.channels.ChannelResult.m1621isClosedimpl(r10)     // Catch: java.lang.Throwable -> L55
+            boolean r5 = kotlinx.coroutines.channels.ChannelResult.m1640isClosedimpl(r10)     // Catch: java.lang.Throwable -> L55
             if (r5 == 0) goto L85
-            java.lang.Throwable r9 = kotlinx.coroutines.channels.ChannelResult.m1618exceptionOrNullimpl(r10)     // Catch: java.lang.Throwable -> L55
+            java.lang.Throwable r9 = kotlinx.coroutines.channels.ChannelResult.m1637exceptionOrNullimpl(r10)     // Catch: java.lang.Throwable -> L55
             if (r9 != 0) goto L84
             if (r7 == 0) goto L81
             kotlinx.coroutines.channels.ChannelsKt.cancelConsumed(r8, r2)
@@ -111,7 +110,7 @@ public final /* synthetic */ class FlowKt__ChannelsKt {
         L84:
             throw r9     // Catch: java.lang.Throwable -> L55
         L85:
-            java.lang.Object r10 = kotlinx.coroutines.channels.ChannelResult.m1619getOrThrowimpl(r10)     // Catch: java.lang.Throwable -> L55
+            java.lang.Object r10 = kotlinx.coroutines.channels.ChannelResult.m1638getOrThrowimpl(r10)     // Catch: java.lang.Throwable -> L55
             r0.L$0 = r9     // Catch: java.lang.Throwable -> L55
             r0.L$1 = r8     // Catch: java.lang.Throwable -> L55
             r0.Z$0 = r7     // Catch: java.lang.Throwable -> L55

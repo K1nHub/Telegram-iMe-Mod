@@ -9,7 +9,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
 import androidx.customview.widget.ViewDragHelper;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* loaded from: classes3.dex */
 public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
@@ -266,7 +265,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
     }
 
     private void updateAccessibilityActions(View view) {
-        ViewCompat.removeAccessibilityAction(view, ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES);
+        ViewCompat.removeAccessibilityAction(view, 1048576);
         if (canSwipeDismissView(view)) {
             ViewCompat.replaceAccessibilityAction(view, AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_DISMISS, null, new AccessibilityViewCommand() { // from class: com.google.android.material.behavior.SwipeDismissBehavior.2
                 @Override // androidx.core.view.accessibility.AccessibilityViewCommand

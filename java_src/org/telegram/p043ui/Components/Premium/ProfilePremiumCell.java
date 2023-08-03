@@ -32,8 +32,8 @@ public class ProfilePremiumCell extends TextCell {
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         float x = this.imageView.getX() + (this.imageView.getWidth() / 2.0f);
-        float paddingTop = ((this.imageView.getPaddingTop() + this.imageView.getY()) + (this.imageView.getHeight() / 2.0f)) - AndroidUtilities.m54dp(3);
-        this.drawable.rect.set(x - AndroidUtilities.m54dp(4), paddingTop - AndroidUtilities.m54dp(4), x + AndroidUtilities.m54dp(4), paddingTop + AndroidUtilities.m54dp(4));
+        float paddingTop = ((this.imageView.getPaddingTop() + this.imageView.getY()) + (this.imageView.getHeight() / 2.0f)) - AndroidUtilities.m72dp(3);
+        this.drawable.rect.set(x - AndroidUtilities.m72dp(4), paddingTop - AndroidUtilities.m72dp(4), x + AndroidUtilities.m72dp(4), paddingTop + AndroidUtilities.m72dp(4));
         if (z) {
             this.drawable.resetPositions();
         }

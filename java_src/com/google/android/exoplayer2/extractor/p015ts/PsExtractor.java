@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
+import android.net.Uri;
 import android.util.SparseArray;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ParserException;
@@ -15,12 +16,27 @@ import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import java.io.IOException;
+import java.util.Map;
 /* renamed from: com.google.android.exoplayer2.extractor.ts.PsExtractor */
 /* loaded from: classes.dex */
 public final class PsExtractor implements Extractor {
     public static final int AUDIO_STREAM = 192;
     public static final int AUDIO_STREAM_MASK = 224;
-    public static final ExtractorsFactory FACTORY = PsExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.PsExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = PsExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final long MAX_SEARCH_LENGTH = 1048576;
     private static final long MAX_SEARCH_LENGTH_AFTER_AUDIO_AND_VIDEO_FOUND = 8192;
     private static final int MAX_STREAM_ID_PLUS_ONE = 256;

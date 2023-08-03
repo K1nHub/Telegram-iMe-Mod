@@ -182,7 +182,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "plain"
+    const-string/jumbo v0, "plain"
 
     .line 147
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z

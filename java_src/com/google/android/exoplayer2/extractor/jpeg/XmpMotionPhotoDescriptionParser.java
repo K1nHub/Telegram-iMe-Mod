@@ -23,7 +23,7 @@ final class XmpMotionPhotoDescriptionParser {
         try {
             return parseInternal(str);
         } catch (ParserException | NumberFormatException | XmlPullParserException unused) {
-            Log.m796w(TAG, "Ignoring unexpected XMP metadata");
+            Log.m814w(TAG, "Ignoring unexpected XMP metadata");
             return null;
         }
     }
@@ -36,7 +36,7 @@ final class XmpMotionPhotoDescriptionParser {
             throw ParserException.createForMalformedContainer("Couldn't find xmp metadata", null);
         }
         long j = C0480C.TIME_UNSET;
-        ImmutableList<MotionPhotoDescription.ContainerItem> m744of = ImmutableList.m744of();
+        ImmutableList<MotionPhotoDescription.ContainerItem> m762of = ImmutableList.m762of();
         do {
             newPullParser.next();
             if (XmlPullParserUtil.isStartTag(newPullParser, "rdf:Description")) {
@@ -44,17 +44,17 @@ final class XmpMotionPhotoDescriptionParser {
                     return null;
                 }
                 j = parseMotionPhotoPresentationTimestampUsFromDescription(newPullParser);
-                m744of = parseMicroVideoOffsetFromDescription(newPullParser);
+                m762of = parseMicroVideoOffsetFromDescription(newPullParser);
             } else if (XmlPullParserUtil.isStartTag(newPullParser, "Container:Directory")) {
-                m744of = parseMotionPhotoV1Directory(newPullParser, "Container", "Item");
+                m762of = parseMotionPhotoV1Directory(newPullParser, "Container", "Item");
             } else if (XmlPullParserUtil.isStartTag(newPullParser, "GContainer:Directory")) {
-                m744of = parseMotionPhotoV1Directory(newPullParser, "GContainer", "GContainerItem");
+                m762of = parseMotionPhotoV1Directory(newPullParser, "GContainer", "GContainerItem");
             }
         } while (!XmlPullParserUtil.isEndTag(newPullParser, "x:xmpmeta"));
-        if (m744of.isEmpty()) {
+        if (m762of.isEmpty()) {
             return null;
         }
-        return new MotionPhotoDescription(j, m744of);
+        return new MotionPhotoDescription(j, m762of);
     }
 
     private static boolean parseMotionPhotoFlagFromDescription(XmlPullParser xmlPullParser) {
@@ -82,10 +82,10 @@ final class XmpMotionPhotoDescriptionParser {
         for (String str : DESCRIPTION_MICRO_VIDEO_OFFSET_ATTRIBUTE_NAMES) {
             String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
             if (attributeValue != null) {
-                return ImmutableList.m742of(new MotionPhotoDescription.ContainerItem(MimeTypes.IMAGE_JPEG, "Primary", 0L, 0L), new MotionPhotoDescription.ContainerItem(MimeTypes.VIDEO_MP4, "MotionPhoto", Long.parseLong(attributeValue), 0L));
+                return ImmutableList.m760of(new MotionPhotoDescription.ContainerItem(MimeTypes.IMAGE_JPEG, "Primary", 0L, 0L), new MotionPhotoDescription.ContainerItem(MimeTypes.VIDEO_MP4, "MotionPhoto", Long.parseLong(attributeValue), 0L));
             }
         }
-        return ImmutableList.m744of();
+        return ImmutableList.m762of();
     }
 
     private static ImmutableList<MotionPhotoDescription.ContainerItem> parseMotionPhotoV1Directory(XmlPullParser xmlPullParser, String str, String str2) throws XmlPullParserException, IOException {
@@ -100,7 +100,7 @@ final class XmpMotionPhotoDescriptionParser {
                 String attributeValue3 = XmlPullParserUtil.getAttributeValue(xmlPullParser, str2 + ":Length");
                 String attributeValue4 = XmlPullParserUtil.getAttributeValue(xmlPullParser, str2 + ":Padding");
                 if (attributeValue == null || attributeValue2 == null) {
-                    return ImmutableList.m744of();
+                    return ImmutableList.m762of();
                 }
                 builder.add((ImmutableList.Builder) new MotionPhotoDescription.ContainerItem(attributeValue, attributeValue2, attributeValue3 != null ? Long.parseLong(attributeValue3) : 0L, attributeValue4 != null ? Long.parseLong(attributeValue4) : 0L));
             }

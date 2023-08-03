@@ -16,13 +16,15 @@ import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectTransactionBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -75,7 +77,7 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
             r4.screenType = r5
             r4.fragment = r6
             com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$presenter$2 r5 = new com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$presenter$2
-            r5.<init>(r4)
+            r5.<init>()
             moxy.ktx.MoxyKtxDelegate r6 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r0 = r4.getMvpDelegate()
             java.lang.String r2 = "mvpDelegate"
@@ -96,16 +98,16 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
             kotlin.LazyThreadSafetyMode r6 = r5.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$special$$inlined$inject$default$1 r0 = new com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$special$$inlined$inject$default$1
             r2 = 0
-            r0.<init>(r4, r2, r2)
+            r0.<init>()
             kotlin.Lazy r6 = kotlin.LazyKt.lazy(r6, r0)
             r4.walletFlowCoordinator$delegate = r6
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$special$$inlined$inject$default$2 r6 = new com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$special$$inlined$inject$default$2
-            r6.<init>(r4, r2, r2)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r4.resourceManager$delegate = r5
             com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$binding$2 r5 = new com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$binding$2
-            r5.<init>(r4)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r5 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r4, r2, r5, r1, r2)
             r4.binding$delegate = r5
             r5 = 0
@@ -149,10 +151,10 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3417R.string.wallet_connect_session_details_network), network, true);
-        binding.textFrom.setTextAndValue(getResourceManager().getString(C3417R.string.wallet_connect_transaction_from), from, true);
-        binding.textTo.setTextAndValue(getResourceManager().getString(C3417R.string.wallet_connect_transaction_to), to, true);
-        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3417R.string.wallet_connect_transaction_dapp), peerUrl, true);
+        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3419R.string.wallet_connect_session_details_network), network, true);
+        binding.textFrom.setTextAndValue(getResourceManager().getString(C3419R.string.wallet_connect_transaction_from), from, true);
+        binding.textTo.setTextAndValue(getResourceManager().getString(C3419R.string.wallet_connect_transaction_to), to, true);
+        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3419R.string.wallet_connect_transaction_dapp), peerUrl, true);
         binding.textTransactionAmount.setText(transactionAmount);
     }
 
@@ -167,7 +169,7 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
 
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void onTransactionSuccess() {
-        showToast(getResourceManager().getString(C3417R.string.wallet_connect_transaction_success));
+        showToast(getResourceManager().getString(C3419R.string.wallet_connect_transaction_success));
         dismiss();
     }
 
@@ -196,21 +198,55 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_connect_transaction_title));
+        binding.textTitle.setText(getResourceManager().getString(C3419R.string.wallet_connect_transaction_title));
         binding.buttonProcess.setText(getResourceManager().getString(this.screenType.getButtonTextResId()));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3419R.C3421drawable.ic_close_white);
     }
 
     private final void setupListeners() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
         BigActionButton buttonProcess = binding.buttonProcess;
         Intrinsics.checkNotNullExpressionValue(buttonProcess, "buttonProcess");
-        ViewExtKt.safeThrottledClick$default(buttonProcess, 0L, new WalletConnectTransactionBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonProcess, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectTransactionBottomSheetDialog.this.showTransactionConfirmationDialog();
+            }
+        }, 1, null);
         ActionBarMenuItem buttonClose = binding.buttonClose;
         Intrinsics.checkNotNullExpressionValue(buttonClose, "buttonClose");
-        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new WalletConnectTransactionBottomSheetDialog$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectTransactionBottomSheetDialog.this.rejectTransaction();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

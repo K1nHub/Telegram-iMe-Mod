@@ -22,12 +22,12 @@
 .method private constructor <init>(Lorg/telegram/ui/CachedMediaLayout;)V
     .locals 1
 
-    .line 771
+    .line 801
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     const/4 v0, 0x3
 
-    .line 772
+    .line 802
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/CachedMediaLayout$BaseFilesAdapter;-><init>(Lorg/telegram/ui/CachedMediaLayout;I)V
 
     return-void
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/CachedMediaLayout$1;)V
     .locals 0
 
-    .line 769
+    .line 799
     invoke-direct {p0, p1}, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;-><init>(Lorg/telegram/ui/CachedMediaLayout;)V
 
     return-void
@@ -47,12 +47,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 6
 
-    .line 799
+    .line 829
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/CachedMediaLayout$CacheCell;
 
-    .line 800
+    .line 830
     iget-object v0, p1, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
@@ -63,7 +63,7 @@
 
     check-cast v0, Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    .line 801
+    .line 831
     iget-object v2, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -74,7 +74,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
-    .line 802
+    .line 832
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v3
@@ -90,7 +90,7 @@
     :cond_0
     move v3, v1
 
-    .line 803
+    .line 833
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
@@ -104,21 +104,21 @@
 
     move v1, v4
 
-    .line 804
+    .line 834
     :cond_1
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 806
+    .line 836
     iget-object v5, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     invoke-static {v5, v2, p2}, Lorg/telegram/ui/CachedMediaLayout;->access$900(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/Storage/CacheModel$FileInfo;I)V
 
-    .line 807
+    .line 837
     iget-object p2, v2, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/Cells/SharedAudioCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Z)V
 
-    .line 808
+    .line 838
     iget-object p2, v2, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->metadata:Lorg/telegram/ui/Storage/CacheModel$FileInfo$FileMetadata;
 
     iget-boolean p2, p2, Lorg/telegram/ui/Storage/CacheModel$FileInfo$FileMetadata;->loading:Z
@@ -127,10 +127,10 @@
 
     invoke-virtual {v0, p2, v3}, Lorg/telegram/ui/Cells/SharedAudioCell;->showName(ZZ)V
 
-    .line 809
+    .line 839
     iput-boolean v1, p1, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->drawDivider:Z
 
-    .line 810
+    .line 840
     iget-object p2, p1, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->sizeTextView:Landroid/widget/TextView;
 
     iget-wide v0, v2, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
@@ -141,7 +141,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 811
+    .line 841
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
@@ -160,7 +160,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 7
 
-    .line 778
+    .line 808
     new-instance p2, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$1;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -171,10 +171,10 @@
 
     const/4 v0, 0x3
 
-    .line 785
+    .line 815
     iput v0, p2, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->type:I
 
-    .line 786
+    .line 816
     new-instance v6, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$2;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -195,15 +195,15 @@
 
     const/4 p1, 0x1
 
-    .line 792
+    .line 822
     invoke-virtual {v6, p1}, Lorg/telegram/ui/Cells/SharedAudioCell;->setCheckForButtonPress(Z)V
 
-    .line 793
+    .line 823
     iget-object p1, p2, Lorg/telegram/ui/CachedMediaLayout$CacheCell;->container:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 794
+    .line 824
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

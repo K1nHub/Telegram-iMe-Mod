@@ -12,20 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.fork.controller.NeuroBotsController;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.shop.BotSettingsActivity;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -43,9 +45,45 @@ public final class BotSettingsActivity extends MvpFragment {
     private int enableBotsRow;
     private int rowCount;
     private int showOftenUsedRow;
-    private final ResettableLazy rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new BotSettingsActivity$rootView$2(this), 1, (Object) null);
-    private final ResettableLazy listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new BotSettingsActivity$listView$2(this), 1, (Object) null);
-    private final ResettableLazy listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new BotSettingsActivity$listAdapter$2(this), 1, (Object) null);
+    private final ResettableLazy rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<FrameLayout>() { // from class: com.iMe.ui.shop.BotSettingsActivity$rootView$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final FrameLayout invoke() {
+            FrameLayout initRootView;
+            initRootView = BotSettingsActivity.this.initRootView();
+            return initRootView;
+        }
+    }, 1, (Object) null);
+    private final ResettableLazy listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.ui.shop.BotSettingsActivity$listView$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final RecyclerListView invoke() {
+            RecyclerListView initListView;
+            initListView = BotSettingsActivity.this.initListView();
+            return initListView;
+        }
+    }, 1, (Object) null);
+    private final ResettableLazy listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ListAdapter>() { // from class: com.iMe.ui.shop.BotSettingsActivity$listAdapter$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final BotSettingsActivity.ListAdapter invoke() {
+            return new BotSettingsActivity.ListAdapter();
+        }
+    }, 1, (Object) null);
 
     @Override // com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {
@@ -88,20 +126,20 @@ public final class BotSettingsActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.neurobots_settings_screen_title));
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.neurobots_settings_screen_title));
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BotSettingsActivity.this.finishFragment();
@@ -150,7 +188,7 @@ public final class BotSettingsActivity extends MvpFragment {
                 } else {
                     listAdapter.notifyItemRangeRemoved(this$0.enableBotsRow + 1, abs);
                 }
-                NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.neuroBotEnableChanged, new Object[0]);
+                NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.neuroBotEnableChanged, new Object[0]);
             } else if (i == this$0.autoBotsInPersonalChatsRow) {
                 NeuroBotsController neuroBotsController2 = this$0.getNeuroBotsController();
                 neuroBotsController2.setNeuroBotsAutoEnabledInPersonalChats(!neuroBotsController2.isNeuroBotsAutoEnabledInPersonalChats());
@@ -161,7 +199,7 @@ public final class BotSettingsActivity extends MvpFragment {
                 NeuroBotsController neuroBotsController4 = this$0.getNeuroBotsController();
                 neuroBotsController4.setShowOftenUsedNeuroBotsEnabled(!neuroBotsController4.isShowOftenUsedNeuroBotsEnabled());
             }
-            NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botSettingsChanged, new Object[0]);
+            NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botSettingsChanged, new Object[0]);
         }
     }
 
@@ -248,16 +286,16 @@ public final class BotSettingsActivity extends MvpFragment {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3417R.string.neurobots_settings_automatic_response_header));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3419R.string.neurobots_settings_automatic_response_header));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 if (i == BotSettingsActivity.this.enableBotsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3417R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3419R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInPersonalChatsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3417R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3419R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInGroupsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3417R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3419R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
                 } else if (i == BotSettingsActivity.this.showOftenUsedRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3417R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3419R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
                 }
             }
         }

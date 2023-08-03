@@ -6,22 +6,22 @@ import java.util.function.ToDoubleFunction;
 public final /* synthetic */ class C3170B0 implements ToDoubleFunction {
 
     /* renamed from: a */
-    final /* synthetic */ p033j$.util.function.ToDoubleFunction f1214a;
+    final /* synthetic */ p033j$.util.function.ToDoubleFunction f1217a;
 
     private /* synthetic */ C3170B0(p033j$.util.function.ToDoubleFunction toDoubleFunction) {
-        this.f1214a = toDoubleFunction;
+        this.f1217a = toDoubleFunction;
     }
 
     /* renamed from: a */
-    public static /* synthetic */ ToDoubleFunction m229a(p033j$.util.function.ToDoubleFunction toDoubleFunction) {
+    public static /* synthetic */ ToDoubleFunction m247a(p033j$.util.function.ToDoubleFunction toDoubleFunction) {
         if (toDoubleFunction == null) {
             return null;
         }
-        return toDoubleFunction instanceof C3168A0 ? ((C3168A0) toDoubleFunction).f1212a : new C3170B0(toDoubleFunction);
+        return toDoubleFunction instanceof C3168A0 ? ((C3168A0) toDoubleFunction).f1215a : new C3170B0(toDoubleFunction);
     }
 
     @Override // java.util.function.ToDoubleFunction
     public /* synthetic */ double applyAsDouble(Object obj) {
-        return this.f1214a.applyAsDouble(obj);
+        return this.f1217a.applyAsDouble(obj);
     }
 }

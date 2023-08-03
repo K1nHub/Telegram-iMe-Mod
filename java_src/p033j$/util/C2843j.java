@@ -6,45 +6,45 @@ import java.util.NoSuchElementException;
 public final class C2843j {
 
     /* renamed from: c */
-    private static final C2843j f755c = new C2843j();
+    private static final C2843j f758c = new C2843j();
 
     /* renamed from: a */
-    private final boolean f756a;
+    private final boolean f759a;
 
     /* renamed from: b */
-    private final int f757b;
+    private final int f760b;
 
     private C2843j() {
-        this.f756a = false;
-        this.f757b = 0;
+        this.f759a = false;
+        this.f760b = 0;
     }
 
     private C2843j(int i) {
-        this.f756a = true;
-        this.f757b = i;
+        this.f759a = true;
+        this.f760b = i;
     }
 
     /* renamed from: a */
-    public static C2843j m531a() {
-        return f755c;
+    public static C2843j m549a() {
+        return f758c;
     }
 
     /* renamed from: d */
-    public static C2843j m528d(int i) {
+    public static C2843j m546d(int i) {
         return new C2843j(i);
     }
 
     /* renamed from: b */
-    public int m530b() {
-        if (this.f756a) {
-            return this.f757b;
+    public int m548b() {
+        if (this.f759a) {
+            return this.f760b;
         }
         throw new NoSuchElementException("No value present");
     }
 
     /* renamed from: c */
-    public boolean m529c() {
-        return this.f756a;
+    public boolean m547c() {
+        return this.f759a;
     }
 
     public boolean equals(Object obj) {
@@ -53,12 +53,12 @@ public final class C2843j {
         }
         if (obj instanceof C2843j) {
             C2843j c2843j = (C2843j) obj;
-            boolean z = this.f756a;
-            if (z && c2843j.f756a) {
-                if (this.f757b == c2843j.f757b) {
+            boolean z = this.f759a;
+            if (z && c2843j.f759a) {
+                if (this.f760b == c2843j.f760b) {
                     return true;
                 }
-            } else if (z == c2843j.f756a) {
+            } else if (z == c2843j.f759a) {
                 return true;
             }
             return false;
@@ -67,13 +67,13 @@ public final class C2843j {
     }
 
     public int hashCode() {
-        if (this.f756a) {
-            return this.f757b;
+        if (this.f759a) {
+            return this.f760b;
         }
         return 0;
     }
 
     public String toString() {
-        return this.f756a ? String.format("OptionalInt[%s]", Integer.valueOf(this.f757b)) : "OptionalInt.empty";
+        return this.f759a ? String.format("OptionalInt[%s]", Integer.valueOf(this.f760b)) : "OptionalInt.empty";
     }
 }

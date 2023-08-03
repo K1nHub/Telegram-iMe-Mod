@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -91,12 +91,12 @@ public class CheckBoxCell extends FrameLayout {
         int i3 = IdFabric$ViewTypes.TON_ADDRESS_VERSION;
         if (i == i3) {
             ViewExtKt.withMediumTypeface(textView);
-            textView.setPadding(AndroidUtilities.m54dp(16), 0, 0, 0);
+            textView.setPadding(AndroidUtilities.m72dp(16), 0, 0, 0);
         }
         if (i == 3) {
             textView.setGravity(19);
             addView(textView, LayoutHelper.createFrame(-1, -1, 51, 29, 0, 0, 0));
-            textView.setPadding(0, 0, 0, AndroidUtilities.m54dp(3));
+            textView.setPadding(0, 0, 0, AndroidUtilities.m72dp(3));
         } else {
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             if (i == 2) {
@@ -121,7 +121,7 @@ public class CheckBoxCell extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-2, -1, (LocaleController.isRTL ? 3 : 5) | 48, i2, 0, i2, 0));
         if (i == i3) {
             ImageView imageView = new ImageView(context);
-            imageView.setImageResource(C3417R.C3419drawable.account_check);
+            imageView.setImageResource(C3419R.C3421drawable.account_check);
             ViewExtKt.setImageColor(imageView, getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon));
             this.checkBox = imageView;
             this.checkBoxSize = 20;
@@ -219,7 +219,7 @@ public class CheckBoxCell extends FrameLayout {
         }
         if (this.collapsedArrow == null) {
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3417R.C3419drawable.arrow_more).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3419R.C3421drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             addView(this.collapsedArrow, LayoutHelper.createFrame(16, 16, 16));
@@ -241,9 +241,9 @@ public class CheckBoxCell extends FrameLayout {
         } catch (Exception unused) {
         }
         if (LocaleController.isRTL) {
-            left = (this.textView.getRight() - f) - AndroidUtilities.m54dp(20);
+            left = (this.textView.getRight() - f) - AndroidUtilities.m72dp(20);
         } else {
-            left = this.textView.getLeft() + f + AndroidUtilities.m54dp(4);
+            left = this.textView.getLeft() + f + AndroidUtilities.m72dp(4);
         }
         this.collapsedArrow.setTranslationX(left);
     }
@@ -253,41 +253,41 @@ public class CheckBoxCell extends FrameLayout {
         int size = View.MeasureSpec.getSize(i);
         int i3 = this.currentType;
         if (i3 == IdFabric$ViewTypes.TON_ADDRESS_VERSION) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
-            int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(34);
+            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(50) + (this.needDivider ? 1 : 0));
+            int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m72dp(34);
             this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth / 3) * 2, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m54dp(8), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
-            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), 1073741824));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m72dp(8), 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), 1073741824));
         } else if (i3 == 3) {
-            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(10), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(34), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
-            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), 1073741824));
-            setMeasuredDimension(this.textView.getMeasuredWidth() + AndroidUtilities.m54dp(29), AndroidUtilities.m54dp(50));
+            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(10), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m72dp(34), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
+            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), 1073741824));
+            setMeasuredDimension(this.textView.getMeasuredWidth() + AndroidUtilities.m72dp(29), AndroidUtilities.m72dp(50));
         } else if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0));
-            int measuredWidth2 = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m54dp(this.currentType == 4 ? 60 : 34);
+            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(50) + (this.needDivider ? 1 : 0));
+            int measuredWidth2 = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m72dp(this.currentType == 4 ? 60 : 34);
             if (this.valueTextView.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
                 measuredWidth2 -= ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).rightMargin;
             }
             this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth2 / 2, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
             TextView textView = this.textView;
-            textView.measure(View.MeasureSpec.makeMeasureSpec(((measuredWidth2 - ((int) Math.abs(textView.getTranslationX()))) - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m54dp(8), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
-            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.checkBoxSize), 1073741824));
+            textView.measure(View.MeasureSpec.makeMeasureSpec(((measuredWidth2 - ((int) Math.abs(textView.getTranslationX()))) - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.m72dp(8), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+            this.checkBox.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.checkBoxSize), 1073741824));
         }
         View view = this.click1Container;
         if (view != null) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.click1Container.measure(View.MeasureSpec.makeMeasureSpec((size - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
+            this.click1Container.measure(View.MeasureSpec.makeMeasureSpec((size - marginLayoutParams.leftMargin) - marginLayoutParams.rightMargin, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
         }
         View view2 = this.click2Container;
         if (view2 != null) {
-            view2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
+            view2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(56), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
         }
         View view3 = this.collapsedArrow;
         if (view3 != null) {
-            view3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(16), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(16), 1073741824));
+            view3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(16), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(16), 1073741824));
         }
     }
 
@@ -317,12 +317,12 @@ public class CheckBoxCell extends FrameLayout {
     }
 
     public void setPad(int i) {
-        int m54dp = AndroidUtilities.m54dp(i * 40 * (LocaleController.isRTL ? -1 : 1));
+        int m72dp = AndroidUtilities.m72dp(i * 40 * (LocaleController.isRTL ? -1 : 1));
         View view = this.checkBox;
         if (view != null) {
-            view.setTranslationX(m54dp);
+            view.setTranslationX(m72dp);
         }
-        float f = m54dp;
+        float f = m72dp;
         this.textView.setTranslationX(f);
         View view2 = this.click1Container;
         if (view2 != null) {
@@ -348,10 +348,10 @@ public class CheckBoxCell extends FrameLayout {
             this.textView.setSingleLine(false);
             this.textView.setEllipsize(null);
             if (this.currentType != 5) {
-                this.textView.setPadding(0, 0, 0, AndroidUtilities.m54dp(5));
+                this.textView.setPadding(0, 0, 0, AndroidUtilities.m72dp(5));
                 layoutParams.height = -2;
-                layoutParams.topMargin = AndroidUtilities.m54dp(10);
-                layoutParams2.topMargin = AndroidUtilities.m54dp(12);
+                layoutParams.topMargin = AndroidUtilities.m72dp(10);
+                layoutParams2.topMargin = AndroidUtilities.m72dp(12);
             }
         } else {
             this.textView.setLines(1);
@@ -361,7 +361,7 @@ public class CheckBoxCell extends FrameLayout {
             this.textView.setPadding(0, 0, 0, 0);
             layoutParams.height = -1;
             layoutParams.topMargin = 0;
-            layoutParams2.topMargin = AndroidUtilities.m54dp(15);
+            layoutParams2.topMargin = AndroidUtilities.m72dp(15);
         }
         this.textView.setLayoutParams(layoutParams);
         this.checkBox.setLayoutParams(layoutParams2);
@@ -429,14 +429,14 @@ public class CheckBoxCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            int m54dp = AndroidUtilities.m54dp(this.currentType == 4 ? 60 : 20) + ((int) Math.abs(this.textView.getTranslationX()));
-            float f = LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : m54dp;
+            int m72dp = AndroidUtilities.m72dp(this.currentType == 4 ? 60 : 20) + ((int) Math.abs(this.textView.getTranslationX()));
+            float f = LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : m72dp;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
             if (!LocaleController.isRTL) {
-                m54dp = 0;
+                m72dp = 0;
             }
-            canvas.drawLine(f, measuredHeight, measuredWidth - m54dp, getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f, measuredHeight, measuredWidth - m72dp, getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

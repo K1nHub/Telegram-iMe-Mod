@@ -1693,30 +1693,30 @@
 .end method
 
 .method private synthetic lambda$searchAnimated$6(Ljava/lang/String;I)V
-    .locals 4
+    .locals 6
 
     .line 513
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 514
-    new-instance v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
+    new-instance v0, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p1, v2}, Lorg/telegram/messenger/MediaDataController$KeywordResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, v2}, Lorg/telegram/messenger/MediaDataController$KeywordResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 515
-    iget v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
+    iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
-    invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
+    invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v1
+    move-result-object v0
 
     const/16 v2, 0xf
 
@@ -1724,13 +1724,15 @@
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;
+    new-instance v5, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;
 
-    invoke-direct {v3, p0, p2, p1, v0}, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/SuggestEmojiView;ILjava/lang/String;Ljava/util/ArrayList;)V
+    invoke-direct {v5, p0, p2, p1, v1}, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/SuggestEmojiView;ILjava/lang/String;Ljava/util/ArrayList;)V
 
-    const/4 p1, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v0, v2, p1, v3}, Lorg/telegram/messenger/MediaDataController;->fillWithAnimatedEmoji(Ljava/util/ArrayList;Ljava/lang/Integer;ZLjava/lang/Runnable;)V
+    const/4 v4, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->fillWithAnimatedEmoji(Ljava/util/ArrayList;Ljava/lang/Integer;ZZLjava/lang/Runnable;)V
 
     return-void
 .end method

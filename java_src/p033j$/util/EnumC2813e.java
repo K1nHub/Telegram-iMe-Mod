@@ -1,7 +1,6 @@
 package p033j$.util;
 
 import java.util.Comparator;
-import java.util.Objects;
 import p033j$.util.Comparator;
 import p033j$.util.function.Function;
 import p033j$.util.function.ToDoubleFunction;
@@ -29,9 +28,9 @@ public enum EnumC2813e implements Comparator, Comparator {
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparing(Function function) {
-        java.util.Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparing(function));
-        return m632a;
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparing(function));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
@@ -46,47 +45,55 @@ public enum EnumC2813e implements Comparator, Comparator {
 
     @Override // java.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparing(java.util.function.Function function) {
-        java.util.Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparing(C3189L.m189a(function)));
-        return m632a;
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparing(C3189L.m207a(function)));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Objects.requireNonNull(toDoubleFunction);
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingDouble(toDoubleFunction));
+        return m650a;
     }
 
     @Override // java.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingDouble(java.util.function.ToDoubleFunction toDoubleFunction) {
-        return Objects.requireNonNull(C3168A0.m231a(toDoubleFunction));
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingDouble(C3168A0.m249a(toDoubleFunction)));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        java.util.Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparingInt(toIntFunction));
-        return m632a;
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingInt(toIntFunction));
+        return m650a;
     }
 
     @Override // java.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(java.util.function.ToIntFunction toIntFunction) {
-        java.util.Comparator m632a;
-        m632a = Comparator.EL.m632a(this, Comparator.CC.comparingInt(C3172C0.m227a(toIntFunction)));
-        return m632a;
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingInt(C3172C0.m245a(toIntFunction)));
+        return m650a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        return Objects.requireNonNull(toLongFunction);
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingLong(toLongFunction));
+        return m650a;
     }
 
     @Override // java.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingLong(java.util.function.ToLongFunction toLongFunction) {
-        return Objects.requireNonNull(C3176E0.m222a(toLongFunction));
+        java.util.Comparator m650a;
+        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingLong(C3176E0.m240a(toLongFunction)));
+        return m650a;
     }
 
     @Override // java.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparing(java.util.function.Function function, java.util.Comparator comparator) {
-        return Comparator.CC.$default$thenComparing(this, C3189L.m189a(function), comparator);
+        return Comparator.CC.$default$thenComparing(this, C3189L.m207a(function), comparator);
     }
 }

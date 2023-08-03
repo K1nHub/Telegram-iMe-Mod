@@ -66,12 +66,12 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
-    const/16 v0, 0xd22
+    const/16 v0, 0xe80
 
     .line 32
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const-string v0, "9.6.6"
+    const-string v0, "9.7.4"
 
     .line 33
     sput-object v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;
@@ -220,7 +220,7 @@
     .line 61
     sget-object v0, Lorg/telegram/messenger/BuildVars;->PLAYSTORE_APP_URL:Ljava/lang/String;
 
-    const-string v1, "org.telegram.messenger"
+    const-string/jumbo v1, "org.telegram.messenger"
 
     const-string v2, "com.iMe.android"
 
@@ -372,9 +372,9 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "org.telegram.messenger.beta"
+    const-string/jumbo v0, "org.telegram.messenger.beta"
 
-    const-string v1, "org.telegram.messenger"
+    const-string/jumbo v1, "org.telegram.messenger"
 
     const-string v2, "com.iMe.android"
 
@@ -443,9 +443,9 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "org.telegram.messenger.web"
+    const-string/jumbo v0, "org.telegram.messenger.web"
 
-    const-string v1, "org.telegram.messenger"
+    const-string/jumbo v1, "org.telegram.messenger"
 
     const-string v2, "com.iMe.android"
 

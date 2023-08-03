@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PipVideoOverlay;Landroid/content/Context;)V
     .locals 0
 
-    .line 962
+    .line 964
     iput-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$6;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 976
+    .line 978
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 977
+    .line 979
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$6;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$900(Lorg/telegram/ui/Components/PipVideoOverlay;)I
@@ -85,10 +85,10 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 978
+    .line 980
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 979
+    .line 981
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -97,7 +97,7 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 965
+    .line 967
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$6;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2600(Lorg/telegram/ui/Components/PipVideoOverlay;)Landroid/widget/FrameLayout;
@@ -126,7 +126,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 970
+    .line 972
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -137,7 +137,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
-    .line 971
+    .line 973
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$6;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2600(Lorg/telegram/ui/Components/PipVideoOverlay;)Landroid/widget/FrameLayout;

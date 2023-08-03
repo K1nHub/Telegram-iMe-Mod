@@ -13,20 +13,20 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zav extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zav> CREATOR = new zaw();
-    @SafeParcelable.VersionField(m776id = 1)
+    @SafeParcelable.VersionField(m794id = 1)
     final int zaa;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     final IBinder zab;
-    @SafeParcelable.Field(getter = "getConnectionResult", m779id = 3)
+    @SafeParcelable.Field(getter = "getConnectionResult", m797id = 3)
     private final ConnectionResult zac;
-    @SafeParcelable.Field(getter = "getSaveDefaultAccount", m779id = 4)
+    @SafeParcelable.Field(getter = "getSaveDefaultAccount", m797id = 4)
     private final boolean zad;
-    @SafeParcelable.Field(getter = "isFromCrossClientAuth", m779id = 5)
+    @SafeParcelable.Field(getter = "isFromCrossClientAuth", m797id = 5)
     private final boolean zae;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zav(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) IBinder iBinder, @SafeParcelable.Param(m778id = 3) ConnectionResult connectionResult, @SafeParcelable.Param(m778id = 4) boolean z, @SafeParcelable.Param(m778id = 5) boolean z2) {
+    public zav(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) IBinder iBinder, @SafeParcelable.Param(m796id = 3) ConnectionResult connectionResult, @SafeParcelable.Param(m796id = 4) boolean z, @SafeParcelable.Param(m796id = 5) boolean z2) {
         this.zaa = i;
         this.zab = iBinder;
         this.zac = connectionResult;

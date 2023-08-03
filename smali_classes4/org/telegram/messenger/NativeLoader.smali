@@ -172,7 +172,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
-    const-string v0, "os.arch"
+    const-string/jumbo v0, "os.arch"
 
     .line 215
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;

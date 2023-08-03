@@ -23,7 +23,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.FileLog;
@@ -32,7 +32,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.IdenticonDrawable;
@@ -70,7 +70,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             try {
                 return super.onTouchEvent(textView, spannable, motionEvent);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 return false;
             }
         }
@@ -95,11 +95,11 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("EncryptionKey", C3417R.string.EncryptionKey));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.IdenticonActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("EncryptionKey", C3419R.string.EncryptionKey));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.IdenticonActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     IdenticonActivity.this.finishFragment();
@@ -110,14 +110,21 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        this.fragmentView.setOnTouchListener(IdenticonActivity$$ExternalSyntheticLambda0.INSTANCE);
+        this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.IdenticonActivity$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createView$0;
+                lambda$createView$0 = IdenticonActivity.lambda$createView$0(view, motionEvent);
+                return lambda$createView$0;
+            }
+        });
         LinearLayout linearLayout = new LinearLayout(context);
         this.linearLayout = linearLayout;
         linearLayout.setOrientation(1);
         this.linearLayout.setWeightSum(100.0f);
         frameLayout2.addView(this.linearLayout, LayoutHelper.createFrame(-1, -1));
         FrameLayout frameLayout3 = new FrameLayout(context);
-        frameLayout3.setPadding(AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(20));
+        frameLayout3.setPadding(AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(20));
         this.linearLayout.addView(frameLayout3, LayoutHelper.createLinear(-1, -1, 50.0f));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -128,7 +135,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
                 super.onLayout(z, i, i2, i3, i4);
                 if (IdenticonActivity.this.codeTextView != null) {
                     int left = (IdenticonActivity.this.codeTextView.getLeft() + (IdenticonActivity.this.codeTextView.getMeasuredWidth() / 2)) - (IdenticonActivity.this.emojiTextView.getMeasuredWidth() / 2);
-                    int measuredHeight = (((IdenticonActivity.this.codeTextView.getMeasuredHeight() - IdenticonActivity.this.emojiTextView.getMeasuredHeight()) / 2) + IdenticonActivity.this.linearLayout1.getTop()) - AndroidUtilities.m54dp(16);
+                    int measuredHeight = (((IdenticonActivity.this.codeTextView.getMeasuredHeight() - IdenticonActivity.this.emojiTextView.getMeasuredHeight()) / 2) + IdenticonActivity.this.linearLayout1.getTop()) - AndroidUtilities.m72dp(16);
                     IdenticonActivity.this.emojiTextView.layout(left, measuredHeight, IdenticonActivity.this.emojiTextView.getMeasuredWidth() + left, IdenticonActivity.this.emojiTextView.getMeasuredHeight() + measuredHeight);
                 }
             }
@@ -139,7 +146,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.linearLayout1 = linearLayout2;
         linearLayout2.setOrientation(1);
-        this.linearLayout1.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
+        this.linearLayout1.setPadding(AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(10), 0);
         this.container.addView(this.linearLayout1, LayoutHelper.createFrame(-2, -2, 17));
         TextView textView = new TextView(context);
         this.codeTextView = textView;
@@ -203,12 +210,12 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             }
             this.codeTextView.setText(spannableStringBuilder.toString());
             spannableStringBuilder.clear();
-            int i7 = C3417R.string.EncryptionKeyDescription;
+            int i7 = C3419R.string.EncryptionKeyDescription;
             String str = user.first_name;
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("EncryptionKeyDescription", i7, str, str)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new URLSpanReplacement(LocaleController.getString("EncryptionKeyLink", C3417R.string.EncryptionKeyLink)), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new URLSpanReplacement(LocaleController.getString("EncryptionKeyLink", C3419R.string.EncryptionKeyLink)), indexOf, indexOf + 12, 33);
             }
             this.textView.setText(spannableStringBuilder);
         }
@@ -321,7 +328,7 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             return;
         }
         TextView textView = this.emojiTextView;
-        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(32), false));
+        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(32), false));
     }
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment

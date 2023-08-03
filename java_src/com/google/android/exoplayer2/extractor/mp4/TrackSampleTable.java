@@ -2,9 +2,8 @@ package com.google.android.exoplayer2.extractor.mp4;
 
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class TrackSampleTable {
+final class TrackSampleTable {
     public final long durationUs;
     public final int[] flags;
     public final int maximumSize;

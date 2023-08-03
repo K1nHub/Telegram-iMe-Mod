@@ -35,3 +35,16 @@
 
 .method public abstract openAvatarsSearch()V
 .end method
+
+.method public abstract sendAudio(Ljava/util/ArrayList;Ljava/lang/CharSequence;ZI)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MessageObject;",
+            ">;",
+            "Ljava/lang/CharSequence;",
+            "ZI)V"
+        }
+    .end annotation
+.end method

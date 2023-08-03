@@ -7,7 +7,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: WalletCreationType.kt */
 /* loaded from: classes3.dex */
 public abstract class WalletCreationType {
@@ -84,7 +84,7 @@ public abstract class WalletCreationType {
             public static final Create INSTANCE = new Create();
 
             private Create() {
-                super(C3417R.C3419drawable.fork_ic_wallet_create, C3417R.string.wallet_dashboard_create_eth_wallet, C3417R.string.wallet_creation_intro_title_create, 0, null);
+                super(C3419R.C3421drawable.fork_ic_wallet_create, C3419R.string.wallet_dashboard_create_eth_wallet, C3419R.string.wallet_creation_intro_title_create, 0, null);
             }
         }
 
@@ -94,7 +94,7 @@ public abstract class WalletCreationType {
             public static final Import INSTANCE = new Import();
 
             private Import() {
-                super(C3417R.C3419drawable.fork_ic_wallet_import, C3417R.string.wallet_dashboard_import_eth_wallet, C3417R.string.wallet_creation_intro_title_import, 1, null);
+                super(C3419R.C3421drawable.fork_ic_wallet_import, C3419R.string.wallet_dashboard_import_eth_wallet, C3419R.string.wallet_creation_intro_title_import, 1, null);
             }
         }
 
@@ -128,7 +128,7 @@ public abstract class WalletCreationType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Activate(BlockchainType blockchainType) {
-            super(C3417R.C3419drawable.fork_ic_wallet_create, C3417R.string.wallet_dashboard_activate_wallet, null);
+            super(C3419R.C3421drawable.fork_ic_wallet_create, C3419R.string.wallet_dashboard_activate_wallet, null);
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             this.blockchainType = blockchainType;
         }

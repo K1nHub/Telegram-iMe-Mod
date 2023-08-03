@@ -95,7 +95,7 @@
 
     move-result v6
 
-    invoke-virtual {v5, v6}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 144
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -1592,7 +1592,7 @@
     .line 304
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     return-void
 .end method

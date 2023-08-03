@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 286
+    .line 287
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
 
     return-void

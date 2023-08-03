@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.wav;
 
+import android.net.Uri;
 import android.util.Pair;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
@@ -23,9 +24,24 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 /* loaded from: classes.dex */
 public final class WavExtractor implements Extractor {
-    public static final ExtractorsFactory FACTORY = WavExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.wav.WavExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = WavExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final int STATE_READING_FILE_TYPE = 0;
     private static final int STATE_READING_FORMAT = 2;
     private static final int STATE_READING_RF64_SAMPLE_DATA_SIZE = 1;
@@ -165,7 +181,7 @@ public final class WavExtractor implements Extractor {
         this.dataEndPosition = this.dataStartPosition + longValue;
         long length = extractorInput.getLength();
         if (length != -1 && this.dataEndPosition > length) {
-            Log.m796w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
+            Log.m814w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
             this.dataEndPosition = length;
         }
         ((OutputWriter) Assertions.checkNotNull(this.outputWriter)).init(this.dataStartPosition, this.dataEndPosition);

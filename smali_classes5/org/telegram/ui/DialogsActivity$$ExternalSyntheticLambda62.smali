@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/bots/usecase/AiBotsManager$AppInstalledCallback;
+.implements Lcom/iMe/bots/usecase/AiBotsManager$BotsListChangedCallback;
 
 
 # instance fields
@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda62;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$GSFdHYnfcL0b1pv-9WVGy-YcwRg(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$d_0oLPVpbFJwEVKNOWFwluGqaU4(Lorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method

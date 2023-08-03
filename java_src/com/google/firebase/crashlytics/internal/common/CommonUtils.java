@@ -12,7 +12,6 @@ import android.os.Debug;
 import android.os.StatFs;
 import android.provider.Settings;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.io.Closeable;
 import java.io.File;
@@ -90,7 +89,7 @@ public class CommonUtils {
             r4.append(r5)     // Catch: java.lang.Throwable -> L59
             r4.append(r6)     // Catch: java.lang.Throwable -> L59
             java.lang.String r6 = r4.toString()     // Catch: java.lang.Throwable -> L59
-            r3.m725e(r6, r7)     // Catch: java.lang.Throwable -> L59
+            r3.m743e(r6, r7)     // Catch: java.lang.Throwable -> L59
             goto L36
         L59:
             r6 = move-exception
@@ -139,7 +138,7 @@ public class CommonUtils {
         static Architecture getValue() {
             String str = Build.CPU_ABI;
             if (TextUtils.isEmpty(str)) {
-                Logger.getLogger().m722v("Architecture#getValue()::Build.CPU_ABI returned null or empty");
+                Logger.getLogger().m740v("Architecture#getValue()::Build.CPU_ABI returned null or empty");
                 return UNKNOWN;
             }
             Architecture architecture = matcher.get(str.toLowerCase(Locale.US));
@@ -159,16 +158,16 @@ public class CommonUtils {
                         if (upperCase.endsWith("KB")) {
                             j2 = convertMemInfoToBytes(upperCase, "KB", 1024);
                         } else if (upperCase.endsWith("MB")) {
-                            j2 = convertMemInfoToBytes(upperCase, "MB", ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES);
+                            j2 = convertMemInfoToBytes(upperCase, "MB", 1048576);
                         } else if (upperCase.endsWith("GB")) {
                             j2 = convertMemInfoToBytes(upperCase, "GB", 1073741824);
                         } else {
                             Logger logger = Logger.getLogger();
-                            logger.m720w("Unexpected meminfo format while computing RAM: " + upperCase);
+                            logger.m738w("Unexpected meminfo format while computing RAM: " + upperCase);
                         }
                     } catch (NumberFormatException e) {
                         Logger logger2 = Logger.getLogger();
-                        logger2.m725e("Unexpected meminfo format while computing RAM: " + upperCase, e);
+                        logger2.m743e("Unexpected meminfo format while computing RAM: " + upperCase, e);
                     }
                 }
                 totalRamInBytes = j2;
@@ -214,7 +213,7 @@ public class CommonUtils {
             return hexify(messageDigest.digest());
         } catch (NoSuchAlgorithmException e) {
             Logger logger = Logger.getLogger();
-            logger.m725e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
+            logger.m743e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
             return "";
         }
     }
@@ -330,7 +329,7 @@ public class CommonUtils {
             try {
                 closeable.close();
             } catch (IOException e) {
-                Logger.getLogger().m725e(str, e);
+                Logger.getLogger().m743e(str, e);
             }
         }
     }

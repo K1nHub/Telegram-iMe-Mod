@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->$r8$lambda$3S47uKeGYxrdM70dYaQfdJn-1WY(Lorg/telegram/ui/Adapters/DialogsAdapter;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->onArchiveSettingsClick()V
 
     return-void
 .end method

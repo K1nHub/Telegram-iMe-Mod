@@ -503,13 +503,13 @@
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->DIGESTS:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.jcajce.provider.digest."
+    const-string/jumbo v1, "org.bouncycastle.jcajce.provider.digest."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->SYMMETRIC_GENERIC:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.jcajce.provider.symmetric."
+    const-string/jumbo v1, "org.bouncycastle.jcajce.provider.symmetric."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -523,7 +523,7 @@
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->ASYMMETRIC_GENERIC:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.jcajce.provider.asymmetric."
+    const-string/jumbo v1, "org.bouncycastle.jcajce.provider.asymmetric."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -533,13 +533,13 @@
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->KEYSTORES:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.jcajce.provider.keystore."
+    const-string/jumbo v1, "org.bouncycastle.jcajce.provider.keystore."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 
     sget-object v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->SECURE_RANDOMS:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.jcajce.provider.drbg."
+    const-string/jumbo v1, "org.bouncycastle.jcajce.provider.drbg."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -547,91 +547,91 @@
 
     const-string v0, "X509Store.CERTIFICATE/COLLECTION"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreCertCollection"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreCertCollection"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.ATTRIBUTECERTIFICATE/COLLECTION"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreAttrCertCollection"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreAttrCertCollection"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.CRL/COLLECTION"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreCRLCollection"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreCRLCollection"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.CERTIFICATEPAIR/COLLECTION"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreCertPairCollection"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreCertPairCollection"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.CERTIFICATE/LDAP"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreLDAPCerts"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreLDAPCerts"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.CRL/LDAP"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreLDAPCRLs"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreLDAPCRLs"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.ATTRIBUTECERTIFICATE/LDAP"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreLDAPAttrCerts"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreLDAPAttrCerts"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509Store.CERTIFICATEPAIR/LDAP"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509StoreLDAPCertPairs"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509StoreLDAPCertPairs"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509StreamParser.CERTIFICATE"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509CertParser"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509CertParser"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509StreamParser.ATTRIBUTECERTIFICATE"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509AttrCertParser"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509AttrCertParser"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509StreamParser.CRL"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509CRLParser"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509CRLParser"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "X509StreamParser.CERTIFICATEPAIR"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509CertPairParser"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509CertPairParser"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "Cipher.BROKENPBEWITHMD5ANDDES"
 
-    const-string v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$BrokePBEWithMD5AndDES"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$BrokePBEWithMD5AndDES"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "Cipher.BROKENPBEWITHSHA1ANDDES"
 
-    const-string v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$BrokePBEWithSHA1AndDES"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$BrokePBEWithSHA1AndDES"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "Cipher.OLDPBEWITHSHAANDTWOFISH-CBC"
 
-    const-string v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$OldPBEWithSHAAndTwofish"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.BrokenJCEBlockCipher$OldPBEWithSHAAndTwofish"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -645,11 +645,11 @@
 
     const-string v4, "CertPathValidator.RFC3280"
 
-    const-string v5, "org.bouncycastle.jce.provider.PKIXAttrCertPathBuilderSpi"
+    const-string/jumbo v5, "org.bouncycastle.jce.provider.PKIXAttrCertPathBuilderSpi"
 
     const-string v6, "CertPathBuilder.RFC3281"
 
-    const-string v7, "org.bouncycastle.jce.provider.PKIXAttrCertPathValidatorSpi"
+    const-string/jumbo v7, "org.bouncycastle.jce.provider.PKIXAttrCertPathValidatorSpi"
 
     const-string v8, "CertPathValidator.RFC3281"
 
@@ -659,20 +659,20 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi_8"
+    const-string/jumbo v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi_8"
 
     invoke-virtual {p0, v4, v0}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi_8"
+    const-string/jumbo v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi_8"
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi"
+    const-string/jumbo v0, "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi"
 
     invoke-virtual {p0, v4, v0}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi"
+    const-string/jumbo v4, "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi"
 
     :goto_0
     invoke-virtual {p0, v3, v4}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -683,19 +683,19 @@
 
     const-string v0, "CertStore.Collection"
 
-    const-string v1, "org.bouncycastle.jce.provider.CertStoreCollectionSpi"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.CertStoreCollectionSpi"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "CertStore.LDAP"
 
-    const-string v1, "org.bouncycastle.jce.provider.X509LDAPCertStoreSpi"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.X509LDAPCertStoreSpi"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "CertStore.Multi"
 
-    const-string v1, "org.bouncycastle.jce.provider.MultiCertStoreSpi"
+    const-string/jumbo v1, "org.bouncycastle.jce.provider.MultiCertStoreSpi"
 
     invoke-virtual {p0, v0, v1}, Ljava/security/Provider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

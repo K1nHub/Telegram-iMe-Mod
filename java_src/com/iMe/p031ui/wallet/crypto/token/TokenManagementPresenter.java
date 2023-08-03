@@ -4,6 +4,8 @@ import com.iMe.model.dialog.DialogModel;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.crypto.token.TokenManagementFragment;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
@@ -22,17 +24,22 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: TokenManagementPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter */
@@ -72,7 +79,19 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
         this.rxEventBus = rxEventBus;
         this.schedulersProvider = schedulersProvider;
         this.walletInteractor = walletInteractor;
-        lazy = LazyKt__LazyJVMKt.lazy(new TokenManagementPresenter$validationErrorText$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<String>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$validationErrorText$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final String invoke() {
+                ResourceManager resourceManager2;
+                resourceManager2 = TokenManagementPresenter.this.resourceManager;
+                return resourceManager2.getString(C3419R.string.wallet_tokens_management_token_address_invalid);
+            }
+        });
         this.validationErrorText$delegate = lazy;
         this.address = "";
         this.selectedNetwork = getInitialNetwork();
@@ -97,13 +116,62 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
         resetImportScreen();
     }
 
-    public final void onAddressScanned(String text) {
+    public final void onAddressScanned(final String text) {
         Intrinsics.checkNotNullParameter(text, "text");
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(text, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(text, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2212xa396b9f6(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2213xa396b9f7((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$onAddressScanned$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1471invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1471invoke(Result<? extends Boolean> it) {
+                String validationErrorText;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (!(result instanceof Result.Success) || !((Boolean) ((Result.Success) result).getData()).booleanValue()) {
+                    validationErrorText = TokenManagementPresenter.this.getValidationErrorText();
+                    ((TokenManagementView) TokenManagementPresenter.this.getViewState()).showToast(validationErrorText);
+                    return;
+                }
+                ((TokenManagementView) TokenManagementPresenter.this.getViewState()).setScannedAddressText(text);
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$onAddressScanned$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -137,7 +205,28 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
         if (this.screenType instanceof TokenManagementFragment.ScreenType.View) {
             return;
         }
-        ((TokenManagementView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getLoggedIndWalletsBlockchains()), new TokenManagementPresenter$startChooseNetworkDialog$1(this));
+        ((TokenManagementView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getLoggedIndWalletsBlockchains()), new Function1<Network, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$startChooseNetworkDialog$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+                invoke2(network);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Network newNetwork) {
+                Network network;
+                Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
+                TokenManagementPresenter.this.selectedNetwork = newNetwork;
+                TokenManagementPresenter.this.resetImportScreen();
+                network = TokenManagementPresenter.this.selectedNetwork;
+                ((TokenManagementView) TokenManagementPresenter.this.getViewState()).setupNetwork(network);
+            }
+        });
     }
 
     public final void copyAddressToClipboard() {
@@ -169,21 +258,117 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
     }
 
     public final void enableToken() {
-        Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(getToken(), true).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(getToken(), true).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2206xd379f861(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2207xd379f862((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$enableToken$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1469invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1469invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    TokenManagementPresenter.this.onTokenStatusChanged(C3419R.string.wallet_tokens_management_add_success);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = TokenManagementPresenter.this.resourceManager;
+                    ((TokenManagementView) TokenManagementPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$enableToken$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void deleteToken() {
-        Observable<Result<Boolean>> observeOn = this.walletInteractor.detachCustomToken(getToken()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.walletInteractor.detachCustomToken(getToken()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2204x76968d39(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2205x76968d3a((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$deleteToken$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1468invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1468invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    TokenManagementPresenter.this.onTokenStatusChanged(C3419R.string.wallet_tokens_management_delete_success);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = TokenManagementPresenter.this.resourceManager;
+                    ((TokenManagementView) TokenManagementPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$deleteToken$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -206,8 +391,29 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
     }
 
     private final void loadTokenInfo() {
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.address, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo699io());
-        final TokenManagementPresenter$loadTokenInfo$1 tokenManagementPresenter$loadTokenInfo$1 = new TokenManagementPresenter$loadTokenInfo$1(this);
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.address, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo717io());
+        final Function1<Result<? extends Boolean>, Result<? extends Boolean>> function1 = new Function1<Result<? extends Boolean>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Result<? extends Boolean> invoke(Result<? extends Boolean> result) {
+                return invoke2((Result<Boolean>) result);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Result<Boolean> invoke2(Result<Boolean> validationResult) {
+                String validationErrorText;
+                Intrinsics.checkNotNullParameter(validationResult, "validationResult");
+                if (!(validationResult instanceof Result.Success) || ((Boolean) ((Result.Success) validationResult).getData()).booleanValue()) {
+                    return validationResult;
+                }
+                validationErrorText = TokenManagementPresenter.this.getValidationErrorText();
+                return Result.Companion.error$default(Result.Companion, new ErrorModel(validationErrorText, FirebaseFunctionsErrorHandler.ErrorStatus.VALIDATION_ERROR, null, 4, null), null, 2, null);
+            }
+        };
         Observable<R> map = observeOn.map(new Function() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -217,11 +423,149 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
             }
         });
         Intrinsics.checkNotNullExpressionValue(map, "private fun loadTokenInf…     .autoDispose()\n    }");
-        Observable flatMap = map.flatMap(new C2214x8acd2b70(new TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1(this)));
+        Observable flatMap = map.flatMap(new C2214x8acd2b70(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>>>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>> invoke(Result<? extends Boolean> result) {
+                WalletInteractor walletInteractor;
+                Token token;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                walletInteractor = TokenManagementPresenter.this.walletInteractor;
+                token = TokenManagementPresenter.this.getToken();
+                Observable<Result<Pair<TokenDetailed, Boolean>>> tokenInfo = walletInteractor.getTokenInfo(token);
+                T viewState = TokenManagementPresenter.this.getViewState();
+                Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+                Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) tokenInfo, (BaseView) viewState, false);
+                final TokenManagementPresenter tokenManagementPresenter = TokenManagementPresenter.this;
+                Observable flatMap2 = withLoadingDialog.flatMap(new C2214x8acd2b70(new Function1<Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>, ObservableSource<? extends Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>>>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$lambda$6$$inlined$flatMapSuccess$1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final ObservableSource<? extends Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>> invoke(final Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> result2) {
+                        WalletInteractor walletInteractor2;
+                        Token token2;
+                        Intrinsics.checkNotNullParameter(result2, "result");
+                        if (!(result2 instanceof Result.Success)) {
+                            if (result2 instanceof Result.Error) {
+                                Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                                return Observable.just(error$default2);
+                            }
+                            return Observable.empty();
+                        }
+                        walletInteractor2 = TokenManagementPresenter.this.walletInteractor;
+                        token2 = TokenManagementPresenter.this.getToken();
+                        Observable<Result<TokenListsData>> tokenListsData = walletInteractor2.getTokenListsData(token2);
+                        final TokenManagementPresenter tokenManagementPresenter2 = TokenManagementPresenter.this;
+                        ObservableSource map2 = tokenListsData.map(new C2214x8acd2b70(new Function1<Result<? extends TokenListsData>, Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$lambda$6$lambda$5$$inlined$mapSuccess$1
+                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                            {
+                                super(1);
+                            }
+
+                            /* JADX WARN: Multi-variable type inference failed */
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> invoke(Result<? extends TokenListsData> result3) {
+                                Intrinsics.checkNotNullParameter(result3, "result");
+                                if (!(result3 instanceof Result.Success)) {
+                                    if (result3 instanceof Result.Error) {
+                                        Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> error$default3 = Result.Companion.error$default(Result.Companion, ((Result.Error) result3).getError(), null, 2, null);
+                                        Intrinsics.checkNotNull(error$default3, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                                        return error$default3;
+                                    } else if (result3 instanceof Object) {
+                                        return result3;
+                                    } else {
+                                        return null;
+                                    }
+                                }
+                                TokenManagementPresenter.this.tokenListsData = (TokenListsData) result3.getData();
+                                return result2;
+                            }
+                        }));
+                        Intrinsics.checkNotNullExpressionValue(map2, "crossinline body: (T) ->…ult as? R\n        }\n    }");
+                        return map2;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
+                return flatMap2;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn2 = flatMap.observeOn(this.schedulersProvider.mo698ui());
+        Observable observeOn2 = flatMap.observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn2, "private fun loadTokenInf…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn2.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2208xaa0b87ac(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2209xaa0b87ad((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn2.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> result) {
+                m1470invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1470invoke(Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> it) {
+                ResourceManager resourceManager;
+                boolean z;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Pair<? extends TokenDetailed, ? extends Boolean>> result = it;
+                if (result instanceof Result.Success) {
+                    Pair pair = (Pair) ((Result.Success) result).getData();
+                    TokenManagementPresenter.this.isCustomToken = ((Boolean) pair.getSecond()).booleanValue();
+                    TokenManagementPresenter.this.setupActionButtonState(true);
+                    TokenManagementPresenter.this.setupTokenData((TokenDetailed) pair.getFirst());
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.CryptoErrorStatus.ERR_TOKEN_NOT_FOUND) {
+                        TokenManagementPresenter.this.isSearchErrorObtained = true;
+                        TokenManagementPresenter.this.setupActionButtonState(false);
+                        z = TokenManagementPresenter.this.isSearchErrorObtained;
+                        ((TokenManagementView) TokenManagementPresenter.this.getViewState()).updateErrorTextVisibility(z);
+                        return;
+                    }
+                    resourceManager = TokenManagementPresenter.this.resourceManager;
+                    ((TokenManagementView) TokenManagementPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementPresenter$loadTokenInfo$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -284,14 +628,14 @@ public final class TokenManagementPresenter extends BasePresenter<TokenManagemen
     }
 
     private final void showEnableConfirmationDialog() {
-        ((TokenManagementView) getViewState()).showEnableConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_tokens_management_enable_title), this.resourceManager.getString(C3417R.string.wallet_tokens_management_enable_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.emoji_premium_title_on_alert)));
+        ((TokenManagementView) getViewState()).showEnableConfirmationDialog(new DialogModel(this.resourceManager.getString(C3419R.string.wallet_tokens_management_enable_title), this.resourceManager.getString(C3419R.string.wallet_tokens_management_enable_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.emoji_premium_title_on_alert)));
     }
 
     private final void showImportConfirmationDialog() {
-        ((TokenManagementView) getViewState()).showEnableConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_tokens_management_import_confirmation_title), this.resourceManager.getString(C3417R.string.wallet_tokens_management_import_confirmation_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_tokens_management_import_confirmation_import)));
+        ((TokenManagementView) getViewState()).showEnableConfirmationDialog(new DialogModel(this.resourceManager.getString(C3419R.string.wallet_tokens_management_import_confirmation_title), this.resourceManager.getString(C3419R.string.wallet_tokens_management_import_confirmation_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_tokens_management_import_confirmation_import)));
     }
 
     private final void showDeleteConfirmationDialog() {
-        ((TokenManagementView) getViewState()).showDeleteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_tokens_management_delete_title), this.resourceManager.getString(C3417R.string.wallet_tokens_management_delete_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.favorite_folder_delete)));
+        ((TokenManagementView) getViewState()).showDeleteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3419R.string.wallet_tokens_management_delete_title), this.resourceManager.getString(C3419R.string.wallet_tokens_management_delete_description), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.favorite_folder_delete)));
     }
 }

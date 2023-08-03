@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkItemAdapterPopupOptionBinding implements ViewBinding {
     private final AppCompatTextView rootView;
@@ -25,7 +25,7 @@ public final class ForkItemAdapterPopupOptionBinding implements ViewBinding {
     }
 
     public static ForkItemAdapterPopupOptionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_item_adapter_popup_option, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_item_adapter_popup_option, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

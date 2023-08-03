@@ -337,7 +337,7 @@
     return v6
 
     :cond_5
-    const-string p4, "pre"
+    const-string/jumbo p4, "pre"
 
     .line 243
     invoke-virtual {p2, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$RlUDL6j-9cBIKRYRcvzhhHItK5Y(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$QuZrPeo6JShlQJyMvUSd0gYZ2tw(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

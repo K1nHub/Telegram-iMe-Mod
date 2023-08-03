@@ -22,6 +22,8 @@
 
 .field public final synthetic f$15:Ljava/lang/String;
 
+.field public final synthetic f$16:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
 .field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
 
 .field public final synthetic f$3:Lorg/telegram/messenger/AccountInstance;
@@ -40,7 +42,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/graphics/Bitmap;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/messenger/VideoEditedInfo;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
+.method public synthetic constructor <init>(Landroid/graphics/Bitmap;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/messenger/VideoEditedInfo;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
     .locals 3
 
     move-object v0, p0
@@ -111,13 +113,17 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda5;->f$15:Ljava/lang/String;
 
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda5;->f$16:Lorg/telegram/tgnet/TLRPC$StoryItem;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -149,7 +155,7 @@
 
     iget-boolean v15, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda5;->f$13:Z
 
-    move-object/from16 v18, v1
+    move-object/from16 v19, v1
 
     iget v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda5;->f$14:I
 
@@ -159,9 +165,13 @@
 
     move-object/from16 v17, v1
 
-    move-object/from16 v1, v18
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda5;->f$16:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$oLPGdVC6xS-46N8iB7mVjIWq8is(Landroid/graphics/Bitmap;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/messenger/VideoEditedInfo;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
+    move-object/from16 v18, v1
+
+    move-object/from16 v1, v19
+
+    invoke-static/range {v1 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$R3_ZeQ7kKsCM8Vp4H4xrZMvkNrg(Landroid/graphics/Bitmap;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/messenger/VideoEditedInfo;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
 
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/CheckedTextViewCompat$Api14Impl;,
+        Landroidx/core/widget/CheckedTextViewCompat$Api21Impl;,
         Landroidx/core/widget/CheckedTextViewCompat$Api16Impl;,
-        Landroidx/core/widget/CheckedTextViewCompat$Api21Impl;
+        Landroidx/core/widget/CheckedTextViewCompat$Api14Impl;
     }
 .end annotation
 

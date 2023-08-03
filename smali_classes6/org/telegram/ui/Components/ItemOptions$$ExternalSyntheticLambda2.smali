@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ItemOptions;
+.field public final synthetic f$0:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ItemOptions;)V
+.method public synthetic constructor <init>(Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ItemOptions;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$$ExternalSyntheticLambda2;->f$0:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+.method public final onPreDraw()Z
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ItemOptions;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$$ExternalSyntheticLambda2;->f$0:Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ItemOptions;->$r8$lambda$BTDHLkcVxUXHJu0EOe0mqr01G-A(Lorg/telegram/ui/Components/ItemOptions;Landroid/view/KeyEvent;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->$r8$lambda$NPblFE4OQfvfmBgtvqfdhH8-7oI(Landroid/view/View;)Z
 
-    return-void
+    move-result v0
+
+    return v0
 .end method

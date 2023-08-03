@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/HintView;)V
     .locals 0
 
-    .line 287
+    .line 315
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 1
 
-    .line 291
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/HintView;->hide()V
@@ -54,27 +54,36 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 290
+    .line 318
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$002(Lorg/telegram/ui/Components/HintView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 291
+    .line 319
+    iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/HintView;->access$100(Lorg/telegram/ui/Components/HintView;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    .line 320
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     new-instance v0, Lorg/telegram/ui/Components/HintView$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/HintView$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/HintView$1;)V
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$102(Lorg/telegram/ui/Components/HintView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$202(Lorg/telegram/ui/Components/HintView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/HintView;->access$200(Lorg/telegram/ui/Components/HintView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/HintView;->access$300(Lorg/telegram/ui/Components/HintView;)I
 
     move-result v0
 
@@ -90,5 +99,6 @@
     :goto_0
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
+    :cond_1
     return-void
 .end method

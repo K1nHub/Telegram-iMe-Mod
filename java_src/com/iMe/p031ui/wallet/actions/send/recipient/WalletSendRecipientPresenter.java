@@ -3,6 +3,7 @@ package com.iMe.p031ui.wallet.actions.send.recipient;
 import com.iMe.manager.crypto.recipient.CryptoRecipientManager;
 import com.iMe.manager.crypto.recipient.CryptoRecipientView;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.iMe.storage.domain.model.Result;
@@ -14,9 +15,13 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.helper.wallet.CryptoHelper;
 import io.reactivex.Observable;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletSendRecipientPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter */
@@ -84,8 +89,57 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
             loadAddressInfoById(str, this.currentNetworkType.getBlockchainType());
             return;
         }
-        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, this.currentNetworkType.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, this.currentNetworkType.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2105xbc0d2688(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2106xbc0d2689(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1421invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1421invoke(Result<? extends String> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    if (!(((CharSequence) success.getData()).length() > 0)) {
+                        resourceManager = WalletSendRecipientPresenter.this.resourceManager;
+                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3419R.string.wallet_recipient_validation_address_error));
+                        return;
+                    }
+                    ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).onRecipientSelected("", (String) success.getData(), false);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 }

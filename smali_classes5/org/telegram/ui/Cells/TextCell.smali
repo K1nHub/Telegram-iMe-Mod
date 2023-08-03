@@ -569,7 +569,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 681
+    .line 684
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoading:Z
 
     const/4 v1, 0x0
@@ -584,7 +584,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 682
+    .line 685
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->paint:Landroid/graphics/Paint;
 
@@ -592,14 +592,14 @@
 
     if-nez v0, :cond_1
 
-    .line 683
+    .line 686
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->paint:Landroid/graphics/Paint;
 
-    .line 684
+    .line 687
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchBackground:I
 
     iget-object v5, p0, Lorg/telegram/ui/Cells/TextCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -610,7 +610,7 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 687
+    .line 690
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->incrementLoadingProgress:Z
 
@@ -618,7 +618,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 688
+    .line 691
     iget v0, p0, Lorg/telegram/ui/Cells/TextCell;->loadingProgress:F
 
     add-float/2addr v0, v4
@@ -629,17 +629,17 @@
 
     if-lez v0, :cond_3
 
-    .line 690
+    .line 693
     iput v2, p0, Lorg/telegram/ui/Cells/TextCell;->loadingProgress:F
 
     const/4 v0, 0x0
 
-    .line 691
+    .line 694
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->incrementLoadingProgress:Z
 
     goto :goto_0
 
-    .line 694
+    .line 697
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Cells/TextCell;->loadingProgress:F
 
@@ -651,13 +651,13 @@
 
     if-gez v0, :cond_3
 
-    .line 696
+    .line 699
     iput v1, p0, Lorg/telegram/ui/Cells/TextCell;->loadingProgress:F
 
-    .line 697
+    .line 700
     iput-boolean v3, p0, Lorg/telegram/ui/Cells/TextCell;->incrementLoadingProgress:Z
 
-    .line 701
+    .line 704
     :cond_3
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Cells/TextCell;->changeProgressStartDelay:I
@@ -666,12 +666,12 @@
 
     add-int/lit8 v0, v0, -0xf
 
-    .line 702
+    .line 705
     iput v0, p0, Lorg/telegram/ui/Cells/TextCell;->changeProgressStartDelay:I
 
     goto :goto_1
 
-    .line 703
+    .line 706
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoading:Z
 
@@ -687,14 +687,14 @@
 
     add-float/2addr v5, v4
 
-    .line 704
+    .line 707
     iput v5, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
     cmpl-float v0, v5, v2
 
     if-lez v0, :cond_6
 
-    .line 706
+    .line 709
     iput v2, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
     goto :goto_1
@@ -702,7 +702,7 @@
     :cond_5
     if-nez v0, :cond_6
 
-    .line 708
+    .line 711
     iget v0, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
     cmpl-float v5, v0, v1
@@ -711,14 +711,14 @@
 
     sub-float/2addr v0, v4
 
-    .line 709
+    .line 712
     iput v0, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_6
 
-    .line 711
+    .line 714
     iput v1, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
     :cond_6
@@ -727,7 +727,7 @@
 
     const v1, 0x3ecccccd    # 0.4f
 
-    .line 715
+    .line 718
     iget v4, p0, Lorg/telegram/ui/Cells/TextCell;->loadingProgress:F
 
     mul-float/2addr v4, v1
@@ -738,7 +738,7 @@
 
     mul-float/2addr v4, v0
 
-    .line 716
+    .line 719
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -749,17 +749,17 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 717
+    .line 720
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
     shr-int/2addr v0, v3
 
-    .line 718
+    .line 721
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 719
+    .line 722
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -784,7 +784,7 @@
 
     const/4 v5, 0x3
 
-    .line 720
+    .line 723
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -793,7 +793,7 @@
 
     int-to-float v6, v6
 
-    .line 721
+    .line 724
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v7
@@ -806,7 +806,7 @@
 
     int-to-float v4, v7
 
-    .line 722
+    .line 725
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -815,15 +815,15 @@
 
     int-to-float v0, v0
 
-    .line 718
+    .line 721
     invoke-virtual {v1, v3, v6, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 724
+    .line 727
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_7
 
-    .line 725
+    .line 728
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -836,7 +836,7 @@
 
     iput v0, v1, Landroid/graphics/RectF;->left:F
 
-    .line 726
+    .line 729
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -849,7 +849,7 @@
 
     iput v0, v1, Landroid/graphics/RectF;->right:F
 
-    .line 728
+    .line 731
     :cond_7
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -867,10 +867,10 @@
 
     invoke-virtual {p1, v1, v0, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 729
+    .line 732
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 731
+    .line 734
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
@@ -880,7 +880,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 732
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->valueSpoilersTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v1, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
@@ -889,7 +889,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 733
+    .line 736
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -984,7 +984,7 @@
 .method protected onAttachedToWindow()V
     .locals 0
 
-    .line 653
+    .line 656
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     return-void
@@ -993,21 +993,46 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 659
+    .line 662
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     return-void
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 10
+    .locals 8
 
-    .line 568
+    .line 567
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_9
 
-    .line 569
+    .line 568
+    iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    if-eqz v0, :cond_0
+
+    const-string v1, "paintDivider"
+
+    invoke-interface {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    .line 570
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+
+    :cond_1
+    move-object v6, v0
+
+    .line 572
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->needFullDivider:Z
 
     const/16 v1, 0x48
@@ -1016,140 +1041,144 @@
 
     const/16 v3, 0x14
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_5
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_0
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->inDialogs:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     move v0, v1
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_3
     move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_2
+    :cond_4
     move v0, v3
 
-    :goto_0
+    :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    const/4 v0, 0x0
-
-    :goto_2
-    move v5, v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    int-to-float v6, v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v0
-
-    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v4, :cond_6
-
-    iget-object v4, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-virtual {v4}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
-    iget-boolean v3, p0, Lorg/telegram/ui/Cells/TextCell;->inDialogs:Z
-
-    if-eqz v3, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    move v1, v2
-
     goto :goto_3
 
     :cond_5
-    move v1, v3
+    :goto_2
+    const/4 v0, 0x0
 
     :goto_3
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v1
+    move-result v4
+
+    add-int/lit8 v4, v4, -0x1
+
+    int-to-float v4, v4
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v5
+
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v7, :cond_8
+
+    iget-object v7, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {v7}, Landroid/widget/ImageView;->getVisibility()I
+
+    move-result v7
+
+    if-nez v7, :cond_7
+
+    iget-boolean v3, p0, Lorg/telegram/ui/Cells/TextCell;->inDialogs:Z
+
+    if-eqz v3, :cond_6
 
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v2
+
+    goto :goto_4
+
+    :cond_7
+    move v1, v3
 
     :goto_4
-    sub-int/2addr v0, v1
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    int-to-float v7, v0
+    move-result v1
+
+    goto :goto_5
+
+    :cond_8
+    const/4 v1, 0x0
+
+    :goto_5
+    sub-int/2addr v5, v1
+
+    int-to-float v5, v5
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v0
+    move-result v1
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    int-to-float v8, v0
+    int-to-float v7, v1
 
-    sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    move-object v1, p1
 
-    move-object v4, p1
+    move v2, v0
 
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    move v3, v4
 
-    :cond_7
+    move v4, v5
+
+    move v5, v7
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    :cond_9
     return-void
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 5
 
-    .line 575
+    .line 578
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 576
+    .line 579
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 577
+    .line 580
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -1158,14 +1187,14 @@
 
     if-nez v1, :cond_0
 
-    .line 578
+    .line 581
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 579
+    .line 582
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -1188,12 +1217,12 @@
 
     aput-object v1, v3, v0
 
-    .line 580
+    .line 583
     invoke-static {v3}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 583
+    .line 586
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
@@ -1201,13 +1230,13 @@
 
     const-string v0, "android.widget.Switch"
 
-    .line 584
+    .line 587
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 585
+    .line 588
     invoke-virtual {p1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 586
+    .line 589
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Switch;->isChecked()Z
@@ -1216,12 +1245,12 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
-    .line 587
+    .line 590
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 588
+    .line 591
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -1230,7 +1259,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 589
+    .line 592
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
@@ -1245,10 +1274,10 @@
 
     const/16 v1, 0xa
 
-    .line 590
+    .line 593
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 591
+    .line 594
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
@@ -1257,13 +1286,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 593
+    .line 596
     :cond_1
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
-    .line 595
+    .line 598
     :cond_2
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1271,14 +1300,14 @@
 
     if-nez v1, :cond_3
 
-    .line 596
+    .line 599
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     :cond_3
     :goto_0
     const/16 v0, 0x10
 
-    .line 599
+    .line 602
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     return-void
@@ -2341,7 +2370,7 @@
 .method public setChecked(Z)V
     .locals 2
 
-    .line 611
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
     const/4 v1, 0x1
@@ -2508,10 +2537,10 @@
 .method public setDrawLoading(ZIZ)V
     .locals 0
 
-    .line 664
+    .line 667
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoading:Z
 
-    .line 665
+    .line 668
     iput p2, p0, Lorg/telegram/ui/Cells/TextCell;->loadingSize:I
 
     if-nez p3, :cond_1
@@ -2525,11 +2554,11 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 668
+    .line 671
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Cells/TextCell;->drawLoadingProgress:F
 
-    .line 672
+    .line 675
     :cond_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -2586,20 +2615,20 @@
 .method public setNeedDivider(Z)V
     .locals 1
 
-    .line 603
+    .line 606
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 604
+    .line 607
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
     xor-int/lit8 p1, p1, 0x1
 
-    .line 605
+    .line 608
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 606
+    .line 609
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
@@ -2636,28 +2665,28 @@
 .method public setSubtitle(Ljava/lang/CharSequence;)V
     .locals 2
 
-    .line 737
+    .line 740
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 738
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 739
+    .line 742
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextCell;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     goto :goto_0
 
-    .line 741
+    .line 744
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -2789,11 +2818,10 @@
 
     .line 504
     :cond_0
-    iput-boolean p3, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
+    iget-boolean p1, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
-    xor-int/lit8 p1, p3, 0x1
+    xor-int/lit8 p1, p1, 0x1
 
-    .line 505
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -2804,60 +2832,60 @@
 
     const/16 v0, 0x15
 
-    .line 509
+    .line 508
     iput v0, p0, Lorg/telegram/ui/Cells/TextCell;->imageLeft:I
 
     const/4 v0, 0x0
 
-    .line 510
+    .line 509
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Cells/TextCell;->getOffsetFromImage(Z)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/TextCell;->offsetFromImage:I
 
-    .line 511
+    .line 510
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 512
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 513
+    .line 512
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueSpoilersTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 514
+    .line 513
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 515
+    .line 514
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
     if-eqz p1, :cond_0
 
-    .line 516
+    .line 515
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 517
+    .line 516
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
-    .line 519
+    .line 518
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 520
+    .line 519
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 p2, 0x7
@@ -2868,17 +2896,17 @@
 
     invoke-virtual {p1, v0, p2, v0, v0}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 521
+    .line 520
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 522
+    .line 521
     iput-boolean p4, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
     xor-int/lit8 p1, p4, 0x1
 
-    .line 523
+    .line 522
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -3491,24 +3519,24 @@
 
     const/16 v0, 0x15
 
-    .line 545
+    .line 544
     iput v0, p0, Lorg/telegram/ui/Cells/TextCell;->imageLeft:I
 
     const/4 v0, 0x0
 
-    .line 546
+    .line 545
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Cells/TextCell;->getOffsetFromImage(Z)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/TextCell;->offsetFromImage:I
 
-    .line 547
+    .line 546
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 548
+    .line 547
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v1, 0x0
@@ -3517,34 +3545,34 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 549
+    .line 548
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 550
+    .line 549
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 551
+    .line 550
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 552
+    .line 551
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->valueSpoilersTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 553
+    .line 552
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 554
+    .line 553
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v1, 0x7
@@ -3555,20 +3583,20 @@
 
     invoke-virtual {p1, v0, v1, v0, v0}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 555
+    .line 554
     iput-boolean p3, p0, Lorg/telegram/ui/Cells/TextCell;->needDivider:Z
 
     xor-int/lit8 p1, p3, 0x1
 
-    .line 556
+    .line 555
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 557
+    .line 556
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
     if-eqz p1, :cond_0
 
-    .line 558
+    .line 557
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0

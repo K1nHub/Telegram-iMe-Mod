@@ -70,7 +70,7 @@
     :catch_0
     :cond_0
     :try_start_1
-    const-string v0, "org.eclipse.jetty.alpn.ALPN"
+    const-string/jumbo v0, "org.eclipse.jetty.alpn.ALPN"
 
     const/4 v2, 0x1
 
@@ -136,7 +136,7 @@
 
     move-result-object v11
 
-    const-string v0, "put"
+    const-string/jumbo v0, "put"
 
     const/4 v5, 0x2
 
@@ -184,7 +184,7 @@
     .line 144
     new-instance v2, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;
 
-    const-string v3, "putMethod"
+    const-string/jumbo v3, "putMethod"
 
     .line 145
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

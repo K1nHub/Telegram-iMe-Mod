@@ -86,7 +86,7 @@
 .end method
 
 .method public static $default$thenComparingDouble(Ljava/util/Comparator;Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,16 +97,11 @@
         }
     .end annotation
 
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lj$/util/Comparator$-CC;->comparingDouble(Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
 
-    .line 2
-    new-instance v0, Lj$/util/d;
+    move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/util/d;-><init>(Lj$/util/function/ToDoubleFunction;)V
-
-    .line 3
-    invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, p1}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -137,7 +132,7 @@
 .end method
 
 .method public static $default$thenComparingLong(Ljava/util/Comparator;Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,16 +143,11 @@
         }
     .end annotation
 
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lj$/util/Comparator$-CC;->comparingLong(Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
 
-    .line 2
-    new-instance v0, Lj$/util/d;
+    move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/util/d;-><init>(Lj$/util/function/ToLongFunction;)V
-
-    .line 3
-    invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0, p1}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
@@ -199,6 +189,31 @@
     return-object v0
 .end method
 
+.method public static comparingDouble(Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lj$/util/function/ToDoubleFunction<",
+            "-TT;>;)",
+            "Ljava/util/Comparator<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    new-instance v0, Lj$/util/d;
+
+    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToDoubleFunction;)V
+
+    return-object v0
+.end method
+
 .method public static comparingInt(Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -220,6 +235,31 @@
     new-instance v0, Lj$/util/d;
 
     invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToIntFunction;)V
+
+    return-object v0
+.end method
+
+.method public static comparingLong(Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lj$/util/function/ToLongFunction<",
+            "-TT;>;)",
+            "Ljava/util/Comparator<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    new-instance v0, Lj$/util/d;
+
+    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToLongFunction;)V
 
     return-object v0
 .end method

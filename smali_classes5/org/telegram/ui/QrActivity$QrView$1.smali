@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$QrView;ZZZ)V
     .locals 0
 
-    .line 841
+    .line 831
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$QrView$1;->this$0:Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -35,7 +35,7 @@
 .method public invalidateSelf()V
     .locals 1
 
-    .line 844
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$QrView$1;->this$0:Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V

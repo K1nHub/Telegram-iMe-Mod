@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,20 +22,14 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda146;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$8TdBvcuyHEUOVRoYF3qMVNxTPVU(Lorg/telegram/ui/DialogsActivity;)V
+    check-cast p1, Ljava/lang/Long;
 
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$ipmiwaQbqxmuJDW5Nz3YLqDpisI(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

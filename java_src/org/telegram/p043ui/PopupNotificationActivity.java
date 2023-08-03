@@ -23,10 +23,10 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
-import org.telegram.PhoneFormat.C3333PhoneFormat;
+import org.telegram.PhoneFormat.C3334PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -40,9 +40,10 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AvatarDrawable;
 import org.telegram.p043ui.Components.BackupImageView;
@@ -61,6 +62,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$KeyboardButton;
 import org.telegram.tgnet.TLRPC$ReplyMarkup;
+import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$TL_channels_sendAsPeers;
 import org.telegram.tgnet.TLRPC$TL_keyboardButtonCallback;
 import org.telegram.tgnet.TLRPC$TL_keyboardButtonRow;
@@ -68,7 +70,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.PopupNotificationActivity */
 /* loaded from: classes5.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
-    private C3484ActionBar actionBar;
+    private C3485ActionBar actionBar;
     private FrameLayout avatarContainer;
     private BackupImageView avatarImageView;
     private ViewGroup centerButtonsView;
@@ -164,7 +166,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 int size = View.MeasureSpec.getSize(i2);
                 int size2 = View.MeasureSpec.getSize(i3);
                 setMeasuredDimension(size, size2);
-                if (measureKeyboardHeight() <= AndroidUtilities.m54dp(20)) {
+                if (measureKeyboardHeight() <= AndroidUtilities.m72dp(20)) {
                     size2 -= PopupNotificationActivity.this.chatActivityEnterView.getEmojiPadding();
                 }
                 int childCount = getChildCount();
@@ -175,7 +177,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                             if (PopupNotificationActivity.this.chatActivityEnterView.isRecordCircle(childAt)) {
                                 measureChildWithMargins(childAt, i2, 0, i3, 0);
                             } else {
-                                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(2) + size2), 1073741824));
+                                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(2) + size2), 1073741824));
                             }
                         } else {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, 1073741824));
@@ -199,7 +201,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     Method dump skipped, instructions count: 231
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.PopupNotificationActivity.C64221.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.PopupNotificationActivity.C64851.onLayout(boolean, int, int, int, int):void");
             }
         };
         setContentView(sizeNotifierFrameLayout);
@@ -215,7 +217,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 for (int i4 = 0; i4 < getChildCount(); i4++) {
                     View childAt = getChildAt(i4);
                     if (childAt.getTag() instanceof String) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.m54dp(3), 1073741824));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.m72dp(3), 1073741824));
                     }
                 }
             }
@@ -226,7 +228,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 for (int i6 = 0; i6 < getChildCount(); i6++) {
                     View childAt = getChildAt(i6);
                     if (childAt.getTag() instanceof String) {
-                        childAt.layout(childAt.getLeft(), PopupNotificationActivity.this.chatActivityEnterView.getTop() + AndroidUtilities.m54dp(3), childAt.getRight(), PopupNotificationActivity.this.chatActivityEnterView.getBottom());
+                        childAt.layout(childAt.getLeft(), PopupNotificationActivity.this.chatActivityEnterView.getTop() + AndroidUtilities.m72dp(3), childAt.getRight(), PopupNotificationActivity.this.chatActivityEnterView.getBottom());
                     }
                 }
             }
@@ -260,6 +262,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             @Override // org.telegram.p043ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ int getContentViewHeight() {
                 return ChatActivityEnterView.ChatActivityEnterViewDelegate.CC.$default$getContentViewHeight(this);
+            }
+
+            @Override // org.telegram.p043ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ TLRPC$StoryItem getReplyToStory() {
+                return ChatActivityEnterView.ChatActivityEnterViewDelegate.CC.$default$getReplyToStory(this);
             }
 
             @Override // org.telegram.p043ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
@@ -415,6 +422,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             }
 
             @Override // org.telegram.p043ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ void sendMedia(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z, int i2, boolean z2, String str) {
+                ChatActivityEnterView.ChatActivityEnterViewDelegate.CC.$default$sendMedia(this, photoEntry, videoEditedInfo, z, i2, z2, str);
+            }
+
+            @Override // org.telegram.p043ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ void showGifsViewer(PhotoViewer.PhotoViewerProvider photoViewerProvider, ArrayList arrayList, int i2) {
                 ChatActivityEnterView.ChatActivityEnterViewDelegate.CC.$default$showGifsViewer(this, photoViewerProvider, arrayList, i2);
             }
@@ -442,17 +454,17 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         FrameLayoutTouch frameLayoutTouch = new FrameLayoutTouch(this);
         this.messageContainer = frameLayoutTouch;
         this.popupContainer.addView(frameLayoutTouch, 0);
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(this);
-        this.actionBar = c3484ActionBar;
-        c3484ActionBar.setOccupyStatusBar(false);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_close_white);
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(this);
+        this.actionBar = c3485ActionBar;
+        c3485ActionBar.setOccupyStatusBar(false);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_close_white);
         this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefault));
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSelector), false);
         this.popupContainer.addView(this.actionBar);
         ViewGroup.LayoutParams layoutParams = this.actionBar.getLayoutParams();
         layoutParams.width = -1;
         this.actionBar.setLayoutParams(layoutParams);
-        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(2, 0, AndroidUtilities.m54dp(56));
+        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(2, 0, AndroidUtilities.m72dp(56));
         TextView textView = new TextView(this);
         this.countText = textView;
         int i2 = Theme.key_actionBarDefaultSubtitle;
@@ -462,23 +474,23 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         addItemWithWidth.addView(this.countText, LayoutHelper.createFrame(56, -1));
         FrameLayout frameLayout = new FrameLayout(this);
         this.avatarContainer = frameLayout;
-        frameLayout.setPadding(AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4), 0);
+        frameLayout.setPadding(AndroidUtilities.m72dp(4), 0, AndroidUtilities.m72dp(4), 0);
         this.actionBar.addView(this.avatarContainer);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.avatarContainer.getLayoutParams();
         layoutParams2.height = -1;
         layoutParams2.width = -2;
-        layoutParams2.rightMargin = AndroidUtilities.m54dp(48);
-        layoutParams2.leftMargin = AndroidUtilities.m54dp(60);
+        layoutParams2.rightMargin = AndroidUtilities.m72dp(48);
+        layoutParams2.leftMargin = AndroidUtilities.m72dp(60);
         layoutParams2.gravity = 51;
         this.avatarContainer.setLayoutParams(layoutParams2);
         BackupImageView backupImageView = new BackupImageView(this);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(21));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(21));
         this.avatarContainer.addView(this.avatarImageView);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.avatarImageView.getLayoutParams();
-        layoutParams3.width = AndroidUtilities.m54dp(42);
-        layoutParams3.height = AndroidUtilities.m54dp(42);
-        layoutParams3.topMargin = AndroidUtilities.m54dp(3);
+        layoutParams3.width = AndroidUtilities.m72dp(42);
+        layoutParams3.height = AndroidUtilities.m72dp(42);
+        layoutParams3.topMargin = AndroidUtilities.m72dp(3);
         this.avatarImageView.setLayoutParams(layoutParams3);
         TextView textView2 = new TextView(this);
         this.nameTextView = textView2;
@@ -494,8 +506,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) this.nameTextView.getLayoutParams();
         layoutParams4.width = -2;
         layoutParams4.height = -2;
-        layoutParams4.leftMargin = AndroidUtilities.m54dp(54);
-        layoutParams4.bottomMargin = AndroidUtilities.m54dp(22);
+        layoutParams4.leftMargin = AndroidUtilities.m72dp(54);
+        layoutParams4.bottomMargin = AndroidUtilities.m72dp(22);
         layoutParams4.gravity = 80;
         this.nameTextView.setLayoutParams(layoutParams4);
         TextView textView3 = new TextView(this);
@@ -511,12 +523,12 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) this.onlineTextView.getLayoutParams();
         layoutParams5.width = -2;
         layoutParams5.height = -2;
-        layoutParams5.leftMargin = AndroidUtilities.m54dp(54);
-        layoutParams5.bottomMargin = AndroidUtilities.m54dp(4);
+        layoutParams5.leftMargin = AndroidUtilities.m72dp(54);
+        layoutParams5.bottomMargin = AndroidUtilities.m72dp(4);
         layoutParams5.gravity = 80;
         this.onlineTextView.setLayoutParams(layoutParams5);
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PopupNotificationActivity.4
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PopupNotificationActivity.4
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     PopupNotificationActivity.this.onFinish();
@@ -554,15 +566,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(LocaleController.getString("AppName", C3417R.string.AppName));
-        builder.setMessage(LocaleController.getString("PermissionNoAudioWithHint", C3417R.string.PermissionNoAudioWithHint));
-        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3417R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("AppName", C3419R.string.AppName));
+        builder.setMessage(LocaleController.getString("PermissionNoAudioWithHint", C3419R.string.PermissionNoAudioWithHint));
+        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3419R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 PopupNotificationActivity.this.lambda$onRequestPermissionsResult$0(dialogInterface, i2);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), null);
         builder.show();
     }
 
@@ -573,7 +585,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
             startActivity(intent);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -653,25 +665,25 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void applyViewsLayoutParams(int i) {
-        int m54dp = AndroidUtilities.displaySize.x - AndroidUtilities.m54dp(24);
+        int m72dp = AndroidUtilities.displaySize.x - AndroidUtilities.m72dp(24);
         ViewGroup viewGroup = this.leftView;
         if (viewGroup != null) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewGroup.getLayoutParams();
-            if (layoutParams.width != m54dp) {
-                layoutParams.width = m54dp;
+            if (layoutParams.width != m72dp) {
+                layoutParams.width = m72dp;
                 this.leftView.setLayoutParams(layoutParams);
             }
-            this.leftView.setTranslationX((-m54dp) + i);
+            this.leftView.setTranslationX((-m72dp) + i);
         }
         ViewGroup viewGroup2 = this.leftButtonsView;
         if (viewGroup2 != null) {
-            viewGroup2.setTranslationX((-m54dp) + i);
+            viewGroup2.setTranslationX((-m72dp) + i);
         }
         ViewGroup viewGroup3 = this.centerView;
         if (viewGroup3 != null) {
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) viewGroup3.getLayoutParams();
-            if (layoutParams2.width != m54dp) {
-                layoutParams2.width = m54dp;
+            if (layoutParams2.width != m72dp) {
+                layoutParams2.width = m72dp;
                 this.centerView.setLayoutParams(layoutParams2);
             }
             this.centerView.setTranslationX(i);
@@ -683,15 +695,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         ViewGroup viewGroup5 = this.rightView;
         if (viewGroup5 != null) {
             FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) viewGroup5.getLayoutParams();
-            if (layoutParams3.width != m54dp) {
-                layoutParams3.width = m54dp;
+            if (layoutParams3.width != m72dp) {
+                layoutParams3.width = m72dp;
                 this.rightView.setLayoutParams(layoutParams3);
             }
-            this.rightView.setTranslationX(m54dp + i);
+            this.rightView.setTranslationX(m72dp + i);
         }
         ViewGroup viewGroup6 = this.rightButtonsView;
         if (viewGroup6 != null) {
-            viewGroup6.setTranslationX(m54dp + i);
+            viewGroup6.setTranslationX(m72dp + i);
         }
         this.messageContainer.invalidate();
     }
@@ -743,7 +755,14 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                                 linearLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                                 linearLayout.setWeightSum(100.0f);
                                 linearLayout.setTag("b");
-                                linearLayout.setOnTouchListener(PopupNotificationActivity$$ExternalSyntheticLambda5.INSTANCE);
+                                linearLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda5
+                                    @Override // android.view.View.OnTouchListener
+                                    public final boolean onTouch(View view, MotionEvent motionEvent) {
+                                        boolean lambda$getButtonsViewForMessage$4;
+                                        lambda$getButtonsViewForMessage$4 = PopupNotificationActivity.lambda$getButtonsViewForMessage$4(view, motionEvent);
+                                        return lambda$getButtonsViewForMessage$4;
+                                    }
+                                });
                             }
                             TextView textView = new TextView(this);
                             textView.setTextSize(1, 16.0f);
@@ -769,7 +788,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 }
             }
             if (linearLayout != null) {
-                int m54dp = AndroidUtilities.displaySize.x - AndroidUtilities.m54dp(24);
+                int m72dp = AndroidUtilities.displaySize.x - AndroidUtilities.m72dp(24);
                 RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
                 layoutParams.addRule(12);
                 if (z) {
@@ -777,9 +796,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     if (i3 == i10) {
                         linearLayout.setTranslationX(BitmapDescriptorFactory.HUE_RED);
                     } else if (i3 == i10 - 1) {
-                        linearLayout.setTranslationX(-m54dp);
+                        linearLayout.setTranslationX(-m72dp);
                     } else if (i3 == i10 + 1) {
-                        linearLayout.setTranslationX(m54dp);
+                        linearLayout.setTranslationX(m72dp);
                     }
                 }
                 this.popupContainer.addView(linearLayout, layoutParams);
@@ -850,7 +869,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
     private void prepareLayouts(int i) {
         MessageObject messageObject;
-        int m54dp = AndroidUtilities.displaySize.x - AndroidUtilities.m54dp(24);
+        int m72dp = AndroidUtilities.displaySize.x - AndroidUtilities.m72dp(24);
         if (i == 0) {
             reuseView(this.centerView);
             reuseView(this.leftView);
@@ -903,7 +922,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 this.rightView = viewForMessage;
                 if (viewForMessage != null) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewForMessage.getLayoutParams();
-                    layoutParams.width = m54dp;
+                    layoutParams.width = m72dp;
                     this.rightView.setLayoutParams(layoutParams);
                     this.rightView.setTranslationX(translationX);
                     this.rightView.invalidate();
@@ -928,7 +947,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 this.leftView = viewForMessage2;
                 if (viewForMessage2 != null) {
                     FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) viewForMessage2.getLayoutParams();
-                    layoutParams2.width = m54dp;
+                    layoutParams2.width = m72dp;
                     this.leftView.setLayoutParams(layoutParams2);
                     this.leftView.setTranslationX(translationX3);
                     this.leftView.invalidate();
@@ -970,7 +989,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     if (PopupNotificationActivity.this.avatarContainer != null) {
                         PopupNotificationActivity.this.avatarContainer.getViewTreeObserver().removeOnPreDrawListener(this);
                     }
-                    int currentActionBarHeight = (C3484ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m54dp(48)) / 2;
+                    int currentActionBarHeight = (C3485ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m72dp(48)) / 2;
                     PopupNotificationActivity.this.avatarContainer.setPadding(PopupNotificationActivity.this.avatarContainer.getPaddingLeft(), currentActionBarHeight, PopupNotificationActivity.this.avatarContainer.getPaddingRight(), currentActionBarHeight);
                     return true;
                 }
@@ -986,8 +1005,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         return true;
                     }
                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) PopupNotificationActivity.this.messageContainer.getLayoutParams();
-                    marginLayoutParams.topMargin = C3484ActionBar.getCurrentActionBarHeight();
-                    marginLayoutParams.bottomMargin = AndroidUtilities.m54dp(48);
+                    marginLayoutParams.topMargin = C3485ActionBar.getCurrentActionBarHeight();
+                    marginLayoutParams.bottomMargin = AndroidUtilities.m72dp(48);
                     marginLayoutParams.width = -1;
                     marginLayoutParams.height = -1;
                     PopupNotificationActivity.this.messageContainer.setLayoutParams(marginLayoutParams);
@@ -1125,8 +1144,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (tLRPC$User2 != null) {
                 this.nameTextView.setText(UserObject.getUserName(tLRPC$User2));
                 if (DialogObject.isEncryptedDialog(dialogId)) {
-                    this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(C3417R.C3419drawable.ic_lock_white, 0, 0, 0);
-                    this.nameTextView.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
+                    this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(C3419R.C3421drawable.ic_lock_white, 0, 0, 0);
+                    this.nameTextView.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
                 } else {
                     this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
                     this.nameTextView.setCompoundDrawablePadding(0);
@@ -1145,13 +1164,13 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         if (this.actionBar == null || (messageObject = this.currentMessageObject) == null || this.currentChat != null || (tLRPC$User = this.currentUser) == null) {
             return;
         }
-        long j = tLRPC$User.f1656id;
-        if (j / 1000 != 777 && j / 1000 != 333 && ContactsController.getInstance(messageObject.currentAccount).contactsDict.get(Long.valueOf(this.currentUser.f1656id)) == null && (ContactsController.getInstance(this.currentMessageObject.currentAccount).contactsDict.size() != 0 || !ContactsController.getInstance(this.currentMessageObject.currentAccount).isLoadingContacts())) {
+        long j = tLRPC$User.f1675id;
+        if (j / 1000 != 777 && j / 1000 != 333 && ContactsController.getInstance(messageObject.currentAccount).contactsDict.get(Long.valueOf(this.currentUser.f1675id)) == null && (ContactsController.getInstance(this.currentMessageObject.currentAccount).contactsDict.size() != 0 || !ContactsController.getInstance(this.currentMessageObject.currentAccount).isLoadingContacts())) {
             String str = this.currentUser.phone;
             if (str != null && str.length() != 0) {
                 TextView textView = this.nameTextView;
-                C3333PhoneFormat c3333PhoneFormat = C3333PhoneFormat.getInstance();
-                textView.setText(c3333PhoneFormat.format("+" + this.currentUser.phone));
+                C3334PhoneFormat c3334PhoneFormat = C3334PhoneFormat.getInstance();
+                textView.setText(c3334PhoneFormat.format("+" + this.currentUser.phone));
             } else {
                 this.nameTextView.setText(UserObject.getUserName(this.currentUser));
             }
@@ -1159,15 +1178,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             this.nameTextView.setText(UserObject.getUserName(this.currentUser));
         }
         TLRPC$User tLRPC$User2 = this.currentUser;
-        if (tLRPC$User2 != null && tLRPC$User2.f1656id == 777000) {
-            this.onlineTextView.setText(LocaleController.getString("ServiceNotifications", C3417R.string.ServiceNotifications));
+        if (tLRPC$User2 != null && tLRPC$User2.f1675id == 777000) {
+            this.onlineTextView.setText(LocaleController.getString("ServiceNotifications", C3419R.string.ServiceNotifications));
             return;
         }
         CharSequence printingString = MessagesController.getInstance(this.currentMessageObject.currentAccount).getPrintingString(this.currentMessageObject.getDialogId(), 0, false);
         if (printingString == null || printingString.length() == 0) {
             this.lastPrintString = null;
             setTypingAnimation(false);
-            TLRPC$User user = MessagesController.getInstance(this.currentMessageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1656id));
+            TLRPC$User user = MessagesController.getInstance(this.currentMessageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1675id));
             if (user != null) {
                 this.currentUser = user;
             }
@@ -1186,7 +1205,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             return;
         }
         if (this.currentChat != null) {
-            TLRPC$Chat chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(this.currentChat.f1515id));
+            TLRPC$Chat chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(this.currentChat.f1518id));
             if (chat == null) {
                 return;
             }
@@ -1194,7 +1213,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (this.avatarImageView != null) {
                 this.avatarImageView.setForUserOrChat(chat, new AvatarDrawable(this.currentChat));
             }
-        } else if (this.currentUser == null || (user = MessagesController.getInstance(messageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1656id))) == null) {
+        } else if (this.currentUser == null || (user = MessagesController.getInstance(messageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1675id))) == null) {
         } else {
             this.currentUser = user;
             if (this.avatarImageView != null) {
@@ -1212,7 +1231,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             try {
                 Integer printingStringType = MessagesController.getInstance(this.currentMessageObject.currentAccount).getPrintingStringType(this.currentMessageObject.getDialogId(), 0);
                 this.onlineTextView.setCompoundDrawablesWithIntrinsicBounds(this.statusDrawables[printingStringType.intValue()], (Drawable) null, (Drawable) null, (Drawable) null);
-                this.onlineTextView.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
+                this.onlineTextView.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
                 while (i < this.statusDrawables.length) {
                     if (i == printingStringType.intValue()) {
                         this.statusDrawables[i].start();
@@ -1223,7 +1242,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 }
                 return;
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 return;
             }
         }

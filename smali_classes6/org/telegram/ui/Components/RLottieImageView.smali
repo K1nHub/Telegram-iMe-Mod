@@ -67,15 +67,15 @@
 .method public clearAnimationDrawable()V
     .locals 2
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 216
+    .line 217
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 218
+    .line 219
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -83,17 +83,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 219
+    .line 220
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 220
+    .line 221
     iput-object v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 222
+    .line 223
     :cond_1
     iput-object v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 223
+    .line 224
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -113,7 +113,7 @@
 .method public getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
     .locals 1
 
-    .line 315
+    .line 316
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-object v0
@@ -122,7 +122,7 @@
 .method public getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     return-object v0
@@ -131,7 +131,7 @@
 .method public isPlaying()Z
     .locals 1
 
-    .line 257
+    .line 258
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_0
@@ -156,47 +156,47 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 228
+    .line 229
     invoke-super {p0}, Landroid/widget/ImageView;->onAttachedToWindow()V
 
     const/4 v0, 0x1
 
-    .line 229
+    .line 230
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->attachedToWindow:Z
 
-    .line 230
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 231
+    .line 232
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 232
+    .line 233
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->playing:Z
 
     if-eqz v0, :cond_0
 
-    .line 233
+    .line 234
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 236
+    .line 237
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 237
+    .line 238
     invoke-virtual {v0, p0}, Landroid/graphics/drawable/BitmapDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 238
+    .line 239
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->playing:Z
 
     if-eqz v0, :cond_1
 
-    .line 239
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -208,29 +208,29 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 246
+    .line 247
     invoke-super {p0}, Landroid/widget/ImageView;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 247
+    .line 248
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->attachedToWindow:Z
 
-    .line 248
+    .line 249
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 249
+    .line 250
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 251
+    .line 252
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_1
 
-    .line 252
+    .line 253
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
     :cond_1
@@ -246,7 +246,7 @@
 .method public playAnimation()V
     .locals 2
 
-    .line 281
+    .line 282
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-nez v0, :cond_0
@@ -260,26 +260,26 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 284
+    .line 285
     iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->playing:Z
 
-    .line 285
+    .line 286
     iget-boolean v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->attachedToWindow:Z
 
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 288
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 289
+    .line 290
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_2
 
-    .line 290
+    .line 291
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
     :cond_2
@@ -392,17 +392,24 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
+    const/4 v13, 0x1
+
     .line 150
-    iget-boolean v2, v0, Lorg/telegram/ui/Components/RLottieImageView;->onlyLastFrame:Z
-
-    const-string v3, "_"
-
-    if-eqz v2, :cond_2
+    invoke-virtual {v1, v13}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
     .line 151
+    iget-boolean v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->onlyLastFrame:Z
+
+    const-string v2, "_"
+
+    if-eqz v1, :cond_2
+
+    .line 152
+    iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
-    move-result-object v2
+    move-result-object v3
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -410,19 +417,17 @@
 
     invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, "_lastframe"
+    const-string v2, "_lastframe"
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
-
-    const/4 v4, 0x0
+    move-result-object v4
 
     const/4 v5, 0x0
 
@@ -432,29 +437,51 @@
 
     const/4 v8, 0x0
 
-    const-wide/16 v9, 0x0
+    const/4 v9, 0x0
 
-    const/4 v11, 0x0
+    const-wide/16 v10, 0x0
 
-    const/4 v13, 0x1
+    const/16 v16, 0x0
+
+    const/16 v17, 0x1
+
+    move-object v2, v3
+
+    move-object v3, v4
+
+    move-object v4, v5
+
+    move-object v5, v6
+
+    move-object v6, v7
+
+    move-object v7, v8
+
+    move-object v8, v9
+
+    move-wide v9, v10
+
+    move-object/from16 v11, v16
 
     move-object/from16 v12, p1
+
+    move/from16 v13, v17
 
     invoke-virtual/range {v1 .. v13}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
     goto/16 :goto_2
 
-    .line 152
+    .line 153
     :cond_2
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    const-string v2, "video/webm"
+    const-string v3, "video/webm"
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    const-string v2, "_pcache"
+    const-string v3, "_pcache"
 
     const-string v4, ""
 
@@ -462,14 +489,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 153
+    .line 154
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v1, v5}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v1
 
-    .line 154
+    .line 155
     iget-object v5, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -482,7 +509,7 @@
 
     invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -493,12 +520,12 @@
     goto :goto_0
 
     :cond_3
-    move-object v2, v4
+    move-object v3, v4
 
     :goto_0
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, "g"
 
@@ -542,7 +569,7 @@
 
     goto :goto_2
 
-    .line 156
+    .line 157
     :cond_4
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
@@ -558,10 +585,10 @@
 
     const/16 v1, 0x200
 
-    .line 158
+    .line 159
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overrideWidthAndHeight(II)V
 
-    .line 160
+    .line 161
     :cond_5
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
@@ -569,7 +596,7 @@
 
     move-result-object v1
 
-    .line 161
+    .line 162
     iget-object v5, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -582,21 +609,21 @@
 
     invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-boolean v3, v0, Lorg/telegram/ui/Components/RLottieImageView;->cached:Z
+    iget-boolean v2, v0, Lorg/telegram/ui/Components/RLottieImageView;->cached:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     goto :goto_1
 
     :cond_6
-    move-object v2, v4
+    move-object v3, v4
 
     :goto_1
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -634,7 +661,7 @@
 
     invoke-virtual/range {v1 .. v13}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 163
+    .line 164
     :goto_2
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -642,42 +669,42 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
-    .line 164
+    .line 165
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 165
+    .line 166
     iget-boolean v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->autoRepeat:Z
 
     const/4 v3, 0x0
 
     if-eqz v1, :cond_7
 
-    .line 166
+    .line 167
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAutoRepeat(I)V
 
-    .line 167
+    .line 168
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartLottieAnimation(Z)V
 
-    .line 168
+    .line 169
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
     goto :goto_3
 
-    .line 170
+    .line 171
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/ImageReceiver;->setAutoRepeat(I)V
 
-    .line 172
+    .line 173
     :goto_3
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -697,24 +724,24 @@
     :goto_4
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
 
-    .line 173
+    .line 174
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iput-boolean v3, v1, Lorg/telegram/messenger/ImageReceiver;->clip:Z
 
-    .line 175
+    .line 176
     new-instance v1, Lorg/telegram/ui/Components/RLottieImageView$2;
 
     invoke-direct {v1, v0, v14, v15}, Lorg/telegram/ui/Components/RLottieImageView$2;-><init>(Lorg/telegram/ui/Components/RLottieImageView;II)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 205
+    .line 206
     iget-boolean v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->attachedToWindow:Z
 
     if-eqz v1, :cond_9
 
-    .line 206
+    .line 207
     iget-object v1, v0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -847,7 +874,7 @@
 .method public setAutoRepeat(Z)V
     .locals 0
 
-    .line 261
+    .line 262
     iput-boolean p1, p0, Lorg/telegram/ui/Components/RLottieImageView;->autoRepeat:Z
 
     return-void
@@ -856,12 +883,12 @@
 .method public setImageResource(I)V
     .locals 0
 
-    .line 276
+    .line 277
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     const/4 p1, 0x0
 
-    .line 277
+    .line 278
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-void
@@ -953,12 +980,12 @@
 .method public setProgress(F)V
     .locals 1
 
-    .line 265
+    .line 266
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 266
+    .line 267
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(F)V
 
     :cond_0
@@ -968,7 +995,7 @@
 .method public stopAnimation()V
     .locals 2
 
-    .line 298
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-nez v0, :cond_0
@@ -982,26 +1009,26 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 301
+    .line 302
     iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->playing:Z
 
-    .line 302
+    .line 303
     iget-boolean v1, p0, Lorg/telegram/ui/Components/RLottieImageView;->attachedToWindow:Z
 
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_1
 
-    .line 304
+    .line 305
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 306
+    .line 307
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_2
 
-    .line 307
+    .line 308
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->stopAnimation()V
 
     :cond_2

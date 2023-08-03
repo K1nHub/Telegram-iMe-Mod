@@ -10,10 +10,11 @@ import com.iMe.fork.enums.FilterActivityType;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.PollEditTextCell;
@@ -60,13 +61,65 @@ public final class PollEditTextCellWrapper extends LinearLayout {
         this.pollEditTextCell = pollEditTextCell;
         this.type = type;
         this.onSelectIconClick = onSelectIconClick;
-        lazy = LazyKt__LazyJVMKt.lazy(new PollEditTextCellWrapper$iconLayout$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$iconLayout$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initIconLayout;
+                initIconLayout = PollEditTextCellWrapper.this.initIconLayout();
+                return initIconLayout;
+            }
+        });
         this.iconLayout$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new PollEditTextCellWrapper$iconView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$iconView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initIconView;
+                initIconView = PollEditTextCellWrapper.this.initIconView();
+                return initIconView;
+            }
+        });
         this.iconView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new PollEditTextCellWrapper$noIconTextView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$noIconTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initNoIconTextView;
+                initNoIconTextView = PollEditTextCellWrapper.this.initNoIconTextView();
+                return initNoIconTextView;
+            }
+        });
         this.noIconTextView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new PollEditTextCellWrapper$arrowImageView$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$arrowImageView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ImageView invoke() {
+                ImageView initArrowImageView;
+                initArrowImageView = PollEditTextCellWrapper.this.initArrowImageView();
+                return initArrowImageView;
+            }
+        });
         this.arrowImageView$delegate = lazy4;
         addView(pollEditTextCell, LayoutHelper.createLinear(0, -2, 1.0f));
         addView(getIconLayout(), LayoutHelper.createLinear(-2, -1, 48));
@@ -129,7 +182,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final LinearLayout initIconLayout() {
         LinearLayout linearLayout = new LinearLayout(getContext());
-        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m54dp(6)));
+        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m72dp(6)));
         linearLayout.setGravity(17);
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -159,7 +212,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3417R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3419R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -168,7 +221,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3417R.C3419drawable.arrow_more);
+        imageView.setImageResource(C3419R.C3421drawable.arrow_more);
         return imageView;
     }
 

@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.SharedElementCallback;
 import androidx.core.content.ContextCompat;
 import androidx.core.p010os.BuildCompat;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -148,8 +149,18 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {
-        if ((BuildCompat.isAtLeastT() || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) && Build.VERSION.SDK_INT >= 23) {
-            return Api23Impl.shouldShowRequestPermissionRationale(activity, str);
+        if (BuildCompat.isAtLeastT() || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) {
+            int i = Build.VERSION.SDK_INT;
+            if (i >= 32) {
+                return Api32Impl.shouldShowRequestPermissionRationale(activity, str);
+            }
+            if (i == 31) {
+                return Api31Impl.shouldShowRequestPermissionRationale(activity, str);
+            }
+            if (i >= 23) {
+                return Api23Impl.shouldShowRequestPermissionRationale(activity, str);
+            }
+            return false;
         }
         return false;
     }
@@ -222,6 +233,30 @@ public class ActivityCompat extends ContextCompat {
                     ActivityCompat.Api23Impl.onSharedElementsReady(onSharedElementsReadyListener);
                 }
             });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api31Impl {
+        static boolean isLaunchedFromBubble(Activity activity) {
+            return activity.isLaunchedFromBubble();
+        }
+
+        static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {
+            try {
+                return ((Boolean) PackageManager.class.getMethod("shouldShowRequestPermissionRationale", String.class).invoke(activity.getApplication().getPackageManager(), str)).booleanValue();
+            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+                return activity.shouldShowRequestPermissionRationale(str);
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api32Impl {
+        static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {
+            return activity.shouldShowRequestPermissionRationale(str);
         }
     }
 

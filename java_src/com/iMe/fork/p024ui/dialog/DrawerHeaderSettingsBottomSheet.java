@@ -11,18 +11,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.fork.models.DrawerHeaderSettings;
+import com.iMe.fork.p024ui.dialog.DrawerHeaderSettingsBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.p031ui.drawer.DrawerAccountData;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -68,25 +71,137 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         Lazy lazy9;
         Lazy lazy10;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(DrawerHeaderSettingsBottomSheet$currentUser$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TLRPC$User>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$currentUser$2
+            @Override // kotlin.jvm.functions.Function0
+            public final TLRPC$User invoke() {
+                return UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
+            }
+        });
         this.currentUser$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(DrawerHeaderSettingsBottomSheet$currentSettings$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<DrawerHeaderSettings>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$currentSettings$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final DrawerHeaderSettings invoke() {
+                return SharedConfig.getDrawerHeaderSettings();
+            }
+        });
         this.currentSettings$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$newSettings$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<DrawerHeaderSettings>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$newSettings$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final DrawerHeaderSettings invoke() {
+                DrawerHeaderSettings currentSettings;
+                currentSettings = DrawerHeaderSettingsBottomSheet.this.getCurrentSettings();
+                Intrinsics.checkNotNullExpressionValue(currentSettings, "currentSettings");
+                return DrawerHeaderSettings.copy$default(currentSettings, null, null, false, false, false, false, 63, null);
+            }
+        });
         this.newSettings$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$rootView$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initRootView;
+                initRootView = DrawerHeaderSettingsBottomSheet.this.initRootView();
+                return initRootView;
+            }
+        });
         this.rootView$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<LinearLayout>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final LinearLayout invoke() {
+                LinearLayout initDynamicOrientationContainer;
+                initDynamicOrientationContainer = DrawerHeaderSettingsBottomSheet.this.initDynamicOrientationContainer();
+                return initDynamicOrientationContainer;
+            }
+        });
         this.dynamicOrientationContainer$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$previewView$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<DrawerProfileCell>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$previewView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final DrawerProfileCell invoke() {
+                DrawerProfileCell initPreviewView;
+                initPreviewView = DrawerHeaderSettingsBottomSheet.this.initPreviewView();
+                return initPreviewView;
+            }
+        });
         this.previewView$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$listView$2(this));
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = DrawerHeaderSettingsBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy7;
-        lazy8 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$listAdapter$2(this));
+        lazy8 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final DrawerHeaderSettingsBottomSheet.ListAdapter invoke() {
+                return new DrawerHeaderSettingsBottomSheet.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy8;
-        lazy9 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$bottomButtonsContainer$2(this));
+        lazy9 = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$bottomButtonsContainer$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initBottomButtonsContainer;
+                initBottomButtonsContainer = DrawerHeaderSettingsBottomSheet.this.initBottomButtonsContainer();
+                return initBottomButtonsContainer;
+            }
+        });
         this.bottomButtonsContainer$delegate = lazy9;
-        lazy10 = LazyKt__LazyJVMKt.lazy(new DrawerHeaderSettingsBottomSheet$saveButton$2(this));
+        lazy10 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$saveButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSaveButton;
+                initSaveButton = DrawerHeaderSettingsBottomSheet.this.initSaveButton();
+                return initSaveButton;
+            }
+        });
         this.saveButton$delegate = lazy10;
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
@@ -267,8 +382,8 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initBottomButtonsContainer() {
         FrameLayout frameLayout = new FrameLayout(getContext());
-        int m54dp = AndroidUtilities.m54dp(8);
-        frameLayout.setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(8);
+        frameLayout.setPadding(m72dp, m72dp, m72dp, m72dp);
         frameLayout.addView(createBottomButton(true), LayoutHelper.createFrame(-2, 36, 8388611));
         frameLayout.addView(getSaveButton(), LayoutHelper.createFrame(-2, 36, 8388613));
         return frameLayout;
@@ -288,9 +403,9 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            string = LocaleController.getString("Cancel", C3417R.string.Cancel);
+            string = LocaleController.getString("Cancel", C3419R.string.Cancel);
         } else {
-            string = LocaleController.getString("Save", C3417R.string.Save);
+            string = LocaleController.getString("Save", C3419R.string.Save);
         }
         Intrinsics.checkNotNullExpressionValue(string, "if (cancel) {\n          … R.string.Save)\n        }");
         String upperCase = string.toUpperCase(Locale.ROOT);
@@ -312,7 +427,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (!z) {
             SharedConfig.setDrawerHeaderSettings(this$0.getNewSettings());
-            NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
+            NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
         }
         this$0.dismiss();
     }
@@ -393,7 +508,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 z = i == DrawerHeaderSettingsBottomSheet.this.avatarRow;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                String internalString = LocaleController.getInternalString(z ? C3417R.string.drawer_profile_cell_avatar : C3417R.string.drawer_profile_cell_archive);
+                String internalString = LocaleController.getInternalString(z ? C3419R.string.drawer_profile_cell_avatar : C3419R.string.drawer_profile_cell_archive);
                 DrawerHeaderSettings newSettings = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 textCheckCell.setTextAndCheck(internalString, z ? newSettings.isShowAvatar() : newSettings.isShowArchive(), true);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (view instanceof NotificationsCheckCell)) {
@@ -401,7 +516,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
                 DrawerHeaderSettings newSettings2 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 DrawerAccountData title = z ? newSettings2.getTitle() : newSettings2.getSubtitle();
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-                String internalString2 = LocaleController.getInternalString(z ? C3417R.string.drawer_profile_cell_alert_title : C3417R.string.drawer_profile_cell_alert_subtitle);
+                String internalString2 = LocaleController.getInternalString(z ? C3419R.string.drawer_profile_cell_alert_title : C3419R.string.drawer_profile_cell_alert_subtitle);
                 String title2 = title.getTitle();
                 DrawerHeaderSettings newSettings3 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 notificationsCheckCell.setTextAndValueAndCheck(internalString2, title2, z ? newSettings3.isShowTitle() : newSettings3.isShowSubtitle(), true);

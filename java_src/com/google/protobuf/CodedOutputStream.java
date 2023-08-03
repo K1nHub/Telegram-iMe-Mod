@@ -7,6 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes3.dex */
 public abstract class CodedOutputStream extends ByteOutput {
     private boolean serializationDeterministic;
@@ -604,7 +605,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    bArr[i2] = (byte) ((i & 127) | 128);
+                    bArr[i2] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                     i >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -644,7 +645,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & 127) | 128));
+                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -658,7 +659,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr3 = this.buffer;
                     int i3 = this.position;
                     this.position = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) j) & 127) | 128);
+                    bArr3[i3] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
@@ -813,7 +814,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    UnsafeUtil.putByte(bArr, i2, (byte) ((i & 127) | 128));
+                    UnsafeUtil.putByte(bArr, i2, (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128));
                     i >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -827,7 +828,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i4 = this.position;
                 this.position = i4 + 1;
-                bArr3[i4] = (byte) ((i & 127) | 128);
+                bArr3[i4] = (byte) ((i & MessagesStorage.LAST_DB_VERSION) | 128);
                 this.totalBytesWritten++;
                 i >>>= 7;
             }
@@ -845,7 +846,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & 127) | 128));
+                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -859,7 +860,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i3 = this.position;
                 this.position = i3 + 1;
-                bArr3[i3] = (byte) ((((int) j) & 127) | 128);
+                bArr3[i3] = (byte) ((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
                 this.totalBytesWritten++;
                 j >>>= 7;
             }

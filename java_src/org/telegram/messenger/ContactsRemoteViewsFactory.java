@@ -88,7 +88,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     /* JADX WARN: Removed duplicated region for block: B:129:0x02bd  */
     /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.messenger.FileLoader] */
     /* JADX WARN: Type inference failed for: r3v0 */
-    /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r3v31 */
     /* JADX WARN: Type inference failed for: r9v11, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.AvatarDrawable] */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory

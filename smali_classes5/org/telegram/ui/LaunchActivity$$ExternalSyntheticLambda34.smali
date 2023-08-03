@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda34;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ndZGrR4cf4mQc2oDkDGSAjk2_g8(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$M8YPBUwOMpYwozHwzDZRDViSzd8(Ljava/lang/Runnable;)V
 
     return-void
 .end method

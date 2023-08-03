@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/os/CancellationSignal$Api16Impl;,
-        Landroidx/core/os/CancellationSignal$OnCancelListener;
+        Landroidx/core/os/CancellationSignal$OnCancelListener;,
+        Landroidx/core/os/CancellationSignal$Api16Impl;
     }
 .end annotation
 

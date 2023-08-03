@@ -1,11 +1,13 @@
 package com.iMe.p031ui.wallet.actions.send.amount;
 
+import com.iMe.common.AppRxEvents;
 import com.iMe.common.Constants;
 import com.iMe.common.TelegramConstants;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.mapper.wallet.TokenUiMappingKt;
+import com.iMe.mapper.wallet.select.SelectableMappingKt;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
@@ -14,7 +16,11 @@ import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.custom.FeeView;
+import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
 import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
+import com.iMe.storage.data.mapper.crypto.DonationMappingKt;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
@@ -57,18 +63,22 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.p043ui.ManageLinksActivity;
 import org.telegram.tgnet.TLRPC$Chat;
-import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityTextUrl;
 import org.telegram.tgnet.TLRPC$User;
+import timber.log.Timber;
 /* compiled from: WalletSendAmountPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter */
@@ -311,11 +321,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         ResourceManager resourceManager = this.resourceManager;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.currentState.ordinal()];
         if (i2 == 1) {
-            i = C3417R.string.wallet_amount_button_txt;
+            i = C3419R.string.wallet_amount_button_txt;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3417R.string.wallet_amount_button_calculate;
+            i = C3419R.string.wallet_amount_button_calculate;
         }
         return resourceManager.getString(i);
     }
@@ -385,10 +395,60 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         CharSequence trim;
         Intrinsics.checkNotNullParameter(rawAmount, "rawAmount");
         trim = StringsKt__StringsKt.trim(rawAmount);
-        String obj = trim.toString();
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        final String obj = trim.toString();
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2103x61dc80d6(this, obj)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2104x61dc80d7(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1420invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* JADX WARN: Code restructure failed: missing block: B:7:0x001b, code lost:
+                if (r0 != false) goto L33;
+             */
+            /* renamed from: invoke  reason: collision with other method in class */
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+                To view partially-correct add '--show-bad-code' argument
+            */
+            public final void m1420invoke(com.iMe.storage.domain.model.Result<? extends java.lang.Boolean> r8) {
+                /*
+                    Method dump skipped, instructions count: 257
+                    To view this dump add '--comments-level debug' option
+                */
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.wallet.actions.send.amount.C2103x61dc80d6.m1420invoke(java.lang.Object):void");
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     public final void send(String amount) {
@@ -402,18 +462,71 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 sendDonation(TelegramConstants.INSTANCE.prepareChatIdForBotAPI(this.args.getChatId().longValue()), (TransferArgs.EVM) formatTransferArgs);
                 return;
             } else {
-                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_feature_not_available));
+                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_feature_not_available));
                 return;
             }
         }
-        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_feature_not_available));
+        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3419R.string.wallet_feature_not_available));
     }
 
     public final void validateRecipientAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(address, this.selectedNetwork.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(address, this.selectedNetwork.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2101x6b9f8be9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2102x6b9f8bea(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1419invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1419invoke(Result<? extends String> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    if (!(((CharSequence) success.getData()).length() > 0)) {
+                        resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showToast(resourceManager.getString(C3419R.string.wallet_recipient_validation_address_error));
+                        return;
+                    }
+                    WalletSendAmountPresenter.this.setSelectedAddress((String) success.getData());
+                    WalletSendAmountPresenter.this.setSelectedUser(null);
+                    WalletSendAmountPresenter.this.setSelectedChat(null);
+                    WalletSendAmountPresenter.this.setSelectedTwitterUserAvatarUrl(null);
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).updateSelectedUser();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     public final void resetStateIfNeed() {
@@ -434,7 +547,24 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             TokenDetailed feeToken = cryptoTransferMetadata2.getFeeToken();
             GasPriceItem gasPriceItem = this.selectedFee;
             Intrinsics.checkNotNull(gasPriceItem);
-            return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, feeToken, gasPriceItem, new WalletSendAmountPresenter$getApproveFeeType$1(this));
+            return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, feeToken, gasPriceItem, new Function1<GasPriceItem, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$getApproveFeeType$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(GasPriceItem gasPriceItem2) {
+                    invoke2(gasPriceItem2);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(GasPriceItem fee) {
+                    Intrinsics.checkNotNullParameter(fee, "fee");
+                    WalletSendAmountPresenter.this.selectFee(fee);
+                }
+            });
         }
         return null;
     }
@@ -455,28 +585,150 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         if (tokenDetailed == null) {
             return;
         }
-        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenDetailed.getTicker(), this.selectedNetwork.getId()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenDetailed.getTicker(), this.selectedNetwork.getId()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xcbcd392d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2092xcbcd392e((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$getBinanceAddressesForReplenish$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
+                m1414invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1414invoke(Result<? extends String> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends String> result = it;
+                if (result instanceof Result.Success) {
+                    WalletSendAmountPresenter.this.setSelectedAddress((String) ((Result.Success) result).getData());
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).setupReplenishAddress();
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                        WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                        return;
+                    }
+                    resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$getBinanceAddressesForReplenish$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     static /* synthetic */ void getBinanceAvailableTokensForReplenish$default(WalletSendAmountPresenter walletSendAmountPresenter, Network network, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 2) != 0) {
-            callbacks$Callback = WalletSendAmountPresenter$$ExternalSyntheticLambda4.INSTANCE;
+            callbacks$Callback = new Callbacks$Callback() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda4
+                @Override // com.iMe.fork.utils.Callbacks$Callback
+                public final void invoke() {
+                    WalletSendAmountPresenter.getBinanceAvailableTokensForReplenish$lambda$8();
+                }
+            };
         }
         walletSendAmountPresenter.getBinanceAvailableTokensForReplenish(network, callbacks$Callback);
     }
 
-    private final void getBinanceAvailableTokensForReplenish(Network network, Callbacks$Callback callbacks$Callback) {
-        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(network.getId()).observeOn(this.schedulersProvider.mo698ui());
+    private final void getBinanceAvailableTokensForReplenish(Network network, final Callbacks$Callback callbacks$Callback) {
+        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(network.getId()).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2093xebaea40e(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094xebaea40f((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BinanceTokenInfo>>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$getBinanceAvailableTokensForReplenish$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
+                m1415invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1415invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+                ResourceManager resourceManager;
+                int collectionSizeOrDefault;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends BinanceTokenInfo>> result = it;
+                if (result instanceof Result.Success) {
+                    WalletSendAmountPresenter walletSendAmountPresenter = WalletSendAmountPresenter.this;
+                    Iterable<BinanceTokenInfo> iterable = (Iterable) ((Result.Success) result).getData();
+                    collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
+                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                    for (BinanceTokenInfo binanceTokenInfo : iterable) {
+                        arrayList.add(SelectableMappingKt.mapToDetailedToken(binanceTokenInfo));
+                    }
+                    walletSendAmountPresenter.availableTokensForBinanceReplenish = arrayList;
+                    callbacks$Callback.invoke();
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                        WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                        return;
+                    }
+                    resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$getBinanceAvailableTokensForReplenish$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -488,11 +740,70 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         if (tokenDetailed == null || (indexedToken = TokenExtKt.toIndexedToken(tokenDetailed)) == null) {
             return;
         }
-        Observable<Result<DonationTransferMetadata>> observeOn = donationsInteractor.getDataForDonation(j, str, indexedToken).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<DonationTransferMetadata>> observeOn = donationsInteractor.getDataForDonation(j, str, indexedToken).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2087x998569d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2088x998569d5((BaseView) getViewState())));
+        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends DonationTransferMetadata>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$calculateFeeForDonationsTransaction$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends DonationTransferMetadata> result) {
+                m1412invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1412invoke(Result<? extends DonationTransferMetadata> it) {
+                ResourceManager resourceManager;
+                WalletSendAmountPresenter.SendScreenState sendScreenState;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends DonationTransferMetadata> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    WalletSendAmountPresenter.this.setSelectedAddress(((DonationTransferMetadata) success.getData()).getRecipientAddress());
+                    WalletSendAmountPresenter.this.configureFees(DonationMappingKt.mapToCryptoMetadata((DonationTransferMetadata) success.getData()));
+                    WalletSendAmountPresenter.this.currentState = WalletSendAmountPresenter.SendScreenState.SEND;
+                    sendScreenState = WalletSendAmountPresenter.this.currentState;
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).setupScreenState(sendScreenState);
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                        WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                        return;
+                    }
+                    resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$calculateFeeForDonationsTransaction$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -609,7 +920,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
-        if (r3.hasUser(r2.f1656id) != false) goto L24;
+        if (r3.hasUser(r2.f1675id) != false) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -660,7 +971,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             if (r2 == 0) goto L6b
             com.iMe.storage.domain.gateway.TelegramGateway r3 = r6.telegramGateway
             kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-            long r4 = r2.f1656id
+            long r4 = r2.f1675id
             boolean r2 = r3.hasUser(r4)
             if (r2 == 0) goto L6b
             goto L6c
@@ -675,7 +986,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final DialogModel getSendConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_ok_btn));
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3419R.string.common_cancel), this.resourceManager.getString(C3419R.string.wallet_amount_confirm_alert_ok_btn));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -693,11 +1004,68 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     private final void calculateFeeForTransaction(String str, String str2) {
         TokenDetailed tokenDetailed = this.selectedToken;
         if (tokenDetailed != null) {
-            Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), str, str2, this.selectedNetwork).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), str, str2, this.selectedNetwork).observeOn(this.schedulersProvider.mo716ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2089x2c16008d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2090x2c16008e((BaseView) getViewState())));
+            Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
+            final BaseView baseView = (BaseView) getViewState();
+            Disposable subscribe = withLoadingDialog$default.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoTransferMetadata>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$calculateFeeForTransaction$$inlined$subscribeWithErrorHandle$default$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoTransferMetadata> result) {
+                    m1413invoke(result);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: collision with other method in class */
+                public final void m1413invoke(Result<? extends CryptoTransferMetadata> it) {
+                    ResourceManager resourceManager;
+                    WalletSendAmountPresenter.SendScreenState sendScreenState;
+                    Intrinsics.checkNotNullExpressionValue(it, "it");
+                    Result<? extends CryptoTransferMetadata> result = it;
+                    if (result instanceof Result.Success) {
+                        WalletSendAmountPresenter.this.configureFees((CryptoTransferMetadata) ((Result.Success) result).getData());
+                        WalletSendAmountPresenter.this.currentState = WalletSendAmountPresenter.SendScreenState.SEND;
+                        sendScreenState = WalletSendAmountPresenter.this.currentState;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).setupScreenState(sendScreenState);
+                    } else if (result instanceof Result.Error) {
+                        Result.Error error = (Result.Error) result;
+                        if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                            WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                            return;
+                        }
+                        resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                    }
+                }
+            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$calculateFeeForTransaction$$inlined$subscribeWithErrorHandle$default$2
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Timber.m6e(th);
+                    BaseView baseView2 = BaseView.this;
+                    if (baseView2 != null) {
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = "";
+                        }
+                        baseView2.showToast(message);
+                    }
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -712,25 +1080,194 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3419R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3419R.string.common_cancel), 6, null);
     }
 
-    private final void sendDonation(long j, TransferArgs.EVM evm) {
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.sendDonation(j, evm).observeOn(this.schedulersProvider.mo698ui());
+    private final void sendDonation(long j, final TransferArgs.EVM evm) {
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.sendDonation(j, evm).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2097xd0cb0852(this, evm)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2098xd0cb0853((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$sendDonation$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1417invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1417invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                ResourceManager resourceManager2;
+                RxEventBus rxEventBus;
+                String successMessage;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    rxEventBus = WalletSendAmountPresenter.this.rxEventBus;
+                    rxEventBus.publish(AppRxEvents.UpdateWalletScreen.INSTANCE);
+                    successMessage = WalletSendAmountPresenter.this.getSuccessMessage(evm.getAmount());
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showSuccessSend(successMessage);
+                    WalletSendAmountPresenter.this.resetTransactionFee();
+                    WalletSendAmountPresenter.this.resetStateIfNeed();
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    IErrorStatus status = error.getError().getStatus();
+                    if (status == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                        WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                    } else if (status == FirebaseFunctionsErrorHandler.ErrorStatus.USER_NOT_FOUND) {
+                        if (WalletSendAmountPresenter.this.getSelectedUser() != null) {
+                            ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showRecipientWalletNotActivatedError();
+                        } else {
+                            ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showRecipientNotFoundError();
+                        }
+                    } else if (status == FirebaseFunctionsErrorHandler.CryptoErrorStatus.ETHER_BLOCK_CHAIN_ERROR) {
+                        WalletSendAmountPresenter.this.resetTransactionFee();
+                        WalletSendAmountPresenter.this.resetStateIfNeed();
+                        resourceManager2 = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
+                    } else {
+                        resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                    }
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$sendDonation$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    private final void transferTokens(TransferArgs transferArgs, boolean z) {
-        Observable<Result<Boolean>> observeOn = this.walletInteractor.sendTokens(transferArgs, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+    private final void transferTokens(final TransferArgs transferArgs, final boolean z) {
+        Observable<Result<Boolean>> observeOn = this.walletInteractor.sendTokens(transferArgs, this.selectedNetwork).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2099x2cfbccbd(this, z, transferArgs)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2100x2cfbccbe((BaseView) getViewState())));
+        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false);
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = withLoadingDialog.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$transferTokens$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                m1418invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1418invoke(Result<? extends Boolean> it) {
+                ResourceManager resourceManager;
+                ResourceManager resourceManager2;
+                RxEventBus rxEventBus;
+                String successMessage;
+                TelegramGateway telegramGateway;
+                TelegramGateway telegramGateway2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends Boolean> result = it;
+                if (result instanceof Result.Success) {
+                    T viewState2 = WalletSendAmountPresenter.this.getViewState();
+                    Intrinsics.checkNotNullExpressionValue(viewState2, "viewState");
+                    BaseView.CC.showLoadingDialog$default((BaseView) viewState2, false, false, null, 6, null);
+                    if (WalletSendAmountPresenter.this.getSelectedUser() != null && z) {
+                        telegramGateway = WalletSendAmountPresenter.this.telegramGateway;
+                        TLRPC$User selectedUser = WalletSendAmountPresenter.this.getSelectedUser();
+                        Intrinsics.checkNotNull(selectedUser);
+                        if (telegramGateway.hasUser(selectedUser.f1675id)) {
+                            WalletSendAmountPresenter walletSendAmountPresenter = WalletSendAmountPresenter.this;
+                            TLRPC$User selectedUser2 = walletSendAmountPresenter.getSelectedUser();
+                            Intrinsics.checkNotNull(selectedUser2);
+                            long j = selectedUser2.f1675id;
+                            telegramGateway2 = WalletSendAmountPresenter.this.telegramGateway;
+                            walletSendAmountPresenter.sendMessageToChat(j, telegramGateway2.getSelectedAccountId(), transferArgs.getAmount());
+                        }
+                    }
+                    rxEventBus = WalletSendAmountPresenter.this.rxEventBus;
+                    rxEventBus.publish(AppRxEvents.UpdateWalletScreen.INSTANCE);
+                    successMessage = WalletSendAmountPresenter.this.getSuccessMessage(transferArgs.getAmount());
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showSuccessSend(successMessage);
+                    WalletSendAmountPresenter.this.resetTransactionFee();
+                    WalletSendAmountPresenter.this.resetStateIfNeed();
+                } else if (result instanceof Result.Error) {
+                    T viewState3 = WalletSendAmountPresenter.this.getViewState();
+                    Intrinsics.checkNotNullExpressionValue(viewState3, "viewState");
+                    BaseView.CC.showLoadingDialog$default((BaseView) viewState3, false, false, null, 6, null);
+                    Result.Error error = (Result.Error) result;
+                    IErrorStatus status = error.getError().getStatus();
+                    if (status == FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY) {
+                        WalletSendAmountPresenter.this.runNoEnoughMoneyFlow();
+                    } else if (status == FirebaseFunctionsErrorHandler.ErrorStatus.USER_NOT_FOUND) {
+                        if (WalletSendAmountPresenter.this.getSelectedUser() != null) {
+                            ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showRecipientWalletNotActivatedError();
+                        } else {
+                            ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showRecipientNotFoundError();
+                        }
+                    } else if (status == FirebaseFunctionsErrorHandler.CryptoErrorStatus.ETHER_BLOCK_CHAIN_ERROR) {
+                        WalletSendAmountPresenter.this.resetTransactionFee();
+                        WalletSendAmountPresenter.this.resetStateIfNeed();
+                        resourceManager2 = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
+                    } else {
+                        resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                    }
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$transferTokens$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -747,7 +1284,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     private final String getConfirmMessage(String str) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3417R.string.wallet_amount_send_confirm_alert_description;
+        int i = C3419R.string.wallet_amount_send_confirm_alert_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(Double.parseDouble(str));
         TokenDetailed tokenDetailed = this.selectedToken;
@@ -759,7 +1296,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     /* JADX INFO: Access modifiers changed from: private */
     public final String getSuccessMessage(double d) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3417R.string.wallet_amount_success_send_description;
+        int i = C3419R.string.wallet_amount_success_send_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(d);
         TokenDetailed tokenDetailed = this.selectedToken;
@@ -768,13 +1305,65 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         return resourceManager.getString(i, objArr);
     }
 
-    private final void loadBalance(TokenDetailed tokenDetailed) {
+    private final void loadBalance(final TokenDetailed tokenDetailed) {
         if (tokenDetailed == null) {
             return;
         }
-        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), false, this.selectedNetwork.getId(), 2, null).observeOn(this.schedulersProvider.mo698ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), false, this.selectedNetwork.getId(), 2, null).observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2095xd63210e4(this, tokenDetailed)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2096xd63210e5((BaseView) getViewState())));
+        final BaseView baseView = (BaseView) getViewState();
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$loadBalance$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
+                m1416invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1416invoke(Result<? extends TokenBalance> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends TokenBalance> result = it;
+                if (result instanceof Result.Success) {
+                    Result.Success success = (Result.Success) result;
+                    WalletSendAmountPresenter.this.tokenBalance = (TokenBalance) success.getData();
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showBalance((TokenBalance) success.getData());
+                } else if (result instanceof Result.Loading) {
+                    WalletSendAmountPresenter.this.tokenBalance = TokenBalance.Companion.createEmptyBalanceFor(tokenDetailed);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = WalletSendAmountPresenter.this.resourceManager;
+                    ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$loadBalance$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView2 = BaseView.this;
+                if (baseView2 != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView2.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -785,9 +1374,9 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         int lastIndexOf$default;
         int indexOf$default2;
         String formatMessageToUser = formatMessageToUser(j, d, j2, DateExtKt.now());
-        ArrayList<TLRPC$MessageEntity> arrayList = new ArrayList<>();
+        ArrayList arrayList = new ArrayList();
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl = new TLRPC$TL_messageEntityTextUrl();
-        String string = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_processing_name);
+        String string = this.resourceManager.getString(C3419R.string.wallet_amount_send_message_processing_name);
         tLRPC$TL_messageEntityTextUrl.url = "https://imem.app/download";
         tLRPC$TL_messageEntityTextUrl.length = string.length();
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, string, 0, false, 6, (Object) null);
@@ -799,7 +1388,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str = user.username;
             if (!(str == null || str.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl2 = new TLRPC$TL_messageEntityTextUrl();
-                String string2 = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_id);
+                String string2 = this.resourceManager.getString(C3419R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram = Constants.Telegram.INSTANCE;
                 String str2 = user.username;
                 Intrinsics.checkNotNullExpressionValue(str2, "user.username");
@@ -816,7 +1405,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str3 = user2.username;
             if (!(str3 == null || str3.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl3 = new TLRPC$TL_messageEntityTextUrl();
-                String string3 = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_id);
+                String string3 = this.resourceManager.getString(C3419R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram2 = Constants.Telegram.INSTANCE;
                 String str4 = user2.username;
                 Intrinsics.checkNotNullExpressionValue(str4, "user.username");
@@ -827,12 +1416,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 arrayList.add(tLRPC$TL_messageEntityTextUrl3);
             }
         }
-        TelegramControllersGateway.CC.getSendMessagesHelper$default(this.telegramControllersGateway, 0, 1, null).sendMessage(formatMessageToUser, j, null, null, null, false, arrayList, null, null, true, 0, null, false, null);
+        TelegramControllersGateway.CC.getSendMessagesHelper$default(this.telegramControllersGateway, 0, 1, null).sendMessage(SendMessagesHelper.SendMessageParams.m60of(formatMessageToUser, j, null, null, null, false, arrayList, null, null, true, 0, null, false, null));
     }
 
     private final String formatMessageToUser(long j, double d, long j2, long j3) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3417R.string.wallet_amount_send_message_payload;
+        int i = C3419R.string.wallet_amount_send_message_payload;
         Object[] objArr = new Object[5];
         Double valueOf = Double.valueOf(d);
         TokenDetailed tokenDetailed = this.selectedToken;

@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 840
+    .line 939
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
@@ -39,12 +39,12 @@
 
     const/4 v0, 0x0
 
-    .line 850
+    .line 949
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$2202(Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     const/4 v0, 0x0
 
-    .line 851
+    .line 950
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
     return-void
@@ -55,24 +55,24 @@
 .method public onChange(Z)V
     .locals 2
 
-    .line 845
+    .line 944
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 846
+    .line 945
     invoke-static {}, Lorg/telegram/messenger/MediaController;->access$2200()Ljava/lang/Runnable;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 847
+    .line 946
     invoke-static {}, Lorg/telegram/messenger/MediaController;->access$2200()Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 849
+    .line 948
     :cond_0
     sget-object p1, Lorg/telegram/messenger/MediaController$GalleryObserverExternal$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/messenger/MediaController$GalleryObserverExternal$$ExternalSyntheticLambda0;
 

@@ -547,7 +547,7 @@
 
     move-result-object p1
 
-    const-string v0, "processingObservable\n   \u2026(schedulersProvider.ui())"
+    const-string/jumbo v0, "processingObservable\n   \u2026(schedulersProvider.ui())"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

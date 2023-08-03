@@ -9,7 +9,7 @@ public final class Dispatchers {
     private static final CoroutineDispatcher Default;
 
     /* renamed from: IO */
-    private static final CoroutineDispatcher f1304IO;
+    private static final CoroutineDispatcher f1307IO;
     private static final CoroutineDispatcher Unconfined;
 
     private Dispatchers() {
@@ -19,7 +19,7 @@ public final class Dispatchers {
         new Dispatchers();
         Default = DefaultScheduler.INSTANCE;
         Unconfined = Unconfined.INSTANCE;
-        f1304IO = DefaultIoScheduler.INSTANCE;
+        f1307IO = DefaultIoScheduler.INSTANCE;
     }
 
     public static final CoroutineDispatcher getDefault() {
@@ -35,6 +35,6 @@ public final class Dispatchers {
     }
 
     public static final CoroutineDispatcher getIO() {
-        return f1304IO;
+        return f1307IO;
     }
 }

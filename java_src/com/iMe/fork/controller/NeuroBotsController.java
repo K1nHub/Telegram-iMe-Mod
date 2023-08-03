@@ -3,7 +3,6 @@ package com.iMe.fork.controller;
 import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.NeuroBotsController;
-import java.util.Objects;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -99,14 +98,26 @@ public final class NeuroBotsController extends BaseController {
             return (NeuroBotsController) tmp0.invoke(obj);
         }
 
-        public final NeuroBotsController getInstance(int i) {
+        public final NeuroBotsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = NeuroBotsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final NeuroBotsController$Companion$getInstance$1 neuroBotsController$Companion$getInstance$1 = new NeuroBotsController$Companion$getInstance$1(i);
+            final Function1<Integer, NeuroBotsController> function1 = new Function1<Integer, NeuroBotsController>() { // from class: com.iMe.fork.controller.NeuroBotsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final NeuroBotsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new NeuroBotsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.NeuroBotsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -118,7 +129,7 @@ public final class NeuroBotsController extends BaseController {
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

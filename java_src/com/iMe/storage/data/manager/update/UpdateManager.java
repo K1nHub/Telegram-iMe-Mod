@@ -17,6 +17,8 @@ import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import java.lang.ref.WeakReference;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -126,7 +128,38 @@ public final class UpdateManager {
     private final void checkUpdate() {
         Timber.m9d("Checking for updates", new Object[0]);
         Task<AppUpdateInfo> task = this.appUpdateInfoTask;
-        final UpdateManager$checkUpdate$1 updateManager$checkUpdate$1 = new UpdateManager$checkUpdate$1(this);
+        final Function1<AppUpdateInfo, Unit> function1 = new Function1<AppUpdateInfo, Unit>() { // from class: com.iMe.storage.data.manager.update.UpdateManager$checkUpdate$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(AppUpdateInfo appUpdateInfo) {
+                invoke2(appUpdateInfo);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(AppUpdateInfo appUpdateInfo) {
+                int i;
+                boolean isNeedUpdate;
+                Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
+                if (appUpdateInfo.updateAvailability() == 2) {
+                    i = UpdateManager.this.mode;
+                    if (appUpdateInfo.isUpdateTypeAllowed(i)) {
+                        Timber.m9d("Update available", new Object[0]);
+                        isNeedUpdate = UpdateManager.this.isNeedUpdate();
+                        if (isNeedUpdate) {
+                            UpdateManager.this.startUpdate(appUpdateInfo);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                Timber.m9d("No Update available", new Object[0]);
+            }
+        };
         task.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda3
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -183,7 +216,27 @@ public final class UpdateManager {
 
     private final void continueUpdateForFlexible() {
         Task<AppUpdateInfo> appUpdateInfo = this.appUpdateManager.getAppUpdateInfo();
-        final UpdateManager$continueUpdateForFlexible$1 updateManager$continueUpdateForFlexible$1 = new UpdateManager$continueUpdateForFlexible$1(this);
+        final Function1<AppUpdateInfo, Unit> function1 = new Function1<AppUpdateInfo, Unit>() { // from class: com.iMe.storage.data.manager.update.UpdateManager$continueUpdateForFlexible$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(AppUpdateInfo appUpdateInfo2) {
+                invoke2(appUpdateInfo2);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(AppUpdateInfo appUpdateInfo2) {
+                Intrinsics.checkNotNullParameter(appUpdateInfo2, "appUpdateInfo");
+                if (appUpdateInfo2.installStatus() == 11) {
+                    Timber.m9d("An update has been downloaded", new Object[0]);
+                    UpdateManager.this.popupSnackbarForCompleteUpdate();
+                }
+            }
+        };
         appUpdateInfo.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda1
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -200,7 +253,37 @@ public final class UpdateManager {
 
     private final void continueUpdateForImmediate() {
         Task<AppUpdateInfo> appUpdateInfo = this.appUpdateManager.getAppUpdateInfo();
-        final UpdateManager$continueUpdateForImmediate$1 updateManager$continueUpdateForImmediate$1 = new UpdateManager$continueUpdateForImmediate$1(this);
+        final Function1<AppUpdateInfo, Unit> function1 = new Function1<AppUpdateInfo, Unit>() { // from class: com.iMe.storage.data.manager.update.UpdateManager$continueUpdateForImmediate$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(AppUpdateInfo appUpdateInfo2) {
+                invoke2(appUpdateInfo2);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(AppUpdateInfo appUpdateInfo2) {
+                AppUpdateManager appUpdateManager;
+                int i;
+                Activity activity;
+                Intrinsics.checkNotNullParameter(appUpdateInfo2, "appUpdateInfo");
+                if (appUpdateInfo2.updateAvailability() == 3) {
+                    try {
+                        appUpdateManager = UpdateManager.this.appUpdateManager;
+                        i = UpdateManager.this.mode;
+                        activity = UpdateManager.this.getActivity();
+                        Intrinsics.checkNotNull(activity);
+                        appUpdateManager.startUpdateFlowForResult(appUpdateInfo2, i, activity, 777);
+                    } catch (IntentSender.SendIntentException e) {
+                        Timber.m8d(e);
+                    }
+                }
+            }
+        };
         appUpdateInfo.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda2
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -220,7 +303,25 @@ public final class UpdateManager {
         ActionGateway actionGateway = this.actionGateway;
         Activity activity = getActivity();
         Intrinsics.checkNotNull(activity);
-        actionGateway.showInfinitySnackBar(activity, this.resourceManager.getString(R$string.in_app_update_snackbar_message), this.resourceManager.getString(R$string.in_app_update_snackbar_action), new UpdateManager$popupSnackbarForCompleteUpdate$1(this));
+        actionGateway.showInfinitySnackBar(activity, this.resourceManager.getString(R$string.in_app_update_snackbar_message), this.resourceManager.getString(R$string.in_app_update_snackbar_action), new Function0<Unit>() { // from class: com.iMe.storage.data.manager.update.UpdateManager$popupSnackbarForCompleteUpdate$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                AppUpdateManager appUpdateManager;
+                appUpdateManager = UpdateManager.this.appUpdateManager;
+                appUpdateManager.completeUpdate();
+            }
+        });
     }
 
     private final void unregisterListener() {

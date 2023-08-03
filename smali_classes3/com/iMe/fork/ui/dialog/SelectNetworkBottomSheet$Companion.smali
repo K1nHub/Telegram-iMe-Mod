@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 454
+    .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,12 +39,12 @@
 
     if-eqz p5, :cond_0
 
-    .line 461
+    .line 456
     invoke-static {}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getSupportedNetworks()Ljava/util/List;
 
     move-result-object p3
 
-    .line 458
+    .line 453
     :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$Companion;->newInstance(Landroid/content/Context;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -88,7 +88,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 464
+    .line 459
     new-instance v0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     const/4 v6, 0x0

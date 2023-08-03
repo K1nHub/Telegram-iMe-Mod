@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;)V
     .locals 0
 
-    .line 5047
+    .line 5042
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getBackgroundColor()I
     .locals 3
 
-    .line 5060
+    .line 5055
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -51,7 +51,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5061
+    .line 5056
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -62,7 +62,7 @@
 
     return v0
 
-    .line 5063
+    .line 5058
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    .line 5064
+    .line 5059
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -94,7 +94,7 @@
 .method public getBackgroundGradientAngle()I
     .locals 2
 
-    .line 5100
+    .line 5095
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -107,7 +107,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5101
+    .line 5096
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -118,7 +118,7 @@
 
     return v0
 
-    .line 5103
+    .line 5098
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
@@ -136,7 +136,7 @@
 .method public getBackgroundGradientColor1()I
     .locals 3
 
-    .line 5070
+    .line 5065
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -149,7 +149,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5071
+    .line 5066
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -160,7 +160,7 @@
 
     return v0
 
-    .line 5073
+    .line 5068
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
@@ -168,7 +168,7 @@
 
     move-result v0
 
-    .line 5074
+    .line 5069
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -192,7 +192,7 @@
 .method public getBackgroundGradientColor2()I
     .locals 3
 
-    .line 5080
+    .line 5075
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -205,7 +205,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5081
+    .line 5076
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -216,7 +216,7 @@
 
     return v0
 
-    .line 5083
+    .line 5078
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
@@ -224,7 +224,7 @@
 
     move-result v0
 
-    .line 5084
+    .line 5079
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -248,7 +248,7 @@
 .method public getBackgroundGradientColor3()I
     .locals 3
 
-    .line 5090
+    .line 5085
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -261,7 +261,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5091
+    .line 5086
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -272,7 +272,7 @@
 
     return v0
 
-    .line 5093
+    .line 5088
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
@@ -280,7 +280,7 @@
 
     move-result v0
 
-    .line 5094
+    .line 5089
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -304,7 +304,7 @@
 .method public getCheckColor()I
     .locals 1
 
-    .line 5055
+    .line 5050
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -319,7 +319,7 @@
 .method public getIntensity()F
     .locals 1
 
-    .line 5108
+    .line 5103
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -334,7 +334,7 @@
 .method public getPatternColor()I
     .locals 1
 
-    .line 5113
+    .line 5108
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -349,7 +349,7 @@
 .method public getSelectedPattern()Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
     .locals 1
 
-    .line 5050
+    .line 5045
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemePreviewActivity$PatternsAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;

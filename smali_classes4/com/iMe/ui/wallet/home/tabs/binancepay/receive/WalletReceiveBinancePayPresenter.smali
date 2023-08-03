@@ -301,7 +301,7 @@
 
     aput-object p1, v0, v1
 
-    const-string p1, "query_id"
+    const-string/jumbo p1, "query_id"
 
     .line 162
     invoke-static {p1, p2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;

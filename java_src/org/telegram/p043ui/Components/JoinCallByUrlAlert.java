@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
@@ -50,7 +50,7 @@ public class JoinCallByUrlAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(80), 1073741824));
         }
 
         public void setText(CharSequence charSequence) {
@@ -66,7 +66,7 @@ public class JoinCallByUrlAlert extends BottomSheet {
         linearLayout.setOrientation(1);
         setCustomView(linearLayout);
         BackupImageView backupImageView = new BackupImageView(context);
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(45));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(45));
         linearLayout.addView(backupImageView, LayoutHelper.createLinear(90, 90, 49, 0, 29, 0, 0));
         backupImageView.setForUserOrChat(tLRPC$Chat, new AvatarDrawable(tLRPC$Chat));
         TextView textView = new TextView(context);
@@ -80,7 +80,7 @@ public class JoinCallByUrlAlert extends BottomSheet {
         textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView2.setGravity(1);
         linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 49, 30, 8, 30, 0));
-        ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(tLRPC$Chat.f1515id, false);
+        ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(tLRPC$Chat.f1518id, false);
         if (groupCall != null) {
             if (TextUtils.isEmpty(groupCall.call.title)) {
                 textView.setText(tLRPC$Chat.title);
@@ -89,20 +89,20 @@ public class JoinCallByUrlAlert extends BottomSheet {
             }
             int i = groupCall.call.participants_count;
             if (i == 0) {
-                textView2.setText(LocaleController.getString("NoOneJoinedYet", C3417R.string.NoOneJoinedYet));
+                textView2.setText(LocaleController.getString("NoOneJoinedYet", C3419R.string.NoOneJoinedYet));
             } else {
                 textView2.setText(LocaleController.formatPluralString("Participants", i, new Object[0]));
             }
         } else {
             textView.setText(tLRPC$Chat.title);
-            textView2.setText(LocaleController.getString("NoOneJoinedYet", C3417R.string.NoOneJoinedYet));
+            textView2.setText(LocaleController.getString("NoOneJoinedYet", C3419R.string.NoOneJoinedYet));
         }
         BottomSheetCell bottomSheetCell = new BottomSheetCell(context);
         bottomSheetCell.setBackground(null);
         if (ChatObject.isChannelOrGiga(tLRPC$Chat)) {
-            bottomSheetCell.setText(LocaleController.getString("VoipChannelJoinVoiceChatUrl", C3417R.string.VoipChannelJoinVoiceChatUrl));
+            bottomSheetCell.setText(LocaleController.getString("VoipChannelJoinVoiceChatUrl", C3419R.string.VoipChannelJoinVoiceChatUrl));
         } else {
-            bottomSheetCell.setText(LocaleController.getString("VoipGroupJoinVoiceChatUrl", C3417R.string.VoipGroupJoinVoiceChatUrl));
+            bottomSheetCell.setText(LocaleController.getString("VoipGroupJoinVoiceChatUrl", C3419R.string.VoipGroupJoinVoiceChatUrl));
         }
         bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinCallByUrlAlert$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

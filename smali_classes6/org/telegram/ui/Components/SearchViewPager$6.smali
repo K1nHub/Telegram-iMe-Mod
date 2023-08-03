@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;)V
     .locals 0
 
-    .line 375
+    .line 376
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$6;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 378
+    .line 379
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$6;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SearchViewPager;->access$300(Lorg/telegram/ui/Components/SearchViewPager;)Lorg/telegram/ui/FilteredSearchView;

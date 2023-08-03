@@ -94,11 +94,11 @@ final class RtpVp9Reader implements RtpPayloadReader {
         } else if (this.gotFirstPacketOfVp9Frame) {
             int nextSequenceNumber = RtpPacket.getNextSequenceNumber(this.previousSequenceNumber);
             if (i < nextSequenceNumber) {
-                Log.m796w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+                Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
                 return false;
             }
         } else {
-            Log.m796w(TAG, "First payload octet of the RTP packet is not the beginning of a new VP9 partition, Dropping current packet.");
+            Log.m814w(TAG, "First payload octet of the RTP packet is not the beginning of a new VP9 partition, Dropping current packet.");
             return false;
         }
         if ((readUnsignedByte & 128) == 0 || (parsableByteArray.readUnsignedByte() & 128) == 0 || parsableByteArray.bytesLeft() >= 1) {

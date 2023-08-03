@@ -1,5 +1,6 @@
 package com.iMe.storage.data.network.model.response.wallet;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FiatValueResponse.kt */
 /* loaded from: classes3.dex */
@@ -51,7 +52,7 @@ public final class FiatValueResponse {
     }
 
     public int hashCode() {
-        return (((Double.doubleToLongBits(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
+        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
     }
 
     public String toString() {

@@ -26,13 +26,13 @@ public class SVG {
     static class Circle extends GraphicsElement {
 
         /* renamed from: cx */
-        Length f99cx;
+        Length f101cx;
 
         /* renamed from: cy */
-        Length f100cy;
+        Length f102cy;
 
         /* renamed from: r */
-        Length f101r;
+        Length f103r;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -62,16 +62,16 @@ public class SVG {
     static class Ellipse extends GraphicsElement {
 
         /* renamed from: cx */
-        Length f102cx;
+        Length f104cx;
 
         /* renamed from: cy */
-        Length f103cy;
+        Length f105cy;
 
         /* renamed from: rx */
-        Length f104rx;
+        Length f106rx;
 
         /* renamed from: ry */
-        Length f105ry;
+        Length f107ry;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -95,16 +95,16 @@ public class SVG {
     static class Line extends GraphicsElement {
 
         /* renamed from: x1 */
-        Length f108x1;
+        Length f110x1;
 
         /* renamed from: x2 */
-        Length f109x2;
+        Length f111x2;
 
         /* renamed from: y1 */
-        Length f110y1;
+        Length f112y1;
 
         /* renamed from: y2 */
-        Length f111y2;
+        Length f113y2;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -135,10 +135,10 @@ public class SVG {
         Length width;
 
         /* renamed from: x */
-        Length f112x;
+        Length f114x;
 
         /* renamed from: y */
-        Length f113y;
+        Length f115y;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -154,7 +154,7 @@ public class SVG {
     static class Path extends GraphicsElement {
 
         /* renamed from: d */
-        PathDefinition f114d;
+        PathDefinition f116d;
         Float pathLength;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
@@ -189,10 +189,10 @@ public class SVG {
         Length width;
 
         /* renamed from: x */
-        Length f115x;
+        Length f117x;
 
         /* renamed from: y */
-        Length f116y;
+        Length f118y;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -223,17 +223,17 @@ public class SVG {
         Length height;
 
         /* renamed from: rx */
-        Length f117rx;
+        Length f119rx;
 
         /* renamed from: ry */
-        Length f118ry;
+        Length f120ry;
         Length width;
 
         /* renamed from: x */
-        Length f119x;
+        Length f121x;
 
         /* renamed from: y */
-        Length f120y;
+        Length f122y;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -249,10 +249,10 @@ public class SVG {
         Length width;
 
         /* renamed from: x */
-        Length f121x;
+        Length f123x;
 
         /* renamed from: y */
-        Length f122y;
+        Length f124y;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -295,16 +295,16 @@ public class SVG {
     static class SvgLinearGradient extends GradientElement {
 
         /* renamed from: x1 */
-        Length f124x1;
+        Length f126x1;
 
         /* renamed from: x2 */
-        Length f125x2;
+        Length f127x2;
 
         /* renamed from: y1 */
-        Length f126y1;
+        Length f128y1;
 
         /* renamed from: y2 */
-        Length f127y2;
+        Length f129y2;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -316,19 +316,19 @@ public class SVG {
     static class SvgRadialGradient extends GradientElement {
 
         /* renamed from: cx */
-        Length f128cx;
+        Length f130cx;
 
         /* renamed from: cy */
-        Length f129cy;
+        Length f131cy;
 
         /* renamed from: fx */
-        Length f130fx;
+        Length f132fx;
 
         /* renamed from: fy */
-        Length f131fy;
+        Length f133fy;
 
         /* renamed from: r */
-        Length f132r;
+        Length f134r;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.caverock.androidsvg.SVG.SvgObject
@@ -384,10 +384,10 @@ public class SVG {
         Length width;
 
         /* renamed from: x */
-        Length f145x;
+        Length f147x;
 
         /* renamed from: y */
-        Length f146y;
+        Length f148y;
 
         @Override // com.caverock.androidsvg.SVG.Group, com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -1036,7 +1036,7 @@ public class SVG {
     public static abstract class SvgElementBase extends SvgObject {
 
         /* renamed from: id */
-        String f123id = null;
+        String f125id = null;
         Boolean spacePreserve = null;
         Style baseStyle = null;
         Style style = null;
@@ -1256,16 +1256,16 @@ public class SVG {
     static abstract class TextPositionedContainer extends TextContainer {
 
         /* renamed from: dx */
-        List<Length> f133dx;
+        List<Length> f135dx;
 
         /* renamed from: dy */
-        List<Length> f134dy;
+        List<Length> f136dy;
 
         /* renamed from: x */
-        List<Length> f135x;
+        List<Length> f137x;
 
         /* renamed from: y */
-        List<Length> f136y;
+        List<Length> f138y;
 
         TextPositionedContainer() {
         }
@@ -1423,10 +1423,10 @@ public class SVG {
         Length width;
 
         /* renamed from: x */
-        Length f106x;
+        Length f108x;
 
         /* renamed from: y */
-        Length f107y;
+        Length f109y;
 
         @Override // com.caverock.androidsvg.SVG.SvgObject
         String getNodeName() {
@@ -1658,7 +1658,7 @@ public class SVG {
         if (str == null || str.length() == 0) {
             return null;
         }
-        if (str.equals(this.rootElement.f123id)) {
+        if (str.equals(this.rootElement.f125id)) {
             return this.rootElement;
         }
         if (this.idToElementMap.containsKey(str)) {
@@ -1672,13 +1672,13 @@ public class SVG {
     private SvgElementBase getElementById(SvgContainer svgContainer, String str) {
         SvgElementBase elementById;
         SvgElementBase svgElementBase = (SvgElementBase) svgContainer;
-        if (str.equals(svgElementBase.f123id)) {
+        if (str.equals(svgElementBase.f125id)) {
             return svgElementBase;
         }
         for (SvgObject svgObject : svgContainer.getChildren()) {
             if (svgObject instanceof SvgElementBase) {
                 SvgElementBase svgElementBase2 = (SvgElementBase) svgObject;
-                if (str.equals(svgElementBase2.f123id)) {
+                if (str.equals(svgElementBase2.f125id)) {
                     return svgElementBase2;
                 }
                 if ((svgObject instanceof SvgContainer) && (elementById = getElementById((SvgContainer) svgObject, str)) != null) {

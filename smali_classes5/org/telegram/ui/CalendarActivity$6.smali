@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/CalendarActivity$6;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
 .source "CalendarActivity.java"
 
 
@@ -14,43 +14,96 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/CalendarActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/CalendarActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 282
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    .line 343
+    iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 7
+.method public onItemClick(I)V
+    .locals 1
 
-    .line 285
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    const/4 v0, -0x1
 
-    move-result v0
+    if-ne p1, v0, :cond_2
 
-    int-to-float v4, v0
+    .line 347
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$700(Lorg/telegram/ui/CalendarActivity;)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v5, v0
+    if-nez p1, :cond_1
 
-    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$800(Lorg/telegram/ui/CalendarActivity;)I
 
-    const/4 v3, 0x0
+    move-result p1
 
-    move-object v1, p1
+    if-nez p1, :cond_1
 
-    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
 
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$900(Lorg/telegram/ui/CalendarActivity;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    .line 354
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
+
+    goto :goto_1
+
+    .line 348
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$902(Lorg/telegram/ui/CalendarActivity;Z)Z
+
+    .line 349
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$702(Lorg/telegram/ui/CalendarActivity;I)I
+
+    .line 350
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$802(Lorg/telegram/ui/CalendarActivity;I)I
+
+    .line 351
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$1000(Lorg/telegram/ui/CalendarActivity;)V
+
+    .line 352
+    iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$6;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$1100(Lorg/telegram/ui/CalendarActivity;)V
+
+    :cond_2
+    :goto_1
     return-void
 .end method

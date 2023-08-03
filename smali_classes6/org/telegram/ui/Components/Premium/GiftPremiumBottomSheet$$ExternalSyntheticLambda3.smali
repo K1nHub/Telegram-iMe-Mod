@@ -35,7 +35,7 @@
 
     check-cast p1, Landroid/graphics/Canvas;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->$r8$lambda$j9IQxl2em4C6qIdqqWEu3LG12vU(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;Landroid/graphics/Path;Landroid/graphics/Canvas;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->$r8$lambda$K_wJUVCwSuh59r4p542v3NGBueM(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;Landroid/graphics/Path;Landroid/graphics/Canvas;)V
 
     return-void
 .end method

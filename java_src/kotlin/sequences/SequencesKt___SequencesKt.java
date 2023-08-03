@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.SetsKt__SetsKt;
 import kotlin.jvm.functions.Function1;
@@ -63,7 +64,19 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     public static <T> Sequence<T> filterNotNull(Sequence<? extends T> sequence) {
         Sequence<T> filterNot;
         Intrinsics.checkNotNullParameter(sequence, "<this>");
-        filterNot = filterNot(sequence, SequencesKt___SequencesKt$filterNotNull$1.INSTANCE);
+        filterNot = filterNot(sequence, new Function1<T, Boolean>() { // from class: kotlin.sequences.SequencesKt___SequencesKt$filterNotNull$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(T t) {
+                return Boolean.valueOf(t == null);
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Boolean invoke(Object obj) {
+                return invoke((SequencesKt___SequencesKt$filterNotNull$1<T>) obj);
+            }
+        });
         Intrinsics.checkNotNull(filterNot, "null cannot be cast to non-null type kotlin.sequences.Sequence<T of kotlin.sequences.SequencesKt___SequencesKt.filterNotNull>");
         return filterNot;
     }
@@ -120,7 +133,12 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
 
     public static <T> Sequence<Pair<T, T>> zipWithNext(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
-        return zipWithNext(sequence, SequencesKt___SequencesKt$zipWithNext$1.INSTANCE);
+        return zipWithNext(sequence, new Function2<T, T, Pair<? extends T, ? extends T>>() { // from class: kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$1
+            @Override // kotlin.jvm.functions.Function2
+            public final Pair<T, T> invoke(T t, T t2) {
+                return TuplesKt.m103to(t, t2);
+            }
+        });
     }
 
     public static final <T, R> Sequence<R> zipWithNext(Sequence<? extends T> sequence, Function2<? super T, ? super T, ? extends R> transform) {

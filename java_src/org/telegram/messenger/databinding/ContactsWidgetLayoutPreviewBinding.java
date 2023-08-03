@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ContactsWidgetLayoutPreviewBinding implements ViewBinding {
     private final LinearLayout rootView;
@@ -25,7 +25,7 @@ public final class ContactsWidgetLayoutPreviewBinding implements ViewBinding {
     }
 
     public static ContactsWidgetLayoutPreviewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.contacts_widget_layout_preview, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.contacts_widget_layout_preview, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

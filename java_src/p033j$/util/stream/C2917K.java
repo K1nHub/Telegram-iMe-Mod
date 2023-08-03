@@ -16,22 +16,22 @@ import p033j$.wrappers.C3228k0;
 class C2917K extends AbstractC2963S {
 
     /* renamed from: l */
-    public final /* synthetic */ int f857l = 4;
+    public final /* synthetic */ int f860l = 4;
 
     /* renamed from: m */
-    final /* synthetic */ Object f858m;
+    final /* synthetic */ Object f861m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC2968T abstractC2968T, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, InterfaceC2820f interfaceC2820f) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = interfaceC2820f;
+        this.f861m = interfaceC2820f;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: H0 */
-    public InterfaceC3080m3 mo283H0(int i, InterfaceC3080m3 interfaceC3080m3) {
-        switch (this.f857l) {
+    public InterfaceC3080m3 mo301H0(int i, InterfaceC3080m3 interfaceC3080m3) {
+        switch (this.f860l) {
             case 0:
                 return new C2911J(this, interfaceC3080m3);
             case 1:
@@ -54,42 +54,42 @@ class C2917K extends AbstractC2963S {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC2968T abstractC2968T, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, InterfaceC2821g interfaceC2821g) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = interfaceC2821g;
+        this.f861m = interfaceC2821g;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC2968T abstractC2968T, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, C3173D c3173d) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = c3173d;
+        this.f861m = c3173d;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC2968T abstractC2968T, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, C3185J c3185j) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = c3185j;
+        this.f861m = c3185j;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC2924L0 abstractC2924L0, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, C3203W c3203w) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = c3203w;
+        this.f861m = c3203w;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC3024d1 abstractC3024d1, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, C3228k0 c3228k0) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = c3228k0;
+        this.f861m = c3228k0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC3032e3 abstractC3032e3, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, Function function) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = function;
+        this.f861m = function;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C2917K(AbstractC3032e3 abstractC3032e3, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i, ToDoubleFunction toDoubleFunction) {
         super(abstractC3016c, enumC3033e4, i);
-        this.f858m = toDoubleFunction;
+        this.f861m = toDoubleFunction;
     }
 }

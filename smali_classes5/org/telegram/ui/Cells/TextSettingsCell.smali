@@ -24,7 +24,7 @@
 
 .field private measureDelay:Z
 
-.field private needDivider:Z
+.field public needDivider:Z
 
 .field private padding:I
 

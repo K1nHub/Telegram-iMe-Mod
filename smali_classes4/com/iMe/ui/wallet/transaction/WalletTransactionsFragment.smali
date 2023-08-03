@@ -103,7 +103,7 @@
     .line 44
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;"
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "presenter"
+    const-string/jumbo v2, "presenter"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -391,7 +391,7 @@
 
     move-result-object v3
 
-    const-string v2, "parentActivity"
+    const-string/jumbo v2, "parentActivity"
 
     invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1371,7 +1371,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    const-string v2, "parentLayout"
+    const-string/jumbo v2, "parentLayout"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1422,7 +1422,7 @@
 
     invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p3, "parentActivity"
+    const-string/jumbo p3, "parentActivity"
 
     .line 76
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

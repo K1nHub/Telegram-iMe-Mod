@@ -2,38 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
-
-.field public final synthetic f$1:I
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;I)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;->f$0:Lorg/telegram/ui/LaunchActivity;
+    check-cast p1, Ljava/lang/Void;
 
-    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda97;->f$1:I
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$8T7vWAVdsuQWFkn1hrE7Nzt51tw(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$egI36V2Z4vZjq7LUsqyAKS-TZsc(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-result-object p1
 
-    return-void
+    return-object p1
 .end method

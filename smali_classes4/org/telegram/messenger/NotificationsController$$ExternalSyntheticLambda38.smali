@@ -8,38 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/NotificationsController;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Ljava/util/ArrayList;
-
-.field public final synthetic f$3:J
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Z
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/NotificationsController;Lorg/telegram/messenger/support/LongSparseIntArray;Ljava/util/ArrayList;JIIZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/NotificationsController;Ljava/util/ArrayList;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/messenger/NotificationsController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iput-object p2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$2:Ljava/util/ArrayList;
-
-    iput-wide p4, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$3:J
-
-    iput p6, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$4:I
-
-    iput p7, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$5:I
-
-    iput-boolean p8, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$6:Z
+    iput p3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$2:I
 
     return-void
 .end method
@@ -47,23 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/messenger/NotificationsController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iget-object v1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$2:Ljava/util/ArrayList;
+    iget v2, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$2:I
 
-    iget-wide v3, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$3:J
-
-    iget v5, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$4:I
-
-    iget v6, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$5:I
-
-    iget-boolean v7, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda38;->f$6:Z
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$AxH7aJsfG5Mc0iwjGIL7viK0O1U(Lorg/telegram/messenger/NotificationsController;Lorg/telegram/messenger/support/LongSparseIntArray;Ljava/util/ArrayList;JIIZ)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$fSWC7FQiOP8To10A_vQObZ0g2qI(Lorg/telegram/messenger/NotificationsController;Ljava/util/ArrayList;I)V
 
     return-void
 .end method

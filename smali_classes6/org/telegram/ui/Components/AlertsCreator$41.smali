@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->lambda$createReportAlert$132([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/DialogInterface;I)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->lambda$createReportAlert$133([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JILandroid/content/DialogInterface;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,20 +21,55 @@
 
 .field final synthetic val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
+.field final synthetic val$storyId:I
+
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/BaseFragment;IJ)V
+.method public static synthetic $r8$lambda$DxdkFmQjBm7FKN6f569mbZvH5no(Lorg/telegram/ui/Components/AlertsCreator$41;)V
     .locals 0
 
-    .line 4814
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/AlertsCreator$41;->lambda$onSend$0()V
 
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
+    return-void
+.end method
 
-    iput-wide p5, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$dialog_id:J
+.method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ActionBar/BaseFragment;IJI)V
+    .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;I)V
+    .line 4836
+    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
+    iput p5, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
+
+    iput-wide p6, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$dialog_id:J
+
+    iput p8, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$storyId:I
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onSend$0()V
+    .locals 2
+
+    .line 4861
+    invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 4863
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createReportSent(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+
+    :cond_0
     return-void
 .end method
 
@@ -43,17 +78,17 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 4818
+    .line 4840
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 4819
+    .line 4841
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of v1, v0, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v1, :cond_0
 
-    .line 4820
+    .line 4842
     check-cast v0, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->checkAdjustResize()V
@@ -65,24 +100,24 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 4
 
-    .line 4826
+    .line 4848
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4827
+    .line 4849
     iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
 
     if-eqz v1, :cond_0
 
-    .line 4828
+    .line 4850
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4830
+    .line 4852
     :cond_0
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -96,24 +131,26 @@
 
     move-result-object v1
 
-    .line 4831
-    invoke-static {v1, p1, p2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;)V
+    .line 4853
+    iget v2, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$storyId:I
 
-    .line 4832
+    invoke-static {v1, p1, p2, v0, v2}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;I)V
+
+    .line 4854
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of p2, p1, Lorg/telegram/ui/ChatActivity;
 
     if-eqz p2, :cond_1
 
-    .line 4833
+    .line 4855
     check-cast p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     const-wide/16 v0, 0x0
 
@@ -121,9 +158,20 @@
 
     const/4 v2, 0x0
 
-    .line 4835
+    .line 4857
     invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
+    goto :goto_0
+
+    .line 4860
     :cond_1
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$41$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$41$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/AlertsCreator$41;)V
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    :cond_2
+    :goto_0
     return-void
 .end method

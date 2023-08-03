@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum Curve {
     SECP256K1(0),
     ED25519(1),
@@ -41,8 +41,8 @@ public enum Curve {
     }
 
     /* renamed from: wallet.core.jni.Curve$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C69291 {
+    /* loaded from: classes4.dex */
+    static /* synthetic */ class C71881 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$Curve;
 
         static {
@@ -81,7 +81,7 @@ public enum Curve {
 
     @Override // java.lang.Enum
     public String toString() {
-        switch (C69291.$SwitchMap$wallet$core$jni$Curve[ordinal()]) {
+        switch (C71881.$SwitchMap$wallet$core$jni$Curve[ordinal()]) {
             case 1:
                 return "secp256k1";
             case 2:

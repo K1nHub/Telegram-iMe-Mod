@@ -17,6 +17,7 @@ public class NotificationsSettingsFacade {
     public static final String PROPERTY_NOTIFY = "notify2_";
     public static final String PROPERTY_NOTIFY_UNTIL = "notifyuntil_";
     public static final String PROPERTY_SILENT = "silent_";
+    public static final String PROPERTY_STORIES_NOTIFY = "stories_";
     private final int currentAccount;
 
     public NotificationsSettingsFacade(int i) {
@@ -35,7 +36,8 @@ public class NotificationsSettingsFacade {
         SharedPreferences.Editor remove2 = remove.remove("custom_" + sharedPrefKey);
         SharedPreferences.Editor remove3 = remove2.remove(PROPERTY_NOTIFY_UNTIL + sharedPrefKey);
         SharedPreferences.Editor remove4 = remove3.remove(PROPERTY_CONTENT_PREVIEW + sharedPrefKey);
-        remove4.remove(PROPERTY_SILENT + sharedPrefKey).apply();
+        SharedPreferences.Editor remove5 = remove4.remove(PROPERTY_SILENT + sharedPrefKey);
+        remove5.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey).apply();
     }
 
     public int getProperty(String str, long j, int i, int i2) {
@@ -109,15 +111,15 @@ public class NotificationsSettingsFacade {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0193  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01d5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$applyDialogNotificationsSettings$1(long r18, int r20, org.telegram.tgnet.TLRPC$PeerNotifySettings r21) {
         /*
-            Method dump skipped, instructions count: 417
+            Method dump skipped, instructions count: 472
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsSettingsFacade.lambda$applyDialogNotificationsSettings$1(long, int, org.telegram.tgnet.TLRPC$PeerNotifySettings):void");
@@ -125,7 +127,7 @@ public class NotificationsSettingsFacade {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$applyDialogNotificationsSettings$0() {
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
     }
 
     public void applySoundSettings(TLRPC$NotificationSound tLRPC$NotificationSound, SharedPreferences.Editor editor, long j, int i, int i2, boolean z) {
@@ -145,6 +147,10 @@ public class NotificationsSettingsFacade {
             str = "GroupSound";
             str2 = "GroupSoundDocId";
             str3 = "GroupSoundPath";
+        } else if (i2 == 3) {
+            str = "StoriesSound";
+            str2 = "StoriesSoundDocId";
+            str3 = "StoriesSoundPath";
         } else if (i2 == 1) {
             str = "GlobalSound";
             str2 = "GlobalSoundDocId";
@@ -183,12 +189,12 @@ public class NotificationsSettingsFacade {
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundRingtone) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = (TLRPC$TL_notificationSoundRingtone) tLRPC$NotificationSound;
-            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1629id);
+            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1637id);
             MediaDataController.getInstance(this.currentAccount).checkRingtones(true);
             if (z && i3 != 0) {
                 editor.putBoolean("custom_" + j, true);
             }
-            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1629id);
+            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1637id);
         }
     }
 

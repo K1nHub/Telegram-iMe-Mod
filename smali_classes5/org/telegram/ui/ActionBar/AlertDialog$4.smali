@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 864
+    .line 867
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onLayout(ZIIII)V
     .locals 6
 
-    .line 867
+    .line 870
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -45,12 +45,12 @@
     :goto_0
     if-ge p5, p1, :cond_a
 
-    .line 871
+    .line 874
     invoke-virtual {p0, p5}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 872
+    .line 875
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
@@ -59,7 +59,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 874
+    .line 877
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -68,12 +68,12 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 876
+    .line 879
     sget-boolean p3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p3, :cond_0
 
-    .line 877
+    .line 880
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result p3
@@ -106,7 +106,7 @@
 
     goto :goto_1
 
-    .line 879
+    .line 882
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
@@ -147,7 +147,7 @@
 
     goto/16 :goto_3
 
-    .line 881
+    .line 884
     :cond_1
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -157,21 +157,21 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 882
+    .line 885
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v2, 0x8
 
     if-eqz v1, :cond_3
 
-    .line 883
+    .line 886
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v1
 
     if-eqz p3, :cond_2
 
-    .line 885
+    .line 888
     invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -184,7 +184,7 @@
 
     add-int/2addr v1, v3
 
-    .line 887
+    .line 890
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
@@ -210,7 +210,7 @@
 
     goto/16 :goto_3
 
-    .line 889
+    .line 892
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
@@ -226,7 +226,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 891
+    .line 894
     invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -239,7 +239,7 @@
 
     sub-int/2addr v1, v3
 
-    .line 893
+    .line 896
     :cond_4
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
@@ -265,7 +265,7 @@
 
     goto/16 :goto_3
 
-    .line 895
+    .line 898
     :cond_5
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -275,12 +275,12 @@
 
     if-ne v1, v2, :cond_9
 
-    .line 896
+    .line 899
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_6
 
-    .line 897
+    .line 900
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
 
     move-result v1
@@ -317,7 +317,7 @@
 
     goto :goto_3
 
-    .line 899
+    .line 902
     :cond_6
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
@@ -351,20 +351,20 @@
 
     goto :goto_3
 
-    .line 903
+    .line 906
     :cond_7
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 904
+    .line 907
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
     if-eqz p3, :cond_8
 
-    .line 908
+    .line 911
     invoke-virtual {p3}, Landroid/view/View;->getLeft()I
 
     move-result v3
@@ -379,7 +379,7 @@
 
     add-int/2addr v3, v4
 
-    .line 909
+    .line 912
     invoke-virtual {p3}, Landroid/view/View;->getTop()I
 
     move-result v4
@@ -406,7 +406,7 @@
 
     add-int/2addr v2, v4
 
-    .line 913
+    .line 916
     invoke-virtual {v0, v3, v4, v1, v2}, Landroid/view/View;->layout(IIII)V
 
     :cond_9
@@ -422,10 +422,10 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 920
+    .line 923
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 923
+    .line 926
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -442,7 +442,7 @@
 
     sub-int/2addr p1, p2
 
-    .line 924
+    .line 927
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p2
@@ -454,12 +454,12 @@
     :goto_0
     if-ge v0, p2, :cond_1
 
-    .line 926
+    .line 929
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 927
+    .line 930
     instance-of v3, v2, Landroid/widget/TextView;
 
     if-eqz v3, :cond_0
@@ -470,7 +470,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 928
+    .line 931
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -487,7 +487,7 @@
 
     const/4 p2, -0x2
 
-    .line 932
+    .line 935
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -498,7 +498,7 @@
 
     const/4 v0, -0x3
 
-    .line 933
+    .line 936
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -511,7 +511,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 935
+    .line 938
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -524,7 +524,7 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 936
+    .line 939
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p2
@@ -549,7 +549,7 @@
 
     goto :goto_1
 
-    .line 938
+    .line 941
     :cond_2
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
 

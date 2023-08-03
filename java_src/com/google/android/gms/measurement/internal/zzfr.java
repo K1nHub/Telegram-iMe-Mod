@@ -79,7 +79,7 @@ public final class zzfr extends Thread {
                 } else {
                     synchronized (this.zzb) {
                         if (this.zzc.peek() == null) {
-                            boolean unused = this.zza.zzj;
+                            zzfs.zzr(this.zza);
                             try {
                                 this.zzb.wait(30000L);
                             } catch (InterruptedException e2) {

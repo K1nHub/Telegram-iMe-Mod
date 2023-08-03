@@ -12,8 +12,9 @@ import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLoader;
@@ -26,6 +27,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Adapters.MentionsAdapter;
@@ -78,6 +80,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     private Runnable cancelDelayRunnable;
     private int channelLastReqId;
     private int channelReqId;
+    private TLRPC$Chat chat;
     private boolean contextMedia;
     private int contextQueryReqid;
     private Runnable contextQueryRunnable;
@@ -123,11 +126,16 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     private ArrayList<StickerResult> stickers;
     private HashMap<String, TLRPC$Document> stickersMap;
     private int threadMessageId;
+    private TLRPC$User user;
     private boolean visibleByStickersSearch;
+    private boolean allowStickers = true;
+    private boolean allowBots = true;
+    private boolean allowChats = true;
     private int currentAccount = UserConfig.selectedAccount;
     private boolean needUsernames = true;
     private boolean needBotContext = true;
     private boolean inlineMediaEnabled = true;
+    private boolean searchInDailogs = false;
     private ArrayList<String> stickersToLoad = new ArrayList<>();
     private SendMessagesHelper.LocationProvider locationProvider = new SendMessagesHelper.LocationProvider(new SendMessagesHelper.LocationProvider.LocationProviderDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter.1
         @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
@@ -250,7 +258,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         if (tLRPC$Document == null) {
             return;
         }
-        String str = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1523id;
+        String str = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1526id;
         HashMap<String, TLRPC$Document> hashMap = this.stickersMap;
         if (hashMap == null || !hashMap.containsKey(str)) {
             if (UserConfig.getInstance(this.currentAccount).isPremium() || !MessageObject.isPremiumSticker(tLRPC$Document)) {
@@ -275,7 +283,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             TLRPC$Document tLRPC$Document = arrayList.get(i);
-            String str = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1523id;
+            String str = tLRPC$Document.dc_id + "_" + tLRPC$Document.f1526id;
             HashMap<String, TLRPC$Document> hashMap = this.stickersMap;
             if ((hashMap == null || !hashMap.containsKey(str)) && (UserConfig.getInstance(this.currentAccount).isPremium() || !MessageObject.isPremiumSticker(tLRPC$Document))) {
                 int size2 = tLRPC$Document.attributes.size();
@@ -437,10 +445,10 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         if ((obj instanceof StickerResult) && (obj2 instanceof StickerResult) && ((StickerResult) obj).sticker == ((StickerResult) obj2).sticker) {
             return true;
         }
-        if ((obj instanceof TLRPC$User) && (obj2 instanceof TLRPC$User) && ((TLRPC$User) obj).f1656id == ((TLRPC$User) obj2).f1656id) {
+        if ((obj instanceof TLRPC$User) && (obj2 instanceof TLRPC$User) && ((TLRPC$User) obj).f1675id == ((TLRPC$User) obj2).f1675id) {
             return true;
         }
-        if ((obj instanceof TLRPC$Chat) && (obj2 instanceof TLRPC$Chat) && ((TLRPC$Chat) obj).f1515id == ((TLRPC$Chat) obj2).f1515id) {
+        if ((obj instanceof TLRPC$Chat) && (obj2 instanceof TLRPC$Chat) && ((TLRPC$Chat) obj).f1518id == ((TLRPC$Chat) obj2).f1518id) {
             return true;
         }
         if ((obj instanceof String) && (obj2 instanceof String) && obj.equals(obj2)) {
@@ -561,7 +569,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     public long getContextBotId() {
         TLRPC$User tLRPC$User = this.foundContextBot;
         if (tLRPC$User != null) {
-            return tLRPC$User.f1656id;
+            return tLRPC$User.f1675id;
         }
         return 0L;
     }
@@ -596,19 +604,19 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             }
             if (this.foundContextBot.bot_inline_geo) {
                 SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.currentAccount);
-                if (!notificationsSettings.getBoolean("inlinegeo_" + this.foundContextBot.f1656id, false) && (chatActivity = this.parentFragment) != null && chatActivity.getParentActivity() != null) {
+                if (!notificationsSettings.getBoolean("inlinegeo_" + this.foundContextBot.f1675id, false) && (chatActivity = this.parentFragment) != null && chatActivity.getParentActivity() != null) {
                     final TLRPC$User tLRPC$User2 = this.foundContextBot;
                     AlertDialog.Builder builder = new AlertDialog.Builder(this.parentFragment.getParentActivity());
-                    builder.setTitle(LocaleController.getString("ShareYouLocationTitle", C3417R.string.ShareYouLocationTitle));
-                    builder.setMessage(LocaleController.getString("ShareYouLocationInline", C3417R.string.ShareYouLocationInline));
+                    builder.setTitle(LocaleController.getString("ShareYouLocationTitle", C3419R.string.ShareYouLocationTitle));
+                    builder.setMessage(LocaleController.getString("ShareYouLocationInline", C3419R.string.ShareYouLocationInline));
                     final boolean[] zArr = new boolean[1];
-                    builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda1
+                    builder.setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda1
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             MentionsAdapter.this.lambda$processFoundUser$2(zArr, tLRPC$User2, dialogInterface, i);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda0
+                    builder.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             MentionsAdapter.this.lambda$processFoundUser$3(zArr, dialogInterface, i);
@@ -644,7 +652,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         zArr[0] = true;
         if (tLRPC$User != null) {
             SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(this.currentAccount).edit();
-            edit.putBoolean("inlinegeo_" + tLRPC$User.f1656id, true).commit();
+            edit.putBoolean("inlinegeo_" + tLRPC$User.f1675id, true).commit();
             checkLocationPermissionsOrStart();
         }
     }
@@ -728,22 +736,22 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
             MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
             this.searchingContextQuery = str2;
-            RunnableC36134 runnableC36134 = new RunnableC36134(str2, str, messagesController, messagesStorage);
-            this.contextQueryRunnable = runnableC36134;
-            AndroidUtilities.runOnUIThread(runnableC36134, 400L);
+            RunnableC36194 runnableC36194 = new RunnableC36194(str2, str, messagesController, messagesStorage);
+            this.contextQueryRunnable = runnableC36194;
+            AndroidUtilities.runOnUIThread(runnableC36194, 400L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.MentionsAdapter$4 */
     /* loaded from: classes5.dex */
-    public class RunnableC36134 implements Runnable {
+    public class RunnableC36194 implements Runnable {
         final /* synthetic */ MessagesController val$messagesController;
         final /* synthetic */ MessagesStorage val$messagesStorage;
         final /* synthetic */ String val$query;
         final /* synthetic */ String val$username;
 
-        RunnableC36134(String str, String str2, MessagesController messagesController, MessagesStorage messagesStorage) {
+        RunnableC36194(String str, String str2, MessagesController messagesController, MessagesStorage messagesStorage) {
             this.val$query = str;
             this.val$username = str2;
             this.val$messagesController = messagesController;
@@ -780,7 +788,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             mentionsAdapter2.contextUsernameReqid = connectionsManager.sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$4$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    MentionsAdapter.RunnableC36134.this.lambda$run$1(str, messagesController, messagesStorage, tLObject, tLRPC$TL_error);
+                    MentionsAdapter.RunnableC36194.this.lambda$run$1(str, messagesController, messagesStorage, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -790,7 +798,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$4$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MentionsAdapter.RunnableC36134.this.lambda$run$0(str, tLRPC$TL_error, tLObject, messagesController, messagesStorage);
+                    MentionsAdapter.RunnableC36194.this.lambda$run$0(str, tLRPC$TL_error, tLObject, messagesController, messagesStorage);
                 }
             });
         }
@@ -857,7 +865,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         if (str == null || !str.equals("gif")) {
             return null;
         }
-        return LocaleController.getString("SearchGifsTitle", C3417R.string.SearchGifsTitle);
+        return LocaleController.getString("SearchGifsTitle", C3419R.string.SearchGifsTitle);
     }
 
     public void searchForContextBotForNextOffset() {
@@ -877,7 +885,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.contextQueryReqid, true);
             this.contextQueryReqid = 0;
         }
-        if (!this.inlineMediaEnabled) {
+        if (!this.inlineMediaEnabled || !this.allowBots) {
             MentionsAdapterDelegate mentionsAdapterDelegate = this.delegate;
             if (mentionsAdapterDelegate != null) {
                 mentionsAdapterDelegate.onContextSearch(false);
@@ -895,7 +903,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             sb.append("_");
             sb.append(this.dialog_id);
             sb.append("_");
-            sb.append(tLRPC$User.f1656id);
+            sb.append(tLRPC$User.f1675id);
             sb.append("_");
             sb.append((!tLRPC$User.bot_inline_geo || this.lastKnownLocation.getLatitude() == -1000.0d) ? "" : Double.valueOf(this.lastKnownLocation.getLatitude() + this.lastKnownLocation.getLongitude()));
             final String sb2 = sb.toString();
@@ -1012,48 +1020,60 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:215:0x036f, code lost:
-        if (r20.info != null) goto L359;
+    /* JADX WARN: Code restructure failed: missing block: B:219:0x0381, code lost:
+        if (r26.info != null) goto L443;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:216:0x0371, code lost:
-        if (r7 == 0) goto L359;
+    /* JADX WARN: Code restructure failed: missing block: B:220:0x0383, code lost:
+        if (r5 == 0) goto L443;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:217:0x0373, code lost:
-        r20.lastText = r6;
-        r20.lastPosition = r22;
-        r20.messages = r23;
-        r20.delegate.needChangePanelVisibility(false);
+    /* JADX WARN: Code restructure failed: missing block: B:221:0x0385, code lost:
+        r26.lastText = r6;
+        r26.lastPosition = r28;
+        r26.messages = r29;
+        r26.delegate.needChangePanelVisibility(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:218:0x037f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:222:0x0391, code lost:
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:219:0x0380, code lost:
-        r20.resultStartPosition = r7;
-        r20.resultLength = r12.length() + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:223:0x0392, code lost:
+        r26.resultStartPosition = r5;
+        r26.resultLength = r13.length() + 1;
         r0 = 0;
         r1 = 65535;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:245:0x03eb, code lost:
-        r20.resultStartPosition = r7;
-        r20.resultLength = r12.length() + r13;
+    /* JADX WARN: Code restructure failed: missing block: B:249:0x03fd, code lost:
+        r26.resultStartPosition = r5;
+        r26.resultLength = r13.length() + r14;
         r0 = 3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:249:0x03ff, code lost:
-        r1 = 65535;
-        r7 = -1;
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x05fa, code lost:
+        if (r19.toLowerCase().startsWith(r6) == false) goto L215;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:362:0x060d, code lost:
+        if (r15.toLowerCase().startsWith(r6) != false) goto L212;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:366:0x061d, code lost:
+        if (r18.toLowerCase().startsWith(r6) != false) goto L212;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:347:0x05b3  */
-    /* JADX WARN: Type inference failed for: r10v51 */
-    /* JADX WARN: Type inference failed for: r10v52 */
-    /* JADX WARN: Type inference failed for: r20v0, types: [org.telegram.ui.Adapters.MentionsAdapter] */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0416  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x05f0  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x05fd  */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x0605  */
+    /* JADX WARN: Removed duplicated region for block: B:365:0x0615  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x0621  */
+    /* JADX WARN: Removed duplicated region for block: B:511:0x063c A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r12v21 */
+    /* JADX WARN: Type inference failed for: r12v22 */
+    /* JADX WARN: Type inference failed for: r26v0, types: [org.telegram.ui.Adapters.MentionsAdapter] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void searchUsernameOrHashtag(java.lang.CharSequence r21, int r22, java.util.ArrayList<org.telegram.messenger.MessageObject> r23, boolean r24, boolean r25) {
+    public void searchUsernameOrHashtag(java.lang.CharSequence r27, int r28, java.util.ArrayList<org.telegram.messenger.MessageObject> r29, boolean r30, boolean r31) {
         /*
-            Method dump skipped, instructions count: 1958
+            Method dump skipped, instructions count: 2308
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Adapters.MentionsAdapter.searchUsernameOrHashtag(java.lang.CharSequence, int, java.util.ArrayList, boolean, boolean):void");
@@ -1068,7 +1088,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.MentionsAdapter$7 */
     /* loaded from: classes5.dex */
-    public class RunnableC36167 implements Runnable {
+    public class RunnableC36227 implements Runnable {
         final /* synthetic */ TLRPC$Chat val$chat;
         final /* synthetic */ MessagesController val$messagesController;
         final /* synthetic */ LongSparseArray val$newMap;
@@ -1076,7 +1096,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         final /* synthetic */ int val$threadId;
         final /* synthetic */ String val$usernameString;
 
-        RunnableC36167(TLRPC$Chat tLRPC$Chat, String str, int i, ArrayList arrayList, LongSparseArray longSparseArray, MessagesController messagesController) {
+        RunnableC36227(TLRPC$Chat tLRPC$Chat, String str, int i, ArrayList arrayList, LongSparseArray longSparseArray, MessagesController messagesController) {
             this.val$chat = tLRPC$Chat;
             this.val$usernameString = str;
             this.val$threadId = i;
@@ -1097,7 +1117,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             TLRPC$TL_channelParticipantsMentions tLRPC$TL_channelParticipantsMentions = new TLRPC$TL_channelParticipantsMentions();
             int i = tLRPC$TL_channelParticipantsMentions.flags | 1;
             tLRPC$TL_channelParticipantsMentions.flags = i;
-            tLRPC$TL_channelParticipantsMentions.f1514q = this.val$usernameString;
+            tLRPC$TL_channelParticipantsMentions.f1517q = this.val$usernameString;
             int i2 = this.val$threadId;
             if (i2 != 0) {
                 tLRPC$TL_channelParticipantsMentions.flags = i | 2;
@@ -1113,7 +1133,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             mentionsAdapter.channelReqId = connectionsManager.sendRequest(tLRPC$TL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$7$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    MentionsAdapter.RunnableC36167.this.lambda$run$1(access$1704, arrayList, longSparseArray, messagesController, tLObject, tLRPC$TL_error);
+                    MentionsAdapter.RunnableC36227.this.lambda$run$1(access$1704, arrayList, longSparseArray, messagesController, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -1123,7 +1143,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MentionsAdapter.RunnableC36167.this.lambda$run$0(i, arrayList, longSparseArray, tLRPC$TL_error, tLObject, messagesController);
+                    MentionsAdapter.RunnableC36227.this.lambda$run$0(i, arrayList, longSparseArray, tLRPC$TL_error, tLObject, messagesController);
                 }
             });
         }
@@ -1199,6 +1219,20 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     /* JADX INFO: Access modifiers changed from: private */
     public void showUsersResult(ArrayList<TLObject> arrayList, LongSparseArray<TLObject> longSparseArray, boolean z) {
         this.searchResultUsernames = arrayList;
+        if ((!this.allowBots || !this.allowChats) && arrayList != null) {
+            Iterator<TLObject> it = arrayList.iterator();
+            while (it.hasNext()) {
+                TLObject next = it.next();
+                if ((next instanceof TLRPC$Chat) && !this.allowChats) {
+                    it.remove();
+                } else if (next instanceof TLRPC$User) {
+                    TLRPC$User tLRPC$User = (TLRPC$User) next;
+                    if (tLRPC$User.bot || UserObject.isService(tLRPC$User.f1675id)) {
+                        it.remove();
+                    }
+                }
+            }
+        }
         this.searchResultUsernamesMap = longSparseArray;
         Runnable runnable = this.cancelDelayRunnable;
         if (runnable != null) {
@@ -1427,12 +1461,12 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             contextLinkCell = new BotSwitchCell(this.mContext);
         } else if (i == 3) {
             TextView textView = new TextView(this.mContext);
-            textView.setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
+            textView.setPadding(AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8));
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText2));
             contextLinkCell = textView;
         } else {
-            contextLinkCell = new StickerCell(this.mContext);
+            contextLinkCell = new StickerCell(this.mContext, this.resourcesProvider);
         }
         return new RecyclerListView.Holder(contextLinkCell);
     }
@@ -1451,11 +1485,11 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             TLRPC$Chat currentChat = this.parentFragment.getCurrentChat();
             if (currentChat != null) {
                 if (!ChatObject.hasAdminRights(currentChat) && (tLRPC$TL_chatBannedRights = currentChat.default_banned_rights) != null && tLRPC$TL_chatBannedRights.send_inline) {
-                    textView.setText(LocaleController.getString("GlobalAttachInlineRestricted", C3417R.string.GlobalAttachInlineRestricted));
+                    textView.setText(LocaleController.getString("GlobalAttachInlineRestricted", C3419R.string.GlobalAttachInlineRestricted));
                 } else if (AndroidUtilities.isBannedForever(currentChat.banned_rights)) {
-                    textView.setText(LocaleController.getString("AttachInlineRestrictedForever", C3417R.string.AttachInlineRestrictedForever));
+                    textView.setText(LocaleController.getString("AttachInlineRestrictedForever", C3419R.string.AttachInlineRestrictedForever));
                 } else {
-                    textView.setText(LocaleController.formatString("AttachInlineRestricted", C3417R.string.AttachInlineRestricted, LocaleController.formatDateForBan(currentChat.banned_rights.until_date)));
+                    textView.setText(LocaleController.formatString("AttachInlineRestricted", C3419R.string.AttachInlineRestricted, LocaleController.formatDateForBan(currentChat.banned_rights.until_date)));
                 }
             }
         } else if (this.searchResultBotContext != null) {
@@ -1471,26 +1505,26 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                 botSwitchCell.setText(tLRPC$TL_inlineBotSwitchPM != null ? tLRPC$TL_inlineBotSwitchPM.text : this.searchResultBotWebViewSwitch.text);
             }
         } else {
+            MentionCell mentionCell = (MentionCell) viewHolder.itemView;
             ArrayList<TLObject> arrayList = this.searchResultUsernames;
             if (arrayList != null) {
                 TLObject tLObject = arrayList.get(i);
                 if (tLObject instanceof TLRPC$User) {
-                    ((MentionCell) viewHolder.itemView).setUser((TLRPC$User) tLObject);
+                    mentionCell.setUser((TLRPC$User) tLObject);
                 } else if (tLObject instanceof TLRPC$Chat) {
-                    ((MentionCell) viewHolder.itemView).setChat((TLRPC$Chat) tLObject);
+                    mentionCell.setChat((TLRPC$Chat) tLObject);
                 }
             } else {
                 ArrayList<String> arrayList2 = this.searchResultHashtags;
                 if (arrayList2 != null) {
-                    ((MentionCell) viewHolder.itemView).setText(arrayList2.get(i));
+                    mentionCell.setText(arrayList2.get(i));
                 } else {
                     ArrayList<MediaDataController.KeywordResult> arrayList3 = this.searchResultSuggestions;
                     if (arrayList3 != null) {
-                        ((MentionCell) viewHolder.itemView).setEmojiSuggestion(arrayList3.get(i));
+                        mentionCell.setEmojiSuggestion(arrayList3.get(i));
                     } else {
                         ArrayList<String> arrayList4 = this.searchResultCommands;
                         if (arrayList4 != null) {
-                            MentionCell mentionCell = (MentionCell) viewHolder.itemView;
                             String str = arrayList4.get(i);
                             String str2 = this.searchResultCommandsHelp.get(i);
                             ArrayList<TLRPC$User> arrayList5 = this.searchResultCommandsUsers;
@@ -1499,7 +1533,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                     }
                 }
             }
-            ((MentionCell) viewHolder.itemView).setDivider(false);
+            mentionCell.setDivider(false);
         }
     }
 
@@ -1532,5 +1566,30 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
 
     private int getThemedColor(int i) {
         return Theme.getColor(i, this.resourcesProvider);
+    }
+
+    public void setDialogId(long j) {
+        this.dialog_id = j;
+    }
+
+    public void setUserOrChar(TLRPC$User tLRPC$User, TLRPC$Chat tLRPC$Chat) {
+        this.user = tLRPC$User;
+        this.chat = tLRPC$Chat;
+    }
+
+    public void setSearchInDailogs(boolean z) {
+        this.searchInDailogs = z;
+    }
+
+    public void setAllowStickers(boolean z) {
+        this.allowStickers = z;
+    }
+
+    public void setAllowBots(boolean z) {
+        this.allowBots = z;
+    }
+
+    public void setAllowChats(boolean z) {
+        this.allowChats = z;
     }
 }

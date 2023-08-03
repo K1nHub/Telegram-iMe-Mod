@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class C0386c {
     /* renamed from: a */
-    public static final String m817a(byte[] byteStr) {
+    public static final String m835a(byte[] byteStr) {
         Intrinsics.checkParameterIsNotNull(byteStr, "byteStr");
         StringBuffer stringBuffer = new StringBuffer();
         try {

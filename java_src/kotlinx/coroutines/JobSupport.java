@@ -242,7 +242,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (!(state$kotlinx_coroutines_core instanceof Incomplete) || ((Incomplete) state$kotlinx_coroutines_core).getList() == null) {
                     return;
                 }
-                jobNode.mo1630remove();
+                jobNode.mo1649remove();
                 return;
             } else if (state$kotlinx_coroutines_core != jobNode) {
                 return;
@@ -915,7 +915,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             this._rootCause = th;
         }
 
-        /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
+        /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
         public final boolean isCompleting() {
             return this._isCompleting;
         }

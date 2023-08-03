@@ -2,46 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/camera/CameraSession;
+
+.field public final synthetic f$1:Ljava/lang/Runnable;
+
+.field public final synthetic f$2:Landroid/graphics/SurfaceTexture;
+
+.field public final synthetic f$3:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/camera/CameraSession;Ljava/lang/Runnable;Landroid/graphics/SurfaceTexture;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/messenger/camera/CameraSession;
+
+    iput-object p2, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$1:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$2:Landroid/graphics/SurfaceTexture;
+
+    iput-object p4, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$3:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    check-cast p1, Lorg/telegram/messenger/camera/Size;
+    iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/messenger/camera/CameraSession;
 
-    check-cast p2, Lorg/telegram/messenger/camera/Size;
+    iget-object v1, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$1:Ljava/lang/Runnable;
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$UQHiOp_k_ixnHDWCsEP-YvxHGU8(Lorg/telegram/messenger/camera/Size;Lorg/telegram/messenger/camera/Size;)I
+    iget-object v2, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$2:Landroid/graphics/SurfaceTexture;
 
-    move-result p1
+    iget-object v3, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda17;->f$3:Ljava/lang/Runnable;
 
-    return p1
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$mT3xQ0Cd-h_UIy2OAuI_-Oj1bow(Lorg/telegram/messenger/camera/CameraSession;Ljava/lang/Runnable;Landroid/graphics/SurfaceTexture;Ljava/lang/Runnable;)V
+
+    return-void
 .end method

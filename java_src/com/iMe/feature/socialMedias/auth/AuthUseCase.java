@@ -25,7 +25,7 @@ public final class AuthUseCase {
     public final Map<String, String> makeAuthHeader(String authToken) {
         Map<String, String> mapOf;
         Intrinsics.checkNotNullParameter(authToken, "authToken");
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m85to(RtspHeaders.AUTHORIZATION, authToken));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m103to(RtspHeaders.AUTHORIZATION, authToken));
         return mapOf;
     }
 }

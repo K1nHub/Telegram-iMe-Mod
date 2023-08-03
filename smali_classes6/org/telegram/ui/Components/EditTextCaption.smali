@@ -142,7 +142,7 @@
 .method private applyTextStyleToSelection(Lorg/telegram/ui/Components/TextStyleSpan;)V
     .locals 4
 
-    .line 261
+    .line 262
     iget v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionStart:I
 
     if-ltz v0, :cond_0
@@ -153,25 +153,25 @@
 
     const/4 v2, -0x1
 
-    .line 264
+    .line 265
     iput v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionEnd:I
 
     iput v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionStart:I
 
     goto :goto_0
 
-    .line 266
+    .line 267
     :cond_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v0
 
-    .line 267
+    .line 268
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionEnd()I
 
     move-result v1
 
-    .line 269
+    .line 270
     :goto_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -181,12 +181,12 @@
 
     invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->addStyleToText(Lorg/telegram/ui/Components/TextStyleSpan;IILandroid/text/Spannable;Z)V
 
-    .line 270
+    .line 271
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->delegate:Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;
 
     if-eqz p1, :cond_1
 
-    .line 271
+    .line 272
     invoke-interface {p1}, Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;->onSpansChanged()V
 
     :cond_1
@@ -196,7 +196,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 523
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -209,12 +209,12 @@
 .method private synthetic lambda$makeSelectedUrl$0(IILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
     .locals 5
 
-    .line 203
+    .line 204
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p4
 
-    .line 204
+    .line 205
     const-class p5, Landroid/text/style/CharacterStyle;
 
     invoke-interface {p4, p1, p2, p5}, Landroid/text/Editable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
@@ -227,49 +227,49 @@
 
     if-eqz p5, :cond_2
 
-    .line 205
+    .line 206
     array-length v1, p5
 
     if-lez v1, :cond_2
 
     const/4 v1, 0x0
 
-    .line 206
+    .line 207
     :goto_0
     array-length v2, p5
 
     if-ge v1, v2, :cond_2
 
-    .line 207
+    .line 208
     aget-object v2, p5, v1
 
-    .line 208
+    .line 209
     instance-of v3, v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     if-nez v3, :cond_1
 
-    .line 209
+    .line 210
     invoke-interface {p4, v2}, Landroid/text/Editable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v3
 
-    .line 210
+    .line 211
     invoke-interface {p4, v2}, Landroid/text/Editable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v4
 
-    .line 211
+    .line 212
     invoke-interface {p4, v2}, Landroid/text/Editable;->removeSpan(Ljava/lang/Object;)V
 
     if-ge v3, p1, :cond_0
 
-    .line 213
+    .line 214
     invoke-interface {p4, v2, v3, p1, v0}, Landroid/text/Editable;->setSpan(Ljava/lang/Object;III)V
 
     :cond_0
     if-le v4, p2, :cond_1
 
-    .line 216
+    .line 217
     invoke-interface {p4, v2, p2, v4, v0}, Landroid/text/Editable;->setSpan(Ljava/lang/Object;III)V
 
     :cond_1
@@ -277,7 +277,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 223
     :cond_2
     :try_start_0
     new-instance p5, Lorg/telegram/ui/Components/URLSpanReplacement;
@@ -296,13 +296,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 226
+    .line 227
     :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->delegate:Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;
 
     if-eqz p1, :cond_3
 
-    .line 227
+    .line 228
     invoke-interface {p1}, Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;->onSpansChanged()V
 
     :cond_3
@@ -312,10 +312,10 @@
 .method private static synthetic lambda$makeSelectedUrl$1(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 232
+    .line 233
     invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 233
+    .line 234
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     return-void
@@ -324,19 +324,19 @@
 .method private overrideCallback(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
     .locals 3
 
-    .line 296
+    .line 297
     new-instance v0, Lorg/telegram/ui/Components/EditTextCaption$3;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/EditTextCaption$3;-><init>(Lorg/telegram/ui/Components/EditTextCaption;Landroid/view/ActionMode$Callback;)V
 
-    .line 330
+    .line 331
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x17
 
     if-lt v1, v2, :cond_0
 
-    .line 331
+    .line 332
     new-instance v1, Lorg/telegram/ui/Components/EditTextCaption$4;
 
     invoke-direct {v1, p0, v0, p1}, Lorg/telegram/ui/Components/EditTextCaption$4;-><init>(Lorg/telegram/ui/Components/EditTextCaption;Landroid/view/ActionMode$Callback;Landroid/view/ActionMode$Callback;)V
@@ -350,91 +350,91 @@
 .method private performMenuAction(I)Z
     .locals 2
 
-    .line 367
+    .line 368
     sget v0, Lorg/telegram/messenger/R$id;->menu_regular:I
 
     const/4 v1, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedRegular()V
 
     return v1
 
-    .line 370
+    .line 371
     :cond_0
     sget v0, Lorg/telegram/messenger/R$id;->menu_bold:I
 
     if-ne p1, v0, :cond_1
 
-    .line 371
+    .line 372
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedBold()V
 
     return v1
 
-    .line 373
+    .line 374
     :cond_1
     sget v0, Lorg/telegram/messenger/R$id;->menu_italic:I
 
     if-ne p1, v0, :cond_2
 
-    .line 374
+    .line 375
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedItalic()V
 
     return v1
 
-    .line 376
+    .line 377
     :cond_2
     sget v0, Lorg/telegram/messenger/R$id;->menu_mono:I
 
     if-ne p1, v0, :cond_3
 
-    .line 377
+    .line 378
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedMono()V
 
     return v1
 
-    .line 379
+    .line 380
     :cond_3
     sget v0, Lorg/telegram/messenger/R$id;->menu_link:I
 
     if-ne p1, v0, :cond_4
 
-    .line 380
+    .line 381
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedUrl()V
 
     return v1
 
-    .line 382
+    .line 383
     :cond_4
     sget v0, Lorg/telegram/messenger/R$id;->menu_strike:I
 
     if-ne p1, v0, :cond_5
 
-    .line 383
+    .line 384
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedStrike()V
 
     return v1
 
-    .line 385
+    .line 386
     :cond_5
     sget v0, Lorg/telegram/messenger/R$id;->menu_underline:I
 
     if-ne p1, v0, :cond_6
 
-    .line 386
+    .line 387
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedUnderline()V
 
     return v1
 
-    .line 388
+    .line 389
     :cond_6
     sget v0, Lorg/telegram/messenger/R$id;->menu_spoiler:I
 
     if-ne p1, v0, :cond_7
 
-    .line 389
+    .line 390
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedSpoiler()V
 
     return v1
@@ -450,7 +450,7 @@
 .method public getCaption()Ljava/lang/String;
     .locals 1
 
-    .line 449
+    .line 450
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->caption:Ljava/lang/String;
 
     return-object v0
@@ -459,7 +459,7 @@
 .method public getOffsetY()F
     .locals 1
 
-    .line 465
+    .line 466
     iget v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->offsetY:F
 
     return v0
@@ -493,19 +493,19 @@
 .method public makeSelectedItalic()V
     .locals 2
 
-    .line 143
+    .line 144
     new-instance v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 144
+    .line 145
     iget v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit8 v1, v1, 0x2
 
     iput v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 145
+    .line 146
     new-instance v1, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
@@ -518,19 +518,19 @@
 .method public makeSelectedMono()V
     .locals 2
 
-    .line 149
+    .line 150
     new-instance v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 150
+    .line 151
     iget v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 151
+    .line 152
     new-instance v1, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
@@ -545,7 +545,7 @@
 
     const/4 v0, 0x0
 
-    .line 250
+    .line 251
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/EditTextCaption;->applyTextStyleToSelection(Lorg/telegram/ui/Components/TextStyleSpan;)V
 
     return-void
@@ -573,25 +573,28 @@
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->applyTextStyleToSelection(Lorg/telegram/ui/Components/TextStyleSpan;)V
 
+    .line 140
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+
     return-void
 .end method
 
 .method public makeSelectedStrike()V
     .locals 2
 
-    .line 155
+    .line 156
     new-instance v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 156
+    .line 157
     iget v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit8 v1, v1, 0x8
 
     iput v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 157
+    .line 158
     new-instance v1, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
@@ -604,19 +607,19 @@
 .method public makeSelectedUnderline()V
     .locals 2
 
-    .line 161
+    .line 162
     new-instance v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 162
+    .line 163
     iget v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit8 v1, v1, 0x10
 
     iput v1, v0, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 163
+    .line 164
     new-instance v1, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
@@ -629,7 +632,7 @@
 .method public makeSelectedUrl()V
     .locals 9
 
-    .line 167
+    .line 168
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
@@ -640,7 +643,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 168
+    .line 169
     sget v1, Lorg/telegram/messenger/R$string;->CreateLink:I
 
     const-string v2, "CreateLink"
@@ -651,7 +654,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 170
+    .line 171
     new-instance v1, Lorg/telegram/ui/Components/EditTextCaption$2;
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
@@ -664,24 +667,24 @@
 
     const/high16 v3, 0x41900000    # 18.0f
 
-    .line 176
+    .line 177
     invoke-virtual {v1, v2, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
     const-string v3, "http://"
 
-    .line 177
+    .line 178
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 178
+    .line 179
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextCaption;->getThemedColor(I)I
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 179
+    .line 180
     sget v3, Lorg/telegram/messenger/R$string;->URL:I
 
     const-string v4, "URL"
@@ -692,7 +695,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    .line 180
+    .line 181
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextCaption;->getThemedColor(I)I
@@ -701,16 +704,16 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHeaderHintColor(I)V
 
-    .line 181
+    .line 182
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 182
+    .line 183
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    .line 183
+    .line 184
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
 
-    .line 184
+    .line 185
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/EditTextCaption;->getThemedColor(I)I
@@ -733,26 +736,26 @@
 
     const/4 v3, 0x6
 
-    .line 185
+    .line 186
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setImeOptions(I)V
 
     const/4 v3, 0x0
 
-    .line 186
+    .line 187
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 187
+    .line 188
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
     const/4 v4, 0x0
 
-    .line 188
+    .line 189
     invoke-virtual {v1, v4, v4, v4, v4}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 189
+    .line 190
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 193
+    .line 194
     iget v5, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionStart:I
 
     if-ltz v5, :cond_0
@@ -763,25 +766,25 @@
 
     const/4 v7, -0x1
 
-    .line 196
+    .line 197
     iput v7, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionEnd:I
 
     iput v7, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionStart:I
 
     goto :goto_0
 
-    .line 198
+    .line 199
     :cond_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v5
 
-    .line 199
+    .line 200
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionEnd()I
 
     move-result v6
 
-    .line 202
+    .line 203
     :goto_0
     sget v7, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -797,7 +800,7 @@
 
     invoke-virtual {v0, v7, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 230
+    .line 231
     sget v5, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v6, "Cancel"
@@ -808,7 +811,7 @@
 
     invoke-virtual {v0, v5, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 231
+    .line 232
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -819,7 +822,7 @@
 
     invoke-virtual {v0, v3}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 236
+    .line 237
     invoke-virtual {v1}, Landroid/widget/EditText;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -828,12 +831,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 238
+    .line 239
     instance-of v3, v0, Landroid/widget/FrameLayout$LayoutParams;
 
     if-eqz v3, :cond_1
 
-    .line 239
+    .line 240
     move-object v3, v0
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
@@ -843,7 +846,7 @@
     :cond_1
     const/16 v2, 0x18
 
-    .line 241
+    .line 242
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -854,17 +857,17 @@
 
     const/16 v2, 0x24
 
-    .line 242
+    .line 243
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    .line 243
+    .line 244
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 245
+    .line 246
     :cond_2
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -894,20 +897,20 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 470
+    .line 471
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 471
+    .line 472
     iget v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->offsetY:F
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 472
+    .line 473
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 474
+    .line 475
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->captionLayout:Landroid/text/StaticLayout;
 
@@ -921,12 +924,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 475
+    .line 476
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
 
-    .line 476
+    .line 477
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v1
@@ -935,15 +938,15 @@
 
     move-result v1
 
-    .line 477
+    .line 478
     iget v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->hintColor:I
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 478
+    .line 479
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 479
+    .line 480
     iget v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->xOffset:I
 
     int-to-float v2, v2
@@ -954,15 +957,15 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 480
+    .line 481
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->captionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 481
+    .line 482
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 482
+    .line 483
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -972,10 +975,10 @@
     :catch_0
     move-exception v0
 
-    .line 485
+    .line 486
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 487
+    .line 488
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
@@ -986,15 +989,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 6
 
-    .line 492
+    .line 493
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 493
+    .line 494
     invoke-static {p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->wrap(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object p1
 
-    .line 494
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->caption:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1003,12 +1006,12 @@
 
     if-nez v0, :cond_0
 
-    .line 495
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->caption:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setHintText(Ljava/lang/CharSequence;)V
 
-    .line 497
+    .line 498
     :cond_0
     invoke-virtual {p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->getActionList()Ljava/util/List;
 
@@ -1016,7 +1019,7 @@
 
     const/4 v1, 0x0
 
-    .line 498
+    .line 499
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -1024,14 +1027,14 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 499
+    .line 500
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    .line 500
+    .line 501
     invoke-virtual {v3}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
 
     move-result v4
@@ -1040,7 +1043,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 501
+    .line 502
     invoke-virtual {p1, v3}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->removeAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)Z
 
     goto :goto_1
@@ -1050,7 +1053,7 @@
 
     goto :goto_0
 
-    .line 505
+    .line 506
     :cond_2
     :goto_1
     invoke-virtual {p0}, Landroid/widget/EditText;->hasSelection()Z
@@ -1059,7 +1062,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 506
+    .line 507
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_spoiler:I
@@ -1076,7 +1079,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 507
+    .line 508
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_bold:I
@@ -1093,7 +1096,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 508
+    .line 509
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_italic:I
@@ -1110,7 +1113,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 509
+    .line 510
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_mono:I
@@ -1127,7 +1130,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 510
+    .line 511
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_strike:I
@@ -1144,7 +1147,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 511
+    .line 512
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_underline:I
@@ -1161,7 +1164,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 512
+    .line 513
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_link:I
@@ -1178,7 +1181,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 513
+    .line 514
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     sget v1, Lorg/telegram/messenger/R$id;->menu_regular:I
@@ -1212,7 +1215,7 @@
 
     const/4 v1, 0x0
 
-    .line 409
+    .line 410
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getMeasuredWidth()I
 
@@ -1236,22 +1239,22 @@
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->isInitLineCount:Z
 
-    .line 410
+    .line 411
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onMeasure(II)V
 
-    .line 411
+    .line 412
     iget-boolean p2, p0, Lorg/telegram/ui/Components/EditTextCaption;->isInitLineCount:Z
 
     if-eqz p2, :cond_1
 
-    .line 412
+    .line 413
     invoke-virtual {p0}, Landroid/widget/EditText;->getLineCount()I
 
     move-result p2
 
     iput p2, p0, Lorg/telegram/ui/Components/EditTextCaption;->lineCount:I
 
-    .line 414
+    .line 415
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextCaption;->isInitLineCount:Z
     :try_end_0
@@ -1262,7 +1265,7 @@
     :catch_0
     move-exception p2
 
-    .line 416
+    .line 417
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1275,16 +1278,16 @@
 
     invoke-virtual {p0, p1, v2}, Landroid/widget/EditText;->setMeasuredDimension(II)V
 
-    .line 417
+    .line 418
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
     const/4 p1, 0x0
 
-    .line 420
+    .line 421
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->captionLayout:Landroid/text/StaticLayout;
 
-    .line 422
+    .line 423
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->caption:Ljava/lang/String;
 
     if-eqz p1, :cond_3
@@ -1295,12 +1298,12 @@
 
     if-lez p1, :cond_3
 
-    .line 423
+    .line 424
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
 
-    .line 424
+    .line 425
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p2
@@ -1317,7 +1320,7 @@
 
     const/16 p2, 0x20
 
-    .line 425
+    .line 426
     invoke-static {p1, p2}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;C)I
 
     move-result p2
@@ -1326,19 +1329,19 @@
 
     if-eq p2, v2, :cond_3
 
-    .line 427
+    .line 428
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v2
 
     add-int/2addr p2, v0
 
-    .line 428
+    .line 429
     invoke-interface {p1, v1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 429
+    .line 430
     invoke-virtual {v2, p1, v1, p2}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
 
     move-result p1
@@ -1351,7 +1354,7 @@
 
     double-to-int p1, p1
 
-    .line 430
+    .line 431
     invoke-virtual {p0}, Landroid/widget/EditText;->getMeasuredWidth()I
 
     move-result p2
@@ -1368,14 +1371,14 @@
 
     sub-int/2addr p2, v3
 
-    .line 431
+    .line 432
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->userNameLength:I
 
-    .line 432
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption;->caption:Ljava/lang/String;
 
     sub-int v6, p2, p1
@@ -1388,10 +1391,10 @@
 
     move-result-object v4
 
-    .line 433
+    .line 434
     iput p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->xOffset:I
 
-    .line 435
+    .line 436
     :try_start_1
     new-instance p1, Landroid/text/StaticLayout;
 
@@ -1413,14 +1416,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->captionLayout:Landroid/text/StaticLayout;
 
-    .line 436
+    .line 437
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
 
     if-lez p1, :cond_2
 
-    .line 437
+    .line 438
     iget p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->xOffset:I
 
     int-to-float p1, p1
@@ -1439,7 +1442,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->xOffset:I
 
-    .line 439
+    .line 440
     :cond_2
     invoke-virtual {p0}, Landroid/widget/EditText;->getMeasuredHeight()I
 
@@ -1472,7 +1475,7 @@
     :catch_1
     move-exception p1
 
-    .line 441
+    .line 442
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -1491,7 +1494,7 @@
 
     if-ne p1, v2, :cond_1
 
-    .line 529
+    .line 530
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -1504,14 +1507,14 @@
 
     check-cast v2, Landroid/content/ClipboardManager;
 
-    .line 530
+    .line 531
     invoke-virtual {v2}, Landroid/content/ClipboardManager;->getPrimaryClip()Landroid/content/ClipData;
 
     move-result-object v2
 
     if-eqz v2, :cond_5
 
-    .line 531
+    .line 532
     invoke-virtual {v2}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v3
@@ -1530,7 +1533,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 533
+    .line 534
     :try_start_0
     invoke-virtual {v2, v1}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
@@ -1540,12 +1543,12 @@
 
     move-result-object v2
 
-    .line 534
+    .line 535
     invoke-static {v2}, Lorg/telegram/messenger/utils/CopyUtilities;->fromHTML(Ljava/lang/String;)Landroid/text/Spannable;
 
     move-result-object v2
 
-    .line 535
+    .line 536
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v3
@@ -1564,7 +1567,7 @@
 
     invoke-static {v2, v3, v4, v1, v5}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ[I)Ljava/lang/CharSequence;
 
-    .line 536
+    .line 537
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v3
@@ -1581,13 +1584,13 @@
 
     move v4, v1
 
-    .line 538
+    .line 539
     :goto_0
     array-length v5, v3
 
     if-ge v4, v5, :cond_0
 
-    .line 539
+    .line 540
     aget-object v5, v3, v4
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
@@ -1608,7 +1611,7 @@
 
     goto :goto_0
 
-    .line 542
+    .line 543
     :cond_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
@@ -1618,7 +1621,7 @@
 
     move-result v1
 
-    .line 543
+    .line 544
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -1635,7 +1638,7 @@
 
     move-result v3
 
-    .line 544
+    .line 545
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v4
@@ -1646,7 +1649,7 @@
 
     invoke-virtual {p0, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 545
+    .line 546
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v3
@@ -1668,7 +1671,7 @@
     :catch_0
     move-exception v0
 
-    .line 548
+    .line 549
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1
@@ -1678,7 +1681,7 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 552
+    .line 553
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v2
@@ -1687,7 +1690,7 @@
 
     move-result v1
 
-    .line 553
+    .line 554
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
@@ -1704,7 +1707,7 @@
 
     move-result v2
 
-    .line 555
+    .line 556
     :try_start_1
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -1725,7 +1728,7 @@
 
     if-ne p1, v2, :cond_5
 
-    .line 561
+    .line 562
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v2
@@ -1734,7 +1737,7 @@
 
     move-result v2
 
-    .line 562
+    .line 563
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -1751,7 +1754,7 @@
 
     move-result v3
 
-    .line 564
+    .line 565
     :try_start_2
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -1763,14 +1766,14 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 565
+    .line 566
     new-instance v4, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v4}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     if-eqz v2, :cond_3
 
-    .line 567
+    .line 568
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v5
@@ -1781,7 +1784,7 @@
 
     invoke-virtual {v4, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 569
+    .line 570
     :cond_3
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -1793,7 +1796,7 @@
 
     if-eq v3, v1, :cond_4
 
-    .line 570
+    .line 571
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
@@ -1812,18 +1815,18 @@
 
     invoke-virtual {v4, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 572
+    .line 573
     :cond_4
     invoke-virtual {p0, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 573
+    .line 574
     invoke-virtual {p0, v2, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     return v0
 
-    .line 579
+    .line 580
     :catch_1
     :cond_5
     :goto_1
@@ -1837,7 +1840,7 @@
 .method public onWindowFocusChanged(Z)V
     .locals 2
 
-    .line 277
+    .line 278
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -1852,7 +1855,7 @@
 
     return-void
 
-    .line 281
+    .line 282
     :cond_0
     :try_start_0
     invoke-super {p0, p1}, Landroid/widget/EditText;->onWindowFocusChanged(Z)V
@@ -1864,7 +1867,7 @@
     :catchall_0
     move-exception p1
 
-    .line 283
+    .line 284
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1874,7 +1877,7 @@
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 1
 
-    .line 519
+    .line 520
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EditTextCaption;->performMenuAction(I)Z
 
     move-result v0
@@ -1985,13 +1988,13 @@
 .method public setHintColor(I)V
     .locals 0
 
-    .line 454
+    .line 455
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    .line 455
+    .line 456
     iput p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->hintColor:I
 
-    .line 456
+    .line 457
     invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
 
     return-void
@@ -2000,10 +2003,10 @@
 .method public setOffsetY(F)V
     .locals 0
 
-    .line 460
+    .line 461
     iput p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->offsetY:F
 
-    .line 461
+    .line 462
     invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
 
     return-void
@@ -2012,10 +2015,10 @@
 .method public setSelectionOverride(II)V
     .locals 0
 
-    .line 254
+    .line 255
     iput p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionStart:I
 
-    .line 255
+    .line 256
     iput p2, p0, Lorg/telegram/ui/Components/EditTextCaption;->selectionEnd:I
 
     return-void
@@ -2024,7 +2027,7 @@
 .method public startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
     .locals 0
 
-    .line 402
+    .line 403
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EditTextCaption;->overrideCallback(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
 
     move-result-object p1
@@ -2039,7 +2042,7 @@
 .method public startActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
     .locals 0
 
-    .line 397
+    .line 398
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EditTextCaption;->overrideCallback(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
 
     move-result-object p1

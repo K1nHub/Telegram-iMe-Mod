@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$39;
-.super Landroid/view/ViewOutlineProvider;
+.super Lorg/telegram/ui/Components/ChatActivityEnterView;
 .source "DialogsActivity.java"
 
 
@@ -15,32 +15,62 @@
 
 
 # instance fields
-.field final synthetic val$forwardingOptionsButtonSize:I
+.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;I)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/app/Activity;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ChatActivity;Z)V
     .locals 0
 
-    .line 6887
-    iput p2, p0, Lorg/telegram/ui/DialogsActivity$39;->val$forwardingOptionsButtonSize:I
+    .line 7197
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$39;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/ChatActivityEnterView;-><init>(Landroid/app/Activity;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ChatActivity;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 1
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    .line 6891
-    iget p1, p0, Lorg/telegram/ui/DialogsActivity$39;->val$forwardingOptionsButtonSize:I
+    .line 7200
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    const/4 v0, 0x0
+    move-result v0
 
-    invoke-virtual {p2, v0, v0, p1, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+    if-nez v0, :cond_0
+
+    .line 7201
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$39;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$39;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$30500(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
+
+    .line 7203
+    :cond_0
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public setTranslationY(F)V
+    .locals 0
+
+    .line 7208
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     return-void
 .end method

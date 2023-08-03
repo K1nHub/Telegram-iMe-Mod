@@ -13,12 +13,12 @@ final class C3049h2 extends AbstractC3055i2 implements InterfaceC2853s.Interface
 
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public /* synthetic */ boolean mo113b(Consumer consumer) {
-        return AbstractC2780a.m599l(this, consumer);
+    public /* synthetic */ boolean mo131b(Consumer consumer) {
+        return AbstractC2780a.m617l(this, consumer);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
-        AbstractC2780a.m607d(this, consumer);
+        AbstractC2780a.m625d(this, consumer);
     }
 }

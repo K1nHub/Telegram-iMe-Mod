@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;)V
     .locals 0
 
-    .line 350
+    .line 356
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$5;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,12 +35,12 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 353
+    .line 359
     instance-of p3, p2, Lorg/telegram/ui/Components/EmojiPacksAlert$SeparatorView;
 
     if-eqz p3, :cond_0
 
-    .line 354
+    .line 360
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$5;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -55,7 +55,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 355
+    .line 361
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$5;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 356
+    .line 362
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$5;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -90,7 +90,7 @@
 
     const/16 p2, 0xe
 
-    .line 357
+    .line 363
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

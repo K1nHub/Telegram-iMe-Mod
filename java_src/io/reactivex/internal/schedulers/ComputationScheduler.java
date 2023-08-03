@@ -39,7 +39,7 @@ public final class ComputationScheduler extends Scheduler {
         final PoolWorker[] eventLoops;
 
         /* renamed from: n */
-        long f556n;
+        long f559n;
 
         FixedSchedulerPool(int i, ThreadFactory threadFactory) {
             this.cores = i;
@@ -55,8 +55,8 @@ public final class ComputationScheduler extends Scheduler {
                 return ComputationScheduler.SHUTDOWN_WORKER;
             }
             PoolWorker[] poolWorkerArr = this.eventLoops;
-            long j = this.f556n;
-            this.f556n = 1 + j;
+            long j = this.f559n;
+            this.f559n = 1 + j;
             return poolWorkerArr[(int) (j % i)];
         }
 

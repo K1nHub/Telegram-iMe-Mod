@@ -10,9 +10,11 @@ import com.google.android.exoplayer2.drm.DrmSession;
 import com.google.android.exoplayer2.drm.DrmSessionEventListener;
 import com.google.android.exoplayer2.drm.DrmSessionManager;
 import com.google.android.exoplayer2.extractor.TrackOutput;
+import com.google.android.exoplayer2.source.SampleQueue;
 import com.google.android.exoplayer2.upstream.Allocator;
 import com.google.android.exoplayer2.upstream.DataReader;
 import com.google.android.exoplayer2.util.Assertions;
+import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
@@ -48,7 +50,12 @@ public class SampleQueue implements TrackOutput {
     private int[] flags = new int[1000];
     private int[] sizes = new int[1000];
     private TrackOutput.CryptoData[] cryptoDatas = new TrackOutput.CryptoData[1000];
-    private final SpannedData<SharedSampleMetadata> sharedSampleMetadata = new SpannedData<>(SampleQueue$$ExternalSyntheticLambda0.INSTANCE);
+    private final SpannedData<SharedSampleMetadata> sharedSampleMetadata = new SpannedData<>(new Consumer() { // from class: com.google.android.exoplayer2.source.SampleQueue$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.util.Consumer
+        public final void accept(Object obj) {
+            SampleQueue.lambda$new$0((SampleQueue.SharedSampleMetadata) obj);
+        }
+    });
     private long startTimeUs = Long.MIN_VALUE;
     private long largestDiscardedTimestampUs = Long.MIN_VALUE;
     private long largestQueuedTimestampUs = Long.MIN_VALUE;
@@ -389,7 +396,7 @@ public class SampleQueue implements TrackOutput {
             r0.append(r6)
             java.lang.String r0 = r0.toString()
             java.lang.String r6 = "SampleQueue"
-            com.google.android.exoplayer2.util.Log.m796w(r6, r0)
+            com.google.android.exoplayer2.util.Log.m814w(r6, r0)
             r8.loggedUnexpectedNonSyncSample = r2
         L50:
             r0 = r14 | 1

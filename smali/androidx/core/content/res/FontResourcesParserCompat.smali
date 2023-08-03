@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/res/FontResourcesParserCompat$Api21Impl;,
-        Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;,
-        Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;,
+        Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;,
         Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;,
-        Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
+        Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;,
+        Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;,
+        Landroidx/core/content/res/FontResourcesParserCompat$Api21Impl;
     }
 .end annotation
 

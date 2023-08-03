@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28452
+    .line 29048
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;
     .locals 1
 
-    .line 28459
+    .line 29055
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 28461
+    .line 29057
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 28466
+    .line 29062
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;-><init>()V
 
-    .line 28467
+    .line 29063
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,7 +86,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 28472
+    .line 29068
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -97,7 +97,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 28473
+    .line 29069
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -110,17 +110,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 28477
+    .line 29073
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 28478
+    .line 29074
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 28479
+    .line 29075
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

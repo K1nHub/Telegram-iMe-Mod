@@ -47,13 +47,13 @@ public class CellFlickerDrawable {
         this.frameInside = false;
         this.repeatProgress = 1.2f;
         this.animationSpeedScale = 1.0f;
-        this.size = AndroidUtilities.m54dp(160);
+        this.size = AndroidUtilities.m72dp(160);
         this.gradientShader = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, this.size, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, ColorUtils.setAlphaComponent(-1, i), 0}, (float[]) null, Shader.TileMode.CLAMP);
         this.gradientShader2 = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, this.size, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, ColorUtils.setAlphaComponent(-1, i2), 0}, (float[]) null, Shader.TileMode.CLAMP);
         this.paint.setShader(this.gradientShader);
         this.paintOutline.setShader(this.gradientShader2);
         this.paintOutline.setStyle(Paint.Style.STROKE);
-        this.paintOutline.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.paintOutline.setStrokeWidth(AndroidUtilities.m72dp(2));
     }
 
     public void setColors(int i, int i2, int i3) {
@@ -180,6 +180,11 @@ public class CellFlickerDrawable {
 
     public void setOnRestartCallback(Runnable runnable) {
         this.onRestartCallback = runnable;
+    }
+
+    public void setAlpha(int i) {
+        this.paint.setAlpha(i);
+        this.paintOutline.setAlpha(i);
     }
 
     /* renamed from: org.telegram.ui.Components.voip.CellFlickerDrawable$DrawableInterface */

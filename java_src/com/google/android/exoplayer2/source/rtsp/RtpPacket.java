@@ -5,6 +5,7 @@ import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.math.IntMath;
 import java.nio.ByteBuffer;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class RtpPacket {
     public static final int CSRC_SIZE = 4;
@@ -107,7 +108,7 @@ public final class RtpPacket {
         }
         int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
         boolean z2 = ((readUnsignedByte2 >> 7) & 1) == 1;
-        byte b3 = (byte) (readUnsignedByte2 & 127);
+        byte b3 = (byte) (readUnsignedByte2 & MessagesStorage.LAST_DB_VERSION);
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         long readUnsignedInt = parsableByteArray.readUnsignedInt();
         int readInt = parsableByteArray.readInt();

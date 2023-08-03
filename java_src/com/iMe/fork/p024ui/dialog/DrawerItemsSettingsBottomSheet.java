@@ -15,9 +15,10 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -42,7 +43,20 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         super(context, false);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new DrawerItemsSettingsBottomSheet$rootView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initRootView;
+                initRootView = DrawerItemsSettingsBottomSheet.this.initRootView();
+                return initRootView;
+            }
+        });
         this.rootView$delegate = lazy;
         setApplyBottomPadding(false);
         setCustomView(getRootView());
@@ -56,7 +70,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     public final FrameLayout initRootView() {
         int collectionSizeOrDefault;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        setTitle(LocaleController.getInternalString(C3417R.string.settings_interface_drawer_items), true);
+        setTitle(LocaleController.getInternalString(C3419R.string.settings_interface_drawer_items), true);
         ScrollView scrollView = new ScrollView(frameLayout.getContext());
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
@@ -84,7 +98,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         frameLayout.addView(view, LayoutHelper.createFrame(-1, 1, 80, 0, 0, 0, 52));
         TextView textView = new TextView(frameLayout.getContext());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3417R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3419R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -94,7 +108,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         int i = Theme.key_dialogTextBlue2;
         textView.setTextColor(Theme.getColor(i));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
+        textView.setPadding(AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(10), 0);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -103,7 +117,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         });
         TextView textView2 = new TextView(frameLayout.getContext());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3417R.string.Save);
+        String string2 = LocaleController.getString("Save", C3419R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -111,7 +125,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(Theme.getColor(i));
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView2.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
+        textView2.setPadding(AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(10), 0);
         textView2.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -119,8 +133,8 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(frameLayout.getContext());
-        int m54dp = AndroidUtilities.m54dp(8);
-        frameLayout2.setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(8);
+        frameLayout2.setPadding(m72dp, m72dp, m72dp, m72dp);
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, 36, 8388659));
         frameLayout2.addView(textView2, LayoutHelper.createFrame(-2, 36, 8388661));
         frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 52, 80));
@@ -161,6 +175,6 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         }
         mutableSet = CollectionsKt___CollectionsKt.toMutableSet(arrayList2);
         SharedConfig.setSelectedDrawerItems(mutableSet);
-        NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
+        NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
     }
 }

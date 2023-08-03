@@ -46,6 +46,13 @@
     <string name="appcenter_distribute_update_failed_dialog_message">Esta versão foi carregada ou baixada usando um browser no modo privado.</string>
     <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstale o app</string>
     <string name="appcenter_distribute_update_failed_dialog_title">Atualizações no aplicativo desabilitadas</string>
+    <string name="call_notification_answer_action">Atender</string>
+    <string name="call_notification_answer_video_action">Vídeo</string>
+    <string name="call_notification_decline_action">Recusar</string>
+    <string name="call_notification_hang_up_action">Desligar</string>
+    <string name="call_notification_incoming_text">Chamada recebida</string>
+    <string name="call_notification_ongoing_text">Chamada em andamento</string>
+    <string name="call_notification_screening_text">Filtrando uma ligação recebida</string>
     <string name="nav_app_bar_navigate_up_description">Navegar para cima</string>
     <string name="nav_app_bar_open_drawer_description">Abrir gaveta de navegação</string>
     <string name="search_menu_title">Pesquisar</string>

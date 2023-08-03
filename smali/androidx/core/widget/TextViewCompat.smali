@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/TextViewCompat$Api24Impl;,
-        Landroidx/core/widget/TextViewCompat$Api23Impl;,
-        Landroidx/core/widget/TextViewCompat$Api28Impl;,
-        Landroidx/core/widget/TextViewCompat$Api16Impl;,
         Landroidx/core/widget/TextViewCompat$Api17Impl;,
-        Landroidx/core/widget/TextViewCompat$OreoCallback;
+        Landroidx/core/widget/TextViewCompat$Api16Impl;,
+        Landroidx/core/widget/TextViewCompat$OreoCallback;,
+        Landroidx/core/widget/TextViewCompat$Api28Impl;,
+        Landroidx/core/widget/TextViewCompat$Api23Impl;,
+        Landroidx/core/widget/TextViewCompat$Api24Impl;
     }
 .end annotation
 

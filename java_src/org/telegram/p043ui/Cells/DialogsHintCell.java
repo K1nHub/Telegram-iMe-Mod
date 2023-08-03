@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -27,11 +27,11 @@ public class DialogsHintCell extends FrameLayout {
     public DialogsHintCell(Context context) {
         super(context);
         setWillNotDraw(false);
-        setPadding(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(8));
+        setPadding(AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(8));
         LinearLayout linearLayout = new LinearLayout(context);
         this.contentView = linearLayout;
         linearLayout.setOrientation(1);
-        this.contentView.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(24) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(24), 0);
+        this.contentView.setPadding(LocaleController.isRTL ? AndroidUtilities.m72dp(24) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(24), 0);
         addView(this.contentView, LayoutHelper.createFrame(-1, -1));
         TextView textView = new TextView(context);
         this.titleView = textView;
@@ -47,7 +47,7 @@ public class DialogsHintCell extends FrameLayout {
         this.contentView.addView(this.messageView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 48));
         ImageView imageView = new ImageView(context);
         this.chevronView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.arrow_newchat);
+        imageView.setImageResource(C3419R.C3421drawable.arrow_newchat);
         addView(this.chevronView, LayoutHelper.createFrame(16, 16, (LocaleController.isRTL ? 3 : 5) | 16));
         updateColors();
     }
@@ -89,7 +89,7 @@ public class DialogsHintCell extends FrameLayout {
             return 0;
         }
         if (this.height <= 0) {
-            this.height = AndroidUtilities.m54dp(72) + 1;
+            this.height = AndroidUtilities.m72dp(72) + 1;
         }
         return this.height;
     }

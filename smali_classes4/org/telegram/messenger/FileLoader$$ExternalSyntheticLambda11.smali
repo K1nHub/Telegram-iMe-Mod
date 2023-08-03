@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/FileLoader;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$FileLocation;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$FileLocation;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$Document;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/messenger/FileLoader;
 
-    iput-object p2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/tgnet/TLRPC$FileLocation;
+    iput-object p2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iput-object p3, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$2:Ljava/lang/String;
+    iput-boolean p3, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$2:Z
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/messenger/FileLoader;
 
-    iget-object v1, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/tgnet/TLRPC$FileLocation;
+    iget-object v1, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iget-object v2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$2:Ljava/lang/String;
+    iget-boolean v2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda11;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$IlTFi8Ho-HruVwVvGaBBLReB_6Q(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$FileLocation;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$gCZqWdZkr1YAL5qaThJRGTYOPIk(Lorg/telegram/messenger/FileLoader;Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
     return-void
 .end method

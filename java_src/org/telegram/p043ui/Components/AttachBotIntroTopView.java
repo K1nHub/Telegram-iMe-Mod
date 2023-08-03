@@ -12,7 +12,7 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -46,9 +46,9 @@ public class AttachBotIntroTopView extends View {
                 ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver2);
             }
         });
-        this.attachDrawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.input_attach).mutate().getConstantState().newDrawable();
+        this.attachDrawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.input_attach).mutate().getConstantState().newDrawable();
         this.paint.setStyle(Paint.Style.STROKE);
-        this.paint.setStrokeWidth(AndroidUtilities.m54dp(3));
+        this.paint.setStrokeWidth(AndroidUtilities.m72dp(3));
         this.paint.setStrokeCap(Paint.Cap.ROUND);
     }
 
@@ -104,13 +104,13 @@ public class AttachBotIntroTopView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight() + AndroidUtilities.m54dp(10));
-        canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), this.backgroundPaint);
-        this.imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.m54dp(66), (getHeight() / 2.0f) - (AndroidUtilities.m54dp(42) / 2.0f), AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(42));
+        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight() + AndroidUtilities.m72dp(10));
+        canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10), this.backgroundPaint);
+        this.imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.m72dp(66), (getHeight() / 2.0f) - (AndroidUtilities.m72dp(42) / 2.0f), AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(42));
         this.imageReceiver.draw(canvas);
-        canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m54dp(8), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.m54dp(8), getHeight() / 2.0f, this.paint);
-        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.m54dp(8), getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.m54dp(8), this.paint);
-        this.attachDrawable.setBounds((getWidth() / 2) + AndroidUtilities.m54dp(24), (getHeight() / 2) - (AndroidUtilities.m54dp(42) / 2), (getWidth() / 2) + AndroidUtilities.m54dp(66), (getHeight() / 2) + (AndroidUtilities.m54dp(42) / 2));
+        canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m72dp(8), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.m72dp(8), getHeight() / 2.0f, this.paint);
+        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.m72dp(8), getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.m72dp(8), this.paint);
+        this.attachDrawable.setBounds((getWidth() / 2) + AndroidUtilities.m72dp(24), (getHeight() / 2) - (AndroidUtilities.m72dp(42) / 2), (getWidth() / 2) + AndroidUtilities.m72dp(66), (getHeight() / 2) + (AndroidUtilities.m72dp(42) / 2));
         this.attachDrawable.draw(canvas);
     }
 }

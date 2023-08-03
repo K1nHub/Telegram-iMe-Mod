@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.amr;
 
+import android.net.Uri;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
@@ -24,6 +25,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Arrays;
+import java.util.Map;
 /* loaded from: classes.dex */
 public final class AmrExtractor implements Extractor {
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING = 1;
@@ -49,7 +51,21 @@ public final class AmrExtractor implements Extractor {
     private SeekMap seekMap;
     private long timeOffsetUs;
     private TrackOutput trackOutput;
-    public static final ExtractorsFactory FACTORY = AmrExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.amr.AmrExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = AmrExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final int[] frameSizeBytesByTypeNb = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
     private static final byte[] amrSignatureNb = Util.getUtf8Bytes("#!AMR\n");
     private static final byte[] amrSignatureWb = Util.getUtf8Bytes("#!AMR-WB\n");

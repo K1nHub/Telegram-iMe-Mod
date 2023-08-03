@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda0;->f$0:Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$qlAn0URCz4uefzCkYeqSqnvW5wc(Landroid/view/View;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$iidNWxdg74xpRXaLGRKS0G4Sddo(Landroid/view/View;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 4854
+    .line 4892
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
     .locals 1
 
-    .line 4861
+    .line 4899
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 4863
+    .line 4901
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 4868
+    .line 4906
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;-><init>()V
 
-    .line 4869
+    .line 4907
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 4874
+    .line 4912
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readDouble(Z)D
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
-    .line 4875
+    .line 4913
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readDouble(Z)D
 
     move-result-wide p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 4879
+    .line 4917
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4880
+    .line 4918
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeDouble(D)V
 
-    .line 4881
+    .line 4919
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->previous:D
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeDouble(D)V

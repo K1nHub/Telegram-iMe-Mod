@@ -3,22 +3,16 @@
 .source "EditTextEffects.java"
 
 
-# static fields
-.field private static final SPOILER_TIMEOUT:I = 0x2710
-
-
 # instance fields
+.field private animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
+
 .field private animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-.field protected animatedEmojiOffsetX:I
-
-.field protected animatedEmojiRawDraw:Z
-
-.field protected animatedEmojiRawDrawFps:I
 
 .field private clickDetector:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
 .field private clipToPadding:Z
+
+.field public drawAnimatedEmojiDrawables:Z
 
 .field private isSpoilersRevealed:Z
 
@@ -64,7 +58,7 @@
     .end annotation
 .end field
 
-.field private suppressOnTextChanged:Z
+.field public suppressOnTextChanged:Z
 
 
 # direct methods
@@ -116,25 +110,12 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    .line 33
-    invoke-direct {p0, p1, v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Z)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
     const/4 v0, 0x1
 
-    .line 43
+    .line 46
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/EditTextEffects;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Z)V
 
     return-void
@@ -143,17 +124,17 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Z)V
     .locals 0
 
-    .line 90
+    .line 86
     invoke-direct {p0, p1, p2}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 50
+    .line 53
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
-    .line 51
+    .line 54
     new-instance p1, Ljava/util/Stack;
 
     invoke-direct {p1}, Ljava/util/Stack;-><init>()V
@@ -162,36 +143,39 @@
 
     const/4 p1, 0x1
 
-    .line 53
+    .line 56
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->shouldRevealSpoilersByTouch:Z
 
-    .line 56
-    new-instance p1, Landroid/graphics/Path;
+    .line 59
+    new-instance p2, Landroid/graphics/Path;
 
-    invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {p2}, Landroid/graphics/Path;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    iput-object p2, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+
+    .line 65
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->drawAnimatedEmojiDrawables:Z
 
     const/4 p1, 0x0
 
-    .line 64
+    .line 66
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastLayout:Landroid/text/Layout;
 
-    .line 73
+    .line 69
     new-instance p1, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/EditTextEffects;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilerTimeout:Ljava/lang/Runnable;
 
-    .line 86
+    .line 82
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
 
-    .line 92
+    .line 88
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -208,7 +192,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 93
+    .line 89
     new-instance p1, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
@@ -225,21 +209,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Z)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 38
-    invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Components/EditTextEffects;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Z)V
-
-    return-void
-.end method
-
 .method private checkSpoilerTimeout()V
     .locals 10
 
-    .line 135
+    .line 131
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
@@ -259,7 +232,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 136
+    .line 132
     :goto_0
     instance-of v1, v0, Landroid/text/Spannable;
 
@@ -269,10 +242,10 @@
 
     if-eqz v1, :cond_5
 
-    .line 137
+    .line 133
     check-cast v0, Landroid/text/Spannable;
 
-    .line 138
+    .line 134
     invoke-interface {v0}, Landroid/text/Spannable;->length()I
 
     move-result v1
@@ -285,7 +258,7 @@
 
     check-cast v1, [Lorg/telegram/ui/Components/TextStyleSpan;
 
-    .line 139
+    .line 135
     array-length v4, v1
 
     move v5, v3
@@ -295,7 +268,7 @@
 
     aget-object v6, v1, v5
 
-    .line 140
+    .line 136
     invoke-interface {v0, v6}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v7
@@ -304,14 +277,14 @@
 
     move-result v8
 
-    .line 141
+    .line 137
     invoke-virtual {v6}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
 
     move-result v6
 
     if-eqz v6, :cond_4
 
-    .line 142
+    .line 138
     iget v6, p0, Lorg/telegram/ui/Components/EditTextEffects;->selStart:I
 
     if-le v7, v6, :cond_1
@@ -332,13 +305,13 @@
 
     if-ge v6, v8, :cond_4
 
-    .line 144
+    .line 140
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilerTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/EditText;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 145
+    .line 141
     iput-boolean v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->postedSpoilerTimeout:Z
 
     move v3, v2
@@ -350,7 +323,7 @@
 
     goto :goto_1
 
-    .line 152
+    .line 148
     :cond_5
     :goto_2
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
@@ -363,10 +336,10 @@
 
     if-nez v0, :cond_6
 
-    .line 153
+    .line 149
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EditTextEffects;->postedSpoilerTimeout:Z
 
-    .line 154
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilerTimeout:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x2710
@@ -377,89 +350,6 @@
     return-void
 .end method
 
-.method private invalidateSpoilers()V
-    .locals 2
-
-    .line 346
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 347
-    :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilersPool:Ljava/util/Stack;
-
-    invoke-virtual {v1, v0}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
-
-    .line 348
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 350
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
-
-    if-eqz v0, :cond_1
-
-    .line 351
-    invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
-
-    return-void
-
-    .line 355
-    :cond_1
-    invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    .line 356
-    invoke-virtual {v0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/text/Spannable;
-
-    if-eqz v0, :cond_3
-
-    .line 357
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x0
-
-    .line 358
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->recordPositions(Z)V
-
-    .line 360
-    :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilersPool:Ljava/util/Stack;
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    invoke-static {p0, v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/widget/TextView;Ljava/util/Stack;Ljava/util/List;)V
-
-    .line 361
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    if-eqz v0, :cond_3
-
-    const/4 v1, 0x1
-
-    .line 362
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->recordPositions(Z)V
-
-    .line 365
-    :cond_3
-    invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
-
-    return-void
-.end method
-
 .method private synthetic lambda$new$0()V
     .locals 2
 
@@ -467,7 +357,7 @@
 
     const/4 v1, 0x1
 
-    .line 80
+    .line 76
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setSpoilersRevealed(ZZ)V
 
     return-void
@@ -476,7 +366,7 @@
 .method private synthetic lambda$new$1()V
     .locals 1
 
-    .line 80
+    .line 76
     new-instance v0, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EditTextEffects;)V
@@ -491,16 +381,16 @@
 
     const/4 v0, 0x0
 
-    .line 74
+    .line 70
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->postedSpoilerTimeout:Z
 
-    .line 75
+    .line 71
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
 
-    .line 76
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+    .line 72
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
 
-    .line 77
+    .line 73
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
@@ -511,7 +401,7 @@
 
     return-void
 
-    .line 80
+    .line 76
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
@@ -527,7 +417,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setOnRippleEndCallback(Ljava/lang/Runnable;)V
 
-    .line 81
+    .line 77
     invoke-virtual {p0}, Landroid/widget/EditText;->getWidth()I
 
     move-result v0
@@ -558,7 +448,7 @@
 
     double-to-float v0, v0
 
-    .line 82
+    .line 78
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -578,7 +468,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 83
+    .line 79
     iget v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastRippleX:F
 
     iget v4, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastRippleY:F
@@ -596,10 +486,10 @@
 .method private synthetic lambda$onSpoilerClicked$3()V
     .locals 0
 
-    .line 108
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+    .line 104
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
 
-    .line 109
+    .line 105
     invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->checkSpoilerTimeout()V
 
     return-void
@@ -608,7 +498,7 @@
 .method private synthetic lambda$onSpoilerClicked$4()V
     .locals 1
 
-    .line 107
+    .line 103
     new-instance v0, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/EditTextEffects;)V
@@ -621,43 +511,43 @@
 .method private onSpoilerClicked(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;FF)V
     .locals 6
 
-    .line 98
+    .line 94
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 100
+    .line 96
     :cond_0
     iput p2, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastRippleX:F
 
-    .line 101
+    .line 97
     iput p3, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastRippleY:F
 
     const/4 v0, 0x0
 
-    .line 103
+    .line 99
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->postedSpoilerTimeout:Z
 
-    .line 104
+    .line 100
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilerTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v1}, Landroid/widget/EditText;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     const/4 v1, 0x1
 
-    .line 106
+    .line 102
     invoke-virtual {p0, v1, v0}, Lorg/telegram/ui/Components/EditTextEffects;->setSpoilersRevealed(ZZ)V
 
-    .line 107
+    .line 103
     new-instance v0, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEffects$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EditTextEffects;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setOnRippleEndCallback(Ljava/lang/Runnable;)V
 
-    .line 112
+    .line 108
     invoke-virtual {p0}, Landroid/widget/EditText;->getWidth()I
 
     move-result p1
@@ -688,7 +578,7 @@
 
     double-to-float p1, v0
 
-    .line 113
+    .line 109
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -708,7 +598,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 114
+    .line 110
     invoke-virtual {v1, p2, p3, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->startRipple(FFF)V
 
     goto :goto_0
@@ -722,7 +612,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 11
 
-    .line 239
+    .line 241
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->shouldRevealSpoilersByTouch:Z
 
     const/4 v1, 0x0
@@ -741,7 +631,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 240
+    .line 242
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -760,15 +650,15 @@
 
     const/4 v10, 0x0
 
-    .line 242
+    .line 244
     invoke-static/range {v3 .. v10}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 243
+    .line 245
     invoke-super {p0, v0}, Landroid/widget/EditText;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 244
+    .line 246
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     :cond_0
@@ -779,7 +669,7 @@
     :cond_1
     move v0, v1
 
-    .line 248
+    .line 250
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/EditText;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -796,32 +686,17 @@
     return v1
 .end method
 
-.method public incrementFrames(I)V
-    .locals 1
-
-    .line 68
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    if-eqz v0, :cond_0
-
-    .line 69
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->incrementFrames(I)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public invalidateEffects()V
     .locals 5
 
-    .line 334
+    .line 335
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 336
+    .line 337
     invoke-interface {v0}, Landroid/text/Editable;->length()I
 
     move-result v1
@@ -843,14 +718,14 @@
 
     aget-object v2, v0, v3
 
-    .line 337
+    .line 338
     invoke-virtual {v2}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 338
+    .line 339
     iget-boolean v4, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/TextStyleSpan;->setSpoilerRevealed(Z)V
@@ -860,9 +735,100 @@
 
     goto :goto_0
 
-    .line 342
+    .line 343
     :cond_1
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+
+    return-void
+.end method
+
+.method protected invalidateSpoilers()V
+    .locals 2
+
+    .line 347
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 348
+    :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilersPool:Ljava/util/Stack;
+
+    invoke-virtual {v1, v0}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
+
+    .line 349
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 351
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
+
+    if-eqz v0, :cond_1
+
+    .line 352
+    invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
+
+    return-void
+
+    .line 356
+    :cond_1
+    invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    .line 357
+    invoke-virtual {v0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/text/Spannable;
+
+    if-eqz v0, :cond_3
+
+    .line 358
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->drawAnimatedEmojiDrawables:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
+    if-eqz v0, :cond_2
+
+    const/4 v1, 0x0
+
+    .line 359
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->recordPositions(Z)V
+
+    .line 361
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilersPool:Ljava/util/Stack;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+
+    invoke-static {p0, v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/widget/TextView;Ljava/util/Stack;Ljava/util/List;)V
+
+    .line 362
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->drawAnimatedEmojiDrawables:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
+    if-eqz v0, :cond_3
+
+    const/4 v1, 0x1
+
+    .line 363
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->recordPositions(Z)V
+
+    .line 366
+    :cond_3
+    invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
 
     return-void
 .end method
@@ -870,12 +836,12 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 172
+    .line 168
     invoke-super {p0}, Landroid/widget/EditText;->onAttachedToWindow()V
 
     const/4 v0, 0x0
 
-    .line 173
+    .line 169
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/EditTextEffects;->updateAnimatedEmoji(Z)V
 
     return-void
@@ -884,15 +850,15 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 160
+    .line 156
     invoke-super {p0}, Landroid/widget/EditText;->onDetachedFromWindow()V
 
-    .line 162
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilerTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/EditText;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 163
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
@@ -901,32 +867,28 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 15
-
-    move-object v0, p0
-
-    move-object/from16 v11, p1
-
-    .line 277
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 278
-    iget-boolean v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->clipToPadding:Z
-
-    const/4 v12, 0x0
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->getScrollY()I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    .locals 13
 
     .line 279
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 280
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->clipToPadding:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
     invoke-virtual {p0}, Landroid/widget/EditText;->getScrollY()I
 
-    move-result v1
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 281
+    invoke-virtual {p0}, Landroid/widget/EditText;->getScrollY()I
+
+    move-result v0
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getMeasuredWidth()I
 
@@ -942,41 +904,41 @@
 
     add-int/2addr v3, v4
 
-    invoke-virtual {v11, v12, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
+    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 281
+    .line 283
     :cond_0
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
 
-    invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
+    invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 282
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+    .line 284
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 283
+    .line 285
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 284
-    iget-object v3, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    .line 286
+    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
 
     iget v4, v2, Landroid/graphics/Rect;->left:I
 
@@ -1000,237 +962,157 @@
 
     goto :goto_0
 
-    .line 286
+    .line 288
     :cond_1
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
-    invoke-virtual {v11, v1, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
-
-    .line 287
-    invoke-virtual {p0, v12}, Lorg/telegram/ui/Components/EditTextEffects;->updateAnimatedEmoji(Z)V
-
-    .line 288
-    invoke-super/range {p0 .. p1}, Landroid/widget/EditText;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
     .line 289
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    const/4 v13, 0x0
-
-    if-eqz v1, :cond_3
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/EditTextEffects;->updateAnimatedEmoji(Z)V
 
     .line 290
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 291
-    iget v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiOffsetX:I
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->drawAnimatedEmojiDrawables:Z
 
-    int-to-float v1, v1
+    const/4 v2, 0x0
 
-    invoke-virtual {v11, v1, v13}, Landroid/graphics/Canvas;->translate(FF)V
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
+    if-eqz v0, :cond_2
 
     .line 292
-    iget-boolean v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiRawDraw:Z
-
-    const/4 v2, 0x6
-
-    if-eqz v1, :cond_2
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 293
+    invoke-virtual {p0}, Landroid/widget/EditText;->getPaddingLeft()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 294
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+    iget-object v5, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    iget-object v6, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollOffset()I
-
-    move-result v1
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    int-to-float v7, v1
+    iget-object v7, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
     invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollOffset()I
 
-    move-result v1
+    move-result v0
+
+    const/4 v3, 0x6
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    sub-int/2addr v0, v3
+
+    int-to-float v8, v0
+
+    invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollOffset()I
+
+    move-result v0
 
     invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollExtent()I
 
-    move-result v2
+    move-result v3
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v3
 
-    int-to-float v8, v1
+    int-to-float v9, v0
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    iget v14, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiRawDrawFps:I
+    iget-object v12, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
-    move-object/from16 v1, p1
+    move-object v3, p1
 
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move v4, v5
-
-    move-object v5, v6
-
-    move v6, v7
-
-    move v7, v8
-
-    move v8, v9
-
-    move v9, v10
-
-    move v10, v14
-
-    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawRawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFFI)V
-
-    goto :goto_1
+    invoke-static/range {v3 .. v12}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFFLandroid/graphics/ColorFilter;)V
 
     .line 295
-    :cond_2
-    invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    const/4 v5, 0x0
-
-    iget-object v6, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollOffset()I
-
-    move-result v1
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    int-to-float v7, v1
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollOffset()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->computeVerticalScrollExtent()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    int-to-float v8, v1
-
-    const/4 v9, 0x0
-
-    const/high16 v10, 0x3f800000    # 1.0f
-
-    move-object/from16 v1, p1
-
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move v4, v5
-
-    move-object v5, v6
-
-    move v6, v7
-
-    move v7, v8
-
-    move v8, v9
-
-    move v9, v10
-
-    invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 297
-    :goto_1
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    :cond_2
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 299
-    :cond_3
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 300
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     .line 301
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+
+    invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
     .line 302
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
-    invoke-virtual {v11, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
 
     .line 303
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
-    invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
+
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getRipplePath(Landroid/graphics/Path;)V
 
     .line 304
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
 
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     .line 305
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
-
-    invoke-interface {v1, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
-
-    iget-object v2, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
-
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getRipplePath(Landroid/graphics/Path;)V
-
-    .line 306
-    :cond_4
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->path:Landroid/graphics/Path;
-
-    invoke-virtual {v11, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
-
-    .line 307
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaddingTop()I
 
-    move-result v1
+    move-result v0
 
-    neg-int v1, v1
+    neg-int v0, v0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    invoke-virtual {v11, v13, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 308
-    invoke-super/range {p0 .. p1}, Landroid/widget/EditText;->onDraw(Landroid/graphics/Canvas;)V
+    .line 306
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onDraw(Landroid/graphics/Canvas;)V
+
+    .line 307
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 309
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 311
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getScrollY()I
 
@@ -1256,86 +1138,86 @@
 
     sub-int/2addr v4, v5
 
-    invoke-virtual {v1, v12, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 310
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 311
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
     .line 312
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
-    .line 313
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v11, v1}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
+    move-result-object v0
 
-    .line 314
-    iget-object v1, v0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
+    :cond_4
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    :cond_5
-    :goto_2
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    move-result v2
-
-    if-eqz v2, :cond_8
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 313
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
+    .line 314
+    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
 
-    .line 315
-    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    iget v4, v3, Landroid/graphics/Rect;->top:I
 
-    move-result-object v3
+    iget v5, v2, Landroid/graphics/Rect;->bottom:I
 
-    .line 316
-    iget-object v4, v0, Lorg/telegram/ui/Components/EditTextEffects;->rect:Landroid/graphics/Rect;
-
-    iget v5, v4, Landroid/graphics/Rect;->top:I
+    if-gt v4, v5, :cond_5
 
     iget v6, v3, Landroid/graphics/Rect;->bottom:I
 
-    if-gt v5, v6, :cond_6
+    iget v7, v2, Landroid/graphics/Rect;->top:I
 
-    iget v7, v4, Landroid/graphics/Rect;->bottom:I
+    if-ge v6, v7, :cond_6
 
-    iget v8, v3, Landroid/graphics/Rect;->top:I
+    :cond_5
+    iget v2, v2, Landroid/graphics/Rect;->top:I
 
-    if-ge v7, v8, :cond_7
+    iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
+    if-gt v2, v3, :cond_4
+
+    if-lt v5, v4, :cond_4
+
+    .line 315
     :cond_6
-    iget v3, v3, Landroid/graphics/Rect;->top:I
-
-    iget v4, v4, Landroid/graphics/Rect;->bottom:I
-
-    if-gt v3, v4, :cond_5
-
-    if-lt v6, v5, :cond_5
-
-    .line 317
-    :cond_7
     invoke-virtual {p0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/text/TextPaint;->getColor()I
+    invoke-virtual {v2}, Landroid/text/TextPaint;->getColor()I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 318
-    invoke-virtual {v2, v11}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
+    .line 316
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 321
-    :cond_8
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    .line 319
+    :cond_7
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 .end method
@@ -1343,12 +1225,12 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 225
+    .line 227
     invoke-super/range {p0 .. p5}, Landroid/widget/EditText;->onLayout(ZIIII)V
 
     const/4 p1, 0x0
 
-    .line 226
+    .line 228
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->updateAnimatedEmoji(Z)V
 
     return-void
@@ -1357,24 +1239,24 @@
 .method protected onSelectionChanged(II)V
     .locals 1
 
-    .line 119
+    .line 115
     invoke-super {p0, p1, p2}, Landroid/widget/EditText;->onSelectionChanged(II)V
 
-    .line 121
+    .line 117
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->suppressOnTextChanged:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 124
+    .line 120
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->selStart:I
 
-    .line 125
+    .line 121
     iput p2, p0, Lorg/telegram/ui/Components/EditTextEffects;->selEnd:I
 
-    .line 127
+    .line 123
     invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->checkSpoilerTimeout()V
 
     return-void
@@ -1383,10 +1265,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 178
+    .line 174
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/EditText;->onSizeChanged(IIII)V
 
-    .line 179
+    .line 175
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateEffects()V
 
     return-void
@@ -1395,43 +1277,43 @@
 .method protected onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 3
 
-    .line 184
+    .line 180
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/EditText;->onTextChanged(Ljava/lang/CharSequence;III)V
 
-    .line 185
+    .line 181
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->suppressOnTextChanged:Z
 
     if-nez v0, :cond_1
 
-    .line 186
+    .line 182
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateEffects()V
 
-    .line 189
+    .line 185
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
 
-    .line 190
+    .line 186
     instance-of p1, p1, Landroid/text/Spannable;
 
     if-eqz p1, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 191
+    .line 187
     invoke-virtual {v0, p2}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result p1
 
-    .line 192
+    .line 188
     invoke-virtual {v0, p2}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result p2
 
     float-to-int p2, p2
 
-    .line 193
+    .line 189
     invoke-virtual {v0, p1}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v1
@@ -1450,7 +1332,7 @@
 
     float-to-int p1, p1
 
-    .line 195
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1470,7 +1352,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 196
+    .line 192
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -1483,14 +1365,14 @@
 
     sub-int/2addr p4, p3
 
-    .line 198
+    .line 194
     iget p3, p0, Lorg/telegram/ui/Components/EditTextEffects;->selStart:I
 
     add-int/2addr p3, p4
 
     iput p3, p0, Lorg/telegram/ui/Components/EditTextEffects;->selStart:I
 
-    .line 199
+    .line 195
     iget p3, p0, Lorg/telegram/ui/Components/EditTextEffects;->selEnd:I
 
     add-int/2addr p3, p4
@@ -1501,7 +1383,7 @@
 
     int-to-float p1, p1
 
-    .line 200
+    .line 196
     invoke-direct {p0, v1, p2, p1}, Lorg/telegram/ui/Components/EditTextEffects;->onSpoilerClicked(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;FF)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1511,17 +1393,17 @@
     :catch_0
     move-exception p1
 
-    .line 206
+    .line 202
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_0
     const/4 p1, 0x1
 
-    .line 209
+    .line 205
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->updateAnimatedEmoji(Z)V
 
-    .line 210
+    .line 206
     invoke-virtual {p0}, Landroid/widget/EditText;->invalidate()V
 
     return-void
@@ -1530,7 +1412,7 @@
 .method public recycleEmojis()V
     .locals 1
 
-    .line 167
+    .line 163
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
@@ -1541,7 +1423,7 @@
 .method public setClipToPadding(Z)V
     .locals 0
 
-    .line 369
+    .line 370
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->clipToPadding:Z
 
     return-void
@@ -1550,7 +1432,7 @@
 .method public setShouldRevealSpoilersByTouch(Z)V
     .locals 0
 
-    .line 233
+    .line 235
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->shouldRevealSpoilersByTouch:Z
 
     return-void
@@ -1559,10 +1441,10 @@
 .method public setSpoilersRevealed(ZZ)V
     .locals 7
 
-    .line 255
+    .line 257
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
 
-    .line 256
+    .line 258
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -1571,7 +1453,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 258
+    .line 260
     invoke-interface {v0}, Landroid/text/Spannable;->length()I
 
     move-result v2
@@ -1584,7 +1466,7 @@
 
     check-cast v2, [Lorg/telegram/ui/Components/TextStyleSpan;
 
-    .line 259
+    .line 261
     array-length v3, v2
 
     move v4, v1
@@ -1594,14 +1476,14 @@
 
     aget-object v5, v2, v4
 
-    .line 260
+    .line 262
     invoke-virtual {v5}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 261
+    .line 263
     invoke-virtual {v5, p1}, Lorg/telegram/ui/Components/TextStyleSpan;->setSpoilerRevealed(Z)V
 
     :cond_0
@@ -1612,28 +1494,28 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 265
+    .line 267
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->suppressOnTextChanged:Z
 
-    .line 266
+    .line 268
     sget-object p1, Landroid/widget/TextView$BufferType;->EDITABLE:Landroid/widget/TextView$BufferType;
 
     invoke-virtual {p0, v0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    .line 267
+    .line 269
     iget p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->selStart:I
 
     iget v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->selEnd:I
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/EditText;->setSelection(II)V
 
-    .line 268
+    .line 270
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EditTextEffects;->suppressOnTextChanged:Z
 
     if-eqz p2, :cond_2
 
-    .line 271
-    invoke-direct {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
+    .line 273
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEffects;->invalidateSpoilers()V
 
     :cond_2
     return-void
@@ -1642,27 +1524,45 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 1
 
-    .line 215
+    .line 211
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->suppressOnTextChanged:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 216
+    .line 212
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->isSpoilersRevealed:Z
 
-    .line 217
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->spoilersPool:Ljava/util/Stack;
 
     if-eqz v0, :cond_0
 
-    .line 218
+    .line 214
     invoke-virtual {v0}, Ljava/util/Stack;->clear()V
 
-    .line 220
+    .line 216
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+
+    return-void
+.end method
+
+.method public setTextColor(I)V
+    .locals 2
+
+    .line 221
+    invoke-super {p0, p1}, Landroid/widget/EditText;->setTextColor(I)V
+
+    .line 222
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v0, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
     return-void
 .end method
@@ -1670,14 +1570,22 @@
 .method public updateAnimatedEmoji(Z)V
     .locals 5
 
-    .line 325
+    .line 323
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->drawAnimatedEmojiDrawables:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 326
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
@@ -1687,11 +1595,11 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
@@ -1706,28 +1614,28 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     :goto_0
     move v0, v1
 
     :goto_1
-    if-nez p1, :cond_2
+    if-nez p1, :cond_3
 
-    .line 326
+    .line 327
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastLayout:Landroid/text/Layout;
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object v2
 
-    if-ne p1, v2, :cond_2
+    if-ne p1, v2, :cond_3
 
     iget p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastTextLength:I
 
-    if-eq p1, v0, :cond_3
+    if-eq p1, v0, :cond_4
 
-    .line 327
-    :cond_2
+    .line 328
+    :cond_3
     invoke-static {}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getCacheTypeForEnterView()I
 
     move-result p1
@@ -1750,16 +1658,16 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->animatedEmojiDrawables:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 328
+    .line 329
     invoke-virtual {p0}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastLayout:Landroid/text/Layout;
 
-    .line 329
+    .line 330
     iput v0, p0, Lorg/telegram/ui/Components/EditTextEffects;->lastTextLength:I
 
-    :cond_3
+    :cond_4
     return-void
 .end method

@@ -516,7 +516,7 @@
 
     const-string v2, "/data/data/org.telegram.messenger/files"
 
-    const-string v3, "org.telegram.messenger"
+    const-string/jumbo v3, "org.telegram.messenger"
 
     invoke-virtual {v2, v3, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
@@ -1347,6 +1347,17 @@
     return-void
 .end method
 
+.method public static logDualCamera(ZZ)V
+    .locals 1
+
+    .line 692
+    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationLoaderInstance:Lorg/telegram/messenger/ApplicationLoader;
+
+    invoke-virtual {v0, p0, p1}, Lorg/telegram/messenger/ApplicationLoader;->logDualCameraInternal(ZZ)V
+
+    return-void
+.end method
+
 .method public static postInitApplication()V
     .locals 6
 
@@ -1516,7 +1527,7 @@
     :try_start_3
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v4, "power"
+    const-string/jumbo v4, "power"
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1731,7 +1742,7 @@
 
     move-result-object v0
 
-    const-string v1, "pushService"
+    const-string/jumbo v1, "pushService"
 
     .line 430
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
@@ -1837,6 +1848,12 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method protected logDualCameraInternal(ZZ)V
+    .locals 0
+
+    return-void
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V

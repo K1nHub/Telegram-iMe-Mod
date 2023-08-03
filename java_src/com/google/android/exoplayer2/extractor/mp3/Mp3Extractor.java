@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.mp3;
 
+import android.net.Uri;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.MpegAudioUtil;
@@ -28,6 +29,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 /* loaded from: classes.dex */
 public final class Mp3Extractor implements Extractor {
     public static final int FLAG_DISABLE_ID3_METADATA = 8;
@@ -62,8 +64,29 @@ public final class Mp3Extractor implements Extractor {
     private final TrackOutput skippingTrackOutput;
     private final MpegAudioUtil.Header synchronizedHeader;
     private int synchronizedHeaderData;
-    public static final ExtractorsFactory FACTORY = Mp3Extractor$$ExternalSyntheticLambda0.INSTANCE;
-    private static final Id3Decoder.FramePredicate REQUIRED_ID3_FRAME_PREDICATE = Mp3Extractor$$ExternalSyntheticLambda1.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.mp3.Mp3Extractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = Mp3Extractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
+    private static final Id3Decoder.FramePredicate REQUIRED_ID3_FRAME_PREDICATE = new Id3Decoder.FramePredicate() { // from class: com.google.android.exoplayer2.extractor.mp3.Mp3Extractor$$ExternalSyntheticLambda1
+        @Override // com.google.android.exoplayer2.metadata.id3.Id3Decoder.FramePredicate
+        public final boolean evaluate(int i, int i2, int i3, int i4, int i5) {
+            boolean lambda$static$1;
+            lambda$static$1 = Mp3Extractor.lambda$static$1(i, i2, i3, i4, i5);
+            return lambda$static$1;
+        }
+    };
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -512,7 +535,7 @@ public final class Mp3Extractor implements Extractor {
                 Metadata.Entry entry = metadata.get(i);
                 if (entry instanceof TextInformationFrame) {
                     TextInformationFrame textInformationFrame = (TextInformationFrame) entry;
-                    if (textInformationFrame.f199id.equals("TLEN")) {
+                    if (textInformationFrame.f201id.equals("TLEN")) {
                         return Util.msToUs(Long.parseLong(textInformationFrame.values.get(0)));
                     }
                 }

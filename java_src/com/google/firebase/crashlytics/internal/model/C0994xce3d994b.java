@@ -10,11 +10,11 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
     private final long offset;
 
     /* renamed from: pc */
-    private final long f243pc;
+    private final long f245pc;
     private final String symbol;
 
     private C0994xce3d994b(long j, String str, String str2, long j2, int i) {
-        this.f243pc = j;
+        this.f245pc = j;
         this.symbol = str;
         this.file = str2;
         this.offset = j2;
@@ -23,7 +23,7 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame
     public long getPc() {
-        return this.f243pc;
+        return this.f245pc;
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame
@@ -47,7 +47,7 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
     }
 
     public String toString() {
-        return "Frame{pc=" + this.f243pc + ", symbol=" + this.symbol + ", file=" + this.file + ", offset=" + this.offset + ", importance=" + this.importance + "}";
+        return "Frame{pc=" + this.f245pc + ", symbol=" + this.symbol + ", file=" + this.file + ", offset=" + this.offset + ", importance=" + this.importance + "}";
     }
 
     public boolean equals(Object obj) {
@@ -57,13 +57,13 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
         }
         if (obj instanceof CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame) {
             CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame frame = (CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame) obj;
-            return this.f243pc == frame.getPc() && this.symbol.equals(frame.getSymbol()) && ((str = this.file) != null ? str.equals(frame.getFile()) : frame.getFile() == null) && this.offset == frame.getOffset() && this.importance == frame.getImportance();
+            return this.f245pc == frame.getPc() && this.symbol.equals(frame.getSymbol()) && ((str = this.file) != null ? str.equals(frame.getFile()) : frame.getFile() == null) && this.offset == frame.getOffset() && this.importance == frame.getImportance();
         }
         return false;
     }
 
     public int hashCode() {
-        long j = this.f243pc;
+        long j = this.f245pc;
         int hashCode = (((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.symbol.hashCode()) * 1000003;
         String str = this.file;
         int hashCode2 = str == null ? 0 : str.hashCode();
@@ -80,12 +80,12 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
         private Long offset;
 
         /* renamed from: pc */
-        private Long f244pc;
+        private Long f246pc;
         private String symbol;
 
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder
         public CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder setPc(long j) {
-            this.f244pc = Long.valueOf(j);
+            this.f246pc = Long.valueOf(j);
             return this;
         }
 
@@ -117,7 +117,7 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder
         public CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame build() {
             String str = "";
-            if (this.f244pc == null) {
+            if (this.f246pc == null) {
                 str = " pc";
             }
             if (this.symbol == null) {
@@ -132,7 +132,7 @@ final class C0994xce3d994b extends CrashlyticsReport.Session.Event.Application.E
             if (!str.isEmpty()) {
                 throw new IllegalStateException("Missing required properties:" + str);
             }
-            return new C0994xce3d994b(this.f244pc.longValue(), this.symbol, this.file, this.offset.longValue(), this.importance.intValue());
+            return new C0994xce3d994b(this.f246pc.longValue(), this.symbol, this.file, this.offset.longValue(), this.importance.intValue());
         }
     }
 }

@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
-    .line 180
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieDrawable$3;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$run$0()V
     .locals 2
 
-    .line 191
+    .line 194
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$3;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -52,12 +52,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 193
+    .line 196
     invoke-virtual {v0}, Lorg/telegram/messenger/utils/BitmapsCache;->createCache()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 198
+    .line 201
     :catchall_0
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->uiHandler:Landroid/os/Handler;
@@ -78,7 +78,7 @@
 .method public run()V
     .locals 3
 
-    .line 183
+    .line 186
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$3;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->isRecycled:Z
@@ -105,22 +105,22 @@
 
     const/4 v1, 0x1
 
-    .line 184
+    .line 187
     iput-boolean v1, v0, Lorg/telegram/ui/Components/RLottieDrawable;->generatingCache:Z
 
-    .line 185
+    .line 188
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->lottieCacheGenerateQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-nez v0, :cond_0
 
-    .line 186
+    .line 189
     invoke-static {}, Lorg/telegram/ui/Components/RLottieDrawable;->createCacheGenQueue()V
 
-    .line 188
+    .line 191
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/utils/BitmapsCache;->incrementTaskCounter()V
 
-    .line 189
+    .line 192
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->lottieCacheGenerateQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/RLottieDrawable$3;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;

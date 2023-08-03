@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 119
+    .line 123
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$1;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public emptyViewIsVisible()Z
     .locals 3
 
-    .line 130
+    .line 134
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -46,7 +46,7 @@
 
     return v1
 
-    .line 133
+    .line 137
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$1;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
@@ -75,14 +75,14 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 123
+    .line 127
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [I
 
-    .line 125
+    .line 129
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
     return-void

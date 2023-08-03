@@ -42,7 +42,7 @@
     .line 100
     invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "outputStream cannot be null!"
+    const-string/jumbo v0, "outputStream cannot be null!"
 
     .line 101
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

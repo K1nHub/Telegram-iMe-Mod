@@ -96,7 +96,7 @@
 
     iput-object v1, v0, Lcom/stripe/android/net/ErrorParser$StripeError;->message:Ljava/lang/String;
 
-    const-string v1, "param"
+    const-string/jumbo v1, "param"
 
     .line 38
     invoke-static {p0, v1}, Lcom/stripe/android/util/StripeJsonUtils;->optString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;

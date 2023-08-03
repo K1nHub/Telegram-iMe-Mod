@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 167
+    .line 169
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 170
+    .line 172
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V

@@ -22,12 +22,22 @@
 
 .field public sound:Ljava/lang/String;
 
+.field public stories_android_sound:Lorg/telegram/tgnet/TLRPC$NotificationSound;
+
+.field public stories_hide_sender:Z
+
+.field public stories_ios_sound:Lorg/telegram/tgnet/TLRPC$NotificationSound;
+
+.field public stories_muted:Z
+
+.field public stories_other_sound:Lorg/telegram/tgnet/TLRPC$NotificationSound;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 9520
+    .line 9729
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -42,7 +52,7 @@
 
     goto :goto_0
 
-    .line 9547
+    .line 9764
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettingsEmpty_layer77;
 
@@ -50,7 +60,7 @@
 
     goto :goto_0
 
-    .line 9541
+    .line 9758
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer139;
 
@@ -58,15 +68,15 @@
 
     goto :goto_0
 
-    .line 9535
+    .line 9752
     :sswitch_2
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer156;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer156;-><init>()V
 
     goto :goto_0
 
-    .line 9538
+    .line 9755
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer77;
 
@@ -74,8 +84,16 @@
 
     goto :goto_0
 
-    .line 9544
+    .line 9749
     :sswitch_4
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;-><init>()V
+
+    goto :goto_0
+
+    .line 9761
+    :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer47;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer47;-><init>()V
@@ -87,7 +105,7 @@
 
     goto :goto_1
 
-    .line 9551
+    .line 9768
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -117,7 +135,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 9554
+    .line 9771
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -127,7 +145,8 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x72a1ee12 -> :sswitch_4
+        -0x72a1ee12 -> :sswitch_5
+        -0x669dd3f4 -> :sswitch_4
         -0x65325b40 -> :sswitch_3
         -0x57c4fbda -> :sswitch_2
         -0x50af62e0 -> :sswitch_1

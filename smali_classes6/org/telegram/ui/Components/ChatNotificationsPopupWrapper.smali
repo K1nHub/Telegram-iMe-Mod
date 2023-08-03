@@ -1384,7 +1384,7 @@
     const/4 v0, 0x0
 
     .line 229
-    invoke-static {p2, p4, p3, v0}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;)Ljava/lang/CharSequence;
+    invoke-static {p2, p4, p3, v0}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 

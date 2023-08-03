@@ -4,9 +4,10 @@ import java.util.Iterator;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class DropSequence$iterator$1 implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
+public final class DropSequence$iterator$1<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private final Iterator<T> iterator;
     private int left;
 
@@ -37,7 +38,6 @@ public final class DropSequence$iterator$1 implements Iterator<T>, KMappedMarker
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [T, java.lang.Object] */
     @Override // java.util.Iterator, p033j$.util.Iterator
     public T next() {
         drop();

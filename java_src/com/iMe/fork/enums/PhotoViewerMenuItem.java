@@ -6,16 +6,16 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: PhotoViewerMenuItem.kt */
 /* loaded from: classes3.dex */
 public enum PhotoViewerMenuItem {
-    PHOTO_TEXT(C3417R.string.photo_viewer_open_recognize_text),
-    PHOTO_INFO(C3417R.string.photo_viewer_open_recognize_photo),
-    FORWARD_MESSENGERS(C3417R.string.settings_interface_message_popup_item_forward_messengers),
-    TRANSLATE(C3417R.string.chat_long_action_translate),
-    COPY_IMAGE(C3417R.string.photo_viewer_image_copy),
-    CLEAR_CACHE(C3417R.string.photo_viewer_clear_cache);
+    PHOTO_TEXT(C3419R.string.photo_viewer_open_recognize_text),
+    PHOTO_INFO(C3419R.string.photo_viewer_open_recognize_photo),
+    FORWARD_MESSENGERS(C3419R.string.settings_interface_message_popup_item_forward_messengers),
+    TRANSLATE(C3419R.string.chat_long_action_translate),
+    COPY_IMAGE(C3419R.string.photo_viewer_image_copy),
+    CLEAR_CACHE(C3419R.string.photo_viewer_clear_cache);
     
     public static final Companion Companion = new Companion(null);
     private final int titleResId;

@@ -1,6 +1,7 @@
 package org.telegram.p043ui.Components;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.Layout;
@@ -59,7 +60,22 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0107, code lost:
+    private MessageContainsEmojiButton(int i, Context context, Theme.ResourcesProvider resourcesProvider, int i2) {
+        super(context);
+        this.emojiDrawableBounds = new Rect();
+        this.loadingDrawableBoundsSet = false;
+        this.lastWidth = -1;
+        this.checkWidth = true;
+        this.loadT = BitmapDescriptorFactory.HUE_RED;
+        this.currentAccount = i;
+        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), 0, 6));
+        TextPaint textPaint = new TextPaint(1);
+        this.textPaint = textPaint;
+        textPaint.setTextSize(AndroidUtilities.m72dp(13));
+        this.textPaint.setColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, resourcesProvider));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00ca, code lost:
         r4 = null;
      */
     /*
@@ -68,7 +84,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
     */
     public MessageContainsEmojiButton(int r10, android.content.Context r11, org.telegram.p043ui.ActionBar.Theme.ResourcesProvider r12, java.util.ArrayList<org.telegram.tgnet.TLRPC$InputStickerSet> r13, int r14) {
         /*
-            Method dump skipped, instructions count: 421
+            Method dump skipped, instructions count: 362
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.MessageContainsEmojiButton.<init>(int, android.content.Context, org.telegram.ui.ActionBar.Theme$ResourcesProvider, java.util.ArrayList, int):void");
@@ -88,10 +104,10 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
                 this.mainTextLayout = staticLayout2;
                 if (this.loadingDrawable != null && this.loadingBoundsTo == null) {
                     int lineCount = staticLayout2.getLineCount() - 1;
-                    this.lastLineMargin = ((int) this.mainTextLayout.getPrimaryHorizontal(this.mainText.length())) + AndroidUtilities.m54dp(2);
+                    this.lastLineMargin = ((int) this.mainTextLayout.getPrimaryHorizontal(this.mainText.length())) + AndroidUtilities.m72dp(2);
                     this.lastLineTop = this.mainTextLayout.getLineTop(lineCount);
                     this.lastLineHeight = r1 - this.lastLineTop;
-                    float min = Math.min(AndroidUtilities.m54dp(100), this.mainTextLayout.getWidth() - this.lastLineMargin);
+                    float min = Math.min(AndroidUtilities.m72dp(100), this.mainTextLayout.getWidth() - this.lastLineMargin);
                     if (this.loadingBoundsFrom == null) {
                         this.loadingBoundsFrom = new Rect();
                     }
@@ -132,7 +148,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int i3;
-        setPadding(AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(8));
+        setPadding(AndroidUtilities.m72dp(13), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(13), AndroidUtilities.m72dp(8));
         int size = View.MeasureSpec.getSize(i);
         if (this.checkWidth && (i3 = this.lastWidth) > 0) {
             size = Math.min(size, i3);

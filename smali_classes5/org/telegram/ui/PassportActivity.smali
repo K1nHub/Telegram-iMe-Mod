@@ -7900,7 +7900,7 @@
 
     move-result v13
 
-    invoke-virtual {v5, v13}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v5, v13}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 3352
     iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -9077,7 +9077,7 @@
 
     move-result v8
 
-    invoke-virtual {v6, v8}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v6, v8}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 2752
     iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -9428,7 +9428,7 @@
 
     move-result v6
 
-    invoke-virtual {v3, v6}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 1452
     iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -10747,7 +10747,7 @@
 
     move-result v13
 
-    invoke-virtual {v8, v13}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v8, v13}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 4145
     iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -11558,7 +11558,7 @@
 
     move-result v13
 
-    invoke-virtual {v7, v13}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v7, v13}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 4485
     iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -13558,7 +13558,7 @@
 
     move-result v11
 
-    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v9, v11}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 1582
     iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -14357,7 +14357,7 @@
 
     move-result v15
 
-    invoke-virtual {v10, v15}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v10, v15}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 2858
     iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda4;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$lkenepau3bF5QAqD7wgE1XZzQlk(Lorg/telegram/ui/Components/FilterGLThread;II)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$uxcOi5esD_W3bpm703Rso8WsGqA(Lorg/telegram/ui/Components/FilterGLThread;II)V
 
     return-void
 .end method

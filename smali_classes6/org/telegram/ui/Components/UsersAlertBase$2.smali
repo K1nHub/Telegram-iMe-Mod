@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase;)V
     .locals 0
 
-    .line 148
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$2;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -37,14 +37,14 @@
 
     if-nez p2, :cond_0
 
-    .line 156
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$2;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->needSnapToTop:Z
 
     if-eqz p2, :cond_0
 
-    .line 157
+    .line 162
     iget p2, p1, Lorg/telegram/ui/Components/UsersAlertBase;->scrollOffsetY:I
 
     invoke-static {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$000(Lorg/telegram/ui/Components/UsersAlertBase;)I
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 158
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$2;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -94,7 +94,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 159
+    .line 164
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
@@ -103,7 +103,7 @@
 
     if-lez v0, :cond_0
 
-    .line 160
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$2;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -123,7 +123,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 151
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$2;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->updateLayout()V

@@ -178,7 +178,7 @@
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     :goto_0
-    const-string p2, "opacity"
+    const-string/jumbo p2, "opacity"
 
     .line 1208
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/SvgHelper$Properties;->getFloat(Ljava/lang/String;)Ljava/lang/Float;
@@ -966,7 +966,7 @@
 
     const/4 v6, 0x3
 
-    const-string v7, "polygon"
+    const-string/jumbo v7, "polygon"
 
     const/4 v8, 0x0
 
@@ -995,7 +995,7 @@
     goto/16 :goto_0
 
     :sswitch_1
-    const-string v4, "polyline"
+    const-string/jumbo v4, "polyline"
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1041,7 +1041,7 @@
     goto/16 :goto_0
 
     :sswitch_4
-    const-string v4, "path"
+    const-string/jumbo v4, "path"
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2082,7 +2082,7 @@
     goto/16 :goto_f
 
     :pswitch_7
-    const-string v3, "points"
+    const-string/jumbo v3, "points"
 
     .line 1422
     invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$1100(Ljava/lang/String;Lorg/xml/sax/Attributes;)Lorg/telegram/messenger/SvgHelper$NumberParse;
@@ -2266,7 +2266,7 @@
 
     move-result-object v3
 
-    const-string v4, "r"
+    const-string/jumbo v4, "r"
 
     .line 1371
     invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
@@ -2574,8 +2574,6 @@
     :cond_32
     :goto_f
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

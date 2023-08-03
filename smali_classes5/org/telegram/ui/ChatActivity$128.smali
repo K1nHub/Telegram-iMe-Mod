@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 27859
+    .line 27976
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$128;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$128;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
@@ -43,10 +43,36 @@
 
 
 # virtual methods
+.method public synthetic drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFF)V
+    .locals 0
+
+    invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$drawRoundRect(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;Landroid/graphics/Canvas;Landroid/graphics/RectF;FFF)V
+
+    return-void
+.end method
+
+.method public synthetic needEnterText()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$needEnterText(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic onEmojiWindowDismissed()V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$onEmojiWindowDismissed(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;)V
+
+    return-void
+.end method
+
 .method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
     .locals 10
 
-    .line 27862
+    .line 27979
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$128;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$128;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;

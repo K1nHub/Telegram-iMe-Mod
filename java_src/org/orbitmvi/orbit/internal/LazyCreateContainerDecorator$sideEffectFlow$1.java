@@ -11,10 +11,11 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [SIDE_EFFECT] */
 /* compiled from: LazyCreateContainerDecorator.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator$sideEffectFlow$1", m83f = "LazyCreateContainerDecorator.kt", m82l = {42}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator$sideEffectFlow$1", m101f = "LazyCreateContainerDecorator.kt", m100l = {42}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class LazyCreateContainerDecorator$sideEffectFlow$1 extends SuspendLambda implements Function2<FlowCollector<? super SIDE_EFFECT>, Continuation<? super Unit>, Object> {
+public final class LazyCreateContainerDecorator$sideEffectFlow$1<SIDE_EFFECT> extends SuspendLambda implements Function2<FlowCollector<? super SIDE_EFFECT>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ LazyCreateContainerDecorator<STATE, SIDE_EFFECT> this$0;
@@ -34,6 +35,10 @@ public final class LazyCreateContainerDecorator$sideEffectFlow$1 extends Suspend
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((FlowCollector) ((FlowCollector) obj), continuation);
+    }
+
     public final Object invoke(FlowCollector<? super SIDE_EFFECT> flowCollector, Continuation<? super Unit> continuation) {
         return ((LazyCreateContainerDecorator$sideEffectFlow$1) create(flowCollector, continuation)).invokeSuspend(Unit.INSTANCE);
     }
@@ -46,7 +51,7 @@ public final class LazyCreateContainerDecorator$sideEffectFlow$1 extends Suspend
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.this$0.runOnCreate();
-            Flow sideEffectFlow = this.this$0.getActual().getSideEffectFlow();
+            Flow<SIDE_EFFECT> sideEffectFlow = this.this$0.getActual().getSideEffectFlow();
             this.label = 1;
             if (FlowKt.emitAll((FlowCollector) this.L$0, sideEffectFlow, this) == coroutine_suspended) {
                 return coroutine_suspended;

@@ -29,6 +29,7 @@ import com.iMe.p031ui.wallet.home.WalletHomeFragment;
 import com.iMe.p031ui.wallet.notifications.WalletNotificationsFragment;
 import com.iMe.p031ui.wallet.settings.WalletSettingsFragment;
 import com.iMe.p031ui.wallet.swap.WalletSwapProtocolsFragment;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -42,6 +43,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -50,15 +52,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.qualifier.StringQualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletGlobalBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletRootFragment.kt */
@@ -84,17 +92,116 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
 
     public WalletRootFragment() {
         Lazy lazy;
-        WalletRootFragment$presenter$2 walletRootFragment$presenter$2 = new WalletRootFragment$presenter$2(this);
+        Function0<WalletRootPresenter> function0 = new Function0<WalletRootPresenter>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletRootPresenter invoke() {
+                Lazy lazy2;
+                final WalletRootFragment walletRootFragment = WalletRootFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletRootPresenter>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.common.WalletRootPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletRootPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletRootPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletRootPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletRootPresenter.class.getName() + ".presenter", walletRootFragment$presenter$2);
-        WalletRootFragment$airdropPresenter$2 walletRootFragment$airdropPresenter$2 = new WalletRootFragment$airdropPresenter$2(this);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletRootPresenter.class.getName() + ".presenter", function0);
+        Function0<WalletAirdropPresenter> function02 = new Function0<WalletAirdropPresenter>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$airdropPresenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletAirdropPresenter invoke() {
+                Lazy lazy2;
+                final WalletRootFragment walletRootFragment = WalletRootFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletAirdropPresenter>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$airdropPresenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.airdrop.WalletAirdropPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletAirdropPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletAirdropPresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletAirdropPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate2 = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate2, "mvpDelegate");
-        new MoxyKtxDelegate(mvpDelegate2, WalletAirdropPresenter.class.getName() + ".presenter", walletRootFragment$airdropPresenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletRootFragment$special$$inlined$inject$default$1(this, NavigationModuleKt.getWALLET_ROOT_NAVIGATOR(), null));
+        new MoxyKtxDelegate(mvpDelegate2, WalletAirdropPresenter.class.getName() + ".presenter", function02);
+        final StringQualifier wallet_root_navigator = NavigationModuleKt.getWALLET_ROOT_NAVIGATOR();
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<NavigationRouter<WalletTabFragment>>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.navigation.common.router.base.NavigationRouter<com.iMe.ui.wallet.common.WalletTabFragment>] */
+            @Override // kotlin.jvm.functions.Function0
+            public final NavigationRouter<WalletTabFragment> invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = wallet_root_navigator;
+                Function0<? extends ParametersHolder> function03 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(NavigationRouter.class), qualifier, function03);
+            }
+        });
         this.bottomNavigationRouter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletRootFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletGlobalBinding>() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletGlobalBinding invoke() {
+                return ForkFragmentWalletGlobalBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletRootFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -210,10 +317,10 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i2 = Theme.key_actionBarDefaultSelector;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletRootFragment.getThemeDescriptions$lambda$4(WalletRootFragment.this);
@@ -238,7 +345,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
     public static final void getThemeDescriptions$lambda$4(WalletRootFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ForkFragmentWalletGlobalBinding binding = this$0.getBinding();
-        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m55dp(30.0f));
+        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m73dp(30.0f));
         binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(Theme.key_chats_actionBackground), 55));
     }
 
@@ -293,15 +400,15 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.drawer_wallet_item_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenu createMenu = c3484ActionBar.createMenu();
-        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3417R.C3419drawable.msg_notifications);
-        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3417R.C3419drawable.fork_ic_wallet_connect);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.drawer_wallet_item_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenu createMenu = c3485ActionBar.createMenu();
+        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3419R.C3421drawable.msg_notifications);
+        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3419R.C3421drawable.fork_ic_wallet_connect);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletRootFragment.this.backAction();
@@ -319,7 +426,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         if (getBottomNavigationRouter().getCurrentScreen() instanceof WalletHomeFragment) {
             finishFragment();
         } else {
-            getPresenter().selectTab(C3417R.C3420id.wallet_root_bottom_navigation_home);
+            getPresenter().selectTab(C3419R.C3422id.wallet_root_bottom_navigation_home);
         }
     }
 
@@ -344,7 +451,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
 
     private final List<WalletBottomNavigationTab> getTabs() {
         List<WalletBottomNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3417R.C3420id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3417R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3417R.C3420id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3417R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3417R.C3420id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3417R.string.wallet_settings_toolbar_title)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3419R.C3422id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3419R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3419R.C3422id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3419R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3419R.C3422id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3419R.string.wallet_settings_toolbar_title)));
         for (WalletBottomNavigationTab walletBottomNavigationTab : mutableListOf) {
             walletBottomNavigationTab.getFragment().setBottomNavigationDelegate(this);
         }
@@ -363,7 +470,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3417R.C3420id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3417R.string.wallet_navigation_wallet), C3417R.C3419drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3417R.C3420id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3417R.string.wallet_navigation_exchange), C3417R.C3419drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3417R.C3420id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3417R.string.wallet_navigation_settings), C3417R.C3419drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3419R.C3422id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3419R.string.wallet_navigation_wallet), C3419R.C3421drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3419R.C3422id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3419R.string.wallet_navigation_exchange), C3419R.C3421drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3419R.C3422id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3419R.string.wallet_navigation_settings), C3419R.C3421drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

@@ -33,37 +33,37 @@
         }
     .end annotation
 
-    .line 211
+    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 212
+    .line 266
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
-    .line 213
+    .line 267
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->encodingID:I
 
-    .line 214
+    .line 268
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
-    .line 215
+    .line 269
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->nameID:I
 
-    .line 216
+    .line 270
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->nameLength:I
 
-    .line 217
+    .line 271
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result p1
@@ -83,7 +83,7 @@
         }
     .end annotation
 
-    .line 221
+    .line 275
     iget v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->stringOffset:I
 
     add-int/2addr p2, v0
@@ -92,31 +92,31 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 222
+    .line 276
     iget p2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->nameLength:I
 
     new-array p2, p2, [B
 
-    .line 223
+    .line 277
     invoke-virtual {p1, p2}, Ljava/io/RandomAccessFile;->read([B)I
 
-    .line 225
+    .line 279
     iget p1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->encodingID:I
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 226
+    .line 280
     sget-object p1, Ljava/nio/charset/StandardCharsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
     goto :goto_0
 
-    .line 228
+    .line 282
     :cond_0
     sget-object p1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 230
+    .line 284
     :goto_0
     new-instance v0, Ljava/lang/String;
 

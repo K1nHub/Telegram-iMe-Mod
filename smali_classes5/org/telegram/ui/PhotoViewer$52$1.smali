@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$52;)V
     .locals 0
 
-    .line 9426
+    .line 9429
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,16 +35,16 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 9429
+    .line 9432
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$52;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$21402(Lorg/telegram/ui/PhotoViewer;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$21302(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 9430
+    .line 9433
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$52;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -57,7 +57,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 9431
+    .line 9434
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$52;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -68,7 +68,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 9433
+    .line 9436
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
@@ -80,7 +80,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 9434
+    .line 9437
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$52;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 9436
+    .line 9439
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
@@ -103,7 +103,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 9437
+    .line 9440
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$52$1;->this$1:Lorg/telegram/ui/PhotoViewer$52;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$52;->this$0:Lorg/telegram/ui/PhotoViewer;

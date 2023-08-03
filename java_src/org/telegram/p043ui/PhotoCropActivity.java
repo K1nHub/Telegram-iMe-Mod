@@ -14,12 +14,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.PhotoCropActivity;
 /* renamed from: org.telegram.ui.PhotoCropActivity */
 /* loaded from: classes5.dex */
@@ -84,7 +84,7 @@ public class PhotoCropActivity extends BaseFragment {
             Paint paint = new Paint();
             this.rectPaint = paint;
             paint.setColor(1073412858);
-            this.rectPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+            this.rectPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
             this.rectPaint.setStyle(Paint.Style.STROKE);
             Paint paint2 = new Paint();
             this.circlePaint = paint2;
@@ -144,25 +144,25 @@ public class PhotoCropActivity extends BaseFragment {
                 this.bitmapWidth = i5;
                 this.bitmapHeight = (int) Math.ceil(height * f8);
             }
-            this.bitmapX = ((this.viewWidth - this.bitmapWidth) / 2) + AndroidUtilities.m54dp(14);
-            int m54dp = ((this.viewHeight - this.bitmapHeight) / 2) + AndroidUtilities.m54dp(14);
-            this.bitmapY = m54dp;
+            this.bitmapX = ((this.viewWidth - this.bitmapWidth) / 2) + AndroidUtilities.m72dp(14);
+            int m72dp = ((this.viewHeight - this.bitmapHeight) / 2) + AndroidUtilities.m72dp(14);
+            this.bitmapY = m72dp;
             if (this.rectX == -1.0f && this.rectY == -1.0f) {
                 if (this.freeform) {
-                    this.rectY = m54dp;
+                    this.rectY = m72dp;
                     this.rectX = this.bitmapX;
                     this.rectSizeX = this.bitmapWidth;
                     this.rectSizeY = this.bitmapHeight;
                 } else {
                     if (this.bitmapWidth > this.bitmapHeight) {
-                        this.rectY = m54dp;
-                        this.rectX = ((this.viewWidth - i2) / 2) + AndroidUtilities.m54dp(14);
+                        this.rectY = m72dp;
+                        this.rectX = ((this.viewWidth - i2) / 2) + AndroidUtilities.m72dp(14);
                         int i7 = this.bitmapHeight;
                         this.rectSizeX = i7;
                         this.rectSizeY = i7;
                     } else {
                         this.rectX = this.bitmapX;
-                        this.rectY = ((this.viewHeight - i) / 2) + AndroidUtilities.m54dp(14);
+                        this.rectY = ((this.viewHeight - i) / 2) + AndroidUtilities.m72dp(14);
                         int i8 = this.bitmapWidth;
                         this.rectSizeX = i8;
                         this.rectSizeY = i8;
@@ -172,7 +172,7 @@ public class PhotoCropActivity extends BaseFragment {
                 int i9 = this.bitmapWidth;
                 this.rectX = (f3 * i9) + this.bitmapX;
                 int i10 = this.bitmapHeight;
-                this.rectY = (f5 * i10) + m54dp;
+                this.rectY = (f5 * i10) + m72dp;
                 this.rectSizeX = f6 * i9;
                 this.rectSizeY = f7 * i10;
             }
@@ -182,8 +182,8 @@ public class PhotoCropActivity extends BaseFragment {
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
-            this.viewWidth = (i3 - i) - AndroidUtilities.m54dp(28);
-            this.viewHeight = (i4 - i2) - AndroidUtilities.m54dp(28);
+            this.viewWidth = (i3 - i) - AndroidUtilities.m72dp(28);
+            this.viewHeight = (i4 - i2) - AndroidUtilities.m72dp(28);
             updateBitmapSize();
         }
 
@@ -212,12 +212,12 @@ public class PhotoCropActivity extends BaseFragment {
             try {
                 return Bitmaps.createBitmap(PhotoCropActivity.this.imageToCrop, width, height, width2, width3);
             } catch (Throwable th) {
-                FileLog.m49e(th);
+                FileLog.m67e(th);
                 System.gc();
                 try {
                     return Bitmaps.createBitmap(PhotoCropActivity.this.imageToCrop, width, height, width2, width3);
                 } catch (Throwable th2) {
-                    FileLog.m49e(th2);
+                    FileLog.m67e(th2);
                     return null;
                 }
             }
@@ -258,7 +258,7 @@ public class PhotoCropActivity extends BaseFragment {
                 return false;
             }
             if (AndroidUtilities.isTablet()) {
-                max = AndroidUtilities.m54dp(520);
+                max = AndroidUtilities.m72dp(520);
             } else {
                 Point point = AndroidUtilities.displaySize;
                 max = Math.max(point.x, point.y);
@@ -295,11 +295,11 @@ public class PhotoCropActivity extends BaseFragment {
         this.actionBar.setItemsBackgroundColor(-12763843, false);
         this.actionBar.setTitleColor(-1);
         this.actionBar.setItemsColor(-1, false);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("CropImage", C3417R.string.CropImage));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("CropImage", C3419R.string.CropImage));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     PhotoCropActivity.this.finishFragment();
@@ -316,7 +316,7 @@ public class PhotoCropActivity extends BaseFragment {
                 }
             }
         });
-        this.actionBar.createMenu().addItemWithWidth(1, C3417R.C3419drawable.ic_ab_done, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3417R.string.Done));
+        this.actionBar.createMenu().addItemWithWidth(1, C3419R.C3421drawable.ic_ab_done, AndroidUtilities.m72dp(56), LocaleController.getString("Done", C3419R.string.Done));
         PhotoCropView photoCropView = new PhotoCropView(context);
         this.view = photoCropView;
         this.fragmentView = photoCropView;

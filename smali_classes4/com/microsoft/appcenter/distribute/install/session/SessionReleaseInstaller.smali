@@ -529,7 +529,7 @@
 
     move-result-object v1
 
-    const-string v2, "r"
+    const-string/jumbo v2, "r"
 
     invoke-virtual {v1, p1, v2}, Landroid/content/ContentResolver;->openFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
 

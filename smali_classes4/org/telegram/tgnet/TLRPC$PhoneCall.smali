@@ -57,10 +57,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 22856
+    .line 23228
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 22868
+    .line 23240
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 22889
+    .line 23261
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallEmpty;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 22898
+    .line 23270
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscarded;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 22892
+    .line 23264
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallAccepted;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 22883
+    .line 23255
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallRequested;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 22895
+    .line 23267
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallWaiting;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 22886
+    .line 23258
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCall;
 
@@ -132,7 +132,7 @@
 
     goto :goto_1
 
-    .line 22902
+    .line 23274
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -162,7 +162,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 22905
+    .line 23277
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

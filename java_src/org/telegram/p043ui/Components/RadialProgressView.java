@@ -46,7 +46,7 @@ public class RadialProgressView extends View {
         this.cicleRect = new RectF();
         this.noProgress = true;
         this.resourcesProvider = resourcesProvider;
-        this.size = AndroidUtilities.m54dp(40);
+        this.size = AndroidUtilities.m72dp(40);
         this.progressColor = getThemedColor(Theme.key_progressCircle);
         this.decelerateInterpolator = new DecelerateInterpolator();
         this.accelerateInterpolator = new AccelerateInterpolator();
@@ -54,7 +54,7 @@ public class RadialProgressView extends View {
         this.progressPaint = paint;
         paint.setStyle(Paint.Style.STROKE);
         this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
-        this.progressPaint.setStrokeWidth(AndroidUtilities.m54dp(3));
+        this.progressPaint.setStrokeWidth(AndroidUtilities.m72dp(3));
         this.progressPaint.setColor(this.progressColor);
     }
 
@@ -136,7 +136,7 @@ public class RadialProgressView extends View {
     }
 
     public void setStrokeWidth(float f) {
-        this.progressPaint.setStrokeWidth(AndroidUtilities.m55dp(f));
+        this.progressPaint.setStrokeWidth(AndroidUtilities.m73dp(f));
     }
 
     public void setProgressColor(int i) {

@@ -10,7 +10,7 @@ public class ReleaseDetails {
     private Uri downloadUrl;
 
     /* renamed from: id */
-    private int f462id;
+    private int f465id;
     private boolean mandatoryUpdate;
     private int minApiLevel;
     private String releaseHash;
@@ -24,7 +24,7 @@ public class ReleaseDetails {
     public static ReleaseDetails parse(String json) throws JSONException {
         JSONObject jSONObject = new JSONObject(json);
         ReleaseDetails releaseDetails = new ReleaseDetails();
-        releaseDetails.f462id = jSONObject.getInt(TtmlNode.ATTR_ID);
+        releaseDetails.f465id = jSONObject.getInt(TtmlNode.ATTR_ID);
         releaseDetails.version = jSONObject.getInt("version");
         releaseDetails.shortVersion = jSONObject.getString("short_version");
         releaseDetails.size = jSONObject.getLong("size");
@@ -44,7 +44,7 @@ public class ReleaseDetails {
     }
 
     public int getId() {
-        return this.f462id;
+        return this.f465id;
     }
 
     public int getVersion() {

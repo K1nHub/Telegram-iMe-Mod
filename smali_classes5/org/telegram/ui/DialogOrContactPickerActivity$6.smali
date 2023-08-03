@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogOrContactPickerActivity;Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
     .locals 0
 
-    .line 525
+    .line 526
     iput-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->val$onScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
@@ -39,7 +39,7 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 2
 
-    .line 528
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->val$onScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
@@ -48,7 +48,7 @@
 
     if-eq p2, p1, :cond_1
 
-    .line 530
+    .line 531
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$3500(Lorg/telegram/ui/DialogOrContactPickerActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -63,7 +63,7 @@
 
     float-to-int p1, p1
 
-    .line 531
+    .line 532
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p2
@@ -72,14 +72,14 @@
 
     if-eq p1, p2, :cond_1
 
-    .line 533
+    .line 534
     div-int/lit8 v0, p2, 0x2
 
     const/4 v1, 0x0
 
     if-ge p1, v0, :cond_0
 
-    .line 534
+    .line 535
     iget-object p2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p2, v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
-    .line 535
+    .line 536
     iget-object p2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -111,7 +111,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 536
+    .line 537
     iget-object p2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 539
+    .line 540
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
-    .line 540
+    .line 541
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -161,7 +161,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 541
+    .line 542
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -184,12 +184,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 550
+    .line 551
     iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->val$onScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 551
+    .line 552
     iget-object p2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
@@ -220,7 +220,7 @@
 
     if-ne p1, p2, :cond_3
 
-    .line 552
+    .line 553
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -236,7 +236,7 @@
 
     sub-float p2, p1, p2
 
-    .line 554
+    .line 555
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p3
@@ -251,7 +251,7 @@
 
     if-gez p3, :cond_1
 
-    .line 555
+    .line 556
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p2
@@ -275,7 +275,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 560
+    .line 561
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$6;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$3700(Lorg/telegram/ui/DialogOrContactPickerActivity;F)V

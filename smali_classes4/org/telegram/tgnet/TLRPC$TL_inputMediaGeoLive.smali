@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30806
+    .line 31435
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$InputMedia;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 30811
+    .line 31440
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -46,11 +46,11 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 30812
+    .line 31441
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->stopped:Z
 
-    .line 30813
+    .line 31442
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -61,21 +61,21 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->geo_point:Lorg/telegram/tgnet/TLRPC$InputGeoPoint;
 
-    .line 30814
+    .line 31443
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_1
 
-    .line 30815
+    .line 31444
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->heading:I
 
-    .line 30817
+    .line 31446
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -83,14 +83,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 30818
+    .line 31447
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->period:I
 
-    .line 30820
+    .line 31449
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 30821
+    .line 31450
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -112,12 +112,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 30826
+    .line 31455
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoLive;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30827
+    .line 31456
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->stopped:Z
 
     if-eqz v0, :cond_0
@@ -136,27 +136,27 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
-    .line 30828
+    .line 31457
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30829
+    .line 31458
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->geo_point:Lorg/telegram/tgnet/TLRPC$InputGeoPoint;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 30830
+    .line 31459
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_1
 
-    .line 30831
+    .line 31460
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->heading:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30833
+    .line 31462
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -164,12 +164,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 30834
+    .line 31463
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30836
+    .line 31465
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -177,7 +177,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 30837
+    .line 31466
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->proximity_notification_radius:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

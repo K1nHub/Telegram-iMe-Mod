@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
+import android.net.Uri;
 import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.audio.Ac4Util;
 import com.google.android.exoplayer2.extractor.Extractor;
@@ -11,10 +12,25 @@ import com.google.android.exoplayer2.extractor.SeekMap;
 import com.google.android.exoplayer2.extractor.p015ts.TsPayloadReader;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.io.IOException;
+import java.util.Map;
 /* renamed from: com.google.android.exoplayer2.extractor.ts.Ac4Extractor */
 /* loaded from: classes.dex */
 public final class Ac4Extractor implements Extractor {
-    public static final ExtractorsFactory FACTORY = Ac4Extractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.Ac4Extractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = Ac4Extractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final int FRAME_HEADER_SIZE = 7;
     private static final int MAX_SNIFF_BYTES = 8192;
     private static final int READ_BUFFER_SIZE = 16384;

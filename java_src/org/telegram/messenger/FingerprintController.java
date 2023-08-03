@@ -90,7 +90,7 @@ public class FingerprintController {
             keyStore3.load(null);
             return keyStore;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return null;
         }
     }
@@ -105,7 +105,7 @@ public class FingerprintController {
             keyPairGenerator = keyPairGenerator3;
             return keyPairGenerator3;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return null;
         }
     }
@@ -127,26 +127,26 @@ public class FingerprintController {
                     }
                 });
             } catch (InvalidAlgorithmParameterException e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             } catch (Exception e2) {
                 if (e2.getClass().getName().equals("android.security.KeyStoreException")) {
                     return;
                 }
-                FileLog.m49e(e2);
+                FileLog.m67e(e2);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$generateNewKey$0(boolean z) {
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didGenerateFingerprintKeyPair, Boolean.valueOf(z));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didGenerateFingerprintKeyPair, Boolean.valueOf(z));
     }
 
     public static void deleteInvalidKey() {
         try {
             getKeyStore().deleteEntry(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         hasChangedFingerprints = null;
         checkKeyReady(false);
@@ -171,7 +171,7 @@ public class FingerprintController {
         try {
             return getKeyStore().containsAlias(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             return false;
         }
     }
@@ -189,7 +189,7 @@ public class FingerprintController {
             hasChangedFingerprints = Boolean.TRUE;
             return true;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             hasChangedFingerprints = Boolean.FALSE;
             return false;
         }

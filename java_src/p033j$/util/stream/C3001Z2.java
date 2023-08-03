@@ -10,7 +10,7 @@ class C3001Z2 extends AbstractC3026d3 {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: H0 */
-    public InterfaceC3080m3 mo283H0(int i, InterfaceC3080m3 interfaceC3080m3) {
+    public InterfaceC3080m3 mo301H0(int i, InterfaceC3080m3 interfaceC3080m3) {
         return interfaceC3080m3;
     }
 }

@@ -6,8 +6,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.p020ml.common.FirebaseMLException;
 import java.util.concurrent.TimeUnit;
+/* JADX INFO: Add missing generic type declarations: [ResultType] */
 /* loaded from: classes.dex */
-public final class zzqg implements zzno<ResultType, zzqe>, zznx {
+public final class zzqg<ResultType> implements zzno<ResultType, zzqe>, zznx {
     private final GoogleApiClient zzbam;
     private final zzqf zzbao;
     private final /* synthetic */ zzqd zzbap;

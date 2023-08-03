@@ -10,14 +10,14 @@ public final class FileLogTree extends Timber.Tree {
     protected void log(int i, String str, String message, Throwable th) {
         Intrinsics.checkNotNullParameter(message, "message");
         if (i == 5) {
-            FileLog.m47w(message);
+            FileLog.m65w(message);
         } else if (i != 6) {
-            FileLog.m52d(message);
+            FileLog.m70d(message);
         } else {
             if (th == null) {
                 th = new Exception(message);
             }
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 }

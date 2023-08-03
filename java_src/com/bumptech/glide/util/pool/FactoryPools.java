@@ -44,6 +44,10 @@ public final class FactoryPools {
             }
         }, new Resetter<List<T>>() { // from class: com.bumptech.glide.util.pool.FactoryPools.3
             @Override // com.bumptech.glide.util.pool.FactoryPools.Resetter
+            public /* bridge */ /* synthetic */ void reset(Object obj) {
+                reset((List) ((List) obj));
+            }
+
             public void reset(List<T> list) {
                 list.clear();
             }

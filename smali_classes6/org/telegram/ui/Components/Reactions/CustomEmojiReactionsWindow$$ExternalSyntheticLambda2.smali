@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$$ExternalSyntheticLambda2;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->$r8$lambda$eVX-6BdupcVqDcP6oYLJ654UQrg(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Ljava/util/ArrayList;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->$r8$lambda$HSxSBS06qcwuCKyx8eBD51nbBL0(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Ljava/util/ArrayList;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

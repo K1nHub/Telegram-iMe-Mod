@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$ThemeListViewController;)V
     .locals 0
 
-    .line 1608
+    .line 1598
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 1611
+    .line 1601
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2900(Lorg/telegram/ui/QrActivity$ThemeListViewController;)Landroid/view/View;
@@ -46,7 +46,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1612
+    .line 1602
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2900(Lorg/telegram/ui/QrActivity$ThemeListViewController;)Landroid/view/View;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1613
+    .line 1603
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2900(Lorg/telegram/ui/QrActivity$ThemeListViewController;)Landroid/view/View;
@@ -80,19 +80,19 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1615
+    .line 1605
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$2902(Lorg/telegram/ui/QrActivity$ThemeListViewController;Landroid/view/View;)Landroid/view/View;
 
-    .line 1617
+    .line 1607
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$6;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/QrActivity$ThemeListViewController;->access$3002(Lorg/telegram/ui/QrActivity$ThemeListViewController;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1618
+    .line 1608
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

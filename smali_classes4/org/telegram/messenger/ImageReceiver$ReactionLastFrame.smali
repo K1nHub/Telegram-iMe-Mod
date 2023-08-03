@@ -22,7 +22,7 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 3169
+    .line 3237
     invoke-direct {p0, p1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
     return-void

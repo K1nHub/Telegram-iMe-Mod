@@ -358,7 +358,7 @@
 .end method
 
 .method private final sendReactionMessage(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
-    .locals 18
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -479,6 +479,8 @@
 
     const/16 v16, 0x0
 
+    const/16 v17, 0x0
+
     move-wide v4, v8
 
     move-object/from16 v6, p4
@@ -499,9 +501,11 @@
 
     move-object/from16 v15, v16
 
-    invoke-static/range {v2 .. v15}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;ZZLorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;)V
+    move-object/from16 v16, v17
 
-    goto :goto_3
+    invoke-static/range {v2 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
+
+    goto/16 :goto_3
 
     :cond_4
     move-object/from16 v6, p3
@@ -559,13 +563,15 @@
 
     const/16 v16, 0x0
 
-    const/16 v17, 0x1
+    const/16 v17, 0x0
+
+    const/16 v18, 0x1
 
     move-object/from16 v6, p3
 
     move-object/from16 v10, p4
 
-    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
+    invoke-static/range {v2 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Z)V
 
     goto :goto_3
 
@@ -609,7 +615,9 @@
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x1
+    const/4 v14, 0x0
+
+    const/4 v15, 0x1
 
     move-object/from16 v4, p3
 
@@ -627,9 +635,11 @@
 
     move-object v12, v13
 
-    move v13, v14
+    move-object v13, v14
 
-    invoke-static/range {v2 .. v13}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
+    move v14, v15
+
+    invoke-static/range {v2 .. v14}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZILorg/telegram/messenger/MessageObject;Ljava/lang/String;Z)V
 
     :cond_6
     :goto_3

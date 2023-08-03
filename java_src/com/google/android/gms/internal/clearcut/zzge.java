@@ -12,11 +12,12 @@ import com.google.android.gms.internal.clearcut.zzgt;
 import com.google.android.gms.internal.clearcut.zzt;
 import com.google.android.gms.wallet.WalletConstants;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class zzge {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C6997zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C7256zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzsm;
         private zzcn<String> zzsh = zzcg.zzbb();
@@ -27,12 +28,12 @@ public final class zzge {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzge$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6997zza extends zzcg.zza<zza, C6997zza> implements zzdq {
-            private C6997zza() {
+        public static final class C7256zza extends zzcg.zza<zza, C7256zza> implements zzdq {
+            private C7256zza() {
                 super(zza.zzsm);
             }
 
-            /* synthetic */ C6997zza(zzgf zzgfVar) {
+            /* synthetic */ C7256zza(zzgf zzgfVar) {
                 this();
             }
         }
@@ -55,7 +56,7 @@ public final class zzge {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6997zza(null);
+                    return new C7256zza(null);
                 case 3:
                     return zzcg.zza(zzsm, "\u0001\u0005\u0000\u0000\u0001\u0005\u0005\u0006\u0000\u0005\u0000\u0001\u001a\u0002\u001a\u0003\u0016\u0004\u0014\u0005\u0014", new Object[]{"zzsh", "zzsi", "zzsj", "zzsk", "zzsl"});
                 case 4:
@@ -1714,7 +1715,7 @@ public final class zzge {
             ANDROID_SNET_JAR(124),
             CONTEXT_MANAGER(125),
             CLASSROOM(126),
-            TAILORMADE(127),
+            TAILORMADE(MessagesStorage.LAST_DB_VERSION),
             KEEP(128),
             GMM_BRIIM_COUNTERS(TsExtractor.TS_STREAM_TYPE_AC3),
             CHROMECAST_APP_LOG(TsExtractor.TS_STREAM_TYPE_HDMV_DTS),
@@ -2635,7 +2636,7 @@ public final class zzge {
                         return CONTEXT_MANAGER;
                     case 126:
                         return CLASSROOM;
-                    case 127:
+                    case MessagesStorage.LAST_DB_VERSION /* 127 */:
                         return TAILORMADE;
                     case 128:
                         return KEEP;

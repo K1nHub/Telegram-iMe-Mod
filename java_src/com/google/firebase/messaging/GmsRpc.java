@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 /* loaded from: classes3.dex */
@@ -50,10 +51,15 @@ public class GmsRpc {
     }
 
     private Task<String> extractResponseWhenComplete(Task<Bundle> task) {
-        return task.continueWith(GmsRpc$$ExternalSyntheticLambda1.INSTANCE, new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
+        return task.continueWith(new Executor() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda1
+            @Override // java.util.concurrent.Executor
+            public final void execute(Runnable runnable) {
+                runnable.run();
+            }
+        }, new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m710xb80eb67f(task2);
+                return GmsRpc.this.m728xb80eb67f(task2);
             }
         });
     }
@@ -119,7 +125,7 @@ public class GmsRpc {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc */
-    public /* synthetic */ String m710xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m728xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

@@ -1124,7 +1124,7 @@
     :cond_0
     sget-object v0, Lcom/trustwallet/walletconnect/models/MessageType;->PUB:Lcom/trustwallet/walletconnect/models/MessageType;
 
-    const-string v3, "payload"
+    const-string/jumbo v3, "payload"
 
     .line 372
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -3291,11 +3291,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "peerMeta"
+    const-string/jumbo v0, "peerMeta"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "peerId"
+    const-string/jumbo v0, "peerId"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3922,7 +3922,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "peerId can\'t be null on connection open"
+    const-string/jumbo p2, "peerId can\'t be null on connection open"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

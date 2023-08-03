@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$13;
-.super Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;
+.super Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,41 +19,29 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 777
+    .line 803
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$13;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEndAnimation()V
-    .locals 2
+.method public onScrolled(II)V
+    .locals 0
 
-    .line 785
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$13;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    .line 806
+    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
 
-    const/4 v1, 0x0
+    .line 807
+    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$13;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$502(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
-
-    return-void
-.end method
-
-.method public onPreAnimation()V
-    .locals 2
-
-    .line 780
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$13;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$502(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
 
     return-void
 .end method

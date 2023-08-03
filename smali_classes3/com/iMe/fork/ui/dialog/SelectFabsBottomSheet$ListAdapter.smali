@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 145
+    .line 144
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 149
+    .line 148
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->access$getFabs(Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;)Ljava/util/List;
@@ -67,13 +67,13 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 5
+    .locals 2
 
     const-string v0, "holder"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 167
+    .line 166
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.fork.ui.view.CircleCheckCell"
@@ -84,7 +84,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
-    .line 168
+    .line 167
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->access$getFabs(Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;)Ljava/util/List;
 
     move-result-object v1
@@ -95,34 +95,26 @@
 
     check-cast p2, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 169
+    .line 168
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const/4 v2, 0x1
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setColor(I)V
 
-    invoke-static {p2, v2}, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt;->iconResId(Lcom/iMe/storage/domain/model/filters/FilterFab;Z)I
-
-    move-result v2
-
-    invoke-static {p2}, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt;->nameResId(Lcom/iMe/storage/domain/model/filters/FilterFab;)I
-
-    move-result v3
-
-    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "getInternalString(fab.nameResId())"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1, v1, v2, v3}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setData(IILjava/lang/String;)V
+    .line 169
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setFabIcon(Lcom/iMe/storage/domain/model/filters/FilterFab;)V
 
     .line 170
+    invoke-static {p2}, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt;->nameResId(Lcom/iMe/storage/domain/model/filters/FilterFab;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setName(Ljava/lang/String;)V
+
+    .line 171
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;->getSelectedFabs()Ljava/util/Set;
 
     move-result-object v0
@@ -139,7 +131,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 145
+    .line 144
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -154,20 +146,20 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 152
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 154
+    .line 153
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-virtual {p2}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object p2
 
-    .line 156
+    .line 155
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    .line 153
+    .line 152
     new-instance v1, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter$onCreateViewHolder$1;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;

@@ -26,19 +26,21 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$ChannelParticipant;
 import org.telegram.tgnet.TLRPC$ChannelParticipantsFilter;
 import org.telegram.tgnet.TLRPC$Chat;
+import org.telegram.tgnet.TLRPC$ChatFull;
 import org.telegram.tgnet.TLRPC$TL_channels_channelParticipants;
 import org.telegram.tgnet.TLRPC$TL_channels_getParticipants;
 import org.telegram.tgnet.TLRPC$TL_chatBannedRights;
@@ -122,9 +124,45 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         Lazy lazy;
         Lazy lazy2;
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.NONE;
-        lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new FilteredChatParticipantsProcessingService$chat$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<TLRPC$Chat>() { // from class: com.iMe.services.FilteredChatParticipantsProcessingService$chat$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final TLRPC$Chat invoke() {
+                MessagesController messagesController;
+                long j;
+                messagesController = FilteredChatParticipantsProcessingService.this.messagesController;
+                if (messagesController == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("messagesController");
+                    messagesController = null;
+                }
+                j = FilteredChatParticipantsProcessingService.this.chatId;
+                return messagesController.getChat(Long.valueOf(j));
+            }
+        });
         this.chat$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new FilteredChatParticipantsProcessingService$chatFull$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<TLRPC$ChatFull>() { // from class: com.iMe.services.FilteredChatParticipantsProcessingService$chatFull$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final TLRPC$ChatFull invoke() {
+                MessagesController messagesController;
+                long j;
+                messagesController = FilteredChatParticipantsProcessingService.this.messagesController;
+                if (messagesController == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("messagesController");
+                    messagesController = null;
+                }
+                j = FilteredChatParticipantsProcessingService.this.chatId;
+                return messagesController.getChatFull(j);
+            }
+        });
         this.chatFull$delegate = lazy2;
         this.participantsFilter = GroupMembersFilter.defaultValue;
         this.participantsActionType = ParticipantsActionType.defaultValue;
@@ -221,7 +259,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3417R.C3419drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3419R.C3421drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -237,7 +275,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             tLRPC$TL_channels_getParticipants.channel = messagesController.getInputChannel(this.chatId);
             TLRPC$ChannelParticipantsFilter serverFilter = this.participantsFilter.getServerFilter();
             tLRPC$TL_channels_getParticipants.filter = serverFilter;
-            serverFilter.f1514q = "";
+            serverFilter.f1517q = "";
             tLRPC$TL_channels_getParticipants.limit = 200;
             this.req = tLRPC$TL_channels_getParticipants;
         }
@@ -275,7 +313,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             this$0.onParticipantsPartLoaded(arrayList);
             return;
         }
-        this$0.stopServiceWithToast(C3417R.string.loading_participants_error);
+        this$0.stopServiceWithToast(C3419R.string.loading_participants_error);
     }
 
     private final void onParticipantsPartLoaded(List<? extends TLRPC$ChannelParticipant> list) {
@@ -314,7 +352,13 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void onAllParticipantsLoaded() {
         if (this.participantsFilter == GroupMembersFilter.DELETED) {
-            CollectionsKt__MutableCollectionsKt.removeAll((List) this.participants, (Function1) C1617x82e66c83.INSTANCE);
+            CollectionsKt__MutableCollectionsKt.removeAll((List) this.participants, (Function1) new Function1<TLRPC$User, Boolean>() { // from class: com.iMe.services.FilteredChatParticipantsProcessingService$onAllParticipantsLoaded$1
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(TLRPC$User it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return Boolean.valueOf(!UserObject.isDeleted(it));
+                }
+            });
         }
         processNextChatParticipantsPart();
     }
@@ -328,7 +372,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
                 }
             });
         } else {
-            stopServiceWithToast(C3417R.string.processing_participants_success);
+            stopServiceWithToast(C3419R.string.processing_participants_success);
         }
     }
 
@@ -415,11 +459,11 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         }
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3417R.string.loading_participants, Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3419R.string.loading_participants, Integer.valueOf(this.participants.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3417R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3419R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3417R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3419R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

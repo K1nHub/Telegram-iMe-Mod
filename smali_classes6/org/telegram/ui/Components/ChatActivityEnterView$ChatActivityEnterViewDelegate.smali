@@ -27,6 +27,9 @@
 .method public abstract getContentViewHeight()I
 .end method
 
+.method public abstract getReplyToStory()Lorg/telegram/tgnet/TLRPC$StoryItem;
+.end method
+
 .method public abstract getSendAsPeers()Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
 .end method
 
@@ -133,6 +136,9 @@
 .end method
 
 .method public abstract sendGif(IJLjava/lang/String;)V
+.end method
+
+.method public abstract sendMedia(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
 .end method
 
 .method public abstract showGifsViewer(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Ljava/util/ArrayList;I)V

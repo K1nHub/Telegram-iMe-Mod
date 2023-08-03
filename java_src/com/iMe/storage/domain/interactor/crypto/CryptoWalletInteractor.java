@@ -1,10 +1,14 @@
 package com.iMe.storage.domain.interactor.crypto;
 
+import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
+import com.iMe.storage.data.network.model.error.ErrorModel;
+import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.data.utils.extentions.CollectionExtKt;
 import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository;
 import com.iMe.storage.domain.repository.crypto.CryptoWalletRepository;
@@ -14,22 +18,32 @@ import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactive
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
+import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import wallet.core.jni.Mnemonic;
 /* compiled from: CryptoWalletInteractor.kt */
@@ -59,12 +73,12 @@ public final class CryptoWalletInteractor {
 
     public final Observable<Result<Wallet>> createLocalWallet(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Wallet>> subscribeOn = this.cryptoLocalWalletRepository.createWallet(blockchainType).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Wallet>> subscribeOn = this.cryptoLocalWalletRepository.createWallet(blockchainType).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<Wallet>> importWallet(String seed, String password, String pinCode, BlockchainType blockchainType) {
+    public final Observable<Result<Wallet>> importWallet(String seed, String password, String pinCode, final BlockchainType blockchainType) {
         String generateUuid;
         boolean isBlank;
         Intrinsics.checkNotNullParameter(seed, "seed");
@@ -83,15 +97,140 @@ public final class CryptoWalletInteractor {
             cryptoPreferenceHelper.setWalletPassword(com.iMe.storage.data.utils.extentions.CryptoExtKt.aesEncrypt(password, pinCode));
             cryptoPreferenceHelper.setLocalEncryptionCompleted(true);
         }
-        Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(generateUuid, seed, password, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1(this)));
+        Observable<R> flatMap = this.cryptoLocalWalletRepository.importWallet(generateUuid, seed, password, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet>, ObservableSource<? extends Result<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Wallet>> invoke(Result<? extends Wallet> result) {
+                List listOfNotNull;
+                Observable linkWalletsWithCheck;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                CryptoWalletInteractor cryptoWalletInteractor = CryptoWalletInteractor.this;
+                listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(result.getData());
+                linkWalletsWithCheck = cryptoWalletInteractor.linkWalletsWithCheck(listOfNotNull);
+                Observable map = linkWalletsWithCheck.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends List<? extends Wallet>>, Result<? extends Wallet>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$lambda$2$$inlined$mapSuccess$1
+                    /* JADX WARN: Multi-variable type inference failed */
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Result<? extends Wallet> invoke(Result<? extends List<? extends Wallet>> result2) {
+                        Wallet wallet2;
+                        Result<? extends Wallet> success;
+                        Intrinsics.checkNotNullParameter(result2, "result");
+                        if (!(result2 instanceof Result.Success)) {
+                            if (result2 instanceof Result.Error) {
+                                Result<? extends Wallet> error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                                return error$default2;
+                            } else if (result2 instanceof Object) {
+                                return result2;
+                            } else {
+                                return null;
+                            }
+                        }
+                        List list = (List) result2.getData();
+                        return (list == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull(list)) == null || (success = Result.Companion.success(wallet2)) == null) ? Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null) : success;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
+                return map;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo699io());
+        Observable subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
-        Observable doOnNext = subscribeOn.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$1(this)));
+        Observable doOnNext = subscribeOn.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Wallet>, Unit>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
+                invoke2(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<? extends Wallet> result) {
+                RxEventBus rxEventBus;
+                if (result instanceof Result.Success) {
+                    rxEventBus = CryptoWalletInteractor.this.rxEventBus;
+                    rxEventBus.publish(DomainRxEvents.WalletRestored.INSTANCE);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        Observable flatMap2 = doOnNext.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$2(blockchainType, this)));
+        Observable flatMap2 = doOnNext.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet>, ObservableSource<? extends Result<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Wallet>> invoke(final Result<? extends Wallet> result) {
+                Observable activateAllBip39BasedWallets;
+                SchedulersProvider schedulersProvider;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                } else if (!BlockchainType.this.isBip39PhraseBased()) {
+                    Observable just = Observable.just(result);
+                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                    return just;
+                } else {
+                    activateAllBip39BasedWallets = this.activateAllBip39BasedWallets();
+                    final Function1<Result<? extends List<? extends Wallet>>, ObservableSource<? extends Result<? extends Wallet>>> function1 = new Function1<Result<? extends List<? extends Wallet>>, ObservableSource<? extends Result<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$4$1
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        /* JADX WARN: Multi-variable type inference failed */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public final ObservableSource<? extends Result<Wallet>> invoke(Result<? extends List<? extends Wallet>> it) {
+                            Intrinsics.checkNotNullParameter(it, "it");
+                            Observable just2 = Observable.just(result);
+                            Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                            return just2;
+                        }
+                    };
+                    Observable flatMap3 = activateAllBip39BasedWallets.flatMap(new Function(function1) { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$sam$io_reactivex_functions_Function$0
+                        private final /* synthetic */ Function1 function;
+
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            Intrinsics.checkNotNullParameter(function1, "function");
+                            this.function = function1;
+                        }
+
+                        @Override // io.reactivex.functions.Function
+                        public final /* synthetic */ Object apply(Object obj) {
+                            return this.function.invoke(obj);
+                        }
+                    });
+                    schedulersProvider = this.schedulersProvider;
+                    Observable subscribeOn2 = flatMap3.subscribeOn(schedulersProvider.mo717io());
+                    Intrinsics.checkNotNullExpressionValue(subscribeOn2, "result ->\n              …())\n                    }");
+                    return subscribeOn2;
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn2 = flatMap2.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Wallet>> subscribeOn2 = flatMap2.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn2, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn2;
     }
@@ -100,16 +239,63 @@ public final class CryptoWalletInteractor {
         List<? extends BlockchainType> listOf;
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         listOf = CollectionsKt__CollectionsJVMKt.listOf(blockchainType);
-        Observable flatMap = importBib39BasedWallets(listOf).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1968xfb32ecc7()));
+        Observable flatMap = importBib39BasedWallets(listOf).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends List<? extends Wallet>>, ObservableSource<? extends Result<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$activateBip39BasedWallet$$inlined$flatMapSuccess$1
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Wallet>> invoke(Result<? extends List<? extends Wallet>> result) {
+                Result error$default;
+                Wallet wallet2;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default2);
+                    }
+                    return Observable.empty();
+                }
+                List<? extends Wallet> data = result.getData();
+                if (data == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull(data)) == null || (error$default = Result.Companion.success(wallet2)) == null) {
+                    error$default = Result.Companion.error$default(Result.Companion, new ErrorModel(ApiErrorHandler.ErrorStatus.NOT_DEFINED, (Throwable) null, 2, (DefaultConstructorMarker) null), null, 2, null);
+                }
+                Observable just = Observable.just(error$default);
+                Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                return just;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
 
-    public final Observable<Result<String>> getLinkedCryptoWalletAddress(BlockchainType blockchainType) {
+    public final Observable<Result<String>> getLinkedCryptoWalletAddress(final BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1970xc1cdc982(blockchainType)));
+        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends CryptoWalletsInfo>, ObservableSource<? extends Result<? extends String>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$getLinkedCryptoWalletAddress$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends String>> invoke(Result<? extends CryptoWalletsInfo> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                CryptoWalletsInfo data = result.getData();
+                String addressByBlockchain = data != null ? data.getAddressByBlockchain(BlockchainType.this) : null;
+                if (addressByBlockchain == null) {
+                    addressByBlockchain = "";
+                }
+                Observable just = Observable.just(Result.Companion.success(addressByBlockchain));
+                Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                return just;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<String>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -117,7 +303,7 @@ public final class CryptoWalletInteractor {
     public final Observable<Result<Boolean>> isValidPasswordForWallet(String password, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -158,7 +344,7 @@ public final class CryptoWalletInteractor {
     public final Observable<Result<Boolean>> isValidSeed(String seed, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -181,7 +367,7 @@ public final class CryptoWalletInteractor {
         return Unit.INSTANCE;
     }
 
-    public final Observable<Result<Boolean>> deleteWallet(final BlockchainType blockchainType, boolean z, boolean z2) {
+    public final Observable<Result<Boolean>> deleteWallet(final BlockchainType blockchainType, final boolean z, final boolean z2) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda9
             @Override // java.util.concurrent.Callable
@@ -191,7 +377,21 @@ public final class CryptoWalletInteractor {
                 return deleteWallet$lambda$9;
             }
         });
-        final CryptoWalletInteractor$deleteWallet$2 cryptoWalletInteractor$deleteWallet$2 = new CryptoWalletInteractor$deleteWallet$2(this, blockchainType);
+        final Function1<Unit, ObservableSource<? extends Result<? extends Boolean>>> function1 = new Function1<Unit, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<Boolean>> invoke(Unit it) {
+                CryptoWalletRepository cryptoWalletRepository;
+                Intrinsics.checkNotNullParameter(it, "it");
+                cryptoWalletRepository = CryptoWalletInteractor.this.cryptoWalletRepository;
+                return cryptoWalletRepository.clearTokensData(blockchainType);
+            }
+        };
         Observable flatMap = fromCallable.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -201,9 +401,81 @@ public final class CryptoWalletInteractor {
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "fun deleteWallet(\n      …(schedulersProvider.io())");
-        Observable doOnNext = flatMap.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1(z2, this)));
+        Observable doOnNext = flatMap.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                invoke2(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<? extends Boolean> result) {
+                RxEventBus rxEventBus;
+                if ((result instanceof Result.Success) && z2) {
+                    rxEventBus = this.rxEventBus;
+                    rxEventBus.publish(DomainRxEvents.WalletReset.INSTANCE);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(doOnNext, "crossinline body: (T) ->…ult as T)\n        }\n    }");
-        final CryptoWalletInteractor$deleteWallet$4 cryptoWalletInteractor$deleteWallet$4 = new CryptoWalletInteractor$deleteWallet$4(z, this, blockchainType, z2);
+        final Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>> function12 = new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$4
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result) {
+                return invoke2((Result<Boolean>) result);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Result<Boolean>> invoke2(Result<Boolean> it) {
+                CryptoWalletRepository cryptoWalletRepository;
+                Intrinsics.checkNotNullParameter(it, "it");
+                if (!z) {
+                    Observable just = Observable.just(it);
+                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                    return just;
+                }
+                cryptoWalletRepository = this.cryptoWalletRepository;
+                Observable<Result<Boolean>> unlinkWallet = cryptoWalletRepository.unlinkWallet(blockchainType);
+                final boolean z3 = z2;
+                final CryptoWalletInteractor cryptoWalletInteractor = this;
+                Observable<Result<Boolean>> doOnNext2 = unlinkWallet.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$4$invoke$$inlined$doOnSuccessNext$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                        invoke2(result);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(Result<? extends Boolean> result) {
+                        RxEventBus rxEventBus;
+                        if (result instanceof Result.Success) {
+                            Objects.requireNonNull(result, "null cannot be cast to non-null type com.iMe.storage.domain.model.Result<kotlin.Boolean>");
+                            if (z3) {
+                                rxEventBus = cryptoWalletInteractor.rxEventBus;
+                                rxEventBus.publish(DomainRxEvents.WalletReset.INSTANCE);
+                            }
+                        }
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(doOnNext2, "crossinline body: (T) ->…ult as T)\n        }\n    }");
+                return doOnNext2;
+            }
+        };
         Observable<Result<Boolean>> subscribeOn = doOnNext.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -211,7 +483,7 @@ public final class CryptoWalletInteractor {
                 deleteWallet$lambda$12 = CryptoWalletInteractor.deleteWallet$lambda$12(Function1.this, obj);
                 return deleteWallet$lambda$12;
             }
-        }).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+        }).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun deleteWallet(\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -230,7 +502,7 @@ public final class CryptoWalletInteractor {
 
     public final Observable<Result<Boolean>> deleteAllWallets() {
         int collectionSizeOrDefault;
-        Observable zip;
+        final Observable zip;
         BlockchainType[] values = BlockchainType.values();
         ArrayList<BlockchainType> arrayList = new ArrayList();
         for (BlockchainType blockchainType : values) {
@@ -246,7 +518,42 @@ public final class CryptoWalletInteractor {
         if (CollectionExtKt.isSingletonList(arrayList2)) {
             zip = (Observable) CollectionsKt.first((List<? extends Object>) arrayList2);
         } else {
-            final CryptoWalletInteractor$deleteAllWallets$finalObservable$1 cryptoWalletInteractor$deleteAllWallets$finalObservable$1 = CryptoWalletInteractor$deleteAllWallets$finalObservable$1.INSTANCE;
+            final CryptoWalletInteractor$deleteAllWallets$finalObservable$1 cryptoWalletInteractor$deleteAllWallets$finalObservable$1 = new Function1<Object[], Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteAllWallets$finalObservable$1
+                @Override // kotlin.jvm.functions.Function1
+                public final Result<Boolean> invoke(Object[] results) {
+                    boolean z;
+                    Intrinsics.checkNotNullParameter(results, "results");
+                    int length = results.length;
+                    int i = 0;
+                    while (true) {
+                        if (i >= length) {
+                            z = false;
+                            break;
+                        } else if (results[i] instanceof Result.Loading) {
+                            z = true;
+                            break;
+                        } else {
+                            i++;
+                        }
+                    }
+                    if (z) {
+                        return Result.Companion.loading$default(Result.Companion, null, 1, null);
+                    }
+                    ArrayList arrayList3 = new ArrayList();
+                    for (Object obj : results) {
+                        if (obj instanceof Result.Success) {
+                            arrayList3.add(obj);
+                        }
+                    }
+                    ArrayList arrayList4 = new ArrayList();
+                    for (Object obj2 : arrayList3) {
+                        if (((Boolean) ((Result.Success) obj2).getData()).booleanValue()) {
+                            arrayList4.add(obj2);
+                        }
+                    }
+                    return Result.Companion.success(Boolean.valueOf(arrayList4.size() == results.length));
+                }
+            };
             zip = Observable.zip(arrayList2, new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda7
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
@@ -264,7 +571,20 @@ public final class CryptoWalletInteractor {
                 return deleteAllWallets$lambda$16;
             }
         });
-        final CryptoWalletInteractor$deleteAllWallets$2 cryptoWalletInteractor$deleteAllWallets$2 = new CryptoWalletInteractor$deleteAllWallets$2(this);
+        final Function1<Unit, ObservableSource<? extends Result<? extends Boolean>>> function1 = new Function1<Unit, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteAllWallets$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<Boolean>> invoke(Unit it) {
+                CryptoWalletRepository cryptoWalletRepository;
+                Intrinsics.checkNotNullParameter(it, "it");
+                cryptoWalletRepository = CryptoWalletInteractor.this.cryptoWalletRepository;
+                return cryptoWalletRepository.clearAllTokensData();
+            }
+        };
         Observable flatMap = fromCallable.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -273,7 +593,24 @@ public final class CryptoWalletInteractor {
                 return deleteAllWallets$lambda$17;
             }
         });
-        final CryptoWalletInteractor$deleteAllWallets$3 cryptoWalletInteractor$deleteAllWallets$3 = new CryptoWalletInteractor$deleteAllWallets$3(zip);
+        final Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>> function12 = new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteAllWallets$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Result<Boolean>> invoke2(Result<Boolean> it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return zip;
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result) {
+                return invoke2((Result<Boolean>) result);
+            }
+        };
         Observable<Result<Boolean>> subscribeOn = flatMap.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -281,7 +618,7 @@ public final class CryptoWalletInteractor {
                 deleteAllWallets$lambda$18 = CryptoWalletInteractor.deleteAllWallets$lambda$18(Function1.this, obj);
                 return deleteAllWallets$lambda$18;
             }
-        }).subscribeOn(this.schedulersProvider.mo699io());
+        }).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun deleteAllWallets(): …ulersProvider.io())\n    }");
         return subscribeOn;
     }
@@ -337,7 +674,7 @@ public final class CryptoWalletInteractor {
 
     private final Observable<Result<List<Wallet>>> importBib39BasedWallets(List<? extends BlockchainType> list) {
         int collectionSizeOrDefault;
-        String walletPassword = this.cryptoAccessManager.getWalletPassword();
+        final String walletPassword = this.cryptoAccessManager.getWalletPassword();
         Wallet wallet2 = this.cryptoAccessManager.getWallet(this.cryptoAccessManager.getFirstBip39PhraseBasedBlockchainType());
         String mnemonic = wallet2 != null ? wallet2.getMnemonic() : null;
         if (mnemonic == null) {
@@ -346,9 +683,44 @@ public final class CryptoWalletInteractor {
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (BlockchainType blockchainType : list) {
-            arrayList.add(this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).subscribeOn(this.schedulersProvider.mo699io()));
+            arrayList.add(this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).subscribeOn(this.schedulersProvider.mo717io()));
         }
-        final CryptoWalletInteractor$importBib39BasedWallets$2 cryptoWalletInteractor$importBib39BasedWallets$2 = CryptoWalletInteractor$importBib39BasedWallets$2.INSTANCE;
+        final CryptoWalletInteractor$importBib39BasedWallets$2 cryptoWalletInteractor$importBib39BasedWallets$2 = new Function1<Object[], Result<? extends List<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importBib39BasedWallets$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<Wallet>> invoke(Object[] results) {
+                boolean z;
+                int collectionSizeOrDefault2;
+                Intrinsics.checkNotNullParameter(results, "results");
+                int length = results.length;
+                int i = 0;
+                while (true) {
+                    if (i >= length) {
+                        z = false;
+                        break;
+                    } else if (results[i] instanceof Result.Loading) {
+                        z = true;
+                        break;
+                    } else {
+                        i++;
+                    }
+                }
+                if (z) {
+                    return Result.Companion.loading$default(Result.Companion, null, 1, null);
+                }
+                ArrayList<Result.Success> arrayList2 = new ArrayList();
+                for (Object obj : results) {
+                    if (obj instanceof Result.Success) {
+                        arrayList2.add(obj);
+                    }
+                }
+                collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList2, 10);
+                ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault2);
+                for (Result.Success success : arrayList2) {
+                    arrayList3.add((Wallet) success.getData());
+                }
+                return Result.Companion.success(arrayList3);
+            }
+        };
         Observable zip = Observable.zip(arrayList, new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -358,9 +730,43 @@ public final class CryptoWalletInteractor {
             }
         });
         Intrinsics.checkNotNullExpressionValue(zip, "zip(\n                   …      }\n                }");
-        Observable flatMap = zip.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1972x2e0ed3d8(this, walletPassword)));
+        Observable flatMap = zip.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends List<? extends Wallet>>, ObservableSource<? extends Result<? extends List<? extends Wallet>>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importBib39BasedWallets$$inlined$flatMapSuccess$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends List<? extends Wallet>>> invoke(Result<? extends List<? extends Wallet>> result) {
+                Observable linkWalletsWithCheck;
+                SchedulersProvider schedulersProvider;
+                CryptoAccessManager cryptoAccessManager;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                List<? extends Wallet> data = result.getData();
+                if (data == null) {
+                    data = CollectionsKt__CollectionsKt.emptyList();
+                }
+                for (Wallet wallet3 : data) {
+                    cryptoAccessManager = CryptoWalletInteractor.this.cryptoAccessManager;
+                    cryptoAccessManager.setWallet(wallet3, walletPassword);
+                }
+                linkWalletsWithCheck = CryptoWalletInteractor.this.linkWalletsWithCheck(data);
+                schedulersProvider = CryptoWalletInteractor.this.schedulersProvider;
+                Observable subscribeOn = linkWalletsWithCheck.subscribeOn(schedulersProvider.mo717io());
+                Intrinsics.checkNotNullExpressionValue(subscribeOn, "linkWalletsWithCheck(wal…(schedulersProvider.io())");
+                return subscribeOn;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<List<Wallet>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<List<Wallet>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "zip(\n                   …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -372,12 +778,160 @@ public final class CryptoWalletInteractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<List<Wallet>>> linkWalletsWithCheck(List<? extends Wallet> list) {
-        Observable<R> flatMap = getLinkedCryptoWalletAddresses().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1974x20d82859(list, this)));
+    public final Observable<Result<List<Wallet>>> linkWalletsWithCheck(final List<? extends Wallet> list) {
+        Observable<R> flatMap = getLinkedCryptoWalletAddresses().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Map<BlockchainType, ? extends String>>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$linkWalletsWithCheck$$inlined$flatMapSuccess$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Map<BlockchainType, ? extends String>> result) {
+                int collectionSizeOrDefault;
+                Observable unlinkWalletsIfNeeded;
+                SchedulersProvider schedulersProvider;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                Map<BlockchainType, ? extends String> data = result.getData();
+                if (data == null) {
+                    data = MapsKt__MapsKt.emptyMap();
+                }
+                List list2 = list;
+                final ArrayList arrayList = new ArrayList();
+                for (Object obj : list2) {
+                    Wallet wallet2 = (Wallet) obj;
+                    if (true ^ Intrinsics.areEqual(wallet2.getAddress(), data.get(wallet2.getBlockchainType()))) {
+                        arrayList.add(obj);
+                    }
+                }
+                if (!(!arrayList.isEmpty())) {
+                    Observable just = Observable.just(Result.Companion.success(Boolean.TRUE));
+                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                    return just;
+                }
+                ArrayList<Wallet> arrayList2 = new ArrayList();
+                for (Object obj2 : arrayList) {
+                    String str = data.get(((Wallet) obj2).getBlockchainType());
+                    if (!(str == null || str.length() == 0)) {
+                        arrayList2.add(obj2);
+                    }
+                }
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList2, 10);
+                ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault);
+                for (Wallet wallet3 : arrayList2) {
+                    arrayList3.add(wallet3.getBlockchainType());
+                }
+                unlinkWalletsIfNeeded = this.unlinkWalletsIfNeeded(arrayList3);
+                final CryptoWalletInteractor cryptoWalletInteractor = this;
+                Observable flatMap2 = unlinkWalletsIfNeeded.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$linkWalletsWithCheck$lambda$31$$inlined$flatMapSuccess$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result2) {
+                        CryptoWalletRepository cryptoWalletRepository;
+                        int collectionSizeOrDefault2;
+                        int mapCapacity;
+                        int coerceAtLeast;
+                        SchedulersProvider schedulersProvider2;
+                        Intrinsics.checkNotNullParameter(result2, "result");
+                        if (!(result2 instanceof Result.Success)) {
+                            if (result2 instanceof Result.Error) {
+                                Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                                return Observable.just(error$default2);
+                            }
+                            return Observable.empty();
+                        }
+                        cryptoWalletRepository = CryptoWalletInteractor.this.cryptoWalletRepository;
+                        List<Wallet> list3 = arrayList;
+                        collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(list3, 10);
+                        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault2);
+                        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
+                        LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
+                        for (Wallet wallet4 : list3) {
+                            Pair m103to = TuplesKt.m103to(wallet4.getBlockchainType(), wallet4.getPublicKey());
+                            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                        }
+                        Observable<Result<Boolean>> linkWallets = cryptoWalletRepository.linkWallets(linkedHashMap);
+                        final List list4 = arrayList;
+                        final CryptoWalletInteractor cryptoWalletInteractor2 = CryptoWalletInteractor.this;
+                        Observable<R> flatMap3 = linkWallets.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$linkWalletsWithCheck$lambda$31$lambda$30$$inlined$flatMapAnyError$1
+                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                            {
+                                super(1);
+                            }
+
+                            @Override // kotlin.jvm.functions.Function1
+                            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result3) {
+                                CryptoAccessManager cryptoAccessManager;
+                                Intrinsics.checkNotNullParameter(result3, "result");
+                                if (result3 instanceof Result.Success) {
+                                    return Observable.just(result3);
+                                }
+                                if (!(result3 instanceof Result.Error)) {
+                                    return Observable.empty();
+                                }
+                                ((Result.Error) result3).getError();
+                                for (Wallet wallet5 : list4) {
+                                    cryptoAccessManager = cryptoWalletInteractor2.cryptoAccessManager;
+                                    cryptoAccessManager.deleteWallet(wallet5.getBlockchainType());
+                                }
+                                Observable just2 = Observable.just(result3);
+                                Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                                return just2;
+                            }
+                        }));
+                        Intrinsics.checkNotNullExpressionValue(flatMap3, "crossinline body: (T, Er…e.empty()\n        }\n    }");
+                        schedulersProvider2 = CryptoWalletInteractor.this.schedulersProvider;
+                        Observable subscribeOn = flatMap3.subscribeOn(schedulersProvider2.mo717io());
+                        Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
+                        return subscribeOn;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
+                schedulersProvider = this.schedulersProvider;
+                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo717io());
+                Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                      …                        }");
+                return subscribeOn;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable map = flatMap.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1975xbe965840(list)));
+        Observable map = flatMap.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, Result<? extends List<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$linkWalletsWithCheck$$inlined$mapSuccess$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            /* JADX WARN: Multi-variable type inference failed */
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<? extends List<? extends Wallet>> invoke(Result<? extends Boolean> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result<? extends List<? extends Wallet>> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                        return error$default;
+                    } else if (result instanceof Object) {
+                        return result;
+                    } else {
+                        return null;
+                    }
+                }
+                return Result.Companion.success(list);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<List<Wallet>>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<List<Wallet>>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "getLinkedCryptoWalletAdd…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -395,7 +949,50 @@ public final class CryptoWalletInteractor {
         for (BlockchainType blockchainType : list) {
             arrayList.add(this.cryptoWalletRepository.unlinkWallet(blockchainType));
         }
-        final CryptoWalletInteractor$unlinkWalletsIfNeeded$2 cryptoWalletInteractor$unlinkWalletsIfNeeded$2 = CryptoWalletInteractor$unlinkWalletsIfNeeded$2.INSTANCE;
+        final CryptoWalletInteractor$unlinkWalletsIfNeeded$2 cryptoWalletInteractor$unlinkWalletsIfNeeded$2 = new Function1<Object[], Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$unlinkWalletsIfNeeded$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Object[] results) {
+                boolean z;
+                Intrinsics.checkNotNullParameter(results, "results");
+                int length = results.length;
+                boolean z2 = false;
+                int i = 0;
+                while (true) {
+                    if (i >= length) {
+                        z = false;
+                        break;
+                    } else if (results[i] instanceof Result.Loading) {
+                        z = true;
+                        break;
+                    } else {
+                        i++;
+                    }
+                }
+                if (z) {
+                    return Result.Companion.loading$default(Result.Companion, null, 1, null);
+                }
+                ArrayList arrayList2 = new ArrayList();
+                for (Object obj : results) {
+                    if (obj instanceof Result.Success) {
+                        arrayList2.add(obj);
+                    }
+                }
+                if (!arrayList2.isEmpty()) {
+                    Iterator it = arrayList2.iterator();
+                    while (true) {
+                        if (it.hasNext()) {
+                            if (((Boolean) ((Result.Success) it.next()).getData()).booleanValue()) {
+                                z2 = true;
+                                break;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                return Result.Companion.success(Boolean.valueOf(z2));
+            }
+        };
         Observable<Result<Boolean>> subscribeOn = Observable.zip(arrayList, new Function() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -403,7 +1000,7 @@ public final class CryptoWalletInteractor {
                 unlinkWalletsIfNeeded$lambda$34 = CryptoWalletInteractor.unlinkWalletsIfNeeded$lambda$34(Function1.this, obj);
                 return unlinkWalletsIfNeeded$lambda$34;
             }
-        }).subscribeOn(this.schedulersProvider.mo699io());
+        }).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "zip(\n                   …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -415,9 +1012,39 @@ public final class CryptoWalletInteractor {
     }
 
     private final Observable<Result<Map<BlockchainType, String>>> getLinkedCryptoWalletAddresses() {
-        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1971x1cad89b0()));
+        Observable<R> flatMap = this.cryptoWalletRepository.getLinkedCryptoWalletInfo().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends CryptoWalletsInfo>, ObservableSource<? extends Result<? extends Map<BlockchainType, ? extends String>>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$getLinkedCryptoWalletAddresses$$inlined$flatMapSuccess$1
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Map<BlockchainType, ? extends String>>> invoke(Result<? extends CryptoWalletsInfo> result) {
+                int mapCapacity;
+                int coerceAtLeast;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                BlockchainType[] values = BlockchainType.values();
+                mapCapacity = MapsKt__MapsJVMKt.mapCapacity(values.length);
+                coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
+                LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
+                for (BlockchainType blockchainType : values) {
+                    CryptoWalletsInfo data = result.getData();
+                    String addressByBlockchain = data != null ? data.getAddressByBlockchain(blockchainType) : null;
+                    if (addressByBlockchain == null) {
+                        addressByBlockchain = "";
+                    }
+                    linkedHashMap.put(blockchainType, addressByBlockchain);
+                }
+                Observable just = Observable.just(Result.Companion.success(linkedHashMap));
+                Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                return just;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

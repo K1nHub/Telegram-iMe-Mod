@@ -2,6 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import android.os.Handler;
 import android.os.Looper;
+import com.google.android.play.core.tasks.OnFailureListener;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
 import java.util.List;
@@ -45,7 +46,12 @@ public final class zzl {
                 zzbh.this.zzC((List) obj);
             }
         });
-        zzd.addOnFailureListener(this.zzi.zza(), zzf.zza);
+        zzd.addOnFailureListener(this.zzi.zza(), new OnFailureListener() { // from class: com.google.android.play.core.assetpacks.zzf
+            @Override // com.google.android.play.core.tasks.OnFailureListener
+            public final void onFailure(Exception exc) {
+                zzl.zza.zze(String.format("Could not sync active asset packs. %s", exc), new Object[0]);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

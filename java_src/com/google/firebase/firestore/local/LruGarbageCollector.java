@@ -101,9 +101,21 @@ public class LruGarbageCollector {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static class RollingSequenceNumberBuffer {
-        private static final Comparator<Long> COMPARATOR = C1018xc382edc1.INSTANCE;
+        private static final Comparator<Long> COMPARATOR = new Comparator() { // from class: com.google.firebase.firestore.local.LruGarbageCollector$RollingSequenceNumberBuffer$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$static$0;
+                lambda$static$0 = LruGarbageCollector.RollingSequenceNumberBuffer.lambda$static$0((Long) obj, (Long) obj2);
+                return lambda$static$0;
+            }
+        };
         private final int maxElements;
         private final PriorityQueue<Long> queue;
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ int lambda$static$0(Long l, Long l2) {
+            return l2.compareTo(l);
+        }
 
         RollingSequenceNumberBuffer(int i) {
             this.maxElements = i;

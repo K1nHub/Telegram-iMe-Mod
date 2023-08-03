@@ -531,7 +531,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "proxy-authenticate"
+    const-string/jumbo v2, "proxy-authenticate"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -541,7 +541,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "proxy-authorization"
+    const-string/jumbo v2, "proxy-authorization"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1329
+    .line 1335
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
@@ -35,17 +35,17 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 1339
+    .line 1345
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Cells/TextCell;->onLayout(ZIIII)V
 
     const/16 p1, 0x15
 
-    .line 1340
+    .line 1346
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 1341
+    .line 1347
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p2
@@ -66,7 +66,7 @@
 
     div-int/lit8 p2, p2, 0x2
 
-    .line 1342
+    .line 1348
     iget-object p3, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     iget-object p3, p3, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;
@@ -111,10 +111,10 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 1332
+    .line 1338
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Cells/TextCell;->onMeasure(II)V
 
-    .line 1333
+    .line 1339
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;
@@ -145,7 +145,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->measure(II)V
 
-    .line 1334
+    .line 1340
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;

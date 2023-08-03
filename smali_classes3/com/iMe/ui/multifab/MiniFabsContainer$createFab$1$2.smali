@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/multifab/MiniFabsContainer;->createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Landroid/widget/ImageView;
+    value = Lcom/iMe/ui/multifab/MiniFabsContainer;->createFab(Lcom/iMe/storage/domain/model/filters/FilterFab;)Lorg/telegram/ui/Components/RLottieImageView;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 80
+    .line 95
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -37,9 +37,9 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 p1, 0x2b
+    const/16 p1, 0x24
 
-    .line 83
+    .line 98
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0

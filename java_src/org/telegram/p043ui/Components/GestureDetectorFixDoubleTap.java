@@ -25,7 +25,7 @@ public class GestureDetectorFixDoubleTap {
     /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap$OnGestureListener */
     /* loaded from: classes6.dex */
     public static class OnGestureListener extends GestureDetector.SimpleOnGestureListener {
-        public boolean hasDoubleTap() {
+        public boolean hasDoubleTap(MotionEvent motionEvent) {
             throw null;
         }
     }

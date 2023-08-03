@@ -1705,7 +1705,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     goto :goto_1
 

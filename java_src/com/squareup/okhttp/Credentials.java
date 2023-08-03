@@ -7,7 +7,7 @@ import okio.ByteString;
 public final class Credentials {
     public static String basic(String str, String str2) {
         try {
-            String base64 = ByteString.m74of((str + ":" + str2).getBytes(C0480C.ISO88591_NAME)).base64();
+            String base64 = ByteString.m92of((str + ":" + str2).getBytes(C0480C.ISO88591_NAME)).base64();
             return "Basic " + base64;
         } catch (UnsupportedEncodingException unused) {
             throw new AssertionError();

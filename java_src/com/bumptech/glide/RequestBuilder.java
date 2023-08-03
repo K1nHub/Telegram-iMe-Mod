@@ -71,7 +71,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     public RequestBuilder<TranscodeType> listener(RequestListener<TranscodeType> requestListener) {
         if (isAutoCloneEnabled()) {
-            return mo885clone().listener(requestListener);
+            return mo903clone().listener(requestListener);
         }
         this.requestListeners = null;
         return addListener(requestListener);
@@ -79,7 +79,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     public RequestBuilder<TranscodeType> addListener(RequestListener<TranscodeType> requestListener) {
         if (isAutoCloneEnabled()) {
-            return mo885clone().addListener(requestListener);
+            return mo903clone().addListener(requestListener);
         }
         if (requestListener != null) {
             if (this.requestListeners == null) {
@@ -96,7 +96,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     private RequestBuilder<TranscodeType> loadGeneric(Object obj) {
         if (isAutoCloneEnabled()) {
-            return mo885clone().loadGeneric(obj);
+            return mo903clone().loadGeneric(obj);
         }
         this.model = obj;
         this.isModelSet = true;
@@ -109,19 +109,19 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     @Override // com.bumptech.glide.request.BaseRequestOptions
     /* renamed from: clone */
-    public RequestBuilder<TranscodeType> mo885clone() {
-        RequestBuilder<TranscodeType> requestBuilder = (RequestBuilder) super.mo885clone();
-        requestBuilder.transitionOptions = (TransitionOptions<?, ? super TranscodeType>) requestBuilder.transitionOptions.m886clone();
+    public RequestBuilder<TranscodeType> mo903clone() {
+        RequestBuilder<TranscodeType> requestBuilder = (RequestBuilder) super.mo903clone();
+        requestBuilder.transitionOptions = (TransitionOptions<?, ? super TranscodeType>) requestBuilder.transitionOptions.m904clone();
         if (requestBuilder.requestListeners != null) {
             requestBuilder.requestListeners = new ArrayList(requestBuilder.requestListeners);
         }
         RequestBuilder<TranscodeType> requestBuilder2 = requestBuilder.thumbnailBuilder;
         if (requestBuilder2 != null) {
-            requestBuilder.thumbnailBuilder = requestBuilder2.mo885clone();
+            requestBuilder.thumbnailBuilder = requestBuilder2.mo903clone();
         }
         RequestBuilder<TranscodeType> requestBuilder3 = requestBuilder.errorBuilder;
         if (requestBuilder3 != null) {
-            requestBuilder.errorBuilder = requestBuilder3.mo885clone();
+            requestBuilder.errorBuilder = requestBuilder3.mo903clone();
         }
         return requestBuilder;
     }
@@ -164,18 +164,18 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         if (!isTransformationSet() && isTransformationAllowed() && imageView.getScaleType() != null) {
             switch (C03901.$SwitchMap$android$widget$ImageView$ScaleType[imageView.getScaleType().ordinal()]) {
                 case 1:
-                    requestBuilder = mo885clone().optionalCenterCrop();
+                    requestBuilder = mo903clone().optionalCenterCrop();
                     break;
                 case 2:
-                    requestBuilder = mo885clone().optionalCenterInside();
+                    requestBuilder = mo903clone().optionalCenterInside();
                     break;
                 case 3:
                 case 4:
                 case 5:
-                    requestBuilder = mo885clone().optionalFitCenter();
+                    requestBuilder = mo903clone().optionalFitCenter();
                     break;
                 case 6:
-                    requestBuilder = mo885clone().optionalCenterInside();
+                    requestBuilder = mo903clone().optionalCenterInside();
                     break;
             }
             return (ViewTarget) into(this.glideContext.buildImageViewTarget(imageView, this.transcodeClass), null, requestBuilder, Executors.mainThreadExecutor());
@@ -330,7 +330,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
             return thumbnailRequestCoordinator;
         } else if (this.thumbSizeMultiplier != null) {
             ThumbnailRequestCoordinator thumbnailRequestCoordinator2 = new ThumbnailRequestCoordinator(obj, requestCoordinator);
-            thumbnailRequestCoordinator2.setRequests(obtainRequest(obj, target, requestListener, baseRequestOptions, thumbnailRequestCoordinator2, transitionOptions, priority, i, i2, executor), obtainRequest(obj, target, requestListener, baseRequestOptions.mo885clone().sizeMultiplier(this.thumbSizeMultiplier.floatValue()), thumbnailRequestCoordinator2, transitionOptions, getThumbnailPriority(priority), i, i2, executor));
+            thumbnailRequestCoordinator2.setRequests(obtainRequest(obj, target, requestListener, baseRequestOptions, thumbnailRequestCoordinator2, transitionOptions, priority, i, i2, executor), obtainRequest(obj, target, requestListener, baseRequestOptions.mo903clone().sizeMultiplier(this.thumbSizeMultiplier.floatValue()), thumbnailRequestCoordinator2, transitionOptions, getThumbnailPriority(priority), i, i2, executor));
             return thumbnailRequestCoordinator2;
         } else {
             return obtainRequest(obj, target, requestListener, baseRequestOptions, requestCoordinator, transitionOptions, priority, i, i2, executor);

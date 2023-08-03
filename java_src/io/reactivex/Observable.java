@@ -1031,7 +1031,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /* renamed from: as */
-    public final <R> R m681as(ObservableConverter<T, ? extends R> observableConverter) {
+    public final <R> R m699as(ObservableConverter<T, ? extends R> observableConverter) {
         return (R) ((ObservableConverter) ObjectHelper.requireNonNull(observableConverter, "converter is null")).apply(this);
     }
 
@@ -2580,7 +2580,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /* renamed from: to */
-    public final <R> R m680to(Function<? super Observable<T>, R> function) {
+    public final <R> R m698to(Function<? super Observable<T>, R> function) {
         try {
             return (R) ((Function) ObjectHelper.requireNonNull(function, "converter is null")).apply(this);
         } catch (Throwable th) {

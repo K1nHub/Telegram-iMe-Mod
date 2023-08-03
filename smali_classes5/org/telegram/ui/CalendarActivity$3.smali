@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/CalendarActivity$3;
-.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "CalendarActivity.java"
 
 
@@ -19,29 +19,31 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
+.method constructor <init>(Lorg/telegram/ui/CalendarActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 201
+    .line 292
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$3;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 0
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 1
 
-    .line 204
-    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .line 295
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 205
+    .line 296
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$3;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$200(Lorg/telegram/ui/CalendarActivity;)V
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/CalendarActivity;->access$402(Lorg/telegram/ui/CalendarActivity;Z)Z
 
     return-void
 .end method

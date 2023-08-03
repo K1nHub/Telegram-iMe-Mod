@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/TextViewOnReceiveContentListener$ApiImpl;,
-        Landroidx/core/widget/TextViewOnReceiveContentListener$Api16Impl;
+        Landroidx/core/widget/TextViewOnReceiveContentListener$Api16Impl;,
+        Landroidx/core/widget/TextViewOnReceiveContentListener$ApiImpl;
     }
 .end annotation
 

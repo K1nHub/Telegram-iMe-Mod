@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;->params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
-    const-string v2, "params == null"
+    const-string/jumbo v2, "params == null"
 
     invoke-static {v0, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -119,7 +119,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "public key has wrong size"
+    const-string/jumbo v0, "public key has wrong size"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

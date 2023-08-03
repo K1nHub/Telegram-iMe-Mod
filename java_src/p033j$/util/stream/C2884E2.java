@@ -11,89 +11,89 @@ import p033j$.util.function.InterfaceC2820f;
 class C2884E2 implements InterfaceC2966S2, InterfaceC3062j3 {
 
     /* renamed from: a */
-    private boolean f809a;
+    private boolean f812a;
 
     /* renamed from: b */
-    private double f810b;
+    private double f813b;
 
     /* renamed from: c */
-    final /* synthetic */ InterfaceC2818d f811c;
+    final /* synthetic */ InterfaceC2818d f814c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2884E2(InterfaceC2818d interfaceC2818d) {
-        this.f811c = interfaceC2818d;
+        this.f814c = interfaceC2818d;
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     public void accept(double d) {
-        if (this.f809a) {
-            this.f809a = false;
+        if (this.f812a) {
+            this.f812a = false;
         } else {
-            d = this.f811c.applyAsDouble(this.f810b, d);
+            d = this.f814c.applyAsDouble(this.f813b, d);
         }
-        this.f810b = d;
+        this.f813b = d;
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     public /* synthetic */ void accept(int i) {
-        AbstractC3090o1.m356d(this);
+        AbstractC3090o1.m374d(this);
         throw null;
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3, p033j$.util.stream.InterfaceC3074l3, p033j$.util.function.InterfaceC2831q
     public /* synthetic */ void accept(long j) {
-        AbstractC3090o1.m355e(this);
+        AbstractC3090o1.m373e(this);
         throw null;
     }
 
     @Override // p033j$.util.function.Consumer
     public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Objects.requireNonNull(consumer);
+        return Consumer.CC.$default$andThen(this, consumer);
     }
 
     @Override // p033j$.util.function.Consumer
     /* renamed from: b */
     public /* synthetic */ void accept(Double d) {
-        AbstractC3090o1.m359a(this, d);
+        AbstractC3090o1.m377a(this, d);
     }
 
     @Override // p033j$.util.function.InterfaceC2839y
     public Object get() {
-        return this.f809a ? C2842i.m535a() : C2842i.m532d(this.f810b);
+        return this.f812a ? C2842i.m553a() : C2842i.m550d(this.f813b);
     }
 
     @Override // p033j$.util.stream.InterfaceC2966S2
     /* renamed from: h */
-    public void mo480h(InterfaceC2966S2 interfaceC2966S2) {
+    public void mo498h(InterfaceC2966S2 interfaceC2966S2) {
         C2884E2 c2884e2 = (C2884E2) interfaceC2966S2;
-        if (c2884e2.f809a) {
+        if (c2884e2.f812a) {
             return;
         }
-        accept(c2884e2.f810b);
+        accept(c2884e2.f813b);
     }
 
     @Override // p033j$.util.function.InterfaceC2820f
     /* renamed from: j */
-    public InterfaceC2820f mo87j(InterfaceC2820f interfaceC2820f) {
+    public InterfaceC2820f mo105j(InterfaceC2820f interfaceC2820f) {
         Objects.requireNonNull(interfaceC2820f);
         return new C2819e(this, interfaceC2820f);
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     /* renamed from: m */
-    public /* synthetic */ void mo321m() {
+    public /* synthetic */ void mo339m() {
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     /* renamed from: n */
-    public void mo297n(long j) {
-        this.f809a = true;
-        this.f810b = 0.0d;
+    public void mo315n(long j) {
+        this.f812a = true;
+        this.f813b = 0.0d;
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     /* renamed from: o */
-    public /* synthetic */ boolean mo296o() {
+    public /* synthetic */ boolean mo314o() {
         return false;
     }
 }

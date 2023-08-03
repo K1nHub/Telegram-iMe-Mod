@@ -14,10 +14,23 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 /* renamed from: org.telegram.ui.Components.ChatActivityBotWebViewButton */
 /* loaded from: classes6.dex */
 public class ChatActivityBotWebViewButton extends FrameLayout {
-    public static final SimpleFloatPropertyCompat<ChatActivityBotWebViewButton> PROGRESS_PROPERTY = new SimpleFloatPropertyCompat("progress", ChatActivityBotWebViewButton$$ExternalSyntheticLambda0.INSTANCE, ChatActivityBotWebViewButton$$ExternalSyntheticLambda1.INSTANCE).setMultiplier(100.0f);
+    public static final SimpleFloatPropertyCompat<ChatActivityBotWebViewButton> PROGRESS_PROPERTY = new SimpleFloatPropertyCompat("progress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.ChatActivityBotWebViewButton$$ExternalSyntheticLambda0
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Getter
+        public final float get(Object obj) {
+            float f;
+            f = ((ChatActivityBotWebViewButton) obj).progress;
+            return f;
+        }
+    }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.ChatActivityBotWebViewButton$$ExternalSyntheticLambda1
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Setter
+        public final void set(Object obj, float f) {
+            ((ChatActivityBotWebViewButton) obj).setProgress(f);
+        }
+    }).setMultiplier(100.0f);
     private int backgroundColor;
     private int buttonColor;
     private BotCommandsMenuView menuButton;
@@ -43,7 +56,7 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
         addView(this.textView, LayoutHelper.createFrame(-1, -1, 3, 0, 0, 0, 0));
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressView = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.m54dp(18));
+        radialProgressView.setSize(AndroidUtilities.m72dp(18));
         this.progressView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.progressView.setScaleX(BitmapDescriptorFactory.HUE_RED);
         this.progressView.setScaleY(BitmapDescriptorFactory.HUE_RED);
@@ -111,17 +124,17 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
     @Override // android.view.View
     public void draw(Canvas canvas) {
         canvas.save();
-        float height = (getHeight() - AndroidUtilities.m54dp(32)) / 2.0f;
-        float max = Math.max((getWidth() - this.menuButtonWidth) - AndroidUtilities.m54dp(4), getHeight()) * this.progress;
-        float m54dp = AndroidUtilities.m54dp(16) + max;
+        float height = (getHeight() - AndroidUtilities.m72dp(32)) / 2.0f;
+        float max = Math.max((getWidth() - this.menuButtonWidth) - AndroidUtilities.m72dp(4), getHeight()) * this.progress;
+        float m72dp = AndroidUtilities.m72dp(16) + max;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.m54dp(14) - max, (AndroidUtilities.m54dp(4) + height) - max, AndroidUtilities.m54dp(6) + this.menuButtonWidth + max, (getHeight() - AndroidUtilities.m54dp(12)) + max);
+        rectF.set(AndroidUtilities.m72dp(14) - max, (AndroidUtilities.m72dp(4) + height) - max, AndroidUtilities.m72dp(6) + this.menuButtonWidth + max, (getHeight() - AndroidUtilities.m72dp(12)) + max);
         this.path.rewind();
-        this.path.addRoundRect(rectF, m54dp, m54dp, Path.Direction.CW);
+        this.path.addRoundRect(rectF, m72dp, m72dp, Path.Direction.CW);
         canvas.clipPath(this.path);
         canvas.drawColor(this.backgroundColor);
         canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.progress) / 0.5f)) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.m54dp(10), height);
+        canvas.translate(AndroidUtilities.m72dp(10), height);
         BotCommandsMenuView botCommandsMenuView = this.menuButton;
         if (botCommandsMenuView != null) {
             botCommandsMenuView.setDrawBackgroundDrawable(false);
@@ -129,8 +142,18 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
             this.menuButton.setDrawBackgroundDrawable(true);
         }
         canvas.restore();
-        canvas.translate((-AndroidUtilities.m54dp(8)) * (1.0f - this.progress), BitmapDescriptorFactory.HUE_RED);
+        canvas.translate((-AndroidUtilities.m72dp(8)) * (1.0f - this.progress), BitmapDescriptorFactory.HUE_RED);
         super.draw(canvas);
         canvas.restore();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i2);
+        int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
+        if (height > 0) {
+            size = Math.min(size, height);
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.getMode(i2)));
     }
 }

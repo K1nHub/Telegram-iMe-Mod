@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$TIpVlSvouxmUXMBCSf4FzVcQjQY(Lorg/telegram/ui/ProfileActivity$7;Landroid/content/DialogInterface;I)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$SmupgQdFCzucng9KvXxoX0WVSVQ(Lorg/telegram/ui/ProfileActivity$7;)V
 
     return-void
 .end method

@@ -339,7 +339,7 @@ public abstract class SpecialEffectsController {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             public void applyState(View view) {
-                int i = C02213.f45xe493b431[ordinal()];
+                int i = C02213.f47xe493b431[ordinal()];
                 if (i == 1) {
                     ViewGroup viewGroup = (ViewGroup) view.getParent();
                     if (viewGroup != null) {
@@ -416,7 +416,7 @@ public abstract class SpecialEffectsController {
         }
 
         final void mergeWith(State state, LifecycleImpact lifecycleImpact) {
-            int i = C02213.f44xb9e640f0[lifecycleImpact.ordinal()];
+            int i = C02213.f46xb9e640f0[lifecycleImpact.ordinal()];
             if (i == 1) {
                 if (this.mFinalState == State.REMOVED) {
                     if (FragmentManager.isLoggingEnabled(2)) {
@@ -479,42 +479,42 @@ public abstract class SpecialEffectsController {
     public static /* synthetic */ class C02213 {
 
         /* renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact */
-        static final /* synthetic */ int[] f44xb9e640f0;
+        static final /* synthetic */ int[] f46xb9e640f0;
 
         /* renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State */
-        static final /* synthetic */ int[] f45xe493b431;
+        static final /* synthetic */ int[] f47xe493b431;
 
         static {
             int[] iArr = new int[Operation.LifecycleImpact.values().length];
-            f44xb9e640f0 = iArr;
+            f46xb9e640f0 = iArr;
             try {
                 iArr[Operation.LifecycleImpact.ADDING.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f44xb9e640f0[Operation.LifecycleImpact.REMOVING.ordinal()] = 2;
+                f46xb9e640f0[Operation.LifecycleImpact.REMOVING.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f44xb9e640f0[Operation.LifecycleImpact.NONE.ordinal()] = 3;
+                f46xb9e640f0[Operation.LifecycleImpact.NONE.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             int[] iArr2 = new int[Operation.State.values().length];
-            f45xe493b431 = iArr2;
+            f47xe493b431 = iArr2;
             try {
                 iArr2[Operation.State.REMOVED.ordinal()] = 1;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f45xe493b431[Operation.State.VISIBLE.ordinal()] = 2;
+                f47xe493b431[Operation.State.VISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f45xe493b431[Operation.State.GONE.ordinal()] = 3;
+                f47xe493b431[Operation.State.GONE.ordinal()] = 3;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f45xe493b431[Operation.State.INVISIBLE.ordinal()] = 4;
+                f47xe493b431[Operation.State.INVISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError unused7) {
             }
         }

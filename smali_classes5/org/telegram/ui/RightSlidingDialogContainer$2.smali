@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 3
 
     .line 308
     iget-object p1, p0, Lorg/telegram/ui/RightSlidingDialogContainer$2;->this$0:Lorg/telegram/ui/RightSlidingDialogContainer;
@@ -72,6 +72,8 @@
 
     iget-object p1, p1, Lorg/telegram/ui/RightSlidingDialogContainer;->currentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
+    const/4 v1, 0x0
+
     if-eqz p1, :cond_1
 
     .line 316
@@ -101,17 +103,15 @@
 
     sget v0, Lorg/telegram/messenger/NotificationCenter;->needCheckSystemBarColors:I
 
-    const/4 v1, 0x0
+    new-array v2, v1, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     .line 323
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/RightSlidingDialogContainer$2;->this$0:Lorg/telegram/ui/RightSlidingDialogContainer;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished()V
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished(Z)V
 
     return-void
 .end method

@@ -23,13 +23,19 @@ import io.reactivex.subjects.BehaviorSubject;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -65,7 +71,27 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new StakingPercentageView$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<SchedulersProvider>() { // from class: com.iMe.ui.custom.StakingPercentageView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.SchedulersProvider, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final SchedulersProvider invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), qualifier, function0);
+            }
+        });
         this.schedulersProvider$delegate = lazy;
         ForkContentStakingCompoundBinding inflate = ForkContentStakingCompoundBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -96,9 +122,9 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
             return;
         }
         AppCompatTextView appCompatTextView = forkContentStakingCompoundBinding.textApr;
-        appCompatTextView.setText(LocaleController.getInternalString(C3417R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
+        appCompatTextView.setText(LocaleController.getInternalString(C3419R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
         AppCompatTextView appCompatTextView2 = forkContentStakingCompoundBinding.textApy;
-        appCompatTextView2.setText(LocaleController.getInternalString(C3417R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
+        appCompatTextView2.setText(LocaleController.getInternalString(C3419R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
         AppCompatTextView appCompatTextView3 = forkContentStakingCompoundBinding.textThresholdValue;
         appCompatTextView3.setText(stakingAnnualPercentageData.getCompoundThreshold() + '+');
     }
@@ -162,7 +188,7 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     }
 
     private final void setupProgressListener() {
-        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo699io()).observeOn(getSchedulersProvider().mo698ui());
+        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo717io()).observeOn(getSchedulersProvider().mo716ui());
         final StakingPercentageView$setupProgressListener$1 stakingPercentageView$setupProgressListener$1 = new StakingPercentageView$setupProgressListener$1(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.custom.StakingPercentageView$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer

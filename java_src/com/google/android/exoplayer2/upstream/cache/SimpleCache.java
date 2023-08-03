@@ -61,12 +61,12 @@ public final class SimpleCache implements Cache {
                     try {
                         CacheFileMetadataIndex.delete(databaseProvider, loadUid);
                     } catch (DatabaseIOException unused) {
-                        Log.m796w(TAG, "Failed to delete file metadata: " + loadUid);
+                        Log.m814w(TAG, "Failed to delete file metadata: " + loadUid);
                     }
                     try {
                         CachedContentIndex.delete(databaseProvider, loadUid);
                     } catch (DatabaseIOException unused2) {
-                        Log.m796w(TAG, "Failed to delete file metadata: " + loadUid);
+                        Log.m814w(TAG, "Failed to delete file metadata: " + loadUid);
                     }
                 }
             }
@@ -146,7 +146,7 @@ public final class SimpleCache implements Cache {
             this.contentIndex.store();
             unlockFolder(this.cacheDir);
         } catch (IOException e) {
-            Log.m799e(TAG, "Storing index file failed", e);
+            Log.m817e(TAG, "Storing index file failed", e);
             unlockFolder(this.cacheDir);
         }
         this.released = true;
@@ -250,7 +250,7 @@ public final class SimpleCache implements Cache {
         if (!file.exists()) {
             createCacheDirectories(file);
         }
-        return SimpleCacheSpan.getCacheFile(file, cachedContent.f223id, j, System.currentTimeMillis());
+        return SimpleCacheSpan.getCacheFile(file, cachedContent.f225id, j, System.currentTimeMillis());
     }
 
     @Override // com.google.android.exoplayer2.upstream.cache.Cache
@@ -415,7 +415,7 @@ public final class SimpleCache implements Cache {
         File[] listFiles = this.cacheDir.listFiles();
         if (listFiles == null) {
             String str = "Failed to list cache directory files: " + this.cacheDir;
-            Log.m800e(TAG, str);
+            Log.m818e(TAG, str);
             this.initializationException = new Cache.CacheException(str);
             return;
         }
@@ -426,7 +426,7 @@ public final class SimpleCache implements Cache {
                 this.uid = createUid(this.cacheDir);
             } catch (IOException e2) {
                 String str2 = "Failed to create cache UID: " + this.cacheDir;
-                Log.m799e(TAG, str2, e2);
+                Log.m817e(TAG, str2, e2);
                 this.initializationException = new Cache.CacheException(str2, e2);
                 return;
             }
@@ -446,11 +446,11 @@ public final class SimpleCache implements Cache {
             try {
                 this.contentIndex.store();
             } catch (IOException e3) {
-                Log.m799e(TAG, "Storing index file failed", e3);
+                Log.m817e(TAG, "Storing index file failed", e3);
             }
         } catch (IOException e4) {
             String str3 = "Failed to initialize cache indices: " + this.cacheDir;
-            Log.m799e(TAG, str3, e4);
+            Log.m817e(TAG, str3, e4);
             this.initializationException = new Cache.CacheException(str3, e4);
         }
     }
@@ -496,7 +496,7 @@ public final class SimpleCache implements Cache {
                 try {
                     cacheFileMetadataIndex.set(name, j, currentTimeMillis);
                 } catch (IOException unused) {
-                    Log.m796w(TAG, "Failed to update index with new touch timestamp.");
+                    Log.m814w(TAG, "Failed to update index with new touch timestamp.");
                 }
             } else {
                 z = true;
@@ -541,7 +541,7 @@ public final class SimpleCache implements Cache {
             try {
                 this.fileIndex.remove(name);
             } catch (IOException unused) {
-                Log.m796w(TAG, "Failed to remove file index entry for: " + name);
+                Log.m814w(TAG, "Failed to remove file index entry for: " + name);
             }
         }
         this.contentIndex.maybeRemove(cachedContent.key);
@@ -603,7 +603,7 @@ public final class SimpleCache implements Cache {
                 try {
                     return parseUid(name);
                 } catch (NumberFormatException unused) {
-                    Log.m800e(TAG, "Malformed UID file: " + file);
+                    Log.m818e(TAG, "Malformed UID file: " + file);
                     file.delete();
                 }
             }
@@ -631,7 +631,7 @@ public final class SimpleCache implements Cache {
             return;
         }
         String str = "Failed to create cache directory: " + file;
-        Log.m800e(TAG, str);
+        Log.m818e(TAG, str);
         throw new Cache.CacheException(str);
     }
 

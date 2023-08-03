@@ -24,6 +24,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import androidx.core.graphics.ColorUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.integration.webp.decoder.WebpDrawable;
 import com.bumptech.glide.integration.webp.decoder.WebpDrawableTransformation;
@@ -35,7 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -148,18 +149,18 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             });
             stickerTabView.setExpanded(this.expanded);
             stickerTabView.updateExpandProgress(this.expandProgress);
-            stickerTabView.textView.setText(LocaleController.getString("FeaturedStickersShort", C3417R.string.FeaturedStickersShort));
+            stickerTabView.textView.setText(LocaleController.getString("FeaturedStickersShort", C3419R.string.FeaturedStickersShort));
             this.tabsContainer.addView(stickerTabView, i);
         }
         stickerTabView.isChatSticker = false;
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i));
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i));
         stickerTabView.setSelected(i == this.currentPosition);
         this.tabTypes.put("kiklikoTrendsTab", stickerTabView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addKiklikoTrendsTab$0(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public void addKiklikoTab(TagResponse tagResponse) {
@@ -183,15 +184,15 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             stickerTabView.textView.setText("#" + tagResponse.getTag());
             this.tabsContainer.addView(stickerTabView, i);
         }
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i));
-        stickerTabView.setTag(C3417R.C3420id.object_tag, tagResponse.getMeme().getFile().getWebp());
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i));
+        stickerTabView.setTag(C3419R.C3422id.object_tag, tagResponse.getMeme().getFile().getWebp());
         stickerTabView.setSelected(i == this.currentPosition);
         this.tabTypes.put(str, stickerTabView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addKiklikoTab$1(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public ScrollSlidingTabStripDelegate getDelegate() {
@@ -212,10 +213,10 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         this.tabBounds = new RectF();
         this.underlineColor = 436207616;
         this.indicatorDrawable = new GradientDrawable();
-        this.scrollOffset = AndroidUtilities.m54dp(33);
-        this.underlineHeight = AndroidUtilities.m54dp(2);
-        AndroidUtilities.m54dp(12);
-        AndroidUtilities.m54dp(24);
+        this.scrollOffset = AndroidUtilities.m72dp(33);
+        this.underlineHeight = AndroidUtilities.m72dp(2);
+        AndroidUtilities.m72dp(12);
+        AndroidUtilities.m72dp(24);
         this.lastScrollX = 0;
         this.currentPlayingImages = new SparseArray<>();
         this.currentPlayingImagesTmp = new SparseArray<>();
@@ -247,8 +248,8 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             }
         };
         this.expanded = false;
-        this.stickerTabExpandedWidth = AndroidUtilities.m55dp(EXPANDED_WIDTH);
-        this.stickerTabWidth = AndroidUtilities.m54dp(33);
+        this.stickerTabExpandedWidth = AndroidUtilities.m73dp(EXPANDED_WIDTH);
+        this.stickerTabWidth = AndroidUtilities.m72dp(33);
         this.scrollByOnNextMeasure = -1;
         this.selectorPaint = new Paint();
         this.showSelected = true;
@@ -283,7 +284,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                     r3 = -1
                     r4 = 1
                     if (r2 >= 0) goto L22
-                    int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r4)
+                    int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r4)
                     int r0 = java.lang.Math.max(r4, r0)
                     org.telegram.ui.Components.ScrollSlidingTabStrip r1 = org.telegram.p043ui.Components.ScrollSlidingTabStrip.this
                     boolean r1 = r1.scrollRight
@@ -298,7 +299,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                     int r0 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
                     if (r0 >= 0) goto L38
                     r0 = 2
-                    int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+                    int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
                     int r0 = java.lang.Math.max(r4, r0)
                     org.telegram.ui.Components.ScrollSlidingTabStrip r1 = org.telegram.p043ui.Components.ScrollSlidingTabStrip.this
                     boolean r1 = r1.scrollRight
@@ -306,7 +307,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                     goto L1f
                 L38:
                     r0 = 4
-                    int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+                    int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
                     int r0 = java.lang.Math.max(r4, r0)
                     org.telegram.ui.Components.ScrollSlidingTabStrip r1 = org.telegram.p043ui.Components.ScrollSlidingTabStrip.this
                     boolean r1 = r1.scrollRight
@@ -321,7 +322,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                     org.telegram.messenger.AndroidUtilities.runOnUIThread(r0)
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ScrollSlidingTabStrip.RunnableC51936.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ScrollSlidingTabStrip.RunnableC52346.run():void");
             }
         };
         this.resourcesProvider = resourcesProvider;
@@ -343,13 +344,13 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         };
         this.tabsContainer = linearLayout;
         linearLayout.setOrientation(0);
-        this.tabsContainer.setPadding(AndroidUtilities.m55dp(9.5f), 0, AndroidUtilities.m55dp(9.5f), 0);
+        this.tabsContainer.setPadding(AndroidUtilities.m73dp(9.5f), 0, AndroidUtilities.m73dp(9.5f), 0);
         addView(this.tabsContainer, new FrameLayout.LayoutParams(-1, -1, 16));
         Paint paint = new Paint();
         this.rectPaint = paint;
         paint.setAntiAlias(true);
         this.rectPaint.setStyle(Paint.Style.FILL);
-        this.defaultTabLayoutParams = new LinearLayout.LayoutParams(AndroidUtilities.m54dp(33), -1);
+        this.defaultTabLayoutParams = new LinearLayout.LayoutParams(AndroidUtilities.m72dp(33), -1);
         this.defaultExpandLayoutParams = new LinearLayout.LayoutParams(0, -1, 1.0f);
     }
 
@@ -366,7 +367,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             return;
         }
         this.type = type;
-        int i = C51947.$SwitchMap$org$telegram$ui$Components$ScrollSlidingTabStrip$Type[type.ordinal()];
+        int i = C52357.$SwitchMap$org$telegram$ui$Components$ScrollSlidingTabStrip$Type[type.ordinal()];
         if (i == 1) {
             this.indicatorDrawable.setCornerRadius(BitmapDescriptorFactory.HUE_RED);
         } else if (i != 2) {
@@ -379,7 +380,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ScrollSlidingTabStrip$7 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C51947 {
+    public static /* synthetic */ class C52357 {
         static final /* synthetic */ int[] $SwitchMap$org$telegram$ui$Components$ScrollSlidingTabStrip$Type;
 
         static {
@@ -407,14 +408,14 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         AutoTransition autoTransition = new AutoTransition();
         autoTransition.setDuration(250L);
         autoTransition.setOrdering(0);
-        autoTransition.addTransition(new C51903());
+        autoTransition.addTransition(new C52313());
         TransitionManager.beginDelayedTransition(this.tabsContainer, autoTransition);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ScrollSlidingTabStrip$3 */
     /* loaded from: classes6.dex */
-    public class C51903 extends Transition {
+    public class C52313 extends Transition {
         @Override // android.transition.Transition
         public void captureEndValues(TransitionValues transitionValues) {
         }
@@ -423,7 +424,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         public void captureStartValues(TransitionValues transitionValues) {
         }
 
-        C51903() {
+        C52313() {
         }
 
         @Override // android.transition.Transition
@@ -432,7 +433,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrollSlidingTabStrip$3$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ScrollSlidingTabStrip.C51903.this.lambda$createAnimator$0(valueAnimator);
+                    ScrollSlidingTabStrip.C52313.this.lambda$createAnimator$0(valueAnimator);
                 }
             });
             return ofFloat;
@@ -501,7 +502,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             });
             this.tabsContainer.addView(frameLayout, i2);
         }
-        frameLayout.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i2));
+        frameLayout.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i2));
         frameLayout.setSelected(i2 == this.currentPosition);
         this.tabTypes.put(str, frameLayout);
         return frameLayout;
@@ -509,7 +510,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addIconTab$2(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public StickerTabView addStickerIconTab(int i, Drawable drawable) {
@@ -534,7 +535,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             this.tabsContainer.addView(stickerTabView, i2);
         }
         stickerTabView.isChatSticker = false;
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i2));
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i2));
         stickerTabView.setSelected(i2 == this.currentPosition);
         this.tabTypes.put(str, stickerTabView);
         return stickerTabView;
@@ -542,11 +543,11 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addStickerIconTab$3(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public void addStickerTab(TLRPC$Chat tLRPC$Chat) {
-        String str = "chat" + tLRPC$Chat.f1515id;
+        String str = "chat" + tLRPC$Chat.f1518id;
         int i = this.tabCount;
         this.tabCount = i + 1;
         StickerTabView stickerTabView = (StickerTabView) this.prevTypes.get(str);
@@ -564,7 +565,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             this.tabsContainer.addView(stickerTabView, i);
             stickerTabView.setRoundImage();
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            avatarDrawable.setTextSize(AndroidUtilities.m54dp(14));
+            avatarDrawable.setTextSize(AndroidUtilities.m72dp(14));
             avatarDrawable.setInfo(tLRPC$Chat);
             BackupImageView backupImageView = stickerTabView.imageView;
             backupImageView.setLayerNum(this.imageReceiversPlayingNum);
@@ -575,14 +576,14 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             stickerTabView.textView.setText(tLRPC$Chat.title);
         }
         stickerTabView.isChatSticker = true;
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i));
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i));
         stickerTabView.setSelected(i == this.currentPosition);
         this.tabTypes.put(str, stickerTabView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addStickerTab$4(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public View addEmojiTab(int i, Emoji.EmojiDrawable emojiDrawable, TLRPC$Document tLRPC$Document) {
@@ -606,9 +607,9 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             this.tabsContainer.addView(stickerTabView, i2);
         }
         stickerTabView.isChatSticker = false;
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i2));
-        stickerTabView.setTag(C3417R.C3420id.parent_tag, emojiDrawable);
-        stickerTabView.setTag(C3417R.C3420id.object_tag, tLRPC$Document);
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i2));
+        stickerTabView.setTag(C3419R.C3422id.parent_tag, emojiDrawable);
+        stickerTabView.setTag(C3419R.C3422id.object_tag, tLRPC$Document);
         stickerTabView.setSelected(i2 == this.currentPosition);
         this.tabTypes.put(str, stickerTabView);
         return stickerTabView;
@@ -616,13 +617,13 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addEmojiTab$5(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public View addStickerTab(TLObject tLObject, TLRPC$Document tLRPC$Document, TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet) {
         StringBuilder sb = new StringBuilder();
         sb.append("set");
-        sb.append(tLRPC$TL_messages_stickerSet == null ? tLRPC$Document.f1523id : tLRPC$TL_messages_stickerSet.set.f1548id);
+        sb.append(tLRPC$TL_messages_stickerSet == null ? tLRPC$Document.f1526id : tLRPC$TL_messages_stickerSet.set.f1552id);
         String sb2 = sb.toString();
         int i = this.tabCount;
         this.tabCount = i + 1;
@@ -645,9 +646,9 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         stickerTabView.imageView.setLayerNum(this.imageReceiversPlayingNum);
         stickerTabView.isChatSticker = false;
         stickerTabView.setTag(tLObject);
-        stickerTabView.setTag(C3417R.C3420id.index_tag, Integer.valueOf(i));
-        stickerTabView.setTag(C3417R.C3420id.parent_tag, tLRPC$TL_messages_stickerSet);
-        stickerTabView.setTag(C3417R.C3420id.object_tag, tLRPC$Document);
+        stickerTabView.setTag(C3419R.C3422id.index_tag, Integer.valueOf(i));
+        stickerTabView.setTag(C3419R.C3422id.parent_tag, tLRPC$TL_messages_stickerSet);
+        stickerTabView.setTag(C3419R.C3422id.object_tag, tLRPC$Document);
         stickerTabView.setSelected(i == this.currentPosition);
         this.tabTypes.put(sb2, stickerTabView);
         return stickerTabView;
@@ -655,7 +656,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addStickerTab$6(View view) {
-        this.delegate.onPageSelected(((Integer) view.getTag(C3417R.C3420id.index_tag)).intValue());
+        this.delegate.onPageSelected(((Integer) view.getTag(C3419R.C3422id.index_tag)).intValue());
     }
 
     public void expandStickers(final float f, final boolean z) {
@@ -717,11 +718,11 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                         if (childAt instanceof StickerTabView) {
                             ((StickerTabView) childAt).setExpanded(false);
                         }
-                        childAt.getLayoutParams().width = AndroidUtilities.m54dp(33);
+                        childAt.getLayoutParams().width = AndroidUtilities.m72dp(33);
                     }
                     ScrollSlidingTabStrip scrollSlidingTabStrip3 = ScrollSlidingTabStrip.this;
                     scrollSlidingTabStrip3.animateToExpanded = false;
-                    scrollSlidingTabStrip3.getLayoutParams().height = AndroidUtilities.m54dp(36);
+                    scrollSlidingTabStrip3.getLayoutParams().height = AndroidUtilities.m72dp(36);
                     ScrollSlidingTabStrip.this.tabsContainer.requestLayout();
                 }
             });
@@ -733,10 +734,10 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                     if (childAt instanceof StickerTabView) {
                         ((StickerTabView) childAt).setExpanded(true);
                     }
-                    childAt.getLayoutParams().width = AndroidUtilities.m55dp(EXPANDED_WIDTH);
+                    childAt.getLayoutParams().width = AndroidUtilities.m73dp(EXPANDED_WIDTH);
                 }
                 this.tabsContainer.requestLayout();
-                getLayoutParams().height = AndroidUtilities.m54dp(86);
+                getLayoutParams().height = AndroidUtilities.m72dp(86);
             }
             if (z) {
                 float childCount = this.stickerTabExpandedWidth * this.tabsContainer.getChildCount() * ((getScrollX() + f) / (this.stickerTabWidth * this.tabsContainer.getChildCount()));
@@ -771,7 +772,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
     }
 
     public float getExpandedOffset() {
-        return this.animateToExpanded ? AndroidUtilities.m54dp(50) * this.expandProgress : BitmapDescriptorFactory.HUE_RED;
+        return this.animateToExpanded ? AndroidUtilities.m72dp(50) * this.expandProgress : BitmapDescriptorFactory.HUE_RED;
     }
 
     public void updateTabStyles() {
@@ -818,12 +819,12 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
     }
 
     public void setImages() {
-        float m54dp;
+        float m72dp;
         ImageLocation forSticker;
         ArrayList<TLRPC$PhotoSize> arrayList;
         float f = this.expandProgress;
-        int scrollX = (int) (((getScrollX() - (this.animateToExpanded ? this.expandOffset * (1.0f - f) : BitmapDescriptorFactory.HUE_RED)) - this.tabsContainer.getPaddingLeft()) / (AndroidUtilities.m54dp(33) + (AndroidUtilities.m55dp(EXPANDED_WIDTH - 33.0f) * f)));
-        int min = Math.min(this.tabsContainer.getChildCount(), ((int) Math.ceil(getMeasuredWidth() / m54dp)) + scrollX + 1);
+        int scrollX = (int) (((getScrollX() - (this.animateToExpanded ? this.expandOffset * (1.0f - f) : BitmapDescriptorFactory.HUE_RED)) - this.tabsContainer.getPaddingLeft()) / (AndroidUtilities.m72dp(33) + (AndroidUtilities.m73dp(EXPANDED_WIDTH - 33.0f) * f)));
+        int min = Math.min(this.tabsContainer.getChildCount(), ((int) Math.ceil(getMeasuredWidth() / m72dp)) + scrollX + 1);
         if (this.animateToExpanded) {
             scrollX -= 2;
             min += 2;
@@ -848,11 +849,11 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                 StickerTabView stickerTabView = (StickerTabView) childAt;
                 int i2 = stickerTabView.type;
                 if (i2 == 100) {
-                    Glide.with(getContext()).load((String) stickerTabView.getTag(C3417R.C3420id.object_tag)).diskCacheStrategy(DiskCacheStrategy.ALL).optionalTransform(WebpDrawable.class, new WebpDrawableTransformation(new CenterCrop())).into(stickerTabView.iconView);
+                    Glide.with(getContext()).load((String) stickerTabView.getTag(C3419R.C3422id.object_tag)).diskCacheStrategy(DiskCacheStrategy.ALL).optionalTransform(WebpDrawable.class, new WebpDrawableTransformation(new CenterCrop())).into(stickerTabView.iconView);
                 } else {
                     if (i2 == 2) {
-                        Object tag = stickerTabView.getTag(C3417R.C3420id.parent_tag);
-                        Object tag2 = stickerTabView.getTag(C3417R.C3420id.object_tag);
+                        Object tag = stickerTabView.getTag(C3419R.C3422id.parent_tag);
+                        Object tag2 = stickerTabView.getTag(C3419R.C3422id.object_tag);
                         Drawable drawable = tag instanceof Drawable ? (Drawable) tag : null;
                         if (tag2 instanceof TLRPC$Document) {
                             stickerTabView.imageView.setImage(ImageLocation.getForDocument((TLRPC$Document) tag2), !LiteMode.isEnabled(1) ? "36_36_firstframe" : "36_36_nolimit", (Drawable) null, (Object) null);
@@ -861,8 +862,8 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                         }
                     } else {
                         Object tag3 = childAt.getTag();
-                        Object tag4 = childAt.getTag(C3417R.C3420id.parent_tag);
-                        TLRPC$Document tLRPC$Document = (TLRPC$Document) childAt.getTag(C3417R.C3420id.object_tag);
+                        Object tag4 = childAt.getTag(C3419R.C3422id.parent_tag);
+                        TLRPC$Document tLRPC$Document = (TLRPC$Document) childAt.getTag(C3419R.C3422id.object_tag);
                         if (tag3 instanceof TLRPC$Document) {
                             if (!stickerTabView.inited) {
                                 stickerTabView.svgThumb = DocumentObject.getSvgThumb((TLRPC$Document) tag3, Theme.key_emptyListPlaceholder, 0.2f);
@@ -917,7 +918,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getTabSize() {
-        return AndroidUtilities.m55dp(this.animateToExpanded ? EXPANDED_WIDTH : 33.0f);
+        return AndroidUtilities.m73dp(this.animateToExpanded ? EXPANDED_WIDTH : 33.0f);
     }
 
     @Override // android.view.View
@@ -951,7 +952,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
         }
         float height = getHeight();
         if (this.animateToExpanded) {
-            height = getHeight() - (AndroidUtilities.m54dp(50) * (1.0f - this.expandProgress));
+            height = getHeight() - (AndroidUtilities.m72dp(50) * (1.0f - this.expandProgress));
         }
         float f4 = height;
         float f5 = this.showSelectedAlpha.set(this.showSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED);
@@ -968,18 +969,18 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
             float f7 = f4 / 2.0f;
             if (childAt != null && view != null) {
                 float f8 = f6 - floor;
-                float lerp = AndroidUtilities.lerp(childAt.getLeft() + childAt.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m54dp(33), AndroidUtilities.m55dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f), view.getLeft() + view.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m54dp(33), AndroidUtilities.m55dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f), f8);
+                float lerp = AndroidUtilities.lerp(childAt.getLeft() + childAt.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m72dp(33), AndroidUtilities.m73dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f), view.getLeft() + view.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m72dp(33), AndroidUtilities.m73dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f), f8);
                 textWidth = AndroidUtilities.lerp(childAt instanceof StickerTabView ? ((StickerTabView) childAt).getTextWidth() : BitmapDescriptorFactory.HUE_RED, view instanceof StickerTabView ? ((StickerTabView) view).getTextWidth() : BitmapDescriptorFactory.HUE_RED, f8);
                 f = lerp;
             } else if (childAt != null) {
-                f = childAt.getLeft() + childAt.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m54dp(33), AndroidUtilities.m55dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f);
+                f = childAt.getLeft() + childAt.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m72dp(33), AndroidUtilities.m73dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f);
                 if (childAt instanceof StickerTabView) {
                     textWidth = ((StickerTabView) childAt).getTextWidth();
                 }
                 textWidth = BitmapDescriptorFactory.HUE_RED;
             } else {
                 if (view != null) {
-                    f = view.getLeft() + view.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m54dp(33), AndroidUtilities.m55dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f);
+                    f = view.getLeft() + view.getTranslationX() + (AndroidUtilities.lerp(AndroidUtilities.m72dp(33), AndroidUtilities.m73dp(EXPANDED_WIDTH), this.expandProgress) / 2.0f);
                     if (view instanceof StickerTabView) {
                         textWidth = ((StickerTabView) view).getTextWidth();
                     }
@@ -988,16 +989,16 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                 }
                 textWidth = BitmapDescriptorFactory.HUE_RED;
             }
-            float m54dp = AndroidUtilities.m54dp(30);
-            float abs = (1.25f - ((Math.abs(0.5f - this.currentPositionAnimated.getTransitionProgressInterpolated()) * 0.25f) * 2.0f)) * m54dp;
+            float m72dp = AndroidUtilities.m72dp(30);
+            float abs = (1.25f - ((Math.abs(0.5f - this.currentPositionAnimated.getTransitionProgressInterpolated()) * 0.25f) * 2.0f)) * m72dp;
             float interpolation = CubicBezierInterpolator.EASE_IN.getInterpolation(this.expandProgress);
-            float lerp2 = f7 + AndroidUtilities.lerp(0, AndroidUtilities.m54dp(26), interpolation);
-            float lerp3 = AndroidUtilities.lerp(abs, textWidth + AndroidUtilities.m54dp(10), interpolation) / 2.0f;
-            float abs2 = ((m54dp * (((Math.abs(0.5f - this.currentPositionAnimated.getTransitionProgressInterpolated()) * 0.1f) * 2.0f) + 0.9f)) * AndroidUtilities.lerp(1.0f, 0.55f, interpolation)) / 2.0f;
+            float lerp2 = f7 + AndroidUtilities.lerp(0, AndroidUtilities.m72dp(26), interpolation);
+            float lerp3 = AndroidUtilities.lerp(abs, textWidth + AndroidUtilities.m72dp(10), interpolation) / 2.0f;
+            float abs2 = ((m72dp * (((Math.abs(0.5f - this.currentPositionAnimated.getTransitionProgressInterpolated()) * 0.1f) * 2.0f) + 0.9f)) * AndroidUtilities.lerp(1.0f, 0.55f, interpolation)) / 2.0f;
             this.tabBounds.set(f - lerp3, lerp2 - abs2, f + lerp3, lerp2 + abs2);
-            this.selectorPaint.setColor(788529151 & getThemedColor(Theme.key_chat_emojiPanelIcon));
+            this.selectorPaint.setColor(ColorUtils.setAlphaComponent(getThemedColor(Theme.key_chat_emojiPanelIcon), 46));
             this.selectorPaint.setAlpha((int) (paint.getAlpha() * f5));
-            canvas.drawRoundRect(this.tabBounds, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), this.selectorPaint);
+            canvas.drawRoundRect(this.tabBounds, AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), this.selectorPaint);
         }
         super.dispatchDraw(canvas);
         if (isInEditMode() || this.tabCount == 0 || this.underlineHeight <= 0) {
@@ -1173,7 +1174,7 @@ public class ScrollSlidingTabStrip extends HorizontalScrollView {
                 if (i3 != i4) {
                     stickerSetPositionChanged(i3, i4);
                     for (int i5 = 0; i5 < this.tabsContainer.getChildCount(); i5++) {
-                        this.tabsContainer.getChildAt(i5).setTag(C3417R.C3420id.index_tag, Integer.valueOf(i5));
+                        this.tabsContainer.getChildAt(i5).setTag(C3419R.C3422id.index_tag, Integer.valueOf(i5));
                     }
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);

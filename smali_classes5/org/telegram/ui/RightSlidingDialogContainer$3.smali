@@ -50,8 +50,10 @@
     .line 419
     iput-object v0, p1, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimator:Landroid/animation/ValueAnimator;
 
+    const/4 v0, 0x1
+
     .line 420
-    invoke-virtual {p1}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished()V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/RightSlidingDialogContainer;->openAnimationFinished(Z)V
 
     return-void
 .end method

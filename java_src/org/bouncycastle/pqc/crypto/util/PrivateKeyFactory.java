@@ -42,7 +42,7 @@ public class PrivateKeyFactory {
 
     public static AsymmetricKeyParameter createKey(PrivateKeyInfo privateKeyInfo) throws IOException {
         ASN1ObjectIdentifier algorithm = privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm();
-        if (algorithm.m70on(BCObjectIdentifiers.qTESLA)) {
+        if (algorithm.m88on(BCObjectIdentifiers.qTESLA)) {
             return new QTESLAPrivateKeyParameters(Utils.qTeslaLookupSecurityCategory(privateKeyInfo.getPrivateKeyAlgorithm()), ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets());
         } else if (algorithm.equals((ASN1Primitive) BCObjectIdentifiers.sphincs256)) {
             return new SPHINCSPrivateKeyParameters(ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets(), Utils.sphincs256LookupTreeAlgName(SPHINCS256KeyParams.getInstance(privateKeyInfo.getPrivateKeyAlgorithm().getParameters())));

@@ -29,7 +29,8 @@ public abstract class zzhu<T> {
     private final boolean zzm;
     private static final Object zzd = new Object();
     private static final AtomicReference<Collection<zzhu<?>>> zzg = new AtomicReference<>();
-    private static final zzhw zzh = new zzhw(zzhl.zza, null);
+    private static final zzhw zzh = new zzhw(new Object() { // from class: com.google.android.gms.internal.measurement.zzhl
+    }, null);
     private static final AtomicInteger zzi = new AtomicInteger();
 
     /* JADX INFO: Access modifiers changed from: package-private */

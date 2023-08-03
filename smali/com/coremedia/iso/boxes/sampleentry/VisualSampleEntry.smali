@@ -398,6 +398,15 @@
     return v0
 .end method
 
+.method public setCompressorname(Ljava/lang/String;)V
+    .locals 0
+
+    .line 139
+    iput-object p1, p0, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->compressorname:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public setDepth(I)V
     .locals 0
 

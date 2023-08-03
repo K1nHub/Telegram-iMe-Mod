@@ -223,7 +223,7 @@
 
     sget-object v1, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
 
-    const-string v2, "proxy selector is null, so continuing without proxy lookup"
+    const-string/jumbo v2, "proxy selector is null, so continuing without proxy lookup"
 
     invoke-virtual {p1, v1, v2}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 

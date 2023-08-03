@@ -65,6 +65,7 @@ public class RxRoom {
 
     public static <T> Single<T> createSingle(final Callable<T> callable) {
         return Single.create(new SingleOnSubscribe<T>() { // from class: androidx.room.RxRoom.5
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // io.reactivex.SingleOnSubscribe
             public void subscribe(SingleEmitter<T> singleEmitter) throws Exception {
                 try {

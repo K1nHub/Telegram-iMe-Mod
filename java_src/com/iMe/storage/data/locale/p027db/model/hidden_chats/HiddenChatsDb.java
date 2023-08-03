@@ -20,7 +20,7 @@ public final class HiddenChatsDb {
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.dialogId);
+        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.dialogId);
     }
 
     public String toString() {

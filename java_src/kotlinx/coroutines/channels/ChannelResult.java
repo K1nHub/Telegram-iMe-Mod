@@ -18,22 +18,22 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ChannelResult m1615boximpl(Object obj) {
+    public static final /* synthetic */ ChannelResult m1634boximpl(Object obj) {
         return new ChannelResult(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1616constructorimpl(Object obj) {
+    public static <T> Object m1635constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1617equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m1623unboximpl());
+    public static boolean m1636equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m1642unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1620hashCodeimpl(Object obj) {
+    public static int m1639hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -41,15 +41,15 @@ public final class ChannelResult<T> {
     }
 
     public boolean equals(Object obj) {
-        return m1617equalsimpl(this.holder, obj);
+        return m1636equalsimpl(this.holder, obj);
     }
 
     public int hashCode() {
-        return m1620hashCodeimpl(this.holder);
+        return m1639hashCodeimpl(this.holder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m1623unboximpl() {
+    public final /* synthetic */ Object m1642unboximpl() {
         return this.holder;
     }
 
@@ -58,13 +58,13 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: isClosed-impl  reason: not valid java name */
-    public static final boolean m1621isClosedimpl(Object obj) {
+    public static final boolean m1640isClosedimpl(Object obj) {
         return obj instanceof Closed;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: getOrThrow-impl  reason: not valid java name */
-    public static final T m1619getOrThrowimpl(Object obj) {
+    public static final T m1638getOrThrowimpl(Object obj) {
         Throwable th;
         if (obj instanceof Failed) {
             if (!(obj instanceof Closed) || (th = ((Closed) obj).cause) == null) {
@@ -76,7 +76,7 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m1618exceptionOrNullimpl(Object obj) {
+    public static final Throwable m1637exceptionOrNullimpl(Object obj) {
         Closed closed = obj instanceof Closed ? (Closed) obj : null;
         if (closed != null) {
             return closed.cause;
@@ -122,27 +122,27 @@ public final class ChannelResult<T> {
         }
 
         /* renamed from: success-JP2dKIU  reason: not valid java name */
-        public final <E> Object m1626successJP2dKIU(E e) {
-            return ChannelResult.m1616constructorimpl(e);
+        public final <E> Object m1645successJP2dKIU(E e) {
+            return ChannelResult.m1635constructorimpl(e);
         }
 
         /* renamed from: failure-PtdJZtk  reason: not valid java name */
-        public final <E> Object m1625failurePtdJZtk() {
-            return ChannelResult.m1616constructorimpl(ChannelResult.failed);
+        public final <E> Object m1644failurePtdJZtk() {
+            return ChannelResult.m1635constructorimpl(ChannelResult.failed);
         }
 
         /* renamed from: closed-JP2dKIU  reason: not valid java name */
-        public final <E> Object m1624closedJP2dKIU(Throwable th) {
-            return ChannelResult.m1616constructorimpl(new Closed(th));
+        public final <E> Object m1643closedJP2dKIU(Throwable th) {
+            return ChannelResult.m1635constructorimpl(new Closed(th));
         }
     }
 
     public String toString() {
-        return m1622toStringimpl(this.holder);
+        return m1641toStringimpl(this.holder);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1622toStringimpl(Object obj) {
+    public static String m1641toStringimpl(Object obj) {
         if (obj instanceof Closed) {
             return ((Closed) obj).toString();
         }

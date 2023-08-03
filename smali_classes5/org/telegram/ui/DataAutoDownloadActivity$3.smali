@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/DataAutoDownloadActivity;Landroid/content/Context;ILorg/telegram/ui/Cells/TextInfoPrivacyCell;[Lorg/telegram/ui/Cells/TextCheckCell;[Landroid/animation/AnimatorSet;)V
     .locals 0
 
-    .line 373
+    .line 379
     iput-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
 
     iput p3, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$position:I
@@ -51,7 +51,7 @@
 .method protected didChangedSizeValue(I)V
     .locals 6
 
-    .line 376
+    .line 382
     iget v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$position:I
 
     iget-object v1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->this$0:Lorg/telegram/ui/DataAutoDownloadActivity;
@@ -62,7 +62,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 377
+    .line 383
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$infoCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     sget v1, Lorg/telegram/messenger/R$string;->AutoDownloadPreloadVideoInfo:I
@@ -98,7 +98,7 @@
     :cond_0
     move v2, v5
 
-    .line 379
+    .line 385
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$checkCell:[Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -110,38 +110,38 @@
 
     if-eq v2, p1, :cond_2
 
-    .line 380
+    .line 386
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 381
+    .line 387
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$checkCell:[Lorg/telegram/ui/Cells/TextCheckCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v2, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
 
-    .line 383
+    .line 389
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     aget-object v1, v0, v5
 
     if-eqz v1, :cond_1
 
-    .line 384
+    .line 390
     aget-object v0, v0, v5
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 385
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     const/4 v1, 0x0
 
     aput-object v1, v0, v5
 
-    .line 387
+    .line 393
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
@@ -151,14 +151,14 @@
 
     aput-object v1, v0, v5
 
-    .line 388
+    .line 394
     iget-object v0, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 389
+    .line 395
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     aget-object p1, p1, v5
@@ -169,7 +169,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 397
+    .line 403
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     aget-object p1, p1, v5
@@ -178,7 +178,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 398
+    .line 404
     iget-object p1, p0, Lorg/telegram/ui/DataAutoDownloadActivity$3;->val$animatorSet:[Landroid/animation/AnimatorSet;
 
     aget-object p1, p1, v5

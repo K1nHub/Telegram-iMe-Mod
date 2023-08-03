@@ -8,7 +8,7 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:I
 
 .field public final synthetic f$10:Ljava/lang/String;
 
@@ -24,29 +24,29 @@
 
 .field public final synthetic f$16:Ljava/lang/String;
 
-.field public final synthetic f$17:Z
+.field public final synthetic f$17:Ljava/lang/String;
 
-.field public final synthetic f$18:Ljava/lang/Integer;
+.field public final synthetic f$18:Ljava/lang/String;
 
-.field public final synthetic f$19:Ljava/lang/Long;
+.field public final synthetic f$19:Ljava/lang/String;
 
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$2:Ljava/lang/Runnable;
 
-.field public final synthetic f$20:Ljava/lang/Integer;
+.field public final synthetic f$20:Z
 
 .field public final synthetic f$21:Ljava/lang/Integer;
 
-.field public final synthetic f$22:Ljava/util/HashMap;
+.field public final synthetic f$22:Ljava/lang/Long;
 
-.field public final synthetic f$23:Ljava/lang/String;
+.field public final synthetic f$23:Ljava/lang/Integer;
 
-.field public final synthetic f$24:Ljava/lang/String;
+.field public final synthetic f$24:Ljava/lang/Integer;
 
-.field public final synthetic f$25:Ljava/lang/String;
+.field public final synthetic f$25:Ljava/util/HashMap;
 
 .field public final synthetic f$26:Ljava/lang/String;
 
-.field public final synthetic f$27:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+.field public final synthetic f$27:Ljava/lang/String;
 
 .field public final synthetic f$28:Ljava/lang/String;
 
@@ -54,41 +54,43 @@
 
 .field public final synthetic f$3:Ljava/lang/String;
 
-.field public final synthetic f$30:I
+.field public final synthetic f$30:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-.field public final synthetic f$31:I
+.field public final synthetic f$31:Ljava/lang/String;
 
 .field public final synthetic f$32:Ljava/lang/String;
 
-.field public final synthetic f$33:Ljava/lang/String;
+.field public final synthetic f$33:I
 
-.field public final synthetic f$34:Ljava/lang/String;
+.field public final synthetic f$34:I
 
-.field public final synthetic f$35:Lorg/telegram/messenger/browser/Browser$Progress;
+.field public final synthetic f$35:Ljava/lang/String;
 
-.field public final synthetic f$36:Z
+.field public final synthetic f$36:Ljava/lang/String;
 
-.field public final synthetic f$37:Ljava/lang/Runnable;
+.field public final synthetic f$37:Ljava/lang/String;
 
-.field public final synthetic f$38:Ljava/lang/String;
+.field public final synthetic f$38:Z
 
-.field public final synthetic f$39:[I
+.field public final synthetic f$39:Ljava/lang/String;
 
 .field public final synthetic f$4:Ljava/lang/String;
 
-.field public final synthetic f$5:I
+.field public final synthetic f$40:[I
+
+.field public final synthetic f$5:Ljava/lang/String;
 
 .field public final synthetic f$6:Ljava/lang/String;
 
-.field public final synthetic f$7:Ljava/lang/String;
+.field public final synthetic f$7:I
 
-.field public final synthetic f$8:Ljava/lang/String;
+.field public final synthetic f$8:Lorg/telegram/messenger/browser/Browser$Progress;
 
 .field public final synthetic f$9:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;ZLjava/lang/Runnable;Ljava/lang/String;[I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Runnable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILorg/telegram/messenger/browser/Browser$Progress;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;[I)V
     .locals 2
 
     move-object v0, p0
@@ -99,13 +101,13 @@
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-object v1, p2
+    move v1, p2
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$1:Ljava/lang/String;
+    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$1:I
 
     move-object v1, p3
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/Runnable;
 
     move-object v1, p4
 
@@ -115,21 +117,21 @@
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$4:Ljava/lang/String;
 
-    move v1, p6
+    move-object v1, p6
 
-    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$5:I
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$5:Ljava/lang/String;
 
     move-object v1, p7
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$6:Ljava/lang/String;
 
-    move-object v1, p8
+    move v1, p8
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$7:Ljava/lang/String;
+    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$7:I
 
     move-object v1, p9
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$8:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$8:Lorg/telegram/messenger/browser/Browser$Progress;
 
     move-object v1, p10
 
@@ -163,21 +165,21 @@
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$16:Ljava/lang/String;
 
-    move/from16 v1, p18
+    move-object/from16 v1, p18
 
-    iput-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$17:Z
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$17:Ljava/lang/String;
 
     move-object/from16 v1, p19
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$18:Ljava/lang/Integer;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$18:Ljava/lang/String;
 
     move-object/from16 v1, p20
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$19:Ljava/lang/Long;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$19:Ljava/lang/String;
 
-    move-object/from16 v1, p21
+    move/from16 v1, p21
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$20:Ljava/lang/Integer;
+    iput-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$20:Z
 
     move-object/from16 v1, p22
 
@@ -185,19 +187,19 @@
 
     move-object/from16 v1, p23
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$22:Ljava/util/HashMap;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$22:Ljava/lang/Long;
 
     move-object/from16 v1, p24
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$23:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$23:Ljava/lang/Integer;
 
     move-object/from16 v1, p25
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$24:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$24:Ljava/lang/Integer;
 
     move-object/from16 v1, p26
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$25:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$25:Ljava/util/HashMap;
 
     move-object/from16 v1, p27
 
@@ -205,7 +207,7 @@
 
     move-object/from16 v1, p28
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$27:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$27:Ljava/lang/String;
 
     move-object/from16 v1, p29
 
@@ -215,45 +217,49 @@
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$29:Ljava/lang/String;
 
-    move/from16 v1, p31
+    move-object/from16 v1, p31
 
-    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$30:I
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$30:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    move/from16 v1, p32
+    move-object/from16 v1, p32
 
-    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$31:I
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$31:Ljava/lang/String;
 
     move-object/from16 v1, p33
 
     iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$32:Ljava/lang/String;
 
-    move-object/from16 v1, p34
+    move/from16 v1, p34
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$33:Ljava/lang/String;
+    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$33:I
 
-    move-object/from16 v1, p35
+    move/from16 v1, p35
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$34:Ljava/lang/String;
+    iput v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$34:I
 
     move-object/from16 v1, p36
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$35:Lorg/telegram/messenger/browser/Browser$Progress;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$35:Ljava/lang/String;
 
-    move/from16 v1, p37
+    move-object/from16 v1, p37
 
-    iput-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$36:Z
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$36:Ljava/lang/String;
 
     move-object/from16 v1, p38
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$37:Ljava/lang/Runnable;
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$37:Ljava/lang/String;
 
-    move-object/from16 v1, p39
+    move/from16 v1, p39
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$38:Ljava/lang/String;
+    iput-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$38:Z
 
     move-object/from16 v1, p40
 
-    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$39:[I
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$39:Ljava/lang/String;
+
+    move-object/from16 v1, p41
+
+    iput-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$40:[I
 
     return-void
 .end method
@@ -261,27 +267,27 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .locals 43
+    .locals 44
 
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$1:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$1:I
 
-    iget-object v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/String;
+    iget-object v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/Runnable;
 
     iget-object v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$3:Ljava/lang/String;
 
     iget-object v5, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$4:Ljava/lang/String;
 
-    iget v6, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$5:I
+    iget-object v6, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$5:Ljava/lang/String;
 
     iget-object v7, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$6:Ljava/lang/String;
 
-    iget-object v8, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$7:Ljava/lang/String;
+    iget v8, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$7:I
 
-    iget-object v9, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$8:Ljava/lang/String;
+    iget-object v9, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$8:Lorg/telegram/messenger/browser/Browser$Progress;
 
     iget-object v10, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$9:Ljava/lang/String;
 
@@ -295,7 +301,7 @@
 
     iget-object v15, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$14:Ljava/lang/String;
 
-    move-object/from16 v42, v1
+    move-object/from16 v43, v1
 
     iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$15:Ljava/lang/String;
 
@@ -305,39 +311,39 @@
 
     move-object/from16 v17, v1
 
-    iget-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$17:Z
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$17:Ljava/lang/String;
 
-    move/from16 v18, v1
+    move-object/from16 v18, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$18:Ljava/lang/Integer;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$18:Ljava/lang/String;
 
     move-object/from16 v19, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$19:Ljava/lang/Long;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$19:Ljava/lang/String;
 
     move-object/from16 v20, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$20:Ljava/lang/Integer;
+    iget-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$20:Z
 
-    move-object/from16 v21, v1
+    move/from16 v21, v1
 
     iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$21:Ljava/lang/Integer;
 
     move-object/from16 v22, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$22:Ljava/util/HashMap;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$22:Ljava/lang/Long;
 
     move-object/from16 v23, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$23:Ljava/lang/String;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$23:Ljava/lang/Integer;
 
     move-object/from16 v24, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$24:Ljava/lang/String;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$24:Ljava/lang/Integer;
 
     move-object/from16 v25, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$25:Ljava/lang/String;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$25:Ljava/util/HashMap;
 
     move-object/from16 v26, v1
 
@@ -345,7 +351,7 @@
 
     move-object/from16 v27, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$27:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$27:Ljava/lang/String;
 
     move-object/from16 v28, v1
 
@@ -357,53 +363,57 @@
 
     move-object/from16 v30, v1
 
-    iget v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$30:I
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$30:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    move/from16 v31, v1
+    move-object/from16 v31, v1
 
-    iget v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$31:I
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$31:Ljava/lang/String;
 
-    move/from16 v32, v1
+    move-object/from16 v32, v1
 
     iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$32:Ljava/lang/String;
 
     move-object/from16 v33, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$33:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$33:I
 
-    move-object/from16 v34, v1
+    move/from16 v34, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$34:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$34:I
 
-    move-object/from16 v35, v1
+    move/from16 v35, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$35:Lorg/telegram/messenger/browser/Browser$Progress;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$35:Ljava/lang/String;
 
     move-object/from16 v36, v1
 
-    iget-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$36:Z
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$36:Ljava/lang/String;
 
-    move/from16 v37, v1
+    move-object/from16 v37, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$37:Ljava/lang/Runnable;
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$37:Ljava/lang/String;
 
     move-object/from16 v38, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$38:Ljava/lang/String;
+    iget-boolean v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$38:Z
 
-    move-object/from16 v39, v1
+    move/from16 v39, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$39:[I
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$39:Ljava/lang/String;
 
     move-object/from16 v40, v1
 
-    move-object/from16 v41, p1
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda27;->f$40:[I
 
-    check-cast v41, Ljava/lang/Long;
+    move-object/from16 v41, v1
 
-    move-object/from16 v1, v42
+    move-object/from16 v42, p1
 
-    invoke-static/range {v1 .. v41}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$nPqif4p8-QSPUvjB1xptAGx44wY(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;ZLjava/lang/Runnable;Ljava/lang/String;[ILjava/lang/Long;)V
+    check-cast v42, Ljava/lang/Long;
+
+    move-object/from16 v1, v43
+
+    invoke-static/range {v1 .. v42}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$BHGWJeHoCpvAcmoiUSAsNeH8LJ4(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Runnable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILorg/telegram/messenger/browser/Browser$Progress;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_wallPaper;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;[ILjava/lang/Long;)V
 
     return-void
 .end method

@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9243
+    .line 9452
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 
     goto :goto_0
 
-    .line 9259
+    .line 9468
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
@@ -50,7 +50,7 @@
 
     goto :goto_0
 
-    .line 9256
+    .line 9465
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeSuccess;
 
@@ -63,7 +63,7 @@
 
     goto :goto_1
 
-    .line 9263
+    .line 9472
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -93,7 +93,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 9266
+    .line 9475
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

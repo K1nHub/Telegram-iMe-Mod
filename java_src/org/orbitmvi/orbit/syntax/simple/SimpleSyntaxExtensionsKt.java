@@ -16,7 +16,7 @@ public final class SimpleSyntaxExtensionsKt {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static final <S, SE> java.lang.Object reduce(org.orbitmvi.orbit.syntax.simple.SimpleSyntax<S, SE> r4, kotlin.jvm.functions.Function1<? super org.orbitmvi.orbit.syntax.simple.SimpleContext<S>, ? extends S> r5, kotlin.coroutines.Continuation<? super kotlin.Unit> r6) {
+    public static final <S, SE> java.lang.Object reduce(org.orbitmvi.orbit.syntax.simple.SimpleSyntax<S, SE> r4, final kotlin.jvm.functions.Function1<? super org.orbitmvi.orbit.syntax.simple.SimpleContext<S>, ? extends S> r5, kotlin.coroutines.Continuation<? super kotlin.Unit> r6) {
         /*
             boolean r0 = r6 instanceof org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$reduce$1
             if (r0 == 0) goto L13
@@ -53,7 +53,7 @@ public final class SimpleSyntaxExtensionsKt {
             org.orbitmvi.orbit.syntax.ContainerContext r4 = r4.getContainerContext()
             kotlin.jvm.functions.Function2 r6 = r4.getReduce()
             org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$reduce$2$1 r2 = new org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$reduce$2$1
-            r2.<init>(r5)
+            r2.<init>()
             r0.L$0 = r4
             r0.label = r3
             java.lang.Object r4 = r6.invoke(r2, r0)

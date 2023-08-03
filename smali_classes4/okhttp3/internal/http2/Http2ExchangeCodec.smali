@@ -70,7 +70,7 @@
 
     const-string v4, "keep-alive"
 
-    const-string v5, "proxy-connection"
+    const-string/jumbo v5, "proxy-connection"
 
     const-string/jumbo v6, "te"
 
@@ -106,7 +106,7 @@
 
     const-string v3, "keep-alive"
 
-    const-string v4, "proxy-connection"
+    const-string/jumbo v4, "proxy-connection"
 
     const-string/jumbo v5, "te"
 

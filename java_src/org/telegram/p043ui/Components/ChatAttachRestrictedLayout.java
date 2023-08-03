@@ -9,7 +9,7 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -25,7 +25,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
     private int gridExtraSpace;
 
     /* renamed from: id */
-    public final int f1711id;
+    public final int f1731id;
     private final RecyclerListView listView;
     private final EmptyTextProgressView progressView;
 
@@ -45,14 +45,14 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
 
     public ChatAttachRestrictedLayout(int i, ChatAttachAlert chatAttachAlert, Context context, Theme.ResourcesProvider resourcesProvider) {
         super(chatAttachAlert, context, resourcesProvider);
-        this.f1711id = i;
+        this.f1731id = i;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.progressView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3417R.string.NoPhotos));
+        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3419R.string.NoPhotos));
         emptyTextProgressView.setOnTouchListener(null);
         emptyTextProgressView.setTextSize(16);
         addView(emptyTextProgressView, LayoutHelper.createFrame(-1, -2));
-        emptyTextProgressView.setLottie(C3417R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        emptyTextProgressView.setLottie(C3419R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC$Chat currentChat = ((ChatActivity) this.parentAlert.baseFragment).getCurrentChat();
         if (i == 1) {
             emptyTextProgressView.setText(ChatObject.getRestrictedErrorText(currentChat, 7));
@@ -92,7 +92,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         };
         this.adapter = adapter;
         recyclerListView.setAdapter(adapter);
-        recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m54dp(48));
+        recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m72dp(48));
         recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachRestrictedLayout.2
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
@@ -111,15 +111,15 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         int i = 0;
         View childAt = this.listView.getChildAt(0);
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.m54dp(8);
+        int top = childAt.getTop() - AndroidUtilities.m72dp(8);
         if (top > 0 && holder != null && holder.getAdapterPosition() == 0) {
             i = top;
         }
         if (top < 0 || holder == null || holder.getAdapterPosition() != 0) {
             top = i;
         }
-        this.progressView.setTranslationY(((((getMeasuredHeight() - top) - AndroidUtilities.m54dp(50)) - this.progressView.getMeasuredHeight()) / 2) + top);
-        return top + AndroidUtilities.m54dp(12);
+        this.progressView.setTranslationY(((((getMeasuredHeight() - top) - AndroidUtilities.m72dp(50)) - this.progressView.getMeasuredHeight()) / 2) + top);
+        return top + AndroidUtilities.m72dp(12);
     }
 
     @Override // android.view.View
@@ -130,7 +130,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m54dp(4);
+        return getListTopPadding() + AndroidUtilities.m72dp(4);
     }
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -150,7 +150,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         /*
             r3 = this;
             super.onPreMeasure(r4, r5)
-            int r4 = org.telegram.p043ui.ActionBar.C3484ActionBar.getCurrentActionBarHeight()
+            int r4 = org.telegram.p043ui.ActionBar.C3485ActionBar.getCurrentActionBarHeight()
             int r4 = r5 - r4
             r0 = 0
             int r4 = java.lang.Math.max(r0, r4)
@@ -176,7 +176,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
             int r4 = r5 * 2
         L31:
             r5 = 52
-            int r5 = org.telegram.messenger.AndroidUtilities.m54dp(r5)
+            int r5 = org.telegram.messenger.AndroidUtilities.m72dp(r5)
             int r4 = r4 - r5
             if (r4 >= 0) goto L3b
             goto L3c
@@ -188,10 +188,10 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
             if (r4 == r0) goto L58
             org.telegram.ui.Components.RecyclerListView r4 = r3.listView
             r5 = 6
-            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r5)
-            int r5 = org.telegram.messenger.AndroidUtilities.m54dp(r5)
+            int r1 = org.telegram.messenger.AndroidUtilities.m72dp(r5)
+            int r5 = org.telegram.messenger.AndroidUtilities.m72dp(r5)
             r2 = 48
-            int r2 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r2 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             r4.setPadding(r1, r0, r5, r2)
         L58:
             return

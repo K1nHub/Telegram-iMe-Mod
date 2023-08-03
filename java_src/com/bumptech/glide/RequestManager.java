@@ -84,7 +84,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public synchronized void setRequestOptions(RequestOptions requestOptions) {
-        this.requestOptions = requestOptions.mo885clone().autoClone();
+        this.requestOptions = requestOptions.mo903clone().autoClone();
     }
 
     public synchronized void pauseRequests() {
@@ -133,11 +133,11 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener {
     }
 
     public RequestBuilder<Bitmap> asBitmap() {
-        return mo693as(Bitmap.class).apply((BaseRequestOptions<?>) DECODE_TYPE_BITMAP);
+        return mo711as(Bitmap.class).apply((BaseRequestOptions<?>) DECODE_TYPE_BITMAP);
     }
 
     public RequestBuilder<Drawable> asDrawable() {
-        return mo693as(Drawable.class);
+        return mo711as(Drawable.class);
     }
 
     public RequestBuilder<Drawable> load(String str) {
@@ -149,7 +149,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener {
     }
 
     /* renamed from: as */
-    public <ResourceType> RequestBuilder<ResourceType> mo693as(Class<ResourceType> cls) {
+    public <ResourceType> RequestBuilder<ResourceType> mo711as(Class<ResourceType> cls) {
         return new RequestBuilder<>(this.glide, this, cls, this.context);
     }
 

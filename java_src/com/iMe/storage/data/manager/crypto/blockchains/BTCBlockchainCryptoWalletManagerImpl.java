@@ -69,7 +69,13 @@ public final class BTCBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
                 return generateAddressByMnemonic$lambda$1;
             }
         });
-        final BTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 bTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 = BTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2.INSTANCE;
+        final BTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 bTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 = new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.BTCBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<String> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.success("");
+            }
+        };
         Observable<Result<String>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.crypto.blockchains.BTCBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

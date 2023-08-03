@@ -64,7 +64,7 @@ public final class TrackSelectionUtil {
         List[] listArr = new List[trackSelectionArr.length];
         for (int i = 0; i < trackSelectionArr.length; i++) {
             TrackSelection trackSelection = trackSelectionArr[i];
-            listArr[i] = trackSelection != null ? ImmutableList.m743of(trackSelection) : ImmutableList.m744of();
+            listArr[i] = trackSelection != null ? ImmutableList.m761of(trackSelection) : ImmutableList.m762of();
         }
         return buildTracks(mappedTrackInfo, listArr);
     }

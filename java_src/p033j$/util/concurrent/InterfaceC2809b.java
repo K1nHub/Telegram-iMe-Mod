@@ -11,4 +11,7 @@ public interface InterfaceC2809b extends Map {
 
     @Override // p033j$.util.Map
     void forEach(BiConsumer biConsumer);
+
+    @Override // java.util.concurrent.ConcurrentMap, p033j$.util.concurrent.InterfaceC2809b, p033j$.util.Map
+    Object getOrDefault(Object obj, Object obj2);
 }

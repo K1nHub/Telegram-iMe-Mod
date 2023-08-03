@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;Ljava/lang/String;)V
     .locals 0
 
-    .line 337
+    .line 362
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->this$1:Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;
 
     iput-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->val$path:Ljava/lang/String;
@@ -48,14 +48,14 @@
 .method private synthetic lambda$run$0(Ljava/lang/String;)V
     .locals 4
 
-    .line 341
+    .line 366
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->this$1:Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;
 
     iget-object v0, v0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->uploadSet:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 342
+    .line 367
     iget-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->this$1:Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;
 
     iget-object p1, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 343
+    .line 368
     iget-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->this$1:Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;
 
     iget-object p1, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->uploadSet:Ljava/util/HashSet;
@@ -95,7 +95,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 344
+    .line 369
     iget-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->this$1:Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;
 
     invoke-static {p1}, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;->access$000(Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory;)V
@@ -109,7 +109,7 @@
 .method public run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 340
+    .line 365
     iget-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2;->val$path:Ljava/lang/String;
 
     new-instance p2, Lorg/telegram/messenger/SendMessagesHelper$ImportingHistory$2$$ExternalSyntheticLambda0;

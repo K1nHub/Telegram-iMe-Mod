@@ -7,29 +7,29 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EglConfig {
 
     /* renamed from: native  reason: not valid java name */
-    private final EGLConfig f1918native;
+    private final EGLConfig f1974native;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EglConfig) && Intrinsics.areEqual(this.f1918native, ((EglConfig) obj).f1918native);
+        return (obj instanceof EglConfig) && Intrinsics.areEqual(this.f1974native, ((EglConfig) obj).f1974native);
     }
 
     public int hashCode() {
-        return this.f1918native.hashCode();
+        return this.f1974native.hashCode();
     }
 
     public String toString() {
-        return "EglConfig(native=" + this.f1918native + ')';
+        return "EglConfig(native=" + this.f1974native + ')';
     }
 
     public EglConfig(EGLConfig eGLConfig) {
         Intrinsics.checkNotNullParameter(eGLConfig, "native");
-        this.f1918native = eGLConfig;
+        this.f1974native = eGLConfig;
     }
 
     public final EGLConfig getNative() {
-        return this.f1918native;
+        return this.f1974native;
     }
 }

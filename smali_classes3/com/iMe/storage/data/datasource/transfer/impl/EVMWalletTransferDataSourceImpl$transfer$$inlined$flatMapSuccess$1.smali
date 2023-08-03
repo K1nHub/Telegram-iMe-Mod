@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;Ljava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,19 +34,23 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 EVMWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,92:1\n44#2,5:93\n70#3:98\n*S KotlinDebug\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n*L\n48#1:98\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 EVMWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,92:1\n44#2,8:93\n70#3:101\n*S KotlinDebug\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n*L\n51#1:101\n*E\n"
 .end annotation
 
 
 # instance fields
+.field final synthetic $networkId$inlined:Ljava/lang/String;
+
 .field final synthetic this$0:Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;)V
+.method public constructor <init>(Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;
+
+    iput-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;->$networkId$inlined:Ljava/lang/String;
 
     const/4 p1, 0x1
 
@@ -92,8 +96,9 @@
     move-result-object v0
 
     .line 95
-    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransferTransactionRequest;
 
+    .line 96
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -104,15 +109,19 @@
 
     const-string p1, ""
 
+    .line 97
     :cond_0
-    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;-><init>(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;->$networkId$inlined:Ljava/lang/String;
+
+    .line 95
+    invoke-direct {v1, p1, v2}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransferTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 94
-    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->sendCryptoTransferTransaction(Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendCryptoTransferTransactionRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->sendCryptoTransferTransaction(Lcom/iMe/storage/data/network/model/request/crypto/wallet/SendTransferTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 97
+    .line 100
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;

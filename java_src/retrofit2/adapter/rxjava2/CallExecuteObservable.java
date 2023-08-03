@@ -20,14 +20,14 @@ final class CallExecuteObservable<T> extends Observable<Response<T>> {
     @Override // io.reactivex.Observable
     protected void subscribeActual(Observer<? super Response<T>> observer) {
         boolean z;
-        Call<T> mo4108clone = this.originalCall.mo4108clone();
-        CallDisposable callDisposable = new CallDisposable(mo4108clone);
+        Call<T> mo4276clone = this.originalCall.mo4276clone();
+        CallDisposable callDisposable = new CallDisposable(mo4276clone);
         observer.onSubscribe(callDisposable);
         if (callDisposable.isDisposed()) {
             return;
         }
         try {
-            Response<T> execute = mo4108clone.execute();
+            Response<T> execute = mo4276clone.execute();
             if (!callDisposable.isDisposed()) {
                 observer.onNext(execute);
             }

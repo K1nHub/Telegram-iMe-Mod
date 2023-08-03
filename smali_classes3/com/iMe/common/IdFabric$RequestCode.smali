@@ -21,19 +21,19 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 255
+    .line 253
     sput v0, Lcom/iMe/common/IdFabric$RequestCode;->id:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 256
+    .line 254
     sput v1, Lcom/iMe/common/IdFabric$RequestCode;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$RequestCode;->FILE_SAVING_WRITE_STORAGE_PERMISSION:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 257
+    .line 255
     sput v0, Lcom/iMe/common/IdFabric$RequestCode;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$RequestCode;->QUICK_LOGIN_AUTHORIZE:I

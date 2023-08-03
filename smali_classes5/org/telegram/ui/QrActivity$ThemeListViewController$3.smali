@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity$ThemeListViewController;Landroid/content/Context;Lorg/telegram/ui/QrActivity;)V
     .locals 0
 
-    .line 1407
+    .line 1397
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$3;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
 
-    .line 1410
+    .line 1400
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1411
+    .line 1401
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$ThemeListViewController$3;->this$1:Lorg/telegram/ui/QrActivity$ThemeListViewController;
 
     iget-object v0, v0, Lorg/telegram/ui/QrActivity$ThemeListViewController;->this$0:Lorg/telegram/ui/QrActivity;
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1412
+    .line 1402
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrSwitchToDayTheme:I
 
     const-string v1, "AccDescrSwitchToDayTheme"
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 1414
+    .line 1404
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrSwitchToNightTheme:I
 

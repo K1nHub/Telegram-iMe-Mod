@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Iterator;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -69,7 +69,7 @@ public class BotHelpCell extends View {
     public BotHelpCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.links = new LinkSpanDrawable.LinkCollector(this);
-        this.imagePadding = AndroidUtilities.m54dp(4);
+        this.imagePadding = AndroidUtilities.m72dp(4);
         this.resourcesProvider = resourcesProvider;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.imageReceiver = imageReceiver;
@@ -136,12 +136,12 @@ public class BotHelpCell extends View {
                     }
                     this.imageReceiver.setImage(ImageLocation.getForDocument(tLRPC$Document), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(MessageObject.getDocumentVideoThumb(tLRPC$Document), tLRPC$Document), null, ImageLocation.getForDocument(closestPhotoSizeWithSize, tLRPC$Document), "86_86_b", bitmapDrawable, tLRPC$Document.size, "mp4", tLRPC$BotInfo, 0);
                 }
-                int m54dp = AndroidUtilities.m54dp(SharedConfig.bubbleRadius) - AndroidUtilities.m54dp(2);
-                int m54dp2 = AndroidUtilities.m54dp(4);
+                int m72dp = AndroidUtilities.m72dp(SharedConfig.bubbleRadius) - AndroidUtilities.m72dp(2);
+                int m72dp2 = AndroidUtilities.m72dp(4);
                 if (!this.isTextVisible) {
-                    m54dp2 = m54dp;
+                    m72dp2 = m72dp;
                 }
-                this.imageReceiver.setRoundRadius(m54dp, m54dp, m54dp2, m54dp2);
+                this.imageReceiver.setRoundRadius(m72dp, m72dp, m72dp2, m72dp2);
             }
         }
         this.oldText = AndroidUtilities.getSafeString(str2);
@@ -156,7 +156,7 @@ public class BotHelpCell extends View {
         if (this.isTextVisible) {
             String[] split = str2.split("\n");
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            String string = LocaleController.getString(C3417R.string.BotInfoTitle);
+            String string = LocaleController.getString(C3419R.string.BotInfoTitle);
             if (z) {
                 spannableStringBuilder.append((CharSequence) string);
                 spannableStringBuilder.append((CharSequence) "\n\n");
@@ -171,12 +171,12 @@ public class BotHelpCell extends View {
             if (z) {
                 spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM)), 0, string.length(), 33);
             }
-            Emoji.replaceEmoji(spannableStringBuilder, Theme.chat_msgTextPaint.getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
+            Emoji.replaceEmoji(spannableStringBuilder, Theme.chat_msgTextPaint.getFontMetricsInt(), AndroidUtilities.m72dp(20), false);
             try {
-                StaticLayout staticLayout = new StaticLayout(spannableStringBuilder, Theme.chat_msgTextPaint, i - (this.isPhotoVisible ? AndroidUtilities.m54dp(5) : 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                StaticLayout staticLayout = new StaticLayout(spannableStringBuilder, Theme.chat_msgTextPaint, i - (this.isPhotoVisible ? AndroidUtilities.m72dp(5) : 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                 this.textLayout = staticLayout;
                 this.width = 0;
-                this.height = staticLayout.getHeight() + AndroidUtilities.m54dp(22);
+                this.height = staticLayout.getHeight() + AndroidUtilities.m72dp(22);
                 int lineCount = this.textLayout.getLineCount();
                 for (int i3 = 0; i3 < lineCount; i3++) {
                     this.width = (int) Math.ceil(Math.max(this.width, this.textLayout.getLineWidth(i3) + this.textLayout.getLineLeft(i3)));
@@ -185,18 +185,18 @@ public class BotHelpCell extends View {
                     this.width = i;
                 }
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         } else if (this.isPhotoVisible) {
             this.width = i;
         }
-        int m54dp3 = this.width + AndroidUtilities.m54dp(22);
-        this.width = m54dp3;
+        int m72dp3 = this.width + AndroidUtilities.m72dp(22);
+        this.width = m72dp3;
         if (this.isPhotoVisible) {
             int i4 = this.height;
-            int i5 = (int) (m54dp3 * 0.5625d);
+            int i5 = (int) (m72dp3 * 0.5625d);
             this.photoHeight = i5;
-            this.height = i4 + i5 + AndroidUtilities.m54dp(4);
+            this.height = i4 + i5 + AndroidUtilities.m72dp(4);
         }
     }
 
@@ -225,17 +225,17 @@ public class BotHelpCell extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), this.height + AndroidUtilities.m54dp(8));
+        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), this.height + AndroidUtilities.m72dp(8));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         int i;
         int width = (getWidth() - this.width) / 2;
-        int m54dp = this.photoHeight + AndroidUtilities.m54dp(2);
+        int m72dp = this.photoHeight + AndroidUtilities.m72dp(2);
         Drawable shadowDrawable = Theme.chat_msgInMediaDrawable.getShadowDrawable();
         if (shadowDrawable != null) {
-            shadowDrawable.setBounds(width, m54dp, this.width + width, this.height + m54dp);
+            shadowDrawable.setBounds(width, m72dp, this.width + width, this.height + m72dp);
             shadowDrawable.draw(canvas);
         }
         Point point = AndroidUtilities.displaySize;
@@ -259,7 +259,7 @@ public class BotHelpCell extends View {
                 this.selectorDrawableRadius = i6;
                 Theme.setMaskDrawableRad(drawable, i6, i6);
             }
-            this.selectorDrawable.setBounds(AndroidUtilities.m54dp(2) + width, AndroidUtilities.m54dp(2), (this.width + width) - AndroidUtilities.m54dp(2), this.height - AndroidUtilities.m54dp(2));
+            this.selectorDrawable.setBounds(AndroidUtilities.m72dp(2) + width, AndroidUtilities.m72dp(2), (this.width + width) - AndroidUtilities.m72dp(2), this.height - AndroidUtilities.m72dp(2));
             this.selectorDrawable.draw(canvas);
         }
         this.imageReceiver.setImageCoords(width + i, this.imagePadding, this.width - (i * 2), this.photoHeight - i);
@@ -267,12 +267,12 @@ public class BotHelpCell extends View {
         Theme.chat_msgTextPaint.setColor(getThemedColor(Theme.key_chat_messageTextIn));
         Theme.chat_msgTextPaint.linkColor = getThemedColor(Theme.key_chat_messageLinkIn);
         canvas.save();
-        int m54dp2 = AndroidUtilities.m54dp(this.isPhotoVisible ? 14 : 11) + width;
-        this.textX = m54dp2;
-        float f = m54dp2;
-        int m54dp3 = AndroidUtilities.m54dp(11) + m54dp;
-        this.textY = m54dp3;
-        canvas.translate(f, m54dp3);
+        int m72dp2 = AndroidUtilities.m72dp(this.isPhotoVisible ? 14 : 11) + width;
+        this.textX = m72dp2;
+        float f = m72dp2;
+        int m72dp3 = AndroidUtilities.m72dp(11) + m72dp;
+        this.textY = m72dp3;
+        canvas.translate(f, m72dp3);
         if (this.links.draw(canvas)) {
             invalidate();
         }

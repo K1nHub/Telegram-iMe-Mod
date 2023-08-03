@@ -14,11 +14,12 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
 import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$ChatInvite;
@@ -26,7 +27,19 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.SenderSelectView */
 /* loaded from: classes6.dex */
 public class SenderSelectView extends View {
-    private static final FloatPropertyCompat<SenderSelectView> MENU_PROGRESS = new SimpleFloatPropertyCompat("menuProgress", SenderSelectView$$ExternalSyntheticLambda3.INSTANCE, SenderSelectView$$ExternalSyntheticLambda4.INSTANCE).setMultiplier(100.0f);
+    private static final FloatPropertyCompat<SenderSelectView> MENU_PROGRESS = new SimpleFloatPropertyCompat("menuProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.SenderSelectView$$ExternalSyntheticLambda3
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Getter
+        public final float get(Object obj) {
+            float f;
+            f = ((SenderSelectView) obj).menuProgress;
+            return f;
+        }
+    }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.SenderSelectView$$ExternalSyntheticLambda4
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Setter
+        public final void set(Object obj, float f) {
+            SenderSelectView.lambda$static$1((SenderSelectView) obj, f);
+        }
+    }).setMultiplier(100.0f);
     private AvatarDrawable avatarDrawable;
     private ImageReceiver avatarImage;
     private Paint backgroundPaint;
@@ -50,18 +63,18 @@ public class SenderSelectView extends View {
         this.avatarDrawable = new AvatarDrawable();
         this.backgroundPaint = new Paint(1);
         this.menuPaint = new Paint(1);
-        this.avatarImage.setRoundRadius(AndroidUtilities.m54dp(28));
-        this.menuPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.avatarImage.setRoundRadius(AndroidUtilities.m72dp(28));
+        this.menuPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.menuPaint.setStrokeCap(Paint.Cap.ROUND);
         this.menuPaint.setStyle(Paint.Style.STROKE);
         updateColors();
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3417R.string.AccDescrSendAsPeer, ""));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3419R.string.AccDescrSendAsPeer, ""));
     }
 
     private void updateColors() {
         this.backgroundPaint.setColor(Theme.getColor(Theme.key_chat_messagePanelVoiceBackground));
         this.menuPaint.setColor(Theme.getColor(Theme.key_chat_messagePanelVoicePressed));
-        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(16), 0, Theme.getColor(Theme.key_windowBackgroundWhite));
+        Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(16), 0, Theme.getColor(Theme.key_windowBackgroundWhite));
         this.selectorDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
     }
@@ -101,9 +114,9 @@ public class SenderSelectView extends View {
         canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, this.backgroundPaint);
         canvas.save();
         this.menuPaint.setAlpha(i);
-        float m54dp = AndroidUtilities.m54dp(9) + this.menuPaint.getStrokeWidth();
-        canvas.drawLine(m54dp, m54dp, getWidth() - m54dp, getHeight() - m54dp, this.menuPaint);
-        canvas.drawLine(m54dp, getHeight() - m54dp, getWidth() - m54dp, m54dp, this.menuPaint);
+        float m72dp = AndroidUtilities.m72dp(9) + this.menuPaint.getStrokeWidth();
+        canvas.drawLine(m72dp, m72dp, getWidth() - m72dp, getHeight() - m72dp, this.menuPaint);
+        canvas.drawLine(m72dp, getHeight() - m72dp, getWidth() - m72dp, m72dp, this.menuPaint);
         canvas.restore();
         this.selectorDrawable.setBounds(0, 0, getWidth(), getHeight());
         this.selectorDrawable.draw(canvas);
@@ -119,7 +132,7 @@ public class SenderSelectView extends View {
         } else {
             str = tLObject instanceof TLRPC$ChatInvite ? ((TLRPC$ChatInvite) tLObject).title : "";
         }
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3417R.string.AccDescrSendAsPeer, str));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3419R.string.AccDescrSendAsPeer, str));
         this.avatarDrawable.setInfo(tLObject);
         this.avatarImage.setForUserOrChat(tLObject, this.avatarDrawable);
     }

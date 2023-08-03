@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18596
+    .line 18968
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;-><init>()V
 
     return-void
@@ -28,14 +28,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 18600
+    .line 18972
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;->hash:J
 
-    .line 18601
+    .line 18973
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
 
     return-void
 
-    .line 18604
+    .line 18976
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -74,7 +74,7 @@
 
     throw p1
 
-    .line 18608
+    .line 18980
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -83,7 +83,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 18610
+    .line 18982
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -96,7 +96,7 @@
 
     return-void
 
-    .line 18614
+    .line 18986
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;->statuses:Ljava/util/ArrayList;
 
@@ -113,29 +113,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 18619
+    .line 18991
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 18620
+    .line 18992
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 18621
+    .line 18993
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 18622
+    .line 18994
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;->statuses:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 18623
+    .line 18995
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -143,7 +143,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 18625
+    .line 18997
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$account_EmojiStatuses;->statuses:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

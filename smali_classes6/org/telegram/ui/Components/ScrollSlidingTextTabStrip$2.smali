@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;Landroid/content/Context;)V
     .locals 0
 
-    .line 154
+    .line 156
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip$2;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 157
+    .line 159
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 158
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip$2;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;
 
     invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->invalidate()V

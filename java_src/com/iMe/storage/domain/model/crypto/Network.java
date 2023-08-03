@@ -16,13 +16,13 @@ public final class Network {
     private final String fullName;
 
     /* renamed from: id */
-    private final String f403id;
+    private final String f406id;
     private final String logoUrl;
     private final String shortName;
     private final String smallLogoUrl;
 
     public final String component1() {
-        return this.f403id;
+        return this.f406id;
     }
 
     public final BlockchainType component2() {
@@ -75,19 +75,19 @@ public final class Network {
         }
         if (obj instanceof Network) {
             Network network = (Network) obj;
-            return Intrinsics.areEqual(this.f403id, network.f403id) && this.blockchainType == network.blockchainType && Intrinsics.areEqual(this.fullName, network.fullName) && Intrinsics.areEqual(this.shortName, network.shortName) && Intrinsics.areEqual(this.colorHex, network.colorHex) && Intrinsics.areEqual(this.explorer, network.explorer) && Intrinsics.areEqual(this.chainId, network.chainId) && Intrinsics.areEqual(this.logoUrl, network.logoUrl) && Intrinsics.areEqual(this.smallLogoUrl, network.smallLogoUrl);
+            return Intrinsics.areEqual(this.f406id, network.f406id) && this.blockchainType == network.blockchainType && Intrinsics.areEqual(this.fullName, network.fullName) && Intrinsics.areEqual(this.shortName, network.shortName) && Intrinsics.areEqual(this.colorHex, network.colorHex) && Intrinsics.areEqual(this.explorer, network.explorer) && Intrinsics.areEqual(this.chainId, network.chainId) && Intrinsics.areEqual(this.logoUrl, network.logoUrl) && Intrinsics.areEqual(this.smallLogoUrl, network.smallLogoUrl);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((this.f403id.hashCode() * 31) + this.blockchainType.hashCode()) * 31) + this.fullName.hashCode()) * 31) + this.shortName.hashCode()) * 31) + this.colorHex.hashCode()) * 31) + this.explorer.hashCode()) * 31;
+        int hashCode = ((((((((((this.f406id.hashCode() * 31) + this.blockchainType.hashCode()) * 31) + this.fullName.hashCode()) * 31) + this.shortName.hashCode()) * 31) + this.colorHex.hashCode()) * 31) + this.explorer.hashCode()) * 31;
         Long l = this.chainId;
         return ((((hashCode + (l == null ? 0 : l.hashCode())) * 31) + this.logoUrl.hashCode()) * 31) + this.smallLogoUrl.hashCode();
     }
 
     public String toString() {
-        return "Network(id=" + this.f403id + ", blockchainType=" + this.blockchainType + ", fullName=" + this.fullName + ", shortName=" + this.shortName + ", colorHex=" + this.colorHex + ", explorer=" + this.explorer + ", chainId=" + this.chainId + ", logoUrl=" + this.logoUrl + ", smallLogoUrl=" + this.smallLogoUrl + ')';
+        return "Network(id=" + this.f406id + ", blockchainType=" + this.blockchainType + ", fullName=" + this.fullName + ", shortName=" + this.shortName + ", colorHex=" + this.colorHex + ", explorer=" + this.explorer + ", chainId=" + this.chainId + ", logoUrl=" + this.logoUrl + ", smallLogoUrl=" + this.smallLogoUrl + ')';
     }
 
     public Network(String id, BlockchainType blockchainType, String fullName, String shortName, String colorHex, Explorer explorer, Long l, String logoUrl, String smallLogoUrl) {
@@ -99,7 +99,7 @@ public final class Network {
         Intrinsics.checkNotNullParameter(explorer, "explorer");
         Intrinsics.checkNotNullParameter(logoUrl, "logoUrl");
         Intrinsics.checkNotNullParameter(smallLogoUrl, "smallLogoUrl");
-        this.f403id = id;
+        this.f406id = id;
         this.blockchainType = blockchainType;
         this.fullName = fullName;
         this.shortName = shortName;
@@ -111,7 +111,7 @@ public final class Network {
     }
 
     public final String getId() {
-        return this.f403id;
+        return this.f406id;
     }
 
     public final BlockchainType getBlockchainType() {
@@ -247,7 +247,7 @@ public final class Network {
             private final String token;
 
             /* renamed from: tx */
-            private final String f404tx;
+            private final String f407tx;
 
             public static /* synthetic */ PathTemplate copy$default(PathTemplate pathTemplate, String str, String str2, String str3, int i, Object obj) {
                 if ((i & 1) != 0) {
@@ -257,7 +257,7 @@ public final class Network {
                     str2 = pathTemplate.token;
                 }
                 if ((i & 4) != 0) {
-                    str3 = pathTemplate.f404tx;
+                    str3 = pathTemplate.f407tx;
                 }
                 return pathTemplate.copy(str, str2, str3);
             }
@@ -271,7 +271,7 @@ public final class Network {
             }
 
             public final String component3() {
-                return this.f404tx;
+                return this.f407tx;
             }
 
             public final PathTemplate copy(String address, String token, String tx) {
@@ -287,17 +287,17 @@ public final class Network {
                 }
                 if (obj instanceof PathTemplate) {
                     PathTemplate pathTemplate = (PathTemplate) obj;
-                    return Intrinsics.areEqual(this.address, pathTemplate.address) && Intrinsics.areEqual(this.token, pathTemplate.token) && Intrinsics.areEqual(this.f404tx, pathTemplate.f404tx);
+                    return Intrinsics.areEqual(this.address, pathTemplate.address) && Intrinsics.areEqual(this.token, pathTemplate.token) && Intrinsics.areEqual(this.f407tx, pathTemplate.f407tx);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((this.address.hashCode() * 31) + this.token.hashCode()) * 31) + this.f404tx.hashCode();
+                return (((this.address.hashCode() * 31) + this.token.hashCode()) * 31) + this.f407tx.hashCode();
             }
 
             public String toString() {
-                return "PathTemplate(address=" + this.address + ", token=" + this.token + ", tx=" + this.f404tx + ')';
+                return "PathTemplate(address=" + this.address + ", token=" + this.token + ", tx=" + this.f407tx + ')';
             }
 
             public PathTemplate(String address, String token, String tx) {
@@ -306,7 +306,7 @@ public final class Network {
                 Intrinsics.checkNotNullParameter(tx, "tx");
                 this.address = address;
                 this.token = token;
-                this.f404tx = tx;
+                this.f407tx = tx;
             }
 
             public final String getAddress() {
@@ -318,7 +318,7 @@ public final class Network {
             }
 
             public final String getTx() {
-                return this.f404tx;
+                return this.f407tx;
             }
         }
     }

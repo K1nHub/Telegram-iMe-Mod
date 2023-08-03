@@ -17,7 +17,7 @@ public final class Insets {
     }
 
     /* renamed from: of */
-    public static Insets m844of(int i, int i2, int i3, int i4) {
+    public static Insets m862of(int i, int i2, int i3, int i4) {
         if (i == 0 && i2 == 0 && i3 == 0 && i4 == 0) {
             return NONE;
         }
@@ -25,12 +25,12 @@ public final class Insets {
     }
 
     /* renamed from: of */
-    public static Insets m843of(Rect rect) {
-        return m844of(rect.left, rect.top, rect.right, rect.bottom);
+    public static Insets m861of(Rect rect) {
+        return m862of(rect.left, rect.top, rect.right, rect.bottom);
     }
 
     public static Insets max(Insets insets, Insets insets2) {
-        return m844of(Math.max(insets.left, insets2.left), Math.max(insets.top, insets2.top), Math.max(insets.right, insets2.right), Math.max(insets.bottom, insets2.bottom));
+        return m862of(Math.max(insets.left, insets2.left), Math.max(insets.top, insets2.top), Math.max(insets.right, insets2.right), Math.max(insets.bottom, insets2.bottom));
     }
 
     public boolean equals(Object obj) {
@@ -53,17 +53,17 @@ public final class Insets {
     }
 
     public static Insets toCompatInsets(android.graphics.Insets insets) {
-        return m844of(insets.left, insets.top, insets.right, insets.bottom);
+        return m862of(insets.left, insets.top, insets.right, insets.bottom);
     }
 
     public android.graphics.Insets toPlatformInsets() {
-        return Api29Impl.m842of(this.left, this.top, this.right, this.bottom);
+        return Api29Impl.m860of(this.left, this.top, this.right, this.bottom);
     }
 
     /* loaded from: classes.dex */
     static class Api29Impl {
         /* renamed from: of */
-        static android.graphics.Insets m842of(int i, int i2, int i3, int i4) {
+        static android.graphics.Insets m860of(int i, int i2, int i3, int i4) {
             return android.graphics.Insets.of(i, i2, i3, i4);
         }
     }

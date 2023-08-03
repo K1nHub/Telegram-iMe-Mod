@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 6
 
-    .line 650
+    .line 647
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$5;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     move-object v0, p0
@@ -47,10 +47,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 653
+    .line 650
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 654
+    .line 651
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$5;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     const/4 v1, 0x0

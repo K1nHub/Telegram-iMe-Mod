@@ -1,5 +1,6 @@
 package com.iMe.storage.data.network.model.response.google;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageToObjectsResponse.kt */
@@ -98,7 +99,7 @@ public final class ImageToObjectsResponse {
         }
 
         public int hashCode() {
-            return (((this.recognizedObject.hashCode() * 31) + Double.doubleToLongBits(this.score)) * 31) + this.entityId.hashCode();
+            return (((this.recognizedObject.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.score)) * 31) + this.entityId.hashCode();
         }
 
         public String toString() {

@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0480C;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_channel extends TLRPC$Chat {
@@ -36,7 +35,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.join_request = (536870912 & readInt32) != 0;
         this.forum = (readInt32 & 1073741824) != 0;
         this.flags2 = abstractSerializedData.readInt32(z);
-        this.f1515id = abstractSerializedData.readInt64(z);
+        this.f1518id = abstractSerializedData.readInt64(z);
         if ((this.flags & 8192) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -115,7 +114,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i8;
         int i9 = this.scam ? i8 | 524288 : i8 & (-524289);
         this.flags = i9;
-        int i10 = this.has_link ? i9 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i9 & (-1048577);
+        int i10 = this.has_link ? i9 | 1048576 : i9 & (-1048577);
         this.flags = i10;
         int i11 = this.has_geo ? i10 | 2097152 : i10 & (-2097153);
         this.flags = i11;
@@ -139,7 +138,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i20;
         abstractSerializedData.writeInt32(i20);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1515id);
+        abstractSerializedData.writeInt64(this.f1518id);
         if ((this.flags & 8192) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

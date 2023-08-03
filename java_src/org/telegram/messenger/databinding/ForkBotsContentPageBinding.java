@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkBotsContentPageBinding implements ViewBinding {
     private final RecyclerView rootView;
@@ -25,7 +25,7 @@ public final class ForkBotsContentPageBinding implements ViewBinding {
     }
 
     public static ForkBotsContentPageBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_bots_content_page, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_bots_content_page, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

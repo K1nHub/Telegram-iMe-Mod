@@ -208,7 +208,7 @@ public final class RemoteSerializer {
     }
 
     private com.google.firebase.firestore.model.mutation.Precondition decodePrecondition(com.google.firestore.p021v1.Precondition precondition) {
-        int i = C10321.f271x8f18ca41[precondition.getConditionTypeCase().ordinal()];
+        int i = C10321.f273x8f18ca41[precondition.getConditionTypeCase().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -256,7 +256,7 @@ public final class RemoteSerializer {
     }
 
     private FieldTransform decodeFieldTransform(DocumentTransform.FieldTransform fieldTransform) {
-        int i = C10321.f269xdd498c9f[fieldTransform.getTransformTypeCase().ordinal()];
+        int i = C10321.f271xdd498c9f[fieldTransform.getTransformTypeCase().ordinal()];
         if (i == 1) {
             Assert.hardAssert(fieldTransform.getSetToServerValue() == DocumentTransform.FieldTransform.ServerValue.REQUEST_TIME, "Unknown transform setToServerValue: %s", fieldTransform.getSetToServerValue());
             return new FieldTransform(FieldPath.fromServerFormat(fieldTransform.getFieldPath()), ServerTimestampOperation.getInstance());
@@ -523,7 +523,7 @@ public final class RemoteSerializer {
         }
         ArrayList arrayList = new ArrayList(singletonList.size());
         for (StructuredQuery.Filter filter2 : singletonList) {
-            int i = C10321.f273x9d2ee979[filter2.getFilterTypeCase().ordinal()];
+            int i = C10321.f275x9d2ee979[filter2.getFilterTypeCase().ordinal()];
             if (i == 1) {
                 throw Assert.fail("Nested composite filters are not supported.", new Object[0]);
             }
@@ -577,7 +577,7 @@ public final class RemoteSerializer {
 
     private Filter decodeUnaryFilter(StructuredQuery.UnaryFilter unaryFilter) {
         FieldPath fromServerFormat = FieldPath.fromServerFormat(unaryFilter.getField().getFieldPath());
-        int i = C10321.f274xf473b456[unaryFilter.getOp().ordinal()];
+        int i = C10321.f276xf473b456[unaryFilter.getOp().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -625,7 +625,7 @@ public final class RemoteSerializer {
     }
 
     private Filter.Operator decodeFieldFilterOperator(StructuredQuery.FieldFilter.Operator operator) {
-        switch (C10321.f272xaf95d2b[operator.ordinal()]) {
+        switch (C10321.f274xaf95d2b[operator.ordinal()]) {
             case 1:
                 return Filter.Operator.LESS_THAN;
             case 2:
@@ -684,51 +684,51 @@ public final class RemoteSerializer {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$local$QueryPurpose;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$DocumentTransform$FieldTransform$TransformTypeCase */
-        static final /* synthetic */ int[] f269xdd498c9f;
+        static final /* synthetic */ int[] f271xdd498c9f;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$ListenResponse$ResponseTypeCase */
-        static final /* synthetic */ int[] f270x1837d9f;
+        static final /* synthetic */ int[] f272x1837d9f;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$Precondition$ConditionTypeCase */
-        static final /* synthetic */ int[] f271x8f18ca41;
+        static final /* synthetic */ int[] f273x8f18ca41;
         static final /* synthetic */ int[] $SwitchMap$com$google$firestore$v1$StructuredQuery$Direction;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$StructuredQuery$FieldFilter$Operator */
-        static final /* synthetic */ int[] f272xaf95d2b;
+        static final /* synthetic */ int[] f274xaf95d2b;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$StructuredQuery$Filter$FilterTypeCase */
-        static final /* synthetic */ int[] f273x9d2ee979;
+        static final /* synthetic */ int[] f275x9d2ee979;
 
         /* renamed from: $SwitchMap$com$google$firestore$v1$StructuredQuery$UnaryFilter$Operator */
-        static final /* synthetic */ int[] f274xf473b456;
+        static final /* synthetic */ int[] f276xf473b456;
         static final /* synthetic */ int[] $SwitchMap$com$google$firestore$v1$TargetChange$TargetChangeType;
         static final /* synthetic */ int[] $SwitchMap$com$google$firestore$v1$Write$OperationCase;
 
         static {
             int[] iArr = new int[ListenResponse.ResponseTypeCase.values().length];
-            f270x1837d9f = iArr;
+            f272x1837d9f = iArr;
             try {
                 iArr[ListenResponse.ResponseTypeCase.TARGET_CHANGE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f270x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_CHANGE.ordinal()] = 2;
+                f272x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_CHANGE.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f270x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_DELETE.ordinal()] = 3;
+                f272x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_DELETE.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f270x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_REMOVE.ordinal()] = 4;
+                f272x1837d9f[ListenResponse.ResponseTypeCase.DOCUMENT_REMOVE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f270x1837d9f[ListenResponse.ResponseTypeCase.FILTER.ordinal()] = 5;
+                f272x1837d9f[ListenResponse.ResponseTypeCase.FILTER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f270x1837d9f[ListenResponse.ResponseTypeCase.RESPONSETYPE_NOT_SET.ordinal()] = 6;
+                f272x1837d9f[ListenResponse.ResponseTypeCase.RESPONSETYPE_NOT_SET.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             int[] iArr2 = new int[TargetChange.TargetChangeType.values().length];
@@ -768,45 +768,45 @@ public final class RemoteSerializer {
             } catch (NoSuchFieldError unused14) {
             }
             int[] iArr4 = new int[StructuredQuery.FieldFilter.Operator.values().length];
-            f272xaf95d2b = iArr4;
+            f274xaf95d2b = iArr4;
             try {
                 iArr4[StructuredQuery.FieldFilter.Operator.LESS_THAN.ordinal()] = 1;
             } catch (NoSuchFieldError unused15) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL.ordinal()] = 2;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL.ordinal()] = 2;
             } catch (NoSuchFieldError unused16) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.EQUAL.ordinal()] = 3;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.EQUAL.ordinal()] = 3;
             } catch (NoSuchFieldError unused17) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.NOT_EQUAL.ordinal()] = 4;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.NOT_EQUAL.ordinal()] = 4;
             } catch (NoSuchFieldError unused18) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL.ordinal()] = 5;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL.ordinal()] = 5;
             } catch (NoSuchFieldError unused19) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.GREATER_THAN.ordinal()] = 6;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.GREATER_THAN.ordinal()] = 6;
             } catch (NoSuchFieldError unused20) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS.ordinal()] = 7;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS.ordinal()] = 7;
             } catch (NoSuchFieldError unused21) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.IN.ordinal()] = 8;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.IN.ordinal()] = 8;
             } catch (NoSuchFieldError unused22) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY.ordinal()] = 9;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY.ordinal()] = 9;
             } catch (NoSuchFieldError unused23) {
             }
             try {
-                f272xaf95d2b[StructuredQuery.FieldFilter.Operator.NOT_IN.ordinal()] = 10;
+                f274xaf95d2b[StructuredQuery.FieldFilter.Operator.NOT_IN.ordinal()] = 10;
             } catch (NoSuchFieldError unused24) {
             }
             int[] iArr5 = new int[Filter.Operator.values().length];
@@ -852,35 +852,35 @@ public final class RemoteSerializer {
             } catch (NoSuchFieldError unused34) {
             }
             int[] iArr6 = new int[StructuredQuery.UnaryFilter.Operator.values().length];
-            f274xf473b456 = iArr6;
+            f276xf473b456 = iArr6;
             try {
                 iArr6[StructuredQuery.UnaryFilter.Operator.IS_NAN.ordinal()] = 1;
             } catch (NoSuchFieldError unused35) {
             }
             try {
-                f274xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NULL.ordinal()] = 2;
+                f276xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NULL.ordinal()] = 2;
             } catch (NoSuchFieldError unused36) {
             }
             try {
-                f274xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NOT_NAN.ordinal()] = 3;
+                f276xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NOT_NAN.ordinal()] = 3;
             } catch (NoSuchFieldError unused37) {
             }
             try {
-                f274xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NOT_NULL.ordinal()] = 4;
+                f276xf473b456[StructuredQuery.UnaryFilter.Operator.IS_NOT_NULL.ordinal()] = 4;
             } catch (NoSuchFieldError unused38) {
             }
             int[] iArr7 = new int[StructuredQuery.Filter.FilterTypeCase.values().length];
-            f273x9d2ee979 = iArr7;
+            f275x9d2ee979 = iArr7;
             try {
                 iArr7[StructuredQuery.Filter.FilterTypeCase.COMPOSITE_FILTER.ordinal()] = 1;
             } catch (NoSuchFieldError unused39) {
             }
             try {
-                f273x9d2ee979[StructuredQuery.Filter.FilterTypeCase.FIELD_FILTER.ordinal()] = 2;
+                f275x9d2ee979[StructuredQuery.Filter.FilterTypeCase.FIELD_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError unused40) {
             }
             try {
-                f273x9d2ee979[StructuredQuery.Filter.FilterTypeCase.UNARY_FILTER.ordinal()] = 3;
+                f275x9d2ee979[StructuredQuery.Filter.FilterTypeCase.UNARY_FILTER.ordinal()] = 3;
             } catch (NoSuchFieldError unused41) {
             }
             int[] iArr8 = new int[QueryPurpose.values().length];
@@ -898,35 +898,35 @@ public final class RemoteSerializer {
             } catch (NoSuchFieldError unused44) {
             }
             int[] iArr9 = new int[DocumentTransform.FieldTransform.TransformTypeCase.values().length];
-            f269xdd498c9f = iArr9;
+            f271xdd498c9f = iArr9;
             try {
                 iArr9[DocumentTransform.FieldTransform.TransformTypeCase.SET_TO_SERVER_VALUE.ordinal()] = 1;
             } catch (NoSuchFieldError unused45) {
             }
             try {
-                f269xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.APPEND_MISSING_ELEMENTS.ordinal()] = 2;
+                f271xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.APPEND_MISSING_ELEMENTS.ordinal()] = 2;
             } catch (NoSuchFieldError unused46) {
             }
             try {
-                f269xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.REMOVE_ALL_FROM_ARRAY.ordinal()] = 3;
+                f271xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.REMOVE_ALL_FROM_ARRAY.ordinal()] = 3;
             } catch (NoSuchFieldError unused47) {
             }
             try {
-                f269xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.INCREMENT.ordinal()] = 4;
+                f271xdd498c9f[DocumentTransform.FieldTransform.TransformTypeCase.INCREMENT.ordinal()] = 4;
             } catch (NoSuchFieldError unused48) {
             }
             int[] iArr10 = new int[Precondition.ConditionTypeCase.values().length];
-            f271x8f18ca41 = iArr10;
+            f273x8f18ca41 = iArr10;
             try {
                 iArr10[Precondition.ConditionTypeCase.UPDATE_TIME.ordinal()] = 1;
             } catch (NoSuchFieldError unused49) {
             }
             try {
-                f271x8f18ca41[Precondition.ConditionTypeCase.EXISTS.ordinal()] = 2;
+                f273x8f18ca41[Precondition.ConditionTypeCase.EXISTS.ordinal()] = 2;
             } catch (NoSuchFieldError unused50) {
             }
             try {
-                f271x8f18ca41[Precondition.ConditionTypeCase.CONDITIONTYPE_NOT_SET.ordinal()] = 3;
+                f273x8f18ca41[Precondition.ConditionTypeCase.CONDITIONTYPE_NOT_SET.ordinal()] = 3;
             } catch (NoSuchFieldError unused51) {
             }
             int[] iArr11 = new int[Write.OperationCase.values().length];
@@ -949,7 +949,7 @@ public final class RemoteSerializer {
     public WatchChange decodeWatchChange(ListenResponse listenResponse) {
         WatchChange.WatchTargetChangeType watchTargetChangeType;
         WatchChange watchTargetChange;
-        int i = C10321.f270x1837d9f[listenResponse.getResponseTypeCase().ordinal()];
+        int i = C10321.f272x1837d9f[listenResponse.getResponseTypeCase().ordinal()];
         Status status = null;
         if (i == 1) {
             com.google.firestore.p021v1.TargetChange targetChange = listenResponse.getTargetChange();

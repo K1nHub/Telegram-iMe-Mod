@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1081
+    .line 1116
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$Adapter$1;->this$1:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/PollVotesAlert$Adapter;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
@@ -37,7 +37,7 @@
 .method protected onCollapseClick()V
     .locals 3
 
-    .line 1084
+    .line 1119
     sget v0, Lorg/telegram/messenger/R$id;->object_tag:I
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getTag(I)Ljava/lang/Object;
@@ -46,7 +46,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
-    .line 1085
+    .line 1120
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 1088
+    .line 1123
     :cond_0
     iget-boolean v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsed:Z
 
@@ -73,10 +73,10 @@
 
     const/16 v1, 0xa
 
-    .line 1090
+    .line 1125
     iput v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsedCount:I
 
-    .line 1092
+    .line 1127
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Adapter$1;->this$1:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/PollVotesAlert;->animateSectionUpdates(Landroid/view/View;)V
 
-    .line 1093
+    .line 1128
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$Adapter$1;->this$1:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/PollVotesAlert$Adapter;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;

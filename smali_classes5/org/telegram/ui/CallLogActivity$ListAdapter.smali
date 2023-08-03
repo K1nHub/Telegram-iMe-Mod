@@ -439,18 +439,6 @@
     return-void
 .end method
 
-.method public notifyItemRemoved(I)V
-    .locals 0
-
-    .line 955
-    invoke-direct {p0}, Lorg/telegram/ui/CallLogActivity$ListAdapter;->updateRows()V
-
-    .line 956
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
-
-    return-void
-.end method
-
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 17
 

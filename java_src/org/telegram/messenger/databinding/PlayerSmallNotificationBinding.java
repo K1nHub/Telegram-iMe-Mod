@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class PlayerSmallNotificationBinding implements ViewBinding {
     private final RelativeLayout rootView;
@@ -28,7 +28,7 @@ public final class PlayerSmallNotificationBinding implements ViewBinding {
     }
 
     public static PlayerSmallNotificationBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.player_small_notification, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.player_small_notification, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,31 +36,31 @@ public final class PlayerSmallNotificationBinding implements ViewBinding {
     }
 
     public static PlayerSmallNotificationBinding bind(View view) {
-        int i = C3417R.C3420id.player_album_art;
+        int i = C3419R.C3422id.player_album_art;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3417R.C3420id.player_author_name;
+            i = C3419R.C3422id.player_author_name;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3417R.C3420id.player_close;
+                i = C3419R.C3422id.player_close;
                 ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
                 if (imageView2 != null) {
-                    i = C3417R.C3420id.player_next;
+                    i = C3419R.C3422id.player_next;
                     ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
                     if (imageView3 != null) {
-                        i = C3417R.C3420id.player_pause;
+                        i = C3419R.C3422id.player_pause;
                         ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
                         if (imageView4 != null) {
-                            i = C3417R.C3420id.player_play;
+                            i = C3419R.C3422id.player_play;
                             ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
                             if (imageView5 != null) {
-                                i = C3417R.C3420id.player_previous;
+                                i = C3419R.C3422id.player_previous;
                                 ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(view, i);
                                 if (imageView6 != null) {
-                                    i = C3417R.C3420id.player_progress_bar;
+                                    i = C3419R.C3422id.player_progress_bar;
                                     ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
                                     if (progressBar != null) {
-                                        i = C3417R.C3420id.player_song_name;
+                                        i = C3419R.C3422id.player_song_name;
                                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView2 != null) {
                                             return new PlayerSmallNotificationBinding((RelativeLayout) view, imageView, textView, imageView2, imageView3, imageView4, imageView5, imageView6, progressBar, textView2);

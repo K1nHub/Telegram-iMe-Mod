@@ -73,7 +73,7 @@ public class SlotsDrawable extends RLottieDrawable {
             try {
                 this.backgroundBitmap = Bitmap.createBitmap(this.width, this.height, Bitmap.Config.ARGB_8888);
             } catch (Throwable th) {
-                FileLog.m49e(th);
+                FileLog.m67e(th);
             }
         }
         if (this.backgroundBitmap != null) {
@@ -179,7 +179,7 @@ public class SlotsDrawable extends RLottieDrawable {
                 }
                 this.nextRenderingBitmap = this.backgroundBitmap;
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         RLottieDrawable.uiHandler.post(this.uiRunnable);

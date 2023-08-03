@@ -61,7 +61,7 @@
 
     move v7, p2
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Bou5BNTxLWOqYMg1f0JuepMMv00(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;ILandroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$5tzLCCfzLpQNbEWG2X7TcS1GLuY(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Landroid/text/style/CharacterStyle;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;ILandroid/content/DialogInterface;I)V
 
     return-void
 .end method

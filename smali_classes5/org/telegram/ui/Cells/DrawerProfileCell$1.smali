@@ -32,6 +32,82 @@
 
 
 # virtual methods
+.method public invalidate()V
+    .locals 1
+
+    .line 270
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 273
+    :cond_0
+    invoke-super {p0}, Landroid/view/View;->invalidate()V
+
+    return-void
+.end method
+
+.method public invalidate(IIII)V
+    .locals 1
+
+    .line 278
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 281
+    :cond_0
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
+
+    return-void
+.end method
+
+.method public invalidate(Landroid/graphics/Rect;)V
+    .locals 1
+
+    .line 294
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 297
+    :cond_0
+    invoke-super {p0, p1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
+
+    return-void
+.end method
+
+.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
+
+    .line 286
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 289
+    :cond_0
+    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 

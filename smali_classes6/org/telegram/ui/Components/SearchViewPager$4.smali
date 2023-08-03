@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;Landroid/content/Context;Landroid/view/View;I)V
     .locals 0
 
-    .line 268
+    .line 269
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$4;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;I)V
@@ -35,7 +35,7 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$4;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SearchViewPager;->access$300(Lorg/telegram/ui/Components/SearchViewPager;)Lorg/telegram/ui/FilteredSearchView;
@@ -50,12 +50,12 @@
 
     const/16 p1, 0x8
 
-    .line 272
+    .line 273
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
 
     return-void
 
-    .line 275
+    .line 276
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
 

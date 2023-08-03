@@ -3,7 +3,7 @@
 .source "DialogsActivity.java"
 
 # interfaces
-.implements Landroid/view/ActionMode$Callback;
+.implements Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$ScrollListener;
 
 
 # annotations
@@ -17,11 +17,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 5676
+    .line 6056
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,32 +35,30 @@
 
 
 # virtual methods
-.method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .locals 0
+.method public onScroll()V
+    .locals 2
 
-    const/4 p1, 0x0
+    .line 6059
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    return p1
-.end method
+    iget-boolean v1, v0, Lorg/telegram/ui/DialogsActivity;->hasStories:Z
 
-.method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .locals 0
+    if-eqz v1, :cond_0
 
-    const/4 p1, 0x0
+    const/4 v1, 0x1
 
-    return p1
-.end method
+    .line 6060
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$4002(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-.method public onDestroyActionMode(Landroid/view/ActionMode;)V
-    .locals 0
+    .line 6061
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$28900(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    :cond_0
     return-void
-.end method
-
-.method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

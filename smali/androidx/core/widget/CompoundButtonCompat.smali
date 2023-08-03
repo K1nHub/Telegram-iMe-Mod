@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/CompoundButtonCompat$Api23Impl;,
-        Landroidx/core/widget/CompoundButtonCompat$Api21Impl;
+        Landroidx/core/widget/CompoundButtonCompat$Api21Impl;,
+        Landroidx/core/widget/CompoundButtonCompat$Api23Impl;
     }
 .end annotation
 

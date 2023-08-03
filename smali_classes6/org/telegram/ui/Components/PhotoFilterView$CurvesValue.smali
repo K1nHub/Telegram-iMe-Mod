@@ -32,32 +32,32 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 124
+    .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 126
+    .line 142
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
 
     const/high16 v0, 0x41c80000    # 25.0f
 
-    .line 127
+    .line 143
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->shadowsLevel:F
 
     const/high16 v0, 0x42480000    # 50.0f
 
-    .line 128
+    .line 144
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->midtonesLevel:F
 
     const/high16 v0, 0x42960000    # 75.0f
 
-    .line 129
+    .line 145
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->highlightsLevel:F
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    .line 130
+    .line 146
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->whitesLevel:F
 
     return-void
@@ -68,15 +68,15 @@
 .method public getDataPoints()[F
     .locals 1
 
-    .line 141
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->cachedDataPoints:[F
 
     if-nez v0, :cond_0
 
-    .line 142
+    .line 158
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->interpolateCurve()[F
 
-    .line 144
+    .line 160
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->cachedDataPoints:[F
 
@@ -98,7 +98,7 @@
 
     aput v2, v1, v3
 
-    .line 165
+    .line 181
     iget v2, v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
 
     const/high16 v4, 0x42c80000    # 100.0f
@@ -189,19 +189,19 @@
 
     aput v2, v1, v4
 
-    .line 175
+    .line 191
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v11, 0x64
 
     invoke-direct {v2, v11}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 176
+    .line 192
     new-instance v13, Ljava/util/ArrayList;
 
     invoke-direct {v13, v11}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 178
+    .line 194
     aget v14, v1, v3
 
     invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -210,7 +210,7 @@
 
     invoke-virtual {v13, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 179
+    .line 195
     aget v14, v1, v6
 
     invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -228,46 +228,46 @@
 
     mul-int/2addr v15, v5
 
-    .line 182
+    .line 198
     aget v16, v1, v15
 
     add-int/2addr v15, v6
 
-    .line 183
+    .line 199
     aget v15, v1, v15
 
     mul-int/lit8 v17, v14, 0x2
 
-    .line 184
+    .line 200
     aget v18, v1, v17
 
     add-int/lit8 v17, v17, 0x1
 
-    .line 185
+    .line 201
     aget v17, v1, v17
 
     add-int/lit8 v19, v14, 0x1
 
     mul-int/lit8 v20, v19, 0x2
 
-    .line 186
+    .line 202
     aget v21, v1, v20
 
     add-int/lit8 v20, v20, 0x1
 
-    .line 187
+    .line 203
     aget v20, v1, v20
 
     add-int/lit8 v14, v14, 0x2
 
     mul-int/2addr v14, v5
 
-    .line 188
+    .line 204
     aget v22, v1, v14
 
     add-int/2addr v14, v6
 
-    .line 189
+    .line 205
     aget v14, v1, v14
 
     move v3, v6
@@ -373,7 +373,7 @@
 
     mul-float v6, v30, v9
 
-    .line 200
+    .line 216
     invoke-static {v10, v6}, Ljava/lang/Math;->min(FF)F
 
     move-result v6
@@ -386,14 +386,14 @@
 
     if-lez v23, :cond_0
 
-    .line 203
+    .line 219
     invoke-static/range {v26 .. v26}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v7
 
     invoke-virtual {v13, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 204
+    .line 220
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v7
@@ -403,12 +403,12 @@
     :cond_0
     add-int/lit8 v7, v3, -0x1
 
-    .line 207
+    .line 223
     rem-int/2addr v7, v5
 
     if-nez v7, :cond_1
 
-    .line 208
+    .line 224
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v6
@@ -424,7 +424,7 @@
 
     goto/16 :goto_1
 
-    .line 211
+    .line 227
     :cond_2
     invoke-static/range {v21 .. v21}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -432,7 +432,7 @@
 
     invoke-virtual {v13, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 212
+    .line 228
     invoke-static/range {v20 .. v20}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v3
@@ -449,7 +449,7 @@
 
     goto/16 :goto_0
 
-    .line 214
+    .line 230
     :cond_3
     aget v3, v1, v12
 
@@ -459,7 +459,7 @@
 
     invoke-virtual {v13, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 215
+    .line 231
     aget v1, v1, v4
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -468,7 +468,7 @@
 
     invoke-virtual {v13, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 217
+    .line 233
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -479,7 +479,7 @@
 
     const/4 v1, 0x0
 
-    .line 218
+    .line 234
     :goto_2
     iget-object v3, v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->cachedDataPoints:[F
 
@@ -487,7 +487,7 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 219
+    .line 235
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -504,7 +504,7 @@
 
     goto :goto_2
 
-    .line 221
+    .line 237
     :cond_4
     invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
@@ -517,7 +517,7 @@
     :goto_3
     if-ge v3, v1, :cond_5
 
-    .line 223
+    .line 239
     invoke-virtual {v13, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -541,7 +541,7 @@
 .method public isDefault()Z
     .locals 4
 
-    .line 229
+    .line 245
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
 
     const/4 v1, 0x0
@@ -633,4 +633,76 @@
 
     :goto_0
     return v0
+.end method
+
+.method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
+    .locals 1
+
+    .line 257
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
+
+    .line 258
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->shadowsLevel:F
+
+    .line 259
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->midtonesLevel:F
+
+    .line 260
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->highlightsLevel:F
+
+    .line 261
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
+
+    move-result p1
+
+    iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->whitesLevel:F
+
+    return-void
+.end method
+
+.method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+    .locals 1
+
+    .line 249
+    iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
+
+    .line 250
+    iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->shadowsLevel:F
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
+
+    .line 251
+    iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->midtonesLevel:F
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
+
+    .line 252
+    iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->highlightsLevel:F
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
+
+    .line 253
+    iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->whitesLevel:F
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
+
+    return-void
 .end method

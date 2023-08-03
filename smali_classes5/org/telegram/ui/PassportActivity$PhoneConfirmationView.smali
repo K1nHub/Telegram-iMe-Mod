@@ -3345,7 +3345,7 @@
 
     move-result v10
 
-    invoke-virtual {v8, v10}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v8, v10}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 7497
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->codeField:[Lorg/telegram/ui/Components/EditTextBoldCursor;

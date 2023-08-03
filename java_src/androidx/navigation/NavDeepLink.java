@@ -16,6 +16,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
@@ -53,9 +54,39 @@ public final class NavDeepLink {
         this.uriPattern = str;
         this.action = str2;
         this.mimeType = str3;
-        lazy = LazyKt__LazyJVMKt.lazy(new NavDeepLink$pattern$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Pattern>() { // from class: androidx.navigation.NavDeepLink$pattern$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Pattern invoke() {
+                String str4;
+                str4 = NavDeepLink.this.patternFinalRegex;
+                if (str4 != null) {
+                    return Pattern.compile(str4, 2);
+                }
+                return null;
+            }
+        });
         this.pattern$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new NavDeepLink$mimeTypePattern$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Pattern>() { // from class: androidx.navigation.NavDeepLink$mimeTypePattern$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Pattern invoke() {
+                String str4;
+                str4 = NavDeepLink.this.mimeTypeFinalRegex;
+                if (str4 != null) {
+                    return Pattern.compile(str4);
+                }
+                return null;
+            }
+        });
         this.mimeTypePattern$delegate = lazy2;
         if (str != null) {
             Uri parse = Uri.parse(str);

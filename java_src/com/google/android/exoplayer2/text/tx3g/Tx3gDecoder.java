@@ -127,13 +127,13 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
         parsableByteArray.skipBytes(1);
         int readInt = parsableByteArray.readInt();
         if (readUnsignedShort2 > spannableStringBuilder.length()) {
-            Log.m796w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
+            Log.m814w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
             i = spannableStringBuilder.length();
         } else {
             i = readUnsignedShort2;
         }
         if (readUnsignedShort >= i) {
-            Log.m796w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
+            Log.m814w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
             return;
         }
         int i2 = i;

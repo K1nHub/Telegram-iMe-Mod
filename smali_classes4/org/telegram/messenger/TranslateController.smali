@@ -345,7 +345,7 @@
 
     const-string v7, "ko"
 
-    const-string v8, "pt"
+    const-string/jumbo v8, "pt"
 
     const-string/jumbo v9, "ru"
 
@@ -506,17 +506,17 @@
 
     const-string v71, "ny"
 
-    const-string v72, "or"
+    const-string/jumbo v72, "or"
 
-    const-string v73, "ps"
+    const-string/jumbo v73, "ps"
 
     const-string v74, "fa"
 
-    const-string v75, "pl"
+    const-string/jumbo v75, "pl"
 
-    const-string v76, "pt"
+    const-string/jumbo v76, "pt"
 
-    const-string v77, "pa"
+    const-string/jumbo v77, "pa"
 
     const-string/jumbo v78, "ro"
 

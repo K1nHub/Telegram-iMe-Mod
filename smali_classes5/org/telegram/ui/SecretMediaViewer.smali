@@ -6673,13 +6673,15 @@
     sub-long/2addr v2, v4
 
     .line 826
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v4
+    move-result-wide v4
 
-    int-to-long v4, v4
+    const-wide v6, 0x408f400000000000L    # 1000.0
 
-    mul-long v4, v4, v17
+    mul-double/2addr v4, v6
+
+    double-to-long v4, v4
 
     cmp-long v2, v4, v2
 

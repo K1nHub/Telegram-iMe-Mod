@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/RemoteInput$Api29Impl;,
-        Landroidx/core/app/RemoteInput$Api16Impl;,
-        Landroidx/core/app/RemoteInput$Api20Impl;,
         Landroidx/core/app/RemoteInput$Api26Impl;,
+        Landroidx/core/app/RemoteInput$Api20Impl;,
+        Landroidx/core/app/RemoteInput$Api16Impl;,
+        Landroidx/core/app/RemoteInput$Api29Impl;,
         Landroidx/core/app/RemoteInput$Builder;
     }
 .end annotation

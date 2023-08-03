@@ -21,6 +21,8 @@
 
 .field private containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
 
+.field private final mirrorT:Lorg/telegram/ui/Components/AnimatedFloat;
+
 .field private mirrored:Z
 
 .field private parentObject:Ljava/lang/Object;
@@ -40,7 +42,7 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Views/StickerView;Lorg/telegram/ui/Components/Point;)V
     .locals 8
 
-    .line 88
+    .line 93
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getRotation()F
 
     move-result v3
@@ -63,12 +65,12 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/Paint/Views/StickerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;FFLorg/telegram/ui/Components/Size;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
 
-    .line 89
+    .line 94
     iget-boolean p1, p2, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
 
     if-eqz p1, :cond_0
 
-    .line 90
+    .line 95
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirror()V
 
     :cond_0
@@ -78,42 +80,42 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;FFLorg/telegram/ui/Components/Size;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
     .locals 8
 
-    .line 49
+    .line 52
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;)V
 
     const/4 p2, -0x1
 
-    .line 37
+    .line 39
     iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->anchor:I
 
     const/4 v0, 0x0
 
-    .line 38
+    .line 40
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
 
-    .line 42
+    .line 45
     new-instance v1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 50
+    .line 53
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setRotation(F)V
 
-    .line 51
+    .line 54
     invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setScale(F)V
 
-    .line 53
+    .line 56
     iput-object p6, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 54
+    .line 57
     iput-object p5, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
 
-    .line 55
+    .line 58
     iput-object p7, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->parentObject:Ljava/lang/Object;
 
-    .line 57
+    .line 60
     :goto_0
     iget-object p3, p6, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
@@ -123,7 +125,7 @@
 
     if-ge v0, p3, :cond_1
 
-    .line 58
+    .line 61
     iget-object p3, p6, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -132,17 +134,17 @@
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 59
+    .line 62
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
     if-eqz p4, :cond_0
 
-    .line 60
+    .line 63
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->mask_coords:Lorg/telegram/tgnet/TLRPC$TL_maskCoords;
 
     if-eqz p3, :cond_1
 
-    .line 61
+    .line 64
     iget p3, p3, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->n:I
 
     iput p3, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->anchor:I
@@ -154,7 +156,7 @@
 
     goto :goto_0
 
-    .line 67
+    .line 70
     :cond_1
     :goto_1
     new-instance p3, Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
@@ -163,33 +165,50 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
 
-    .line 68
+    .line 71
     invoke-static {p2, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
 
     invoke-virtual {p0, p3, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 70
+    .line 73
+    new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, 0x1f4
+
+    sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    move-object v0, p1
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JJLandroid/animation/TimeInterpolator;)V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrorT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    .line 75
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 p2, 0x1
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
-    .line 71
+    .line 76
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
 
-    .line 72
+    .line 77
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 73
+    .line 78
     iget-object p1, p6, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     const/16 p2, 0x5a
@@ -198,7 +217,7 @@
 
     move-result-object p1
 
-    .line 74
+    .line 79
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {p6}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -221,7 +240,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 75
+    .line 80
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance p2, Lorg/telegram/ui/Components/Paint/Views/StickerView$$ExternalSyntheticLambda0;
@@ -230,7 +249,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setDelegate(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;)V
 
-    .line 84
+    .line 89
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->updatePosition()V
 
     return-void
@@ -243,14 +262,14 @@
 
     if-nez p3, :cond_0
 
-    .line 77
+    .line 82
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 79
+    .line 84
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     :cond_0
@@ -262,7 +281,7 @@
 .method protected createSelectionView()Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;
     .locals 2
 
-    .line 178
+    .line 189
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/StickerView$StickerViewSelectionView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -283,7 +302,7 @@
 .method public getAnchor()I
     .locals 1
 
-    .line 107
+    .line 112
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->anchor:I
 
     return v0
@@ -292,7 +311,7 @@
 .method public getBaseSize()Lorg/telegram/ui/Components/Size;
     .locals 1
 
-    .line 190
+    .line 201
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
 
     return-object v0
@@ -301,7 +320,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 147
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -310,14 +329,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 149
+    .line 160
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->getDuration()J
 
     move-result-wide v0
 
     return-wide v0
 
-    .line 151
+    .line 162
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -327,7 +346,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 153
+    .line 164
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->getDurationMs()I
 
     move-result v0
@@ -345,7 +364,7 @@
 .method public getParentObject()Ljava/lang/Object;
     .locals 1
 
-    .line 186
+    .line 197
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->parentObject:Ljava/lang/Object;
 
     return-object v0
@@ -354,7 +373,7 @@
 .method protected getSelectionBounds()Lorg/telegram/ui/Components/Rect;
     .locals 6
 
-    .line 166
+    .line 177
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -363,20 +382,20 @@
 
     if-nez v0, :cond_0
 
-    .line 168
+    .line 179
     new-instance v0, Lorg/telegram/ui/Components/Rect;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Rect;-><init>()V
 
     return-object v0
 
-    .line 170
+    .line 181
     :cond_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getScaleX()F
 
     move-result v0
 
-    .line 172
+    .line 183
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -393,7 +412,7 @@
 
     mul-float/2addr v1, v2
 
-    .line 173
+    .line 184
     new-instance v2, Lorg/telegram/ui/Components/Rect;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionX()F
@@ -426,7 +445,7 @@
 .method public getSticker()Lorg/telegram/tgnet/TLRPC$Document;
     .locals 1
 
-    .line 182
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     return-object v0
@@ -435,7 +454,7 @@
 .method public isMirrored()Z
     .locals 1
 
-    .line 116
+    .line 128
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
 
     return v0
@@ -444,17 +463,38 @@
 .method public mirror()V
     .locals 1
 
-    .line 111
+    const/4 v0, 0x0
+
+    .line 116
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirror(Z)V
+
+    return-void
+.end method
+
+.method public mirror(Z)V
+    .locals 2
+
+    .line 120
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
 
-    xor-int/lit8 v0, v0, 0x1
+    const/4 v1, 0x1
+
+    xor-int/2addr v0, v1
 
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
 
-    .line 112
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
+    if-nez p1, :cond_0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
+    .line 122
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrorT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
+
+    .line 124
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
 .end method
@@ -462,10 +502,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 102
+    .line 107
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 103
+    .line 108
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -476,10 +516,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 96
+    .line 101
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 97
+    .line 102
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
@@ -490,7 +530,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 161
+    .line 172
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
 
     iget p1, p1, Lorg/telegram/ui/Components/Size;->width:F
@@ -519,44 +559,63 @@
 .end method
 
 .method protected stickerDraw(Landroid/graphics/Canvas;)V
-    .locals 4
+    .locals 5
 
-    .line 132
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->containerView:Lorg/telegram/ui/Components/Paint/Views/StickerView$FrameLayoutDrawer;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 136
+    .line 148
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 137
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
+    .line 149
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrorT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirrored:Z
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(Z)F
+
+    move-result v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    mul-float v2, v0, v1
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    sub-float v2, v3, v2
+
+    .line 150
+    iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
+
+    iget v4, v4, Lorg/telegram/ui/Components/Size;->width:F
+
+    div-float/2addr v4, v1
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p1, v2, v3, v4, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    const/high16 v0, -0x40800000    # -1.0f
+    const/high16 v2, 0x40800000    # 4.0f
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    mul-float/2addr v2, v0
 
-    .line 138
-    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->scale(FF)V
+    sub-float/2addr v3, v0
 
-    .line 139
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
+    mul-float/2addr v2, v3
 
-    iget v0, v0, Lorg/telegram/ui/Components/Size;->width:F
+    const/high16 v0, 0x3e800000    # 0.25f
 
-    neg-float v0, v0
+    mul-float/2addr v2, v0
 
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    .line 151
+    invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->skew(FF)V
 
-    .line 141
-    :cond_1
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
@@ -575,12 +634,12 @@
 
     invoke-virtual {v0, v1, v1, v3, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 142
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 143
+    .line 154
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -589,7 +648,7 @@
 .method protected updatePosition()V
     .locals 3
 
-    .line 120
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/StickerView;->baseSize:Lorg/telegram/ui/Components/Size;
 
     iget v1, v0, Lorg/telegram/ui/Components/Size;->width:F
@@ -598,12 +657,12 @@
 
     div-float/2addr v1, v2
 
-    .line 121
+    .line 133
     iget v0, v0, Lorg/telegram/ui/Components/Size;->height:F
 
     div-float/2addr v0, v2
 
-    .line 122
+    .line 134
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionX()F
 
     move-result v2
@@ -612,7 +671,7 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setX(F)V
 
-    .line 123
+    .line 135
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionY()F
 
     move-result v1
@@ -621,7 +680,7 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 124
+    .line 136
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->updateSelectionView()V
 
     return-void

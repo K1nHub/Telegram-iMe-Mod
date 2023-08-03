@@ -18,7 +18,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "params == null"
+    const-string/jumbo v0, "params == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -66,7 +66,7 @@
 
     if-ne v1, v0, :cond_3
 
-    const-string v1, "otsHashAddress == null"
+    const-string/jumbo v1, "otsHashAddress == null"
 
     invoke-static {p4, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    const-string v2, "otsHashAddress byte array == null"
+    const-string/jumbo v2, "otsHashAddress byte array == null"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -372,7 +372,7 @@
 .method getPublicKey(Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress;)Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusPublicKeyParameters;
     .locals 6
 
-    const-string v0, "otsHashAddress == null"
+    const-string/jumbo v0, "otsHashAddress == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -572,7 +572,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const-string v0, "publicSeed == null"
+    const-string/jumbo v0, "publicSeed == null"
 
     invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

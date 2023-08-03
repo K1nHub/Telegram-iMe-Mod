@@ -33,6 +33,7 @@ import com.google.android.exoplayer2.video.VideoFrameMetadataListener;
 import com.google.android.exoplayer2.video.VideoSize;
 import com.google.android.exoplayer2.video.spherical.CameraMotionListener;
 import java.util.List;
+import org.telegram.messenger.DispatchQueue;
 @Deprecated
 /* loaded from: classes.dex */
 public class SimpleExoPlayer extends BasePlayer implements ExoPlayer, ExoPlayer.AudioComponent, ExoPlayer.VideoComponent, ExoPlayer.TextComponent, ExoPlayer.DeviceComponent {
@@ -61,6 +62,10 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer, ExoPlayer.
     @Deprecated
     public ExoPlayer.VideoComponent getVideoComponent() {
         return this;
+    }
+
+    @Override // com.google.android.exoplayer2.ExoPlayer
+    public void setWorkerQueue(DispatchQueue dispatchQueue) {
     }
 
     @Deprecated

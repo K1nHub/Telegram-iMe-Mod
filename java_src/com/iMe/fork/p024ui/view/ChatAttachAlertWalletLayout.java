@@ -56,6 +56,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -64,15 +65,20 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.Koin;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.java.KoinJavaComponent;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -154,7 +160,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ChatAttachAlertWalletLayout(ChatAttachAlert alert, Theme.ResourcesProvider resourcesProvider) {
+    public ChatAttachAlertWalletLayout(final ChatAttachAlert alert, Theme.ResourcesProvider resourcesProvider) {
         super(alert, alert.getContext(), resourcesProvider);
         Lazy lazy;
         Lazy lazy2;
@@ -165,20 +171,140 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         List<TokenBalance> emptyList2;
         Intrinsics.checkNotNullParameter(alert, "alert");
         Intrinsics.checkNotNullParameter(resourcesProvider, "resourcesProvider");
-        ChatAttachAlertWalletLayout$presenter$2 chatAttachAlertWalletLayout$presenter$2 = new ChatAttachAlertWalletLayout$presenter$2(this);
+        Function0<WalletAttachAlertPresenter> function0 = new Function0<WalletAttachAlertPresenter>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletAttachAlertPresenter invoke() {
+                Lazy lazy6;
+                final ChatAttachAlertWalletLayout chatAttachAlertWalletLayout = ChatAttachAlertWalletLayout.this;
+                lazy6 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletAttachAlertPresenter>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletAttachAlertPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletAttachAlertPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletAttachAlertPresenter) lazy6.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletAttachAlertPresenter.class.getName() + ".presenter", chatAttachAlertWalletLayout$presenter$2);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletAttachAlertPresenter.class.getName() + ".presenter", function0);
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ChatAttachAlertWalletLayout$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletTransactionsRecycleAdapter>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.transaction.adapter.WalletTransactionsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletTransactionsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletTransactionsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.transactionAdapter$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ChatAttachAlertWalletLayout$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletFlowCoordinator>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletFlowCoordinator invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), qualifier, function02);
+            }
+        });
         this.walletFlowCoordinator$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new ChatAttachAlertWalletLayout$special$$inlined$inject$default$3(this, null, null));
+        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$special$$inlined$inject$default$3
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new ChatAttachAlertWalletLayout$progressDialog$2(alert));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<AlertDialog>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$progressDialog$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final AlertDialog invoke() {
+                AlertDialog alertDialog = new AlertDialog(ChatAttachAlert.this.getBaseFragment().getParentActivity(), 3);
+                alertDialog.setCanCancel(false);
+                return alertDialog;
+            }
+        });
         this.progressDialog$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new ChatAttachAlertWalletLayout$listAdapter$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final ChatAttachAlertWalletLayout.ListAdapter invoke() {
+                ChatAttachAlertWalletLayout chatAttachAlertWalletLayout = ChatAttachAlertWalletLayout.this;
+                Context context = chatAttachAlertWalletLayout.getContext();
+                Intrinsics.checkNotNullExpressionValue(context, "context");
+                return new ChatAttachAlertWalletLayout.ListAdapter(chatAttachAlertWalletLayout, context);
+            }
+        });
         this.listAdapter$delegate = lazy5;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.transactions = emptyList;
@@ -227,12 +353,12 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 RecyclerListView.Holder holder;
                 Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                 if (i == 0) {
-                    int m55dp = AndroidUtilities.m55dp(13.0f);
+                    int m73dp = AndroidUtilities.m73dp(13.0f);
                     int backgroundPaddingTop = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.getBackgroundPaddingTop();
-                    if (((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m55dp) + backgroundPaddingTop >= C3484ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) recyclerListView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m55dp(53.0f)) {
+                    if (((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m73dp) + backgroundPaddingTop >= C3485ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) recyclerListView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m73dp(53.0f)) {
                         return;
                     }
-                    recyclerListView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m55dp(53.0f));
+                    recyclerListView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m73dp(53.0f));
                 }
             }
         });
@@ -380,7 +506,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         Intrinsics.checkNotNullParameter(action, "action");
         BaseFragment baseFragment = this.parentAlert.getBaseFragment();
         Intrinsics.checkNotNullExpressionValue(baseFragment, "parentAlert.baseFragment");
-        Dialog createSuccessAlert$default = DialogsFactoryKt.createSuccessAlert$default(baseFragment, title, message, getResourceManager().getString(C3417R.string.common_ok), null, action, 8, null);
+        Dialog createSuccessAlert$default = DialogsFactoryKt.createSuccessAlert$default(baseFragment, title, message, getResourceManager().getString(C3419R.string.common_ok), null, action, 8, null);
         createSuccessAlert$default.show();
         this.activeDialog = createSuccessAlert$default;
     }
@@ -467,9 +593,9 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
             Intrinsics.checkNotNull(baseFragment, "null cannot be cast to non-null type org.telegram.ui.ChatActivity");
             TLRPC$User currentUser = ((ChatActivity) baseFragment).getCurrentUser();
             if (this.selectedBalance != null) {
-                getPresenter().loadAddressInfoById(String.valueOf(currentUser.f1656id));
+                getPresenter().loadAddressInfoById(String.valueOf(currentUser.f1675id));
             } else {
-                showToast(getResourceManager().getString(C3417R.string.transfer_via_wallet_transfer_empty_selected_account));
+                showToast(getResourceManager().getString(C3419R.string.transfer_via_wallet_transfer_empty_selected_account));
             }
         }
     }
@@ -479,19 +605,19 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         View childAt;
         if (this.listView.getChildCount() > 0 && (childAt = this.listView.getChildAt(1)) != null) {
             RecyclerView.ViewHolder findContainingViewHolder = this.listView.findContainingViewHolder(childAt);
-            int y = ((int) childAt.getY()) - AndroidUtilities.m55dp(8.0f);
+            int y = ((int) childAt.getY()) - AndroidUtilities.m73dp(8.0f);
             int i = (y <= 0 || findContainingViewHolder == null || findContainingViewHolder.getAdapterPosition() != 1) ? 0 : y;
             if (y < 0 || findContainingViewHolder == null || findContainingViewHolder.getAdapterPosition() != 0) {
                 y = i;
             }
-            return y + AndroidUtilities.m55dp(25.0f);
+            return y + AndroidUtilities.m73dp(25.0f);
         }
         return Integer.MAX_VALUE;
     }
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.m55dp(17.0f);
+        return getListTopPadding() + AndroidUtilities.m73dp(17.0f);
     }
 
     @Override // android.view.View
@@ -518,12 +644,12 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
             org.telegram.ui.Components.SizeNotifierFrameLayout r4 = r4.sizeNotifierFrameLayout
             int r4 = r4.measureKeyboardHeight()
             r0 = 1101004800(0x41a00000, float:20.0)
-            int r0 = org.telegram.messenger.AndroidUtilities.m55dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m73dp(r0)
             r1 = 1
             r2 = 0
             if (r4 <= r0) goto L1e
             r4 = 1112539136(0x42500000, float:52.0)
-            int r4 = org.telegram.messenger.AndroidUtilities.m55dp(r4)
+            int r4 = org.telegram.messenger.AndroidUtilities.m73dp(r4)
             org.telegram.ui.Components.ChatAttachAlert r5 = r3.parentAlert
             r5.setAllowNestedScroll(r2)
             goto L45
@@ -544,7 +670,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
             int r4 = r5 * 2
         L36:
             r5 = 1095761920(0x41500000, float:13.0)
-            int r5 = org.telegram.messenger.AndroidUtilities.m55dp(r5)
+            int r5 = org.telegram.messenger.AndroidUtilities.m73dp(r5)
             int r4 = r4 - r5
             if (r4 >= 0) goto L40
             r4 = r2
@@ -571,7 +697,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public int getButtonsHideOffset() {
-        return AndroidUtilities.m55dp(70.0f);
+        return AndroidUtilities.m73dp(70.0f);
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -600,11 +726,11 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        this.parentAlert.actionBar.setTitle(LocaleController.getInternalString(C3417R.string.transfer_via_wallet_toolbar_title));
+        this.parentAlert.actionBar.setTitle(LocaleController.getInternalString(C3419R.string.transfer_via_wallet_toolbar_title));
         ActionBarMenuItem onShow$lambda$11 = this.parentAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(onShow$lambda$11, "onShow$lambda$11");
         ViewExtKt.visible$default(onShow$lambda$11, false, 1, null);
-        String internalString = LocaleController.getInternalString(C3417R.string.transfer_via_wallet_action_item);
+        String internalString = LocaleController.getInternalString(C3419R.string.transfer_via_wallet_action_item);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…r_via_wallet_action_item)");
         String upperCase = internalString.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -617,7 +743,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         ActionBarMenuItem onHide$lambda$12 = this.parentAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(onHide$lambda$12, "onHide$lambda$12");
         ViewExtKt.invisible$default(onHide$lambda$12, false, 1, null);
-        String string = LocaleController.getString("Create", C3417R.string.Create);
+        String string = LocaleController.getString("Create", C3419R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -701,18 +827,18 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 ChatAttachAlertWalletLayout chatAttachAlertWalletLayout = this.this$0;
                 if (i == chatAttachAlertWalletLayout.sendHeaderRow) {
                     headerCell.getTextView().setGravity(19);
-                    headerCell.setText(LocaleController.getInternalString(C3417R.string.transfer_via_wallet_transfer_title));
+                    headerCell.setText(LocaleController.getInternalString(C3419R.string.transfer_via_wallet_transfer_title));
                     return;
                 }
                 headerCell.getTextView().setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                 if (i != chatAttachAlertWalletLayout.accountsHeaderRow) {
                     if (i == chatAttachAlertWalletLayout.transactionsHeaderRow) {
-                        headerCell.setText(LocaleController.getInternalString(C3417R.string.transfer_via_wallet_transaction_title));
+                        headerCell.setText(LocaleController.getInternalString(C3419R.string.transfer_via_wallet_transaction_title));
                         return;
                     }
                     return;
                 }
-                headerCell.setText(LocaleController.getInternalString(C3417R.string.transfer_via_wallet_my_accounts_title));
+                headerCell.setText(LocaleController.getInternalString(C3419R.string.transfer_via_wallet_my_accounts_title));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_NETWORK_SWITCHER) {
                 View view2 = holder.itemView;
                 Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.iMe.fork.ui.view.TextNetworkSwitcherCell");
@@ -726,7 +852,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                             ChatAttachAlertWalletLayout.ListAdapter.onBindViewHolder$lambda$2$lambda$1(ChatAttachAlertWalletLayout.this, view3);
                         }
                     });
-                    String internalString = LocaleController.getInternalString(C3417R.string.transfer_via_wallet_choose_account_hint);
+                    String internalString = LocaleController.getInternalString(C3419R.string.transfer_via_wallet_choose_account_hint);
                     Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…llet_choose_account_hint)");
                     textNetworkSwitcherCell.setText(internalString);
                     textNetworkSwitcherCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -745,7 +871,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                     imageRadioCell.setImageUrl(tokenBalance.getToken().getAvatarUrl());
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TRANSACTION) {
-                ((GlobalStateLayout) holder.itemView.findViewById(C3417R.C3420id.global_state_layout)).setInternalState(this.this$0.transactionState);
+                ((GlobalStateLayout) holder.itemView.findViewById(C3419R.C3422id.global_state_layout)).setInternalState(this.this$0.transactionState);
                 if (Intrinsics.areEqual(this.this$0.transactionState, GlobalState.Content.INSTANCE)) {
                     WalletTransactionsRecycleAdapter transactionAdapter = this.this$0.getTransactionAdapter();
                     mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.this$0.transactions);
@@ -777,7 +903,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 imageRadioCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false);
             } else if (i == IdFabric$ViewTypes.SHADOW_SECTION) {
                 imageRadioCell = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(this.mContext, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 imageRadioCell.setBackground(combinedDrawable);
             } else if (i == IdFabric$ViewTypes.TEXT_NETWORK_SWITCHER) {
@@ -795,9 +921,9 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                     }
                 };
             } else if (i == IdFabric$ViewTypes.TRANSACTION) {
-                imageRadioCell = LayoutInflater.from(((ChatAttachAlert.AttachAlertLayout) this.this$0).parentAlert.getBaseFragment().getParentActivity()).inflate(C3417R.layout.fork_recycle_item_wallet_attach_transactions, parent, false);
+                imageRadioCell = LayoutInflater.from(((ChatAttachAlert.AttachAlertLayout) this.this$0).parentAlert.getBaseFragment().getParentActivity()).inflate(C3419R.layout.fork_recycle_item_wallet_attach_transactions, parent, false);
                 final ChatAttachAlertWalletLayout chatAttachAlertWalletLayout2 = this.this$0;
-                RecyclerView recyclerView = (RecyclerView) imageRadioCell.findViewById(C3417R.C3420id.recycle_transactions);
+                RecyclerView recyclerView = (RecyclerView) imageRadioCell.findViewById(C3419R.C3422id.recycle_transactions);
                 WalletTransactionsRecycleAdapter transactionAdapter = chatAttachAlertWalletLayout2.getTransactionAdapter();
                 transactionAdapter.getHeaderProvider().setExtraPadding(6.0f);
                 transactionAdapter.getTokenTransactionProvider().setExtraPadding(6.0f);
@@ -811,7 +937,23 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 recyclerView.setAdapter(transactionAdapter);
                 recyclerView.setNestedScrollingEnabled(false);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this.mContext));
-                ((GlobalStateLayout) imageRadioCell.findViewById(C3417R.C3420id.global_state_layout)).setRetryButtonClickListener(new ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1(chatAttachAlertWalletLayout2));
+                ((GlobalStateLayout) imageRadioCell.findViewById(C3419R.C3422id.global_state_layout)).setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public /* bridge */ /* synthetic */ Unit invoke() {
+                        invoke2();
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2() {
+                        ChatAttachAlertWalletLayout.this.getPresenter().getWalletData(true);
+                    }
+                });
             } else {
                 imageRadioCell = new ImageRadioCell(this.mContext, false, 0, 6, null);
             }

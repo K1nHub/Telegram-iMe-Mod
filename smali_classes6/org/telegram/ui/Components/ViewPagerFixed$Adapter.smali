@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 774
+    .line 872
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,12 @@
     return p1
 .end method
 
-.method public abstract getItemTitle(I)Ljava/lang/String;
+.method public getItemTitle(I)Ljava/lang/String;
+    .locals 0
+
+    const-string p1, ""
+
+    return-object p1
 .end method
 
 .method public getItemViewType(I)I

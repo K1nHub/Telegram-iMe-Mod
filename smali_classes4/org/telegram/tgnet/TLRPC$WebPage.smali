@@ -8,7 +8,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;",
+            "Lorg/telegram/tgnet/TLRPC$WebPageAttribute;",
             ">;"
         }
     .end annotation
@@ -57,10 +57,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 20728
+    .line 21100
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 20767
+    .line 21139
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 20791
+    .line 21163
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 20779
+    .line 21151
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer104;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 20776
+    .line 21148
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 20785
+    .line 21157
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 20773
+    .line 21145
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 20788
+    .line 21160
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 20800
+    .line 21172
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer58;
 
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 20794
+    .line 21166
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPagePending;
 
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 20782
+    .line 21154
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_old;
 
@@ -151,7 +151,7 @@
 
     goto :goto_0
 
-    .line 20797
+    .line 21169
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified_layer110;
 
@@ -164,7 +164,7 @@
 
     goto :goto_1
 
-    .line 20804
+    .line 21176
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -194,7 +194,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 20807
+    .line 21179
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

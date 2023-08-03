@@ -7,6 +7,7 @@ import com.google.firebase.firestore.local.LruGarbageCollector;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Consumer;
+import com.google.firebase.firestore.util.Function;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public class SQLiteLruReferenceDelegate implements ReferenceDelegate, LruDelegate {
@@ -52,7 +53,14 @@ public class SQLiteLruReferenceDelegate implements ReferenceDelegate, LruDelegat
 
     @Override // com.google.firebase.firestore.local.LruDelegate
     public long getSequenceNumberCount() {
-        return this.persistence.getTargetCache().getTargetCount() + ((Long) this.persistence.query("SELECT COUNT(*) FROM (SELECT sequence_number FROM target_documents GROUP BY path HAVING COUNT(*) = 1 AND target_id = 0)").firstValue(SQLiteLruReferenceDelegate$$ExternalSyntheticLambda2.INSTANCE)).longValue();
+        return this.persistence.getTargetCache().getTargetCount() + ((Long) this.persistence.query("SELECT COUNT(*) FROM (SELECT sequence_number FROM target_documents GROUP BY path HAVING COUNT(*) = 1 AND target_id = 0)").firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteLruReferenceDelegate$$ExternalSyntheticLambda2
+            @Override // com.google.firebase.firestore.util.Function
+            public final Object apply(Object obj) {
+                Long lambda$getSequenceNumberCount$0;
+                lambda$getSequenceNumberCount$0 = SQLiteLruReferenceDelegate.lambda$getSequenceNumberCount$0((Cursor) obj);
+                return lambda$getSequenceNumberCount$0;
+            }
+        })).longValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

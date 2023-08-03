@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DilogCacheBottomSheet;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 231
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/DilogCacheBottomSheet$3;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/CachedMediaLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 234
+    .line 237
     iget-object p2, p0, Lorg/telegram/ui/DilogCacheBottomSheet$3;->this$0:Lorg/telegram/ui/DilogCacheBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/DilogCacheBottomSheet;->access$300(Lorg/telegram/ui/DilogCacheBottomSheet;)I

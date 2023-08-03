@@ -18,6 +18,7 @@ import okio.BufferedSource;
 import okio.ByteString;
 import okio.Okio;
 import okio.Source;
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: Hpack.kt */
 /* loaded from: classes4.dex */
 public final class Hpack {
@@ -133,7 +134,7 @@ public final class Hpack {
                     throw new IOException("index == 0");
                 }
                 if ((and & 128) == 128) {
-                    readIndexedHeader(readInt(and, 127) - 1);
+                    readIndexedHeader(readInt(and, MessagesStorage.LAST_DB_VERSION) - 1);
                 } else if (and == 64) {
                     readLiteralHeaderWithIncrementalIndexingNewName();
                 } else if ((and & 64) == 64) {
@@ -260,7 +261,7 @@ public final class Hpack {
                 if ((readByte & 128) == 0) {
                     return i2 + (readByte << i4);
                 }
-                i2 += (readByte & 127) << i4;
+                i2 += (readByte & MessagesStorage.LAST_DB_VERSION) << i4;
                 i4 += 7;
             }
         }
@@ -268,7 +269,7 @@ public final class Hpack {
         public final ByteString readByteString() throws IOException {
             int readByte = readByte();
             boolean z = (readByte & 128) == 128;
-            long readInt = readInt(readByte, 127);
+            long readInt = readInt(readByte, MessagesStorage.LAST_DB_VERSION);
             if (z) {
                 Buffer buffer = new Buffer();
                 Huffman.INSTANCE.decode(this.source, readInt, buffer);
@@ -443,7 +444,7 @@ public final class Hpack {
                     }
                 }
                 if (i2 != -1) {
-                    writeInt(i2, 127, 128);
+                    writeInt(i2, MessagesStorage.LAST_DB_VERSION, 128);
                 } else if (i == -1) {
                     this.out.writeByte(64);
                     writeByteString(asciiLowercase);
@@ -468,7 +469,7 @@ public final class Hpack {
             this.out.writeByte(i3 | i2);
             int i4 = i - i2;
             while (i4 >= 128) {
-                this.out.writeByte(128 | (i4 & 127));
+                this.out.writeByte(128 | (i4 & MessagesStorage.LAST_DB_VERSION));
                 i4 >>>= 7;
             }
             this.out.writeByte(i4);
@@ -482,12 +483,12 @@ public final class Hpack {
                     Buffer buffer = new Buffer();
                     huffman.encode(data, buffer);
                     ByteString readByteString = buffer.readByteString();
-                    writeInt(readByteString.size(), 127, 128);
+                    writeInt(readByteString.size(), MessagesStorage.LAST_DB_VERSION, 128);
                     this.out.write(readByteString);
                     return;
                 }
             }
-            writeInt(data.size(), 127, 0);
+            writeInt(data.size(), MessagesStorage.LAST_DB_VERSION, 0);
             this.out.write(data);
         }
 

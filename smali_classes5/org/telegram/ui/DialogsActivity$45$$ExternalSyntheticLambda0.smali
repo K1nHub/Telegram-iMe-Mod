@@ -2,38 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity$45;
-
-.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/BaseFragment;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity$45;[Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/DialogsActivity$45;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;->f$1:[Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final accept(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/DialogsActivity$45;
+    check-cast p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$45$$ExternalSyntheticLambda0;->f$1:[Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity$45;->$r8$lambda$5G_gKzlPqy-sR7uhou0JJTXmpvM(Lorg/telegram/ui/DialogsActivity$45;[Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$45;->$r8$lambda$-InS3_b7s6XjxBGi1dT_OyJCP3g(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
     return-void
 .end method

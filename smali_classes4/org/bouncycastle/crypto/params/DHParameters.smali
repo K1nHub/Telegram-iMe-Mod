@@ -57,7 +57,7 @@
 
     if-le p4, p5, :cond_4
 
-    const-string p4, "org.bouncycastle.dh.allow_unsafe_p_value"
+    const-string/jumbo p4, "org.bouncycastle.dh.allow_unsafe_p_value"
 
     invoke-static {p4}, Lorg/bouncycastle/util/Properties;->isOverrideSet(Ljava/lang/String;)Z
 

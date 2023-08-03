@@ -4004,48 +4004,50 @@
 
     invoke-virtual {v3, v2, v7, v8, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
+    const/4 v3, 0x2
+
     if-eqz v15, :cond_33
 
     .line 462
-    iget-object v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
-
-    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
-
-    const/4 v7, 0x1
-
-    invoke-static {v3, v0, v7}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
-
-    move-result-object v3
-
-    .line 463
     iget-object v7, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
     iget-object v7, v7, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
-    const/16 v8, 0x50
+    const/4 v8, 0x1
 
-    invoke-static {v7, v8}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
+    invoke-static {v7, v0, v8}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v7
 
-    if-ne v7, v3, :cond_31
+    .line 463
+    iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
-    move-object/from16 v7, v17
+    iget-object v8, v8, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
+
+    const/16 v9, 0x50
+
+    invoke-static {v8, v9}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+    move-result-object v8
+
+    if-ne v8, v7, :cond_31
+
+    move-object/from16 v8, v17
 
     :cond_31
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
     .line 467
-    iput v8, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
+    iput v9, v7, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
-    if-eqz v7, :cond_32
+    if-eqz v8, :cond_32
 
     .line 469
-    iput v8, v7, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
+    iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     .line 471
     :cond_32
-    iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
+    iget-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float v2, v2
 
@@ -4055,19 +4057,17 @@
 
     int-to-float v6, v6
 
-    int-to-float v9, v0
+    int-to-float v10, v0
 
-    invoke-virtual {v8, v2, v6, v9, v9}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {v9, v2, v6, v10, v10}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
     .line 472
-    invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
+    invoke-static {v7}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     .line 473
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const/4 v6, 0x2
-
-    new-array v8, v6, [Ljava/lang/Object;
+    new-array v6, v3, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4075,7 +4075,7 @@
 
     const/4 v10, 0x0
 
-    aput-object v9, v8, v10
+    aput-object v9, v6, v10
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4083,22 +4083,22 @@
 
     const/4 v11, 0x1
 
-    aput-object v9, v8, v11
+    aput-object v9, v6, v11
 
     const-string v9, "%d_%d"
 
-    invoke-static {v2, v9, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v9, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v19
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v6, v3, [Ljava/lang/Object;
 
     .line 474
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v9
 
-    aput-object v8, v6, v10
+    aput-object v9, v6, v10
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4119,7 +4119,7 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->photoThumbsObject:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/ImageLocation;->getForObject(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v7, v2}, Lorg/telegram/messenger/ImageLocation;->getForObject(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v18
 
@@ -4127,7 +4127,7 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->photoThumbsObject:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v7, v2}, Lorg/telegram/messenger/ImageLocation;->getForObject(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v8, v2}, Lorg/telegram/messenger/ImageLocation;->getForObject(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLObject;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v20
 
@@ -4164,7 +4164,9 @@
     .line 480
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
-    invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->createFromInfoString(Lorg/telegram/messenger/MessageObject;)Ljava/lang/CharSequence;
+    iget-object v6, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->description2TextPaint:Landroid/text/TextPaint;
+
+    invoke-static {v0, v2, v3, v6}, Lorg/telegram/ui/FilteredSearchView;->createFromInfoString(Lorg/telegram/messenger/MessageObject;ZILandroid/text/TextPaint;)Ljava/lang/CharSequence;
 
     move-result-object v6
 

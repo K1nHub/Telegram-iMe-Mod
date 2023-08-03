@@ -1,4 +1,6 @@
 package com.iMe.storage.domain.model.wallet;
+
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 /* compiled from: PriceRate.kt */
 /* loaded from: classes3.dex */
 public final class PriceRate {
@@ -39,7 +41,7 @@ public final class PriceRate {
     }
 
     public int hashCode() {
-        return (Double.doubleToLongBits(this.rateToDollars) * 31) + Float.floatToIntBits(this.ratePercentageChange24h);
+        return (StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.rateToDollars) * 31) + Float.floatToIntBits(this.ratePercentageChange24h);
     }
 
     public String toString() {

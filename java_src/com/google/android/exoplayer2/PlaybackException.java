@@ -57,7 +57,12 @@ public class PlaybackException extends Exception implements Bundleable {
     private static final String FIELD_STRING_MESSAGE = Util.intToStringMaxRadix(2);
     private static final String FIELD_STRING_CAUSE_CLASS_NAME = Util.intToStringMaxRadix(3);
     private static final String FIELD_STRING_CAUSE_MESSAGE = Util.intToStringMaxRadix(4);
-    public static final Bundleable.Creator<PlaybackException> CREATOR = PlaybackException$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<PlaybackException> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.PlaybackException$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            return new PlaybackException(bundle);
+        }
+    };
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented

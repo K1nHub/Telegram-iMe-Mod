@@ -31,13 +31,9 @@ public class NotificationsCheckCell extends FrameLayout {
     private TextView valueTextView;
 
     public boolean isInSwitch(float f) {
-        int m54dp = AndroidUtilities.m54dp(76);
+        int m72dp = AndroidUtilities.m72dp(76);
         boolean z = LocaleController.isRTL;
-        return (z && f <= ((float) m54dp)) || (!z && f >= ((float) (getMeasuredWidth() - m54dp)));
-    }
-
-    public void toggleCheckBox() {
-        setChecked(!isChecked());
+        return (z && f <= ((float) m72dp)) || (!z && f >= ((float) (getMeasuredWidth() - m72dp)));
     }
 
     public NotificationsCheckCell(Context context) {
@@ -110,7 +106,7 @@ public class NotificationsCheckCell extends FrameLayout {
         if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.currentHeight), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.currentHeight), 1073741824));
         }
     }
 
@@ -143,7 +139,7 @@ public class NotificationsCheckCell extends FrameLayout {
             this.valueTextView.setMaxLines(0);
             this.valueTextView.setSingleLine(false);
             this.valueTextView.setEllipsize(null);
-            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(14));
+            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m72dp(14));
         } else {
             this.valueTextView.setLines(1);
             this.valueTextView.setMaxLines(1);
@@ -173,27 +169,27 @@ public class NotificationsCheckCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         int measuredHeight;
-        float m54dp;
+        float m72dp;
         int i;
         if (this.needDivider) {
             if (LocaleController.isRTL) {
-                m54dp = BitmapDescriptorFactory.HUE_RED;
+                m72dp = BitmapDescriptorFactory.HUE_RED;
             } else {
-                m54dp = AndroidUtilities.m54dp(this.imageView != null ? 64 : 20);
+                m72dp = AndroidUtilities.m72dp(this.imageView != null ? 64 : 20);
             }
-            float f = m54dp;
+            float f = m72dp;
             float measuredHeight2 = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
             if (LocaleController.isRTL) {
-                i = AndroidUtilities.m54dp(this.imageView == null ? 20 : 64);
+                i = AndroidUtilities.m72dp(this.imageView == null ? 20 : 64);
             } else {
                 i = 0;
             }
             canvas.drawLine(f, measuredHeight2, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
         }
         if (this.drawLine) {
-            int m54dp2 = LocaleController.isRTL ? AndroidUtilities.m54dp(76) : (getMeasuredWidth() - AndroidUtilities.m54dp(76)) - 1;
-            canvas.drawRect(m54dp2, (getMeasuredHeight() - AndroidUtilities.m54dp(22)) / 2, m54dp2 + 2, measuredHeight + AndroidUtilities.m54dp(22), Theme.dividerPaint);
+            int m72dp2 = LocaleController.isRTL ? AndroidUtilities.m72dp(76) : (getMeasuredWidth() - AndroidUtilities.m72dp(76)) - 1;
+            canvas.drawRect(m72dp2, (getMeasuredHeight() - AndroidUtilities.m72dp(22)) / 2, m72dp2 + 2, measuredHeight + AndroidUtilities.m72dp(22), Theme.dividerPaint);
         }
     }
 

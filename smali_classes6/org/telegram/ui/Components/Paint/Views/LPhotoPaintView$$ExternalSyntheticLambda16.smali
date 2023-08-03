@@ -45,7 +45,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda16;->f$3:I
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$Y8yVojC5e7bn8xW2MuKzgeqDMvY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;Landroid/graphics/Bitmap;ILandroid/view/View;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$wEIvBp9w7vLALn5UC9BYoCa7olw(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;Landroid/graphics/Bitmap;ILandroid/view/View;)V
 
     return-void
 .end method

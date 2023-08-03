@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda202;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$L-wYGwA4oAh6rdr7Z0HQswzVwI0(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$uuy7Zoe93uJkM2HOcEcimI2Eb4U(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;)V
 
     return-void
 .end method

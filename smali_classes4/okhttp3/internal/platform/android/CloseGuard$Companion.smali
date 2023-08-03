@@ -59,7 +59,7 @@
 
     move-result-object v2
 
-    const-string v4, "open"
+    const-string/jumbo v4, "open"
 
     const/4 v5, 0x1
 

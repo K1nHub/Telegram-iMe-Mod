@@ -8,7 +8,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcher;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkContentConfirmSeedBinding implements ViewBinding {
     public final LinearLayout linearSwitcherWrapper;
@@ -29,7 +29,7 @@ public final class ForkContentConfirmSeedBinding implements ViewBinding {
     }
 
     public static ForkContentConfirmSeedBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_confirm_seed, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_content_confirm_seed, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,19 +37,19 @@ public final class ForkContentConfirmSeedBinding implements ViewBinding {
     }
 
     public static ForkContentConfirmSeedBinding bind(View view) {
-        int i = C3417R.C3420id.backup_word_switcher_1;
+        int i = C3419R.C3422id.backup_word_switcher_1;
         BackupWordSwitcher backupWordSwitcher = (BackupWordSwitcher) ViewBindings.findChildViewById(view, i);
         if (backupWordSwitcher != null) {
-            i = C3417R.C3420id.backup_word_switcher_2;
+            i = C3419R.C3422id.backup_word_switcher_2;
             BackupWordSwitcher backupWordSwitcher2 = (BackupWordSwitcher) ViewBindings.findChildViewById(view, i);
             if (backupWordSwitcher2 != null) {
-                i = C3417R.C3420id.backup_word_switcher_3;
+                i = C3419R.C3422id.backup_word_switcher_3;
                 BackupWordSwitcher backupWordSwitcher3 = (BackupWordSwitcher) ViewBindings.findChildViewById(view, i);
                 if (backupWordSwitcher3 != null) {
-                    i = C3417R.C3420id.backup_word_switcher_4;
+                    i = C3419R.C3422id.backup_word_switcher_4;
                     BackupWordSwitcher backupWordSwitcher4 = (BackupWordSwitcher) ViewBindings.findChildViewById(view, i);
                     if (backupWordSwitcher4 != null) {
-                        i = C3417R.C3420id.linear_switcher_wrapper;
+                        i = C3419R.C3422id.linear_switcher_wrapper;
                         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                         if (linearLayout != null) {
                             return new ForkContentConfirmSeedBinding((NestedScrollView) view, backupWordSwitcher, backupWordSwitcher2, backupWordSwitcher3, backupWordSwitcher4, linearLayout);

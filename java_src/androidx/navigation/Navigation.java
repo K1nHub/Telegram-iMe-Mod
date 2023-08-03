@@ -1,7 +1,9 @@
 package androidx.navigation;
 
 import android.view.View;
+import android.view.ViewParent;
 import java.lang.ref.WeakReference;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt;
@@ -32,8 +34,26 @@ public final class Navigation {
     private final NavController findViewNavController(View view) {
         Sequence generateSequence;
         Sequence mapNotNull;
-        generateSequence = SequencesKt__SequencesKt.generateSequence(view, Navigation$findViewNavController$1.INSTANCE);
-        mapNotNull = SequencesKt___SequencesKt.mapNotNull(generateSequence, Navigation$findViewNavController$2.INSTANCE);
+        generateSequence = SequencesKt__SequencesKt.generateSequence(view, new Function1<View, View>() { // from class: androidx.navigation.Navigation$findViewNavController$1
+            @Override // kotlin.jvm.functions.Function1
+            public final View invoke(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                ViewParent parent = it.getParent();
+                if (parent instanceof View) {
+                    return (View) parent;
+                }
+                return null;
+            }
+        });
+        mapNotNull = SequencesKt___SequencesKt.mapNotNull(generateSequence, new Function1<View, NavController>() { // from class: androidx.navigation.Navigation$findViewNavController$2
+            @Override // kotlin.jvm.functions.Function1
+            public final NavController invoke(View it) {
+                NavController viewNavController;
+                Intrinsics.checkNotNullParameter(it, "it");
+                viewNavController = Navigation.INSTANCE.getViewNavController(it);
+                return viewNavController;
+            }
+        });
         return (NavController) SequencesKt.firstOrNull(mapNotNull);
     }
 

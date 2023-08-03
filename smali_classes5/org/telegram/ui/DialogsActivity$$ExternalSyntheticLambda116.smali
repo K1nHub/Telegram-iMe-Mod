@@ -8,34 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+.field public final synthetic f$1:J
 
-.field public final synthetic f$2:J
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$User;
-
-.field public final synthetic f$5:Z
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$User;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;JZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-wide p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$1:J
 
-    iput-wide p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$2:J
-
-    iput-boolean p5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$3:Z
-
-    iput-object p6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$4:Lorg/telegram/tgnet/TLRPC$User;
-
-    iput-boolean p7, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$5:Z
+    iput-boolean p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$2:Z
 
     return-void
 .end method
@@ -43,21 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$1:J
 
-    iget-wide v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$2:J
+    iget-boolean v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$2:Z
 
-    iget-boolean v4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$3:Z
-
-    iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$4:Lorg/telegram/tgnet/TLRPC$User;
-
-    iget-boolean v6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$5:Z
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$iZ2AI-z0ckVNZrIyqErlOidvxyQ(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$User;Z)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$k0Mcaa5Wu_Q0h_DSFK7IfUmFvUM(Lorg/telegram/ui/DialogsActivity;JZ)V
 
     return-void
 .end method

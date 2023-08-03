@@ -48,7 +48,7 @@ public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
     }
 
     public final void saveThreadContext(CoroutineContext coroutineContext, Object obj) {
-        this.threadStateToRecover.set(TuplesKt.m85to(coroutineContext, obj));
+        this.threadStateToRecover.set(TuplesKt.m103to(coroutineContext, obj));
     }
 
     public final boolean clearThreadContext() {

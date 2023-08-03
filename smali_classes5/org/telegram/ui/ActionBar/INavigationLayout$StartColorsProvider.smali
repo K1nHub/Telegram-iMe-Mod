@@ -93,27 +93,14 @@
     return-void
 .end method
 
-.method public contains(I)Z
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
     .locals 1
 
-    .line 426
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
-    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
+    move-result-object v0
 
-    move-result p1
-
-    if-ltz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
+    return-object v0
 .end method
 
 .method public getColor(I)I
@@ -122,7 +109,24 @@
     .line 421
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    .line 423
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
+
+    invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
+
+    move-result p1
+
+    return p1
+
+    .line 425
+    :cond_0
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -142,7 +146,7 @@
 .method public getCurrentColor(I)I
     .locals 1
 
-    .line 431
+    .line 430
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -185,12 +189,12 @@
 .method public saveColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 435
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 436
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[I
 
     array-length v1, v0
@@ -202,7 +206,7 @@
 
     aget v3, v0, v2
 
-    .line 437
+    .line 436
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-interface {p1, v3}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getCurrentColor(I)I

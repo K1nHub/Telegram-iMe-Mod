@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field private currentAccount:I
+
 .field private currentType:I
 
 .field private imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -91,6 +93,8 @@
 
     .line 83
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    iput v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->currentAccount:I
 
     const/16 v0, 0x11
 
@@ -448,7 +452,7 @@
 .end method
 
 .method private measureUtyanHeight(I)I
-    .locals 3
+    .locals 2
 
     .line 299
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
@@ -464,30 +468,30 @@
     .line 300
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/view/View;
+    check-cast p1, Landroid/view/View;
 
     .line 301
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v2
-
-    .line 302
-    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    .line 302
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-result p1
 
-    if-lt v0, v1, :cond_1
+    if-eqz p1, :cond_1
+
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-lt p1, v1, :cond_1
 
     .line 303
-    sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+    sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    sub-int/2addr v2, v0
+    sub-int/2addr v0, p1
 
     goto :goto_0
 
@@ -495,18 +499,22 @@
     :cond_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v2
+    move-result v0
 
     :cond_1
     :goto_0
-    if-nez v2, :cond_2
+    if-nez v0, :cond_3
 
     .line 309
-    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+    sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
-    iget v0, v0, Landroid/graphics/Point;->y:I
+    iget p1, p1, Landroid/graphics/Point;->y:I
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
+
+    move-result v0
+
+    sub-int/2addr p1, v0
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -514,51 +522,56 @@
 
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    .line 311
+    goto :goto_1
+
     :cond_2
+    const/4 v0, 0x0
+
+    :goto_1
+    sub-int v0, p1, v0
+
+    .line 311
+    :cond_3
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v0
+    move-result-object p1
 
-    instance-of v0, v0, Lorg/telegram/ui/Components/BlurredRecyclerView;
+    instance-of p1, p1, Lorg/telegram/ui/Components/BlurredRecyclerView;
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_4
 
     .line 312
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lorg/telegram/ui/Components/BlurredRecyclerView;
+    check-cast p1, Lorg/telegram/ui/Components/BlurredRecyclerView;
 
-    iget v0, v0, Lorg/telegram/ui/Components/BlurredRecyclerView;->blurTopPadding:I
+    iget p1, p1, Lorg/telegram/ui/Components/BlurredRecyclerView;->blurTopPadding:I
 
-    .line 314
-    :cond_3
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    sub-int/2addr v0, p1
 
-    move-result p1
-
-    int-to-float v0, p1
+    :cond_4
+    int-to-float p1, v0
 
     const/16 v1, 0x140
 
-    .line 316
+    .line 315
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    sub-int/2addr v1, p1
+    sub-int/2addr v1, v0
 
-    int-to-float p1, v1
+    int-to-float v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->utyanCollapseProgress:F
 
-    mul-float/2addr p1, v1
+    mul-float/2addr v0, v1
 
-    add-float/2addr v0, p1
+    add-float/2addr p1, v0
 
-    float-to-int p1, v0
+    float-to-int p1, p1
 
     return p1
 .end method
@@ -599,16 +612,221 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 1
+    .locals 5
 
-    .line 322
+    .line 320
+    iget v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->currentType:I
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    if-eqz v0, :cond_9
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    goto/16 :goto_3
+
+    :cond_0
+    const/4 v3, 0x2
+
+    if-eq v0, v3, :cond_2
+
+    const/4 v3, 0x3
+
+    if-ne v0, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/16 p2, 0xa6
+
+    .line 347
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    invoke-static {p2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
+
+    goto/16 :goto_4
+
+    .line 324
+    :cond_2
+    :goto_0
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/view/View;
+
+    const/16 v3, 0x15
+
+    if-eqz v0, :cond_3
+
+    .line 325
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/View;
+
+    .line 326
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v0
+
+    .line 327
+    invoke-virtual {p2}, Landroid/view/View;->getPaddingTop()I
+
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-lt p2, v3, :cond_4
+
+    .line 328
+    sget p2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    sub-int/2addr v0, p2
+
+    goto :goto_1
+
+    .line 331
+    :cond_3
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v0
+
+    :cond_4
+    :goto_1
+    if-nez v0, :cond_6
+
+    .line 334
+    sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+
+    iget p2, p2, Landroid/graphics/Point;->y:I
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
+
+    move-result v0
+
+    sub-int/2addr p2, v0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-lt v0, v3, :cond_5
+
+    sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    goto :goto_2
+
+    :cond_5
+    const/4 v0, 0x0
+
+    :goto_2
+    sub-int v0, p2, v0
+
+    .line 337
+    :cond_6
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p2
+
+    instance-of p2, p2, Lorg/telegram/ui/Components/BlurredRecyclerView;
+
+    if-eqz p2, :cond_7
+
+    .line 338
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p2
+
+    check-cast p2, Lorg/telegram/ui/Components/BlurredRecyclerView;
+
+    iget p2, p2, Lorg/telegram/ui/Components/BlurredRecyclerView;->blurTopPadding:I
+
+    sub-int/2addr v0, p2
+
+    .line 341
+    :cond_7
+    iget p2, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->currentAccount:I
+
+    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/telegram/messenger/MessagesController;->hintDialogs:Ljava/util/ArrayList;
+
+    .line 342
+    invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_8
+
+    const/16 v3, 0x48
+
+    .line 343
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    mul-int/2addr v3, v4
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result p2
+
+    add-int/2addr v3, p2
+
+    sub-int/2addr v3, v2
+
+    const/16 p2, 0x32
+
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    add-int/2addr v3, p2
+
+    sub-int/2addr v0, v3
+
+    .line 345
+    :cond_8
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    const/high16 v0, 0x40000000    # 2.0f
+    invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result p1
+
+    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
+
+    goto :goto_4
+
+    .line 321
+    :cond_9
+    :goto_3
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result p1
+
+    invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
@@ -616,12 +834,13 @@
 
     move-result p2
 
-    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
+    :goto_4
     return-void
 .end method
 
@@ -1164,9 +1383,63 @@
 .method public updateLayout()V
     .locals 4
 
-    const/4 v0, 0x0
+    .line 282
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
 
-    int-to-float v0, v0
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->currentType:I
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_0
+
+    const/4 v3, 0x3
+
+    if-ne v0, v3, :cond_1
+
+    .line 283
+    :cond_0
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 284
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 286
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getTop()I
+
+    move-result v0
+
+    div-int/2addr v0, v2
+
+    sub-int/2addr v1, v0
+
+    .line 289
+    :cond_1
+    iget v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->currentType:I
+
+    if-eqz v0, :cond_2
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_3
+
+    :cond_2
+    int-to-float v0, v1
 
     .line 290
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
@@ -1183,34 +1456,35 @@
 
     int-to-float v1, v1
 
-    iget v2, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->utyanCollapseProgress:F
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    iget v3, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->utyanCollapseProgress:F
 
-    sub-float/2addr v3, v2
+    sub-float/2addr v2, v3
 
-    mul-float/2addr v1, v3
+    mul-float/2addr v1, v2
 
     sub-float/2addr v0, v1
 
-    float-to-int v0, v0
+    float-to-int v1, v0
 
     .line 292
-    iget-object v1, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    int-to-float v0, v0
+    int-to-float v1, v1
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setTranslationY(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
     .line 293
-    iget-object v1, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->titleView:Landroid/widget/TextView;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->titleView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTranslationY(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTranslationY(F)V
 
     .line 294
-    iget-object v1, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->subtitleView:Lorg/telegram/ui/Components/TextViewSwitcher;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->subtitleView:Lorg/telegram/ui/Components/TextViewSwitcher;
 
-    invoke-virtual {v1, v0}, Landroid/widget/ViewSwitcher;->setTranslationY(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/ViewSwitcher;->setTranslationY(F)V
 
     return-void
 .end method

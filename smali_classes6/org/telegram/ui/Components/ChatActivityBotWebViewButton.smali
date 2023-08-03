@@ -518,6 +518,61 @@
     return-void
 .end method
 
+.method protected onMeasure(II)V
+    .locals 2
+
+    .line 143
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v0
+
+    .line 144
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    instance-of v1, v1, Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    if-lez v1, :cond_1
+
+    .line 146
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 148
+    :cond_1
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    move-result p2
+
+    invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+
+    return-void
+.end method
+
 .method public setBotMenuButton(Lorg/telegram/ui/Components/BotCommandsMenuView;)V
     .locals 0
 

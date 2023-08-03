@@ -5,8 +5,22 @@ import com.google.firebase.firestore.util.Util;
 import java.util.Comparator;
 /* loaded from: classes3.dex */
 class DocumentReference {
-    static final Comparator<DocumentReference> BY_KEY = DocumentReference$$ExternalSyntheticLambda1.INSTANCE;
-    static final Comparator<DocumentReference> BY_TARGET = DocumentReference$$ExternalSyntheticLambda0.INSTANCE;
+    static final Comparator<DocumentReference> BY_KEY = new Comparator() { // from class: com.google.firebase.firestore.local.DocumentReference$$ExternalSyntheticLambda1
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int lambda$static$0;
+            lambda$static$0 = DocumentReference.lambda$static$0((DocumentReference) obj, (DocumentReference) obj2);
+            return lambda$static$0;
+        }
+    };
+    static final Comparator<DocumentReference> BY_TARGET = new Comparator() { // from class: com.google.firebase.firestore.local.DocumentReference$$ExternalSyntheticLambda0
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int lambda$static$1;
+            lambda$static$1 = DocumentReference.lambda$static$1((DocumentReference) obj, (DocumentReference) obj2);
+            return lambda$static$1;
+        }
+    };
     private final DocumentKey key;
     private final int targetOrBatchId;
 

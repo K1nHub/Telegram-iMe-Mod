@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;)V
     .locals 0
 
-    .line 300
+    .line 324
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton$2;->this$0:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
@@ -41,7 +41,7 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    .line 303
+    .line 327
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton$2;->this$0:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->access$300(Lorg/telegram/ui/Components/MessageContainsEmojiButton;)I

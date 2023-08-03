@@ -11,13 +11,12 @@ public final class GlideSuppliers {
         return new GlideSupplier<T>() { // from class: com.bumptech.glide.util.GlideSuppliers.1
             private volatile T instance;
 
-            /* JADX WARN: Type inference failed for: r0v6, types: [T, java.lang.Object] */
             @Override // com.bumptech.glide.util.GlideSuppliers.GlideSupplier
             public T get() {
-                if (this.instance == 0) {
+                if (this.instance == null) {
                     synchronized (this) {
-                        if (this.instance == 0) {
-                            this.instance = Preconditions.checkNotNull(GlideSupplier.this.get());
+                        if (this.instance == null) {
+                            this.instance = (T) Preconditions.checkNotNull(GlideSupplier.this.get());
                         }
                     }
                 }

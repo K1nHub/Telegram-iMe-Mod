@@ -15,10 +15,11 @@ import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentNetworkTypeBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
@@ -53,7 +54,13 @@ public final class NetworkTypeView extends FrameLayout {
         ForkContentNetworkTypeBinding inflate = ForkContentNetworkTypeBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
         this.binding = inflate;
-        lazy = LazyKt__LazyJVMKt.lazy(NetworkTypeView$cornerRadius$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.NetworkTypeView$cornerRadius$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m73dp(15.0f));
+            }
+        });
         this.cornerRadius$delegate = lazy;
         setupView();
     }
@@ -85,8 +92,8 @@ public final class NetworkTypeView extends FrameLayout {
         AppCompatTextView updateView$lambda$2$lambda$1 = forkContentNetworkTypeBinding.textNetwork;
         updateView$lambda$2$lambda$1.setText(this.network.getFullName());
         if (!this.isImmutable) {
-            updateView$lambda$2$lambda$1.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3417R.C3419drawable.fork_ic_arrow_down_16, 0);
-            updateView$lambda$2$lambda$1.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
+            updateView$lambda$2$lambda$1.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3419R.C3421drawable.fork_ic_arrow_down_16, 0);
+            updateView$lambda$2$lambda$1.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
             Intrinsics.checkNotNullExpressionValue(updateView$lambda$2$lambda$1, "updateView$lambda$2$lambda$1");
             ViewExtKt.setCompoundDrawablesColor(updateView$lambda$2$lambda$1, -1);
         }

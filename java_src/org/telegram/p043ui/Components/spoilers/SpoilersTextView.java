@@ -20,10 +20,11 @@ import org.telegram.p043ui.Components.spoilers.SpoilersClickDetector;
 /* renamed from: org.telegram.ui.Components.spoilers.SpoilersTextView */
 /* loaded from: classes6.dex */
 public class SpoilersTextView extends TextView {
+    public boolean allowClickSpoilers;
     private SpoilersClickDetector clickDetector;
     private boolean isSpoilersRevealed;
     private Path path;
-    private List<SpoilerEffect> spoilers;
+    protected List<SpoilerEffect> spoilers;
     private Stack<SpoilerEffect> spoilersPool;
     private Paint xRefPaint;
 
@@ -36,6 +37,7 @@ public class SpoilersTextView extends TextView {
         this.spoilers = new ArrayList();
         this.spoilersPool = new Stack<>();
         this.path = new Path();
+        this.allowClickSpoilers = true;
         this.clickDetector = new SpoilersClickDetector(this, this.spoilers, new SpoilersClickDetector.OnSpoilerClickedListener() { // from class: org.telegram.ui.Components.spoilers.SpoilersTextView$$ExternalSyntheticLambda2
             @Override // org.telegram.p043ui.Components.spoilers.SpoilersClickDetector.OnSpoilerClickedListener
             public final void onSpoilerClicked(SpoilerEffect spoilerEffect, float f, float f2) {
@@ -79,7 +81,7 @@ public class SpoilersTextView extends TextView {
 
     @Override // android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.clickDetector.onTouchEvent(motionEvent)) {
+        if (this.allowClickSpoilers && this.clickDetector.onTouchEvent(motionEvent)) {
             return true;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -136,7 +138,7 @@ public class SpoilersTextView extends TextView {
         } else {
             canvas.save();
         }
-        canvas.translate(getPaddingLeft(), getPaddingTop() + AndroidUtilities.m54dp(2));
+        canvas.translate(getPaddingLeft(), getPaddingTop() + AndroidUtilities.m72dp(2));
         for (SpoilerEffect spoilerEffect2 : this.spoilers) {
             spoilerEffect2.setColor(getPaint().getColor());
             spoilerEffect2.draw(canvas);

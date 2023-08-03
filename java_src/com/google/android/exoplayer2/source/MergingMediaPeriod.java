@@ -92,7 +92,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             Integer num = sampleStreamArr[i2] != null ? this.streamPeriodIndices.get(sampleStreamArr[i2]) : null;
             iArr[i2] = num == null ? -1 : num.intValue();
             if (exoTrackSelectionArr[i2] != null) {
-                String str = exoTrackSelectionArr[i2].getTrackGroup().f208id;
+                String str = exoTrackSelectionArr[i2].getTrackGroup().f210id;
                 iArr2[i2] = Integer.parseInt(str.substring(0, str.indexOf(":")));
             } else {
                 iArr2[i2] = -1;
@@ -262,7 +262,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 int i5 = 0;
                 while (i5 < i4) {
                     TrackGroup trackGroup = trackGroups.get(i5);
-                    TrackGroup copyWithId = trackGroup.copyWithId(i2 + ":" + trackGroup.f208id);
+                    TrackGroup copyWithId = trackGroup.copyWithId(i2 + ":" + trackGroup.f210id);
                     this.childTrackGroupByMergedTrackGroup.put(copyWithId, trackGroup);
                     trackGroupArr[i3] = copyWithId;
                     i5++;

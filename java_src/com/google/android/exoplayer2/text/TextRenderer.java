@@ -297,7 +297,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     private void clearOutput() {
-        updateOutput(new CueGroup(ImmutableList.m744of(), getPresentationTimeUs(this.lastRendererPositionUs)));
+        updateOutput(new CueGroup(ImmutableList.m762of(), getPresentationTimeUs(this.lastRendererPositionUs)));
     }
 
     @Override // android.os.Handler.Callback
@@ -315,7 +315,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     private void handleDecoderError(SubtitleDecoderException subtitleDecoderException) {
-        Log.m799e(TAG, "Subtitle decoding failed. streamFormat=" + this.streamFormat, subtitleDecoderException);
+        Log.m817e(TAG, "Subtitle decoding failed. streamFormat=" + this.streamFormat, subtitleDecoderException);
         clearOutput();
         replaceDecoder();
     }

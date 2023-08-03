@@ -267,7 +267,7 @@
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/DialogCell;->resetPinnedArchiveState()V
 
     .line 1633
-    invoke-virtual {p2}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-virtual {p2}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     .line 1636
     :cond_1

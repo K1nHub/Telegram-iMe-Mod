@@ -7,6 +7,7 @@ import com.iMe.p031ui.topics.TopicView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -33,9 +34,35 @@ public final class MediaSwitchTopicsBar extends LinearLayout {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         this.currentMessagesContextMenu = z;
         this.delegate = delegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new MediaSwitchTopicsBar$mediaTopic$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TopicView>() { // from class: com.iMe.fork.ui.view.MediaSwitchTopicsBar$mediaTopic$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicView invoke() {
+                TopicView initTopic;
+                initTopic = MediaSwitchTopicsBar.this.initTopic(false);
+                return initTopic;
+            }
+        });
         this.mediaTopic$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new MediaSwitchTopicsBar$messagesTopic$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TopicView>() { // from class: com.iMe.fork.ui.view.MediaSwitchTopicsBar$messagesTopic$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicView invoke() {
+                TopicView initTopic;
+                initTopic = MediaSwitchTopicsBar.this.initTopic(true);
+                return initTopic;
+            }
+        });
         this.messagesTopic$delegate = lazy2;
         setGravity(17);
         addView(getMessagesTopic(), LayoutHelper.createLinear(-2, -1));

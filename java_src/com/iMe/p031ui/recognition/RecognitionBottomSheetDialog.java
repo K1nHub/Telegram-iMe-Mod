@@ -82,11 +82,11 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
             kotlin.LazyThreadSafetyMode r3 = r3.defaultLazyMode()
             com.iMe.ui.recognition.RecognitionBottomSheetDialog$special$$inlined$inject$default$1 r4 = new com.iMe.ui.recognition.RecognitionBottomSheetDialog$special$$inlined$inject$default$1
             r5 = 0
-            r4.<init>(r2, r5, r5)
+            r4.<init>()
             kotlin.Lazy r3 = kotlin.LazyKt.lazy(r3, r4)
             r2.resourceManager$delegate = r3
             com.iMe.ui.recognition.RecognitionBottomSheetDialog$binding$2 r3 = new com.iMe.ui.recognition.RecognitionBottomSheetDialog$binding$2
-            r3.<init>(r2)
+            r3.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r3 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r2, r5, r3, r1, r5)
             r2.binding$delegate = r3
             r3 = 0

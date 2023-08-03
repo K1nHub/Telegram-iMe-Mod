@@ -42,10 +42,10 @@
 .method public constructor <init>(Ljava/io/File;)V
     .locals 0
 
-    .line 369
+    .line 382
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 370
+    .line 383
     iput-object p1, p0, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
 
     return-void

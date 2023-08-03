@@ -12,15 +12,9 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:Ljava/util/ArrayList;
-
-.field public final synthetic f$5:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;IJILjava/util/ArrayList;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;IJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,19 +25,13 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$2:J
 
-    iput p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$3:I
-
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$4:Ljava/util/ArrayList;
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$5:I
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -51,13 +39,7 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$2:J
 
-    iget v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$3:I
-
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$4:Ljava/util/ArrayList;
-
-    iget v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda50;->f$5:I
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$dDXUR-IUhaDs-SiQt_0QtFEQq0I(Lorg/telegram/messenger/MessagesStorage;IJILjava/util/ArrayList;I)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$pDbKl4rqpmjvqT6ErCG_8t02JFw(Lorg/telegram/messenger/MessagesStorage;IJ)V
 
     return-void
 .end method

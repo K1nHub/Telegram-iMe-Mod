@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/VideoPlayer;Landroid/content/Context;)V
     .locals 0
 
-    .line 633
+    .line 700
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$AudioVisualizerRenderersFactory;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 634
+    .line 701
     invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -36,12 +36,12 @@
 .method protected buildAudioSink(Landroid/content/Context;ZZZ)Lcom/google/android/exoplayer2/audio/AudioSink;
     .locals 2
 
-    .line 640
+    .line 707
     new-instance v0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;-><init>()V
 
-    .line 641
+    .line 708
     invoke-static {p1}, Lcom/google/android/exoplayer2/audio/AudioCapabilities;->getCapabilities(Landroid/content/Context;)Lcom/google/android/exoplayer2/audio/AudioCapabilities;
 
     move-result-object p1
@@ -50,12 +50,12 @@
 
     move-result-object p1
 
-    .line 642
+    .line 709
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setEnableFloatOutput(Z)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
 
     move-result-object p1
 
-    .line 643
+    .line 710
     invoke-virtual {p1, p3}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setEnableAudioTrackPlaybackParams(Z)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
 
     move-result-object p1
@@ -78,17 +78,17 @@
 
     aput-object p3, p2, v0
 
-    .line 644
+    .line 711
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setAudioProcessors([Lcom/google/android/exoplayer2/audio/AudioProcessor;)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
 
     move-result-object p1
 
-    .line 645
+    .line 712
     invoke-virtual {p1, p4}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setOffloadMode(I)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
 
     move-result-object p1
 
-    .line 649
+    .line 716
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->build()Lcom/google/android/exoplayer2/audio/DefaultAudioSink;
 
     move-result-object p1

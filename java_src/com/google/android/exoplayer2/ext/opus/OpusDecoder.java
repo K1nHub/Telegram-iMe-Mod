@@ -156,7 +156,7 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
         ByteBuffer byteBuffer = (ByteBuffer) Util.castNonNull(decoderInputBuffer.data);
         CryptoInfo cryptoInfo = decoderInputBuffer.cryptoInfo;
         if (decoderInputBuffer.isEncrypted()) {
-            opusDecode = opusSecureDecode(this.nativeDecoderContext, decoderInputBuffer.timeUs, byteBuffer, byteBuffer.limit(), simpleDecoderOutputBuffer, 48000, this.cryptoConfig, cryptoInfo.mode, (byte[]) Assertions.checkNotNull(cryptoInfo.key), (byte[]) Assertions.checkNotNull(cryptoInfo.f189iv), cryptoInfo.numSubSamples, cryptoInfo.numBytesOfClearData, cryptoInfo.numBytesOfEncryptedData);
+            opusDecode = opusSecureDecode(this.nativeDecoderContext, decoderInputBuffer.timeUs, byteBuffer, byteBuffer.limit(), simpleDecoderOutputBuffer, 48000, this.cryptoConfig, cryptoInfo.mode, (byte[]) Assertions.checkNotNull(cryptoInfo.key), (byte[]) Assertions.checkNotNull(cryptoInfo.f191iv), cryptoInfo.numSubSamples, cryptoInfo.numBytesOfClearData, cryptoInfo.numBytesOfEncryptedData);
             opusDecoder = this;
             decoderInputBuffer2 = decoderInputBuffer;
         } else {

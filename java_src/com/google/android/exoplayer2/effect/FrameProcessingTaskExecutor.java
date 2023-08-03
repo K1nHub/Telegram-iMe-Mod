@@ -44,7 +44,12 @@ public final class FrameProcessingTaskExecutor {
             return;
         }
         this.highPriorityTasks.add(frameProcessingTask);
-        submit(FrameProcessingTaskExecutor$$ExternalSyntheticLambda0.INSTANCE);
+        submit(new FrameProcessingTask() { // from class: com.google.android.exoplayer2.effect.FrameProcessingTaskExecutor$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.effect.FrameProcessingTask
+            public final void run() {
+                FrameProcessingTaskExecutor.lambda$submitWithHighPriority$0();
+            }
+        });
     }
 
     public void release(FrameProcessingTask frameProcessingTask, long j) throws InterruptedException {

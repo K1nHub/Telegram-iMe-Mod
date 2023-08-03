@@ -16,6 +16,7 @@ import com.iMe.fork.utils.UserUtils;
 import com.iMe.manager.notifications.PushNotificationsManager;
 import com.iMe.model.wallet.notification.NotificationInformation;
 import com.iMe.model.wallet.notification.PushNotificationModel;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.data.utils.extentions.GsonExtKt;
 import com.iMe.storage.data.utils.extentions.RxExtKt;
 import com.iMe.storage.domain.interactor.notification.PushNotificationInteractor;
@@ -32,20 +33,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.IntIterator;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.LaunchActivity;
+import timber.log.Timber;
 /* compiled from: PushNotificationsManager.kt */
 /* loaded from: classes3.dex */
 public final class PushNotificationsManager {
@@ -165,7 +169,7 @@ public final class PushNotificationsManager {
             arrayList.add(notificationInformation);
         }
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(arrayList);
-        ArrayList<NotificationInformation> arrayList2 = new ArrayList();
+        final ArrayList<NotificationInformation> arrayList2 = new ArrayList();
         for (Object obj : filterNotNull) {
             if (((NotificationInformation) obj).getPushAllowanceToken().length() > 0) {
                 arrayList2.add(obj);
@@ -203,7 +207,55 @@ public final class PushNotificationsManager {
                     }
                 });
                 Intrinsics.checkNotNullExpressionValue(doFinally, "notificationInteractor\n …{ subscriptions.clear() }");
-                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1603x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1604x6e1faa36(null)));
+                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
+                        m1302invoke(result);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: collision with other method in class */
+                    public final void m1302invoke(Result<? extends Boolean> it3) {
+                        PreferenceHelper preferenceHelper4;
+                        Intrinsics.checkNotNullExpressionValue(it3, "it");
+                        if (it3 instanceof Result.Success) {
+                            for (NotificationInformation notificationInformation3 : arrayList2) {
+                                preferenceHelper4 = this.preferenceHelper;
+                                preferenceHelper4.setTempOneActionUserId(notificationInformation3.getUserId());
+                                preferenceHelper4.setPushTokenRegistered(true);
+                                preferenceHelper4.setTempOneActionUserId("");
+                            }
+                        }
+                    }
+                }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                        invoke2(th);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(Throwable th) {
+                        Timber.m6e(th);
+                        BaseView baseView = BaseView.this;
+                        if (baseView != null) {
+                            String message = th.getMessage();
+                            if (message == null) {
+                                message = "";
+                            }
+                            baseView.showToast(message);
+                        }
+                    }
+                }));
                 Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
                 RxExtKt.autoDispose(subscribe, this.subscriptions);
             }
@@ -323,9 +375,9 @@ public final class PushNotificationsManager {
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3417R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3419R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3417R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3417R.C3419drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3417R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3417R.C3418color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3419R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3419R.C3421drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3419R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3419R.C3420color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }

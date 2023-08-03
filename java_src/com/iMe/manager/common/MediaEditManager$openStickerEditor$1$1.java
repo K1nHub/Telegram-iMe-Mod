@@ -7,7 +7,7 @@ import com.iMe.utils.dialogs.DialogUtils;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
@@ -67,8 +67,8 @@ public final class MediaEditManager$openStickerEditor$1$1 extends PhotoViewer.Em
             baseFragment2 = this.this$0.parentFragment;
             Activity parentActivity = baseFragment2.getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentFragment.parentActivity");
-            String internalString = LocaleController.getInternalString(C3417R.string.sticker_edit_send_as);
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{LocaleController.getString("AttachGif", C3417R.string.AttachGif), LocaleController.getString("AttachVideo", C3417R.string.AttachVideo)});
+            String internalString = LocaleController.getInternalString(C3419R.string.sticker_edit_send_as);
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{LocaleController.getString("AttachGif", C3419R.string.AttachGif), LocaleController.getString("AttachVideo", C3419R.string.AttachVideo)});
             ListDialogModel listDialogModel = new ListDialogModel(internalString, null, null, listOf, null, null);
             final MediaEditManager mediaEditManager = this.this$0;
             baseFragment.showDialog(DialogUtils.createDialogWithSelectableList(parentActivity, listDialogModel, new Callbacks$Callback1() { // from class: com.iMe.manager.common.MediaEditManager$openStickerEditor$1$1$$ExternalSyntheticLambda0

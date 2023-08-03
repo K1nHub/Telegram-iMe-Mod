@@ -59,3 +59,6 @@
 # virtual methods
 .method public abstract logDebug(Ljava/lang/String;)V
 .end method
+
+.method public abstract logError(Ljava/lang/String;)V
+.end method

@@ -54,7 +54,7 @@
 
     const-class v2, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsPresenter;"
 
@@ -159,7 +159,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -485,7 +485,7 @@
 
     invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "plannedWithdrawalFeeText"
+    const-string/jumbo v6, "plannedWithdrawalFeeText"
 
     invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

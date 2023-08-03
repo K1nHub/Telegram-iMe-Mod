@@ -34,9 +34,9 @@
 
     const/4 v1, 0x0
 
-    const-string v4, "openAddTokenScreen"
+    const-string/jumbo v4, "openAddTokenScreen"
 
-    const-string v5, "openAddTokenScreen()V"
+    const-string/jumbo v5, "openAddTokenScreen()V"
 
     const/4 v6, 0x0
 

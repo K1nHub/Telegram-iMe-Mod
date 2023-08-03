@@ -130,7 +130,7 @@
 
     const/4 v3, 0x5
 
-    const-string v4, "quic"
+    const-string/jumbo v4, "quic"
 
     .line 84
     invoke-direct {v1, v2, v3, v4}, Lokhttp3/Protocol;-><init>(Ljava/lang/String;ILjava/lang/String;)V

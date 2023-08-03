@@ -28,14 +28,14 @@
 .method private final createHintView(Landroid/content/Context;IZ)Lorg/telegram/ui/Components/HintView;
     .locals 1
 
-    .line 49
+    .line 52
     new-instance v0, Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {v0, p1, p2, p3}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
 
     const/4 p1, 0x0
 
-    .line 50
+    .line 53
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     const/4 p1, 0x0
@@ -44,10 +44,10 @@
 
     const/4 p3, 0x0
 
-    .line 51
+    .line 54
     invoke-static {v0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 52
+    .line 55
     new-instance p1, Lcom/iMe/utils/hints/HintFactory$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/iMe/utils/hints/HintFactory$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/utils/hints/HintFactory;)V
@@ -66,7 +66,7 @@
 
     const/4 v0, 0x0
 
-    .line 52
+    .line 55
     iput-object v0, p0, Lcom/iMe/utils/hints/HintFactory;->hintView:Lorg/telegram/ui/Components/HintView;
 
     return-void
@@ -91,7 +91,7 @@
 .method public final showHint(Lorg/telegram/ui/ActionBar/INavigationLayout;Landroid/view/View;Lcom/iMe/model/hint/HintModel;)V
     .locals 8
 
-    const-string v0, "parentLayout"
+    const-string/jumbo v0, "parentLayout"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentLayout.view.context"
+    const-string/jumbo v1, "parentLayout.view.context"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -168,14 +168,21 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 p1, 0x1
-
     .line 37
     invoke-virtual {p3}, Lcom/iMe/model/hint/HintModel;->getAutoHide()Z
 
-    move-result p3
+    move-result p1
 
-    invoke-virtual {v0, p2, p1, p3}, Lorg/telegram/ui/Components/HintView;->showForView(Landroid/view/View;ZZ)Z
+    if-nez p1, :cond_1
+
+    .line 38
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/HintView;->createCloseButton()V
+
+    :cond_1
+    const/4 p1, 0x1
+
+    .line 40
+    invoke-virtual {v0, p2, p1}, Lorg/telegram/ui/Components/HintView;->showForView(Landroid/view/View;Z)Z
 
     .line 30
     iput-object v0, p0, Lcom/iMe/utils/hints/HintFactory;->hintView:Lorg/telegram/ui/Components/HintView;

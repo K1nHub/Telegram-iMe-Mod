@@ -2,12 +2,11 @@ package com.iMe.model.group;
 
 import com.iMe.model.group.GroupMembersFilter;
 import java.util.List;
-import java.util.Objects;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.tgnet.TLRPC$ChannelParticipantsFilter;
 import org.telegram.tgnet.TLRPC$TL_channelParticipantsAdmins;
 import org.telegram.tgnet.TLRPC$TL_channelParticipantsBanned;
@@ -20,13 +19,13 @@ import p033j$.util.function.Predicate;
 /* compiled from: GroupMembersFilter.kt */
 /* loaded from: classes3.dex */
 public enum GroupMembersFilter {
-    ALL(C3417R.string.profile_group_filter_all, C3417R.C3419drawable.msg_contacts, new TLRPC$TL_channelParticipantsRecent(), false),
-    ADMINISTRATORS(C3417R.string.profile_group_filter_administrator, C3417R.C3419drawable.msg_admins, new TLRPC$TL_channelParticipantsAdmins(), false),
-    BOTS(C3417R.string.profile_group_filter_bots, C3417R.C3419drawable.fork_filter_icon_bot, new TLRPC$TL_channelParticipantsBots(), false),
-    CONTACTS(C3417R.string.profile_group_filter_contacts, C3417R.C3419drawable.msg_groups, new TLRPC$TL_channelParticipantsContacts(), false),
-    RESTRICTED(C3417R.string.profile_group_filter_restricted, C3417R.C3419drawable.msg_permissions, new TLRPC$TL_channelParticipantsBanned(), false),
-    BLOCKED(C3417R.string.profile_group_filter_blocked, C3417R.C3419drawable.msg_block, new TLRPC$TL_channelParticipantsKicked(), true),
-    DELETED(C3417R.string.profile_group_filter_deleted, C3417R.C3419drawable.fork_ic_ghost_26, new TLRPC$TL_channelParticipantsRecent(), true);
+    ALL(C3419R.string.profile_group_filter_all, C3419R.C3421drawable.msg_contacts, new TLRPC$TL_channelParticipantsRecent(), false),
+    ADMINISTRATORS(C3419R.string.profile_group_filter_administrator, C3419R.C3421drawable.msg_admins, new TLRPC$TL_channelParticipantsAdmins(), false),
+    BOTS(C3419R.string.profile_group_filter_bots, C3419R.C3421drawable.fork_filter_icon_bot, new TLRPC$TL_channelParticipantsBots(), false),
+    CONTACTS(C3419R.string.profile_group_filter_contacts, C3419R.C3421drawable.msg_groups, new TLRPC$TL_channelParticipantsContacts(), false),
+    RESTRICTED(C3419R.string.profile_group_filter_restricted, C3419R.C3421drawable.msg_permissions, new TLRPC$TL_channelParticipantsBanned(), false),
+    BLOCKED(C3419R.string.profile_group_filter_blocked, C3419R.C3421drawable.msg_block, new TLRPC$TL_channelParticipantsKicked(), true),
+    DELETED(C3419R.string.profile_group_filter_deleted, C3419R.C3421drawable.fork_ic_ghost_26, new TLRPC$TL_channelParticipantsRecent(), true);
     
     public static final Companion Companion = new Companion(null);
     public static GroupMembersFilter defaultValue;
@@ -81,14 +80,26 @@ public enum GroupMembersFilter {
         private Companion() {
         }
 
-        public final List<GroupMembersFilter> getAvailableFilters(boolean z, boolean z2) {
+        public final List<GroupMembersFilter> getAvailableFilters(final boolean z, final boolean z2) {
             List<GroupMembersFilter> mutableList;
             mutableList = ArraysKt___ArraysKt.toMutableList(GroupMembersFilter.values());
-            final GroupMembersFilter$Companion$getAvailableFilters$1$1 groupMembersFilter$Companion$getAvailableFilters$1$1 = new GroupMembersFilter$Companion$getAvailableFilters$1$1(z, z2);
+            final Function1<GroupMembersFilter, Boolean> function1 = new Function1<GroupMembersFilter, Boolean>() { // from class: com.iMe.model.group.GroupMembersFilter$Companion$getAvailableFilters$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(GroupMembersFilter it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return Boolean.valueOf((it == GroupMembersFilter.BLOCKED || it == GroupMembersFilter.RESTRICTED) && !(z && z2));
+                }
+            };
             Collection$EL.removeIf(mutableList, new Predicate() { // from class: com.iMe.model.group.GroupMembersFilter$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return Objects.requireNonNull(predicate);
+                    return Predicate.CC.$default$and(this, predicate);
                 }
 
                 @Override // p033j$.util.function.Predicate
@@ -98,8 +109,8 @@ public enum GroupMembersFilter {
 
                 @Override // p033j$.util.function.Predicate
                 /* renamed from: or */
-                public /* synthetic */ Predicate mo23or(Predicate predicate) {
-                    return Objects.requireNonNull(predicate);
+                public /* synthetic */ Predicate mo25or(Predicate predicate) {
+                    return Predicate.CC.$default$or(this, predicate);
                 }
 
                 @Override // p033j$.util.function.Predicate

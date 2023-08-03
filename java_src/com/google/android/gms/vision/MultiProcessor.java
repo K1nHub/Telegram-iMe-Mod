@@ -41,6 +41,11 @@ public class MultiProcessor<T> implements Detector.Processor<T> {
             zzaVar.zzb = i + 1;
             return i;
         }
+
+        static /* synthetic */ int zza(zza zzaVar, int i) {
+            zzaVar.zzb = 0;
+            return 0;
+        }
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
@@ -111,7 +116,7 @@ public class MultiProcessor<T> implements Detector.Processor<T> {
             int keyAt3 = detectedItems3.keyAt(i3);
             T valueAt3 = detectedItems3.valueAt(i3);
             zza zzaVar2 = this.zzb.get(keyAt3);
-            zzaVar2.zzb = 0;
+            zza.zza(zzaVar2, 0);
             zzaVar2.zza.onUpdate(detections, valueAt3);
         }
     }

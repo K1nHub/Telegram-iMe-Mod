@@ -24,7 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/FileUploadOperation$1;)V
     .locals 0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method static synthetic access$000(Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;)J
     .locals 2
 
-    .line 30
+    .line 31
     iget-wide v0, p0, Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;->bytesOffset:J
 
     return-wide v0
@@ -51,7 +51,7 @@
 .method static synthetic access$002(Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;J)J
     .locals 0
 
-    .line 30
+    .line 31
     iput-wide p1, p0, Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;->bytesOffset:J
 
     return-wide p1
@@ -60,7 +60,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;)[B
     .locals 0
 
-    .line 30
+    .line 31
     iget-object p0, p0, Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;->iv:[B
 
     return-object p0
@@ -69,7 +69,7 @@
 .method static synthetic access$102(Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;[B)[B
     .locals 0
 
-    .line 30
+    .line 31
     iput-object p1, p0, Lorg/telegram/messenger/FileUploadOperation$UploadCachedResult;->iv:[B
 
     return-object p1

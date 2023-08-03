@@ -15,6 +15,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes3.dex */
 final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
@@ -25,7 +26,12 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private static final FieldDescriptor MAP_KEY_DESC = FieldDescriptor.builder("key").withProperty(AtProtobuf.builder().tag(1).build()).build();
     private static final FieldDescriptor MAP_VALUE_DESC = FieldDescriptor.builder(AppMeasurementSdk.ConditionalUserProperty.VALUE).withProperty(AtProtobuf.builder().tag(2).build()).build();
-    private static final ObjectEncoder<Map.Entry<Object, Object>> DEFAULT_MAP_ENCODER = ProtobufDataEncoderContext$$ExternalSyntheticLambda0.INSTANCE;
+    private static final ObjectEncoder<Map.Entry<Object, Object>> DEFAULT_MAP_ENCODER = new ObjectEncoder() { // from class: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$$ExternalSyntheticLambda0
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public final void encode(Object obj, Object obj2) {
+            ProtobufDataEncoderContext.lambda$static$0((Map.Entry) obj, (ObjectEncoderContext) obj2);
+        }
+    };
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$static$0(Map.Entry entry, ObjectEncoderContext objectEncoderContext) throws IOException {
@@ -140,21 +146,21 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     public static /* synthetic */ class C10071 {
 
         /* renamed from: $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding */
-        static final /* synthetic */ int[] f245x531607dd;
+        static final /* synthetic */ int[] f247x531607dd;
 
         static {
             int[] iArr = new int[Protobuf.IntEncoding.values().length];
-            f245x531607dd = iArr;
+            f247x531607dd = iArr;
             try {
                 iArr[Protobuf.IntEncoding.DEFAULT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f245x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
+                f247x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f245x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
+                f247x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
         }
@@ -165,7 +171,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i2 = C10071.f245x531607dd[protobuf.intEncoding().ordinal()];
+        int i2 = C10071.f247x531607dd[protobuf.intEncoding().ordinal()];
         if (i2 == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt32(i);
@@ -189,7 +195,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i = C10071.f245x531607dd[protobuf.intEncoding().ordinal()];
+        int i = C10071.f247x531607dd[protobuf.intEncoding().ordinal()];
         if (i == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt64(j);
@@ -285,17 +291,17 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
 
     private void writeVarInt32(int i) throws IOException {
         while ((i & (-128)) != 0) {
-            this.output.write((i & 127) | 128);
+            this.output.write((i & MessagesStorage.LAST_DB_VERSION) | 128);
             i >>>= 7;
         }
-        this.output.write(i & 127);
+        this.output.write(i & MessagesStorage.LAST_DB_VERSION);
     }
 
     private void writeVarInt64(long j) throws IOException {
         while (((-128) & j) != 0) {
-            this.output.write((((int) j) & 127) | 128);
+            this.output.write((((int) j) & MessagesStorage.LAST_DB_VERSION) | 128);
             j >>>= 7;
         }
-        this.output.write(((int) j) & 127);
+        this.output.write(((int) j) & MessagesStorage.LAST_DB_VERSION);
     }
 }

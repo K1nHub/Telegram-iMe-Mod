@@ -482,14 +482,14 @@ public class CSSParser {
         public static class AnPlusB {
 
             /* renamed from: a */
-            public int f94a;
+            public int f96a;
 
             /* renamed from: b */
-            public int f95b;
+            public int f97b;
 
             AnPlusB(int i, int i2) {
-                this.f94a = i;
-                this.f95b = i2;
+                this.f96a = i;
+                this.f97b = i2;
             }
         }
 
@@ -670,7 +670,7 @@ public class CSSParser {
                     if (nextAnPlusB == null) {
                         throw new CSSParseException("Invalid or missing parameter section for pseudo class: " + nextIdentifier);
                     }
-                    PseudoClassAnPlusB pseudoClassAnPlusB3 = new PseudoClassAnPlusB(nextAnPlusB.f94a, nextAnPlusB.f95b, z, z2, simpleSelector.tag);
+                    PseudoClassAnPlusB pseudoClassAnPlusB3 = new PseudoClassAnPlusB(nextAnPlusB.f96a, nextAnPlusB.f97b, z, z2, simpleSelector.tag);
                     selector.addedAttributeOrPseudo();
                     pseudoClassAnPlusB2 = pseudoClassAnPlusB3;
                     pseudoClassAnPlusB = pseudoClassAnPlusB2;
@@ -1131,7 +1131,7 @@ public class CSSParser {
 
         public String toString() {
             SVG.SvgElementBase svgElementBase = this.targetElement;
-            return svgElementBase != null ? String.format("<%s id=\"%s\">", svgElementBase.getNodeName(), this.targetElement.f123id) : "";
+            return svgElementBase != null ? String.format("<%s id=\"%s\">", svgElementBase.getNodeName(), this.targetElement.f125id) : "";
         }
     }
 
@@ -1234,7 +1234,7 @@ public class CSSParser {
                     String str2 = attrib.name;
                     str2.hashCode();
                     if (str2.equals(TtmlNode.ATTR_ID)) {
-                        if (!attrib.value.equals(svgElementBase.f123id)) {
+                        if (!attrib.value.equals(svgElementBase.f125id)) {
                             return false;
                         }
                     } else if (!str2.equals("class") || (list2 = svgElementBase.classNames) == null || !list2.contains(attrib.value)) {
@@ -1261,17 +1261,17 @@ public class CSSParser {
     public static class PseudoClassAnPlusB implements PseudoClass {
 
         /* renamed from: a */
-        private int f97a;
+        private int f99a;
 
         /* renamed from: b */
-        private int f98b;
+        private int f100b;
         private boolean isFromStart;
         private boolean isOfType;
         private String nodeName;
 
         PseudoClassAnPlusB(int i, int i2, boolean z, boolean z2, String str) {
-            this.f97a = i;
-            this.f98b = i2;
+            this.f99a = i;
+            this.f100b = i2;
             this.isFromStart = z;
             this.isOfType = z2;
             this.nodeName = str;
@@ -1301,20 +1301,20 @@ public class CSSParser {
                 i2 = 1;
             }
             int i3 = this.isFromStart ? i + 1 : i2 - i;
-            int i4 = this.f97a;
+            int i4 = this.f99a;
             if (i4 == 0) {
-                return i3 == this.f98b;
+                return i3 == this.f100b;
             }
-            int i5 = this.f98b;
+            int i5 = this.f100b;
             if ((i3 - i5) % i4 == 0) {
-                return Integer.signum(i3 - i5) == 0 || Integer.signum(i3 - this.f98b) == Integer.signum(this.f97a);
+                return Integer.signum(i3 - i5) == 0 || Integer.signum(i3 - this.f100b) == Integer.signum(this.f99a);
             }
             return false;
         }
 
         public String toString() {
             String str = this.isFromStart ? "" : "last-";
-            return this.isOfType ? String.format("nth-%schild(%dn%+d of type <%s>)", str, Integer.valueOf(this.f97a), Integer.valueOf(this.f98b), this.nodeName) : String.format("nth-%schild(%dn%+d)", str, Integer.valueOf(this.f97a), Integer.valueOf(this.f98b));
+            return this.isOfType ? String.format("nth-%schild(%dn%+d of type <%s>)", str, Integer.valueOf(this.f99a), Integer.valueOf(this.f100b), this.nodeName) : String.format("nth-%schild(%dn%+d)", str, Integer.valueOf(this.f99a), Integer.valueOf(this.f100b));
         }
     }
 

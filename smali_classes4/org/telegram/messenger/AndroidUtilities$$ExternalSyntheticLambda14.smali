@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback;
 
-.field public final synthetic f$1:Landroid/graphics/Bitmap;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;Landroid/graphics/Bitmap;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/Utilities$Callback;
-
-    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;->f$1:Landroid/graphics/Bitmap;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/Utilities$Callback;
 
-    iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda14;->f$1:Landroid/graphics/Bitmap;
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$-DIaRgeCBogU_dYp-RjLT_VJ6II(Lorg/telegram/messenger/Utilities$Callback;Landroid/graphics/Bitmap;)V
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$J0hzW9CVkVodMhZKO7wyVnwCTUk(Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

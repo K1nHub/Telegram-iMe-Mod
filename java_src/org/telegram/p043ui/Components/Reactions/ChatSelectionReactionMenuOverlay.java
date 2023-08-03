@@ -68,7 +68,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
 
     private void checkCreateReactionsLayout() {
         if (this.reactionsContainerLayout == null) {
-            ReactionsContainerLayout reactionsContainerLayout = new ReactionsContainerLayout(this, this.parentFragment, getContext(), this.parentFragment.getCurrentAccount(), this.parentFragment.getResourceProvider()) { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay.2
+            ReactionsContainerLayout reactionsContainerLayout = new ReactionsContainerLayout(this, 0, this.parentFragment, getContext(), this.parentFragment.getCurrentAccount(), this.parentFragment.getResourceProvider()) { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay.2
                 float enabledAlpha = 1.0f;
                 long lastUpdate;
 
@@ -116,8 +116,8 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
                 }
             };
             this.reactionsContainerLayout = reactionsContainerLayout;
-            reactionsContainerLayout.setPadding(AndroidUtilities.m54dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m54dp(this.mPadding));
-            this.reactionsContainerLayout.setDelegate(new C51363());
+            reactionsContainerLayout.setPadding(AndroidUtilities.m72dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m72dp(this.mPadding));
+            this.reactionsContainerLayout.setDelegate(new C51703());
             this.reactionsContainerLayout.setClipChildren(false);
             this.reactionsContainerLayout.setClipToPadding(false);
             addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, this.mPadding + 70, 5));
@@ -127,8 +127,23 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3 */
     /* loaded from: classes6.dex */
-    public class C51363 implements ReactionsContainerLayout.ReactionsContainerDelegate {
-        C51363() {
+    public class C51703 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+        @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+        public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f, float f2, float f3) {
+            ReactionsContainerLayout.ReactionsContainerDelegate.CC.$default$drawRoundRect(this, canvas, rectF, f, f2, f3);
+        }
+
+        @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+        public /* synthetic */ boolean needEnterText() {
+            return ReactionsContainerLayout.ReactionsContainerDelegate.CC.$default$needEnterText(this);
+        }
+
+        @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+        public /* synthetic */ void onEmojiWindowDismissed() {
+            ReactionsContainerLayout.ReactionsContainerDelegate.CC.$default$onEmojiWindowDismissed(this);
+        }
+
+        C51703() {
         }
 
         @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -137,7 +152,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatSelectionReactionMenuOverlay.C51363.this.lambda$onReactionClicked$0();
+                    ChatSelectionReactionMenuOverlay.C51703.this.lambda$onReactionClicked$0();
                 }
             });
         }
@@ -205,7 +220,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
                     ReactionsContainerLayout reactionsContainerLayout = this.reactionsContainerLayout;
                     if (reactionsContainerLayout != null) {
                         reactionsContainerLayout.setMirrorX(isOutOwner);
-                        this.reactionsContainerLayout.setPadding(AndroidUtilities.m54dp(4) + ((LocaleController.isRTL || isOutOwner) ? 0 : this.mSidePadding), AndroidUtilities.m54dp(this.mPadding), AndroidUtilities.m54dp(4) + ((LocaleController.isRTL || isOutOwner) ? this.mSidePadding : 0), AndroidUtilities.m54dp(this.mPadding));
+                        this.reactionsContainerLayout.setPadding(AndroidUtilities.m72dp(4) + ((LocaleController.isRTL || isOutOwner) ? 0 : this.mSidePadding), AndroidUtilities.m72dp(this.mPadding), AndroidUtilities.m72dp(4) + ((LocaleController.isRTL || isOutOwner) ? this.mSidePadding : 0), AndroidUtilities.m72dp(this.mPadding));
                     }
                     int height2 = getHeight() != 0 ? getHeight() : chatListView.getHeight();
                     if (chatMessageCell.getCurrentMessagesGroup() != null) {
@@ -214,23 +229,23 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
                     } else {
                         height = chatMessageCell.getHeight();
                     }
-                    float y = (chatMessageCell.getY() + pullingDownOffset) - AndroidUtilities.m54dp(74);
-                    float m54dp = AndroidUtilities.m54dp(14);
-                    float m54dp2 = height2 - AndroidUtilities.m54dp(218);
+                    float y = (chatMessageCell.getY() + pullingDownOffset) - AndroidUtilities.m72dp(74);
+                    float m72dp = AndroidUtilities.m72dp(14);
+                    float m72dp2 = height2 - AndroidUtilities.m72dp(218);
                     FragmentContextView fragmentContextView = this.parentFragment.getFragmentContextView();
                     if (fragmentContextView != null && fragmentContextView.getVisibility() == 0) {
-                        m54dp += fragmentContextView.getHeight();
+                        m72dp += fragmentContextView.getHeight();
                     }
                     float f4 = height;
-                    if (y > m54dp - (f4 / 2.0f) && y < m54dp2) {
+                    if (y > m72dp - (f4 / 2.0f) && y < m72dp2) {
                         this.toOffsetY = BitmapDescriptorFactory.HUE_RED;
                         z2 = false;
                         z3 = true;
                     } else {
-                        if (y < (m54dp - f4) - AndroidUtilities.m54dp(92) || y > m54dp2) {
+                        if (y < (m72dp - f4) - AndroidUtilities.m72dp(92) || y > m72dp2) {
                             z2 = false;
                         } else {
-                            this.translationOffsetY = height + AndroidUtilities.m54dp(56);
+                            this.translationOffsetY = height + AndroidUtilities.m72dp(56);
                             this.toOffsetY = 1.0f;
                             z2 = true;
                         }
@@ -264,18 +279,18 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
                             }
                         }
                     }
-                    this.reactionsContainerLayout.setTranslationY(MathUtils.clamp(interpolation, m54dp, m54dp2));
+                    this.reactionsContainerLayout.setTranslationY(MathUtils.clamp(interpolation, m72dp, m72dp2));
                     this.reactionsContainerLayout.setTranslationX(chatMessageCell.getNonAnimationTranslationX(true));
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.reactionsContainerLayout.getLayoutParams();
-                    int max = Math.max(0, chatMessageCell.getBackgroundDrawableLeft() - AndroidUtilities.m54dp(32));
-                    int max2 = Math.max((int) chatMessageCell.getNonAnimationTranslationX(true), (chatMessageCell.getWidth() - chatMessageCell.getBackgroundDrawableRight()) - AndroidUtilities.m54dp(32));
-                    int m54dp3 = AndroidUtilities.m54dp(40) * 8;
-                    if ((getWidth() - max2) - max < m54dp3) {
+                    int max = Math.max(0, chatMessageCell.getBackgroundDrawableLeft() - AndroidUtilities.m72dp(32));
+                    int max2 = Math.max((int) chatMessageCell.getNonAnimationTranslationX(true), (chatMessageCell.getWidth() - chatMessageCell.getBackgroundDrawableRight()) - AndroidUtilities.m72dp(32));
+                    int m72dp3 = AndroidUtilities.m72dp(40) * 8;
+                    if ((getWidth() - max2) - max < m72dp3) {
                         if (isOutOwner) {
-                            max = Math.min(max, (getWidth() - 0) - m54dp3);
+                            max = Math.min(max, (getWidth() - 0) - m72dp3);
                             max2 = 0;
                         } else {
-                            max2 = Math.min(max2, (getWidth() - 0) - m54dp3);
+                            max2 = Math.min(max2, (getWidth() - 0) - m72dp3);
                             max = 0;
                         }
                     }

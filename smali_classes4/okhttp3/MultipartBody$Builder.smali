@@ -131,7 +131,7 @@
 .method public final addPart(Lokhttp3/MultipartBody$Part;)Lokhttp3/MultipartBody$Builder;
     .locals 1
 
-    const-string v0, "part"
+    const-string/jumbo v0, "part"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

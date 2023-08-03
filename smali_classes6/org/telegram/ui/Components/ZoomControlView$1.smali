@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ZoomControlView;Ljava/lang/String;)V
     .locals 0
 
-    .line 53
+    .line 55
     iput-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 .method public get(Lorg/telegram/ui/Components/ZoomControlView;)Ljava/lang/Float;
     .locals 0
 
-    .line 65
+    .line 67
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ZoomControlView;->access$000(Lorg/telegram/ui/Components/ZoomControlView;)F
@@ -60,7 +60,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 53
+    .line 55
     check-cast p1, Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ZoomControlView$1;->get(Lorg/telegram/ui/Components/ZoomControlView;)Ljava/lang/Float;
@@ -73,7 +73,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 53
+    .line 55
     check-cast p1, Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ZoomControlView$1;->setValue(Lorg/telegram/ui/Components/ZoomControlView;F)V
@@ -84,12 +84,12 @@
 .method public setValue(Lorg/telegram/ui/Components/ZoomControlView;F)V
     .locals 0
 
-    .line 56
+    .line 58
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/ZoomControlView;->access$002(Lorg/telegram/ui/Components/ZoomControlView;F)F
 
-    .line 57
+    .line 59
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ZoomControlView;->access$100(Lorg/telegram/ui/Components/ZoomControlView;)Lorg/telegram/ui/Components/ZoomControlView$ZoomControlViewDelegate;
@@ -98,7 +98,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 58
+    .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ZoomControlView;->access$100(Lorg/telegram/ui/Components/ZoomControlView;)Lorg/telegram/ui/Components/ZoomControlView$ZoomControlViewDelegate;
@@ -113,7 +113,7 @@
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/Components/ZoomControlView$ZoomControlViewDelegate;->didSetZoom(F)V
 
-    .line 60
+    .line 62
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView$1;->this$0:Lorg/telegram/ui/Components/ZoomControlView;
 

@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 60151
+    .line 61041
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PhotoSize;-><init>()V
 
     return-void
@@ -32,14 +32,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 60156
+    .line 61046
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 60157
+    .line 61047
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -48,12 +48,12 @@
 
     const/16 p2, 0x32
 
-    .line 60158
+    .line 61048
     iput p2, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     iput p2, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 60159
+    .line 61049
     invoke-static {p1}, Lorg/telegram/messenger/SvgHelper;->decompress([B)Ljava/lang/String;
 
     move-result-object p1
@@ -70,17 +70,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 60163
+    .line 61053
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_photoPathSize;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 60164
+    .line 61054
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 60165
+    .line 61055
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

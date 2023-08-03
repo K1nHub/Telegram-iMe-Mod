@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
-    .line 166
+    .line 169
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +38,24 @@
 .method public run()V
     .locals 2
 
-    .line 169
+    .line 172
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->access$102(Lorg/telegram/ui/Components/RLottieDrawable;Z)Z
 
-    .line 170
+    .line 173
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->invalidateInternal()V
 
-    .line 171
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->decodeFrameFinishedInternal()V
 
-    .line 172
+    .line 175
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$000(Lorg/telegram/ui/Components/RLottieDrawable;)Ljava/lang/Runnable;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 173
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$2;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->access$000(Lorg/telegram/ui/Components/RLottieDrawable;)Ljava/lang/Runnable;

@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.p024ui.dialog.SelectedFilesBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.fork.utils.CollectionsUtilsKt;
 import com.iMe.utils.extentions.common.ThrowableExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.io.File;
@@ -39,6 +40,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -46,7 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -105,17 +107,93 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         this.activity = activity;
         this.uris = uris;
         this.onFilesChangedAction = onFilesChangedAction;
-        lazy = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$titleTextView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$titleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTitleTextView;
+                initTitleTextView = SelectedFilesBottomSheet.this.initTitleTextView();
+                return initTitleTextView;
+            }
+        });
         this.titleTextView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$topShadow$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$topShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = SelectedFilesBottomSheet.this.initShadow(true);
+                return initShadow;
+            }
+        });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$listView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<SelectedFilesBottomSheet$initListView$1>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectedFilesBottomSheet$initListView$1 invoke() {
+                SelectedFilesBottomSheet$initListView$1 initListView;
+                initListView = SelectedFilesBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$bottomShadow$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$bottomShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = SelectedFilesBottomSheet.this.initShadow(false);
+                return initShadow;
+            }
+        });
         this.bottomShadow$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$saveButton$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$saveButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSaveButton;
+                initSaveButton = SelectedFilesBottomSheet.this.initSaveButton();
+                return initSaveButton;
+            }
+        });
         this.saveButton$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$listAdapter$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<FilesAdapter>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectedFilesBottomSheet.FilesAdapter invoke() {
+                return new SelectedFilesBottomSheet.FilesAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy6;
         this.files = new ArrayList();
         RootView rootView = new RootView();
@@ -172,7 +250,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3417R.string.multiple_files_sending_selected));
+        textView.setText(LocaleController.getInternalString(C3419R.string.multiple_files_sending_selected));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -187,7 +265,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor(Theme.key_dialogBackground), getThemedColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3417R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3419R.string.Save));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
         return textView;
     }
@@ -264,8 +342,56 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 SelectedFilesBottomSheet.setupListeners$lambda$8$lambda$7(SelectedFilesBottomSheet.this, view, i);
             }
         });
-        getListAdapter().setOnItemDeleteClick(new SelectedFilesBottomSheet$setupListeners$2(this));
-        ViewExtKt.safeThrottledClick$default(getSaveButton(), 0L, new SelectedFilesBottomSheet$setupListeners$3(this), 1, null);
+        getListAdapter().setOnItemDeleteClick(new Function1<Integer, Unit>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$setupListeners$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke(num.intValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(int i) {
+                List list = SelectedFilesBottomSheet.this.files;
+                SelectedFilesBottomSheet selectedFilesBottomSheet = SelectedFilesBottomSheet.this;
+                list.remove(i);
+                selectedFilesBottomSheet.getListAdapter().notifyDataSetChanged();
+                if (list.isEmpty()) {
+                    selectedFilesBottomSheet.getOnFilesChangedAction().invoke(new ArrayList<>());
+                    selectedFilesBottomSheet.dismiss();
+                }
+            }
+        });
+        ViewExtKt.safeThrottledClick$default(getSaveButton(), 0L, new Function1<View, Unit>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$setupListeners$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                int collectionSizeOrDefault;
+                Intrinsics.checkNotNullParameter(it, "it");
+                Callbacks$Callback1<ArrayList<Uri>> onFilesChangedAction = SelectedFilesBottomSheet.this.getOnFilesChangedAction();
+                List<SelectedFilesBottomSheet.FileItem> list = SelectedFilesBottomSheet.this.files;
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
+                ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                for (SelectedFilesBottomSheet.FileItem fileItem : list) {
+                    arrayList.add(fileItem.getUri());
+                }
+                onFilesChangedAction.invoke(CollectionsUtilsKt.toArrayList(arrayList));
+                SelectedFilesBottomSheet.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -285,7 +411,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void openFile$lambda$16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
-        Object m1601constructorimpl;
+        Object m1620constructorimpl;
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         File checkDirectory = FileLoader.checkDirectory(3);
@@ -312,22 +438,22 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 openInputStream.close();
                 fileOutputStream.close();
             }
-            m1601constructorimpl = Result.m1601constructorimpl(Unit.INSTANCE);
+            m1620constructorimpl = Result.m1620constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
+            m1620constructorimpl = Result.m1620constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1602exceptionOrNullimpl = Result.m1602exceptionOrNullimpl(m1601constructorimpl);
-        if (m1602exceptionOrNullimpl != null) {
+        final Throwable m1621exceptionOrNullimpl = Result.m1621exceptionOrNullimpl(m1620constructorimpl);
+        if (m1621exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1602exceptionOrNullimpl);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1621exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1604isSuccessimpl(m1601constructorimpl)) {
-            Unit unit = (Unit) m1601constructorimpl;
+        if (Result.m1623isSuccessimpl(m1620constructorimpl)) {
+            Unit unit = (Unit) m1620constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -479,11 +605,11 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
             SelectedFilesBottomSheet.this.ignoreLayout = false;
             SelectedFilesBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i);
-            int m54dp = AndroidUtilities.m54dp(110) + (SelectedFilesBottomSheet.this.files.size() * AndroidUtilities.m54dp(60)) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int m72dp = AndroidUtilities.m72dp(110) + (SelectedFilesBottomSheet.this.files.size() * AndroidUtilities.m72dp(60)) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int i3 = size / 5;
-            int i4 = ((float) m54dp) < ((float) i3) * 3.2f ? 0 : i3 * 2;
-            if (i4 != 0 && m54dp < size) {
-                i4 -= size - m54dp;
+            int i4 = ((float) m72dp) < ((float) i3) * 3.2f ? 0 : i3 * 2;
+            if (i4 != 0 && m72dp < size) {
+                i4 -= size - m72dp;
             }
             if (i4 == 0) {
                 i4 = ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
@@ -493,8 +619,8 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 SelectedFilesBottomSheet.this.getListView().setPadding(0, i4, 0, 0);
                 SelectedFilesBottomSheet.this.ignoreLayout = false;
             }
-            this.fullHeight = m54dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
+            this.fullHeight = m72dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m72dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -521,12 +647,12 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m54dp = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
-            int m54dp2 = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
+            int m72dp = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m72dp(6);
+            int m72dp2 = (SelectedFilesBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m72dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(15) + ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m54dp2 + i2;
-            int i4 = m54dp + i2;
+            int i3 = m72dp2 + i2;
+            int i4 = m72dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3;
@@ -550,13 +676,13 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ((BottomSheet) SelectedFilesBottomSheet.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectedFilesBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m72dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m54dp3 = AndroidUtilities.m54dp(36);
-            this.rect.set((getMeasuredWidth() - m54dp3) / 2, i4, (getMeasuredWidth() + m54dp3) / 2, i4 + AndroidUtilities.m54dp(4));
+            int m72dp3 = AndroidUtilities.m72dp(36);
+            this.rect.set((getMeasuredWidth() - m72dp3) / 2, i4, (getMeasuredWidth() + m72dp3) / 2, i4 + AndroidUtilities.m72dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(SelectedFilesBottomSheet.this.getThemedColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int themedColor = SelectedFilesBottomSheet.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
@@ -570,7 +696,16 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     /* renamed from: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FilesAdapter */
     /* loaded from: classes3.dex */
     public final class FilesAdapter extends RecyclerListView.SelectionAdapter {
-        private Function1<? super Integer, Unit> onItemDeleteClick = SelectedFilesBottomSheet$FilesAdapter$onItemDeleteClick$1.INSTANCE;
+        private Function1<? super Integer, Unit> onItemDeleteClick = new Function1<Integer, Unit>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FilesAdapter$onItemDeleteClick$1
+            public final void invoke(int i) {
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke(num.intValue());
+                return Unit.INSTANCE;
+            }
+        };
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
@@ -605,11 +740,28 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.iMe.fork.ui.dialog.SelectedFilesBottomSheet.FileView");
-            ((FileView) view).setupView((FileItem) SelectedFilesBottomSheet.this.files.get(i), new SelectedFilesBottomSheet$FilesAdapter$onBindViewHolder$1$1(this, i));
+            ((FileView) view).setupView((FileItem) SelectedFilesBottomSheet.this.files.get(i), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FilesAdapter$onBindViewHolder$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    SelectedFilesBottomSheet.FilesAdapter.this.getOnItemDeleteClick().invoke(Integer.valueOf(i));
+                }
+            });
         }
     }
 
@@ -633,16 +785,68 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             Lazy lazy4;
             Intrinsics.checkNotNullParameter(context, "context");
             this.this$0 = selectedFilesBottomSheet;
-            lazy = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$imageView$2(this));
+            lazy = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FileView$imageView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final ImageView invoke() {
+                    ImageView initImageView;
+                    initImageView = SelectedFilesBottomSheet.FileView.this.initImageView();
+                    return initImageView;
+                }
+            });
             this.imageView$delegate = lazy;
-            lazy2 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$nameTextView$2(this));
+            lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FileView$nameTextView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final TextView invoke() {
+                    TextView initNameTextView;
+                    initNameTextView = SelectedFilesBottomSheet.FileView.this.initNameTextView();
+                    return initNameTextView;
+                }
+            });
             this.nameTextView$delegate = lazy2;
-            lazy3 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$sizeTextView$2(this));
+            lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FileView$sizeTextView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final TextView invoke() {
+                    TextView initSizeTextView;
+                    initSizeTextView = SelectedFilesBottomSheet.FileView.this.initSizeTextView();
+                    return initSizeTextView;
+                }
+            });
             this.sizeTextView$delegate = lazy3;
-            lazy4 = LazyKt__LazyJVMKt.lazy(new SelectedFilesBottomSheet$FileView$deleteButton$2(this));
+            lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ImageView>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FileView$deleteButton$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final ImageView invoke() {
+                    ImageView initDeleteButton;
+                    initDeleteButton = SelectedFilesBottomSheet.FileView.this.initDeleteButton();
+                    return initDeleteButton;
+                }
+            });
             this.deleteButton$delegate = lazy4;
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m54dp(16));
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, AndroidUtilities.m54dp(8));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m72dp(16));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, AndroidUtilities.m72dp(8));
             setGravity(16);
             addView(getImageView(), LayoutHelper.createLinear(-2, -2));
             LinearLayout linearLayout = new LinearLayout(context);
@@ -669,12 +873,30 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             return (ImageView) this.deleteButton$delegate.getValue();
         }
 
-        public final void setupView(FileItem fileItem, Function0<Unit> onItemDeleteClick) {
+        public final void setupView(FileItem fileItem, final Function0<Unit> onItemDeleteClick) {
             Intrinsics.checkNotNullParameter(fileItem, "fileItem");
             Intrinsics.checkNotNullParameter(onItemDeleteClick, "onItemDeleteClick");
             getNameTextView().setText(fileItem.getName());
             getSizeTextView().setText(fileItem.getSize());
-            ViewExtKt.safeThrottledClick$default(getDeleteButton(), 0L, new SelectedFilesBottomSheet$FileView$setupView$2(onItemDeleteClick), 1, null);
+            ViewExtKt.safeThrottledClick$default(getDeleteButton(), 0L, new Function1<View, Unit>() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$FileView$setupView$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                    invoke2(view);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(View it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    onItemDeleteClick.invoke();
+                }
+            }, 1, null);
         }
 
         @Override // android.widget.LinearLayout, android.view.View
@@ -686,7 +908,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(44), C3417R.C3419drawable.msg_round_file_s);
+            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m72dp(44), C3419R.C3421drawable.msg_round_file_s);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_outMediaIcon), false);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_inMediaIcon), true);
             imageView.setImageDrawable(createCircleDrawableWithIcon);
@@ -719,9 +941,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor(Theme.key_chat_replyPanelClose), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("Delete", C3417R.string.Delete));
+            imageView.setContentDescription(LocaleController.getString("Delete", C3419R.string.Delete));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3417R.C3419drawable.input_clear);
+            imageView.setImageResource(C3419R.C3421drawable.input_clear);
             imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor(Theme.key_listSelector), 3));
             return imageView;
         }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;Landroid/content/Context;)V
     .locals 0
 
-    .line 200
+    .line 201
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BlurredRecyclerView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 203
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -64,13 +64,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 204
+    .line 205
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 205
+    .line 206
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -83,7 +83,7 @@
 
     const/4 v1, 0x0
 
-    .line 207
+    .line 208
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -91,19 +91,19 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 208
+    .line 209
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 209
+    .line 210
     invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v3
 
     if-ne v3, v0, :cond_0
 
-    .line 210
+    .line 211
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -133,12 +133,12 @@
 
     goto :goto_0
 
-    .line 215
+    .line 216
     :cond_1
     :goto_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BlurredRecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 216
+    .line 217
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -167,10 +167,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 217
+    .line 218
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 219
+    .line 220
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
@@ -182,10 +182,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 220
+    .line 221
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 221
+    .line 222
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -224,7 +224,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 222
+    .line 223
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$2;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -233,7 +233,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 223
+    .line 224
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3

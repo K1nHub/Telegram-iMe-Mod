@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0480C;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.ArrayList;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
@@ -32,7 +31,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
     public boolean hidden_prehistory;
 
     /* renamed from: id */
-    public long f1516id;
+    public long f1519id;
     public long inviterId;
     public int invitesCount;
     public int kicked_count;
@@ -77,7 +76,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -129,7 +128,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -175,7 +174,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -232,7 +231,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -280,7 +279,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -334,7 +333,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -382,7 +381,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -461,7 +460,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -524,7 +523,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -573,7 +572,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -615,7 +614,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -669,7 +668,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -719,7 +718,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -789,7 +788,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i5 = this.hidden_prehistory ? i4 | 1024 : i4 & (-1025);
                         this.flags = i5;
                         abstractSerializedData2.writeInt32(i5);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -846,7 +845,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -930,7 +929,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -1004,7 +1003,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1152,12 +1151,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1283,7 +1282,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1399,12 +1398,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1511,7 +1510,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int readInt322 = abstractSerializedData2.readInt32(z2);
                         this.flags2 = readInt322;
                         this.can_delete_channel = (readInt322 & 1) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1659,7 +1658,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
@@ -1667,7 +1666,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i10 = this.can_delete_channel ? this.flags2 | 1 : this.flags2 & (-2);
                         this.flags2 = i10;
                         abstractSerializedData2.writeInt32(i10);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1784,7 +1783,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
                             this.chat_photo = TLRPC$Photo.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
@@ -1820,7 +1819,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
                             this.chat_photo.serializeToStream(abstractSerializedData2);
@@ -1857,7 +1856,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1952,12 +1951,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2041,7 +2040,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2090,7 +2089,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2139,7 +2138,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2231,12 +2230,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2315,7 +2314,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2361,7 +2360,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2400,7 +2399,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2428,7 +2427,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2461,7 +2460,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2537,7 +2536,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2598,7 +2597,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2645,7 +2644,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2687,7 +2686,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
                         this.can_set_location = (readInt32 & 65536) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2771,7 +2770,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i7 = this.can_set_location ? i6 | 65536 : i6 & (-65537);
                         this.flags = i7;
                         abstractSerializedData2.writeInt32(i7);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2839,7 +2838,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2901,7 +2900,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i4 = this.can_set_stickers ? i3 | 128 : i3 & (-129);
                         this.flags = i4;
                         abstractSerializedData2.writeInt32(i4);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2952,7 +2951,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2996,7 +2995,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -3034,7 +3033,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3106,7 +3105,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3162,7 +3161,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -3201,7 +3200,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -3239,7 +3238,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3349,12 +3348,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3451,7 +3450,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_view_stats = (readInt32 & 4096) != 0;
                         this.can_set_location = (65536 & readInt32) != 0;
                         this.has_scheduled = (readInt32 & 524288) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3543,7 +3542,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i8 = this.has_scheduled ? i7 | 524288 : i7 & (-524289);
                         this.flags = i8;
                         abstractSerializedData2.writeInt32(i8);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3612,7 +3611,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.chat_photo = TLRPC$Photo.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.notify_settings = TLRPC$PeerNotifySettings.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
@@ -3640,7 +3639,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         this.participants.serializeToStream(abstractSerializedData2);
                         this.chat_photo.serializeToStream(abstractSerializedData2);
                         this.notify_settings.serializeToStream(abstractSerializedData2);
@@ -3670,7 +3669,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3786,12 +3785,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3889,7 +3888,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -3960,7 +3959,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4020,7 +4019,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -4075,7 +4074,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4124,7 +4123,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -4179,7 +4178,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4234,7 +4233,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4347,12 +4346,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4453,7 +4452,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4588,12 +4587,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4711,7 +4710,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt64(z2);
+                        this.f1519id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4843,12 +4842,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1516id);
+                        abstractSerializedData2.writeInt64(this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4959,7 +4958,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -5026,7 +5025,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i5 = this.hidden_prehistory ? i4 | 1024 : i4 & (-1025);
                         this.flags = i5;
                         abstractSerializedData2.writeInt32(i5);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -5086,7 +5085,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1516id = abstractSerializedData2.readInt32(z2);
+                        this.f1519id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -5180,12 +5179,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.flags = i6;
                         int i7 = this.has_scheduled ? i6 | 524288 : i6 & (-524289);
                         this.flags = i7;
-                        int i8 = this.can_view_stats ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
+                        int i8 = this.can_view_stats ? i7 | 1048576 : i7 & (-1048577);
                         this.flags = i8;
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1516id);
+                        abstractSerializedData2.writeInt32((int) this.f1519id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);

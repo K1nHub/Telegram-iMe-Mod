@@ -12,6 +12,8 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.Components.AnimatedFileDrawable;
+import org.telegram.p043ui.Components.AnimatedFloat;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Paint.Views.EntityView;
 import org.telegram.p043ui.Components.Point;
@@ -29,6 +31,7 @@ public class StickerView extends EntityView {
     private Size baseSize;
     public final ImageReceiver centerImage;
     private FrameLayoutDrawer containerView;
+    private final AnimatedFloat mirrorT;
     private boolean mirrored;
     private Object parentObject;
     private TLRPC$Document sticker;
@@ -70,7 +73,7 @@ public class StickerView extends EntityView {
             if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeSticker) {
                 TLRPC$TL_maskCoords tLRPC$TL_maskCoords = tLRPC$DocumentAttribute.mask_coords;
                 if (tLRPC$TL_maskCoords != null) {
-                    this.anchor = tLRPC$TL_maskCoords.f1592n;
+                    this.anchor = tLRPC$TL_maskCoords.f1600n;
                 }
             } else {
                 i++;
@@ -79,6 +82,7 @@ public class StickerView extends EntityView {
         FrameLayoutDrawer frameLayoutDrawer = new FrameLayoutDrawer(context);
         this.containerView = frameLayoutDrawer;
         addView(frameLayoutDrawer, LayoutHelper.createFrame(-1, -1));
+        this.mirrorT = new AnimatedFloat(this.containerView, 0L, 500L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.centerImage.setAspectFit(true);
         this.centerImage.setInvalidateAll(true);
         this.centerImage.setParentView(this.containerView);
@@ -130,7 +134,15 @@ public class StickerView extends EntityView {
     }
 
     public void mirror() {
-        this.mirrored = !this.mirrored;
+        mirror(false);
+    }
+
+    public void mirror(boolean z) {
+        boolean z2 = !this.mirrored;
+        this.mirrored = z2;
+        if (!z) {
+            this.mirrorT.set(z2, true);
+        }
         this.containerView.invalidate();
     }
 
@@ -152,10 +164,9 @@ public class StickerView extends EntityView {
             return;
         }
         canvas.save();
-        if (this.mirrored) {
-            canvas.scale(-1.0f, 1.0f);
-            canvas.translate(-this.baseSize.width, BitmapDescriptorFactory.HUE_RED);
-        }
+        float f = this.mirrorT.set(this.mirrored);
+        canvas.scale(1.0f - (f * 2.0f), 1.0f, this.baseSize.width / 2.0f, BitmapDescriptorFactory.HUE_RED);
+        canvas.skew(BitmapDescriptorFactory.HUE_RED, 4.0f * f * (1.0f - f) * 0.25f);
         ImageReceiver imageReceiver = this.centerImage;
         Size size = this.baseSize;
         imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (int) size.width, (int) size.height);
@@ -222,12 +233,12 @@ public class StickerView extends EntityView {
 
         @Override // org.telegram.p043ui.Components.Paint.Views.EntityView.SelectionView
         protected int pointInsideHandle(float f, float f2) {
-            float m55dp = AndroidUtilities.m55dp(19.5f);
-            float m55dp2 = AndroidUtilities.m55dp(1.0f) + m55dp;
-            float f3 = m55dp2 * 2.0f;
-            float measuredHeight = ((getMeasuredHeight() - f3) / 2.0f) + m55dp2;
-            if (f <= m55dp2 - m55dp || f2 <= measuredHeight - m55dp || f >= m55dp2 + m55dp || f2 >= measuredHeight + m55dp) {
-                if (f <= ((getMeasuredWidth() - f3) + m55dp2) - m55dp || f2 <= measuredHeight - m55dp || f >= m55dp2 + (getMeasuredWidth() - f3) + m55dp || f2 >= measuredHeight + m55dp) {
+            float m73dp = AndroidUtilities.m73dp(19.5f);
+            float m73dp2 = AndroidUtilities.m73dp(1.0f) + m73dp;
+            float f3 = m73dp2 * 2.0f;
+            float measuredHeight = ((getMeasuredHeight() - f3) / 2.0f) + m73dp2;
+            if (f <= m73dp2 - m73dp || f2 <= measuredHeight - m73dp || f >= m73dp2 + m73dp || f2 >= measuredHeight + m73dp) {
+                if (f <= ((getMeasuredWidth() - f3) + m73dp2) - m73dp || f2 <= measuredHeight - m73dp || f >= m73dp2 + (getMeasuredWidth() - f3) + m73dp || f2 >= measuredHeight + m73dp) {
                     float measuredWidth = getMeasuredWidth() / 2.0f;
                     return Math.pow((double) (f - measuredWidth), 2.0d) + Math.pow((double) (f2 - measuredWidth), 2.0d) < Math.pow((double) measuredWidth, 2.0d) ? 3 : 0;
                 }
@@ -239,18 +250,18 @@ public class StickerView extends EntityView {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            float m55dp = AndroidUtilities.m55dp(4.5f);
-            float m55dp2 = AndroidUtilities.m55dp(1.0f) + m55dp + AndroidUtilities.m54dp(15);
-            float measuredWidth = (getMeasuredWidth() / 2) - m55dp2;
-            float f = m55dp2 + (2.0f * measuredWidth);
-            this.arcRect.set(m55dp2, m55dp2, f, f);
+            float dpf2 = AndroidUtilities.dpf2(5.66f);
+            float m73dp = AndroidUtilities.m73dp(1.0f) + dpf2 + AndroidUtilities.m72dp(15);
+            float measuredWidth = (getMeasuredWidth() / 2) - m73dp;
+            float f = m73dp + (2.0f * measuredWidth);
+            this.arcRect.set(m73dp, m73dp, f, f);
             canvas.drawArc(this.arcRect, BitmapDescriptorFactory.HUE_RED, 180.0f, false, this.paint);
             canvas.drawArc(this.arcRect, 180.0f, 180.0f, false, this.paint);
-            float f2 = measuredWidth + m55dp2;
-            canvas.drawCircle(m55dp2, f2, m55dp, this.dotPaint);
-            canvas.drawCircle(m55dp2, f2, m55dp, this.dotStrokePaint);
-            canvas.drawCircle(f, f2, m55dp, this.dotPaint);
-            canvas.drawCircle(f, f2, m55dp, this.dotStrokePaint);
+            float f2 = measuredWidth + m73dp;
+            canvas.drawCircle(m73dp, f2, dpf2, this.dotStrokePaint);
+            canvas.drawCircle(m73dp, f2, dpf2 - AndroidUtilities.m72dp(1), this.dotPaint);
+            canvas.drawCircle(f, f2, dpf2, this.dotStrokePaint);
+            canvas.drawCircle(f, f2, dpf2 - AndroidUtilities.m72dp(1), this.dotPaint);
         }
     }
 }

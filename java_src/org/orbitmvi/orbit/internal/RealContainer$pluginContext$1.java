@@ -9,10 +9,11 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [SIDE_EFFECT] */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$1", m83f = "RealContainer.kt", m82l = {69}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$1", m101f = "RealContainer.kt", m100l = {69}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class RealContainer$pluginContext$1 extends SuspendLambda implements Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> {
+public final class RealContainer$pluginContext$1<SIDE_EFFECT> extends SuspendLambda implements Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
@@ -31,9 +32,10 @@ public final class RealContainer$pluginContext$1 extends SuspendLambda implement
         return realContainer$pluginContext$1;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
-        return invoke2((RealContainer$pluginContext$1) obj, continuation);
+        return invoke2((RealContainer$pluginContext$1<SIDE_EFFECT>) obj, continuation);
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */

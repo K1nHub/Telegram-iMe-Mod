@@ -24,7 +24,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -107,16 +107,16 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         public float width;
 
         /* renamed from: x */
-        public float f1720x;
+        public float f1740x;
 
         /* renamed from: y */
-        public float f1721y;
+        public float f1741y;
 
         private CropState(int i, int i2, int i3) {
             this.width = i;
             this.height = i2;
-            this.f1720x = BitmapDescriptorFactory.HUE_RED;
-            this.f1721y = BitmapDescriptorFactory.HUE_RED;
+            this.f1740x = BitmapDescriptorFactory.HUE_RED;
+            this.f1741y = BitmapDescriptorFactory.HUE_RED;
             this.scale = 1.0f;
             this.baseRotation = i3;
             this.rotation = BitmapDescriptorFactory.HUE_RED;
@@ -143,7 +143,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
 
         /* JADX INFO: Access modifiers changed from: private */
         public boolean hasChanges() {
-            return Math.abs(this.f1720x) > 1.0E-5f || Math.abs(this.f1721y) > 1.0E-5f || Math.abs(this.scale - this.minimumScale) > 1.0E-5f || Math.abs(this.rotation) > 1.0E-5f || Math.abs(this.orientation) > 1.0E-5f;
+            return Math.abs(this.f1740x) > 1.0E-5f || Math.abs(this.f1741y) > 1.0E-5f || Math.abs(this.scale - this.minimumScale) > 1.0E-5f || Math.abs(this.rotation) > 1.0E-5f || Math.abs(this.orientation) > 1.0E-5f;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -168,19 +168,19 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
 
         /* JADX INFO: Access modifiers changed from: private */
         public void translate(float f, float f2) {
-            this.f1720x += f;
-            this.f1721y += f2;
+            this.f1740x += f;
+            this.f1741y += f2;
             this.matrix.postTranslate(f, f2);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public float getX() {
-            return this.f1720x;
+            return this.f1740x;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public float getY() {
-            return this.f1721y;
+            return this.f1741y;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -228,8 +228,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         /* JADX INFO: Access modifiers changed from: private */
         public void reset(CropAreaView cropAreaView, float f, boolean z) {
             this.matrix.reset();
-            this.f1720x = BitmapDescriptorFactory.HUE_RED;
-            this.f1721y = BitmapDescriptorFactory.HUE_RED;
+            this.f1740x = BitmapDescriptorFactory.HUE_RED;
+            this.f1741y = BitmapDescriptorFactory.HUE_RED;
             this.rotation = BitmapDescriptorFactory.HUE_RED;
             this.orientation = f;
             updateMinimumScale();
@@ -808,8 +808,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
             final RectF rectF2 = new RectF();
             this.areaView.getCropRect(rectF);
             CropState cropState2 = this.state;
-            final float f3 = cropState2.f1720x;
-            final float f4 = cropState2.f1721y;
+            final float f3 = cropState2.f1740x;
+            final float f4 = cropState2.f1741y;
             final float f5 = cropState2.scale;
             final float f6 = cropState2.rotation;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda2
@@ -825,7 +825,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         }
         this.areaView.setActualRect(this.initialAreaRect);
         CropState cropState3 = this.state;
-        cropState3.translate(-cropState3.f1720x, -cropState3.f1721y);
+        cropState3.translate(-cropState3.f1740x, -cropState3.f1741y);
         CropState cropState4 = this.state;
         cropState4.scale(cropState4.minimumScale / cropState4.scale, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
         CropState cropState5 = this.state;
@@ -841,8 +841,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         this.areaView.setActualRect(rectF2);
         CropState cropState = this.state;
         float f6 = 1.0f - floatValue;
-        float f7 = cropState.f1720x - (f * f6);
-        float f8 = cropState.f1721y - (f2 * f6);
+        float f7 = cropState.f1740x - (f * f6);
+        float f8 = cropState.f1741y - (f2 * f6);
         float f9 = cropState.rotation - (f3 * f6);
         float lerp = AndroidUtilities.lerp(f4, f5, floatValue);
         CropState cropState2 = this.state;
@@ -1003,7 +1003,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
             try {
                 bitmap2.eraseColor(0);
             } catch (Throwable th) {
-                FileLog.m49e(th);
+                FileLog.m67e(th);
                 return;
             }
         }
@@ -1033,8 +1033,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
             int i4 = 0;
             while (i4 < size) {
                 VideoEditedInfo.MediaEntity mediaEntity = arrayList.get(i4);
-                fArr[c] = (mediaEntity.f1492x * decodeFile.getWidth()) + ((mediaEntity.viewWidth * mediaEntity.scale) / 2.0f);
-                fArr[1] = (mediaEntity.f1493y * decodeFile.getHeight()) + ((mediaEntity.viewHeight * mediaEntity.scale) / 2.0f);
+                fArr[c] = (mediaEntity.f1495x * decodeFile.getWidth()) + ((mediaEntity.viewWidth * mediaEntity.scale) / 2.0f);
+                fArr[1] = (mediaEntity.f1496y * decodeFile.getHeight()) + ((mediaEntity.viewHeight * mediaEntity.scale) / 2.0f);
                 fArr[i3] = mediaEntity.textViewX * decodeFile.getWidth();
                 fArr[3] = mediaEntity.textViewY * decodeFile.getHeight();
                 matrix2.mapPoints(fArr);
@@ -1059,8 +1059,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
                 float f7 = mediaEntity.scale * width;
                 mediaEntity.scale = f7;
                 c = 0;
-                mediaEntity.f1492x = (fArr[0] - ((mediaEntity.viewWidth * f7) / 2.0f)) / bitmap2.getWidth();
-                mediaEntity.f1493y = (fArr[1] - ((mediaEntity.viewHeight * mediaEntity.scale) / 2.0f)) / bitmap2.getHeight();
+                mediaEntity.f1495x = (fArr[0] - ((mediaEntity.viewWidth * f7) / 2.0f)) / bitmap2.getWidth();
+                mediaEntity.f1496y = (fArr[1] - ((mediaEntity.viewHeight * mediaEntity.scale) / 2.0f)) / bitmap2.getHeight();
                 mediaEntity.textViewX = fArr[2] / bitmap2.getWidth();
                 mediaEntity.textViewY = fArr[3] / bitmap2.getHeight();
                 mediaEntity.width = (mediaEntity.viewWidth * mediaEntity.scale) / bitmap2.getWidth();
@@ -1147,7 +1147,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         try {
             AndroidUtilities.copyFile(new File(str), file);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         return file.getAbsolutePath();
     }
@@ -1200,7 +1200,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         float f3 = cropState3.minimumScale * cropWidth;
         mediaEditState.cropState.transformRotation = cropState3.getOrientationOnly();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("set transformRotation = " + mediaEditState.cropState.transformRotation);
+            FileLog.m70d("set transformRotation = " + mediaEditState.cropState.transformRotation);
         }
         while (true) {
             cropState = mediaEditState.cropState;
@@ -1270,8 +1270,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         this.hasAspectRatioDialog = true;
         String[] strArr = new String[8];
         final Integer[][] numArr = {new Integer[]{3, 2}, new Integer[]{5, 3}, new Integer[]{4, 3}, new Integer[]{5, 4}, new Integer[]{7, 5}, new Integer[]{16, 9}};
-        strArr[0] = LocaleController.getString("CropOriginal", C3417R.string.CropOriginal);
-        strArr[1] = LocaleController.getString("CropSquare", C3417R.string.CropSquare);
+        strArr[0] = LocaleController.getString("CropOriginal", C3419R.string.CropOriginal);
+        strArr[1] = LocaleController.getString("CropSquare", C3419R.string.CropSquare);
         int i = 2;
         for (int i2 = 0; i2 < 6; i2++) {
             Integer[] numArr2 = numArr[i2];

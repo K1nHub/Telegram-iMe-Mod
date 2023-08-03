@@ -543,7 +543,7 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "only owner can write"
+    const-string/jumbo p2, "only owner can write"
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

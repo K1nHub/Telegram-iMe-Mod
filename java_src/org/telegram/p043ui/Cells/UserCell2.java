@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -66,14 +66,14 @@ public class UserCell2 extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(24));
         View view = this.avatarImageView;
         boolean z = LocaleController.isRTL;
         addView(view, LayoutHelper.createFrame(48, 48, (z ? 5 : 3) | 48, z ? 0 : i + 7, 11, z ? i + 7 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Cells.UserCell2.1
             @Override // org.telegram.p043ui.ActionBar.SimpleTextView
             public boolean setText(CharSequence charSequence) {
-                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(15), false));
+                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(15), false));
             }
         };
         this.nameTextView = simpleTextView;
@@ -117,7 +117,7 @@ public class UserCell2 extends FrameLayout {
             boolean z5 = LocaleController.isRTL;
             addView(checkBoxSquare, LayoutHelper.createFrame(18, 18, (z5 ? 3 : 5) | 16, z5 ? 19 : 0, 0, z5 ? 0 : 19, 0));
         } else if (i2 == 1) {
-            CheckBox checkBox = new CheckBox(context, C3417R.C3419drawable.round_check2);
+            CheckBox checkBox = new CheckBox(context, C3419R.C3421drawable.round_check2);
             this.checkBox = checkBox;
             checkBox.setVisibility(4);
             this.checkBox.setColor(Theme.getColor(Theme.key_checkbox, resourcesProvider), Theme.getColor(Theme.key_checkboxCheck, resourcesProvider));
@@ -161,7 +161,7 @@ public class UserCell2 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(70), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(70), 1073741824));
     }
 
     @Override // android.view.View

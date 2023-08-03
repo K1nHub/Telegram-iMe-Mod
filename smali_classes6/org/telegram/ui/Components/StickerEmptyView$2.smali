@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerEmptyView;Landroid/content/Context;)V
     .locals 0
 
-    .line 77
+    .line 80
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$2;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public setVisibility(I)V
     .locals 2
 
-    .line 80
+    .line 83
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getVisibility()I
 
     move-result v0
@@ -46,21 +46,21 @@
 
     if-nez p1, :cond_0
 
-    .line 81
+    .line 84
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView$2;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickerEmptyView;->access$100(Lorg/telegram/ui/Components/StickerEmptyView;)V
 
     const/4 v0, 0x3
 
-    .line 82
+    .line 85
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 83
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView$2;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/StickerEmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
@@ -76,7 +76,7 @@
     :cond_0
     if-ne p1, v1, :cond_1
 
-    .line 86
+    .line 89
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView$2;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/StickerEmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 88
+    .line 91
     :cond_1
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setVisibility(I)V

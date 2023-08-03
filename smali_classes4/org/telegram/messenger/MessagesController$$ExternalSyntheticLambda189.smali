@@ -12,11 +12,11 @@
 
 .field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
     return-void
 .end method
@@ -43,9 +43,9 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda189;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$bY3cMwZA59R-va0Zj8vPbEgqa38(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$YJe0C1TI7oYsbTvV9C3LKE4U92I(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;)V
 
     return-void
 .end method

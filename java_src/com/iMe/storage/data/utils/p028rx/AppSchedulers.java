@@ -11,15 +11,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AppSchedulers implements SchedulersProvider {
     @Override // com.iMe.storage.domain.utils.p030rx.SchedulersProvider
     /* renamed from: ui */
-    public Scheduler mo698ui() {
+    public Scheduler mo716ui() {
         return AndroidSchedulers.mainThread();
     }
 
     @Override // com.iMe.storage.domain.utils.p030rx.SchedulersProvider
     /* renamed from: io */
-    public Scheduler mo699io() {
-        Scheduler m679io = Schedulers.m679io();
-        Intrinsics.checkNotNullExpressionValue(m679io, "io()");
-        return m679io;
+    public Scheduler mo717io() {
+        Scheduler m697io = Schedulers.m697io();
+        Intrinsics.checkNotNullExpressionValue(m697io, "io()");
+        return m697io;
     }
 }

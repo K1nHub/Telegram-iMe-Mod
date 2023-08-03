@@ -11,7 +11,7 @@ import p033j$.util.function.InterfaceC2826l;
 final class C2892F4 extends AbstractC2904H4 implements InterfaceC2853s.InterfaceC2855b, InterfaceC2826l {
 
     /* renamed from: e */
-    int f824e;
+    int f827e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2892F4(InterfaceC2853s.InterfaceC2855b interfaceC2855b, long j, long j2) {
@@ -24,42 +24,42 @@ final class C2892F4 extends AbstractC2904H4 implements InterfaceC2853s.Interface
 
     @Override // p033j$.util.function.InterfaceC2826l
     public void accept(int i) {
-        this.f824e = i;
+        this.f827e = i;
     }
 
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public /* synthetic */ boolean mo113b(Consumer consumer) {
-        return AbstractC2780a.m600k(this, consumer);
+    public /* synthetic */ boolean mo131b(Consumer consumer) {
+        return AbstractC2780a.m618k(this, consumer);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
-        AbstractC2780a.m608c(this, consumer);
+        AbstractC2780a.m626c(this, consumer);
     }
 
     @Override // p033j$.util.function.InterfaceC2826l
     /* renamed from: l */
-    public InterfaceC2826l mo165l(InterfaceC2826l interfaceC2826l) {
+    public InterfaceC2826l mo183l(InterfaceC2826l interfaceC2826l) {
         Objects.requireNonNull(interfaceC2826l);
         return new C2825k(this, interfaceC2826l);
     }
 
     @Override // p033j$.util.stream.AbstractC2916J4
     /* renamed from: q */
-    protected InterfaceC2853s mo499q(InterfaceC2853s interfaceC2853s) {
+    protected InterfaceC2853s mo517q(InterfaceC2853s interfaceC2853s) {
         return new C2892F4((InterfaceC2853s.InterfaceC2855b) interfaceC2853s, this);
     }
 
     @Override // p033j$.util.stream.AbstractC2904H4
     /* renamed from: s */
-    protected void mo502s(Object obj) {
-        ((InterfaceC2826l) obj).accept(this.f824e);
+    protected void mo520s(Object obj) {
+        ((InterfaceC2826l) obj).accept(this.f827e);
     }
 
     @Override // p033j$.util.stream.AbstractC2904H4
     /* renamed from: t */
-    protected AbstractC3063j4 mo501t(int i) {
+    protected AbstractC3063j4 mo519t(int i) {
         return new C3051h4(i);
     }
 }

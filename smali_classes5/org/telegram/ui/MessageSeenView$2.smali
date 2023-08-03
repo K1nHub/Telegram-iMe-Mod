@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/MessageSeenView;)V
     .locals 0
 
-    .line 306
+    .line 318
     iput-object p1, p0, Lorg/telegram/ui/MessageSeenView$2;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,12 +35,12 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 309
+    .line 321
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
-    .line 310
+    .line 322
     iget-object p3, p0, Lorg/telegram/ui/MessageSeenView$2;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     iget-object p3, p3, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
@@ -55,7 +55,7 @@
 
     const/4 p2, 0x4
 
-    .line 311
+    .line 323
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

@@ -55,16 +55,16 @@ public final class GrpcUtil {
 
     static {
         Charset.forName(C0480C.ASCII_NAME);
-        TIMEOUT_KEY = Metadata.Key.m685of("grpc-timeout", new TimeoutMarshaller());
+        TIMEOUT_KEY = Metadata.Key.m703of("grpc-timeout", new TimeoutMarshaller());
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        MESSAGE_ENCODING_KEY = Metadata.Key.m685of("grpc-encoding", asciiMarshaller);
+        MESSAGE_ENCODING_KEY = Metadata.Key.m703of("grpc-encoding", asciiMarshaller);
         MESSAGE_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("grpc-accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_ENCODING_KEY = Metadata.Key.m685of("content-encoding", asciiMarshaller);
+        CONTENT_ENCODING_KEY = Metadata.Key.m703of("content-encoding", asciiMarshaller);
         CONTENT_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_TYPE_KEY = Metadata.Key.m685of("content-type", asciiMarshaller);
-        TE_HEADER = Metadata.Key.m685of("te", asciiMarshaller);
-        USER_AGENT_KEY = Metadata.Key.m685of("user-agent", asciiMarshaller);
-        Splitter.m746on(',').trimResults();
+        CONTENT_TYPE_KEY = Metadata.Key.m703of("content-type", asciiMarshaller);
+        TE_HEADER = Metadata.Key.m703of("te", asciiMarshaller);
+        USER_AGENT_KEY = Metadata.Key.m703of("user-agent", asciiMarshaller);
+        Splitter.m764on(',').trimResults();
         TimeUnit timeUnit = TimeUnit.SECONDS;
         DEFAULT_KEEPALIVE_TIMEOUT_NANOS = timeUnit.toNanos(20L);
         TimeUnit.HOURS.toNanos(2L);

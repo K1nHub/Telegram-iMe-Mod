@@ -16,7 +16,14 @@ public final class ColorInfo implements Bundleable {
     private static final String FIELD_COLOR_RANGE = Util.intToStringMaxRadix(1);
     private static final String FIELD_COLOR_TRANSFER = Util.intToStringMaxRadix(2);
     private static final String FIELD_HDR_STATIC_INFO = Util.intToStringMaxRadix(3);
-    public static final Bundleable.Creator<ColorInfo> CREATOR = ColorInfo$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<ColorInfo> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.video.ColorInfo$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            ColorInfo lambda$static$0;
+            lambda$static$0 = ColorInfo.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     public static int isoColorPrimariesToColorSpace(int i) {
         if (i != 1) {

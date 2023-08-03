@@ -2,6 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,14 @@ final class zzep {
     public static List<File> zza(File file, File file2) throws IOException {
         File[] fileArr;
         ArrayList arrayList = new ArrayList();
-        File[] listFiles = file2.listFiles(zzeo.zza);
+        File[] listFiles = file2.listFiles(new FilenameFilter() { // from class: com.google.android.play.core.assetpacks.zzeo
+            @Override // java.io.FilenameFilter
+            public final boolean accept(File file3, String str) {
+                boolean matches;
+                matches = zzep.zza.matcher(str).matches();
+                return matches;
+            }
+        });
         if (listFiles == null) {
             fileArr = new File[0];
         } else {

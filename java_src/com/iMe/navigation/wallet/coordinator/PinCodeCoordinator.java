@@ -1,16 +1,24 @@
 package com.iMe.navigation.wallet.coordinator;
 
+import android.app.Activity;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.model.wallet.crypto.pin.EnterPinCodeResult;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
+import com.iMe.p031ui.base.mvp.MvpFragment;
 import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinFragment;
+import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.LaunchActivity;
 /* compiled from: PinCodeCoordinator.kt */
 /* loaded from: classes3.dex */
 public final class PinCodeCoordinator {
@@ -37,11 +45,38 @@ public final class PinCodeCoordinator {
         pinCodeCoordinator.start(iNavigationLayout, walletAuthBaseFragment, args, z);
     }
 
-    public final void start(INavigationLayout actionBarLayout, WalletAuthBaseFragment nextFragment, Args args, boolean z) {
+    public final void start(INavigationLayout actionBarLayout, final WalletAuthBaseFragment nextFragment, Args args, boolean z) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(nextFragment, "nextFragment");
         Intrinsics.checkNotNullParameter(args, "args");
-        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new PinCodeCoordinator$start$1(nextFragment)), z);
+        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new Function2<EnterPinCodeResult, MvpFragment, Unit>() { // from class: com.iMe.navigation.wallet.coordinator.PinCodeCoordinator$start$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Unit invoke(EnterPinCodeResult enterPinCodeResult, MvpFragment mvpFragment) {
+                invoke2(enterPinCodeResult, mvpFragment);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(EnterPinCodeResult result, MvpFragment fragment) {
+                Lazy<WalletConnectManager> lazy;
+                Intrinsics.checkNotNullParameter(result, "result");
+                Intrinsics.checkNotNullParameter(fragment, "fragment");
+                if (result instanceof EnterPinCodeResult.Success) {
+                    fragment.presentFragment(WalletAuthBaseFragment.this, true);
+                    Activity parentActivity = WalletAuthBaseFragment.this.getParentActivity();
+                    LaunchActivity launchActivity = parentActivity instanceof LaunchActivity ? (LaunchActivity) parentActivity : null;
+                    if (launchActivity == null || (lazy = launchActivity.walletConnectManager) == null || !lazy.isInitialized()) {
+                        return;
+                    }
+                    lazy.getValue().connectToStoredSessions();
+                }
+            }
+        }), z);
     }
 
     public final void lock(INavigationLayout actionBarLayout, EnterPinCodeScreenType lockType) {
@@ -64,14 +99,48 @@ public final class PinCodeCoordinator {
         if (z) {
             return;
         }
-        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(lockType, PinCodeCoordinator$lock$1.INSTANCE), false, true, true, false);
+        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(lockType, new Function2<EnterPinCodeResult, MvpFragment, Unit>() { // from class: com.iMe.navigation.wallet.coordinator.PinCodeCoordinator$lock$1
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Unit invoke(EnterPinCodeResult enterPinCodeResult, MvpFragment mvpFragment) {
+                invoke2(enterPinCodeResult, mvpFragment);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(EnterPinCodeResult enterPinCodeResult, MvpFragment fragment) {
+                Intrinsics.checkNotNullParameter(enterPinCodeResult, "<anonymous parameter 0>");
+                Intrinsics.checkNotNullParameter(fragment, "fragment");
+                fragment.finishFragment();
+            }
+        }), false, true, true, false);
     }
 
-    public final void startAction(INavigationLayout actionBarLayout, Callbacks$Callback action, Args args, boolean z) {
+    public final void startAction(INavigationLayout actionBarLayout, final Callbacks$Callback action, Args args, boolean z) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(action, "action");
         Intrinsics.checkNotNullParameter(args, "args");
-        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new PinCodeCoordinator$startAction$1(action)), z);
+        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new Function2<EnterPinCodeResult, MvpFragment, Unit>() { // from class: com.iMe.navigation.wallet.coordinator.PinCodeCoordinator$startAction$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Unit invoke(EnterPinCodeResult enterPinCodeResult, MvpFragment mvpFragment) {
+                invoke2(enterPinCodeResult, mvpFragment);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(EnterPinCodeResult result, MvpFragment fragment) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                Intrinsics.checkNotNullParameter(fragment, "fragment");
+                if (result instanceof EnterPinCodeResult.Success) {
+                    Callbacks$Callback.this.invoke();
+                    fragment.onBackPressed();
+                }
+            }
+        }), z);
     }
 
     /* compiled from: PinCodeCoordinator.kt */

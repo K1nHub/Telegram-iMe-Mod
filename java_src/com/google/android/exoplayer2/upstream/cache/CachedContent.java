@@ -12,7 +12,7 @@ public final class CachedContent {
     private final TreeSet<SimpleCacheSpan> cachedSpans;
 
     /* renamed from: id */
-    public final int f223id;
+    public final int f225id;
     public final String key;
     private final ArrayList<Range> lockedRanges;
     private DefaultContentMetadata metadata;
@@ -22,7 +22,7 @@ public final class CachedContent {
     }
 
     public CachedContent(int i, String str, DefaultContentMetadata defaultContentMetadata) {
-        this.f223id = i;
+        this.f225id = i;
         this.key = str;
         this.metadata = defaultContentMetadata;
         this.cachedSpans = new TreeSet<>();
@@ -124,11 +124,11 @@ public final class CachedContent {
         Assertions.checkState(this.cachedSpans.remove(simpleCacheSpan));
         File file = (File) Assertions.checkNotNull(simpleCacheSpan.file);
         if (z) {
-            File cacheFile = SimpleCacheSpan.getCacheFile((File) Assertions.checkNotNull(file.getParentFile()), this.f223id, simpleCacheSpan.position, j);
+            File cacheFile = SimpleCacheSpan.getCacheFile((File) Assertions.checkNotNull(file.getParentFile()), this.f225id, simpleCacheSpan.position, j);
             if (file.renameTo(cacheFile)) {
                 file = cacheFile;
             } else {
-                Log.m796w(TAG, "Failed to rename " + file + " to " + cacheFile);
+                Log.m814w(TAG, "Failed to rename " + file + " to " + cacheFile);
             }
         }
         SimpleCacheSpan copyWithFileAndLastTouchTimestamp = simpleCacheSpan.copyWithFileAndLastTouchTimestamp(file, j);
@@ -153,7 +153,7 @@ public final class CachedContent {
     }
 
     public int hashCode() {
-        return (((this.f223id * 31) + this.key.hashCode()) * 31) + this.metadata.hashCode();
+        return (((this.f225id * 31) + this.key.hashCode()) * 31) + this.metadata.hashCode();
     }
 
     public boolean equals(Object obj) {
@@ -164,7 +164,7 @@ public final class CachedContent {
             return false;
         }
         CachedContent cachedContent = (CachedContent) obj;
-        return this.f223id == cachedContent.f223id && this.key.equals(cachedContent.key) && this.cachedSpans.equals(cachedContent.cachedSpans) && this.metadata.equals(cachedContent.metadata);
+        return this.f225id == cachedContent.f225id && this.key.equals(cachedContent.key) && this.cachedSpans.equals(cachedContent.cachedSpans) && this.metadata.equals(cachedContent.metadata);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

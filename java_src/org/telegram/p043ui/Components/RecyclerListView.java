@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
@@ -143,6 +143,7 @@ public class RecyclerListView extends RecyclerView {
     private boolean stoppedAllHeavyOperations;
     private int topBottomSelectorRadius;
     private int touchSlop;
+    private boolean translateSelector;
     public boolean useLayoutPositionOnClick;
     boolean useRelativePositions;
 
@@ -343,7 +344,7 @@ public class RecyclerListView extends RecyclerView {
 
         public abstract void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder);
 
-        private void cleanupCache() {
+        public void cleanupCache() {
             SparseIntArray sparseIntArray = this.sectionCache;
             if (sparseIntArray == null) {
                 this.sectionCache = new SparseIntArray();
@@ -467,16 +468,8 @@ public class RecyclerListView extends RecyclerView {
         }
 
         public void update(boolean z) {
-            cleanupCache();
             final ArrayList arrayList = new ArrayList(this.hashes);
-            this.hashes.clear();
-            int internalGetSectionCount = internalGetSectionCount();
-            for (int i = 0; i < internalGetSectionCount; i++) {
-                int internalGetCountForSection = internalGetCountForSection(i);
-                for (int i2 = 0; i2 < internalGetCountForSection; i2++) {
-                    this.hashes.add(Integer.valueOf(Objects.hash(Integer.valueOf((-49612) * i), getItem(i, i2))));
-                }
-            }
+            updateHashes();
             if (z) {
                 DiffUtil.calculateDiff(new DiffUtil.Callback() { // from class: org.telegram.ui.Components.RecyclerListView.SectionsAdapter.1
                     @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -490,18 +483,34 @@ public class RecyclerListView extends RecyclerView {
                     }
 
                     @Override // androidx.recyclerview.widget.DiffUtil.Callback
-                    public boolean areItemsTheSame(int i3, int i4) {
-                        return Objects.equals(arrayList.get(i3), SectionsAdapter.this.hashes.get(i4));
+                    public boolean areItemsTheSame(int i, int i2) {
+                        return Objects.equals(arrayList.get(i), SectionsAdapter.this.hashes.get(i2));
                     }
 
                     @Override // androidx.recyclerview.widget.DiffUtil.Callback
-                    public boolean areContentsTheSame(int i3, int i4) {
-                        return areItemsTheSame(i3, i4);
+                    public boolean areContentsTheSame(int i, int i2) {
+                        return areItemsTheSame(i, i2);
                     }
                 }, true).dispatchUpdatesTo(this);
             } else {
                 super.notifyDataSetChanged();
             }
+        }
+
+        public void updateHashes() {
+            cleanupCache();
+            this.hashes.clear();
+            int internalGetSectionCount = internalGetSectionCount();
+            for (int i = 0; i < internalGetSectionCount; i++) {
+                int internalGetCountForSection = internalGetCountForSection(i);
+                for (int i2 = 0; i2 < internalGetCountForSection; i2++) {
+                    this.hashes.add(Integer.valueOf(getHash(i, i2)));
+                }
+            }
+        }
+
+        public int getHash(int i, int i2) {
+            return Objects.hash(Integer.valueOf((-49612) * i), getItem(i, i2));
         }
     }
 
@@ -531,7 +540,7 @@ public class RecyclerListView extends RecyclerView {
         private int inactiveColor;
         boolean isMoving;
         boolean isRtl;
-        boolean isVisible;
+        public boolean isVisible;
         private float lastLetterY;
         private long lastUpdateTime;
         private float lastY;
@@ -555,6 +564,7 @@ public class RecyclerListView extends RecyclerView {
         float startY;
         private float textX;
         private float textY;
+        public int topOffset;
         float touchSlop;
         private int type;
         public boolean usePadding;
@@ -588,44 +598,44 @@ public class RecyclerListView extends RecyclerView {
             this.viewAlpha = 1.0f;
             this.type = i;
             if (i == 0) {
-                this.letterPaint.setTextSize(AndroidUtilities.m54dp(45));
+                this.letterPaint.setTextSize(AndroidUtilities.m72dp(45));
                 this.isRtl = LocaleController.isRTL;
             } else {
                 this.isRtl = false;
-                this.letterPaint.setTextSize(AndroidUtilities.m54dp(13));
+                this.letterPaint.setTextSize(AndroidUtilities.m72dp(13));
                 this.letterPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 Paint paint = this.paint2;
                 int i2 = Theme.key_windowBackgroundWhite;
-                paint.setColor(Theme.getColor(i2));
-                Drawable mutate = ContextCompat.getDrawable(context, C3417R.C3419drawable.calendar_date).mutate();
+                paint.setColor(Theme.getColor(i2, RecyclerListView.this.resourcesProvider));
+                Drawable mutate = ContextCompat.getDrawable(context, C3419R.C3421drawable.calendar_date).mutate();
                 this.fastScrollBackgroundDrawable = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i2), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
+                mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i2, RecyclerListView.this.resourcesProvider), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
             }
             for (int i3 = 0; i3 < 8; i3++) {
-                this.radii[i3] = AndroidUtilities.m54dp(44);
+                this.radii[i3] = AndroidUtilities.m72dp(44);
             }
-            this.scrollX = AndroidUtilities.m54dp(this.isRtl ? 10 : (i == 0 ? 132 : PsExtractor.VIDEO_STREAM_MASK) - 15);
+            this.scrollX = AndroidUtilities.m72dp(this.isRtl ? 10 : (i == 0 ? 132 : PsExtractor.VIDEO_STREAM_MASK) - 15);
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.fast_scroll_shadow);
+            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.fast_scroll_shadow);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateColors() {
-            this.inactiveColor = this.type == 0 ? Theme.getColor(Theme.key_fastScrollInactive) : ColorUtils.setAlphaComponent(-16777216, 102);
-            this.activeColor = Theme.getColor(Theme.key_fastScrollActive);
+            this.inactiveColor = this.type == 0 ? Theme.getColor(Theme.key_fastScrollInactive, RecyclerListView.this.resourcesProvider) : ColorUtils.setAlphaComponent(-16777216, 102);
+            this.activeColor = Theme.getColor(Theme.key_fastScrollActive, RecyclerListView.this.resourcesProvider);
             this.paint.setColor(this.inactiveColor);
             if (this.type == 0) {
-                this.letterPaint.setColor(Theme.getColor(Theme.key_fastScrollText));
+                this.letterPaint.setColor(Theme.getColor(Theme.key_fastScrollText, RecyclerListView.this.resourcesProvider));
             } else {
-                this.letterPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+                this.letterPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, RecyclerListView.this.resourcesProvider));
             }
             invalidate();
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:79:0x0159, code lost:
-            if (r0 <= (org.telegram.messenger.AndroidUtilities.m54dp(30) + r8)) goto L81;
+            if (r0 <= (org.telegram.messenger.AndroidUtilities.m72dp(30) + r8)) goto L81;
          */
         @Override // android.view.View
         /*
@@ -699,11 +709,11 @@ public class RecyclerListView extends RecyclerView {
                                 this.letterLayout.getLineWidth(0);
                                 this.letterLayout.getLineLeft(0);
                                 if (this.isRtl) {
-                                    this.textX = (AndroidUtilities.m54dp(10) + ((AndroidUtilities.m54dp(88) - this.letterLayout.getLineWidth(0)) / 2.0f)) - this.letterLayout.getLineLeft(0);
+                                    this.textX = (AndroidUtilities.m72dp(10) + ((AndroidUtilities.m72dp(88) - this.letterLayout.getLineWidth(0)) / 2.0f)) - this.letterLayout.getLineLeft(0);
                                 } else {
-                                    this.textX = ((AndroidUtilities.m54dp(88) - this.letterLayout.getLineWidth(0)) / 2.0f) - this.letterLayout.getLineLeft(0);
+                                    this.textX = ((AndroidUtilities.m72dp(88) - this.letterLayout.getLineWidth(0)) / 2.0f) - this.letterLayout.getLineLeft(0);
                                 }
-                                this.textY = (AndroidUtilities.m54dp(88) - this.letterLayout.getHeight()) / 2;
+                                this.textY = (AndroidUtilities.m72dp(88) - this.letterLayout.getHeight()) / 2;
                             }
                         }
                     }
@@ -713,28 +723,28 @@ public class RecyclerListView extends RecyclerView {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            setMeasuredDimension(AndroidUtilities.m54dp(this.type == 0 ? 132 : PsExtractor.VIDEO_STREAM_MASK), View.MeasureSpec.getSize(i2));
+            setMeasuredDimension(AndroidUtilities.m72dp(this.type == 0 ? 132 : PsExtractor.VIDEO_STREAM_MASK), View.MeasureSpec.getSize(i2));
             this.arrowPath.reset();
             this.arrowPath.setLastPoint(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
-            this.arrowPath.lineTo(AndroidUtilities.m54dp(4), -AndroidUtilities.m54dp(4));
-            this.arrowPath.lineTo(-AndroidUtilities.m54dp(4), -AndroidUtilities.m54dp(4));
+            this.arrowPath.lineTo(AndroidUtilities.m72dp(4), -AndroidUtilities.m72dp(4));
+            this.arrowPath.lineTo(-AndroidUtilities.m72dp(4), -AndroidUtilities.m72dp(4));
             this.arrowPath.close();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x01e0, code lost:
-            if (r6[6] == r8) goto L88;
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x01e7, code lost:
+            if (r6[6] == r15) goto L88;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:34:0x01f0, code lost:
-            if (r6[4] == r8) goto L80;
+        /* JADX WARN: Code restructure failed: missing block: B:34:0x01f7, code lost:
+            if (r6[4] == r15) goto L80;
          */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x01f4  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x0201  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0218  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x021e  */
-        /* JADX WARN: Removed duplicated region for block: B:44:0x0223  */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0226  */
-        /* JADX WARN: Removed duplicated region for block: B:50:0x024c  */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x0250  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x01fb  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x0208  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x021f  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x0225  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x022a  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x022d  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x0253  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x0257  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -742,7 +752,7 @@ public class RecyclerListView extends RecyclerView {
         */
         protected void onDraw(android.graphics.Canvas r20) {
             /*
-                Method dump skipped, instructions count: 1310
+                Method dump skipped, instructions count: 1317
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RecyclerListView.FastScroll.onDraw(android.graphics.Canvas):void");
@@ -807,7 +817,7 @@ public class RecyclerListView extends RecyclerView {
         }
 
         public int getScrollBarY() {
-            return ((int) Math.ceil((getMeasuredHeight() - AndroidUtilities.m54dp(54)) * this.progress)) + AndroidUtilities.m54dp(17);
+            return ((int) Math.ceil((getMeasuredHeight() - AndroidUtilities.m72dp(54)) * this.progress)) + AndroidUtilities.m72dp(17);
         }
 
         public float getProgress() {
@@ -874,7 +884,10 @@ public class RecyclerListView extends RecyclerView {
                         RecyclerListView.this.onChildPressed(view, x, y, true);
                         final int i = RecyclerListView.this.currentChildPosition;
                         if (RecyclerListView.this.instantClick && i != -1) {
-                            view.playSoundEffect(0);
+                            try {
+                                view.playSoundEffect(0);
+                            } catch (Exception unused) {
+                            }
                             view.sendAccessibilityEvent(1);
                             if (RecyclerListView.this.onItemClickListener != null) {
                                 RecyclerListView.this.onItemClickListener.onItemClick(view, i);
@@ -894,7 +907,10 @@ public class RecyclerListView extends RecyclerView {
                                     if (RecyclerListView.this.instantClick) {
                                         return;
                                     }
-                                    view.playSoundEffect(0);
+                                    try {
+                                        view.playSoundEffect(0);
+                                    } catch (Exception unused2) {
+                                    }
                                     view.sendAccessibilityEvent(1);
                                     if (i != -1) {
                                         if (RecyclerListView.this.onItemClickListener != null) {
@@ -943,7 +959,7 @@ public class RecyclerListView extends RecyclerView {
                 }
 
                 @Override // org.telegram.p043ui.Components.GestureDetectorFixDoubleTap.OnGestureListener
-                public boolean hasDoubleTap() {
+                public boolean hasDoubleTap(MotionEvent motionEvent) {
                     return RecyclerListView.this.onItemLongClickListenerExtended != null;
                 }
             });
@@ -999,7 +1015,7 @@ public class RecyclerListView extends RecyclerView {
                 try {
                     RecyclerListView.this.gestureDetector.onTouchEvent(motionEvent);
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             }
             if (actionMasked == 0 || actionMasked == 5) {
@@ -1230,19 +1246,19 @@ public class RecyclerListView extends RecyclerView {
         this.scroller = new Runnable() { // from class: org.telegram.ui.Components.RecyclerListView.6
             @Override // java.lang.Runnable
             public void run() {
-                int m55dp;
+                int m73dp;
                 RecyclerListView recyclerListView = RecyclerListView.this;
                 recyclerListView.multiSelectionListener.getPaddings(recyclerListView.listPaddings);
                 if (RecyclerListView.this.multiselectScrollToTop) {
-                    m55dp = -AndroidUtilities.m55dp(12.0f);
+                    m73dp = -AndroidUtilities.m73dp(12.0f);
                     RecyclerListView recyclerListView2 = RecyclerListView.this;
                     recyclerListView2.chekMultiselect(BitmapDescriptorFactory.HUE_RED, recyclerListView2.listPaddings[0]);
                 } else {
-                    m55dp = AndroidUtilities.m55dp(12.0f);
+                    m73dp = AndroidUtilities.m73dp(12.0f);
                     RecyclerListView recyclerListView3 = RecyclerListView.this;
                     recyclerListView3.chekMultiselect(BitmapDescriptorFactory.HUE_RED, recyclerListView3.getMeasuredHeight() - RecyclerListView.this.listPaddings[1]);
                 }
-                RecyclerListView.this.multiSelectionListener.scrollBy(m55dp);
+                RecyclerListView.this.multiSelectionListener.scrollBy(m73dp);
                 RecyclerListView recyclerListView4 = RecyclerListView.this;
                 if (recyclerListView4.multiselectScrollRunning) {
                     AndroidUtilities.runOnUIThread(recyclerListView4.scroller);
@@ -1269,7 +1285,7 @@ public class RecyclerListView extends RecyclerView {
                 method.invoke(this, obtainStyledAttributes);
             }
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
         super.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.RecyclerListView.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -1285,7 +1301,7 @@ public class RecyclerListView extends RecyclerView {
                     try {
                         RecyclerListView.this.gestureDetector.onTouchEvent(obtain);
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                     RecyclerListView.this.currentChildView.onTouchEvent(obtain);
                     obtain.recycle();
@@ -1336,6 +1352,9 @@ public class RecyclerListView extends RecyclerView {
     /* JADX INFO: Access modifiers changed from: protected */
     public void drawSectionBackground(Canvas canvas, int i, int i2, int i3) {
         int childAdapterPosition;
+        if (i2 < i) {
+            return;
+        }
         int i4 = Integer.MAX_VALUE;
         int i5 = Integer.MIN_VALUE;
         for (int i6 = 0; i6 < getChildCount(); i6++) {
@@ -1408,12 +1427,12 @@ public class RecyclerListView extends RecyclerView {
         if (i == 0) {
             if (this.stoppedAllHeavyOperations) {
                 this.stoppedAllHeavyOperations = false;
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
             }
         } else if (this.stoppedAllHeavyOperations || !this.allowStopHeaveOperations) {
         } else {
             this.stoppedAllHeavyOperations = true;
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         }
     }
 
@@ -1430,9 +1449,10 @@ public class RecyclerListView extends RecyclerView {
         super.onMeasure(i, i2);
         FastScroll fastScroll = this.fastScroll;
         if (fastScroll != null && fastScroll.getLayoutParams() != null) {
-            int measuredHeight = (getMeasuredHeight() - (this.fastScroll.usePadding ? getPaddingTop() : 0)) - getPaddingBottom();
+            FastScroll fastScroll2 = this.fastScroll;
+            int measuredHeight = (getMeasuredHeight() - (fastScroll2.usePadding ? getPaddingTop() : fastScroll2.topOffset)) - getPaddingBottom();
             this.fastScroll.getLayoutParams().height = measuredHeight;
-            this.fastScroll.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(132), 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
+            this.fastScroll.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(132), 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
         }
         this.touchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
     }
@@ -1444,7 +1464,7 @@ public class RecyclerListView extends RecyclerView {
         FastScroll fastScroll = this.fastScroll;
         if (fastScroll != null) {
             this.selfOnLayout = true;
-            int paddingTop = i2 + (fastScroll.usePadding ? getPaddingTop() : 0);
+            int paddingTop = i2 + (fastScroll.usePadding ? getPaddingTop() : fastScroll.topOffset);
             FastScroll fastScroll2 = this.fastScroll;
             if (fastScroll2.isRtl) {
                 fastScroll2.layout(0, paddingTop, fastScroll2.getMeasuredWidth(), this.fastScroll.getMeasuredHeight() + paddingTop);
@@ -1547,7 +1567,7 @@ public class RecyclerListView extends RecyclerView {
                                             i4 = bottom;
                                         }
                                         i5 = Math.max(i5, bottom);
-                                        if (bottom >= this.sectionOffset + paddingTop + AndroidUtilities.m54dp(32) && bottom < i6) {
+                                        if (bottom >= this.sectionOffset + paddingTop + AndroidUtilities.m72dp(32) && bottom < i6) {
                                             view2 = childAt;
                                             i6 = bottom;
                                         }
@@ -1602,7 +1622,7 @@ public class RecyclerListView extends RecyclerView {
                                     view5 = childAt2;
                                 }
                                 i9 = Math.max(i9, bottom2);
-                                if (bottom2 >= this.sectionOffset + paddingTop + AndroidUtilities.m54dp(32) && bottom2 < i10) {
+                                if (bottom2 >= this.sectionOffset + paddingTop + AndroidUtilities.m72dp(32) && bottom2 < i10) {
                                     i10 = bottom2;
                                 }
                             }
@@ -1653,7 +1673,7 @@ public class RecyclerListView extends RecyclerView {
                                         if (childAt3 != null) {
                                             i = childAt3.getTop() + paddingTop;
                                         } else {
-                                            i = -AndroidUtilities.m54dp(100);
+                                            i = -AndroidUtilities.m72dp(100);
                                         }
                                         sectionHeaderView2.setTag(Integer.valueOf(Math.min(i, 0)));
                                     } else {
@@ -1665,7 +1685,7 @@ public class RecyclerListView extends RecyclerView {
                                     if (childAt4 != null) {
                                         sectionHeaderView2.setTag(Integer.valueOf(childAt4.getTop() + paddingTop));
                                     } else {
-                                        sectionHeaderView2.setTag(Integer.valueOf(-AndroidUtilities.m54dp(100)));
+                                        sectionHeaderView2.setTag(Integer.valueOf(-AndroidUtilities.m72dp(100)));
                                     }
                                 }
                                 i12 += countForSection3;
@@ -1721,6 +1741,18 @@ public class RecyclerListView extends RecyclerView {
 
     public OnItemClickListener getOnItemClickListener() {
         return this.onItemClickListener;
+    }
+
+    public void clickItem(View view, int i) {
+        OnItemClickListener onItemClickListener = this.onItemClickListener;
+        if (onItemClickListener != null) {
+            onItemClickListener.onItemClick(view, i);
+            return;
+        }
+        OnItemClickListenerExtended onItemClickListenerExtended = this.onItemClickListenerExtended;
+        if (onItemClickListenerExtended != null) {
+            onItemClickListenerExtended.onItemClick(view, i, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
+        }
     }
 
     public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
@@ -2130,7 +2162,6 @@ public class RecyclerListView extends RecyclerView {
             Theme.setMaskDrawableRad(this.selectorDrawable, i == 0 ? this.topBottomSelectorRadius : 0, i == getAdapter().getItemCount() + (-2) ? this.topBottomSelectorRadius : 0);
         }
         this.selectorRect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom() - selectionBottomPadding);
-        this.selectorRect.offset((int) view.getTranslationX(), (int) view.getTranslationY());
         boolean isEnabled = view.isEnabled();
         if (this.isChildViewEnabled != isEnabled) {
             this.isChildViewEnabled = isEnabled;
@@ -2313,13 +2344,13 @@ public class RecyclerListView extends RecyclerView {
                 try {
                     view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, 1073741824), View.MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824));
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             } else if (i == 2) {
                 try {
                     view.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
                 } catch (Exception e2) {
-                    FileLog.m49e(e2);
+                    FileLog.m67e(e2);
                 }
             }
             view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
@@ -2352,10 +2383,18 @@ public class RecyclerListView extends RecyclerView {
         return this.selectorRect;
     }
 
+    public void setTranslateSelector(boolean z) {
+        this.translateSelector = z;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         View view;
+        View view2;
+        Consumer<Canvas> consumer;
+        View view3;
+        Consumer<Canvas> consumer2;
         RecyclerItemsEnterAnimator recyclerItemsEnterAnimator = this.itemsEnterAnimator;
         if (recyclerItemsEnterAnimator != null) {
             recyclerItemsEnterAnimator.dispatchDraw();
@@ -2363,9 +2402,11 @@ public class RecyclerListView extends RecyclerView {
         if (this.drawSelection && this.drawSelectorBehind && !this.selectorRect.isEmpty()) {
             this.selectorDrawable.setBounds(this.selectorRect);
             canvas.save();
-            Consumer<Canvas> consumer = this.selectorTransformer;
-            if (consumer != null) {
-                consumer.accept(canvas);
+            if (this.translateSelector && (consumer2 = this.selectorTransformer) != null) {
+                consumer2.accept(canvas);
+            }
+            if (this.translateSelector && (view3 = this.selectorView) != null) {
+                canvas.translate(view3.getX() - this.selectorRect.left, this.selectorView.getY() - this.selectorRect.top);
             }
             this.selectorDrawable.draw(canvas);
             canvas.restore();
@@ -2374,9 +2415,11 @@ public class RecyclerListView extends RecyclerView {
         if (this.drawSelection && !this.drawSelectorBehind && !this.selectorRect.isEmpty()) {
             this.selectorDrawable.setBounds(this.selectorRect);
             canvas.save();
-            Consumer<Canvas> consumer2 = this.selectorTransformer;
-            if (consumer2 != null) {
-                consumer2.accept(canvas);
+            if (this.translateSelector && (consumer = this.selectorTransformer) != null) {
+                consumer.accept(canvas);
+            }
+            if (this.translateSelector && (view2 = this.selectorView) != null) {
+                canvas.translate(view2.getX() - this.selectorRect.left, this.selectorView.getY() - this.selectorRect.top);
             }
             this.selectorDrawable.draw(canvas);
             canvas.restore();
@@ -2392,11 +2435,11 @@ public class RecyclerListView extends RecyclerView {
                 return;
             }
             for (int i2 = 0; i2 < this.headers.size(); i2++) {
-                View view2 = this.headers.get(i2);
+                View view4 = this.headers.get(i2);
                 int save = canvas.save();
-                canvas.translate(LocaleController.isRTL ? getWidth() - view2.getWidth() : 0.0f, ((Integer) view2.getTag()).intValue());
-                canvas.clipRect(0, 0, getWidth(), view2.getMeasuredHeight());
-                view2.draw(canvas);
+                canvas.translate(LocaleController.isRTL ? getWidth() - view4.getWidth() : 0.0f, ((Integer) view4.getTag()).intValue());
+                canvas.clipRect(0, 0, getWidth(), view4.getMeasuredHeight());
+                view4.draw(canvas);
                 canvas.restoreToCount(save);
             }
         } else if (i == 2 && this.sectionsAdapter != null && (view = this.pinnedHeader) != null && view.getAlpha() != BitmapDescriptorFactory.HUE_RED) {
@@ -2461,7 +2504,7 @@ public class RecyclerListView extends RecyclerView {
         }
         if (this.stoppedAllHeavyOperations) {
             this.stoppedAllHeavyOperations = false;
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.startAllHeavyOperations, 512);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
         }
     }
 
@@ -2517,10 +2560,10 @@ public class RecyclerListView extends RecyclerView {
         private boolean onFocus;
 
         /* renamed from: x */
-        private float f1818x;
+        private float f1840x;
 
         /* renamed from: y */
-        private float f1819y;
+        private float f1841y;
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -2529,14 +2572,14 @@ public class RecyclerListView extends RecyclerView {
                 return false;
             }
             if (motionEvent.getAction() == 0) {
-                this.f1818x = motionEvent.getX();
-                this.f1819y = motionEvent.getY();
+                this.f1840x = motionEvent.getX();
+                this.f1841y = motionEvent.getY();
                 this.onFocus = true;
                 parent.requestDisallowInterceptTouchEvent(true);
             }
             if (motionEvent.getAction() == 2) {
-                float x = this.f1818x - motionEvent.getX();
-                float y = this.f1819y - motionEvent.getY();
+                float x = this.f1840x - motionEvent.getX();
+                float y = this.f1841y - motionEvent.getY();
                 float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
                 if (this.onFocus && Math.sqrt((x * x) + (y * y)) > scaledTouchSlop) {
                     this.onFocus = false;
@@ -2588,9 +2631,9 @@ public class RecyclerListView extends RecyclerView {
                 if (this.multiSelectionGestureStarted) {
                     chekMultiselect(motionEvent.getX(), motionEvent.getY());
                     this.multiSelectionListener.getPaddings(this.listPaddings);
-                    if (motionEvent.getY() > (getMeasuredHeight() - AndroidUtilities.m54dp(56)) - this.listPaddings[1] && (this.currentSelectedPosition >= this.startSelectionFrom || !this.multiSelectionListener.limitReached())) {
+                    if (motionEvent.getY() > (getMeasuredHeight() - AndroidUtilities.m72dp(56)) - this.listPaddings[1] && (this.currentSelectedPosition >= this.startSelectionFrom || !this.multiSelectionListener.limitReached())) {
                         startMultiselectScroll(false);
-                    } else if (motionEvent.getY() < AndroidUtilities.m54dp(56) + this.listPaddings[0] && (this.currentSelectedPosition <= this.startSelectionFrom || !this.multiSelectionListener.limitReached())) {
+                    } else if (motionEvent.getY() < AndroidUtilities.m72dp(56) + this.listPaddings[0] && (this.currentSelectedPosition <= this.startSelectionFrom || !this.multiSelectionListener.limitReached())) {
                         startMultiselectScroll(true);
                     } else {
                         cancelMultiselectScroll();

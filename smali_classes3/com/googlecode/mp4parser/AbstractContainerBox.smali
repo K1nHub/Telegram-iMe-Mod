@@ -9,6 +9,8 @@
 # instance fields
 .field protected largeBox:Z
 
+.field parent:Lcom/coremedia/iso/boxes/Container;
+
 .field protected type:Ljava/lang/String;
 
 
@@ -213,6 +215,15 @@
     return-object v0
 .end method
 
+.method public getParent()Lcom/coremedia/iso/boxes/Container;
+    .locals 1
+
+    .line 45
+    iget-object v0, p0, Lcom/googlecode/mp4parser/AbstractContainerBox;->parent:Lcom/coremedia/iso/boxes/Container;
+
+    return-object v0
+.end method
+
 .method public getSize()J
     .locals 6
 
@@ -255,8 +266,20 @@
     return-wide v0
 .end method
 
+.method public getType()Ljava/lang/String;
+    .locals 1
+
+    .line 62
+    iget-object v0, p0, Lcom/googlecode/mp4parser/AbstractContainerBox;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public setParent(Lcom/coremedia/iso/boxes/Container;)V
     .locals 0
+
+    .line 53
+    iput-object p1, p0, Lcom/googlecode/mp4parser/AbstractContainerBox;->parent:Lcom/coremedia/iso/boxes/Container;
 
     return-void
 .end method

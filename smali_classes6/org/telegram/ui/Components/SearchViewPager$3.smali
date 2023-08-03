@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 235
+    .line 236
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->val$fragment:Lorg/telegram/ui/DialogsActivity;
@@ -43,7 +43,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 239
+    .line 240
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -63,7 +63,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 4
 
-    .line 245
+    .line 246
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/SearchViewPager;->access$200(Lorg/telegram/ui/Components/SearchViewPager;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -74,7 +74,7 @@
 
     move-result p2
 
-    .line 246
+    .line 247
     iget-object p3, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SearchViewPager;->access$200(Lorg/telegram/ui/Components/SearchViewPager;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -85,7 +85,7 @@
 
     move-result p3
 
-    .line 247
+    .line 248
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SearchViewPager;->access$200(Lorg/telegram/ui/Components/SearchViewPager;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -104,7 +104,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 248
+    .line 249
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object p1
@@ -115,7 +115,7 @@
 
     if-lez v0, :cond_1
 
-    .line 249
+    .line 250
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -138,7 +138,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 251
+    .line 252
     invoke-interface {p1}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$DialogsSearchAdapterDelegate;->getSearchForumDialogId()J
 
     move-result-wide v0
@@ -161,7 +161,7 @@
 
     if-lt p3, p1, :cond_1
 
-    .line 253
+    .line 254
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
@@ -169,7 +169,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->loadMoreSearchMessages()V
 
-    .line 255
+    .line 256
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$3;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 

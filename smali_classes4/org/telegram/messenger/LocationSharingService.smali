@@ -527,7 +527,7 @@
 
     invoke-direct {p2, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    const-string v0, "org.tmessages.openlocations"
+    const-string/jumbo v0, "org.tmessages.openlocations"
 
     .line 134
     invoke-virtual {p2, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;

@@ -45,6 +45,9 @@
 .method public abstract isSearchOpened()Z
 .end method
 
+.method public abstract isStoryReply()Z
+.end method
+
 .method public abstract isUserSelf()Z
 .end method
 

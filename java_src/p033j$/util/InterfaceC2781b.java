@@ -11,7 +11,7 @@ public interface InterfaceC2781b extends InterfaceC2727e {
     void forEach(Consumer consumer);
 
     /* renamed from: k */
-    boolean mo556k(Predicate predicate);
+    boolean mo574k(Predicate predicate);
 
     @Override // p033j$.lang.InterfaceC2727e
     InterfaceC2853s spliterator();

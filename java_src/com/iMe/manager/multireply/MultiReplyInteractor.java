@@ -12,13 +12,13 @@ import io.reactivex.Single;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.Components.URLSpanReplacement;
-import org.telegram.p043ui.Components.URLSpanUserMention;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -32,7 +32,7 @@ public final class MultiReplyInteractor {
         this.multiReplyRepo = multiReplyRepo;
     }
 
-    public final Single<Result<CharSequence>> buildMultiReplyMessage(List<? extends MessageObject> selectedMessages, TLRPC$Chat currentChat) {
+    public final Single<Result<CharSequence>> buildMultiReplyMessage(final List<? extends MessageObject> selectedMessages, TLRPC$Chat currentChat) {
         Intrinsics.checkNotNullParameter(selectedMessages, "selectedMessages");
         Intrinsics.checkNotNullParameter(currentChat, "currentChat");
         if (selectedMessages.isEmpty()) {
@@ -41,7 +41,37 @@ public final class MultiReplyInteractor {
             return just;
         }
         Single<MessageLinkPattern> requestPattern = this.multiReplyRepo.requestPattern(selectedMessages.get(0), currentChat);
-        final MultiReplyInteractor$buildMultiReplyMessage$1 multiReplyInteractor$buildMultiReplyMessage$1 = new MultiReplyInteractor$buildMultiReplyMessage$1(selectedMessages, this);
+        final Function1<MessageLinkPattern, Result<? extends CharSequence>> function1 = new Function1<MessageLinkPattern, Result<? extends CharSequence>>() { // from class: com.iMe.manager.multireply.MultiReplyInteractor$buildMultiReplyMessage$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<CharSequence> invoke(MessageLinkPattern pattern) {
+                CharSequence buildMultiReplyMessageForMessageObject;
+                Intrinsics.checkNotNullParameter(pattern, "pattern");
+                List<MessageObject> list = selectedMessages;
+                MultiReplyInteractor multiReplyInteractor = this;
+                CharSequence charSequence = "";
+                int i = 0;
+                for (Object obj : list) {
+                    int i2 = i + 1;
+                    if (i < 0) {
+                        CollectionsKt__CollectionsKt.throwIndexOverflow();
+                    }
+                    buildMultiReplyMessageForMessageObject = multiReplyInteractor.buildMultiReplyMessageForMessageObject((MessageObject) obj, pattern);
+                    charSequence = TextUtils.concat(charSequence, buildMultiReplyMessageForMessageObject, "\n");
+                    Intrinsics.checkNotNullExpressionValue(charSequence, "concat(totalMessage, bui…nstants.Symbols.NEW_LINE)");
+                    i = i2;
+                }
+                CharSequence concat = TextUtils.concat(charSequence, "\n");
+                Intrinsics.checkNotNullExpressionValue(concat, "concat(totalMessage, Dom…nstants.Symbols.NEW_LINE)");
+                return Result.Companion.success(concat);
+            }
+        };
         Single map = requestPattern.map(new Function() { // from class: com.iMe.manager.multireply.MultiReplyInteractor$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -104,13 +134,11 @@ public final class MultiReplyInteractor {
     }
 
     private final SpannableString buildSpannableStringUser(TLRPC$User tLRPC$User) {
-        SpannableString spannableString = new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
-        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1656id));
-        return spannableString;
+        return new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
     }
 
     private final SpannableString buildSpannableStringChat(TLRPC$Chat tLRPC$Chat) {
-        return new SpannableString(tLRPC$Chat.title + ':');
+        return new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$Chat) + ':');
     }
 
     private final CharSequence buildMessageLink(MessageObject messageObject, MessageLinkPattern messageLinkPattern) {
@@ -137,14 +165,6 @@ public final class MultiReplyInteractor {
     private final void addUrlSpan(SpannableString spannableString, String str, int i, int i2) {
         try {
             spannableString.setSpan(new URLSpanReplacement(str), i, i2, 33);
-        } catch (Exception e) {
-            Timber.m6e(e);
-        }
-    }
-
-    private final void addUserNameSpan(SpannableString spannableString, String str) {
-        try {
-            spannableString.setSpan(new URLSpanUserMention(str, 1), 0, spannableString.length(), 33);
         } catch (Exception e) {
             Timber.m6e(e);
         }

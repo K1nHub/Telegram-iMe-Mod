@@ -1,7 +1,9 @@
 package com.iMe.p031ui.catalog;
 
 import com.iMe.gateway.TelegramControllersGateway;
+import com.iMe.mapper.catalog.CatalogLanguagesUiMappingKt;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.interactor.catalog.CatalogInteractor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.catalog.CatalogLanguage;
@@ -11,18 +13,25 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import java.util.Collection;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC$Chat;
+import timber.log.Timber;
 /* compiled from: CatalogRootPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.CatalogRootPresenter */
@@ -50,9 +59,21 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
         this.resourceManager = resourceManager;
         this.schedulersProvider = schedulersProvider;
         this.telegramControllersGateway = telegramControllersGateway;
-        lazy = LazyKt__LazyJVMKt.lazy(new CatalogRootPresenter$notificationCenter$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<NotificationCenter>() { // from class: com.iMe.ui.catalog.CatalogRootPresenter$notificationCenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final NotificationCenter invoke() {
+                TelegramControllersGateway telegramControllersGateway2;
+                telegramControllersGateway2 = CatalogRootPresenter.this.telegramControllersGateway;
+                return TelegramControllersGateway.CC.getNotificationCenterInstance$default(telegramControllersGateway2, 0, 1, null);
+            }
+        });
         this.notificationCenter$delegate = lazy;
-        this.selectedTabId = C3417R.C3420id.catalog_root_bottom_navigation_channels;
+        this.selectedTabId = C3419R.C3422id.catalog_root_bottom_navigation_channels;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.languages = emptyList;
     }
@@ -91,7 +112,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        selectTab(C3417R.C3420id.catalog_root_bottom_navigation_channels);
+        selectTab(C3419R.C3422id.catalog_root_bottom_navigation_channels);
         getNotificationCenter().addObserver(this, NotificationCenter.needDeleteDialog);
     }
 
@@ -124,9 +145,67 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     }
 
     private final void loadLanguages() {
-        Observable<Result<List<CatalogLanguage>>> observeOn = this.catalogInteractor.getLanguages().observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<List<CatalogLanguage>>> observeOn = this.catalogInteractor.getLanguages().observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2003xc92b31a1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004xc92b31a2(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends CatalogLanguage>>, Unit>() { // from class: com.iMe.ui.catalog.CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends CatalogLanguage>> result) {
+                m1348invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1348invoke(Result<? extends List<? extends CatalogLanguage>> it) {
+                ResourceManager resourceManager;
+                LocaleController.LocaleInfo allLanguagesLocaleInfo;
+                List listOf;
+                List plus;
+                int selectedLanguageId;
+                List<? extends LocaleController.LocaleInfo> list;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends CatalogLanguage>> result = it;
+                if (result instanceof Result.Success) {
+                    CatalogRootPresenter catalogRootPresenter = CatalogRootPresenter.this;
+                    allLanguagesLocaleInfo = catalogRootPresenter.getAllLanguagesLocaleInfo();
+                    listOf = CollectionsKt__CollectionsJVMKt.listOf(allLanguagesLocaleInfo);
+                    plus = CollectionsKt___CollectionsKt.plus((Collection) listOf, (Iterable) CatalogLanguagesUiMappingKt.mapToUI((List) ((Result.Success) result).getData()));
+                    catalogRootPresenter.languages = plus;
+                    selectedLanguageId = CatalogRootPresenter.this.getSelectedLanguageId();
+                    list = CatalogRootPresenter.this.languages;
+                    ((CatalogRootView) CatalogRootPresenter.this.getViewState()).openSelectLanguageScreen(selectedLanguageId, list);
+                } else if (result instanceof Result.Error) {
+                    resourceManager = CatalogRootPresenter.this.resourceManager;
+                    ((CatalogRootView) CatalogRootPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.catalog.CatalogRootPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -134,8 +213,8 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: private */
     public final LocaleController.LocaleInfo getAllLanguagesLocaleInfo() {
         LocaleController.LocaleInfo localeInfo = new LocaleController.LocaleInfo();
-        localeInfo.name = this.resourceManager.getString(C3417R.string.catalog_all);
-        localeInfo.nameEnglish = this.resourceManager.getString(C3417R.string.catalog_all_languages);
+        localeInfo.name = this.resourceManager.getString(C3419R.string.catalog_all);
+        localeInfo.nameEnglish = this.resourceManager.getString(C3419R.string.catalog_all_languages);
         localeInfo.serverIndex = -1;
         return localeInfo;
     }

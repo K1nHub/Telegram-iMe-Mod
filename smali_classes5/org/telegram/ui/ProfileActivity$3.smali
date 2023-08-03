@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$3;
-.super Landroid/graphics/Paint;
+.super Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;
 .source "ProfileActivity.java"
 
 
@@ -13,35 +13,82 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lorg/telegram/ui/Components/AnimationProperties$FloatProperty<",
+        "Lorg/telegram/ui/ProfileActivity;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;I)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 804
+    .line 1061
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$3;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-direct {p0, p2}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setAlpha(I)V
+.method public get(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/Float;
     .locals 0
 
-    .line 807
-    invoke-super {p0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 808
+    .line 1070
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$3;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$000(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+    iget p1, p1, Lorg/telegram/ui/ProfileActivity;->headerShadowAlpha:F
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1061
+    check-cast p1, Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ProfileActivity$3;->get(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/Float;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic setValue(Ljava/lang/Object;F)V
+    .locals 0
+
+    .line 1061
+    check-cast p1, Lorg/telegram/ui/ProfileActivity;
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$3;->setValue(Lorg/telegram/ui/ProfileActivity;F)V
+
+    return-void
+.end method
+
+.method public setValue(Lorg/telegram/ui/ProfileActivity;F)V
+    .locals 0
+
+    .line 1064
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$3;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    iput p2, p1, Lorg/telegram/ui/ProfileActivity;->headerShadowAlpha:F
+
+    .line 1065
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$TopView;
 
     move-result-object p1
 

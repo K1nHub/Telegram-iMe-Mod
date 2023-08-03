@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26162
+    .line 26731
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessageAction;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 26168
+    .line 26737
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -45,12 +45,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 26172
+    .line 26741
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionBotAllowed_layer153;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26173
+    .line 26742
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionBotAllowed_layer153;->domain:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

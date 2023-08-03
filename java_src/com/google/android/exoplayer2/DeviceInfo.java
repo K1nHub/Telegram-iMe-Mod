@@ -19,7 +19,14 @@ public final class DeviceInfo implements Bundleable {
     private static final String FIELD_PLAYBACK_TYPE = Util.intToStringMaxRadix(0);
     private static final String FIELD_MIN_VOLUME = Util.intToStringMaxRadix(1);
     private static final String FIELD_MAX_VOLUME = Util.intToStringMaxRadix(2);
-    public static final Bundleable.Creator<DeviceInfo> CREATOR = DeviceInfo$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<DeviceInfo> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.DeviceInfo$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            DeviceInfo lambda$static$0;
+            lambda$static$0 = DeviceInfo.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     @Target({ElementType.TYPE_USE})
     @Documented

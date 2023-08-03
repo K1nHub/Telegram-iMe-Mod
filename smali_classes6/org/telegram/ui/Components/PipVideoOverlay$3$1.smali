@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PipVideoOverlay$3;Ljava/util/List;)V
     .locals 0
 
-    .line 623
+    .line 625
     iput-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$3$1;->this$1:Lorg/telegram/ui/Components/PipVideoOverlay$3;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/PipVideoOverlay$3$1;->val$springs:Ljava/util/List;
@@ -42,17 +42,17 @@
 .method public onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 626
+    .line 628
     invoke-virtual {p1, p0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->removeEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)V
 
-    .line 628
+    .line 630
     iget-object p2, p0, Lorg/telegram/ui/Components/PipVideoOverlay$3$1;->val$springs:Ljava/util/List;
 
     check-cast p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 629
+    .line 631
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$3$1;->val$springs:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -63,7 +63,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 630
+    .line 632
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$3$1;->this$1:Lorg/telegram/ui/Components/PipVideoOverlay$3;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PipVideoOverlay$3;->access$2500(Lorg/telegram/ui/Components/PipVideoOverlay$3;)V

@@ -25,7 +25,7 @@ public final class MetadataList extends Table {
     public int version() {
         int __offset = __offset(4);
         if (__offset != 0) {
-            return this.f42bb.getInt(__offset + this.bb_pos);
+            return this.f44bb.getInt(__offset + this.bb_pos);
         }
         return 0;
     }
@@ -33,7 +33,7 @@ public final class MetadataList extends Table {
     public MetadataItem list(MetadataItem metadataItem, int i) {
         int __offset = __offset(6);
         if (__offset != 0) {
-            return metadataItem.__assign(__indirect(__vector(__offset) + (i * 4)), this.f42bb);
+            return metadataItem.__assign(__indirect(__vector(__offset) + (i * 4)), this.f44bb);
         }
         return null;
     }

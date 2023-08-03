@@ -5,15 +5,11 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
-import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SocialWebViewModel.kt */
-@DebugMetadata(m84c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1", m83f = "SocialWebViewModel.kt", m82l = {29, 30, 32}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1", m101f = "SocialWebViewModel.kt", m100l = {29, 30, 32}, m99m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ SocialNetwork $socialNetwork;
@@ -92,7 +88,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
             java.lang.String r5 = r5.getSocialName()
             com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$1 r6 = new com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$1
             com.iMe.feature.socialMedias.SocialNetwork r7 = r8.$socialNetwork
-            r6.<init>(r5, r7)
+            r6.<init>()
             r8.L$0 = r9
             r8.L$1 = r1
             r8.label = r4
@@ -112,7 +108,59 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
         L6d:
             com.iMe.feature.socialMedias.webScreen.SocialWebViewModel r9 = r8.this$0
             com.iMe.feature.socialMedias.webScreen.SocialWebViewModel.access$processUrl(r9, r1)
-            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 r9 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.INSTANCE
+            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 r9 = new kotlin.jvm.functions.Function1<org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.webScreen.SocialWebState>, com.iMe.feature.socialMedias.webScreen.SocialWebState>() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.2
+                static {
+                    /*
+                        com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 r0 = new com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2
+                        r0.<init>()
+                        
+                        // error: 0x0005: SPUT  (r0 I:com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2) com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.2.INSTANCE com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.<clinit>():void");
+                }
+
+                {
+                    /*
+                        r1 = this;
+                        r0 = 1
+                        r1.<init>(r0)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.<init>():void");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final com.iMe.feature.socialMedias.webScreen.SocialWebState invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.webScreen.SocialWebState> r7) {
+                    /*
+                        r6 = this;
+                        java.lang.String r0 = "$this$reduce"
+                        kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, r0)
+                        java.lang.Object r7 = r7.getState()
+                        r0 = r7
+                        com.iMe.feature.socialMedias.webScreen.SocialWebState r0 = (com.iMe.feature.socialMedias.webScreen.SocialWebState) r0
+                        r1 = 0
+                        r2 = 0
+                        r3 = 0
+                        r4 = 3
+                        r5 = 0
+                        com.iMe.feature.socialMedias.webScreen.SocialWebState r7 = com.iMe.feature.socialMedias.webScreen.SocialWebState.copy$default(r0, r1, r2, r3, r4, r5)
+                        return r7
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.webScreen.SocialWebState");
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ com.iMe.feature.socialMedias.webScreen.SocialWebState invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext<com.iMe.feature.socialMedias.webScreen.SocialWebState> r1) {
+                    /*
+                        r0 = this;
+                        org.orbitmvi.orbit.syntax.simple.SimpleContext r1 = (org.orbitmvi.orbit.syntax.simple.SimpleContext) r1
+                        com.iMe.feature.socialMedias.webScreen.SocialWebState r1 = r0.invoke(r1)
+                        return r1
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.invoke(java.lang.Object):java.lang.Object");
+                }
+            }
             r1 = 0
             r8.L$0 = r1
             r8.L$1 = r1
@@ -125,45 +173,5 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
             return r9
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.invokeSuspend(java.lang.Object):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: SocialWebViewModel.kt */
-    /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$1 */
-    /* loaded from: classes3.dex */
-    public static final class C14761 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
-        final /* synthetic */ SocialNetwork $socialNetwork;
-        final /* synthetic */ String $title;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14761(String str, SocialNetwork socialNetwork) {
-            super(1);
-            this.$title = str;
-            this.$socialNetwork = socialNetwork;
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final SocialWebState invoke(SimpleContext<SocialWebState> reduce) {
-            Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
-            return reduce.getState().copy(this.$title, this.$socialNetwork, true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: SocialWebViewModel.kt */
-    /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 */
-    /* loaded from: classes3.dex */
-    public static final class C14772 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
-        public static final C14772 INSTANCE = new C14772();
-
-        C14772() {
-            super(1);
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final SocialWebState invoke(SimpleContext<SocialWebState> reduce) {
-            Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
-            return SocialWebState.copy$default(reduce.getState(), null, null, false, 3, null);
-        }
     }
 }

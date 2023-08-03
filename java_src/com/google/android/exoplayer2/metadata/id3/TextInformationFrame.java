@@ -40,7 +40,7 @@ public final class TextInformationFrame extends Id3Frame {
 
     @Deprecated
     public TextInformationFrame(String str, String str2, String str3) {
-        this(str, str2, ImmutableList.m743of(str3));
+        this(str, str2, ImmutableList.m761of(str3));
     }
 
     private TextInformationFrame(Parcel parcel) {
@@ -50,7 +50,7 @@ public final class TextInformationFrame extends Id3Frame {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame, com.google.android.exoplayer2.metadata.Metadata.Entry
     public void populateMediaMetadata(MediaMetadata.Builder builder) {
-        String str = this.f199id;
+        String str = this.f201id;
         str.hashCode();
         char c = 65535;
         switch (str.hashCode()) {
@@ -274,23 +274,23 @@ public final class TextInformationFrame extends Id3Frame {
             return false;
         }
         TextInformationFrame textInformationFrame = (TextInformationFrame) obj;
-        return Util.areEqual(this.f199id, textInformationFrame.f199id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values);
+        return Util.areEqual(this.f201id, textInformationFrame.f201id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values);
     }
 
     public int hashCode() {
-        int hashCode = (527 + this.f199id.hashCode()) * 31;
+        int hashCode = (527 + this.f201id.hashCode()) * 31;
         String str = this.description;
         return ((hashCode + (str != null ? str.hashCode() : 0)) * 31) + this.values.hashCode();
     }
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f199id + ": description=" + this.description + ": values=" + this.values;
+        return this.f201id + ": description=" + this.description + ": values=" + this.values;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f199id);
+        parcel.writeString(this.f201id);
         parcel.writeString(this.description);
         parcel.writeStringArray((String[]) this.values.toArray(new String[0]));
     }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)V
     .locals 0
 
-    .line 1519
+    .line 1547
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$1;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
@@ -35,7 +35,7 @@
 .method public getCurrentAccount()I
     .locals 1
 
-    .line 1522
+    .line 1550
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return v0
@@ -44,12 +44,12 @@
 .method public getFragmentView()Landroid/view/View;
     .locals 1
 
-    .line 1527
+    .line 1555
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$1;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4500(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -59,12 +59,12 @@
 .method public getLayoutContainer()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 1532
+    .line 1560
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$1;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -76,12 +76,12 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 1537
+    .line 1565
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader$1;->this$1:Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v0
 

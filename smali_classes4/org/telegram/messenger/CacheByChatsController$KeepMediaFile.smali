@@ -19,6 +19,8 @@
 
 .field final file:Ljava/io/File;
 
+.field isStory:Z
+
 .field keepMedia:I
 
 
@@ -26,20 +28,20 @@
 .method public constructor <init>(Ljava/io/File;)V
     .locals 1
 
-    .line 191
+    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 188
+    .line 196
     iput v0, p0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->keepMedia:I
 
     const/4 v0, 0x2
 
-    .line 189
+    .line 197
     iput v0, p0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->dialogType:I
 
-    .line 192
+    .line 201
     iput-object p1, p0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
 
     return-void

@@ -61,7 +61,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -75,7 +75,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -130,7 +130,7 @@ public class CameraScanActivity extends BaseFragment {
     private float recognizedT = BitmapDescriptorFactory.HUE_RED;
     private float newRecognizedT = BitmapDescriptorFactory.HUE_RED;
     private float useRecognizedBounds = BitmapDescriptorFactory.HUE_RED;
-    private Runnable requestShot = new RunnableC37347();
+    private Runnable requestShot = new RunnableC37437();
     private float averageProcessTime = BitmapDescriptorFactory.HUE_RED;
     private long processTimesCount = 0;
 
@@ -191,7 +191,7 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$1 */
     /* loaded from: classes5.dex */
-    public class DialogC37271 extends BottomSheet {
+    public class DialogC37361 extends BottomSheet {
         CameraScanActivity fragment;
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ boolean val$allowCustomScan;
@@ -205,7 +205,7 @@ public class CameraScanActivity extends BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC37271(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
+        DialogC37361(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
             super(context, z);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$type = i;
@@ -215,18 +215,18 @@ public class CameraScanActivity extends BaseFragment {
             iNavigationLayoutArr[0].setFragmentStack(new ArrayList());
             CameraScanActivity cameraScanActivity = new CameraScanActivity(i) { // from class: org.telegram.ui.CameraScanActivity.1.1
                 {
-                    DialogC37271.this = this;
+                    DialogC37361.this = this;
                 }
 
                 @Override // org.telegram.p043ui.ActionBar.BaseFragment
                 public void finishFragment() {
                     setFinishing(true);
-                    DialogC37271.this.dismiss();
+                    DialogC37361.this.dismiss();
                 }
 
                 @Override // org.telegram.p043ui.ActionBar.BaseFragment
                 public void removeSelfFromStack() {
-                    DialogC37271.this.dismiss();
+                    DialogC37361.this.dismiss();
                 }
             };
             this.fragment = cameraScanActivity;
@@ -249,7 +249,7 @@ public class CameraScanActivity extends BaseFragment {
             setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.CameraScanActivity$1$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    CameraScanActivity.DialogC37271.this.lambda$new$0(dialogInterface);
+                    CameraScanActivity.DialogC37361.this.lambda$new$0(dialogInterface);
                 }
             });
         }
@@ -280,14 +280,14 @@ public class CameraScanActivity extends BaseFragment {
         if (activity == null) {
             return null;
         }
-        DialogC37271 dialogC37271 = new DialogC37271(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
-        dialogC37271.setUseLightStatusBar(false);
-        AndroidUtilities.setLightNavigationBar(dialogC37271.getWindow(), false);
-        AndroidUtilities.setNavigationBarColor(dialogC37271.getWindow(), -16777216, false);
-        dialogC37271.setUseLightStatusBar(false);
-        dialogC37271.getWindow().addFlags(512);
-        dialogC37271.show();
-        return dialogC37271;
+        DialogC37361 dialogC37361 = new DialogC37361(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
+        dialogC37361.setUseLightStatusBar(false);
+        AndroidUtilities.setLightNavigationBar(dialogC37361.getWindow(), false);
+        AndroidUtilities.setNavigationBarColor(dialogC37361.getWindow(), -16777216, false);
+        dialogC37361.setUseLightStatusBar(false);
+        dialogC37361.getWindow().addFlags(512);
+        dialogC37361.show();
+        return dialogC37361;
     }
 
     public CameraScanActivity(int i) {
@@ -330,7 +330,7 @@ public class CameraScanActivity extends BaseFragment {
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         if (this.shownAsBottomSheet) {
             this.actionBar.setItemsColor(-1, false);
             this.actionBar.setItemsBackgroundColor(-1, false);
@@ -344,12 +344,12 @@ public class CameraScanActivity extends BaseFragment {
         if (!AndroidUtilities.isTablet() && !isQr()) {
             this.actionBar.showActionModeTop();
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
             {
                 CameraScanActivity.this = this;
             }
 
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CameraScanActivity.this.finishFragment();
@@ -379,13 +379,13 @@ public class CameraScanActivity extends BaseFragment {
                     }
                     CameraScanActivity.this.recognizedMrzView.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     if (CameraScanActivity.this.galleryButton != null) {
-                        CameraScanActivity.this.galleryButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824));
+                        CameraScanActivity.this.galleryButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(60), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(60), 1073741824));
                     }
-                    CameraScanActivity.this.flashButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60), 1073741824));
+                    CameraScanActivity.this.flashButton.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(60), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(60), 1073741824));
                 }
-                CameraScanActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(72), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                CameraScanActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m72dp(72), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 if (CameraScanActivity.this.currentType == 3) {
-                    CameraScanActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(72), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    CameraScanActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m72dp(72), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 } else {
                     CameraScanActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec((int) (size * 0.9f), 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 }
@@ -395,7 +395,7 @@ public class CameraScanActivity extends BaseFragment {
             @Override // android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 int measuredHeight;
-                int m54dp;
+                int m72dp;
                 int measuredWidth;
                 int i5 = i3 - i;
                 int i6 = i4 - i2;
@@ -406,7 +406,7 @@ public class CameraScanActivity extends BaseFragment {
                     CameraScanActivity.this.recognizedMrzView.setTextSize(0, i6 / 22);
                     CameraScanActivity.this.recognizedMrzView.setPadding(0, 0, 0, i6 / 15);
                     int i7 = (int) (i6 * 0.65f);
-                    CameraScanActivity.this.titleTextView.layout(AndroidUtilities.m54dp(36), i7, AndroidUtilities.m54dp(36) + CameraScanActivity.this.titleTextView.getMeasuredWidth(), CameraScanActivity.this.titleTextView.getMeasuredHeight() + i7);
+                    CameraScanActivity.this.titleTextView.layout(AndroidUtilities.m72dp(36), i7, AndroidUtilities.m72dp(36) + CameraScanActivity.this.titleTextView.getMeasuredWidth(), CameraScanActivity.this.titleTextView.getMeasuredHeight() + i7);
                 } else {
                     ((BaseFragment) CameraScanActivity.this).actionBar.layout(0, 0, ((BaseFragment) CameraScanActivity.this).actionBar.getMeasuredWidth(), ((BaseFragment) CameraScanActivity.this).actionBar.getMeasuredHeight());
                     if (CameraScanActivity.this.cameraView != null) {
@@ -415,28 +415,28 @@ public class CameraScanActivity extends BaseFragment {
                     int min = (int) (Math.min(i5, i6) / 1.5f);
                     if (CameraScanActivity.this.currentType == 1) {
                         measuredHeight = ((i6 - min) / 2) - CameraScanActivity.this.titleTextView.getMeasuredHeight();
-                        m54dp = AndroidUtilities.m54dp(30);
+                        m72dp = AndroidUtilities.m72dp(30);
                     } else {
                         measuredHeight = ((i6 - min) / 2) - CameraScanActivity.this.titleTextView.getMeasuredHeight();
-                        m54dp = AndroidUtilities.m54dp(64);
+                        m72dp = AndroidUtilities.m72dp(64);
                     }
-                    int i8 = measuredHeight - m54dp;
-                    CameraScanActivity.this.titleTextView.layout(AndroidUtilities.m54dp(36), i8, AndroidUtilities.m54dp(36) + CameraScanActivity.this.titleTextView.getMeasuredWidth(), CameraScanActivity.this.titleTextView.getMeasuredHeight() + i8);
+                    int i8 = measuredHeight - m72dp;
+                    CameraScanActivity.this.titleTextView.layout(AndroidUtilities.m72dp(36), i8, AndroidUtilities.m72dp(36) + CameraScanActivity.this.titleTextView.getMeasuredWidth(), CameraScanActivity.this.titleTextView.getMeasuredHeight() + i8);
                     if (CameraScanActivity.this.currentType == 3) {
-                        int measuredHeight2 = i8 + CameraScanActivity.this.titleTextView.getMeasuredHeight() + AndroidUtilities.m54dp(8);
-                        CameraScanActivity.this.descriptionText.layout(AndroidUtilities.m54dp(36), measuredHeight2, AndroidUtilities.m54dp(36) + CameraScanActivity.this.descriptionText.getMeasuredWidth(), CameraScanActivity.this.descriptionText.getMeasuredHeight() + measuredHeight2);
+                        int measuredHeight2 = i8 + CameraScanActivity.this.titleTextView.getMeasuredHeight() + AndroidUtilities.m72dp(8);
+                        CameraScanActivity.this.descriptionText.layout(AndroidUtilities.m72dp(36), measuredHeight2, AndroidUtilities.m72dp(36) + CameraScanActivity.this.descriptionText.getMeasuredWidth(), CameraScanActivity.this.descriptionText.getMeasuredHeight() + measuredHeight2);
                     }
                     CameraScanActivity.this.recognizedMrzView.layout(0, getMeasuredHeight() - CameraScanActivity.this.recognizedMrzView.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
                     if (!CameraScanActivity.this.needGalleryButton) {
                         measuredWidth = (i5 / 2) - (CameraScanActivity.this.flashButton.getMeasuredWidth() / 2);
                     } else {
-                        measuredWidth = (i5 / 2) + AndroidUtilities.m54dp(35);
+                        measuredWidth = (i5 / 2) + AndroidUtilities.m72dp(35);
                     }
-                    int m54dp2 = ((i6 - min) / 2) + min + AndroidUtilities.m54dp(80);
-                    CameraScanActivity.this.flashButton.layout(measuredWidth, m54dp2, CameraScanActivity.this.flashButton.getMeasuredWidth() + measuredWidth, CameraScanActivity.this.flashButton.getMeasuredHeight() + m54dp2);
+                    int m72dp2 = ((i6 - min) / 2) + min + AndroidUtilities.m72dp(80);
+                    CameraScanActivity.this.flashButton.layout(measuredWidth, m72dp2, CameraScanActivity.this.flashButton.getMeasuredWidth() + measuredWidth, CameraScanActivity.this.flashButton.getMeasuredHeight() + m72dp2);
                     if (CameraScanActivity.this.galleryButton != null) {
-                        int m54dp3 = ((i5 / 2) - AndroidUtilities.m54dp(35)) - CameraScanActivity.this.galleryButton.getMeasuredWidth();
-                        CameraScanActivity.this.galleryButton.layout(m54dp3, m54dp2, CameraScanActivity.this.galleryButton.getMeasuredWidth() + m54dp3, CameraScanActivity.this.galleryButton.getMeasuredHeight() + m54dp2);
+                        int m72dp3 = ((i5 / 2) - AndroidUtilities.m72dp(35)) - CameraScanActivity.this.galleryButton.getMeasuredWidth();
+                        CameraScanActivity.this.galleryButton.layout(m72dp3, m72dp2, CameraScanActivity.this.galleryButton.getMeasuredWidth() + m72dp3, CameraScanActivity.this.galleryButton.getMeasuredHeight() + m72dp2);
                     }
                 }
                 if (CameraScanActivity.this.currentType != 3) {
@@ -470,9 +470,9 @@ public class CameraScanActivity extends BaseFragment {
                     canvas.drawRect(f4, f, view.getMeasuredWidth(), f2, CameraScanActivity.this.paint);
                     CameraScanActivity.this.paint.setAlpha((int) (Math.max((float) BitmapDescriptorFactory.HUE_RED, 1.0f - CameraScanActivity.this.qrAppearingValue) * 255.0f));
                     canvas.drawRect(f3, f, f4, f2, CameraScanActivity.this.paint);
-                    int lerp = AndroidUtilities.lerp(0, AndroidUtilities.m54dp(4), Math.min(1.0f, CameraScanActivity.this.qrAppearingValue * 20.0f));
+                    int lerp = AndroidUtilities.lerp(0, AndroidUtilities.m72dp(4), Math.min(1.0f, CameraScanActivity.this.qrAppearingValue * 20.0f));
                     int i4 = lerp / 2;
-                    int lerp2 = AndroidUtilities.lerp(Math.min(width, height2), AndroidUtilities.m54dp(20), Math.min(1.2f, (float) Math.pow(CameraScanActivity.this.qrAppearingValue, 1.7999999523162842d)));
+                    int lerp2 = AndroidUtilities.lerp(Math.min(width, height2), AndroidUtilities.m72dp(20), Math.min(1.2f, (float) Math.pow(CameraScanActivity.this.qrAppearingValue, 1.7999999523162842d)));
                     CameraScanActivity.this.cornerPaint.setAlpha((int) (Math.min(1.0f, CameraScanActivity.this.qrAppearingValue) * 255.0f));
                     CameraScanActivity.this.path.reset();
                     int i5 = i + lerp2;
@@ -524,7 +524,14 @@ public class CameraScanActivity extends BaseFragment {
                 return rectF;
             }
         };
-        viewGroup.setOnTouchListener(CameraScanActivity$$ExternalSyntheticLambda4.INSTANCE);
+        viewGroup.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda4
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createView$1;
+                lambda$createView$1 = CameraScanActivity.lambda$createView$1(view, motionEvent);
+                return lambda$createView$1;
+            }
+        });
         this.fragmentView = viewGroup;
         if (isQr()) {
             this.fragmentView.postDelayed(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda9
@@ -537,9 +544,9 @@ public class CameraScanActivity extends BaseFragment {
             initCameraView();
         }
         if (this.currentType == 0) {
-            C3484ActionBar c3484ActionBar = this.actionBar;
+            C3485ActionBar c3485ActionBar = this.actionBar;
             int i = Theme.key_windowBackgroundWhite;
-            c3484ActionBar.setBackgroundColor(Theme.getColor(i));
+            c3485ActionBar.setBackgroundColor(Theme.getColor(i));
             this.fragmentView.setBackgroundColor(Theme.getColor(i));
         } else {
             this.actionBar.setBackgroundDrawable(null);
@@ -552,7 +559,7 @@ public class CameraScanActivity extends BaseFragment {
         }
         int i2 = this.currentType;
         if (i2 == 2 || i2 == 3) {
-            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3417R.string.AuthAnotherClientScan));
+            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3419R.string.AuthAnotherClientScan));
         }
         final Paint paint = new Paint(1);
         paint.setPathEffect(LinkPath.getRoundedEffect());
@@ -579,7 +586,7 @@ public class CameraScanActivity extends BaseFragment {
                         int spanEnd = spanned.getSpanEnd(uRLSpanNoUnderlineArr[i5]);
                         this.textPath.setCurrentLayout(getLayout(), spanStart, BitmapDescriptorFactory.HUE_RED);
                         int i6 = getText() != null ? getPaint().baselineShift : 0;
-                        this.textPath.setBaselineShift(i6 != 0 ? i6 + AndroidUtilities.m54dp(i6 > 0 ? 5 : -2) : 0);
+                        this.textPath.setBaselineShift(i6 != 0 ? i6 + AndroidUtilities.m72dp(i6 > 0 ? 5 : -2) : 0);
                         getLayout().getSelectionPath(spanStart, spanEnd, this.textPath);
                     }
                     this.textPath.setAllowReset(true);
@@ -659,22 +666,22 @@ public class CameraScanActivity extends BaseFragment {
         this.recognizedMrzView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         int i3 = this.currentType;
         if (i3 == 0) {
-            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3417R.string.PassportScanPassport));
-            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3417R.string.PassportScanPassportInfo));
+            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3419R.string.PassportScanPassport));
+            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3419R.string.PassportScanPassportInfo));
             this.titleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             this.recognizedMrzView.setTypeface(Typeface.MONOSPACE);
         } else {
             if (i3 == IdFabric$CustomType.QR_CODE_SCANNER_CHAT_LINK) {
-                this.titleTextView.setText(LocaleController.getInternalString(C3417R.string.dialogs_qr_scanner_chat_link_hint));
+                this.titleTextView.setText(LocaleController.getInternalString(C3419R.string.dialogs_qr_scanner_chat_link_hint));
                 this.titleTextView.setTextSize(1, 16.0f);
             } else if (!this.needGalleryButton) {
                 if (i3 == 1 || i3 == 3) {
-                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3417R.string.AuthAnotherClientScan));
+                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3419R.string.AuthAnotherClientScan));
                 } else {
-                    LocaleController.getString("AuthAnotherClientInfo5", C3417R.string.AuthAnotherClientInfo5);
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3417R.string.AuthAnotherClientInfo4));
-                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3417R.string.AuthAnotherClientDownloadClientUrl);
-                    LocaleController.getString("AuthAnotherWebClientUrl", C3417R.string.AuthAnotherWebClientUrl);
+                    LocaleController.getString("AuthAnotherClientInfo5", C3419R.string.AuthAnotherClientInfo5);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3419R.string.AuthAnotherClientInfo4));
+                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3419R.string.AuthAnotherClientDownloadClientUrl);
+                    LocaleController.getString("AuthAnotherWebClientUrl", C3419R.string.AuthAnotherWebClientUrl);
                     String[] strArr = {"https://apps.apple.com/us/app/ime-messenger/id1450480822", BuildVars.PLAYSTORE_APP_URL, "https://imem.app/desktop"};
                     int i4 = 0;
                     for (int i5 = 3; i4 < i5; i5 = 3) {
@@ -696,7 +703,7 @@ public class CameraScanActivity extends BaseFragment {
                     }
                     this.titleTextView.setLinkTextColor(-1);
                     this.titleTextView.setTextSize(1, 16.0f);
-                    this.titleTextView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
+                    this.titleTextView.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
                     this.titleTextView.setPadding(0, 0, 0, 0);
                     this.titleTextView.setText(spannableStringBuilder);
                 }
@@ -706,17 +713,17 @@ public class CameraScanActivity extends BaseFragment {
                 this.descriptionText.setTextColor(-1711276033);
             }
             this.recognizedMrzView.setTextSize(1, 16.0f);
-            this.recognizedMrzView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10));
+            this.recognizedMrzView.setPadding(AndroidUtilities.m72dp(10), 0, AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10));
             if (!this.needGalleryButton) {
-                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3417R.string.AuthAnotherClientNotFound));
+                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3419R.string.AuthAnotherClientNotFound));
             }
             viewGroup.addView(this.recognizedMrzView);
             if (this.needGalleryButton) {
                 ImageView imageView = new ImageView(context);
                 this.galleryButton = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                this.galleryButton.setImageResource(C3417R.C3419drawable.qr_gallery);
-                this.galleryButton.setBackgroundDrawable(Theme.createSelectorDrawableFromDrawables(Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 587202559), Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 1157627903)));
+                this.galleryButton.setImageResource(C3419R.C3421drawable.qr_gallery);
+                this.galleryButton.setBackgroundDrawable(Theme.createSelectorDrawableFromDrawables(Theme.createCircleDrawable(AndroidUtilities.m72dp(60), 587202559), Theme.createCircleDrawable(AndroidUtilities.m72dp(60), 1157627903)));
                 viewGroup.addView(this.galleryButton);
                 this.galleryButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
@@ -728,8 +735,8 @@ public class CameraScanActivity extends BaseFragment {
             ImageView imageView2 = new ImageView(context);
             this.flashButton = imageView2;
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
-            this.flashButton.setImageResource(C3417R.C3419drawable.qr_flashlight);
-            this.flashButton.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 587202559));
+            this.flashButton.setImageResource(C3419R.C3421drawable.qr_flashlight);
+            this.flashButton.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(60), 587202559));
             viewGroup.addView(this.flashButton);
             this.flashButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
@@ -778,12 +785,12 @@ public class CameraScanActivity extends BaseFragment {
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                         if (tryReadQr == null && CameraScanActivity.this.isAllowCustomScan) {
-                            ContextExtKt.toast(LocaleController.getInternalString(C3417R.string.custom_qr_error));
+                            ContextExtKt.toast(LocaleController.getInternalString(C3419R.string.custom_qr_error));
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                     }
                 } catch (Throwable th) {
-                    FileLog.m49e(th);
+                    FileLog.m67e(th);
                 }
             }
 
@@ -794,7 +801,7 @@ public class CameraScanActivity extends BaseFragment {
                     intent.setType("image/*");
                     CameraScanActivity.this.getParentActivity().startActivityForResult(intent, 11);
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             }
         });
@@ -1051,7 +1058,7 @@ public class CameraScanActivity extends BaseFragment {
                 finishFragment();
             }
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
@@ -1070,8 +1077,8 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$7 */
     /* loaded from: classes5.dex */
-    public class RunnableC37347 implements Runnable {
-        RunnableC37347() {
+    public class RunnableC37437 implements Runnable {
+        RunnableC37437() {
             CameraScanActivity.this = r1;
         }
 
@@ -1083,7 +1090,7 @@ public class CameraScanActivity extends BaseFragment {
             CameraScanActivity.this.handler.post(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CameraScanActivity.RunnableC37347.this.lambda$run$0();
+                    CameraScanActivity.RunnableC37437.this.lambda$run$0();
                 }
             });
         }
@@ -1334,7 +1341,7 @@ public class CameraScanActivity extends BaseFragment {
         private QrResult(CameraScanActivity cameraScanActivity) {
         }
 
-        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC37271 dialogC37271) {
+        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC37361 dialogC37361) {
             this(cameraScanActivity);
         }
     }
@@ -1517,9 +1524,9 @@ public class CameraScanActivity extends BaseFragment {
             }
             QrResult qrResult = new QrResult(this, null);
             if (rectF != null) {
-                float m54dp = AndroidUtilities.m54dp(25);
-                float m54dp2 = AndroidUtilities.m54dp(15);
-                rectF.set(rectF.left - m54dp, rectF.top - m54dp2, rectF.right + m54dp, rectF.bottom + m54dp2);
+                float m72dp = AndroidUtilities.m72dp(25);
+                float m72dp2 = AndroidUtilities.m72dp(15);
+                rectF.set(rectF.left - m72dp, rectF.top - m72dp2, rectF.right + m72dp, rectF.bottom + m72dp2);
                 float f11 = i6;
                 float f12 = i4;
                 rectF.set(rectF.left / f11, rectF.top / f12, rectF.right / f11, rectF.bottom / f12);

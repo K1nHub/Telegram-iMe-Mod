@@ -226,7 +226,7 @@
         }
     .end annotation
 
-    const-string v0, "query is null"
+    const-string/jumbo v0, "query is null"
 
     .line 101
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -623,7 +623,7 @@
         }
     .end annotation
 
-    const-string v0, "query is null"
+    const-string/jumbo v0, "query is null"
 
     .line 59
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

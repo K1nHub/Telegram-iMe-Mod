@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -78,7 +78,7 @@ public class PremiumTierCell extends ViewGroup {
         this.discountView = textView2;
         textView2.setTextSize(1, 14.0f);
         this.discountView.setTextColor(-1);
-        this.discountView.setPadding(AndroidUtilities.m54dp(3), 0, AndroidUtilities.m54dp(3), 0);
+        this.discountView.setPadding(AndroidUtilities.m72dp(3), 0, AndroidUtilities.m72dp(3), 0);
         this.discountView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         addView(this.discountView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 80, 0, 0, 0, 8));
         TextView textView3 = new TextView(context);
@@ -102,7 +102,7 @@ public class PremiumTierCell extends ViewGroup {
         this.pricePerMonthView.setTextColor(Theme.getColor(i2));
         this.pricePerMonthView.setSingleLine();
         addView(this.pricePerMonthView, LayoutHelper.createFrame(-2, -2, 8388613));
-        setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(8));
+        setPadding(AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(8));
         setClipToPadding(false);
         setWillNotDraw(false);
     }
@@ -146,23 +146,23 @@ public class PremiumTierCell extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp) + getPaddingLeft(), (int) ((getMeasuredHeight() - this.checkBox.getMeasuredHeight()) / 2.0f), 0, 0);
+        rect.set(AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp) + getPaddingLeft(), (int) ((getMeasuredHeight() - this.checkBox.getMeasuredHeight()) / 2.0f), 0, 0);
         checkRtlAndLayout(this.checkBox);
         int measuredHeight = (int) ((getMeasuredHeight() - this.pricePerMonthView.getMeasuredHeight()) / 2.0f);
-        if (AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp + 24) + this.checkBox.getMeasuredWidth() + (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() : 0) + this.pricePerYearView.getMeasuredWidth() + getPaddingLeft() > getMeasuredWidth() - this.pricePerMonthView.getMeasuredWidth() && this.discountView.getVisibility() == 0) {
-            measuredHeight = getPaddingTop() + AndroidUtilities.m54dp(2);
+        if (AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp + 24) + this.checkBox.getMeasuredWidth() + (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() : 0) + this.pricePerYearView.getMeasuredWidth() + getPaddingLeft() > getMeasuredWidth() - this.pricePerMonthView.getMeasuredWidth() && this.discountView.getVisibility() == 0) {
+            measuredHeight = getPaddingTop() + AndroidUtilities.m72dp(2);
         }
-        rect.set(((getMeasuredWidth() - this.pricePerMonthView.getMeasuredWidth()) - AndroidUtilities.m54dp(16)) - getPaddingRight(), measuredHeight, 0, 0);
+        rect.set(((getMeasuredWidth() - this.pricePerMonthView.getMeasuredWidth()) - AndroidUtilities.m72dp(16)) - getPaddingRight(), measuredHeight, 0, 0);
         checkRtlAndLayout(this.pricePerMonthView);
-        rect.set(AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + getPaddingLeft(), this.pricePerYearView.getVisibility() == 8 ? (int) ((getMeasuredHeight() - this.titleView.getMeasuredHeight()) / 2.0f) : getPaddingTop(), 0, 0);
+        rect.set(AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + getPaddingLeft(), this.pricePerYearView.getVisibility() == 8 ? (int) ((getMeasuredHeight() - this.titleView.getMeasuredHeight()) / 2.0f) : getPaddingTop(), 0, 0);
         checkRtlAndLayout(this.titleView);
         if (this.discountView.getVisibility() == 0) {
-            rect.set(AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp + 6) + this.checkBox.getMeasuredWidth() + getPaddingLeft() + this.titleView.getMeasuredWidth(), getPaddingTop() + AndroidUtilities.m54dp(2), 0, 0);
+            rect.set(AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp + 6) + this.checkBox.getMeasuredWidth() + getPaddingLeft() + this.titleView.getMeasuredWidth(), getPaddingTop() + AndroidUtilities.m72dp(2), 0, 0);
             checkRtlAndLayout(this.discountView);
         }
-        rect.set(AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + getPaddingLeft(), (getMeasuredHeight() - this.pricePerYearStrikeView.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + getPaddingLeft(), (getMeasuredHeight() - this.pricePerYearStrikeView.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         checkRtlAndLayout(this.pricePerYearStrikeView);
-        rect.set(AndroidUtilities.m54dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() + AndroidUtilities.m54dp(6) : 0) + getPaddingLeft(), (getMeasuredHeight() - this.pricePerYearView.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(AndroidUtilities.m72dp(this.leftPaddingToCheckboxDp + this.leftPaddingToTextDp) + this.checkBox.getMeasuredWidth() + (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() + AndroidUtilities.m72dp(6) : 0) + getPaddingLeft(), (getMeasuredHeight() - this.pricePerYearView.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         checkRtlAndLayout(this.pricePerYearView);
     }
 
@@ -179,12 +179,12 @@ public class PremiumTierCell extends ViewGroup {
             updateColors();
             updateGradient();
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(this.pricePerMonthView.getLeft(), this.pricePerMonthView.getTop() + AndroidUtilities.m54dp(4), this.pricePerMonthView.getRight(), this.pricePerMonthView.getBottom() - AndroidUtilities.m54dp(4));
-            canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint);
-            rectF.set(this.pricePerYearStrikeView.getLeft(), this.pricePerYearStrikeView.getTop() + AndroidUtilities.m54dp(3), this.pricePerYearStrikeView.getRight(), this.pricePerYearStrikeView.getBottom() - AndroidUtilities.m54dp(3));
-            canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint);
-            rectF.set(this.titleView.getLeft(), this.titleView.getTop() + AndroidUtilities.m54dp(4), this.titleView.getRight(), this.titleView.getBottom() - AndroidUtilities.m54dp(4));
-            canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint);
+            rectF.set(this.pricePerMonthView.getLeft(), this.pricePerMonthView.getTop() + AndroidUtilities.m72dp(4), this.pricePerMonthView.getRight(), this.pricePerMonthView.getBottom() - AndroidUtilities.m72dp(4));
+            canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), paint);
+            rectF.set(this.pricePerYearStrikeView.getLeft(), this.pricePerYearStrikeView.getTop() + AndroidUtilities.m72dp(3), this.pricePerYearStrikeView.getRight(), this.pricePerYearStrikeView.getBottom() - AndroidUtilities.m72dp(3));
+            canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), paint);
+            rectF.set(this.titleView.getLeft(), this.titleView.getTop() + AndroidUtilities.m72dp(4), this.titleView.getRight(), this.titleView.getBottom() - AndroidUtilities.m72dp(4));
+            canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), paint);
             invalidate();
             return;
         }
@@ -206,22 +206,22 @@ public class PremiumTierCell extends ViewGroup {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
-        int m54dp = AndroidUtilities.m54dp(58);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(28), 1073741824);
+        int m72dp = AndroidUtilities.m72dp(58);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(28), 1073741824);
         this.checkBox.measure(makeMeasureSpec, makeMeasureSpec);
-        this.pricePerMonthView.measure(View.MeasureSpec.makeMeasureSpec(size - this.checkBox.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
-        this.titleView.measure(View.MeasureSpec.makeMeasureSpec((size - this.checkBox.getMeasuredWidth()) - this.pricePerMonthView.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+        this.pricePerMonthView.measure(View.MeasureSpec.makeMeasureSpec(size - this.checkBox.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
+        this.titleView.measure(View.MeasureSpec.makeMeasureSpec((size - this.checkBox.getMeasuredWidth()) - this.pricePerMonthView.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
         if (this.discountView.getVisibility() == 0) {
-            this.discountView.measure(View.MeasureSpec.makeMeasureSpec((size - this.checkBox.getMeasuredWidth()) - this.pricePerMonthView.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+            this.discountView.measure(View.MeasureSpec.makeMeasureSpec((size - this.checkBox.getMeasuredWidth()) - this.pricePerMonthView.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
         } else {
             this.discountView.measure(View.MeasureSpec.makeMeasureSpec(0, 1073741824), View.MeasureSpec.makeMeasureSpec(0, 1073741824));
         }
-        this.pricePerYearStrikeView.measure(View.MeasureSpec.makeMeasureSpec(size - this.checkBox.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
-        this.pricePerYearView.measure(View.MeasureSpec.makeMeasureSpec(((size - this.checkBox.getMeasuredWidth()) - (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() : 0)) - AndroidUtilities.m54dp(6), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m54dp, Integer.MIN_VALUE));
+        this.pricePerYearStrikeView.measure(View.MeasureSpec.makeMeasureSpec(size - this.checkBox.getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
+        this.pricePerYearView.measure(View.MeasureSpec.makeMeasureSpec(((size - this.checkBox.getMeasuredWidth()) - (this.pricePerYearStrikeView.getVisibility() == 0 ? this.pricePerYearStrikeView.getMeasuredWidth() : 0)) - AndroidUtilities.m72dp(6), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(m72dp, Integer.MIN_VALUE));
         if (this.pricePerYearView.getVisibility() != 0) {
-            m54dp -= AndroidUtilities.m54dp(8);
+            m72dp -= AndroidUtilities.m72dp(8);
         }
-        setMeasuredDimension(size, m54dp);
+        setMeasuredDimension(size, m72dp);
     }
 
     public PremiumPreviewFragment.SubscriptionTier getTier() {
@@ -237,13 +237,13 @@ public class PremiumTierCell extends ViewGroup {
         this.hasDivider = z;
         int months = subscriptionTier.getMonths();
         if (months == 1) {
-            this.titleView.setText(LocaleController.getString(C3417R.string.PremiumTierMonthly));
+            this.titleView.setText(LocaleController.getString(C3419R.string.PremiumTierMonthly));
         } else if (months == 6) {
-            this.titleView.setText(LocaleController.getString(C3417R.string.PremiumTierSemiannual));
+            this.titleView.setText(LocaleController.getString(C3419R.string.PremiumTierSemiannual));
         } else if (months != 12) {
             this.titleView.setText(LocaleController.formatPluralString("Months", subscriptionTier.getMonths(), new Object[0]));
         } else {
-            this.titleView.setText(LocaleController.getString(C3417R.string.PremiumTierAnnual));
+            this.titleView.setText(LocaleController.getString(C3419R.string.PremiumTierAnnual));
         }
         boolean z2 = !BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || subscriptionTier.getOfferDetails() == null);
         this.isDrawingGradient = z2;
@@ -253,26 +253,26 @@ public class PremiumTierCell extends ViewGroup {
                 this.pricePerYearStrikeView.setVisibility(8);
                 this.pricePerYearView.setVisibility(8);
             } else {
-                this.discountView.setText(LocaleController.formatString(C3417R.string.GiftPremiumOptionDiscount, Integer.valueOf(subscriptionTier.getDiscount())));
+                this.discountView.setText(LocaleController.formatString(C3419R.string.GiftPremiumOptionDiscount, Integer.valueOf(subscriptionTier.getDiscount())));
                 this.discountView.setVisibility(0);
                 this.pricePerYearStrikeView.setVisibility(0);
                 this.pricePerYearView.setVisibility(0);
             }
             this.pricePerYearStrikeView.setText(subscriptionTier.getFormattedPricePerYearRegular());
-            this.pricePerYearView.setText(LocaleController.formatString(C3417R.string.PricePerYear, subscriptionTier.getFormattedPricePerYear()));
-            this.pricePerMonthView.setText(LocaleController.formatString(C3417R.string.PricePerMonthMe, subscriptionTier.getFormattedPricePerMonth()));
+            this.pricePerYearView.setText(LocaleController.formatString(C3419R.string.PricePerYear, subscriptionTier.getFormattedPricePerYear()));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3419R.string.PricePerMonthMe, subscriptionTier.getFormattedPricePerMonth()));
             if (subscriptionTier.subscriptionOption.current) {
                 this.pricePerYearView.setVisibility(0);
-                this.pricePerYearView.setText(LocaleController.getString(C3417R.string.YourCurrentPlan));
+                this.pricePerYearView.setText(LocaleController.getString(C3419R.string.YourCurrentPlan));
             }
         } else {
-            this.discountView.setText(LocaleController.formatString(C3417R.string.GiftPremiumOptionDiscount, 10));
+            this.discountView.setText(LocaleController.formatString(C3419R.string.GiftPremiumOptionDiscount, 10));
             this.discountView.setVisibility(0);
             this.pricePerYearStrikeView.setVisibility(0);
             this.pricePerYearView.setVisibility(0);
             this.pricePerYearStrikeView.setText("USD00.00");
-            this.pricePerYearView.setText(LocaleController.formatString(C3417R.string.PricePerYear, 1000));
-            this.pricePerMonthView.setText(LocaleController.formatString(C3417R.string.PricePerMonthMe, 100));
+            this.pricePerYearView.setText(LocaleController.formatString(C3419R.string.PricePerYear, 1000));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3419R.string.PricePerMonthMe, 100));
         }
         requestLayout();
     }
@@ -321,9 +321,9 @@ public class PremiumTierCell extends ViewGroup {
         }
         this.color0 = color;
         this.color1 = color2;
-        int m54dp = AndroidUtilities.m54dp(200);
-        this.gradientWidth = m54dp;
-        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{color2, color, color, color2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+        int m72dp = AndroidUtilities.m72dp(200);
+        this.gradientWidth = m72dp;
+        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m72dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{color2, color, color, color2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
         this.gradient = linearGradient;
         this.paint.setShader(linearGradient);
     }

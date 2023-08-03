@@ -14,15 +14,15 @@ final class C3041g0 extends AbstractC3053i0 implements InterfaceC3074l3 {
 
     @Override // p033j$.util.function.InterfaceC2831q
     /* renamed from: f */
-    public InterfaceC2831q mo140f(InterfaceC2831q interfaceC2831q) {
+    public InterfaceC2831q mo158f(InterfaceC2831q interfaceC2831q) {
         Objects.requireNonNull(interfaceC2831q);
         return new C2830p(this, interfaceC2831q);
     }
 
     @Override // p033j$.util.function.InterfaceC2839y
     public Object get() {
-        if (this.f1047a) {
-            return C2844k.m524d(((Long) this.f1048b).longValue());
+        if (this.f1050a) {
+            return C2844k.m542d(((Long) this.f1051b).longValue());
         }
         return null;
     }

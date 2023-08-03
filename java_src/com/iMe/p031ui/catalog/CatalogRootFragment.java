@@ -27,6 +27,7 @@ import com.iMe.p031ui.catalog.tabs.CatalogFragment;
 import com.iMe.p031ui.wallet.common.BottomNavigationDelegate;
 import com.iMe.storage.domain.model.catalog.ChatType;
 import com.iMe.storage.domain.utils.system.ResourceManager;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -38,6 +39,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -46,14 +48,19 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
 import org.koin.core.qualifier.StringQualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.LanguageSelectActivity;
@@ -82,18 +89,114 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
-        CatalogRootFragment$presenter$2 catalogRootFragment$presenter$2 = new CatalogRootFragment$presenter$2(this);
+        Function0<CatalogRootPresenter> function0 = new Function0<CatalogRootPresenter>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogRootPresenter invoke() {
+                Lazy lazy4;
+                final CatalogRootFragment catalogRootFragment = CatalogRootFragment.this;
+                lazy4 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CatalogRootPresenter>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.catalog.CatalogRootPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CatalogRootPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogRootPresenter.class), qualifier, function02);
+                    }
+                });
+                return (CatalogRootPresenter) lazy4.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogRootPresenter.class.getName() + ".presenter", catalogRootFragment$presenter$2);
-        StringQualifier common_bottom_navigator = NavigationModuleKt.getCOMMON_BOTTOM_NAVIGATOR();
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogRootPresenter.class.getName() + ".presenter", function0);
+        final StringQualifier common_bottom_navigator = NavigationModuleKt.getCOMMON_BOTTOM_NAVIGATOR();
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new CatalogRootFragment$special$$inlined$inject$default$1(this, common_bottom_navigator, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<NavigationRouter<CatalogFragment>>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.navigation.common.router.base.NavigationRouter<com.iMe.ui.catalog.tabs.CatalogFragment>] */
+            @Override // kotlin.jvm.functions.Function0
+            public final NavigationRouter<CatalogFragment> invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = common_bottom_navigator;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(NavigationRouter.class), qualifier, function02);
+            }
+        });
         this.bottomNavigationRouter$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new CatalogRootFragment$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy2;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CatalogRootFragment$binding$2(this), 1, (Object) null);
-        lazy3 = LazyKt__LazyJVMKt.lazy(new CatalogRootFragment$tabs$2(this));
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentCatalogGlobalBinding>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentCatalogGlobalBinding invoke() {
+                return ForkFragmentCatalogGlobalBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CatalogRootFragment.this));
+            }
+        }, 1, (Object) null);
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<List<NavigationTab<CatalogFragment>>>() { // from class: com.iMe.ui.catalog.CatalogRootFragment$tabs$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<NavigationTab<CatalogFragment>> invoke() {
+                List<NavigationTab<CatalogFragment>> initTabs;
+                initTabs = CatalogRootFragment.this.initTabs();
+                return initTabs;
+            }
+        });
         this.tabs$delegate = lazy3;
     }
 
@@ -211,10 +314,10 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i2 = Theme.key_actionBarDefaultSelector;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogRootFragment.getThemeDescriptions$lambda$4(CatalogRootFragment.this);
@@ -235,7 +338,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     public static final void getThemeDescriptions$lambda$4(CatalogRootFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ForkFragmentCatalogGlobalBinding binding = this$0.getBinding();
-        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m55dp(30.0f));
+        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m73dp(30.0f));
         binding.realtimeBlur.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(Theme.key_chats_actionBackground), 55));
     }
 
@@ -280,14 +383,14 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setCastShadows(false);
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.catalog_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3417R.C3419drawable.msg_language);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setCastShadows(false);
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.catalog_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3419R.C3421drawable.msg_language);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CatalogRootPresenter presenter;
                 if (i == -1) {
@@ -321,9 +424,9 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     /* JADX INFO: Access modifiers changed from: private */
     public final List<NavigationTab<CatalogFragment>> initTabs() {
         List<NavigationTab<CatalogFragment>> mutableListOf;
-        int i = C3417R.C3420id.catalog_root_bottom_navigation_channels;
+        int i = C3419R.C3422id.catalog_root_bottom_navigation_channels;
         CatalogFragment.Companion companion = CatalogFragment.Companion;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3417R.C3420id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3419R.C3422id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
         Iterator<T> it = mutableListOf.iterator();
         while (it.hasNext()) {
             ((CatalogFragment) ((NavigationTab) it.next()).getFragment()).setBottomNavigationDelegate(this);
@@ -343,7 +446,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3417R.C3420id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3417R.string.catalog_navigation_channels), C3417R.C3419drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3417R.C3420id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3417R.string.catalog_navigation_groups), C3417R.C3419drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3419R.C3422id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3419R.string.catalog_navigation_channels), C3419R.C3421drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3419R.C3422id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3419R.string.catalog_navigation_groups), C3419R.C3421drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

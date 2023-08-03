@@ -4,28 +4,6 @@
 
 
 # virtual methods
-.method public abstract activateWallet(Lcom/iMe/storage/data/network/model/request/wallet/ActivateWalletRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/ActivateWalletRequest;
-        .annotation runtime Lretrofit2/http/Body;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/storage/data/network/model/request/wallet/ActivateWalletRequest;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Ljava/lang/Object;",
-            ">;>;"
-        }
-    .end annotation
-
-    .annotation runtime Lretrofit2/http/POST;
-        value = "firstWalletActivation"
-    .end annotation
-.end method
-
 .method public abstract detachCustomToken(Lcom/iMe/storage/data/network/model/request/wallet/TokenCommonRequest;)Lio/reactivex/Observable;
     .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/TokenCommonRequest;
         .annotation runtime Lretrofit2/http/Body;

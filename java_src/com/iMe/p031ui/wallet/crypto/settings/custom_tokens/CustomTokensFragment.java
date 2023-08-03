@@ -19,6 +19,7 @@ import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.crypto.settings.custom_tokens.adapter.CustomTokensRecycleAdapter;
 import com.iMe.p031ui.wallet.crypto.settings.custom_tokens.adapter.diff.CustomTokensDiffCallback;
 import com.iMe.p031ui.wallet.crypto.token.TokenManagementFragment;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -27,7 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -35,13 +38,18 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCustomTokensBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
@@ -62,13 +70,77 @@ public final class CustomTokensFragment extends WalletAuthBaseFragment implement
 
     public CustomTokensFragment() {
         Lazy lazy;
-        CustomTokensFragment$presenter$2 customTokensFragment$presenter$2 = new CustomTokensFragment$presenter$2(this);
+        Function0<CustomTokensPresenter> function0 = new Function0<CustomTokensPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CustomTokensPresenter invoke() {
+                Lazy lazy2;
+                final CustomTokensFragment customTokensFragment = CustomTokensFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CustomTokensPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CustomTokensPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CustomTokensPresenter.class), qualifier, function02);
+                    }
+                });
+                return (CustomTokensPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CustomTokensPresenter.class.getName() + ".presenter", customTokensFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CustomTokensFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CustomTokensPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CustomTokensRecycleAdapter>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.settings.custom_tokens.adapter.CustomTokensRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CustomTokensRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CustomTokensRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.tokensRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CustomTokensFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentCustomTokensBinding>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentCustomTokensBinding invoke() {
+                return ForkFragmentCustomTokensBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CustomTokensFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -139,11 +211,11 @@ public final class CustomTokensFragment extends WalletAuthBaseFragment implement
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.wallet_home_crypto_tokens_settings_toolbar_title));
-        final ActionBarMenu createMenu = c3484ActionBar.createMenu();
-        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(IdFabric$Menu.SEARCH, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupActionBar$1$1$1
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        final ActionBarMenu createMenu = c3485ActionBar.createMenu();
+        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(IdFabric$Menu.SEARCH, C3419R.C3421drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupActionBar$1$1$1
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 CustomTokensPresenter presenter;
@@ -175,11 +247,11 @@ public final class CustomTokensFragment extends WalletAuthBaseFragment implement
         EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
         searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(128)});
         searchField.setImeOptions(Integer.MIN_VALUE);
-        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3417R.string.token_search_hint));
-        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
-        createMenu.addItem(IdFabric$Menu.ADD_TOKEN, C3417R.C3419drawable.msg_add);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3419R.string.token_search_hint));
+        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3419R.string.Search));
+        createMenu.addItem(IdFabric$Menu.ADD_TOKEN, C3419R.C3421drawable.msg_add);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CustomTokensPresenter presenter;
                 if (i == -1) {
@@ -223,8 +295,44 @@ public final class CustomTokensFragment extends WalletAuthBaseFragment implement
     private final void setupListeners() {
         final CustomTokensRecycleAdapter tokensRecycleAdapter = getTokensRecycleAdapter();
         GlobalStateProvider globalStateProvider = tokensRecycleAdapter.getGlobalStateProvider();
-        globalStateProvider.setOnRetryButtonClickAction(new CustomTokensFragment$setupListeners$1$1$1(this));
-        globalStateProvider.setOnEmptyButtonClickAction(new CustomTokensFragment$setupListeners$1$1$2(this));
+        globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupListeners$1$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                CustomTokensPresenter presenter;
+                presenter = CustomTokensFragment.this.getPresenter();
+                presenter.reload();
+            }
+        });
+        globalStateProvider.setOnEmptyButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$setupListeners$1$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                CustomTokensPresenter presenter;
+                presenter = CustomTokensFragment.this.getPresenter();
+                presenter.onAddClicked();
+            }
+        });
         tokensRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {

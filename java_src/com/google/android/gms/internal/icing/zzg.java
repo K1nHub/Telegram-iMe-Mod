@@ -17,13 +17,13 @@ import java.util.BitSet;
 /* loaded from: classes.dex */
 public final class zzg extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzg> CREATOR = new zzh();
-    @SafeParcelable.Field(m779id = 1)
+    @SafeParcelable.Field(m797id = 1)
     final zzk[] zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final String zzb;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final boolean zzc;
-    @SafeParcelable.Field(m779id = 4)
+    @SafeParcelable.Field(m797id = 4)
     public final Account zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -72,7 +72,7 @@ public final class zzg extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzg(@SafeParcelable.Param(m778id = 1) zzk[] zzkVarArr, @SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) boolean z, @SafeParcelable.Param(m778id = 4) Account account) {
+    public zzg(@SafeParcelable.Param(m796id = 1) zzk[] zzkVarArr, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) boolean z, @SafeParcelable.Param(m796id = 4) Account account) {
         this.zza = zzkVarArr;
         this.zzb = str;
         this.zzc = z;

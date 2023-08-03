@@ -76,7 +76,7 @@ public final class WalletConnectTransactionParamsResponse {
         GasPriceResponse gasPriceResponse = this.fastest;
         int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
         GasPriceResponse gasPriceResponse2 = this.safeLow;
-        return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId);
+        return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
     }
 
     public String toString() {

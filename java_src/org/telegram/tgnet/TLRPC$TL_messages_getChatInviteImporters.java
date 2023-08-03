@@ -10,7 +10,7 @@ public class TLRPC$TL_messages_getChatInviteImporters extends TLObject {
     public TLRPC$InputPeer peer;
 
     /* renamed from: q */
-    public String f1602q;
+    public String f1610q;
     public boolean requested;
 
     @Override // org.telegram.tgnet.TLObject
@@ -29,7 +29,7 @@ public class TLRPC$TL_messages_getChatInviteImporters extends TLObject {
             abstractSerializedData.writeString(this.link);
         }
         if ((this.flags & 4) != 0) {
-            abstractSerializedData.writeString(this.f1602q);
+            abstractSerializedData.writeString(this.f1610q);
         }
         abstractSerializedData.writeInt32(this.offset_date);
         this.offset_user.serializeToStream(abstractSerializedData);

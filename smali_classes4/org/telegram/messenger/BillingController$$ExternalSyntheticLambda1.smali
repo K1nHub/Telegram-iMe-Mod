@@ -35,7 +35,7 @@
 .method public final onConsumeResponse(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/BillingController;->$r8$lambda$CI5PliQgom8y-XGNWhJkLBSBp3Q(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lorg/telegram/messenger/BillingController;->$r8$lambda$Uu1GmAqpPBqPTVz03ntZHXn1Qqg(Lcom/android/billingclient/api/BillingResult;Ljava/lang/String;)V
 
     return-void
 .end method

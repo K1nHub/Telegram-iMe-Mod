@@ -11,3 +11,6 @@
 
 .method public abstract forEach(Lj$/util/function/BiConsumer;)V
 .end method
+
+.method public abstract getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.end method

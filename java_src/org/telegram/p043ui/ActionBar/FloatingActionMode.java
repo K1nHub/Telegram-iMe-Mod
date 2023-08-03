@@ -116,7 +116,7 @@ public final class FloatingActionMode extends ActionMode {
         this.mScreenRect = new Rect();
         this.mOriginatingView = view;
         view.getLocationOnScreen(iArr);
-        this.mBottomAllowance = AndroidUtilities.m54dp(20);
+        this.mBottomAllowance = AndroidUtilities.m72dp(20);
         this.mDisplaySize = new Point();
         setFloatingToolbar(floatingToolbar);
     }

@@ -12,16 +12,16 @@ public final class DebugMetadataKt {
         if (debugMetadataAnnotation == null) {
             return null;
         }
-        checkDebugMetadataVersion(1, debugMetadataAnnotation.m80v());
+        checkDebugMetadataVersion(1, debugMetadataAnnotation.m98v());
         int label = getLabel(baseContinuationImpl);
-        int i = label < 0 ? -1 : debugMetadataAnnotation.m82l()[label];
+        int i = label < 0 ? -1 : debugMetadataAnnotation.m100l()[label];
         String moduleName = ModuleNameRetriever.INSTANCE.getModuleName(baseContinuationImpl);
         if (moduleName == null) {
-            str = debugMetadataAnnotation.m84c();
+            str = debugMetadataAnnotation.m102c();
         } else {
-            str = moduleName + '/' + debugMetadataAnnotation.m84c();
+            str = moduleName + '/' + debugMetadataAnnotation.m102c();
         }
-        return new StackTraceElement(str, debugMetadataAnnotation.m81m(), debugMetadataAnnotation.m83f(), i);
+        return new StackTraceElement(str, debugMetadataAnnotation.m99m(), debugMetadataAnnotation.m101f(), i);
     }
 
     private static final DebugMetadata getDebugMetadataAnnotation(BaseContinuationImpl baseContinuationImpl) {

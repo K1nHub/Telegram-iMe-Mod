@@ -169,7 +169,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.surfaceSize = Size.UNKNOWN;
                 this.newlyRenderedFirstFrame = false;
                 this.timedMetadata = new Metadata((long) C0480C.TIME_UNSET, new Metadata.Entry[0]);
-                this.playlist = ImmutableList.m744of();
+                this.playlist = ImmutableList.m762of();
                 this.timeline = Timeline.EMPTY;
                 this.playlistMetadata = MediaMetadata.EMPTY;
                 this.currentMediaItemIndex = -1;
@@ -684,7 +684,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.durationUs = C0480C.TIME_UNSET;
                 this.positionInFirstPeriodUs = 0L;
                 this.isPlaceholder = false;
-                this.periods = ImmutableList.m744of();
+                this.periods = ImmutableList.m762of();
             }
 
             private Builder(MediaItemData mediaItemData) {
@@ -2292,7 +2292,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (positionDiscontinuityReason == 1) {
-            this.listeners.queueEvent(-1, ExoPlayerImpl$$ExternalSyntheticLambda26.INSTANCE);
+            this.listeners.queueEvent(-1, ExoPlayerImpl$$ExternalSyntheticLambda27.INSTANCE);
         }
         if (!state2.availableCommands.equals(state.availableCommands)) {
             this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.SimpleBasePlayer$$ExternalSyntheticLambda16

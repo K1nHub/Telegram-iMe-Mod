@@ -19,23 +19,17 @@ public class ContextProgressView extends View {
     private int outerKey;
     private Paint outerPaint;
     private int radOffset;
-    private Theme.ResourcesProvider resourcesProvider;
 
     public ContextProgressView(Context context, int i) {
-        this(context, i, null);
-    }
-
-    public ContextProgressView(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.innerPaint = new Paint(1);
         this.outerPaint = new Paint(1);
         this.cicleRect = new RectF();
         this.radOffset = 0;
-        this.resourcesProvider = resourcesProvider;
         this.innerPaint.setStyle(Paint.Style.STROKE);
-        this.innerPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.innerPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.outerPaint.setStyle(Paint.Style.STROKE);
-        this.outerPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.outerPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.outerPaint.setStrokeCap(Paint.Cap.ROUND);
         if (i == 0) {
             this.innerKey = Theme.key_contextProgressInner1;
@@ -64,13 +58,13 @@ public class ContextProgressView extends View {
     public void updateColors() {
         int i = this.innerKey;
         if (i >= 0) {
-            this.innerPaint.setColor(Theme.getColor(i, this.resourcesProvider));
+            this.innerPaint.setColor(Theme.getColor(i));
         } else {
             this.innerPaint.setColor(this.innerColor);
         }
         int i2 = this.outerKey;
         if (i2 >= 0) {
-            this.outerPaint.setColor(Theme.getColor(i2, this.resourcesProvider));
+            this.outerPaint.setColor(Theme.getColor(i2));
         } else {
             this.outerPaint.setColor(this.outerColor);
         }
@@ -100,10 +94,10 @@ public class ContextProgressView extends View {
         long j = currentTimeMillis - this.lastUpdateTime;
         this.lastUpdateTime = currentTimeMillis;
         this.radOffset = (int) (this.radOffset + (((float) (j * 360)) / 1000.0f));
-        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.m54dp(9);
-        int measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.m54dp(9);
-        this.cicleRect.set(measuredWidth, measuredHeight, measuredWidth + AndroidUtilities.m54dp(18), measuredHeight + AndroidUtilities.m54dp(18));
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, AndroidUtilities.m54dp(9), this.innerPaint);
+        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.m72dp(9);
+        int measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.m72dp(9);
+        this.cicleRect.set(measuredWidth, measuredHeight, measuredWidth + AndroidUtilities.m72dp(18), measuredHeight + AndroidUtilities.m72dp(18));
+        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, AndroidUtilities.m72dp(9), this.innerPaint);
         canvas.drawArc(this.cicleRect, this.radOffset - 90, 90.0f, false, this.outerPaint);
         invalidate();
     }

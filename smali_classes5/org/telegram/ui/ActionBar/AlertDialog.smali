@@ -153,6 +153,8 @@
 
 .field private showRunnable:Ljava/lang/Runnable;
 
+.field private shownAt:J
+
 .field private subtitle:Ljava/lang/CharSequence;
 
 .field private subtitleTextView:Landroid/widget/TextView;
@@ -1283,7 +1285,7 @@
 .method private canTextInput(Landroid/view/View;)Z
     .locals 4
 
-    .line 1274
+    .line 1277
     invoke-virtual {p1}, Landroid/view/View;->onCheckIsTextEditor()Z
 
     move-result v0
@@ -1294,7 +1296,7 @@
 
     return v1
 
-    .line 1277
+    .line 1280
     :cond_0
     instance-of v0, p1, Landroid/view/ViewGroup;
 
@@ -1304,11 +1306,11 @@
 
     return v2
 
-    .line 1280
+    .line 1283
     :cond_1
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 1281
+    .line 1284
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -1318,12 +1320,12 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1284
+    .line 1287
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1285
+    .line 1288
     invoke-direct {p0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->canTextInput(Landroid/view/View;)Z
 
     move-result v3
@@ -1362,12 +1364,12 @@
 .method private synthetic lambda$onCreate$1(Landroid/view/View;)V
     .locals 1
 
-    .line 827
+    .line 830
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz v0, :cond_0
 
-    .line 828
+    .line 831
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -1380,7 +1382,7 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 830
+    .line 833
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
@@ -1390,23 +1392,23 @@
 .method private synthetic lambda$onCreate$2(Landroid/view/View;)V
     .locals 1
 
-    .line 982
+    .line 985
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz p1, :cond_0
 
     const/4 v0, -0x1
 
-    .line 983
+    .line 986
     invoke-interface {p1, p0, v0}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 985
+    .line 988
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->dismissDialogByButtons:Z
 
     if-eqz p1, :cond_1
 
-    .line 986
+    .line 989
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     :cond_1
@@ -1416,23 +1418,23 @@
 .method private synthetic lambda$onCreate$3(Landroid/view/View;)V
     .locals 1
 
-    .line 1022
+    .line 1025
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->negativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz p1, :cond_0
 
     const/4 v0, -0x2
 
-    .line 1023
+    .line 1026
     invoke-interface {p1, p0, v0}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 1025
+    .line 1028
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->dismissDialogByButtons:Z
 
     if-eqz p1, :cond_1
 
-    .line 1026
+    .line 1029
     invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
 
     :cond_1
@@ -1442,23 +1444,23 @@
 .method private synthetic lambda$onCreate$4(Landroid/view/View;)V
     .locals 1
 
-    .line 1062
+    .line 1065
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz p1, :cond_0
 
     const/4 v0, -0x2
 
-    .line 1063
+    .line 1066
     invoke-interface {p1, p0, v0}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 1065
+    .line 1068
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->dismissDialogByButtons:Z
 
     if-eqz p1, :cond_1
 
-    .line 1066
+    .line 1069
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     :cond_1
@@ -1472,7 +1474,7 @@
 
     return-void
 
-    .line 1135
+    .line 1138
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurPaint:Landroid/graphics/Paint;
 
@@ -1480,18 +1482,18 @@
 
     if-nez v0, :cond_1
 
-    .line 1136
+    .line 1139
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurPaint:Landroid/graphics/Paint;
 
-    .line 1138
+    .line 1141
     :cond_1
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurBitmap:Landroid/graphics/Bitmap;
 
-    .line 1139
+    .line 1142
     new-instance p2, Landroid/graphics/BitmapShader;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurBitmap:Landroid/graphics/Bitmap;
@@ -1502,12 +1504,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurShader:Landroid/graphics/BitmapShader;
 
-    .line 1140
+    .line 1143
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1141
+    .line 1144
     new-instance p2, Landroid/graphics/Matrix;
 
     invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
@@ -1516,10 +1518,10 @@
 
     const/high16 v0, 0x41000000    # 8.0f
 
-    .line 1142
+    .line 1145
     invoke-virtual {p2, v0, v0}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 1143
+    .line 1146
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurMatrix:Landroid/graphics/Matrix;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->containerViewLocation:[I
@@ -1540,14 +1542,14 @@
 
     invoke-virtual {p2, v2, v0}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1144
+    .line 1147
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurShader:Landroid/graphics/BitmapShader;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p2, v0}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1145
+    .line 1148
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->invalidate()V
 
     return-void
@@ -1556,15 +1558,15 @@
 .method private synthetic lambda$showCancelAlert$6(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1205
+    .line 1208
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->onCancelListener:Landroid/content/DialogInterface$OnCancelListener;
 
     if-eqz p1, :cond_0
 
-    .line 1206
+    .line 1209
     invoke-interface {p1, p0}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
 
-    .line 1208
+    .line 1211
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
@@ -1576,7 +1578,7 @@
 
     const/4 p1, 0x0
 
-    .line 1210
+    .line 1213
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->cancelDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
@@ -1587,7 +1589,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1219
+    .line 1222
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowVisibility:[Z
 
     aget-boolean v0, v0, p1
@@ -1603,25 +1605,25 @@
 
     if-eqz v0, :cond_5
 
-    .line 1220
+    .line 1223
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowVisibility:[Z
 
     aput-boolean p2, v0, p1
 
-    .line 1221
+    .line 1224
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object v1, v0, p1
 
     if-eqz v1, :cond_2
 
-    .line 1222
+    .line 1225
     aget-object v0, v0, p1
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1224
+    .line 1227
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
@@ -1631,14 +1633,14 @@
 
     aput-object v1, v0, p1
 
-    .line 1225
+    .line 1228
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
 
     aget-object v1, v0, p1
 
     if-eqz v1, :cond_4
 
-    .line 1226
+    .line 1229
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object v1, v1, p1
@@ -1675,7 +1677,7 @@
 
     invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1228
+    .line 1231
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
@@ -1685,7 +1687,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1229
+    .line 1232
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object p2, p2, p1
@@ -1696,7 +1698,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1245
+    .line 1248
     :try_start_0
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
@@ -1711,7 +1713,7 @@
     :catch_0
     move-exception p1
 
-    .line 1247
+    .line 1250
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -1722,7 +1724,7 @@
 .method private showCancelAlert()V
     .locals 3
 
-    .line 1197
+    .line 1200
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->canCacnel:Z
 
     if-eqz v0, :cond_1
@@ -1733,7 +1735,7 @@
 
     goto :goto_0
 
-    .line 1200
+    .line 1203
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1741,9 +1743,11 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 1201
+    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 1204
     sget v1, Lorg/telegram/messenger/R$string;->StopLoadingTitle:I
 
     const-string v2, "StopLoadingTitle"
@@ -1754,7 +1758,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1202
+    .line 1205
     sget v1, Lorg/telegram/messenger/R$string;->StopLoading:I
 
     const-string v2, "StopLoading"
@@ -1765,7 +1769,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1203
+    .line 1206
     sget v1, Lorg/telegram/messenger/R$string;->WaitMore:I
 
     const-string v2, "WaitMore"
@@ -1778,7 +1782,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1204
+    .line 1207
     sget v1, Lorg/telegram/messenger/R$string;->Stop:I
 
     const-string v2, "Stop"
@@ -1793,14 +1797,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1210
+    .line 1213
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1212
+    .line 1215
     :try_start_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1844,7 +1848,7 @@
 .method private updateLineProgressTextView()V
     .locals 4
 
-    .line 1266
+    .line 1269
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -1877,17 +1881,17 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1294
+    .line 1297
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_0
 
-    .line 1295
+    .line 1298
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_0
 
-    .line 1296
+    .line 1299
     invoke-virtual {p1}, Landroid/widget/TextView;->invalidate()V
 
     :cond_0
@@ -1897,7 +1901,7 @@
 .method public dismiss()V
     .locals 2
 
-    .line 1303
+    .line 1315
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1906,37 +1910,37 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1304
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->onDismissListener:Landroid/content/DialogInterface$OnDismissListener;
 
     if-eqz v0, :cond_0
 
-    .line 1305
+    .line 1317
     invoke-interface {v0, p0}, Landroid/content/DialogInterface$OnDismissListener;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 1307
+    .line 1319
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->cancelDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     if-eqz v0, :cond_1
 
-    .line 1308
+    .line 1320
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    .line 1311
+    .line 1323
     :cond_1
     :try_start_0
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1315
+    .line 1327
     :catchall_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->showRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1317
+    .line 1329
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurShader:Landroid/graphics/BitmapShader;
 
     if-eqz v0, :cond_2
@@ -1945,33 +1949,68 @@
 
     if-eqz v0, :cond_2
 
-    .line 1318
+    .line 1330
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     const/4 v0, 0x0
 
-    .line 1319
+    .line 1331
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurShader:Landroid/graphics/BitmapShader;
 
-    .line 1320
+    .line 1332
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurPaint:Landroid/graphics/Paint;
 
-    .line 1321
+    .line 1333
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurBitmap:Landroid/graphics/Bitmap;
 
     :cond_2
     return-void
 .end method
 
+.method public dismissUnless(J)V
+    .locals 4
+
+    .line 1305
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shownAt:J
+
+    sub-long/2addr v0, v2
+
+    cmp-long v2, v0, p1
+
+    if-gez v2, :cond_0
+
+    .line 1307
+    new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda6;
+
+    invoke-direct {v2, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+
+    sub-long/2addr v0, p1
+
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+
+    goto :goto_0
+
+    .line 1309
+    :cond_0
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
+
+    :goto_0
+    return-void
+.end method
+
 .method public getButton(I)Landroid/view/View;
     .locals 1
 
-    .line 1426
+    .line 1438
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 1427
+    .line 1439
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1991,7 +2030,7 @@
 .method public getButtonsLayout()Landroid/view/ViewGroup;
     .locals 1
 
-    .line 1476
+    .line 1488
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     return-object v0
@@ -2009,7 +2048,7 @@
 .method public getItemsCount()I
     .locals 1
 
-    .line 1389
+    .line 1401
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2047,7 +2086,7 @@
 .method protected getThemedColor(I)I
     .locals 1
 
-    .line 1463
+    .line 1475
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -2069,12 +2108,12 @@
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 1434
+    .line 1446
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {p1}, Landroid/widget/ScrollView;->invalidate()V
 
-    .line 1435
+    .line 1447
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->invalidate()V
@@ -2085,17 +2124,17 @@
 .method public onBackPressed()V
     .locals 2
 
-    .line 1157
+    .line 1160
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
-    .line 1158
+    .line 1161
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->onBackButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     if-eqz v0, :cond_0
 
     const/4 v1, -0x2
 
-    .line 1159
+    .line 1162
     invoke-interface {v0, p0, v1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
     :cond_0
@@ -2107,10 +2146,10 @@
 
     move-object/from16 v0, p0
 
-    .line 344
+    .line 347
     invoke-super/range {p0 .. p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 346
+    .line 349
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$1;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2121,10 +2160,10 @@
 
     const/4 v2, 0x1
 
-    .line 609
+    .line 612
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 610
+    .line 613
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurredBackground:Z
 
     const/4 v4, 0x0
@@ -2146,13 +2185,13 @@
 
     if-eq v3, v5, :cond_2
 
-    .line 611
+    .line 614
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 612
+    .line 615
     invoke-virtual {v1, v7, v7, v7, v7}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 613
+    .line 616
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurredBackground:Z
 
     if-eqz v3, :cond_1
@@ -2161,32 +2200,32 @@
 
     if-nez v3, :cond_1
 
-    .line 614
+    .line 617
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setWillNotDraw(Z)V
 
-    .line 616
+    .line 619
     :cond_1
     iput-boolean v7, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->drawBackground:Z
 
     goto :goto_0
 
-    .line 618
+    .line 621
     :cond_2
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->notDrawBackgroundOnTopView:Z
 
     if-eqz v3, :cond_3
 
-    .line 619
+    .line 622
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 620
+    .line 623
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v8, v3}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 621
+    .line 624
     iget v8, v3, Landroid/graphics/Rect;->left:I
 
     iget v9, v3, Landroid/graphics/Rect;->top:I
@@ -2197,27 +2236,27 @@
 
     invoke-virtual {v1, v8, v9, v10, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 622
+    .line 625
     iput-boolean v2, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->drawBackground:Z
 
     goto :goto_0
 
-    .line 624
+    .line 627
     :cond_3
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 625
+    .line 628
     invoke-virtual {v1, v7, v7, v7, v7}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 626
+    .line 629
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 627
+    .line 630
     iput-boolean v7, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->drawBackground:Z
 
-    .line 630
+    .line 633
     :goto_0
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2235,10 +2274,10 @@
     :goto_1
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setFitsSystemWindows(Z)V
 
-    .line 631
+    .line 634
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
-    .line 633
+    .line 636
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonText:Ljava/lang/CharSequence;
 
     if-nez v3, :cond_6
@@ -2262,7 +2301,7 @@
     :goto_2
     move v3, v2
 
-    .line 635
+    .line 638
     :goto_3
     iget v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topResId:I
 
@@ -2282,16 +2321,16 @@
 
     goto :goto_4
 
-    .line 696
+    .line 699
     :cond_7
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topView:Landroid/view/View;
 
     if-eqz v8, :cond_f
 
-    .line 697
+    .line 700
     invoke-virtual {v8, v7, v7, v7, v7}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 698
+    .line 701
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topView:Landroid/view/View;
 
     const/4 v11, -0x1
@@ -2316,7 +2355,7 @@
 
     goto/16 :goto_a
 
-    .line 636
+    .line 639
     :cond_8
     :goto_4
     new-instance v8, Lorg/telegram/ui/Components/RLottieImageView;
@@ -2329,34 +2368,34 @@
 
     iput-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 637
+    .line 640
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v11, :cond_9
 
-    .line 638
+    .line 641
     invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_6
 
-    .line 639
+    .line 642
     :cond_9
     iget v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topResId:I
 
     if-eqz v11, :cond_a
 
-    .line 640
+    .line 643
     invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
     goto :goto_6
 
-    .line 642
+    .line 645
     :cond_a
     iget-boolean v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationAutoRepeat:Z
 
     invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 643
+    .line 646
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationId:I
@@ -2365,19 +2404,19 @@
 
     invoke-virtual {v8, v11, v12, v12}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 644
+    .line 647
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationLayerColors:Ljava/util/Map;
 
     if-eqz v8, :cond_b
 
-    .line 645
+    .line 648
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v8
 
-    .line 646
+    .line 649
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationLayerColors:Ljava/util/Map;
 
     invoke-interface {v11}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -2401,7 +2440,7 @@
 
     check-cast v12, Ljava/util/Map$Entry;
 
-    .line 647
+    .line 650
     invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v13
@@ -2422,13 +2461,13 @@
 
     goto :goto_5
 
-    .line 650
+    .line 653
     :cond_b
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 652
+    .line 655
     :goto_6
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -2436,24 +2475,24 @@
 
     invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 653
+    .line 656
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
 
     if-eqz v8, :cond_c
 
-    .line 654
+    .line 657
     new-instance v8, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v8}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    .line 655
+    .line 658
     iget v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topBackgroundColor:I
 
     invoke-virtual {v8, v11}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
     const/16 v11, 0x80
 
-    .line 656
+    .line 659
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -2462,7 +2501,7 @@
 
     invoke-virtual {v8, v11}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    .line 657
+    .line 660
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v12, Lorg/telegram/ui/ActionBar/AlertDialog$2;
@@ -2473,12 +2512,12 @@
 
     const/16 v8, 0x5c
 
-    .line 681
+    .line 684
     iput v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topHeight:I
 
     goto :goto_7
 
-    .line 683
+    .line 686
     :cond_c
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -2494,13 +2533,13 @@
 
     invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 685
+    .line 688
     :goto_7
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
 
     if-eqz v8, :cond_d
 
-    .line 686
+    .line 689
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v11, 0x10
@@ -2515,19 +2554,19 @@
 
     goto :goto_8
 
-    .line 688
+    .line 691
     :cond_d
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 691
+    .line 694
     :goto_8
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topIconImagePaddingsRect:Landroid/graphics/Rect;
 
     if-eqz v8, :cond_e
 
-    .line 692
+    .line 695
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget v12, v8, Landroid/graphics/Rect;->left:I
@@ -2542,13 +2581,13 @@
 
     goto :goto_9
 
-    .line 694
+    .line 697
     :cond_e
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v8, v7, v7, v7, v7}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 695
+    .line 698
     :goto_9
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -2572,7 +2611,7 @@
 
     invoke-virtual {v1, v8, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 701
+    .line 704
     :cond_f
     :goto_a
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->title:Ljava/lang/CharSequence;
@@ -2585,7 +2624,7 @@
 
     if-eqz v8, :cond_17
 
-    .line 702
+    .line 705
     new-instance v8, Landroid/widget/FrameLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2600,7 +2639,7 @@
 
     const/16 v17, -0x2
 
-    .line 703
+    .line 706
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
 
     const/16 v19, 0x18
@@ -2619,7 +2658,7 @@
 
     invoke-virtual {v1, v8, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 705
+    .line 708
     new-instance v4, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2630,12 +2669,12 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
-    .line 706
+    .line 709
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 707
+    .line 710
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -2646,14 +2685,14 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 708
+    .line 711
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     const/high16 v8, 0x41a00000    # 20.0f
 
     invoke-virtual {v4, v2, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 709
+    .line 712
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -2662,7 +2701,7 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 710
+    .line 713
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
@@ -2690,7 +2729,7 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 711
+    .line 714
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleContainer:Landroid/widget/FrameLayout;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
@@ -2762,7 +2801,7 @@
 
     invoke-virtual {v4, v8, v15}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 714
+    .line 717
     :cond_17
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitle:Ljava/lang/CharSequence;
 
@@ -2772,7 +2811,7 @@
 
     if-eqz v4, :cond_1a
 
-    .line 715
+    .line 718
     new-instance v4, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2783,12 +2822,12 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitleTextView:Landroid/widget/TextView;
 
-    .line 716
+    .line 719
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 717
+    .line 720
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitleTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
@@ -2799,14 +2838,14 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 718
+    .line 721
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitleTextView:Landroid/widget/TextView;
 
     const/high16 v8, 0x41900000    # 18.0f
 
     invoke-virtual {v4, v2, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 719
+    .line 722
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitleTextView:Landroid/widget/TextView;
 
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -2825,7 +2864,7 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 720
+    .line 723
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleContainer:Landroid/widget/FrameLayout;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->secondTitleTextView:Landroid/widget/TextView;
@@ -2862,13 +2901,13 @@
 
     invoke-virtual {v4, v8, v15}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 723
+    .line 726
     :cond_1a
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitle:Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_1e
 
-    .line 724
+    .line 727
     new-instance v4, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2879,12 +2918,12 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitleTextView:Landroid/widget/TextView;
 
-    .line 725
+    .line 728
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitle:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 726
+    .line 729
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitleTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
@@ -2895,14 +2934,14 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 727
+    .line 730
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitleTextView:Landroid/widget/TextView;
 
     const/high16 v8, 0x41600000    # 14.0f
 
     invoke-virtual {v4, v2, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 728
+    .line 731
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitleTextView:Landroid/widget/TextView;
 
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -2921,7 +2960,7 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 729
+    .line 732
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->subtitleTextView:Landroid/widget/TextView;
 
     const/4 v15, -0x2
@@ -2966,7 +3005,7 @@
 
     invoke-virtual {v1, v4, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 732
+    .line 735
     :cond_1e
     iget v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewStyle:I
 
@@ -2976,7 +3015,7 @@
 
     if-nez v4, :cond_1f
 
-    .line 733
+    .line 736
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3001,7 +3040,7 @@
 
     aput-object v9, v4, v7
 
-    .line 734
+    .line 737
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3026,35 +3065,35 @@
 
     aput-object v9, v4, v2
 
-    .line 735
-    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
-
-    aget-object v4, v4, v7
-
-    invoke-virtual {v4, v7}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
-
-    .line 736
-    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
-
-    aget-object v4, v4, v2
-
-    invoke-virtual {v4, v7}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
-
-    .line 737
-    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
-
-    aget-object v4, v4, v7
-
-    invoke-virtual {v4, v0}, Landroid/graphics/drawable/BitmapDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
     .line 738
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
 
+    aget-object v4, v4, v7
+
+    invoke-virtual {v4, v7}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
+
+    .line 739
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
+
+    aget-object v4, v4, v2
+
+    invoke-virtual {v4, v7}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
+
+    .line 740
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
+
+    aget-object v4, v4, v7
+
+    invoke-virtual {v4, v0}, Landroid/graphics/drawable/BitmapDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 741
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadow:[Landroid/graphics/drawable/BitmapDrawable;
+
     aget-object v4, v4, v2
 
     invoke-virtual {v4, v0}, Landroid/graphics/drawable/BitmapDrawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 740
+    .line 743
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog$3;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3065,10 +3104,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
-    .line 755
+    .line 758
     invoke-virtual {v4, v7}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 756
+    .line 759
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
@@ -3079,7 +3118,7 @@
 
     invoke-static {v4, v9}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
-    .line 757
+    .line 760
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     const/16 v23, -0x1
@@ -3100,7 +3139,7 @@
 
     invoke-virtual {v1, v4, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 759
+    .line 762
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3111,10 +3150,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
 
-    .line 760
+    .line 763
     invoke-virtual {v4, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 761
+    .line 764
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     iget-object v9, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
@@ -3125,7 +3164,7 @@
 
     invoke-virtual {v4, v9, v12}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 764
+    .line 767
     :cond_1f
     new-instance v4, Lorg/telegram/ui/Components/EffectsTextView;
 
@@ -3137,10 +3176,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
-    .line 765
+    .line 768
     invoke-static {v4}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 766
+    .line 769
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     iget-boolean v9, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
@@ -3161,14 +3200,14 @@
 
     invoke-virtual {v4, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 767
+    .line 770
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     const/high16 v9, 0x41800000    # 16.0f
 
     invoke-virtual {v4, v2, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 768
+    .line 771
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     new-instance v12, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
@@ -3177,7 +3216,7 @@
 
     invoke-virtual {v4, v12}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 769
+    .line 772
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
@@ -3188,22 +3227,22 @@
 
     invoke-virtual {v4, v12}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 770
+    .line 773
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextViewClickable:Z
 
     if-nez v4, :cond_21
 
-    .line 771
+    .line 774
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setClickable(Z)V
 
-    .line 772
+    .line 775
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 774
+    .line 777
     :cond_21
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
@@ -3232,14 +3271,14 @@
 
     invoke-virtual {v4, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 775
+    .line 778
     iget v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewStyle:I
 
     const/16 v12, 0x11
 
     if-ne v4, v5, :cond_28
 
-    .line 776
+    .line 779
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     const/16 v23, -0x2
@@ -3286,7 +3325,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 778
+    .line 781
     new-instance v4, Lorg/telegram/ui/Components/LineProgressView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3297,7 +3336,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
-    .line 779
+    .line 782
     iget v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->currentProgress:I
 
     int-to-float v5, v5
@@ -3308,7 +3347,7 @@
 
     invoke-virtual {v4, v5, v7}, Lorg/telegram/ui/Components/LineProgressView;->setProgress(FZ)V
 
-    .line 780
+    .line 783
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLineProgress:I
@@ -3319,7 +3358,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/LineProgressView;->setProgressColor(I)V
 
-    .line 781
+    .line 784
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLineProgressBackground:I
@@ -3330,7 +3369,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/LineProgressView;->setBackColor(I)V
 
-    .line 782
+    .line 785
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     const/16 v23, -0x1
@@ -3351,7 +3390,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 784
+    .line 787
     new-instance v4, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3362,14 +3401,14 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
-    .line 785
+    .line 788
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 786
+    .line 789
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3388,7 +3427,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 787
+    .line 790
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
@@ -3399,14 +3438,14 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 788
+    .line 791
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
     const/high16 v5, 0x41600000    # 14.0f
 
     invoke-virtual {v4, v2, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 789
+    .line 792
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressViewPercent:Landroid/widget/TextView;
 
     const/16 v23, -0x2
@@ -3441,7 +3480,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 790
+    .line 793
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->updateLineProgressTextView()V
 
     goto/16 :goto_1c
@@ -3449,13 +3488,13 @@
     :cond_28
     if-ne v4, v6, :cond_2b
 
-    .line 792
+    .line 795
     invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 793
+    .line 796
     invoke-virtual {v0, v7}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    .line 795
+    .line 798
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3466,7 +3505,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
-    .line 796
+    .line 799
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialog_inlineProgressBackground:I
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/AlertDialog;->getThemedColor(I)I
@@ -3475,7 +3514,7 @@
 
     iput v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->backgroundColor:I
 
-    .line 797
+    .line 800
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurredBackground:Z
 
     if-eqz v4, :cond_29
@@ -3484,7 +3523,7 @@
 
     if-eqz v4, :cond_2a
 
-    .line 798
+    .line 801
     :cond_29
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
@@ -3502,7 +3541,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 800
+    .line 803
     :cond_2a
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
@@ -3514,7 +3553,7 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 802
+    .line 805
     new-instance v4, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3527,14 +3566,14 @@
 
     const/16 v6, 0x20
 
-    .line 803
+    .line 806
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/RadialProgressView;->setSize(I)V
 
-    .line 804
+    .line 807
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialog_inlineProgress:I
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/AlertDialog;->getThemedColor(I)I
@@ -3543,7 +3582,7 @@
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 805
+    .line 808
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
     invoke-static {v5, v5, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -3554,7 +3593,7 @@
 
     goto :goto_1c
 
-    .line 807
+    .line 810
     :cond_2b
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
 
@@ -3621,7 +3660,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 809
+    .line 812
     :goto_1c
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->message:Ljava/lang/CharSequence;
 
@@ -3633,27 +3672,27 @@
 
     if-nez v4, :cond_30
 
-    .line 810
+    .line 813
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->message:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 811
+    .line 814
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_1d
 
-    .line 813
+    .line 816
     :cond_30
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 816
+    .line 819
     :goto_1d
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->items:[Ljava/lang/CharSequence;
 
@@ -3661,7 +3700,7 @@
 
     move v4, v7
 
-    .line 817
+    .line 820
     :goto_1e
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->items:[Ljava/lang/CharSequence;
 
@@ -3669,14 +3708,14 @@
 
     if-ge v4, v15, :cond_33
 
-    .line 818
+    .line 821
     aget-object v6, v6, v4
 
     if-nez v6, :cond_31
 
     goto :goto_20
 
-    .line 821
+    .line 824
     :cond_31
     new-instance v6, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;
 
@@ -3688,7 +3727,7 @@
 
     invoke-direct {v6, v15, v14}, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 822
+    .line 825
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->items:[Ljava/lang/CharSequence;
 
     aget-object v14, v14, v4
@@ -3707,19 +3746,19 @@
     :goto_1f
     invoke-virtual {v6, v14, v15}, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 823
+    .line 826
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v14
 
     invoke-virtual {v6, v14}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 824
+    .line 827
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v14, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 825
+    .line 828
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
 
     const/16 v15, 0x32
@@ -3730,7 +3769,7 @@
 
     invoke-virtual {v14, v6, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 826
+    .line 829
     new-instance v14, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda2;
 
     invoke-direct {v14, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -3744,20 +3783,20 @@
 
     goto :goto_1e
 
-    .line 834
+    .line 837
     :cond_33
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->customView:Landroid/view/View;
 
     if-eqz v4, :cond_35
 
-    .line 835
+    .line 838
     invoke-virtual {v4}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
 
     if-eqz v4, :cond_34
 
-    .line 836
+    .line 839
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->customView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -3766,12 +3805,12 @@
 
     check-cast v4, Landroid/view/ViewGroup;
 
-    .line 837
+    .line 840
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->customView:Landroid/view/View;
 
     invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 839
+    .line 842
     :cond_34
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->scrollContainer:Landroid/widget/LinearLayout;
 
@@ -3792,17 +3831,17 @@
 
     if-eqz v3, :cond_45
 
-    .line 842
+    .line 845
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
     if-nez v3, :cond_39
 
-    .line 844
+    .line 847
     new-instance v3, Landroid/text/TextPaint;
 
     invoke-direct {v3}, Landroid/text/TextPaint;-><init>()V
 
-    .line 845
+    .line 848
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -3811,14 +3850,14 @@
 
     invoke-virtual {v3, v11}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 846
+    .line 849
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonText:Ljava/lang/CharSequence;
 
     if-eqz v11, :cond_36
 
     int-to-float v14, v7
 
-    .line 847
+    .line 850
     invoke-interface {v11}, Ljava/lang/CharSequence;->length()I
 
     move-result v15
@@ -3844,7 +3883,7 @@
     :cond_36
     move v11, v7
 
-    .line 849
+    .line 852
     :goto_21
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->negativeButtonText:Ljava/lang/CharSequence;
 
@@ -3852,7 +3891,7 @@
 
     int-to-float v11, v11
 
-    .line 850
+    .line 853
     invoke-interface {v14}, Ljava/lang/CharSequence;->length()I
 
     move-result v15
@@ -3873,7 +3912,7 @@
 
     float-to-int v11, v11
 
-    .line 852
+    .line 855
     :cond_37
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonText:Ljava/lang/CharSequence;
 
@@ -3881,7 +3920,7 @@
 
     int-to-float v11, v11
 
-    .line 853
+    .line 856
     invoke-interface {v14}, Ljava/lang/CharSequence;->length()I
 
     move-result v15
@@ -3902,7 +3941,7 @@
 
     float-to-int v11, v11
 
-    .line 855
+    .line 858
     :cond_38
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -3918,16 +3957,16 @@
 
     if-le v11, v3, :cond_39
 
-    .line 856
+    .line 859
     iput-boolean v2, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
-    .line 859
+    .line 862
     :cond_39
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
     if-eqz v3, :cond_3a
 
-    .line 860
+    .line 863
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3936,15 +3975,15 @@
 
     invoke-direct {v3, v10}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 861
+    .line 864
     invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 862
+    .line 865
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     goto :goto_22
 
-    .line 864
+    .line 867
     :cond_3a
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$4;
 
@@ -3956,7 +3995,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
-    .line 945
+    .line 948
     :goto_22
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
@@ -3978,7 +4017,7 @@
 
     invoke-virtual {v3, v10, v11, v14, v15}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 946
+    .line 949
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     const/16 v10, 0x34
@@ -3989,12 +4028,12 @@
 
     invoke-virtual {v1, v3, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 947
+    .line 950
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->topAnimationIsNew:Z
 
     if-eqz v3, :cond_3b
 
-    .line 948
+    .line 951
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4007,7 +4046,7 @@
 
     invoke-virtual {v3, v10}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 951
+    .line 954
     :cond_3b
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonText:Ljava/lang/CharSequence;
 
@@ -4017,7 +4056,7 @@
 
     if-eqz v3, :cond_3e
 
-    .line 952
+    .line 955
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$5;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -4026,24 +4065,24 @@
 
     invoke-direct {v3, v0, v14}, Lorg/telegram/ui/ActionBar/AlertDialog$5;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
 
-    .line 965
+    .line 968
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 966
+    .line 969
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v14
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 967
+    .line 970
     invoke-virtual {v3, v2, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 968
+    .line 971
     iget v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->dialogButtonColorKey:I
 
     invoke-virtual {v0, v14}, Lorg/telegram/ui/ActionBar/AlertDialog;->getThemedColor(I)I
@@ -4052,17 +4091,17 @@
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 969
+    .line 972
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 970
+    .line 973
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v14
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 973
+    .line 976
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonText:Ljava/lang/CharSequence;
 
     invoke-interface {v14}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -4071,7 +4110,7 @@
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 974
+    .line 977
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -4088,7 +4127,7 @@
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 975
+    .line 978
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -4099,12 +4138,12 @@
 
     invoke-virtual {v3, v14, v7, v15, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 976
+    .line 979
     iget-boolean v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
     if-eqz v14, :cond_3d
 
-    .line 977
+    .line 980
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     sget-boolean v15, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -4132,7 +4171,7 @@
     :cond_3d
     const/4 v5, -0x2
 
-    .line 979
+    .line 982
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     const/16 v15, 0x35
@@ -4143,7 +4182,7 @@
 
     invoke-virtual {v14, v3, v15}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 981
+    .line 984
     :goto_24
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda5;
 
@@ -4151,13 +4190,13 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 991
+    .line 994
     :cond_3e
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->negativeButtonText:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_41
 
-    .line 992
+    .line 995
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$6;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -4166,7 +4205,7 @@
 
     invoke-direct {v3, v0, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$6;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
 
-    .line 1005
+    .line 1008
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4175,17 +4214,17 @@
 
     const/4 v5, -0x2
 
-    .line 1006
+    .line 1009
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v14
 
     invoke-virtual {v3, v14}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 1007
+    .line 1010
     invoke-virtual {v3, v2, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1008
+    .line 1011
     iget v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->dialogButtonColorKey:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/AlertDialog;->getThemedColor(I)I
@@ -4194,25 +4233,25 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1009
+    .line 1012
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1010
+    .line 1013
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v5
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1011
+    .line 1014
     sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1012
+    .line 1015
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1013
+    .line 1016
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->negativeButtonText:Ljava/lang/CharSequence;
 
     invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -4221,7 +4260,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1014
+    .line 1017
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4238,7 +4277,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1015
+    .line 1018
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4249,12 +4288,12 @@
 
     invoke-virtual {v3, v5, v7, v14, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1016
+    .line 1019
     iget-boolean v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
     if-eqz v5, :cond_40
 
-    .line 1017
+    .line 1020
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     sget-boolean v14, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -4282,7 +4321,7 @@
     :cond_40
     const/4 v15, -0x2
 
-    .line 1019
+    .line 1022
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     const/16 v14, 0x35
@@ -4293,7 +4332,7 @@
 
     invoke-virtual {v5, v3, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1021
+    .line 1024
     :goto_26
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda4;
 
@@ -4301,13 +4340,13 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1031
+    .line 1034
     :cond_41
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonText:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_44
 
-    .line 1032
+    .line 1035
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$7;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -4316,7 +4355,7 @@
 
     invoke-direct {v3, v0, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$7;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
 
-    .line 1045
+    .line 1048
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4325,17 +4364,17 @@
 
     const/4 v5, -0x3
 
-    .line 1046
+    .line 1049
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 1047
+    .line 1050
     invoke-virtual {v3, v2, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1048
+    .line 1051
     iget v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->dialogButtonColorKey:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/AlertDialog;->getThemedColor(I)I
@@ -4344,25 +4383,25 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1049
+    .line 1052
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1050
+    .line 1053
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v5
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1051
+    .line 1054
     sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1052
+    .line 1055
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1053
+    .line 1056
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonText:Ljava/lang/CharSequence;
 
     invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -4371,7 +4410,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1054
+    .line 1057
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4388,7 +4427,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1055
+    .line 1058
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -4399,12 +4438,12 @@
 
     invoke-virtual {v3, v5, v7, v9, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1056
+    .line 1059
     iget-boolean v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
     if-eqz v5, :cond_43
 
-    .line 1057
+    .line 1060
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -4432,7 +4471,7 @@
     :cond_43
     const/4 v10, -0x2
 
-    .line 1059
+    .line 1062
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     const/16 v9, 0x33
@@ -4443,7 +4482,7 @@
 
     invoke-virtual {v5, v3, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1061
+    .line 1064
     :goto_28
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda3;
 
@@ -4451,7 +4490,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1071
+    .line 1074
     :cond_44
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->verticalButtons:Z
 
@@ -4459,7 +4498,7 @@
 
     move v3, v2
 
-    .line 1072
+    .line 1075
     :goto_29
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
@@ -4469,7 +4508,7 @@
 
     if-ge v3, v5, :cond_45
 
-    .line 1073
+    .line 1076
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->buttonsLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v5, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -4492,37 +4531,37 @@
 
     goto :goto_29
 
-    .line 1078
+    .line 1081
     :cond_45
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
-    .line 1079
+    .line 1082
     new-instance v5, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v5}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
-    .line 1080
+    .line 1083
     invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v9
 
     invoke-virtual {v5, v9}, Landroid/view/WindowManager$LayoutParams;->copyFrom(Landroid/view/WindowManager$LayoutParams;)I
 
-    .line 1081
+    .line 1084
     iget v9, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewStyle:I
 
     const/4 v10, 0x3
 
     if-ne v9, v10, :cond_46
 
-    .line 1082
+    .line 1085
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->width:I
 
     goto :goto_2c
 
-    .line 1084
+    .line 1087
     :cond_46
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->dimEnabled:Z
 
@@ -4532,12 +4571,12 @@
 
     if-nez v8, :cond_47
 
-    .line 1085
+    .line 1088
     iget v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->dimAlpha:F
 
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 1086
+    .line 1089
     iget v8, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/4 v9, 0x2
@@ -4553,17 +4592,17 @@
 
     const/4 v8, 0x0
 
-    .line 1088
+    .line 1091
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 1089
+    .line 1092
     iget v8, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     xor-int/2addr v8, v9
 
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1092
+    .line 1095
     :goto_2a
     sget-object v8, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -4573,7 +4612,7 @@
 
     const/16 v10, 0x30
 
-    .line 1093
+    .line 1096
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -4586,14 +4625,14 @@
 
     sub-int/2addr v8, v10
 
-    .line 1095
+    .line 1098
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v9
 
     if-eqz v9, :cond_49
 
-    .line 1096
+    .line 1099
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isSmallTablet()Z
 
     move-result v9
@@ -4602,7 +4641,7 @@
 
     const/16 v9, 0x1be
 
-    .line 1097
+    .line 1100
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -4612,7 +4651,7 @@
     :cond_48
     const/16 v9, 0x1f0
 
-    .line 1099
+    .line 1102
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -4622,12 +4661,12 @@
     :cond_49
     const/16 v9, 0x164
 
-    .line 1102
+    .line 1105
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
-    .line 1105
+    .line 1108
     :goto_2b
     invoke-static {v9, v8}, Ljava/lang/Math;->min(II)I
 
@@ -4645,7 +4684,7 @@
 
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 1107
+    .line 1110
     :goto_2c
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->customView:Landroid/view/View;
 
@@ -4666,12 +4705,12 @@
     :cond_4a
     const/4 v8, 0x4
 
-    .line 1110
+    .line 1113
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     goto :goto_2e
 
-    .line 1108
+    .line 1111
     :cond_4b
     :goto_2d
     iget v8, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
@@ -4682,7 +4721,7 @@
 
     iput v8, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1112
+    .line 1115
     :goto_2e
     sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -4690,43 +4729,43 @@
 
     if-lt v8, v9, :cond_4c
 
-    .line 1113
+    .line 1116
     iput v7, v5, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    .line 1116
+    .line 1119
     :cond_4c
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurredBackground:Z
 
     if-eqz v8, :cond_4e
 
-    .line 1117
+    .line 1120
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->supportsNativeBlur()Z
 
     move-result v8
 
     if-eqz v8, :cond_4d
 
-    .line 1118
+    .line 1121
     iget v1, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewStyle:I
 
     if-nez v1, :cond_4e
 
-    .line 1119
+    .line 1122
     iput-boolean v2, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurredNativeBackground:Z
 
     const/16 v1, 0x32
 
-    .line 1120
+    .line 1123
     invoke-virtual {v3, v1}, Landroid/view/Window;->setBackgroundBlurRadius(I)V
 
-    .line 1121
+    .line 1124
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 1122
+    .line 1125
     new-instance v6, Landroid/graphics/drawable/ShapeDrawable;
 
     new-instance v8, Landroid/graphics/drawable/shapes/RoundRectShape;
@@ -4767,7 +4806,7 @@
 
     invoke-direct {v6, v8}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
-    .line 1123
+    .line 1126
     invoke-virtual {v6}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v1
@@ -4788,15 +4827,15 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1124
+    .line 1127
     invoke-virtual {v3, v6}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1125
+    .line 1128
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/AlertDialog;->blurBehind:Z
 
     if-eqz v1, :cond_4e
 
-    .line 1126
+    .line 1129
     iget v1, v5, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/4 v2, 0x4
@@ -4807,12 +4846,12 @@
 
     const/16 v1, 0x14
 
-    .line 1127
+    .line 1130
     invoke-virtual {v5, v1}, Landroid/view/WindowManager$LayoutParams;->setBlurBehindRadius(I)V
 
     goto :goto_2f
 
-    .line 1131
+    .line 1134
     :cond_4d
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$$ExternalSyntheticLambda8;
 
@@ -4822,12 +4861,12 @@
 
     invoke-static {v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->makeGlobalBlurBitmap(Lorg/telegram/messenger/Utilities$Callback;F)V
 
-    .line 1150
+    .line 1153
     :cond_4e
     :goto_2f
     invoke-virtual {v3, v5}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 1152
+    .line 1155
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -4869,12 +4908,12 @@
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .locals 0
 
-    .line 1440
+    .line 1452
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     if-eqz p1, :cond_0
 
-    .line 1441
+    .line 1453
     invoke-virtual {p1, p2, p3, p4}, Landroid/widget/ScrollView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_0
@@ -4884,15 +4923,15 @@
 .method public setBackgroundColor(I)V
     .locals 3
 
-    .line 1181
+    .line 1184
     iput p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->backgroundColor:I
 
-    .line 1182
+    .line 1185
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_0
 
-    .line 1183
+    .line 1186
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->backgroundColor:I
@@ -4925,7 +4964,7 @@
 .method public setCanCancel(Z)V
     .locals 0
 
-    .line 1270
+    .line 1273
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->canCacnel:Z
 
     return-void
@@ -4934,7 +4973,7 @@
 .method public setCanceledOnTouchOutside(Z)V
     .locals 0
 
-    .line 1327
+    .line 1339
     invoke-super {p0, p1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     return-void
@@ -4952,7 +4991,7 @@
 .method public setDismissDialogByButtons(Z)V
     .locals 0
 
-    .line 1254
+    .line 1257
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->dismissDialogByButtons:Z
 
     return-void
@@ -4961,38 +5000,38 @@
 .method public setFocusable(Z)V
     .locals 3
 
-    .line 1164
+    .line 1167
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->focusable:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 1167
+    .line 1170
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->focusable:Z
 
-    .line 1168
+    .line 1171
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
 
-    .line 1169
+    .line 1172
     invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 1170
+    .line 1173
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->focusable:Z
 
     if-eqz v1, :cond_1
 
     const/16 v1, 0x10
 
-    .line 1171
+    .line 1174
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1172
+    .line 1175
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v2, -0x20001
@@ -5006,10 +5045,10 @@
     :cond_1
     const/16 v1, 0x30
 
-    .line 1174
+    .line 1177
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1175
+    .line 1178
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/high16 v2, 0x20000
@@ -5018,7 +5057,7 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1177
+    .line 1180
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
@@ -5030,7 +5069,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 1380
+    .line 1392
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -5041,7 +5080,7 @@
 
     goto :goto_0
 
-    .line 1383
+    .line 1395
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->itemViews:Ljava/util/ArrayList;
 
@@ -5051,14 +5090,14 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;
 
-    .line 1384
+    .line 1396
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->access$3900(Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1385
+    .line 1397
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->access$4000(Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;)Landroid/widget/ImageView;
 
     move-result-object p1
@@ -5079,29 +5118,29 @@
 .method public setMessage(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 1393
+    .line 1405
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->message:Ljava/lang/CharSequence;
 
-    .line 1394
+    .line 1406
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 1395
+    .line 1407
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 1396
+    .line 1408
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->message:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1397
+    .line 1409
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     const/4 v0, 0x0
@@ -5110,7 +5149,7 @@
 
     goto :goto_0
 
-    .line 1399
+    .line 1411
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
@@ -5126,10 +5165,10 @@
 .method public setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 0
 
-    .line 1375
+    .line 1387
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonText:Ljava/lang/CharSequence;
 
-    .line 1376
+    .line 1388
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->neutralButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
@@ -5138,10 +5177,10 @@
 .method public setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
     .locals 0
 
-    .line 1454
+    .line 1466
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->onCancelListener:Landroid/content/DialogInterface$OnCancelListener;
 
-    .line 1455
+    .line 1467
     invoke-super {p0, p1}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
     return-void
@@ -5150,7 +5189,7 @@
 .method public setPositiveButtonListener(Landroid/content/DialogInterface$OnClickListener;)V
     .locals 0
 
-    .line 1459
+    .line 1471
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->positiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
@@ -5159,10 +5198,10 @@
 .method public setProgress(I)V
     .locals 2
 
-    .line 1258
+    .line 1261
     iput p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->currentProgress:I
 
-    .line 1259
+    .line 1262
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->lineProgressView:Lorg/telegram/ui/Components/LineProgressView;
 
     if-eqz v0, :cond_0
@@ -5175,10 +5214,10 @@
 
     const/4 v1, 0x1
 
-    .line 1260
+    .line 1263
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/LineProgressView;->setProgress(FZ)V
 
-    .line 1261
+    .line 1264
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->updateLineProgressTextView()V
 
     :cond_0
@@ -5188,21 +5227,21 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 1188
+    .line 1191
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 1189
+    .line 1192
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1191
+    .line 1194
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 1192
+    .line 1195
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_1
@@ -5212,15 +5251,15 @@
 .method public setTitle(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 1354
+    .line 1366
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->title:Ljava/lang/CharSequence;
 
-    .line 1355
+    .line 1367
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->titleTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 1356
+    .line 1368
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_0
@@ -5230,10 +5269,10 @@
 .method public show()V
     .locals 3
 
-    .line 330
+    .line 332
     invoke-super {p0}, Landroid/app/Dialog;->show()V
 
-    .line 331
+    .line 333
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
@@ -5246,15 +5285,15 @@
 
     const/4 v1, 0x0
 
-    .line 332
+    .line 334
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 333
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 334
+    .line 336
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->progressViewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -5263,7 +5302,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 335
+    .line 337
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -5278,34 +5317,41 @@
 
     invoke-direct {v1, v2}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
-    .line 336
+    .line 338
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const-wide/16 v1, 0xbe
 
-    .line 337
+    .line 339
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 338
+    .line 340
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
+    .line 342
     :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->shownAt:J
+
     return-void
 .end method
 
 .method public showDelayed(J)V
     .locals 1
 
-    .line 1467
+    .line 1479
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->showRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1468
+    .line 1480
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->showRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -5316,12 +5362,12 @@
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1447
+    .line 1459
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->contentScrollView:Landroid/widget/ScrollView;
 
     if-eqz p1, :cond_0
 
-    .line 1448
+    .line 1460
     invoke-virtual {p1, p2}, Landroid/widget/ScrollView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :cond_0

@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
+import android.net.Uri;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 /* renamed from: com.google.android.exoplayer2.extractor.ts.TsExtractor */
 /* loaded from: classes.dex */
 public final class TsExtractor implements Extractor {
@@ -35,7 +37,21 @@ public final class TsExtractor implements Extractor {
     private static final int BUFFER_SIZE = 9400;
     public static final int DEFAULT_TIMESTAMP_SEARCH_BYTES = 112800;
     private static final long E_AC3_FORMAT_IDENTIFIER = 1161904947;
-    public static final ExtractorsFactory FACTORY = TsExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.ts.TsExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = TsExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final long HEVC_FORMAT_IDENTIFIER = 1212503619;
     private static final int MAX_PID_PLUS_ONE = 8192;
     public static final int MODE_HLS = 2;
@@ -528,7 +544,7 @@ public final class TsExtractor implements Extractor {
                 } else {
                     if (readUnsignedByte != 106) {
                         if (readUnsignedByte != 122) {
-                            if (readUnsignedByte == TS_PMT_DESC_DVB_EXT) {
+                            if (readUnsignedByte == 127) {
                                 if (parsableByteArray.readUnsignedByte() != 21) {
                                 }
                                 i3 = 172;

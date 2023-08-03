@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/NotificationsController$$ExternalSyntheticLambda5;->f$1:Ljava/util/HashSet;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$OwDgIeXXRYyH5tYu73aClazdD68(Lj$/util/function/Consumer;Ljava/util/HashSet;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$fEkV8zTqCp8OZ5FosAtJ_l0pIeY(Lj$/util/function/Consumer;Ljava/util/HashSet;)V
 
     return-void
 .end method

@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkWebScreenBinding implements ViewBinding {
     public final ProgressBar progressBar;
@@ -33,7 +33,7 @@ public final class ForkWebScreenBinding implements ViewBinding {
     }
 
     public static ForkWebScreenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_web_screen, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_web_screen, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,11 +42,11 @@ public final class ForkWebScreenBinding implements ViewBinding {
 
     public static ForkWebScreenBinding bind(View view) {
         View findChildViewById;
-        int i = C3417R.C3420id.progress_bar;
+        int i = C3419R.C3422id.progress_bar;
         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
-        if (progressBar != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3417R.C3420id.toolbar))) != null) {
+        if (progressBar != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3419R.C3422id.toolbar))) != null) {
             ForkToolbarBinding bind = ForkToolbarBinding.bind(findChildViewById);
-            int i2 = C3417R.C3420id.web_view;
+            int i2 = C3419R.C3422id.web_view;
             WebView webView = (WebView) ViewBindings.findChildViewById(view, i2);
             if (webView != null) {
                 return new ForkWebScreenBinding((ConstraintLayout) view, progressBar, bind, webView);

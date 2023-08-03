@@ -3256,13 +3256,15 @@
     if-eqz v3, :cond_11
 
     .line 1911
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v3
+    move-result-wide v9
 
-    const/16 v9, 0x258
+    const-wide v11, 0x4082c00000000000L    # 600.0
 
-    if-lt v3, v9, :cond_10
+    cmpl-double v3, v9, v11
+
+    if-ltz v3, :cond_10
 
     .line 1912
     iget-object v3, p0, Lorg/telegram/ui/Components/FragmentContextView;->playbackSpeedButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -6192,7 +6194,7 @@
 .end method
 
 .method private static synthetic lambda$openSharingLocation$15(Lorg/telegram/messenger/LocationController$SharingLocationInfo;JLorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 12
+    .locals 11
 
     move-object v0, p0
 
@@ -6203,7 +6205,9 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v1
+    move-result-object v0
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
@@ -6211,19 +6215,21 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move-object v1, p3
 
-    move-object v2, p3
+    move-wide v2, p1
 
-    move-wide v3, p1
+    move/from16 v8, p5
 
-    move/from16 v9, p5
+    move/from16 v9, p6
 
-    move/from16 v10, p6
+    move-object/from16 v10, p7
 
-    move-object/from16 v11, p7
+    invoke-static/range {v1 .. v10}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Lorg/telegram/tgnet/TLRPC$MessageMedia;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    invoke-virtual/range {v1 .. v11}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/tgnet/TLRPC$MessageMedia;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILjava/lang/String;)V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     return-void
 .end method

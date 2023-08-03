@@ -9,14 +9,14 @@ import org.json.JSONStringer;
 public class LocExtension implements Model {
 
     /* renamed from: tz */
-    private String f466tz;
+    private String f469tz;
 
     public String getTz() {
-        return this.f466tz;
+        return this.f469tz;
     }
 
     public void setTz(String tz) {
-        this.f466tz = tz;
+        this.f469tz = tz;
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
@@ -36,13 +36,13 @@ public class LocExtension implements Model {
         if (o == null || LocExtension.class != o.getClass()) {
             return false;
         }
-        String str = this.f466tz;
-        String str2 = ((LocExtension) o).f466tz;
+        String str = this.f469tz;
+        String str2 = ((LocExtension) o).f469tz;
         return str != null ? str.equals(str2) : str2 == null;
     }
 
     public int hashCode() {
-        String str = this.f466tz;
+        String str = this.f469tz;
         if (str != null) {
             return str.hashCode();
         }

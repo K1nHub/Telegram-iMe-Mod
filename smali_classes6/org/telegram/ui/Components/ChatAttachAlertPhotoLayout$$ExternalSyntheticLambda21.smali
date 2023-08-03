@@ -2,70 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
-
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->INSTANCE:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
-
-    return-void
-.end method
-
-.method public final onItemClick(Landroid/view/View;IFF)V
-    .locals 7
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
-
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Z
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    move-object v3, p1
-
-    move v4, p2
-
-    move v5, p3
-
-    move v6, p4
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$RG3zAWWLloSQ99Pd005Wj6rzIuE(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;IFF)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$zRX8sBuZrIA_7lu0uLzavVw6M2s(Landroid/view/View;I)V
 
     return-void
 .end method

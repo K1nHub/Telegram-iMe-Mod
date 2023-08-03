@@ -4,10 +4,9 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
 /* loaded from: classes4.dex */
-public final class SafeFlow<T> extends AbstractFlow<T> {
+final class SafeFlow<T> extends AbstractFlow<T> {
     private final Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> block;
 
     /* JADX WARN: Multi-variable type inference failed */

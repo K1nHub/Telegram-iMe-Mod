@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.core.view.ViewGroupKt;
 import java.util.List;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
@@ -56,9 +57,9 @@ public final class SeedListView extends FrameLayout {
     public final void applyColors() {
         LinearLayout linearLayout = this.binding.linearRoot;
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(9.0f));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m73dp(9.0f));
         gradientDrawable.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
+        gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
         linearLayout.setBackground(gradientDrawable);
         LinearLayout linearLayout2 = this.binding.linearSeedFirstPart;
         Intrinsics.checkNotNullExpressionValue(linearLayout2, "binding.linearSeedFirstPart");
@@ -81,7 +82,13 @@ public final class SeedListView extends FrameLayout {
 
     private final void applyColorForSeedWord(LinearLayout linearLayout) {
         Sequence<NumberBackupWordWrapper> filter;
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), SeedListView$applyColorForSeedWord$$inlined$filterIsInstance$1.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.SeedListView$applyColorForSeedWord$$inlined$filterIsInstance$1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Object obj) {
+                return Boolean.valueOf(obj instanceof NumberBackupWordWrapper);
+            }
+        });
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (NumberBackupWordWrapper numberBackupWordWrapper : filter) {
             numberBackupWordWrapper.applyColors();

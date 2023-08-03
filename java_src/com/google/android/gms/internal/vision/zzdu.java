@@ -1,7 +1,8 @@
 package com.google.android.gms.internal.vision;
+/* JADX INFO: Add missing generic type declarations: [V] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-final class zzdu extends zzdw<V> {
+final class zzdu<V> extends zzdw<V> {
     private final /* synthetic */ zzdp zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -11,9 +12,8 @@ final class zzdu extends zzdw<V> {
         this.zza = zzdpVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.android.gms.internal.vision.zzdw
     final V zza(int i) {
-        return this.zza.zzc[i];
+        return (V) this.zza.zzc[i];
     }
 }

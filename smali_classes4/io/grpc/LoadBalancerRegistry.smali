@@ -418,7 +418,7 @@
     :try_start_0
     iget-object v0, p0, Lio/grpc/LoadBalancerRegistry;->effectiveProviders:Ljava/util/LinkedHashMap;
 
-    const-string v1, "policy"
+    const-string/jumbo v1, "policy"
 
     invoke-static {p1, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

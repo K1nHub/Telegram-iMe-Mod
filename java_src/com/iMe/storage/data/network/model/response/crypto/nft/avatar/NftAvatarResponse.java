@@ -9,7 +9,7 @@ public final class NftAvatarResponse {
     private final String description;
 
     /* renamed from: id */
-    private final long f384id;
+    private final long f387id;
     private final String image;
     private final String meta;
     private final String owner;
@@ -17,7 +17,7 @@ public final class NftAvatarResponse {
     private final String tokenId;
 
     public final long component1() {
-        return this.f384id;
+        return this.f387id;
     }
 
     public final String component2() {
@@ -65,17 +65,17 @@ public final class NftAvatarResponse {
         }
         if (obj instanceof NftAvatarResponse) {
             NftAvatarResponse nftAvatarResponse = (NftAvatarResponse) obj;
-            return this.f384id == nftAvatarResponse.f384id && Intrinsics.areEqual(this.tokenId, nftAvatarResponse.tokenId) && Intrinsics.areEqual(this.owner, nftAvatarResponse.owner) && Intrinsics.areEqual(this.image, nftAvatarResponse.image) && Intrinsics.areEqual(this.meta, nftAvatarResponse.meta) && Intrinsics.areEqual(this.title, nftAvatarResponse.title) && Intrinsics.areEqual(this.description, nftAvatarResponse.description) && Intrinsics.areEqual(this.collection, nftAvatarResponse.collection);
+            return this.f387id == nftAvatarResponse.f387id && Intrinsics.areEqual(this.tokenId, nftAvatarResponse.tokenId) && Intrinsics.areEqual(this.owner, nftAvatarResponse.owner) && Intrinsics.areEqual(this.image, nftAvatarResponse.image) && Intrinsics.areEqual(this.meta, nftAvatarResponse.meta) && Intrinsics.areEqual(this.title, nftAvatarResponse.title) && Intrinsics.areEqual(this.description, nftAvatarResponse.description) && Intrinsics.areEqual(this.collection, nftAvatarResponse.collection);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f384id) * 31) + this.tokenId.hashCode()) * 31) + this.owner.hashCode()) * 31) + this.image.hashCode()) * 31) + this.meta.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.collection.hashCode();
+        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f387id) * 31) + this.tokenId.hashCode()) * 31) + this.owner.hashCode()) * 31) + this.image.hashCode()) * 31) + this.meta.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.collection.hashCode();
     }
 
     public String toString() {
-        return "NftAvatarResponse(id=" + this.f384id + ", tokenId=" + this.tokenId + ", owner=" + this.owner + ", image=" + this.image + ", meta=" + this.meta + ", title=" + this.title + ", description=" + this.description + ", collection=" + this.collection + ')';
+        return "NftAvatarResponse(id=" + this.f387id + ", tokenId=" + this.tokenId + ", owner=" + this.owner + ", image=" + this.image + ", meta=" + this.meta + ", title=" + this.title + ", description=" + this.description + ", collection=" + this.collection + ')';
     }
 
     public NftAvatarResponse(long j, String tokenId, String owner, String image, String meta, String title, String description, NftCollectionResponse collection) {
@@ -86,7 +86,7 @@ public final class NftAvatarResponse {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(collection, "collection");
-        this.f384id = j;
+        this.f387id = j;
         this.tokenId = tokenId;
         this.owner = owner;
         this.image = image;
@@ -97,7 +97,7 @@ public final class NftAvatarResponse {
     }
 
     public final long getId() {
-        return this.f384id;
+        return this.f387id;
     }
 
     public final String getTokenId() {
@@ -134,7 +134,7 @@ public final class NftAvatarResponse {
         private final String contractAddress;
 
         /* renamed from: id */
-        private final long f385id;
+        private final long f388id;
         private final String status;
         private final String title;
         private final String transactionHash;
@@ -144,7 +144,7 @@ public final class NftAvatarResponse {
             Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
             Intrinsics.checkNotNullParameter(transactionHash, "transactionHash");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f385id = j;
+            this.f388id = j;
             this.title = title;
             this.contractAddress = contractAddress;
             this.transactionHash = transactionHash;
@@ -152,7 +152,7 @@ public final class NftAvatarResponse {
         }
 
         public final long getId() {
-            return this.f385id;
+            return this.f388id;
         }
 
         public final String getTitle() {

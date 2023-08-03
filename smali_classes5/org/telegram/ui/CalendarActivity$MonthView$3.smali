@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity$MonthView;Lorg/telegram/ui/CalendarActivity$RowAnimationValue;FFFIZ)V
     .locals 0
 
-    .line 868
+    .line 1061
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iput-object p2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$pr:Lorg/telegram/ui/CalendarActivity$RowAnimationValue;
@@ -59,24 +59,24 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 871
+    .line 1064
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$pr:Lorg/telegram/ui/CalendarActivity$RowAnimationValue;
 
     iget v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$cxTo1:F
 
     iput v0, p1, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->startX:F
 
-    .line 872
+    .line 1065
     iget v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$cxTo2:F
 
     iput v0, p1, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->endX:F
 
-    .line 873
+    .line 1066
     iget v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$toAlpha:F
 
     iput v0, p1, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->alpha:F
 
-    .line 874
+    .line 1067
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -87,10 +87,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 879
+    .line 1072
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$3200(Lorg/telegram/ui/CalendarActivity$MonthView;)Landroid/util/SparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$3900(Lorg/telegram/ui/CalendarActivity$MonthView;)Landroid/util/SparseArray;
 
     move-result-object p1
 
@@ -98,15 +98,15 @@
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 880
+    .line 1073
     iget-boolean p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->val$appear:Z
 
     if-nez p1, :cond_0
 
-    .line 881
+    .line 1074
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$3;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
-    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$3300(Lorg/telegram/ui/CalendarActivity$MonthView;)Landroid/util/SparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/CalendarActivity$MonthView;->access$4000(Lorg/telegram/ui/CalendarActivity$MonthView;)Landroid/util/SparseArray;
 
     move-result-object p1
 

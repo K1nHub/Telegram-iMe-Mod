@@ -8,10 +8,10 @@ public class TransitionParams {
     public boolean needScaleY = true;
 
     /* renamed from: pX */
-    public float f1692pX;
+    public float f1712pX;
 
     /* renamed from: pY */
-    public float f1693pY;
+    public float f1713pY;
     public float pickerEndOut;
     public float pickerStartOut;
     public float progress;

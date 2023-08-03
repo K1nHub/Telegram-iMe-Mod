@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2352
+    .line 2467
     invoke-direct {p0}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
 
     return-void
@@ -29,13 +29,13 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    .line 2424
+    .line 2539
     invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 2425
+    .line 2540
     check-cast p1, Landroidx/core/widget/NestedScrollView;
 
-    .line 2426
+    .line 2541
     const-class v0, Landroid/widget/ScrollView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -44,7 +44,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 2427
+    .line 2542
     invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
 
     move-result v0
@@ -58,32 +58,32 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2428
+    .line 2543
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
 
-    .line 2429
+    .line 2544
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollX()I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollX(I)V
 
-    .line 2430
+    .line 2545
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollY(I)V
 
-    .line 2431
+    .line 2546
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollX()I
 
     move-result v0
 
     invoke-static {p2, v0}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->setMaxScrollX(Landroid/view/accessibility/AccessibilityRecord;I)V
 
-    .line 2432
+    .line 2547
     invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
 
     move-result p1
@@ -96,13 +96,13 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 2
 
-    .line 2399
+    .line 2514
     invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
-    .line 2400
+    .line 2515
     check-cast p1, Landroidx/core/widget/NestedScrollView;
 
-    .line 2401
+    .line 2516
     const-class v0, Landroid/widget/ScrollView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -111,14 +111,14 @@
 
     invoke-virtual {p2, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 2402
+    .line 2517
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->isEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 2403
+    .line 2518
     invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
 
     move-result v0
@@ -127,27 +127,27 @@
 
     const/4 v1, 0x1
 
-    .line 2405
+    .line 2520
     invoke-virtual {p2, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setScrollable(Z)V
 
-    .line 2406
+    .line 2521
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 2407
+    .line 2522
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_SCROLL_BACKWARD:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     invoke-virtual {p2, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 2409
+    .line 2524
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_SCROLL_UP:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     invoke-virtual {p2, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 2412
+    .line 2527
     :cond_0
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
@@ -155,12 +155,12 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 2413
+    .line 2528
     sget-object p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_SCROLL_FORWARD:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
 
-    .line 2415
+    .line 2530
     sget-object p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_SCROLL_DOWN:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
@@ -172,7 +172,7 @@
 .method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 4
 
-    .line 2355
+    .line 2470
     invoke-super {p0, p1, p2, p3}, Landroidx/core/view/AccessibilityDelegateCompat;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result p3
@@ -183,11 +183,11 @@
 
     return v0
 
-    .line 2358
+    .line 2473
     :cond_0
     check-cast p1, Landroidx/core/widget/NestedScrollView;
 
-    .line 2359
+    .line 2474
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->isEnabled()Z
 
     move-result p3
@@ -198,18 +198,18 @@
 
     return v1
 
-    .line 2362
+    .line 2477
     :cond_1
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result p3
 
-    .line 2363
+    .line 2478
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2366
+    .line 2481
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v3
@@ -226,7 +226,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 2367
+    .line 2482
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
     move-result p3
@@ -250,7 +250,7 @@
 
     return v1
 
-    .line 2384
+    .line 2499
     :cond_3
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
@@ -258,14 +258,14 @@
 
     sub-int/2addr p3, p2
 
-    .line 2385
+    .line 2500
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result p2
 
     sub-int/2addr p3, p2
 
-    .line 2386
+    .line 2501
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result p2
@@ -276,14 +276,14 @@
 
     move-result p2
 
-    .line 2387
+    .line 2502
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result p3
 
     if-eq p2, p3, :cond_4
 
-    .line 2388
+    .line 2503
     invoke-virtual {p1, v1, p2, v0}, Landroidx/core/widget/NestedScrollView;->smoothScrollTo(IIZ)V
 
     return v0
@@ -291,7 +291,7 @@
     :cond_4
     return v1
 
-    .line 2372
+    .line 2487
     :cond_5
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
@@ -299,38 +299,38 @@
 
     sub-int/2addr p3, p2
 
-    .line 2373
+    .line 2488
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result p2
 
     sub-int/2addr p3, p2
 
-    .line 2374
+    .line 2489
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result p2
 
     add-int/2addr p2, p3
 
-    .line 2375
+    .line 2490
     invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
 
     move-result p3
 
-    .line 2374
+    .line 2489
     invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 2376
+    .line 2491
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result p3
 
     if-eq p2, p3, :cond_6
 
-    .line 2377
+    .line 2492
     invoke-virtual {p1, v1, p2, v0}, Landroidx/core/widget/NestedScrollView;->smoothScrollTo(IIZ)V
 
     return v0

@@ -67,8 +67,8 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
         super(context);
         this.currentSelection = -1;
         this.rectF = new RectF();
-        this.MIN_TEXT_SIZE = AndroidUtilities.m54dp(9);
-        this.MAX_TEXT_SIZE = AndroidUtilities.m54dp(13);
+        this.MIN_TEXT_SIZE = AndroidUtilities.m72dp(9);
+        this.MAX_TEXT_SIZE = AndroidUtilities.m72dp(13);
         this.lookupTable = new String[101];
         this.emptyDataAlpha = 1.0f;
         this.oldW = 0;
@@ -143,7 +143,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
             canvas3.scale(f13, f13, this.chartArea.centerX(), this.chartArea.centerY());
         }
         float height = (int) ((this.chartArea.width() > this.chartArea.height() ? this.chartArea.height() : this.chartArea.width()) * 0.45f);
-        this.rectF.set(this.chartArea.centerX() - height, (this.chartArea.centerY() + AndroidUtilities.m54dp(16)) - height, this.chartArea.centerX() + height, this.chartArea.centerY() + AndroidUtilities.m54dp(16) + height);
+        this.rectF.set(this.chartArea.centerX() - height, (this.chartArea.centerY() + AndroidUtilities.m72dp(16)) - height, this.chartArea.centerX() + height, this.chartArea.centerY() + AndroidUtilities.m72dp(16) + height);
         int size = this.lines.size();
         float f14 = 0.0f;
         for (int i7 = 0; i7 < size; i7++) {
@@ -180,7 +180,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
                             f4 = f14;
                             double d2 = interpolation;
                             i4 = i6;
-                            canvas3.translate((float) (Math.cos(Math.toRadians(d)) * AndroidUtilities.m54dp(8) * d2), (float) (Math.sin(Math.toRadians(d)) * AndroidUtilities.m54dp(8) * d2));
+                            canvas3.translate((float) (Math.cos(Math.toRadians(d)) * AndroidUtilities.m72dp(8) * d2), (float) (Math.sin(Math.toRadians(d)) * AndroidUtilities.m72dp(8) * d2));
                             ((PieChartViewData) this.lines.get(i8)).paint.setStyle(Paint.Style.FILL_AND_STROKE);
                             ((PieChartViewData) this.lines.get(i8)).paint.setStrokeWidth(1.0f);
                             ((PieChartViewData) this.lines.get(i8)).paint.setAntiAlias(!BaseChartView.USE_LINES);
@@ -235,7 +235,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
                     double d3 = f15 + ((f19 / f) * 360.0f);
                     if (((PieChartViewData) this.lines.get(i10)).selectionA > BitmapDescriptorFactory.HUE_RED) {
                         double interpolation2 = BaseChartView.INTERPOLATOR.getInterpolation(((PieChartViewData) this.lines.get(i10)).selectionA);
-                        canvas3.translate((float) (Math.cos(Math.toRadians(d3)) * AndroidUtilities.m54dp(i2) * interpolation2), (float) (Math.sin(Math.toRadians(d3)) * AndroidUtilities.m54dp(i2) * interpolation2));
+                        canvas3.translate((float) (Math.cos(Math.toRadians(d3)) * AndroidUtilities.m72dp(i2) * interpolation2), (float) (Math.sin(Math.toRadians(d3)) * AndroidUtilities.m72dp(i2) * interpolation2));
                     }
                     int i11 = (int) (100.0f * f19);
                     if (f19 < 0.02f || i11 <= 0 || i11 > 100) {
@@ -303,7 +303,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
                     LineViewData lineViewData = (LineViewData) this.lines.get(i6);
                     boolean z = lineViewData.enabled;
                     if (z || lineViewData.alpha != BitmapDescriptorFactory.HUE_RED) {
-                        float f6 = lineViewData.line.f1691y[i4] * lineViewData.alpha;
+                        float f6 = lineViewData.line.f1711y[i4] * lineViewData.alpha;
                         f5 += f6;
                         if (f6 > BitmapDescriptorFactory.HUE_RED) {
                             i7++;
@@ -319,7 +319,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
                 while (i9 < size) {
                     LineViewData lineViewData2 = (LineViewData) this.lines.get(i9);
                     if (lineViewData2.enabled || lineViewData2.alpha != f4) {
-                        int[] iArr = lineViewData2.line.f1691y;
+                        int[] iArr = lineViewData2.line.f1711y;
                         if (i7 == i5) {
                             if (iArr[i4] != 0) {
                                 f = lineViewData2.alpha;
@@ -453,7 +453,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
         if (this.chartData == 0 || this.isEmpty) {
             return;
         }
-        float degrees = (float) (Math.toDegrees(Math.atan2((this.chartArea.centerY() + AndroidUtilities.m54dp(16)) - i2, this.chartArea.centerX() - i)) - 90.0d);
+        float degrees = (float) (Math.toDegrees(Math.atan2((this.chartArea.centerY() + AndroidUtilities.m72dp(16)) - i2, this.chartArea.centerX() - i)) - 90.0d);
         float f = BitmapDescriptorFactory.HUE_RED;
         if (degrees < BitmapDescriptorFactory.HUE_RED) {
             degrees = (float) (degrees + 360.0d);
@@ -492,10 +492,10 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
             if (min < 0) {
                 min = 0;
             }
-            if (this.pieLegendView.getMeasuredWidth() + min > getMeasuredWidth() - AndroidUtilities.m54dp(16)) {
-                min -= (this.pieLegendView.getMeasuredWidth() + min) - (getMeasuredWidth() - AndroidUtilities.m54dp(16));
+            if (this.pieLegendView.getMeasuredWidth() + min > getMeasuredWidth() - AndroidUtilities.m72dp(16)) {
+                min -= (this.pieLegendView.getMeasuredWidth() + min) - (getMeasuredWidth() - AndroidUtilities.m72dp(16));
             }
-            int min2 = ((int) Math.min(this.rectF.centerY(), (int) Math.min(this.rectF.centerY() + (Math.sin(Math.toRadians(d2)) * width), this.rectF.centerY() + (width * Math.sin(Math.toRadians(d)))))) - AndroidUtilities.m54dp(50);
+            int min2 = ((int) Math.min(this.rectF.centerY(), (int) Math.min(this.rectF.centerY() + (Math.sin(Math.toRadians(d2)) * width), this.rectF.centerY() + (width * Math.sin(Math.toRadians(d)))))) - AndroidUtilities.m72dp(50);
             this.pieLegendView.setTranslationX(min);
             this.pieLegendView.setTranslationY(min2);
             if (!(Build.VERSION.SDK_INT >= 27 ? performHapticFeedback(9, 2) : false)) {
@@ -551,20 +551,20 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
 
     @Override // org.telegram.p043ui.Charts.BaseChartView
     public void updatePicker(ChartData chartData, long j) {
-        int length = chartData.f1689x.length;
+        int length = chartData.f1709x.length;
         long j2 = j - (j % 86400000);
         int i = 0;
         for (int i2 = 0; i2 < length; i2++) {
-            if (j2 >= chartData.f1689x[i2]) {
+            if (j2 >= chartData.f1709x[i2]) {
                 i = i2;
             }
         }
-        float length2 = chartData.xPercentage.length < 2 ? 0.5f : 1.0f / chartData.f1689x.length;
+        float length2 = chartData.xPercentage.length < 2 ? 0.5f : 1.0f / chartData.f1709x.length;
         if (i == 0) {
             ChartPickerDelegate chartPickerDelegate = this.pickerDelegate;
             chartPickerDelegate.pickerStart = BitmapDescriptorFactory.HUE_RED;
             chartPickerDelegate.pickerEnd = length2;
-        } else if (i >= chartData.f1689x.length - 1) {
+        } else if (i >= chartData.f1709x.length - 1) {
             ChartPickerDelegate chartPickerDelegate2 = this.pickerDelegate;
             chartPickerDelegate2.pickerStart = 1.0f - length2;
             chartPickerDelegate2.pickerEnd = 1.0f;
@@ -633,9 +633,9 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
         while (i3 <= i2) {
             for (int i6 = 0; i6 < size; i6++) {
                 float[] fArr = this.values;
-                fArr[i6] = fArr[i6] + ((StackLinearChartData) this.chartData).lines.get(i6).f1691y[i3];
-                this.sum += ((StackLinearChartData) this.chartData).lines.get(i6).f1691y[i3];
-                if (this.isEmpty && ((PieChartViewData) this.lines.get(i6)).enabled && ((StackLinearChartData) this.chartData).lines.get(i6).f1691y[i3] > 0) {
+                fArr[i6] = fArr[i6] + ((StackLinearChartData) this.chartData).lines.get(i6).f1711y[i3];
+                this.sum += ((StackLinearChartData) this.chartData).lines.get(i6).f1711y[i3];
+                if (this.isEmpty && ((PieChartViewData) this.lines.get(i6)).enabled && ((StackLinearChartData) this.chartData).lines.get(i6).f1711y[i3] > 0) {
                     this.isEmpty = false;
                 }
             }

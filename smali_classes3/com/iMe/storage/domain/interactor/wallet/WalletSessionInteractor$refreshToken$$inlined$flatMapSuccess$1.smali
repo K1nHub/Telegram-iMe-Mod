@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,92:1\n28#2,4:93\n32#2,4:98\n14#3:97\n18#4:102\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n31#1:97\n35#1:102\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,92:1\n28#2,4:93\n18#3:97\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n31#1:97\n*E\n"
 .end annotation
 
 
@@ -114,38 +114,13 @@
     .line 94
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
-    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->access$getNotificationRepository$p(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;
+    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->access$updatePushToken(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 95
-    invoke-interface {v0}, Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;->issuePushAllowanceToken()Lio/reactivex/Observable;
+    new-instance v1, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$1;
 
-    move-result-object v0
-
-    .line 14
-    new-instance v1, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$lambda$1$$inlined$flatMapSuccess$1;
-
-    iget-object v2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
-
-    invoke-direct {v1, v2}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$lambda$1$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)V
-
-    new-instance v2, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    const-string v1, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 98
-    new-instance v1, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$2;
-
-    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$2;-><init>(Lcom/iMe/storage/domain/model/Result;)V
+    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$refreshToken$1$1;-><init>(Lcom/iMe/storage/domain/model/Result;)V
 
     new-instance p1, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$sam$io_reactivex_functions_Function$0;
 
@@ -155,18 +130,8 @@
 
     move-result-object p1
 
-    .line 99
-    invoke-static {}, Lio/reactivex/schedulers/Schedulers;->io()Lio/reactivex/Scheduler;
+    const-string v0, "tokensResult ->\n        \u2026                        }"
 
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "result ->\n              \u2026                        }"
-
-    .line 98
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1

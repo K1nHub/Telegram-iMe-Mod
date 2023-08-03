@@ -67,7 +67,7 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        float m55dp;
+        float m73dp;
         float interpolation;
         float min = Math.min(this.progress, 1.0f);
         int i = (min > 0.3f ? 1 : (min == 0.3f ? 0 : -1));
@@ -76,13 +76,13 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
         float interpolation3 = cubicBezierInterpolator.getInterpolation(i < 0 ? 0.0f : (min - 0.3f) / 0.7f);
         float f = 2.0f;
         if (this.increment) {
-            m55dp = (AndroidUtilities.m55dp(2.1f) * interpolation2) + ((AndroidUtilities.m54dp(7) - AndroidUtilities.m55dp(2.1f)) * (1.0f - interpolation2));
+            m73dp = (AndroidUtilities.m73dp(2.1f) * interpolation2) + ((AndroidUtilities.m72dp(7) - AndroidUtilities.m73dp(2.1f)) * (1.0f - interpolation2));
             interpolation = AndroidUtilities.dpf2(1.5f) * (1.0f - cubicBezierInterpolator.getInterpolation(this.progress / 2.0f));
         } else {
-            m55dp = (AndroidUtilities.m55dp(2.1f) * (1.0f - interpolation2)) + ((AndroidUtilities.m54dp(7) - AndroidUtilities.m55dp(2.1f)) * interpolation2);
+            m73dp = (AndroidUtilities.m73dp(2.1f) * (1.0f - interpolation2)) + ((AndroidUtilities.m72dp(7) - AndroidUtilities.m73dp(2.1f)) * interpolation2);
             interpolation = CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(this.progress / 2.0f) * AndroidUtilities.dpf2(1.5f);
         }
-        float m54dp = AndroidUtilities.m54dp(11) / 2.0f;
+        float m72dp = AndroidUtilities.m72dp(11) / 2.0f;
         float dpf2 = AndroidUtilities.dpf2(2.0f);
         float dpf22 = (AndroidUtilities.dpf2(0.5f) * interpolation2) - (AndroidUtilities.dpf2(0.5f) * interpolation3);
         Paint paint = this.strokePaint;
@@ -93,17 +93,17 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
         if (paint2 == null) {
             paint2 = Theme.chat_statusPaint;
         }
-        if (paint.getStrokeWidth() != AndroidUtilities.m55dp(0.8f)) {
-            paint.setStrokeWidth(AndroidUtilities.m55dp(0.8f));
+        if (paint.getStrokeWidth() != AndroidUtilities.m73dp(0.8f)) {
+            paint.setStrokeWidth(AndroidUtilities.m73dp(0.8f));
         }
         int i2 = 0;
         while (i2 < 2) {
             canvas.save();
-            canvas.translate((paint.getStrokeWidth() / f) + interpolation + (AndroidUtilities.m54dp(9) * i2) + getBounds().left + AndroidUtilities.dpf2(0.2f), (paint.getStrokeWidth() / f) + AndroidUtilities.dpf2(f) + getBounds().top);
+            canvas.translate((paint.getStrokeWidth() / f) + interpolation + (AndroidUtilities.m72dp(9) * i2) + getBounds().left + AndroidUtilities.dpf2(0.2f), (paint.getStrokeWidth() / f) + AndroidUtilities.dpf2(f) + getBounds().top);
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(BitmapDescriptorFactory.HUE_RED, dpf22, AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(11) - dpf22);
+            rectF.set(BitmapDescriptorFactory.HUE_RED, dpf22, AndroidUtilities.m72dp(7), AndroidUtilities.m72dp(11) - dpf22);
             canvas.drawOval(rectF, paint);
-            canvas.drawCircle(m55dp, m54dp, dpf2, paint2);
+            canvas.drawCircle(m73dp, m72dp, dpf2, paint2);
             canvas.restore();
             i2++;
             f = 2.0f;
@@ -131,11 +131,11 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(20);
+        return AndroidUtilities.m72dp(20);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(18);
+        return AndroidUtilities.m72dp(18);
     }
 }

@@ -1,5 +1,6 @@
 package com.google.firebase.database.collection;
 
+import com.google.firebase.database.collection.ImmutableSortedMap;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -84,7 +85,14 @@ public abstract class ImmutableSortedMap<K, V> implements Iterable<Map.Entry<K, 
 
     /* loaded from: classes3.dex */
     public static class Builder {
-        private static final KeyTranslator IDENTITY_TRANSLATOR = ImmutableSortedMap$Builder$$ExternalSyntheticLambda0.INSTANCE;
+        private static final KeyTranslator IDENTITY_TRANSLATOR = new KeyTranslator() { // from class: com.google.firebase.database.collection.ImmutableSortedMap$Builder$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.database.collection.ImmutableSortedMap.Builder.KeyTranslator
+            public final Object translate(Object obj) {
+                Object lambda$static$0;
+                lambda$static$0 = ImmutableSortedMap.Builder.lambda$static$0(obj);
+                return lambda$static$0;
+            }
+        };
 
         /* loaded from: classes3.dex */
         public interface KeyTranslator<C, D> {

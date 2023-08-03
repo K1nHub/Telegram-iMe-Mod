@@ -11,18 +11,18 @@ import org.json.JSONStringer;
 public class AppExtension implements Model {
 
     /* renamed from: id */
-    private String f463id;
+    private String f466id;
     private String locale;
     private String name;
     private String userId;
     private String ver;
 
     public String getId() {
-        return this.f463id;
+        return this.f466id;
     }
 
     public void setId(String id) {
-        this.f463id = id;
+        this.f466id = id;
     }
 
     public String getName() {
@@ -83,8 +83,8 @@ public class AppExtension implements Model {
             return false;
         }
         AppExtension appExtension = (AppExtension) o;
-        String str = this.f463id;
-        if (str == null ? appExtension.f463id == null : str.equals(appExtension.f463id)) {
+        String str = this.f466id;
+        if (str == null ? appExtension.f466id == null : str.equals(appExtension.f466id)) {
             String str2 = this.ver;
             if (str2 == null ? appExtension.ver == null : str2.equals(appExtension.ver)) {
                 String str3 = this.name;
@@ -105,7 +105,7 @@ public class AppExtension implements Model {
     }
 
     public int hashCode() {
-        String str = this.f463id;
+        String str = this.f466id;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
         String str2 = this.ver;
         int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;

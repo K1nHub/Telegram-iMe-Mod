@@ -84,7 +84,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
                 HashMap hashMap = new HashMap();
                 for (String str : metadata.keys()) {
                     if (Datastore.WHITE_LISTED_HEADERS.contains(str.toLowerCase(Locale.ENGLISH))) {
-                        hashMap.put(str, (String) metadata.get(Metadata.Key.m685of(str, Metadata.ASCII_STRING_MARSHALLER)));
+                        hashMap.put(str, (String) metadata.get(Metadata.Key.m703of(str, Metadata.ASCII_STRING_MARSHALLER)));
                     }
                 }
                 if (hashMap.isEmpty()) {
@@ -244,7 +244,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
 
     public void stop() {
         if (isStarted()) {
-            close(Stream$State.Initial, Status.f513OK);
+            close(Stream$State.Initial, Status.f516OK);
         }
     }
 
@@ -266,7 +266,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     /* JADX INFO: Access modifiers changed from: private */
     public void handleIdleCloseTimer() {
         if (isOpen()) {
-            close(Stream$State.Initial, Status.f513OK);
+            close(Stream$State.Initial, Status.f516OK);
         }
     }
 

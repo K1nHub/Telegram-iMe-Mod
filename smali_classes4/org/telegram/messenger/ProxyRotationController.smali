@@ -475,41 +475,41 @@
     .line 74
     iget-object v3, v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
 
-    const-string v4, "proxy_ip"
+    const-string/jumbo v4, "proxy_ip"
 
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 75
     iget-object v3, v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
 
-    const-string v4, "proxy_pass"
+    const-string/jumbo v4, "proxy_pass"
 
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 76
     iget-object v3, v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
 
-    const-string v4, "proxy_user"
+    const-string/jumbo v4, "proxy_user"
 
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 77
     iget v3, v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->port:I
 
-    const-string v4, "proxy_port"
+    const-string/jumbo v4, "proxy_port"
 
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     .line 78
     iget-object v3, v2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
 
-    const-string v4, "proxy_secret"
+    const-string/jumbo v4, "proxy_secret"
 
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     const/4 v3, 0x1
 
-    const-string v4, "proxy_enabled"
+    const-string/jumbo v4, "proxy_enabled"
 
     .line 79
     invoke-interface {v1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
@@ -523,7 +523,7 @@
 
     if-nez v3, :cond_3
 
-    const-string v3, "proxy_enabled_calls"
+    const-string/jumbo v3, "proxy_enabled_calls"
 
     .line 82
     invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;

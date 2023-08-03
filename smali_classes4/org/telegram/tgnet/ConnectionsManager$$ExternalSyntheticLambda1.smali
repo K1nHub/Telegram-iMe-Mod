@@ -27,7 +27,7 @@
 
     iget v0, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda1;->f$0:I
 
-    invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$Fi_A2RVOj2JPMAhACRWsXmCsfTY(I)V
+    invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$cMYsLOUGOUTuekpCRC7avujXDog(I)V
 
     return-void
 .end method

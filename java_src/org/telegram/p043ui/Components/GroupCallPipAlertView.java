@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -36,10 +36,10 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
     int currentAccount;
 
     /* renamed from: cx */
-    float f1741cx;
+    float f1761cx;
 
     /* renamed from: cy */
-    float f1742cy;
+    float f1762cy;
     FrameLayout groupInfoContainer;
     private boolean invalidateGradient;
     VoIPToggleButton leaveButton;
@@ -100,20 +100,20 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
                 if (Build.VERSION.SDK_INT >= 21) {
                     VoIPService sharedInstance = VoIPService.getSharedInstance();
                     if (sharedInstance != null && ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
-                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("VoipChannelOpenVoiceChat", C3417R.string.VoipChannelOpenVoiceChat)));
+                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("VoipChannelOpenVoiceChat", C3419R.string.VoipChannelOpenVoiceChat)));
                     } else {
-                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("VoipGroupOpenVoiceChat", C3417R.string.VoipGroupOpenVoiceChat)));
+                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("VoipGroupOpenVoiceChat", C3419R.string.VoipGroupOpenVoiceChat)));
                     }
                 }
             }
         };
         this.groupInfoContainer = frameLayout;
-        frameLayout.setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
+        frameLayout.setPadding(AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(8));
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(22));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(22));
         this.groupInfoContainer.addView(this.avatarImageView, LayoutHelper.createFrame(44, 44));
-        this.groupInfoContainer.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), 0, ColorUtils.setAlphaComponent(-1, 76)));
+        this.groupInfoContainer.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(6), 0, ColorUtils.setAlphaComponent(-1, 76)));
         this.groupInfoContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -160,7 +160,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         VoIPToggleButton voIPToggleButton3 = new VoIPToggleButton(context, 44.0f);
         this.leaveButton = voIPToggleButton3;
         voIPToggleButton3.setTextSize(12);
-        this.leaveButton.setData(C3417R.C3419drawable.calls_decline, -1, -3257782, 0.3f, false, LocaleController.getString("VoipGroupLeave", C3417R.string.VoipGroupLeave), false, false);
+        this.leaveButton.setData(C3419R.C3421drawable.calls_decline, -1, -3257782, 0.3f, false, LocaleController.getString("VoipGroupLeave", C3419R.string.VoipGroupLeave), false, false);
         this.leaveButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GroupCallPipAlertView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -207,7 +207,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
                     }
                     return;
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                     return;
                 }
             }
@@ -247,7 +247,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(230), 1073741824), i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(230), 1073741824), i2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -257,7 +257,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null && sharedInstance.groupCall != null) {
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            avatarDrawable.setColor(Theme.getColor(Theme.keys_avatar_background[AvatarDrawable.getColorIndex(sharedInstance.getChat().f1515id)]), Theme.getColor(Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(sharedInstance.getChat().f1515id)]));
+            avatarDrawable.setColor(Theme.getColor(Theme.keys_avatar_background[AvatarDrawable.getColorIndex(sharedInstance.getChat().f1518id)]), Theme.getColor(Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(sharedInstance.getChat().f1518id)]));
             avatarDrawable.setInfo(sharedInstance.getChat());
             this.avatarImageView.setImage(ImageLocation.getForLocal(sharedInstance.getChat().photo.photo_small), "50_50", avatarDrawable, (Object) null);
             if (!TextUtils.isEmpty(sharedInstance.groupCall.call.title)) {
@@ -298,7 +298,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         }
         int callState = sharedInstance.getCallState();
         if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-            this.subtitleView.setText(LocaleController.getString("VoipGroupConnecting", C3417R.string.VoipGroupConnecting));
+            this.subtitleView.setText(LocaleController.getString("VoipGroupConnecting", C3419R.string.VoipGroupConnecting));
             return;
         }
         TextView textView = this.subtitleView;
@@ -317,25 +317,25 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         boolean z2 = !isBluetoothOn && sharedInstance.isSpeakerphoneOn();
         this.soundButton.setChecked(z2, z);
         if (isBluetoothOn) {
-            this.soundButton.setData(C3417R.C3419drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString("VoipAudioRoutingBluetooth", C3417R.string.VoipAudioRoutingBluetooth), false, z);
+            this.soundButton.setData(C3419R.C3421drawable.calls_bluetooth, -1, 0, 0.1f, true, LocaleController.getString("VoipAudioRoutingBluetooth", C3419R.string.VoipAudioRoutingBluetooth), false, z);
         } else if (z2) {
-            this.soundButton.setData(C3417R.C3419drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString("VoipSpeaker", C3417R.string.VoipSpeaker), false, z);
+            this.soundButton.setData(C3419R.C3421drawable.calls_speaker, -1, 0, 0.3f, true, LocaleController.getString("VoipSpeaker", C3419R.string.VoipSpeaker), false, z);
         } else if (sharedInstance.isHeadsetPlugged()) {
-            this.soundButton.setData(C3417R.C3419drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString("VoipAudioRoutingHeadset", C3417R.string.VoipAudioRoutingHeadset), false, z);
+            this.soundButton.setData(C3419R.C3421drawable.calls_headphones, -1, 0, 0.1f, true, LocaleController.getString("VoipAudioRoutingHeadset", C3419R.string.VoipAudioRoutingHeadset), false, z);
         } else {
-            this.soundButton.setData(C3417R.C3419drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString("VoipSpeaker", C3417R.string.VoipSpeaker), false, z);
+            this.soundButton.setData(C3419R.C3421drawable.calls_speaker, -1, 0, 0.1f, true, LocaleController.getString("VoipSpeaker", C3419R.string.VoipSpeaker), false, z);
         }
         if (sharedInstance.mutedByAdmin()) {
-            this.muteButton.setData(C3417R.C3419drawable.calls_unmute, -1, ColorUtils.setAlphaComponent(-1, 76), 0.1f, true, LocaleController.getString("VoipMutedByAdminShort", C3417R.string.VoipMutedByAdminShort), true, z);
+            this.muteButton.setData(C3419R.C3421drawable.calls_unmute, -1, ColorUtils.setAlphaComponent(-1, 76), 0.1f, true, LocaleController.getString("VoipMutedByAdminShort", C3419R.string.VoipMutedByAdminShort), true, z);
         } else {
             VoIPToggleButton voIPToggleButton = this.muteButton;
-            int i2 = C3417R.C3419drawable.calls_unmute;
+            int i2 = C3419R.C3421drawable.calls_unmute;
             int alphaComponent = ColorUtils.setAlphaComponent(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f));
             if (sharedInstance.isMicMute()) {
-                i = C3417R.string.VoipUnmute;
+                i = C3419R.string.VoipUnmute;
                 str = "VoipUnmute";
             } else {
-                i = C3417R.string.VoipMute;
+                i = C3419R.string.VoipMute;
                 str = "VoipMute";
             }
             voIPToggleButton.setData(i2, -1, alphaComponent, 0.1f, true, LocaleController.getString(str, i), sharedInstance.isMicMute(), z);
@@ -355,8 +355,8 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
 
     public void setPosition(int i, float f, float f2) {
         this.position = i;
-        this.f1741cx = f;
-        this.f1742cy = f2;
+        this.f1761cx = f;
+        this.f1762cy = f2;
         invalidate();
         this.invalidateGradient = true;
     }

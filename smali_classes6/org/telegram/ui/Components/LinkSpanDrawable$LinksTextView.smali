@@ -185,11 +185,7 @@
     move-result v3
 
     .line 555
-    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Landroid/text/Layout;->getLineLeft(I)F
+    invoke-virtual {v0, v2}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v4
 

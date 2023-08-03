@@ -43,6 +43,7 @@ import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
 import com.iMe.p031ui.wallet.crypto.token.TokenManagementFragment;
+import com.iMe.p031ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment;
 import com.iMe.p031ui.wallet.home.tabs.crypto.settings.adapter.FoundTokensRecycleAdapter;
 import com.iMe.p031ui.wallet.home.tabs.crypto.settings.adapter.diff.TokensSearchDiffCallback;
 import com.iMe.p031ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog;
@@ -65,7 +66,10 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -73,15 +77,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoTokensBinding;
 import org.telegram.messenger.databinding.ForkRecycleItemGlobalStateBinding;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletTokensHeaderBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
@@ -122,14 +132,99 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         Lazy lazy;
         Lazy lazy2;
         this.screenType = tokensScreenType;
-        WalletHomeCryptoTokensSettingsFragment$presenter$2 walletHomeCryptoTokensSettingsFragment$presenter$2 = new WalletHomeCryptoTokensSettingsFragment$presenter$2(this);
+        Function0<WalletHomeCryptoTokensSettingsPresenter> function0 = new Function0<WalletHomeCryptoTokensSettingsPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletHomeCryptoTokensSettingsPresenter invoke() {
+                Lazy lazy3;
+                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(WalletHomeCryptoTokensSettingsFragment.this.getScreenType());
+                    }
+                };
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletHomeCryptoTokensSettingsPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletHomeCryptoTokensSettingsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsPresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletHomeCryptoTokensSettingsPresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeCryptoTokensSettingsPresenter.class.getName() + ".presenter", walletHomeCryptoTokensSettingsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2319x6f6044cf(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeCryptoTokensSettingsPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<FoundTokensRecycleAdapter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.crypto.settings.adapter.FoundTokensRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final FoundTokensRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(FoundTokensRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.searchRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeCryptoTokensSettingsFragment$binding$2(this), 1, (Object) null);
-        lazy2 = LazyKt__LazyJVMKt.lazy(new WalletHomeCryptoTokensSettingsFragment$mainAdapter$2(this));
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletHomeCryptoTokensBinding>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletHomeCryptoTokensBinding invoke() {
+                return ForkFragmentWalletHomeCryptoTokensBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
+            }
+        }, 1, (Object) null);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$mainAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletHomeCryptoTokensSettingsFragment.ListAdapter invoke() {
+                return new WalletHomeCryptoTokensSettingsFragment.ListAdapter();
+            }
+        });
         this.mainAdapter$delegate = lazy2;
         this.isPinAvailable = Intrinsics.areEqual(tokensScreenType, TokensScreenType.Crypto.INSTANCE);
         this.headerRow = -1;
@@ -279,12 +374,12 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.wallet_home_crypto_tokens_settings_toolbar_title));
         setupSearchIfNeeded();
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletHomeCryptoTokensSettingsFragment.this.finishFragment();
@@ -295,7 +390,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
 
     private final void setupSearchIfNeeded() {
         if (Intrinsics.areEqual(this.screenType, TokensScreenType.Crypto.INSTANCE)) {
-            ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupSearchIfNeeded$1
+            ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3419R.C3421drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupSearchIfNeeded$1
                 @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onSearchExpand() {
                     ForkFragmentWalletHomeCryptoTokensBinding binding;
@@ -334,8 +429,8 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
             EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
             searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(128)});
             searchField.setImeOptions(Integer.MIN_VALUE);
-            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3417R.string.token_search_hint));
-            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
+            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3419R.string.token_search_hint));
+            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3419R.string.Search));
         }
     }
 
@@ -379,7 +474,23 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
     private final void setupListeners() {
         final FoundTokensRecycleAdapter searchRecycleAdapter = getSearchRecycleAdapter();
         GlobalStateProvider globalStateProvider = searchRecycleAdapter.getGlobalStateProvider();
-        globalStateProvider.setOnRetryButtonClickAction(new WalletHomeCryptoTokensSettingsFragment$setupListeners$1$1$1(this));
+        globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupListeners$1$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletHomeCryptoTokensSettingsPresenter.reloadSearchResults$default(WalletHomeCryptoTokensSettingsFragment.this.getPresenter(), false, 1, null);
+            }
+        });
         globalStateProvider.setOnEmptyButtonClickAction(new WalletHomeCryptoTokensSettingsFragment$setupListeners$1$1$2(this));
         searchRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
@@ -405,27 +516,27 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         ForkFragmentWalletHomeCryptoTokensBinding binding = getBinding();
         binding.getRoot().setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         binding.recycleTokensSearch.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3484ActionBar.setSearchTextColor(getThemedColor(i), false);
-        c3484ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText), true);
-        c3484ActionBar.setSearchCursorColor(getThemedColor(i));
+        c3485ActionBar.setSearchTextColor(getThemedColor(i), false);
+        c3485ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText), true);
+        c3485ActionBar.setSearchCursorColor(getThemedColor(i));
         AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), isLightStatusBar());
         setupActionBarColors();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupActionBarColors() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         if (this.isSearching) {
-            c3484ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
-            c3484ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
-            c3484ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
+            c3485ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
+            c3485ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
+            c3485ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
             return;
         }
-        c3484ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
-        c3484ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
-        c3484ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
+        c3485ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
+        c3485ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
+        c3485ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -467,7 +578,13 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
 
         public ListAdapter() {
             Lazy lazy;
-            lazy = LazyKt__LazyJVMKt.lazy(C2325x4798b42.INSTANCE);
+            lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$tokenLogoSize$2
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final Integer invoke() {
+                    return Integer.valueOf(AndroidUtilities.m73dp(35.0f));
+                }
+            });
             this.tokenLogoSize$delegate = lazy;
         }
 
@@ -501,30 +618,105 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
             LinearLayout linearLayout;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.HEADER_CELL) {
-                ForkRecycleItemWalletTokensHeaderBinding inflate = ForkRecycleItemWalletTokensHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
-                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
-                inflate.textAddToken.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3417R.string.wallet_token_settings_add_custom_tokens));
-                inflate.textNetwork.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3417R.string.wallet_network_type_dialog_title));
-                inflate.textTitleDisplayedTokens.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3417R.string.wallet_token_settings_displayed_tokens));
+                final ForkRecycleItemWalletTokensHeaderBinding inflate = ForkRecycleItemWalletTokensHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
+                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
+                inflate.textAddToken.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3419R.string.wallet_token_settings_add_custom_tokens));
+                inflate.textNetwork.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3419R.string.wallet_network_type_dialog_title));
+                inflate.textTitleDisplayedTokens.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3419R.string.wallet_token_settings_displayed_tokens));
                 LinearLayout linearAddToken = inflate.linearAddToken;
                 Intrinsics.checkNotNullExpressionValue(linearAddToken, "linearAddToken");
-                ViewExtKt.safeThrottledClick$default(linearAddToken, 0L, new C2321xf56e8537(walletHomeCryptoTokensSettingsFragment), 1, null);
+                ViewExtKt.safeThrottledClick$default(linearAddToken, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                        invoke2(view);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        WalletHomeCryptoTokensSettingsFragment.this.openAddTokenScreen();
+                    }
+                }, 1, null);
                 LinearLayout linearNetwork = inflate.linearNetwork;
                 Intrinsics.checkNotNullExpressionValue(linearNetwork, "linearNetwork");
-                ViewExtKt.safeThrottledClick$default(linearNetwork, 0L, new C2322xf56e8538(walletHomeCryptoTokensSettingsFragment, inflate), 1, null);
+                ViewExtKt.safeThrottledClick$default(linearNetwork, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$2
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                        invoke2(view);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = WalletHomeCryptoTokensSettingsFragment.this;
+                        NetworkTypeView networkTypeView = inflate.networkTypeView;
+                        Intrinsics.checkNotNullExpressionValue(networkTypeView, "networkTypeView");
+                        walletHomeCryptoTokensSettingsFragment2.showNetworksDialog(networkTypeView);
+                    }
+                }, 1, null);
                 NetworkTypeView networkTypeView = inflate.networkTypeView;
                 Intrinsics.checkNotNullExpressionValue(networkTypeView, "networkTypeView");
-                ViewExtKt.safeThrottledClick$default(networkTypeView, 0L, new C2323xf56e8539(walletHomeCryptoTokensSettingsFragment, inflate), 1, null);
+                ViewExtKt.safeThrottledClick$default(networkTypeView, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$3
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                        invoke2(view);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = WalletHomeCryptoTokensSettingsFragment.this;
+                        NetworkTypeView networkTypeView2 = inflate.networkTypeView;
+                        Intrinsics.checkNotNullExpressionValue(networkTypeView2, "networkTypeView");
+                        walletHomeCryptoTokensSettingsFragment2.showNetworksDialog(networkTypeView2);
+                    }
+                }, 1, null);
                 LinearLayout root = inflate.getRoot();
                 Intrinsics.checkNotNullExpressionValue(root, "inflate(layoutInflater).…                   }.root");
                 linearLayout = root;
             } else if (i == IdFabric$ViewTypes.GLOBAL_STATE) {
                 GlobalStateLayout root2 = ForkRecycleItemGlobalStateBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this)).getRoot();
-                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = WalletHomeCryptoTokensSettingsFragment.this;
+                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment2 = WalletHomeCryptoTokensSettingsFragment.this;
                 GlobalState settingsGlobalState = walletHomeCryptoTokensSettingsFragment2.getPresenter().getSettingsGlobalState();
                 if (settingsGlobalState != null) {
                     root2.setInternalState(settingsGlobalState);
-                    root2.setRetryButtonClickListener(new C2324xf56e88f8(walletHomeCryptoTokensSettingsFragment2));
+                    root2.setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$2$1
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            super(0);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function0
+                        public /* bridge */ /* synthetic */ Unit invoke() {
+                            invoke2();
+                            return Unit.INSTANCE;
+                        }
+
+                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                        public final void invoke2() {
+                            WalletHomeCryptoTokensSettingsFragment.this.getPresenter().reloadSettings();
+                        }
+                    });
                 }
                 Intrinsics.checkNotNullExpressionValue(root2, "inflate(layoutInflater).…                        }");
                 linearLayout = root2;
@@ -545,7 +737,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int i) {
             List<AppCompatImageView> listOf;
             List<LinearLayout> listOf2;
             Intrinsics.checkNotNullParameter(holder, "holder");
@@ -587,7 +779,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                 View view = holder.itemView;
                 Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.iMe.fork.ui.view.MovingCheckCell");
                 final MovingCheckCell movingCheckCell = (MovingCheckCell) view;
-                WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment3 = WalletHomeCryptoTokensSettingsFragment.this;
+                final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment3 = WalletHomeCryptoTokensSettingsFragment.this;
                 movingCheckCell.setBackgroundColor(walletHomeCryptoTokensSettingsFragment3.getThemedColor(Theme.key_windowBackgroundWhite));
                 Pair<TokenDetailed, TokenDisplaySettings> tokenSetting = walletHomeCryptoTokensSettingsFragment3.getPresenter().getTokenSetting(i - walletHomeCryptoTokensSettingsFragment3.tokensStartRow);
                 TokenDetailed component1 = tokenSetting.component1();
@@ -608,8 +800,8 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                 } else if (screenType instanceof TokensScreenType.Crypto) {
                     GradientDrawable gradientDrawable = new GradientDrawable();
                     gradientDrawable.setShape(1);
-                    gradientDrawable.setColor(ColorStateList.valueOf(ContextCompat.getColor(movingCheckCell.getContext(), C3417R.C3418color.placeholder_color)));
-                    movingCheckCell.setImage(DrawableKt.toBitmap$default(gradientDrawable, AndroidUtilities.m54dp(40), AndroidUtilities.m54dp(40), null, 4, null));
+                    gradientDrawable.setColor(ColorStateList.valueOf(ContextCompat.getColor(movingCheckCell.getContext(), C3419R.C3420color.placeholder_color)));
+                    movingCheckCell.setImage(DrawableKt.toBitmap$default(gradientDrawable, AndroidUtilities.m72dp(40), AndroidUtilities.m72dp(40), null, 4, null));
                     Activity parentActivity2 = walletHomeCryptoTokensSettingsFragment3.getParentActivity();
                     Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
                     GlideHelper.loadImageAsBitmap(parentActivity2, component1.getAvatarUrl(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda0
@@ -622,7 +814,27 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                 if (component1.isCoin()) {
                     return;
                 }
-                ViewExtKt.safeThrottledClick$default(movingCheckCell, 0L, new C2320x64b14e3d(movingCheckCell, walletHomeCryptoTokensSettingsFragment3, i), 1, null);
+                ViewExtKt.safeThrottledClick$default(movingCheckCell, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(View view2) {
+                        invoke2(view2);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(View it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        MovingCheckCell movingCheckCell2 = MovingCheckCell.this;
+                        movingCheckCell2.setChecked(!movingCheckCell2.isChecked());
+                        walletHomeCryptoTokensSettingsFragment3.getPresenter().switchTokenVisibility(i - walletHomeCryptoTokensSettingsFragment3.tokensStartRow, MovingCheckCell.this.isChecked());
+                    }
+                }, 1, null);
             }
         }
     }

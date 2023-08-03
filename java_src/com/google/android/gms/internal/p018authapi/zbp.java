@@ -13,11 +13,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zbp extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zbp> CREATOR = new zbq();
-    @SafeParcelable.Field(getter = "getCredential", m779id = 1)
+    @SafeParcelable.Field(getter = "getCredential", m797id = 1)
     private final Credential zba;
 
     @SafeParcelable.Constructor
-    public zbp(@SafeParcelable.Param(m778id = 1) Credential credential) {
+    public zbp(@SafeParcelable.Param(m796id = 1) Credential credential) {
         this.zba = credential;
     }
 

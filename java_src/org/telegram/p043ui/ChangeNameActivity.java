@@ -9,18 +9,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_account_updateProfile;
 import org.telegram.tgnet.TLRPC$TL_error;
@@ -50,11 +51,11 @@ public class ChangeNameActivity extends BaseFragment {
     public View createView(Context context) {
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_avatar_actionBarSelectorBlue, this.resourcesProvider), false);
         this.actionBar.setItemsColor(Theme.getColor(Theme.key_actionBarDefaultIcon, this.resourcesProvider), false);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("EditName", C3417R.string.EditName));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeNameActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("EditName", C3419R.string.EditName));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeNameActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i != -1) {
                     if (i != 1 || ChangeNameActivity.this.firstNameField.getText().length() == 0) {
@@ -67,7 +68,7 @@ public class ChangeNameActivity extends BaseFragment {
                 ChangeNameActivity.this.finishFragment();
             }
         });
-        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, C3417R.C3419drawable.ic_ab_done, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3417R.string.Done));
+        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, C3419R.C3421drawable.ic_ab_done, AndroidUtilities.m72dp(56), LocaleController.getString("Done", C3419R.string.Done));
         TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(this.currentAccount).getClientUserId()));
         if (user == null) {
             user = UserConfig.getInstance(this.currentAccount).getCurrentUser();
@@ -76,7 +77,14 @@ public class ChangeNameActivity extends BaseFragment {
         this.fragmentView = linearLayout;
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         ((LinearLayout) this.fragmentView).setOrientation(1);
-        this.fragmentView.setOnTouchListener(ChangeNameActivity$$ExternalSyntheticLambda0.INSTANCE);
+        this.fragmentView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createView$0;
+                lambda$createView$0 = ChangeNameActivity.lambda$createView$0(view, motionEvent);
+                return lambda$createView$0;
+            }
+        });
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.ChangeNameActivity.2
             @Override // org.telegram.p043ui.Components.EditTextBoldCursor
             protected Theme.ResourcesProvider getResourcesProvider() {
@@ -105,9 +113,9 @@ public class ChangeNameActivity extends BaseFragment {
         this.firstNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.firstNameField.setInputType(49152);
         this.firstNameField.setImeOptions(5);
-        this.firstNameField.setHint(LocaleController.getString("FirstName", C3417R.string.FirstName));
+        this.firstNameField.setHint(LocaleController.getString("FirstName", C3419R.string.FirstName));
         this.firstNameField.setCursorColor(Theme.getColor(i2, this.resourcesProvider));
-        this.firstNameField.setCursorSize(AndroidUtilities.m54dp(20));
+        this.firstNameField.setCursorSize(AndroidUtilities.m72dp(20));
         this.firstNameField.setCursorWidth(1.5f);
         linearLayout.addView(this.firstNameField, LayoutHelper.createLinear(-1, 36, 24, 24, 24, 0));
         this.firstNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda1
@@ -136,9 +144,9 @@ public class ChangeNameActivity extends BaseFragment {
         this.lastNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.lastNameField.setInputType(49152);
         this.lastNameField.setImeOptions(6);
-        this.lastNameField.setHint(LocaleController.getString("LastName", C3417R.string.LastName));
+        this.lastNameField.setHint(LocaleController.getString("LastName", C3419R.string.LastName));
         this.lastNameField.setCursorColor(Theme.getColor(i2, this.resourcesProvider));
-        this.lastNameField.setCursorSize(AndroidUtilities.m54dp(20));
+        this.lastNameField.setCursorSize(AndroidUtilities.m72dp(20));
         this.lastNameField.setCursorWidth(1.5f);
         linearLayout.addView(this.lastNameField, LayoutHelper.createLinear(-1, 36, 24, 16, 24, 0));
         this.lastNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda2
@@ -211,9 +219,14 @@ public class ChangeNameActivity extends BaseFragment {
                 user.last_name = tLRPC$TL_account_updateProfile.last_name;
             }
             UserConfig.getInstance(this.currentAccount).saveConfig(true);
-            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.mainUserInfoChanged, new Object[0]);
-            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_account_updateProfile, ChangeNameActivity$$ExternalSyntheticLambda4.INSTANCE);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_account_updateProfile, new RequestDelegate() { // from class: org.telegram.ui.ChangeNameActivity$$ExternalSyntheticLambda4
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+                    ChangeNameActivity.lambda$saveName$3(tLObject, tLRPC$TL_error);
+                }
+            });
         }
     }
 

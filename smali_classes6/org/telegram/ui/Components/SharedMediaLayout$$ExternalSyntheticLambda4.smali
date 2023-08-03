@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$CtR5HtKYScIEeY-kS1HTrJ2vbpE(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$AJi7VydZxCX3qHVTKPDeMssqqJ4(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/view/View;)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -32,7 +32,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.HeaderCell;
 import org.telegram.p043ui.Cells.TextCheckCell2;
@@ -116,16 +116,16 @@ public class TopicCreateFragment extends BaseFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         if (this.topicForEdit != null) {
-            this.actionBar.setTitle(LocaleController.getString("EditTopic", C3417R.string.EditTopic));
+            this.actionBar.setTitle(LocaleController.getString("EditTopic", C3419R.string.EditTopic));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("NewTopic", C3417R.string.NewTopic));
+            this.actionBar.setTitle(LocaleController.getString("NewTopic", C3419R.string.NewTopic));
         }
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new C67411());
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        this.actionBar.setActionBarMenuOnItemClick(new C70001());
         if (this.topicForEdit == null) {
-            this.actionBar.createMenu().addItem(1, LocaleController.getString("Create", C3417R.string.Create).toUpperCase());
+            this.actionBar.createMenu().addItem(1, LocaleController.getString("Create", C3419R.string.Create).toUpperCase());
         } else {
-            this.actionBar.createMenu().addItem(2, C3417R.C3419drawable.ic_ab_done);
+            this.actionBar.createMenu().addItem(2, C3419R.C3421drawable.ic_ab_done);
         }
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(this, context) { // from class: org.telegram.ui.TopicCreateFragment.2
             boolean keyboardWasShown;
@@ -134,7 +134,7 @@ public class TopicCreateFragment extends BaseFragment {
             protected void onMeasure(int i, int i2) {
                 measureKeyboardHeight();
                 if (getKeyboardHeight() == 0 && !this.keyboardWasShown) {
-                    int i3 = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m54dp(200));
+                    int i3 = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m72dp(200));
                     this.keyboardHeight = i3;
                     setPadding(0, 0, 0, i3);
                 } else {
@@ -150,18 +150,18 @@ public class TopicCreateFragment extends BaseFragment {
         sizeNotifierFrameLayout.addView(linearLayout);
         HeaderCell headerCell = new HeaderCell(context);
         TLRPC$TL_forumTopic tLRPC$TL_forumTopic = this.topicForEdit;
-        if (tLRPC$TL_forumTopic != null && tLRPC$TL_forumTopic.f1568id == 1) {
-            headerCell.setText(LocaleController.getString("CreateGeneralTopicTitle", C3417R.string.CreateGeneralTopicTitle));
+        if (tLRPC$TL_forumTopic != null && tLRPC$TL_forumTopic.f1575id == 1) {
+            headerCell.setText(LocaleController.getString("CreateGeneralTopicTitle", C3419R.string.CreateGeneralTopicTitle));
         } else {
-            headerCell.setText(LocaleController.getString("CreateTopicTitle", C3417R.string.CreateTopicTitle));
+            headerCell.setText(LocaleController.getString("CreateTopicTitle", C3419R.string.CreateTopicTitle));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.editTextBoldCursor = editTextBoldCursor;
-        editTextBoldCursor.setHintText(LocaleController.getString("EnterTopicName", C3417R.string.EnterTopicName));
+        editTextBoldCursor.setHintText(LocaleController.getString("EnterTopicName", C3419R.string.EnterTopicName));
         this.editTextBoldCursor.setHintColor(getThemedColor(Theme.key_chat_messagePanelHint));
         this.editTextBoldCursor.setTextColor(getThemedColor(Theme.key_chat_messagePanelText));
-        this.editTextBoldCursor.setPadding(AndroidUtilities.m54dp(0), this.editTextBoldCursor.getPaddingTop(), AndroidUtilities.m54dp(0), this.editTextBoldCursor.getPaddingBottom());
+        this.editTextBoldCursor.setPadding(AndroidUtilities.m72dp(0), this.editTextBoldCursor.getPaddingTop(), AndroidUtilities.m72dp(0), this.editTextBoldCursor.getPaddingBottom());
         this.editTextBoldCursor.setBackgroundDrawable(null);
         this.editTextBoldCursor.setSingleLine(true);
         EditTextBoldCursor editTextBoldCursor2 = this.editTextBoldCursor;
@@ -196,8 +196,8 @@ public class TopicCreateFragment extends BaseFragment {
                 }
             }
         });
-        C67444 c67444 = new C67444(this, context);
-        c67444.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda0
+        C70034 c70034 = new C70034(this, context);
+        c70034.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TopicCreateFragment.this.lambda$createView$0(view);
@@ -205,20 +205,20 @@ public class TopicCreateFragment extends BaseFragment {
         });
         for (int i = 0; i < 2; i++) {
             this.backupImageView[i] = new BackupImageView(context);
-            c67444.addView(this.backupImageView[i], LayoutHelper.createFrame(28, 28, 17));
+            c70034.addView(this.backupImageView[i], LayoutHelper.createFrame(28, 28, 17));
         }
-        frameLayout.addView(c67444, LayoutHelper.createFrame(40, 40, 16, 10, 0, 0, 0));
+        frameLayout.addView(c70034, LayoutHelper.createFrame(40, 40, 16, 10, 0, 0, 0));
         linearLayout.addView(headerCell);
         linearLayout.addView(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        int i2 = C3417R.C3419drawable.greydivider_top;
+        int i2 = C3419R.C3421drawable.greydivider_top;
         int i3 = Theme.key_windowBackgroundGrayShadow;
         CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(context, i2, Theme.getColor(i3)), 0, 0);
         combinedDrawable.setFullsize(true);
         frameLayout2.setBackgroundDrawable(combinedDrawable);
         frameLayout2.setClipChildren(false);
         TLRPC$TL_forumTopic tLRPC$TL_forumTopic2 = this.topicForEdit;
-        if (tLRPC$TL_forumTopic2 == null || tLRPC$TL_forumTopic2.f1568id != 1) {
+        if (tLRPC$TL_forumTopic2 == null || tLRPC$TL_forumTopic2.f1575id != 1) {
             SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), false, null, 3, null) { // from class: org.telegram.ui.TopicCreateFragment.5
                 private boolean firstLayout = true;
 
@@ -236,7 +236,7 @@ public class TopicCreateFragment extends BaseFragment {
                     boolean z = false;
                     if (!TextUtils.isEmpty(UserConfig.getInstance(((BaseFragment) TopicCreateFragment.this).currentAccount).defaultTopicIcons)) {
                         TLRPC$TL_messages_stickerSet stickerSetByEmojiOrName = TopicCreateFragment.this.getMediaDataController().getStickerSetByEmojiOrName(UserConfig.getInstance(((BaseFragment) TopicCreateFragment.this).currentAccount).defaultTopicIcons);
-                        if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.f1548id) == MediaDataController.getStickerSetId(tLRPC$Document)) {
+                        if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.f1552id) == MediaDataController.getStickerSetId(tLRPC$Document)) {
                             z = true;
                         }
                     }
@@ -263,14 +263,14 @@ public class TopicCreateFragment extends BaseFragment {
             this.forumBubbleDrawable.addParent(this.backupImageView[1]);
         } else {
             ImageView imageView = new ImageView(context);
-            imageView.setImageResource(C3417R.C3419drawable.msg_filled_general);
+            imageView.setImageResource(C3419R.C3421drawable.msg_filled_general);
             imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_inMenu), PorterDuff.Mode.MULTIPLY));
-            c67444.addView(imageView, LayoutHelper.createFrame(22, 22, 17));
+            c70034.addView(imageView, LayoutHelper.createFrame(22, 22, 17));
             frameLayout2.addView(new ActionBarPopupWindow.GapView(context, getResourceProvider()), LayoutHelper.createFrame(-1, 8));
             TextCheckCell2 textCheckCell2 = new TextCheckCell2(context);
             this.checkBoxCell = textCheckCell2;
             textCheckCell2.getCheckBox().setDrawIconType(0);
-            this.checkBoxCell.setTextAndCheck(LocaleController.getString("EditTopicHide", C3417R.string.EditTopicHide), !this.topicForEdit.hidden, false);
+            this.checkBoxCell.setTextAndCheck(LocaleController.getString("EditTopicHide", C3419R.string.EditTopicHide), !this.topicForEdit.hidden, false);
             this.checkBoxCell.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor(Theme.key_windowBackgroundWhite), getThemedColor(Theme.key_listSelector)));
             this.checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -280,8 +280,8 @@ public class TopicCreateFragment extends BaseFragment {
             });
             frameLayout2.addView(this.checkBoxCell, LayoutHelper.createFrame(-1, 50, 48, 0, 8, 0, 0));
             TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
-            textInfoPrivacyCell.setText(LocaleController.getString("EditTopicHideInfo", C3417R.string.EditTopicHideInfo));
-            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(getContext(), C3417R.C3419drawable.greydivider_bottom, i3, getResourceProvider()));
+            textInfoPrivacyCell.setText(LocaleController.getString("EditTopicHideInfo", C3419R.string.EditTopicHideInfo));
+            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(getContext(), C3419R.C3421drawable.greydivider_bottom, i3, getResourceProvider()));
             frameLayout2.addView(textInfoPrivacyCell, LayoutHelper.createFrame(-1, -2, 48, 0, 58, 0, 0));
         }
         linearLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, -1));
@@ -298,7 +298,7 @@ public class TopicCreateFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.TopicCreateFragment$1 */
     /* loaded from: classes5.dex */
-    public class C67411 extends C3484ActionBar.ActionBarMenuOnItemClick {
+    public class C70001 extends C3485ActionBar.ActionBarMenuOnItemClick {
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$onItemClick$2(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         }
@@ -307,13 +307,13 @@ public class TopicCreateFragment extends BaseFragment {
         public static /* synthetic */ void lambda$onItemClick$3(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         }
 
-        C67411() {
+        C70001() {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:42:0x0100, code lost:
             if (r13.topicForEdit.icon_emoji_id != r13.selectedEmojiDocumentId) goto L58;
          */
-        @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
@@ -323,7 +323,7 @@ public class TopicCreateFragment extends BaseFragment {
                 Method dump skipped, instructions count: 483
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.TopicCreateFragment.C67411.onItemClick(int):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.TopicCreateFragment.C70001.onItemClick(int):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -331,7 +331,7 @@ public class TopicCreateFragment extends BaseFragment {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicCreateFragment.C67411.this.lambda$onItemClick$0(tLObject, str, alertDialog);
+                    TopicCreateFragment.C70001.this.lambda$onItemClick$0(tLObject, str, alertDialog);
                 }
             });
         }
@@ -355,29 +355,29 @@ public class TopicCreateFragment extends BaseFragment {
                         tLRPC$TL_messageService.action = tLRPC$TL_messageActionTopicCreate;
                         tLRPC$TL_messageService.peer_id = TopicCreateFragment.this.getMessagesController().getPeer(-TopicCreateFragment.this.chatId);
                         tLRPC$TL_messageService.dialog_id = -TopicCreateFragment.this.chatId;
-                        tLRPC$TL_messageService.f1539id = tLRPC$TL_updateMessageID.f1651id;
+                        tLRPC$TL_messageService.f1542id = tLRPC$TL_updateMessageID.f1667id;
                         tLRPC$TL_messageService.date = (int) (System.currentTimeMillis() / 1000);
                         ArrayList<MessageObject> arrayList = new ArrayList<>();
                         arrayList.add(new MessageObject(((BaseFragment) TopicCreateFragment.this).currentAccount, tLRPC$TL_messageService, false, false));
                         TLRPC$Chat chat = TopicCreateFragment.this.getMessagesController().getChat(Long.valueOf(TopicCreateFragment.this.chatId));
                         TLRPC$TL_forumTopic tLRPC$TL_forumTopic = new TLRPC$TL_forumTopic();
-                        tLRPC$TL_forumTopic.f1568id = tLRPC$TL_updateMessageID.f1651id;
+                        tLRPC$TL_forumTopic.f1575id = tLRPC$TL_updateMessageID.f1667id;
                         TopicCreateFragment topicCreateFragment = TopicCreateFragment.this;
                         long j = topicCreateFragment.selectedEmojiDocumentId;
                         if (j != 0) {
                             tLRPC$TL_forumTopic.icon_emoji_id = j;
                             tLRPC$TL_forumTopic.flags |= 1;
                         }
-                        tLRPC$TL_forumTopic.f1569my = true;
+                        tLRPC$TL_forumTopic.f1576my = true;
                         tLRPC$TL_forumTopic.flags |= 2;
                         tLRPC$TL_forumTopic.topicStartMessage = tLRPC$TL_messageService;
                         tLRPC$TL_forumTopic.title = str;
-                        tLRPC$TL_forumTopic.top_message = tLRPC$TL_messageService.f1539id;
+                        tLRPC$TL_forumTopic.top_message = tLRPC$TL_messageService.f1542id;
                         tLRPC$TL_forumTopic.topMessage = tLRPC$TL_messageService;
                         tLRPC$TL_forumTopic.from_id = topicCreateFragment.getMessagesController().getPeer(TopicCreateFragment.this.getUserConfig().clientUserId);
                         tLRPC$TL_forumTopic.notify_settings = new TLRPC$TL_peerNotifySettings();
                         tLRPC$TL_forumTopic.icon_color = TopicCreateFragment.this.iconColor;
-                        chatActivity.setThreadMessages(arrayList, chat, tLRPC$TL_messageService.f1539id, 1, 1, tLRPC$TL_forumTopic);
+                        chatActivity.setThreadMessages(arrayList, chat, tLRPC$TL_messageService.f1542id, 1, 1, tLRPC$TL_forumTopic);
                         chatActivity.justCreatedTopic = true;
                         TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(-TopicCreateFragment.this.chatId, tLRPC$TL_forumTopic, true);
                         TopicCreateFragment.this.presentFragment(chatActivity);
@@ -391,12 +391,12 @@ public class TopicCreateFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.TopicCreateFragment$4 */
     /* loaded from: classes5.dex */
-    public class C67444 extends FrameLayout {
+    public class C70034 extends FrameLayout {
         ValueAnimator backAnimator;
         boolean pressed;
         float pressedProgress;
 
-        C67444(TopicCreateFragment topicCreateFragment, Context context) {
+        C70034(TopicCreateFragment topicCreateFragment, Context context) {
             super(context);
         }
 
@@ -431,14 +431,14 @@ public class TopicCreateFragment extends BaseFragment {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.TopicCreateFragment$4$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            TopicCreateFragment.C67444.this.lambda$setPressed$0(valueAnimator2);
+                            TopicCreateFragment.C70034.this.lambda$setPressed$0(valueAnimator2);
                         }
                     });
                     this.backAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.TopicCreateFragment.4.1
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             super.onAnimationEnd(animator);
-                            C67444.this.backAnimator = null;
+                            C70034.this.backAnimator = null;
                         }
                     });
                     this.backAnimator.setInterpolator(new OvershootInterpolator(5.0f));
@@ -491,7 +491,7 @@ public class TopicCreateFragment extends BaseFragment {
         if (!z && longValue != 0 && !getUserConfig().isPremium()) {
             TLRPC$Document findDocument = AnimatedEmojiDrawable.findDocument(this.currentAccount, l.longValue());
             if (findDocument != null) {
-                BulletinFactory.m29of(this).createEmojiBulletin(findDocument, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", C3417R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", C3417R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda2
+                BulletinFactory.m32of(this).createEmojiBulletin(findDocument, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", C3419R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", C3419R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.TopicCreateFragment$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
                         TopicCreateFragment.this.lambda$selectEmoji$2();

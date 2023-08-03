@@ -8,10 +8,11 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.channels.ProducerScope;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: ChannelFlow.kt */
-@DebugMetadata(m84c = "kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1", m83f = "ChannelFlow.kt", m82l = {60}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1", m101f = "ChannelFlow.kt", m100l = {60}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-final class ChannelFlow$collectToFun$1 extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
+final class ChannelFlow$collectToFun$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ ChannelFlow<T> this$0;
@@ -31,6 +32,10 @@ final class ChannelFlow$collectToFun$1 extends SuspendLambda implements Function
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((ProducerScope) ((ProducerScope) obj), continuation);
+    }
+
     public final Object invoke(ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
         return ((ChannelFlow$collectToFun$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }

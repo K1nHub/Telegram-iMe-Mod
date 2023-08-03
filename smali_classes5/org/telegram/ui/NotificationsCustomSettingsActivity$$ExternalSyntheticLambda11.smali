@@ -2,40 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ProfileNotificationsActivity$ProfileNotificationsActivityDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
+.field public final synthetic f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+.field public final synthetic f$2:Landroid/view/View;
+
+.field public final synthetic f$3:Z
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+    iput-object p3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$2:Landroid/view/View;
+
+    iput-boolean p4, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$3:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didCreateNewException(Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;)V
-    .locals 1
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$0vPSAhH3PvmQ7a3OslGVaKcbXUk(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;)V
+    iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
 
-    return-void
-.end method
+    iget-object v2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$2:Landroid/view/View;
 
-.method public synthetic didRemoveException(J)V
-    .locals 0
+    iget-boolean v3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda11;->f$3:Z
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ProfileNotificationsActivity$ProfileNotificationsActivityDelegate$-CC;->$default$didRemoveException(Lorg/telegram/ui/ProfileNotificationsActivity$ProfileNotificationsActivityDelegate;J)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$9w5jzyO-88SW3MwIFkL23qQmGEc(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;Z)V
 
     return-void
 .end method

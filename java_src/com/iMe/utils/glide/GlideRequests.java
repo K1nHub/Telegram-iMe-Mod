@@ -17,7 +17,7 @@ public class GlideRequests extends RequestManager {
 
     @Override // com.bumptech.glide.RequestManager
     /* renamed from: as */
-    public <ResourceType> GlideRequest<ResourceType> mo693as(Class<ResourceType> cls) {
+    public <ResourceType> GlideRequest<ResourceType> mo711as(Class<ResourceType> cls) {
         return new GlideRequest<>(this.glide, this, cls, this.context);
     }
 

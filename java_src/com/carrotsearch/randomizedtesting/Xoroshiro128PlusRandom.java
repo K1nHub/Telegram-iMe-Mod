@@ -5,27 +5,27 @@ import java.util.Random;
 public class Xoroshiro128PlusRandom extends Random {
 
     /* renamed from: s0 */
-    private long f92s0;
+    private long f94s0;
 
     /* renamed from: s1 */
-    private long f93s1;
+    private long f95s1;
 
     public Xoroshiro128PlusRandom(long j) {
         super(0L);
         long hash = MurmurHash3.hash(j);
-        this.f92s0 = hash;
+        this.f94s0 = hash;
         long hash2 = MurmurHash3.hash(hash);
-        this.f93s1 = hash2;
-        if (this.f92s0 == 0 && hash2 == 0) {
+        this.f95s1 = hash2;
+        if (this.f94s0 == 0 && hash2 == 0) {
             long hash3 = MurmurHash3.hash(3735928559L);
-            this.f92s0 = hash3;
-            this.f93s1 = MurmurHash3.hash(hash3);
+            this.f94s0 = hash3;
+            this.f95s1 = MurmurHash3.hash(hash3);
         }
     }
 
     @Override // java.util.Random
     public void setSeed(long j) {
-        if (this.f92s0 != 0 || this.f93s1 != 0) {
+        if (this.f94s0 != 0 || this.f95s1 != 0) {
             throw new RuntimeException("No seed set");
         }
     }
@@ -81,12 +81,12 @@ public class Xoroshiro128PlusRandom extends Random {
 
     @Override // java.util.Random
     public long nextLong() {
-        long j = this.f92s0;
-        long j2 = this.f93s1;
+        long j = this.f94s0;
+        long j2 = this.f95s1;
         long j3 = j + j2;
         long j4 = j2 ^ j;
-        this.f92s0 = (Long.rotateLeft(j, 55) ^ j4) ^ (j4 << 14);
-        this.f93s1 = Long.rotateLeft(j4, 36);
+        this.f94s0 = (Long.rotateLeft(j, 55) ^ j4) ^ (j4 << 14);
+        this.f95s1 = Long.rotateLeft(j4, 36);
         return j3;
     }
 

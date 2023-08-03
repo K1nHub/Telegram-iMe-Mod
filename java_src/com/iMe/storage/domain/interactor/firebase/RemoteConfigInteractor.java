@@ -20,7 +20,7 @@ public final class RemoteConfigInteractor {
 
     public final Single<Result<Boolean>> getBoolean(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        Single<Result<Boolean>> subscribeOn = this.remoteConfigRepository.getBoolean(key).subscribeOn(this.schedulersProvider.mo699io());
+        Single<Result<Boolean>> subscribeOn = this.remoteConfigRepository.getBoolean(key).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "remoteConfigRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

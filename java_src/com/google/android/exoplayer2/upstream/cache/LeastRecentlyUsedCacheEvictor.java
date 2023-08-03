@@ -1,10 +1,18 @@
 package com.google.android.exoplayer2.upstream.cache;
 
+import java.util.Comparator;
 import java.util.TreeSet;
 /* loaded from: classes.dex */
 public final class LeastRecentlyUsedCacheEvictor implements CacheEvictor {
     private long currentSize;
-    private final TreeSet<CacheSpan> leastRecentlyUsed = new TreeSet<>(LeastRecentlyUsedCacheEvictor$$ExternalSyntheticLambda0.INSTANCE);
+    private final TreeSet<CacheSpan> leastRecentlyUsed = new TreeSet<>(new Comparator() { // from class: com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor$$ExternalSyntheticLambda0
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int compare;
+            compare = LeastRecentlyUsedCacheEvictor.compare((CacheSpan) obj, (CacheSpan) obj2);
+            return compare;
+        }
+    });
     private final long maxBytes;
 
     @Override // com.google.android.exoplayer2.upstream.cache.CacheEvictor

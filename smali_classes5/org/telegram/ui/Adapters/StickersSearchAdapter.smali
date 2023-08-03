@@ -2426,7 +2426,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->context:Landroid/content/Context;
 
-    invoke-direct {p2, p0, v1, p1}, Lorg/telegram/ui/Adapters/StickersSearchAdapter$2;-><init>(Lorg/telegram/ui/Adapters/StickersSearchAdapter;Landroid/content/Context;Z)V
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/StickersSearchAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-direct {p2, p0, v1, p1, v2}, Lorg/telegram/ui/Adapters/StickersSearchAdapter$2;-><init>(Lorg/telegram/ui/Adapters/StickersSearchAdapter;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 347
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/StickerEmojiCell;->getImageView()Lorg/telegram/messenger/ImageReceiver;

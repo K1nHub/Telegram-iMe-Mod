@@ -268,6 +268,32 @@
     return-void
 .end method
 
+.method public static writeUInt48(Ljava/nio/ByteBuffer;J)V
+    .locals 2
+
+    const-wide v0, 0xffffffffffffL
+
+    and-long/2addr p1, v0
+
+    const/16 v0, 0x20
+
+    shr-long v0, p1, v0
+
+    long-to-int v0, v0
+
+    .line 50
+    invoke-static {p0, v0}, Lcom/coremedia/iso/IsoTypeWriter;->writeUInt16(Ljava/nio/ByteBuffer;I)V
+
+    const-wide v0, 0xffffffffL
+
+    and-long/2addr p1, v0
+
+    .line 51
+    invoke-static {p0, p1, p2}, Lcom/coremedia/iso/IsoTypeWriter;->writeUInt32(Ljava/nio/ByteBuffer;J)V
+
+    return-void
+.end method
+
 .method public static writeUInt64(Ljava/nio/ByteBuffer;J)V
     .locals 0
 

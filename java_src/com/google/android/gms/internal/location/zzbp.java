@@ -21,6 +21,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.tasks.CancellationToken;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Executor;
@@ -41,7 +42,12 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
     }
 
     private final Task zza(final LocationRequest locationRequest, ListenerHolder listenerHolder) {
-        final zzbo zzboVar = new zzbo(this, listenerHolder, zzax.zza);
+        final zzbo zzboVar = new zzbo(this, listenerHolder, new zzbn() { // from class: com.google.android.gms.internal.location.zzax
+            @Override // com.google.android.gms.internal.location.zzbn
+            public final void zza(zzda zzdaVar, ListenerHolder.ListenerKey listenerKey, boolean z, TaskCompletionSource taskCompletionSource) {
+                zzdaVar.zzB(listenerKey, z, taskCompletionSource);
+            }
+        });
         return doRegisterEventListener(RegistrationMethods.builder().register(new RemoteCall() { // from class: com.google.android.gms.internal.location.zzay
             @Override // com.google.android.gms.common.api.internal.RemoteCall
             public final void accept(Object obj, Object obj2) {
@@ -52,7 +58,12 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
     }
 
     private final Task zzb(final LocationRequest locationRequest, ListenerHolder listenerHolder) {
-        final zzbo zzboVar = new zzbo(this, listenerHolder, zzbd.zza);
+        final zzbo zzboVar = new zzbo(this, listenerHolder, new zzbn() { // from class: com.google.android.gms.internal.location.zzbd
+            @Override // com.google.android.gms.internal.location.zzbn
+            public final void zza(zzda zzdaVar, ListenerHolder.ListenerKey listenerKey, boolean z, TaskCompletionSource taskCompletionSource) {
+                zzdaVar.zzC(listenerKey, z, taskCompletionSource);
+            }
+        });
         return doRegisterEventListener(RegistrationMethods.builder().register(new RemoteCall() { // from class: com.google.android.gms.internal.location.zzbf
             @Override // com.google.android.gms.common.api.internal.RemoteCall
             public final void accept(Object obj, Object obj2) {
@@ -64,7 +75,12 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
     public final Task<Void> flushLocations() {
-        return doWrite(TaskApiCall.builder().run(zzav.zza).setMethodKey(2422).build());
+        return doWrite(TaskApiCall.builder().run(new RemoteCall() { // from class: com.google.android.gms.internal.location.zzav
+            @Override // com.google.android.gms.common.api.internal.RemoteCall
+            public final void accept(Object obj, Object obj2) {
+                ((zzda) obj).zzr((TaskCompletionSource) obj2);
+            }
+        }).setMethodKey(2422).build());
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
@@ -86,12 +102,23 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
     public final Task<Location> getLastLocation() {
-        return doRead(TaskApiCall.builder().run(zzbe.zza).setMethodKey(2414).build());
+        return doRead(TaskApiCall.builder().run(new RemoteCall() { // from class: com.google.android.gms.internal.location.zzbe
+            @Override // com.google.android.gms.common.api.internal.RemoteCall
+            public final void accept(Object obj, Object obj2) {
+                ((zzda) obj).zzt(new LastLocationRequest.Builder().build(), (TaskCompletionSource) obj2);
+            }
+        }).setMethodKey(2414).build());
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
     public final Task<LocationAvailability> getLocationAvailability() {
-        return doRead(TaskApiCall.builder().run(zzba.zza).setMethodKey(2416).build());
+        return doRead(TaskApiCall.builder().run(new RemoteCall() { // from class: com.google.android.gms.internal.location.zzba
+            @Override // com.google.android.gms.common.api.internal.RemoteCall
+            public final void accept(Object obj, Object obj2) {
+                Api api = zzbp.zzb;
+                ((TaskCompletionSource) obj2).setResult(((zzda) obj).zzp());
+            }
+        }).setMethodKey(2416).build());
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
@@ -156,7 +183,13 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
     public final Task<Void> removeLocationUpdates(LocationCallback locationCallback) {
-        return doUnregisterEventListener(ListenerHolders.createListenerKey(locationCallback, LocationCallback.class.getSimpleName()), 2418).continueWith(zzbk.zza, zzbc.zza);
+        return doUnregisterEventListener(ListenerHolders.createListenerKey(locationCallback, LocationCallback.class.getSimpleName()), 2418).continueWith(zzbk.zza, new Continuation() { // from class: com.google.android.gms.internal.location.zzbc
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                Api api = zzbp.zzb;
+                return null;
+            }
+        });
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
@@ -170,7 +203,13 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient
     public final Task<Void> removeLocationUpdates(LocationListener locationListener) {
-        return doUnregisterEventListener(ListenerHolders.createListenerKey(locationListener, LocationListener.class.getSimpleName()), 2418).continueWith(zzbk.zza, zzbl.zza);
+        return doUnregisterEventListener(ListenerHolders.createListenerKey(locationListener, LocationListener.class.getSimpleName()), 2418).continueWith(zzbk.zza, new Continuation() { // from class: com.google.android.gms.internal.location.zzbl
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                Api api = zzbp.zzb;
+                return null;
+            }
+        });
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient

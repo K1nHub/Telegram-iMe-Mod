@@ -1,10 +1,6 @@
 .class public Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;
-.super Lorg/telegram/tgnet/TLObject;
+.super Lorg/telegram/tgnet/TLRPC$WebPageAttribute;
 .source "TLRPC.java"
-
-
-# static fields
-.field public static constructor:I = 0x54b56617
 
 
 # instance fields
@@ -18,25 +14,17 @@
     .end annotation
 .end field
 
-.field public flags:I
-
 .field public settings:Lorg/telegram/tgnet/TLRPC$ThemeSettings;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 12199
-    invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
+    .line 12552
+    invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;-><init>()V
 
-    .line 12203
+    .line 12555
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -46,69 +34,17 @@
     return-void
 .end method
 
-.method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;
-    .locals 1
-
-    .line 12207
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->constructor:I
-
-    if-eq v0, p1, :cond_1
-
-    if-nez p2, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    .line 12209
-    :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
-
-    const/4 p2, 0x1
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    aput-object p1, p2, v0
-
-    const-string p1, "can\'t parse magic %x in TL_webPageAttributeTheme"
-
-    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 12214
-    :cond_1
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;
-
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;-><init>()V
-
-    .line 12215
-    invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
-
-    return-object p1
-.end method
-
 
 # virtual methods
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 12220
+    .line 12559
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
-    iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->flags:I
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;->flags:I
 
     const/4 v1, 0x1
 
@@ -116,7 +52,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 12222
+    .line 12561
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -131,7 +67,7 @@
 
     return-void
 
-    .line 12225
+    .line 12564
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -153,7 +89,7 @@
 
     throw p1
 
-    .line 12229
+    .line 12568
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -162,7 +98,7 @@
     :goto_0
     if-ge v3, v0, :cond_3
 
-    .line 12231
+    .line 12570
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -175,7 +111,7 @@
 
     return-void
 
-    .line 12235
+    .line 12574
     :cond_2
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->documents:Ljava/util/ArrayList;
 
@@ -185,15 +121,15 @@
 
     goto :goto_0
 
-    .line 12238
+    .line 12577
     :cond_3
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->flags:I
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_4
 
-    .line 12239
+    .line 12578
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -211,18 +147,18 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 12244
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->constructor:I
+    const v0, 0x54b56617
+
+    .line 12583
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    .line 12584
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12245
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->flags:I
-
-    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
-
-    .line 12246
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->flags:I
+    .line 12585
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
@@ -230,17 +166,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 12247
+    .line 12586
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12248
+    .line 12587
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 12249
+    .line 12588
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -248,7 +184,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 12251
+    .line 12590
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -263,15 +199,15 @@
 
     goto :goto_0
 
-    .line 12254
+    .line 12593
     :cond_0
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->flags:I
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPageAttribute;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 12255
+    .line 12594
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_webPageAttributeTheme;->settings:Lorg/telegram/tgnet/TLRPC$ThemeSettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

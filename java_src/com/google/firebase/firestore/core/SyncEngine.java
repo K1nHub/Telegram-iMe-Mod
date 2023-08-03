@@ -128,7 +128,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
         if (list.isEmpty()) {
             this.localStore.releaseTarget(targetId);
             this.remoteStore.stopListening(targetId);
-            removeAndCleanupTarget(targetId, Status.f513OK);
+            removeAndCleanupTarget(targetId, Status.f516OK);
         }
     }
 
@@ -313,17 +313,17 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
     public static /* synthetic */ class C10131 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$LimboDocumentChange$Type */
-        static final /* synthetic */ int[] f250x84ba890d;
+        static final /* synthetic */ int[] f252x84ba890d;
 
         static {
             int[] iArr = new int[LimboDocumentChange.Type.values().length];
-            f250x84ba890d = iArr;
+            f252x84ba890d = iArr;
             try {
                 iArr[LimboDocumentChange.Type.ADDED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f250x84ba890d[LimboDocumentChange.Type.REMOVED.ordinal()] = 2;
+                f252x84ba890d[LimboDocumentChange.Type.REMOVED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
         }
@@ -331,7 +331,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
 
     private void updateTrackedLimboDocuments(List<LimboDocumentChange> list, int i) {
         for (LimboDocumentChange limboDocumentChange : list) {
-            int i2 = C10131.f250x84ba890d[limboDocumentChange.getType().ordinal()];
+            int i2 = C10131.f252x84ba890d[limboDocumentChange.getType().ordinal()];
             if (i2 == 1) {
                 this.limboDocumentRefs.addReference(limboDocumentChange.getKey(), i);
                 trackLimboChange(limboDocumentChange);

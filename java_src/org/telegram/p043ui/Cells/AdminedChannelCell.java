@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -46,7 +46,7 @@ public class AdminedChannelCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z2 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(48, 48, (z2 ? 5 : 3) | 48, z2 ? 0 : i + 12, 6, z2 ? i + 12 : 0, 6));
@@ -84,7 +84,7 @@ public class AdminedChannelCell extends FrameLayout {
             ImageView imageView = new ImageView(context);
             this.deleteButton = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.deleteButton.setImageResource(C3417R.C3419drawable.msg_panel_clear);
+            this.deleteButton.setImageResource(C3419R.C3421drawable.msg_panel_clear);
             this.deleteButton.setOnClickListener(onClickListener);
             this.deleteButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
             this.deleteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3), PorterDuff.Mode.MULTIPLY));
@@ -117,7 +117,7 @@ public class AdminedChannelCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp((this.isLast ? 12 : 0) + 60), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp((this.isLast ? 12 : 0) + 60), 1073741824));
     }
 
     public SimpleTextView getNameTextView() {

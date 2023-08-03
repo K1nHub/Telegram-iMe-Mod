@@ -5,6 +5,7 @@ import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.reaction.ReactionMessageResult;
 import com.iMe.storage.data.network.model.request.reaction.ReactionRequestData;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.repository.socialEmotion.ReactionRepository;
@@ -31,9 +32,37 @@ public final class ReactionRepositoryImpl implements ReactionRepository {
     @Override // com.iMe.storage.domain.repository.socialEmotion.ReactionRepository
     public Observable<Result<ReactionMessageResult>> prepareLikeMessage(ReactionRequestData data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        Observable<R> map = this.api.prepareLikeMessage(data).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new ReactionRepositoryImpl$prepareLikeMessage$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<ReactionMessageResult>> prepareLikeMessage = this.api.prepareLikeMessage(data);
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = prepareLikeMessage.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<ReactionMessageResult>, Result<? extends ReactionMessageResult>>() { // from class: com.iMe.storage.data.repository.socialEmotion.ReactionRepositoryImpl$prepareLikeMessage$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<ReactionMessageResult> invoke(ApiBaseResponse<ReactionMessageResult> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(response.getPayload());
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        final ReactionRepositoryImpl$prepareLikeMessage$2 reactionRepositoryImpl$prepareLikeMessage$2 = new ReactionRepositoryImpl$prepareLikeMessage$2(this);
+        final Function1<Throwable, Result<? extends ReactionMessageResult>> function1 = new Function1<Throwable, Result<? extends ReactionMessageResult>>() { // from class: com.iMe.storage.data.repository.socialEmotion.ReactionRepositoryImpl$prepareLikeMessage$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<ReactionMessageResult> invoke(Throwable it) {
+                ApiErrorHandler apiErrorHandler;
+                Intrinsics.checkNotNullParameter(it, "it");
+                apiErrorHandler = ReactionRepositoryImpl.this.errorHandler;
+                return Result.Companion.error$default(Result.Companion, apiErrorHandler.handleError(it), null, 2, null);
+            }
+        };
         Observable<Result<ReactionMessageResult>> onErrorReturn = map.onErrorReturn(new Function() { // from class: com.iMe.storage.data.repository.socialEmotion.ReactionRepositoryImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

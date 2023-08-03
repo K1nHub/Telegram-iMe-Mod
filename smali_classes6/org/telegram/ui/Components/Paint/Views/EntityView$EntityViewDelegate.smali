@@ -24,7 +24,22 @@
 .method public abstract getCropRotation()F
 .end method
 
-.method public abstract getTransformedTouch(FF)[F
+.method public abstract getTransformedTouch(Landroid/view/MotionEvent;FF)[F
+.end method
+
+.method public abstract onEntityDragEnd(Z)V
+.end method
+
+.method public abstract onEntityDragStart()V
+.end method
+
+.method public abstract onEntityDragTrash(Z)V
+.end method
+
+.method public abstract onEntityDraggedBottom(Z)V
+.end method
+
+.method public abstract onEntityDraggedTop(Z)V
 .end method
 
 .method public abstract onEntityLongClicked(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z

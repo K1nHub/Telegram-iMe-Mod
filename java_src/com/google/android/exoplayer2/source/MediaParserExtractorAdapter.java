@@ -17,7 +17,12 @@ import java.util.List;
 import java.util.Map;
 /* loaded from: classes.dex */
 public final class MediaParserExtractorAdapter implements ProgressiveMediaExtractor {
-    public static final ProgressiveMediaExtractor.Factory FACTORY = MediaParserExtractorAdapter$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ProgressiveMediaExtractor.Factory FACTORY = new ProgressiveMediaExtractor.Factory() { // from class: com.google.android.exoplayer2.source.MediaParserExtractorAdapter$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor.Factory
+        public final ProgressiveMediaExtractor createProgressiveMediaExtractor(PlayerId playerId) {
+            return new MediaParserExtractorAdapter(playerId);
+        }
+    };
     private final InputReaderAdapterV30 inputReaderAdapter;
     private final MediaParser mediaParser;
     private final OutputConsumerAdapterV30 outputConsumerAdapter;

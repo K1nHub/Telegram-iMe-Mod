@@ -44,10 +44,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 13
 
-    .line 831
+    .line 833
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 822
+    .line 824
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -56,7 +56,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 824
+    .line 826
     new-instance p1, Landroid/text/TextPaint;
 
     invoke-direct {p1, v0}, Landroid/text/TextPaint;-><init>(I)V
@@ -65,10 +65,10 @@
 
     const/4 p1, 0x0
 
-    .line 901
+    .line 903
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->shown:Z
 
-    .line 902
+    .line 904
     new-instance v8, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -87,14 +87,14 @@
 
     iput-object v8, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->showT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 833
+    .line 835
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x7f000000
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 835
+    .line 837
     new-instance v1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v1, p1, v0, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -105,17 +105,17 @@
 
     const-wide/16 v5, 0x140
 
-    .line 836
+    .line 838
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 837
+    .line 839
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v8, -0x1
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 838
+    .line 840
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v10, 0xe
@@ -128,7 +128,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 839
+    .line 841
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v11, "fonts/rmedium.ttf"
@@ -139,19 +139,19 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 840
+    .line 842
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 841
+    .line 843
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v12, "0"
 
     invoke-virtual {v1, v12}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 842
+    .line 844
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -160,12 +160,12 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setOverrideFullWidth(I)V
 
-    .line 844
+    .line 846
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->paint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v8}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 845
+    .line 847
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->paint:Landroid/text/TextPaint;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -176,7 +176,7 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 846
+    .line 848
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->paint:Landroid/text/TextPaint;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -185,10 +185,10 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 847
+    .line 849
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->setCenterText()V
 
-    .line 849
+    .line 851
     new-instance v1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v1, p1, v0, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -197,15 +197,15 @@
 
     const v2, 0x3e99999a    # 0.3f
 
-    .line 850
+    .line 852
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 851
+    .line 853
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 852
+    .line 854
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -216,7 +216,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 853
+    .line 855
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -225,17 +225,17 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 854
+    .line 856
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 855
+    .line 857
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 856
+    .line 858
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -250,7 +250,7 @@
 .method private getOf()Ljava/lang/String;
     .locals 3
 
-    .line 871
+    .line 873
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -265,7 +265,7 @@
 
     const-string v0, "Of"
 
-    .line 872
+    .line 874
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -274,14 +274,14 @@
 
     const-string v2, ""
 
-    .line 873
+    .line 875
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v1, "%2$d"
 
-    .line 874
+    .line 876
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
@@ -292,7 +292,7 @@
 .method private setCenterText()V
     .locals 9
 
-    .line 860
+    .line 862
     new-instance v8, Landroid/text/StaticLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->getOf()Ljava/lang/String;
@@ -321,7 +321,7 @@
 
     iput-object v8, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->center:Landroid/text/StaticLayout;
 
-    .line 861
+    .line 863
     invoke-virtual {v8}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -330,7 +330,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 862
+    .line 864
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->center:Landroid/text/StaticLayout;
 
     const/4 v1, 0x0
@@ -341,7 +341,7 @@
 
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->centerWidth:F
 
-    .line 863
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->center:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v1}, Landroid/text/StaticLayout;->getLineDescent(I)I
@@ -357,10 +357,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 865
+    .line 867
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->centerWidth:F
 
-    .line 866
+    .line 868
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->centerTop:F
 
     :goto_0
@@ -372,7 +372,7 @@
 .method public isShown()Z
     .locals 1
 
-    .line 919
+    .line 921
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->shown:Z
 
     return v0
@@ -381,10 +381,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 926
+    .line 928
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 928
+    .line 930
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->showT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->shown:Z
@@ -413,7 +413,7 @@
 
     return-void
 
-    .line 934
+    .line 936
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -443,7 +443,7 @@
 
     add-float/2addr v1, v4
 
-    .line 935
+    .line 937
     iget v4, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->marginTop:I
 
     int-to-float v4, v4
@@ -464,10 +464,10 @@
 
     add-float/2addr v4, v2
 
-    .line 937
+    .line 939
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 938
+    .line 940
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
@@ -482,14 +482,14 @@
 
     const/high16 v7, 0x41200000    # 10.0f
 
-    .line 939
+    .line 941
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v7
 
     add-float/2addr v7, v4
 
-    .line 940
+    .line 942
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v8
@@ -502,24 +502,24 @@
 
     const/high16 v9, 0x42040000    # 33.0f
 
-    .line 941
+    .line 943
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v9
 
     add-float/2addr v9, v4
 
-    .line 937
+    .line 939
     invoke-virtual {v2, v5, v7, v8, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 943
+    .line 945
     iget-object v5, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v5}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v5
 
-    .line 944
+    .line 946
     iget-object v7, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
     int-to-float v8, v5
@@ -532,30 +532,30 @@
 
     const/high16 v7, 0x41400000    # 12.0f
 
-    .line 947
+    .line 949
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v8
 
-    .line 948
+    .line 950
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v7
 
     iget-object v9, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 945
+    .line 947
     invoke-virtual {p1, v2, v8, v7, v9}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 951
+    .line 953
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 953
+    .line 955
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 954
+    .line 956
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
@@ -588,7 +588,7 @@
 
     invoke-virtual {p1, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 955
+    .line 957
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
@@ -607,7 +607,7 @@
 
     invoke-virtual {v1, v7, v7, v2, v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 956
+    .line 958
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/high16 v2, 0x437f0000    # 255.0f
@@ -618,12 +618,12 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 957
+    .line 959
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 959
+    .line 961
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
@@ -632,10 +632,10 @@
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 960
+    .line 962
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 961
+    .line 963
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->center:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getWidth()I
@@ -676,25 +676,25 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 962
+    .line 964
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->paint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 963
+    .line 965
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->center:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 964
+    .line 966
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 966
+    .line 968
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->centerWidth:F
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 967
+    .line 969
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
@@ -709,17 +709,17 @@
 
     invoke-virtual {v1, v7, v7, v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 968
+    .line 970
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 969
+    .line 971
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 970
+    .line 972
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -728,12 +728,12 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 975
+    .line 977
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 976
+    .line 978
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p2
@@ -756,19 +756,19 @@
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->marginTop:I
 
-    .line 977
+    .line 979
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setOverrideFullWidth(I)V
 
-    .line 978
+    .line 980
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setOverrideFullWidth(I)V
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 980
+    .line 982
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -777,7 +777,7 @@
 
     const/16 v1, 0x2b
 
-    .line 981
+    .line 983
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -788,7 +788,7 @@
 
     move-result p2
 
-    .line 979
+    .line 981
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void
@@ -799,7 +799,7 @@
 
     const/4 v0, 0x1
 
-    .line 879
+    .line 881
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->set(IIZ)V
 
     return-void
@@ -810,17 +810,17 @@
 
     const/4 v0, 0x0
 
-    .line 883
+    .line 885
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
-    .line 884
+    .line 886
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 886
+    .line 888
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v1
@@ -833,7 +833,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->lng:Ljava/lang/String;
 
-    .line 887
+    .line 889
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v2
@@ -850,10 +850,10 @@
 
     if-nez v1, :cond_0
 
-    .line 889
+    .line 891
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->setCenterText()V
 
-    .line 891
+    .line 893
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -905,7 +905,7 @@
     :goto_1
     invoke-virtual {v1, v3, v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 892
+    .line 894
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->right:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     new-array v3, v2, [Ljava/lang/Object;
@@ -947,7 +947,7 @@
 
     xor-int/lit8 p1, p3, 0x1
 
-    .line 893
+    .line 895
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->nextNotAnimate:Z
 
     return-void
@@ -956,25 +956,25 @@
 .method public updateShow(ZZ)V
     .locals 1
 
-    .line 906
+    .line 908
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->shown:Z
 
     if-eq v0, p1, :cond_3
 
-    .line 907
+    .line 909
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->shown:Z
 
     const/4 v0, 0x1
 
     if-nez p1, :cond_0
 
-    .line 909
+    .line 911
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->nextNotAnimate:Z
 
     :cond_0
     if-nez p2, :cond_2
 
-    .line 912
+    .line 914
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->showT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     if-eqz p1, :cond_1
@@ -989,7 +989,7 @@
     :goto_0
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 914
+    .line 916
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -1000,7 +1000,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 898
+    .line 900
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoCountView;->left:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eq v0, p1, :cond_1

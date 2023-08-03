@@ -1178,6 +1178,27 @@
     return-object p0
 .end method
 
+.method public static bridge synthetic toSortedSet(Ljava/lang/Iterable;)Ljava/util/SortedSet;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/lang/Comparable<",
+            "-TT;>;>(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/SortedSet<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsJvmKt;->toSortedSet(Ljava/lang/Iterable;)Ljava/util/SortedSet;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic zip(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

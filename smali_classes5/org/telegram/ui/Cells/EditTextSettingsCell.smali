@@ -30,7 +30,7 @@
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 52
     iget-object p1, p0, Lorg/telegram/ui/Cells/EditTextSettingsCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -390,7 +390,7 @@
     .line 90
     iget-object v0, p0, Lorg/telegram/ui/Cells/EditTextSettingsCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     return-void
 .end method

@@ -26,16 +26,16 @@
 .method public constructor <init>(III)V
     .locals 0
 
-    .line 1772
+    .line 1773
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1773
+    .line 1774
     iput p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->width:I
 
-    .line 1774
+    .line 1775
     iput p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->height:I
 
-    .line 1775
+    .line 1776
     iput p3, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$CodecMaxValues;->inputSize:I
 
     return-void

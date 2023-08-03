@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$$ExternalSyntheticLambda2;->f$1:Z
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->$r8$lambda$6jZ6gjr3Ze2AJTw_OwwCScE8LIU(Lorg/telegram/ui/Cells/ChatMessageCell;ZLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->$r8$lambda$ZQlnT_7Plgj3-0w-5wjTMjsjIc0(Lorg/telegram/ui/Cells/ChatMessageCell;ZLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

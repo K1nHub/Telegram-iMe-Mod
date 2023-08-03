@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/JoinCallAlert;)V
     .locals 0
 
-    .line 460
+    .line 464
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$4;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 463
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$4;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1000(Lorg/telegram/ui/Components/JoinCallAlert;)V

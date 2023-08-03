@@ -341,7 +341,7 @@
 .method private final getIntervals()[Lcom/iMe/fork/enums/Interval;
     .locals 1
 
-    .line 166
+    .line 158
     invoke-static {}, Lcom/iMe/fork/enums/Interval;->values()[Lcom/iMe/fork/enums/Interval;
 
     move-result-object v0
@@ -415,7 +415,7 @@
 .method private final getSelectedInterval()Lcom/iMe/fork/enums/Interval;
     .locals 2
 
-    .line 161
+    .line 154
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -428,32 +428,9 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x2
-
     if-ne v0, v1, :cond_0
 
-    .line 163
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->getSelectedAutoUpdateTopicsCatalogInterval()Lcom/iMe/fork/enums/Interval;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
-    .line 162
-    :cond_1
+    .line 155
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
@@ -462,14 +439,20 @@
 
     move-result-object v0
 
-    :goto_0
     return-object v0
+
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
 .end method
 
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 136
+    .line 134
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -480,10 +463,10 @@
 
     const/4 v1, 0x0
 
-    .line 137
+    .line 135
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 138
+    .line 136
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -494,14 +477,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 139
+    .line 137
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 140
+    .line 138
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RecyclerListView;->disableItemAnimationDelay()V
 
     return-object v0
@@ -510,7 +493,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 132
+    .line 130
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -519,7 +502,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 133
+    .line 131
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -534,7 +517,7 @@
 .method private final isMainSwitchEnabled()Z
     .locals 2
 
-    .line 143
+    .line 141
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -547,32 +530,9 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x2
-
     if-ne v0, v1, :cond_0
 
-    .line 145
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
-    .line 144
-    :cond_1
+    .line 142
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
@@ -581,8 +541,14 @@
 
     move-result v0
 
-    :goto_0
     return v0
+
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
 .end method
 
 .method public static final newInstanceForAutoBackupSettings()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
@@ -597,22 +563,10 @@
     return-object v0
 .end method
 
-.method public static final newInstanceForAutoUpdateTopicsCatalogSettings()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
-    .locals 1
-
-    sget-object v0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->Companion:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Companion;
-
-    invoke-virtual {v0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Companion;->newInstanceForAutoUpdateTopicsCatalogSettings()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method private final setInterval(Lcom/iMe/fork/enums/Interval;)V
     .locals 2
 
-    .line 169
+    .line 161
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -625,61 +579,40 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    goto :goto_0
-
-    .line 174
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
-
-    move-result-object v0
-
-    .line 175
-    invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/ForkTopicsController;->setSelectedAutoUpdateTopicsCatalogInterval(Lcom/iMe/fork/enums/Interval;)V
-
-    .line 176
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->resetLastAutoUpdateCatalogTime()V
-
-    goto :goto_0
-
-    .line 170
-    :cond_1
+    .line 162
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
-    .line 171
+    .line 163
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/BackupController;->setSelectedAutoBackupInterval(Lcom/iMe/fork/enums/Interval;)V
 
-    .line 172
+    .line 164
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->resetLastAutoBackupTime()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
 .method private final setupActionBar()V
     .locals 4
 
-    .line 95
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 96
+    .line 95
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 97
+    .line 96
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 98
+    .line 97
     iget-object v2, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v3, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -690,37 +623,19 @@
 
     aget v2, v3, v2
 
-    if-eq v2, v1, :cond_1
-
-    const/4 v1, 0x2
-
     if-ne v2, v1, :cond_0
 
-    .line 100
-    sget v1, Lorg/telegram/messenger/R$string;->topics_catalog:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
-    .line 99
-    :cond_1
+    .line 98
     sget v1, Lorg/telegram/messenger/R$string;->backup_settings_header:I
 
-    .line 98
-    :goto_0
+    .line 97
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 102
+    .line 100
     new-instance v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;)V
@@ -728,12 +643,20 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
     return-void
+
+    .line 98
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
 .end method
 
 .method private final setupListeners()V
     .locals 2
 
-    .line 113
+    .line 111
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -754,7 +677,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 114
+    .line 112
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_1
@@ -763,26 +686,26 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 115
+    .line 113
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
-    .line 116
+    .line 114
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->toggleEnabled()V
 
-    .line 117
+    .line 115
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;
 
     move-result-object p2
 
-    .line 118
+    .line 116
     iget v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
-    .line 119
+    .line 117
     invoke-virtual {p2}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$ListAdapter;->updateRows()V
 
-    .line 120
+    .line 118
     iget v1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->rowCount:I
 
     sub-int/2addr v0, v1
@@ -791,14 +714,14 @@
 
     move-result v0
 
-    .line 121
+    .line 119
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 122
+    .line 120
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -807,7 +730,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 122
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
@@ -815,7 +738,7 @@
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 126
+    .line 124
     :goto_0
     iget p0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->enableInfoRow:I
 
@@ -828,7 +751,7 @@
 .method private final toggleEnabled()V
     .locals 3
 
-    .line 149
+    .line 146
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->type:Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$Type;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -841,41 +764,14 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
-    const/4 v2, 0x2
-
-    if-eq v0, v2, :cond_0
-
-    goto :goto_0
-
-    .line 154
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
-
-    move-result-object v0
-
-    .line 155
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
-
-    move-result v2
-
-    xor-int/2addr v1, v2
-
-    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->setAutoUpdateTopicsCatalogEnabled(Z)V
-
-    .line 156
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->resetLastAutoUpdateCatalogTime()V
-
-    goto :goto_0
-
-    .line 150
-    :cond_1
+    .line 147
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
-    .line 151
+    .line 148
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->isAutoBackupEnabled()Z
 
     move-result v2
@@ -884,10 +780,10 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/BackupController;->setAutoBackupEnabled(Z)V
 
-    .line 152
+    .line 149
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->resetLastAutoBackupTime()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -910,7 +806,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 63
+    .line 62
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -935,7 +831,7 @@
 
     aput-object v10, v1, v2
 
-    .line 64
+    .line 63
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -962,7 +858,7 @@
 
     aput-object v3, v1, v12
 
-    .line 65
+    .line 64
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -983,7 +879,7 @@
 
     aput-object v3, v1, v13
 
-    .line 66
+    .line 65
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1000,7 +896,7 @@
 
     aput-object v3, v1, v14
 
-    .line 67
+    .line 66
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1017,7 +913,7 @@
 
     aput-object v3, v1, v4
 
-    .line 68
+    .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1044,7 +940,7 @@
 
     aput-object v3, v1, v4
 
-    .line 69
+    .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1063,7 +959,7 @@
 
     aput-object v3, v1, v4
 
-    .line 70
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1100,7 +996,7 @@
 
     aput-object v3, v1, v4
 
-    .line 71
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1135,7 +1031,7 @@
 
     aput-object v3, v1, v4
 
-    .line 72
+    .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1170,7 +1066,7 @@
 
     aput-object v3, v1, v4
 
-    .line 73
+    .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1201,7 +1097,7 @@
 
     aput-object v3, v1, v4
 
-    .line 74
+    .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1236,7 +1132,7 @@
 
     aput-object v3, v1, v4
 
-    .line 75
+    .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1267,7 +1163,7 @@
 
     aput-object v3, v1, v4
 
-    .line 76
+    .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1300,7 +1196,7 @@
 
     aput-object v3, v1, v4
 
-    .line 77
+    .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1329,7 +1225,7 @@
 
     aput-object v3, v1, v4
 
-    .line 78
+    .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1358,7 +1254,7 @@
 
     aput-object v3, v1, v4
 
-    .line 79
+    .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1387,7 +1283,7 @@
 
     aput-object v3, v1, v4
 
-    .line 80
+    .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1416,7 +1312,7 @@
 
     aput-object v3, v1, v4
 
-    .line 81
+    .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1445,7 +1341,7 @@
 
     aput-object v3, v1, v4
 
-    .line 82
+    .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1472,7 +1368,7 @@
 
     aput-object v3, v1, v4
 
-    .line 83
+    .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1497,7 +1393,7 @@
 
     aput-object v3, v1, v4
 
-    .line 84
+    .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1522,7 +1418,7 @@
 
     aput-object v3, v1, v4
 
-    .line 85
+    .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1553,7 +1449,7 @@
 
     aput-object v3, v1, v4
 
-    .line 86
+    .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1582,7 +1478,7 @@
 
     aput-object v3, v1, v4
 
-    .line 87
+    .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/ChooseIntervalSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -1609,7 +1505,7 @@
 
     aput-object v3, v1, v2
 
-    .line 62
+    .line 61
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1681,34 +1577,17 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    goto :goto_0
-
-    .line 57
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->saveConfig()V
-
-    goto :goto_0
+    if-ne v0, v1, :cond_0
 
     .line 56
-    :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/BackupController;->saveConfig()V
 
-    .line 59
-    :goto_0
+    .line 58
+    :cond_0
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     return-void

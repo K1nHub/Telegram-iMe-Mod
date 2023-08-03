@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_peerNotifySettings extends TLRPC$PeerNotifySettings {
-    public static int constructor = -1472527322;
+    public static int constructor = -1721619444;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
@@ -24,6 +24,21 @@ public class TLRPC$TL_peerNotifySettings extends TLRPC$PeerNotifySettings {
         }
         if ((this.flags & 32) != 0) {
             this.other_sound = TLRPC$NotificationSound.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        }
+        if ((this.flags & 64) != 0) {
+            this.stories_muted = abstractSerializedData.readBool(z);
+        }
+        if ((this.flags & 128) != 0) {
+            this.stories_hide_sender = abstractSerializedData.readBool(z);
+        }
+        if ((this.flags & 256) != 0) {
+            this.stories_ios_sound = TLRPC$NotificationSound.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        }
+        if ((this.flags & 512) != 0) {
+            this.stories_android_sound = TLRPC$NotificationSound.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        }
+        if ((this.flags & 1024) != 0) {
+            this.stories_other_sound = TLRPC$NotificationSound.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
     }
 
@@ -48,6 +63,21 @@ public class TLRPC$TL_peerNotifySettings extends TLRPC$PeerNotifySettings {
         }
         if ((this.flags & 32) != 0) {
             this.other_sound.serializeToStream(abstractSerializedData);
+        }
+        if ((this.flags & 64) != 0) {
+            abstractSerializedData.writeBool(this.stories_muted);
+        }
+        if ((this.flags & 128) != 0) {
+            abstractSerializedData.writeBool(this.stories_hide_sender);
+        }
+        if ((this.flags & 256) != 0) {
+            this.stories_ios_sound.serializeToStream(abstractSerializedData);
+        }
+        if ((this.flags & 512) != 0) {
+            this.stories_android_sound.serializeToStream(abstractSerializedData);
+        }
+        if ((this.flags & 1024) != 0) {
+            this.stories_other_sound.serializeToStream(abstractSerializedData);
         }
     }
 }

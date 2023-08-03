@@ -2,38 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionIntroActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionIntroActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;->f$1:Lorg/telegram/ui/ActionIntroActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final run()Z
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Qv6A9QqiVesj4_K-QAScAE1xc9M()Z
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda96;->f$1:Lorg/telegram/ui/ActionIntroActivity;
+    move-result v0
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$oAFF9RL6HIJsMIrtAISzqdSXMlc(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionIntroActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
+    return v0
 .end method

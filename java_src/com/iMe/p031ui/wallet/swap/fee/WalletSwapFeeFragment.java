@@ -1,5 +1,6 @@
 package com.iMe.p031ui.wallet.swap.fee;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
@@ -21,9 +22,12 @@ import com.iMe.utils.extentions.delegate.ResettableLazyManager;
 import com.iMe.utils.formatter.BalanceFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -32,8 +36,15 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3419R;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -63,16 +74,112 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
     private int slipHeaderRow;
     private int slipInfoRow;
 
-    public WalletSwapFeeFragment(SwapFeeScreenArgs args) {
+    public WalletSwapFeeFragment(final SwapFeeScreenArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        WalletSwapFeeFragment$presenter$2 walletSwapFeeFragment$presenter$2 = new WalletSwapFeeFragment$presenter$2(this, args);
+        Function0<WalletSwapFeePresenter> function0 = new Function0<WalletSwapFeePresenter>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSwapFeePresenter invoke() {
+                Lazy lazy;
+                final WalletSwapFeeFragment walletSwapFeeFragment = WalletSwapFeeFragment.this;
+                final SwapFeeScreenArgs swapFeeScreenArgs = args;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(SwapFeeScreenArgs.this);
+                    }
+                };
+                lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletSwapFeePresenter>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.swap.fee.WalletSwapFeePresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletSwapFeePresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSwapFeePresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletSwapFeePresenter) lazy.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletSwapFeePresenter.class.getName() + ".presenter", walletSwapFeeFragment$presenter$2);
-        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletSwapFeeFragment$listAdapter$2(this), 1, (Object) null);
-        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletSwapFeeFragment$rootView$2(this), 1, (Object) null);
-        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletSwapFeeFragment$listView$2(this), 1, (Object) null);
-        this.onFeeChangedListener = WalletSwapFeeFragment$onFeeChangedListener$1.INSTANCE;
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletSwapFeePresenter.class.getName() + ".presenter", function0);
+        this.listAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ListAdapter>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletSwapFeeFragment.ListAdapter invoke() {
+                WalletSwapFeeFragment walletSwapFeeFragment = WalletSwapFeeFragment.this;
+                Activity parentActivity = walletSwapFeeFragment.getParentActivity();
+                Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+                return new WalletSwapFeeFragment.ListAdapter(walletSwapFeeFragment, parentActivity);
+            }
+        }, 1, (Object) null);
+        this.rootView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<FrameLayout>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$rootView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout createRootView;
+                createRootView = WalletSwapFeeFragment.this.createRootView();
+                return createRootView;
+            }
+        }, 1, (Object) null);
+        this.listView$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<RecyclerListView>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView createListView;
+                createListView = WalletSwapFeeFragment.this.createListView();
+                return createListView;
+            }
+        }, 1, (Object) null);
+        this.onFeeChangedListener = new Function1<SwapFeeScreenArgs, Unit>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$onFeeChangedListener$1
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(SwapFeeScreenArgs swapFeeScreenArgs) {
+                Intrinsics.checkNotNullParameter(swapFeeScreenArgs, "<anonymous parameter 0>");
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(SwapFeeScreenArgs swapFeeScreenArgs) {
+                invoke2(swapFeeScreenArgs);
+                return Unit.INSTANCE;
+            }
+        };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -121,21 +228,21 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_toolbar_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.createMenu();
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_toolbar_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.createMenu();
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapFeeFragment.this.finishFragment();
@@ -251,25 +358,25 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
                 WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                     if (i == walletSwapFeeFragment.slipInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_slip_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_slip_description));
                     } else if (i == walletSwapFeeFragment.deadlineInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_deadline_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_deadline_description));
                     } else {
                         GasPriceInfo info = walletSwapFeeFragment.getPresenter().getSelectedFee().getInfo();
                         ResourceManager resourceManager = walletSwapFeeFragment.getResourceManager();
-                        int i2 = C3417R.string.wallet_amount_send_fee_format;
+                        int i2 = C3419R.string.wallet_amount_send_fee_format;
                         Double valueOf = Double.valueOf(info.getFeeInFiat().getValue());
                         TokenDetailed.Companion companion = TokenDetailed.Companion;
                         ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.formatBalance(Double.valueOf(info.getFee()), Integer.valueOf(walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getDecimals())), walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getTicker(), BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
                     }
-                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3419R.C3421drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                     if (i == walletSwapFeeFragment.slipHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_slip_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_slip_header));
                     } else if (i == walletSwapFeeFragment.deadlineHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_deadline_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_deadline_header));
                     } else {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_fee_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3419R.string.wallet_swap_transaction_options_fee_header));
                     }
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.SLIDE_CHOOSE && (view instanceof SlideChooseView)) {
                     if (i == walletSwapFeeFragment.slipChooserRow) {

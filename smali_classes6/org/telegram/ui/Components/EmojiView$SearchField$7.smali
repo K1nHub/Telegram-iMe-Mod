@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/EmojiView$SearchField$7;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "EmojiView.java"
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView$SearchField;->showShadow(ZZ)V
+    value = Lorg/telegram/ui/Components/EmojiView$SearchField;-><init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,28 +22,67 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView$SearchField;)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView$SearchField;Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 1318
+    .line 1231
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$7;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    .line 1321
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$7;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+    .line 1234
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p1
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$3602(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    const/4 v1, 0x1
 
-    return-void
+    if-nez p1, :cond_0
+
+    .line 1235
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$7;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$3502(Lorg/telegram/ui/Components/EmojiView;Z)Z
+
+    goto :goto_0
+
+    .line 1236
+    :cond_0
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p1
+
+    if-eq p1, v1, :cond_1
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p1
+
+    const/4 p2, 0x3
+
+    if-ne p1, p2, :cond_2
+
+    .line 1237
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$7;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$3502(Lorg/telegram/ui/Components/EmojiView;Z)Z
+
+    :cond_2
+    :goto_0
+    return v0
 .end method

@@ -23,7 +23,7 @@
 
     move-object/from16 v1, p0
 
-    .line 18
+    .line 19
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
 
     move-result-object v2
@@ -36,7 +36,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_photos(uid INTEGER, id INTEGER, data BLOB, PRIMARY KEY (uid, id))"
 
-    .line 20
+    .line 21
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -49,7 +49,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS read_state_out_idx_messages;"
 
-    .line 22
+    .line 23
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS ttl_idx_messages;"
 
-    .line 23
+    .line 24
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS date_idx_messages;"
 
-    .line 24
+    .line 25
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -88,7 +88,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages ON messages(mid, out);"
 
-    .line 26
+    .line 27
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -101,7 +101,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS task_idx_messages ON messages(uid, out, read_state, ttl, date, send_state);"
 
-    .line 27
+    .line 28
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -114,7 +114,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages ON messages(uid, date, mid);"
 
-    .line 28
+    .line 29
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -127,7 +127,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_contacts_v6(uid INTEGER PRIMARY KEY, fname TEXT, sname TEXT)"
 
-    .line 30
+    .line 31
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -140,7 +140,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_phones_v6(uid INTEGER, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (uid, phone))"
 
-    .line 31
+    .line 32
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -153,7 +153,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v6(sphone, deleted);"
 
-    .line 32
+    .line 33
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -166,7 +166,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_idx_randoms ON randoms(mid);"
 
-    .line 34
+    .line 35
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -179,7 +179,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS sent_files_v2(uid TEXT, type INTEGER, data BLOB, PRIMARY KEY (uid, type))"
 
-    .line 36
+    .line 37
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -192,7 +192,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, PRIMARY KEY (uid, type));"
 
-    .line 38
+    .line 39
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -205,7 +205,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);"
 
-    .line 39
+    .line 40
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -218,7 +218,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);"
 
-    .line 41
+    .line 42
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -231,7 +231,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);"
 
-    .line 43
+    .line 44
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -244,7 +244,7 @@
 
     const-string v0, "UPDATE messages SET send_state = 2 WHERE mid < 0 AND send_state = 1"
 
-    .line 45
+    .line 46
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -255,12 +255,12 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 47
+    .line 48
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessagesStorage;->fixNotificationSettings()V
 
     const-string v0, "PRAGMA user_version = 4"
 
-    .line 48
+    .line 49
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -286,7 +286,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS enc_tasks_v2(mid INTEGER PRIMARY KEY, date INTEGER)"
 
-    .line 52
+    .line 53
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -299,7 +299,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS date_idx_enc_tasks_v2 ON enc_tasks_v2(date);"
 
-    .line 53
+    .line 54
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -310,105 +310,92 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 54
+    .line 55
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     new-array v0, v7, [Ljava/lang/Object;
 
     const-string v8, "SELECT date, data FROM enc_tasks WHERE 1"
 
-    .line 55
+    .line 56
     invoke-virtual {v2, v8, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
 
     const-string v8, "REPLACE INTO enc_tasks_v2 VALUES(?, ?)"
 
-    .line 56
+    .line 57
     invoke-virtual {v2, v8}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v8
 
-    .line 57
+    .line 58
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    .line 58
+    .line 59
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v9
 
-    .line 59
+    .line 60
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v10
 
     if-eqz v10, :cond_2
 
-    .line 61
+    .line 62
     invoke-virtual {v10}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v11
 
     move v12, v7
 
-    .line 62
+    .line 63
     :goto_0
     div-int/lit8 v13, v11, 0x4
 
     if-ge v12, v13, :cond_1
 
-    .line 63
+    .line 64
     invoke-virtual {v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 64
+    .line 65
     invoke-virtual {v10, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v13
 
     invoke-virtual {v8, v6, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 65
+    .line 66
     invoke-virtual {v8, v5, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 66
+    .line 67
     invoke-virtual {v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_0
 
-    .line 68
+    .line 69
     :cond_1
     invoke-virtual {v10}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 71
+    .line 72
     :cond_2
     invoke-virtual {v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 72
+    .line 73
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 73
+    .line 74
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "DROP INDEX IF EXISTS date_idx_enc_tasks;"
-
-    .line 75
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP TABLE IF EXISTS enc_tasks;"
 
     .line 76
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -421,9 +408,22 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "DROP TABLE IF EXISTS enc_tasks;"
+
+    .line 77
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
     const-string v0, "ALTER TABLE messages ADD COLUMN media INTEGER default 0"
 
-    .line 78
+    .line 79
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -436,7 +436,7 @@
 
     const-string v0, "PRAGMA user_version = 6"
 
-    .line 79
+    .line 80
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -456,7 +456,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS messages_seq(mid INTEGER PRIMARY KEY, seq_in INTEGER, seq_out INTEGER);"
 
-    .line 83
+    .line 84
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -469,7 +469,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS seq_idx_messages_seq ON messages_seq(seq_in, seq_out);"
 
-    .line 84
+    .line 85
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -482,7 +482,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN layer INTEGER default 0"
 
-    .line 85
+    .line 86
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -495,7 +495,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN seq_in INTEGER default 0"
 
-    .line 86
+    .line 87
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -508,7 +508,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN seq_out INTEGER default 0"
 
-    .line 87
+    .line 88
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -521,7 +521,7 @@
 
     const-string v0, "PRAGMA user_version = 7"
 
-    .line 88
+    .line 89
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -550,7 +550,7 @@
     :cond_5
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN use_count INTEGER default 0"
 
-    .line 92
+    .line 93
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -563,7 +563,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN exchange_id INTEGER default 0"
 
-    .line 93
+    .line 94
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -576,7 +576,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN key_date INTEGER default 0"
 
-    .line 94
+    .line 95
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -589,7 +589,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN fprint INTEGER default 0"
 
-    .line 95
+    .line 96
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -602,7 +602,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN fauthkey BLOB default NULL"
 
-    .line 96
+    .line 97
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -615,7 +615,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN khash BLOB default NULL"
 
-    .line 97
+    .line 98
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -628,7 +628,7 @@
 
     const-string v0, "PRAGMA user_version = 10"
 
-    .line 98
+    .line 99
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -648,7 +648,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS web_recent_v3(id TEXT, type INTEGER, image_url TEXT, thumb_url TEXT, local_url TEXT, width INTEGER, height INTEGER, size INTEGER, date INTEGER, PRIMARY KEY (id, type));"
 
-    .line 102
+    .line 103
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -661,7 +661,7 @@
 
     const-string v0, "PRAGMA user_version = 11"
 
-    .line 103
+    .line 104
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -686,7 +686,7 @@
     :cond_8
     const-string v0, "DROP INDEX IF EXISTS uid_mid_idx_media;"
 
-    .line 107
+    .line 108
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -699,7 +699,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS mid_idx_media;"
 
-    .line 108
+    .line 109
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -712,7 +712,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_date_mid_idx_media;"
 
-    .line 109
+    .line 110
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -725,7 +725,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS media;"
 
-    .line 110
+    .line 111
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -738,7 +738,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS media_counts;"
 
-    .line 111
+    .line 112
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -751,7 +751,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_v2(mid INTEGER PRIMARY KEY, uid INTEGER, date INTEGER, type INTEGER, data BLOB)"
 
-    .line 113
+    .line 114
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -764,7 +764,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_counts_v2(uid INTEGER, type INTEGER, count INTEGER, PRIMARY KEY(uid, type))"
 
-    .line 114
+    .line 115
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -777,7 +777,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media ON media_v2(uid, mid, type, date);"
 
-    .line 115
+    .line 116
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -790,7 +790,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS keyvalue(id TEXT PRIMARY KEY, value TEXT)"
 
-    .line 117
+    .line 118
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -803,7 +803,7 @@
 
     const-string v0, "PRAGMA user_version = 13"
 
-    .line 119
+    .line 120
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -823,7 +823,7 @@
 
     const-string v0, "ALTER TABLE messages ADD COLUMN replydata BLOB default NULL"
 
-    .line 123
+    .line 124
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -836,7 +836,7 @@
 
     const-string v0, "PRAGMA user_version = 14"
 
-    .line 124
+    .line 125
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -856,7 +856,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS hashtag_recent_v2(id TEXT PRIMARY KEY, date INTEGER);"
 
-    .line 128
+    .line 129
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -869,7 +869,7 @@
 
     const-string v0, "PRAGMA user_version = 15"
 
-    .line 129
+    .line 130
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -889,7 +889,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS webpage_pending(id INTEGER, mid INTEGER, PRIMARY KEY (id, mid));"
 
-    .line 133
+    .line 134
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -902,7 +902,7 @@
 
     const-string v0, "PRAGMA user_version = 16"
 
-    .line 134
+    .line 135
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -922,7 +922,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN inbox_max INTEGER default 0"
 
-    .line 138
+    .line 139
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -935,7 +935,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN outbox_max INTEGER default 0"
 
-    .line 139
+    .line 140
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -948,7 +948,7 @@
 
     const-string v0, "PRAGMA user_version = 17"
 
-    .line 140
+    .line 141
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -968,7 +968,7 @@
 
     const-string v0, "PRAGMA user_version = 18"
 
-    .line 144
+    .line 145
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -986,7 +986,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS stickers;"
 
-    .line 148
+    .line 149
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -999,7 +999,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS stickers_v2(id INTEGER PRIMARY KEY, data BLOB, date INTEGER, hash INTEGER);"
 
-    .line 149
+    .line 150
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1012,7 +1012,7 @@
 
     const-string v0, "PRAGMA user_version = 19"
 
-    .line 150
+    .line 151
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1032,7 +1032,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS bot_keyboard(uid INTEGER PRIMARY KEY, mid INTEGER, info BLOB)"
 
-    .line 154
+    .line 155
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1045,7 +1045,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS bot_keyboard_idx_mid ON bot_keyboard(mid);"
 
-    .line 155
+    .line 156
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1058,7 +1058,7 @@
 
     const-string v0, "PRAGMA user_version = 20"
 
-    .line 156
+    .line 157
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1078,7 +1078,7 @@
 
     const-string v0, "CREATE TABLE search_recent(did INTEGER PRIMARY KEY, date INTEGER);"
 
-    .line 160
+    .line 161
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1091,7 +1091,7 @@
 
     const-string v0, "PRAGMA user_version = 21"
 
-    .line 161
+    .line 162
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1113,7 +1113,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS chat_settings_v2(uid INTEGER PRIMARY KEY, info BLOB)"
 
-    .line 165
+    .line 166
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1128,19 +1128,19 @@
 
     const-string v14, "SELECT uid, participants FROM chat_settings WHERE uid < 0"
 
-    .line 167
+    .line 168
     invoke-virtual {v2, v14, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
 
     const-string v14, "REPLACE INTO chat_settings_v2 VALUES(?, ?)"
 
-    .line 168
+    .line 169
     invoke-virtual {v2, v14}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v14
 
-    .line 169
+    .line 170
     :goto_1
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -1148,21 +1148,21 @@
 
     if-eqz v16, :cond_13
 
-    .line 170
+    .line 171
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v13
 
     int-to-long v12, v13
 
-    .line 171
+    .line 172
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v11
 
     if-eqz v11, :cond_12
 
-    .line 173
+    .line 174
     invoke-virtual {v11, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v9
@@ -1171,40 +1171,40 @@
 
     move-result-object v9
 
-    .line 174
+    .line 175
     invoke-virtual {v11}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     if-eqz v9, :cond_12
 
-    .line 176
+    .line 177
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_chatFull;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_chatFull;-><init>()V
 
-    .line 177
+    .line 178
     iput-wide v12, v11, Lorg/telegram/tgnet/TLRPC$ChatFull;->id:J
 
-    .line 178
+    .line 179
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_photoEmpty;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_photoEmpty;-><init>()V
 
     iput-object v10, v11, Lorg/telegram/tgnet/TLRPC$ChatFull;->chat_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 179
+    .line 180
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettingsEmpty_layer77;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettingsEmpty_layer77;-><init>()V
 
     iput-object v10, v11, Lorg/telegram/tgnet/TLRPC$ChatFull;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
-    .line 180
+    .line 181
     iput-object v15, v11, Lorg/telegram/tgnet/TLRPC$ChatFull;->exported_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 181
+    .line 182
     iput-object v9, v11, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
-    .line 182
+    .line 183
     new-instance v9, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {v11}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
@@ -1213,22 +1213,22 @@
 
     invoke-direct {v9, v10}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 183
+    .line 184
     invoke-virtual {v11, v9}, Lorg/telegram/tgnet/TLRPC$TL_chatFull;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 184
+    .line 185
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 185
+    .line 186
     invoke-virtual {v14, v6, v12, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 186
+    .line 187
     invoke-virtual {v14, v5, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 187
+    .line 188
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 188
+    .line 189
     invoke-virtual {v9}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     :cond_12
@@ -1244,27 +1244,14 @@
 
     goto :goto_1
 
-    .line 192
+    .line 193
     :cond_13
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 193
+    .line 194
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     const-string v0, "DROP TABLE IF EXISTS chat_settings;"
-
-    .line 195
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "ALTER TABLE dialogs ADD COLUMN last_mid_i INTEGER default 0"
 
     .line 196
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1277,7 +1264,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "ALTER TABLE dialogs ADD COLUMN unread_count_i INTEGER default 0"
+    const-string v0, "ALTER TABLE dialogs ADD COLUMN last_mid_i INTEGER default 0"
 
     .line 197
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1290,7 +1277,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "ALTER TABLE dialogs ADD COLUMN pts INTEGER default 0"
+    const-string v0, "ALTER TABLE dialogs ADD COLUMN unread_count_i INTEGER default 0"
 
     .line 198
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1303,7 +1290,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "ALTER TABLE dialogs ADD COLUMN date_i INTEGER default 0"
+    const-string v0, "ALTER TABLE dialogs ADD COLUMN pts INTEGER default 0"
 
     .line 199
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1316,7 +1303,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE INDEX IF NOT EXISTS last_mid_i_idx_dialogs ON dialogs(last_mid_i);"
+    const-string v0, "ALTER TABLE dialogs ADD COLUMN date_i INTEGER default 0"
 
     .line 200
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1329,7 +1316,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE INDEX IF NOT EXISTS unread_count_i_idx_dialogs ON dialogs(unread_count_i);"
+    const-string v0, "CREATE INDEX IF NOT EXISTS last_mid_i_idx_dialogs ON dialogs(last_mid_i);"
 
     .line 201
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1342,7 +1329,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "ALTER TABLE messages ADD COLUMN imp INTEGER default 0"
+    const-string v0, "CREATE INDEX IF NOT EXISTS unread_count_i_idx_dialogs ON dialogs(unread_count_i);"
 
     .line 202
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1355,7 +1342,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE TABLE IF NOT EXISTS messages_holes(uid INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, start));"
+    const-string v0, "ALTER TABLE messages ADD COLUMN imp INTEGER default 0"
 
     .line 203
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1368,7 +1355,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes(uid, end);"
+    const-string v0, "CREATE TABLE IF NOT EXISTS messages_holes(uid INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, start));"
 
     .line 204
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -1381,9 +1368,22 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "PRAGMA user_version = 22"
+    const-string v0, "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes(uid, end);"
 
     .line 205
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 22"
+
+    .line 206
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1403,7 +1403,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_holes_v2(uid INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, type, start));"
 
-    .line 209
+    .line 210
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1416,7 +1416,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_end_media_holes_v2 ON media_holes_v2(uid, type, end);"
 
-    .line 210
+    .line 211
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1429,7 +1429,7 @@
 
     const-string v0, "PRAGMA user_version = 23"
 
-    .line 211
+    .line 212
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1454,7 +1454,7 @@
     :cond_16
     const-string v0, "DELETE FROM media_holes_v2 WHERE uid != 0 AND type >= 0 AND start IN (0, 1)"
 
-    .line 215
+    .line 216
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1467,7 +1467,7 @@
 
     const-string v0, "PRAGMA user_version = 25"
 
-    .line 216
+    .line 217
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1492,7 +1492,7 @@
     :cond_18
     const-string v0, "CREATE TABLE IF NOT EXISTS channel_users_v2(did INTEGER, uid INTEGER, date INTEGER, data BLOB, PRIMARY KEY(did, uid))"
 
-    .line 220
+    .line 221
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1505,7 +1505,7 @@
 
     const-string v0, "PRAGMA user_version = 27"
 
-    .line 221
+    .line 222
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1525,7 +1525,7 @@
 
     const-string v0, "ALTER TABLE web_recent_v3 ADD COLUMN document BLOB default NULL"
 
-    .line 225
+    .line 226
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1538,7 +1538,7 @@
 
     const-string v0, "PRAGMA user_version = 28"
 
-    .line 226
+    .line 227
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1565,7 +1565,7 @@
     :cond_1b
     const-string v0, "DELETE FROM sent_files_v2 WHERE 1"
 
-    .line 230
+    .line 231
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1576,7 +1576,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 231
+    .line 232
     invoke-virtual {v2, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1589,7 +1589,7 @@
 
     const-string v0, "PRAGMA user_version = 30"
 
-    .line 232
+    .line 233
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1609,7 +1609,7 @@
 
     const-string v0, "ALTER TABLE chat_settings_v2 ADD COLUMN pinned INTEGER default 0"
 
-    .line 236
+    .line 237
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1622,7 +1622,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS chat_settings_pinned_idx ON chat_settings_v2(uid, pinned) WHERE pinned != 0;"
 
-    .line 237
+    .line 238
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1635,7 +1635,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS users_data(uid INTEGER PRIMARY KEY, about TEXT)"
 
-    .line 238
+    .line 239
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1648,7 +1648,7 @@
 
     const-string v0, "PRAGMA user_version = 31"
 
-    .line 239
+    .line 240
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1670,7 +1670,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS bot_recent;"
 
-    .line 243
+    .line 244
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1683,7 +1683,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS chat_hints(did INTEGER, type INTEGER, rating REAL, date INTEGER, PRIMARY KEY(did, type))"
 
-    .line 244
+    .line 245
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1696,7 +1696,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS chat_hints_rating_idx ON chat_hints(rating);"
 
-    .line 245
+    .line 246
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1709,7 +1709,7 @@
 
     const-string v0, "PRAGMA user_version = 32"
 
-    .line 246
+    .line 247
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1727,7 +1727,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_mid_idx_imp_messages;"
 
-    .line 250
+    .line 251
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1740,7 +1740,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_date_mid_imp_idx_messages;"
 
-    .line 251
+    .line 252
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1753,7 +1753,7 @@
 
     const-string v0, "PRAGMA user_version = 33"
 
-    .line 252
+    .line 253
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1773,7 +1773,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS pending_tasks(id INTEGER PRIMARY KEY, data BLOB);"
 
-    .line 256
+    .line 257
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1786,7 +1786,7 @@
 
     const-string v0, "PRAGMA user_version = 34"
 
-    .line 257
+    .line 258
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1806,7 +1806,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS stickers_featured(id INTEGER PRIMARY KEY, data BLOB, unread BLOB, date INTEGER, hash INTEGER);"
 
-    .line 261
+    .line 262
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1819,7 +1819,7 @@
 
     const-string v0, "PRAGMA user_version = 35"
 
-    .line 262
+    .line 263
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1839,7 +1839,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS requested_holes(uid INTEGER, seq_out_start INTEGER, seq_out_end INTEGER, PRIMARY KEY (uid, seq_out_start, seq_out_end));"
 
-    .line 266
+    .line 267
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1852,7 +1852,7 @@
 
     const-string v0, "PRAGMA user_version = 36"
 
-    .line 267
+    .line 268
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1872,7 +1872,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN in_seq_no INTEGER default 0"
 
-    .line 271
+    .line 272
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1885,7 +1885,7 @@
 
     const-string v0, "PRAGMA user_version = 37"
 
-    .line 272
+    .line 273
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1905,7 +1905,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS botcache(id TEXT PRIMARY KEY, date INTEGER, data BLOB)"
 
-    .line 276
+    .line 277
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1918,7 +1918,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS botcache_date_idx ON botcache(date);"
 
-    .line 277
+    .line 278
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1931,7 +1931,7 @@
 
     const-string v0, "PRAGMA user_version = 38"
 
-    .line 278
+    .line 279
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1951,7 +1951,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN pinned INTEGER default 0"
 
-    .line 282
+    .line 283
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1964,7 +1964,7 @@
 
     const-string v0, "PRAGMA user_version = 39"
 
-    .line 283
+    .line 284
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1984,7 +1984,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN admin_id INTEGER default 0"
 
-    .line 287
+    .line 288
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -1997,7 +1997,7 @@
 
     const-string v0, "PRAGMA user_version = 40"
 
-    .line 288
+    .line 289
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2015,12 +2015,12 @@
 
     if-ne v0, v9, :cond_27
 
-    .line 292
+    .line 293
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessagesStorage;->fixNotificationSettings()V
 
     const-string v0, "PRAGMA user_version = 41"
 
-    .line 293
+    .line 294
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2040,7 +2040,7 @@
 
     const-string v0, "ALTER TABLE messages ADD COLUMN mention INTEGER default 0"
 
-    .line 297
+    .line 298
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2053,7 +2053,7 @@
 
     const-string v0, "ALTER TABLE user_contacts_v6 ADD COLUMN imported INTEGER default 0"
 
-    .line 298
+    .line 299
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2066,7 +2066,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages ON messages(uid, mention, read_state);"
 
-    .line 299
+    .line 300
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2079,7 +2079,7 @@
 
     const-string v0, "PRAGMA user_version = 42"
 
-    .line 300
+    .line 301
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2099,7 +2099,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS sharing_locations(uid INTEGER PRIMARY KEY, mid INTEGER, date INTEGER, period INTEGER, message BLOB);"
 
-    .line 304
+    .line 305
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2112,7 +2112,7 @@
 
     const-string v0, "PRAGMA user_version = 43"
 
-    .line 305
+    .line 306
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2132,7 +2132,7 @@
 
     const-string v0, "PRAGMA user_version = 44"
 
-    .line 309
+    .line 310
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2152,7 +2152,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_contacts_v7(key TEXT PRIMARY KEY, uid INTEGER, fname TEXT, sname TEXT, imported INTEGER)"
 
-    .line 313
+    .line 314
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2165,7 +2165,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_phones_v7(key TEXT, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (key, phone))"
 
-    .line 314
+    .line 315
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2178,7 +2178,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v7(sphone, deleted);"
 
-    .line 315
+    .line 316
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2191,7 +2191,7 @@
 
     const-string v0, "PRAGMA user_version = 45"
 
-    .line 316
+    .line 317
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2211,7 +2211,7 @@
 
     const-string v0, "ALTER TABLE enc_chats ADD COLUMN mtproto_seq INTEGER default 0"
 
-    .line 320
+    .line 321
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2224,7 +2224,7 @@
 
     const-string v0, "PRAGMA user_version = 46"
 
-    .line 321
+    .line 322
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2244,7 +2244,7 @@
 
     const-string v0, "DELETE FROM botcache WHERE 1"
 
-    .line 325
+    .line 326
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2257,7 +2257,7 @@
 
     const-string v0, "PRAGMA user_version = 47"
 
-    .line 326
+    .line 327
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2277,7 +2277,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN flags INTEGER default 0"
 
-    .line 330
+    .line 331
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2290,7 +2290,7 @@
 
     const-string v0, "PRAGMA user_version = 48"
 
-    .line 331
+    .line 332
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2310,7 +2310,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS unread_push_messages(uid INTEGER, mid INTEGER, random INTEGER, date INTEGER, data BLOB, fm TEXT, name TEXT, uname TEXT, flags INTEGER, PRIMARY KEY(uid, mid))"
 
-    .line 335
+    .line 336
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2323,7 +2323,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_date ON unread_push_messages(date);"
 
-    .line 336
+    .line 337
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2336,7 +2336,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS unread_push_messages_idx_random ON unread_push_messages(random);"
 
-    .line 337
+    .line 338
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2349,7 +2349,7 @@
 
     const-string v0, "PRAGMA user_version = 49"
 
-    .line 338
+    .line 339
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2369,7 +2369,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS user_settings(uid INTEGER PRIMARY KEY, info BLOB, pinned INTEGER)"
 
-    .line 342
+    .line 343
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2382,7 +2382,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS user_settings_pinned_idx ON user_settings(uid, pinned) WHERE pinned != 0;"
 
-    .line 343
+    .line 344
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2395,7 +2395,7 @@
 
     const-string v0, "PRAGMA user_version = 50"
 
-    .line 344
+    .line 345
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2415,7 +2415,7 @@
 
     const-string v0, "DELETE FROM sent_files_v2 WHERE 1"
 
-    .line 348
+    .line 349
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2428,7 +2428,7 @@
 
     const-string v0, "ALTER TABLE sent_files_v2 ADD COLUMN parent TEXT"
 
-    .line 349
+    .line 350
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2439,7 +2439,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 350
+    .line 351
     invoke-virtual {v2, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2452,7 +2452,7 @@
 
     const-string v0, "ALTER TABLE download_queue ADD COLUMN parent TEXT"
 
-    .line 351
+    .line 352
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2465,7 +2465,7 @@
 
     const-string v0, "PRAGMA user_version = 51"
 
-    .line 352
+    .line 353
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2485,7 +2485,7 @@
 
     const-string v0, "ALTER TABLE media_counts_v2 ADD COLUMN old INTEGER"
 
-    .line 356
+    .line 357
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2498,7 +2498,7 @@
 
     const-string v0, "PRAGMA user_version = 52"
 
-    .line 357
+    .line 358
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2518,7 +2518,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS polls_v2(mid INTEGER, uid INTEGER, id INTEGER, PRIMARY KEY (mid, uid));"
 
-    .line 361
+    .line 362
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2531,7 +2531,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS polls_id ON polls_v2(id);"
 
-    .line 362
+    .line 363
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2544,7 +2544,7 @@
 
     const-string v0, "PRAGMA user_version = 53"
 
-    .line 363
+    .line 364
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2564,7 +2564,7 @@
 
     const-string v0, "ALTER TABLE chat_settings_v2 ADD COLUMN online INTEGER default 0"
 
-    .line 367
+    .line 368
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2577,7 +2577,7 @@
 
     const-string v0, "PRAGMA user_version = 54"
 
-    .line 368
+    .line 369
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2597,7 +2597,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS wallpapers;"
 
-    .line 372
+    .line 373
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2610,7 +2610,7 @@
 
     const-string v0, "PRAGMA user_version = 55"
 
-    .line 373
+    .line 374
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2630,7 +2630,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS wallpapers2(uid INTEGER PRIMARY KEY, data BLOB, num INTEGER)"
 
-    .line 377
+    .line 378
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2643,7 +2643,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS wallpapers_num ON wallpapers2(num);"
 
-    .line 378
+    .line 379
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2656,7 +2656,7 @@
 
     const-string v0, "PRAGMA user_version = 56"
 
-    .line 379
+    .line 380
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2681,7 +2681,7 @@
     :cond_37
     const-string v0, "CREATE TABLE IF NOT EXISTS emoji_keywords_v2(lang TEXT, keyword TEXT, emoji TEXT, PRIMARY KEY(lang, keyword, emoji));"
 
-    .line 383
+    .line 384
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2694,7 +2694,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS emoji_keywords_info_v2(lang TEXT PRIMARY KEY, alias TEXT, version INTEGER);"
 
-    .line 384
+    .line 385
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2707,7 +2707,7 @@
 
     const-string v0, "PRAGMA user_version = 58"
 
-    .line 385
+    .line 386
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2727,7 +2727,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS emoji_keywords_v2_keyword ON emoji_keywords_v2(keyword);"
 
-    .line 389
+    .line 390
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2740,7 +2740,7 @@
 
     const-string v0, "ALTER TABLE emoji_keywords_info_v2 ADD COLUMN date INTEGER default 0"
 
-    .line 390
+    .line 391
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2753,7 +2753,7 @@
 
     const-string v0, "PRAGMA user_version = 59"
 
-    .line 391
+    .line 392
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2773,7 +2773,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN folder_id INTEGER default 0"
 
-    .line 395
+    .line 396
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2786,7 +2786,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN data BLOB default NULL"
 
-    .line 396
+    .line 397
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2799,7 +2799,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON dialogs(folder_id);"
 
-    .line 397
+    .line 398
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2812,7 +2812,7 @@
 
     const-string v0, "PRAGMA user_version = 60"
 
-    .line 398
+    .line 399
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2832,7 +2832,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS channel_admins;"
 
-    .line 402
+    .line 403
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2845,7 +2845,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS blocked_users;"
 
-    .line 403
+    .line 404
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2858,7 +2858,7 @@
 
     const-string v0, "PRAGMA user_version = 61"
 
-    .line 404
+    .line 405
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2878,7 +2878,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS send_state_idx_messages;"
 
-    .line 408
+    .line 409
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2891,7 +2891,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS send_state_idx_messages2 ON messages(mid, send_state, date);"
 
-    .line 409
+    .line 410
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2904,7 +2904,7 @@
 
     const-string v0, "PRAGMA user_version = 62"
 
-    .line 410
+    .line 411
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2924,7 +2924,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS scheduled_messages(mid INTEGER PRIMARY KEY, uid INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB)"
 
-    .line 414
+    .line 415
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2937,7 +2937,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS send_state_idx_scheduled_messages ON scheduled_messages(mid, send_state, date);"
 
-    .line 415
+    .line 416
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2950,7 +2950,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_date_idx_scheduled_messages ON scheduled_messages(uid, date);"
 
-    .line 416
+    .line 417
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2963,7 +2963,7 @@
 
     const-string v0, "PRAGMA user_version = 63"
 
-    .line 417
+    .line 418
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2981,7 +2981,7 @@
 
     if-ne v0, v9, :cond_3e
 
-    .line 421
+    .line 422
     invoke-virtual {v2, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -2994,7 +2994,7 @@
 
     const-string v0, "PRAGMA user_version = 64"
 
-    .line 422
+    .line 423
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3014,7 +3014,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS dialog_filter(id INTEGER PRIMARY KEY, ord INTEGER, unread_count INTEGER, flags INTEGER, title TEXT)"
 
-    .line 426
+    .line 427
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3027,7 +3027,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS dialog_filter_ep(id INTEGER, peer INTEGER, PRIMARY KEY (id, peer))"
 
-    .line 427
+    .line 428
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3040,7 +3040,7 @@
 
     const-string v0, "PRAGMA user_version = 65"
 
-    .line 428
+    .line 429
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3060,7 +3060,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON dialogs(flags);"
 
-    .line 432
+    .line 433
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3073,7 +3073,7 @@
 
     const-string v0, "PRAGMA user_version = 66"
 
-    .line 433
+    .line 434
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3093,7 +3093,7 @@
 
     const-string v0, "CREATE TABLE dialog_filter_pin_v2(id INTEGER, peer INTEGER, pin INTEGER, PRIMARY KEY (id, peer))"
 
-    .line 437
+    .line 438
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3106,7 +3106,7 @@
 
     const-string v0, "PRAGMA user_version = 67"
 
-    .line 438
+    .line 439
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3126,7 +3126,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS stickers_dice(emoji TEXT PRIMARY KEY, data BLOB, date INTEGER);"
 
-    .line 442
+    .line 443
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3139,7 +3139,7 @@
 
     const-string v0, "PRAGMA user_version = 68"
 
-    .line 443
+    .line 444
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3159,12 +3159,12 @@
 
     const-string v0, "ALTER TABLE messages ADD COLUMN forwards INTEGER default 0"
 
-    .line 447
+    .line 448
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 69"
 
-    .line 448
+    .line 449
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3184,17 +3184,17 @@
 
     const-string v0, "ALTER TABLE messages ADD COLUMN replies_data BLOB default NULL"
 
-    .line 452
+    .line 453
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "ALTER TABLE messages ADD COLUMN thread_reply_id INTEGER default 0"
 
-    .line 453
+    .line 454
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 70"
 
-    .line 454
+    .line 455
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3214,7 +3214,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS chat_pinned_v2(uid INTEGER, mid INTEGER, data BLOB, PRIMARY KEY (uid, mid));"
 
-    .line 458
+    .line 459
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3227,7 +3227,7 @@
 
     const-string v0, "PRAGMA user_version = 71"
 
-    .line 459
+    .line 460
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3247,12 +3247,12 @@
 
     const-string v0, "ALTER TABLE sharing_locations ADD COLUMN proximity INTEGER default 0"
 
-    .line 463
+    .line 464
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 72"
 
-    .line 464
+    .line 465
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3272,7 +3272,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS chat_pinned_count(uid INTEGER PRIMARY KEY, count INTEGER, end INTEGER);"
 
-    .line 468
+    .line 469
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3285,7 +3285,7 @@
 
     const-string v0, "PRAGMA user_version = 73"
 
-    .line 469
+    .line 470
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3305,12 +3305,12 @@
 
     const-string v0, "ALTER TABLE chat_settings_v2 ADD COLUMN inviter INTEGER default 0"
 
-    .line 473
+    .line 474
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 74"
 
-    .line 474
+    .line 475
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3330,7 +3330,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS shortcut_widget(id INTEGER, did INTEGER, ord INTEGER, PRIMARY KEY (id, did));"
 
-    .line 478
+    .line 479
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3343,7 +3343,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS shortcut_widget_did ON shortcut_widget(did);"
 
-    .line 479
+    .line 480
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3356,7 +3356,7 @@
 
     const-string v0, "PRAGMA user_version = 75"
 
-    .line 480
+    .line 481
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3376,12 +3376,12 @@
 
     const-string v0, "ALTER TABLE chat_settings_v2 ADD COLUMN links INTEGER default 0"
 
-    .line 484
+    .line 485
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 76"
 
-    .line 485
+    .line 486
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3401,12 +3401,12 @@
 
     const-string v0, "ALTER TABLE enc_tasks_v2 ADD COLUMN media INTEGER default -1"
 
-    .line 489
+    .line 490
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 77"
 
-    .line 490
+    .line 491
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3426,7 +3426,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS channel_admins_v2;"
 
-    .line 494
+    .line 495
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3439,7 +3439,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS channel_admins_v3(did INTEGER, uid INTEGER, data BLOB, PRIMARY KEY(did, uid))"
 
-    .line 495
+    .line 496
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3452,7 +3452,7 @@
 
     const-string v0, "PRAGMA user_version = 78"
 
-    .line 496
+    .line 497
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3472,7 +3472,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS bot_info;"
 
-    .line 500
+    .line 501
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3485,7 +3485,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS bot_info_v2(uid INTEGER, dialogId INTEGER, info BLOB, PRIMARY KEY(uid, dialogId))"
 
-    .line 501
+    .line 502
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3498,7 +3498,7 @@
 
     const-string v0, "PRAGMA user_version = 79"
 
-    .line 502
+    .line 503
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3520,7 +3520,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS enc_tasks_v3(mid INTEGER, date INTEGER, media INTEGER, PRIMARY KEY(mid, media))"
 
-    .line 506
+    .line 507
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3533,7 +3533,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS date_idx_enc_tasks_v3 ON enc_tasks_v3(date);"
 
-    .line 507
+    .line 508
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3544,86 +3544,73 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 509
+    .line 510
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     new-array v0, v7, [Ljava/lang/Object;
 
     const-string v9, "SELECT mid, date, media FROM enc_tasks_v2 WHERE 1"
 
-    .line 510
+    .line 511
     invoke-virtual {v2, v9, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
 
     const-string v9, "REPLACE INTO enc_tasks_v3 VALUES(?, ?, ?)"
 
-    .line 511
+    .line 512
     invoke-virtual {v2, v9}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v9
 
-    .line 512
+    .line 513
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result v12
 
     if-eqz v12, :cond_4e
 
-    .line 513
+    .line 514
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v12
 
-    .line 514
+    .line 515
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v14
 
-    .line 515
+    .line 516
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v15
 
-    .line 517
+    .line 518
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 518
+    .line 519
     invoke-virtual {v9, v6, v12, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 519
+    .line 520
     invoke-virtual {v9, v5, v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 520
+    .line 521
     invoke-virtual {v9, v10, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 521
+    .line 522
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 523
+    .line 524
     :cond_4e
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 524
+    .line 525
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 525
+    .line 526
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "DROP INDEX IF EXISTS date_idx_enc_tasks_v2;"
-
-    .line 527
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP TABLE IF EXISTS enc_tasks_v2;"
 
     .line 528
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -3636,9 +3623,22 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "DROP TABLE IF EXISTS enc_tasks_v2;"
+
+    .line 529
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
     const-string v0, "PRAGMA user_version = 80"
 
-    .line 530
+    .line 531
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3660,7 +3660,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS scheduled_messages_v2(mid INTEGER, uid INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, PRIMARY KEY(mid, uid))"
 
-    .line 534
+    .line 535
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3673,7 +3673,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS send_state_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, send_state, date);"
 
-    .line 535
+    .line 536
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3686,7 +3686,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_date_idx_scheduled_messages_v2 ON scheduled_messages_v2(uid, date);"
 
-    .line 536
+    .line 537
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3699,7 +3699,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS bot_keyboard_idx_mid_v2 ON bot_keyboard(mid, uid);"
 
-    .line 538
+    .line 539
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3712,7 +3712,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS bot_keyboard_idx_mid;"
 
-    .line 539
+    .line 540
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3723,7 +3723,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 541
+    .line 542
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     :try_start_0
@@ -3731,7 +3731,7 @@
 
     new-array v9, v7, [Ljava/lang/Object;
 
-    .line 544
+    .line 545
     invoke-virtual {v2, v0, v9}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -3743,7 +3743,7 @@
     :catch_0
     move-exception v0
 
-    .line 547
+    .line 548
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -3753,12 +3753,12 @@
 
     const-string v9, "REPLACE INTO scheduled_messages_v2 VALUES(?, ?, ?, ?, ?, ?, ?)"
 
-    .line 550
+    .line 551
     invoke-virtual {v2, v9}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v9
 
-    .line 551
+    .line 552
     :goto_3
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -3766,7 +3766,7 @@
 
     if-eqz v13, :cond_53
 
-    .line 552
+    .line 553
     invoke-virtual {v0, v3}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v13
@@ -3775,67 +3775,67 @@
 
     goto :goto_3
 
-    .line 556
+    .line 557
     :cond_50
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v14
 
-    .line 557
+    .line 558
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v7
 
-    .line 558
+    .line 559
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v15
 
-    .line 559
+    .line 560
     invoke-virtual {v0, v10}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v11
 
-    .line 560
+    .line 561
     invoke-virtual {v0, v12}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v3
 
-    .line 561
+    .line 562
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v12
 
-    .line 563
+    .line 564
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 564
+    .line 565
     invoke-virtual {v9, v6, v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 565
+    .line 566
     invoke-virtual {v9, v5, v7, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 566
+    .line 567
     invoke-virtual {v9, v10, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v7, 0x4
 
-    .line 567
+    .line 568
     invoke-virtual {v9, v7, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     const/4 v7, 0x5
 
-    .line 568
+    .line 569
     invoke-virtual {v9, v7, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 569
+    .line 570
     invoke-virtual {v9, v4, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-eqz v12, :cond_51
 
     const/4 v3, 0x7
 
-    .line 571
+    .line 572
     invoke-virtual {v9, v3, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     goto :goto_4
@@ -3843,19 +3843,19 @@
     :cond_51
     const/4 v3, 0x7
 
-    .line 573
+    .line 574
     invoke-virtual {v9, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
 
-    .line 575
+    .line 576
     :goto_4
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     if-eqz v12, :cond_52
 
-    .line 577
+    .line 578
     invoke-virtual {v12}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 579
+    .line 580
     :cond_52
     invoke-virtual {v13}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
@@ -3871,28 +3871,15 @@
 
     goto :goto_3
 
-    .line 581
+    .line 582
     :cond_53
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 582
+    .line 583
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_54
     const-string v0, "DROP INDEX IF EXISTS send_state_idx_scheduled_messages;"
-
-    .line 585
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP INDEX IF EXISTS uid_date_idx_scheduled_messages;"
 
     .line 586
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -3905,7 +3892,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP TABLE IF EXISTS scheduled_messages;"
+    const-string v0, "DROP INDEX IF EXISTS uid_date_idx_scheduled_messages;"
 
     .line 587
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -3918,12 +3905,25 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 589
+    const-string v0, "DROP TABLE IF EXISTS scheduled_messages;"
+
+    .line 588
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    .line 590
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "PRAGMA user_version = 81"
 
-    .line 590
+    .line 591
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3943,7 +3943,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_v3(mid INTEGER, uid INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid))"
 
-    .line 594
+    .line 595
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3956,7 +3956,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_v3 ON media_v3(uid, mid, type, date);"
 
-    .line 595
+    .line 596
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -3967,7 +3967,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 597
+    .line 598
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     :try_start_1
@@ -3977,7 +3977,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 600
+    .line 601
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -3989,7 +3989,7 @@
     :catch_1
     move-exception v0
 
-    .line 603
+    .line 604
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -3999,12 +3999,12 @@
 
     const-string v3, "REPLACE INTO media_v3 VALUES(?, ?, ?, ?, ?)"
 
-    .line 606
+    .line 607
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 607
+    .line 608
     :goto_6
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4014,7 +4014,7 @@
 
     const/4 v7, 0x4
 
-    .line 608
+    .line 609
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v8
@@ -4026,12 +4026,12 @@
     :cond_56
     const/4 v7, 0x0
 
-    .line 612
+    .line 613
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v9
 
-    .line 613
+    .line 614
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
@@ -4048,74 +4048,61 @@
 
     int-to-long v11, v7
 
-    .line 617
+    .line 618
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v11
 
-    .line 619
+    .line 620
     :cond_57
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v7
 
-    .line 620
+    .line 621
     invoke-virtual {v0, v10}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v13
 
-    .line 622
+    .line 623
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 623
+    .line 624
     invoke-virtual {v3, v6, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 624
+    .line 625
     invoke-virtual {v3, v5, v11, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 625
+    .line 626
     invoke-virtual {v3, v10, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v7, 0x4
 
-    .line 626
+    .line 627
     invoke-virtual {v3, v7, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v7, 0x5
 
-    .line 627
+    .line 628
     invoke-virtual {v3, v7, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 628
+    .line 629
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 629
+    .line 630
     invoke-virtual {v8}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     goto :goto_6
 
-    .line 631
+    .line 632
     :cond_58
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 632
+    .line 633
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_59
     const-string v0, "DROP INDEX IF EXISTS uid_mid_type_date_idx_media;"
-
-    .line 635
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP TABLE IF EXISTS media_v2;"
 
     .line 636
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -4128,12 +4115,25 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "DROP TABLE IF EXISTS media_v2;"
+
     .line 637
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    .line 638
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "PRAGMA user_version = 82"
 
-    .line 639
+    .line 640
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4153,7 +4153,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS randoms_v2(random_id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (random_id, mid, uid))"
 
-    .line 643
+    .line 644
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4166,7 +4166,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_idx_randoms_v2 ON randoms_v2(mid, uid);"
 
-    .line 644
+    .line 645
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4179,7 +4179,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS enc_tasks_v4(mid INTEGER, uid INTEGER, date INTEGER, media INTEGER, PRIMARY KEY(mid, uid, media))"
 
-    .line 646
+    .line 647
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4192,7 +4192,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS date_idx_enc_tasks_v4 ON enc_tasks_v4(date);"
 
-    .line 647
+    .line 648
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4205,7 +4205,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS polls_v2(mid INTEGER, uid INTEGER, id INTEGER, PRIMARY KEY (mid, uid));"
 
-    .line 649
+    .line 650
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4218,7 +4218,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS polls_id_v2 ON polls_v2(id);"
 
-    .line 650
+    .line 651
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4231,7 +4231,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS webpage_pending_v2(id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (id, mid, uid));"
 
-    .line 652
+    .line 653
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4242,7 +4242,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 654
+    .line 655
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     :try_start_2
@@ -4252,7 +4252,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 658
+    .line 659
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -4264,7 +4264,7 @@
     :catch_2
     move-exception v0
 
-    .line 661
+    .line 662
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -4274,12 +4274,12 @@
 
     const-string v3, "REPLACE INTO randoms_v2 VALUES(?, ?, ?)"
 
-    .line 664
+    .line 665
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 665
+    .line 666
     :goto_8
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4289,17 +4289,17 @@
 
     const/4 v7, 0x0
 
-    .line 666
+    .line 667
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v8
 
-    .line 667
+    .line 668
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v7
 
-    .line 668
+    .line 669
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
@@ -4316,34 +4316,34 @@
 
     int-to-long v11, v11
 
-    .line 672
+    .line 673
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v11
 
-    .line 675
+    .line 676
     :cond_5b
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 676
+    .line 677
     invoke-virtual {v3, v6, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 677
+    .line 678
     invoke-virtual {v3, v5, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 678
+    .line 679
     invoke-virtual {v3, v10, v11, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 679
+    .line 680
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     goto :goto_8
 
-    .line 681
+    .line 682
     :cond_5c
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 682
+    .line 683
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_5d
@@ -4354,7 +4354,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 686
+    .line 687
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -4366,7 +4366,7 @@
     :catch_3
     move-exception v0
 
-    .line 689
+    .line 690
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -4376,12 +4376,12 @@
 
     const-string v3, "REPLACE INTO polls_v2 VALUES(?, ?, ?)"
 
-    .line 692
+    .line 693
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 693
+    .line 694
     :goto_a
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4391,17 +4391,17 @@
 
     const/4 v7, 0x0
 
-    .line 694
+    .line 695
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v8
 
-    .line 695
+    .line 696
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
-    .line 696
+    .line 697
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v13
@@ -4418,34 +4418,34 @@
 
     int-to-long v11, v7
 
-    .line 700
+    .line 701
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v11
 
-    .line 703
+    .line 704
     :cond_5e
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 704
+    .line 705
     invoke-virtual {v3, v6, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 705
+    .line 706
     invoke-virtual {v3, v5, v11, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 706
+    .line 707
     invoke-virtual {v3, v10, v13, v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 707
+    .line 708
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     goto :goto_a
 
-    .line 709
+    .line 710
     :cond_5f
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 710
+    .line 711
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_60
@@ -4456,7 +4456,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 714
+    .line 715
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -4468,7 +4468,7 @@
     :catch_4
     move-exception v0
 
-    .line 717
+    .line 718
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -4478,12 +4478,12 @@
 
     const-string v3, "REPLACE INTO webpage_pending_v2 VALUES(?, ?, ?)"
 
-    .line 720
+    .line 721
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 721
+    .line 722
     :goto_c
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4493,17 +4493,17 @@
 
     const/4 v7, 0x0
 
-    .line 722
+    .line 723
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v8
 
-    .line 723
+    .line 724
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v7
 
-    .line 724
+    .line 725
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
@@ -4520,34 +4520,34 @@
 
     int-to-long v11, v11
 
-    .line 728
+    .line 729
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v11
 
-    .line 731
+    .line 732
     :cond_61
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 732
+    .line 733
     invoke-virtual {v3, v6, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 733
+    .line 734
     invoke-virtual {v3, v5, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 734
+    .line 735
     invoke-virtual {v3, v10, v11, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 735
+    .line 736
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     goto :goto_c
 
-    .line 737
+    .line 738
     :cond_62
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 738
+    .line 739
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_63
@@ -4558,7 +4558,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 742
+    .line 743
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -4570,7 +4570,7 @@
     :catch_5
     move-exception v0
 
-    .line 745
+    .line 746
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -4580,12 +4580,12 @@
 
     const-string v3, "REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)"
 
-    .line 748
+    .line 749
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 749
+    .line 750
     :goto_e
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4595,22 +4595,22 @@
 
     const/4 v7, 0x0
 
-    .line 750
+    .line 751
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v8
 
-    .line 751
+    .line 752
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
-    .line 752
+    .line 753
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v7
 
-    .line 753
+    .line 754
     invoke-virtual {v0, v10}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v9
@@ -4627,56 +4627,43 @@
 
     int-to-long v11, v11
 
-    .line 758
+    .line 759
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v11
 
-    .line 761
+    .line 762
     :cond_64
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 762
+    .line 763
     invoke-virtual {v3, v6, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 763
+    .line 764
     invoke-virtual {v3, v5, v11, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 764
+    .line 765
     invoke-virtual {v3, v10, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v7, 0x4
 
-    .line 765
+    .line 766
     invoke-virtual {v3, v7, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 766
+    .line 767
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     goto :goto_e
 
-    .line 768
+    .line 769
     :cond_65
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 769
+    .line 770
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_66
     const-string v0, "DROP INDEX IF EXISTS mid_idx_randoms;"
-
-    .line 772
-    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP TABLE IF EXISTS randoms;"
 
     .line 773
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -4689,9 +4676,9 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS date_idx_enc_tasks_v3;"
+    const-string v0, "DROP TABLE IF EXISTS randoms;"
 
-    .line 775
+    .line 774
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4702,7 +4689,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP TABLE IF EXISTS enc_tasks_v3;"
+    const-string v0, "DROP INDEX IF EXISTS date_idx_enc_tasks_v3;"
 
     .line 776
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -4715,9 +4702,9 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS polls_id;"
+    const-string v0, "DROP TABLE IF EXISTS enc_tasks_v3;"
 
-    .line 778
+    .line 777
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4728,7 +4715,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP TABLE IF EXISTS polls;"
+    const-string v0, "DROP INDEX IF EXISTS polls_id;"
 
     .line 779
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -4741,9 +4728,9 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP TABLE IF EXISTS webpage_pending;"
+    const-string v0, "DROP TABLE IF EXISTS polls;"
 
-    .line 781
+    .line 780
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4754,12 +4741,25 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "DROP TABLE IF EXISTS webpage_pending;"
+
     .line 782
+    invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    .line 783
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "PRAGMA user_version = 83"
 
-    .line 784
+    .line 785
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4779,7 +4779,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS messages_v2(mid INTEGER, uid INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, PRIMARY KEY(mid, uid))"
 
-    .line 788
+    .line 789
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4792,7 +4792,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_v2 ON messages_v2(uid, mid, read_state, out);"
 
-    .line 789
+    .line 790
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4805,7 +4805,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_v2 ON messages_v2(uid, date, mid);"
 
-    .line 790
+    .line 791
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4818,7 +4818,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_v2 ON messages_v2(mid, out);"
 
-    .line 791
+    .line 792
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4831,7 +4831,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS task_idx_messages_v2 ON messages_v2(uid, out, read_state, ttl, date, send_state);"
 
-    .line 792
+    .line 793
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4844,7 +4844,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS send_state_idx_messages_v2 ON messages_v2(mid, send_state, date);"
 
-    .line 793
+    .line 794
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4857,7 +4857,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_v2 ON messages_v2(uid, mention, read_state);"
 
-    .line 794
+    .line 795
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4870,7 +4870,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_v2 ON messages_v2(mid, is_channel);"
 
-    .line 795
+    .line 796
     invoke-virtual {v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -4881,7 +4881,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 797
+    .line 798
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     :try_start_6
@@ -4891,7 +4891,7 @@
 
     new-array v7, v3, [Ljava/lang/Object;
 
-    .line 802
+    .line 803
     invoke-virtual {v2, v0, v7}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -4903,7 +4903,7 @@
     :catch_6
     move-exception v0
 
-    .line 805
+    .line 806
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -4913,12 +4913,12 @@
 
     const-string v3, "REPLACE INTO messages_v2 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
-    .line 808
+    .line 809
     invoke-virtual {v2, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v3
 
-    .line 810
+    .line 811
     :goto_10
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -4928,7 +4928,7 @@
 
     const/4 v7, 0x5
 
-    .line 811
+    .line 812
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v8
@@ -4940,14 +4940,14 @@
     :cond_68
     const/4 v7, 0x0
 
-    .line 816
+    .line 817
     invoke-virtual {v0, v7}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v9
 
     int-to-long v11, v9
 
-    .line 817
+    .line 818
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v13
@@ -4964,44 +4964,44 @@
 
     int-to-long v13, v7
 
-    .line 821
+    .line 822
     invoke-static {v13, v14}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v13
 
-    .line 823
+    .line 824
     :cond_69
     invoke-virtual {v0, v5}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v7
 
-    .line 824
+    .line 825
     invoke-virtual {v0, v10}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v9
 
     const/4 v15, 0x4
 
-    .line 825
+    .line 826
     invoke-virtual {v0, v15}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v10
 
-    .line 826
+    .line 827
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v15
 
     const/4 v4, 0x7
 
-    .line 827
+    .line 828
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v5
 
     const/16 v4, 0x8
 
-    .line 828
+    .line 829
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v6
@@ -5010,14 +5010,14 @@
 
     const/16 v4, 0x9
 
-    .line 829
+    .line 830
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v15
 
     const/16 v4, 0xa
 
-    .line 830
+    .line 831
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v1
@@ -5026,7 +5026,7 @@
 
     const/16 v4, 0xb
 
-    .line 831
+    .line 832
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v2
@@ -5035,7 +5035,7 @@
 
     const/16 v4, 0xc
 
-    .line 832
+    .line 833
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v2
@@ -5044,7 +5044,7 @@
 
     const/16 v4, 0xd
 
-    .line 833
+    .line 834
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v2
@@ -5053,7 +5053,7 @@
 
     const/16 v4, 0xe
 
-    .line 834
+    .line 835
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v2
@@ -5072,7 +5072,7 @@
 
     const/4 v1, 0x0
 
-    .line 837
+    .line 838
     invoke-virtual {v8, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v4
@@ -5087,7 +5087,7 @@
 
     if-eqz v4, :cond_6b
 
-    .line 839
+    .line 840
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -5098,19 +5098,19 @@
 
     invoke-virtual {v4, v8, v0, v1}, Lorg/telegram/tgnet/TLRPC$Message;->readAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;J)V
 
-    .line 840
+    .line 841
     iget-object v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     if-nez v0, :cond_6a
 
-    .line 841
+    .line 842
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
-    .line 842
+    .line 843
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5136,11 +5136,11 @@
     :cond_6a
     move/from16 v25, v2
 
-    .line 844
+    .line 845
     :goto_11
     invoke-virtual {v8}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 845
+    .line 846
     new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {v4}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
@@ -5149,7 +5149,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 846
+    .line 847
     invoke-virtual {v4, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     move-object v8, v0
@@ -5173,7 +5173,7 @@
 
     move/from16 v17, v0
 
-    .line 851
+    .line 852
     :goto_13
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
@@ -5181,56 +5181,56 @@
 
     const/4 v1, 0x1
 
-    .line 852
+    .line 853
     invoke-virtual {v3, v1, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v1, 0x2
 
-    .line 853
+    .line 854
     invoke-virtual {v3, v1, v13, v14}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
     const/4 v1, 0x3
 
-    .line 854
+    .line 855
     invoke-virtual {v3, v1, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v1, 0x4
 
-    .line 855
+    .line 856
     invoke-virtual {v3, v1, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v1, 0x5
 
-    .line 856
+    .line 857
     invoke-virtual {v3, v1, v10}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v1, 0x6
 
-    .line 857
+    .line 858
     invoke-virtual {v3, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     move/from16 v0, v24
 
     const/4 v2, 0x7
 
-    .line 858
+    .line 859
     invoke-virtual {v3, v2, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/16 v4, 0x8
 
-    .line 859
+    .line 860
     invoke-virtual {v3, v4, v5}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/16 v5, 0x9
 
-    .line 860
+    .line 861
     invoke-virtual {v3, v5, v6}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-eqz v15, :cond_6d
 
     const/16 v6, 0xa
 
-    .line 862
+    .line 863
     invoke-virtual {v3, v6, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     goto :goto_14
@@ -5238,7 +5238,7 @@
     :cond_6d
     const/16 v6, 0xa
 
-    .line 864
+    .line 865
     invoke-virtual {v3, v6}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
 
     :goto_14
@@ -5246,21 +5246,21 @@
 
     const/16 v7, 0xb
 
-    .line 866
+    .line 867
     invoke-virtual {v3, v7, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     move/from16 v0, v19
 
     const/16 v9, 0xc
 
-    .line 867
+    .line 868
     invoke-virtual {v3, v9, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     move/from16 v0, v20
 
     const/16 v10, 0xd
 
-    .line 868
+    .line 869
     invoke-virtual {v3, v10, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-eqz v21, :cond_6e
@@ -5269,7 +5269,7 @@
 
     const/16 v11, 0xe
 
-    .line 870
+    .line 871
     invoke-virtual {v3, v11, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     goto :goto_15
@@ -5279,7 +5279,7 @@
 
     const/16 v11, 0xe
 
-    .line 872
+    .line 873
     invoke-virtual {v3, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
 
     :goto_15
@@ -5287,7 +5287,7 @@
 
     const/16 v13, 0xf
 
-    .line 874
+    .line 875
     invoke-virtual {v3, v13, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-lez v17, :cond_6f
@@ -5302,24 +5302,24 @@
     :goto_16
     const/16 v14, 0x10
 
-    .line 875
+    .line 876
     invoke-virtual {v3, v14, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 876
+    .line 877
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     if-eqz v15, :cond_70
 
-    .line 878
+    .line 879
     invoke-virtual {v15}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     :cond_70
     if-eqz v0, :cond_71
 
-    .line 881
+    .line 882
     invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 883
+    .line 884
     :cond_71
     invoke-virtual {v8}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
@@ -5344,10 +5344,10 @@
 
     move-object/from16 v18, v2
 
-    .line 885
+    .line 886
     invoke-virtual/range {v22 .. v22}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 886
+    .line 887
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     goto :goto_17
@@ -5364,14 +5364,14 @@
 
     move-object/from16 v3, v18
 
-    .line 891
+    .line 892
     invoke-virtual {v3, v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
 
     const-string v2, "UPDATE dialogs SET last_mid = ?, last_mid_i = ? WHERE did = ?"
 
-    .line 892
+    .line 893
     invoke-virtual {v3, v2}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v2
@@ -5380,7 +5380,7 @@
 
     const/4 v5, 0x0
 
-    .line 893
+    .line 894
     :goto_18
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -5388,7 +5388,7 @@
 
     if-eqz v6, :cond_78
 
-    .line 894
+    .line 895
     invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v6
@@ -5405,14 +5405,14 @@
 
     if-nez v4, :cond_74
 
-    .line 899
+    .line 900
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v4, v1
 
-    .line 901
+    .line 902
     :cond_74
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5429,12 +5429,12 @@
 
     if-nez v5, :cond_76
 
-    .line 904
+    .line 905
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 906
+    .line 907
     :cond_76
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5442,21 +5442,12 @@
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 909
+    .line 910
     :cond_77
     :goto_19
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
     const/4 v1, 0x1
-
-    .line 910
-    invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
-
-    move-result v8
-
-    invoke-virtual {v2, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
-
-    const/4 v1, 0x2
 
     .line 911
     invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
@@ -5465,23 +5456,32 @@
 
     invoke-virtual {v2, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    const/4 v1, 0x3
+    const/4 v1, 0x2
 
     .line 912
-    invoke-virtual {v2, v1, v6, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
+
+    move-result v8
+
+    invoke-virtual {v2, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+
+    const/4 v1, 0x3
 
     .line 913
+    invoke-virtual {v2, v1, v6, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+
+    .line 914
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     const/4 v1, 0x0
 
     goto :goto_18
 
-    .line 915
+    .line 916
     :cond_78
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 916
+    .line 917
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     const/4 v1, 0x0
@@ -5490,19 +5490,19 @@
 
     const-string v2, "SELECT uid, mid FROM unread_push_messages WHERE 1"
 
-    .line 918
+    .line 919
     invoke-virtual {v3, v2, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
 
     const-string v2, "UPDATE unread_push_messages SET mid = ? WHERE uid = ? AND mid = ?"
 
-    .line 919
+    .line 920
     invoke-virtual {v3, v2}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v2
 
-    .line 920
+    .line 921
     :goto_1a
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -5510,72 +5510,72 @@
 
     if-eqz v6, :cond_79
 
-    .line 921
+    .line 922
     invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v6
 
     const/4 v1, 0x1
 
-    .line 922
+    .line 923
     invoke-virtual {v0, v1}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v8
 
-    .line 923
+    .line 924
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 924
+    .line 925
     invoke-virtual {v2, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v1, 0x2
 
-    .line 925
+    .line 926
     invoke-virtual {v2, v1, v6, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
     const/4 v1, 0x3
 
-    .line 926
+    .line 927
     invoke-virtual {v2, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 927
+    .line 928
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     const/4 v1, 0x0
 
     goto :goto_1a
 
-    .line 929
+    .line 930
     :cond_79
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 930
+    .line 931
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     if-eqz v4, :cond_7b
 
     const-string v0, "UPDATE dialogs SET did = ? WHERE did = ?"
 
-    .line 933
+    .line 934
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
     const-string v1, "UPDATE dialog_filter_pin_v2 SET peer = ? WHERE peer = ?"
 
-    .line 934
+    .line 935
     invoke-virtual {v3, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v1
 
     const-string v2, "UPDATE dialog_filter_ep SET peer = ? WHERE peer = ?"
 
-    .line 935
+    .line 936
     invoke-virtual {v3, v2}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v2
 
-    .line 936
+    .line 937
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -5585,7 +5585,7 @@
     :goto_1b
     if-ge v7, v6, :cond_7a
 
-    .line 937
+    .line 938
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -5598,7 +5598,7 @@
 
     int-to-long v8, v8
 
-    .line 939
+    .line 940
     invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v10
@@ -5607,58 +5607,58 @@
 
     shl-long/2addr v8, v12
 
-    .line 941
+    .line 942
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
     const/4 v12, 0x1
 
-    .line 942
+    .line 943
     invoke-virtual {v0, v12, v10, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
     const/4 v13, 0x2
 
-    .line 943
+    .line 944
     invoke-virtual {v0, v13, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 944
+    .line 945
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 946
+    .line 947
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 947
+    .line 948
     invoke-virtual {v1, v12, v10, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 948
+    .line 949
     invoke-virtual {v1, v13, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 949
+    .line 950
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 951
+    .line 952
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 952
+    .line 953
     invoke-virtual {v2, v12, v10, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 953
+    .line 954
     invoke-virtual {v2, v13, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 954
+    .line 955
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1b
 
-    .line 956
+    .line 957
     :cond_7a
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 957
+    .line 958
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 958
+    .line 959
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_7b
@@ -5666,12 +5666,12 @@
 
     const-string v0, "UPDATE dialogs SET did = ? WHERE did = ?"
 
-    .line 961
+    .line 962
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
-    .line 962
+    .line 963
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -5681,7 +5681,7 @@
     :goto_1c
     if-ge v2, v1, :cond_7c
 
-    .line 963
+    .line 964
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -5692,7 +5692,7 @@
 
     move-result v4
 
-    .line 965
+    .line 966
     invoke-static {v4}, Lorg/telegram/messenger/DialogObject;->makeFolderDialogId(I)J
 
     move-result-wide v6
@@ -5703,45 +5703,32 @@
 
     or-long/2addr v8, v10
 
-    .line 967
+    .line 968
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
     const/4 v4, 0x1
 
-    .line 968
+    .line 969
     invoke-virtual {v0, v4, v6, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
     const/4 v4, 0x2
 
-    .line 969
+    .line 970
     invoke-virtual {v0, v4, v8, v9}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 970
+    .line 971
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1c
 
-    .line 972
+    .line 973
     :cond_7c
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     :cond_7d
     const-string v0, "DROP INDEX IF EXISTS uid_mid_read_out_idx_messages;"
-
-    .line 975
-    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "DROP INDEX IF EXISTS uid_date_mid_idx_messages;"
 
     .line 976
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5754,7 +5741,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS mid_out_idx_messages;"
+    const-string v0, "DROP INDEX IF EXISTS uid_date_mid_idx_messages;"
 
     .line 977
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5767,7 +5754,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS task_idx_messages;"
+    const-string v0, "DROP INDEX IF EXISTS mid_out_idx_messages;"
 
     .line 978
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5780,7 +5767,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS send_state_idx_messages2;"
+    const-string v0, "DROP INDEX IF EXISTS task_idx_messages;"
 
     .line 979
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5793,7 +5780,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP INDEX IF EXISTS uid_mention_idx_messages;"
+    const-string v0, "DROP INDEX IF EXISTS send_state_idx_messages2;"
 
     .line 980
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5806,7 +5793,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "DROP TABLE IF EXISTS messages;"
+    const-string v0, "DROP INDEX IF EXISTS uid_mention_idx_messages;"
 
     .line 981
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -5819,12 +5806,25 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "DROP TABLE IF EXISTS messages;"
+
     .line 982
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    .line 983
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "PRAGMA user_version = 84"
 
-    .line 984
+    .line 985
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -5849,7 +5849,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_v4(mid INTEGER, uid INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, type))"
 
-    .line 988
+    .line 989
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -5860,7 +5860,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 989
+    .line 990
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     :try_start_7
@@ -5870,7 +5870,7 @@
 
     new-array v2, v1, [Ljava/lang/Object;
 
-    .line 992
+    .line 993
     invoke-virtual {v3, v0, v2}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v0
@@ -5882,7 +5882,7 @@
     :catch_7
     move-exception v0
 
-    .line 995
+    .line 996
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -5892,12 +5892,12 @@
 
     const-string v1, "REPLACE INTO media_v4 VALUES(?, ?, ?, ?, ?)"
 
-    .line 998
+    .line 999
     invoke-virtual {v3, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v1
 
-    .line 999
+    .line 1000
     :goto_1f
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -5907,7 +5907,7 @@
 
     const/4 v2, 0x4
 
-    .line 1000
+    .line 1001
     invoke-virtual {v0, v2}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v4
@@ -5919,14 +5919,14 @@
     :cond_7f
     const/4 v2, 0x0
 
-    .line 1004
+    .line 1005
     invoke-virtual {v0, v2}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v5
 
     const/4 v6, 0x1
 
-    .line 1005
+    .line 1006
     invoke-virtual {v0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v7
@@ -5943,7 +5943,7 @@
 
     int-to-long v7, v7
 
-    .line 1009
+    .line 1010
     invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
 
     move-result-wide v7
@@ -5956,64 +5956,64 @@
     :goto_20
     const/4 v9, 0x2
 
-    .line 1011
+    .line 1012
     invoke-virtual {v0, v9}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v10
 
     const/4 v11, 0x3
 
-    .line 1012
+    .line 1013
     invoke-virtual {v0, v11}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v12
 
-    .line 1014
+    .line 1015
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
     const/4 v13, 0x1
 
-    .line 1015
+    .line 1016
     invoke-virtual {v1, v13, v5}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 1016
+    .line 1017
     invoke-virtual {v1, v9, v7, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    .line 1017
+    .line 1018
     invoke-virtual {v1, v11, v10}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v5, 0x4
 
-    .line 1018
+    .line 1019
     invoke-virtual {v1, v5, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 v7, 0x5
 
-    .line 1019
+    .line 1020
     invoke-virtual {v1, v7, v4}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 1020
+    .line 1021
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 1021
+    .line 1022
     invoke-virtual {v4}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     goto :goto_1f
 
-    .line 1023
+    .line 1024
     :cond_81
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 1024
+    .line 1025
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1026
+    .line 1027
     :cond_82
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
     const-string v0, "DROP TABLE IF EXISTS media_v3;"
 
-    .line 1028
+    .line 1029
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6026,7 +6026,7 @@
 
     const-string v0, "PRAGMA user_version = 85"
 
-    .line 1029
+    .line 1030
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6048,28 +6048,15 @@
 
     move-object/from16 v1, p0
 
-    .line 1033
+    .line 1034
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "ALTER TABLE scheduled_messages_v2 ADD COLUMN reply_to_message_id INTEGER default 0"
 
-    .line 1034
+    .line 1035
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_v2 ON messages_v2(mid, reply_to_message_id);"
-
-    .line 1036
-    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "CREATE INDEX IF NOT EXISTS reply_to_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, reply_to_message_id);"
 
     .line 1037
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -6082,19 +6069,32 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
+    const-string v0, "CREATE INDEX IF NOT EXISTS reply_to_idx_scheduled_messages_v2 ON scheduled_messages_v2(mid, reply_to_message_id);"
+
+    .line 1038
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
     const-string v0, "UPDATE messages_v2 SET replydata = NULL"
-
-    .line 1039
-    invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
-
-    const-string v0, "UPDATE scheduled_messages_v2 SET replydata = NULL"
 
     .line 1040
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
-    const-string v0, "PRAGMA user_version = 86"
+    const-string v0, "UPDATE scheduled_messages_v2 SET replydata = NULL"
 
     .line 1041
+    invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
+
+    const-string v0, "PRAGMA user_version = 86"
+
+    .line 1042
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6119,7 +6119,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS reactions(data BLOB, hash INTEGER, date INTEGER);"
 
-    .line 1046
+    .line 1047
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6132,7 +6132,7 @@
 
     const-string v0, "PRAGMA user_version = 87"
 
-    .line 1047
+    .line 1048
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6152,7 +6152,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN unread_reactions INTEGER default 0"
 
-    .line 1052
+    .line 1053
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6165,7 +6165,7 @@
 
     const-string v0, "CREATE TABLE reaction_mentions(message_id INTEGER PRIMARY KEY, state INTEGER);"
 
-    .line 1053
+    .line 1054
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6178,7 +6178,7 @@
 
     const-string v0, "PRAGMA user_version = 88"
 
-    .line 1054
+    .line 1055
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6203,7 +6203,7 @@
     :cond_87
     const-string v0, "DROP TABLE IF EXISTS reaction_mentions;"
 
-    .line 1059
+    .line 1060
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6216,7 +6216,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS reaction_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(dialog_id, message_id));"
 
-    .line 1060
+    .line 1061
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6229,7 +6229,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS reaction_mentions_did ON reaction_mentions(dialog_id);"
 
-    .line 1061
+    .line 1062
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6242,7 +6242,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_mid_type_date_idx_media_v3"
 
-    .line 1063
+    .line 1064
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6255,7 +6255,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_v4 ON media_v4(uid, mid, type, date);"
 
-    .line 1064
+    .line 1065
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6268,7 +6268,7 @@
 
     const-string v0, "PRAGMA user_version = 90"
 
-    .line 1066
+    .line 1067
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6293,7 +6293,7 @@
     :cond_89
     const-string v0, "DROP TABLE IF EXISTS downloading_documents;"
 
-    .line 1072
+    .line 1073
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6306,7 +6306,7 @@
 
     const-string v0, "CREATE TABLE downloading_documents(data BLOB, hash INTEGER, id INTEGER, state INTEGER, date INTEGER, PRIMARY KEY(hash, id));"
 
-    .line 1073
+    .line 1074
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6319,7 +6319,7 @@
 
     const-string v0, "PRAGMA user_version = 92"
 
-    .line 1074
+    .line 1075
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6339,7 +6339,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS attach_menu_bots(data BLOB, hash INTEGER, date INTEGER);"
 
-    .line 1079
+    .line 1080
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6352,7 +6352,7 @@
 
     const-string v0, "PRAGMA user_version = 93"
 
-    .line 1080
+    .line 1081
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6377,12 +6377,12 @@
     :cond_8c
     const-string v0, "ALTER TABLE messages_v2 ADD COLUMN custom_params BLOB default NULL"
 
-    .line 1085
+    .line 1086
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->executeNoException(Ljava/lang/String;)V
 
     const-string v0, "PRAGMA user_version = 96"
 
-    .line 1086
+    .line 1087
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6402,7 +6402,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS premium_promo(data BLOB, date INTEGER);"
 
-    .line 1092
+    .line 1093
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6415,12 +6415,12 @@
 
     const-string v0, "UPDATE stickers_v2 SET date = 0"
 
-    .line 1093
+    .line 1094
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     const-string v0, "PRAGMA user_version = 97"
 
-    .line 1094
+    .line 1095
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6440,7 +6440,7 @@
 
     const-string v0, "DROP TABLE IF EXISTS stickers_featured;"
 
-    .line 1099
+    .line 1100
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6453,7 +6453,7 @@
 
     const-string v0, "CREATE TABLE stickers_featured(id INTEGER PRIMARY KEY, data BLOB, unread BLOB, date INTEGER, hash INTEGER, premium INTEGER);"
 
-    .line 1100
+    .line 1101
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6466,7 +6466,7 @@
 
     const-string v0, "PRAGMA user_version = 98"
 
-    .line 1101
+    .line 1102
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6486,7 +6486,7 @@
 
     const-string v0, "CREATE TABLE animated_emoji(document_id INTEGER PRIMARY KEY, data BLOB);"
 
-    .line 1106
+    .line 1107
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6499,7 +6499,7 @@
 
     const-string v0, "PRAGMA user_version = 99"
 
-    .line 1107
+    .line 1108
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6519,7 +6519,7 @@
 
     const-string v0, "ALTER TABLE stickers_featured ADD COLUMN emoji INTEGER default 0"
 
-    .line 1112
+    .line 1113
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6532,7 +6532,7 @@
 
     const-string v0, "PRAGMA user_version = 100"
 
-    .line 1113
+    .line 1114
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6552,7 +6552,7 @@
 
     const-string v0, "CREATE TABLE emoji_statuses(data BLOB, type INTEGER);"
 
-    .line 1118
+    .line 1119
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6565,7 +6565,7 @@
 
     const-string v0, "PRAGMA user_version = 101"
 
-    .line 1119
+    .line 1120
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6585,7 +6585,7 @@
 
     const-string v0, "ALTER TABLE messages_v2 ADD COLUMN group_id INTEGER default NULL"
 
-    .line 1124
+    .line 1125
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6598,7 +6598,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN last_mid_group INTEGER default NULL"
 
-    .line 1125
+    .line 1126
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6611,7 +6611,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_groupid_messages_v2 ON messages_v2(uid, mid, group_id);"
 
-    .line 1126
+    .line 1127
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6624,7 +6624,7 @@
 
     const-string v0, "PRAGMA user_version = 102"
 
-    .line 1128
+    .line 1129
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6644,7 +6644,7 @@
 
     const-string v0, "CREATE TABLE messages_holes_topics(uid INTEGER, topic_id INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, start));"
 
-    .line 1133
+    .line 1134
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6657,7 +6657,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes_topics(uid, topic_id, end);"
 
-    .line 1134
+    .line 1135
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6670,7 +6670,7 @@
 
     const-string v0, "CREATE TABLE messages_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, PRIMARY KEY(mid, topic_id, uid))"
 
-    .line 1136
+    .line 1137
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6683,7 +6683,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, mid, read_state, out);"
 
-    .line 1137
+    .line 1138
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6696,7 +6696,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages_topics ON messages_topics(uid, date, mid);"
 
-    .line 1138
+    .line 1139
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6709,7 +6709,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages_topics ON messages_topics(mid, out);"
 
-    .line 1139
+    .line 1140
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6722,7 +6722,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS task_idx_messages_topics ON messages_topics(uid, out, read_state, ttl, date, send_state);"
 
-    .line 1140
+    .line 1141
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6735,7 +6735,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS send_state_idx_messages_topics ON messages_topics(mid, send_state, date);"
 
-    .line 1141
+    .line 1142
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6748,7 +6748,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, mention, read_state);"
 
-    .line 1142
+    .line 1143
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6761,7 +6761,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_topics ON messages_topics(mid, is_channel);"
 
-    .line 1143
+    .line 1144
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6774,7 +6774,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_topics ON messages_topics(mid, reply_to_message_id);"
 
-    .line 1144
+    .line 1145
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6787,7 +6787,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_uid_messages_topics ON messages_topics(mid, uid);"
 
-    .line 1145
+    .line 1146
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6800,7 +6800,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS mid_uid_topic_id_messages_topics ON messages_topics(mid, topic_id, uid);"
 
-    .line 1146
+    .line 1147
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6813,7 +6813,7 @@
 
     const-string v0, "CREATE TABLE media_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, topic_id, type))"
 
-    .line 1148
+    .line 1149
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6826,7 +6826,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_topics ON media_topics(uid, topic_id, mid, type, date);"
 
-    .line 1149
+    .line 1150
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6839,7 +6839,7 @@
 
     const-string v0, "CREATE TABLE media_holes_topics(uid INTEGER, topic_id INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, type, start));"
 
-    .line 1151
+    .line 1152
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6852,7 +6852,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_end_media_holes_topics ON media_holes_topics(uid, topic_id, type, end);"
 
-    .line 1152
+    .line 1153
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6865,7 +6865,7 @@
 
     const-string v0, "CREATE TABLE topics(did INTEGER, topic_id INTEGER, data BLOB, top_message INTEGER, topic_message BLOB, unread_count INTEGER, max_read_id INTEGER, unread_mentions INTEGER, unread_reactions INTEGER, PRIMARY KEY(did, topic_id));"
 
-    .line 1154
+    .line 1155
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6878,7 +6878,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS did_top_message_topics ON topics(did, top_message);"
 
-    .line 1155
+    .line 1156
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6891,7 +6891,7 @@
 
     const-string v0, "PRAGMA user_version = 103"
 
-    .line 1157
+    .line 1158
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6911,7 +6911,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS media_counts_topics(uid INTEGER, topic_id INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, topic_id, type))"
 
-    .line 1162
+    .line 1163
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6924,7 +6924,7 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS reaction_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))"
 
-    .line 1163
+    .line 1164
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6937,7 +6937,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS reaction_mentions_topics_did ON reaction_mentions_topics(dialog_id, topic_id);"
 
-    .line 1164
+    .line 1165
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6950,7 +6950,7 @@
 
     const-string v0, "PRAGMA user_version = 104"
 
-    .line 1166
+    .line 1167
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6970,7 +6970,7 @@
 
     const-string v0, "ALTER TABLE topics ADD COLUMN read_outbox INTEGER default 0"
 
-    .line 1171
+    .line 1172
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -6983,7 +6983,7 @@
 
     const-string v0, "PRAGMA user_version = 105"
 
-    .line 1173
+    .line 1174
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7003,7 +7003,7 @@
 
     const-string v0, "ALTER TABLE topics ADD COLUMN pinned INTEGER default 0"
 
-    .line 1178
+    .line 1179
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7016,7 +7016,7 @@
 
     const-string v0, "PRAGMA user_version = 106"
 
-    .line 1180
+    .line 1181
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7036,7 +7036,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_mid_read_out_idx_messages_topics"
 
-    .line 1185
+    .line 1186
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7049,7 +7049,7 @@
 
     const-string v0, "DROP INDEX IF EXISTS uid_mention_idx_messages_topics"
 
-    .line 1186
+    .line 1187
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7062,7 +7062,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, topic_id, mid, read_state, out);"
 
-    .line 1188
+    .line 1189
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7075,7 +7075,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, topic_id, mention, read_state);"
 
-    .line 1189
+    .line 1190
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7088,7 +7088,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_topic_id_messages_topics ON messages_topics(uid, topic_id);"
 
-    .line 1191
+    .line 1192
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7101,7 +7101,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_topic_id_date_mid_messages_topics ON messages_topics(uid, topic_id, date, mid);"
 
-    .line 1192
+    .line 1193
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7114,7 +7114,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS uid_topic_id_mid_messages_topics ON messages_topics(uid, topic_id, mid);"
 
-    .line 1193
+    .line 1194
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7127,7 +7127,7 @@
 
     const-string v0, "CREATE INDEX IF NOT EXISTS did_topics ON topics(did);"
 
-    .line 1195
+    .line 1196
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7140,7 +7140,7 @@
 
     const-string v0, "PRAGMA user_version = 107"
 
-    .line 1197
+    .line 1198
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7160,7 +7160,7 @@
 
     const-string v0, "ALTER TABLE topics ADD COLUMN total_messages_count INTEGER default 0"
 
-    .line 1202
+    .line 1203
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7173,7 +7173,7 @@
 
     const-string v0, "PRAGMA user_version = 108"
 
-    .line 1203
+    .line 1204
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7193,7 +7193,7 @@
 
     const-string v0, "ALTER TABLE topics ADD COLUMN hidden INTEGER default 0"
 
-    .line 1208
+    .line 1209
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7206,7 +7206,7 @@
 
     const-string v0, "PRAGMA user_version = 109"
 
-    .line 1209
+    .line 1210
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7226,7 +7226,7 @@
 
     const-string v0, "ALTER TABLE dialogs ADD COLUMN ttl_period INTEGER default 0"
 
-    .line 1214
+    .line 1215
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7239,7 +7239,7 @@
 
     const-string v0, "PRAGMA user_version = 110"
 
-    .line 1215
+    .line 1216
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7259,7 +7259,7 @@
 
     const-string v0, "CREATE TABLE stickersets(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER);"
 
-    .line 1220
+    .line 1221
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7272,7 +7272,7 @@
 
     const-string v0, "PRAGMA user_version = 111"
 
-    .line 1221
+    .line 1222
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7292,7 +7292,7 @@
 
     const-string v0, "CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)"
 
-    .line 1226
+    .line 1227
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7305,7 +7305,7 @@
 
     const-string v0, "PRAGMA user_version = 112"
 
-    .line 1227
+    .line 1228
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7325,7 +7325,7 @@
 
     const-string v0, "CREATE TABLE app_config(data BLOB)"
 
-    .line 1232
+    .line 1233
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7338,7 +7338,7 @@
 
     const-string v0, "PRAGMA user_version = 113"
 
-    .line 1233
+    .line 1234
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7356,12 +7356,12 @@
 
     if-ne v0, v2, :cond_9f
 
-    .line 1240
+    .line 1241
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MessagesStorage;->reset()V
 
     const-string v0, "PRAGMA user_version = 114"
 
-    .line 1241
+    .line 1242
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7375,24 +7375,11 @@
     const/16 v0, 0x72
 
     :cond_9f
-    const/16 v1, 0x72
+    const/16 v2, 0x72
 
-    if-ne v0, v1, :cond_a0
+    if-ne v0, v2, :cond_a0
 
     const-string v0, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))"
-
-    .line 1245
-    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);"
 
     .line 1246
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -7405,9 +7392,22 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "PRAGMA user_version = 115"
+    const-string v0, "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);"
 
     .line 1247
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 115"
+
+    .line 1248
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7421,24 +7421,11 @@
     const/16 v0, 0x73
 
     :cond_a0
-    const/16 v1, 0x73
+    const/16 v2, 0x73
 
-    if-ne v0, v1, :cond_a1
+    if-ne v0, v2, :cond_a1
 
     const-string v0, "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);"
-
-    .line 1251
-    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
-
-    const-string v0, "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);"
 
     .line 1252
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -7451,7 +7438,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);"
+    const-string v0, "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);"
 
     .line 1253
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -7464,9 +7451,22 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "PRAGMA user_version = 117"
+    const-string v0, "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);"
 
     .line 1254
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 117"
+
+    .line 1255
     invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -7480,18 +7480,413 @@
     const/16 v0, 0x75
 
     :cond_a1
+    const/16 v2, 0x74
+
+    if-eq v0, v2, :cond_a2
+
+    const/16 v2, 0x75
+
+    if-eq v0, v2, :cond_a2
+
+    const/16 v2, 0x76
+
+    if-ne v0, v2, :cond_a3
+
+    :cond_a2
+    const-string v0, "DROP TABLE IF EXISTS stories"
+
+    .line 1260
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "DROP TABLE IF EXISTS stories_counter"
+
+    .line 1261
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, local_path TEXT, local_thumb_path TEXT, PRIMARY KEY (dialog_id, story_id));"
+
+    .line 1263
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);"
+
+    .line 1264
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 119"
+
+    .line 1265
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    .line 1266
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->cleanup()V
+
+    const/16 v0, 0x77
+
+    :cond_a3
+    const/16 v1, 0x77
+
+    if-ne v0, v1, :cond_a4
+
+    const-string v0, "ALTER TABLE messages_v2 ADD COLUMN reply_to_story_id INTEGER default 0"
+
+    .line 1271
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "ALTER TABLE messages_topics ADD COLUMN reply_to_story_id INTEGER default 0"
+
+    .line 1272
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 120"
+
+    .line 1274
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x78
+
+    :cond_a4
+    const/16 v1, 0x78
+
+    if-ne v0, v1, :cond_a5
+
+    const-string v0, "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, PRIMARY KEY(dialog_id, story_id));"
+
+    .line 1279
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "CREATE TABLE archived_stories (story_id INTEGER PRIMARY KEY, data BLOB);"
+
+    .line 1280
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 121"
+
+    .line 1282
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x79
+
+    :cond_a5
+    const/16 v1, 0x79
+
+    if-ne v0, v1, :cond_a6
+
+    const-string v0, "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB);"
+
+    .line 1287
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 122"
+
+    .line 1289
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7a
+
+    :cond_a6
+    const/16 v1, 0x7a
+
+    if-ne v0, v1, :cond_a7
+
+    const-string v0, "ALTER TABLE chat_settings_v2 ADD COLUMN participants_count INTEGER default 0"
+
+    .line 1294
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 123"
+
+    .line 1296
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7b
+
+    :cond_a7
+    const/16 v1, 0x7b
+
+    if-ne v0, v1, :cond_a8
+
+    const-string v0, "CREATE TABLE story_pushes (uid INTEGER PRIMARY KEY, minId INTEGER, maxId INTEGER, date INTEGER, localName TEXT);"
+
+    .line 1301
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 124"
+
+    .line 1303
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7c
+
+    :cond_a8
+    const/16 v1, 0x7c
+
+    if-ne v0, v1, :cond_a9
+
+    const-string v0, "DROP TABLE IF EXISTS story_pushes;"
+
+    .line 1308
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, PRIMARY KEY(uid, sid));"
+
+    .line 1309
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 125"
+
+    .line 1311
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7d
+
+    :cond_a9
+    const/16 v1, 0x7d
+
+    if-ne v0, v1, :cond_aa
+
+    const-string v0, "ALTER TABLE story_pushes ADD COLUMN flags INTEGER default 0"
+
+    .line 1316
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 126"
+
+    .line 1318
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7e
+
+    :cond_aa
+    const/16 v1, 0x7e
+
+    if-ne v0, v1, :cond_ab
+
+    const-string v0, "ALTER TABLE story_pushes ADD COLUMN expire_date INTEGER default 0"
+
+    .line 1323
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 127"
+
+    .line 1325
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x7f
+
+    :cond_ab
     return v0
 .end method
 
 .method public static recoverDatabase(Ljava/io/File;Ljava/io/File;Ljava/io/File;I)Z
     .locals 18
 
-    .line 1262
+    .line 1333
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v0
 
-    .line 1263
+    .line 1334
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7516,38 +7911,38 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1264
+    .line 1335
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
-    .line 1266
+    .line 1337
     new-instance v2, Ljava/io/File;
 
     const-string v0, "cache4.db"
 
     invoke-direct {v2, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1267
+    .line 1338
     new-instance v3, Ljava/io/File;
 
     const-string v0, "cache4.db-wal"
 
     invoke-direct {v3, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1268
+    .line 1339
     new-instance v4, Ljava/io/File;
 
     const-string v0, "cache4.db-shm"
 
     invoke-direct {v4, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1270
+    .line 1341
     :try_start_0
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 1271
+    .line 1342
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1272
+    .line 1343
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -7557,38 +7952,38 @@
     :catch_0
     move-exception v0
 
-    .line 1274
+    .line 1345
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
     const-wide/16 v5, 0x0
 
-    .line 1279
+    .line 1350
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1280
+    .line 1351
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     const-string/jumbo v7, "start recover database"
 
-    .line 1282
+    .line 1353
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
-    .line 1285
+    .line 1356
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 1287
+    .line 1358
     new-instance v9, Lorg/telegram/SQLite/SQLiteDatabase;
 
     invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -7599,7 +7994,7 @@
 
     const-string v10, "PRAGMA secure_delete = ON"
 
-    .line 1288
+    .line 1359
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7612,7 +8007,7 @@
 
     const-string v10, "PRAGMA temp_store = MEMORY"
 
-    .line 1289
+    .line 1360
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7625,7 +8020,7 @@
 
     const-string v10, "PRAGMA journal_mode = WAL"
 
-    .line 1290
+    .line 1361
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7638,7 +8033,7 @@
 
     const-string v10, "PRAGMA journal_size_limit = 10485760"
 
-    .line 1291
+    .line 1362
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7649,10 +8044,10 @@
 
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1293
+    .line 1364
     invoke-static {v9}, Lorg/telegram/messenger/MessagesStorage;->createTables(Lorg/telegram/SQLite/SQLiteDatabase;)V
 
-    .line 1294
+    .line 1365
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -7689,7 +8084,7 @@
 
     new-array v11, v8, [Ljava/lang/Object;
 
-    .line 1296
+    .line 1367
     invoke-virtual {v9, v10, v11}, Lorg/telegram/SQLite/SQLiteDatabase;->executeInt(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v10
@@ -7698,11 +8093,11 @@
 
     move-result v10
 
-    const/16 v11, 0x75
+    const/16 v11, 0x7f
 
     if-eq v10, v11, :cond_0
 
-    .line 1298
+    .line 1369
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7721,7 +8116,7 @@
 
     return v8
 
-    .line 1301
+    .line 1372
     :cond_0
     new-instance v10, Ljava/util/HashSet;
 
@@ -7729,87 +8124,87 @@
 
     const-string v11, "messages_v2"
 
-    .line 1302
+    .line 1373
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_holes"
 
-    .line 1303
+    .line 1374
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string/jumbo v11, "scheduled_messages_v2"
 
-    .line 1304
+    .line 1375
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_holes_v2"
 
-    .line 1305
+    .line 1376
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_v4"
 
-    .line 1306
+    .line 1377
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_holes_topics"
 
-    .line 1307
+    .line 1378
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_topics"
 
-    .line 1308
+    .line 1379
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_topics"
 
-    .line 1309
+    .line 1380
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_holes_topics"
 
-    .line 1310
+    .line 1381
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string/jumbo v11, "topics"
 
-    .line 1311
+    .line 1382
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_counts_v2"
 
-    .line 1312
+    .line 1383
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_counts_topics"
 
-    .line 1313
+    .line 1384
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialogs"
 
-    .line 1314
+    .line 1385
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter"
 
-    .line 1315
+    .line 1386
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter_ep"
 
-    .line 1316
+    .line 1387
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter_pin_v2"
 
-    .line 1317
+    .line 1388
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     move v11, v8
 
-    .line 1320
+    .line 1391
     :goto_1
     sget-object v12, Lorg/telegram/messenger/MessagesStorage;->DATABASE_TABLES:[Ljava/lang/String;
 
@@ -7817,10 +8212,10 @@
 
     if-ge v11, v13, :cond_2
 
-    .line 1321
+    .line 1392
     aget-object v12, v12, v11
 
-    .line 1322
+    .line 1393
     invoke-virtual {v10, v12}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v13
@@ -7829,7 +8224,7 @@
 
     goto :goto_2
 
-    .line 1325
+    .line 1396
     :cond_1
     sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -7867,12 +8262,12 @@
 
     new-array v11, v8, [Ljava/lang/Object;
 
-    .line 1328
+    .line 1399
     invoke-virtual {v9, v10, v11}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v10
 
-    .line 1330
+    .line 1401
     :goto_3
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -7880,19 +8275,19 @@
 
     if-eqz v11, :cond_4
 
-    .line 1331
+    .line 1402
     invoke-virtual {v10, v8}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
-    .line 1332
+    .line 1403
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v13
 
     if-eqz v13, :cond_3
 
-    .line 1333
+    .line 1404
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -7901,7 +8296,7 @@
 
     goto :goto_3
 
-    .line 1335
+    .line 1406
     :cond_3
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -7911,13 +8306,13 @@
 
     goto :goto_3
 
-    .line 1338
+    .line 1409
     :cond_4
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     move v10, v8
 
-    .line 1341
+    .line 1412
     :goto_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -7925,7 +8320,7 @@
 
     if-ge v10, v11, :cond_5
 
-    .line 1342
+    .line 1413
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -7936,7 +8331,7 @@
 
     move-result-wide v11
 
-    .line 1343
+    .line 1414
     sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v14, "INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = %d;"
@@ -7967,7 +8362,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1344
+    .line 1415
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v16
@@ -7992,7 +8387,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1345
+    .line 1416
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v16
@@ -8017,7 +8412,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1346
+    .line 1417
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -8045,21 +8440,21 @@
     :cond_5
     const-string v0, "REPLACE INTO messages_holes VALUES(?, ?, ?)"
 
-    .line 1349
+    .line 1420
     invoke-virtual {v9, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
     const-string v10, "REPLACE INTO media_holes_v2 VALUES(?, ?, ?, ?)"
 
-    .line 1350
+    .line 1421
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v16
 
     move v15, v8
 
-    .line 1352
+    .line 1423
     :goto_5
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -8067,14 +8462,14 @@
 
     if-ge v15, v10, :cond_7
 
-    .line 1353
+    .line 1424
     invoke-virtual {v1, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Ljava/lang/Long;
 
-    .line 1355
+    .line 1426
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -8095,26 +8490,26 @@
 
     move-result-object v14
 
-    .line 1357
+    .line 1428
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result v11
 
     if-eqz v11, :cond_6
 
-    .line 1358
+    .line 1429
     invoke-virtual {v14, v8}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
     move-object/from16 v17, v9
 
-    .line 1359
+    .line 1430
     invoke-virtual {v14, v7}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v8
 
-    .line 1360
+    .line 1431
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -8157,7 +8552,7 @@
 
     invoke-virtual {v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1362
+    .line 1433
     invoke-virtual {v10}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v10
@@ -8189,7 +8584,7 @@
 
     move v7, v15
 
-    .line 1365
+    .line 1436
     :goto_6
     invoke-virtual/range {v17 .. v17}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
@@ -8201,16 +8596,16 @@
 
     goto/16 :goto_5
 
-    .line 1369
+    .line 1440
     :cond_7
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1370
+    .line 1441
     invoke-virtual/range {v16 .. v16}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     const-string v0, "DETACH DATABASE old;"
 
-    .line 1372
+    .line 1443
     invoke-virtual {v9, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -8221,7 +8616,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1373
+    .line 1444
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLiteDatabase;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -8233,7 +8628,7 @@
     :catch_1
     move-exception v0
 
-    .line 1375
+    .line 1446
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -8245,44 +8640,44 @@
 
     return v1
 
-    .line 1382
+    .line 1453
     :cond_8
     :try_start_2
     invoke-virtual/range {p0 .. p0}, Ljava/io/File;->delete()Z
 
-    .line 1383
+    .line 1454
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->delete()Z
 
-    .line 1384
+    .line 1455
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->delete()Z
 
     move-object/from16 v1, p0
 
-    .line 1386
+    .line 1457
     invoke-static {v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
     move-object/from16 v1, p1
 
-    .line 1387
+    .line 1458
     invoke-static {v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
     move-object/from16 v1, p2
 
-    .line 1388
+    .line 1459
     invoke-static {v4, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
-    .line 1390
+    .line 1461
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 1391
+    .line 1462
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1392
+    .line 1463
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 1398
+    .line 1469
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8312,7 +8707,7 @@
     :catch_2
     move-exception v0
 
-    .line 1394
+    .line 1465
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     const/4 v1, 0x0

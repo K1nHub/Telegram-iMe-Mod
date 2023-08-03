@@ -3,11 +3,15 @@ package com.iMe.storage.data.repository.crypto.wallet_connect;
 import com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource;
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletConnectSessionsDao;
 import com.iMe.storage.data.locale.p027db.model.wallet.WalletConnectSessionDb;
+import com.iMe.storage.data.mapper.crypto.CryptoWalletMappingKt;
 import com.iMe.storage.data.mapper.wallet.WalletConnectSessionMappingKt;
 import com.iMe.storage.data.network.api.own.WalletConnectApi;
+import com.iMe.storage.data.network.handlers.ErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.crypto.wallet_connect.GetParamsForCryptoTransactionRequest;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.data.network.model.response.crypto.wallet_connect.ParamsForCryptoTransactionResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.gateway.TelegramGateway;
@@ -21,7 +25,12 @@ import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectRepositoryImpl.kt */
@@ -52,9 +61,35 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
     @Override // com.iMe.storage.domain.repository.crypto.wallet_connect.WalletConnectRepository
     public Observable<Result<WalletConnectProcessedTransaction>> getWalletConnectParamsForCryptoTransaction(WalletConnectTransaction transaction) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
-        Observable<R> map = this.walletConnectApi.getWalletConnectParamsForCryptoTransaction(new GetParamsForCryptoTransactionRequest(transaction.getFrom(), transaction.getTo(), transaction.getValue(), transaction.getData(), transaction.getGas(), transaction.getGasPrice(), transaction.getNonce(), transaction.getNetworkId())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1914x1a4c414b(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<ParamsForCryptoTransactionResponse>> walletConnectParamsForCryptoTransaction = this.walletConnectApi.getWalletConnectParamsForCryptoTransaction(new GetParamsForCryptoTransactionRequest(transaction.getFrom(), transaction.getTo(), transaction.getValue(), transaction.getData(), transaction.getGas(), transaction.getGasPrice(), transaction.getNonce(), transaction.getNetworkId()));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = walletConnectParamsForCryptoTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<ParamsForCryptoTransactionResponse>, Result<? extends WalletConnectProcessedTransaction>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectParamsForCryptoTransaction$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<WalletConnectProcessedTransaction> invoke(ApiBaseResponse<ParamsForCryptoTransactionResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(CryptoWalletMappingKt.mapToDomain(response.getPayload()));
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<WalletConnectProcessedTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1913x1243a0b6(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<WalletConnectProcessedTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends WalletConnectProcessedTransaction>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectParamsForCryptoTransaction$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<WalletConnectProcessedTransaction> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -62,7 +97,19 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
     @Override // com.iMe.storage.domain.repository.crypto.wallet_connect.WalletConnectRepository
     public Observable<Result<String>> sendWalletConnectCryptoTransaction(WalletConnectTransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> onErrorReturn = this.walletConnectDataSource.sendTransaction(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1917xc1db6217(this.errorHandler)));
+        Observable<Result<String>> sendTransaction = this.walletConnectDataSource.sendTransaction(args);
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<String>> onErrorReturn = sendTransaction.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$sendWalletConnectCryptoTransaction$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<String> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -76,7 +123,33 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
     @Override // com.iMe.storage.domain.repository.crypto.wallet_connect.WalletConnectRepository
     public Flowable<Result<List<WCSessionStoreItem>>> getWalletConnectSavedSessions() {
         Flowable<List<WalletConnectSessionDb>> allSessions = this.walletConnectSessionsDao.getAllSessions(this.telegramGateway.getSelectedAccountId());
-        final WalletConnectRepositoryImpl$getWalletConnectSavedSessions$1 walletConnectRepositoryImpl$getWalletConnectSavedSessions$1 = WalletConnectRepositoryImpl$getWalletConnectSavedSessions$1.INSTANCE;
+        final WalletConnectRepositoryImpl$getWalletConnectSavedSessions$1 walletConnectRepositoryImpl$getWalletConnectSavedSessions$1 = new Function1<List<? extends WalletConnectSessionDb>, Result<? extends List<? extends WCSessionStoreItem>>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectSavedSessions$1
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Result<? extends List<? extends WCSessionStoreItem>> invoke(List<? extends WalletConnectSessionDb> list) {
+                return invoke2((List<WalletConnectSessionDb>) list);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Result<List<WCSessionStoreItem>> invoke2(List<WalletConnectSessionDb> sessions) {
+                int collectionSizeOrDefault;
+                List sortedWith;
+                Intrinsics.checkNotNullParameter(sessions, "sessions");
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(sessions, 10);
+                ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                for (WalletConnectSessionDb walletConnectSessionDb : sessions) {
+                    arrayList.add(WalletConnectSessionMappingKt.mapToDomain(walletConnectSessionDb));
+                }
+                sortedWith = CollectionsKt___CollectionsKt.sortedWith(arrayList, new Comparator() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectSavedSessions$1$invoke$$inlined$sortedBy$1
+                    @Override // java.util.Comparator
+                    public final int compare(T t, T t2) {
+                        int compareValues;
+                        compareValues = ComparisonsKt__ComparisonsKt.compareValues(((WCSessionStoreItem) t).getDate(), ((WCSessionStoreItem) t2).getDate());
+                        return compareValues;
+                    }
+                });
+                return Result.Companion.success(sortedWith);
+            }
+        };
         Flowable<R> map = allSessions.map(new Function() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -86,7 +159,18 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
             }
         });
         Intrinsics.checkNotNullExpressionValue(map, "walletConnectSessionsDao…s()\n                    }");
-        Flowable<Result<List<WCSessionStoreItem>>> handleError = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1915x8b365d34(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Flowable<Result<List<WCSessionStoreItem>>> handleError = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends WCSessionStoreItem>>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectSavedSessions$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends WCSessionStoreItem>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(handleError, "handleError");
         return handleError;
     }

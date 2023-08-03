@@ -3,6 +3,7 @@ package com.google.android.exoplayer2.upstream;
 import android.net.Uri;
 import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -177,7 +178,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     public Map<String, List<String>> getResponseHeaders() {
         HttpURLConnection httpURLConnection = this.connection;
         if (httpURLConnection == null) {
-            return ImmutableMap.m737of();
+            return ImmutableMap.m755of();
         }
         return new NullFilteringHeadersMap(httpURLConnection.getHeaderFields());
     }
@@ -505,7 +506,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             try {
                 httpURLConnection.disconnect();
             } catch (Exception e) {
-                Log.m799e(TAG, "Unexpected error while disconnecting", e);
+                Log.m817e(TAG, "Unexpected error while disconnecting", e);
             }
             this.connection = null;
         }
@@ -515,9 +516,8 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         return "gzip".equalsIgnoreCase(httpURLConnection.getHeaderField(RtspHeaders.CONTENT_ENCODING));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    public static class NullFilteringHeadersMap extends ForwardingMap<String, List<String>> {
+    private static class NullFilteringHeadersMap extends ForwardingMap<String, List<String>> {
         private final Map<String, List<String>> headers;
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -550,7 +550,14 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<String> keySet() {
-            return Sets.filter(super.keySet(), C0665x828bc3d2.INSTANCE);
+            return Sets.filter(super.keySet(), new Predicate() { // from class: com.google.android.exoplayer2.upstream.DefaultHttpDataSource$NullFilteringHeadersMap$$ExternalSyntheticLambda0
+                @Override // com.google.common.base.Predicate
+                public final boolean apply(Object obj) {
+                    boolean lambda$keySet$0;
+                    lambda$keySet$0 = DefaultHttpDataSource.NullFilteringHeadersMap.lambda$keySet$0((String) obj);
+                    return lambda$keySet$0;
+                }
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -560,7 +567,14 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<Map.Entry<String, List<String>>> entrySet() {
-            return Sets.filter(super.entrySet(), C0666x828bc3d3.INSTANCE);
+            return Sets.filter(super.entrySet(), new Predicate() { // from class: com.google.android.exoplayer2.upstream.DefaultHttpDataSource$NullFilteringHeadersMap$$ExternalSyntheticLambda1
+                @Override // com.google.common.base.Predicate
+                public final boolean apply(Object obj) {
+                    boolean lambda$entrySet$1;
+                    lambda$entrySet$1 = DefaultHttpDataSource.NullFilteringHeadersMap.lambda$entrySet$1((Map.Entry) obj);
+                    return lambda$entrySet$1;
+                }
+            });
         }
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map

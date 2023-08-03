@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/messenger/ImageLoader$$ExternalSyntheticLambda11;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$41ypbGDiBd6bFLuDT8i-V89mgyQ(Lorg/telegram/messenger/ImageLoader;Lorg/telegram/messenger/ImageLoader$HttpFileTask;I)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ImageLoader;->$r8$lambda$fNZb0XUPjA7PexnBdEEmRJ3qYK4(Lorg/telegram/messenger/ImageLoader;Lorg/telegram/messenger/ImageLoader$HttpFileTask;I)V
 
     return-void
 .end method

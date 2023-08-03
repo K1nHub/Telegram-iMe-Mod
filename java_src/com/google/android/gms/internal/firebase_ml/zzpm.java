@@ -69,7 +69,7 @@ public final class zzpm {
         L4f:
             com.google.android.gms.common.internal.GmsLogger r8 = com.google.android.gms.internal.firebase_ml.zzpm.zzass     // Catch: java.lang.Throwable -> L78
             java.lang.String r2 = "Cannot read the temp file for SHA-256 check"
-            r8.m787e(r0, r2)     // Catch: java.lang.Throwable -> L78
+            r8.m805e(r0, r2)     // Catch: java.lang.Throwable -> L78
             if (r3 == 0) goto L77
             r3.close()
             goto L77
@@ -78,7 +78,7 @@ public final class zzpm {
         L5d:
             com.google.android.gms.common.internal.GmsLogger r8 = com.google.android.gms.internal.firebase_ml.zzpm.zzass     // Catch: java.lang.Throwable -> L78
             java.lang.String r2 = "Temp file is not found"
-            r8.m787e(r0, r2)     // Catch: java.lang.Throwable -> L78
+            r8.m805e(r0, r2)     // Catch: java.lang.Throwable -> L78
             if (r3 == 0) goto L77
             r3.close()
             goto L77
@@ -87,7 +87,7 @@ public final class zzpm {
         L6b:
             com.google.android.gms.common.internal.GmsLogger r8 = com.google.android.gms.internal.firebase_ml.zzpm.zzass     // Catch: java.lang.Throwable -> L78
             java.lang.String r2 = "Do not have SHA-256 algorithm"
-            r8.m787e(r0, r2)     // Catch: java.lang.Throwable -> L78
+            r8.m805e(r0, r2)     // Catch: java.lang.Throwable -> L78
             if (r3 == 0) goto L77
             r3.close()
         L77:
@@ -112,12 +112,12 @@ public final class zzpm {
         } catch (IOException unused) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(file.getAbsolutePath());
-            gmsLogger.m789d("RemoteModelUtils", valueOf.length() != 0 ? "Failed to close the tmp FileInputStream: ".concat(valueOf) : new String("Failed to close the tmp FileInputStream: "));
+            gmsLogger.m807d("RemoteModelUtils", valueOf.length() != 0 ? "Failed to close the tmp FileInputStream: ".concat(valueOf) : new String("Failed to close the tmp FileInputStream: "));
             str2 = "";
         }
         GmsLogger gmsLogger2 = zzass;
         String valueOf2 = String.valueOf(str2);
-        gmsLogger2.m789d("RemoteModelUtils", valueOf2.length() != 0 ? "Calculated hash value is: ".concat(valueOf2) : new String("Calculated hash value is: "));
+        gmsLogger2.m807d("RemoteModelUtils", valueOf2.length() != 0 ? "Calculated hash value is: ".concat(valueOf2) : new String("Calculated hash value is: "));
         return str.equals(str2);
     }
 

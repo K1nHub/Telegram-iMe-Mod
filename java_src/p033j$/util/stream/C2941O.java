@@ -4,7 +4,7 @@ package p033j$.util.stream;
 class C2941O extends AbstractC2963S {
 
     /* renamed from: l */
-    public final /* synthetic */ int f891l = 1;
+    public final /* synthetic */ int f894l = 1;
 
     public C2941O(AbstractC2968T abstractC2968T, AbstractC3016c abstractC3016c, EnumC3033e4 enumC3033e4, int i) {
         super(abstractC3016c, enumC3033e4, i);
@@ -13,8 +13,8 @@ class C2941O extends AbstractC2963S {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // p033j$.util.stream.AbstractC3016c
     /* renamed from: H0 */
-    public InterfaceC3080m3 mo283H0(int i, InterfaceC3080m3 interfaceC3080m3) {
-        switch (this.f891l) {
+    public InterfaceC3080m3 mo301H0(int i, InterfaceC3080m3 interfaceC3080m3) {
+        switch (this.f894l) {
             case 0:
                 return interfaceC3080m3;
             case 1:

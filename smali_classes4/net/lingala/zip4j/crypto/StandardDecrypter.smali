@@ -54,7 +54,7 @@
     :cond_0
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "one of more of the input parameters were null in StandardDecryptor"
+    const-string/jumbo p2, "one of more of the input parameters were null in StandardDecryptor"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -132,7 +132,7 @@
     :cond_1
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "one of the input parameters were null in standard decrpyt data"
+    const-string/jumbo p2, "one of the input parameters were null in standard decrpyt data"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

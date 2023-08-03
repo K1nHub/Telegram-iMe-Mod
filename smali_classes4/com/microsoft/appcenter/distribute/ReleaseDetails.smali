@@ -195,7 +195,7 @@
 
     iput-boolean v1, p0, Lcom/microsoft/appcenter/distribute/ReleaseDetails;->mandatoryUpdate:Z
 
-    const-string v1, "package_hashes"
+    const-string/jumbo v1, "package_hashes"
 
     .line 126
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;

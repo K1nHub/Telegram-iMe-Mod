@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$33;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/BotCommandsMenuContainer;
 .source "ChatActivityEnterView.java"
-
-# interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createMessageEditText()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createBotCommandsMenuContainer()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,88 +15,49 @@
 
 
 # instance fields
-.field ctrlPressed:Z
-
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    .line 4647
+    .line 4285
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
-
-    .line 4649
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->ctrlPressed:Z
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotCommandsMenuContainer;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 1
+.method protected onDismiss()V
+    .locals 2
 
-    const/4 p1, 0x1
+    .line 4288
+    invoke-super {p0}, Lorg/telegram/ui/Components/BotCommandsMenuContainer;->onDismiss()V
 
-    const/4 v0, 0x4
+    .line 4289
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    if-ne p2, v0, :cond_0
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView;
 
-    .line 4654
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result-object v0
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11500(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    if-eqz v0, :cond_0
 
-    return p1
+    .line 4290
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotCommandsMenuView;->setOpened(Z)V
 
     :cond_0
-    if-eqz p3, :cond_2
-
-    if-nez p2, :cond_2
-
-    .line 4657
-    iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->ctrlPressed:Z
-
-    if-nez p2, :cond_1
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_2
-
-    :cond_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
-
-    move-result-object p2
-
-    if-nez p2, :cond_2
-
-    .line 4658
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11500(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
-
-    return p1
-
-    :cond_2
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

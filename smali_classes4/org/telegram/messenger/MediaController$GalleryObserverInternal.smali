@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 814
+    .line 913
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method private synthetic lambda$scheduleReloadRunnable$0()V
     .locals 1
 
-    .line 819
+    .line 918
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 820
+    .line 919
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController$GalleryObserverInternal;->scheduleReloadRunnable()V
 
     return-void
@@ -56,12 +56,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 823
+    .line 922
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$2202(Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     const/4 v0, 0x0
 
-    .line 824
+    .line 923
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
     return-void
@@ -70,7 +70,7 @@
 .method private scheduleReloadRunnable()V
     .locals 3
 
-    .line 818
+    .line 917
     new-instance v0, Lorg/telegram/messenger/MediaController$GalleryObserverInternal$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/MediaController$GalleryObserverInternal$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/MediaController$GalleryObserverInternal;)V
@@ -91,24 +91,24 @@
 .method public onChange(Z)V
     .locals 0
 
-    .line 830
+    .line 929
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 831
+    .line 930
     invoke-static {}, Lorg/telegram/messenger/MediaController;->access$2200()Ljava/lang/Runnable;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 832
+    .line 931
     invoke-static {}, Lorg/telegram/messenger/MediaController;->access$2200()Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 834
+    .line 933
     :cond_0
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController$GalleryObserverInternal;->scheduleReloadRunnable()V
 

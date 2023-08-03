@@ -13,9 +13,11 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.BaseController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC$TL_contact;
 import org.telegram.tgnet.TLRPC$User;
@@ -43,21 +45,247 @@ public final class FilteredContactsByNameDelegate extends BaseController {
         Lazy lazy6;
         Lazy lazy7;
         Lazy lazy8;
-        lazy = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$onlineContactsDictionary$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsDictionary$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
+                HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsDictionary$2.1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        long j;
+                        boolean z;
+                        MessagesController messagesController;
+                        boolean userIsOnline;
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        long j2 = it.user_id;
+                        j = FilteredContactsByNameDelegate.this.selfId;
+                        if (j2 != j) {
+                            FilteredContactsByNameDelegate filteredContactsByNameDelegate2 = FilteredContactsByNameDelegate.this;
+                            messagesController = filteredContactsByNameDelegate2.getMessagesController();
+                            TLRPC$User user = messagesController.getUser(Long.valueOf(it.user_id));
+                            Intrinsics.checkNotNullExpressionValue(user, "messagesController.getUser(it.user_id)");
+                            userIsOnline = filteredContactsByNameDelegate2.userIsOnline(user);
+                            if (userIsOnline) {
+                                z = true;
+                                return Boolean.valueOf(z);
+                            }
+                        }
+                        z = false;
+                        return Boolean.valueOf(z);
+                    }
+                });
+                return usersByPredicate;
+            }
+        });
         this.onlineContactsDictionary$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$onlineContactsArr$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsArr$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<String> invoke() {
+                ArrayList<String> arrCharsByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                arrCharsByPredicate = filteredContactsByNameDelegate.getArrCharsByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsArr$2.1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        long j;
+                        boolean z;
+                        MessagesController messagesController;
+                        boolean userIsOnline;
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        long j2 = it.user_id;
+                        j = FilteredContactsByNameDelegate.this.selfId;
+                        if (j2 != j) {
+                            FilteredContactsByNameDelegate filteredContactsByNameDelegate2 = FilteredContactsByNameDelegate.this;
+                            messagesController = filteredContactsByNameDelegate2.getMessagesController();
+                            TLRPC$User user = messagesController.getUser(Long.valueOf(it.user_id));
+                            Intrinsics.checkNotNullExpressionValue(user, "messagesController.getUser(it.user_id)");
+                            userIsOnline = filteredContactsByNameDelegate2.userIsOnline(user);
+                            if (userIsOnline) {
+                                z = true;
+                                return Boolean.valueOf(z);
+                            }
+                        }
+                        z = false;
+                        return Boolean.valueOf(z);
+                    }
+                });
+                return arrCharsByPredicate;
+            }
+        });
         this.onlineContactsArr$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$mutualContacts$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContacts$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
+                HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
+                usersByPredicate = FilteredContactsByNameDelegate.this.getUsersByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContacts$2.1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        return Boolean.valueOf(it.mutual);
+                    }
+                });
+                return usersByPredicate;
+            }
+        });
         this.mutualContacts$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$mutualContactsArr$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContactsArr$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<String> invoke() {
+                ArrayList<String> arrCharsByPredicate;
+                arrCharsByPredicate = FilteredContactsByNameDelegate.this.getArrCharsByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContactsArr$2.1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        return Boolean.valueOf(it.mutual);
+                    }
+                });
+                return arrCharsByPredicate;
+            }
+        });
         this.mutualContactsArr$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$notMutualContacts$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContacts$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
+                HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
+                usersByPredicate = FilteredContactsByNameDelegate.this.getUsersByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContacts$2.1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        return Boolean.valueOf(!it.mutual);
+                    }
+                });
+                return usersByPredicate;
+            }
+        });
         this.notMutualContacts$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$notMutualContactsArr$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContactsArr$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<String> invoke() {
+                ArrayList<String> arrCharsByPredicate;
+                arrCharsByPredicate = FilteredContactsByNameDelegate.this.getArrCharsByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContactsArr$2.1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        return Boolean.valueOf(!it.mutual);
+                    }
+                });
+                return arrCharsByPredicate;
+            }
+        });
         this.notMutualContactsArr$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$blockedUsers$2(this));
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsers$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
+                HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsers$2.1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        long j;
+                        boolean z;
+                        boolean userIsBlocked;
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        long j2 = it.user_id;
+                        j = FilteredContactsByNameDelegate.this.selfId;
+                        if (j2 != j) {
+                            userIsBlocked = FilteredContactsByNameDelegate.this.userIsBlocked(it);
+                            if (userIsBlocked) {
+                                z = true;
+                                return Boolean.valueOf(z);
+                            }
+                        }
+                        z = false;
+                        return Boolean.valueOf(z);
+                    }
+                });
+                return usersByPredicate;
+            }
+        });
         this.blockedUsers$delegate = lazy7;
-        lazy8 = LazyKt__LazyJVMKt.lazy(new FilteredContactsByNameDelegate$blockedUsersArr$2(this));
+        lazy8 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsersArr$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<String> invoke() {
+                ArrayList<String> arrCharsByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                arrCharsByPredicate = filteredContactsByNameDelegate.getArrCharsByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsersArr$2.1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(TLRPC$TL_contact it) {
+                        long j;
+                        boolean z;
+                        boolean userIsBlocked;
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        long j2 = it.user_id;
+                        j = FilteredContactsByNameDelegate.this.selfId;
+                        if (j2 != j) {
+                            userIsBlocked = FilteredContactsByNameDelegate.this.userIsBlocked(it);
+                            if (userIsBlocked) {
+                                z = true;
+                                return Boolean.valueOf(z);
+                            }
+                        }
+                        z = false;
+                        return Boolean.valueOf(z);
+                    }
+                });
+                return arrCharsByPredicate;
+            }
+        });
         this.blockedUsersArr$delegate = lazy8;
         this.selfId = UserConfig.getInstance(this.currentAccount).clientUserId;
     }
@@ -97,7 +325,7 @@ public final class FilteredContactsByNameDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1656id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1675id));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

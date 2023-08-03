@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/DialogsActivity$29;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/SearchViewPager;
 .source "DialogsActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;
 
 
 # annotations
@@ -22,94 +19,86 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity;IIILorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;)V
+    .locals 7
 
-    .line 6033
+    .line 6251
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$29;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
+    move-object v6, p7
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/SearchViewPager;-><init>(Landroid/content/Context;Lorg/telegram/ui/DialogsActivity;IIILorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/view/View;IFF)Z
-    .locals 8
+.method protected includeDownloads()Z
+    .locals 1
 
-    .line 6036
+    .line 6279
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$29;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$5700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/SearchViewPager;
+    iget-object v0, v0, Lorg/telegram/ui/DialogsActivity;->rightSlidingDialogContainer:Lorg/telegram/ui/RightSlidingDialogContainer;
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/SearchViewPager;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-virtual {v0}, Lorg/telegram/ui/RightSlidingDialogContainer;->hasFragment()Z
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$29;->this$0:Lorg/telegram/ui/DialogsActivity;
+    move-result v0
 
-    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$5700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/SearchViewPager;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    const/4 v0, 0x0
 
-    iget-object v7, v2, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+    return v0
 
-    const/4 v6, -0x1
+    :cond_0
+    const/4 v0, 0x1
 
-    move-object v2, p1
+    return v0
+.end method
 
-    move v3, p2
+.method protected onBackProgress(F)Z
+    .locals 0
 
-    move v4, p3
-
-    move v5, p4
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/DialogsActivity;->access$27100(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFFILandroidx/recyclerview/widget/RecyclerView$Adapter;)Z
-
-    move-result p1
+    const/4 p1, 0x0
 
     return p1
 .end method
 
-.method public onLongClickRelease()V
+.method protected onTabPageSelected(I)V
     .locals 2
 
-    .line 6048
-    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
-
-    iget v1, v0, Landroid/graphics/Point;->x:I
-
-    iget v0, v0, Landroid/graphics/Point;->y:I
-
-    if-le v1, v0, :cond_0
-
-    .line 6049
+    .line 6254
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$29;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
+    const/4 v1, 0x2
+
+    if-ne p1, v1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    const/4 p1, 0x0
 
-.method public onMove(FF)V
-    .locals 1
+    :goto_0
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->updateSpeedItem(Z)V
 
-    .line 6041
-    sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
-
-    iget v0, p1, Landroid/graphics/Point;->x:I
-
-    iget p1, p1, Landroid/graphics/Point;->y:I
-
-    if-le v0, p1, :cond_0
-
-    .line 6042
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$29;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->movePreviewFragment(F)V
-
-    :cond_0
     return-void
 .end method

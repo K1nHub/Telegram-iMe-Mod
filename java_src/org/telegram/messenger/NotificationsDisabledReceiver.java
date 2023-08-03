@@ -26,11 +26,11 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 return;
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
+                FileLog.m70d("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
             }
             if (SystemClock.elapsedRealtime() - AccountInstance.getInstance(intValue).getNotificationsController().lastNotificationChannelCreateTime <= 1000) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("received disable notification event right after creating notification channel, ignoring");
+                    FileLog.m70d("received disable notification event right after creating notification channel, ignoring");
                     return;
                 }
                 return;
@@ -41,7 +41,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("apply channel " + stringExtra + " state");
+                    FileLog.m70d("apply channel{channel} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(2);
@@ -50,7 +50,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("apply channel " + stringExtra + " state");
+                    FileLog.m70d("apply channel{groups} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(0), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(0);
@@ -59,9 +59,18 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("apply channel " + stringExtra + " state");
+                    FileLog.m70d("apply channel{private} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
+            } else if (split[1].startsWith("stories")) {
+                if (!stringExtra.equals(notificationsSettings.getString("stories", null))) {
+                    return;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.m70d("apply channel{stories} " + stringExtra + " state");
+                }
+                notificationsSettings.edit().putBoolean(NotificationsController.getGlobalNotificationsKey(3), !booleanExtra).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
             } else {
                 long longValue = Utilities.parseLong(split[1]).longValue();
@@ -73,7 +82,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("apply channel " + stringExtra + " state");
+                    FileLog.m70d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit = notificationsSettings.edit();
                 edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + sharedPrefKey, booleanExtra ? 2 : 0);

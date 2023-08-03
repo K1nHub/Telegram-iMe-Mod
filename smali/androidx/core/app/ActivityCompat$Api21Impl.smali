@@ -18,7 +18,7 @@
 .method static finishAfterTransition(Landroid/app/Activity;)V
     .locals 0
 
-    .line 834
+    .line 885
     invoke-virtual {p0}, Landroid/app/Activity;->finishAfterTransition()V
 
     return-void
@@ -27,7 +27,7 @@
 .method static postponeEnterTransition(Landroid/app/Activity;)V
     .locals 0
 
-    .line 851
+    .line 902
     invoke-virtual {p0}, Landroid/app/Activity;->postponeEnterTransition()V
 
     return-void
@@ -36,7 +36,7 @@
 .method static setEnterSharedElementCallback(Landroid/app/Activity;Landroid/app/SharedElementCallback;)V
     .locals 0
 
-    .line 840
+    .line 891
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setEnterSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     return-void
@@ -45,7 +45,7 @@
 .method static setExitSharedElementCallback(Landroid/app/Activity;Landroid/app/SharedElementCallback;)V
     .locals 0
 
-    .line 846
+    .line 897
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setExitSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     return-void
@@ -54,7 +54,7 @@
 .method static startPostponedEnterTransition(Landroid/app/Activity;)V
     .locals 0
 
-    .line 856
+    .line 907
     invoke-virtual {p0}, Landroid/app/Activity;->startPostponedEnterTransition()V
 
     return-void

@@ -30,18 +30,18 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
 
-    .line 913
+    .line 1011
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 911
+    .line 1009
     iput v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->alpha:F
 
-    .line 914
+    .line 1012
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->id:I
 
-    .line 915
+    .line 1013
     iput-object p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->title:Ljava/lang/String;
 
     return-void
@@ -52,7 +52,7 @@
 .method public getWidth(ZLandroid/text/TextPaint;)I
     .locals 0
 
-    .line 919
+    .line 1017
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->title:Ljava/lang/String;
 
     invoke-virtual {p2, p1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -71,7 +71,7 @@
 
     const/16 p2, 0x28
 
-    .line 920
+    .line 1018
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

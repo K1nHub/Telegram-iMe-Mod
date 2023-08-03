@@ -16,11 +16,11 @@ class C3000Z1 extends AbstractC3007a2 {
 
     @Override // p033j$.util.stream.InterfaceC2859A1
     /* renamed from: i */
-    public /* bridge */ /* synthetic */ void mo322i(Object[] objArr, int i) {
+    public /* bridge */ /* synthetic */ void mo340i(Object[] objArr, int i) {
     }
 
     @Override // p033j$.util.stream.InterfaceC2859A1
     public InterfaceC2853s spliterator() {
-        return AbstractC2777I.m622e();
+        return AbstractC2777I.m640e();
     }
 }

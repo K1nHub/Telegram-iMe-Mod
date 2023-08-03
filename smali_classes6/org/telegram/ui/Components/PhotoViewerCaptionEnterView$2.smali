@@ -49,7 +49,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;)V
     .locals 0
 
-    .line 267
+    .line 268
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$photoViewer:Lorg/telegram/ui/PhotoViewer;
@@ -60,7 +60,7 @@
 
     const/4 p1, 0x0
 
-    .line 268
+    .line 269
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->processChange:Z
 
     return-void
@@ -69,7 +69,7 @@
 .method private synthetic lambda$afterTextChanged$0(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 356
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -84,7 +84,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1102(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;F)F
 
-    .line 357
+    .line 358
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingIcon:I
@@ -93,12 +93,12 @@
 
     move-result p1
 
-    .line 358
+    .line 359
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
 
-    .line 359
+    .line 360
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/graphics/drawable/Drawable;
@@ -131,7 +131,7 @@
 
     invoke-static {v1, p1}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 360
+    .line 361
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1400(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/widget/ImageView;
@@ -146,7 +146,7 @@
 .method private static synthetic lambda$afterTextChanged$1(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;)V
     .locals 0
 
-    .line 368
+    .line 369
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PhotoViewer;->showCaptionLimitBulletin(Landroid/widget/FrameLayout;)V
 
     return-void
@@ -157,7 +157,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 10
 
-    .line 301
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     iget v0, v0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->currentAccount:I
@@ -192,7 +192,7 @@
 
     if-gt v0, v4, :cond_0
 
-    .line 303
+    .line 304
     iget-object v4, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     new-array v5, v2, [Ljava/lang/Object;
@@ -213,19 +213,19 @@
 
     goto :goto_0
 
-    .line 305
+    .line 306
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$702(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 307
+    .line 308
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 308
+    .line 309
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$500(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Z
@@ -234,12 +234,12 @@
 
     if-nez v0, :cond_2
 
-    .line 309
+    .line 310
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->processChange:Z
 
     if-eqz v0, :cond_2
 
-    .line 310
+    .line 311
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result v0
@@ -254,13 +254,13 @@
 
     move v4, v3
 
-    .line 311
+    .line 312
     :goto_1
     array-length v5, v0
 
     if-ge v4, v5, :cond_1
 
-    .line 312
+    .line 313
     aget-object v5, v0, v4
 
     invoke-interface {p1, v5}, Landroid/text/Editable;->removeSpan(Ljava/lang/Object;)V
@@ -269,7 +269,7 @@
 
     goto :goto_1
 
-    .line 314
+    .line 315
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -293,10 +293,10 @@
 
     invoke-static {p1, v0, v4, v3}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
 
-    .line 315
+    .line 316
     iput-boolean v3, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->processChange:Z
 
-    .line 320
+    .line 321
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -310,7 +310,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$802(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;I)I
 
-    .line 322
+    .line 323
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     iget p1, p1, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->currentAccount:I
@@ -363,7 +363,7 @@
 
     move p1, v8
 
-    .line 326
+    .line 327
     :cond_3
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -393,7 +393,7 @@
     :goto_2
     invoke-virtual {v8, p1, v9}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
 
-    .line 327
+    .line 328
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -406,7 +406,7 @@
 
     if-eqz v8, :cond_5
 
-    .line 328
+    .line 329
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -415,7 +415,7 @@
 
     invoke-virtual {v8, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 329
+    .line 330
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -424,7 +424,7 @@
 
     invoke-virtual {v8, v6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 330
+    .line 331
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -433,7 +433,7 @@
 
     invoke-virtual {v8, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 331
+    .line 332
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -442,7 +442,7 @@
 
     invoke-virtual {v8, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 333
+    .line 334
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -460,7 +460,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 334
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -491,7 +491,7 @@
 
     if-gez p1, :cond_6
 
-    .line 337
+    .line 338
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/NumberTextView;
@@ -506,7 +506,7 @@
 
     goto :goto_4
 
-    .line 339
+    .line 340
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -520,7 +520,7 @@
 
     goto :goto_3
 
-    .line 342
+    .line 343
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -557,7 +557,7 @@
     :goto_3
     move p1, v2
 
-    .line 349
+    .line 350
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -565,17 +565,17 @@
 
     if-eq v1, p1, :cond_b
 
-    .line 350
+    .line 351
     iput-boolean p1, v0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->sendButtonEnabled:Z
 
-    .line 351
+    .line 352
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1000(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     if-eqz p1, :cond_8
 
-    .line 352
+    .line 353
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1000(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/animation/ValueAnimator;
@@ -584,7 +584,7 @@
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 354
+    .line 355
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -619,7 +619,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1002(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 355
+    .line 356
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1000(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/animation/ValueAnimator;
@@ -632,7 +632,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 362
+    .line 363
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$1000(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Landroid/animation/ValueAnimator;
@@ -647,7 +647,7 @@
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 365
+    .line 366
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$photoViewer:Lorg/telegram/ui/PhotoViewer;
 
@@ -729,7 +729,7 @@
 
     if-ge p1, v0, :cond_d
 
-    .line 366
+    .line 367
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$photoViewer:Lorg/telegram/ui/PhotoViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer;->getParentAlert()Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -738,12 +738,12 @@
 
     iput-boolean v2, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->captionLimitBulletinShown:Z
 
-    .line 367
+    .line 368
     iget-boolean p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->heightShouldBeChanged:Z
 
     if-eqz p1, :cond_c
 
-    .line 368
+    .line 369
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$photoViewer:Lorg/telegram/ui/PhotoViewer;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$parent:Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;
@@ -758,7 +758,7 @@
 
     goto :goto_6
 
-    .line 370
+    .line 371
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->val$photoViewer:Lorg/telegram/ui/PhotoViewer;
 
@@ -780,7 +780,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 4
 
-    .line 277
+    .line 278
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$200(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)I
@@ -803,7 +803,7 @@
 
     if-eq p2, v0, :cond_4
 
-    .line 278
+    .line 279
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -849,7 +849,7 @@
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->heightShouldBeChanged:Z
 
-    .line 279
+    .line 280
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$100(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Z
@@ -870,7 +870,7 @@
 
     if-lez p2, :cond_3
 
-    .line 280
+    .line 281
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$200(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)I
@@ -889,7 +889,7 @@
 
     invoke-static {p2, v0, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$400(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;II)V
 
-    .line 282
+    .line 283
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -905,11 +905,11 @@
 
     goto :goto_2
 
-    .line 284
+    .line 285
     :cond_4
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->heightShouldBeChanged:Z
 
-    .line 287
+    .line 288
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -921,7 +921,7 @@
 
     return-void
 
-    .line 291
+    .line 292
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -931,7 +931,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 292
+    .line 293
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$600(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$PhotoViewerCaptionEnterViewDelegate;
@@ -945,7 +945,7 @@
 
     if-le p4, v2, :cond_7
 
-    .line 295
+    .line 296
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->processChange:Z
 
     :cond_7

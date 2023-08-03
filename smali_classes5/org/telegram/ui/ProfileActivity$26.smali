@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$26;
-.super Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;
+.super Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 .source "ProfileActivity.java"
 
 
@@ -17,148 +17,65 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 4742
+    .line 4833
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;-><init>(Landroid/content/Context;)V
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$26;->val$context:Landroid/content/Context;
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setAlpha(F)V
-    .locals 0
+.method protected createTextView()Landroid/widget/TextView;
+    .locals 3
 
-    .line 4746
-    invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
+    .line 4836
+    new-instance v0, Landroid/widget/TextView;
 
-    .line 4747
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$26;->val$context:Landroid/content/Context;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16600(Lorg/telegram/ui/ProfileActivity;)V
+    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    return-void
-.end method
+    .line 4837
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-.method public setTextColor(I)V
-    .locals 2
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
 
-    .line 4766
-    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(I)I
 
-    .line 4767
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
+    move-result v1
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    const/4 v1, 0x2
+    const/high16 v2, 0x41600000    # 14.0f
 
-    aget-object v0, v0, v1
+    .line 4838
+    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    if-eqz v0, :cond_0
+    .line 4839
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 4768
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 4840
+    sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
-
-    .line 4769
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/4 v1, 0x3
 
-    aget-object v0, v0, v1
+    .line 4841
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setTranslationX(F)V
-    .locals 2
-
-    .line 4759
-    invoke-super {p0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    .line 4760
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    .line 4761
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    return-void
-.end method
-
-.method public setTranslationY(F)V
-    .locals 2
-
-    .line 4752
-    invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
-
-    .line 4753
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationY(F)V
-
-    .line 4754
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$10800(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
+    return-object v0
 .end method

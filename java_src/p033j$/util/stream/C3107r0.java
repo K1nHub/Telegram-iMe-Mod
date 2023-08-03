@@ -7,50 +7,50 @@ import p033j$.util.InterfaceC2853s;
 final class C3107r0 extends CountedCompleter {
 
     /* renamed from: a */
-    private InterfaceC2853s f1119a;
+    private InterfaceC2853s f1122a;
 
     /* renamed from: b */
-    private final InterfaceC3080m3 f1120b;
+    private final InterfaceC3080m3 f1123b;
 
     /* renamed from: c */
-    private final AbstractC3151y2 f1121c;
+    private final AbstractC3151y2 f1124c;
 
     /* renamed from: d */
-    private long f1122d;
+    private long f1125d;
 
     C3107r0(C3107r0 c3107r0, InterfaceC2853s interfaceC2853s) {
         super(c3107r0);
-        this.f1119a = interfaceC2853s;
-        this.f1120b = c3107r0.f1120b;
-        this.f1122d = c3107r0.f1122d;
-        this.f1121c = c3107r0.f1121c;
+        this.f1122a = interfaceC2853s;
+        this.f1123b = c3107r0.f1123b;
+        this.f1125d = c3107r0.f1125d;
+        this.f1124c = c3107r0.f1124c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C3107r0(AbstractC3151y2 abstractC3151y2, InterfaceC2853s interfaceC2853s, InterfaceC3080m3 interfaceC3080m3) {
         super(null);
-        this.f1120b = interfaceC3080m3;
-        this.f1121c = abstractC3151y2;
-        this.f1119a = interfaceC2853s;
-        this.f1122d = 0L;
+        this.f1123b = interfaceC3080m3;
+        this.f1124c = abstractC3151y2;
+        this.f1122a = interfaceC2853s;
+        this.f1125d = 0L;
     }
 
     @Override // java.util.concurrent.CountedCompleter
     public void compute() {
         InterfaceC2853s trySplit;
-        InterfaceC2853s interfaceC2853s = this.f1119a;
+        InterfaceC2853s interfaceC2853s = this.f1122a;
         long estimateSize = interfaceC2853s.estimateSize();
-        long j = this.f1122d;
+        long j = this.f1125d;
         if (j == 0) {
-            j = AbstractC3034f.m402h(estimateSize);
-            this.f1122d = j;
+            j = AbstractC3034f.m420h(estimateSize);
+            this.f1125d = j;
         }
-        boolean m420d = EnumC3027d4.SHORT_CIRCUIT.m420d(this.f1121c.mo290s0());
+        boolean m438d = EnumC3027d4.SHORT_CIRCUIT.m438d(this.f1124c.mo308s0());
         boolean z = false;
-        InterfaceC3080m3 interfaceC3080m3 = this.f1120b;
+        InterfaceC3080m3 interfaceC3080m3 = this.f1123b;
         C3107r0 c3107r0 = this;
         while (true) {
-            if (m420d && interfaceC3080m3.mo296o()) {
+            if (m438d && interfaceC3080m3.mo314o()) {
                 break;
             } else if (estimateSize <= j || (trySplit = interfaceC2853s.trySplit()) == null) {
                 break;
@@ -70,8 +70,8 @@ final class C3107r0 extends CountedCompleter {
                 estimateSize = interfaceC2853s.estimateSize();
             }
         }
-        c3107r0.f1121c.mo295n0(interfaceC3080m3, interfaceC2853s);
-        c3107r0.f1119a = null;
+        c3107r0.f1124c.mo313n0(interfaceC3080m3, interfaceC2853s);
+        c3107r0.f1122a = null;
         c3107r0.propagateCompletion();
     }
 }

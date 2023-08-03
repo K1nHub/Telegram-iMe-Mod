@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1320
+    .line 1325
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$14;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 2
 
-    .line 1323
+    .line 1328
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$14;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$2500(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;

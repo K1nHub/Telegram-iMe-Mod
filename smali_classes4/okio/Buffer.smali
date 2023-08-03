@@ -239,7 +239,7 @@
 .method public final copyTo(Lokio/Buffer;JJ)Lokio/Buffer;
     .locals 7
 
-    const-string v0, "out"
+    const-string/jumbo v0, "out"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4296,7 +4296,7 @@
 .method public select(Lokio/Options;)I
     .locals 3
 
-    const-string v0, "options"
+    const-string/jumbo v0, "options"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

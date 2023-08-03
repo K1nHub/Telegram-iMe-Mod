@@ -126,7 +126,7 @@
 .method public final factory(Ljava/lang/String;)Lokhttp3/internal/platform/android/DeferredSocketAdapter$Factory;
     .locals 1
 
-    const-string v0, "packageName"
+    const-string/jumbo v0, "packageName"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

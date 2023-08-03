@@ -90,7 +90,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
             } else if ("[V4+ Styles]".equalsIgnoreCase(readLine)) {
                 this.styles = parseStyles(parsableByteArray);
             } else if ("[V4 Styles]".equalsIgnoreCase(readLine)) {
-                Log.m798i(TAG, "[V4 Styles] are not supported");
+                Log.m816i(TAG, "[V4 Styles] are not supported");
             } else if ("[Events]".equalsIgnoreCase(readLine)) {
                 return;
             }
@@ -164,7 +164,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
                 format = SsaStyle.Format.fromFormatLine(readLine);
             } else if (readLine.startsWith(STYLE_LINE_PREFIX)) {
                 if (format == null) {
-                    Log.m796w(TAG, "Skipping 'Style:' line before 'Format:' line: " + readLine);
+                    Log.m814w(TAG, "Skipping 'Style:' line before 'Format:' line: " + readLine);
                 } else {
                     SsaStyle fromStyleLine = SsaStyle.fromStyleLine(readLine, format);
                     if (fromStyleLine != null) {
@@ -187,7 +187,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
                 ssaDialogueFormat = SsaDialogueFormat.fromFormatLine(readLine);
             } else if (readLine.startsWith(DIALOGUE_LINE_PREFIX)) {
                 if (ssaDialogueFormat == null) {
-                    Log.m796w(TAG, "Skipping dialogue line before complete format: " + readLine);
+                    Log.m814w(TAG, "Skipping dialogue line before complete format: " + readLine);
                 } else {
                     parseDialogueLine(readLine, ssaDialogueFormat, list, list2);
                 }
@@ -200,17 +200,17 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
         Assertions.checkArgument(str.startsWith(DIALOGUE_LINE_PREFIX));
         String[] split = str.substring(9).split(",", ssaDialogueFormat.length);
         if (split.length != ssaDialogueFormat.length) {
-            Log.m796w(TAG, "Skipping dialogue line with fewer columns than format: " + str);
+            Log.m814w(TAG, "Skipping dialogue line with fewer columns than format: " + str);
             return;
         }
         long parseTimecodeUs = parseTimecodeUs(split[ssaDialogueFormat.startTimeIndex]);
         if (parseTimecodeUs == C0480C.TIME_UNSET) {
-            Log.m796w(TAG, "Skipping invalid timing: " + str);
+            Log.m814w(TAG, "Skipping invalid timing: " + str);
             return;
         }
         long parseTimecodeUs2 = parseTimecodeUs(split[ssaDialogueFormat.endTimeIndex]);
         if (parseTimecodeUs2 == C0480C.TIME_UNSET) {
-            Log.m796w(TAG, "Skipping invalid timing: " + str);
+            Log.m814w(TAG, "Skipping invalid timing: " + str);
             return;
         }
         Map<String, SsaStyle> map = this.styles;
@@ -279,7 +279,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
                 return null;
             case 0:
             default:
-                Log.m796w(TAG, "Unknown alignment: " + i);
+                Log.m814w(TAG, "Unknown alignment: " + i);
                 return null;
             case 1:
             case 4:
@@ -302,7 +302,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
                 return Integer.MIN_VALUE;
             case 0:
             default:
-                Log.m796w(TAG, "Unknown alignment: " + i);
+                Log.m814w(TAG, "Unknown alignment: " + i);
                 return Integer.MIN_VALUE;
             case 1:
             case 2:
@@ -325,7 +325,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
                 return Integer.MIN_VALUE;
             case 0:
             default:
-                Log.m796w(TAG, "Unknown alignment: " + i);
+                Log.m814w(TAG, "Unknown alignment: " + i);
                 return Integer.MIN_VALUE;
             case 1:
             case 4:

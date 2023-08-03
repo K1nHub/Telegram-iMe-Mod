@@ -5,6 +5,7 @@ import android.media.MediaCodecList;
 import android.os.Build;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.FileLog;
@@ -41,9 +42,16 @@ class MediaCodecUtils {
                     Logging.m18e(TAG, "Cannot retrieve codec info", e);
                 }
             }
-            Collections.sort(arrayList, MediaCodecUtils$$ExternalSyntheticLambda0.INSTANCE);
+            Collections.sort(arrayList, new Comparator() { // from class: org.webrtc.MediaCodecUtils$$ExternalSyntheticLambda0
+                @Override // java.util.Comparator
+                public final int compare(Object obj, Object obj2) {
+                    int lambda$getSortedCodecsList$0;
+                    lambda$getSortedCodecsList$0 = MediaCodecUtils.lambda$getSortedCodecsList$0((MediaCodecInfo) obj, (MediaCodecInfo) obj2);
+                    return lambda$getSortedCodecsList$0;
+                }
+            });
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
         }
         return arrayList;
     }
@@ -78,7 +86,7 @@ class MediaCodecUtils {
 
     /* renamed from: org.webrtc.MediaCodecUtils$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68791 {
+    static /* synthetic */ class C71381 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -109,7 +117,7 @@ class MediaCodecUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z) {
-        int i = C68791.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        int i = C71381.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
         if (i == 1 || i == 2 || i == 3 || i == 4) {
             return new HashMap();
         }

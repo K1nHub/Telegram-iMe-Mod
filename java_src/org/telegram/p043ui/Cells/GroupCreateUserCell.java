@@ -46,6 +46,7 @@ public class GroupCreateUserCell extends FrameLayout {
     private SimpleTextView nameTextView;
     private int padding;
     private Paint paint;
+    Theme.ResourcesProvider resourcesProvider;
     private boolean showSelfAsSaved;
     private SimpleTextView statusTextView;
 
@@ -55,12 +56,13 @@ public class GroupCreateUserCell extends FrameLayout {
     }
 
     public GroupCreateUserCell(Context context, int i, int i2, boolean z) {
-        this(context, i, i2, z, false);
+        this(context, i, i2, z, false, null);
     }
 
-    public GroupCreateUserCell(Context context, int i, int i2, boolean z, boolean z2) {
+    public GroupCreateUserCell(Context context, int i, int i2, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.currentAccount = UserConfig.selectedAccount;
+        this.resourcesProvider = resourcesProvider;
         this.checkBoxType = i;
         this.forceDarkTheme = z2;
         this.drawDivider = false;
@@ -69,19 +71,19 @@ public class GroupCreateUserCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z3 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(46, 46, (z3 ? 5 : 3) | 48, z3 ? 0 : this.padding + 13, 6, z3 ? this.padding + 13 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(this, context) { // from class: org.telegram.ui.Cells.GroupCreateUserCell.1
             @Override // org.telegram.p043ui.ActionBar.SimpleTextView
             public boolean setText(CharSequence charSequence, boolean z4) {
-                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), z4);
+                return super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(14), false), z4);
             }
         };
         this.nameTextView = simpleTextView;
         NotificationCenter.listenEmojiLoading(simpleTextView);
-        this.nameTextView.setTextColor(Theme.getColor(this.forceDarkTheme ? Theme.key_voipgroup_nameText : Theme.key_windowBackgroundWhiteBlackText));
+        this.nameTextView.setTextColor(Theme.getColor(this.forceDarkTheme ? Theme.key_voipgroup_nameText : Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.nameTextView.setTextSize(16);
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -114,7 +116,7 @@ public class GroupCreateUserCell extends FrameLayout {
             Paint paint = new Paint(1);
             this.paint = paint;
             paint.setStyle(Paint.Style.STROKE);
-            this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
+            this.paint.setStrokeWidth(AndroidUtilities.m72dp(2));
         }
         setWillNotDraw(false);
     }
@@ -217,7 +219,7 @@ public class GroupCreateUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.currentObject instanceof String ? 50 : 58), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.currentObject instanceof String ? 50 : 58), 1073741824));
     }
 
     public void recycle() {
@@ -234,7 +236,7 @@ public class GroupCreateUserCell extends FrameLayout {
     */
     public void update(int r12) {
         /*
-            Method dump skipped, instructions count: 1218
+            Method dump skipped, instructions count: 1226
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.GroupCreateUserCell.update(int):void");
@@ -244,18 +246,18 @@ public class GroupCreateUserCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.checkBoxType == 2 && (this.isChecked || this.checkProgress > BitmapDescriptorFactory.HUE_RED)) {
-            this.paint.setColor(Theme.getColor(Theme.key_checkboxSquareBackground));
-            canvas.drawCircle(this.avatarImageView.getLeft() + (this.avatarImageView.getMeasuredWidth() / 2), this.avatarImageView.getTop() + (this.avatarImageView.getMeasuredHeight() / 2), AndroidUtilities.m54dp(18) + (AndroidUtilities.m54dp(4) * this.checkProgress), this.paint);
+            this.paint.setColor(Theme.getColor(Theme.key_checkboxSquareBackground, this.resourcesProvider));
+            canvas.drawCircle(this.avatarImageView.getLeft() + (this.avatarImageView.getMeasuredWidth() / 2), this.avatarImageView.getTop() + (this.avatarImageView.getMeasuredHeight() / 2), AndroidUtilities.m72dp(18) + (AndroidUtilities.m72dp(4) * this.checkProgress), this.paint);
         }
         if (this.drawDivider) {
-            int m54dp = AndroidUtilities.m54dp(LocaleController.isRTL ? 0 : this.padding + 72);
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m54dp(LocaleController.isRTL ? this.padding + 72 : 0);
+            int m72dp = AndroidUtilities.m72dp(LocaleController.isRTL ? 0 : this.padding + 72);
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m72dp(LocaleController.isRTL ? this.padding + 72 : 0);
             if (this.forceDarkTheme) {
-                Theme.dividerExtraPaint.setColor(Theme.getColor(Theme.key_voipgroup_actionBar));
-                canvas.drawRect(m54dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerExtraPaint);
+                Theme.dividerExtraPaint.setColor(Theme.getColor(Theme.key_voipgroup_actionBar, this.resourcesProvider));
+                canvas.drawRect(m72dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerExtraPaint);
                 return;
             }
-            canvas.drawRect(m54dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerPaint);
+            canvas.drawRect(m72dp, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), Theme.dividerPaint);
         }
     }
 

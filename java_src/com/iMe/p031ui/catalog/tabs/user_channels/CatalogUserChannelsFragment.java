@@ -18,6 +18,7 @@ import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.state.GlobalStateView;
 import com.iMe.storage.domain.model.catalog.ChatType;
 import com.iMe.storage.domain.utils.system.ResourceManager;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -26,7 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -34,8 +38,14 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentCatalogUserChannelsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -112,16 +122,110 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(chatType, "chatType");
         this.chatType = chatType;
-        CatalogUserChannelsFragment$presenter$2 catalogUserChannelsFragment$presenter$2 = new CatalogUserChannelsFragment$presenter$2(this);
+        Function0<CatalogUserChannelsPresenter> function0 = new Function0<CatalogUserChannelsPresenter>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogUserChannelsPresenter invoke() {
+                Lazy lazy3;
+                final CatalogUserChannelsFragment catalogUserChannelsFragment = CatalogUserChannelsFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        return ParametersHolderKt.parametersOf(CatalogUserChannelsFragment.this.getChatType());
+                    }
+                };
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CatalogUserChannelsPresenter>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CatalogUserChannelsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogUserChannelsPresenter.class), qualifier, function03);
+                    }
+                });
+                return (CatalogUserChannelsPresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogUserChannelsPresenter.class.getName() + ".presenter", catalogUserChannelsFragment$presenter$2);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CatalogUserChannelsPresenter.class.getName() + ".presenter", function0);
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new CatalogUserChannelsFragment$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<CatalogUserChannelsRecycleAdapter>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.catalog.tabs.user_channels.adapter.CatalogUserChannelsRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogUserChannelsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogUserChannelsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.userChannelsRecycleAdapter$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new CatalogUserChannelsFragment$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resourceManager$delegate = lazy2;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CatalogUserChannelsFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentCatalogUserChannelsBinding>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentCatalogUserChannelsBinding invoke() {
+                return ForkFragmentCatalogUserChannelsBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CatalogUserChannelsFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -221,7 +325,26 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
     private final void setupListeners() {
         ActionButton actionButton = getBinding().buttonAdd;
         Intrinsics.checkNotNullExpressionValue(actionButton, "binding.buttonAdd");
-        ViewExtKt.safeThrottledClick$default(actionButton, 0L, new CatalogUserChannelsFragment$setupListeners$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(actionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$setupListeners$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                CatalogUserChannelsPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = CatalogUserChannelsFragment.this.getPresenter();
+                presenter.onAddChannelClick();
+            }
+        }, 1, null);
         getUserChannelsRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -242,18 +365,18 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageEmpty;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3419R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
         int i = WhenMappings.$EnumSwitchMapping$0[this.chatType.ordinal()];
         if (i == 1) {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3417R.string.catalog_user_channels_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3417R.string.catalog_user_channels_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3417R.string.catalog_user_channels_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3419R.string.catalog_user_channels_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3419R.string.catalog_user_channels_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3419R.string.catalog_user_channels_empty_create));
         } else if (i != 2) {
         } else {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3417R.string.catalog_user_groups_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3417R.string.catalog_user_groups_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3417R.string.catalog_user_groups_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3419R.string.catalog_user_groups_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3419R.string.catalog_user_groups_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3419R.string.catalog_user_groups_empty_create));
         }
     }
 

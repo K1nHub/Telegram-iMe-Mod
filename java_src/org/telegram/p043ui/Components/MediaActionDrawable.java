@@ -75,11 +75,11 @@ public class MediaActionDrawable extends Drawable {
     public MediaActionDrawable() {
         this.paint.setColor(-1);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeWidth(AndroidUtilities.m54dp(3));
+        this.paint.setStrokeWidth(AndroidUtilities.m72dp(3));
         this.paint.setStyle(Paint.Style.STROKE);
         this.paint3.setColor(-1);
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.textPaint.setTextSize(AndroidUtilities.m54dp(13));
+        this.textPaint.setTextSize(AndroidUtilities.m72dp(13));
         this.textPaint.setColor(-1);
         this.paint2.setColor(-1);
     }
@@ -111,7 +111,7 @@ public class MediaActionDrawable extends Drawable {
 
     public void setMini(boolean z) {
         this.isMini = z;
-        this.paint.setStrokeWidth(AndroidUtilities.m54dp(z ? 2 : 3));
+        this.paint.setStrokeWidth(AndroidUtilities.m72dp(z ? 2 : 3));
     }
 
     public void setDelegate(MediaActionDrawableDelegate mediaActionDrawableDelegate) {
@@ -223,7 +223,7 @@ public class MediaActionDrawable extends Drawable {
         float intrinsicWidth = (i3 - i) / getIntrinsicWidth();
         this.scale = intrinsicWidth;
         if (intrinsicWidth < 0.7f) {
-            this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
+            this.paint.setStrokeWidth(AndroidUtilities.m72dp(2));
         }
     }
 
@@ -318,21 +318,21 @@ public class MediaActionDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(48);
+        return AndroidUtilities.m72dp(48);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(48);
+        return AndroidUtilities.m72dp(48);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumWidth() {
-        return AndroidUtilities.m54dp(48);
+        return AndroidUtilities.m72dp(48);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumHeight() {
-        return AndroidUtilities.m54dp(48);
+        return AndroidUtilities.m72dp(48);
     }
 }

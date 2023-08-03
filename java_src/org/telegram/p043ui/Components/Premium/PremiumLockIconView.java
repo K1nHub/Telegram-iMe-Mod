@@ -1,7 +1,6 @@
 package org.telegram.p043ui.Components.Premium;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
@@ -13,7 +12,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
@@ -57,7 +56,7 @@ public class PremiumLockIconView extends ImageView {
         this.shaderCrossfadeProgress = 1.0f;
         this.type = i;
         this.resourcesProvider = resourcesProvider;
-        setImageResource(i == TYPE_REACTIONS ? C3417R.C3419drawable.msg_premium_lock2 : C3417R.C3419drawable.msg_mini_premiumlock);
+        setImageResource(i == TYPE_REACTIONS ? C3419R.C3421drawable.msg_premium_lock2 : C3419R.C3421drawable.msg_mini_premiumlock);
         if (i == TYPE_REACTIONS) {
             StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(5);
             this.starParticles = drawable;
@@ -80,11 +79,11 @@ public class PremiumLockIconView extends ImageView {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
             this.path.addCircle(rectF.width() / 2.0f, rectF.centerY(), rectF.width() / 2.0f, Path.Direction.CW);
-            rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.m55dp(2.5f), (getMeasuredHeight() / 2.0f) + AndroidUtilities.dpf2(5.7f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
-            this.path.addRoundRect(rectF, AndroidUtilities.m55dp(2.0f), AndroidUtilities.m55dp(2.0f), Path.Direction.CW);
+            rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.m73dp(2.5f), (getMeasuredHeight() / 2.0f) + AndroidUtilities.dpf2(5.7f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
+            this.path.addRoundRect(rectF, AndroidUtilities.m73dp(2.0f), AndroidUtilities.m73dp(2.0f), Path.Direction.CW);
             this.path.close();
             this.starParticles.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.starParticles.rect.inset(AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6));
+            this.starParticles.rect.inset(AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(6));
             return;
         }
         updateGradient();
@@ -109,7 +108,7 @@ public class PremiumLockIconView extends ImageView {
             ImageReceiver imageReceiver = this.imageReceiver;
             if (imageReceiver != null && imageReceiver.getBitmap() != null) {
                 this.waitingImage = false;
-                setColor(getDominantColor(this.imageReceiver.getBitmap()));
+                setColor(AndroidUtilities.getDominantColor(this.imageReceiver.getBitmap()));
             } else {
                 invalidate();
             }
@@ -118,7 +117,7 @@ public class PremiumLockIconView extends ImageView {
             if (this.currentColor != 0) {
                 canvas.drawPath(this.path, this.paint);
             } else {
-                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), -AndroidUtilities.m54dp(24), BitmapDescriptorFactory.HUE_RED);
+                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), -AndroidUtilities.m72dp(24), BitmapDescriptorFactory.HUE_RED);
                 canvas.drawPath(this.path, PremiumGradient.getInstance().getMainGradientPaint());
             }
             if (this.cellFlickerDrawable == null) {
@@ -170,33 +169,6 @@ public class PremiumLockIconView extends ImageView {
 
     public ImageReceiver getImageReceiver() {
         return this.imageReceiver;
-    }
-
-    public static int getDominantColor(Bitmap bitmap) {
-        if (bitmap == null) {
-            return -1;
-        }
-        float height = (bitmap.getHeight() - 1) / 10.0f;
-        float width = (bitmap.getWidth() - 1) / 10.0f;
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        int i4 = 0;
-        for (int i5 = 0; i5 < 10; i5++) {
-            for (int i6 = 0; i6 < 10; i6++) {
-                int pixel = bitmap.getPixel((int) (i5 * width), (int) (i6 * height));
-                if (Color.alpha(pixel) > 200) {
-                    i2 += Color.red(pixel);
-                    i3 += Color.green(pixel);
-                    i4 += Color.blue(pixel);
-                    i++;
-                }
-            }
-        }
-        if (i == 0) {
-            return 0;
-        }
-        return Color.argb(255, i2 / i, i3 / i, i4 / i);
     }
 
     private void updateGradient() {
@@ -258,7 +230,7 @@ public class PremiumLockIconView extends ImageView {
 
     public void setLocked(boolean z) {
         if (this.type != TYPE_REACTIONS) {
-            setImageResource(z ? C3417R.C3419drawable.msg_mini_premiumlock : C3417R.C3419drawable.msg_mini_stickerstar);
+            setImageResource(z ? C3419R.C3421drawable.msg_mini_premiumlock : C3419R.C3421drawable.msg_mini_stickerstar);
         }
     }
 }

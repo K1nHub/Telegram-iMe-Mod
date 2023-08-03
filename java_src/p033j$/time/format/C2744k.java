@@ -7,16 +7,16 @@ import java.util.Objects;
 final class C2744k implements InterfaceC2740g {
 
     /* renamed from: c */
-    static final String[] f588c = {"+HH", "+HHmm", "+HH:mm", "+HHMM", "+HH:MM", "+HHMMss", "+HH:MM:ss", "+HHMMSS", "+HH:MM:SS"};
+    static final String[] f591c = {"+HH", "+HHmm", "+HH:mm", "+HHMM", "+HH:MM", "+HHMMss", "+HH:MM:ss", "+HHMMSS", "+HH:MM:SS"};
 
     /* renamed from: d */
-    static final C2744k f589d = new C2744k("+HH:MM:ss", "Z");
+    static final C2744k f592d = new C2744k("+HH:MM:ss", "Z");
 
     /* renamed from: a */
-    private final String f590a;
+    private final String f593a;
 
     /* renamed from: b */
-    private final int f591b;
+    private final int f594b;
 
     static {
         new C2744k("+HH:MM:ss", SessionDescription.SUPPORTED_SDP_VERSION);
@@ -28,12 +28,12 @@ final class C2744k implements InterfaceC2740g {
         Objects.requireNonNull(str2, "noOffsetText");
         int i = 0;
         while (true) {
-            String[] strArr = f588c;
+            String[] strArr = f591c;
             if (i >= strArr.length) {
                 throw new IllegalArgumentException("Invalid zone offset pattern: " + str);
             } else if (strArr[i].equals(str)) {
-                this.f591b = i;
-                this.f590a = str2;
+                this.f594b = i;
+                this.f593a = str2;
                 return;
             } else {
                 i++;
@@ -42,7 +42,7 @@ final class C2744k implements InterfaceC2740g {
     }
 
     public String toString() {
-        String replace = this.f590a.replace("'", "''");
-        return "Offset(" + f588c[this.f591b] + ",'" + replace + "')";
+        String replace = this.f593a.replace("'", "''");
+        return "Offset(" + f591c[this.f594b] + ",'" + replace + "')";
     }
 }

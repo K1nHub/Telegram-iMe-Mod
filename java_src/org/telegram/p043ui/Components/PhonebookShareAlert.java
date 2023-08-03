@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -41,7 +41,7 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ChatActivity;
 import org.telegram.p043ui.Components.AlertsCreator;
@@ -52,7 +52,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.PhonebookShareAlert */
 /* loaded from: classes6.dex */
 public class PhonebookShareAlert extends BottomSheet {
-    private C3484ActionBar actionBar;
+    private C3485ActionBar actionBar;
     private AnimatorSet actionBarAnimation;
     private View actionBarShadow;
     private Paint backgroundPaint;
@@ -98,10 +98,10 @@ public class PhonebookShareAlert extends BottomSheet {
                 z = false;
             }
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            avatarDrawable.setTextSize(AndroidUtilities.m54dp(30));
+            avatarDrawable.setTextSize(AndroidUtilities.m72dp(30));
             avatarDrawable.setInfo(phonebookShareAlert.currentUser);
             BackupImageView backupImageView = new BackupImageView(context);
-            backupImageView.setRoundRadius(AndroidUtilities.m54dp(40));
+            backupImageView.setRoundRadius(AndroidUtilities.m72dp(40));
             backupImageView.setForUserOrChat(phonebookShareAlert.currentUser, avatarDrawable);
             addView(backupImageView, LayoutHelper.createLinear(80, 80, 49, 0, 32, 0, 0));
             TextView textView = new TextView(context);
@@ -219,13 +219,13 @@ public class PhonebookShareAlert extends BottomSheet {
             if (r7 != null) {
                 measureChildWithMargins(r7, i, 0, i2, 0);
             }
-            setMeasuredDimension(View.MeasureSpec.getSize(i), Math.max(AndroidUtilities.m54dp(64), this.textView.getMeasuredHeight() + this.valueTextView.getMeasuredHeight() + AndroidUtilities.m54dp(20)) + (this.needDivider ? 1 : 0));
+            setMeasuredDimension(View.MeasureSpec.getSize(i), Math.max(AndroidUtilities.m72dp(64), this.textView.getMeasuredHeight() + this.valueTextView.getMeasuredHeight() + AndroidUtilities.m72dp(20)) + (this.needDivider ? 1 : 0));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
-            int measuredHeight = this.textView.getMeasuredHeight() + AndroidUtilities.m54dp(13);
+            int measuredHeight = this.textView.getMeasuredHeight() + AndroidUtilities.m72dp(13);
             TextView textView = this.valueTextView;
             textView.layout(textView.getLeft(), measuredHeight, this.valueTextView.getRight(), this.valueTextView.getMeasuredHeight() + measuredHeight);
         }
@@ -256,7 +256,7 @@ public class PhonebookShareAlert extends BottomSheet {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.needDivider) {
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(70), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(70) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(70), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(70) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
     }
@@ -320,7 +320,7 @@ public class PhonebookShareAlert extends BottomSheet {
                     this.parentFragment.getParentActivity().startActivityForResult(intent, 500);
                     return;
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                     return;
                 }
             } else if (i4 == 1) {
@@ -335,7 +335,7 @@ public class PhonebookShareAlert extends BottomSheet {
                 return;
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.parentFragment.getParentActivity());
-                builder.setItems(new CharSequence[]{LocaleController.getString("Copy", C3417R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda0
+                builder.setItems(new CharSequence[]{LocaleController.getString("Copy", C3419R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i5) {
                         PhonebookShareAlert.this.lambda$new$1(vcardItem, dialogInterface, i5);
@@ -375,10 +375,10 @@ public class PhonebookShareAlert extends BottomSheet {
             try {
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
                 if (AndroidUtilities.shouldShowClipboardToast()) {
-                    Toast.makeText(this.parentFragment.getParentActivity(), LocaleController.getString("TextCopied", C3417R.string.TextCopied), 0).show();
+                    Toast.makeText(this.parentFragment.getParentActivity(), LocaleController.getString("TextCopied", C3419R.string.TextCopied), 0).show();
                 }
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
     }
@@ -399,19 +399,19 @@ public class PhonebookShareAlert extends BottomSheet {
         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
         if (BulletinFactory.canShowBulletin(this.parentFragment)) {
             if (vcardItem.type == 3) {
-                BulletinFactory.m30of((FrameLayout) this.containerView, resourcesProvider).createCopyLinkBulletin().show();
+                BulletinFactory.m33of((FrameLayout) this.containerView, resourcesProvider).createCopyLinkBulletin().show();
             } else {
                 Bulletin.SimpleLayout simpleLayout = new Bulletin.SimpleLayout(context, resourcesProvider);
                 int i4 = vcardItem.type;
                 if (i4 == 0) {
-                    simpleLayout.textView.setText(LocaleController.getString("PhoneCopied", C3417R.string.PhoneCopied));
-                    simpleLayout.imageView.setImageResource(C3417R.C3419drawable.msg_calls);
+                    simpleLayout.textView.setText(LocaleController.getString("PhoneCopied", C3419R.string.PhoneCopied));
+                    simpleLayout.imageView.setImageResource(C3419R.C3421drawable.msg_calls);
                 } else if (i4 == 1) {
-                    simpleLayout.textView.setText(LocaleController.getString("EmailCopied", C3417R.string.EmailCopied));
-                    simpleLayout.imageView.setImageResource(C3417R.C3419drawable.msg_mention);
+                    simpleLayout.textView.setText(LocaleController.getString("EmailCopied", C3419R.string.EmailCopied));
+                    simpleLayout.imageView.setImageResource(C3419R.C3421drawable.msg_mention);
                 } else {
-                    simpleLayout.textView.setText(LocaleController.getString("TextCopied", C3417R.string.TextCopied));
-                    simpleLayout.imageView.setImageResource(C3417R.C3419drawable.msg_info);
+                    simpleLayout.textView.setText(LocaleController.getString("TextCopied", C3419R.string.TextCopied));
+                    simpleLayout.imageView.setImageResource(C3419R.C3421drawable.msg_info);
                 }
                 if (AndroidUtilities.shouldShowClipboardToast()) {
                     Bulletin.make((FrameLayout) this.containerView, simpleLayout, (int) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED).show();
@@ -426,9 +426,9 @@ public class PhonebookShareAlert extends BottomSheet {
         StringBuilder sb;
         if (this.isImport) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle(LocaleController.getString("AddContactTitle", C3417R.string.AddContactTitle));
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
-            builder.setItems(new CharSequence[]{LocaleController.getString("CreateNewContact", C3417R.string.CreateNewContact), LocaleController.getString("AddToExistingContact", C3417R.string.AddToExistingContact)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert.5
+            builder.setTitle(LocaleController.getString("AddContactTitle", C3419R.string.AddContactTitle));
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null);
+            builder.setItems(new CharSequence[]{LocaleController.getString("CreateNewContact", C3419R.string.CreateNewContact), LocaleController.getString("AddToExistingContact", C3419R.string.AddToExistingContact)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.PhonebookShareAlert.5
                 private void fillRowWithType(String str, ContentValues contentValues) {
                     if (str.startsWith("X-")) {
                         contentValues.put("data2", (Integer) 0);
@@ -494,7 +494,7 @@ public class PhonebookShareAlert extends BottomSheet {
                     int i2;
                     boolean z;
                     boolean z2;
-                    DialogInterface$OnClickListenerC49955 dialogInterface$OnClickListenerC49955 = this;
+                    DialogInterface$OnClickListenerC50305 dialogInterface$OnClickListenerC50305 = this;
                     int i3 = 1;
                     if (i == 0) {
                         intent = new Intent("android.intent.action.INSERT");
@@ -513,7 +513,7 @@ public class PhonebookShareAlert extends BottomSheet {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("mimetype", "vnd.android.cursor.item/phone_v2");
                         contentValues.put("data1", vcardItem.getValue(false));
-                        dialogInterface$OnClickListenerC49955.fillRowWithType(vcardItem.getRawType(false), contentValues);
+                        dialogInterface$OnClickListenerC50305.fillRowWithType(vcardItem.getRawType(false), contentValues);
                         arrayList.add(contentValues);
                     }
                     int i5 = 0;
@@ -525,13 +525,13 @@ public class PhonebookShareAlert extends BottomSheet {
                             ContentValues contentValues2 = new ContentValues();
                             contentValues2.put("mimetype", "vnd.android.cursor.item/email_v2");
                             contentValues2.put("data1", vcardItem2.getValue(z3));
-                            dialogInterface$OnClickListenerC49955.fillRowWithType(vcardItem2.getRawType(z3), contentValues2);
+                            dialogInterface$OnClickListenerC50305.fillRowWithType(vcardItem2.getRawType(z3), contentValues2);
                             arrayList.add(contentValues2);
                         } else if (i6 == 3) {
                             ContentValues contentValues3 = new ContentValues();
                             contentValues3.put("mimetype", "vnd.android.cursor.item/website");
                             contentValues3.put("data1", vcardItem2.getValue(z3));
-                            dialogInterface$OnClickListenerC49955.fillUrlRowWithType(vcardItem2.getRawType(z3), contentValues3);
+                            dialogInterface$OnClickListenerC50305.fillUrlRowWithType(vcardItem2.getRawType(z3), contentValues3);
                             arrayList.add(contentValues3);
                         } else if (i6 == 4) {
                             ContentValues contentValues4 = new ContentValues();
@@ -623,7 +623,7 @@ public class PhonebookShareAlert extends BottomSheet {
                                 } else if (i6 == 6 && !z) {
                                     ContentValues contentValues8 = new ContentValues();
                                     contentValues8.put("mimetype", "vnd.android.cursor.item/organization");
-                                    dialogInterface$OnClickListenerC49955 = this;
+                                    dialogInterface$OnClickListenerC50305 = this;
                                     for (int i7 = i2; i7 < PhonebookShareAlert.this.other.size(); i7++) {
                                         AndroidUtilities.VcardItem vcardItem3 = (AndroidUtilities.VcardItem) PhonebookShareAlert.this.other.get(i7);
                                         if (vcardItem3.type == 6) {
@@ -661,7 +661,7 @@ public class PhonebookShareAlert extends BottomSheet {
                                 }
                             }
                             z2 = false;
-                            dialogInterface$OnClickListenerC49955 = this;
+                            dialogInterface$OnClickListenerC50305 = this;
                             z4 = z;
                             i5 = i2 + 1;
                             z3 = z2;
@@ -685,7 +685,7 @@ public class PhonebookShareAlert extends BottomSheet {
                         PhonebookShareAlert.this.parentFragment.getParentActivity().startActivity(intent3);
                         PhonebookShareAlert.this.dismiss();
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             });
@@ -769,6 +769,11 @@ public class PhonebookShareAlert extends BottomSheet {
             }
 
             @Override // org.telegram.p043ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean clipWithGradient(int i) {
+                return Bulletin.Delegate.CC.$default$clipWithGradient(this, i);
+            }
+
+            @Override // org.telegram.p043ui.Components.Bulletin.Delegate
             public /* synthetic */ int getTopOffset(int i) {
                 return Bulletin.Delegate.CC.$default$getTopOffset(this, i);
             }
@@ -790,7 +795,7 @@ public class PhonebookShareAlert extends BottomSheet {
 
             @Override // org.telegram.p043ui.Components.Bulletin.Delegate
             public int getBottomOffset(int i) {
-                return AndroidUtilities.m54dp(74);
+                return AndroidUtilities.m72dp(74);
             }
         });
     }
@@ -826,11 +831,11 @@ public class PhonebookShareAlert extends BottomSheet {
                 animatorSet2.setDuration(180L);
                 AnimatorSet animatorSet3 = this.actionBarAnimation;
                 Animator[] animatorArr = new Animator[2];
-                C3484ActionBar c3484ActionBar = this.actionBar;
+                C3485ActionBar c3485ActionBar = this.actionBar;
                 Property property = View.ALPHA;
                 float[] fArr = new float[1];
                 fArr[0] = z2 ? 1.0f : 0.0f;
-                animatorArr[0] = ObjectAnimator.ofFloat(c3484ActionBar, property, fArr);
+                animatorArr[0] = ObjectAnimator.ofFloat(c3485ActionBar, property, fArr);
                 View view = this.actionBarShadow;
                 Property property2 = View.ALPHA;
                 float[] fArr2 = new float[1];
@@ -941,29 +946,29 @@ public class PhonebookShareAlert extends BottomSheet {
                     vcardItem = (AndroidUtilities.VcardItem) PhonebookShareAlert.this.other.get(i - PhonebookShareAlert.this.vcardStartRow);
                     int i4 = vcardItem.type;
                     if (i4 == 1) {
-                        i3 = C3417R.C3419drawable.msg_mention;
+                        i3 = C3419R.C3421drawable.msg_mention;
                     } else if (i4 == 2) {
-                        i3 = C3417R.C3419drawable.msg_location;
+                        i3 = C3419R.C3421drawable.msg_location;
                     } else if (i4 == 3) {
-                        i3 = C3417R.C3419drawable.msg_link;
+                        i3 = C3419R.C3421drawable.msg_link;
                     } else if (i4 == 4) {
-                        i3 = C3417R.C3419drawable.msg_info;
+                        i3 = C3419R.C3421drawable.msg_info;
                     } else if (i4 == 5) {
-                        i3 = C3417R.C3419drawable.msg_calendar2;
+                        i3 = C3419R.C3421drawable.msg_calendar2;
                     } else if (i4 == 6) {
                         if ("ORG".equalsIgnoreCase(vcardItem.getRawType(true))) {
-                            i3 = C3417R.C3419drawable.msg_work;
+                            i3 = C3419R.C3421drawable.msg_work;
                         } else {
-                            i3 = C3417R.C3419drawable.msg_jobtitle;
+                            i3 = C3419R.C3421drawable.msg_jobtitle;
                         }
                     } else if (i4 == 20) {
-                        i3 = C3417R.C3419drawable.msg_info;
+                        i3 = C3419R.C3421drawable.msg_info;
                     } else {
-                        i3 = C3417R.C3419drawable.msg_info;
+                        i3 = C3419R.C3421drawable.msg_info;
                     }
                 } else {
                     vcardItem = (AndroidUtilities.VcardItem) PhonebookShareAlert.this.phones.get(i - PhonebookShareAlert.this.phoneStartRow);
-                    i3 = C3417R.C3419drawable.msg_calls;
+                    i3 = C3419R.C3421drawable.msg_calls;
                 }
                 textCheckBoxCell.setVCardItem(vcardItem, i3, i != getItemCount() - 1);
             }

@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/BackupImageView;
 .source "ReactionsContainerLayout.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,63 +19,72 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;Landroid/content/Context;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 1487
+    .line 1503
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public invalidate()V
+    .locals 1
 
-    .line 1490
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
+    .line 1516
+    invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
-
-    .line 1491
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
-
-    iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$1000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/util/List;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
-
-    iget-object v2, v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2402(Lorg/telegram/ui/Components/ReactionsContainerLayout;I)I
-
-    .line 1492
-    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
-
-    iget-object v1, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
-
-    invoke-static {v1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$102(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
-
-    .line 1493
+    .line 1517
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    return-void
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 2
+
+    .line 1507
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 1508
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 1509
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
+
+    .line 1511
+    :cond_1
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method

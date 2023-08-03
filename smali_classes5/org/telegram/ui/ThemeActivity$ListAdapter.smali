@@ -3261,7 +3261,7 @@
 
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->isVibrationEnabled:Z
 
-    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3286,7 +3286,7 @@
 
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->pauseMusicOnRecord:Z
 
-    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3346,7 +3346,7 @@
 
     sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3380,7 +3380,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v3, v2, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v3, v2, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3414,7 +3414,7 @@
 
     move-result v2
 
-    invoke-virtual {v1, v3, v2, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v3, v2, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3591,7 +3591,7 @@
 
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->pauseMusicOnMedia:Z
 
-    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 
@@ -3696,7 +3696,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v1, v2, v3, v15}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     goto/16 :goto_a
 

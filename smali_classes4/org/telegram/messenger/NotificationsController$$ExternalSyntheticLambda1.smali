@@ -35,7 +35,7 @@
 .method public final onPostProcess(Landroid/graphics/Canvas;)I
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$bOc-Mw6YYRkNjHFQ_wD7NQ0vsF0(Landroid/graphics/Canvas;)I
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$EkCl9b4ZX3qETNNmKuCETUeq2hU(Landroid/graphics/Canvas;)I
 
     move-result p1
 

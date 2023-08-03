@@ -2,46 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;
+# instance fields
+.field public final synthetic f$0:[Z
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;->INSTANCE:Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>([ZLorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;->f$0:[Z
+
+    iput-object p2, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    check-cast p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
+    iget-object v0, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;->f$0:[Z
 
-    check-cast p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
+    iget-object v1, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MediaController;->$r8$lambda$XTl53FfjAU1ZhnyerfXc8KSznro(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/MediaController$PhotoEntry;)I
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MediaController;->$r8$lambda$euoiYqovQdEMBXz67sC1qTjBPMo([ZLorg/telegram/ui/ActionBar/AlertDialog;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

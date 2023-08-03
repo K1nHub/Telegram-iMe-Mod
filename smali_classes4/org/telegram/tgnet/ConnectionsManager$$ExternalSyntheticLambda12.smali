@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/tgnet/ConnectionsManager;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:I
+
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/ConnectionsManager;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/tgnet/ConnectionsManager;
 
-    iput-boolean p2, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$1:Z
+    iput p2, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$1:I
+
+    iput-boolean p3, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$2:Z
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/tgnet/ConnectionsManager;
 
-    iget-boolean v1, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$1:Z
+    iget v1, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$hmO3xgQKgjqYa6HUPdt2v205cTs(Lorg/telegram/tgnet/ConnectionsManager;Z)V
+    iget-boolean v2, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda12;->f$2:Z
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$hZKuRu03_J1UirWThkzgZPjI-ck(Lorg/telegram/tgnet/ConnectionsManager;IZ)V
 
     return-void
 .end method

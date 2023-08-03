@@ -7,11 +7,14 @@ import com.iMe.mapper.transaction.TransactionUiMappingKt;
 import com.iMe.model.wallet.home.HeaderItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.storage.data.locale.prefs.model.TokenDisplaySettings;
+import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
+import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
@@ -25,11 +28,13 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
@@ -83,7 +88,28 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
             listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.first((List<? extends Object>) this.cryptoAccessManager.getCreatedWalletsBlockchains()));
             cryptoPreferenceHelper.setNetwork((Network) CollectionsKt.first((List<? extends Object>) networksHelper.getNetworksByBlockchains(listOf)));
         }
-        ((WalletAttachAlertView) getViewState()).showChooseNetworkDialog(this.cryptoPreferenceHelper.getNetwork(), NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getCreatedWalletsBlockchains()), new WalletAttachAlertPresenter$startChooseNetworkDialog$1(this));
+        ((WalletAttachAlertView) getViewState()).showChooseNetworkDialog(this.cryptoPreferenceHelper.getNetwork(), NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getCreatedWalletsBlockchains()), new Function1<Network, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$startChooseNetworkDialog$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+                invoke2(network);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Network newNetwork) {
+                CryptoPreferenceHelper cryptoPreferenceHelper2;
+                Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
+                cryptoPreferenceHelper2 = WalletAttachAlertPresenter.this.cryptoPreferenceHelper;
+                cryptoPreferenceHelper2.setNetwork(newNetwork);
+                WalletAttachAlertPresenter.this.resetCache();
+                WalletAttachAlertPresenter.this.getWalletData(true);
+            }
+        });
     }
 
     public final Network getCurrentNetworkType() {
@@ -136,15 +162,64 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
     }
 
     private final void getWalletBalance(boolean z) {
-        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
-        final WalletAttachAlertPresenter$getWalletBalance$1 walletAttachAlertPresenter$getWalletBalance$1 = new WalletAttachAlertPresenter$getWalletBalance$1(this);
+        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui());
+        final Function1<Result<? extends List<? extends TokenBalance>>, Unit> function1 = new Function1<Result<? extends List<? extends TokenBalance>>, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletBalance$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenBalance>> result) {
+                invoke2((Result<? extends List<TokenBalance>>) result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<? extends List<TokenBalance>> result) {
+                ResourceManager resourceManager;
+                List<TokenBalance> configureTokens;
+                if (result instanceof Result.Success) {
+                    configureTokens = WalletAttachAlertPresenter.this.configureTokens((List) ((Result.Success) result).getData());
+                    ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).showBalances(configureTokens);
+                    if (!configureTokens.isEmpty()) {
+                        WalletAttachAlertPresenter.this.selectBalance((TokenBalance) CollectionsKt.first((List<? extends Object>) configureTokens));
+                    }
+                } else if (result instanceof Result.Error) {
+                    Intrinsics.checkNotNullExpressionValue(result, "result");
+                    resourceManager = WalletAttachAlertPresenter.this.resourceManager;
+                    ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        };
         Consumer consumer = new Consumer() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 WalletAttachAlertPresenter.getWalletBalance$lambda$1(Function1.this, obj);
             }
         };
-        final WalletAttachAlertPresenter$getWalletBalance$2 walletAttachAlertPresenter$getWalletBalance$2 = new WalletAttachAlertPresenter$getWalletBalance$2(this);
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletBalance$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                WalletAttachAlertView walletAttachAlertView = (WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState();
+                String message = th.getMessage();
+                if (message == null) {
+                    message = "";
+                }
+                walletAttachAlertView.showToast(message);
+            }
+        };
         Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
@@ -203,9 +278,34 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
         return arrayList3.isEmpty() ? list : arrayList3;
     }
 
-    private final void getWalletTransactions(TokenDetailed tokenDetailed) {
+    private final void getWalletTransactions(final TokenDetailed tokenDetailed) {
         Observable just = Observable.just(Boolean.TRUE);
-        final WalletAttachAlertPresenter$getWalletTransactions$1 walletAttachAlertPresenter$getWalletTransactions$1 = new WalletAttachAlertPresenter$getWalletTransactions$1(this, tokenDetailed);
+        final Function1<Boolean, ObservableSource<? extends Result<? extends List<? extends Transaction>>>> function1 = new Function1<Boolean, ObservableSource<? extends Result<? extends List<? extends Transaction>>>>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletTransactions$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<List<Transaction>>> invoke(Boolean it) {
+                HashMap hashMap;
+                WalletInteractor walletInteractor;
+                Result success;
+                Intrinsics.checkNotNullParameter(it, "it");
+                hashMap = WalletAttachAlertPresenter.this.cachedTransactions;
+                List list = (List) hashMap.get(tokenDetailed.getTicker());
+                if (list != null && (success = Result.Companion.success(list)) != null) {
+                    Observable just2 = Observable.just(success);
+                    Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                    if (just2 != null) {
+                        return just2;
+                    }
+                }
+                walletInteractor = WalletAttachAlertPresenter.this.walletInteractor;
+                return WalletInteractor.getWalletTransactions$default(walletInteractor, false, null, new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), 0, null, 27, null);
+            }
+        };
         Observable observeOn = just.switchMap(new Function() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -213,15 +313,82 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
                 walletTransactions$lambda$8 = WalletAttachAlertPresenter.getWalletTransactions$lambda$8(Function1.this, obj);
                 return walletTransactions$lambda$8;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
-        final WalletAttachAlertPresenter$getWalletTransactions$2 walletAttachAlertPresenter$getWalletTransactions$2 = new WalletAttachAlertPresenter$getWalletTransactions$2(this, tokenDetailed);
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui());
+        final Function1<Result<? extends List<? extends Transaction>>, Unit> function12 = new Function1<Result<? extends List<? extends Transaction>>, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletTransactions$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Transaction>> result) {
+                invoke2(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<? extends List<? extends Transaction>> result) {
+                ResourceManager resourceManager;
+                HashMap hashMap;
+                List mutableList;
+                List<BaseNode> mapTransactionsToGroups;
+                if (result instanceof Result.Success) {
+                    hashMap = WalletAttachAlertPresenter.this.cachedTransactions;
+                    String ticker = tokenDetailed.getTicker();
+                    Result.Success success = (Result.Success) result;
+                    mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) ((Collection) success.getData()));
+                    hashMap.put(ticker, mutableList);
+                    mapTransactionsToGroups = WalletAttachAlertPresenter.this.mapTransactionsToGroups((List) success.getData());
+                    if (mapTransactionsToGroups.isEmpty()) {
+                        ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).onEmptyState();
+                    } else {
+                        ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).showTransactions(mapTransactionsToGroups);
+                    }
+                } else if (result instanceof Result.Error) {
+                    Result.Error error = (Result.Error) result;
+                    if (error.getError().getStatus() == ApiErrorHandler.ErrorStatus.NO_CONNECTION) {
+                        ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).onNoInternetErrorState();
+                    } else {
+                        ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).onUnexpectedErrorState();
+                    }
+                    Intrinsics.checkNotNullExpressionValue(result, "result");
+                    resourceManager = WalletAttachAlertPresenter.this.resourceManager;
+                    ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                } else if (result instanceof Result.Loading) {
+                    ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).onLoadingState();
+                }
+            }
+        };
         Consumer consumer = new Consumer() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 WalletAttachAlertPresenter.getWalletTransactions$lambda$9(Function1.this, obj);
             }
         };
-        final WalletAttachAlertPresenter$getWalletTransactions$3 walletAttachAlertPresenter$getWalletTransactions$3 = new WalletAttachAlertPresenter$getWalletTransactions$3(this);
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletTransactions$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                ((WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState()).onUnexpectedErrorState();
+                WalletAttachAlertView walletAttachAlertView = (WalletAttachAlertView) WalletAttachAlertPresenter.this.getViewState();
+                String message = th.getMessage();
+                if (message == null) {
+                    message = "";
+                }
+                walletAttachAlertView.showToast(message);
+            }
+        };
         Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {

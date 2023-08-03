@@ -15,6 +15,7 @@ import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
 import com.iMe.p031ui.wallet.notifications.adapter.WalletNotificationsRecycleAdapter;
 import com.iMe.p031ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -23,8 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -32,12 +35,17 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNotificationsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletNotificationsFragment.kt */
@@ -58,13 +66,77 @@ public final class WalletNotificationsFragment extends WalletAuthBaseFragment im
 
     public WalletNotificationsFragment() {
         Lazy lazy;
-        WalletNotificationsFragment$presenter$2 walletNotificationsFragment$presenter$2 = new WalletNotificationsFragment$presenter$2(this);
+        Function0<WalletNotificationsPresenter> function0 = new Function0<WalletNotificationsPresenter>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletNotificationsPresenter invoke() {
+                Lazy lazy2;
+                final WalletNotificationsFragment walletNotificationsFragment = WalletNotificationsFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletNotificationsPresenter>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.notifications.WalletNotificationsPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletNotificationsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletNotificationsPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletNotificationsPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletNotificationsPresenter.class.getName() + ".presenter", walletNotificationsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletNotificationsFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletNotificationsPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletNotificationsRecycleAdapter>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.notifications.adapter.WalletNotificationsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletNotificationsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletNotificationsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.notificationAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletNotificationsFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletNotificationsBinding>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletNotificationsBinding invoke() {
+                return ForkFragmentWalletNotificationsBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletNotificationsFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -192,18 +264,18 @@ public final class WalletNotificationsFragment extends WalletAuthBaseFragment im
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_notifications_toolbar_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3484ActionBar.createMenu().addItem(0, C3417R.C3419drawable.ic_ab_other);
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_notifications_toolbar_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3485ActionBar.createMenu().addItem(0, C3419R.C3421drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
         ViewExtKt.gone$default(setupActionBar$lambda$3$lambda$2$lambda$1, false, 1, null);
-        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
-        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3417R.C3419drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3417R.string.dialogs_tab_popup_read_all));
+        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3419R.C3421drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3419R.string.dialogs_tab_popup_read_all));
         this.optionsMenuItem = setupActionBar$lambda$3$lambda$2$lambda$1;
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletNotificationsPresenter presenter;
                 WalletNotificationsRecycleAdapter notificationAdapter;
@@ -273,7 +345,25 @@ public final class WalletNotificationsFragment extends WalletAuthBaseFragment im
 
     private final void setupListeners() {
         ForkFragmentWalletNotificationsBinding binding = getBinding();
-        binding.globalStateLayout.setRetryButtonClickListener(new WalletNotificationsFragment$setupListeners$1$1(this));
+        binding.globalStateLayout.setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletNotificationsPresenter presenter;
+                presenter = WalletNotificationsFragment.this.getPresenter();
+                presenter.loadNotification(true);
+            }
+        });
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {

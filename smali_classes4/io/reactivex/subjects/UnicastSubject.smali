@@ -96,7 +96,7 @@
     .line 293
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    const-string v0, "onTerminate"
+    const-string/jumbo v0, "onTerminate"
 
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

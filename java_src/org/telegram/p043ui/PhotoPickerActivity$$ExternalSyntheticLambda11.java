@@ -13,7 +13,7 @@ public final /* synthetic */ class PhotoPickerActivity$$ExternalSyntheticLambda1
 
     @Override // org.telegram.p043ui.Components.AlertsCreator.ScheduleDatePickerDelegate
     public final void didSelectDate(boolean z, int i, String str) {
-        this.f$0.sendSelectedPhotos(z, i, str);
+        PhotoPickerActivity.m3785$r8$lambda$WTN55SH6KzEvu06KvDjoxMcCqc(this.f$0, z, i, str);
     }
 
     @Override // org.telegram.p043ui.Components.AlertsCreator.ScheduleDatePickerDelegate

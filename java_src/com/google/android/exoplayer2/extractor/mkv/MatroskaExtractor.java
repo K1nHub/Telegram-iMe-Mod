@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor.mkv;
 
+import android.net.Uri;
 import android.util.Pair;
 import android.util.SparseArray;
 import com.google.android.exoplayer2.C0480C;
@@ -257,7 +258,21 @@ public class MatroskaExtractor implements Extractor {
     private final SparseArray<Track> tracks;
     private final VarintReader varintReader;
     private final ParsableByteArray vorbisNumPageSamples;
-    public static final ExtractorsFactory FACTORY = MatroskaExtractor$$ExternalSyntheticLambda0.INSTANCE;
+    public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public final Extractor[] createExtractors() {
+            Extractor[] lambda$static$0;
+            lambda$static$0 = MatroskaExtractor.lambda$static$0();
+            return lambda$static$0;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.ExtractorsFactory
+        public /* synthetic */ Extractor[] createExtractors(Uri uri, Map map) {
+            Extractor[] createExtractors;
+            createExtractors = createExtractors();
+            return createExtractors;
+        }
+    };
     private static final byte[] SUBRIP_PREFIX = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
     private static final byte[] SSA_DIALOGUE_FORMAT = Util.getUtf8Bytes("Format: Start, End, ReadOrder, Layer, Style, Name, MarginL, MarginR, MarginV, Effect, Text");
     private static final byte[] SSA_PREFIX = {68, 105, 97, 108, 111, 103, 117, 101, 58, 32, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44};
@@ -930,11 +945,11 @@ public class MatroskaExtractor implements Extractor {
         } else {
             if (CODEC_ID_SUBRIP.equals(track.codecId) || CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_VTT.equals(track.codecId)) {
                 if (this.blockSampleCount > 1) {
-                    Log.m796w(TAG, "Skipping subtitle sample in laced block.");
+                    Log.m814w(TAG, "Skipping subtitle sample in laced block.");
                 } else {
                     long j2 = this.blockDurationUs;
                     if (j2 == C0480C.TIME_UNSET) {
-                        Log.m796w(TAG, "Skipping subtitle sample with no duration.");
+                        Log.m814w(TAG, "Skipping subtitle sample with no duration.");
                     } else {
                         setSubtitleEndTime(track.codecId, j2, this.subtitleSample.getData());
                         int position = this.subtitleSample.getPosition();
@@ -1271,7 +1286,7 @@ public class MatroskaExtractor implements Extractor {
         jArr2[i] = this.durationUs - jArr3[i];
         long j = jArr2[i];
         if (j <= 0) {
-            Log.m796w(TAG, "Discarding last cue point with unexpected duration: " + j);
+            Log.m814w(TAG, "Discarding last cue point with unexpected duration: " + j);
             iArr = Arrays.copyOf(iArr, i);
             jArr = Arrays.copyOf(jArr, i);
             jArr2 = Arrays.copyOf(jArr2, i);
@@ -1747,7 +1762,7 @@ public class MatroskaExtractor implements Extractor {
                     }
                     throw ParserException.createForMalformedContainer("Failed to find FourCC VC1 initialization data", null);
                 }
-                Log.m796w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
+                Log.m814w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
                 return new Pair<>(MimeTypes.VIDEO_UNKNOWN, null);
             } catch (ArrayIndexOutOfBoundsException unused) {
                 throw ParserException.createForMalformedContainer("Error parsing FourCC private data", null);

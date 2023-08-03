@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PollVotesAlert;)V
     .locals 0
 
-    .line 999
+    .line 1034
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$9;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1007
+    .line 1042
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert$9;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
     const/4 v0, 0x0

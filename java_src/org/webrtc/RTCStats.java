@@ -5,7 +5,7 @@ import java.util.Map;
 public class RTCStats {
 
     /* renamed from: id */
-    private final String f1856id;
+    private final String f1912id;
     private final Map<String, Object> members;
     private final long timestampUs;
     private final String type;
@@ -13,7 +13,7 @@ public class RTCStats {
     public RTCStats(long j, String str, String str2, Map<String, Object> map) {
         this.timestampUs = j;
         this.type = str;
-        this.f1856id = str2;
+        this.f1912id = str2;
         this.members = map;
     }
 
@@ -26,7 +26,7 @@ public class RTCStats {
     }
 
     public String getId() {
-        return this.f1856id;
+        return this.f1912id;
     }
 
     public Map<String, Object> getMembers() {
@@ -40,7 +40,7 @@ public class RTCStats {
         sb.append(", type: ");
         sb.append(this.type);
         sb.append(", id: ");
-        sb.append(this.f1856id);
+        sb.append(this.f1912id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
             sb.append(", ");
             sb.append(entry.getKey());

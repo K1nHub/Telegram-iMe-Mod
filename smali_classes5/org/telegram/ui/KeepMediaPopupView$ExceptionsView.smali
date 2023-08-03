@@ -28,13 +28,13 @@
 .method public constructor <init>(Lorg/telegram/ui/KeepMediaPopupView;Landroid/content/Context;)V
     .locals 9
 
-    .line 209
+    .line 227
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->this$0:Lorg/telegram/ui/KeepMediaPopupView;
 
-    .line 210
+    .line 228
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 211
+    .line 229
     new-instance p1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
@@ -43,17 +43,17 @@
 
     const/16 v0, 0x10
 
-    .line 212
+    .line 230
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 213
+    .line 231
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
 
-    .line 214
+    .line 232
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x44
@@ -64,7 +64,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 215
+    .line 233
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 217
+    .line 235
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, 0x0
@@ -98,7 +98,7 @@
 
     invoke-virtual {p0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 219
+    .line 237
     new-instance p1, Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/4 v1, 0x0
@@ -107,19 +107,19 @@
 
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
-    .line 220
+    .line 238
     iget-object p1, p1, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->setShowSavedMessages(Z)V
 
-    .line 221
+    .line 239
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/16 p2, 0xb
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarsImageView;->setStyle(I)V
 
-    .line 222
+    .line 240
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/16 p2, 0x16
@@ -130,7 +130,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarsImageView;->setAvatarsTextSize(I)V
 
-    .line 223
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/16 v2, 0x38
@@ -151,7 +151,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 225
+    .line 243
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -174,7 +174,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 232
+    .line 250
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -183,14 +183,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 233
+    .line 251
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 234
+    .line 252
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result p1
@@ -204,27 +204,27 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 236
+    .line 254
     iput-boolean v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->ignoreLayout:Z
 
-    .line 237
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 238
+    .line 256
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 239
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 240
+    .line 258
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -237,15 +237,15 @@
 
     iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 241
+    .line 259
     iput-boolean v1, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->ignoreLayout:Z
 
-    .line 242
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->this$0:Lorg/telegram/ui/KeepMediaPopupView;
 
     invoke-static {v0}, Lorg/telegram/ui/KeepMediaPopupView;->access$100(Lorg/telegram/ui/KeepMediaPopupView;)V
 
-    .line 243
+    .line 261
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -254,14 +254,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 248
+    .line 266
     iget-boolean v0, p0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 251
+    .line 269
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

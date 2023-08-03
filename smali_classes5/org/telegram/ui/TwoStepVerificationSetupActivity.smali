@@ -8260,7 +8260,7 @@
 
     move-result v11
 
-    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 738
     iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -8549,7 +8549,7 @@
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 851
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;

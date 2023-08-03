@@ -99,7 +99,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
             java.util.ArrayList<org.telegram.tgnet.TLRPC$Document> r3 = r0.documents
             java.lang.Object r3 = r3.get(r2)
             org.telegram.tgnet.TLRPC$Document r3 = (org.telegram.tgnet.TLRPC$Document) r3
-            long r3 = r3.f1523id
+            long r3 = r3.f1526id
             org.telegram.tgnet.TLRPC$TL_videoSizeStickerMarkup r5 = r15.sizeStickerMarkup
             long r5 = r5.sticker_id
             int r3 = (r3 > r5 ? 1 : (r3 == r5 ? 0 : -1))
@@ -283,7 +283,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
                     }
                     TLRPC$TL_videoSizeStickerMarkup tLRPC$TL_videoSizeStickerMarkup2 = this.sizeStickerMarkup;
                     if (tLRPC$TL_videoSizeStickerMarkup2 != null && (tLRPC$TL_videoSizeStickerMarkup = vectorAvatarThumbDrawable.sizeStickerMarkup) != null) {
-                        return tLRPC$TL_videoSizeStickerMarkup2.stickerset.f1538id == tLRPC$TL_videoSizeStickerMarkup.stickerset.f1538id && tLRPC$TL_videoSizeStickerMarkup2.sticker_id == tLRPC$TL_videoSizeStickerMarkup.sticker_id;
+                        return tLRPC$TL_videoSizeStickerMarkup2.stickerset.f1541id == tLRPC$TL_videoSizeStickerMarkup.stickerset.f1541id && tLRPC$TL_videoSizeStickerMarkup2.sticker_id == tLRPC$TL_videoSizeStickerMarkup.sticker_id;
                     }
                 }
             }

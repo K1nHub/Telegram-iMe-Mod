@@ -44,7 +44,7 @@
     .line 325
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "policyName"
+    const-string/jumbo v0, "policyName"
 
     .line 326
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -175,7 +175,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ServiceConfigUtil$LbConfig;->policyName:Ljava/lang/String;
 
-    const-string v2, "policyName"
+    const-string/jumbo v2, "policyName"
 
     .line 356
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

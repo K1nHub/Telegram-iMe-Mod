@@ -19,7 +19,6 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.R$styleable;
 import androidx.core.view.ViewCompat;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -317,7 +316,7 @@ public class AppCompatTextViewAutoSizeHelper {
                 if (this.mTextView.getMeasuredHeight() <= 0 || this.mTextView.getMeasuredWidth() <= 0) {
                     return;
                 }
-                int measuredWidth = this.mImpl.isHorizontallyScrollable(this.mTextView) ? ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : (this.mTextView.getMeasuredWidth() - this.mTextView.getTotalPaddingLeft()) - this.mTextView.getTotalPaddingRight();
+                int measuredWidth = this.mImpl.isHorizontallyScrollable(this.mTextView) ? 1048576 : (this.mTextView.getMeasuredWidth() - this.mTextView.getTotalPaddingLeft()) - this.mTextView.getTotalPaddingRight();
                 int height = (this.mTextView.getHeight() - this.mTextView.getCompoundPaddingBottom()) - this.mTextView.getCompoundPaddingTop();
                 if (measuredWidth <= 0 || height <= 0) {
                     return;

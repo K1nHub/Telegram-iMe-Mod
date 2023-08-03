@@ -14,17 +14,17 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public class PublicKeyCredentialUserEntity extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PublicKeyCredentialUserEntity> CREATOR = new zzam();
-    @SafeParcelable.Field(getter = "getId", m779id = 2)
+    @SafeParcelable.Field(getter = "getId", m797id = 2)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getName", m779id = 3)
+    @SafeParcelable.Field(getter = "getName", m797id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getIcon", m779id = 4)
+    @SafeParcelable.Field(getter = "getIcon", m797id = 4)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getDisplayName", m779id = 5)
+    @SafeParcelable.Field(getter = "getDisplayName", m797id = 5)
     private final String zzd;
 
     @SafeParcelable.Constructor
-    public PublicKeyCredentialUserEntity(@SafeParcelable.Param(m778id = 2) byte[] bArr, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2, @SafeParcelable.Param(m778id = 5) String str3) {
+    public PublicKeyCredentialUserEntity(@SafeParcelable.Param(m796id = 2) byte[] bArr, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2, @SafeParcelable.Param(m796id = 5) String str3) {
         this.zza = (byte[]) Preconditions.checkNotNull(bArr);
         this.zzb = (String) Preconditions.checkNotNull(str);
         this.zzc = str2;

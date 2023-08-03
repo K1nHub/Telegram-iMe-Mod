@@ -19,17 +19,17 @@ public final class C2750q {
         for (Map.Entry entry : map.entrySet()) {
             HashMap hashMap2 = new HashMap();
             for (Map.Entry entry2 : ((Map) entry.getValue()).entrySet()) {
-                int i = C2736c.f575b;
+                int i = C2736c.f578b;
                 hashMap2.put((String) entry2.getValue(), new AbstractMap.SimpleImmutableEntry((String) entry2.getValue(), (Long) entry2.getKey()));
             }
             ArrayList arrayList2 = new ArrayList(hashMap2.values());
-            comparator2 = C2736c.f574a;
+            comparator2 = C2736c.f577a;
             Collections.sort(arrayList2, comparator2);
             hashMap.put((EnumC2754u) entry.getKey(), arrayList2);
             arrayList.addAll(arrayList2);
             hashMap.put(null, arrayList);
         }
-        comparator = C2736c.f574a;
+        comparator = C2736c.f577a;
         Collections.sort(arrayList, comparator);
     }
 }

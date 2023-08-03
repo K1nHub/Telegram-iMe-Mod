@@ -29,12 +29,27 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return indexOf(iterable, t) >= 0;
     }
 
-    public static final <T> T elementAt(Iterable<? extends T> iterable, int i) {
+    public static final <T> T elementAt(Iterable<? extends T> iterable, final int i) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         if (iterable instanceof List) {
             return (T) ((List) iterable).get(i);
         }
-        return (T) elementAtOrElse(iterable, i, new CollectionsKt___CollectionsKt$elementAt$1(i));
+        return (T) elementAtOrElse(iterable, i, new Function1<Integer, T>() { // from class: kotlin.collections.CollectionsKt___CollectionsKt$elementAt$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            public final T invoke(int i2) {
+                throw new IndexOutOfBoundsException("Collection doesn't contain element at index " + i + '.');
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Object invoke(Integer num) {
+                return invoke(num.intValue());
+            }
+        });
     }
 
     public static final <T> T elementAtOrElse(Iterable<? extends T> iterable, int i, Function1<? super Integer, ? extends T> defaultValue) {
@@ -656,7 +671,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m85to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m103to(it.next(), it2.next()));
         }
         return arrayList;
     }
@@ -673,7 +688,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         T next = it.next();
         while (it.hasNext()) {
             T next2 = it.next();
-            arrayList.add(TuplesKt.m85to(next, next2));
+            arrayList.add(TuplesKt.m103to(next, next2));
             next = next2;
         }
         return arrayList;

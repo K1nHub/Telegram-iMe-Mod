@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)V
     .locals 0
 
-    .line 211
+    .line 210
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 214
+    .line 213
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$000(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/util/ArrayList;
@@ -46,7 +46,7 @@
 
     move-result-object p1
 
-    .line 215
+    .line 214
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -54,14 +54,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 216
+    .line 215
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;
 
-    .line 217
+    .line 216
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$100(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/util/Stack;
@@ -80,7 +80,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 218
+    .line 217
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$100(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/util/Stack;
@@ -89,13 +89,13 @@
 
     invoke-virtual {v1, v0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 220
+    .line 219
     :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 223
+    .line 222
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
@@ -107,7 +107,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 224
+    .line 223
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$300(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/lang/Runnable;
@@ -116,18 +116,18 @@
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 225
+    .line 224
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$302(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 228
+    .line 227
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->access$402(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 229
+    .line 228
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V

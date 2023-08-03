@@ -40,7 +40,7 @@ public class EffectsTextView extends SpoilersTextView {
 
     @Override // org.telegram.p043ui.Components.spoilers.SpoilersTextView, android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(14), false), bufferType);
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(14), false), bufferType);
     }
 
     public void setDisablePaddingsOffset(boolean z) {
@@ -140,8 +140,9 @@ public class EffectsTextView extends SpoilersTextView {
         this.links.clear();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p043ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
-    protected void onDraw(Canvas canvas) {
+    public void onDraw(Canvas canvas) {
         if (!this.isCustomLinkCollector) {
             canvas.save();
             if (!this.disablePaddingsOffset) {

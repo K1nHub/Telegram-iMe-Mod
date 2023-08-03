@@ -98,7 +98,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 66
+    .line 68
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -107,7 +107,7 @@
 
     const v1, 0x17700
 
-    .line 70
+    .line 72
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -120,7 +120,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
+    .line 73
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const v1, 0x15888
@@ -137,7 +137,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 72
+    .line 74
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const v1, 0xfa00
@@ -154,7 +154,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
+    .line 75
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const v1, 0xbb80
@@ -171,7 +171,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
+    .line 76
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const v1, 0xac44
@@ -188,7 +188,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
+    .line 77
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x7d00
@@ -205,7 +205,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 76
+    .line 78
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x5dc0
@@ -222,7 +222,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 77
+    .line 79
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x5622
@@ -239,7 +239,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
+    .line 80
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x3e80
@@ -256,7 +256,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 79
+    .line 81
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x2ee0
@@ -273,7 +273,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 80
+    .line 82
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x2b11
@@ -290,7 +290,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
+    .line 83
     sget-object v0, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
 
     const/16 v1, 0x1f40
@@ -313,326 +313,326 @@
 .method public constructor <init>(ILandroid/media/MediaFormat;Z)V
     .locals 16
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    move-object/from16 v1, p2
+    move-object/from16 v0, p2
 
     move/from16 v2, p3
 
-    .line 84
+    .line 86
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 53
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v3, v0, Lorg/telegram/messenger/video/Track;->samples:Ljava/util/ArrayList;
+    iput-object v3, v1, Lorg/telegram/messenger/video/Track;->samples:Ljava/util/ArrayList;
 
     const-wide/16 v3, 0x0
 
-    .line 52
-    iput-wide v3, v0, Lorg/telegram/messenger/video/Track;->duration:J
+    .line 54
+    iput-wide v3, v1, Lorg/telegram/messenger/video/Track;->duration:J
 
     const/4 v3, 0x0
 
-    .line 57
-    iput-object v3, v0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
-
     .line 59
+    iput-object v3, v1, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
+
+    .line 61
     new-instance v3, Ljava/util/Date;
 
     invoke-direct {v3}, Ljava/util/Date;-><init>()V
 
-    iput-object v3, v0, Lorg/telegram/messenger/video/Track;->creationTime:Ljava/util/Date;
+    iput-object v3, v1, Lorg/telegram/messenger/video/Track;->creationTime:Ljava/util/Date;
 
     const/4 v3, 0x0
 
-    .line 62
-    iput v3, v0, Lorg/telegram/messenger/video/Track;->volume:F
-
     .line 64
+    iput v3, v1, Lorg/telegram/messenger/video/Track;->volume:F
+
+    .line 66
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v3, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
+    iput-object v3, v1, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     const/4 v3, 0x1
 
-    .line 67
-    iput-boolean v3, v0, Lorg/telegram/messenger/video/Track;->first:Z
+    .line 69
+    iput-boolean v3, v1, Lorg/telegram/messenger/video/Track;->first:Z
 
     move/from16 v4, p1
 
     int-to-long v4, v4
 
-    .line 85
-    iput-wide v4, v0, Lorg/telegram/messenger/video/Track;->trackId:J
+    .line 87
+    iput-wide v4, v1, Lorg/telegram/messenger/video/Track;->trackId:J
 
-    .line 86
-    iput-boolean v2, v0, Lorg/telegram/messenger/video/Track;->isAudio:Z
+    .line 88
+    iput-boolean v2, v1, Lorg/telegram/messenger/video/Track;->isAudio:Z
 
     const/4 v4, 0x5
 
-    const/16 v6, 0x40
+    const/16 v5, 0x40
 
-    const-string v7, "mime"
+    const-string v6, "mime"
 
-    const/16 v8, 0x10
+    const/16 v7, 0x10
 
-    const/4 v9, 0x2
+    const/4 v8, 0x2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_27
 
     const-string/jumbo v2, "width"
 
-    .line 88
-    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 90
+    invoke-virtual {v0, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v2
 
-    iput v2, v0, Lorg/telegram/messenger/video/Track;->width:I
+    iput v2, v1, Lorg/telegram/messenger/video/Track;->width:I
 
     const-string v2, "height"
 
-    .line 89
-    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 91
+    invoke-virtual {v0, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v2
 
-    iput v2, v0, Lorg/telegram/messenger/video/Track;->height:I
+    iput v2, v1, Lorg/telegram/messenger/video/Track;->height:I
 
     const v2, 0x15f90
 
-    .line 90
-    iput v2, v0, Lorg/telegram/messenger/video/Track;->timeScale:I
+    .line 92
+    iput v2, v1, Lorg/telegram/messenger/video/Track;->timeScale:I
 
-    .line 91
+    .line 93
     new-instance v2, Ljava/util/LinkedList;
 
     invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v2, v0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
+    iput-object v2, v1, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
     const-string/jumbo v2, "vide"
 
-    .line 92
-    iput-object v2, v0, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
+    .line 94
+    iput-object v2, v1, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
 
-    .line 93
+    .line 95
     new-instance v2, Lcom/coremedia/iso/boxes/VideoMediaHeaderBox;
 
     invoke-direct {v2}, Lcom/coremedia/iso/boxes/VideoMediaHeaderBox;-><init>()V
 
-    iput-object v2, v0, Lorg/telegram/messenger/video/Track;->headerBox:Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
+    iput-object v2, v1, Lorg/telegram/messenger/video/Track;->headerBox:Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
 
-    .line 94
+    .line 96
     new-instance v2, Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
     invoke-direct {v2}, Lcom/coremedia/iso/boxes/SampleDescriptionBox;-><init>()V
 
-    iput-object v2, v0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+    iput-object v2, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
-    .line 95
-    invoke-virtual {v1, v7}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 97
+    invoke-virtual {v0, v6}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v7, "video/avc"
+    const-string/jumbo v6, "video/avc"
 
-    .line 96
-    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 98
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
     const/16 v10, 0x18
 
-    const-wide/high16 v11, 0x4052000000000000L    # 72.0
+    const-string v11, "csd-0"
 
-    if-eqz v7, :cond_1b
+    const-wide/high16 v12, 0x4052000000000000L    # 72.0
 
-    .line 97
-    new-instance v2, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;
+    const/4 v14, 0x3
 
-    const-string v7, "avc1"
+    const/4 v9, 0x4
 
-    invoke-direct {v2, v7}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;-><init>(Ljava/lang/String;)V
-
-    .line 98
-    invoke-virtual {v2, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
+    if-eqz v6, :cond_1b
 
     .line 99
-    invoke-virtual {v2, v10}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setDepth(I)V
+    new-instance v2, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;
+
+    const-string v6, "avc1"
+
+    invoke-direct {v2, v6}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;-><init>(Ljava/lang/String;)V
 
     .line 100
-    invoke-virtual {v2, v3}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setFrameCount(I)V
+    invoke-virtual {v2, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
 
     .line 101
-    invoke-virtual {v2, v11, v12}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHorizresolution(D)V
+    invoke-virtual {v2, v10}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setDepth(I)V
 
     .line 102
-    invoke-virtual {v2, v11, v12}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setVertresolution(D)V
+    invoke-virtual {v2, v3}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setFrameCount(I)V
 
     .line 103
-    iget v7, v0, Lorg/telegram/messenger/video/Track;->width:I
-
-    invoke-virtual {v2, v7}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setWidth(I)V
+    invoke-virtual {v2, v12, v13}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHorizresolution(D)V
 
     .line 104
-    iget v7, v0, Lorg/telegram/messenger/video/Track;->height:I
+    invoke-virtual {v2, v12, v13}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setVertresolution(D)V
 
-    invoke-virtual {v2, v7}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHeight(I)V
+    .line 105
+    iget v6, v1, Lorg/telegram/messenger/video/Track;->width:I
+
+    invoke-virtual {v2, v6}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setWidth(I)V
 
     .line 106
-    new-instance v7, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;
+    iget v6, v1, Lorg/telegram/messenger/video/Track;->height:I
 
-    invoke-direct {v7}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;-><init>()V
-
-    const-string v10, "csd-0"
+    invoke-virtual {v2, v6}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHeight(I)V
 
     .line 108
-    invoke-virtual {v1, v10}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+    new-instance v6, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;
+
+    invoke-direct {v6}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;-><init>()V
+
+    .line 110
+    invoke-virtual {v0, v11}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    .line 111
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    .line 112
+    invoke-virtual {v0, v11}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v11
 
-    const/4 v12, 0x4
+    .line 113
+    invoke-virtual {v11, v9}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    if-eqz v11, :cond_0
+    .line 114
+    invoke-virtual {v11}, Ljava/nio/ByteBuffer;->remaining()I
 
-    .line 109
+    move-result v12
+
+    new-array v12, v12, [B
+
+    .line 115
+    invoke-virtual {v11, v12}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
+
+    .line 116
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 118
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    .line 110
-    invoke-virtual {v1, v10}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+    const-string v12, "csd-1"
 
-    move-result-object v10
+    .line 119
+    invoke-virtual {v0, v12}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
-    .line 111
-    invoke-virtual {v10, v12}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    move-result-object v12
 
-    .line 112
-    invoke-virtual {v10}, Ljava/nio/ByteBuffer;->remaining()I
+    .line 120
+    invoke-virtual {v12, v9}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 121
+    invoke-virtual {v12}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v13
 
     new-array v13, v13, [B
 
-    .line 113
-    invoke-virtual {v10, v13}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    .line 114
-    invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 116
-    new-instance v10, Ljava/util/ArrayList;
-
-    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
-
-    const-string v13, "csd-1"
-
-    .line 117
-    invoke-virtual {v1, v13}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
-
-    move-result-object v13
-
-    .line 118
-    invoke-virtual {v13, v12}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 119
-    invoke-virtual {v13}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v14
-
-    new-array v14, v14, [B
-
-    .line 120
-    invoke-virtual {v13, v14}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    .line 121
-    invoke-virtual {v10, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
     .line 122
-    invoke-virtual {v7, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setSequenceParameterSets(Ljava/util/List;)V
+    invoke-virtual {v12, v13}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
     .line 123
-    invoke-virtual {v7, v10}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setPictureParameterSets(Ljava/util/List;)V
+    invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 124
+    invoke-virtual {v6, v10}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setSequenceParameterSets(Ljava/util/List;)V
+
+    .line 125
+    invoke-virtual {v6, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setPictureParameterSets(Ljava/util/List;)V
 
     :cond_0
     const-string v10, "level"
 
-    .line 126
-    invoke-virtual {v1, v10}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+    .line 128
+    invoke-virtual {v0, v10}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v11
 
-    const/16 v13, 0x8
+    const/16 v12, 0x8
 
-    const/4 v14, 0x3
+    const/16 v13, 0xd
 
-    const/16 v15, 0xd
-
-    const/16 v5, 0x20
+    const/16 v15, 0x20
 
     if-eqz v11, :cond_11
 
-    .line 127
-    invoke-virtual {v1, v10}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 129
+    invoke-virtual {v0, v10}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v10
 
     if-ne v10, v3, :cond_1
 
-    .line 129
-    invoke-virtual {v7, v3}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 131
+    invoke-virtual {v6, v3}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
     :cond_1
-    if-ne v10, v5, :cond_2
+    if-ne v10, v15, :cond_2
 
-    .line 131
-    invoke-virtual {v7, v9}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 133
+    invoke-virtual {v6, v8}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
     :cond_2
-    if-ne v10, v12, :cond_3
+    if-ne v10, v9, :cond_3
 
     const/16 v4, 0xb
 
-    .line 133
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 135
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
     :cond_3
-    if-ne v10, v13, :cond_4
+    if-ne v10, v12, :cond_4
 
     const/16 v4, 0xc
 
-    .line 135
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 137
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
     :cond_4
-    if-ne v10, v8, :cond_5
+    if-ne v10, v7, :cond_5
 
-    .line 137
-    invoke-virtual {v7, v15}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 139
+    invoke-virtual {v6, v13}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
     :cond_5
-    if-ne v10, v6, :cond_6
+    if-ne v10, v5, :cond_6
 
     const/16 v4, 0x15
 
-    .line 139
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 141
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto/16 :goto_0
 
@@ -643,8 +643,8 @@
 
     const/16 v4, 0x16
 
-    .line 141
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 143
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -653,8 +653,8 @@
 
     if-ne v10, v11, :cond_8
 
-    .line 143
-    invoke-virtual {v7, v14}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 145
+    invoke-virtual {v6, v14}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -665,8 +665,8 @@
 
     const/16 v4, 0x1f
 
-    .line 145
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 147
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -675,8 +675,8 @@
 
     if-ne v10, v11, :cond_a
 
-    .line 147
-    invoke-virtual {v7, v5}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 149
+    invoke-virtual {v6, v15}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -685,8 +685,8 @@
 
     if-ne v10, v11, :cond_b
 
-    .line 149
-    invoke-virtual {v7, v12}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 151
+    invoke-virtual {v6, v9}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -697,8 +697,8 @@
 
     const/16 v4, 0x29
 
-    .line 151
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 153
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -709,8 +709,8 @@
 
     const/16 v4, 0x2a
 
-    .line 153
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 155
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -719,8 +719,8 @@
 
     if-ne v10, v11, :cond_e
 
-    .line 155
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 157
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -731,8 +731,8 @@
 
     const/16 v4, 0x33
 
-    .line 157
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 159
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
@@ -743,31 +743,31 @@
 
     const/16 v4, 0x34
 
-    .line 159
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 161
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
     :cond_10
-    if-ne v10, v9, :cond_12
+    if-ne v10, v8, :cond_12
 
     const/16 v4, 0x1b
 
-    .line 161
-    invoke-virtual {v7, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    .line 163
+    invoke-virtual {v6, v4}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     goto :goto_0
 
-    .line 164
+    .line 166
     :cond_11
-    invoke-virtual {v7, v15}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
+    invoke-virtual {v6, v13}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcLevelIndication(I)V
 
     :cond_12
     :goto_0
-    const-string v4, "profile"
+    const-string/jumbo v4, "profile"
 
-    .line 166
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+    .line 168
+    invoke-virtual {v0, v4}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v10
 
@@ -775,364 +775,595 @@
 
     if-eqz v10, :cond_19
 
-    .line 167
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-ne v1, v3, :cond_13
-
-    const/16 v1, 0x42
-
     .line 169
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    invoke-virtual {v0, v4}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-ne v0, v3, :cond_13
+
+    const/16 v0, 0x42
+
+    .line 171
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_13
-    if-ne v1, v9, :cond_14
+    if-ne v0, v8, :cond_14
 
-    const/16 v1, 0x4d
+    const/16 v0, 0x4d
 
-    .line 171
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 173
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_14
-    if-ne v1, v12, :cond_15
+    if-ne v0, v9, :cond_15
 
-    const/16 v1, 0x58
+    const/16 v0, 0x58
 
-    .line 173
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 175
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_15
-    if-ne v1, v13, :cond_16
+    if-ne v0, v12, :cond_16
 
-    .line 175
-    invoke-virtual {v7, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 177
+    invoke-virtual {v6, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_16
-    if-ne v1, v8, :cond_17
+    if-ne v0, v7, :cond_17
 
-    const/16 v1, 0x6e
+    const/16 v0, 0x6e
 
-    .line 177
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 179
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_17
-    if-ne v1, v5, :cond_18
+    if-ne v0, v15, :cond_18
 
-    const/16 v1, 0x7a
+    const/16 v0, 0x7a
 
-    .line 179
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 181
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
     :cond_18
-    if-ne v1, v6, :cond_1a
+    if-ne v0, v5, :cond_1a
 
-    const/16 v1, 0xf4
+    const/16 v0, 0xf4
 
-    .line 181
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    .line 183
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     goto :goto_1
 
-    .line 184
+    .line 186
     :cond_19
-    invoke-virtual {v7, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
+    invoke-virtual {v6, v11}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setAvcProfileIndication(I)V
 
     :cond_1a
     :goto_1
-    const/4 v1, -0x1
-
-    .line 186
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setBitDepthLumaMinus8(I)V
-
-    .line 187
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setBitDepthChromaMinus8(I)V
+    const/4 v0, -0x1
 
     .line 188
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setChromaFormat(I)V
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setBitDepthLumaMinus8(I)V
 
     .line 189
-    invoke-virtual {v7, v3}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setConfigurationVersion(I)V
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setBitDepthChromaMinus8(I)V
 
     .line 190
-    invoke-virtual {v7, v14}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setLengthSizeMinusOne(I)V
-
-    const/4 v1, 0x0
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setChromaFormat(I)V
 
     .line 191
-    invoke-virtual {v7, v1}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setProfileCompatibility(I)V
+    invoke-virtual {v6, v3}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setConfigurationVersion(I)V
+
+    .line 192
+    invoke-virtual {v6, v14}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setLengthSizeMinusOne(I)V
+
+    const/4 v0, 0x0
 
     .line 193
-    invoke-virtual {v2, v7}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
-
-    .line 194
-    iget-object v1, v0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
-
-    invoke-virtual {v1, v2}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
-
-    goto/16 :goto_5
-
-    :cond_1b
-    const-string/jumbo v1, "video/mp4v"
+    invoke-virtual {v6, v0}, Lcom/mp4parser/iso14496/part15/AvcConfigurationBox;->setProfileCompatibility(I)V
 
     .line 195
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_20
+    invoke-virtual {v2, v6}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     .line 196
-    new-instance v1, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;
+    iget-object v0, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+
+    invoke-virtual {v0, v2}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
+
+    goto/16 :goto_a
+
+    :cond_1b
+    const-string/jumbo v4, "video/mp4v"
+
+    .line 197
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1c
+
+    .line 198
+    new-instance v0, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;
 
     const-string v2, "mp4v"
 
-    invoke-direct {v1, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;-><init>(Ljava/lang/String;)V
-
-    .line 197
-    invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
-
-    .line 198
-    invoke-virtual {v1, v10}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setDepth(I)V
+    invoke-direct {v0, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;-><init>(Ljava/lang/String;)V
 
     .line 199
-    invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setFrameCount(I)V
+    invoke-virtual {v0, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
 
     .line 200
-    invoke-virtual {v1, v11, v12}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHorizresolution(D)V
+    invoke-virtual {v0, v10}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setDepth(I)V
 
     .line 201
-    invoke-virtual {v1, v11, v12}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setVertresolution(D)V
+    invoke-virtual {v0, v3}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setFrameCount(I)V
 
     .line 202
-    iget v2, v0, Lorg/telegram/messenger/video/Track;->width:I
-
-    invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setWidth(I)V
+    invoke-virtual {v0, v12, v13}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHorizresolution(D)V
 
     .line 203
-    iget v2, v0, Lorg/telegram/messenger/video/Track;->height:I
+    invoke-virtual {v0, v12, v13}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setVertresolution(D)V
 
-    invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHeight(I)V
+    .line 204
+    iget v2, v1, Lorg/telegram/messenger/video/Track;->width:I
+
+    invoke-virtual {v0, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setWidth(I)V
 
     .line 205
-    iget-object v2, v0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+    iget v2, v1, Lorg/telegram/messenger/video/Track;->height:I
 
-    invoke-virtual {v2, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
+    invoke-virtual {v0, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHeight(I)V
 
-    goto/16 :goto_5
+    .line 207
+    iget-object v2, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+
+    invoke-virtual {v2, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
+
+    goto/16 :goto_a
 
     :cond_1c
-    const/high16 v2, 0x3f800000    # 1.0f
+    const-string/jumbo v4, "video/hevc"
 
     .line 208
-    iput v2, v0, Lorg/telegram/messenger/video/Track;->volume:F
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2b
+
+    .line 209
+    invoke-virtual {v0, v11}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2b
+
+    .line 210
+    invoke-virtual {v0, v11}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    .line 211
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, -0x1
+
+    const/4 v6, -0x1
+
+    const/4 v7, -0x1
+
+    .line 216
+    :goto_2
+    array-length v10, v0
+
+    if-ge v2, v10, :cond_22
+
+    if-ne v4, v14, :cond_1f
+
+    .line 217
+    aget-byte v10, v0, v2
+
+    if-ne v10, v3, :cond_1f
+
+    const/4 v10, -0x1
+
+    if-ne v7, v10, :cond_1d
+
+    add-int/lit8 v7, v2, -0x3
+
+    goto :goto_3
+
+    :cond_1d
+    if-ne v5, v10, :cond_1e
+
+    add-int/lit8 v5, v2, -0x3
+
+    goto :goto_3
+
+    :cond_1e
+    if-ne v6, v10, :cond_20
+
+    add-int/lit8 v6, v2, -0x3
+
+    goto :goto_3
+
+    :cond_1f
+    const/4 v10, -0x1
+
+    .line 226
+    :cond_20
+    :goto_3
+    aget-byte v11, v0, v2
+
+    if-nez v11, :cond_21
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_4
+
+    :cond_21
+    const/4 v4, 0x0
+
+    :goto_4
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_22
+    add-int/lit8 v2, v5, -0x4
+
+    .line 232
+    new-array v2, v2, [B
+
+    sub-int v4, v6, v5
+
+    sub-int/2addr v4, v9
+
+    .line 233
+    new-array v4, v4, [B
+
+    .line 234
+    array-length v7, v0
+
+    sub-int/2addr v7, v6
+
+    sub-int/2addr v7, v9
+
+    new-array v7, v7, [B
+
+    const/4 v10, 0x0
+
+    .line 235
+    :goto_5
+    array-length v11, v0
+
+    if-ge v10, v11, :cond_26
+
+    if-ge v10, v5, :cond_23
+
+    add-int/lit8 v11, v10, -0x4
+
+    if-ltz v11, :cond_25
+
+    .line 238
+    aget-byte v12, v0, v10
+
+    aput-byte v12, v2, v11
+
+    goto :goto_6
+
+    :cond_23
+    if-ge v10, v6, :cond_24
+
+    sub-int v11, v10, v5
+
+    sub-int/2addr v11, v9
+
+    if-ltz v11, :cond_25
+
+    .line 242
+    aget-byte v12, v0, v10
+
+    aput-byte v12, v4, v11
+
+    goto :goto_6
+
+    :cond_24
+    sub-int v11, v10, v6
+
+    sub-int/2addr v11, v9
+
+    if-ltz v11, :cond_25
+
+    .line 246
+    aget-byte v12, v0, v10
+
+    aput-byte v12, v7, v11
+
+    :cond_25
+    :goto_6
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_5
+
+    :cond_26
+    :try_start_0
+    new-array v0, v14, [Ljava/nio/ByteBuffer;
+
+    .line 252
+    invoke-static {v2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    aput-object v2, v0, v5
+
+    invoke-static {v7}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v3
+
+    invoke-static {v4}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v8
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/video/HevcDecoderConfigurationRecord;->parseFromCsd(Ljava/util/List;)Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;
+
+    move-result-object v0
+
+    .line 253
+    iget v2, v1, Lorg/telegram/messenger/video/Track;->width:I
+
+    invoke-virtual {v0, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setWidth(I)V
+
+    .line 254
+    iget v2, v1, Lorg/telegram/messenger/video/Track;->height:I
+
+    invoke-virtual {v0, v2}, Lcom/coremedia/iso/boxes/sampleentry/VisualSampleEntry;->setHeight(I)V
+
+    .line 255
+    iget-object v2, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+
+    invoke-virtual {v2, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto/16 :goto_a
+
+    :catch_0
+    move-exception v0
+
+    .line 257
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    goto/16 :goto_a
+
+    :cond_27
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 262
+    iput v2, v1, Lorg/telegram/messenger/video/Track;->volume:F
 
     const-string/jumbo v2, "sample-rate"
 
-    .line 209
-    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 263
+    invoke-virtual {v0, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v9
 
-    iput v5, v0, Lorg/telegram/messenger/video/Track;->timeScale:I
+    iput v9, v1, Lorg/telegram/messenger/video/Track;->timeScale:I
 
-    const-string/jumbo v5, "soun"
+    const-string/jumbo v9, "soun"
 
-    .line 210
-    iput-object v5, v0, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
+    .line 264
+    iput-object v9, v1, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
 
-    .line 211
-    new-instance v5, Lcom/coremedia/iso/boxes/SoundMediaHeaderBox;
+    .line 265
+    new-instance v9, Lcom/coremedia/iso/boxes/SoundMediaHeaderBox;
 
-    invoke-direct {v5}, Lcom/coremedia/iso/boxes/SoundMediaHeaderBox;-><init>()V
+    invoke-direct {v9}, Lcom/coremedia/iso/boxes/SoundMediaHeaderBox;-><init>()V
 
-    iput-object v5, v0, Lorg/telegram/messenger/video/Track;->headerBox:Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
+    iput-object v9, v1, Lorg/telegram/messenger/video/Track;->headerBox:Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
 
-    .line 212
-    new-instance v5, Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+    .line 266
+    new-instance v9, Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
-    invoke-direct {v5}, Lcom/coremedia/iso/boxes/SampleDescriptionBox;-><init>()V
+    invoke-direct {v9}, Lcom/coremedia/iso/boxes/SampleDescriptionBox;-><init>()V
 
-    iput-object v5, v0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+    iput-object v9, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
-    .line 213
-    new-instance v5, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;
+    .line 267
+    new-instance v9, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;
 
     const-string v10, "mp4a"
 
-    invoke-direct {v5, v10}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v10}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;-><init>(Ljava/lang/String;)V
 
     const-string v10, "channel-count"
 
-    .line 214
-    invoke-virtual {v1, v10}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 268
+    invoke-virtual {v0, v10}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v10
 
-    invoke-virtual {v5, v10}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setChannelCount(I)V
+    invoke-virtual {v9, v10}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setChannelCount(I)V
 
-    .line 215
-    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+    .line 269
+    invoke-virtual {v0, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v2
 
     int-to-long v10, v2
 
-    invoke-virtual {v5, v10, v11}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setSampleRate(J)V
+    invoke-virtual {v9, v10, v11}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setSampleRate(J)V
 
-    .line 216
-    invoke-virtual {v5, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
+    .line 270
+    invoke-virtual {v9, v3}, Lcom/coremedia/iso/boxes/sampleentry/AbstractSampleEntry;->setDataReferenceIndex(I)V
 
-    .line 217
-    invoke-virtual {v5, v8}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setSampleSize(I)V
+    .line 271
+    invoke-virtual {v9, v7}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->setSampleSize(I)V
 
-    .line 219
+    .line 273
     new-instance v2, Lcom/googlecode/mp4parser/boxes/mp4/ESDescriptorBox;
 
     invoke-direct {v2}, Lcom/googlecode/mp4parser/boxes/mp4/ESDescriptorBox;-><init>()V
 
-    .line 220
+    .line 274
     new-instance v3, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;
 
     invoke-direct {v3}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;-><init>()V
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    .line 221
-    invoke-virtual {v3, v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setEsId(I)V
+    .line 275
+    invoke-virtual {v3, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setEsId(I)V
 
-    .line 223
-    new-instance v8, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;
+    .line 277
+    new-instance v7, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;
 
-    invoke-direct {v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;-><init>()V
+    invoke-direct {v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;-><init>()V
 
-    .line 224
-    invoke-virtual {v8, v9}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;->setPredefined(I)V
+    .line 278
+    invoke-virtual {v7, v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;->setPredefined(I)V
 
-    .line 225
-    invoke-virtual {v3, v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setSlConfigDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;)V
+    .line 279
+    invoke-virtual {v3, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setSlConfigDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor;)V
 
-    .line 228
-    invoke-virtual {v1, v7}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1d
-
-    .line 229
-    invoke-virtual {v1, v7}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    goto :goto_2
-
-    :cond_1d
-    const-string v7, "audio/mp4-latm"
-
-    .line 234
-    :goto_2
-    new-instance v8, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;
-
-    invoke-direct {v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;-><init>()V
-
-    const-string v10, "audio/mpeg"
-
-    .line 235
-    invoke-virtual {v10, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 282
+    invoke-virtual {v0, v6}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_1e
+    if-eqz v7, :cond_28
 
-    const/16 v6, 0x69
-
-    .line 236
-    invoke-virtual {v8, v6}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setObjectTypeIndication(I)V
-
-    goto :goto_3
-
-    .line 238
-    :cond_1e
-    invoke-virtual {v8, v6}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setObjectTypeIndication(I)V
-
-    .line 240
-    :goto_3
-    invoke-virtual {v8, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setStreamType(I)V
-
-    const/16 v4, 0x600
-
-    .line 241
-    invoke-virtual {v8, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setBufferSizeDB(I)V
-
-    const-string v4, "max-bitrate"
-
-    .line 242
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1f
-
-    .line 243
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
-
-    move-result v1
-
-    int-to-long v6, v1
-
-    invoke-virtual {v8, v6, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setMaxBitRate(J)V
-
-    goto :goto_4
-
-    :cond_1f
-    const-wide/32 v6, 0x17700
-
-    .line 245
-    invoke-virtual {v8, v6, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setMaxBitRate(J)V
-
-    .line 247
-    :goto_4
-    iget v1, v0, Lorg/telegram/messenger/video/Track;->timeScale:I
-
-    int-to-long v6, v1
-
-    invoke-virtual {v8, v6, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setAvgBitRate(J)V
-
-    .line 249
-    new-instance v1, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;
-
-    invoke-direct {v1}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;-><init>()V
-
-    .line 250
-    invoke-virtual {v1, v9}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setAudioObjectType(I)V
-
-    .line 251
-    sget-object v4, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
-
-    invoke-virtual {v5}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->getSampleRate()J
-
-    move-result-wide v6
-
-    long-to-int v6, v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 283
+    invoke-virtual {v0, v6}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-interface {v4, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_7
+
+    :cond_28
+    const-string v6, "audio/mp4-latm"
+
+    .line 288
+    :goto_7
+    new-instance v7, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;
+
+    invoke-direct {v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;-><init>()V
+
+    const-string v10, "audio/mpeg"
+
+    .line 289
+    invoke-virtual {v10, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_29
+
+    const/16 v5, 0x69
+
+    .line 290
+    invoke-virtual {v7, v5}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setObjectTypeIndication(I)V
+
+    goto :goto_8
+
+    .line 292
+    :cond_29
+    invoke-virtual {v7, v5}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setObjectTypeIndication(I)V
+
+    .line 294
+    :goto_8
+    invoke-virtual {v7, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setStreamType(I)V
+
+    const/16 v4, 0x600
+
+    .line 295
+    invoke-virtual {v7, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setBufferSizeDB(I)V
+
+    const-string v4, "max-bitrate"
+
+    .line 296
+    invoke-virtual {v0, v4}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2a
+
+    .line 297
+    invoke-virtual {v0, v4}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v0
+
+    int-to-long v4, v0
+
+    invoke-virtual {v7, v4, v5}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setMaxBitRate(J)V
+
+    goto :goto_9
+
+    :cond_2a
+    const-wide/32 v4, 0x17700
+
+    .line 299
+    invoke-virtual {v7, v4, v5}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setMaxBitRate(J)V
+
+    .line 301
+    :goto_9
+    iget v0, v1, Lorg/telegram/messenger/video/Track;->timeScale:I
+
+    int-to-long v4, v0
+
+    invoke-virtual {v7, v4, v5}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setAvgBitRate(J)V
+
+    .line 303
+    new-instance v0, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;
+
+    invoke-direct {v0}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;-><init>()V
+
+    .line 304
+    invoke-virtual {v0, v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setAudioObjectType(I)V
+
+    .line 305
+    sget-object v4, Lorg/telegram/messenger/video/Track;->samplingFrequencyIndexMap:Ljava/util/Map;
+
+    invoke-virtual {v9}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->getSampleRate()J
+
+    move-result-wide v5
+
+    long-to-int v5, v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-interface {v4, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -1142,49 +1373,46 @@
 
     move-result v4
 
-    invoke-virtual {v1, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setSamplingFrequencyIndex(I)V
+    invoke-virtual {v0, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setSamplingFrequencyIndex(I)V
 
-    .line 252
-    invoke-virtual {v5}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->getChannelCount()I
+    .line 306
+    invoke-virtual {v9}, Lcom/coremedia/iso/boxes/sampleentry/AudioSampleEntry;->getChannelCount()I
 
     move-result v4
 
-    invoke-virtual {v1, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setChannelConfiguration(I)V
+    invoke-virtual {v0, v4}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;->setChannelConfiguration(I)V
 
-    .line 253
-    invoke-virtual {v8, v1}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setAudioSpecificInfo(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;)V
+    .line 307
+    invoke-virtual {v7, v0}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;->setAudioSpecificInfo(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig;)V
 
-    .line 255
-    invoke-virtual {v3, v8}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setDecoderConfigDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;)V
+    .line 309
+    invoke-virtual {v3, v7}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->setDecoderConfigDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor;)V
 
-    .line 257
+    .line 311
     invoke-virtual {v3}, Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;->serialize()Ljava/nio/ByteBuffer;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 258
-    invoke-virtual {v2, v3}, Lcom/googlecode/mp4parser/boxes/mp4/ESDescriptorBox;->setEsDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;)V
+    .line 313
+    invoke-virtual {v2, v0}, Lcom/googlecode/mp4parser/boxes/mp4/AbstractDescriptorBox;->setData(Ljava/nio/ByteBuffer;)V
 
-    .line 259
-    invoke-virtual {v2, v1}, Lcom/googlecode/mp4parser/boxes/mp4/AbstractDescriptorBox;->setData(Ljava/nio/ByteBuffer;)V
+    .line 314
+    invoke-virtual {v9, v2}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 260
-    invoke-virtual {v5, v2}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
+    .line 315
+    iget-object v0, v1, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
-    .line 261
-    iget-object v1, v0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
+    invoke-virtual {v0, v9}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    invoke-virtual {v1, v5}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
-
-    :cond_20
-    :goto_5
+    :cond_2b
+    :goto_a
     return-void
 .end method
 
 .method private static synthetic lambda$prepare$0(Lorg/telegram/messenger/video/Track$SamplePresentationTime;Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
     .locals 4
 
-    .line 281
+    .line 335
     invoke-static {p0}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
 
     move-result-wide v0
@@ -1201,7 +1429,7 @@
 
     return p0
 
-    .line 283
+    .line 337
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
 
@@ -1230,7 +1458,7 @@
 .method public addSample(JLandroid/media/MediaCodec$BufferInfo;)V
     .locals 5
 
-    .line 270
+    .line 324
     iget-boolean v0, p0, Lorg/telegram/messenger/video/Track;->isAudio:Z
 
     const/4 v1, 0x1
@@ -1248,7 +1476,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 271
+    .line 325
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->samples:Ljava/util/ArrayList;
 
@@ -1262,14 +1490,14 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 272
+    .line 326
     iget-object p1, p0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
     if-eqz p1, :cond_1
 
     if-eqz v1, :cond_1
 
-    .line 273
+    .line 327
     iget-object p2, p0, Lorg/telegram/messenger/video/Track;->samples:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -1282,7 +1510,7 @@
 
     invoke-virtual {p1, p2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 275
+    .line 329
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
@@ -1318,7 +1546,7 @@
 .method public getCreationTime()Ljava/util/Date;
     .locals 1
 
-    .line 371
+    .line 425
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->creationTime:Ljava/util/Date;
 
     return-object v0
@@ -1327,7 +1555,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 336
+    .line 390
     iget-wide v0, p0, Lorg/telegram/messenger/video/Track;->duration:J
 
     return-wide v0
@@ -1336,7 +1564,7 @@
 .method public getHandler()Ljava/lang/String;
     .locals 1
 
-    .line 340
+    .line 394
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
 
     return-object v0
@@ -1345,7 +1573,7 @@
 .method public getHeight()I
     .locals 1
 
-    .line 379
+    .line 433
     iget v0, p0, Lorg/telegram/messenger/video/Track;->height:I
 
     return v0
@@ -1354,7 +1582,7 @@
 .method public getLastFrameTimestamp()J
     .locals 5
 
-    .line 332
+    .line 386
     iget-wide v0, p0, Lorg/telegram/messenger/video/Track;->duration:J
 
     iget-object v2, p0, Lorg/telegram/messenger/video/Track;->sampleDurations:[J
@@ -1387,7 +1615,7 @@
 .method public getMediaHeaderBox()Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
     .locals 1
 
-    .line 344
+    .line 398
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->headerBox:Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
 
     return-object v0
@@ -1396,7 +1624,7 @@
 .method public getSampleCompositions()[I
     .locals 1
 
-    .line 348
+    .line 402
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->sampleCompositions:[I
 
     return-object v0
@@ -1405,7 +1633,7 @@
 .method public getSampleDescriptionBox()Lcom/coremedia/iso/boxes/SampleDescriptionBox;
     .locals 1
 
-    .line 352
+    .line 406
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->sampleDescriptionBox:Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
     return-object v0
@@ -1414,7 +1642,7 @@
 .method public getSampleDurations()[J
     .locals 1
 
-    .line 387
+    .line 441
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->sampleDurations:[J
 
     return-object v0
@@ -1431,7 +1659,7 @@
         }
     .end annotation
 
-    .line 328
+    .line 382
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->samples:Ljava/util/ArrayList;
 
     return-object v0
@@ -1440,7 +1668,7 @@
 .method public getSyncSamples()[J
     .locals 4
 
-    .line 356
+    .line 410
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
     if-eqz v0, :cond_2
@@ -1453,7 +1681,7 @@
 
     goto :goto_1
 
-    .line 359
+    .line 413
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
@@ -1465,7 +1693,7 @@
 
     const/4 v1, 0x0
 
-    .line 360
+    .line 414
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
@@ -1475,7 +1703,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 361
+    .line 415
     iget-object v2, p0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
     invoke-virtual {v2, v1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
@@ -1509,7 +1737,7 @@
 .method public getTimeScale()I
     .locals 1
 
-    .line 367
+    .line 421
     iget v0, p0, Lorg/telegram/messenger/video/Track;->timeScale:I
 
     return v0
@@ -1518,7 +1746,7 @@
 .method public getTrackId()J
     .locals 2
 
-    .line 266
+    .line 320
     iget-wide v0, p0, Lorg/telegram/messenger/video/Track;->trackId:J
 
     return-wide v0
@@ -1527,7 +1755,7 @@
 .method public getVolume()F
     .locals 1
 
-    .line 383
+    .line 437
     iget v0, p0, Lorg/telegram/messenger/video/Track;->volume:F
 
     return v0
@@ -1536,7 +1764,7 @@
 .method public getWidth()I
     .locals 1
 
-    .line 375
+    .line 429
     iget v0, p0, Lorg/telegram/messenger/video/Track;->width:I
 
     return v0
@@ -1545,7 +1773,7 @@
 .method public isAudio()Z
     .locals 1
 
-    .line 391
+    .line 445
     iget-boolean v0, p0, Lorg/telegram/messenger/video/Track;->isAudio:Z
 
     return v0
@@ -1556,21 +1784,21 @@
 
     move-object/from16 v0, p0
 
-    .line 279
+    .line 333
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 280
+    .line 334
     iget-object v2, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     sget-object v3, Lorg/telegram/messenger/video/Track$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/messenger/video/Track$$ExternalSyntheticLambda0;
 
     invoke-static {v2, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 289
+    .line 343
     iget-object v2, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1591,7 +1819,7 @@
 
     const/4 v10, 0x0
 
-    .line 292
+    .line 346
     :goto_0
     iget-object v11, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
@@ -1603,7 +1831,7 @@
 
     if-ge v7, v11, :cond_3
 
-    .line 293
+    .line 347
     iget-object v11, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1612,19 +1840,19 @@
 
     check-cast v11, Lorg/telegram/messenger/video/Track$SamplePresentationTime;
 
-    .line 294
+    .line 348
     invoke-static {v11}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
 
     move-result-wide v13
 
     sub-long/2addr v13, v8
 
-    .line 295
+    .line 349
     invoke-static {v11}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
 
     move-result-wide v8
 
-    .line 296
+    .line 350
     iget-object v15, v0, Lorg/telegram/messenger/video/Track;->sampleDurations:[J
 
     invoke-static {v11}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$100(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
@@ -1633,7 +1861,7 @@
 
     aput-wide v13, v15, v16
 
-    .line 297
+    .line 351
     invoke-static {v11}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$100(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
 
     move-result v15
@@ -1642,7 +1870,7 @@
 
     if-eqz v15, :cond_0
 
-    .line 298
+    .line 352
     iget-wide v4, v0, Lorg/telegram/messenger/video/Track;->duration:J
 
     add-long/2addr v4, v13
@@ -1662,7 +1890,7 @@
 
     move-wide/from16 v5, v16
 
-    .line 301
+    .line 355
     invoke-static {v5, v6, v13, v14}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v4
@@ -1674,7 +1902,7 @@
     :cond_1
     move-wide/from16 v5, v16
 
-    .line 303
+    .line 357
     :goto_1
     invoke-static {v11}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$100(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
 
@@ -1689,7 +1917,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 361
     :cond_3
     iget-object v2, v0, Lorg/telegram/messenger/video/Track;->sampleDurations:[J
 
@@ -1699,10 +1927,10 @@
 
     const/4 v3, 0x0
 
-    .line 308
+    .line 362
     aput-wide v5, v2, v3
 
-    .line 309
+    .line 363
     iget-wide v7, v0, Lorg/telegram/messenger/video/Track;->duration:J
 
     add-long/2addr v7, v5
@@ -1714,7 +1942,7 @@
     :cond_4
     const/4 v3, 0x0
 
-    .line 311
+    .line 365
     :goto_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1722,7 +1950,7 @@
 
     if-ge v12, v2, :cond_5
 
-    .line 312
+    .line 366
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1756,7 +1984,7 @@
     :cond_5
     if-eqz v10, :cond_6
 
-    .line 315
+    .line 369
     iget-object v1, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1769,7 +1997,7 @@
 
     move v4, v3
 
-    .line 316
+    .line 370
     :goto_3
     iget-object v1, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
@@ -1779,7 +2007,7 @@
 
     if-ge v4, v1, :cond_6
 
-    .line 317
+    .line 371
     iget-object v1, v0, Lorg/telegram/messenger/video/Track;->samplePresentationTimes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1788,7 +2016,7 @@
 
     check-cast v1, Lorg/telegram/messenger/video/Track$SamplePresentationTime;
 
-    .line 318
+    .line 372
     iget-object v2, v0, Lorg/telegram/messenger/video/Track;->sampleCompositions:[I
 
     invoke-static {v1}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$100(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I

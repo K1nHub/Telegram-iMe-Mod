@@ -5,13 +5,13 @@ public class TLRPC$TL_chatEmpty extends TLRPC$Chat {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1515id = abstractSerializedData.readInt64(z);
+        this.f1518id = abstractSerializedData.readInt64(z);
         this.title = "DELETED";
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1515id);
+        abstractSerializedData.writeInt64(this.f1518id);
     }
 }

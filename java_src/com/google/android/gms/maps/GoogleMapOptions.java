@@ -22,43 +22,43 @@ import com.google.android.gms.maps.model.LatLngBounds;
 public final class GoogleMapOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleMapOptions> CREATOR = new zzab();
     private static final Integer zza = Integer.valueOf(Color.argb(255, 236, 233, 225));
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZOrderOnTopForParcel", m779id = 2, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZOrderOnTopForParcel", m797id = 2, type = "byte")
     private Boolean zzb;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getUseViewLifecycleInFragmentForParcel", m779id = 3, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getUseViewLifecycleInFragmentForParcel", m797id = 3, type = "byte")
     private Boolean zzc;
-    @SafeParcelable.Field(getter = "getMapType", m779id = 4)
+    @SafeParcelable.Field(getter = "getMapType", m797id = 4)
     private int zzd;
-    @SafeParcelable.Field(getter = "getCamera", m779id = 5)
+    @SafeParcelable.Field(getter = "getCamera", m797id = 5)
     private CameraPosition zze;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomControlsEnabledForParcel", m779id = 6, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomControlsEnabledForParcel", m797id = 6, type = "byte")
     private Boolean zzf;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getCompassEnabledForParcel", m779id = 7, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getCompassEnabledForParcel", m797id = 7, type = "byte")
     private Boolean zzg;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledForParcel", m779id = 8, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledForParcel", m797id = 8, type = "byte")
     private Boolean zzh;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomGesturesEnabledForParcel", m779id = 9, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomGesturesEnabledForParcel", m797id = 9, type = "byte")
     private Boolean zzi;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getTiltGesturesEnabledForParcel", m779id = 10, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getTiltGesturesEnabledForParcel", m797id = 10, type = "byte")
     private Boolean zzj;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getRotateGesturesEnabledForParcel", m779id = 11, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getRotateGesturesEnabledForParcel", m797id = 11, type = "byte")
     private Boolean zzk;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getLiteModeForParcel", m779id = 12, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getLiteModeForParcel", m797id = 12, type = "byte")
     private Boolean zzl;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getMapToolbarEnabledForParcel", m779id = 14, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getMapToolbarEnabledForParcel", m797id = 14, type = "byte")
     private Boolean zzm;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getAmbientEnabledForParcel", m779id = 15, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getAmbientEnabledForParcel", m797id = 15, type = "byte")
     private Boolean zzn;
-    @SafeParcelable.Field(getter = "getMinZoomPreference", m779id = 16)
+    @SafeParcelable.Field(getter = "getMinZoomPreference", m797id = 16)
     private Float zzo;
-    @SafeParcelable.Field(getter = "getMaxZoomPreference", m779id = 17)
+    @SafeParcelable.Field(getter = "getMaxZoomPreference", m797id = 17)
     private Float zzp;
-    @SafeParcelable.Field(getter = "getLatLngBoundsForCameraTarget", m779id = 18)
+    @SafeParcelable.Field(getter = "getLatLngBoundsForCameraTarget", m797id = 18)
     private LatLngBounds zzq;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledDuringRotateOrZoomForParcel", m779id = 19, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledDuringRotateOrZoomForParcel", m797id = 19, type = "byte")
     private Boolean zzr;
-    @SafeParcelable.Field(getter = "getBackgroundColor", m779id = 20)
+    @SafeParcelable.Field(getter = "getBackgroundColor", m797id = 20)
     private Integer zzs;
-    @SafeParcelable.Field(getter = "getMapId", m779id = 21)
+    @SafeParcelable.Field(getter = "getMapId", m797id = 21)
     private String zzt;
 
     public GoogleMapOptions() {
@@ -399,7 +399,7 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleMapOptions(@SafeParcelable.Param(m778id = 2) byte b, @SafeParcelable.Param(m778id = 3) byte b2, @SafeParcelable.Param(m778id = 4) int i, @SafeParcelable.Param(m778id = 5) CameraPosition cameraPosition, @SafeParcelable.Param(m778id = 6) byte b3, @SafeParcelable.Param(m778id = 7) byte b4, @SafeParcelable.Param(m778id = 8) byte b5, @SafeParcelable.Param(m778id = 9) byte b6, @SafeParcelable.Param(m778id = 10) byte b7, @SafeParcelable.Param(m778id = 11) byte b8, @SafeParcelable.Param(m778id = 12) byte b9, @SafeParcelable.Param(m778id = 14) byte b10, @SafeParcelable.Param(m778id = 15) byte b11, @SafeParcelable.Param(m778id = 16) Float f, @SafeParcelable.Param(m778id = 17) Float f2, @SafeParcelable.Param(m778id = 18) LatLngBounds latLngBounds, @SafeParcelable.Param(m778id = 19) byte b12, @SafeParcelable.Param(m778id = 20) Integer num, @SafeParcelable.Param(m778id = 21) String str) {
+    public GoogleMapOptions(@SafeParcelable.Param(m796id = 2) byte b, @SafeParcelable.Param(m796id = 3) byte b2, @SafeParcelable.Param(m796id = 4) int i, @SafeParcelable.Param(m796id = 5) CameraPosition cameraPosition, @SafeParcelable.Param(m796id = 6) byte b3, @SafeParcelable.Param(m796id = 7) byte b4, @SafeParcelable.Param(m796id = 8) byte b5, @SafeParcelable.Param(m796id = 9) byte b6, @SafeParcelable.Param(m796id = 10) byte b7, @SafeParcelable.Param(m796id = 11) byte b8, @SafeParcelable.Param(m796id = 12) byte b9, @SafeParcelable.Param(m796id = 14) byte b10, @SafeParcelable.Param(m796id = 15) byte b11, @SafeParcelable.Param(m796id = 16) Float f, @SafeParcelable.Param(m796id = 17) Float f2, @SafeParcelable.Param(m796id = 18) LatLngBounds latLngBounds, @SafeParcelable.Param(m796id = 19) byte b12, @SafeParcelable.Param(m796id = 20) Integer num, @SafeParcelable.Param(m796id = 21) String str) {
         this.zzd = -1;
         this.zzo = null;
         this.zzp = null;

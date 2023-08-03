@@ -6,24 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
-
-.field public final synthetic f$2:Z
+.field public final synthetic f$0:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Z)V
+.method public synthetic constructor <init>(Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$0:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
-
-    iput-boolean p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$2:Z
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$0:Landroid/view/View;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$0:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$0:Landroid/view/View;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
-
-    iget-boolean v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda159;->f$2:Z
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$MIykS42iAfNhOEJRYC281dSxpwk(Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Z)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$t1jPYQIu2uyczspCszOCU3OUfCc(Landroid/view/View;)V
 
     return-void
 .end method

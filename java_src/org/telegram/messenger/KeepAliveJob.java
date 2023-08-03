@@ -11,7 +11,12 @@ public class KeepAliveJob extends JobIntentService {
     private static Runnable finishJobByTimeoutRunnable = KeepAliveJob$$ExternalSyntheticLambda0.INSTANCE;
 
     public static void startJob() {
-        Utilities.globalQueue.postRunnable(KeepAliveJob$$ExternalSyntheticLambda1.INSTANCE);
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.KeepAliveJob$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                KeepAliveJob.lambda$startJob$0();
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -21,7 +26,7 @@ public class KeepAliveJob extends JobIntentService {
         }
         try {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("starting keep-alive job");
+                FileLog.m70d("starting keep-alive job");
             }
             synchronized (sync) {
                 startingJob = true;
@@ -36,13 +41,13 @@ public class KeepAliveJob extends JobIntentService {
         synchronized (sync) {
             if (countDownLatch != null) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("finish keep-alive job");
+                    FileLog.m70d("finish keep-alive job");
                 }
                 countDownLatch.countDown();
             }
             if (startingJob) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("finish queued keep-alive job");
+                    FileLog.m70d("finish queued keep-alive job");
                 }
                 startingJob = false;
             }
@@ -59,7 +64,7 @@ public class KeepAliveJob extends JobIntentService {
             if (startingJob) {
                 countDownLatch = new CountDownLatch(1);
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("started keep-alive job");
+                    FileLog.m70d("started keep-alive job");
                 }
                 Utilities.globalQueue.postRunnable(finishJobByTimeoutRunnable, 60000L);
                 try {
@@ -71,7 +76,7 @@ public class KeepAliveJob extends JobIntentService {
                     countDownLatch = null;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("ended keep-alive job");
+                    FileLog.m70d("ended keep-alive job");
                 }
             }
         }

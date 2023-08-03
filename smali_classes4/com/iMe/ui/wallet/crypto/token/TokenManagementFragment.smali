@@ -89,7 +89,7 @@
     .line 61
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     const-string v4, "getPresenter()Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;"
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "presenter"
+    const-string/jumbo v3, "presenter"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -375,7 +375,7 @@
 
     move-result-object v3
 
-    const-string v2, "parentActivity"
+    const-string/jumbo v2, "parentActivity"
 
     invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1674,7 +1674,7 @@
 .method public onRequestPermissionsResultFragment(I[Ljava/lang/String;[I)V
     .locals 2
 
-    const-string v0, "permissions"
+    const-string/jumbo v0, "permissions"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2144,7 +2144,7 @@
 
     invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p3, "parentActivity"
+    const-string/jumbo p3, "parentActivity"
 
     .line 93
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -2172,7 +2172,7 @@
 
     move-result-object v1
 
-    const-string v0, "parentActivity"
+    const-string/jumbo v0, "parentActivity"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2222,7 +2222,7 @@
 
     move-result-object v1
 
-    const-string v0, "parentActivity"
+    const-string/jumbo v0, "parentActivity"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2277,7 +2277,7 @@
 
     move-result-object v1
 
-    const-string v2, "parentActivity"
+    const-string/jumbo v2, "parentActivity"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

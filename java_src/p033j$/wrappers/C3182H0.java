@@ -9,57 +9,57 @@ import p033j$.util.stream.InterfaceC3040g;
 public final /* synthetic */ class C3182H0 implements BaseStream {
 
     /* renamed from: a */
-    final /* synthetic */ InterfaceC3040g f1226a;
+    final /* synthetic */ InterfaceC3040g f1229a;
 
     private /* synthetic */ C3182H0(InterfaceC3040g interfaceC3040g) {
-        this.f1226a = interfaceC3040g;
+        this.f1229a = interfaceC3040g;
     }
 
     /* renamed from: n0 */
-    public static /* synthetic */ BaseStream m216n0(InterfaceC3040g interfaceC3040g) {
+    public static /* synthetic */ BaseStream m234n0(InterfaceC3040g interfaceC3040g) {
         if (interfaceC3040g == null) {
             return null;
         }
-        return interfaceC3040g instanceof C3180G0 ? ((C3180G0) interfaceC3040g).f1224a : new C3182H0(interfaceC3040g);
+        return interfaceC3040g instanceof C3180G0 ? ((C3180G0) interfaceC3040g).f1227a : new C3182H0(interfaceC3040g);
     }
 
     @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
     public /* synthetic */ void close() {
-        this.f1226a.close();
+        this.f1229a.close();
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ boolean isParallel() {
-        return this.f1226a.isParallel();
+        return this.f1229a.isParallel();
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ Iterator iterator() {
-        return this.f1226a.iterator();
+        return this.f1229a.iterator();
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ BaseStream onClose(Runnable runnable) {
-        return m216n0(this.f1226a.onClose(runnable));
+        return m234n0(this.f1229a.onClose(runnable));
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ BaseStream parallel() {
-        return m216n0(this.f1226a.parallel());
+        return m234n0(this.f1229a.parallel());
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ BaseStream sequential() {
-        return m216n0(this.f1226a.sequential());
+        return m234n0(this.f1229a.sequential());
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ Spliterator spliterator() {
-        return C3221h.m135a(this.f1226a.spliterator());
+        return C3221h.m153a(this.f1229a.spliterator());
     }
 
     @Override // java.util.stream.BaseStream
     public /* synthetic */ BaseStream unordered() {
-        return m216n0(this.f1226a.unordered());
+        return m234n0(this.f1229a.unordered());
     }
 }

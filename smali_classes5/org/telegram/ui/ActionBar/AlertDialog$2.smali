@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/graphics/drawable/GradientDrawable;)V
     .locals 0
 
-    .line 657
+    .line 660
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 658
+    .line 661
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3600(Lorg/telegram/ui/ActionBar/AlertDialog;)I
 
     move-result p1
@@ -56,7 +56,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 662
+    .line 665
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v1, v3, v4, v2}, Landroid/graphics/drawable/GradientDrawable;->setBounds(IIII)V
 
-    .line 663
+    .line 666
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -154,7 +154,7 @@
 .method public getOpacity()I
     .locals 1
 
-    .line 678
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/GradientDrawable;->getOpacity()I
@@ -167,7 +167,7 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 668
+    .line 671
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setAlpha(I)V
@@ -178,7 +178,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 673
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$2;->val$d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V

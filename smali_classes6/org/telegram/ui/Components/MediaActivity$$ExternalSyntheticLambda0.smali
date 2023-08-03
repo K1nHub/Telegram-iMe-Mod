@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->$r8$lambda$PpsAX86yp4YQ7wxCOY-fhXBLIzM(Lorg/telegram/ui/Components/MediaActivity;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/MediaActivity;->$r8$lambda$2VX20iuMsZcsJKa92RHWvrQYS5s(Lorg/telegram/ui/Components/MediaActivity;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

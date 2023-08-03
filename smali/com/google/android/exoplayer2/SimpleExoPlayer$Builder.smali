@@ -27,10 +27,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 83
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
+    .line 86
     new-instance v0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;-><init>(Landroid/content/Context;)V
@@ -45,10 +45,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 91
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 94
     new-instance v0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-direct {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/RenderersFactory;)V
@@ -63,10 +63,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 112
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 115
     new-instance v0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     new-instance v1, Lcom/google/android/exoplayer2/source/DefaultMediaSourceFactory;
@@ -85,10 +85,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 131
+    .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
+    .line 134
     new-instance v8, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     move-object v0, v8
@@ -121,10 +121,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 100
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 103
     new-instance v0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     new-instance v1, Lcom/google/android/exoplayer2/source/DefaultMediaSourceFactory;
@@ -141,7 +141,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
     .locals 0
 
-    .line 75
+    .line 77
     iget-object p0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     return-object p0
@@ -154,7 +154,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 384
+    .line 386
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->buildSimpleExoPlayer()Lcom/google/android/exoplayer2/SimpleExoPlayer;
@@ -169,7 +169,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 150
+    .line 152
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->experimentalSetForegroundModeTimeoutMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -182,7 +182,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 210
+    .line 212
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setAnalyticsCollector(Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -195,7 +195,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 232
+    .line 234
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setAudioAttributes(Lcom/google/android/exoplayer2/audio/AudioAttributes;Z)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -208,7 +208,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 190
+    .line 192
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setBandwidthMeter(Lcom/google/android/exoplayer2/upstream/BandwidthMeter;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -221,7 +221,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 375
+    .line 377
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setClock(Lcom/google/android/exoplayer2/util/Clock;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -234,7 +234,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 343
+    .line 345
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setDetachSurfaceTimeoutMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -247,7 +247,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 252
+    .line 254
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setHandleAudioBecomingNoisy(Z)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -260,7 +260,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 364
+    .line 366
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setLivePlaybackSpeedControl(Lcom/google/android/exoplayer2/LivePlaybackSpeedControl;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -273,7 +273,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 180
+    .line 182
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setLoadControl(Lcom/google/android/exoplayer2/LoadControl;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -286,7 +286,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 200
+    .line 202
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setLooper(Landroid/os/Looper;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -299,7 +299,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 170
+    .line 172
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setMediaSourceFactory(Lcom/google/android/exoplayer2/source/MediaSource$Factory;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -312,7 +312,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 353
+    .line 355
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setPauseAtEndOfMediaItems(Z)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -325,7 +325,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setPriorityTaskManager(Lcom/google/android/exoplayer2/util/PriorityTaskManager;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -338,7 +338,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 333
+    .line 335
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setReleaseTimeoutMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -351,7 +351,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 313
+    .line 315
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setSeekBackIncrementMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -364,7 +364,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 323
+    .line 325
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setSeekForwardIncrementMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -377,7 +377,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 303
+    .line 305
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setSeekParameters(Lcom/google/android/exoplayer2/SeekParameters;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -390,7 +390,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 262
+    .line 264
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setSkipSilenceEnabled(Z)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -403,7 +403,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 160
+    .line 162
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setTrackSelector(Lcom/google/android/exoplayer2/trackselection/TrackSelector;)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -416,7 +416,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 293
+    .line 295
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setUseLazyPreparation(Z)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -429,7 +429,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 283
+    .line 285
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setVideoChangeFrameRateStrategy(I)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -442,7 +442,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 272
+    .line 274
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setVideoScalingMode(I)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
@@ -455,7 +455,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 242
+    .line 244
     iget-object v0, p0, Lcom/google/android/exoplayer2/SimpleExoPlayer$Builder;->wrappedBuilder:Lcom/google/android/exoplayer2/ExoPlayer$Builder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->setWakeMode(I)Lcom/google/android/exoplayer2/ExoPlayer$Builder;

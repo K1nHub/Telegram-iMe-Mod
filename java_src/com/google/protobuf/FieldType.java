@@ -75,7 +75,7 @@ public final class FieldType {
     private final Class<?> elementType;
 
     /* renamed from: id */
-    private final int f307id;
+    private final int f309id;
     private final JavaType javaType;
     private final boolean primitiveScalar;
 
@@ -207,13 +207,13 @@ public final class FieldType {
         FieldType[] values = values();
         VALUES = new FieldType[values.length];
         for (FieldType fieldType52 : values) {
-            VALUES[fieldType52.f307id] = fieldType52;
+            VALUES[fieldType52.f309id] = fieldType52;
         }
     }
 
     private FieldType(String str, int i, int i2, Collection collection, JavaType javaType) {
         int i3;
-        this.f307id = i2;
+        this.f309id = i2;
         this.collection = collection;
         this.javaType = javaType;
         int i4 = C12021.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
@@ -267,8 +267,8 @@ public final class FieldType {
     }
 
     /* renamed from: id */
-    public int m707id() {
-        return this.f307id;
+    public int m725id() {
+        return this.f309id;
     }
 
     public JavaType getJavaType() {

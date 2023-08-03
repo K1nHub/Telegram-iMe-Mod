@@ -17,7 +17,8 @@ public abstract class zzdc {
     private final boolean zzm;
     private static final Object zza = new Object();
     private static final AtomicReference zzg = new AtomicReference();
-    private static final zzde zzh = new zzde(zzcu.zza, null);
+    private static final zzde zzh = new zzde(new Object() { // from class: com.google.android.gms.internal.auth.zzcu
+    }, null);
     private static final AtomicInteger zzi = new AtomicInteger();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -108,7 +109,37 @@ public abstract class zzdc {
             android.content.ContentResolver r2 = r2.getContentResolver()     // Catch: java.lang.Throwable -> Ld3
             com.google.android.gms.internal.auth.zzcz r4 = r6.zzb     // Catch: java.lang.Throwable -> Ld3
             android.net.Uri r4 = r4.zzb     // Catch: java.lang.Throwable -> Ld3
-            com.google.android.gms.internal.auth.zzcs r5 = com.google.android.gms.internal.auth.zzcs.zza     // Catch: java.lang.Throwable -> Ld3
+            com.google.android.gms.internal.auth.zzcs r5 = new java.lang.Runnable() { // from class: com.google.android.gms.internal.auth.zzcs
+                static {
+                    /*
+                        com.google.android.gms.internal.auth.zzcs r0 = new com.google.android.gms.internal.auth.zzcs
+                        r0.<init>()
+                        
+                        // error: 0x0005: SPUT  (r0 I:com.google.android.gms.internal.auth.zzcs) com.google.android.gms.internal.auth.zzcs.zza com.google.android.gms.internal.auth.zzcs
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.auth.zzcs.<clinit>():void");
+                }
+
+                {
+                    /*
+                        r0 = this;
+                        r0.<init>()
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.auth.zzcs.<init>():void");
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    /*
+                        r0 = this;
+                        com.google.android.gms.internal.auth.zzdc.zzd()
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.auth.zzcs.run():void");
+                }
+            }     // Catch: java.lang.Throwable -> Ld3
             com.google.android.gms.internal.auth.zzcg r2 = com.google.android.gms.internal.auth.zzcg.zza(r2, r4, r5)     // Catch: java.lang.Throwable -> Ld3
             goto L5e
         L4e:

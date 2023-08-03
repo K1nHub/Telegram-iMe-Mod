@@ -106,7 +106,7 @@ public final class TtmlRenderUtil {
                     }
                     spannable.setSpan(new RubySpan(str, rubyPosition), i, i2, 33);
                 } else {
-                    Log.m798i(TAG, "Skipping rubyText node without exactly one text child.");
+                    Log.m816i(TAG, "Skipping rubyText node without exactly one text child.");
                 }
             }
         } else if (rubyType == 3 || rubyType == 4) {

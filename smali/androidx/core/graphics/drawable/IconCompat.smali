@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/graphics/drawable/IconCompat$Api23Impl;,
-        Landroidx/core/graphics/drawable/IconCompat$Api30Impl;,
         Landroidx/core/graphics/drawable/IconCompat$Api26Impl;,
+        Landroidx/core/graphics/drawable/IconCompat$Api30Impl;,
         Landroidx/core/graphics/drawable/IconCompat$Api28Impl;
     }
 .end annotation
@@ -141,6 +141,37 @@
     .locals 0
 
     .line 997
+    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompat$Api23Impl;->createFromIconInner(Ljava/lang/Object;)Landroidx/core/graphics/drawable/IconCompat;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static createFromIconOrNullIfZeroResId(Landroid/graphics/drawable/Icon;)Landroidx/core/graphics/drawable/IconCompat;
+    .locals 2
+
+    .line 1009
+    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompat$Api23Impl;->getType(Ljava/lang/Object;)I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompat$Api23Impl;->getResId(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 1012
+    :cond_0
     invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompat$Api23Impl;->createFromIconInner(Ljava/lang/Object;)Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object p0

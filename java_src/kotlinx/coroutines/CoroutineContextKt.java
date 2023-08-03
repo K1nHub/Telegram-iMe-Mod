@@ -5,6 +5,7 @@ import kotlin.coroutines.ContinuationInterceptor;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$ObjectRef;
 /* compiled from: CoroutineContext.kt */
 /* loaded from: classes4.dex */
@@ -20,23 +21,65 @@ public final class CoroutineContextKt {
     }
 
     private static final boolean hasCopyableElements(CoroutineContext coroutineContext) {
-        return ((Boolean) coroutineContext.fold(Boolean.FALSE, CoroutineContextKt$hasCopyableElements$1.INSTANCE)).booleanValue();
+        return ((Boolean) coroutineContext.fold(Boolean.FALSE, new Function2<Boolean, CoroutineContext.Element, Boolean>() { // from class: kotlinx.coroutines.CoroutineContextKt$hasCopyableElements$1
+            public final Boolean invoke(boolean z, CoroutineContext.Element element) {
+                return Boolean.valueOf(z || (element instanceof CopyableThreadContextElement));
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Boolean invoke(Boolean bool, CoroutineContext.Element element) {
+                return invoke(bool.booleanValue(), element);
+            }
+        })).booleanValue();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v4, types: [T, java.lang.Object] */
-    private static final CoroutineContext foldCopies(CoroutineContext coroutineContext, CoroutineContext coroutineContext2, boolean z) {
+    private static final CoroutineContext foldCopies(CoroutineContext coroutineContext, CoroutineContext coroutineContext2, final boolean z) {
         boolean hasCopyableElements = hasCopyableElements(coroutineContext);
         boolean hasCopyableElements2 = hasCopyableElements(coroutineContext2);
         if (!hasCopyableElements && !hasCopyableElements2) {
             return coroutineContext.plus(coroutineContext2);
         }
-        Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
+        final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
         ref$ObjectRef.element = coroutineContext2;
         EmptyCoroutineContext emptyCoroutineContext = EmptyCoroutineContext.INSTANCE;
-        CoroutineContext coroutineContext3 = (CoroutineContext) coroutineContext.fold(emptyCoroutineContext, new CoroutineContextKt$foldCopies$folded$1(ref$ObjectRef, z));
+        CoroutineContext coroutineContext3 = (CoroutineContext) coroutineContext.fold(emptyCoroutineContext, new Function2<CoroutineContext, CoroutineContext.Element, CoroutineContext>() { // from class: kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(2);
+            }
+
+            /* JADX WARN: Type inference failed for: r2v2, types: [T, kotlin.coroutines.CoroutineContext] */
+            @Override // kotlin.jvm.functions.Function2
+            public final CoroutineContext invoke(CoroutineContext coroutineContext4, CoroutineContext.Element element) {
+                if (element instanceof CopyableThreadContextElement) {
+                    CoroutineContext.Element element2 = ref$ObjectRef.element.get(element.getKey());
+                    if (element2 == null) {
+                        CopyableThreadContextElement copyableThreadContextElement = (CopyableThreadContextElement) element;
+                        if (z) {
+                            copyableThreadContextElement = copyableThreadContextElement.copyForChild();
+                        }
+                        return coroutineContext4.plus(copyableThreadContextElement);
+                    }
+                    Ref$ObjectRef<CoroutineContext> ref$ObjectRef2 = ref$ObjectRef;
+                    ref$ObjectRef2.element = ref$ObjectRef2.element.minusKey(element.getKey());
+                    return coroutineContext4.plus(((CopyableThreadContextElement) element).mergeForChild(element2));
+                }
+                return coroutineContext4.plus(element);
+            }
+        });
         if (hasCopyableElements2) {
-            ref$ObjectRef.element = ((CoroutineContext) ref$ObjectRef.element).fold(emptyCoroutineContext, CoroutineContextKt$foldCopies$1.INSTANCE);
+            ref$ObjectRef.element = ((CoroutineContext) ref$ObjectRef.element).fold(emptyCoroutineContext, new Function2<CoroutineContext, CoroutineContext.Element, CoroutineContext>() { // from class: kotlinx.coroutines.CoroutineContextKt$foldCopies$1
+                @Override // kotlin.jvm.functions.Function2
+                public final CoroutineContext invoke(CoroutineContext coroutineContext4, CoroutineContext.Element element) {
+                    if (element instanceof CopyableThreadContextElement) {
+                        return coroutineContext4.plus(((CopyableThreadContextElement) element).copyForChild());
+                    }
+                    return coroutineContext4.plus(element);
+                }
+            });
         }
         return coroutineContext3.plus((CoroutineContext) ref$ObjectRef.element);
     }

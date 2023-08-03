@@ -8,10 +8,11 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -33,9 +34,34 @@ public final class FloatingActionButtonsCell extends LinearLayout {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new FloatingActionButtonsCell$textView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<SimpleTextView>() { // from class: com.iMe.fork.ui.view.FloatingActionButtonsCell$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final SimpleTextView invoke() {
+                SimpleTextView initTextView;
+                initTextView = FloatingActionButtonsCell.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new FloatingActionButtonsCell$fabsView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<FabsView>() { // from class: com.iMe.fork.ui.view.FloatingActionButtonsCell$fabsView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FabsView invoke() {
+                FabsView initFabsView;
+                initFabsView = FloatingActionButtonsCell.this.initFabsView();
+                return initFabsView;
+            }
+        });
         this.fabsView$delegate = lazy2;
         setGravity(17);
         ViewExtKt.setHorizontalPadding(this, 23);
@@ -64,13 +90,13 @@ public final class FloatingActionButtonsCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(48), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3417R.string.create_folder_change_fab_title));
+        simpleTextView.setText(LocaleController.getInternalString(C3419R.string.create_folder_change_fab_title));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }

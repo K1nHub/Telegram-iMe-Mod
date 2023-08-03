@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentStakingCalculatorBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -25,7 +25,7 @@ public final class ForkFragmentStakingCalculatorBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingCalculatorBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_staking_calculator, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_staking_calculator, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

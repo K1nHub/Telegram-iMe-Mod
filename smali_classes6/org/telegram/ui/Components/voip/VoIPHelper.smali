@@ -2488,7 +2488,7 @@
 .end method
 
 .method private static synthetic lambda$showRateAlert$15(I[ZLjava/io/File;Lorg/telegram/tgnet/TLRPC$TL_phone_setCallRating;Ljava/util/ArrayList;Landroid/content/Context;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 16
+    .locals 17
 
     move-object/from16 v0, p6
 
@@ -2571,9 +2571,11 @@
 
     const/4 v15, 0x0
 
+    const/16 v16, 0x0
+
     const-string v6, "text/plain"
 
-    invoke-static/range {v1 .. v15}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocument(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
+    invoke-static/range {v1 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocument(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
 
     .line 615
     sget v0, Lorg/telegram/messenger/R$string;->CallReportSent:I
@@ -3147,7 +3149,7 @@
 
     const-string v5, "Force TCP"
 
-    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 664
     new-instance v3, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;
@@ -3182,7 +3184,7 @@
 
     const-string v5, "Dump detailed stats"
 
-    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 676
     new-instance v3, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda10;
@@ -3216,7 +3218,7 @@
 
     const-string v5, "Enable ConnectionService"
 
-    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    invoke-virtual {v2, v5, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
     .line 689
     new-instance v3, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda11;
@@ -3691,7 +3693,7 @@
 
     move-result v0
 
-    invoke-virtual {v4, v0}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v4, v0}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 514
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I

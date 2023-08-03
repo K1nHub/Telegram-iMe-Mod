@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.measurement;
 
 import java.io.IOException;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
 /* loaded from: classes.dex */
@@ -191,7 +192,7 @@ public final class zzil {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int zzk(int i, byte[] bArr, int i2, zzik zzikVar) {
-        int i3 = i & 127;
+        int i3 = i & MessagesStorage.LAST_DB_VERSION;
         int i4 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

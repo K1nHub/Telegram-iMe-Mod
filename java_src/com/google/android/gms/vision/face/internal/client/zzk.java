@@ -16,10 +16,10 @@ public final class zzk extends com.google.android.gms.internal.vision.zzb implem
     @Override // com.google.android.gms.vision.face.internal.client.zzi
     public final zzh newFaceDetector(IObjectWrapper iObjectWrapper, zzf zzfVar) throws RemoteException {
         zzh zzjVar;
-        Parcel m760a_ = m760a_();
-        com.google.android.gms.internal.vision.zzd.zza(m760a_, iObjectWrapper);
-        com.google.android.gms.internal.vision.zzd.zza(m760a_, zzfVar);
-        Parcel zza = zza(1, m760a_);
+        Parcel m778a_ = m778a_();
+        com.google.android.gms.internal.vision.zzd.zza(m778a_, iObjectWrapper);
+        com.google.android.gms.internal.vision.zzd.zza(m778a_, zzfVar);
+        Parcel zza = zza(1, m778a_);
         IBinder readStrongBinder = zza.readStrongBinder();
         if (readStrongBinder == null) {
             zzjVar = null;

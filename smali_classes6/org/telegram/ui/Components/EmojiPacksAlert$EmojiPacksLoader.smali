@@ -112,33 +112,33 @@
         }
     .end annotation
 
-    .line 1798
+    .line 1830
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1796
+    .line 1828
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->started:Z
 
-    .line 1799
+    .line 1831
     iput p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
 
     if-nez p3, :cond_0
 
     if-nez p4, :cond_0
 
-    .line 1801
+    .line 1833
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1803
+    .line 1835
     :cond_0
     iput-object p3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->inputStickerSets:Ljava/util/ArrayList;
 
-    .line 1804
+    .line 1836
     iput-object p4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->parentObject:Lorg/telegram/tgnet/TLObject;
 
     return-void
@@ -149,23 +149,23 @@
 
     if-nez p1, :cond_4
 
-    .line 1846
+    .line 1878
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
     if-nez p1, :cond_0
 
     goto :goto_1
 
-    .line 1852
+    .line 1884
     :cond_0
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 1853
+    .line 1885
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->inputStickerSets:Ljava/util/ArrayList;
 
     if-nez p1, :cond_1
 
-    .line 1854
+    .line 1886
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -175,7 +175,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 1856
+    .line 1888
     :goto_0
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
@@ -185,14 +185,14 @@
 
     if-ge p1, v0, :cond_3
 
-    .line 1857
+    .line 1889
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1858
+    .line 1890
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
     if-eqz v1, :cond_2
@@ -203,7 +203,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1859
+    .line 1891
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->inputStickerSets:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInputStickerSet(Lorg/telegram/tgnet/TLRPC$StickerSet;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
@@ -220,22 +220,22 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 1862
+    .line 1894
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->parentObject:Lorg/telegram/tgnet/TLObject;
 
-    .line 1863
+    .line 1895
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->init()V
 
     goto :goto_2
 
-    .line 1847
+    .line 1879
     :cond_4
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 1848
+    .line 1880
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -256,7 +256,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 1849
+    .line 1881
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -289,7 +289,7 @@
 .method private synthetic lambda$init$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 1845
+    .line 1877
     new-instance v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -302,12 +302,12 @@
 .method private synthetic lambda$init$2()V
     .locals 3
 
-    .line 1878
+    .line 1910
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 1879
+    .line 1911
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -328,7 +328,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1880
+    .line 1912
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -364,17 +364,17 @@
 
     const/4 p2, 0x0
 
-    .line 1875
+    .line 1907
     aget-boolean v0, p1, p2
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 1876
+    .line 1908
     aput-boolean v0, p1, p2
 
-    .line 1877
+    .line 1909
     new-instance p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;)V
@@ -388,7 +388,7 @@
 .method private synthetic lambda$init$4()V
     .locals 1
 
-    .line 1886
+    .line 1918
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
@@ -399,32 +399,32 @@
 .method private putStickerSet(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
     .locals 6
 
-    if-ltz p1, :cond_4
+    if-ltz p1, :cond_7
 
-    .line 1920
+    .line 1952
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     array-length v1, v0
 
     if-lt p1, v1, :cond_0
 
-    goto :goto_4
+    goto/16 :goto_6
 
     :cond_0
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_6
 
-    .line 1923
+    .line 1955
     iget-object v3, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     if-nez v3, :cond_1
 
-    goto :goto_2
+    goto :goto_4
 
-    .line 1929
+    .line 1961
     :cond_1
     new-instance v3, Ljava/util/ArrayList;
 
@@ -432,7 +432,7 @@
 
     aput-object v3, v0, p1
 
-    .line 1930
+    .line 1962
     :goto_0
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -440,9 +440,9 @@
 
     move-result v0
 
-    if-ge v2, v0, :cond_4
+    if-ge v2, v0, :cond_7
 
-    .line 1931
+    .line 1963
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -453,49 +453,93 @@
 
     if-nez v0, :cond_2
 
-    .line 1933
+    .line 1965
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     aget-object v0, v0, p1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 1935
+    .line 1967
     :cond_2
     new-instance v3, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;-><init>()V
 
-    .line 1936
+    .line 1968
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     invoke-virtual {p0, p2, v4, v5}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->findEmoticon(Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;J)Ljava/lang/String;
 
-    .line 1937
+    .line 1969
     iput-object p2, v3, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 1938
+    .line 1970
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v4, v3, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->documentId:J
 
-    .line 1939
+    .line 1971
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     aget-object v0, v0, p1
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1972
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 1973
+    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+    if-eqz v0, :cond_4
+
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$StickerSet;->emojis:Z
+
+    if-eqz v0, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    const/16 v0, 0xa
+
+    goto :goto_2
+
+    :cond_4
     :goto_1
+    const/16 v0, 0x10
+
+    .line 1974
+    :goto_2
+    iget-object v3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
+
+    aget-object v3, v3, p1
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lt v3, v0, :cond_5
+
+    goto :goto_6
+
+    :cond_5
+    :goto_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1924
-    :cond_3
-    :goto_2
+    .line 1956
+    :cond_6
+    :goto_4
     new-instance p2, Ljava/util/ArrayList;
 
     const/16 v3, 0xc
@@ -504,10 +548,10 @@
 
     aput-object p2, v0, p1
 
-    :goto_3
-    if-ge v2, v3, :cond_4
+    :goto_5
+    if-ge v2, v3, :cond_7
 
-    .line 1926
+    .line 1958
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     aget-object p2, p2, p1
@@ -516,10 +560,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_4
-    :goto_4
+    :cond_7
+    :goto_6
     return-void
 .end method
 
@@ -528,14 +572,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 7
 
-    .line 1899
+    .line 1931
     sget p2, Lorg/telegram/messenger/NotificationCenter;->groupStickersDidLoad:I
 
     if-ne p1, p2, :cond_4
 
     const/4 p1, 0x0
 
-    .line 1900
+    .line 1932
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
@@ -545,7 +589,7 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 1901
+    .line 1933
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -554,7 +598,7 @@
 
     if-nez p2, :cond_2
 
-    .line 1902
+    .line 1934
     iget p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -575,7 +619,7 @@
 
     move-result-object p2
 
-    .line 1903
+    .line 1935
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
@@ -594,12 +638,12 @@
 
     if-nez p3, :cond_1
 
-    .line 1904
+    .line 1936
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 1905
+    .line 1937
     new-instance p2, Lorg/telegram/ui/Components/StickersAlert;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -658,7 +702,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v6
 
@@ -666,12 +710,12 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/StickersAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$InputStickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1906
+    .line 1938
     invoke-virtual {p2}, Lorg/telegram/ui/Components/StickersAlert;->show()V
 
     return-void
 
-    .line 1909
+    .line 1941
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
@@ -679,7 +723,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1911
+    .line 1943
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->putStickerSet(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     :cond_2
@@ -687,7 +731,7 @@
 
     goto/16 :goto_0
 
-    .line 1915
+    .line 1947
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->onUpdate()V
 
@@ -707,7 +751,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 2013
+    .line 2051
     :goto_0
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
@@ -717,7 +761,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2014
+    .line 2052
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -726,7 +770,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;
 
-    .line 2015
+    .line 2053
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->documents:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_1
@@ -741,7 +785,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 2016
+    .line 2054
     iget-object p1, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->emoticon:Ljava/lang/String;
 
     return-object p1
@@ -758,7 +802,7 @@
 .method public getItemsCount()I
     .locals 5
 
-    .line 1965
+    .line 2003
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -770,7 +814,7 @@
     :cond_0
     move v0, v1
 
-    .line 1969
+    .line 2007
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
@@ -778,14 +822,14 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 1970
+    .line 2008
     aget-object v3, v2, v1
 
     if-nez v3, :cond_1
 
     goto :goto_2
 
-    .line 1973
+    .line 2011
     :cond_1
     array-length v3, v2
 
@@ -793,7 +837,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1974
+    .line 2012
     aget-object v2, v2, v1
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -802,7 +846,7 @@
 
     goto :goto_1
 
-    .line 1976
+    .line 2014
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
@@ -845,7 +889,7 @@
 .method public init()V
     .locals 11
 
-    .line 1816
+    .line 1848
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->parentObject:Lorg/telegram/tgnet/TLObject;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$Photo;
@@ -875,7 +919,7 @@
 
     goto/16 :goto_1
 
-    .line 1869
+    .line 1901
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -889,7 +933,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
-    .line 1870
+    .line 1902
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->inputStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -900,7 +944,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
-    .line 1871
+    .line 1903
     iget v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -915,7 +959,7 @@
 
     move v1, v4
 
-    .line 1873
+    .line 1905
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
@@ -923,7 +967,7 @@
 
     if-ge v1, v5, :cond_4
 
-    .line 1874
+    .line 1906
     iget v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -946,7 +990,7 @@
 
     move-result-object v5
 
-    .line 1885
+    .line 1917
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
     array-length v6, v6
@@ -963,14 +1007,14 @@
 
     if-nez v6, :cond_3
 
-    .line 1886
+    .line 1918
     new-instance v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1887
+    .line 1919
     new-instance v0, Lorg/telegram/ui/Components/StickersAlert;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -1024,7 +1068,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6500(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v10
 
@@ -1032,25 +1076,25 @@
 
     invoke-direct/range {v4 .. v10}, Lorg/telegram/ui/Components/StickersAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$InputStickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/ui/Components/StickersAlert$StickersAlertDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1888
+    .line 1920
     invoke-virtual {v0}, Lorg/telegram/ui/Components/StickersAlert;->show()V
 
     return-void
 
-    .line 1891
+    .line 1923
     :cond_3
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1892
+    .line 1924
     invoke-direct {p0, v1, v5}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->putStickerSet(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1894
+    .line 1926
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->onUpdate()V
 
@@ -1062,53 +1106,53 @@
 
     new-array v0, v0, [Ljava/util/ArrayList;
 
-    .line 1817
+    .line 1849
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->data:[Ljava/util/ArrayList;
 
-    .line 1818
+    .line 1850
     invoke-direct {p0, v4, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->putStickerSet(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
-    .line 1819
+    .line 1851
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->putStickerSet(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
-    .line 1820
+    .line 1852
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;-><init>()V
 
-    .line 1821
+    .line 1853
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->parentObject:Lorg/telegram/tgnet/TLObject;
 
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-eqz v2, :cond_7
 
-    .line 1822
+    .line 1854
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 1823
+    .line 1855
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;-><init>()V
 
-    .line 1824
+    .line 1856
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;->id:Lorg/telegram/tgnet/TLRPC$InputPhoto;
 
-    .line 1825
+    .line 1857
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$InputPhoto;->id:J
 
-    .line 1826
+    .line 1858
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Photo;->access_hash:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$InputPhoto;->access_hash:J
 
-    .line 1827
+    .line 1859
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Photo;->file_reference:[B
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
@@ -1117,47 +1161,47 @@
 
     new-array v1, v4, [B
 
-    .line 1829
+    .line 1861
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
 
-    .line 1831
+    .line 1863
     :cond_6
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;->media:Lorg/telegram/tgnet/TLRPC$InputStickeredMedia;
 
     goto :goto_2
 
-    .line 1832
+    .line 1864
     :cond_7
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v2, :cond_9
 
-    .line 1833
+    .line 1865
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1834
+    .line 1866
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;-><init>()V
 
-    .line 1835
+    .line 1867
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;->id:Lorg/telegram/tgnet/TLRPC$InputDocument;
 
-    .line 1836
+    .line 1868
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
 
-    .line 1837
+    .line 1869
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
 
-    .line 1838
+    .line 1870
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
@@ -1166,14 +1210,14 @@
 
     new-array v1, v4, [B
 
-    .line 1840
+    .line 1872
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
 
-    .line 1842
+    .line 1874
     :cond_8
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;->media:Lorg/telegram/tgnet/TLRPC$InputStickeredMedia;
 
-    .line 1844
+    .line 1876
     :cond_9
     :goto_2
     iget v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
@@ -1202,7 +1246,7 @@
 .method public recycle()V
     .locals 2
 
-    .line 1946
+    .line 1984
     iget v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1219,7 +1263,7 @@
 .method public start()V
     .locals 1
 
-    .line 1808
+    .line 1840
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->started:Z
 
     if-eqz v0, :cond_0
@@ -1229,10 +1273,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1811
+    .line 1843
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->started:Z
 
-    .line 1812
+    .line 1844
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->init()V
 
     return-void

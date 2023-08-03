@@ -6,15 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/ContextCompat$Api33Impl;,
         Landroidx/core/content/ContextCompat$Api30Impl;,
+        Landroidx/core/content/ContextCompat$Api16Impl;,
+        Landroidx/core/content/ContextCompat$Api24Impl;,
+        Landroidx/core/content/ContextCompat$Api19Impl;,
+        Landroidx/core/content/ContextCompat$Api21Impl;,
+        Landroidx/core/content/ContextCompat$Api23Impl;,
         Landroidx/core/content/ContextCompat$Api28Impl;,
         Landroidx/core/content/ContextCompat$Api26Impl;,
-        Landroidx/core/content/ContextCompat$Api24Impl;,
-        Landroidx/core/content/ContextCompat$Api23Impl;,
-        Landroidx/core/content/ContextCompat$Api21Impl;,
-        Landroidx/core/content/ContextCompat$Api19Impl;,
-        Landroidx/core/content/ContextCompat$Api16Impl;,
+        Landroidx/core/content/ContextCompat$Api33Impl;,
         Landroidx/core/content/ContextCompat$LegacyServiceMapHolder;
     }
 .end annotation

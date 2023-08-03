@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/VideoPlayer;
 
-.field public final synthetic f$1:Lcom/google/android/exoplayer2/PlaybackException;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/VideoPlayer;Lcom/google/android/exoplayer2/PlaybackException;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/VideoPlayer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/VideoPlayer;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;->f$1:Lcom/google/android/exoplayer2/PlaybackException;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/VideoPlayer;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/VideoPlayer$$ExternalSyntheticLambda0;->f$1:Lcom/google/android/exoplayer2/PlaybackException;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->$r8$lambda$-Ijl4vI8fRIHq3iKaiRphCYJe2Q(Lorg/telegram/ui/Components/VideoPlayer;Lcom/google/android/exoplayer2/PlaybackException;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/VideoPlayer;->$r8$lambda$YI4K5Gj24zkjvMozL2teUY020aE(Lorg/telegram/ui/Components/VideoPlayer;)V
 
     return-void
 .end method

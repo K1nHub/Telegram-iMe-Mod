@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$nlbgsOpWTnm83wudhu-vu9eZ8qI(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$RlUDL6j-9cBIKRYRcvzhhHItK5Y(Lorg/telegram/ui/Components/EmojiView$SearchField;Landroid/view/View;)V
 
     return-void
 .end method

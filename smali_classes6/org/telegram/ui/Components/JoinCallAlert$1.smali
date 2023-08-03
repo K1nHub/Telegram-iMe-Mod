@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/JoinCallAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 330
+    .line 334
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 336
+    .line 340
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$200(Lorg/telegram/ui/Components/JoinCallAlert;)I
@@ -46,12 +46,12 @@
 
     if-nez v0, :cond_4
 
-    .line 337
+    .line 341
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 338
+    .line 342
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -70,7 +70,7 @@
 
     mul-int/2addr v1, v2
 
-    .line 339
+    .line 343
     iget-object v2, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$400(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -91,20 +91,20 @@
 
     const/4 v0, -0x1
 
-    .line 341
+    .line 345
     iput v0, v2, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/16 v0, 0x33
 
-    .line 342
+    .line 346
     iput v0, v2, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 343
+    .line 347
     iget-boolean v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->sorted:Z
 
     if-nez v0, :cond_4
 
-    .line 344
+    .line 348
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$500(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/tgnet/TLRPC$Peer;
@@ -113,7 +113,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 345
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 346
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v3, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 348
+    .line 352
     :cond_0
     iput-boolean v4, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->sorted:Z
 
@@ -152,20 +152,20 @@
     :cond_1
     const/4 v0, -0x2
 
-    .line 351
+    .line 355
     iput v0, v2, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/16 v0, 0x31
 
-    .line 352
+    .line 356
     iput v0, v2, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 353
+    .line 357
     iget-boolean v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->sorted:Z
 
     if-nez v0, :cond_4
 
-    .line 354
+    .line 358
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$500(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/tgnet/TLRPC$Peer;
@@ -174,7 +174,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 356
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -189,7 +189,7 @@
 
     if-nez v0, :cond_2
 
-    .line 357
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 359
+    .line 363
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -224,7 +224,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 361
+    .line 365
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -240,7 +240,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 362
+    .line 366
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$300(Lorg/telegram/ui/Components/JoinCallAlert;)Ljava/util/ArrayList;
@@ -255,11 +255,11 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 364
+    .line 368
     :cond_3
     iput-boolean v4, p0, Lorg/telegram/ui/Components/JoinCallAlert$1;->sorted:Z
 
-    .line 368
+    .line 372
     :cond_4
     :goto_1
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V

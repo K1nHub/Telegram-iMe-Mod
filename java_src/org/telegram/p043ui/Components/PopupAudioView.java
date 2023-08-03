@@ -70,7 +70,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
         this.lastTimeString = null;
         TextPaint textPaint = new TextPaint(1);
         this.timePaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m54dp(16));
+        textPaint.setTextSize(AndroidUtilities.m72dp(16));
         this.TAG = DownloadController.getInstance(this.currentAccount).generateObserverTag();
         SeekBar seekBar = new SeekBar(this);
         this.seekBar = seekBar;
@@ -101,7 +101,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(56));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(56));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -109,14 +109,14 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
         if (this.currentMessageObject == null) {
             return;
         }
-        this.seekBarX = AndroidUtilities.m54dp(54);
-        this.buttonX = AndroidUtilities.m54dp(10);
-        this.timeX = (getMeasuredWidth() - this.timeWidth) - AndroidUtilities.m54dp(16);
-        this.seekBar.setSize((getMeasuredWidth() - AndroidUtilities.m54dp(70)) - this.timeWidth, AndroidUtilities.m54dp(30));
-        this.progressView.width = (getMeasuredWidth() - AndroidUtilities.m54dp(94)) - this.timeWidth;
-        this.progressView.height = AndroidUtilities.m54dp(30);
-        this.seekBarY = AndroidUtilities.m54dp(13);
-        this.buttonY = AndroidUtilities.m54dp(10);
+        this.seekBarX = AndroidUtilities.m72dp(54);
+        this.buttonX = AndroidUtilities.m72dp(10);
+        this.timeX = (getMeasuredWidth() - this.timeWidth) - AndroidUtilities.m72dp(16);
+        this.seekBar.setSize((getMeasuredWidth() - AndroidUtilities.m72dp(70)) - this.timeWidth, AndroidUtilities.m72dp(30));
+        this.progressView.width = (getMeasuredWidth() - AndroidUtilities.m72dp(94)) - this.timeWidth;
+        this.progressView.height = AndroidUtilities.m72dp(30);
+        this.seekBarY = AndroidUtilities.m72dp(13);
+        this.buttonY = AndroidUtilities.m72dp(10);
         updateProgress();
         if (z || !this.wasLayout) {
             this.wasLayout = true;
@@ -158,18 +158,18 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
             canvas.translate(this.seekBarX, this.seekBarY);
             this.seekBar.draw(canvas);
         } else {
-            canvas.translate(this.seekBarX + AndroidUtilities.m54dp(12), this.seekBarY);
+            canvas.translate(this.seekBarX + AndroidUtilities.m72dp(12), this.seekBarY);
             this.progressView.draw(canvas);
         }
         canvas.restore();
         int i6 = this.buttonState;
         this.timePaint.setColor(-6182221);
         Drawable drawable = Theme.chat_fileStatesDrawable[i6][this.buttonPressed];
-        int m54dp = AndroidUtilities.m54dp(36);
-        BaseCell.setDrawableBounds(drawable, ((m54dp - drawable.getIntrinsicWidth()) / 2) + this.buttonX, ((m54dp - drawable.getIntrinsicHeight()) / 2) + this.buttonY);
+        int m72dp = AndroidUtilities.m72dp(36);
+        BaseCell.setDrawableBounds(drawable, ((m72dp - drawable.getIntrinsicWidth()) / 2) + this.buttonX, ((m72dp - drawable.getIntrinsicHeight()) / 2) + this.buttonY);
         drawable.draw(canvas);
         canvas.save();
-        canvas.translate(this.timeX, AndroidUtilities.m54dp(18));
+        canvas.translate(this.timeX, AndroidUtilities.m72dp(18));
         this.timeLayout.draw(canvas);
         canvas.restore();
     }
@@ -215,7 +215,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
             goto Lb4
         L37:
             r4 = 36
-            int r4 = org.telegram.messenger.AndroidUtilities.m54dp(r4)
+            int r4 = org.telegram.messenger.AndroidUtilities.m72dp(r4)
             int r5 = r8.getAction()
             if (r5 != 0) goto L64
             int r5 = r7.buttonX
@@ -333,7 +333,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
                 }
                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute = this.currentMessageObject.getDocument().attributes.get(i2);
                 if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeAudio) {
-                    i = tLRPC$DocumentAttribute.duration;
+                    i = (int) tLRPC$DocumentAttribute.duration;
                     break;
                 }
                 i2++;

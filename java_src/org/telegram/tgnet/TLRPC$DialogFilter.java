@@ -15,7 +15,7 @@ public abstract class TLRPC$DialogFilter extends TLObject {
     public boolean has_my_invites;
 
     /* renamed from: id */
-    public int f1522id;
+    public int f1525id;
     public boolean non_contacts;
     public String title;
     public ArrayList<TLRPC$InputPeer> pinned_peers = new ArrayList<>();
@@ -33,7 +33,7 @@ public abstract class TLRPC$DialogFilter extends TLObject {
                     int readInt32 = abstractSerializedData2.readInt32(z2);
                     this.flags = readInt32;
                     this.has_my_invites = (readInt32 & ConnectionsManager.FileTypeFile) != 0;
-                    this.f1522id = abstractSerializedData2.readInt32(z2);
+                    this.f1525id = abstractSerializedData2.readInt32(z2);
                     this.title = abstractSerializedData2.readString(z2);
                     if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
                         this.emoticon = abstractSerializedData2.readString(z2);
@@ -76,7 +76,7 @@ public abstract class TLRPC$DialogFilter extends TLObject {
                     int i2 = this.has_my_invites ? this.flags | ConnectionsManager.FileTypeFile : this.flags & (-67108865);
                     this.flags = i2;
                     abstractSerializedData2.writeInt32(i2);
-                    abstractSerializedData2.writeInt32(this.f1522id);
+                    abstractSerializedData2.writeInt32(this.f1525id);
                     abstractSerializedData2.writeString(this.title);
                     if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
                         abstractSerializedData2.writeString(this.emoticon);

@@ -622,7 +622,7 @@
     .line 1209
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-direct {p0, v6}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->getThemedColor(I)I
 
     move-result v6
 

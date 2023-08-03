@@ -4850,7 +4850,7 @@
 
     move-result v9
 
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 258
     iget-object v8, v0, Lorg/telegram/ui/TwoStepVerificationActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

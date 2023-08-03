@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final synthetic ajc$tjp_1:Lorg/aspectj/lang/JoinPoint$StaticPart;
-
 .field private static final synthetic ajc$tjp_2:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
 .field private static final synthetic ajc$tjp_3:Lorg/aspectj/lang/JoinPoint$StaticPart;
@@ -93,10 +91,6 @@
     const/16 v1, 0x25
 
     invoke-virtual {v8, v9, v0, v1}, Lorg/aspectj/runtime/reflect/Factory;->makeSJP(Ljava/lang/String;Lorg/aspectj/lang/Signature;I)Lorg/aspectj/lang/JoinPoint$StaticPart;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/googlecode/mp4parser/boxes/mp4/ESDescriptorBox;->ajc$tjp_1:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
     const-string v1, "1"
 
@@ -261,25 +255,4 @@
 
     :goto_0
     return v0
-.end method
-
-.method public setEsDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor;)V
-    .locals 2
-
-    sget-object v0, Lcom/googlecode/mp4parser/boxes/mp4/ESDescriptorBox;->ajc$tjp_1:Lorg/aspectj/lang/JoinPoint$StaticPart;
-
-    invoke-static {v0, p0, p0, p1}, Lorg/aspectj/runtime/reflect/Factory;->makeJP(Lorg/aspectj/lang/JoinPoint$StaticPart;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lorg/aspectj/lang/JoinPoint;
-
-    move-result-object v0
-
-    .line 38
-    invoke-static {}, Lcom/googlecode/mp4parser/RequiresParseDetailAspect;->aspectOf()Lcom/googlecode/mp4parser/RequiresParseDetailAspect;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/googlecode/mp4parser/RequiresParseDetailAspect;->before(Lorg/aspectj/lang/JoinPoint;)V
-
-    invoke-super {p0, p1}, Lcom/googlecode/mp4parser/boxes/mp4/AbstractDescriptorBox;->setDescriptor(Lcom/googlecode/mp4parser/boxes/mp4/objectdescriptors/BaseDescriptor;)V
-
-    return-void
 .end method

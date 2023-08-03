@@ -868,7 +868,7 @@
     .line 805
     iget-object v2, v0, Lorg/telegram/ui/Components/PasscodeView;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v2, v10}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 806
     iget-object v2, v0, Lorg/telegram/ui/Components/PasscodeView;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -23,13 +23,19 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkProfileSocialCellBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import timber.log.Timber;
@@ -87,7 +93,27 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new ProfileSocialCell$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.profile.ProfileSocialCell$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resource$delegate = lazy;
         this.cachedImageViews = new ArrayList();
         ForkProfileSocialCellBinding inflate = ForkProfileSocialCellBinding.inflate(LayoutInflater.from(context), this);
@@ -97,7 +123,7 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         inflate.textTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         inflate.textSubTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         TextView lambda$1$lambda$0 = inflate.buttonAdd;
-        lambda$1$lambda$0.setText(getResource().getString(C3417R.string.social_cell_add_button));
+        lambda$1$lambda$0.setText(getResource().getString(C3419R.string.social_cell_add_button));
         lambda$1$lambda$0.setBackground(Theme.createSimpleSelectorRoundRectDrawable(4, Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
         lambda$1$lambda$0.setTextColor(Theme.getColor(Theme.key_chats_actionIcon));
         Intrinsics.checkNotNullExpressionValue(lambda$1$lambda$0, "lambda$1$lambda$0");
@@ -112,7 +138,7 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         return this.binding;
     }
 
-    public final void updateState(ProfileUiState profileUiState, Function1<? super SocialNetwork, Unit> onNetworkClick, final Function1<? super SocialNetwork, Unit> onNetworkLongClick, Function1<? super List<SocialNetwork>, Unit> onAddButtonClick) {
+    public final void updateState(ProfileUiState profileUiState, final Function1<? super SocialNetwork, Unit> onNetworkClick, final Function1<? super SocialNetwork, Unit> onNetworkLongClick, final Function1<? super List<SocialNetwork>, Unit> onAddButtonClick) {
         int collectionSizeOrDefault;
         SocialNetwork copy;
         Intrinsics.checkNotNullParameter(profileUiState, "profileUiState");
@@ -136,8 +162,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
                 LinearLayout linearImages = forkProfileSocialCellBinding.linearImages;
                 Intrinsics.checkNotNullExpressionValue(linearImages, "linearImages");
                 ViewExtKt.gone$default(linearImages, false, 1, null);
-                forkProfileSocialCellBinding.textTitle.setText(getResource().getString(C3417R.string.social_cell_not_connected));
-                forkProfileSocialCellBinding.textSubTitle.setText(getResource().getString(C3417R.string.social_cell_social_networks));
+                forkProfileSocialCellBinding.textTitle.setText(getResource().getString(C3419R.string.social_cell_not_connected));
+                forkProfileSocialCellBinding.textSubTitle.setText(getResource().getString(C3419R.string.social_cell_social_networks));
                 return;
             } else if (i == 3) {
                 ForkProfileSocialCellBinding forkProfileSocialCellBinding2 = this.binding;
@@ -153,8 +179,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
                 LinearLayout linearImages2 = forkProfileSocialCellBinding2.linearImages;
                 Intrinsics.checkNotNullExpressionValue(linearImages2, "linearImages");
                 ViewExtKt.invisible$default(linearImages2, false, 1, null);
-                forkProfileSocialCellBinding2.textTitle.setText(getResource().getString(C3417R.string.social_cell_not_connected));
-                forkProfileSocialCellBinding2.textSubTitle.setText(getResource().getString(C3417R.string.social_cell_social_networks));
+                forkProfileSocialCellBinding2.textTitle.setText(getResource().getString(C3419R.string.social_cell_not_connected));
+                forkProfileSocialCellBinding2.textSubTitle.setText(getResource().getString(C3419R.string.social_cell_social_networks));
                 return;
             } else {
                 Timber.m7e("updateState is not handled", new Object[0]);
@@ -176,7 +202,7 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
                 arrayList2.add(obj);
             }
         }
-        ArrayList arrayList3 = new ArrayList();
+        final ArrayList arrayList3 = new ArrayList();
         for (Object obj2 : arrayList) {
             if (!((SocialNetwork) obj2).isActive()) {
                 arrayList3.add(obj2);
@@ -194,7 +220,26 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
             ImageView imageView = this.cachedImageViews.get(i2);
             ImageViewExtKt.withGlide$default(imageView, socialNetwork2.getIcon(), null, null, 6, null);
             ViewExtKt.visible$default(imageView, false, 1, null);
-            ViewExtKt.safeThrottledClick$default(imageView, 0L, new ProfileSocialCell$updateState$1$1$1$1(onNetworkClick, socialNetwork2), 1, null);
+            ViewExtKt.safeThrottledClick$default(imageView, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.profile.ProfileSocialCell$updateState$1$1$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                /* JADX WARN: Multi-variable type inference failed */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                    invoke2(view);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(View it2) {
+                    Intrinsics.checkNotNullParameter(it2, "it");
+                    onNetworkClick.invoke(socialNetwork2);
+                }
+            }, 1, null);
             imageView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.iMe.feature.profile.ProfileSocialCell$updateState$lambda$7$lambda$6$lambda$5$$inlined$safeLongClick$1
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
@@ -215,7 +260,26 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         ViewExtKt.gone(buttonAdd3, z || arrayList3.isEmpty());
         TextView buttonAdd4 = forkProfileSocialCellBinding3.buttonAdd;
         Intrinsics.checkNotNullExpressionValue(buttonAdd4, "buttonAdd");
-        ViewExtKt.safeThrottledClick$default(buttonAdd4, 0L, new ProfileSocialCell$updateState$1$3(onAddButtonClick, arrayList3), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonAdd4, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.profile.ProfileSocialCell$updateState$1$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it2) {
+                Intrinsics.checkNotNullParameter(it2, "it");
+                onAddButtonClick.invoke(arrayList3);
+            }
+        }, 1, null);
         TextView textSubTitle3 = forkProfileSocialCellBinding3.textSubTitle;
         Intrinsics.checkNotNullExpressionValue(textSubTitle3, "textSubTitle");
         ViewExtKt.visible$default(textSubTitle3, false, 1, null);
@@ -225,8 +289,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         TextView textView = forkProfileSocialCellBinding3.textTitle;
         Intrinsics.checkNotNullExpressionValue(textView, str2);
         ViewExtKt.visible(textView, arrayList2.isEmpty());
-        forkProfileSocialCellBinding3.textTitle.setText(getResource().getString(C3417R.string.social_cell_not_connected));
-        forkProfileSocialCellBinding3.textSubTitle.setText(getResource().getString(C3417R.string.social_cell_social_networks));
+        forkProfileSocialCellBinding3.textTitle.setText(getResource().getString(C3419R.string.social_cell_not_connected));
+        forkProfileSocialCellBinding3.textSubTitle.setText(getResource().getString(C3419R.string.social_cell_social_networks));
     }
 
     private final void buildImageViews() {

@@ -232,7 +232,7 @@ public class ClippingImageView extends View {
             try {
                 canvas.drawBitmap(this.bmp.bitmap, this.matrix, this.paint);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         canvas.restore();

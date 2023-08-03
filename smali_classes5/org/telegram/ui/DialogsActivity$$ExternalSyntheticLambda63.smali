@@ -2,20 +2,30 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/bots/usecase/AiBotsManager$BotsListChangedCallback;
+.implements Lcom/iMe/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
@@ -23,11 +33,9 @@
 
 # virtual methods
 .method public final onSuccess()V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$9DGCK1bWYB5ka8g_Xz_LFBQDAPs(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Mztl1BRxk9h-8VSnVrbNzhB1tdI()V
 
     return-void
 .end method

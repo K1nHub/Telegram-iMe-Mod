@@ -12,10 +12,14 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.activity.OnBackPressedDispatcherKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.ViewModelStoreOwner;
+import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.navigation.NavArgsLazy;
 import com.iMe.common.viewBinding.FragmentViewBindingDelegate;
 import com.iMe.feature.socialMedias.SocialAuthDomain;
@@ -36,15 +40,23 @@ import kotlin.LazyThreadSafetyMode;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
+import org.koin.android.ext.android.AndroidKoinScopeExtKt;
+import org.koin.androidx.viewmodel.GetViewModelKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkToolbarBinding;
 import org.telegram.messenger.databinding.ForkWebScreenBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -58,14 +70,84 @@ public final class AuthScreen extends Fragment implements KoinComponent {
     private final Lazy viewModel$delegate;
 
     public AuthScreen() {
-        super(C3417R.layout.fork_web_screen);
+        super(C3419R.layout.fork_web_screen);
         Lazy lazy;
         Lazy lazy2;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkWebScreenBinding.class, this);
-        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new AuthScreen$special$$inlined$viewModel$default$2(this, null, new AuthScreen$special$$inlined$viewModel$default$1(this), null, null));
+        final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$special$$inlined$viewModel$default$1
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Fragment invoke() {
+                return Fragment.this;
+            }
+        };
+        lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new Function0<AuthViewModel>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$special$$inlined$viewModel$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            /* JADX WARN: Type inference failed for: r0v3, types: [com.iMe.feature.socialMedias.auth.AuthViewModel, androidx.lifecycle.ViewModel] */
+            @Override // kotlin.jvm.functions.Function0
+            public final AuthViewModel invoke() {
+                CreationExtras defaultViewModelCreationExtras;
+                ?? resolveViewModel;
+                Fragment fragment = Fragment.this;
+                Qualifier qualifier = r2;
+                Function0 function02 = function0;
+                Function0 function03 = r4;
+                Function0 function04 = r5;
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function02.invoke()).getViewModelStore();
+                if (function03 == null || (defaultViewModelCreationExtras = (CreationExtras) function03.invoke()) == null) {
+                    defaultViewModelCreationExtras = fragment.getDefaultViewModelCreationExtras();
+                    Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "this.defaultViewModelCreationExtras");
+                }
+                resolveViewModel = GetViewModelKt.resolveViewModel(Reflection.getOrCreateKotlinClass(AuthViewModel.class), viewModelStore, (i & 4) != 0 ? null : null, defaultViewModelCreationExtras, (i & 16) != 0 ? null : qualifier, AndroidKoinScopeExtKt.getKoinScope(fragment), (i & 64) != 0 ? null : function04);
+                return resolveViewModel;
+            }
+        });
         this.viewModel$delegate = lazy;
-        this.args$delegate = new NavArgsLazy(Reflection.getOrCreateKotlinClass(AuthScreenArgs.class), new AuthScreen$special$$inlined$navArgs$1(this));
-        lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new AuthScreen$special$$inlined$inject$default$1(this, null, null));
+        this.args$delegate = new NavArgsLazy(Reflection.getOrCreateKotlinClass(AuthScreenArgs.class), new Function0<Bundle>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$special$$inlined$navArgs$1
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Bundle invoke() {
+                Bundle arguments = Fragment.this.getArguments();
+                if (arguments != null) {
+                    return arguments;
+                }
+                throw new IllegalStateException("Fragment " + Fragment.this + " has null arguments");
+            }
+        });
+        lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function02);
+            }
+        });
         this.resource$delegate = lazy2;
     }
 
@@ -114,7 +196,24 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         super.onViewCreated(view, bundle);
         OnBackPressedDispatcher onBackPressedDispatcher = requireActivity().getOnBackPressedDispatcher();
         Intrinsics.checkNotNullExpressionValue(onBackPressedDispatcher, "requireActivity().onBackPressedDispatcher");
-        OnBackPressedDispatcherKt.addCallback$default(onBackPressedDispatcher, getViewLifecycleOwner(), false, new AuthScreen$onViewCreated$1(this), 2, null);
+        OnBackPressedDispatcherKt.addCallback$default(onBackPressedDispatcher, getViewLifecycleOwner(), false, new Function1<OnBackPressedCallback, Unit>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$onViewCreated$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(OnBackPressedCallback onBackPressedCallback) {
+                invoke2(onBackPressedCallback);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(OnBackPressedCallback addCallback) {
+                Intrinsics.checkNotNullParameter(addCallback, "$this$addCallback");
+                AuthScreen.this.showCloseDialog();
+            }
+        }, 2, null);
         initToolbar();
         setupWebView();
         AuthViewModel viewModel = getViewModel();
@@ -143,7 +242,7 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         } else if (Intrinsics.areEqual(authSideEffects, AuthSideEffects.RemoveCookies.INSTANCE)) {
             CookieManager.getInstance().removeAllCookies(null);
         } else if (Intrinsics.areEqual(authSideEffects, AuthSideEffects.ShowAccessError.INSTANCE)) {
-            showErrorMessageAndClose(getResource().getString(C3417R.string.social_access_error));
+            showErrorMessageAndClose(getResource().getString(C3419R.string.social_access_error));
         }
     }
 
@@ -160,20 +259,54 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         ImageView initToolbar$lambda$2$lambda$0 = forkToolbarBinding.imageBack;
         initToolbar$lambda$2$lambda$0.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         Intrinsics.checkNotNullExpressionValue(initToolbar$lambda$2$lambda$0, "initToolbar$lambda$2$lambda$0");
-        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$2$lambda$0, 0L, new AuthScreen$initToolbar$1$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$2$lambda$0, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$initToolbar$1$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                AuthScreen.this.showCloseDialog();
+            }
+        }, 1, null);
         ImageView initToolbar$lambda$2$lambda$1 = forkToolbarBinding.imageMenu;
         initToolbar$lambda$2$lambda$1.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         Intrinsics.checkNotNullExpressionValue(initToolbar$lambda$2$lambda$1, "initToolbar$lambda$2$lambda$1");
-        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$2$lambda$1, 0L, new AuthScreen$initToolbar$1$2$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(initToolbar$lambda$2$lambda$1, 0L, new Function1<View, Unit>() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$initToolbar$1$2$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                AuthScreen.this.showPopupMenu();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showPopupMenu() {
         List mutableListOf;
-        String string = getResource().getString(C3417R.string.social_clear_cache_menu_item);
-        int i = C3417R.C3419drawable.msg_delete;
+        String string = getResource().getString(C3419R.string.social_clear_cache_menu_item);
+        int i = C3419R.C3421drawable.msg_delete;
         int i2 = Theme.key_color_red;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3417R.string.social_refresh_page_menu_item), C3417R.C3419drawable.msg_retry, 0, 0, new AuthScreen$showPopupMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new AuthScreen$showPopupMenu$menuItems$2(getViewModel())));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3419R.string.social_refresh_page_menu_item), C3419R.C3421drawable.msg_retry, 0, 0, new AuthScreen$showPopupMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new AuthScreen$showPopupMenu$menuItems$2(getViewModel())));
         ImageView imageView = getBinding().toolbar.imageMenu;
         Intrinsics.checkNotNullExpressionValue(imageView, "binding.toolbar.imageMenu");
         PopupMenuExtKt.showPopupMenu(imageView, mutableListOf);
@@ -195,7 +328,7 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         String capitalizeOnlyFirstSymbol = StringExtKt.capitalizeOnlyFirstSymbol(getArgs().getSocialAuthDomain().getSocialType().name());
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        DialogUtils.createDialog$default(requireContext, new DialogModel(getString(C3417R.string.social_connect_account_title, capitalizeOnlyFirstSymbol), getString(C3417R.string.social_connect_account_message), getString(C3417R.string.social_connect_account_negative_button), getString(C3417R.string.social_connect_account_positive_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(requireContext, new DialogModel(getString(C3419R.string.social_connect_account_title, capitalizeOnlyFirstSymbol), getString(C3419R.string.social_connect_account_message), getString(C3419R.string.social_connect_account_negative_button), getString(C3419R.string.social_connect_account_positive_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 AuthScreen.this.closeAuthScreen();

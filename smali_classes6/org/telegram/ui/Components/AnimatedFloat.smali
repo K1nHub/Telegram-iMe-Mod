@@ -400,10 +400,19 @@
     return v0
 .end method
 
+.method public getDuration()J
+    .locals 2
+
+    .line 177
+    iget-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDuration:J
+
+    return-wide v0
+.end method
+
 .method public getTransitionProgress()F
     .locals 6
 
-    .line 169
+    .line 185
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
     const/4 v1, 0x0
@@ -412,13 +421,13 @@
 
     return v1
 
-    .line 172
+    .line 188
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 173
+    .line 189
     iget-wide v4, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionStart:J
 
     sub-long/2addr v2, v4
@@ -447,12 +456,12 @@
 .method public getTransitionProgressInterpolated()F
     .locals 2
 
-    .line 177
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionInterpolator:Landroid/animation/TimeInterpolator;
 
     if-eqz v0, :cond_0
 
-    .line 178
+    .line 194
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedFloat;->getTransitionProgress()F
 
     move-result v1
@@ -463,7 +472,7 @@
 
     return v0
 
-    .line 180
+    .line 196
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedFloat;->getTransitionProgress()F
 
@@ -475,7 +484,7 @@
 .method public isInProgress()Z
     .locals 1
 
-    .line 165
+    .line 181
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
     return v0
@@ -501,7 +510,7 @@
 
     if-nez p2, :cond_1
 
-    .line 130
+    .line 138
     iget-wide v1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDuration:J
 
     const-wide/16 v3, 0x0
@@ -516,7 +525,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 142
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Components/AnimatedFloat;->targetValue:F
 
@@ -534,18 +543,18 @@
 
     const/4 p2, 0x1
 
-    .line 135
+    .line 143
     iput-boolean p2, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
-    .line 136
+    .line 144
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->targetValue:F
 
-    .line 137
+    .line 145
     iget p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->value:F
 
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->startValue:F
 
-    .line 138
+    .line 146
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -554,32 +563,32 @@
 
     goto :goto_1
 
-    .line 131
+    .line 139
     :cond_1
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->targetValue:F
 
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->value:F
 
-    .line 132
+    .line 140
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
-    .line 133
+    .line 141
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->firstSet:Z
 
-    .line 140
+    .line 148
     :cond_2
     :goto_1
     iget-boolean p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
     if-eqz p1, :cond_7
 
-    .line 141
+    .line 149
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
 
-    .line 142
+    .line 150
     iget-wide v1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionStart:J
 
     sub-long v1, p1, v1
@@ -604,7 +613,7 @@
 
     move-result v1
 
-    .line 143
+    .line 151
     iget-wide v4, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionStart:J
 
     sub-long/2addr p1, v4
@@ -615,12 +624,12 @@
 
     if-ltz p1, :cond_4
 
-    .line 144
+    .line 152
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionInterpolator:Landroid/animation/TimeInterpolator;
 
     if-nez p1, :cond_3
 
-    .line 145
+    .line 153
     iget p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->startValue:F
 
     iget p2, p0, Lorg/telegram/ui/Components/AnimatedFloat;->targetValue:F
@@ -633,7 +642,7 @@
 
     goto :goto_2
 
-    .line 147
+    .line 155
     :cond_3
     iget p2, p0, Lorg/telegram/ui/Components/AnimatedFloat;->startValue:F
 
@@ -655,30 +664,30 @@
 
     if-ltz p1, :cond_5
 
-    .line 151
+    .line 159
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transition:Z
 
     goto :goto_3
 
-    .line 153
+    .line 161
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->parent:Landroid/view/View;
 
     if-eqz p1, :cond_6
 
-    .line 154
+    .line 162
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 156
+    .line 164
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->invalidate:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_7
 
-    .line 157
+    .line 165
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 161
+    .line 169
     :cond_7
     :goto_3
     iget p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->value:F
@@ -686,10 +695,63 @@
     return p1
 .end method
 
+.method public set(Z)F
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    const/4 v0, 0x0
+
+    .line 130
+    invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public set(ZZ)F
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 134
+    :goto_0
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public setDuration(J)V
+    .locals 0
+
+    .line 173
+    iput-wide p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDuration:J
+
+    return-void
+.end method
+
 .method public setParent(Landroid/view/View;)V
     .locals 0
 
-    .line 185
+    .line 201
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->parent:Landroid/view/View;
 
     return-void

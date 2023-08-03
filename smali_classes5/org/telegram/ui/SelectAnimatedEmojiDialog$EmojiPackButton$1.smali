@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$1;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lorg/telegram/ui/Components/AnimatedTextView;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;->updateLock(ZZ)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,45 +14,52 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;
-
-.field final synthetic val$show:Z
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;Z)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;Landroid/content/Context;Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 2522
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$1;->val$show:Z
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 2544
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public invalidate()V
     .locals 1
 
-    .line 2525
-    iget-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$1;->val$show:Z
+    .line 2547
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
-    if-nez p1, :cond_0
+    move-result v0
 
-    .line 2526
-    iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;
+    if-eqz v0, :cond_0
 
-    iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
+    return-void
 
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
+    .line 2550
     :cond_0
+    invoke-super {p0}, Landroid/view/View;->invalidate()V
+
+    return-void
+.end method
+
+.method public invalidate(IIII)V
+    .locals 1
+
+    .line 2555
+    invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 2558
+    :cond_0
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
+
     return-void
 .end method

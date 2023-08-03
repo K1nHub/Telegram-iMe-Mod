@@ -85,17 +85,17 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 50
+    .line 52
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     const-wide/16 v0, -0x1
 
-    .line 91
+    .line 93
     iput-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
-    .line 93
+    .line 95
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -108,25 +108,25 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeMatrix:Landroid/graphics/Matrix;
 
-    .line 96
+    .line 98
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     iput v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->colorKey1:I
 
-    .line 97
+    .line 99
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
 
     iput v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->colorKey2:I
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 101
+    .line 103
     iput v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidthScale:F
 
-    .line 102
+    .line 104
     iput v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->speed:F
 
-    .line 105
+    .line 107
     new-instance v1, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -135,14 +135,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 106
+    .line 108
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
-    .line 108
+    .line 110
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
@@ -153,24 +153,24 @@
 
     new-array v1, v1, [F
 
-    .line 111
+    .line 113
     iput-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->radii:[F
 
-    .line 113
+    .line 115
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
-    .line 51
+    .line 53
     iget-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 52
+    .line 54
     iget-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -192,10 +192,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 33
+    .line 35
     invoke-direct {p0}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
 
-    .line 34
+    .line 36
     iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -206,7 +206,7 @@
 .method public disappear()V
     .locals 2
 
-    .line 201
+    .line 204
     invoke-virtual {p0}, Lorg/telegram/ui/Components/LoadingDrawable;->isDisappeared()Z
 
     move-result v0
@@ -219,7 +219,7 @@
 
     if-nez v0, :cond_0
 
-    .line 202
+    .line 205
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -237,7 +237,7 @@
 
     move-object/from16 v7, p1
 
-    .line 212
+    .line 215
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/LoadingDrawable;->isDisappeared()Z
 
     move-result v1
@@ -246,13 +246,13 @@
 
     return-void
 
-    .line 216
+    .line 219
     :cond_0
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v8
 
-    .line 217
+    .line 220
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/LoadingDrawable;->getPaintAlpha()I
 
     move-result v1
@@ -261,7 +261,7 @@
 
     return-void
 
-    .line 221
+    .line 224
     :cond_1
     invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
 
@@ -271,7 +271,7 @@
 
     if-gtz v1, :cond_2
 
-    .line 223
+    .line 226
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -279,7 +279,7 @@
     :cond_2
     const/16 v3, 0x190
 
-    .line 225
+    .line 228
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -296,7 +296,7 @@
 
     float-to-int v1, v1
 
-    .line 226
+    .line 229
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->color1:Ljava/lang/Integer;
 
     if-eqz v3, :cond_3
@@ -316,7 +316,7 @@
 
     move-result v3
 
-    .line 227
+    .line 230
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/Components/LoadingDrawable;->color2:Ljava/lang/Integer;
 
@@ -337,7 +337,7 @@
 
     move-result v4
 
-    .line 228
+    .line 231
     :goto_1
     iget-object v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeColor1:Ljava/lang/Integer;
 
@@ -358,7 +358,7 @@
 
     move-result v5
 
-    .line 229
+    .line 232
     :goto_2
     iget-object v6, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeColor2:Ljava/lang/Integer;
 
@@ -379,7 +379,7 @@
 
     move-result v6
 
-    .line 230
+    .line 233
     :goto_3
     iget-object v9, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradient:Landroid/graphics/LinearGradient;
 
@@ -413,17 +413,17 @@
 
     if-eq v6, v9, :cond_8
 
-    .line 231
+    .line 234
     :cond_7
     iput v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidth:I
 
-    .line 233
+    .line 236
     iput v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientColor1:I
 
-    .line 234
+    .line 237
     iput v4, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientColor2:I
 
-    .line 235
+    .line 238
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/4 v15, 0x0
@@ -466,25 +466,25 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradient:Landroid/graphics/LinearGradient;
 
-    .line 236
+    .line 239
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 237
+    .line 240
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 239
+    .line 242
     iput v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientStrokeColor1:I
 
-    .line 240
+    .line 243
     iput v6, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientStrokeColor2:I
 
-    .line 241
+    .line 244
     new-instance v1, Landroid/graphics/LinearGradient;
 
     iget v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidth:I
@@ -525,25 +525,25 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeGradient:Landroid/graphics/LinearGradient;
 
-    .line 242
+    .line 245
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 243
+    .line 246
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 246
+    .line 249
     :cond_8
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 247
+    .line 250
     iget-wide v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
     const-wide/16 v14, 0x0
@@ -552,10 +552,10 @@
 
     if-gez v1, :cond_9
 
-    .line 248
+    .line 251
     iput-wide v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
-    .line 250
+    .line 253
     :cond_9
     iget-wide v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
@@ -567,7 +567,7 @@
 
     div-float/2addr v1, v5
 
-    .line 251
+    .line 254
     iget v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->speed:F
 
     mul-float/2addr v1, v5
@@ -588,7 +588,7 @@
 
     mul-float/2addr v9, v5
 
-    .line 252
+    .line 255
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     mul-float/2addr v9, v5
@@ -603,7 +603,7 @@
 
     rem-float v5, v9, v5
 
-    .line 253
+    .line 256
     iget-wide v9, v0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
     sub-long v9, v3, v9
@@ -614,7 +614,7 @@
 
     div-float v10, v9, v10
 
-    .line 254
+    .line 257
     iget-wide v12, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     cmp-long v9, v12, v14
@@ -650,7 +650,7 @@
     :cond_a
     const/4 v12, 0x0
 
-    .line 257
+    .line 260
     :goto_4
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/LoadingDrawable;->isDisappearing()Z
 
@@ -662,7 +662,7 @@
 
     if-eqz v3, :cond_d
 
-    .line 258
+    .line 261
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -681,12 +681,12 @@
 
     if-gez v9, :cond_d
 
-    .line 261
+    .line 264
     iget-object v9, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
     if-nez v9, :cond_b
 
-    .line 262
+    .line 265
     new-instance v9, Landroid/graphics/Paint;
 
     const/4 v6, 0x1
@@ -695,7 +695,7 @@
 
     iput-object v9, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
-    .line 263
+    .line 266
     new-instance v9, Landroid/graphics/LinearGradient;
 
     const/16 v18, 0x0
@@ -734,26 +734,26 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
-    .line 264
+    .line 267
     new-instance v1, Landroid/graphics/Matrix;
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearMatrix:Landroid/graphics/Matrix;
 
-    .line 265
+    .line 268
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v3, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 266
+    .line 269
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 267
+    .line 270
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
     new-instance v3, Landroid/graphics/PorterDuffXfermode;
@@ -766,13 +766,13 @@
 
     goto :goto_5
 
-    .line 268
+    .line 271
     :cond_b
     iget v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradientWidth:I
 
     if-eq v1, v3, :cond_c
 
-    .line 269
+    .line 272
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/16 v18, 0x0
@@ -811,26 +811,26 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
-    .line 270
+    .line 273
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 271
+    .line 274
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 274
+    .line 277
     :cond_c
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v8}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 275
+    .line 278
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
@@ -851,7 +851,7 @@
 
     invoke-virtual {v1, v3, v6}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 276
+    .line 279
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v7, v1, v13, v4}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
@@ -863,13 +863,13 @@
     :cond_d
     const/4 v15, 0x0
 
-    .line 281
+    .line 284
     :goto_6
     iget-boolean v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearByGradient:Z
 
     if-eqz v1, :cond_10
 
-    .line 282
+    .line 285
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -888,12 +888,12 @@
 
     if-gez v2, :cond_10
 
-    .line 285
+    .line 288
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearPaint:Landroid/graphics/Paint;
 
     if-nez v2, :cond_e
 
-    .line 286
+    .line 289
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v3, 0x1
@@ -902,7 +902,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearPaint:Landroid/graphics/Paint;
 
-    .line 287
+    .line 290
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/16 v17, 0x0
@@ -939,26 +939,26 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
-    .line 288
+    .line 291
     new-instance v1, Landroid/graphics/Matrix;
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearMatrix:Landroid/graphics/Matrix;
 
-    .line 289
+    .line 292
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v2, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 290
+    .line 293
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearPaint:Landroid/graphics/Paint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 291
+    .line 294
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearPaint:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -974,12 +974,12 @@
     :cond_e
     const/4 v3, 0x1
 
-    .line 292
+    .line 295
     iget v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradientWidth:I
 
     if-eq v2, v1, :cond_f
 
-    .line 293
+    .line 296
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/16 v17, 0x0
@@ -1016,26 +1016,26 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
-    .line 294
+    .line 297
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 295
+    .line 298
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearPaint:Landroid/graphics/Paint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 298
+    .line 301
     :cond_f
     :goto_7
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v8}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 299
+    .line 302
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
@@ -1056,7 +1056,7 @@
 
     invoke-virtual {v1, v2, v6}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 300
+    .line 303
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v7, v1, v13, v4}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
@@ -1066,7 +1066,7 @@
     :cond_10
     const/4 v3, 0x0
 
-    .line 305
+    .line 308
     :goto_8
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->matrix:Landroid/graphics/Matrix;
 
@@ -1074,33 +1074,33 @@
 
     invoke-virtual {v1, v5, v2}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 306
+    .line 309
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradient:Landroid/graphics/LinearGradient;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/LoadingDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v4}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 308
+    .line 311
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v5, v2}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 309
+    .line 312
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 312
+    .line 315
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->usePath:Landroid/graphics/Path;
 
     if-eqz v1, :cond_11
 
     goto :goto_9
 
-    .line 315
+    .line 318
     :cond_11
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
@@ -1112,20 +1112,20 @@
 
     if-nez v1, :cond_13
 
-    .line 316
+    .line 319
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 317
+    .line 320
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     iput-object v8, v0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v8}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 318
+    .line 321
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
@@ -1136,31 +1136,31 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 320
+    .line 323
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
-    .line 322
+    .line 325
     :goto_9
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     if-eqz v2, :cond_14
 
-    .line 323
+    .line 326
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 325
+    .line 328
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 326
+    .line 329
     iget-boolean v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->stroke:Z
 
     if-eqz v2, :cond_15
 
-    .line 327
+    .line 330
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
@@ -1168,10 +1168,10 @@
     :cond_15
     if-eqz v3, :cond_16
 
-    .line 331
+    .line 334
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 332
+    .line 335
     iget v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradientWidth:I
 
     invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
@@ -1192,7 +1192,7 @@
 
     sub-float/2addr v10, v1
 
-    .line 333
+    .line 336
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearMatrix:Landroid/graphics/Matrix;
 
     iget v2, v8, Landroid/graphics/Rect;->left:I
@@ -1205,14 +1205,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 334
+    .line 337
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 335
+    .line 338
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getStrokeWidth()F
@@ -1221,7 +1221,7 @@
 
     float-to-int v1, v1
 
-    .line 336
+    .line 339
     iget v2, v8, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v2, v1
@@ -1252,19 +1252,19 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 337
+    .line 340
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 338
+    .line 341
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_16
     if-eqz v15, :cond_17
 
-    .line 341
+    .line 344
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 342
+    .line 345
     iget v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradientWidth:I
 
     invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
@@ -1285,7 +1285,7 @@
 
     sub-float/2addr v12, v1
 
-    .line 343
+    .line 346
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearMatrix:Landroid/graphics/Matrix;
 
     iget v2, v8, Landroid/graphics/Rect;->right:I
@@ -1298,14 +1298,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 344
+    .line 347
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 345
+    .line 348
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getStrokeWidth()F
@@ -1314,7 +1314,7 @@
 
     float-to-int v1, v1
 
-    .line 346
+    .line 349
     iget v2, v8, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v2, v1
@@ -1345,13 +1345,13 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 347
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 348
+    .line 350
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 351
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 354
     :cond_17
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/LoadingDrawable;->isDisappeared()Z
 
@@ -1359,7 +1359,7 @@
 
     if-nez v1, :cond_18
 
-    .line 352
+    .line 355
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_18
@@ -1442,7 +1442,7 @@
 .method public getPaintAlpha()I
     .locals 1
 
-    .line 364
+    .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
@@ -1455,7 +1455,7 @@
 .method public isDisappeared()Z
     .locals 4
 
-    .line 81
+    .line 83
     iget-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     const-wide/16 v2, 0x0
@@ -1494,7 +1494,7 @@
 .method public isDisappearing()Z
     .locals 4
 
-    .line 77
+    .line 79
     iget-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     const-wide/16 v2, 0x0
@@ -1535,7 +1535,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 197
+    .line 200
     iput-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->start:J
 
     return-void
@@ -1546,7 +1546,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 207
+    .line 210
     iput-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     return-void
@@ -1555,14 +1555,14 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 369
+    .line 372
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     if-lez p1, :cond_0
 
-    .line 371
+    .line 374
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_0
@@ -1572,7 +1572,7 @@
 .method public setAppearByGradient(Z)V
     .locals 0
 
-    .line 139
+    .line 141
     iput-boolean p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->appearByGradient:Z
 
     return-void
@@ -1581,7 +1581,7 @@
 .method public setBounds(Landroid/graphics/RectF;)V
     .locals 3
 
-    .line 193
+    .line 195
     iget v0, p1, Landroid/graphics/RectF;->left:F
 
     float-to-int v0, v0
@@ -1600,13 +1600,18 @@
 
     invoke-super {p0, v0, v1, v2, p1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
+    const/4 p1, 0x0
+
+    .line 196
+    iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
+
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 377
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
@@ -1617,14 +1622,14 @@
 .method public setColors(II)V
     .locals 0
 
-    .line 56
+    .line 58
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->color1:Ljava/lang/Integer;
 
-    .line 57
+    .line 59
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1633,7 +1638,7 @@
 
     const/4 p1, 0x0
 
-    .line 58
+    .line 60
     iput-boolean p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->stroke:Z
 
     return-void
@@ -1642,14 +1647,14 @@
 .method public setColors(IIII)V
     .locals 0
 
-    .line 62
+    .line 64
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->color1:Ljava/lang/Integer;
 
-    .line 63
+    .line 65
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1658,17 +1663,17 @@
 
     const/4 p1, 0x1
 
-    .line 64
+    .line 66
     iput-boolean p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->stroke:Z
 
-    .line 65
+    .line 67
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeColor1:Ljava/lang/Integer;
 
-    .line 66
+    .line 68
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1681,7 +1686,7 @@
 .method public setGradientScale(F)V
     .locals 0
 
-    .line 131
+    .line 133
     iput p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidthScale:F
 
     return-void
@@ -1690,7 +1695,7 @@
 .method public setRadii(FFFF)V
     .locals 7
 
-    .line 156
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->radii:[F
 
     const/4 v1, 0x0
@@ -1738,7 +1743,7 @@
     :goto_0
     move v2, v6
 
-    .line 162
+    .line 164
     :goto_1
     aput p1, v0, v6
 
@@ -1746,45 +1751,45 @@
 
     const/4 p1, 0x3
 
-    .line 163
+    .line 165
     aput p2, v0, p1
 
     aput p2, v0, v5
 
     const/4 p1, 0x5
 
-    .line 164
+    .line 166
     aput p3, v0, p1
 
     aput p3, v0, v4
 
     const/4 p1, 0x7
 
-    .line 165
+    .line 167
     aput p4, v0, p1
 
     aput p4, v0, v3
 
-    .line 167
+    .line 169
     iget-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
     if-eqz p1, :cond_2
 
     if-eqz v2, :cond_2
 
-    .line 168
+    .line 170
     iget-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1}, Landroid/graphics/Path;->rewind()V
 
-    .line 169
+    .line 171
     iget-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 170
+    .line 172
     iget-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
@@ -1804,7 +1809,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 175
+    .line 177
     array-length v0, p1
 
     const/16 v1, 0x8
@@ -1821,7 +1826,7 @@
     :goto_0
     if-ge v0, v1, :cond_2
 
-    .line 180
+    .line 182
     iget-object v3, p0, Lorg/telegram/ui/Components/LoadingDrawable;->radii:[F
 
     aget v4, v3, v0
@@ -1832,7 +1837,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 181
+    .line 183
     aget v2, p1, v0
 
     aput v2, v3, v0
@@ -1844,7 +1849,7 @@
 
     goto :goto_0
 
-    .line 185
+    .line 187
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
@@ -1852,19 +1857,19 @@
 
     if-eqz v2, :cond_3
 
-    .line 186
+    .line 188
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 187
+    .line 189
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->lastBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 188
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
@@ -1881,12 +1886,12 @@
 .method public setRadiiDp(F)V
     .locals 3
 
-    .line 143
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->usePath:Landroid/graphics/Path;
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/CornerPathEffect;
@@ -1901,7 +1906,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 145
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/CornerPathEffect;
@@ -1918,7 +1923,7 @@
 
     goto :goto_0
 
-    .line 147
+    .line 149
     :cond_0
     invoke-virtual {p0, p1, p1, p1, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(FFFF)V
 
@@ -1929,7 +1934,7 @@
 .method public setRadiiDp(FFFF)V
     .locals 0
 
-    .line 152
+    .line 154
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
@@ -1962,7 +1967,7 @@
 .method public setSpeed(F)V
     .locals 0
 
-    .line 135
+    .line 137
     iput p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->speed:F
 
     return-void
@@ -1971,7 +1976,7 @@
 .method public timeToDisappear()J
     .locals 6
 
-    .line 85
+    .line 87
     iget-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     const-wide/16 v2, 0x0
@@ -1982,7 +1987,7 @@
 
     const-wide/16 v0, 0x140
 
-    .line 86
+    .line 88
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -2002,19 +2007,19 @@
 .method public updateBounds()V
     .locals 3
 
-    .line 357
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->usePath:Landroid/graphics/Path;
 
     if-eqz v0, :cond_0
 
-    .line 358
+    .line 361
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->computeBounds(Landroid/graphics/RectF;Z)V
 
-    .line 359
+    .line 362
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setBounds(Landroid/graphics/RectF;)V
 
     :cond_0
@@ -2024,7 +2029,7 @@
 .method public usePath(Landroid/graphics/Path;)V
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/LoadingDrawable;->usePath:Landroid/graphics/Path;
 
     return-void

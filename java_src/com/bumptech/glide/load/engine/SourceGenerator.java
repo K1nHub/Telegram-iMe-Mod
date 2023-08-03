@@ -18,7 +18,7 @@ import java.util.List;
 public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerator.FetcherReadyCallback {
 
     /* renamed from: cb */
-    private final DataFetcherGenerator.FetcherReadyCallback f90cb;
+    private final DataFetcherGenerator.FetcherReadyCallback f92cb;
     private volatile Object dataToCache;
     private final DecodeHelper<?> helper;
     private volatile ModelLoader.LoadData<?> loadData;
@@ -29,7 +29,7 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
     /* JADX INFO: Access modifiers changed from: package-private */
     public SourceGenerator(DecodeHelper<?> decodeHelper, DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback) {
         this.helper = decodeHelper;
-        this.f90cb = fetcherReadyCallback;
+        this.f92cb = fetcherReadyCallback;
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator
@@ -117,7 +117,7 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
                 Log.d("SourceGenerator", "Attempt to write: " + this.originalKey + ", data: " + obj + " to the disk cache failed, maybe the disk cache is disabled? Trying to decode the data directly...");
             }
             try {
-                this.f90cb.onDataFetcherReady(this.loadData.sourceKey, rewinder.rewindAndGet(), this.loadData.fetcher, this.loadData.fetcher.getDataSource(), this.loadData.sourceKey);
+                this.f92cb.onDataFetcherReady(this.loadData.sourceKey, rewinder.rewindAndGet(), this.loadData.fetcher, this.loadData.fetcher.getDataSource(), this.loadData.sourceKey);
                 return false;
             } catch (Throwable th) {
                 th = th;
@@ -144,17 +144,17 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
         DiskCacheStrategy diskCacheStrategy = this.helper.getDiskCacheStrategy();
         if (obj != null && diskCacheStrategy.isDataCacheable(loadData.fetcher.getDataSource())) {
             this.dataToCache = obj;
-            this.f90cb.reschedule();
+            this.f92cb.reschedule();
             return;
         }
-        DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback = this.f90cb;
+        DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback = this.f92cb;
         Key key = loadData.sourceKey;
         DataFetcher<?> dataFetcher = loadData.fetcher;
         fetcherReadyCallback.onDataFetcherReady(key, obj, dataFetcher, dataFetcher.getDataSource(), this.originalKey);
     }
 
     void onLoadFailedInternal(ModelLoader.LoadData<?> loadData, Exception exc) {
-        DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback = this.f90cb;
+        DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback = this.f92cb;
         DataCacheKey dataCacheKey = this.originalKey;
         DataFetcher<?> dataFetcher = loadData.fetcher;
         fetcherReadyCallback.onDataFetcherFailed(dataCacheKey, exc, dataFetcher, dataFetcher.getDataSource());
@@ -167,11 +167,11 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator.FetcherReadyCallback
     public void onDataFetcherReady(Key key, Object obj, DataFetcher<?> dataFetcher, DataSource dataSource, Key key2) {
-        this.f90cb.onDataFetcherReady(key, obj, dataFetcher, this.loadData.fetcher.getDataSource(), key);
+        this.f92cb.onDataFetcherReady(key, obj, dataFetcher, this.loadData.fetcher.getDataSource(), key);
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator.FetcherReadyCallback
     public void onDataFetcherFailed(Key key, Exception exc, DataFetcher<?> dataFetcher, DataSource dataSource) {
-        this.f90cb.onDataFetcherFailed(key, exc, dataFetcher, this.loadData.fetcher.getDataSource());
+        this.f92cb.onDataFetcherFailed(key, exc, dataFetcher, this.loadData.fetcher.getDataSource());
     }
 }

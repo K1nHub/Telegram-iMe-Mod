@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.HorizontalActionButtonsView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDashboardAccountEmptyBinding implements ViewBinding {
     private final FrameLayout rootView;
@@ -27,7 +27,7 @@ public final class ForkRecycleItemWalletDashboardAccountEmptyBinding implements 
     }
 
     public static ForkRecycleItemWalletDashboardAccountEmptyBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_dashboard_account_empty, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_dashboard_account_empty, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,11 +35,11 @@ public final class ForkRecycleItemWalletDashboardAccountEmptyBinding implements 
     }
 
     public static ForkRecycleItemWalletDashboardAccountEmptyBinding bind(View view) {
-        int i = C3417R.C3420id.card_empty_account;
+        int i = C3419R.C3422id.card_empty_account;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;
-            int i2 = C3417R.C3420id.horizontal_action_buttons;
+            int i2 = C3419R.C3422id.horizontal_action_buttons;
             HorizontalActionButtonsView horizontalActionButtonsView = (HorizontalActionButtonsView) ViewBindings.findChildViewById(view, i2);
             if (horizontalActionButtonsView != null) {
                 return new ForkRecycleItemWalletDashboardAccountEmptyBinding(frameLayout, cardView, frameLayout, horizontalActionButtonsView);

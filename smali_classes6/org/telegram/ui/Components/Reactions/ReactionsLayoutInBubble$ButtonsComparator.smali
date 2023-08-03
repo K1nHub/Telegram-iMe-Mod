@@ -36,7 +36,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 864
+    .line 873
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$1;)V
     .locals 0
 
-    .line 864
+    .line 873
     invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ButtonsComparator;-><init>()V
 
     return-void
@@ -56,7 +56,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 864
+    .line 873
     check-cast p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;
 
     check-cast p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;
@@ -71,7 +71,7 @@
 .method public compare(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;)I
     .locals 4
 
-    .line 871
+    .line 880
     iget-wide v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ButtonsComparator;->dialogId:J
 
     const-wide/16 v2, 0x0
@@ -80,7 +80,7 @@
 
     if-ltz v0, :cond_3
 
-    .line 872
+    .line 881
     iget-boolean v0, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSelected:Z
 
     iget-boolean v1, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->isSelected:Z
@@ -102,7 +102,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 875
+    .line 884
     iget v0, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosenOrder:I
 
     iget v1, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosenOrder:I
@@ -113,7 +113,7 @@
 
     return v0
 
-    .line 879
+    .line 888
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->access$100(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;)Lorg/telegram/tgnet/TLRPC$ReactionCount;
 
@@ -132,7 +132,7 @@
 
     return p1
 
-    .line 881
+    .line 890
     :cond_3
     iget v0, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->realCount:I
 
@@ -144,7 +144,7 @@
 
     return v1
 
-    .line 890
+    .line 899
     :cond_4
     invoke-static {p1}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->access$100(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;)Lorg/telegram/tgnet/TLRPC$ReactionCount;
 

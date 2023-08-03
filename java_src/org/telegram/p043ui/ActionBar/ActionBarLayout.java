@@ -44,7 +44,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MessagesController;
@@ -62,6 +62,7 @@ import org.telegram.p043ui.Components.FloatingDebug.FloatingDebugProvider;
 import org.telegram.p043ui.Components.GroupCallPip;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.PasscodeView;
+import org.telegram.p043ui.Stories.StoryViewer;
 /* renamed from: org.telegram.ui.ActionBar.ActionBarLayout */
 /* loaded from: classes5.dex */
 public class ActionBarLayout extends FrameLayout implements INavigationLayout, FloatingDebugProvider {
@@ -84,7 +85,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     private boolean beginTrackingSent;
     public LayoutContainer containerView;
     private LayoutContainer containerViewBack;
-    private C3484ActionBar currentActionBar;
+    private C3485ActionBar currentActionBar;
     private AnimatorSet currentAnimation;
     Runnable debugBlackScreenRunnable;
     private DecelerateInterpolator decelerateInterpolator;
@@ -122,6 +123,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     private List<BackButtonMenu.PulledDialog> pulledDialogs;
     private boolean rebuildAfterAnimation;
     private boolean rebuildLastAfterAnimation;
+    private Rect rect;
     private boolean removeActionBarExtraHeight;
     private boolean showLastAfterAnimation;
     INavigationLayout.StartColorsProvider startColorsProvider;
@@ -144,24 +146,22 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean addFragmentToStack(BaseFragment baseFragment) {
-        boolean addFragmentToStack;
-        addFragmentToStack = addFragmentToStack(baseFragment, -1);
-        return addFragmentToStack;
+        return INavigationLayout.CC.$default$addFragmentToStack(this, baseFragment);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ void animateThemedValues(Theme.ThemeInfo themeInfo, int i, boolean z, boolean z2) {
-        animateThemedValues(new INavigationLayout.ThemeAnimationSettings(themeInfo, i, z, z2), null);
+        INavigationLayout.CC.$default$animateThemedValues(this, themeInfo, i, z, z2);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ void animateThemedValues(Theme.ThemeInfo themeInfo, int i, boolean z, boolean z2, Runnable runnable) {
-        animateThemedValues(new INavigationLayout.ThemeAnimationSettings(themeInfo, i, z, z2), runnable);
+        INavigationLayout.CC.$default$animateThemedValues(this, themeInfo, i, z, z2, runnable);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ void closeLastFragment() {
-        closeLastFragment(true);
+        INavigationLayout.CC.$default$closeLastFragment(this);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
@@ -171,7 +171,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ void drawHeaderShadow(Canvas canvas, int i) {
-        drawHeaderShadow(canvas, 255, i);
+        INavigationLayout.CC.$default$drawHeaderShadow(this, canvas, i);
     }
 
     public /* bridge */ /* synthetic */ BaseFragment getBackgroundFragment() {
@@ -219,44 +219,32 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragment(BaseFragment baseFragment) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragment(this, baseFragment);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragment(BaseFragment baseFragment, boolean z) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment).setRemoveLast(z));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragment(this, baseFragment, z);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragment(BaseFragment baseFragment, boolean z, boolean z2, boolean z3, boolean z4) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment).setRemoveLast(z).setNoAnimation(z2).setCheckPresentFromDelegate(z3).setPreview(z4));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragment(this, baseFragment, z, z2, z3, z4);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragment(BaseFragment baseFragment, boolean z, boolean z2, boolean z3, boolean z4, ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment).setRemoveLast(z).setNoAnimation(z2).setCheckPresentFromDelegate(z3).setPreview(z4).setMenuView(actionBarPopupWindowLayout));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragment(this, baseFragment, z, z2, z3, z4, actionBarPopupWindowLayout);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragmentAsPreview(BaseFragment baseFragment) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment).setPreview(true));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragmentAsPreview(this, baseFragment);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ boolean presentFragmentAsPreviewWithMenu(BaseFragment baseFragment, ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
-        boolean presentFragment;
-        presentFragment = presentFragment(new INavigationLayout.NavigationParams(baseFragment).setPreview(true).setMenuView(actionBarPopupWindowLayout));
-        return presentFragment;
+        return INavigationLayout.CC.$default$presentFragmentAsPreviewWithMenu(this, baseFragment, actionBarPopupWindowLayout);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
@@ -271,10 +259,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public /* synthetic */ void removeFragmentFromStack(BaseFragment baseFragment) {
-        removeFragmentFromStack(baseFragment, false);
+        INavigationLayout.CC.$default$removeFragmentFromStack(this, baseFragment);
     }
 
-    static /* synthetic */ float access$1216(ActionBarLayout actionBarLayout, float f) {
+    static /* synthetic */ float access$1316(ActionBarLayout actionBarLayout, float f) {
         float f2 = actionBarLayout.animationProgress + f;
         actionBarLayout.animationProgress = f2;
         return f2;
@@ -311,7 +299,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 if ((view instanceof FrameLayout) && baseFragment.pinnedPlayerView != null) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
                     if (isPinnedPlayerVisible()) {
-                        layoutParams.bottomMargin = AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight());
+                        layoutParams.bottomMargin = AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight());
                         baseFragment.pinnedPlayerView.setVisibility(0);
                         baseFragment.pinnedPlayerView.updateTitle(false);
                     } else {
@@ -356,6 +344,18 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.highlightActionButtons = z;
     }
 
+    public boolean storyViewerAttached() {
+        BaseFragment baseFragment;
+        StoryViewer storyViewer;
+        if (this.fragmentsStack.isEmpty()) {
+            baseFragment = null;
+        } else {
+            List<BaseFragment> list = this.fragmentsStack;
+            baseFragment = list.get(list.size() - 1);
+        }
+        return (baseFragment == null || (storyViewer = baseFragment.storyViewer) == null || !storyViewer.attachedToParent()) ? false : true;
+    }
+
     /* renamed from: org.telegram.ui.ActionBar.ActionBarLayout$LayoutContainer */
     /* loaded from: classes5.dex */
     public class LayoutContainer extends FrameLayout {
@@ -380,7 +380,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         protected boolean drawChild(Canvas canvas, View view, long j) {
             int i;
             int i2;
-            if ((view instanceof C3484ActionBar) || (view instanceof PinnedPlayerView) || (view instanceof PasscodeView)) {
+            BaseFragment baseFragment = !ActionBarLayout.this.fragmentsStack.isEmpty() ? (BaseFragment) ActionBarLayout.this.fragmentsStack.get(ActionBarLayout.this.fragmentsStack.size() - 1) : null;
+            if (ActionBarLayout.this.storyViewerAttached() && baseFragment.storyViewer.isFullyVisible() && !baseFragment.isStoryViewer(view)) {
+                return true;
+            }
+            if ((view instanceof C3485ActionBar) || (view instanceof PinnedPlayerView) || (view instanceof PasscodeView)) {
                 return super.drawChild(canvas, view, j);
             }
             int childCount = getChildCount();
@@ -390,9 +394,9 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     break;
                 }
                 View childAt = getChildAt(i3);
-                if (childAt == view || !(childAt instanceof C3484ActionBar) || childAt.getVisibility() != 0) {
+                if (childAt == view || !(childAt instanceof C3485ActionBar) || childAt.getVisibility() != 0) {
                     i3++;
-                } else if (((C3484ActionBar) childAt).getCastShadows()) {
+                } else if (((C3485ActionBar) childAt).getCastShadows()) {
                     i = childAt.getMeasuredHeight();
                     i2 = (int) childAt.getY();
                 }
@@ -431,7 +435,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     break;
                 }
                 View childAt = getChildAt(i4);
-                if (childAt instanceof C3484ActionBar) {
+                if (childAt instanceof C3485ActionBar) {
                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     i3 = childAt.getMeasuredHeight();
                     break;
@@ -448,7 +452,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             }
             for (int i6 = 0; i6 < childCount; i6++) {
                 View childAt3 = getChildAt(i6);
-                if (!(childAt3 instanceof C3484ActionBar) && !(childAt3 instanceof PinnedPlayerView) && !(childAt3 instanceof PasscodeView)) {
+                if (!(childAt3 instanceof C3485ActionBar) && !(childAt3 instanceof PinnedPlayerView) && !(childAt3 instanceof PasscodeView)) {
                     if (childAt3.getFitsSystemWindows()) {
                         measureChildWithMargins(childAt3, i, 0, i2, 0);
                     } else {
@@ -470,7 +474,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     break;
                 }
                 View childAt = getChildAt(i6);
-                if (childAt instanceof C3484ActionBar) {
+                if (childAt instanceof C3485ActionBar) {
                     i5 = childAt.getMeasuredHeight();
                     childAt.layout(0, 0, childAt.getMeasuredWidth(), i5);
                     break;
@@ -480,14 +484,14 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             for (int i7 = 0; i7 < childCount; i7++) {
                 View childAt2 = getChildAt(i7);
                 if (childAt2 instanceof PinnedPlayerView) {
-                    childAt2.layout(0, i4 - AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight()), childAt2.getMeasuredWidth(), i4);
+                    childAt2.layout(0, i4 - AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight()), childAt2.getMeasuredWidth(), i4);
                 } else if (childAt2 instanceof PasscodeView) {
                     childAt2.layout(0, 0, childAt2.getMeasuredWidth(), childAt2.getMeasuredHeight());
                 }
             }
             for (int i8 = 0; i8 < childCount; i8++) {
                 View childAt3 = getChildAt(i8);
-                if (!(childAt3 instanceof C3484ActionBar) && !(childAt3 instanceof PinnedPlayerView) && !(childAt3 instanceof PasscodeView)) {
+                if (!(childAt3 instanceof C3485ActionBar) && !(childAt3 instanceof PinnedPlayerView) && !(childAt3 instanceof PasscodeView)) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt3.getLayoutParams();
                     if (childAt3.getFitsSystemWindows()) {
                         int i9 = layoutParams.leftMargin;
@@ -532,12 +536,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 r5 = this;
                 r5.processMenuButtonsTouch(r6)
                 org.telegram.ui.ActionBar.ActionBarLayout r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.this
-                boolean r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$400(r0)
+                boolean r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$500(r0)
                 r1 = 1
                 r2 = 0
                 if (r0 == 0) goto L17
                 org.telegram.ui.ActionBar.ActionBarLayout r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.this
-                org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$500(r0)
+                org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout r0 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$600(r0)
                 if (r0 != 0) goto L17
                 r0 = r1
                 goto L18
@@ -546,7 +550,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             L18:
                 if (r0 != 0) goto L22
                 org.telegram.ui.ActionBar.ActionBarLayout r3 = org.telegram.p043ui.ActionBar.ActionBarLayout.this
-                boolean r3 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$600(r3)
+                boolean r3 = org.telegram.p043ui.ActionBar.ActionBarLayout.access$700(r3)
                 if (r3 == 0) goto L30
             L22:
                 int r3 = r6.getActionMasked()
@@ -570,7 +574,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 return r1
             L41:
                 r6 = move-exception
-                org.telegram.messenger.FileLog.m49e(r6)
+                org.telegram.messenger.FileLog.m67e(r6)
             L45:
                 return r2
             */
@@ -604,7 +608,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.pressY = motionEvent.getY();
                 this.allowToPressByHover = false;
             } else if ((motionEvent.getAction() == 2 || motionEvent.getAction() == 1) && ActionBarLayout.this.previewMenu != null && ActionBarLayout.this.highlightActionButtons) {
-                if (!this.allowToPressByHover && Math.sqrt(Math.pow(this.pressX - motionEvent.getX(), 2.0d) + Math.pow(this.pressY - motionEvent.getY(), 2.0d)) > AndroidUtilities.m54dp(30)) {
+                if (!this.allowToPressByHover && Math.sqrt(Math.pow(this.pressX - motionEvent.getX(), 2.0d) + Math.pow(this.pressY - motionEvent.getY(), 2.0d)) > AndroidUtilities.m72dp(30)) {
                     this.allowToPressByHover = true;
                 }
                 if (this.allowToPressByHover && (ActionBarLayout.this.previewMenu.getSwipeBack() == null || !ActionBarLayout.this.previewMenu.getSwipeBack().isForegroundOpen())) {
@@ -680,7 +684,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.themeAnimatorDescriptions = new ArrayList<>();
         this.themeAnimatorDelegate = new ArrayList<>();
         this.notificationsLocker = new AnimationNotificationsLocker();
-        new Rect();
+        this.rect = new Rect();
         this.overrideWidthOffset = -1;
         this.measureSpec = new int[2];
         this.lastActions = new ArrayList<>();
@@ -692,8 +696,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         };
         this.parentActivity = (Activity) context;
         if (layerShadowDrawable == null) {
-            layerShadowDrawable = getResources().getDrawable(C3417R.C3419drawable.layer_shadow);
-            headerShadowDrawable = getResources().getDrawable(C3417R.C3419drawable.header_shadow).mutate();
+            layerShadowDrawable = getResources().getDrawable(C3419R.C3421drawable.layer_shadow);
+            headerShadowDrawable = getResources().getDrawable(C3419R.C3421drawable.header_shadow).mutate();
             scrimPaint = new Paint();
         }
     }
@@ -741,6 +745,19 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
+        BaseFragment baseFragment;
+        if (this.fragmentsStack.isEmpty()) {
+            baseFragment = null;
+        } else {
+            List<BaseFragment> list = this.fragmentsStack;
+            baseFragment = list.get(list.size() - 1);
+        }
+        if (baseFragment != null && storyViewerAttached()) {
+            int measureKeyboardHeight = measureKeyboardHeight();
+            baseFragment.setKeyboardHeightFromParent(measureKeyboardHeight);
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + measureKeyboardHeight, 1073741824));
+            return;
+        }
         INavigationLayout.INavigationLayoutDelegate iNavigationLayoutDelegate = this.delegate;
         if (iNavigationLayoutDelegate != null) {
             int[] iArr = this.measureSpec;
@@ -871,7 +888,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         int paddingLeft = getPaddingLeft();
         int paddingLeft2 = getPaddingLeft() + width;
         if (view == this.containerViewBack) {
-            paddingLeft2 = AndroidUtilities.m54dp(1) + paddingRight;
+            paddingLeft2 = AndroidUtilities.m72dp(1) + paddingRight;
         } else if (view == this.containerView) {
             paddingLeft = paddingRight;
         }
@@ -890,7 +907,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 i = width - paddingRight;
             }
             if (view == this.containerView) {
-                float clamp = MathUtils.clamp(i / AndroidUtilities.m54dp(20), (float) BitmapDescriptorFactory.HUE_RED, 1.0f);
+                float clamp = MathUtils.clamp(i / AndroidUtilities.m72dp(20), (float) BitmapDescriptorFactory.HUE_RED, 1.0f);
                 Drawable drawable = layerShadowDrawable;
                 drawable.setBounds(paddingRight - drawable.getIntrinsicWidth(), view.getTop(), paddingRight, view.getBottom());
                 layerShadowDrawable.setAlpha((int) (clamp * 255.0f));
@@ -957,11 +974,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             this.previewBackgroundDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.previewBackgroundDrawable.draw(canvas);
             if (this.previewMenu == null) {
-                int m54dp = AndroidUtilities.m54dp(32);
-                int i = m54dp / 2;
-                int measuredWidth = (getMeasuredWidth() - m54dp) / 2;
-                int top = (int) ((childAt.getTop() + viewGroup.getTranslationY()) - AndroidUtilities.m54dp((Build.VERSION.SDK_INT < 21 ? 20 : 0) + 12));
-                Theme.moveUpDrawable.setBounds(measuredWidth, top, m54dp + measuredWidth, i + top);
+                int m72dp = AndroidUtilities.m72dp(32);
+                int i = m72dp / 2;
+                int measuredWidth = (getMeasuredWidth() - m72dp) / 2;
+                int top = (int) ((childAt.getTop() + viewGroup.getTranslationY()) - AndroidUtilities.m72dp((Build.VERSION.SDK_INT < 21 ? 20 : 0) + 12));
+                Theme.moveUpDrawable.setBounds(measuredWidth, top, m72dp + measuredWidth, i + top);
                 Theme.moveUpDrawable.draw(canvas);
             }
         }
@@ -1014,8 +1031,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 baseFragment3.onRemoveFromParent();
                 viewGroup4.removeViewInLayout(baseFragment3.fragmentView);
             }
-            C3484ActionBar c3484ActionBar = baseFragment3.actionBar;
-            if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer() && (viewGroup3 = (ViewGroup) baseFragment3.actionBar.getParent()) != null) {
+            C3485ActionBar c3485ActionBar = baseFragment3.actionBar;
+            if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer() && (viewGroup3 = (ViewGroup) baseFragment3.actionBar.getParent()) != null) {
                 viewGroup3.removeViewInLayout(baseFragment3.actionBar);
             }
             PinnedPlayerView pinnedPlayerView = baseFragment3.pinnedPlayerView;
@@ -1026,6 +1043,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             if (passcodeView != null && (viewGroup = (ViewGroup) passcodeView.getParent()) != null) {
                 viewGroup.removeViewInLayout(baseFragment3.passcodeView);
             }
+            baseFragment3.detachStoryViewer();
         }
         this.containerViewBack.setVisibility(4);
         this.startedTracking = false;
@@ -1061,15 +1079,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         layoutParams.bottomMargin = 0;
         layoutParams.topMargin = 0;
         if (baseFragment.isAllowPinnedPlayer() && isPinnedPlayerVisible()) {
-            layoutParams.bottomMargin = AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight());
+            layoutParams.bottomMargin = AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight());
         }
         view.setLayoutParams(layoutParams);
-        C3484ActionBar c3484ActionBar = baseFragment.actionBar;
-        if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer()) {
-            ViewGroup viewGroup2 = (ViewGroup) baseFragment.actionBar.getParent();
-            if (viewGroup2 != null) {
-                viewGroup2.removeView(baseFragment.actionBar);
-            }
+        C3485ActionBar c3485ActionBar = baseFragment.actionBar;
+        if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer()) {
+            AndroidUtilities.removeFromParent(baseFragment.actionBar);
             if (this.removeActionBarExtraHeight) {
                 baseFragment.actionBar.setOccupyStatusBar(false);
             }
@@ -1078,20 +1093,21 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
         PinnedPlayerView pinnedPlayerView = baseFragment.pinnedPlayerView;
         if (pinnedPlayerView != null) {
-            ViewGroup viewGroup3 = (ViewGroup) pinnedPlayerView.getParent();
-            if (viewGroup3 != null) {
-                viewGroup3.removeView(baseFragment.pinnedPlayerView);
+            ViewGroup viewGroup2 = (ViewGroup) pinnedPlayerView.getParent();
+            if (viewGroup2 != null) {
+                viewGroup2.removeView(baseFragment.pinnedPlayerView);
             }
             this.containerViewBack.addView(baseFragment.pinnedPlayerView, LayoutHelper.createFrame(-1, PinnedPlayerView.getPlayerHeight()));
         }
         PasscodeView passcodeView = baseFragment.passcodeView;
         if (passcodeView != null) {
-            ViewGroup viewGroup4 = (ViewGroup) passcodeView.getParent();
-            if (viewGroup4 != null) {
-                viewGroup4.removeView(baseFragment.passcodeView);
+            ViewGroup viewGroup3 = (ViewGroup) passcodeView.getParent();
+            if (viewGroup3 != null) {
+                viewGroup3.removeView(baseFragment.passcodeView);
             }
             this.containerViewBack.addView(baseFragment.passcodeView, LayoutHelper.createFrame(-1, -1));
         }
+        baseFragment.attachStoryViewer(this.containerViewBack);
         if (!baseFragment.hasOwnBackground && view.getBackground() == null) {
             view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         }
@@ -1238,11 +1254,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (this.transitionAnimationPreviewMode || this.startedTracking || checkTransitionAnimation() || this.fragmentsStack.isEmpty() || GroupCallPip.onBackPressed()) {
             return;
         }
-        C3484ActionBar c3484ActionBar = this.currentActionBar;
-        if (c3484ActionBar != null && !c3484ActionBar.isActionModeShowed()) {
-            C3484ActionBar c3484ActionBar2 = this.currentActionBar;
-            if (c3484ActionBar2.isSearchFieldVisible) {
-                c3484ActionBar2.closeSearchField();
+        C3485ActionBar c3485ActionBar = this.currentActionBar;
+        if (c3485ActionBar != null && !c3485ActionBar.isActionModeShowed()) {
+            C3485ActionBar c3485ActionBar2 = this.currentActionBar;
+            if (c3485ActionBar2.isSearchFieldVisible) {
+                c3485ActionBar2.closeSearchField();
                 return;
             }
         }
@@ -1347,16 +1363,16 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 try {
                     viewGroup4.removeViewInLayout(baseFragment.fragmentView);
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                     try {
                         viewGroup4.removeView(baseFragment.fragmentView);
                     } catch (Exception e2) {
-                        FileLog.m49e(e2);
+                        FileLog.m67e(e2);
                     }
                 }
             }
-            C3484ActionBar c3484ActionBar = baseFragment.actionBar;
-            if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer() && (viewGroup3 = (ViewGroup) baseFragment.actionBar.getParent()) != null) {
+            C3485ActionBar c3485ActionBar = baseFragment.actionBar;
+            if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer() && (viewGroup3 = (ViewGroup) baseFragment.actionBar.getParent()) != null) {
                 viewGroup3.removeViewInLayout(baseFragment.actionBar);
             }
             PinnedPlayerView pinnedPlayerView = baseFragment.pinnedPlayerView;
@@ -1367,6 +1383,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             if (passcodeView != null && (viewGroup = (ViewGroup) passcodeView.getParent()) != null) {
                 viewGroup.removeViewInLayout(baseFragment.passcodeView);
             }
+            baseFragment.detachStoryViewer();
         }
         this.containerViewBack.setVisibility(4);
     }
@@ -1396,7 +1413,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     j = 18;
                 }
                 ActionBarLayout.this.lastFrameTime = nanoTime;
-                ActionBarLayout.access$1216(ActionBarLayout.this, ((float) j) / ((z3 && z) ? 190.0f : 150.0f));
+                ActionBarLayout.access$1316(ActionBarLayout.this, ((float) j) / ((z3 && z) ? 190.0f : 150.0f));
                 if (ActionBarLayout.this.animationProgress > 1.0f) {
                     ActionBarLayout.this.animationProgress = 1.0f;
                 }
@@ -1409,7 +1426,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 Integer valueOf = ActionBarLayout.this.oldFragment != null ? Integer.valueOf(ActionBarLayout.this.oldFragment.getNavigationBarColor()) : null;
                 Integer valueOf2 = ActionBarLayout.this.newFragment != null ? Integer.valueOf(ActionBarLayout.this.newFragment.getNavigationBarColor()) : null;
                 if (ActionBarLayout.this.newFragment != null && valueOf != null) {
-                    ActionBarLayout.this.newFragment.setNavigationBarColor(ColorUtils.blendARGB(valueOf.intValue(), valueOf2.intValue(), MathUtils.clamp((ActionBarLayout.this.animationProgress * 2.0f) - (z ? 1.0f : 0.0f), (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
+                    ActionBarLayout.this.newFragment.setNavigationBarColor(ColorUtils.blendARGB(valueOf.intValue(), valueOf2.intValue(), MathUtils.clamp(ActionBarLayout.this.animationProgress * 4.0f, (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
                 }
                 if (!z3) {
                     interpolation = ActionBarLayout.this.decelerateInterpolator.getInterpolation(ActionBarLayout.this.animationProgress);
@@ -1425,8 +1442,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         ActionBarLayout.this.containerView.setScaleY(f);
                         if (ActionBarLayout.this.previewMenu != null) {
                             float f2 = 1.0f - interpolation;
-                            ActionBarLayout.this.containerView.setTranslationY(AndroidUtilities.m54dp(40) * f2);
-                            ActionBarLayout.this.previewMenu.setTranslationY((-AndroidUtilities.m54dp(70)) * f2);
+                            ActionBarLayout.this.containerView.setTranslationY(AndroidUtilities.m72dp(40) * f2);
+                            ActionBarLayout.this.previewMenu.setTranslationY((-AndroidUtilities.m72dp(70)) * f2);
                             float f3 = (interpolation * 0.05f) + 0.95f;
                             ActionBarLayout.this.previewMenu.setScaleX(f3);
                             ActionBarLayout.this.previewMenu.setScaleY(f3);
@@ -1436,7 +1453,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         ActionBarLayout.this.containerView.invalidate();
                         ActionBarLayout.this.invalidate();
                     } else {
-                        ActionBarLayout.this.containerView.setTranslationX(AndroidUtilities.m54dp(48) * (1.0f - interpolation));
+                        ActionBarLayout.this.containerView.setTranslationX(AndroidUtilities.m72dp(48) * (1.0f - interpolation));
                     }
                 } else {
                     float f4 = 1.0f - interpolation;
@@ -1453,7 +1470,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         ActionBarLayout.this.containerView.invalidate();
                         ActionBarLayout.this.invalidate();
                     } else {
-                        ActionBarLayout.this.containerViewBack.setTranslationX(AndroidUtilities.m54dp(48) * interpolation);
+                        ActionBarLayout.this.containerViewBack.setTranslationX(AndroidUtilities.m72dp(48) * interpolation);
                     }
                 }
                 if (ActionBarLayout.this.animationProgress < 1.0f) {
@@ -1499,8 +1516,9 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             return false;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m52d("present fragment " + baseFragment2.getClass().getSimpleName());
+            FileLog.m70d("present fragment " + baseFragment2.getClass().getSimpleName());
         }
+        StoryViewer.closeGlobalInstances();
         if (this.inPreviewMode && this.transitionAnimationPreviewMode) {
             Runnable runnable = this.delayedOpenAnimationRunnable;
             if (runnable != null) {
@@ -1545,11 +1563,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (actionBarPopupWindowLayout != null) {
             this.containerViewBack.addView(actionBarPopupWindowLayout);
             actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), Integer.MIN_VALUE));
-            i = actionBarPopupWindowLayout.getMeasuredHeight() + AndroidUtilities.m54dp(24);
+            i = actionBarPopupWindowLayout.getMeasuredHeight() + AndroidUtilities.m72dp(24);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) actionBarPopupWindowLayout.getLayoutParams();
             layoutParams.width = -2;
             layoutParams.height = -2;
-            layoutParams.topMargin = (getMeasuredHeight() - i) - AndroidUtilities.m54dp(6);
+            layoutParams.topMargin = (getMeasuredHeight() - i) - AndroidUtilities.m72dp(6);
             actionBarPopupWindowLayout.setLayoutParams(layoutParams);
         } else {
             i = 0;
@@ -1564,55 +1582,53 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 layoutParams2.height = previewHeight;
                 layoutParams2.topMargin = i2 + (((getMeasuredHeight() - i2) - previewHeight) / 2);
             } else {
-                int m54dp = AndroidUtilities.m54dp(actionBarPopupWindowLayout != null ? 0 : 24);
-                layoutParams2.bottomMargin = m54dp;
-                layoutParams2.topMargin = m54dp;
-                layoutParams2.topMargin = m54dp + AndroidUtilities.statusBarHeight;
+                int m72dp = AndroidUtilities.m72dp(actionBarPopupWindowLayout != null ? 0 : 24);
+                layoutParams2.bottomMargin = m72dp;
+                layoutParams2.topMargin = m72dp;
+                layoutParams2.topMargin = m72dp + AndroidUtilities.statusBarHeight;
             }
             if (actionBarPopupWindowLayout != null) {
-                layoutParams2.bottomMargin += i + AndroidUtilities.m54dp(8);
+                layoutParams2.bottomMargin += i + AndroidUtilities.m72dp(8);
             }
-            int m54dp2 = AndroidUtilities.m54dp(8);
-            layoutParams2.leftMargin = m54dp2;
-            layoutParams2.rightMargin = m54dp2;
+            int m72dp2 = AndroidUtilities.m72dp(8);
+            layoutParams2.leftMargin = m72dp2;
+            layoutParams2.rightMargin = m72dp2;
         } else {
             layoutParams2.leftMargin = 0;
             layoutParams2.rightMargin = 0;
             layoutParams2.bottomMargin = 0;
             layoutParams2.topMargin = 0;
             if (baseFragment2.isAllowPinnedPlayer() && isPinnedPlayerVisible()) {
-                layoutParams2.bottomMargin = AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight());
+                layoutParams2.bottomMargin = AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight());
             }
         }
         view.setLayoutParams(layoutParams2);
-        C3484ActionBar c3484ActionBar = baseFragment2.actionBar;
-        if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer()) {
+        C3485ActionBar c3485ActionBar = baseFragment2.actionBar;
+        if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer()) {
             if (this.removeActionBarExtraHeight) {
                 baseFragment2.actionBar.setOccupyStatusBar(false);
             }
-            ViewGroup viewGroup2 = (ViewGroup) baseFragment2.actionBar.getParent();
-            if (viewGroup2 != null) {
-                viewGroup2.removeView(baseFragment2.actionBar);
-            }
+            AndroidUtilities.removeFromParent(baseFragment2.actionBar);
             this.containerViewBack.addView(baseFragment2.actionBar);
             baseFragment2.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
         PinnedPlayerView pinnedPlayerView = baseFragment2.pinnedPlayerView;
         if (pinnedPlayerView != null) {
-            ViewGroup viewGroup3 = (ViewGroup) pinnedPlayerView.getParent();
-            if (viewGroup3 != null) {
-                viewGroup3.removeView(baseFragment2.pinnedPlayerView);
+            ViewGroup viewGroup2 = (ViewGroup) pinnedPlayerView.getParent();
+            if (viewGroup2 != null) {
+                viewGroup2.removeView(baseFragment2.pinnedPlayerView);
             }
             this.containerViewBack.addView(baseFragment2.pinnedPlayerView, LayoutHelper.createFrame(-1, PinnedPlayerView.getPlayerHeight()));
         }
         PasscodeView passcodeView = baseFragment2.passcodeView;
         if (passcodeView != null) {
-            ViewGroup viewGroup4 = (ViewGroup) passcodeView.getParent();
-            if (viewGroup4 != null) {
-                viewGroup4.removeView(baseFragment2.passcodeView);
+            ViewGroup viewGroup3 = (ViewGroup) passcodeView.getParent();
+            if (viewGroup3 != null) {
+                viewGroup3.removeView(baseFragment2.passcodeView);
             }
             this.containerViewBack.addView(baseFragment2.passcodeView, LayoutHelper.createFrame(-1, -1));
         }
+        baseFragment2.attachStoryViewer(this.containerViewBack);
         this.fragmentsStack.add(baseFragment2);
         onFragmentStackChanged("presentFragment");
         baseFragment2.onViewCreated();
@@ -1633,11 +1649,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 view.setOutlineProvider(new ViewOutlineProvider(this) { // from class: org.telegram.ui.ActionBar.ActionBarLayout.3
                     @Override // android.view.ViewOutlineProvider
                     public void getOutline(View view2, Outline outline) {
-                        outline.setRoundRect(0, AndroidUtilities.statusBarHeight, view2.getMeasuredWidth(), view2.getMeasuredHeight(), AndroidUtilities.m54dp(6));
+                        outline.setRoundRect(0, AndroidUtilities.statusBarHeight, view2.getMeasuredWidth(), view2.getMeasuredHeight(), AndroidUtilities.m72dp(6));
                     }
                 });
                 view.setClipToOutline(true);
-                view.setElevation(AndroidUtilities.m54dp(4));
+                view.setElevation(AndroidUtilities.m72dp(4));
             }
             if (this.previewBackgroundDrawable == null) {
                 this.previewBackgroundDrawable = new ColorDrawable(771751936);
@@ -1886,8 +1902,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     List<BaseFragment> list = this.fragmentsStack;
                     BaseFragment baseFragment2 = list.get(list.size() - 1);
                     baseFragment2.onPause();
-                    C3484ActionBar c3484ActionBar = baseFragment2.actionBar;
-                    if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer() && (viewGroup4 = (ViewGroup) baseFragment2.actionBar.getParent()) != null) {
+                    C3485ActionBar c3485ActionBar = baseFragment2.actionBar;
+                    if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer() && (viewGroup4 = (ViewGroup) baseFragment2.actionBar.getParent()) != null) {
                         viewGroup4.removeView(baseFragment2.actionBar);
                     }
                     PinnedPlayerView pinnedPlayerView = baseFragment2.pinnedPlayerView;
@@ -1903,6 +1919,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         baseFragment2.onRemoveFromParent();
                         viewGroup.removeView(baseFragment2.fragmentView);
                     }
+                    baseFragment2.detachStoryViewer();
                 }
                 this.fragmentsStack.add(baseFragment);
                 if (i != -2) {
@@ -1937,19 +1954,19 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         }
         this.containerView.addView(view, LayoutHelper.createFrame(-1, -1));
-        C3484ActionBar c3484ActionBar = baseFragment.actionBar;
-        if (c3484ActionBar == null || !c3484ActionBar.shouldAddToContainer()) {
-            return;
+        C3485ActionBar c3485ActionBar = baseFragment.actionBar;
+        if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer()) {
+            if (this.removeActionBarExtraHeight) {
+                baseFragment.actionBar.setOccupyStatusBar(false);
+            }
+            ViewGroup viewGroup2 = (ViewGroup) baseFragment.actionBar.getParent();
+            if (viewGroup2 != null) {
+                viewGroup2.removeView(baseFragment.actionBar);
+            }
+            this.containerView.addView(baseFragment.actionBar);
+            baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
-        if (this.removeActionBarExtraHeight) {
-            baseFragment.actionBar.setOccupyStatusBar(false);
-        }
-        ViewGroup viewGroup2 = (ViewGroup) baseFragment.actionBar.getParent();
-        if (viewGroup2 != null) {
-            viewGroup2.removeView(baseFragment.actionBar);
-        }
-        this.containerView.addView(baseFragment.actionBar);
-        baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
+        baseFragment.attachStoryViewer(this.containerView);
     }
 
     private void closeLastFragmentInternalRemoveOld(BaseFragment baseFragment) {
@@ -1993,7 +2010,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             goto L2b
         L1b:
             r2 = 60
-            int r2 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
+            int r2 = org.telegram.messenger.AndroidUtilities.m72dp(r2)
             int r2 = -r2
             float r2 = (float) r2
             int r2 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
@@ -2030,7 +2047,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         layoutParams.bottomMargin = 0;
         layoutParams.topMargin = 0;
         if (baseFragment2.isAllowPinnedPlayer() && isPinnedPlayerVisible()) {
-            layoutParams.bottomMargin = AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight());
+            layoutParams.bottomMargin = AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight());
         }
         layoutParams.height = -1;
         baseFragment2.fragmentView.setLayoutParams(layoutParams);
@@ -2109,7 +2126,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         try {
                             viewGroup.removeView(view);
                         } catch (Exception e) {
-                            FileLog.m49e(e);
+                            FileLog.m67e(e);
                         }
                     }
                     this.containerView.addView(view);
@@ -2121,37 +2138,35 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     layoutParams.bottomMargin = 0;
                     layoutParams.topMargin = 0;
                     if (baseFragment.isAllowPinnedPlayer() && isPinnedPlayerVisible()) {
-                        layoutParams.bottomMargin = AndroidUtilities.m54dp(PinnedPlayerView.getPlayerHeight());
+                        layoutParams.bottomMargin = AndroidUtilities.m72dp(PinnedPlayerView.getPlayerHeight());
                     }
                     view.setLayoutParams(layoutParams);
-                    C3484ActionBar c3484ActionBar = baseFragment.actionBar;
-                    if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer()) {
+                    C3485ActionBar c3485ActionBar = baseFragment.actionBar;
+                    if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer()) {
                         if (this.removeActionBarExtraHeight) {
                             baseFragment.actionBar.setOccupyStatusBar(false);
                         }
-                        ViewGroup viewGroup2 = (ViewGroup) baseFragment.actionBar.getParent();
-                        if (viewGroup2 != null) {
-                            viewGroup2.removeView(baseFragment.actionBar);
-                        }
+                        AndroidUtilities.removeFromParent(baseFragment.actionBar);
                         this.containerView.addView(baseFragment.actionBar);
                         baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
                     }
                     PinnedPlayerView pinnedPlayerView = baseFragment.pinnedPlayerView;
                     if (pinnedPlayerView != null) {
-                        ViewGroup viewGroup3 = (ViewGroup) pinnedPlayerView.getParent();
-                        if (viewGroup3 != null) {
-                            viewGroup3.removeView(baseFragment.pinnedPlayerView);
+                        ViewGroup viewGroup2 = (ViewGroup) pinnedPlayerView.getParent();
+                        if (viewGroup2 != null) {
+                            viewGroup2.removeView(baseFragment.pinnedPlayerView);
                         }
                         this.containerView.addView(baseFragment.pinnedPlayerView, LayoutHelper.createFrame(-1, PinnedPlayerView.getPlayerHeight()));
                     }
                     PasscodeView passcodeView = baseFragment.passcodeView;
                     if (passcodeView != null) {
-                        ViewGroup viewGroup4 = (ViewGroup) passcodeView.getParent();
-                        if (viewGroup4 != null) {
-                            viewGroup4.removeView(baseFragment.passcodeView);
+                        ViewGroup viewGroup3 = (ViewGroup) passcodeView.getParent();
+                        if (viewGroup3 != null) {
+                            viewGroup3.removeView(baseFragment.passcodeView);
                         }
                         this.containerView.addView(baseFragment.passcodeView, LayoutHelper.createFrame(-1, -1));
                     }
+                    baseFragment.attachStoryViewer(this.containerView);
                 }
                 this.newFragment = baseFragment;
                 this.oldFragment = baseFragment2;
@@ -2310,8 +2325,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (this.fragmentsStack.isEmpty() || this.fragmentsStack.size() - 1 != i || this.fragmentsStack.get(i).fragmentView == null) {
             for (int i2 = 0; i2 < i; i2++) {
                 BaseFragment baseFragment = this.fragmentsStack.get(i2);
-                C3484ActionBar c3484ActionBar = baseFragment.actionBar;
-                if (c3484ActionBar != null && c3484ActionBar.shouldAddToContainer() && (viewGroup4 = (ViewGroup) baseFragment.actionBar.getParent()) != null) {
+                C3485ActionBar c3485ActionBar = baseFragment.actionBar;
+                if (c3485ActionBar != null && c3485ActionBar.shouldAddToContainer() && (viewGroup4 = (ViewGroup) baseFragment.actionBar.getParent()) != null) {
                     viewGroup4.removeView(baseFragment.actionBar);
                 }
                 PinnedPlayerView pinnedPlayerView = baseFragment.pinnedPlayerView;
@@ -2342,26 +2357,24 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
             }
             this.containerView.addView(view2, LayoutHelper.createFrame(-1, -1));
-            C3484ActionBar c3484ActionBar2 = baseFragment2.actionBar;
-            if (c3484ActionBar2 != null && c3484ActionBar2.shouldAddToContainer()) {
+            C3485ActionBar c3485ActionBar2 = baseFragment2.actionBar;
+            if (c3485ActionBar2 != null && c3485ActionBar2.shouldAddToContainer()) {
                 if (this.removeActionBarExtraHeight) {
                     baseFragment2.actionBar.setOccupyStatusBar(false);
                 }
-                ViewGroup viewGroup6 = (ViewGroup) baseFragment2.actionBar.getParent();
-                if (viewGroup6 != null) {
-                    viewGroup6.removeView(baseFragment2.actionBar);
-                }
+                AndroidUtilities.removeFromParent(baseFragment2.actionBar);
                 this.containerView.addView(baseFragment2.actionBar);
                 baseFragment2.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
             }
             PinnedPlayerView pinnedPlayerView2 = baseFragment2.pinnedPlayerView;
             if (pinnedPlayerView2 != null) {
-                ViewGroup viewGroup7 = (ViewGroup) pinnedPlayerView2.getParent();
-                if (viewGroup7 != null) {
-                    viewGroup7.removeView(baseFragment2.pinnedPlayerView);
+                ViewGroup viewGroup6 = (ViewGroup) pinnedPlayerView2.getParent();
+                if (viewGroup6 != null) {
+                    viewGroup6.removeView(baseFragment2.pinnedPlayerView);
                 }
                 this.containerView.addView(baseFragment2.pinnedPlayerView, LayoutHelper.createFrame(-1, PinnedPlayerView.getPlayerHeight()));
             }
+            baseFragment2.attachStoryViewer(this.containerView);
             baseFragment2.onResume();
             this.currentActionBar = baseFragment2.actionBar;
             if (baseFragment2.hasOwnBackground || view2.getBackground() != null) {
@@ -2804,27 +2817,27 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // android.view.View, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
-        C3484ActionBar c3484ActionBar;
-        if (i == 82 && !checkTransitionAnimation() && !this.startedTracking && (c3484ActionBar = this.currentActionBar) != null) {
-            c3484ActionBar.onMenuButtonPressed();
+        C3485ActionBar c3485ActionBar;
+        if (i == 82 && !checkTransitionAnimation() && !this.startedTracking && (c3485ActionBar = this.currentActionBar) != null) {
+            c3485ActionBar.onMenuButtonPressed();
         }
         return super.onKeyUp(i, keyEvent);
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public void onActionModeStarted(Object obj) {
-        C3484ActionBar c3484ActionBar = this.currentActionBar;
-        if (c3484ActionBar != null) {
-            c3484ActionBar.setVisibility(8);
+        C3485ActionBar c3485ActionBar = this.currentActionBar;
+        if (c3485ActionBar != null) {
+            c3485ActionBar.setVisibility(8);
         }
         this.inActionMode = true;
     }
 
     @Override // org.telegram.p043ui.ActionBar.INavigationLayout
     public void onActionModeFinished(Object obj) {
-        C3484ActionBar c3484ActionBar = this.currentActionBar;
-        if (c3484ActionBar != null) {
-            c3484ActionBar.setVisibility(0);
+        C3485ActionBar c3485ActionBar = this.currentActionBar;
+        if (c3485ActionBar != null) {
+            c3485ActionBar.setVisibility(0);
         }
         this.inActionMode = false;
     }
@@ -2952,9 +2965,9 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.titleOverlayTextId = i;
         this.overlayAction = runnable;
         for (int i2 = 0; i2 < this.fragmentsStack.size(); i2++) {
-            C3484ActionBar c3484ActionBar = this.fragmentsStack.get(i2).actionBar;
-            if (c3484ActionBar != null) {
-                c3484ActionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, runnable);
+            C3485ActionBar c3485ActionBar = this.fragmentsStack.get(i2).actionBar;
+            if (c3485ActionBar != null) {
+                c3485ActionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, runnable);
             }
         }
     }
@@ -3030,7 +3043,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     public /* synthetic */ void lambda$new$8() {
         if (this.attached && getLastFragment() != null && this.containerView.getChildCount() == 0) {
             if (BuildVars.DEBUG_VERSION) {
-                FileLog.m49e(new RuntimeException(TextUtils.join(", ", this.lastActions)));
+                FileLog.m67e(new RuntimeException(TextUtils.join(", ", this.lastActions)));
             }
             rebuildAllFragmentViews(true, true);
         }
@@ -3061,5 +3074,28 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.attached = false;
+    }
+
+    public int measureKeyboardHeight() {
+        View rootView = getRootView();
+        getWindowVisibleDisplayFrame(this.rect);
+        Rect rect = this.rect;
+        if (rect.bottom == 0 && rect.top == 0) {
+            return 0;
+        }
+        int height = (rootView.getHeight() - (this.rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView);
+        Rect rect2 = this.rect;
+        return Math.max(0, height - (rect2.bottom - rect2.top));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getLastFragment() != null && getLastFragment().overlayStoryViewer != null && getLastFragment().overlayStoryViewer.attachedToParent()) {
+            return getLastFragment().overlayStoryViewer.windowView.dispatchTouchEvent(motionEvent);
+        }
+        if (getLastFragment() != null && getLastFragment().storyViewer != null && getLastFragment().storyViewer.attachedToParent()) {
+            return getLastFragment().storyViewer.windowView.dispatchTouchEvent(motionEvent);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

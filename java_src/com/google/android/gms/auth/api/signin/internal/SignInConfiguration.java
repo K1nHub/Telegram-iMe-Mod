@@ -14,13 +14,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class SignInConfiguration extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInConfiguration> CREATOR = new zbu();
-    @SafeParcelable.Field(getter = "getConsumerPkgName", m779id = 2)
+    @SafeParcelable.Field(getter = "getConsumerPkgName", m797id = 2)
     private final String zba;
-    @SafeParcelable.Field(getter = "getGoogleConfig", m779id = 5)
+    @SafeParcelable.Field(getter = "getGoogleConfig", m797id = 5)
     private GoogleSignInOptions zbb;
 
     @SafeParcelable.Constructor
-    public SignInConfiguration(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 5) GoogleSignInOptions googleSignInOptions) {
+    public SignInConfiguration(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 5) GoogleSignInOptions googleSignInOptions) {
         this.zba = Preconditions.checkNotEmpty(str);
         this.zbb = googleSignInOptions;
     }

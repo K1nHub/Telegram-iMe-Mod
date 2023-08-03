@@ -276,8 +276,8 @@
     return-void
 .end method
 
-.method protected createFileTypeBox()Lcom/coremedia/iso/boxes/FileTypeBox;
-    .locals 5
+.method protected createFileTypeBox(Z)Lcom/coremedia/iso/boxes/FileTypeBox;
+    .locals 4
 
     .line 204
     new-instance v0, Ljava/util/LinkedList;
@@ -294,27 +294,35 @@
     .line 206
     invoke-virtual {v0, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    const-string v2, "avc1"
+    if-eqz p1, :cond_0
+
+    const-string p1, "hvc1"
+
+    goto :goto_0
+
+    :cond_0
+    const-string p1, "avc1"
 
     .line 207
-    invoke-virtual {v0, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    const-string v2, "mp41"
+    const-string p1, "mp41"
 
     .line 208
-    invoke-virtual {v0, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     .line 209
-    new-instance v2, Lcom/coremedia/iso/boxes/FileTypeBox;
+    new-instance p1, Lcom/coremedia/iso/boxes/FileTypeBox;
 
-    const-wide/16 v3, 0x200
+    const-wide/16 v2, 0x200
 
-    invoke-direct {v2, v1, v3, v4, v0}, Lcom/coremedia/iso/boxes/FileTypeBox;-><init>(Ljava/lang/String;JLjava/util/List;)V
+    invoke-direct {p1, v1, v2, v3, v0}, Lcom/coremedia/iso/boxes/FileTypeBox;-><init>(Ljava/lang/String;JLjava/util/List;)V
 
-    return-object v2
+    return-object p1
 .end method
 
-.method public createMovie(Lorg/telegram/messenger/video/Mp4Movie;Z)Lorg/telegram/messenger/video/MP4Builder;
+.method public createMovie(Lorg/telegram/messenger/video/Mp4Movie;ZZ)Lorg/telegram/messenger/video/MP4Builder;
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -344,14 +352,14 @@
     iput-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     .line 72
-    invoke-virtual {p0}, Lorg/telegram/messenger/video/MP4Builder;->createFileTypeBox()Lcom/coremedia/iso/boxes/FileTypeBox;
+    invoke-virtual {p0, p3}, Lorg/telegram/messenger/video/MP4Builder;->createFileTypeBox(Z)Lcom/coremedia/iso/boxes/FileTypeBox;
 
     move-result-object p1
 
     .line 73
-    iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
+    iget-object p3, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
-    invoke-virtual {p1, v0}, Lcom/googlecode/mp4parser/AbstractBox;->getBox(Ljava/nio/channels/WritableByteChannel;)V
+    invoke-virtual {p1, p3}, Lcom/googlecode/mp4parser/AbstractBox;->getBox(Ljava/nio/channels/WritableByteChannel;)V
 
     .line 74
     iget-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J

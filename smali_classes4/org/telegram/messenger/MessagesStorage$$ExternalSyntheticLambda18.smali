@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$c5wd8jvratUY-yGIfL3KwaFiJys(Lorg/telegram/messenger/MessagesStorage;)V
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$aC58uxMJEiXnwPgfdYfbq59XrkQ(Lorg/telegram/messenger/MessagesStorage;)V
 
     return-void
 .end method

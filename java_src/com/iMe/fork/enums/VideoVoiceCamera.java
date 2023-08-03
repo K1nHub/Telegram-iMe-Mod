@@ -2,13 +2,13 @@ package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* compiled from: VideoVoiceCamera.kt */
 /* loaded from: classes3.dex */
 public enum VideoVoiceCamera {
-    FRONT(C3417R.string.settings_interface_video_voice_front_camera, C3417R.string.settings_interface_video_voice_front_camera_short),
-    BACK(C3417R.string.settings_interface_video_voice_back_camera, C3417R.string.settings_interface_video_voice_back_camera_short),
-    ASK(C3417R.string.settings_interface_video_voice_ask_camera, C3417R.string.settings_interface_video_voice_ask_camera_short);
+    FRONT(C3419R.string.settings_interface_video_voice_front_camera, C3419R.string.settings_interface_video_voice_front_camera_short),
+    BACK(C3419R.string.settings_interface_video_voice_back_camera, C3419R.string.settings_interface_video_voice_back_camera_short),
+    ASK(C3419R.string.settings_interface_video_voice_ask_camera, C3419R.string.settings_interface_video_voice_ask_camera_short);
     
     public static final Companion Companion = new Companion(null);
     private final int shortTextResId;

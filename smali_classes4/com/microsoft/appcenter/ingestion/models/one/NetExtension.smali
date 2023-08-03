@@ -129,7 +129,7 @@
         }
     .end annotation
 
-    const-string v0, "provider"
+    const-string/jumbo v0, "provider"
 
     const/4 v1, 0x0
 
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    const-string v1, "provider"
+    const-string/jumbo v1, "provider"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

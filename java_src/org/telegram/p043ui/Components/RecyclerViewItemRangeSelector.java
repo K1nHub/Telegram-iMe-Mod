@@ -21,7 +21,7 @@ public class RecyclerViewItemRangeSelector implements RecyclerView.OnItemTouchLi
     private int initialSelection;
     private RecyclerView recyclerView;
     private int lastDraggedIndex = -1;
-    private int hotspotHeight = AndroidUtilities.m54dp(80);
+    private int hotspotHeight = AndroidUtilities.m72dp(80);
     private Runnable autoScrollRunnable = new Runnable() { // from class: org.telegram.ui.Components.RecyclerViewItemRangeSelector.1
         @Override // java.lang.Runnable
         public void run() {

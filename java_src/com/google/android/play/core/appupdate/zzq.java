@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.IBinder;
 import com.google.android.play.core.common.PlayCoreVersion;
 import com.google.android.play.core.install.InstallException;
 import com.google.android.play.core.internal.zzag;
+import com.google.android.play.core.internal.zzan;
 import com.google.android.play.core.internal.zzas;
 import com.google.android.play.core.internal.zzce;
 import com.google.android.play.core.internal.zzch;
@@ -29,7 +31,12 @@ public final class zzq {
         this.zze = context;
         this.zzf = zzsVar;
         if (zzch.zzb(context)) {
-            this.zza = new zzas<>(zzce.zza(context), zzb, "AppUpdateService", zzc, zzk.zza, null);
+            this.zza = new zzas<>(zzce.zza(context), zzb, "AppUpdateService", zzc, new zzan() { // from class: com.google.android.play.core.appupdate.zzk
+                @Override // com.google.android.play.core.internal.zzan
+                public final Object zza(IBinder iBinder) {
+                    return com.google.android.play.core.internal.zzo.zzb(iBinder);
+                }
+            }, null);
         }
     }
 

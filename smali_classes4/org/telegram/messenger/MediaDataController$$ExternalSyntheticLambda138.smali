@@ -10,7 +10,9 @@
 
 .field public final synthetic f$1:[Ljava/lang/String;
 
-.field public final synthetic f$10:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$10:Z
+
+.field public final synthetic f$11:Ljava/util/concurrent/CountDownLatch;
 
 .field public final synthetic f$2:Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;
 
@@ -30,7 +32,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZLjava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZZLjava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +57,9 @@
 
     iput-boolean p10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$9:Z
 
-    iput-object p11, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$10:Ljava/util/concurrent/CountDownLatch;
+    iput-boolean p11, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$10:Z
+
+    iput-object p12, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$11:Ljava/util/concurrent/CountDownLatch;
 
     return-void
 .end method
@@ -63,7 +67,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 11
+    .locals 12
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -85,9 +89,11 @@
 
     iget-boolean v9, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$9:Z
 
-    iget-object v10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$10:Ljava/util/concurrent/CountDownLatch;
+    iget-boolean v10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$10:Z
 
-    invoke-static/range {v0 .. v10}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$BjUQnGS_WfXN0EIoIZ5MatVdGGU(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZLjava/util/concurrent/CountDownLatch;)V
+    iget-object v11, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda138;->f$11:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$MywEvdxUdSA8SPOICLku4iAUeWs(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZZLjava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

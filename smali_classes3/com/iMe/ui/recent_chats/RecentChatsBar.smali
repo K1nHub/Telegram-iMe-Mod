@@ -312,7 +312,7 @@
     return p1
 .end method
 
-.method public final scrollToStart()V
+.method public final scrollToFirstCell()V
     .locals 2
 
     .line 44

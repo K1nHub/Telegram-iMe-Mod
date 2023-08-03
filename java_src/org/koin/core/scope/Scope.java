@@ -3,6 +3,7 @@ package org.koin.core.scope;
 import java.util.ArrayList;
 import java.util.Iterator;
 import kotlin.KotlinNothingValueException;
+import kotlin.Unit;
 import kotlin.collections.ArrayDeque;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
@@ -28,7 +29,7 @@ public final class Scope {
     private Object _source;
 
     /* renamed from: id */
-    private final String f1435id;
+    private final String f1438id;
     private final boolean isRoot;
     private final ArrayList<Scope> linkedScopes;
     private final Qualifier scopeQualifier;
@@ -39,14 +40,14 @@ public final class Scope {
         }
         if (obj instanceof Scope) {
             Scope scope = (Scope) obj;
-            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1435id, scope.f1435id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
+            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1438id, scope.f1438id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1435id.hashCode()) * 31;
+        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1438id.hashCode()) * 31;
         boolean z = this.isRoot;
         int i = z;
         if (z != 0) {
@@ -60,7 +61,7 @@ public final class Scope {
     }
 
     public final String getId() {
-        return this.f1435id;
+        return this.f1438id;
     }
 
     public final Koin get_koin() {
@@ -72,7 +73,7 @@ public final class Scope {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(_koin, "_koin");
         this.scopeQualifier = scopeQualifier;
-        this.f1435id = id;
+        this.f1438id = id;
         this.isRoot = z;
         this._koin = _koin;
         this.linkedScopes = new ArrayList<>();
@@ -202,16 +203,33 @@ public final class Scope {
 
     private final <T> T resolveInstance(Qualifier qualifier, KClass<?> kClass, Function0<? extends ParametersHolder> function0) {
         if (this._closed) {
-            throw new ClosedScopeException("Scope '" + this.f1435id + "' is closed");
+            throw new ClosedScopeException("Scope '" + this.f1438id + "' is closed");
         }
-        ParametersHolder invoke = function0 != null ? function0.invoke() : null;
+        final ParametersHolder invoke = function0 != null ? function0.invoke() : null;
         if (invoke != null) {
             Logger logger = this._koin.getLogger();
             Level level = Level.DEBUG;
             if (logger.isAt(level)) {
                 logger.display(level, "| >> parameters " + invoke + ' ');
             }
-            KoinPlatformTools.INSTANCE.m1639synchronized(this, new Scope$resolveInstance$2(this, invoke));
+            KoinPlatformTools.INSTANCE.m1658synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveInstance$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    Scope.this.get_parameterStack().addFirst(invoke);
+                }
+            });
         }
         T t = (T) resolveValue(qualifier, kClass, new InstanceContext(this._koin.getLogger(), this, invoke), function0);
         if (invoke != null) {
@@ -220,7 +238,17 @@ public final class Scope {
             if (logger2.isAt(level2)) {
                 logger2.display(level2, "| << parameters");
             }
-            KoinPlatformTools.INSTANCE.m1639synchronized(this, new Scope$resolveInstance$3(this));
+            KoinPlatformTools.INSTANCE.m1658synchronized(this, new Function0<ParametersHolder>() { // from class: org.koin.core.scope.Scope$resolveInstance$3
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public final ParametersHolder invoke() {
+                    return Scope.this.get_parameterStack().removeFirstOrNull();
+                }
+            });
         }
         return t;
     }
@@ -259,7 +287,23 @@ public final class Scope {
                     }
                     t = (T) findInOtherScope(kClass, qualifier, function0);
                     if (t == null) {
-                        KoinPlatformTools.INSTANCE.m1639synchronized(this, new Scope$resolveValue$4$1(this));
+                        KoinPlatformTools.INSTANCE.m1658synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveValue$4$1
+                            /* JADX INFO: Access modifiers changed from: package-private */
+                            {
+                                super(0);
+                            }
+
+                            @Override // kotlin.jvm.functions.Function0
+                            public /* bridge */ /* synthetic */ Unit invoke() {
+                                invoke2();
+                                return Unit.INSTANCE;
+                            }
+
+                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                            public final void invoke2() {
+                                Scope.this.get_parameterStack().clear();
+                            }
+                        });
                         Logger logger4 = this._koin.getLogger();
                         if (logger4.isAt(level)) {
                             logger4.display(level, "|- << parameters");
@@ -324,10 +368,43 @@ public final class Scope {
     }
 
     public final void close() {
-        KoinPlatformTools.INSTANCE.m1639synchronized(this, new Scope$close$1(this));
+        KoinPlatformTools.INSTANCE.m1658synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$close$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                ArrayList<ScopeCallback> arrayList;
+                ArrayList arrayList2;
+                Logger logger = Scope.this.get_koin().getLogger();
+                String str = "|- (-) Scope - id:'" + Scope.this.getId() + '\'';
+                Level level = Level.DEBUG;
+                if (logger.isAt(level)) {
+                    logger.display(level, str);
+                }
+                arrayList = Scope.this._callbacks;
+                Scope scope = Scope.this;
+                for (ScopeCallback scopeCallback : arrayList) {
+                    scopeCallback.onScopeClose(scope);
+                }
+                arrayList2 = Scope.this._callbacks;
+                arrayList2.clear();
+                Scope.this.set_source(null);
+                Scope.this._closed = true;
+                Scope.this.get_koin().getScopeRegistry().deleteScope$koin_core(Scope.this);
+            }
+        });
     }
 
     public String toString() {
-        return "['" + this.f1435id + "']";
+        return "['" + this.f1438id + "']";
     }
 }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)V
     .locals 0
 
-    .line 646
+    .line 654
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$9;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,10 +35,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 649
+    .line 657
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 650
+    .line 658
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$9;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->checkTopOffset()V

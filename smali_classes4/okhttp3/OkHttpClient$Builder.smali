@@ -838,7 +838,7 @@
         }
     .end annotation
 
-    const-string v0, "protocols"
+    const-string/jumbo v0, "protocols"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -960,7 +960,7 @@
     :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "protocols must not contain null"
+    const-string/jumbo v0, "protocols must not contain null"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -976,7 +976,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "protocols must not contain http/1.0: "
+    const-string/jumbo v1, "protocols must not contain http/1.0: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1003,7 +1003,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "protocols containing h2_prior_knowledge cannot use other protocols: "
+    const-string/jumbo v1, "protocols containing h2_prior_knowledge cannot use other protocols: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1030,7 +1030,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "protocols must contain h2_prior_knowledge or http/1.1: "
+    const-string/jumbo v1, "protocols must contain h2_prior_knowledge or http/1.1: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

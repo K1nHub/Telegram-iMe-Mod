@@ -51,6 +51,7 @@ import androidx.recyclerview.widget.ViewInfoStore;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.iMe.common.IdFabric$ViewTypes;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -4304,6 +4305,15 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         }
 
         public void onViewRecycled(VH vh) {
+        }
+
+        public boolean isNeedDivider(int i) {
+            int i2 = i + 1;
+            if (i2 < 0 || i2 >= getItemCount()) {
+                return false;
+            }
+            int itemViewType = getItemViewType(i2);
+            return (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL || itemViewType == IdFabric$ViewTypes.SHADOW_SECTION) ? false : true;
         }
 
         public void onBindViewHolder(VH vh, int i, List<Object> list) {

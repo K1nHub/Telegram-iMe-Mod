@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.backup.ConfirmSeedView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthBackupConfirmBinding implements ViewBinding {
     private final RelativeLayout rootView;
@@ -27,7 +27,7 @@ public final class ForkFragmentWalletEthBackupConfirmBinding implements ViewBind
     }
 
     public static ForkFragmentWalletEthBackupConfirmBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_eth_backup_confirm, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_wallet_eth_backup_confirm, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ForkFragmentWalletEthBackupConfirmBinding implements ViewBind
     }
 
     public static ForkFragmentWalletEthBackupConfirmBinding bind(View view) {
-        int i = C3417R.C3420id.button_action;
+        int i = C3419R.C3422id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3417R.C3420id.confirm_seed_view;
+            i = C3419R.C3422id.confirm_seed_view;
             ConfirmSeedView confirmSeedView = (ConfirmSeedView) ViewBindings.findChildViewById(view, i);
             if (confirmSeedView != null) {
                 return new ForkFragmentWalletEthBackupConfirmBinding((RelativeLayout) view, actionButton, confirmSeedView);

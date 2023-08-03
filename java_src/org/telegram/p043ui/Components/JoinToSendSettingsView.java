@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -51,7 +51,7 @@ public class JoinToSendSettingsView extends LinearLayout {
         setOrientation(1);
         HeaderCell headerCell = new HeaderCell(context, 23);
         this.joinHeaderCell = headerCell;
-        headerCell.setText(LocaleController.getString("ChannelSettingsJoinTitle", C3417R.string.ChannelSettingsJoinTitle));
+        headerCell.setText(LocaleController.getString("ChannelSettingsJoinTitle", C3419R.string.ChannelSettingsJoinTitle));
         this.joinHeaderCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         addView(this.joinHeaderCell);
         TextCheckCell textCheckCell = new TextCheckCell(this, context) { // from class: org.telegram.ui.Components.JoinToSendSettingsView.1
@@ -59,7 +59,7 @@ public class JoinToSendSettingsView extends LinearLayout {
         this.joinToSendCell = textCheckCell;
         textCheckCell.setBackground(Theme.getSelectorDrawable(true));
         TextCheckCell textCheckCell2 = this.joinToSendCell;
-        String string = LocaleController.getString("ChannelSettingsJoinToSend", C3417R.string.ChannelSettingsJoinToSend);
+        String string = LocaleController.getString("ChannelSettingsJoinToSend", C3419R.string.ChannelSettingsJoinToSend);
         boolean z2 = this.isJoinToSend;
         textCheckCell2.setTextAndCheck(string, z2, z2);
         this.joinToSendCell.setEnabled(tLRPC$Chat.creator || ((tLRPC$TL_chatAdminRights2 = tLRPC$Chat.admin_rights) != null && tLRPC$TL_chatAdminRights2.ban_users));
@@ -74,7 +74,7 @@ public class JoinToSendSettingsView extends LinearLayout {
         };
         this.joinRequestCell = textCheckCell3;
         textCheckCell3.setBackground(Theme.getSelectorDrawable(true));
-        this.joinRequestCell.setTextAndCheck(LocaleController.getString("ChannelSettingsJoinRequest", C3417R.string.ChannelSettingsJoinRequest), this.isJoinRequest, false);
+        this.joinRequestCell.setTextAndCheck(LocaleController.getString("ChannelSettingsJoinRequest", C3419R.string.ChannelSettingsJoinRequest), this.isJoinRequest, false);
         TextCheckCell textCheckCell4 = this.joinRequestCell;
         float f = BitmapDescriptorFactory.HUE_RED;
         textCheckCell4.setPivotY(BitmapDescriptorFactory.HUE_RED);
@@ -92,11 +92,11 @@ public class JoinToSendSettingsView extends LinearLayout {
         addView(this.joinRequestCell);
         TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
         this.joinToSendInfoCell = textInfoPrivacyCell;
-        textInfoPrivacyCell.setText(LocaleController.getString("ChannelSettingsJoinToSendInfo", C3417R.string.ChannelSettingsJoinToSendInfo));
+        textInfoPrivacyCell.setText(LocaleController.getString("ChannelSettingsJoinToSendInfo", C3419R.string.ChannelSettingsJoinToSendInfo));
         addView(this.joinToSendInfoCell);
         TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
         this.joinRequestInfoCell = textInfoPrivacyCell2;
-        textInfoPrivacyCell2.setText(LocaleController.getString("ChannelSettingsJoinRequestInfo", C3417R.string.ChannelSettingsJoinRequestInfo));
+        textInfoPrivacyCell2.setText(LocaleController.getString("ChannelSettingsJoinRequestInfo", C3419R.string.ChannelSettingsJoinRequestInfo));
         addView(this.joinRequestInfoCell);
         boolean z3 = this.isJoinToSend;
         this.toggleValue = z3 ? 1.0f : f;
@@ -178,14 +178,14 @@ public class JoinToSendSettingsView extends LinearLayout {
         this.toggleValue = f;
         this.joinRequestCell.setAlpha(f);
         float f2 = 1.0f - f;
-        this.joinRequestCell.setTranslationY((-AndroidUtilities.m54dp(16)) * f2);
+        this.joinRequestCell.setTranslationY((-AndroidUtilities.m72dp(16)) * f2);
         this.joinRequestCell.setScaleY(1.0f - (0.1f * f2));
-        int m54dp = this.joinRequestCell.getMeasuredHeight() <= 0 ? AndroidUtilities.m54dp(50) : this.joinRequestCell.getMeasuredHeight();
+        int m72dp = this.joinRequestCell.getMeasuredHeight() <= 0 ? AndroidUtilities.m72dp(50) : this.joinRequestCell.getMeasuredHeight();
         this.joinToSendInfoCell.setAlpha(f2);
-        float f3 = (-m54dp) * f2;
-        this.joinToSendInfoCell.setTranslationY(((-AndroidUtilities.m54dp(4)) * f) + f3);
+        float f3 = (-m72dp) * f2;
+        this.joinToSendInfoCell.setTranslationY(((-AndroidUtilities.m72dp(4)) * f) + f3);
         this.joinRequestInfoCell.setAlpha(f);
-        this.joinRequestInfoCell.setTranslationY(f3 + (AndroidUtilities.m54dp(4) * f2));
+        this.joinRequestInfoCell.setTranslationY(f3 + (AndroidUtilities.m72dp(4) * f2));
         requestLayout();
     }
 

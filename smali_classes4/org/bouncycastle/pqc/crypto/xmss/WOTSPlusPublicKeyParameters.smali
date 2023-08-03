@@ -12,11 +12,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "params == null"
+    const-string/jumbo v0, "params == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "publicKey == null"
+    const-string/jumbo v0, "publicKey == null"
 
     invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -85,7 +85,7 @@
     :cond_3
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p2, "publicKey byte array == null"
+    const-string/jumbo p2, "publicKey byte array == null"
 
     invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

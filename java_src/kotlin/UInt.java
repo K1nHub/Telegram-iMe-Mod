@@ -9,7 +9,7 @@ public final class UInt implements Comparable<UInt> {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1605constructorimpl(int i) {
+    public static int m1624constructorimpl(int i) {
         return i;
     }
 

@@ -8,34 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-.field public final synthetic f$1:Ljava/io/File;
-
-.field public final synthetic f$2:Ljava/io/File;
-
-.field public final synthetic f$3:Ljava/io/File;
-
-.field public final synthetic f$4:Ljava/io/File;
-
-.field public final synthetic f$5:Z
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoadOperation;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    iput-object p2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$1:Ljava/io/File;
-
-    iput-object p3, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$2:Ljava/io/File;
-
-    iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$3:Ljava/io/File;
-
-    iput-object p5, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$4:Ljava/io/File;
-
-    iput-boolean p6, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$5:Z
+    iput p2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$1:I
 
     return-void
 .end method
@@ -43,21 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/messenger/FileLoadOperation;
 
-    iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$1:Ljava/io/File;
+    iget v1, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$2:Ljava/io/File;
-
-    iget-object v3, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$3:Ljava/io/File;
-
-    iget-object v4, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$4:Ljava/io/File;
-
-    iget-boolean v5, p0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;->f$5:Z
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$b4y7uHCqY8-rCY9iYipBMyeiC_0(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->$r8$lambda$Fcb3Pi9vz92Q3NDRFOMPog_OAII(Lorg/telegram/messenger/FileLoadOperation;I)V
 
     return-void
 .end method

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->lambda$updateAccountSwitchItems$16(ILandroid/view/View;)Z
+    value = Lorg/telegram/ui/DialogsActivity;->lambda$updateAccountSwitchItems$17(ILandroid/view/View;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/os/Bundle;Lorg/telegram/ui/LaunchActivity;I)V
     .locals 0
 
-    .line 1019
+    .line 1036
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
@@ -51,25 +51,25 @@
 .method private synthetic lambda$onTransitionAnimationEnd$0(Lorg/telegram/ui/LaunchActivity;I)V
     .locals 3
 
-    .line 1037
+    .line 1054
     new-instance v0, Lorg/telegram/ui/DialogsActivity$4$1;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
     invoke-direct {v0, p0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity$4$1;-><init>(Lorg/telegram/ui/DialogsActivity$4;Landroid/os/Bundle;Lorg/telegram/ui/LaunchActivity;I)V
 
-    .line 1044
+    .line 1061
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->setCurrentAccount(I)V
 
-    .line 1045
+    .line 1062
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29400(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29800(Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 1046
+    .line 1063
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$39100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
@@ -77,14 +77,14 @@
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->setHighlightActionButtons(Z)V
 
-    .line 1047
+    .line 1064
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance p2, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$39200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$41900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -102,13 +102,13 @@
 .method protected onPreviewChatOpened(Landroid/os/Bundle;)V
     .locals 0
 
-    .line 1025
+    .line 1042
     invoke-super {p0, p1}, Lorg/telegram/ui/DialogsActivity;->onPreviewChatOpened(Landroid/os/Bundle;)V
 
-    .line 1026
+    .line 1043
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
-    .line 1027
+    .line 1044
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
     return-void
@@ -117,10 +117,10 @@
 .method public onPreviewOpenAnimationEnd()V
     .locals 3
 
-    .line 1053
+    .line 1070
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
 
-    .line 1054
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, p0, Lorg/telegram/ui/DialogsActivity$4;->val$accountNumberFinal:I
@@ -135,21 +135,21 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 1
 
-    .line 1032
+    .line 1049
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->onTransitionAnimationEnd(ZZ)V
 
     if-nez p1, :cond_1
 
     if-eqz p2, :cond_1
 
-    .line 1033
+    .line 1050
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
     if-nez p1, :cond_0
 
     goto :goto_0
 
-    .line 1036
+    .line 1053
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 

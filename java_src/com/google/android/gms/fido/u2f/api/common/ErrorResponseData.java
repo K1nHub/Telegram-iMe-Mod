@@ -22,14 +22,14 @@ public class ErrorResponseData extends ResponseData {
     public static final String JSON_ERROR_CODE = "errorCode";
     @VisibleForTesting
     public static final String JSON_ERROR_MESSAGE = "errorMessage";
-    @SafeParcelable.Field(getter = "getErrorCodeAsInt", m779id = 2, type = "int")
+    @SafeParcelable.Field(getter = "getErrorCodeAsInt", m797id = 2, type = "int")
     private final ErrorCode zza;
-    @SafeParcelable.Field(getter = "getErrorMessage", m779id = 3)
+    @SafeParcelable.Field(getter = "getErrorMessage", m797id = 3)
     private final String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ErrorResponseData(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) String str) {
+    public ErrorResponseData(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) String str) {
         this.zza = ErrorCode.toErrorCode(i);
         this.zzb = str;
     }

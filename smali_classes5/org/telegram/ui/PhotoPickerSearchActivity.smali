@@ -894,7 +894,7 @@
 
     move-result v6
 
-    invoke-virtual {v0, v6}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 147
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I

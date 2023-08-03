@@ -8,7 +8,7 @@ import p033j$.util.function.Consumer;
 final class C2771D extends AbstractC2773E implements InterfaceC2853s {
     @Override // p033j$.util.InterfaceC2853s
     /* renamed from: b */
-    public boolean mo113b(Consumer consumer) {
+    public boolean mo131b(Consumer consumer) {
         Objects.requireNonNull(consumer);
         return false;
     }
@@ -25,11 +25,11 @@ final class C2771D extends AbstractC2773E implements InterfaceC2853s {
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ long getExactSizeIfKnown() {
-        return AbstractC2780a.m606e(this);
+        return AbstractC2780a.m624e(this);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 }

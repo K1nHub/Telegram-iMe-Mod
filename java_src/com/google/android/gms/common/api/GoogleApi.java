@@ -177,7 +177,11 @@ public abstract class GoogleApi<O extends Api.ApiOptions> implements HasApiKey<O
         Preconditions.checkNotNull(t.getListenerKey(), "Listener has already been released.");
         Preconditions.checkNotNull(u.getListenerKey(), "Listener has already been released.");
         Preconditions.checkArgument(Objects.equal(t.getListenerKey(), u.getListenerKey()), "Listener registration and unregistration methods must be constructed with the same ListenerHolder.");
-        return this.zaa.zaq(this, t, u, zad.zaa);
+        return this.zaa.zaq(this, t, u, new Runnable() { // from class: com.google.android.gms.common.api.zad
+            @Override // java.lang.Runnable
+            public final void run() {
+            }
+        });
     }
 
     @KeepForSdk

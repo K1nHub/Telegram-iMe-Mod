@@ -32,19 +32,19 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;)V
     .locals 0
 
-    .line 2015
+    .line 2016
     iput-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2016
+    .line 2017
     invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->createHandlerForCurrentLooper(Landroid/os/Handler$Callback;)Landroid/os/Handler;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->handler:Landroid/os/Handler;
 
-    .line 2017
+    .line 2018
     invoke-interface {p2, p0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;->setOnFrameRenderedListener(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$OnFrameRenderedListener;Landroid/os/Handler;)V
 
     return-void
@@ -53,7 +53,7 @@
 .method private handleFrameRendered(J)V
     .locals 2
 
-    .line 2054
+    .line 2055
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
     iget-object v1, v0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunnelingOnFrameRenderedListener:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;
@@ -75,14 +75,14 @@
 
     if-nez v0, :cond_1
 
-    .line 2059
+    .line 2060
     iget-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->access$100(Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;)V
 
     goto :goto_0
 
-    .line 2062
+    .line 2063
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
@@ -96,7 +96,7 @@
     :catch_0
     move-exception p1
 
-    .line 2064
+    .line 2065
     iget-object p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
     invoke-static {p2, p1}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->access$200(Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;Lcom/google/android/exoplayer2/ExoPlaybackException;)V
@@ -111,7 +111,7 @@
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 2
 
-    .line 2044
+    .line 2045
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-eqz v0, :cond_0
@@ -120,7 +120,7 @@
 
     return p1
 
-    .line 2046
+    .line 2047
     :cond_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -140,14 +140,14 @@
 .method public onFrameRendered(Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;JJ)V
     .locals 2
 
-    .line 2029
+    .line 2030
     sget p1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 p4, 0x1e
 
     if-ge p1, p4, :cond_0
 
-    .line 2030
+    .line 2031
     iget-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->handler:Landroid/os/Handler;
 
     const/4 p4, 0x0
@@ -160,19 +160,19 @@
 
     long-to-int p2, p2
 
-    .line 2031
+    .line 2032
     invoke-static {p1, p4, p5, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 2036
+    .line 2037
     iget-object p2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->handler:Landroid/os/Handler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
     goto :goto_0
 
-    .line 2038
+    .line 2039
     :cond_0
     invoke-direct {p0, p2, p3}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->handleFrameRendered(J)V
 

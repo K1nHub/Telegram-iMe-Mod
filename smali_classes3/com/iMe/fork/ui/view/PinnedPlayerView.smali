@@ -34,7 +34,7 @@
 
 .field private lastBufferedPositionCheck:J
 
-.field private lastDuration:I
+.field private lastDuration:D
 
 .field private lastMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -128,6 +128,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$aqETI2P08p-sYY0JizAsPK4R1oU(Lcom/iMe/fork/ui/view/PinnedPlayerView;Landroid/net/Uri;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lambda$onSubItemClick$8(Landroid/net/Uri;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$bTlKk18BNF-qmsjQdO5rn3wP_Zw(Lcom/iMe/fork/ui/view/PinnedPlayerView;Ljava/util/ArrayList;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 0
 
@@ -150,14 +158,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lambda$new$4(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$r9EOV82Z4v4OueGzck0wL7k-22Y(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lambda$onSubItemClick$8()V
 
     return-void
 .end method
@@ -1452,13 +1452,13 @@
     return p0
 .end method
 
-.method static synthetic access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)I
-    .locals 0
+.method static synthetic access$900(Lcom/iMe/fork/ui/view/PinnedPlayerView;)D
+    .locals 2
 
     .line 87
-    iget p0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lastDuration:I
+    iget-wide v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lastDuration:D
 
-    return p0
+    return-wide v0
 .end method
 
 .method private checkIfMusicDownloaded(Lorg/telegram/messenger/MessageObject;)V
@@ -2061,7 +2061,7 @@
 .end method
 
 .method private synthetic lambda$onSubItemClick$7(Ljava/util/ArrayList;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 32
+    .locals 31
 
     move-object/from16 v11, p1
 
@@ -2220,7 +2220,7 @@
     .line 967
     invoke-virtual {v2, v14, v11}, Lorg/telegram/ui/ChatActivity;->showFieldPanelForForward(ZLjava/util/ArrayList;)V
 
-    goto :goto_3
+    goto/16 :goto_3
 
     .line 969
     :cond_4
@@ -2263,43 +2263,47 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
-    move-result-object v16
+    move-result-object v0
 
     invoke-interface/range {p4 .. p4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v16
+
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
     const/16 v21, 0x0
 
-    const/16 v22, 0x0
+    const/16 v22, 0x1
 
-    const/16 v23, 0x1
+    const/16 v23, 0x0
 
     const/16 v24, 0x0
 
     const/16 v25, 0x0
 
-    const/16 v26, 0x0
+    iget-boolean v1, v12, Lorg/telegram/ui/DialogsActivity;->notify:Z
 
-    iget-boolean v0, v12, Lorg/telegram/ui/DialogsActivity;->notify:Z
+    iget v4, v12, Lorg/telegram/ui/DialogsActivity;->scheduleDate:I
 
-    iget v1, v12, Lorg/telegram/ui/DialogsActivity;->scheduleDate:I
+    const/16 v28, 0x0
 
     const/16 v29, 0x0
 
     const/16 v30, 0x0
 
-    const/16 v31, 0x0
+    move-wide/from16 v17, v2
 
-    move-wide/from16 v18, v2
+    move/from16 v26, v1
 
-    move/from16 v27, v0
+    move/from16 v27, v4
 
-    move/from16 v28, v1
+    invoke-static/range {v16 .. v30}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
-    invoke-virtual/range {v16 .. v31}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
     .line 950
     :cond_6
@@ -2347,25 +2351,25 @@
     return v14
 .end method
 
-.method private synthetic lambda$onSubItemClick$8()V
-    .locals 2
+.method private synthetic lambda$onSubItemClick$8(Landroid/net/Uri;)V
+    .locals 1
 
     .line 1055
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->bottomView:Landroid/widget/FrameLayout;
+    iget-object p1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->bottomView:Landroid/widget/FrameLayout;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget-object v1, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
+    sget-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/Bulletin;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return-void
 .end method
@@ -2426,9 +2430,9 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda7;
+    new-instance v0, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;
 
-    invoke-direct {v0, p1}, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
+    invoke-direct {v0, p1}, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ActionBar/INavigationLayout;)V
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
@@ -3096,11 +3100,11 @@
     :goto_5
     move-object v8, p1
 
-    new-instance v9, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;
+    new-instance v9, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda7;
 
-    invoke-direct {v9, p0}, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
+    invoke-direct {v9, p0}, Lcom/iMe/fork/ui/view/PinnedPlayerView$$ExternalSyntheticLambda7;-><init>(Lcom/iMe/fork/ui/view/PinnedPlayerView;)V
 
-    invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
 
     :cond_1a
     :goto_6
@@ -3533,21 +3537,21 @@
     if-eqz v0, :cond_0
 
     .line 1067
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result p1
+    move-result-wide p1
 
-    int-to-float p1, p1
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    iget-object p2, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
 
-    invoke-virtual {p2}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
+    move-result v0
 
-    move-result p2
+    float-to-double v0, v0
 
-    mul-float/2addr p1, p2
+    mul-double/2addr p1, v0
 
-    float-to-int p1, p1
+    double-to-int p1, p1
 
     goto/16 :goto_3
 
@@ -3692,21 +3696,21 @@
     if-eqz v1, :cond_8
 
     .line 1092
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
+
+    move-result-wide v0
+
+    iget-object p2, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
 
     move-result p2
 
-    int-to-float p2, p2
+    float-to-double v2, p2
 
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    mul-double/2addr v0, v2
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getProgress()F
-
-    move-result v0
-
-    mul-float/2addr p2, v0
-
-    float-to-int p2, p2
+    double-to-int p2, v0
 
     .line 1093
     iput p2, p1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
@@ -5640,18 +5644,24 @@
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;)V
 
     .line 717
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v0
+    move-result-wide v0
 
-    iput v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lastDuration:I
+    iput-wide v0, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->lastDuration:D
 
     .line 718
-    iget-object v1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->durationTextView:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView;->durationTextView:Landroid/widget/TextView;
 
-    if-eqz v1, :cond_11
+    if-eqz v2, :cond_11
 
-    if-eqz v0, :cond_10
+    const-wide/16 v3, 0x0
+
+    cmpl-double v3, v0, v3
+
+    if-eqz v3, :cond_10
+
+    double-to-int v0, v0
 
     .line 719
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->formatShortDuration(I)Ljava/lang/String;
@@ -5664,7 +5674,7 @@
     const-string v0, "-:--"
 
     :goto_a
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_11
     if-nez p1, :cond_12

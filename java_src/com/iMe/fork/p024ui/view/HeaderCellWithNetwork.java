@@ -8,6 +8,7 @@ import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -31,11 +32,24 @@ public final class HeaderCellWithNetwork extends FrameLayout {
         Lazy lazy;
         int i;
         ViewGroup.MarginLayoutParams marginLayoutParams;
-        int m53px;
+        int m71px;
         ViewGroup.MarginLayoutParams marginLayoutParams2;
         Intrinsics.checkNotNullParameter(headerCell, "headerCell");
         this.headerCell = headerCell;
-        lazy = LazyKt__LazyJVMKt.lazy(new HeaderCellWithNetwork$networkTypeView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<NetworkTypeView>() { // from class: com.iMe.fork.ui.view.HeaderCellWithNetwork$networkTypeView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final NetworkTypeView invoke() {
+                NetworkTypeView initNetworkView;
+                initNetworkView = HeaderCellWithNetwork.this.initNetworkView();
+                return initNetworkView;
+            }
+        });
         this.networkTypeView$delegate = lazy;
         addView(headerCell);
         NetworkTypeView networkTypeView = getNetworkTypeView();
@@ -45,19 +59,19 @@ public final class HeaderCellWithNetwork extends FrameLayout {
             TextView textView = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
-            i = AndroidUtilities.m53px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
+            i = AndroidUtilities.m71px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
         } else {
             i = 0;
         }
         if (LocaleController.isRTL) {
-            m53px = 0;
+            m71px = 0;
         } else {
             TextView textView2 = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView2, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams2 = textView2.getLayoutParams();
-            m53px = AndroidUtilities.m53px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
+            m71px = AndroidUtilities.m71px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
         }
-        addView(networkTypeView, LayoutHelper.createFrame(-2, -2, i2, i, 0, m53px, 0));
+        addView(networkTypeView, LayoutHelper.createFrame(-2, -2, i2, i, 0, m71px, 0));
     }
 
     public final NetworkTypeView getNetworkTypeView() {
@@ -71,7 +85,7 @@ public final class HeaderCellWithNetwork extends FrameLayout {
     }
 
     public final void setNetworkViewTopMargin(int i) {
-        ViewExtKt.setMargins$default(getNetworkTypeView(), 0, AndroidUtilities.m54dp(i), 0, 0, 13, null);
+        ViewExtKt.setMargins$default(getNetworkTypeView(), 0, AndroidUtilities.m72dp(i), 0, 0, 13, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

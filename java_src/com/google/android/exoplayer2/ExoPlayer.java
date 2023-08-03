@@ -12,6 +12,7 @@ import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.PlayerMessage;
 import com.google.android.exoplayer2.analytics.AnalyticsCollector;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
+import com.google.android.exoplayer2.analytics.DefaultAnalyticsCollector;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.audio.AuxEffectInfo;
 import com.google.android.exoplayer2.decoder.DecoderCounters;
@@ -36,6 +37,7 @@ import com.google.android.exoplayer2.video.spherical.CameraMotionListener;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import java.util.List;
+import org.telegram.messenger.DispatchQueue;
 /* loaded from: classes.dex */
 public interface ExoPlayer extends Player {
     public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
@@ -332,6 +334,8 @@ public interface ExoPlayer extends Player {
 
     void setWakeMode(int i);
 
+    void setWorkerQueue(DispatchQueue dispatchQueue);
+
     /* renamed from: com.google.android.exoplayer2.ExoPlayer$-CC  reason: invalid class name */
     /* loaded from: classes.dex */
     public final /* synthetic */ class CC {
@@ -604,14 +608,24 @@ public interface ExoPlayer extends Player {
                     lambda$new$14 = ExoPlayer.Builder.lambda$new$14(context);
                     return lambda$new$14;
                 }
-            }, ExoPlayer$Builder$$ExternalSyntheticLambda23.INSTANCE, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda4
+            }, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda23
+                @Override // com.google.common.base.Supplier
+                public final Object get() {
+                    return new DefaultLoadControl();
+                }
+            }, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda4
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     BandwidthMeter singletonInstance;
                     singletonInstance = DefaultBandwidthMeter.getSingletonInstance(context);
                     return singletonInstance;
                 }
-            }, ExoPlayer$Builder$$ExternalSyntheticLambda2.INSTANCE);
+            }, new Function() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda2
+                @Override // com.google.common.base.Function
+                public final Object apply(Object obj) {
+                    return new DefaultAnalyticsCollector((Clock) obj);
+                }
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */

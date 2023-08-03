@@ -25,6 +25,7 @@ import com.iMe.p031ui.wallet.crypto.settings.blockchains.details.BlockchainWalle
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -33,7 +34,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -41,11 +45,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -68,13 +77,77 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
 
     public BlockchainsManagementFragment() {
         Lazy lazy;
-        BlockchainsManagementFragment$presenter$2 blockchainsManagementFragment$presenter$2 = new BlockchainsManagementFragment$presenter$2(this);
+        Function0<BlockchainsManagementPresenter> function0 = new Function0<BlockchainsManagementPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final BlockchainsManagementPresenter invoke() {
+                Lazy lazy2;
+                final BlockchainsManagementFragment blockchainsManagementFragment = BlockchainsManagementFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BlockchainsManagementPresenter>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final BlockchainsManagementPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(BlockchainsManagementPresenter.class), qualifier, function02);
+                    }
+                });
+                return (BlockchainsManagementPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, BlockchainsManagementPresenter.class.getName() + ".presenter", blockchainsManagementFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new BlockchainsManagementFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, BlockchainsManagementPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BlockchainsWalletsRecycleAdapter>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.settings.blockchains.adapter.BlockchainsWalletsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BlockchainsWalletsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BlockchainsWalletsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.walletsAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new BlockchainsManagementFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentBlockchainsManagementBinding>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentBlockchainsManagementBinding invoke() {
+                return ForkFragmentBlockchainsManagementBinding.inflate(BaseFragmentExtKt.getLayoutInflater(BlockchainsManagementFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,13 +249,13 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_crypto_blockchains_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.createMenu();
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_crypto_blockchains_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.createMenu();
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BlockchainsManagementFragment.this.finishFragment();
@@ -214,10 +287,46 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         TextCell buttonResetAll = binding.buttonResetAll;
         Intrinsics.checkNotNullExpressionValue(buttonResetAll, "buttonResetAll");
-        ViewExtKt.safeThrottledClick$default(buttonResetAll, 0L, new BlockchainsManagementFragment$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonResetAll, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                BlockchainsManagementPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = BlockchainsManagementFragment.this.getPresenter();
+                presenter.showResetAllWalletsDialog();
+            }
+        }, 1, null);
         RLottieImageView imageHeader = binding.imageHeader;
         Intrinsics.checkNotNullExpressionValue(imageHeader, "imageHeader");
-        ViewExtKt.safeThrottledClick$default(imageHeader, 0L, new BlockchainsManagementFragment$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(imageHeader, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                BlockchainsManagementFragment.this.onImageHeaderClick();
+            }
+        }, 1, null);
         final BlockchainsWalletsRecycleAdapter walletsAdapter = getWalletsAdapter();
         walletsAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
@@ -248,7 +357,7 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3417R.C3420id.image_info) {
+        if (view.getId() == C3419R.C3422id.image_info) {
             this$0.getPresenter().showInfoDialog(this_with.getItem(i));
         }
     }
@@ -273,12 +382,12 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_multi_networking, 300, 170);
+        rLottieImageView.setAnimation(C3419R.raw.fork_multi_networking, 300, 170);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textWalletsTitle.setText(getResourceManager().getString(C3417R.string.wallet_crypto_blockchains_active_wallets));
-        binding.textDescription.setText(getResourceManager().getString(C3417R.string.wallet_crypto_blockchains_description));
-        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3417R.string.wallet_reset_all_title), C3417R.C3419drawable.msg_block2, false);
+        binding.textWalletsTitle.setText(getResourceManager().getString(C3419R.string.wallet_crypto_blockchains_active_wallets));
+        binding.textDescription.setText(getResourceManager().getString(C3419R.string.wallet_crypto_blockchains_description));
+        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3419R.string.wallet_reset_all_title), C3419R.C3421drawable.msg_block2, false);
     }
 
     /* compiled from: BlockchainsManagementFragment.kt */

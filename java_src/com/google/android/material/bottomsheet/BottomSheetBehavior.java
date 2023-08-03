@@ -23,7 +23,6 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
 import androidx.customview.view.AbsSavedState;
 import androidx.customview.widget.ViewDragHelper;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$attr;
 import com.google.android.material.R$dimen;
@@ -1296,7 +1295,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         }
         ViewCompat.removeAccessibilityAction(v, 524288);
         ViewCompat.removeAccessibilityAction(v, 262144);
-        ViewCompat.removeAccessibilityAction(v, ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES);
+        ViewCompat.removeAccessibilityAction(v, 1048576);
         int i = this.expandHalfwayActionId;
         if (i != -1) {
             ViewCompat.removeAccessibilityAction(v, i);

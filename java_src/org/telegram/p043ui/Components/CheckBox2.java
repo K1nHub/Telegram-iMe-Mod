@@ -114,9 +114,9 @@ public class CheckBox2 extends View {
             this.iconDrawable.draw(canvas);
             Paint paint = new Paint();
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(AndroidUtilities.m55dp(1.2f));
+            paint.setStrokeWidth(AndroidUtilities.m73dp(1.2f));
             paint.setColor(Theme.getColor(Theme.key_switch2Track));
-            canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - AndroidUtilities.m55dp(1.5f), paint);
+            canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - AndroidUtilities.m73dp(1.5f), paint);
             return;
         }
         this.checkBoxBase.draw(canvas);

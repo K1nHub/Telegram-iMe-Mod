@@ -48,7 +48,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;)V
     .locals 0
 
-    .line 851
+    .line 927
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;)V
     .locals 0
 
-    .line 851
+    .line 927
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;-><init>(Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;)V
 
     return-void

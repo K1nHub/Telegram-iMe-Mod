@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;
-.super Lorg/telegram/ui/Components/EditTextCaption;
+.super Landroid/widget/FrameLayout;
 .source "SelectAnimatedEmojiDialog.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,70 +15,197 @@
 
 
 # instance fields
+.field fadePaint:Landroid/graphics/Paint;
+
 .field final synthetic this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
+
+.field final synthetic val$drawBackground:Z
 
 
 # direct methods
-.method public static synthetic $r8$lambda$_JVx1xHyOvopWnft2qLt1LT_vgU(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;)V
+.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->lambda$onFocusChanged$0()V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
-    .locals 0
-
-    .line 4074
+    .line 4303
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/EditTextCaption;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    iput-boolean p4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->val$drawBackground:Z
 
-    return-void
-.end method
-
-.method private synthetic lambda$onFocusChanged$0()V
-    .locals 1
-
-    .line 4080
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
-
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8000(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)Lorg/telegram/ui/Components/EditTextCaption;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onFocusChanged(ZILandroid/graphics/Rect;)V
-    .locals 3
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 11
 
-    if-eqz p1, :cond_0
+    .line 4308
+    iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->val$drawBackground:Z
 
-    .line 4078
+    if-nez v0, :cond_1
+
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
 
-    invoke-virtual {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->onInputFocus()V
+    move-result v0
 
-    .line 4079
-    new-instance v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2$$ExternalSyntheticLambda0;
+    const/4 v1, 0x0
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;)V
+    cmpl-float v0, v0, v1
 
-    const-wide/16 v1, 0xc8
+    if-lez v0, :cond_1
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    .line 4309
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
 
-    .line 4084
+    const/16 v1, 0x12
+
+    if-nez v0, :cond_0
+
+    .line 4310
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
+
+    .line 4311
+    new-instance v10, Landroid/graphics/LinearGradient;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v5, v2
+
+    const/4 v6, 0x0
+
+    const/4 v2, 0x2
+
+    new-array v7, v2, [I
+
+    fill-array-data v7, :array_0
+
+    new-array v8, v2, [F
+
+    fill-array-data v8, :array_1
+
+    sget-object v9, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    move-object v2, v10
+
+    invoke-direct/range {v2 .. v9}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 4312
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
+
+    new-instance v2, Landroid/graphics/PorterDuffXfermode;
+
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v3}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onFocusChanged(ZILandroid/graphics/Rect;)V
+    const/4 v5, 0x0
 
+    const/4 v6, 0x0
+
+    .line 4314
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v8, v0
+
+    const/16 v9, 0xff
+
+    const/16 v10, 0x1f
+
+    move-object v4, p1
+
+    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+
+    .line 4315
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    .line 4316
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
+
+    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
+
+    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
+
+    move-result v2
+
+    const/high16 v3, 0x437f0000    # 255.0f
+
+    mul-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    const/4 v4, 0x0
+
+    .line 4317
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    iget-object v8, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
+
+    move-object v3, p1
+
+    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 4318
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    goto :goto_0
+
+    .line 4320
+    :cond_1
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    :goto_0
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        -0x1
+        0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method

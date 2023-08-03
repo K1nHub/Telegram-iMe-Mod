@@ -5,8 +5,8 @@ enum EnumC2761g implements InterfaceC2764j {
     DAY_OF_QUARTER { // from class: j$.time.temporal.c
         @Override // p033j$.time.temporal.InterfaceC2764j
         /* renamed from: a */
-        public C2767m mo640a() {
-            return C2767m.m636d(1L, 90L, 92L);
+        public C2767m mo658a() {
+            return C2767m.m654d(1L, 90L, 92L);
         }
 
         @Override // java.lang.Enum
@@ -17,8 +17,8 @@ enum EnumC2761g implements InterfaceC2764j {
     QUARTER_OF_YEAR { // from class: j$.time.temporal.d
         @Override // p033j$.time.temporal.InterfaceC2764j
         /* renamed from: a */
-        public C2767m mo640a() {
-            return C2767m.m637c(1L, 4L);
+        public C2767m mo658a() {
+            return C2767m.m655c(1L, 4L);
         }
 
         @Override // java.lang.Enum
@@ -29,8 +29,8 @@ enum EnumC2761g implements InterfaceC2764j {
     WEEK_OF_WEEK_BASED_YEAR { // from class: j$.time.temporal.e
         @Override // p033j$.time.temporal.InterfaceC2764j
         /* renamed from: a */
-        public C2767m mo640a() {
-            return C2767m.m636d(1L, 52L, 53L);
+        public C2767m mo658a() {
+            return C2767m.m654d(1L, 52L, 53L);
         }
 
         @Override // java.lang.Enum
@@ -41,8 +41,8 @@ enum EnumC2761g implements InterfaceC2764j {
     WEEK_BASED_YEAR { // from class: j$.time.temporal.f
         @Override // p033j$.time.temporal.InterfaceC2764j
         /* renamed from: a */
-        public C2767m mo640a() {
-            return EnumC2755a.YEAR.mo640a();
+        public C2767m mo658a() {
+            return EnumC2755a.YEAR.mo658a();
         }
 
         @Override // java.lang.Enum

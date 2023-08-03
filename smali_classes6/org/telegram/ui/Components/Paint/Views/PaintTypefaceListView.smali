@@ -2,6 +2,9 @@
 .super Lorg/telegram/ui/Components/RecyclerListView;
 .source "PaintTypefaceListView.java"
 
+# interfaces
+.implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
+
 
 # instance fields
 .field private mask:Landroid/graphics/Path;
@@ -21,10 +24,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 23
+    .line 24
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 19
+    .line 20
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -33,17 +36,17 @@
 
     const/4 v0, 0x0
 
-    .line 25
+    .line 26
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    .line 26
+    .line 27
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {v1, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 27
+    .line 28
     new-instance p1, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView$1;-><init>(Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;)V
@@ -52,7 +55,7 @@
 
     const/16 p1, 0x8
 
-    .line 54
+    .line 55
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -63,52 +66,123 @@
 
     invoke-virtual {p0, v0, v1, v0, p1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
+    .line 56
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
+
     return-void
 .end method
 
 
 # virtual methods
+.method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
+    .locals 0
+
+    .line 78
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
+
+    if-ne p1, p2, :cond_0
+
+    .line 79
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+
+    :cond_0
+    return-void
+.end method
+
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 64
+    .line 90
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;->maskProvider:Landroidx/core/util/Consumer;
 
     if-eqz v0, :cond_0
 
-    .line 65
+    .line 91
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;->mask:Landroid/graphics/Path;
 
     invoke-interface {v0, v1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 67
+    .line 93
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 68
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;->mask:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 70
+    .line 96
     :cond_0
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 71
+    .line 97
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;->maskProvider:Landroidx/core/util/Consumer;
 
     if-eqz v0, :cond_1
 
-    .line 72
+    .line 98
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1
     return-void
 .end method
 
+.method public getSelectorColor(I)Ljava/lang/Integer;
+    .locals 0
+
+    const p1, 0x10ffffff
+
+    .line 61
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected onAttachedToWindow()V
+    .locals 2
+
+    .line 66
+    invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onAttachedToWindow()V
+
+    .line 67
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    sget v1, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
+
+    invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+
+    return-void
+.end method
+
+.method protected onDetachedFromWindow()V
+    .locals 2
+
+    .line 72
+    invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onDetachedFromWindow()V
+
+    .line 73
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    sget v1, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
+
+    invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+
+    return-void
+.end method
+
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 59
+    .line 85
     invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
 
     move-result-object p2
@@ -161,10 +235,10 @@
         }
     .end annotation
 
-    .line 77
+    .line 103
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;->maskProvider:Landroidx/core/util/Consumer;
 
-    .line 78
+    .line 104
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void

@@ -6,8 +6,8 @@ public class TLRPC$TL_photoCachedSize extends TLRPC$PhotoSize {
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.type = abstractSerializedData.readString(z);
-        this.f1546w = abstractSerializedData.readInt32(z);
-        this.f1545h = abstractSerializedData.readInt32(z);
+        this.f1550w = abstractSerializedData.readInt32(z);
+        this.f1549h = abstractSerializedData.readInt32(z);
         this.bytes = abstractSerializedData.readByteArray(z);
     }
 
@@ -15,8 +15,8 @@ public class TLRPC$TL_photoCachedSize extends TLRPC$PhotoSize {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeString(this.type);
-        abstractSerializedData.writeInt32(this.f1546w);
-        abstractSerializedData.writeInt32(this.f1545h);
+        abstractSerializedData.writeInt32(this.f1550w);
+        abstractSerializedData.writeInt32(this.f1549h);
         abstractSerializedData.writeByteArray(this.bytes);
     }
 }

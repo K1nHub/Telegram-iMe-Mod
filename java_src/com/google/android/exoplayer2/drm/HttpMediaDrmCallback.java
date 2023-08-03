@@ -72,7 +72,7 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
             licenseServerUrl = this.defaultLicenseUrl;
         }
         if (TextUtils.isEmpty(licenseServerUrl)) {
-            throw new MediaDrmCallbackException(new DataSpec.Builder().setUri(Uri.EMPTY).build(), Uri.EMPTY, ImmutableMap.m737of(), 0L, new IllegalStateException("No license URL"));
+            throw new MediaDrmCallbackException(new DataSpec.Builder().setUri(Uri.EMPTY).build(), Uri.EMPTY, ImmutableMap.m755of(), 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = C0480C.PLAYREADY_UUID;

@@ -6,7 +6,7 @@ import com.iMe.model.wallet.crypto.settings.BlockchainWalletItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BlockchainsWalletsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.adapter.BlockchainsWalletsRecycleAdapter */
@@ -16,10 +16,10 @@ public final class BlockchainsWalletsRecycleAdapter extends BaseQuickAdapter<Blo
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BlockchainsWalletsRecycleAdapter(ResourceManager resourceManager) {
-        super(C3417R.layout.fork_recycle_item_blockchain_wallet, null, 2, null);
+        super(C3419R.layout.fork_recycle_item_blockchain_wallet, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
-        addChildClickViewIds(C3417R.C3420id.image_info);
+        addChildClickViewIds(C3419R.C3422id.image_info);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -27,12 +27,12 @@ public final class BlockchainsWalletsRecycleAdapter extends BaseQuickAdapter<Blo
     public void convert(BaseViewHolder holder, BlockchainWalletItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(holder, C3417R.C3420id.constraint_root, false);
+        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(holder, C3419R.C3422id.constraint_root, false);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        int i2 = C3417R.C3420id.text_name;
-        int i3 = C3417R.C3420id.text_address;
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i, i2, i3), i2).setText(i2, this.resourceManager.getString(item.getBlockchainType().getTitleResId())).setText(i3, item.getAddress()).setImageResource(C3417R.C3420id.image_icon, item.getBlockchainType().getIconResId());
-        int i4 = C3417R.C3420id.image_info;
-        BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(imageResource, i4, Theme.key_actionBarActionModeDefaultIcon), i4), C3417R.C3420id.view_divider, Theme.key_divider);
+        int i2 = C3419R.C3422id.text_name;
+        int i3 = C3419R.C3422id.text_address;
+        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i, i2, i3), i2).setText(i2, this.resourceManager.getString(item.getBlockchainType().getTitleResId())).setText(i3, item.getAddress()).setImageResource(C3419R.C3422id.image_icon, item.getBlockchainType().getIconResId());
+        int i4 = C3419R.C3422id.image_info;
+        BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(imageResource, i4, Theme.key_actionBarActionModeDefaultIcon), i4), C3419R.C3422id.view_divider, Theme.key_divider);
     }
 }

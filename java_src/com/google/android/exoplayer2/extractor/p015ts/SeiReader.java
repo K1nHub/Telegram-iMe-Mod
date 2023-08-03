@@ -27,7 +27,7 @@ public final class SeiReader {
             Format format = this.closedCaptionFormats.get(i);
             String str = format.sampleMimeType;
             Assertions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption mime type provided: " + str);
-            String str2 = format.f182id;
+            String str2 = format.f184id;
             if (str2 == null) {
                 str2 = trackIdGenerator.getFormatId();
             }

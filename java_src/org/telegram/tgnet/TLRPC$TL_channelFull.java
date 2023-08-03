@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0480C;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
@@ -25,7 +24,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.antispam = (readInt322 & 2) != 0;
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
-        this.f1516id = abstractSerializedData.readInt64(z);
+        this.f1519id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -163,7 +162,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.flags = i5;
         int i6 = this.has_scheduled ? i5 | 524288 : i5 & (-524289);
         this.flags = i6;
-        int i7 = this.can_view_stats ? i6 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i6 & (-1048577);
+        int i7 = this.can_view_stats ? i6 | 1048576 : i6 & (-1048577);
         this.flags = i7;
         int i8 = this.blocked ? i7 | 4194304 : i7 & (-4194305);
         this.flags = i8;
@@ -177,7 +176,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i12 = this.translations_disabled ? i11 | 8 : i11 & (-9);
         this.flags2 = i12;
         abstractSerializedData.writeInt32(i12);
-        abstractSerializedData.writeInt64(this.f1516id);
+        abstractSerializedData.writeInt64(this.f1519id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);

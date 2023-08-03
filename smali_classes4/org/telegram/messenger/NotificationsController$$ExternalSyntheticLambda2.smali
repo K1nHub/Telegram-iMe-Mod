@@ -35,7 +35,7 @@
 .method public final onLoadComplete(Landroid/media/SoundPool;II)V
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$3kQAiZ9Bh16atkj_BNBB6fIwBz0(Landroid/media/SoundPool;II)V
+    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->$r8$lambda$98oXWEEZMoTiSsm4_dJWYvRQnIk(Landroid/media/SoundPool;II)V
 
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 558
+    .line 555
     iput-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$2;->val$dimView:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .locals 1
 
-    .line 561
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$2;->val$dimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V

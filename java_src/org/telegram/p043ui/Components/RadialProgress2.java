@@ -102,9 +102,9 @@ public class RadialProgress2 {
         });
         this.miniMediaActionDrawable.setMini(true);
         this.miniMediaActionDrawable.setIcon(4, false);
-        int m54dp = AndroidUtilities.m54dp(22);
-        this.circleRadius = m54dp;
-        this.overlayImageView.setRoundRadius(m54dp);
+        int m72dp = AndroidUtilities.m72dp(22);
+        this.circleRadius = m72dp;
+        this.overlayImageView.setRoundRadius(m72dp);
         this.overlayPaint.setColor(1677721600);
     }
 
@@ -216,12 +216,12 @@ public class RadialProgress2 {
     }
 
     private void invalidateParent() {
-        int m54dp = AndroidUtilities.m54dp(2);
+        int m72dp = AndroidUtilities.m72dp(2);
         View view = this.parent;
         RectF rectF = this.progressRect;
-        int i = ((int) rectF.left) - m54dp;
-        int i2 = ((int) rectF.top) - m54dp;
-        int i3 = m54dp * 2;
+        int i = ((int) rectF.left) - m72dp;
+        int i2 = ((int) rectF.top) - m72dp;
+        int i3 = m72dp * 2;
         view.invalidate(i, i2, ((int) rectF.right) + i3, ((int) rectF.bottom) + i3);
     }
 
@@ -271,7 +271,7 @@ public class RadialProgress2 {
     public void initMiniIcons() {
         if (this.miniDrawBitmap == null) {
             try {
-                this.miniDrawBitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(48), AndroidUtilities.m54dp(48), Bitmap.Config.ARGB_8888);
+                this.miniDrawBitmap = Bitmap.createBitmap(AndroidUtilities.m72dp(48), AndroidUtilities.m72dp(48), Bitmap.Config.ARGB_8888);
                 this.miniDrawCanvas = new Canvas(this.miniDrawBitmap);
             } catch (Throwable unused) {
             }
@@ -304,7 +304,7 @@ public class RadialProgress2 {
         int i2;
         int i3;
         float centerX;
-        float m54dp;
+        float m72dp;
         float f;
         int i4;
         Canvas canvas2;
@@ -452,7 +452,7 @@ public class RadialProgress2 {
                     canvas4.drawCircle(ceil, ceil2, this.circleRadius, this.circlePaint);
                 } else if (currentIcon != 4 || transitionProgress != BitmapDescriptorFactory.HUE_RED) {
                     if (this.backgroundStroke != 0) {
-                        canvas.drawCircle(ceil, ceil2, this.circleRadius - AndroidUtilities.m55dp(3.5f), this.circlePaint);
+                        canvas.drawCircle(ceil, ceil2, this.circleRadius - AndroidUtilities.m73dp(3.5f), this.circlePaint);
                     } else {
                         canvas.drawCircle(ceil, ceil2, this.circleRadius, this.circlePaint);
                     }
@@ -490,15 +490,15 @@ public class RadialProgress2 {
                 canvas2.restoreToCount(i2);
             }
             if (this.drawMiniIcon || this.circleCrossfadeColorKey >= 0) {
-                if (Math.abs(this.progressRect.width() - AndroidUtilities.m54dp(44)) < AndroidUtilities.density) {
+                if (Math.abs(this.progressRect.width() - AndroidUtilities.m72dp(44)) < AndroidUtilities.density) {
                     i3 = 20;
-                    centerX = this.progressRect.centerX() + AndroidUtilities.m54dp(16);
-                    m54dp = this.progressRect.centerY() + AndroidUtilities.m54dp(16);
+                    centerX = this.progressRect.centerX() + AndroidUtilities.m72dp(16);
+                    m72dp = this.progressRect.centerY() + AndroidUtilities.m72dp(16);
                     i15 = 0;
                 } else {
                     i3 = 22;
-                    centerX = this.progressRect.centerX() + AndroidUtilities.m54dp(18);
-                    m54dp = AndroidUtilities.m54dp(18) + this.progressRect.centerY();
+                    centerX = this.progressRect.centerX() + AndroidUtilities.m72dp(18);
+                    m72dp = AndroidUtilities.m72dp(18) + this.progressRect.centerY();
                 }
                 int i19 = i3 / 2;
                 if (this.drawMiniIcon) {
@@ -513,10 +513,10 @@ public class RadialProgress2 {
                 Canvas canvas7 = this.miniDrawCanvas;
                 if (canvas7 != null) {
                     int i20 = i3 + 18 + i15;
-                    canvas7.drawCircle(AndroidUtilities.m54dp(i20), AndroidUtilities.m54dp(i20), AndroidUtilities.m54dp(i19 + 1) * f * this.miniIconScale, Theme.checkboxSquare_eraserPaint);
+                    canvas7.drawCircle(AndroidUtilities.m72dp(i20), AndroidUtilities.m72dp(i20), AndroidUtilities.m72dp(i19 + 1) * f * this.miniIconScale, Theme.checkboxSquare_eraserPaint);
                 } else {
                     this.miniProgressBackgroundPaint.setColor(this.progressColor);
-                    canvas.drawCircle(centerX, m54dp, AndroidUtilities.m54dp(12), this.miniProgressBackgroundPaint);
+                    canvas.drawCircle(centerX, m72dp, AndroidUtilities.m72dp(12), this.miniProgressBackgroundPaint);
                 }
                 if (this.miniDrawCanvas != null) {
                     Bitmap bitmap = this.miniDrawBitmap;
@@ -526,13 +526,13 @@ public class RadialProgress2 {
                 if (this.miniIconScale < 1.0f) {
                     i4 = canvas.save();
                     float f3 = this.miniIconScale;
-                    canvas.scale(f3, f3, centerX, m54dp);
+                    canvas.scale(f3, f3, centerX, m72dp);
                 } else {
                     i4 = Integer.MIN_VALUE;
                 }
-                canvas.drawCircle(centerX, m54dp, (AndroidUtilities.m54dp(i19) * f) + (AndroidUtilities.m54dp(1) * (1.0f - this.circleCheckProgress)), this.circleMiniPaint);
+                canvas.drawCircle(centerX, m72dp, (AndroidUtilities.m72dp(i19) * f) + (AndroidUtilities.m72dp(1) * (1.0f - this.circleCheckProgress)), this.circleMiniPaint);
                 if (this.drawMiniIcon) {
-                    this.miniMediaActionDrawable.setBounds((int) (centerX - (AndroidUtilities.m54dp(i19) * f)), (int) (m54dp - (AndroidUtilities.m54dp(i19) * f)), (int) (centerX + (AndroidUtilities.m54dp(i19) * f)), (int) (m54dp + (AndroidUtilities.m54dp(i19) * f)));
+                    this.miniMediaActionDrawable.setBounds((int) (centerX - (AndroidUtilities.m72dp(i19) * f)), (int) (m72dp - (AndroidUtilities.m72dp(i19) * f)), (int) (centerX + (AndroidUtilities.m72dp(i19) * f)), (int) (m72dp + (AndroidUtilities.m72dp(i19) * f)));
                     this.miniMediaActionDrawable.draw(canvas);
                 }
                 if (i4 != Integer.MIN_VALUE) {

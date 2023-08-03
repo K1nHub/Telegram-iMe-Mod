@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;)V
     .locals 0
 
-    .line 137
+    .line 138
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 1
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$000(Lorg/telegram/ui/FilteredSearchView;)Z
@@ -47,35 +47,35 @@
 
     if-eqz v0, :cond_0
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sections:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 143
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->sectionArrays:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$1;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 146
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_0

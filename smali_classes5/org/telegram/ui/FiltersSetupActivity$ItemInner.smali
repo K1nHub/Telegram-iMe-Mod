@@ -30,7 +30,7 @@
 
     const/4 v0, 0x0
 
-    .line 1005
+    .line 993
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     return-void
@@ -39,7 +39,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/FiltersSetupActivity$ItemInner;)Lcom/iMe/storage/domain/model/topics/TopicModel;
     .locals 0
 
-    .line 995
+    .line 983
     iget-object p0, p0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     return-object p0
@@ -48,14 +48,14 @@
 .method public static asButton(Ljava/lang/CharSequence;)Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1032
+    .line 1020
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x4
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;-><init>(I)V
 
-    .line 1033
+    .line 1021
     iput-object p0, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -64,17 +64,17 @@
 .method public static asFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;Lcom/iMe/storage/domain/model/topics/TopicModel;)Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1026
+    .line 1014
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x2
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;-><init>(I)V
 
-    .line 1027
+    .line 1015
     iput-object p0, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 1028
+    .line 1016
     iput-object p1, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     return-object v0
@@ -83,14 +83,14 @@
 .method public static asHeader(Ljava/lang/CharSequence;)Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1013
+    .line 1001
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;-><init>(I)V
 
-    .line 1014
+    .line 1002
     iput-object p0, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -99,7 +99,7 @@
 .method public static asHint()Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1018
+    .line 1006
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x1
@@ -112,14 +112,14 @@
 .method public static asShadow(Ljava/lang/CharSequence;)Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1021
+    .line 1009
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x3
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;-><init>(I)V
 
-    .line 1022
+    .line 1010
     iput-object p0, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -128,14 +128,14 @@
 .method public static asSuggested(Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;)Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
     .locals 2
 
-    .line 1037
+    .line 1025
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
     const/4 v1, 0x5
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;-><init>(I)V
 
-    .line 1038
+    .line 1026
     iput-object p0, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->suggested:Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;
 
     return-object v0
@@ -152,7 +152,7 @@
 
     return v0
 
-    .line 1047
+    .line 1035
     :cond_0
     instance-of v1, p1, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
@@ -162,11 +162,11 @@
 
     return v2
 
-    .line 1050
+    .line 1038
     :cond_1
     check-cast p1, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;
 
-    .line 1051
+    .line 1039
     iget v1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -186,7 +186,7 @@
 
     if-ne v3, v1, :cond_4
 
-    .line 1055
+    .line 1043
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
@@ -200,7 +200,7 @@
 
     return v2
 
-    .line 1059
+    .line 1047
     :cond_4
     iget v1, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -208,7 +208,7 @@
 
     if-ne v1, v3, :cond_c
 
-    .line 1061
+    .line 1049
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     if-nez v1, :cond_5
@@ -240,7 +240,7 @@
     :cond_7
     if-eqz v1, :cond_8
 
-    .line 1064
+    .line 1052
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v3
@@ -257,7 +257,7 @@
 
     return v2
 
-    .line 1068
+    .line 1056
     :cond_8
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
@@ -290,7 +290,7 @@
     :cond_b
     if-eqz v1, :cond_c
 
-    .line 1071
+    .line 1059
     iget v1, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     iget v3, v4, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
@@ -299,7 +299,7 @@
 
     return v2
 
-    .line 1075
+    .line 1063
     :cond_c
     iget v1, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -307,7 +307,7 @@
 
     if-ne v1, v3, :cond_10
 
-    .line 1076
+    .line 1064
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->suggested:Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;
 
     if-nez v1, :cond_d
@@ -339,7 +339,7 @@
     :cond_f
     if-eqz v1, :cond_10
 
-    .line 1079
+    .line 1067
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;->filter:Lorg/telegram/tgnet/TLRPC$DialogFilter;
 
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$DialogFilter;->id:I

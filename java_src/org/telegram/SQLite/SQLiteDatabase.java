@@ -57,7 +57,7 @@ public class SQLiteDatabase {
                 sb.append(query.stringValue(i));
                 sb.append(", ");
             }
-            FileLog.m52d("EXPLAIN QUERY PLAN " + sb.toString());
+            FileLog.m70d("EXPLAIN QUERY PLAN " + sb.toString());
         }
         query.dispose();
     }
@@ -74,7 +74,7 @@ public class SQLiteDatabase {
                 closedb(this.sqliteHandle);
             } catch (SQLiteException e) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m50e(e.getMessage(), e);
+                    FileLog.m68e(e.getMessage(), e);
                 }
             }
             this.isOpen = false;

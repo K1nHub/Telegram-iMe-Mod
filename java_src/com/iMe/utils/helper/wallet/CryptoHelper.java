@@ -40,17 +40,43 @@ public final class CryptoHelper {
         Intrinsics.checkNotNullParameter(cryptoWalletInteractor, "cryptoWalletInteractor");
         Matcher matcher = Pattern.compile(BlockchainAddressData.Companion.mapByBlockchainType(blockchainType).getRegex()).matcher(value);
         if (matcher.find()) {
-            String group = matcher.group();
+            final String group = matcher.group();
             Intrinsics.checkNotNullExpressionValue(group, "group");
             if (group.length() > 0) {
                 Observable<Result<Boolean>> isValidAddress = cryptoWalletInteractor.isValidAddress(group, blockchainType);
-                final CryptoHelper$extractAddress$$inlined$mapSuccess$1 cryptoHelper$extractAddress$$inlined$mapSuccess$1 = new CryptoHelper$extractAddress$$inlined$mapSuccess$1(group);
-                Observable map = isValidAddress.map(new Function(cryptoHelper$extractAddress$$inlined$mapSuccess$1) { // from class: com.iMe.utils.helper.wallet.CryptoHelper$inlined$sam$i$io_reactivex_functions_Function$0
+                final Function1<Result<? extends Boolean>, Result<? extends String>> function1 = new Function1<Result<? extends Boolean>, Result<? extends String>>() { // from class: com.iMe.utils.helper.wallet.CryptoHelper$extractAddress$$inlined$mapSuccess$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    /* JADX WARN: Multi-variable type inference failed */
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Result<? extends String> invoke(Result<? extends Boolean> result) {
+                        Intrinsics.checkNotNullParameter(result, "result");
+                        if (!(result instanceof Result.Success)) {
+                            if (result instanceof Result.Error) {
+                                Result<? extends String> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                                Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                                return error$default;
+                            } else if (result instanceof Object) {
+                                return result;
+                            } else {
+                                return null;
+                            }
+                        } else if (Intrinsics.areEqual(result.getData(), Boolean.TRUE)) {
+                            return Result.Companion.success(group);
+                        } else {
+                            return Result.Companion.success("");
+                        }
+                    }
+                };
+                Observable map = isValidAddress.map(new Function(function1) { // from class: com.iMe.utils.helper.wallet.CryptoHelper$inlined$sam$i$io_reactivex_functions_Function$0
                     private final /* synthetic */ Function1 function;
 
                     {
-                        Intrinsics.checkNotNullParameter(cryptoHelper$extractAddress$$inlined$mapSuccess$1, "function");
-                        this.function = cryptoHelper$extractAddress$$inlined$mapSuccess$1;
+                        Intrinsics.checkNotNullParameter(function1, "function");
+                        this.function = function1;
                     }
 
                     @Override // io.reactivex.functions.Function

@@ -34,22 +34,22 @@ public class MsgClockDrawable extends Drawable {
         this.colorAlpha = 255;
         paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeWidth(AndroidUtilities.m55dp(1.0f));
+        this.paint.setStrokeWidth(AndroidUtilities.m73dp(1.0f));
         this.startTime = System.currentTimeMillis();
     }
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        canvas.drawCircle(bounds.centerX(), bounds.centerY(), (Math.min(bounds.width(), bounds.height()) >> 1) - AndroidUtilities.m55dp(0.5f), this.paint);
+        canvas.drawCircle(bounds.centerX(), bounds.centerY(), (Math.min(bounds.width(), bounds.height()) >> 1) - AndroidUtilities.m73dp(0.5f), this.paint);
         long currentTimeMillis = System.currentTimeMillis();
         canvas.save();
         canvas.rotate(((((float) (currentTimeMillis - this.startTime)) % 1500.0f) * 360.0f) / 1500.0f, bounds.centerX(), bounds.centerY());
-        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX(), bounds.centerY() - AndroidUtilities.m54dp(3), this.paint);
+        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX(), bounds.centerY() - AndroidUtilities.m72dp(3), this.paint);
         canvas.restore();
         canvas.save();
         canvas.rotate(((((float) (currentTimeMillis - this.startTime)) % 4500.0f) * 360.0f) / 4500.0f, bounds.centerX(), bounds.centerY());
-        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX() + AndroidUtilities.m55dp(2.3f), bounds.centerY(), this.paint);
+        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX() + AndroidUtilities.m73dp(2.3f), bounds.centerY(), this.paint);
         canvas.restore();
     }
 
@@ -64,12 +64,12 @@ public class MsgClockDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(12);
+        return AndroidUtilities.m72dp(12);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(12);
+        return AndroidUtilities.m72dp(12);
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    const-string v1, "queue.removeFirst()"
+    const-string/jumbo v1, "queue.removeFirst()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -220,7 +220,7 @@
 
     move-result-object v3
 
-    const-string v5, "queue.iterator()"
+    const-string/jumbo v5, "queue.iterator()"
 
     invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

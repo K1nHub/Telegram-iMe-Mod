@@ -39,6 +39,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_translateText;
 import org.telegram.tgnet.TLRPC$TL_textWithEntities;
 import org.telegram.tgnet.TLRPC$UserFull;
 import p033j$.util.Comparator;
+import p033j$.util.function.Function;
 /* loaded from: classes4.dex */
 public class TranslateController extends BaseController {
     private static final int GROUPING_TRANSLATIONS_TIMEOUT = 80;
@@ -72,7 +73,7 @@ public class TranslateController extends BaseController {
         public String ownDisplayName;
 
         /* renamed from: q */
-        public String f1490q;
+        public String f1493q;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -176,11 +177,11 @@ public class TranslateController extends BaseController {
         boolean z2 = false;
         if (z && !isTranslatingDialog) {
             this.translatingDialogs.add(Long.valueOf(j));
-            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.TRUE);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.TRUE);
         } else {
             if (!z && isTranslatingDialog) {
                 this.translatingDialogs.remove(Long.valueOf(j));
-                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.FALSE);
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.FALSE);
                 cancelTranslations(j);
             }
             saveTranslatingDialogsCache();
@@ -231,7 +232,7 @@ public class TranslateController extends BaseController {
         synchronized (this) {
             this.translatingDialogs.remove(Long.valueOf(j));
         }
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.FALSE);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.FALSE);
         TranslateAlert2.setToLanguage(str);
     }
 
@@ -242,7 +243,7 @@ public class TranslateController extends BaseController {
             this.translatingDialogs.add(Long.valueOf(j));
             saveTranslatingDialogsCache();
         }
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.TRUE);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.TRUE);
     }
 
     public void updateDialogFull(long j) {
@@ -265,7 +266,7 @@ public class TranslateController extends BaseController {
             }
             if (contains != z) {
                 saveTranslatingDialogsCache();
-                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.valueOf(isTranslatingDialog(j)));
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.valueOf(isTranslatingDialog(j)));
             }
         }
     }
@@ -300,7 +301,7 @@ public class TranslateController extends BaseController {
         if (z2) {
             return;
         }
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.valueOf(isTranslatingDialog(j)));
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j), Boolean.valueOf(isTranslatingDialog(j)));
     }
 
     public static ArrayList<Language> getLanguages() {
@@ -323,7 +324,7 @@ public class TranslateController extends BaseController {
                     str2 = "";
                 }
                 sb.append(str2);
-                language.f1490q = sb.toString().toLowerCase();
+                language.f1493q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
         }
@@ -338,7 +339,24 @@ public class TranslateController extends BaseController {
                 }
             });
         } else {
-            Collections.sort(arrayList, Comparator.CC.comparing(TranslateController$$ExternalSyntheticLambda13.INSTANCE));
+            Collections.sort(arrayList, Comparator.CC.comparing(new Function() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda13
+                @Override // p033j$.util.function.Function
+                public /* synthetic */ Function andThen(Function function) {
+                    return Function.CC.$default$andThen(this, function);
+                }
+
+                @Override // p033j$.util.function.Function
+                public final Object apply(Object obj) {
+                    String str3;
+                    str3 = ((TranslateController.Language) obj).displayName;
+                    return str3;
+                }
+
+                @Override // p033j$.util.function.Function
+                public /* synthetic */ Function compose(Function function) {
+                    return Function.CC.$default$compose(this, function);
+                }
+            }));
         }
         return arrayList;
     }
@@ -357,17 +375,17 @@ public class TranslateController extends BaseController {
         try {
             linkedHashSet.add(LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         try {
             linkedHashSet.add(Resources.getSystem().getConfiguration().locale.getLanguage());
         } catch (Exception e2) {
-            FileLog.m49e(e2);
+            FileLog.m67e(e2);
         }
         try {
             linkedHashSet.addAll(RestrictedLanguagesSelectActivity.getRestrictedLanguages());
         } catch (Exception e3) {
-            FileLog.m49e(e3);
+            FileLog.m67e(e3);
         }
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
@@ -385,7 +403,7 @@ public class TranslateController extends BaseController {
                 }
             }
         } catch (Exception e4) {
-            FileLog.m49e(e4);
+            FileLog.m67e(e4);
         }
         suggestedLanguageCodes = linkedHashSet;
     }
@@ -411,7 +429,7 @@ public class TranslateController extends BaseController {
                     language.displayName = TranslateAlert2.capitalFirst(TranslateAlert2.languageName(language.code));
                     language.ownDisplayName = TranslateAlert2.capitalFirst(TranslateAlert2.systemLanguageName(language.code, true));
                     if (language.displayName != null) {
-                        language.f1490q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
+                        language.f1493q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
                     }
                 }
@@ -492,7 +510,7 @@ public class TranslateController extends BaseController {
             saveTranslatingDialogsCache();
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogTranslate, Long.valueOf(((Long) it.next()).longValue()), Boolean.FALSE);
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(((Long) it.next()).longValue()), Boolean.FALSE);
             }
         }
     }
@@ -534,7 +552,7 @@ public class TranslateController extends BaseController {
             if (z && isTranslatingDialog(dialogId)) {
                 TLRPC$Message tLRPC$Message4 = messageObject.messageOwner;
                 if (tLRPC$Message4.translatedText == null || !dialogTranslateTo.equals(tLRPC$Message4.translatedToLanguage)) {
-                    NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.messageTranslating, messageObject);
+                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageTranslating, messageObject);
                     final MessageObject messageObject3 = messageObject;
                     pushToTranslate(messageObject, dialogTranslateTo, new Utilities.Callback2() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda16
                         @Override // org.telegram.messenger.Utilities.Callback2
@@ -558,7 +576,7 @@ public class TranslateController extends BaseController {
             keepReplyMessage(messageObject);
         }
         getMessagesStorage().updateMessageCustomParams(j, messageObject.messageOwner);
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.messageTranslated, messageObject);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageTranslated, messageObject);
         ArrayList<MessageObject> arrayList = this.messagesController.dialogMessage.get(j);
         if (arrayList != null) {
             for (int i = 0; i < arrayList.size(); i++) {
@@ -568,7 +586,7 @@ public class TranslateController extends BaseController {
                     tLRPC$Message2.translatedToLanguage = str;
                     tLRPC$Message2.translatedText = tLRPC$TL_textWithEntities;
                     if (messageObject2.updateTranslation()) {
-                        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, 0);
+                        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
                         return;
                     }
                     return;
@@ -596,7 +614,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$invalidateTranslation$5(MessageObject messageObject, long j) {
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.messageTranslated, messageObject, Boolean.valueOf(isTranslatingDialog(j)));
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageTranslated, messageObject, Boolean.valueOf(isTranslatingDialog(j)));
     }
 
     public void checkDialogMessage(long j) {
@@ -655,7 +673,7 @@ public class TranslateController extends BaseController {
             }
         }
         if (z) {
-            NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.updateInterfaces, 0);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
         }
     }
 
@@ -794,7 +812,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDialogTranslatable$13(long j) {
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.dialogIsTranslatable, Long.valueOf(j));
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogIsTranslatable, Long.valueOf(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -907,7 +925,7 @@ public class TranslateController extends BaseController {
         TLRPC$TL_messages_translateText tLRPC$TL_messages_translateText = new TLRPC$TL_messages_translateText();
         tLRPC$TL_messages_translateText.flags |= 1;
         tLRPC$TL_messages_translateText.peer = getMessagesController().getInputPeer(j);
-        tLRPC$TL_messages_translateText.f1626id = pendingTranslation.messageIds;
+        tLRPC$TL_messages_translateText.f1634id = pendingTranslation.messageIds;
         tLRPC$TL_messages_translateText.to_lang = pendingTranslation.language;
         int sendRequest = getConnectionsManager().sendRequest(tLRPC$TL_messages_translateText, new RequestDelegate() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
@@ -948,7 +966,7 @@ public class TranslateController extends BaseController {
             }
         } else if (tLRPC$TL_error != null && "TO_LANG_INVALID".equals(tLRPC$TL_error.text)) {
             toggleTranslatingDialog(j, false);
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3417R.string.TranslationFailedAlert2));
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3419R.string.TranslationFailedAlert2));
         } else {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 arrayList2.get(i2).run(null, pendingTranslation.language);
@@ -1103,7 +1121,7 @@ public class TranslateController extends BaseController {
                     try {
                         this.hideTranslateDialogs.add(Long.valueOf(Long.parseLong(str4)));
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             }
@@ -1145,7 +1163,7 @@ public class TranslateController extends BaseController {
             try {
                 hashSet.add("" + it.next());
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         MessagesController.getMainSettings(this.currentAccount).edit().putString("translating_dialog_languages2", sb.toString()).putStringSet("hidden_translation_at", hashSet).apply();

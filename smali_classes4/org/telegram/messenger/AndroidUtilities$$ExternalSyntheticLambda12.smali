@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;->f$0:Ljava/util/List;
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$qNw5wHuhIdr9tkHE5c21-dGE_CA(Ljava/util/List;)V
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$QzRXRiLKb9fegd-VVXsWlk1kZqI(Ljava/util/List;)V
 
     return-void
 .end method

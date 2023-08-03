@@ -10,13 +10,15 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -50,7 +52,7 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSwitchNetworkBottomSheetDialog(long r9, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, java.lang.String r12, org.telegram.p043ui.ActionBar.BaseFragment r13) {
+    public WalletConnectSwitchNetworkBottomSheetDialog(final long r9, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, final java.lang.String r12, final org.telegram.p043ui.ActionBar.BaseFragment r13) {
         /*
             r8 = this;
             java.lang.String r0 = "sessionItem"
@@ -70,7 +72,7 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
             r4 = r9
             r6 = r11
             r7 = r12
-            r2.<init>(r3, r4, r6, r7)
+            r2.<init>()
             moxy.ktx.MoxyKtxDelegate r9 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r10 = r8.getMvpDelegate()
             java.lang.String r11 = "mvpDelegate"
@@ -91,11 +93,11 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
             kotlin.LazyThreadSafetyMode r9 = r9.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$special$$inlined$inject$default$1 r10 = new com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$special$$inlined$inject$default$1
             r11 = 0
-            r10.<init>(r8, r11, r11)
+            r10.<init>()
             kotlin.Lazy r9 = kotlin.LazyKt.lazy(r9, r10)
             r8.resourceManager$delegate = r9
             com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$binding$2 r9 = new com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$binding$2
-            r9.<init>(r13)
+            r9.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r9 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r8, r11, r9, r1, r11)
             r8.binding$delegate = r9
             r9 = 0
@@ -135,8 +137,8 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Intrinsics.checkNotNullParameter(networkLogoUrl, "networkLogoUrl");
         Intrinsics.checkNotNullParameter(networkName, "networkName");
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3417R.string.wallet_connect_switch_network_title, name), url);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_network), networkName, networkLogoUrl, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3419R.string.wallet_connect_switch_network_title, name), url);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3419R.string.wallet_connect_session_details_network), networkName, networkLogoUrl, true);
     }
 
     @Override // android.app.Dialog
@@ -159,20 +161,54 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     private final void setupViews() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         binding.viewNetworkCell.setIconTinted(false);
-        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3417R.string.wallet_connect_switch_network));
+        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3419R.string.wallet_connect_switch_network));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3419R.C3421drawable.ic_close_white);
     }
 
     private final void setupListeners() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         BigActionButton buttonChangeNetwork = binding.buttonChangeNetwork;
         Intrinsics.checkNotNullExpressionValue(buttonChangeNetwork, "buttonChangeNetwork");
-        ViewExtKt.safeThrottledClick$default(buttonChangeNetwork, 0L, new WalletConnectSwitchNetworkBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonChangeNetwork, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectSwitchNetworkBottomSheetDialog.this.approveNetworkChange();
+            }
+        }, 1, null);
         ActionBarMenuItem buttonClose = binding.buttonClose;
         Intrinsics.checkNotNullExpressionValue(buttonClose, "buttonClose");
-        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new WalletConnectSwitchNetworkBottomSheetDialog$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonClose, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectSwitchNetworkBottomSheetDialog.this.rejectNetworkChange();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

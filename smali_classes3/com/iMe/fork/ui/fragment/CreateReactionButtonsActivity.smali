@@ -1401,10 +1401,10 @@
 .end method
 
 .method private final initEmojiView()Lorg/telegram/ui/Components/EmojiView;
-    .locals 11
+    .locals 12
 
     .line 261
-    new-instance v10, Lorg/telegram/ui/Components/EmojiView;
+    new-instance v11, Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -1422,13 +1422,15 @@
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    const/4 v9, 0x1
 
-    move-object v0, v10
+    const/4 v10, 0x0
+
+    move-object v0, v11
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v9}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v10}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 262
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -1471,21 +1473,21 @@
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     .line 263
-    invoke-virtual {v10, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 v0, 0x0
 
     .line 267
-    invoke-direct {p0, v0, v10}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;->showEmojiView(ZLandroid/view/View;)V
+    invoke-direct {p0, v0, v11}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;->showEmojiView(ZLandroid/view/View;)V
 
     .line 268
     new-instance v0, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$initEmojiView$1$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$initEmojiView$1$2;-><init>(Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity;)V
 
-    invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/EmojiView;->setDelegate(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)V
+    invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/EmojiView;->setDelegate(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)V
 
-    return-object v10
+    return-object v11
 .end method
 
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -2198,7 +2200,7 @@
 
     move-result p2
 
-    invoke-virtual {v3, p2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v3, p2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 389
     sget p2, Lorg/telegram/messenger/R$string;->URL:I

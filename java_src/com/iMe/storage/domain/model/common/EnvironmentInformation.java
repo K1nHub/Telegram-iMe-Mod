@@ -2,15 +2,25 @@ package com.iMe.storage.domain.model.common;
 
 import com.google.firebase.FirebaseOptions;
 import com.iMe.storage.common.AppConfiguration$Common;
+import com.iMe.storage.domain.model.common.EnvironmentInformation;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: EnvironmentInformation.kt */
 /* loaded from: classes3.dex */
 public abstract class EnvironmentInformation {
     public static final Companion Companion = new Companion(null);
-    private static final Lazy<List<EnvironmentInformation>> availableEnvironments$delegate = LazyKt.lazy(EnvironmentInformation$Companion$availableEnvironments$2.INSTANCE);
+    private static final Lazy<List<EnvironmentInformation>> availableEnvironments$delegate = LazyKt.lazy(new Function0<List<? extends EnvironmentInformation>>() { // from class: com.iMe.storage.domain.model.common.EnvironmentInformation$Companion$availableEnvironments$2
+        @Override // kotlin.jvm.functions.Function0
+        public final List<? extends EnvironmentInformation> invoke() {
+            List<? extends EnvironmentInformation> listOfNotNull;
+            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new EnvironmentInformation[]{EnvironmentInformation.Production.INSTANCE, EnvironmentInformation.Stage.INSTANCE, EnvironmentInformation.Development.INSTANCE});
+            return listOfNotNull;
+        }
+    });
     private final String binanceProcessUrl;
     private final String bitcoinScanUrl;
     private final String bscScanUrl;

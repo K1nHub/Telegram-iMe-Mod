@@ -5,12 +5,12 @@ public class TLRPC$TL_photoEmpty extends TLRPC$Photo {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1544id = abstractSerializedData.readInt64(z);
+        this.f1548id = abstractSerializedData.readInt64(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1544id);
+        abstractSerializedData.writeInt64(this.f1548id);
     }
 }

@@ -4,25 +4,25 @@ package p033j$.util.stream;
 abstract /* synthetic */ class AbstractC2865B1 {
 
     /* renamed from: a */
-    static final /* synthetic */ int[] f780a;
+    static final /* synthetic */ int[] f783a;
 
     static {
         int[] iArr = new int[EnumC3033e4.values().length];
-        f780a = iArr;
+        f783a = iArr;
         try {
             iArr[EnumC3033e4.REFERENCE.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            f780a[EnumC3033e4.INT_VALUE.ordinal()] = 2;
+            f783a[EnumC3033e4.INT_VALUE.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            f780a[EnumC3033e4.LONG_VALUE.ordinal()] = 3;
+            f783a[EnumC3033e4.LONG_VALUE.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
         try {
-            f780a[EnumC3033e4.DOUBLE_VALUE.ordinal()] = 4;
+            f783a[EnumC3033e4.DOUBLE_VALUE.ordinal()] = 4;
         } catch (NoSuchFieldError unused4) {
         }
     }

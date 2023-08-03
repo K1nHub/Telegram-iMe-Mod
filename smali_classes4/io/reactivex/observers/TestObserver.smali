@@ -164,7 +164,7 @@
 
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "onSubscribe not called in proper order"
+    const-string/jumbo v2, "onSubscribe not called in proper order"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -235,7 +235,7 @@
 
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "onSubscribe not called in proper order"
+    const-string/jumbo v2, "onSubscribe not called in proper order"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -324,7 +324,7 @@
 
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "onSubscribe not called in proper order"
+    const-string/jumbo v2, "onSubscribe not called in proper order"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -418,7 +418,7 @@
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "onSubscribe received a null Subscription"
+    const-string/jumbo v1, "onSubscribe received a null Subscription"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -461,7 +461,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "onSubscribe received multiple subscriptions: "
+    const-string/jumbo v3, "onSubscribe received multiple subscriptions: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

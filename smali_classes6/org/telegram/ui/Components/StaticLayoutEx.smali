@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 37
+    .line 39
     invoke-static {}, Landroid/text/Layout$Alignment;->values()[Landroid/text/Layout$Alignment;
 
     move-result-object v0
@@ -24,7 +24,7 @@
 .method public static ALIGN_LEFT()Landroid/text/Layout$Alignment;
     .locals 3
 
-    .line 42
+    .line 44
     sget-object v0, Lorg/telegram/ui/Components/StaticLayoutEx;->alignments:[Landroid/text/Layout$Alignment;
 
     array-length v1, v0
@@ -49,7 +49,7 @@
 .method public static ALIGN_RIGHT()Landroid/text/Layout$Alignment;
     .locals 3
 
-    .line 39
+    .line 41
     sget-object v0, Lorg/telegram/ui/Components/StaticLayoutEx;->alignments:[Landroid/text/Layout$Alignment;
 
     array-length v1, v0
@@ -92,23 +92,52 @@
 
     move/from16 v8, p11
 
-    const/4 v7, 0x0
+    const-string v7, "\u2026"
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
-    if-ne v8, v6, :cond_0
+    const/4 v5, 0x1
 
+    const/4 v4, 0x0
+
+    if-ne v8, v5, :cond_1
+
+    :try_start_0
+    const-string v1, "\n"
+
+    .line 138
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
+
+    move-result v1
+
+    sub-int/2addr v1, v5
+
+    if-lez v1, :cond_0
+
+    .line 140
+    invoke-interface {v0, v4, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v7}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object v0
+
+    :cond_0
     int-to-float v1, v15
 
-    .line 136
-    :try_start_0
+    .line 142
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-static {v0, v9, v1, v2}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 137
+    .line 143
     new-instance v15, Landroid/text/StaticLayout;
 
     const/4 v2, 0x0
@@ -125,9 +154,9 @@
 
     move/from16 v5, p4
 
-    move-object/from16 v6, p5
+    move-object v10, v6
 
-    move-object v10, v7
+    move-object/from16 v6, p5
 
     move/from16 v7, p6
 
@@ -145,92 +174,94 @@
     :catch_0
     move-exception v0
 
-    move-object/from16 v19, v10
+    move-object/from16 v18, v10
 
     goto/16 :goto_4
 
-    .line 140
-    :cond_0
+    .line 146
+    :cond_1
     :try_start_2
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v4, 0x17
+    const/16 v2, 0x17
 
-    const/4 v3, 0x0
+    if-lt v3, v2, :cond_2
 
-    if-lt v5, v4, :cond_1
-
-    .line 141
+    .line 147
     invoke-interface/range {p0 .. p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    invoke-static {v0, v3, v1, v9, v10}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 142
-    invoke-virtual {v1, v11}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 143
-    invoke-virtual {v1, v13, v12}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 144
-    invoke-virtual {v1, v14}, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 145
-    invoke-virtual {v1, v7}, Landroid/text/StaticLayout$Builder;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 146
-    invoke-virtual {v1, v15}, Landroid/text/StaticLayout$Builder;->setEllipsizedWidth(I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v1
-
-    .line 147
-    invoke-virtual {v1, v8}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
+    invoke-static {v0, v4, v1, v9, v10}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
     .line 148
-    invoke-virtual {v1, v6}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+    invoke-virtual {v1, v11}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
     .line 149
-    invoke-virtual {v1, v3}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+    invoke-virtual {v1, v13, v12}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
     .line 150
+    invoke-virtual {v1, v14}, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 151
+    invoke-virtual {v1, v6}, Landroid/text/StaticLayout$Builder;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 152
+    invoke-virtual {v1, v15}, Landroid/text/StaticLayout$Builder;->setEllipsizedWidth(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 153
+    invoke-virtual {v1, v8}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 154
+    invoke-virtual {v1, v5}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 155
+    invoke-virtual {v1, v4}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v1
+
+    .line 156
     invoke-virtual {v1}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v1
 
+    move v14, v3
+
     move/from16 v17, v5
 
-    move/from16 v18, v6
+    move-object/from16 v18, v6
 
     move-object/from16 v19, v7
 
-    move v14, v8
+    move v12, v8
 
     goto :goto_0
 
-    .line 152
-    :cond_1
+    .line 158
+    :cond_2
     new-instance v16, Landroid/text/StaticLayout;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     move-object/from16 v1, v16
+
+    move v14, v2
 
     move-object/from16 v2, p0
 
@@ -238,13 +269,15 @@
 
     move-object/from16 v3, p3
 
+    move v12, v4
+
     move/from16 v4, p4
 
     move/from16 v17, v5
 
     move-object/from16 v5, p5
 
-    move/from16 v18, v6
+    move-object/from16 v18, v6
 
     move/from16 v6, p6
 
@@ -252,7 +285,7 @@
 
     move/from16 v7, p7
 
-    move v14, v8
+    move v12, v8
 
     move/from16 v8, p8
 
@@ -261,25 +294,25 @@
 
     move-object/from16 v1, v16
 
-    .line 154
+    .line 160
     :goto_0
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v2
 
-    if-gt v2, v14, :cond_2
+    if-gt v2, v12, :cond_3
 
     return-object v1
 
-    :cond_2
-    add-int/lit8 v2, v14, -0x1
+    :cond_3
+    add-int/lit8 v2, v12, -0x1
 
-    .line 159
+    .line 165
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v3
 
-    .line 160
+    .line 166
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v4
@@ -288,17 +321,17 @@
 
     cmpl-float v5, v3, v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
-    .line 162
+    .line 168
     invoke-virtual {v1, v2, v3}, Landroid/text/StaticLayout;->getOffsetForHorizontal(IF)I
 
     move-result v1
 
     goto :goto_1
 
-    .line 164
-    :cond_3
+    .line 170
+    :cond_4
     invoke-virtual {v1, v2, v4}, Landroid/text/StaticLayout;->getOffsetForHorizontal(IF)I
 
     move-result v1
@@ -306,7 +339,7 @@
     :goto_1
     const/16 v2, 0xa
 
-    .line 166
+    .line 172
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -317,12 +350,12 @@
 
     cmpg-float v2, v4, v2
 
-    if-gez v2, :cond_4
+    if-gez v2, :cond_5
 
     add-int/lit8 v1, v1, 0x3
 
-    .line 169
-    :cond_4
+    .line 175
+    :cond_5
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v1, v1, -0x3
@@ -339,18 +372,16 @@
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const-string v0, "\u2026"
+    move-object/from16 v0, v19
 
-    .line 170
+    .line 176
     invoke-virtual {v2, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move/from16 v0, v17
+    const/16 v0, 0x17
 
-    const/16 v1, 0x17
+    if-lt v14, v0, :cond_8
 
-    if-lt v0, v1, :cond_7
-
-    .line 172
+    .line 178
     invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v0
@@ -361,24 +392,26 @@
 
     move-result-object v0
 
-    .line 173
+    .line 179
     invoke-virtual {v0, v11}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 174
-    invoke-virtual {v0, v13, v12}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
+    move/from16 v5, p6
+
+    .line 180
+    invoke-virtual {v0, v13, v5}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
     move/from16 v7, p8
 
-    .line 175
+    .line 181
     invoke-virtual {v0, v7}, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 176
+    .line 182
     invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v3
@@ -393,13 +426,13 @@
 
     array-length v2, v2
 
-    if-lez v2, :cond_5
+    if-lez v2, :cond_6
 
-    move-object/from16 v2, v19
+    move-object/from16 v2, v18
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     move-object/from16 v2, p9
 
     :goto_2
@@ -407,47 +440,49 @@
 
     move-result-object v0
 
-    .line 177
+    .line 183
     invoke-virtual {v0, v15}, Landroid/text/StaticLayout$Builder;->setEllipsizedWidth(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 178
-    invoke-virtual {v0, v14}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
+    .line 184
+    invoke-virtual {v0, v12}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    if-eqz p12, :cond_6
+    if-eqz p12, :cond_7
 
-    move/from16 v6, v18
+    move/from16 v5, v17
 
     goto :goto_3
 
-    :cond_6
-    move v6, v1
+    :cond_7
+    move v5, v1
 
-    .line 179
+    .line 185
     :goto_3
-    invoke-virtual {v0, v6}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+    invoke-virtual {v0, v5}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 180
+    .line 186
     invoke-virtual {v0, v1}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 181
+    .line 187
     invoke-virtual {v0}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_7
+    :cond_8
+    move/from16 v5, p6
+
     move/from16 v7, p8
 
-    .line 183
+    .line 189
     new-instance v8, Landroid/text/StaticLayout;
 
     move-object v0, v8
@@ -480,19 +515,19 @@
     :catch_2
     move-exception v0
 
-    move-object/from16 v19, v7
+    move-object/from16 v18, v6
 
-    .line 188
+    .line 194
     :goto_4
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    return-object v19
+    return-object v18
 .end method
 
 .method public static createStaticLayout(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;II)Landroid/text/StaticLayout;
     .locals 13
 
-    .line 105
+    .line 107
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -531,7 +566,7 @@
 .method public static createStaticLayout(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;IIZ)Landroid/text/StaticLayout;
     .locals 13
 
-    .line 109
+    .line 111
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -572,14 +607,14 @@
 
     move/from16 v10, p8
 
-    .line 88
+    .line 90
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_0
 
-    .line 89
+    .line 91
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -596,7 +631,7 @@
 
     move-object/from16 v5, p3
 
-    .line 90
+    .line 92
     invoke-virtual {v0, v5}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
@@ -605,50 +640,50 @@
 
     move/from16 v7, p5
 
-    .line 91
+    .line 93
     invoke-virtual {v0, v7, v6}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
     move/from16 v8, p6
 
-    .line 92
+    .line 94
     invoke-virtual {v0, v8}, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    .line 93
+    .line 95
     invoke-virtual {v0, v2}, Landroid/text/StaticLayout$Builder;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 94
+    .line 96
     invoke-virtual {v0, v10}, Landroid/text/StaticLayout$Builder;->setEllipsizedWidth(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
     move/from16 v11, p9
 
-    .line 95
+    .line 97
     invoke-virtual {v0, v11}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
     const/4 v2, 0x1
 
-    .line 96
+    .line 98
     invoke-virtual {v0, v2}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 97
+    .line 99
     invoke-virtual {v0, v1}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v0
 
-    .line 98
+    .line 100
     invoke-virtual {v0}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v0
@@ -672,7 +707,7 @@
 
     const/4 v1, 0x0
 
-    .line 100
+    .line 102
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v4

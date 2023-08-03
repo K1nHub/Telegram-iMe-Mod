@@ -28,19 +28,19 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     @KeepForSdk
     public static final Parcelable.Creator<DataHolder> CREATOR = new zaf();
     private static final Builder zaf = new zab(new String[0], null);
-    @SafeParcelable.VersionField(m776id = 1000)
+    @SafeParcelable.VersionField(m794id = 1000)
     final int zaa;
     Bundle zab;
     int[] zac;
     int zad;
     boolean zae;
-    @SafeParcelable.Field(getter = "getColumns", m779id = 1)
+    @SafeParcelable.Field(getter = "getColumns", m797id = 1)
     private final String[] zag;
-    @SafeParcelable.Field(getter = "getWindows", m779id = 2)
+    @SafeParcelable.Field(getter = "getWindows", m797id = 2)
     private final CursorWindow[] zah;
-    @SafeParcelable.Field(getter = "getStatusCode", m779id = 3)
+    @SafeParcelable.Field(getter = "getStatusCode", m797id = 3)
     private final int zai;
-    @SafeParcelable.Field(getter = "getMetadata", m779id = 4)
+    @SafeParcelable.Field(getter = "getMetadata", m797id = 4)
     private final Bundle zaj;
     private boolean zak;
 
@@ -86,7 +86,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public DataHolder(@SafeParcelable.Param(m778id = 1000) int i, @SafeParcelable.Param(m778id = 1) String[] strArr, @SafeParcelable.Param(m778id = 2) CursorWindow[] cursorWindowArr, @SafeParcelable.Param(m778id = 3) int i2, @SafeParcelable.Param(m778id = 4) Bundle bundle) {
+    public DataHolder(@SafeParcelable.Param(m796id = 1000) int i, @SafeParcelable.Param(m796id = 1) String[] strArr, @SafeParcelable.Param(m796id = 2) CursorWindow[] cursorWindowArr, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) Bundle bundle) {
         this.zae = false;
         this.zak = true;
         this.zaa = i;

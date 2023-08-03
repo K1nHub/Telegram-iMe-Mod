@@ -6,16 +6,16 @@ import p033j$.util.function.Consumer;
 final class C3083n0 extends AbstractC3089o0 {
 
     /* renamed from: b */
-    final Consumer f1084b;
+    final Consumer f1087b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C3083n0(Consumer consumer, boolean z) {
         super(z);
-        this.f1084b = consumer;
+        this.f1087b = consumer;
     }
 
     @Override // p033j$.util.function.Consumer
     public void accept(Object obj) {
-        this.f1084b.accept(obj);
+        this.f1087b.accept(obj);
     }
 }

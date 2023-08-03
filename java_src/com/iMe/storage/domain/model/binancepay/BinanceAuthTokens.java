@@ -63,7 +63,7 @@ public final class BinanceAuthTokens {
     }
 
     public int hashCode() {
-        return (((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.accessTokenExpiresIn)) * 31) + this.authType.hashCode();
+        return (((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.accessTokenExpiresIn)) * 31) + this.authType.hashCode();
     }
 
     public String toString() {

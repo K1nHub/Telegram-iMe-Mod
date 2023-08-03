@@ -33,6 +33,7 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -41,7 +42,10 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -50,15 +54,23 @@ import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentCreateWalletIntroBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -80,23 +92,106 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     private final ResettableLazy toolbar$delegate;
     private final WalletCreationType.Initial walletCreationType;
 
-    public CreateWalletIntroFragment(String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+    public CreateWalletIntroFragment(final String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(linkedWalletAddress, "linkedWalletAddress");
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
         this.walletCreationType = walletCreationType;
-        CreateWalletIntroFragment$presenter$2 createWalletIntroFragment$presenter$2 = new CreateWalletIntroFragment$presenter$2(this, linkedWalletAddress);
+        Function0<CreateWalletIntroPresenter> function0 = new Function0<CreateWalletIntroPresenter>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final CreateWalletIntroPresenter invoke() {
+                Lazy lazy3;
+                final CreateWalletIntroFragment createWalletIntroFragment = CreateWalletIntroFragment.this;
+                final String str = linkedWalletAddress;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$presenter$2.1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        WalletCreationType.Initial initial;
+                        initial = createWalletIntroFragment.walletCreationType;
+                        return ParametersHolderKt.parametersOf(str, initial);
+                    }
+                };
+                lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CreateWalletIntroPresenter>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final CreateWalletIntroPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(CreateWalletIntroPresenter.class), qualifier, function03);
+                    }
+                });
+                return (CreateWalletIntroPresenter) lazy3.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletIntroPresenter.class.getName() + ".presenter", createWalletIntroFragment$presenter$2);
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletIntroFragment$binding$2(this), 1, (Object) null);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, CreateWalletIntroPresenter.class.getName() + ".presenter", function0);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentCreateWalletIntroBinding>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentCreateWalletIntroBinding invoke() {
+                return ForkFragmentCreateWalletIntroBinding.inflate(BaseFragmentExtKt.getLayoutInflater(CreateWalletIntroFragment.this));
+            }
+        }, 1, (Object) null);
         this.bottomPanelRect = new Rect();
-        lazy = LazyKt__LazyJVMKt.lazy(CreateWalletIntroFragment$linkedWalletViewStrokeWidth$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$linkedWalletViewStrokeWidth$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(1));
+            }
+        });
         this.linkedWalletViewStrokeWidth$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(CreateWalletIntroFragment$linkedWalletViewCornerRadius$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$linkedWalletViewCornerRadius$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Float invoke() {
+                return Float.valueOf(AndroidUtilities.m72dp(8));
+            }
+        });
         this.linkedWalletViewCornerRadius$delegate = lazy2;
-        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new CreateWalletIntroFragment$toolbar$2(this), 1, (Object) null);
+        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<C3485ActionBar>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$toolbar$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final C3485ActionBar invoke() {
+                C3485ActionBar initActionBar;
+                initActionBar = CreateWalletIntroFragment.this.initActionBar();
+                return initActionBar;
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -116,8 +211,8 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         return ((Number) this.linkedWalletViewCornerRadius$delegate.getValue()).floatValue();
     }
 
-    private final C3484ActionBar getToolbar() {
-        return (C3484ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
+    private final C3485ActionBar getToolbar() {
+        return (C3485ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
     }
 
     @Override // com.iMe.p031ui.base.mvp.MvpFragment
@@ -142,7 +237,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         Intrinsics.checkNotNullExpressionValue(constraintLinkedWalletSection, "constraintLinkedWalletSection");
         ViewExtKt.visible$default(constraintLinkedWalletSection, false, 1, null);
         binding.imageAvatar.setUser(user);
-        binding.textUserId.setText(getResourceManager().getString(C3417R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1656id)));
+        binding.textUserId.setText(getResourceManager().getString(C3419R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1675id)));
         binding.textAddress.setText(address);
         setupItemMoreOptions(explorer);
     }
@@ -186,10 +281,21 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.intro.CreateWalletIntroView
-    public void openAddWalletScreen(Wallet wallet2, String password) {
+    public void openAddWalletScreen(final Wallet wallet2, final String password) {
         Intrinsics.checkNotNullParameter(wallet2, "wallet");
         Intrinsics.checkNotNullParameter(password, "password");
-        presentFragment(CreateWalletTutorialFragment.Companion.newInstance(new TutorialType.WalletIntro(new CreateWalletIntroFragment$openAddWalletScreen$1(password, wallet2))));
+        presentFragment(CreateWalletTutorialFragment.Companion.newInstance(new TutorialType.WalletIntro(new Function0<BaseFragment>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$openAddWalletScreen$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final BaseFragment invoke() {
+                return CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.SecretWords(password, null, wallet2, 2, null));
+            }
+        })));
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.intro.CreateWalletIntroView
@@ -228,13 +334,13 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3484ActionBar initActionBar() {
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(getContext());
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
-        c3484ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3417R.C3419drawable.msg_info);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+    public final C3485ActionBar initActionBar() {
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(getContext());
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
+        c3485ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3419R.C3421drawable.msg_info);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletIntroFragment.this.finishFragment();
@@ -243,25 +349,42 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
                 }
             }
         });
-        return c3484ActionBar;
+        return c3485ActionBar;
     }
 
     private final void setupItemMoreOptions(Network.Explorer explorer) {
-        ActionBarMenuItem setupItemMoreOptions$lambda$8 = getBinding().itemMoreOptions;
+        final ActionBarMenuItem setupItemMoreOptions$lambda$8 = getBinding().itemMoreOptions;
         setupItemMoreOptions$lambda$8.setLongClickEnabled(false);
         setupItemMoreOptions$lambda$8.setSubMenuOpenSide(2);
-        setupItemMoreOptions$lambda$8.setIcon(C3417R.C3419drawable.ic_ab_other);
+        setupItemMoreOptions$lambda$8.setIcon(C3419R.C3421drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupItemMoreOptions$lambda$8, "setupItemMoreOptions$lambda$8");
         ViewExtKt.setCircleRippleBackground(setupItemMoreOptions$lambda$8);
-        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3417R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
-        ViewExtKt.safeThrottledClick$default(setupItemMoreOptions$lambda$8, 0L, new CreateWalletIntroFragment$setupItemMoreOptions$1$2(setupItemMoreOptions$lambda$8), 1, null);
+        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3419R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+        ViewExtKt.safeThrottledClick$default(setupItemMoreOptions$lambda$8, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupItemMoreOptions$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                ActionBarMenuItem.this.toggleSubMenu();
+            }
+        }, 1, null);
         setupItemMoreOptions$lambda$8.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 CreateWalletIntroFragment.setupItemMoreOptions$lambda$8$lambda$7(CreateWalletIntroFragment.this, i);
             }
         });
-        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,7 +397,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
 
     private final void setupListeners() {
         final ForkFragmentCreateWalletIntroBinding binding = getBinding();
-        C3484ActionBar toolbar = getToolbar();
+        C3485ActionBar toolbar = getToolbar();
         if (!ViewCompat.isLaidOut(toolbar) || toolbar.isLayoutRequested()) {
             toolbar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$lambda$12$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
@@ -321,13 +444,68 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         });
         FloatingActionButton buttonNext = binding.buttonNext;
         Intrinsics.checkNotNullExpressionValue(buttonNext, "buttonNext");
-        ViewExtKt.safeThrottledClick$default(buttonNext, 0L, new CreateWalletIntroFragment$setupListeners$1$4(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonNext, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$1$4
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                CreateWalletIntroPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = CreateWalletIntroFragment.this.getPresenter();
+                presenter.onNextClick();
+            }
+        }, 1, null);
         AppCompatImageView imageCopy = binding.imageCopy;
         Intrinsics.checkNotNullExpressionValue(imageCopy, "imageCopy");
-        ViewExtKt.safeThrottledClick$default(imageCopy, 0L, new CreateWalletIntroFragment$setupListeners$1$5(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(imageCopy, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$1$5
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                CreateWalletIntroPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = CreateWalletIntroFragment.this.getPresenter();
+                presenter.onCopyAddressClick();
+            }
+        }, 1, null);
         AppCompatImageView imageLinkedWalletInfo = binding.imageLinkedWalletInfo;
         Intrinsics.checkNotNullExpressionValue(imageLinkedWalletInfo, "imageLinkedWalletInfo");
-        ViewExtKt.safeThrottledClick$default(imageLinkedWalletInfo, 0L, new CreateWalletIntroFragment$setupListeners$1$6(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(imageLinkedWalletInfo, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$1$6
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                CreateWalletIntroFragment.this.showInfoDialog();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -348,7 +526,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupColors() {
         List<AppCompatImageView> listOf;
-        C3484ActionBar toolbar = getToolbar();
+        C3485ActionBar toolbar = getToolbar();
         int i = Theme.key_windowBackgroundWhite;
         toolbar.setBackgroundColor(getThemedColor(i));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
@@ -401,30 +579,30 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         ForkFragmentCreateWalletIntroBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3419R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
-        binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_creation_intro_title));
-        binding.textDescription.setText(getResourceManager().getString(C3417R.string.wallet_creation_intro_description));
-        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3417R.string.wallet_creation_intro_linked_wallet));
+        binding.textTitle.setText(getResourceManager().getString(C3419R.string.wallet_creation_intro_title));
+        binding.textDescription.setText(getResourceManager().getString(C3419R.string.wallet_creation_intro_description));
+        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3419R.string.wallet_creation_intro_linked_wallet));
         TextView textView = binding.textPrivacy;
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        String string = getResourceManager().getString(C3417R.string.wallet_creation_intro_privacy);
+        String string = getResourceManager().getString(C3419R.string.wallet_creation_intro_privacy);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3417R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
+            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3419R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
         }
         textView.setText(spannableStringBuilder);
-        binding.itemMoreOptions.setIcon(C3417R.C3419drawable.ic_ab_other);
-        binding.buttonNext.setIcon(C3417R.C3419drawable.msg_arrow_forward);
+        binding.itemMoreOptions.setIcon(C3419R.C3421drawable.ic_ab_other);
+        binding.buttonNext.setIcon(C3419R.C3421drawable.msg_arrow_forward);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3417R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3417R.string.wallet_creation_intro_information_description), getResourceManager().getString(C3417R.string.common_ok), null, 8, null));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3419R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3419R.string.wallet_creation_intro_information_description), getResourceManager().getString(C3419R.string.common_ok), null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -38,23 +38,23 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 1441
+    .line 1469
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
-    .line 1437
+    .line 1465
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backgroundThreadDrawHolder:[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
     return-void
 .end method
 
-.method static synthetic access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
+.method static synthetic access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
     .locals 0
 
-    .line 1435
+    .line 1463
     iget p0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->pressedProgress:F
 
     return p0
@@ -63,7 +63,7 @@
 .method private synthetic lambda$setPressed$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1480
+    .line 1508
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -76,7 +76,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->pressedProgress:F
 
-    .line 1481
+    .line 1509
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -85,7 +85,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1482
+    .line 1510
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -103,22 +103,22 @@
 .method public getDocument()Lorg/telegram/tgnet/TLRPC$Document;
     .locals 3
 
-    .line 1448
+    .line 1476
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     if-eqz v0, :cond_0
 
-    .line 1449
+    .line 1477
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-nez v1, :cond_1
 
-    .line 1451
+    .line 1479
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->getDocumentId()J
 
     move-result-wide v0
 
-    .line 1452
+    .line 1480
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2, v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->findDocument(IJ)Lorg/telegram/tgnet/TLRPC$Document;
@@ -140,7 +140,7 @@
 
     const/4 p2, 0x2
 
-    .line 1460
+    .line 1488
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -159,7 +159,7 @@
 
     invoke-virtual {p0, v0, v1, v2, p2}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1461
+    .line 1489
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -178,30 +178,30 @@
 .method public setPressed(Z)V
     .locals 3
 
-    .line 1468
+    .line 1496
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
 
     if-eq v0, p1, :cond_1
 
-    .line 1469
+    .line 1497
     invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1470
+    .line 1498
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     if-eqz p1, :cond_0
 
-    .line 1472
+    .line 1500
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1473
+    .line 1501
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1474
+    .line 1502
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -209,7 +209,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1477
+    .line 1505
     iget p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->pressedProgress:F
 
     const/4 v0, 0x0
@@ -230,21 +230,21 @@
 
     aput v0, v1, p1
 
-    .line 1478
+    .line 1506
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1479
+    .line 1507
     new-instance v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1486
+    .line 1514
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView$1;
@@ -253,7 +253,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1493
+    .line 1521
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -264,14 +264,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1494
+    .line 1522
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1495
+    .line 1523
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -283,7 +283,7 @@
 .method public updatePressedProgress()V
     .locals 3
 
-    .line 1501
+    .line 1529
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
@@ -304,14 +304,14 @@
 
     const/4 v2, 0x0
 
-    .line 1502
+    .line 1530
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->pressedProgress:F
 
-    .line 1503
+    .line 1531
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0

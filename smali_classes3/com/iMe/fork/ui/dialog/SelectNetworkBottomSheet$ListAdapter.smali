@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 398
+    .line 393
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 406
+    .line 401
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 407
+    .line 402
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -76,7 +76,7 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 411
+    .line 406
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 412
+    .line 407
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NETWORK_CELL:I
 
@@ -106,7 +106,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 403
+    .line 398
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -133,12 +133,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 432
+    .line 427
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 433
+    .line 428
     sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->NETWORK_CELL:I
 
     if-ne v0, v1, :cond_1
@@ -157,7 +157,7 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    .line 434
+    .line 429
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v2, "null cannot be cast to non-null type com.iMe.ui.custom.ImageTextCheckCell"
@@ -166,17 +166,17 @@
 
     check-cast p1, Lcom/iMe/ui/custom/ImageTextCheckCell;
 
-    .line 436
+    .line 431
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getFullName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 437
+    .line 432
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getLogoUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 438
+    .line 433
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
 
     move-result-object v3
@@ -203,7 +203,7 @@
 
     move-result v3
 
-    .line 439
+    .line 434
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
 
     move-result-object v1
@@ -223,16 +223,16 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 435
+    .line 430
     :goto_0
     invoke-virtual {p1, v2, v0, v3, p2}, Lcom/iMe/ui/custom/ImageTextCheckCell;->setupViewData(Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 441
+    .line 436
     invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     goto :goto_1
 
-    .line 445
+    .line 440
     :cond_1
     sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
@@ -260,7 +260,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 398
+    .line 393
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -275,7 +275,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 418
+    .line 413
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     const-string v0, "context"
@@ -284,7 +284,7 @@
 
     new-instance p1, Lcom/iMe/fork/ui/view/EmptyView;
 
-    .line 419
+    .line 414
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-virtual {p2}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -293,7 +293,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 420
+    .line 415
     sget v0, Lorg/telegram/messenger/R$string;->wallet_network_type_dialog_search_empty:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -304,13 +304,13 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 418
+    .line 413
     invoke-direct {p1, p2, v0}, Lcom/iMe/fork/ui/view/EmptyView;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 421
+    .line 416
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 422
+    .line 417
     invoke-static {p2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getItemWidth$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
 
     move-result p2
@@ -325,7 +325,7 @@
 
     goto :goto_0
 
-    .line 425
+    .line 420
     :cond_0
     new-instance p1, Lcom/iMe/ui/custom/ImageTextCheckCell;
 
@@ -351,7 +351,7 @@
 
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 426
+    .line 421
     invoke-static {p2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getItemWidth$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
 
     move-result p2
@@ -364,7 +364,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 416
+    .line 411
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

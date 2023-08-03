@@ -2,7 +2,6 @@ package com.iMe.bots.data.repository;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -55,6 +54,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
@@ -158,7 +158,19 @@ public final class BotsRepository {
 
     public final Completable sendAppInstallEvent(long j) {
         Single<Response<String>> appInstall = this.botsApi.appInstall("telegram_client", 1, j);
-        final BotsRepository$sendAppInstallEvent$1 botsRepository$sendAppInstallEvent$1 = BotsRepository$sendAppInstallEvent$1.INSTANCE;
+        final BotsRepository$sendAppInstallEvent$1 botsRepository$sendAppInstallEvent$1 = new Function1<Response<String>, CompletableSource>() { // from class: com.iMe.bots.data.repository.BotsRepository$sendAppInstallEvent$1
+            @Override // kotlin.jvm.functions.Function1
+            public final CompletableSource invoke(Response<String> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (Intrinsics.areEqual(response.getStatus(), "ok")) {
+                    return Completable.complete();
+                }
+                if (Intrinsics.areEqual(response.getStatus(), "error")) {
+                    return Completable.error(new Exception(response.getMessage()));
+                }
+                return Completable.error(new Exception("Unknown error"));
+            }
+        };
         Completable flatMapCompletable = appInstall.flatMapCompletable(new Function() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda19
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -180,7 +192,19 @@ public final class BotsRepository {
     public final Completable sendBotInstallEvent(String botId, long j) {
         Intrinsics.checkNotNullParameter(botId, "botId");
         Single<Response<String>> botInstall = this.botsApi.botInstall(botId, 1, j);
-        final BotsRepository$sendBotInstallEvent$1 botsRepository$sendBotInstallEvent$1 = BotsRepository$sendBotInstallEvent$1.INSTANCE;
+        final BotsRepository$sendBotInstallEvent$1 botsRepository$sendBotInstallEvent$1 = new Function1<Response<String>, CompletableSource>() { // from class: com.iMe.bots.data.repository.BotsRepository$sendBotInstallEvent$1
+            @Override // kotlin.jvm.functions.Function1
+            public final CompletableSource invoke(Response<String> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (Intrinsics.areEqual(response.getStatus(), "ok")) {
+                    return Completable.complete();
+                }
+                if (Intrinsics.areEqual(response.getStatus(), "error")) {
+                    return Completable.error(new Exception(response.getMessage()));
+                }
+                return Completable.error(new Exception("Unknown error"));
+            }
+        };
         Completable flatMapCompletable = botInstall.flatMapCompletable(new Function() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda21
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -199,10 +223,28 @@ public final class BotsRepository {
         return (CompletableSource) tmp0.invoke(obj);
     }
 
-    public final Single<Integer> sendBotRating(final String botId, long j, int i) {
+    public final Single<Integer> sendBotRating(final String botId, long j, final int i) {
         Intrinsics.checkNotNullParameter(botId, "botId");
         Single<Response<String>> voteForBot = this.botsApi.voteForBot(botId, i, j);
-        final BotsRepository$sendBotRating$1 botsRepository$sendBotRating$1 = new BotsRepository$sendBotRating$1(i);
+        final Function1<Response<String>, SingleSource<? extends Integer>> function1 = new Function1<Response<String>, SingleSource<? extends Integer>>() { // from class: com.iMe.bots.data.repository.BotsRepository$sendBotRating$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final SingleSource<? extends Integer> invoke(Response<String> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (Intrinsics.areEqual(response.getStatus(), "ok")) {
+                    return Single.just(Integer.valueOf(i));
+                }
+                if (Intrinsics.areEqual(response.getStatus(), "error")) {
+                    return Single.error(new Exception(response.getMessage()));
+                }
+                return Single.error(new Exception("Unknown error"));
+            }
+        };
         Single<R> flatMap = voteForBot.flatMap(new Function() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda17
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -211,7 +253,28 @@ public final class BotsRepository {
                 return sendBotRating$lambda$4;
             }
         });
-        final BotsRepository$sendBotRating$2 botsRepository$sendBotRating$2 = new BotsRepository$sendBotRating$2(this, botId);
+        final Function1<Integer, Unit> function12 = new Function1<Integer, Unit>() { // from class: com.iMe.bots.data.repository.BotsRepository$sendBotRating$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke2(num);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Integer it) {
+                BotsDao botsDao;
+                botsDao = BotsRepository.this.botsDao;
+                String str = botId;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                botsDao.saveOwnRating(str, it.intValue());
+            }
+        };
         Single<Integer> onErrorReturn = flatMap.doOnSuccess(new Consumer() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda15
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
@@ -251,7 +314,26 @@ public final class BotsRepository {
 
     public final Completable fetchVotes(long j) {
         Single<Response<List<BotVoteInfo>>> botsVoting = this.botsApi.getBotsVoting(j);
-        final BotsRepository$fetchVotes$1 botsRepository$fetchVotes$1 = new BotsRepository$fetchVotes$1(this);
+        final Function1<Response<List<? extends BotVoteInfo>>, CompletableSource> function1 = new Function1<Response<List<? extends BotVoteInfo>>, CompletableSource>() { // from class: com.iMe.bots.data.repository.BotsRepository$fetchVotes$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ CompletableSource invoke(Response<List<? extends BotVoteInfo>> response) {
+                return invoke2((Response<List<BotVoteInfo>>) response);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final CompletableSource invoke2(Response<List<BotVoteInfo>> response) {
+                BotsDao botsDao;
+                Intrinsics.checkNotNullParameter(response, "response");
+                botsDao = BotsRepository.this.botsDao;
+                botsDao.saveRatings(response);
+                return Completable.complete();
+            }
+        };
         Completable subscribeOn = botsVoting.flatMapCompletable(new Function() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda18
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -259,7 +341,7 @@ public final class BotsRepository {
                 fetchVotes$lambda$7 = BotsRepository.fetchVotes$lambda$7(Function1.this, obj);
                 return fetchVotes$lambda$7;
             }
-        }).subscribeOn(Schedulers.m679io());
+        }).subscribeOn(Schedulers.m697io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun fetchVotes(userId: L…scribeOn(Schedulers.io())");
         return subscribeOn;
     }
@@ -354,7 +436,7 @@ public final class BotsRepository {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:4:0x001d, code lost:
-        r1 = r1.copy((r50 & 1) != 0 ? r1.f328id : null, (r50 & 2) != 0 ? r1.sku : null, (r50 & 4) != 0 ? r1.lang : null, (r50 & 8) != 0 ? r1.avatarOriginal : null, (r50 & 16) != 0 ? r1.avatarRounded : null, (r50 & 32) != 0 ? r1.titleLocales : null, (r50 & 64) != 0 ? r1.descriptionLocales : null, (r50 & 128) != 0 ? r1.title : null, (r50 & 256) != 0 ? r1.description : null, (r50 & 512) != 0 ? r1.installs : 0, (r50 & 1024) != 0 ? r1.priority : 0, (r50 & 2048) != 0 ? r1.reviews : 0, (r50 & 4096) != 0 ? r1.rating : com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? r1.ownRating : 0, (r50 & 16384) != 0 ? r1.installLogged : 0, (r50 & org.telegram.messenger.LiteMode.FLAG_CHAT_SCALE) != 0 ? r1.useAssets : 0, (r50 & 65536) != 0 ? r1.botUpdated : 0, (r50 & 131072) != 0 ? r1.tags : null, (r50 & 262144) != 0 ? r1.file : null, (r50 & 524288) != 0 ? r1.hash : null, (r50 & com.google.android.exoplayer2.source.ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0 ? r1.phrases : 0, (r50 & 2097152) != 0 ? r1.themes : 0, (r50 & 4194304) != 0 ? r1.created : null, (8388608 & r50) != 0 ? r1.updated : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypePhoto) != 0 ? r1.price : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypeVideo) != 0 ? r1.type : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypeFile) != 0 ? r1.status : r40);
+        r1 = r1.copy((r50 & 1) != 0 ? r1.f331id : null, (r50 & 2) != 0 ? r1.sku : null, (r50 & 4) != 0 ? r1.lang : null, (r50 & 8) != 0 ? r1.avatarOriginal : null, (r50 & 16) != 0 ? r1.avatarRounded : null, (r50 & 32) != 0 ? r1.titleLocales : null, (r50 & 64) != 0 ? r1.descriptionLocales : null, (r50 & 128) != 0 ? r1.title : null, (r50 & 256) != 0 ? r1.description : null, (r50 & 512) != 0 ? r1.installs : 0, (r50 & 1024) != 0 ? r1.priority : 0, (r50 & 2048) != 0 ? r1.reviews : 0, (r50 & 4096) != 0 ? r1.rating : com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? r1.ownRating : 0, (r50 & 16384) != 0 ? r1.installLogged : 0, (r50 & org.telegram.messenger.LiteMode.FLAG_CHAT_SCALE) != 0 ? r1.useAssets : 0, (r50 & 65536) != 0 ? r1.botUpdated : 0, (r50 & 131072) != 0 ? r1.tags : null, (r50 & 262144) != 0 ? r1.file : null, (r50 & 524288) != 0 ? r1.hash : null, (r50 & 1048576) != 0 ? r1.phrases : 0, (r50 & 2097152) != 0 ? r1.themes : 0, (r50 & 4194304) != 0 ? r1.created : null, (8388608 & r50) != 0 ? r1.updated : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypePhoto) != 0 ? r1.price : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypeVideo) != 0 ? r1.type : null, (r50 & org.telegram.tgnet.ConnectionsManager.FileTypeFile) != 0 ? r1.status : r40);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -456,7 +538,7 @@ public final class BotsRepository {
             public final void subscribe(SingleEmitter singleEmitter) {
                 BotsRepository.updateRemoteBotHash$lambda$18(BotsRepository.this, botId, singleEmitter);
             }
-        }).observeOn(Schedulers.m679io());
+        }).observeOn(Schedulers.m697io());
         final BotsRepository$updateRemoteBotHash$2 botsRepository$updateRemoteBotHash$2 = new BotsRepository$updateRemoteBotHash$2(this, botId);
         Completable flatMapCompletable = observeOn.flatMapCompletable(new Function() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda20
             @Override // io.reactivex.functions.Function
@@ -579,7 +661,28 @@ public final class BotsRepository {
                 BotsRepository.getTagsInfo$lambda$25$lambda$23(SingleEmitter.this, exc);
             }
         });
-        final BotsRepository$getTagsInfo$1$2 botsRepository$getTagsInfo$1$2 = new BotsRepository$getTagsInfo$1$2(emitter);
+        final Function1<QuerySnapshot, Unit> function1 = new Function1<QuerySnapshot, Unit>() { // from class: com.iMe.bots.data.repository.BotsRepository$getTagsInfo$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(QuerySnapshot querySnapshot) {
+                invoke2(querySnapshot);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(QuerySnapshot querySnapshot) {
+                if (querySnapshot != null) {
+                    emitter.onSuccess(querySnapshot);
+                } else {
+                    emitter.onError(new EmptySnapshotException("Collection tags is empty"));
+                }
+            }
+        };
         addOnFailureListener.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -661,7 +764,28 @@ public final class BotsRepository {
                 BotsRepository.getCategoriesInfo$lambda$30$lambda$28(SingleEmitter.this, exc);
             }
         });
-        final BotsRepository$getCategoriesInfo$1$2 botsRepository$getCategoriesInfo$1$2 = new BotsRepository$getCategoriesInfo$1$2(emitter);
+        final Function1<QuerySnapshot, Unit> function1 = new Function1<QuerySnapshot, Unit>() { // from class: com.iMe.bots.data.repository.BotsRepository$getCategoriesInfo$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(QuerySnapshot querySnapshot) {
+                invoke2(querySnapshot);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(QuerySnapshot querySnapshot) {
+                if (querySnapshot != null) {
+                    emitter.onSuccess(querySnapshot);
+                } else {
+                    emitter.onError(new EmptySnapshotException("Collection bot_categories is empty"));
+                }
+            }
+        };
         addOnFailureListener.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.bots.data.repository.BotsRepository$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
@@ -794,7 +918,7 @@ public final class BotsRepository {
             ShopProduct shopProduct = (ShopProduct) it.next();
             BotsDbModel bySku = this$0.botsDao.getBySku(shopProduct.getSku());
             if (bySku != null) {
-                botsDbModel = bySku.copy((r50 & 1) != 0 ? bySku.f328id : null, (r50 & 2) != 0 ? bySku.sku : null, (r50 & 4) != 0 ? bySku.lang : null, (r50 & 8) != 0 ? bySku.avatarOriginal : null, (r50 & 16) != 0 ? bySku.avatarRounded : null, (r50 & 32) != 0 ? bySku.titleLocales : null, (r50 & 64) != 0 ? bySku.descriptionLocales : null, (r50 & 128) != 0 ? bySku.title : null, (r50 & 256) != 0 ? bySku.description : null, (r50 & 512) != 0 ? bySku.installs : 0L, (r50 & 1024) != 0 ? bySku.priority : 0L, (r50 & 2048) != 0 ? bySku.reviews : 0L, (r50 & 4096) != 0 ? bySku.rating : BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? bySku.ownRating : 0, (r50 & 16384) != 0 ? bySku.installLogged : 0, (r50 & LiteMode.FLAG_CHAT_SCALE) != 0 ? bySku.useAssets : 0, (r50 & 65536) != 0 ? bySku.botUpdated : 0, (r50 & 131072) != 0 ? bySku.tags : null, (r50 & 262144) != 0 ? bySku.file : null, (r50 & 524288) != 0 ? bySku.hash : null, (r50 & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0 ? bySku.phrases : 0L, (r50 & 2097152) != 0 ? bySku.themes : 0L, (r50 & 4194304) != 0 ? bySku.created : null, (8388608 & r50) != 0 ? bySku.updated : null, (r50 & ConnectionsManager.FileTypePhoto) != 0 ? bySku.price : shopProduct.getPrice(), (r50 & ConnectionsManager.FileTypeVideo) != 0 ? bySku.type : null, (r50 & ConnectionsManager.FileTypeFile) != 0 ? bySku.status : null);
+                botsDbModel = bySku.copy((r50 & 1) != 0 ? bySku.f331id : null, (r50 & 2) != 0 ? bySku.sku : null, (r50 & 4) != 0 ? bySku.lang : null, (r50 & 8) != 0 ? bySku.avatarOriginal : null, (r50 & 16) != 0 ? bySku.avatarRounded : null, (r50 & 32) != 0 ? bySku.titleLocales : null, (r50 & 64) != 0 ? bySku.descriptionLocales : null, (r50 & 128) != 0 ? bySku.title : null, (r50 & 256) != 0 ? bySku.description : null, (r50 & 512) != 0 ? bySku.installs : 0L, (r50 & 1024) != 0 ? bySku.priority : 0L, (r50 & 2048) != 0 ? bySku.reviews : 0L, (r50 & 4096) != 0 ? bySku.rating : BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? bySku.ownRating : 0, (r50 & 16384) != 0 ? bySku.installLogged : 0, (r50 & LiteMode.FLAG_CHAT_SCALE) != 0 ? bySku.useAssets : 0, (r50 & 65536) != 0 ? bySku.botUpdated : 0, (r50 & 131072) != 0 ? bySku.tags : null, (r50 & 262144) != 0 ? bySku.file : null, (r50 & 524288) != 0 ? bySku.hash : null, (r50 & 1048576) != 0 ? bySku.phrases : 0L, (r50 & 2097152) != 0 ? bySku.themes : 0L, (r50 & 4194304) != 0 ? bySku.created : null, (8388608 & r50) != 0 ? bySku.updated : null, (r50 & ConnectionsManager.FileTypePhoto) != 0 ? bySku.price : shopProduct.getPrice(), (r50 & ConnectionsManager.FileTypeVideo) != 0 ? bySku.type : null, (r50 & ConnectionsManager.FileTypeFile) != 0 ? bySku.status : null);
             }
             if (botsDbModel != null) {
                 this$0.botsDao.insertOrReplace(botsDbModel);
@@ -818,7 +942,7 @@ public final class BotsRepository {
             }
             BotsDbModel bySku2 = this$0.botsDao.getBySku(((ShopProduct) obj).getSku());
             if ((bySku2 != null ? bySku2.getStatus() : null) == BotStatus.PAID) {
-                copy = bySku2.copy((r50 & 1) != 0 ? bySku2.f328id : null, (r50 & 2) != 0 ? bySku2.sku : null, (r50 & 4) != 0 ? bySku2.lang : null, (r50 & 8) != 0 ? bySku2.avatarOriginal : null, (r50 & 16) != 0 ? bySku2.avatarRounded : null, (r50 & 32) != 0 ? bySku2.titleLocales : null, (r50 & 64) != 0 ? bySku2.descriptionLocales : null, (r50 & 128) != 0 ? bySku2.title : null, (r50 & 256) != 0 ? bySku2.description : null, (r50 & 512) != 0 ? bySku2.installs : 0L, (r50 & 1024) != 0 ? bySku2.priority : 0L, (r50 & 2048) != 0 ? bySku2.reviews : 0L, (r50 & 4096) != 0 ? bySku2.rating : BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? bySku2.ownRating : 0, (r50 & 16384) != 0 ? bySku2.installLogged : 0, (r50 & LiteMode.FLAG_CHAT_SCALE) != 0 ? bySku2.useAssets : 0, (r50 & 65536) != 0 ? bySku2.botUpdated : 0, (r50 & 131072) != 0 ? bySku2.tags : null, (r50 & 262144) != 0 ? bySku2.file : null, (r50 & 524288) != 0 ? bySku2.hash : null, (r50 & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0 ? bySku2.phrases : 0L, (r50 & 2097152) != 0 ? bySku2.themes : 0L, (r50 & 4194304) != 0 ? bySku2.created : null, (8388608 & r50) != 0 ? bySku2.updated : null, (r50 & ConnectionsManager.FileTypePhoto) != 0 ? bySku2.price : null, (r50 & ConnectionsManager.FileTypeVideo) != 0 ? bySku2.type : null, (r50 & ConnectionsManager.FileTypeFile) != 0 ? bySku2.status : BotStatus.AVAILABLE);
+                copy = bySku2.copy((r50 & 1) != 0 ? bySku2.f331id : null, (r50 & 2) != 0 ? bySku2.sku : null, (r50 & 4) != 0 ? bySku2.lang : null, (r50 & 8) != 0 ? bySku2.avatarOriginal : null, (r50 & 16) != 0 ? bySku2.avatarRounded : null, (r50 & 32) != 0 ? bySku2.titleLocales : null, (r50 & 64) != 0 ? bySku2.descriptionLocales : null, (r50 & 128) != 0 ? bySku2.title : null, (r50 & 256) != 0 ? bySku2.description : null, (r50 & 512) != 0 ? bySku2.installs : 0L, (r50 & 1024) != 0 ? bySku2.priority : 0L, (r50 & 2048) != 0 ? bySku2.reviews : 0L, (r50 & 4096) != 0 ? bySku2.rating : BitmapDescriptorFactory.HUE_RED, (r50 & 8192) != 0 ? bySku2.ownRating : 0, (r50 & 16384) != 0 ? bySku2.installLogged : 0, (r50 & LiteMode.FLAG_CHAT_SCALE) != 0 ? bySku2.useAssets : 0, (r50 & 65536) != 0 ? bySku2.botUpdated : 0, (r50 & 131072) != 0 ? bySku2.tags : null, (r50 & 262144) != 0 ? bySku2.file : null, (r50 & 524288) != 0 ? bySku2.hash : null, (r50 & 1048576) != 0 ? bySku2.phrases : 0L, (r50 & 2097152) != 0 ? bySku2.themes : 0L, (r50 & 4194304) != 0 ? bySku2.created : null, (8388608 & r50) != 0 ? bySku2.updated : null, (r50 & ConnectionsManager.FileTypePhoto) != 0 ? bySku2.price : null, (r50 & ConnectionsManager.FileTypeVideo) != 0 ? bySku2.type : null, (r50 & ConnectionsManager.FileTypeFile) != 0 ? bySku2.status : BotStatus.AVAILABLE);
                 this$0.botsDao.insertOrReplace(copy);
             }
             i = i2;

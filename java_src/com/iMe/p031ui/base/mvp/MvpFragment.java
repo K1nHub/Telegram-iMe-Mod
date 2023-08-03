@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
+import com.iMe.p031ui.base.mvp.MvpFragment$mvpBaseDelegate$2;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.base.mvp.base.MvpBaseDelegate;
 import com.iMe.storage.domain.model.Result;
@@ -20,6 +21,8 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import kotlin.Lazy;
 import kotlin.LazyKt;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
@@ -35,8 +38,57 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
 /* loaded from: classes.dex */
 public abstract class MvpFragment extends BaseFragment implements MvpDelegateHolder, KoinComponent, BaseView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(MvpFragment.class, "hintUtils", "getHintUtils()Lcom/iMe/utils/hints/HintUtils;", 0))};
-    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new MvpFragment$mvpBaseDelegate$2(this));
-    private final ResettableLazy hintUtils$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, MvpFragment$hintUtils$2.INSTANCE, 1, (Object) null);
+    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C19971>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        /* JADX WARN: Type inference failed for: r0v0, types: [com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
+        @Override // kotlin.jvm.functions.Function0
+        public final C19971 invoke() {
+            return new MvpBaseDelegate<MvpFragment>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
+                private final Lazy context$delegate;
+
+                {
+                    Lazy lazy;
+                    lazy = LazyKt__LazyJVMKt.lazy(new Function0<Activity>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1$context$2
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            super(0);
+                        }
+
+                        /* JADX WARN: Can't rename method to resolve collision */
+                        @Override // kotlin.jvm.functions.Function0
+                        public final Activity invoke() {
+                            return MvpFragment.this.getParentActivity();
+                        }
+                    });
+                    this.context$delegate = lazy;
+                }
+
+                @Override // com.iMe.p031ui.base.mvp.base.BaseDelegate
+                public Context getContext() {
+                    Object value = this.context$delegate.getValue();
+                    Intrinsics.checkNotNullExpressionValue(value, "<get-context>(...)");
+                    return (Context) value;
+                }
+
+                @Override // com.iMe.p031ui.base.mvp.base.BaseDelegate
+                public MvpDelegate<MvpFragment> createDelegate() {
+                    return new MvpDelegate<>(MvpFragment.this);
+                }
+            };
+        }
+    });
+    private final ResettableLazy hintUtils$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<HintUtils>() { // from class: com.iMe.ui.base.mvp.MvpFragment$hintUtils$2
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final HintUtils invoke() {
+            return new HintUtils();
+        }
+    }, 1, (Object) null);
     private final CompositeDisposable subscriptions = new CompositeDisposable();
 
     public abstract View onCreateView(Context context);

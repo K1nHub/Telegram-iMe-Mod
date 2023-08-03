@@ -9,12 +9,12 @@ import org.bouncycastle.util.p041io.Streams;
 public class HSSPublicKeyParameters extends LMSKeyParameters {
 
     /* renamed from: l */
-    private final int f1391l;
+    private final int f1394l;
     private final LMSPublicKeyParameters lmsPublicKey;
 
     public HSSPublicKeyParameters(int i, LMSPublicKeyParameters lMSPublicKeyParameters) {
         super(false);
-        this.f1391l = i;
+        this.f1394l = i;
         this.lmsPublicKey = lMSPublicKeyParameters;
     }
 
@@ -59,7 +59,7 @@ public class HSSPublicKeyParameters extends LMSKeyParameters {
             return false;
         }
         HSSPublicKeyParameters hSSPublicKeyParameters = (HSSPublicKeyParameters) obj;
-        if (this.f1391l != hSSPublicKeyParameters.f1391l) {
+        if (this.f1394l != hSSPublicKeyParameters.f1394l) {
             return false;
         }
         return this.lmsPublicKey.equals(hSSPublicKeyParameters.lmsPublicKey);
@@ -67,11 +67,11 @@ public class HSSPublicKeyParameters extends LMSKeyParameters {
 
     @Override // org.bouncycastle.pqc.crypto.lms.LMSKeyParameters, org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(this.f1391l).bytes(this.lmsPublicKey.getEncoded()).build();
+        return Composer.compose().u32str(this.f1394l).bytes(this.lmsPublicKey.getEncoded()).build();
     }
 
     public int getL() {
-        return this.f1391l;
+        return this.f1394l;
     }
 
     public LMSPublicKeyParameters getLMSPublicKey() {
@@ -79,6 +79,6 @@ public class HSSPublicKeyParameters extends LMSKeyParameters {
     }
 
     public int hashCode() {
-        return (this.f1391l * 31) + this.lmsPublicKey.hashCode();
+        return (this.f1394l * 31) + this.lmsPublicKey.hashCode();
     }
 }

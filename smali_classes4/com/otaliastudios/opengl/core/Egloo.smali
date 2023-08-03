@@ -46,7 +46,7 @@
 .method public static final checkEglError(Ljava/lang/String;)V
     .locals 3
 
-    const-string v0, "opName"
+    const-string/jumbo v0, "opName"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -106,7 +106,7 @@
 .method public static final checkGlError(Ljava/lang/String;)V
     .locals 3
 
-    const-string v0, "opName"
+    const-string/jumbo v0, "opName"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

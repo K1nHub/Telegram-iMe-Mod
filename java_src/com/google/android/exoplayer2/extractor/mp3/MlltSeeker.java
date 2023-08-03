@@ -6,9 +6,8 @@ import com.google.android.exoplayer2.extractor.SeekMap;
 import com.google.android.exoplayer2.extractor.SeekPoint;
 import com.google.android.exoplayer2.metadata.id3.MlltFrame;
 import com.google.android.exoplayer2.util.Util;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class MlltSeeker implements Seeker {
+final class MlltSeeker implements Seeker {
     private final long durationUs;
     private final long[] referencePositions;
     private final long[] referenceTimesMs;

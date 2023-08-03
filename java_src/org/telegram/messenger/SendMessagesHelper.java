@@ -93,6 +93,7 @@ import org.telegram.tgnet.TLRPC$InputEncryptedFile;
 import org.telegram.tgnet.TLRPC$InputFile;
 import org.telegram.tgnet.TLRPC$InputMedia;
 import org.telegram.tgnet.TLRPC$InputPeer;
+import org.telegram.tgnet.TLRPC$InputReplyTo;
 import org.telegram.tgnet.TLRPC$InputStickerSet;
 import org.telegram.tgnet.TLRPC$KeyboardButton;
 import org.telegram.tgnet.TLRPC$Message;
@@ -100,9 +101,11 @@ import org.telegram.tgnet.TLRPC$MessageAction;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$MessageReplies;
+import org.telegram.tgnet.TLRPC$MessageReplyHeader;
 import org.telegram.tgnet.TLRPC$Peer;
 import org.telegram.tgnet.TLRPC$PhotoSize;
 import org.telegram.tgnet.TLRPC$ReplyMarkup;
+import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$TL_account_getPassword;
 import org.telegram.tgnet.TLRPC$TL_botInlineMessageMediaAuto;
 import org.telegram.tgnet.TLRPC$TL_botInlineMessageMediaContact;
@@ -146,6 +149,8 @@ import org.telegram.tgnet.TLRPC$TL_inputPeerChannel;
 import org.telegram.tgnet.TLRPC$TL_inputPeerChat;
 import org.telegram.tgnet.TLRPC$TL_inputPeerSelf;
 import org.telegram.tgnet.TLRPC$TL_inputPeerUser;
+import org.telegram.tgnet.TLRPC$TL_inputReplyToMessage;
+import org.telegram.tgnet.TLRPC$TL_inputReplyToStory;
 import org.telegram.tgnet.TLRPC$TL_inputSingleMedia;
 import org.telegram.tgnet.TLRPC$TL_inputStickerSetItem;
 import org.telegram.tgnet.TLRPC$TL_inputStickerSetShortName;
@@ -228,7 +233,9 @@ import org.telegram.tgnet.TLRPC$messages_Messages;
 public class SendMessagesHelper extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     private static final int ERROR_TYPE_FILE_TOO_LARGE = 2;
     private static final int ERROR_TYPE_UNSUPPORTED = 1;
-    private static volatile SendMessagesHelper[] Instance;
+    private static volatile SendMessagesHelper[] Instance = null;
+    public static final int MEDIA_TYPE_DICE = 11;
+    public static final int MEDIA_TYPE_STORY = 12;
     private static DispatchQueue mediaSendQueue = new DispatchQueue("mediaSendQueue");
     private static ThreadPoolExecutor mediaSendThreadPool;
     private HashMap<String, ArrayList<DelayedMessage>> delayedMessages;
@@ -284,22 +291,22 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendCallback(z, messageObject, tLRPC$KeyboardButton, tLRPC$InputCheckPasswordSRP, twoStepVerificationActivity, chatActivity, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x013c, code lost:
-        if (org.telegram.messenger.DialogObject.isEncryptedDialog(r42) == false) goto L47;
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0153, code lost:
+        if (org.telegram.messenger.DialogObject.isEncryptedDialog(r37) == false) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00b2  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00e5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void forwardWithoutAuthor(org.telegram.messenger.MessageObject r37, org.telegram.messenger.MessageObject r38, org.telegram.messenger.MessageObject r39, java.lang.Long r40, boolean r41, long r42, boolean r44, int r45, boolean r46, boolean r47, boolean r48) {
+    public void forwardWithoutAuthor(org.telegram.messenger.MessageObject r32, org.telegram.messenger.MessageObject r33, org.telegram.messenger.MessageObject r34, java.lang.Long r35, boolean r36, long r37, boolean r39, int r40, boolean r41, boolean r42, boolean r43) {
         /*
-            Method dump skipped, instructions count: 437
+            Method dump skipped, instructions count: 457
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.forwardWithoutAuthor(org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, java.lang.Long, boolean, long, boolean, int, boolean, boolean, boolean):void");
@@ -314,6 +321,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
         return false;
+    }
+
+    public TLRPC$InputReplyTo creteReplyInput(TLRPC$StoryItem tLRPC$StoryItem) {
+        TLRPC$TL_inputReplyToStory tLRPC$TL_inputReplyToStory = new TLRPC$TL_inputReplyToStory();
+        tLRPC$TL_inputReplyToStory.story_id = tLRPC$StoryItem.f1553id;
+        tLRPC$TL_inputReplyToStory.user_id = getMessagesController().getInputUser(tLRPC$StoryItem.dialogId);
+        return tLRPC$TL_inputReplyToStory;
+    }
+
+    public static TLRPC$InputReplyTo creteReplyInput(int i) {
+        return creteReplyInput(i, 0);
+    }
+
+    public static TLRPC$InputReplyTo creteReplyInput(int i, int i2) {
+        TLRPC$TL_inputReplyToMessage tLRPC$TL_inputReplyToMessage = new TLRPC$TL_inputReplyToMessage();
+        tLRPC$TL_inputReplyToMessage.reply_to_msg_id = i;
+        if (i2 != 0) {
+            tLRPC$TL_inputReplyToMessage.flags |= 1;
+            tLRPC$TL_inputReplyToMessage.top_msg_id = i2;
+        }
+        return tLRPC$TL_inputReplyToMessage;
     }
 
     /* loaded from: classes4.dex */
@@ -344,16 +372,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_messages_initHistoryImport.file = tLRPC$InputFile;
             tLRPC$TL_messages_initHistoryImport.media_count = this.mediaPaths.size();
             tLRPC$TL_messages_initHistoryImport.peer = this.peer;
-            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_initHistoryImport, new C34251(tLRPC$TL_messages_initHistoryImport), 2);
+            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_initHistoryImport, new C34271(tLRPC$TL_messages_initHistoryImport), 2);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.SendMessagesHelper$ImportingHistory$1 */
         /* loaded from: classes4.dex */
-        public class C34251 implements RequestDelegate {
+        public class C34271 implements RequestDelegate {
             final /* synthetic */ TLRPC$TL_messages_initHistoryImport val$req;
 
-            C34251(TLRPC$TL_messages_initHistoryImport tLRPC$TL_messages_initHistoryImport) {
+            C34271(TLRPC$TL_messages_initHistoryImport tLRPC$TL_messages_initHistoryImport) {
                 this.val$req = tLRPC$TL_messages_initHistoryImport;
             }
 
@@ -363,7 +391,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$ImportingHistory$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendMessagesHelper.ImportingHistory.C34251.this.lambda$run$0(tLObject, tLRPC$TL_messages_initHistoryImport, tLRPC$TL_error);
+                        SendMessagesHelper.ImportingHistory.C34271.this.lambda$run$0(tLObject, tLRPC$TL_messages_initHistoryImport, tLRPC$TL_error);
                     }
                 });
             }
@@ -372,13 +400,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             public /* synthetic */ void lambda$run$0(TLObject tLObject, TLRPC$TL_messages_initHistoryImport tLRPC$TL_messages_initHistoryImport, TLRPC$TL_error tLRPC$TL_error) {
                 if (!(tLObject instanceof TLRPC$TL_messages_historyImport)) {
                     SendMessagesHelper.this.importingHistoryMap.remove(ImportingHistory.this.dialogId);
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId), tLRPC$TL_messages_initHistoryImport, tLRPC$TL_error);
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId), tLRPC$TL_messages_initHistoryImport, tLRPC$TL_error);
                     return;
                 }
                 ImportingHistory importingHistory = ImportingHistory.this;
-                importingHistory.importId = ((TLRPC$TL_messages_historyImport) tLObject).f1612id;
+                importingHistory.importId = ((TLRPC$TL_messages_historyImport) tLObject).f1620id;
                 importingHistory.uploadSet.remove(importingHistory.historyPath);
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
                 if (ImportingHistory.this.uploadSet.isEmpty()) {
                     ImportingHistory.this.startImport();
                 }
@@ -405,7 +433,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 TLRPC$TL_error tLRPC$TL_error = new TLRPC$TL_error();
                 tLRPC$TL_error.code = 400;
                 tLRPC$TL_error.text = "IMPORT_UPLOAD_FAILED";
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId), new TLRPC$TL_messages_initHistoryImport(), tLRPC$TL_error);
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId), new TLRPC$TL_messages_initHistoryImport(), tLRPC$TL_error);
                 return;
             }
             this.uploadSet.remove(str);
@@ -442,7 +470,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             int uploadedCount = (int) ((((float) getUploadedCount()) / ((float) getTotalCount())) * 100.0f);
             if (this.uploadProgress != uploadedCount) {
                 this.uploadProgress = uploadedCount;
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId));
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId));
             }
         }
 
@@ -474,16 +502,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 tLRPC$TL_inputMediaUploadedDocument.mime_type = mimeTypeFromExtension;
                 tLRPC$TL_messages_uploadImportedMedia.media = tLRPC$TL_inputMediaUploadedDocument;
             }
-            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_uploadImportedMedia, new C34262(str), 2);
+            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_uploadImportedMedia, new C34282(str), 2);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.SendMessagesHelper$ImportingHistory$2 */
         /* loaded from: classes4.dex */
-        public class C34262 implements RequestDelegate {
+        public class C34282 implements RequestDelegate {
             final /* synthetic */ String val$path;
 
-            C34262(String str) {
+            C34282(String str) {
                 this.val$path = str;
             }
 
@@ -493,7 +521,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$ImportingHistory$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendMessagesHelper.ImportingHistory.C34262.this.lambda$run$0(str);
+                        SendMessagesHelper.ImportingHistory.C34282.this.lambda$run$0(str);
                     }
                 });
             }
@@ -501,7 +529,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$run$0(String str) {
                 ImportingHistory.this.uploadSet.remove(str);
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
                 if (ImportingHistory.this.uploadSet.isEmpty()) {
                     ImportingHistory.this.startImport();
                 }
@@ -513,16 +541,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC$TL_messages_startHistoryImport tLRPC$TL_messages_startHistoryImport = new TLRPC$TL_messages_startHistoryImport();
             tLRPC$TL_messages_startHistoryImport.peer = this.peer;
             tLRPC$TL_messages_startHistoryImport.import_id = this.importId;
-            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_startHistoryImport, new C34273(tLRPC$TL_messages_startHistoryImport));
+            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_startHistoryImport, new C34293(tLRPC$TL_messages_startHistoryImport));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.SendMessagesHelper$ImportingHistory$3 */
         /* loaded from: classes4.dex */
-        public class C34273 implements RequestDelegate {
+        public class C34293 implements RequestDelegate {
             final /* synthetic */ TLRPC$TL_messages_startHistoryImport val$req;
 
-            C34273(TLRPC$TL_messages_startHistoryImport tLRPC$TL_messages_startHistoryImport) {
+            C34293(TLRPC$TL_messages_startHistoryImport tLRPC$TL_messages_startHistoryImport) {
                 this.val$req = tLRPC$TL_messages_startHistoryImport;
             }
 
@@ -532,7 +560,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$ImportingHistory$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendMessagesHelper.ImportingHistory.C34273.this.lambda$run$0(tLRPC$TL_error, tLRPC$TL_messages_startHistoryImport);
+                        SendMessagesHelper.ImportingHistory.C34293.this.lambda$run$0(tLRPC$TL_error, tLRPC$TL_messages_startHistoryImport);
                     }
                 });
             }
@@ -541,9 +569,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             public /* synthetic */ void lambda$run$0(TLRPC$TL_error tLRPC$TL_error, TLRPC$TL_messages_startHistoryImport tLRPC$TL_messages_startHistoryImport) {
                 SendMessagesHelper.this.importingHistoryMap.remove(ImportingHistory.this.dialogId);
                 if (tLRPC$TL_error == null) {
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId));
                 } else {
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId), tLRPC$TL_messages_startHistoryImport, tLRPC$TL_error);
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(ImportingHistory.this.dialogId), tLRPC$TL_messages_startHistoryImport, tLRPC$TL_error);
                 }
             }
         }
@@ -552,7 +580,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (i == 100) {
                 SendMessagesHelper.this.importingHistoryMap.remove(this.dialogId);
             }
-            SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId));
+            SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(this.dialogId));
         }
     }
 
@@ -572,16 +600,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_messages_uploadMedia.media = tLRPC$TL_inputMediaUploadedDocument;
             tLRPC$TL_inputMediaUploadedDocument.file = tLRPC$InputFile;
             tLRPC$TL_inputMediaUploadedDocument.mime_type = this.mimeType;
-            ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_messages_uploadMedia, new C34281(runnable), 2);
+            ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_messages_uploadMedia, new C34301(runnable), 2);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.SendMessagesHelper$ImportingSticker$1 */
         /* loaded from: classes4.dex */
-        public class C34281 implements RequestDelegate {
+        public class C34301 implements RequestDelegate {
             final /* synthetic */ Runnable val$onFinish;
 
-            C34281(Runnable runnable) {
+            C34301(Runnable runnable) {
                 this.val$onFinish = runnable;
             }
 
@@ -591,7 +619,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$ImportingSticker$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendMessagesHelper.ImportingSticker.C34281.this.lambda$run$0(tLObject, runnable);
+                        SendMessagesHelper.ImportingSticker.C34301.this.lambda$run$0(tLObject, runnable);
                     }
                 });
             }
@@ -605,7 +633,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     TLRPC$TL_inputStickerSetItem tLRPC$TL_inputStickerSetItem = importingSticker.item;
                     TLRPC$InputDocument tLRPC$InputDocument = tLRPC$TL_inputStickerSetItem.document;
                     TLRPC$Document tLRPC$Document = ((TLRPC$TL_messageMediaDocument) tLObject).document;
-                    tLRPC$InputDocument.f1531id = tLRPC$Document.f1523id;
+                    tLRPC$InputDocument.f1534id = tLRPC$Document.f1526id;
                     tLRPC$InputDocument.access_hash = tLRPC$Document.access_hash;
                     tLRPC$InputDocument.file_reference = tLRPC$Document.file_reference;
                     String str = importingSticker.emoji;
@@ -647,7 +675,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
         /* JADX INFO: Access modifiers changed from: private */
         public void initImport() {
-            SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, this.shortName);
+            SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, this.shortName);
             this.lastUploadTime = SystemClock.elapsedRealtime();
             int size = this.uploadMedia.size();
             for (int i = 0; i < size; i++) {
@@ -700,7 +728,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             int uploadedCount = (int) ((((float) getUploadedCount()) / ((float) getTotalCount())) * 100.0f);
             if (this.uploadProgress != uploadedCount) {
                 this.uploadProgress = uploadedCount;
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, this.shortName);
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, this.shortName);
             }
         }
 
@@ -722,7 +750,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onMediaImport$0(String str) {
             this.uploadSet.remove(str);
-            SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, this.shortName);
+            SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, this.shortName);
             if (this.uploadSet.isEmpty()) {
                 startImport();
             }
@@ -747,16 +775,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     tLRPC$TL_stickers_createStickerSet.stickers.add(tLRPC$TL_inputStickerSetItem);
                 }
             }
-            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_stickers_createStickerSet, new C34291(tLRPC$TL_stickers_createStickerSet));
+            SendMessagesHelper.this.getConnectionsManager().sendRequest(tLRPC$TL_stickers_createStickerSet, new C34311(tLRPC$TL_stickers_createStickerSet));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.SendMessagesHelper$ImportingStickers$1 */
         /* loaded from: classes4.dex */
-        public class C34291 implements RequestDelegate {
+        public class C34311 implements RequestDelegate {
             final /* synthetic */ TLRPC$TL_stickers_createStickerSet val$req;
 
-            C34291(TLRPC$TL_stickers_createStickerSet tLRPC$TL_stickers_createStickerSet) {
+            C34311(TLRPC$TL_stickers_createStickerSet tLRPC$TL_stickers_createStickerSet) {
                 this.val$req = tLRPC$TL_stickers_createStickerSet;
             }
 
@@ -766,7 +794,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$ImportingStickers$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SendMessagesHelper.ImportingStickers.C34291.this.lambda$run$0(tLRPC$TL_error, tLRPC$TL_stickers_createStickerSet, tLObject);
+                        SendMessagesHelper.ImportingStickers.C34311.this.lambda$run$0(tLRPC$TL_error, tLRPC$TL_stickers_createStickerSet, tLObject);
                     }
                 });
             }
@@ -775,15 +803,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             public /* synthetic */ void lambda$run$0(TLRPC$TL_error tLRPC$TL_error, TLRPC$TL_stickers_createStickerSet tLRPC$TL_stickers_createStickerSet, TLObject tLObject) {
                 SendMessagesHelper.this.importingStickersMap.remove(ImportingStickers.this.shortName);
                 if (tLRPC$TL_error == null) {
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, ImportingStickers.this.shortName);
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, ImportingStickers.this.shortName);
                 } else {
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, ImportingStickers.this.shortName, tLRPC$TL_stickers_createStickerSet, tLRPC$TL_error);
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, ImportingStickers.this.shortName, tLRPC$TL_stickers_createStickerSet, tLRPC$TL_error);
                 }
                 if (tLObject instanceof TLRPC$TL_messages_stickerSet) {
                     NotificationCenter notificationCenter = SendMessagesHelper.this.getNotificationCenter();
                     int i = NotificationCenter.stickersImportComplete;
                     if (notificationCenter.hasObservers(i)) {
-                        SendMessagesHelper.this.getNotificationCenter().postNotificationName(i, tLObject);
+                        SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, tLObject);
                     } else {
                         SendMessagesHelper.this.getMediaDataController().toggleStickerSet(null, tLObject, 2, null, false, false);
                     }
@@ -795,7 +823,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (i == 100) {
                 SendMessagesHelper.this.importingStickersMap.remove(this.shortName);
             }
-            SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.stickersImportProgressChanged, this.shortName);
+            SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersImportProgressChanged, this.shortName);
         }
     }
 
@@ -856,7 +884,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("found location " + location);
+                    FileLog.m70d("found location " + location);
                 }
                 LocationProvider.this.lastKnownLocation = location;
                 if (location.getAccuracy() < 100.0f) {
@@ -897,12 +925,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             try {
                 this.locationManager.requestLocationUpdates("gps", 1L, BitmapDescriptorFactory.HUE_RED, this.gpsLocationListener);
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
             try {
                 this.locationManager.requestLocationUpdates("network", 1L, BitmapDescriptorFactory.HUE_RED, this.networkLocationListener);
             } catch (Exception e2) {
-                FileLog.m49e(e2);
+                FileLog.m67e(e2);
             }
             try {
                 Location lastKnownLocation = this.locationManager.getLastKnownLocation("gps");
@@ -911,7 +939,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     this.lastKnownLocation = this.locationManager.getLastKnownLocation("network");
                 }
             } catch (Exception e3) {
-                FileLog.m49e(e3);
+                FileLog.m67e(e3);
             }
             Runnable runnable = this.locationQueryCancelRunnable;
             if (runnable != null) {
@@ -1077,7 +1105,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     MessageObject messageObject = this.messageObjects.get(i);
                     SendMessagesHelper.this.getMessagesStorage().markMessageAsSendError(messageObject.messageOwner, messageObject.scheduled);
                     messageObject.messageOwner.send_state = 2;
-                    SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(messageObject.getId()));
+                    SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(messageObject.getId()));
                     SendMessagesHelper.this.processSentMessage(messageObject.getId());
                     SendMessagesHelper.this.removeFromUploadingMessages(messageObject.getId(), this.scheduled);
                 }
@@ -1087,7 +1115,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 MessageObject messageObject2 = this.obj;
                 messagesStorage.markMessageAsSendError(messageObject2.messageOwner, messageObject2.scheduled);
                 this.obj.messageOwner.send_state = 2;
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(this.obj.getId()));
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(this.obj.getId()));
                 SendMessagesHelper.this.processSentMessage(this.obj.getId());
                 SendMessagesHelper.this.removeFromUploadingMessages(this.obj.getId(), this.scheduled);
             }
@@ -1138,7 +1166,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
             @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
             public void onUnableLocationAcquire() {
-                SendMessagesHelper.this.getNotificationCenter().postNotificationName(NotificationCenter.wasUnableToFindCurrentLocation, new HashMap(SendMessagesHelper.this.waitingForLocation));
+                SendMessagesHelper.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.wasUnableToFindCurrentLocation, new HashMap(SendMessagesHelper.this.waitingForLocation));
                 SendMessagesHelper.this.waitingForLocation.clear();
             }
         });
@@ -1260,7 +1288,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 int indexOf = tLRPC$TL_messages_sendEncryptedMultiMedia.files.indexOf(tLRPC$InputEncryptedFile5);
                                 if (indexOf >= 0) {
                                     tLRPC$TL_messages_sendEncryptedMultiMedia.files.set(indexOf, tLRPC$InputEncryptedFile);
-                                    if (tLRPC$InputEncryptedFile5.f1532id == 1) {
+                                    if (tLRPC$InputEncryptedFile5.f1535id == 1) {
                                         MessageObject messageObject3 = (MessageObject) delayedMessage.extraHashMap.get(str2 + "_i");
                                         delayedMessage.photoSize = (TLRPC$PhotoSize) delayedMessage.extraHashMap.get(str2 + "_t");
                                         stopVideoService(delayedMessage.messageObjects.get(indexOf).messageOwner.attachPath);
@@ -1279,7 +1307,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                                 TLRPC$DecryptedMessageMedia tLRPC$DecryptedMessageMedia2 = tLRPC$TL_decryptedMessage.media;
                                 tLRPC$DecryptedMessageMedia2.key = (byte[]) objArr[3];
-                                tLRPC$DecryptedMessageMedia2.f1519iv = (byte[]) objArr[4];
+                                tLRPC$DecryptedMessageMedia2.f1522iv = (byte[]) objArr[4];
                                 if (delayedMessage.type == 4) {
                                     uploadMultiMedia(delayedMessage, null, tLRPC$InputEncryptedFile, str2);
                                 } else {
@@ -1634,7 +1662,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             ArrayList<TLRPC$Message> arrayList = new ArrayList<>();
             arrayList.add(messageObject.messageOwner);
             getMessagesStorage().putMessages(arrayList, false, true, false, 0, messageObject.scheduled, 0);
-            getNotificationCenter().postNotificationName(NotificationCenter.updateMessageMedia, messageObject.messageOwner);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateMessageMedia, messageObject.messageOwner);
             ArrayList<TLRPC$PhotoSize> arrayList2 = tLRPC$TL_photo.sizes;
             delayedMessage.photoSize = arrayList2.get(arrayList2.size() - 1);
             delayedMessage.locationParent = tLRPC$TL_photo;
@@ -1648,7 +1676,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m51e("can't load image " + str + " to file " + file.toString());
+            FileLog.m69e("can't load image " + str + " to file " + file.toString());
         }
         delayedMessage.markAsError();
     }
@@ -1666,7 +1694,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
             } catch (Exception e) {
                 document.thumbs.clear();
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
@@ -1693,7 +1721,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         getMessagesStorage().putMessages(arrayList, false, true, false, 0, messageObject.scheduled, 0);
         delayedMessage.performMediaUpload = true;
         performSendDelayedMessage(delayedMessage);
-        getNotificationCenter().postNotificationName(NotificationCenter.updateMessageMedia, delayedMessage.obj.messageOwner);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateMessageMedia, delayedMessage.obj.messageOwner);
     }
 
     private void revertEditingMessageObject(MessageObject messageObject) {
@@ -1728,7 +1756,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         getMessagesStorage().putMessages(arrayList2, false, true, false, 0, messageObject.scheduled, 0);
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(messageObject);
-        getNotificationCenter().postNotificationName(NotificationCenter.replaceMessagesObjects, Long.valueOf(messageObject.getDialogId()), arrayList3);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.replaceMessagesObjects, Long.valueOf(messageObject.getDialogId()), arrayList3);
     }
 
     public void cancelSendingMessage(MessageObject messageObject) {
@@ -1895,7 +1923,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (encryptedChat == null) {
                 getMessagesStorage().markMessageAsSendError(messageObject.messageOwner, messageObject.scheduled);
                 messageObject.messageOwner.send_state = 2;
-                getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(messageObject.getId()));
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(messageObject.getId()));
                 processSentMessage(messageObject.getId());
                 return false;
             }
@@ -1939,7 +1967,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (z) {
             this.unsentMessages.put(messageObject.getId(), messageObject);
         }
-        sendMessage(messageObject);
+        sendMessage(SendMessageParams.m57of(messageObject, null));
         return true;
     }
 
@@ -1953,40 +1981,40 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         checkUnsentMessages();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00bd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void processForwardFromMyName(org.telegram.messenger.MessageObject r21, long r22) {
+    public void processForwardFromMyName(org.telegram.messenger.MessageObject r28, long r29) {
         /*
-            Method dump skipped, instructions count: 456
+            Method dump skipped, instructions count: 494
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.processForwardFromMyName(org.telegram.messenger.MessageObject, long):void");
     }
 
     public void sendScreenshotMessage(TLRPC$User tLRPC$User, int i, TLRPC$Message tLRPC$Message) {
-        if (tLRPC$User == null || i == 0 || tLRPC$User.f1656id == getUserConfig().getClientUserId()) {
+        if (tLRPC$User == null || i == 0 || tLRPC$User.f1675id == getUserConfig().getClientUserId()) {
             return;
         }
         TLRPC$TL_messages_sendScreenshotNotification tLRPC$TL_messages_sendScreenshotNotification = new TLRPC$TL_messages_sendScreenshotNotification();
         TLRPC$TL_inputPeerUser tLRPC$TL_inputPeerUser = new TLRPC$TL_inputPeerUser();
         tLRPC$TL_messages_sendScreenshotNotification.peer = tLRPC$TL_inputPeerUser;
         tLRPC$TL_inputPeerUser.access_hash = tLRPC$User.access_hash;
-        tLRPC$TL_inputPeerUser.user_id = tLRPC$User.f1656id;
+        tLRPC$TL_inputPeerUser.user_id = tLRPC$User.f1675id;
         if (tLRPC$Message != null) {
-            tLRPC$TL_messages_sendScreenshotNotification.reply_to_msg_id = i;
+            tLRPC$TL_messages_sendScreenshotNotification.reply_to = creteReplyInput(i);
             tLRPC$TL_messages_sendScreenshotNotification.random_id = tLRPC$Message.random_id;
         } else {
             tLRPC$Message = new TLRPC$TL_messageService();
             tLRPC$Message.random_id = getNextRandomId();
-            tLRPC$Message.dialog_id = tLRPC$User.f1656id;
+            tLRPC$Message.dialog_id = tLRPC$User.f1675id;
             tLRPC$Message.unread = true;
             tLRPC$Message.out = true;
             int newMessageId = getUserConfig().getNewMessageId();
-            tLRPC$Message.f1539id = newMessageId;
+            tLRPC$Message.f1542id = newMessageId;
             tLRPC$Message.local_id = newMessageId;
             TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
             tLRPC$Message.from_id = tLRPC$TL_peerUser;
@@ -1999,7 +2027,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_messageReplyHeader.reply_to_msg_id = i;
             TLRPC$TL_peerUser tLRPC$TL_peerUser2 = new TLRPC$TL_peerUser();
             tLRPC$Message.peer_id = tLRPC$TL_peerUser2;
-            tLRPC$TL_peerUser2.user_id = tLRPC$User.f1656id;
+            tLRPC$TL_peerUser2.user_id = tLRPC$User.f1675id;
             tLRPC$Message.date = getConnectionsManager().getCurrentTime();
             tLRPC$Message.action = new TLRPC$TL_messageActionScreenshotTaken();
             getUserConfig().saveConfig(false);
@@ -2011,16 +2039,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         ArrayList<MessageObject> arrayList = new ArrayList<>();
         arrayList.add(messageObject);
         getMessagesController().updateInterfaceWithMessages(tLRPC$Message.dialog_id, arrayList, false);
-        getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
         ArrayList<TLRPC$Message> arrayList2 = new ArrayList<>();
         arrayList2.add(tLRPC$Message);
         getMessagesStorage().putMessages(arrayList2, false, true, false, 0, false, 0);
         performSendMessageRequest(tLRPC$TL_messages_sendScreenshotNotification, messageObject, null, null, null, null, false);
     }
 
-    public void sendSticker(TLRPC$Document tLRPC$Document, String str, final long j, final MessageObject messageObject, final MessageObject messageObject2, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, boolean z2, final String str2) {
+    public void sendSticker(TLRPC$Document tLRPC$Document, String str, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, boolean z2, final Object obj, final String str2) {
         final TLRPC$TL_document_layer82 tLRPC$TL_document_layer82;
-        HashMap<String, String> hashMap;
+        HashMap hashMap;
         TLRPC$PhotoSize tLRPC$PhotoSize;
         byte[] bArr;
         if (tLRPC$Document == null) {
@@ -2031,7 +2059,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 return;
             }
             TLRPC$TL_document_layer82 tLRPC$TL_document_layer822 = new TLRPC$TL_document_layer82();
-            tLRPC$TL_document_layer822.f1523id = tLRPC$Document.f1523id;
+            tLRPC$TL_document_layer822.f1526id = tLRPC$Document.f1526id;
             tLRPC$TL_document_layer822.access_hash = tLRPC$Document.access_hash;
             tLRPC$TL_document_layer822.date = tLRPC$Document.date;
             tLRPC$TL_document_layer822.mime_type = tLRPC$Document.mime_type;
@@ -2070,14 +2098,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         tLRPC$TL_fileLocation_layer82.secret = tLRPC$FileLocation.secret;
                         tLRPC$PhotoSize.location = tLRPC$TL_fileLocation_layer82;
                         tLRPC$PhotoSize.size = closestPhotoSizeWithSize.size;
-                        tLRPC$PhotoSize.f1546w = closestPhotoSizeWithSize.f1546w;
-                        tLRPC$PhotoSize.f1545h = closestPhotoSizeWithSize.f1545h;
+                        tLRPC$PhotoSize.f1550w = closestPhotoSizeWithSize.f1550w;
+                        tLRPC$PhotoSize.f1549h = closestPhotoSizeWithSize.f1549h;
                         tLRPC$PhotoSize.type = closestPhotoSizeWithSize.type;
                         tLRPC$PhotoSize.bytes = bArr;
                         tLRPC$TL_document_layer822.thumbs.add(tLRPC$PhotoSize);
                         tLRPC$TL_document_layer822.flags |= 1;
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             }
@@ -2094,7 +2122,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda44
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.this.lambda$sendSticker$6(tLRPC$TL_document_layer82, j, messageObject, messageObject2, z, i, obj, sendAnimationData, str2);
+                    SendMessagesHelper.this.lambda$sendSticker$6(tLRPC$TL_document_layer82, j, messageObject, messageObject2, z, i, obj, sendAnimationData, str2, tLRPC$StoryItem);
                 }
             });
             return;
@@ -2102,14 +2130,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (TextUtils.isEmpty(str)) {
             hashMap = null;
         } else {
-            hashMap = new HashMap<>();
+            hashMap = new HashMap();
             hashMap.put(SearchIntents.EXTRA_QUERY, str);
         }
-        sendMessage((TLRPC$TL_document) tLRPC$TL_document_layer82, null, null, j, messageObject, messageObject2, null, null, null, hashMap, z, i, 0, obj, sendAnimationData, z2, str2);
+        SendMessageParams m55of = SendMessageParams.m55of((TLRPC$TL_document) tLRPC$TL_document_layer82, null, null, j, messageObject, messageObject2, null, null, null, hashMap, z, i, 0, obj, sendAnimationData, z2, str2);
+        m55of.replyToStoryItem = tLRPC$StoryItem;
+        sendMessage(m55of);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSticker$6(final TLRPC$Document tLRPC$Document, final long j, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final String str) {
+    public /* synthetic */ void lambda$sendSticker$6(final TLRPC$Document tLRPC$Document, final long j, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final String str, final TLRPC$StoryItem tLRPC$StoryItem) {
         String str2;
         final Bitmap[] bitmapArr = new Bitmap[1];
         final String[] strArr = new String[1];
@@ -2130,65 +2160,67 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.this.lambda$sendSticker$5(bitmapArr, strArr, tLRPC$Document, j, messageObject, messageObject2, z, i, obj, sendAnimationData, str);
+                SendMessagesHelper.this.lambda$sendSticker$5(bitmapArr, strArr, tLRPC$Document, j, messageObject, messageObject2, z, i, obj, sendAnimationData, str, tLRPC$StoryItem);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSticker$5(Bitmap[] bitmapArr, String[] strArr, TLRPC$Document tLRPC$Document, long j, MessageObject messageObject, MessageObject messageObject2, boolean z, int i, Object obj, MessageObject.SendAnimationData sendAnimationData, String str) {
+    public /* synthetic */ void lambda$sendSticker$5(Bitmap[] bitmapArr, String[] strArr, TLRPC$Document tLRPC$Document, long j, MessageObject messageObject, MessageObject messageObject2, boolean z, int i, Object obj, MessageObject.SendAnimationData sendAnimationData, String str, TLRPC$StoryItem tLRPC$StoryItem) {
         if (bitmapArr[0] != null && strArr[0] != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
         }
-        sendMessage((TLRPC$TL_document) tLRPC$Document, null, null, j, messageObject, messageObject2, null, null, null, null, z, i, 0, obj, sendAnimationData, false, str);
+        SendMessageParams m55of = SendMessageParams.m55of((TLRPC$TL_document) tLRPC$Document, null, null, j, messageObject, messageObject2, null, null, null, null, z, i, 0, obj, sendAnimationData, false, str);
+        m55of.replyToStoryItem = tLRPC$StoryItem;
+        sendMessage(m55of);
     }
 
     public int sendMessage(ArrayList<MessageObject> arrayList, long j, boolean z, boolean z2, boolean z3, int i) {
         return sendMessage(arrayList, j, z, z2, z3, i, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:346:0x07f9  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x0803  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x081e  */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x087c  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x088e  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x08ab  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x08d4  */
-    /* JADX WARN: Removed duplicated region for block: B:375:0x08d6  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x094a  */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x094c  */
-    /* JADX WARN: Removed duplicated region for block: B:405:0x0967  */
-    /* JADX WARN: Removed duplicated region for block: B:413:0x099d  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x09a5  */
-    /* JADX WARN: Removed duplicated region for block: B:416:0x09a7  */
-    /* JADX WARN: Removed duplicated region for block: B:419:0x09af  */
-    /* JADX WARN: Removed duplicated region for block: B:422:0x09e7  */
-    /* JADX WARN: Removed duplicated region for block: B:428:0x0a0d  */
-    /* JADX WARN: Removed duplicated region for block: B:436:0x0a54  */
-    /* JADX WARN: Removed duplicated region for block: B:439:0x0a69  */
-    /* JADX WARN: Removed duplicated region for block: B:440:0x0a6c  */
-    /* JADX WARN: Removed duplicated region for block: B:443:0x0a7b  */
-    /* JADX WARN: Removed duplicated region for block: B:444:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:447:0x0a9f  */
-    /* JADX WARN: Removed duplicated region for block: B:451:0x0ac3  */
-    /* JADX WARN: Removed duplicated region for block: B:455:0x0aca  */
-    /* JADX WARN: Removed duplicated region for block: B:457:0x0ad8  */
-    /* JADX WARN: Removed duplicated region for block: B:460:0x0ae8  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x0b12  */
-    /* JADX WARN: Removed duplicated region for block: B:466:0x0b2f  */
-    /* JADX WARN: Removed duplicated region for block: B:472:0x0b4a  */
-    /* JADX WARN: Removed duplicated region for block: B:473:0x0b4d  */
-    /* JADX WARN: Removed duplicated region for block: B:476:0x0ba3  */
-    /* JADX WARN: Type inference failed for: r3v26 */
-    /* JADX WARN: Type inference failed for: r3v30, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r3v39 */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x07f5  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x07ff  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x081a  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x0878  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x088a  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x08a7  */
+    /* JADX WARN: Removed duplicated region for block: B:375:0x08d0  */
+    /* JADX WARN: Removed duplicated region for block: B:376:0x08d2  */
+    /* JADX WARN: Removed duplicated region for block: B:402:0x0947  */
+    /* JADX WARN: Removed duplicated region for block: B:403:0x0949  */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x0964  */
+    /* JADX WARN: Removed duplicated region for block: B:414:0x09a2  */
+    /* JADX WARN: Removed duplicated region for block: B:416:0x09ac  */
+    /* JADX WARN: Removed duplicated region for block: B:417:0x09ae  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x09b6  */
+    /* JADX WARN: Removed duplicated region for block: B:421:0x09ec  */
+    /* JADX WARN: Removed duplicated region for block: B:424:0x09f1  */
+    /* JADX WARN: Removed duplicated region for block: B:430:0x0a17  */
+    /* JADX WARN: Removed duplicated region for block: B:438:0x0a57  */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x0a6c  */
+    /* JADX WARN: Removed duplicated region for block: B:442:0x0a6f  */
+    /* JADX WARN: Removed duplicated region for block: B:445:0x0a7e  */
+    /* JADX WARN: Removed duplicated region for block: B:446:0x0a80  */
+    /* JADX WARN: Removed duplicated region for block: B:449:0x0aa2  */
+    /* JADX WARN: Removed duplicated region for block: B:456:0x0ac9  */
+    /* JADX WARN: Removed duplicated region for block: B:458:0x0ad7  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0ae7  */
+    /* JADX WARN: Removed duplicated region for block: B:464:0x0b0f  */
+    /* JADX WARN: Removed duplicated region for block: B:467:0x0b2a  */
+    /* JADX WARN: Removed duplicated region for block: B:473:0x0b45  */
+    /* JADX WARN: Removed duplicated region for block: B:474:0x0b48  */
+    /* JADX WARN: Removed duplicated region for block: B:477:0x0ba2  */
+    /* JADX WARN: Type inference failed for: r2v27 */
+    /* JADX WARN: Type inference failed for: r2v31, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v38 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public int sendMessage(java.util.ArrayList<org.telegram.messenger.MessageObject> r74, final long r75, boolean r77, boolean r78, boolean r79, final int r80, org.telegram.messenger.MessageObject r81, org.telegram.messenger.ForwardingMessagesParams r82, boolean r83, org.telegram.messenger.MessageObject r84) {
+    public int sendMessage(java.util.ArrayList<org.telegram.messenger.MessageObject> r71, final long r72, boolean r74, boolean r75, boolean r76, final int r77, org.telegram.messenger.MessageObject r78, org.telegram.messenger.ForwardingMessagesParams r79, boolean r80, org.telegram.messenger.MessageObject r81) {
         /*
-            Method dump skipped, instructions count: 3339
+            Method dump skipped, instructions count: 3322
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(java.util.ArrayList, long, boolean, boolean, boolean, int, org.telegram.messenger.MessageObject, org.telegram.messenger.ForwardingMessagesParams, boolean, org.telegram.messenger.MessageObject):int");
@@ -2247,7 +2279,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$11(final TLRPC$Message tLRPC$Message, TLRPC$Peer tLRPC$Peer, final int i, final int i2, ArrayList arrayList, final long j, final TLRPC$Message tLRPC$Message2, final int i3) {
-        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Peer), Integer.valueOf(i), tLRPC$Message.f1539id, 0, false, i2 != 0 ? 1 : 0);
+        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Peer), Integer.valueOf(i), tLRPC$Message.f1542id, 0, false, i2 != 0 ? 1 : 0);
         getMessagesStorage().putMessages((ArrayList<TLRPC$Message>) arrayList, true, false, false, 0, i2 != 0, 0);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda51
             @Override // java.lang.Runnable
@@ -2265,13 +2297,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i4 = NotificationCenter.messageReceivedByServer;
         Object[] objArr = new Object[7];
         objArr[0] = Integer.valueOf(i);
-        objArr[1] = Integer.valueOf(tLRPC$Message2.f1539id);
+        objArr[1] = Integer.valueOf(tLRPC$Message2.f1542id);
         objArr[2] = tLRPC$Message2;
         objArr[3] = Long.valueOf(j);
         objArr[4] = 0L;
         objArr[5] = Integer.valueOf(i2);
         objArr[6] = Boolean.valueOf(i3 != 0);
-        notificationCenter.postNotificationName(i4, objArr);
+        notificationCenter.lambda$postNotificationNameOnUIThread$1(i4, objArr);
         processSentMessage(i);
         removeFromSendingMessages(i, i3 != 0);
     }
@@ -2284,9 +2316,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$13(TLRPC$Message tLRPC$Message, int i) {
         tLRPC$Message.send_state = 2;
-        getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1539id));
-        processSentMessage(tLRPC$Message.f1539id);
-        removeFromSendingMessages(tLRPC$Message.f1539id, i != 0);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1542id));
+        processSentMessage(tLRPC$Message.f1542id);
+        removeFromSendingMessages(tLRPC$Message.f1542id, i != 0);
     }
 
     public static int canSendMessageToChat(TLRPC$Chat tLRPC$Chat, MessageObject messageObject) {
@@ -2342,20 +2374,20 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:228:0x04e3 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x04ef A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0501 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x054d A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0552 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x056a  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0160 A[Catch: Exception -> 0x0600, TryCatch #0 {Exception -> 0x0600, blocks: (B:9:0x0022, B:11:0x002a, B:12:0x0032, B:14:0x0038, B:16:0x004a, B:23:0x005b, B:26:0x0065, B:29:0x006a, B:31:0x006e, B:43:0x0094, B:46:0x009a, B:48:0x00a0, B:50:0x00a7, B:77:0x017a, B:79:0x017e, B:80:0x0182, B:88:0x019c, B:93:0x01a5, B:95:0x01a9, B:97:0x01b9, B:99:0x01bd, B:116:0x0216, B:118:0x0222, B:119:0x0243, B:121:0x0257, B:123:0x025f, B:126:0x0264, B:127:0x026b, B:128:0x026e, B:130:0x027a, B:132:0x0296, B:135:0x02b5, B:137:0x02bd, B:151:0x02de, B:153:0x02e7, B:155:0x02ef, B:157:0x0300, B:158:0x0319, B:160:0x0327, B:167:0x0355, B:169:0x0369, B:171:0x036f, B:173:0x0378, B:226:0x04cc, B:228:0x04e3, B:229:0x04eb, B:231:0x04ef, B:232:0x04fd, B:234:0x0501, B:238:0x0514, B:240:0x051a, B:247:0x0547, B:242:0x0523, B:244:0x0537, B:246:0x053d, B:249:0x054d, B:252:0x0552, B:256:0x056f, B:257:0x0574, B:261:0x058c, B:262:0x0591, B:265:0x05ab, B:269:0x05c6, B:270:0x05ca, B:274:0x05e6, B:275:0x05ea, B:174:0x037b, B:163:0x0331, B:165:0x034c, B:166:0x0351, B:178:0x0398, B:180:0x03a3, B:182:0x03ab, B:184:0x03bc, B:185:0x03cd, B:186:0x03d6, B:189:0x03e8, B:193:0x03f1, B:195:0x03f8, B:197:0x0400, B:204:0x042b, B:206:0x0445, B:208:0x0452, B:209:0x0456, B:200:0x0409, B:202:0x0423, B:203:0x0428, B:212:0x0463, B:219:0x049d, B:221:0x04b1, B:223:0x04be, B:224:0x04c2, B:215:0x047b, B:217:0x0495, B:218:0x049a, B:131:0x028f, B:100:0x01c6, B:102:0x01cc, B:103:0x01d3, B:105:0x01d7, B:114:0x0210, B:106:0x01e0, B:108:0x01f3, B:110:0x01f9, B:111:0x0202, B:113:0x020a, B:85:0x0191, B:87:0x0199, B:32:0x0076, B:34:0x007a, B:40:0x008a, B:51:0x00ba, B:53:0x00cc, B:54:0x00d1, B:56:0x00fb, B:58:0x010e, B:60:0x0114, B:62:0x011a, B:76:0x016e, B:63:0x011d, B:66:0x0141, B:73:0x0160, B:74:0x016a), top: B:280:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x04e6 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x04f2 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0504 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0550 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0555 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x056d  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0163 A[Catch: Exception -> 0x0603, TryCatch #0 {Exception -> 0x0603, blocks: (B:9:0x0024, B:11:0x002c, B:12:0x0034, B:14:0x003a, B:16:0x004c, B:23:0x005d, B:26:0x0067, B:29:0x006c, B:31:0x0070, B:43:0x0096, B:46:0x009c, B:48:0x00a2, B:50:0x00a9, B:77:0x017d, B:79:0x0181, B:80:0x0185, B:88:0x019f, B:93:0x01a8, B:95:0x01ac, B:97:0x01bc, B:99:0x01c0, B:116:0x0219, B:118:0x0225, B:119:0x0246, B:121:0x025a, B:123:0x0262, B:126:0x0267, B:127:0x026e, B:128:0x0271, B:130:0x027d, B:132:0x0299, B:135:0x02b8, B:137:0x02c0, B:151:0x02e1, B:153:0x02ea, B:155:0x02f2, B:157:0x0303, B:158:0x031c, B:160:0x032a, B:167:0x0358, B:169:0x036c, B:171:0x0372, B:173:0x037b, B:226:0x04cf, B:228:0x04e6, B:229:0x04ee, B:231:0x04f2, B:232:0x0500, B:234:0x0504, B:238:0x0517, B:240:0x051d, B:247:0x054a, B:242:0x0526, B:244:0x053a, B:246:0x0540, B:249:0x0550, B:252:0x0555, B:256:0x0572, B:257:0x0577, B:261:0x058f, B:262:0x0594, B:265:0x05ae, B:269:0x05c9, B:270:0x05cd, B:274:0x05e9, B:275:0x05ed, B:174:0x037e, B:163:0x0334, B:165:0x034f, B:166:0x0354, B:178:0x039b, B:180:0x03a6, B:182:0x03ae, B:184:0x03bf, B:185:0x03d0, B:186:0x03d9, B:189:0x03eb, B:193:0x03f4, B:195:0x03fb, B:197:0x0403, B:204:0x042e, B:206:0x0448, B:208:0x0455, B:209:0x0459, B:200:0x040c, B:202:0x0426, B:203:0x042b, B:212:0x0466, B:219:0x04a0, B:221:0x04b4, B:223:0x04c1, B:224:0x04c5, B:215:0x047e, B:217:0x0498, B:218:0x049d, B:131:0x0292, B:100:0x01c9, B:102:0x01cf, B:103:0x01d6, B:105:0x01da, B:114:0x0213, B:106:0x01e3, B:108:0x01f6, B:110:0x01fc, B:111:0x0205, B:113:0x020d, B:85:0x0194, B:87:0x019c, B:32:0x0078, B:34:0x007c, B:40:0x008c, B:51:0x00bc, B:53:0x00ce, B:54:0x00d3, B:56:0x00fe, B:58:0x0111, B:60:0x0117, B:62:0x011d, B:76:0x0171, B:63:0x0120, B:66:0x0144, B:73:0x0163, B:74:0x016d), top: B:280:0x0024 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void editMessage(org.telegram.messenger.MessageObject r29, org.telegram.tgnet.TLRPC$TL_photo r30, org.telegram.messenger.VideoEditedInfo r31, org.telegram.tgnet.TLRPC$TL_document r32, java.lang.String r33, java.util.HashMap<java.lang.String, java.lang.String> r34, boolean r35, boolean r36, java.lang.Object r37) {
         /*
-            Method dump skipped, instructions count: 1544
+            Method dump skipped, instructions count: 1547
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.editMessage(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$TL_photo, org.telegram.messenger.VideoEditedInfo, org.telegram.tgnet.TLRPC$TL_document, java.lang.String, java.util.HashMap, boolean, boolean, java.lang.Object):void");
@@ -2372,7 +2404,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_messages_editMessage.flags |= 2048;
             tLRPC$TL_messages_editMessage.no_webpage = !z;
         }
-        tLRPC$TL_messages_editMessage.f1599id = messageObject.getId();
+        tLRPC$TL_messages_editMessage.f1607id = messageObject.getId();
         if (arrayList != null) {
             tLRPC$TL_messages_editMessage.entities = arrayList;
             tLRPC$TL_messages_editMessage.flags |= 8;
@@ -2417,7 +2449,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         tLRPC$TL_messageMediaGeo.geo._long = AndroidUtilities.fixLocationCoord(location.getLongitude());
         for (Map.Entry<String, MessageObject> entry : this.waitingForLocation.entrySet()) {
             MessageObject value = entry.getValue();
-            sendMessage((TLRPC$MessageMedia) tLRPC$TL_messageMediaGeo, value.getDialogId(), value, (MessageObject) null, (TLRPC$ReplyMarkup) null, (HashMap<String, String>) null, true, 0, (String) null);
+            sendMessage(SendMessageParams.m56of((TLRPC$MessageMedia) tLRPC$TL_messageMediaGeo, value.getDialogId(), value, (MessageObject) null, (TLRPC$ReplyMarkup) null, (HashMap<String, String>) null, true, 0, (String) null));
         }
     }
 
@@ -2522,7 +2554,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return;
         }
         HashMap<String, List<String>> hashMap = this.waitingForCallbackMap;
-        List<String> remove = hashMap.remove(tLRPC$Message.dialog_id + "_" + tLRPC$Message.f1539id);
+        List<String> remove = hashMap.remove(tLRPC$Message.dialog_id + "_" + tLRPC$Message.f1542id);
         if (remove != null) {
             for (String str : remove) {
                 this.waitingForCallback.remove(str);
@@ -2791,7 +2823,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                         AlertDialog.Builder builder = new AlertDialog.Builder(chatActivity.getParentActivity());
                         builder.setTitle(str2);
-                        builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null);
+                        builder.setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), null);
                         builder.setMessage(tLRPC$TL_messages_botCallbackAnswer.message);
                         chatActivity.showDialog(builder.create());
                         return;
@@ -2824,15 +2856,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if ("PASSWORD_HASH_INVALID".equals(tLRPC$TL_error.text)) {
                 if (tLRPC$InputCheckPasswordSRP == null) {
                     AlertDialog.Builder builder2 = new AlertDialog.Builder(chatActivity.getParentActivity());
-                    builder2.setTitle(LocaleController.getString("BotOwnershipTransfer", C3417R.string.BotOwnershipTransfer));
-                    builder2.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("BotOwnershipTransferReadyAlertText", C3417R.string.BotOwnershipTransferReadyAlertText, new Object[0])));
-                    builder2.setPositiveButton(LocaleController.getString("BotOwnershipTransferChangeOwner", C3417R.string.BotOwnershipTransferChangeOwner), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda0
+                    builder2.setTitle(LocaleController.getString("BotOwnershipTransfer", C3419R.string.BotOwnershipTransfer));
+                    builder2.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("BotOwnershipTransferReadyAlertText", C3419R.string.BotOwnershipTransferReadyAlertText, new Object[0])));
+                    builder2.setPositiveButton(LocaleController.getString("BotOwnershipTransferChangeOwner", C3419R.string.BotOwnershipTransferChangeOwner), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i2) {
                             SendMessagesHelper.this.lambda$sendCallback$25(z2, messageObject, tLRPC$KeyboardButton, chatActivity, dialogInterface, i2);
                         }
                     });
-                    builder2.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
+                    builder2.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null);
                     chatActivity.showDialog(builder2.create());
                 }
             } else if ("PASSWORD_MISSING".equals(tLRPC$TL_error.text) || tLRPC$TL_error.text.startsWith("PASSWORD_TOO_FRESH_") || tLRPC$TL_error.text.startsWith("SESSION_TOO_FRESH_")) {
@@ -2840,9 +2872,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     twoStepVerificationActivity.needHideProgress();
                 }
                 AlertDialog.Builder builder3 = new AlertDialog.Builder(chatActivity.getParentActivity());
-                builder3.setTitle(LocaleController.getString("EditAdminTransferAlertTitle", C3417R.string.EditAdminTransferAlertTitle));
+                builder3.setTitle(LocaleController.getString("EditAdminTransferAlertTitle", C3419R.string.EditAdminTransferAlertTitle));
                 LinearLayout linearLayout = new LinearLayout(chatActivity.getParentActivity());
-                linearLayout.setPadding(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(24), 0);
+                linearLayout.setPadding(AndroidUtilities.m72dp(24), AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(24), 0);
                 linearLayout.setOrientation(1);
                 builder3.setView(linearLayout);
                 TextView textView = new TextView(chatActivity.getParentActivity());
@@ -2850,21 +2882,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 textView.setTextColor(Theme.getColor(i2));
                 textView.setTextSize(1, 16.0f);
                 textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BotOwnershipTransferAlertText", C3417R.string.BotOwnershipTransferAlertText, new Object[0])));
+                textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BotOwnershipTransferAlertText", C3419R.string.BotOwnershipTransferAlertText, new Object[0])));
                 linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2));
                 LinearLayout linearLayout2 = new LinearLayout(chatActivity.getParentActivity());
                 linearLayout2.setOrientation(0);
                 linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 0, 11, 0, 0));
                 ImageView imageView = new ImageView(chatActivity.getParentActivity());
-                int i3 = C3417R.C3419drawable.list_circle;
+                int i3 = C3419R.C3421drawable.list_circle;
                 imageView.setImageResource(i3);
-                imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(11) : 0, AndroidUtilities.m54dp(9), LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(11), 0);
+                imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.m72dp(11) : 0, AndroidUtilities.m72dp(9), LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(11), 0);
                 imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
                 TextView textView2 = new TextView(chatActivity.getParentActivity());
                 textView2.setTextColor(Theme.getColor(i2));
                 textView2.setTextSize(1, 16.0f);
                 textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("EditAdminTransferAlertText1", C3417R.string.EditAdminTransferAlertText1)));
+                textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("EditAdminTransferAlertText1", C3419R.string.EditAdminTransferAlertText1)));
                 if (LocaleController.isRTL) {
                     linearLayout2.addView(textView2, LayoutHelper.createLinear(-1, -2));
                     linearLayout2.addView(imageView, LayoutHelper.createLinear(-2, -2, 5));
@@ -2877,13 +2909,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 linearLayout.addView(linearLayout3, LayoutHelper.createLinear(-1, -2, 0, 11, 0, 0));
                 ImageView imageView2 = new ImageView(chatActivity.getParentActivity());
                 imageView2.setImageResource(i3);
-                imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(11) : 0, AndroidUtilities.m54dp(9), LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(11), 0);
+                imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.m72dp(11) : 0, AndroidUtilities.m72dp(9), LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(11), 0);
                 imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
                 TextView textView3 = new TextView(chatActivity.getParentActivity());
                 textView3.setTextColor(Theme.getColor(i2));
                 textView3.setTextSize(1, 16.0f);
                 textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("EditAdminTransferAlertText2", C3417R.string.EditAdminTransferAlertText2)));
+                textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("EditAdminTransferAlertText2", C3419R.string.EditAdminTransferAlertText2)));
                 if (LocaleController.isRTL) {
                     linearLayout3.addView(textView3, LayoutHelper.createLinear(-1, -2));
                     i = 5;
@@ -2894,21 +2926,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     linearLayout3.addView(textView3, LayoutHelper.createLinear(-1, -2));
                 }
                 if ("PASSWORD_MISSING".equals(tLRPC$TL_error.text)) {
-                    builder3.setPositiveButton(LocaleController.getString("EditAdminTransferSetPassword", C3417R.string.EditAdminTransferSetPassword), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
+                    builder3.setPositiveButton(LocaleController.getString("EditAdminTransferSetPassword", C3419R.string.EditAdminTransferSetPassword), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i4) {
                             SendMessagesHelper.lambda$sendCallback$26(ChatActivity.this, dialogInterface, i4);
                         }
                     });
-                    builder3.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
+                    builder3.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null);
                 } else {
                     TextView textView4 = new TextView(chatActivity.getParentActivity());
                     textView4.setTextColor(Theme.getColor(i2));
                     textView4.setTextSize(1, 16.0f);
                     textView4.setGravity((LocaleController.isRTL ? i : 3) | 48);
-                    textView4.setText(LocaleController.getString("EditAdminTransferAlertText3", C3417R.string.EditAdminTransferAlertText3));
+                    textView4.setText(LocaleController.getString("EditAdminTransferAlertText3", C3419R.string.EditAdminTransferAlertText3));
                     linearLayout.addView(textView4, LayoutHelper.createLinear(-1, -2, 0, 11, 0, 0));
-                    builder3.setNegativeButton(LocaleController.getString("OK", C3417R.string.OK), null);
+                    builder3.setNegativeButton(LocaleController.getString("OK", C3419R.string.OK), null);
                 }
                 chatActivity.showDialog(builder3.create());
             } else if ("SRP_ID_INVALID".equals(tLRPC$TL_error.text)) {
@@ -3016,7 +3048,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             } catch (Exception e2) {
                 e = e2;
                 nativeByteBuffer2 = nativeByteBuffer;
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 nativeByteBuffer = nativeByteBuffer2;
                 j2 = getMessagesStorage().createPendingTask(nativeByteBuffer);
                 getConnectionsManager().sendRequest(tLRPC$TL_messages_sendMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda80
@@ -3046,295 +3078,268 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    public void sendMessage(MessageObject messageObject) {
-        long dialogId = messageObject.getDialogId();
-        TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-        sendMessage(null, null, null, null, null, null, null, null, null, null, dialogId, tLRPC$Message.attachPath, null, null, null, true, messageObject, null, tLRPC$Message.reply_markup, tLRPC$Message.params, !tLRPC$Message.silent, messageObject.scheduled ? tLRPC$Message.date : 0, 0, null, null, false, null);
-    }
-
-    public void sendMessage(TLRPC$User tLRPC$User, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
-        sendMessage(null, null, null, null, null, tLRPC$User, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
-    }
-
-    public void sendMessage(TLRPC$TL_messageMediaInvoice tLRPC$TL_messageMediaInvoice, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
-        sendMessage(null, null, null, null, null, null, null, null, null, tLRPC$TL_messageMediaInvoice, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
-    }
-
-    public void sendMessage(TLRPC$TL_document tLRPC$TL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, String str3) {
-        sendMessage(null, str2, null, null, videoEditedInfo, null, tLRPC$TL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2, str3);
-    }
-
-    public void sendMessage(TLRPC$TL_document tLRPC$TL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, boolean z3, String str3) {
-        sendMessage(null, str2, null, null, videoEditedInfo, null, tLRPC$TL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2, z3, str3);
-    }
-
-    public void sendMessage(String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$WebPage tLRPC$WebPage, boolean z, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z2, int i, MessageObject.SendAnimationData sendAnimationData, boolean z3, String str2) {
-        sendMessage(str, null, null, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, tLRPC$WebPage, z, null, arrayList, tLRPC$ReplyMarkup, hashMap, z2, i, 0, null, sendAnimationData, z3, str2);
-    }
-
-    public void sendMessage(TLRPC$MessageMedia tLRPC$MessageMedia, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
-        sendMessage(null, null, tLRPC$MessageMedia, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
-    }
-
-    public void sendMessage(TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
-        sendMessage(null, null, null, null, null, null, null, null, tLRPC$TL_messageMediaPoll, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
-    }
-
-    public void sendMessage(TLRPC$TL_game tLRPC$TL_game, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
-        sendMessage(null, null, null, null, null, null, null, tLRPC$TL_game, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
-    }
-
-    public void sendMessage(TLRPC$TL_photo tLRPC$TL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2, boolean z3, String str3) {
-        sendMessage(null, str2, null, tLRPC$TL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, null, z2, z3, str3);
-    }
-
-    public void sendMessage(TLRPC$TL_photo tLRPC$TL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2, String str3) {
-        sendMessage(null, str2, null, tLRPC$TL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, null, z2, str3);
-    }
-
-    private void sendMessage(String str, String str2, TLRPC$MessageMedia tLRPC$MessageMedia, TLRPC$TL_photo tLRPC$TL_photo, VideoEditedInfo videoEditedInfo, TLRPC$User tLRPC$User, TLRPC$TL_document tLRPC$TL_document, TLRPC$TL_game tLRPC$TL_game, TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, TLRPC$TL_messageMediaInvoice tLRPC$TL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC$WebPage tLRPC$WebPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3, String str4) {
-        sendMessage(str, str2, tLRPC$MessageMedia, tLRPC$TL_photo, videoEditedInfo, tLRPC$User, tLRPC$TL_document, tLRPC$TL_game, tLRPC$TL_messageMediaPoll, tLRPC$TL_messageMediaInvoice, j, str3, messageObject, messageObject2, tLRPC$WebPage, z, messageObject3, arrayList, tLRPC$ReplyMarkup, hashMap, z2, i, i2, obj, sendAnimationData, z3, false, str4);
-    }
-
-    /* JADX WARN: Can't wrap try/catch for region: R(13:224|(11:226|(1:228)|229|230|(4:232|(4:234|(1:236)(2:354|(4:356|(1:358)|359|(1:361))(1:362))|237|238)(4:363|364|(11:613|614|615|(1:617)|(1:652)(4:621|(1:623)|624|625)|626|627|(1:629)(5:645|646|647|(1:649)|650)|(3:631|(1:633)(1:643)|634)(1:644)|635|(1:642)(1:641))(4:369|370|(18:545|546|(13:548|(1:(2:551|(1:553)))(1:607)|(1:561)|(3:595|596|(13:598|599|(1:601)|602|603|564|565|566|(1:568)(4:584|(2:586|587)|(1:591)|592)|(4:570|571|(1:573)(1:581)|574)(1:583)|575|(2:577|(1:579))|580))|563|564|565|566|(0)(0)|(0)(0)|575|(0)|580)|608|555|556|(1:558)|(0)|(0)|563|564|565|566|(0)(0)|(0)(0)|575|(0)|580)(4:372|(3:374|(1:383)(1:378)|379)(9:384|(2:389|(9:391|(5:429|430|431|432|433)(1:393)|394|395|396|(1:398)(6:405|406|407|(1:409)|(1:413)|414)|399|(1:401)(1:404)|402)(3:440|(4:442|(2:446|(4:448|(2:451|449)|452|453))|454|(2:456|(1:458)))(2:460|(1:462)(2:463|381))|459))|464|(6:513|514|(4:534|535|536|537)(1:516)|(3:531|532|533)|(1:530)(1:528)|529)(1:471)|472|473|(2:475|476)(7:499|500|501|502|(1:504)|(1:508)|509)|(4:(5:479|480|481|(1:483)(1:492)|484)(1:497)|485|(2:487|(1:489))|490)(1:498)|491)|380|381)|382)|403)|(5:240|(1:242)(6:319|(1:321)|322|(1:326)|(1:328)|329)|243|(1:247)|248)(11:330|(1:332)|333|(1:337)|338|(1:340)|341|(1:345)|(1:347)|(1:351)|(1:353))|(2:250|251)(2:252|(4:254|(1:256)(1:259)|257|258)(2:260|(1:(2:263|264)(4:265|(1:267)(1:270)|268|269))(2:271|(1:(2:274|275)(3:(1:277)(1:280)|278|279))(2:281|(3:(1:284)(1:287)|285|286)(2:288|(1:(3:(1:295)(1:298)|296|297)(2:292|293))(2:299|(1:(2:302|303)(3:(1:305)(1:308)|306|307))(2:309|(3:(1:315)(1:318)|316|317)(1:313)))))))))(19:657|658|659|660|(2:662|(1:664))(1:911)|665|(1:669)|670|(2:672|(1:674))|675|(3:677|678|(1:680))(1:910)|681|682|683|(4:685|(1:687)(1:720)|688|689)(10:721|(2:723|(4:781|(13:852|853|(7:858|(1:898)(1:862)|863|(2:864|(2:866|(2:869|870)(1:868))(1:897))|871|(3:(8:878|(3:880|881|(5:883|884|885|(1:887)(1:892)|888))|894|895|884|885|(0)(0)|888)(1:896)|889|(1:891))(2:874|875)|876)|899|(1:904)(1:903)|863|(3:864|(0)(0)|868)|871|(0)|(0)(0)|889|(0)|876)(2:783|(1:785)(4:786|(2:792|(5:794|(1:796)(1:802)|797|(1:799)(1:801)|800))|803|(8:819|(2:821|(1:823)(1:850))(1:851)|824|(2:828|740)|841|(1:847)|(1:849)|740)(5:809|(1:811)(1:818)|(2:813|(2:815|691))(1:817)|816|691)))|(1:719)(7:693|(1:695)(1:718)|696|697|698|(1:711)|702)|(4:704|(1:706)(1:709)|707|708)(1:710))(1:726))(1:907)|727|728|729|730|731|(3:733|734|735)(2:774|775)|736|(7:(10:753|754|(3:756|757|(6:759|760|761|(1:763)(1:766)|764|765))|768|769|760|761|(0)(0)|764|765)(1:742)|743|744|(2:751|752)(1:748)|(1:750)|(0)(0)|(0)(0))(4:739|740|(0)(0)|(0)(0)))|690|691|(0)(0)|(0)(0))|420|(1:422)(1:428)|423|(1:425)|426|427)|915|(2:927|(12:929|(1:931)|(2:933|(11:935|(2:937|(1:939)(1:959))(1:960)|940|941|(1:943)|944|(1:946)(2:953|(1:955)(2:956|(1:958)))|947|(1:949)(1:952)|950|951))(1:962)|961|941|(0)|944|(0)(0)|947|(0)(0)|950|951)(2:963|(16:965|(1:967)|968|(1:970)|971|(1:973)(1:995)|974|(1:978)|979|(1:981)|982|(3:984|(1:986)(1:988)|987)|989|(1:991)(1:994)|992|993)(1:996)))|229|230|(0)(0)|420|(0)(0)|423|(0)|426|427) */
-    /* JADX WARN: Can't wrap try/catch for region: R(5:721|(6:(2:723|(4:781|(13:852|853|(7:858|(1:898)(1:862)|863|(2:864|(2:866|(2:869|870)(1:868))(1:897))|871|(3:(8:878|(3:880|881|(5:883|884|885|(1:887)(1:892)|888))|894|895|884|885|(0)(0)|888)(1:896)|889|(1:891))(2:874|875)|876)|899|(1:904)(1:903)|863|(3:864|(0)(0)|868)|871|(0)|(0)(0)|889|(0)|876)(2:783|(1:785)(4:786|(2:792|(5:794|(1:796)(1:802)|797|(1:799)(1:801)|800))|803|(8:819|(2:821|(1:823)(1:850))(1:851)|824|(2:828|740)|841|(1:847)|(1:849)|740)(5:809|(1:811)(1:818)|(2:813|(2:815|691))(1:817)|816|691)))|(1:719)(7:693|(1:695)(1:718)|696|697|698|(1:711)|702)|(4:704|(1:706)(1:709)|707|708)(1:710))(1:726))(1:907)|730|731|(3:733|734|735)(2:774|775)|736|(7:(10:753|754|(3:756|757|(6:759|760|761|(1:763)(1:766)|764|765))|768|769|760|761|(0)(0)|764|765)(1:742)|743|744|(2:751|752)(1:748)|(1:750)|(0)(0)|(0)(0))(4:739|740|(0)(0)|(0)(0)))|727|728|729) */
-    /* JADX WARN: Can't wrap try/catch for region: R(71:10|(1:1576)(1:13)|(1:1575)(1:17)|18|(1:20)(1:1574)|21|(2:23|(1:(2:26|27)(1:28))(1:29))(2:1560|(67:1562|(1:1564)(1:1572)|(1:1571)(1:1569)|1570|31|(3:(3:34|(3:37|(1:53)(1:51)|35)|1557)|1558|(65:(1:56)(1:1549)|57|(1:59)(1:(1:1547)(62:1548|61|62|63|(7:65|(1:1257)(1:70)|71|(7:77|(1:79)(10:1194|(7:1199|(1:1201)(3:1203|(3:1205|(1:1207)|1208)(4:1210|(2:1217|(1:1219)(4:1220|(2:1231|(2:1233|(2:1235|1236)(5:1237|1238|(1:1193)(1:84)|85|(3:87|88|89)(2:1192|89)))(2:1239|(1:1241)(5:1242|(1:82)|1193|85|(0)(0))))|1243|(2:1245|1236)(6:1246|1238|(0)|1193|85|(0)(0))))|1247|(2:1249|1236)(6:1250|1238|(0)|1193|85|(0)(0)))|1209)|1202|(0)|1193|85|(0)(0))|1251|(1:1253)(1:1255)|1254|1202|(0)|1193|85|(0)(0))|80|(0)|1193|85|(0)(0))|1256|88|89)(5:1258|1259|1260|(1:1262)(1:1539)|(19:(1:1265)(1:1338)|(3:1328|1329|(3:1331|(1:1333)(1:1334)|(14:(1:1318)(1:1327)|(1:1326)(1:1322)|1323|1324|1325|(3:1312|1313|(12:1315|(1:1283)(3:1308|1309|(1:1311))|1284|(1:1286)|1287|(2:1304|(1:1306)(6:1307|1292|1293|1294|1295|1296))(1:1290)|1291|1292|1293|1294|1295|1296))|1281|(0)(0)|1284|(0)|1287|(0)|1304|(0)(0))(10:1279|(0)|1281|(0)(0)|1284|(0)|1287|(0)|1304|(0)(0))))|1267|(1:1269)|(0)(0)|(1:1320)|1326|1323|1324|1325|(0)|1281|(0)(0)|1284|(0)|1287|(0)|1304|(0)(0))(11:1339|(3:(1:1342)(1:1345)|1343|1344)(4:1346|(4:(1:1349)(1:1358)|1350|(1:1357)(1:1354)|1355)(4:1359|1360|(9:(1:1363)(1:1387)|1364|(1:1366)|1367|(1:1369)|1370|(1:1386)(1:1374)|(3:1383|1384|1385)(1:1380)|1381)(3:1389|1390|(3:1392|1393|(1:1399)(2:1397|1398))(2:1400|(3:1402|1403|(1:1408)(2:1407|1398))(2:1409|(9:(1:1412)(1:1431)|1413|1414|(1:1430)(1:1418)|1419|(1:1421)|1422|(1:1424)|(1:1429)(1:1428))(2:1432|(14:(1:1435)(1:1533)|1436|1437|(4:1440|1441|(2:1443|(3:1446|1447|1448)(1:1445))|1527)|1530|1449|(1:1451)|1452|(2:1515|(2:1523|(1:1525)(1:1526))(1:1522))(1:1456)|(3:1458|(1:1460)(1:1513)|1461)(1:1514)|(1:1512)(1:1471)|(3:1478|(3:1481|(4:1484|1485|1486|(5:1488|(2:1490|1491)(3:1502|1503|1504)|1492|(1:1494)(3:1496|(1:1498)(1:1500)|1499)|1495)(2:1506|1507))(1:1483)|1479)|1510)|1511|1507)(2:1534|1325)))))|1382)|1356|1325)|(0)|1281|(0)(0)|1284|(0)|1287|(0)|1304|(0)(0)))|(4:91|92|93|(52:95|96|97|98|(1:100)|101|(1:1184)(2:(3:106|(1:108)|109)(1:1183)|110)|111|112|(3:(1:1165)(1:1182)|1166|(3:(2:1170|1171)|1172|(2:1174|(1:1176)(2:1177|(1:1179))))(2:1180|1181))|116|117|(47:119|(1:1162)(3:122|123|(1:125))|126|(2:128|(39:130|131|(2:1156|(1:1158))(2:136|(1:138))|139|(1:141)|142|(2:145|(1:147))|148|(4:150|(2:152|(2:154|155)(2:156|(1:158)))|159|(3:161|(1:163)(1:165)|164))(6:1112|1113|(1:1115)(1:1155)|(1:1117)(2:1150|(1:1154))|1118|(2:1122|(3:1124|(2:1125|(2:1127|(2:1130|1131)(1:1129))(2:1133|1134))|1132)(2:1135|(3:1139|(2:1140|(2:1142|(2:1145|1146)(1:1144))(2:1148|1149))|1147))))|166|(2:1110|1111)|170|(1:172)|173|174|(4:176|(1:178)(1:1108)|179|(20:181|(1:183)(1:1106)|(1:1105)(1:189)|190|191|192|193|(1:195)(1:1101)|196|(3:1091|1092|(1:1099))|198|(1:1090)|201|(7:203|(1:205)(1:1073)|206|(1:208)(1:1072)|209|(1:211)(1:1071)|212)(7:1074|1075|(2:1077|1078)|(3:1080|(1:1082)(1:1088)|1083)(1:1089)|1084|1085|(1:1087))|213|(1:1069)(1:216)|217|(13:224|(11:226|(1:228)|229|230|(4:232|(4:234|(1:236)(2:354|(4:356|(1:358)|359|(1:361))(1:362))|237|238)(4:363|364|(11:613|614|615|(1:617)|(1:652)(4:621|(1:623)|624|625)|626|627|(1:629)(5:645|646|647|(1:649)|650)|(3:631|(1:633)(1:643)|634)(1:644)|635|(1:642)(1:641))(4:369|370|(18:545|546|(13:548|(1:(2:551|(1:553)))(1:607)|(1:561)|(3:595|596|(13:598|599|(1:601)|602|603|564|565|566|(1:568)(4:584|(2:586|587)|(1:591)|592)|(4:570|571|(1:573)(1:581)|574)(1:583)|575|(2:577|(1:579))|580))|563|564|565|566|(0)(0)|(0)(0)|575|(0)|580)|608|555|556|(1:558)|(0)|(0)|563|564|565|566|(0)(0)|(0)(0)|575|(0)|580)(4:372|(3:374|(1:383)(1:378)|379)(9:384|(2:389|(9:391|(5:429|430|431|432|433)(1:393)|394|395|396|(1:398)(6:405|406|407|(1:409)|(1:413)|414)|399|(1:401)(1:404)|402)(3:440|(4:442|(2:446|(4:448|(2:451|449)|452|453))|454|(2:456|(1:458)))(2:460|(1:462)(2:463|381))|459))|464|(6:513|514|(4:534|535|536|537)(1:516)|(3:531|532|533)|(1:530)(1:528)|529)(1:471)|472|473|(2:475|476)(7:499|500|501|502|(1:504)|(1:508)|509)|(4:(5:479|480|481|(1:483)(1:492)|484)(1:497)|485|(2:487|(1:489))|490)(1:498)|491)|380|381)|382)|403)|(5:240|(1:242)(6:319|(1:321)|322|(1:326)|(1:328)|329)|243|(1:247)|248)(11:330|(1:332)|333|(1:337)|338|(1:340)|341|(1:345)|(1:347)|(1:351)|(1:353))|(2:250|251)(2:252|(4:254|(1:256)(1:259)|257|258)(2:260|(1:(2:263|264)(4:265|(1:267)(1:270)|268|269))(2:271|(1:(2:274|275)(3:(1:277)(1:280)|278|279))(2:281|(3:(1:284)(1:287)|285|286)(2:288|(1:(3:(1:295)(1:298)|296|297)(2:292|293))(2:299|(1:(2:302|303)(3:(1:305)(1:308)|306|307))(2:309|(3:(1:315)(1:318)|316|317)(1:313)))))))))(19:657|658|659|660|(2:662|(1:664))(1:911)|665|(1:669)|670|(2:672|(1:674))|675|(3:677|678|(1:680))(1:910)|681|682|683|(4:685|(1:687)(1:720)|688|689)(10:721|(2:723|(4:781|(13:852|853|(7:858|(1:898)(1:862)|863|(2:864|(2:866|(2:869|870)(1:868))(1:897))|871|(3:(8:878|(3:880|881|(5:883|884|885|(1:887)(1:892)|888))|894|895|884|885|(0)(0)|888)(1:896)|889|(1:891))(2:874|875)|876)|899|(1:904)(1:903)|863|(3:864|(0)(0)|868)|871|(0)|(0)(0)|889|(0)|876)(2:783|(1:785)(4:786|(2:792|(5:794|(1:796)(1:802)|797|(1:799)(1:801)|800))|803|(8:819|(2:821|(1:823)(1:850))(1:851)|824|(2:828|740)|841|(1:847)|(1:849)|740)(5:809|(1:811)(1:818)|(2:813|(2:815|691))(1:817)|816|691)))|(1:719)(7:693|(1:695)(1:718)|696|697|698|(1:711)|702)|(4:704|(1:706)(1:709)|707|708)(1:710))(1:726))(1:907)|727|728|729|730|731|(3:733|734|735)(2:774|775)|736|(7:(10:753|754|(3:756|757|(6:759|760|761|(1:763)(1:766)|764|765))|768|769|760|761|(0)(0)|764|765)(1:742)|743|744|(2:751|752)(1:748)|(1:750)|(0)(0)|(0)(0))(4:739|740|(0)(0)|(0)(0)))|690|691|(0)(0)|(0)(0))|420|(1:422)(1:428)|423|(1:425)|426|427)|915|(2:927|(12:929|(1:931)|(2:933|(11:935|(2:937|(1:939)(1:959))(1:960)|940|941|(1:943)|944|(1:946)(2:953|(1:955)(2:956|(1:958)))|947|(1:949)(1:952)|950|951))(1:962)|961|941|(0)|944|(0)(0)|947|(0)(0)|950|951)(2:963|(16:965|(1:967)|968|(1:970)|971|(1:973)(1:995)|974|(1:978)|979|(1:981)|982|(3:984|(1:986)(1:988)|987)|989|(1:991)(1:994)|992|993)(1:996)))|229|230|(0)(0)|420|(0)(0)|423|(0)|426|427)|997|(16:999|(1:1001)(1:1038)|1002|(1:1004)|(1:1008)|1009|(1:1011)|1012|(1:1016)|(1:1018)|(1:1022)|(1:1024)|1025|(1:1027)(1:1037)|1028|(4:1030|(1:1032)(1:1035)|1033|1034)(1:1036))(9:1039|(1:1043)|1044|(2:1046|(1:1048))|(1:1052)|1053|(1:1067)(1:1057)|1058|(4:1060|(1:1062)(1:1065)|1063|1064)(1:1066))))(1:1109)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(10:219|224|(0)|915|(1:917)|919|922|924|927|(0)(0))|997|(0)(0)))(1:1160)|1159|131|(0)|1156|(0)|139|(0)|142|(2:145|(0))|148|(0)(0)|166|(1:168)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0))(1:1163)|1161|139|(0)|142|(0)|148|(0)(0)|166|(0)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0)))(1:1191)|1188|96|97|98|(0)|101|(1:103)|1184|111|112|(1:114)|(0)(0)|1166|(0)(0)|116|117|(0)(0)|1161|139|(0)|142|(0)|148|(0)(0)|166|(0)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0)))|60|61|62|63|(0)(0)|(0)(0)|1188|96|97|98|(0)|101|(0)|1184|111|112|(0)|(0)(0)|1166|(0)(0)|116|117|(0)(0)|1161|139|(0)|142|(0)|148|(0)(0)|166|(0)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0)))(1:1559)|1550|62|63|(0)(0)|(0)(0)|1188|96|97|98|(0)|101|(0)|1184|111|112|(0)|(0)(0)|1166|(0)(0)|116|117|(0)(0)|1161|139|(0)|142|(0)|148|(0)(0)|166|(0)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0))(1:1573))|30|31|(0)(0)|1550|62|63|(0)(0)|(0)(0)|1188|96|97|98|(0)|101|(0)|1184|111|112|(0)|(0)(0)|1166|(0)(0)|116|117|(0)(0)|1161|139|(0)|142|(0)|148|(0)(0)|166|(0)|1110|1111|170|(0)|173|174|(0)(0)|1107|(0)(0)|(0)|1105|190|191|192|193|(0)(0)|196|(0)|198|(0)|1090|201|(0)(0)|213|(0)|1069|217|(0)|997|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:1178:0x1679, code lost:
-        r0 = e;
+    /* JADX WARN: Code restructure failed: missing block: B:1300:0x1a32, code lost:
+        r12 = r36;
+        r2 = new org.telegram.messenger.SendMessagesHelper.DelayedMessage(r94, r12);
+        r2.encryptedChat = r6;
+        r2.type = 1;
+        r2.sendEncryptedRequest = r3;
+        r4 = r92;
+        r2.originalPath = r4;
+        r2.obj = r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1325:0x1a53, code lost:
-        r1 = new org.telegram.messenger.SendMessagesHelper.DelayedMessage(r15, r11);
-        r1.encryptedChat = r3;
+    /* JADX WARN: Code restructure failed: missing block: B:1301:0x1a46, code lost:
+        if (r7 == null) goto L350;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1302:0x1a48, code lost:
+        r5 = r27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1303:0x1a4e, code lost:
+        if (r7.containsKey(r5) == false) goto L350;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1304:0x1a50, code lost:
+        r2.parentObject = r7.get(r5);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1305:0x1a57, code lost:
+        r2.parentObject = r91;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1306:0x1a5b, code lost:
+        r2.performMediaUpload = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1307:0x1a5e, code lost:
+        if (r40 == 0) goto L349;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1308:0x1a60, code lost:
+        r5 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1309:0x1a62, code lost:
+        r5 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1310:0x1a63, code lost:
+        r2.scheduled = r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1370:0x1c5e, code lost:
+        r1 = new org.telegram.messenger.SendMessagesHelper.DelayedMessage(r94, r12);
+        r1.encryptedChat = r6;
         r1.type = 2;
-        r1.sendEncryptedRequest = r10;
-        r1.originalPath = r5;
-        r1.obj = r2;
+        r1.sendEncryptedRequest = r3;
+        r1.originalPath = r4;
+        r1.obj = r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1326:0x1a63, code lost:
-        if (r13 == null) goto L840;
+    /* JADX WARN: Code restructure failed: missing block: B:1371:0x1c6e, code lost:
+        if (r7 == null) goto L418;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1328:0x1a69, code lost:
-        if (r13.containsKey(r4) == false) goto L840;
+    /* JADX WARN: Code restructure failed: missing block: B:1373:0x1c78, code lost:
+        if (r7.containsKey(r7) == false) goto L418;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1329:0x1a6b, code lost:
-        r1.parentObject = r13.get(r4);
+    /* JADX WARN: Code restructure failed: missing block: B:1374:0x1c7a, code lost:
+        r1.parentObject = r7.get(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1330:0x1a72, code lost:
-        r1.parentObject = r19;
+    /* JADX WARN: Code restructure failed: missing block: B:1375:0x1c81, code lost:
+        r1.parentObject = r16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1331:0x1a76, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1376:0x1c85, code lost:
         r1.performMediaUpload = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1332:0x1a79, code lost:
-        if (r76 == 0) goto L839;
+    /* JADX WARN: Code restructure failed: missing block: B:1377:0x1c88, code lost:
+        if (r40 == 0) goto L417;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1333:0x1a7b, code lost:
-        r3 = true;
+    /* JADX WARN: Code restructure failed: missing block: B:1378:0x1c8a, code lost:
+        r7 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1334:0x1a7d, code lost:
-        r3 = false;
+    /* JADX WARN: Code restructure failed: missing block: B:1379:0x1c8c, code lost:
+        r7 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1335:0x1a7e, code lost:
-        r1.scheduled = r3;
-        r9 = r1;
+    /* JADX WARN: Code restructure failed: missing block: B:1380:0x1c8d, code lost:
+        r1.scheduled = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1417:0x1c0b, code lost:
-        r0 = e;
+    /* JADX WARN: Code restructure failed: missing block: B:286:0x065e, code lost:
+        if (r10.containsKey("query_id") != false) goto L1470;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1418:0x1c0c, code lost:
-        r23 = r23;
+    /* JADX WARN: Code restructure failed: missing block: B:296:0x0676, code lost:
+        if (r10.containsKey("query_id") != false) goto L1470;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1490:0x1d5e, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:1492:0x1d60, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:1493:0x1d61, code lost:
-        r2 = r1;
-        r14 = r4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:1495:0x1d66, code lost:
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:1496:0x1d67, code lost:
-        r1 = r0;
+    /* JADX WARN: Code restructure failed: missing block: B:297:0x0678, code lost:
         r5 = r4;
-        r15 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x03a8, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x03a9, code lost:
-        r15 = r53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x03ae, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x03af, code lost:
+        r3 = r5;
+        r60 = "query_id";
+        r61 = r6;
+        r23 = r20;
         r2 = null;
-        r5 = null;
+        r20 = false;
+        r36 = '\t';
      */
-    /* JADX WARN: Code restructure failed: missing block: B:819:0x0f84, code lost:
-        if (r14.roundVideo == false) goto L555;
+    /* JADX WARN: Code restructure failed: missing block: B:855:0x114a, code lost:
+        if (r1.roundVideo == false) goto L786;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1170:0x1647  */
-    /* JADX WARN: Removed duplicated region for block: B:1238:0x17a8 A[Catch: Exception -> 0x1679, TRY_ENTER, TryCatch #33 {Exception -> 0x1679, blocks: (B:1065:0x1440, B:1067:0x1444, B:1079:0x147e, B:1081:0x14bf, B:1083:0x14c5, B:1084:0x14cf, B:1110:0x1546, B:1117:0x1556, B:1121:0x1570, B:1126:0x157c, B:1130:0x1598, B:1134:0x15a2, B:1140:0x15bf, B:1145:0x15db, B:1149:0x15e5, B:1153:0x1600, B:1157:0x160a, B:1165:0x162c, B:1068:0x1447, B:1070:0x1456, B:1071:0x1462, B:1073:0x1466, B:1075:0x146a, B:1077:0x1474, B:1078:0x147c, B:1085:0x14d5, B:1087:0x14e8, B:1088:0x14f4, B:1090:0x14f8, B:1092:0x14fc, B:1093:0x1504, B:1095:0x150c, B:1096:0x1518, B:1098:0x151e, B:1100:0x1524, B:1102:0x152f, B:1104:0x1539, B:1106:0x153d, B:1108:0x1542, B:1049:0x13f3, B:1053:0x1404, B:1055:0x140d, B:1057:0x1415, B:1059:0x141b, B:1061:0x1423, B:1062:0x1426, B:1044:0x13db, B:1046:0x13e9, B:1047:0x13ee, B:1174:0x1668, B:1176:0x166f, B:1183:0x1686, B:1185:0x168c, B:1188:0x1698, B:1190:0x169e, B:1194:0x16b7, B:1196:0x16bd, B:1202:0x16d7, B:1204:0x16db, B:1206:0x16fa, B:1205:0x16f3, B:1218:0x1754, B:1221:0x175b, B:1223:0x1764, B:1225:0x1768, B:1238:0x17a8, B:1240:0x17b4, B:1247:0x17d7, B:1253:0x1829, B:1255:0x182f, B:1264:0x1844, B:1266:0x1853, B:1268:0x1857, B:1226:0x176d, B:1230:0x1782, B:1232:0x1786), top: B:1567:0x0ed4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1250:0x1811 A[Catch: Exception -> 0x1863, TRY_ENTER, TRY_LEAVE, TryCatch #19 {Exception -> 0x1863, blocks: (B:1216:0x1745, B:1235:0x1792, B:1236:0x17a0, B:1243:0x17c6, B:1250:0x1811, B:1259:0x183a, B:1258:0x1838, B:1228:0x1775, B:1234:0x178b), top: B:1544:0x1745 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1262:0x1841  */
-    /* JADX WARN: Removed duplicated region for block: B:1263:0x1843  */
-    /* JADX WARN: Removed duplicated region for block: B:1265:0x1849  */
-    /* JADX WARN: Removed duplicated region for block: B:1268:0x1857 A[Catch: Exception -> 0x1679, TRY_LEAVE, TryCatch #33 {Exception -> 0x1679, blocks: (B:1065:0x1440, B:1067:0x1444, B:1079:0x147e, B:1081:0x14bf, B:1083:0x14c5, B:1084:0x14cf, B:1110:0x1546, B:1117:0x1556, B:1121:0x1570, B:1126:0x157c, B:1130:0x1598, B:1134:0x15a2, B:1140:0x15bf, B:1145:0x15db, B:1149:0x15e5, B:1153:0x1600, B:1157:0x160a, B:1165:0x162c, B:1068:0x1447, B:1070:0x1456, B:1071:0x1462, B:1073:0x1466, B:1075:0x146a, B:1077:0x1474, B:1078:0x147c, B:1085:0x14d5, B:1087:0x14e8, B:1088:0x14f4, B:1090:0x14f8, B:1092:0x14fc, B:1093:0x1504, B:1095:0x150c, B:1096:0x1518, B:1098:0x151e, B:1100:0x1524, B:1102:0x152f, B:1104:0x1539, B:1106:0x153d, B:1108:0x1542, B:1049:0x13f3, B:1053:0x1404, B:1055:0x140d, B:1057:0x1415, B:1059:0x141b, B:1061:0x1423, B:1062:0x1426, B:1044:0x13db, B:1046:0x13e9, B:1047:0x13ee, B:1174:0x1668, B:1176:0x166f, B:1183:0x1686, B:1185:0x168c, B:1188:0x1698, B:1190:0x169e, B:1194:0x16b7, B:1196:0x16bd, B:1202:0x16d7, B:1204:0x16db, B:1206:0x16fa, B:1205:0x16f3, B:1218:0x1754, B:1221:0x175b, B:1223:0x1764, B:1225:0x1768, B:1238:0x17a8, B:1240:0x17b4, B:1247:0x17d7, B:1253:0x1829, B:1255:0x182f, B:1264:0x1844, B:1266:0x1853, B:1268:0x1857, B:1226:0x176d, B:1230:0x1782, B:1232:0x1786), top: B:1567:0x0ed4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1375:0x1b70  */
-    /* JADX WARN: Removed duplicated region for block: B:1376:0x1b72  */
-    /* JADX WARN: Removed duplicated region for block: B:1393:0x1bac A[Catch: Exception -> 0x1bef, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x1bef, blocks: (B:1393:0x1bac, B:1398:0x1bba, B:1397:0x1bb3, B:1382:0x1b7e, B:1389:0x1b93), top: B:1513:0x1b7e }] */
-    /* JADX WARN: Removed duplicated region for block: B:1408:0x1bf1  */
-    /* JADX WARN: Removed duplicated region for block: B:1410:0x1bf5 A[Catch: Exception -> 0x1d5e, TryCatch #14 {Exception -> 0x1d5e, blocks: (B:1400:0x1bc3, B:1405:0x1be2, B:1410:0x1bf5, B:1412:0x1bfb, B:1414:0x1c01, B:1424:0x1c28, B:1428:0x1c34, B:1430:0x1c42, B:1432:0x1c50, B:1434:0x1c54, B:1435:0x1c57, B:1437:0x1c5b, B:1438:0x1c67, B:1440:0x1c6b, B:1442:0x1c6f, B:1444:0x1c79, B:1446:0x1c7e, B:1448:0x1c84, B:1450:0x1c8f, B:1455:0x1c9e, B:1457:0x1cb3, B:1459:0x1cb9, B:1461:0x1cbf, B:1462:0x1cc5, B:1464:0x1cd0, B:1466:0x1cd6, B:1467:0x1cde, B:1469:0x1ce2, B:1471:0x1ce8, B:1473:0x1cf3, B:1475:0x1cf9, B:1476:0x1d07, B:1478:0x1d15, B:1480:0x1d19, B:1482:0x1d32, B:1484:0x1d4d, B:1486:0x1d53, B:1488:0x1d59, B:1481:0x1d2b), top: B:1537:0x0cfa }] */
-    /* JADX WARN: Removed duplicated region for block: B:1424:0x1c28 A[Catch: Exception -> 0x1d5e, TryCatch #14 {Exception -> 0x1d5e, blocks: (B:1400:0x1bc3, B:1405:0x1be2, B:1410:0x1bf5, B:1412:0x1bfb, B:1414:0x1c01, B:1424:0x1c28, B:1428:0x1c34, B:1430:0x1c42, B:1432:0x1c50, B:1434:0x1c54, B:1435:0x1c57, B:1437:0x1c5b, B:1438:0x1c67, B:1440:0x1c6b, B:1442:0x1c6f, B:1444:0x1c79, B:1446:0x1c7e, B:1448:0x1c84, B:1450:0x1c8f, B:1455:0x1c9e, B:1457:0x1cb3, B:1459:0x1cb9, B:1461:0x1cbf, B:1462:0x1cc5, B:1464:0x1cd0, B:1466:0x1cd6, B:1467:0x1cde, B:1469:0x1ce2, B:1471:0x1ce8, B:1473:0x1cf3, B:1475:0x1cf9, B:1476:0x1d07, B:1478:0x1d15, B:1480:0x1d19, B:1482:0x1d32, B:1484:0x1d4d, B:1486:0x1d53, B:1488:0x1d59, B:1481:0x1d2b), top: B:1537:0x0cfa }] */
-    /* JADX WARN: Removed duplicated region for block: B:1462:0x1cc5 A[Catch: Exception -> 0x1d5e, TryCatch #14 {Exception -> 0x1d5e, blocks: (B:1400:0x1bc3, B:1405:0x1be2, B:1410:0x1bf5, B:1412:0x1bfb, B:1414:0x1c01, B:1424:0x1c28, B:1428:0x1c34, B:1430:0x1c42, B:1432:0x1c50, B:1434:0x1c54, B:1435:0x1c57, B:1437:0x1c5b, B:1438:0x1c67, B:1440:0x1c6b, B:1442:0x1c6f, B:1444:0x1c79, B:1446:0x1c7e, B:1448:0x1c84, B:1450:0x1c8f, B:1455:0x1c9e, B:1457:0x1cb3, B:1459:0x1cb9, B:1461:0x1cbf, B:1462:0x1cc5, B:1464:0x1cd0, B:1466:0x1cd6, B:1467:0x1cde, B:1469:0x1ce2, B:1471:0x1ce8, B:1473:0x1cf3, B:1475:0x1cf9, B:1476:0x1d07, B:1478:0x1d15, B:1480:0x1d19, B:1482:0x1d32, B:1484:0x1d4d, B:1486:0x1d53, B:1488:0x1d59, B:1481:0x1d2b), top: B:1537:0x0cfa }] */
-    /* JADX WARN: Removed duplicated region for block: B:1506:0x1d86  */
-    /* JADX WARN: Removed duplicated region for block: B:1507:0x1d88  */
-    /* JADX WARN: Removed duplicated region for block: B:1510:0x1d8e  */
-    /* JADX WARN: Removed duplicated region for block: B:1529:0x0fae A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1531:0x0822 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1559:0x0806 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1562:0x0bbe A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1587:0x17c6 A[EDGE_INSN: B:1587:0x17c6->B:1243:0x17c6 ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1612:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0326 A[Catch: Exception -> 0x03a8, TryCatch #16 {Exception -> 0x03a8, blocks: (B:90:0x019d, B:92:0x01a3, B:94:0x01aa, B:97:0x01b2, B:100:0x01bc, B:102:0x01c2, B:167:0x0326, B:171:0x0333, B:104:0x01d8, B:106:0x01dc, B:109:0x01e4, B:111:0x01eb, B:114:0x01fc, B:123:0x021d, B:128:0x0227, B:142:0x0276, B:148:0x029e, B:150:0x02be, B:154:0x02e0, B:160:0x0309, B:163:0x0314, B:231:0x0483, B:238:0x04ac, B:240:0x04b0, B:251:0x04e6, B:253:0x04fb, B:256:0x0501, B:257:0x050b, B:259:0x050f, B:264:0x0520, B:266:0x0526, B:268:0x052e, B:269:0x0533), top: B:1515:0x0195 }] */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0339  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x035a  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x03b6  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x0444 A[Catch: Exception -> 0x03f6, TryCatch #8 {Exception -> 0x03f6, blocks: (B:195:0x03e2, B:197:0x03e6, B:199:0x03ea, B:205:0x03fc, B:209:0x0408, B:211:0x040e, B:215:0x0425, B:217:0x0444, B:220:0x0457, B:224:0x0462, B:218:0x044c), top: B:1527:0x03e2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x044c A[Catch: Exception -> 0x03f6, TryCatch #8 {Exception -> 0x03f6, blocks: (B:195:0x03e2, B:197:0x03e6, B:199:0x03ea, B:205:0x03fc, B:209:0x0408, B:211:0x040e, B:215:0x0425, B:217:0x0444, B:220:0x0457, B:224:0x0462, B:218:0x044c), top: B:1527:0x03e2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:427:0x081f A[Catch: Exception -> 0x0817, TRY_LEAVE, TryCatch #28 {Exception -> 0x0817, blocks: (B:420:0x0806, B:422:0x080c, B:427:0x081f, B:434:0x082c, B:438:0x0841, B:441:0x085b, B:431:0x0826), top: B:1559:0x0806 }] */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x082c A[Catch: Exception -> 0x0817, TRY_ENTER, TRY_LEAVE, TryCatch #28 {Exception -> 0x0817, blocks: (B:420:0x0806, B:422:0x080c, B:427:0x081f, B:434:0x082c, B:438:0x0841, B:441:0x085b, B:431:0x0826), top: B:1559:0x0806 }] */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x083f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:441:0x085b A[Catch: Exception -> 0x0817, TRY_LEAVE, TryCatch #28 {Exception -> 0x0817, blocks: (B:420:0x0806, B:422:0x080c, B:427:0x081f, B:434:0x082c, B:438:0x0841, B:441:0x085b, B:431:0x0826), top: B:1559:0x0806 }] */
-    /* JADX WARN: Removed duplicated region for block: B:443:0x0862 A[Catch: Exception -> 0x1d72, TRY_ENTER, TryCatch #11 {Exception -> 0x1d72, blocks: (B:432:0x0828, B:435:0x082e, B:444:0x0873, B:443:0x0862, B:429:0x0822), top: B:1531:0x0822 }] */
-    /* JADX WARN: Removed duplicated region for block: B:449:0x08a3  */
-    /* JADX WARN: Removed duplicated region for block: B:457:0x08cf  */
-    /* JADX WARN: Removed duplicated region for block: B:462:0x08dc A[Catch: Exception -> 0x08c9, TRY_ENTER, TRY_LEAVE, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x08e8 A[Catch: Exception -> 0x08c9, TRY_ENTER, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:479:0x0920 A[Catch: Exception -> 0x08c9, TRY_ENTER, TRY_LEAVE, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:482:0x0926  */
-    /* JADX WARN: Removed duplicated region for block: B:483:0x0928 A[Catch: Exception -> 0x1d66, TRY_ENTER, TryCatch #18 {Exception -> 0x1d66, blocks: (B:459:0x08d4, B:476:0x091a, B:501:0x096f, B:541:0x0a32, B:602:0x0b1c, B:608:0x0b2b, B:612:0x0b34, B:633:0x0b97, B:607:0x0b29, B:560:0x0a78, B:574:0x0aa3, B:569:0x0a91, B:565:0x0a8a, B:484:0x0930, B:500:0x096d, B:483:0x0928), top: B:1542:0x08d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:486:0x0936  */
-    /* JADX WARN: Removed duplicated region for block: B:499:0x096c  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:504:0x097d  */
-    /* JADX WARN: Removed duplicated region for block: B:529:0x09e7 A[Catch: Exception -> 0x08c9, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x09f4  */
-    /* JADX WARN: Removed duplicated region for block: B:534:0x09fc A[Catch: Exception -> 0x08c9, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:537:0x0a1a A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:540:0x0a2c A[Catch: Exception -> 0x08c9, TRY_LEAVE, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:543:0x0a38 A[Catch: Exception -> 0x08c9, TRY_ENTER, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:560:0x0a78 A[Catch: Exception -> 0x1d66, TRY_ENTER, TRY_LEAVE, TryCatch #18 {Exception -> 0x1d66, blocks: (B:459:0x08d4, B:476:0x091a, B:501:0x096f, B:541:0x0a32, B:602:0x0b1c, B:608:0x0b2b, B:612:0x0b34, B:633:0x0b97, B:607:0x0b29, B:560:0x0a78, B:574:0x0aa3, B:569:0x0a91, B:565:0x0a8a, B:484:0x0930, B:500:0x096d, B:483:0x0928), top: B:1542:0x08d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:604:0x0b22 A[Catch: Exception -> 0x08c9, TRY_ENTER, TRY_LEAVE, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:610:0x0b2f A[Catch: Exception -> 0x08c9, TRY_ENTER, TRY_LEAVE, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:614:0x0b38 A[Catch: Exception -> 0x08c9, TRY_ENTER, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:621:0x0b60  */
-    /* JADX WARN: Removed duplicated region for block: B:624:0x0b65 A[Catch: Exception -> 0x08c9, TryCatch #27 {Exception -> 0x08c9, blocks: (B:450:0x08a5, B:462:0x08dc, B:465:0x08e8, B:468:0x08f0, B:470:0x08fa, B:473:0x0911, B:479:0x0920, B:508:0x0985, B:512:0x098f, B:514:0x0998, B:516:0x09a2, B:519:0x09b5, B:522:0x09bf, B:524:0x09c6, B:526:0x09da, B:534:0x09fc, B:538:0x0a1c, B:540:0x0a2c, B:543:0x0a38, B:545:0x0a48, B:547:0x0a56, B:549:0x0a5c, B:551:0x0a60, B:552:0x0a63, B:554:0x0a6d, B:558:0x0a74, B:604:0x0b22, B:610:0x0b2f, B:614:0x0b38, B:616:0x0b42, B:618:0x0b56, B:624:0x0b65, B:628:0x0b8b, B:563:0x0a85, B:567:0x0a8e, B:576:0x0aa7, B:578:0x0aad, B:581:0x0ab4, B:583:0x0ac0, B:585:0x0ad0, B:588:0x0ad7, B:586:0x0ad3, B:589:0x0ae2, B:591:0x0ae8, B:594:0x0aef, B:596:0x0afb, B:598:0x0b0b, B:601:0x0b12, B:599:0x0b0e, B:571:0x0a97, B:573:0x0a9b, B:527:0x09e3, B:529:0x09e7, B:518:0x09ae, B:489:0x093b, B:490:0x0943, B:492:0x0953, B:494:0x0957, B:495:0x095b, B:497:0x0962, B:472:0x08ff), top: B:1558:0x08a5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:625:0x0b80  */
-    /* JADX WARN: Removed duplicated region for block: B:627:0x0b89 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:637:0x0bb3  */
-    /* JADX WARN: Removed duplicated region for block: B:638:0x0bb5  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x0bdd A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:659:0x0be6 A[Catch: Exception -> 0x0bd4, TRY_ENTER, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:673:0x0c3d  */
-    /* JADX WARN: Removed duplicated region for block: B:692:0x0c91 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:696:0x0cfc  */
-    /* JADX WARN: Removed duplicated region for block: B:703:0x0d0b  */
-    /* JADX WARN: Removed duplicated region for block: B:721:0x0d2e A[Catch: Exception -> 0x0bd4, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:739:0x0dc9 A[Catch: Exception -> 0x0bd4, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:742:0x0de2 A[Catch: Exception -> 0x0bd4, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:743:0x0df0 A[Catch: Exception -> 0x0bd4, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:751:0x0e13  */
-    /* JADX WARN: Removed duplicated region for block: B:752:0x0e15  */
-    /* JADX WARN: Removed duplicated region for block: B:754:0x0e2b  */
-    /* JADX WARN: Removed duplicated region for block: B:787:0x0ed6  */
-    /* JADX WARN: Removed duplicated region for block: B:828:0x0f9e A[Catch: Exception -> 0x0bd4, TRY_LEAVE, TryCatch #30 {Exception -> 0x0bd4, blocks: (B:641:0x0bbe, B:646:0x0bc8, B:648:0x0bd0, B:659:0x0be6, B:663:0x0c0f, B:667:0x0c21, B:669:0x0c26, B:693:0x0c93, B:789:0x0ed9, B:791:0x0edf, B:801:0x0f29, B:792:0x0ef9, B:794:0x0efd, B:796:0x0f10, B:797:0x0f16, B:799:0x0f1a, B:800:0x0f24, B:813:0x0f72, B:816:0x0f7a, B:818:0x0f82, B:826:0x0f97, B:828:0x0f9e, B:987:0x12a8, B:964:0x1258, B:969:0x126a, B:971:0x1270, B:974:0x127e, B:979:0x128b, B:721:0x0d2e, B:723:0x0d3f, B:725:0x0d4d, B:727:0x0d57, B:729:0x0d7e, B:731:0x0d91, B:734:0x0db0, B:737:0x0dc3, B:739:0x0dc9, B:740:0x0dd1, B:742:0x0de2, B:753:0x0e16, B:743:0x0df0, B:745:0x0df6, B:746:0x0e00, B:748:0x0e04, B:732:0x0da1, B:733:0x0da9, B:736:0x0dbc, B:756:0x0e33, B:758:0x0e40, B:759:0x0e4c, B:761:0x0e50, B:762:0x0e5c, B:766:0x0e67, B:768:0x0e6d, B:770:0x0e71, B:771:0x0e79, B:773:0x0e7f, B:774:0x0e87, B:776:0x0ea5, B:778:0x0eae, B:780:0x0eb4, B:785:0x0ebf, B:677:0x0c5f, B:679:0x0c69, B:683:0x0c78, B:689:0x0c89), top: B:1562:0x0bbe }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:844:0x1004  */
-    /* JADX WARN: Removed duplicated region for block: B:845:0x1008 A[Catch: Exception -> 0x1092, TRY_LEAVE, TryCatch #31 {Exception -> 0x1092, blocks: (B:842:0x0ffe, B:855:0x1042, B:845:0x1008, B:853:0x103d), top: B:1563:0x0ffe }] */
-    /* JADX WARN: Removed duplicated region for block: B:855:0x1042 A[Catch: Exception -> 0x1092, TRY_LEAVE, TryCatch #31 {Exception -> 0x1092, blocks: (B:842:0x0ffe, B:855:0x1042, B:845:0x1008, B:853:0x103d), top: B:1563:0x0ffe }] */
-    /* JADX WARN: Removed duplicated region for block: B:861:0x105e  */
-    /* JADX WARN: Removed duplicated region for block: B:864:0x1072 A[Catch: Exception -> 0x10f8, TryCatch #5 {Exception -> 0x10f8, blocks: (B:833:0x0fba, B:835:0x0fcc, B:836:0x0fe7, B:860:0x105b, B:862:0x1064, B:864:0x1072, B:866:0x107f, B:867:0x1083, B:848:0x1023, B:850:0x1029, B:852:0x102f, B:876:0x10b4, B:878:0x10cf, B:880:0x10e2, B:881:0x10f0, B:892:0x1107, B:918:0x1181, B:922:0x119a, B:910:0x1154, B:912:0x1162, B:914:0x1169, B:916:0x116f, B:917:0x117d, B:927:0x11b3, B:929:0x11c0, B:931:0x11c8, B:934:0x11d8, B:936:0x11db, B:937:0x11eb, B:938:0x11f1, B:940:0x11f5, B:942:0x11fd, B:945:0x1212, B:955:0x123e), top: B:1522:0x0f5a }] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0197 A[Catch: Exception -> 0x03ae, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x03ae, blocks: (B:87:0x0197, B:188:0x03be, B:192:0x03d5, B:193:0x03db, B:229:0x0478, B:230:0x047e, B:236:0x04a1, B:237:0x04a7, B:248:0x04db), top: B:1515:0x0195 }] */
-    /* JADX WARN: Type inference failed for: r15v37 */
-    /* JADX WARN: Type inference failed for: r15v4, types: [org.telegram.messenger.SendMessagesHelper] */
-    /* JADX WARN: Type inference failed for: r1v1 */
+    /* JADX WARN: Removed duplicated region for block: B:1010:0x1492 A[Catch: Exception -> 0x1550, TryCatch #37 {Exception -> 0x1550, blocks: (B:1101:0x1670, B:1103:0x16b3, B:1105:0x16b9, B:1106:0x16c3, B:1138:0x1750, B:1087:0x162d, B:1089:0x1635, B:1099:0x1666, B:1100:0x166e, B:1090:0x1644, B:1092:0x1648, B:1095:0x164e, B:1097:0x1654, B:1111:0x16e3, B:1114:0x16eb, B:1123:0x1716, B:1126:0x1728, B:1128:0x172e, B:1130:0x1739, B:1132:0x1743, B:1134:0x1747, B:1136:0x174c, B:1118:0x16fc, B:1120:0x1700, B:933:0x12eb, B:935:0x12f8, B:946:0x1344, B:950:0x135b, B:938:0x1307, B:940:0x1325, B:942:0x132c, B:944:0x1332, B:945:0x1340, B:955:0x1379, B:957:0x1386, B:959:0x138e, B:962:0x139e, B:964:0x13a1, B:965:0x13b1, B:966:0x13b7, B:968:0x13bb, B:970:0x13c3, B:973:0x13d8, B:977:0x13f3, B:984:0x1429, B:990:0x1441, B:992:0x144a, B:994:0x1456, B:996:0x145c, B:999:0x146a, B:1003:0x1477, B:1007:0x1482, B:1008:0x148c, B:1010:0x1492, B:1021:0x14d3, B:1025:0x14ea, B:1027:0x14f3, B:1029:0x14ff, B:1031:0x150c, B:1011:0x1497, B:1013:0x14b1, B:1015:0x14b8, B:1017:0x14be, B:1018:0x14cc, B:1001:0x1472, B:1038:0x1545, B:1042:0x1557, B:1044:0x1561, B:1046:0x1571, B:1047:0x158e), top: B:1652:0x1095 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1011:0x1497 A[Catch: Exception -> 0x1550, TryCatch #37 {Exception -> 0x1550, blocks: (B:1101:0x1670, B:1103:0x16b3, B:1105:0x16b9, B:1106:0x16c3, B:1138:0x1750, B:1087:0x162d, B:1089:0x1635, B:1099:0x1666, B:1100:0x166e, B:1090:0x1644, B:1092:0x1648, B:1095:0x164e, B:1097:0x1654, B:1111:0x16e3, B:1114:0x16eb, B:1123:0x1716, B:1126:0x1728, B:1128:0x172e, B:1130:0x1739, B:1132:0x1743, B:1134:0x1747, B:1136:0x174c, B:1118:0x16fc, B:1120:0x1700, B:933:0x12eb, B:935:0x12f8, B:946:0x1344, B:950:0x135b, B:938:0x1307, B:940:0x1325, B:942:0x132c, B:944:0x1332, B:945:0x1340, B:955:0x1379, B:957:0x1386, B:959:0x138e, B:962:0x139e, B:964:0x13a1, B:965:0x13b1, B:966:0x13b7, B:968:0x13bb, B:970:0x13c3, B:973:0x13d8, B:977:0x13f3, B:984:0x1429, B:990:0x1441, B:992:0x144a, B:994:0x1456, B:996:0x145c, B:999:0x146a, B:1003:0x1477, B:1007:0x1482, B:1008:0x148c, B:1010:0x1492, B:1021:0x14d3, B:1025:0x14ea, B:1027:0x14f3, B:1029:0x14ff, B:1031:0x150c, B:1011:0x1497, B:1013:0x14b1, B:1015:0x14b8, B:1017:0x14be, B:1018:0x14cc, B:1001:0x1472, B:1038:0x1545, B:1042:0x1557, B:1044:0x1561, B:1046:0x1571, B:1047:0x158e), top: B:1652:0x1095 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1020:0x14d1  */
+    /* JADX WARN: Removed duplicated region for block: B:1033:0x1513  */
+    /* JADX WARN: Removed duplicated region for block: B:1081:0x1619 A[Catch: Exception -> 0x136b, TRY_ENTER, TRY_LEAVE, TryCatch #3 {Exception -> 0x136b, blocks: (B:1081:0x1619, B:1085:0x1622, B:929:0x12d6, B:931:0x12e7), top: B:1593:0x12d6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1108:0x16ca  */
+    /* JADX WARN: Removed duplicated region for block: B:1138:0x1750 A[Catch: Exception -> 0x1550, TRY_LEAVE, TryCatch #37 {Exception -> 0x1550, blocks: (B:1101:0x1670, B:1103:0x16b3, B:1105:0x16b9, B:1106:0x16c3, B:1138:0x1750, B:1087:0x162d, B:1089:0x1635, B:1099:0x1666, B:1100:0x166e, B:1090:0x1644, B:1092:0x1648, B:1095:0x164e, B:1097:0x1654, B:1111:0x16e3, B:1114:0x16eb, B:1123:0x1716, B:1126:0x1728, B:1128:0x172e, B:1130:0x1739, B:1132:0x1743, B:1134:0x1747, B:1136:0x174c, B:1118:0x16fc, B:1120:0x1700, B:933:0x12eb, B:935:0x12f8, B:946:0x1344, B:950:0x135b, B:938:0x1307, B:940:0x1325, B:942:0x132c, B:944:0x1332, B:945:0x1340, B:955:0x1379, B:957:0x1386, B:959:0x138e, B:962:0x139e, B:964:0x13a1, B:965:0x13b1, B:966:0x13b7, B:968:0x13bb, B:970:0x13c3, B:973:0x13d8, B:977:0x13f3, B:984:0x1429, B:990:0x1441, B:992:0x144a, B:994:0x1456, B:996:0x145c, B:999:0x146a, B:1003:0x1477, B:1007:0x1482, B:1008:0x148c, B:1010:0x1492, B:1021:0x14d3, B:1025:0x14ea, B:1027:0x14f3, B:1029:0x14ff, B:1031:0x150c, B:1011:0x1497, B:1013:0x14b1, B:1015:0x14b8, B:1017:0x14be, B:1018:0x14cc, B:1001:0x1472, B:1038:0x1545, B:1042:0x1557, B:1044:0x1561, B:1046:0x1571, B:1047:0x158e), top: B:1652:0x1095 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1140:0x1755  */
+    /* JADX WARN: Removed duplicated region for block: B:1290:0x19cd A[Catch: Exception -> 0x1a7a, TryCatch #23 {Exception -> 0x1a7a, blocks: (B:1258:0x1934, B:1270:0x1968, B:1272:0x1977, B:1275:0x197e, B:1277:0x1987, B:1279:0x198b, B:1287:0x19b5, B:1288:0x19c5, B:1290:0x19cd, B:1292:0x19d9, B:1293:0x19e9, B:1294:0x19ec, B:1298:0x19fd, B:1300:0x1a32, B:1302:0x1a48, B:1304:0x1a50, B:1306:0x1a5b, B:1310:0x1a63, B:1312:0x1a6c, B:1314:0x1a70, B:1305:0x1a57, B:1280:0x1990, B:1281:0x1998, B:1283:0x19a5, B:1285:0x19a9, B:1286:0x19ae), top: B:1627:0x18fb }] */
+    /* JADX WARN: Removed duplicated region for block: B:1314:0x1a70 A[Catch: Exception -> 0x1a7a, TRY_LEAVE, TryCatch #23 {Exception -> 0x1a7a, blocks: (B:1258:0x1934, B:1270:0x1968, B:1272:0x1977, B:1275:0x197e, B:1277:0x1987, B:1279:0x198b, B:1287:0x19b5, B:1288:0x19c5, B:1290:0x19cd, B:1292:0x19d9, B:1293:0x19e9, B:1294:0x19ec, B:1298:0x19fd, B:1300:0x1a32, B:1302:0x1a48, B:1304:0x1a50, B:1306:0x1a5b, B:1310:0x1a63, B:1312:0x1a6c, B:1314:0x1a70, B:1305:0x1a57, B:1280:0x1990, B:1281:0x1998, B:1283:0x19a5, B:1285:0x19a9, B:1286:0x19ae), top: B:1627:0x18fb }] */
+    /* JADX WARN: Removed duplicated region for block: B:1415:0x1d7d  */
+    /* JADX WARN: Removed duplicated region for block: B:1416:0x1d7f  */
+    /* JADX WARN: Removed duplicated region for block: B:1517:0x1efa  */
+    /* JADX WARN: Removed duplicated region for block: B:1580:0x1fde  */
+    /* JADX WARN: Removed duplicated region for block: B:1581:0x1fe0  */
+    /* JADX WARN: Removed duplicated region for block: B:1584:0x1fe6  */
+    /* JADX WARN: Removed duplicated region for block: B:1587:0x1e38 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1595:0x0d63 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1600:0x0d8b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1625:0x0cb6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1675:0x1170 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1689:0x19ec A[EDGE_INSN: B:1689:0x19ec->B:1294:0x19ec ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x03ea  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x048d A[Catch: Exception -> 0x0436, TryCatch #30 {Exception -> 0x0436, blocks: (B:187:0x0422, B:189:0x0426, B:191:0x042a, B:198:0x0441, B:202:0x044d, B:204:0x0453, B:208:0x046a, B:210:0x048d, B:213:0x04a0, B:217:0x04ab, B:211:0x0495), top: B:1640:0x0422 }] */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0495 A[Catch: Exception -> 0x0436, TryCatch #30 {Exception -> 0x0436, blocks: (B:187:0x0422, B:189:0x0426, B:191:0x042a, B:198:0x0441, B:202:0x044d, B:204:0x0453, B:208:0x046a, B:210:0x048d, B:213:0x04a0, B:217:0x04ab, B:211:0x0495), top: B:1640:0x0422 }] */
+    /* JADX WARN: Removed duplicated region for block: B:453:0x09b1  */
+    /* JADX WARN: Removed duplicated region for block: B:460:0x09de  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x09ef A[Catch: Exception -> 0x09d9, TRY_ENTER, TRY_LEAVE, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x09fb A[Catch: Exception -> 0x09d9, TRY_ENTER, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:481:0x0a31  */
+    /* JADX WARN: Removed duplicated region for block: B:486:0x0a3b  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x0a3f  */
+    /* JADX WARN: Removed duplicated region for block: B:489:0x0a42 A[Catch: Exception -> 0x1fc2, TRY_ENTER, TryCatch #51 {Exception -> 0x1fc2, blocks: (B:462:0x09e5, B:479:0x0a2d, B:507:0x0a8d, B:547:0x0b7b, B:608:0x0c67, B:614:0x0c76, B:618:0x0c7f, B:613:0x0c74, B:566:0x0bc1, B:580:0x0bec, B:575:0x0bda, B:571:0x0bd3, B:490:0x0a4a, B:506:0x0a8b, B:489:0x0a42), top: B:1678:0x09e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:492:0x0a50  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:505:0x0a88  */
+    /* JADX WARN: Removed duplicated region for block: B:509:0x0a97 A[Catch: Exception -> 0x09d9, TRY_ENTER, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:510:0x0ab5  */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x0b2b A[Catch: Exception -> 0x09d9, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x0b44 A[Catch: Exception -> 0x09d9, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:543:0x0b61 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:546:0x0b75 A[Catch: Exception -> 0x09d9, TRY_LEAVE, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:549:0x0b81 A[Catch: Exception -> 0x09d9, TRY_ENTER, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:566:0x0bc1 A[Catch: Exception -> 0x1fc2, TRY_ENTER, TRY_LEAVE, TryCatch #51 {Exception -> 0x1fc2, blocks: (B:462:0x09e5, B:479:0x0a2d, B:507:0x0a8d, B:547:0x0b7b, B:608:0x0c67, B:614:0x0c76, B:618:0x0c7f, B:613:0x0c74, B:566:0x0bc1, B:580:0x0bec, B:575:0x0bda, B:571:0x0bd3, B:490:0x0a4a, B:506:0x0a8b, B:489:0x0a42), top: B:1678:0x09e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0c6d A[Catch: Exception -> 0x09d9, TRY_ENTER, TRY_LEAVE, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:616:0x0c7a A[Catch: Exception -> 0x09d9, TRY_ENTER, TRY_LEAVE, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:620:0x0c83 A[Catch: Exception -> 0x09d9, TRY_ENTER, TryCatch #10 {Exception -> 0x09d9, blocks: (B:454:0x09b3, B:465:0x09ef, B:468:0x09fb, B:471:0x0a03, B:473:0x0a0d, B:476:0x0a24, B:482:0x0a33, B:509:0x0a97, B:541:0x0b44, B:544:0x0b63, B:546:0x0b75, B:549:0x0b81, B:551:0x0b91, B:553:0x0b9f, B:555:0x0ba5, B:557:0x0ba9, B:558:0x0bac, B:560:0x0bb6, B:564:0x0bbd, B:610:0x0c6d, B:616:0x0c7a, B:620:0x0c83, B:622:0x0c8d, B:624:0x0ca2, B:569:0x0bce, B:573:0x0bd7, B:582:0x0bf0, B:584:0x0bf6, B:587:0x0bfd, B:589:0x0c09, B:591:0x0c19, B:594:0x0c21, B:592:0x0c1d, B:595:0x0c2c, B:597:0x0c32, B:600:0x0c39, B:602:0x0c45, B:604:0x0c55, B:607:0x0c5d, B:605:0x0c59, B:577:0x0be0, B:579:0x0be4, B:515:0x0ac3, B:519:0x0acf, B:521:0x0ad8, B:523:0x0ae2, B:526:0x0af5, B:529:0x0aff, B:531:0x0b06, B:533:0x0b1c, B:534:0x0b25, B:536:0x0b2b, B:525:0x0aee, B:495:0x0a55, B:496:0x0a5d, B:498:0x0a6f, B:500:0x0a73, B:501:0x0a77, B:503:0x0a7e, B:475:0x0a12), top: B:1606:0x09b3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:629:0x0cb0  */
+    /* JADX WARN: Removed duplicated region for block: B:636:0x0d00  */
+    /* JADX WARN: Removed duplicated region for block: B:638:0x0d2c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:642:0x0d35  */
+    /* JADX WARN: Removed duplicated region for block: B:649:0x0d58  */
+    /* JADX WARN: Removed duplicated region for block: B:650:0x0d5a  */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x0d82 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:686:0x0de4  */
+    /* JADX WARN: Removed duplicated region for block: B:708:0x0e3a  */
+    /* JADX WARN: Removed duplicated region for block: B:713:0x0ea8  */
+    /* JADX WARN: Removed duplicated region for block: B:716:0x0eaf  */
+    /* JADX WARN: Removed duplicated region for block: B:763:0x0f82 A[Catch: Exception -> 0x0e0a, TRY_ENTER, TRY_LEAVE, TryCatch #17 {Exception -> 0x0e0a, blocks: (B:679:0x0dc5, B:681:0x0dca, B:710:0x0e3e, B:824:0x1097, B:826:0x109d, B:836:0x10e7, B:827:0x10b7, B:829:0x10bb, B:831:0x10ce, B:832:0x10d4, B:834:0x10d8, B:835:0x10e2, B:849:0x113a, B:852:0x1142, B:854:0x1148, B:862:0x1159, B:864:0x1160, B:745:0x0ef7, B:747:0x0f05, B:749:0x0f0f, B:751:0x0f36, B:753:0x0f49, B:756:0x0f68, B:763:0x0f82, B:766:0x0f9b, B:779:0x0fcf, B:770:0x0faf, B:774:0x0fbd, B:754:0x0f59, B:755:0x0f61, B:789:0x0ffc, B:792:0x1010, B:800:0x102d, B:802:0x1031, B:805:0x1042, B:809:0x1068, B:811:0x1070, B:813:0x1076, B:818:0x1080, B:690:0x0e03, B:695:0x0e10, B:699:0x0e21, B:705:0x0e32), top: B:1617:0x0d89 }] */
+    /* JADX WARN: Removed duplicated region for block: B:766:0x0f9b A[Catch: Exception -> 0x0e0a, TRY_ENTER, TRY_LEAVE, TryCatch #17 {Exception -> 0x0e0a, blocks: (B:679:0x0dc5, B:681:0x0dca, B:710:0x0e3e, B:824:0x1097, B:826:0x109d, B:836:0x10e7, B:827:0x10b7, B:829:0x10bb, B:831:0x10ce, B:832:0x10d4, B:834:0x10d8, B:835:0x10e2, B:849:0x113a, B:852:0x1142, B:854:0x1148, B:862:0x1159, B:864:0x1160, B:745:0x0ef7, B:747:0x0f05, B:749:0x0f0f, B:751:0x0f36, B:753:0x0f49, B:756:0x0f68, B:763:0x0f82, B:766:0x0f9b, B:779:0x0fcf, B:770:0x0faf, B:774:0x0fbd, B:754:0x0f59, B:755:0x0f61, B:789:0x0ffc, B:792:0x1010, B:800:0x102d, B:802:0x1031, B:805:0x1042, B:809:0x1068, B:811:0x1070, B:813:0x1076, B:818:0x1080, B:690:0x0e03, B:695:0x0e10, B:699:0x0e21, B:705:0x0e32), top: B:1617:0x0d89 }] */
+    /* JADX WARN: Removed duplicated region for block: B:768:0x0fa9 A[Catch: Exception -> 0x0fdc, TRY_ENTER, TRY_LEAVE, TryCatch #9 {Exception -> 0x0fdc, blocks: (B:761:0x0f7c, B:764:0x0f8a, B:768:0x0fa9, B:772:0x0fb9, B:760:0x0f75), top: B:1604:0x0f75 }] */
+    /* JADX WARN: Removed duplicated region for block: B:777:0x0fcc  */
+    /* JADX WARN: Removed duplicated region for block: B:778:0x0fce  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01dc A[Catch: Exception -> 0x03e4, TRY_ENTER, TRY_LEAVE, TryCatch #11 {Exception -> 0x03e4, blocks: (B:85:0x01dc, B:179:0x03f2, B:183:0x0411, B:184:0x0417, B:223:0x04db, B:224:0x04e1, B:234:0x0520, B:235:0x0526, B:247:0x0577, B:282:0x0648, B:291:0x0667, B:303:0x069c, B:304:0x06a2, B:326:0x0740, B:327:0x0746, B:420:0x08e6, B:421:0x08ec), top: B:1607:0x01da }] */
+    /* JADX WARN: Removed duplicated region for block: B:864:0x1160 A[Catch: Exception -> 0x0e0a, TRY_LEAVE, TryCatch #17 {Exception -> 0x0e0a, blocks: (B:679:0x0dc5, B:681:0x0dca, B:710:0x0e3e, B:824:0x1097, B:826:0x109d, B:836:0x10e7, B:827:0x10b7, B:829:0x10bb, B:831:0x10ce, B:832:0x10d4, B:834:0x10d8, B:835:0x10e2, B:849:0x113a, B:852:0x1142, B:854:0x1148, B:862:0x1159, B:864:0x1160, B:745:0x0ef7, B:747:0x0f05, B:749:0x0f0f, B:751:0x0f36, B:753:0x0f49, B:756:0x0f68, B:763:0x0f82, B:766:0x0f9b, B:779:0x0fcf, B:770:0x0faf, B:774:0x0fbd, B:754:0x0f59, B:755:0x0f61, B:789:0x0ffc, B:792:0x1010, B:800:0x102d, B:802:0x1031, B:805:0x1042, B:809:0x1068, B:811:0x1070, B:813:0x1076, B:818:0x1080, B:690:0x0e03, B:695:0x0e10, B:699:0x0e21, B:705:0x0e32), top: B:1617:0x0d89 }] */
+    /* JADX WARN: Removed duplicated region for block: B:880:0x11cc  */
+    /* JADX WARN: Removed duplicated region for block: B:881:0x11cf A[Catch: Exception -> 0x1256, TRY_LEAVE, TryCatch #41 {Exception -> 0x1256, blocks: (B:878:0x11c6, B:891:0x1209, B:881:0x11cf, B:889:0x1204), top: B:1660:0x11c6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:891:0x1209 A[Catch: Exception -> 0x1256, TRY_LEAVE, TryCatch #41 {Exception -> 0x1256, blocks: (B:878:0x11c6, B:891:0x1209, B:881:0x11cf, B:889:0x1204), top: B:1660:0x11c6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:898:0x1225  */
+    /* JADX WARN: Removed duplicated region for block: B:901:0x1237 A[Catch: Exception -> 0x12c7, TryCatch #50 {Exception -> 0x12c7, blocks: (B:1083:0x161d, B:870:0x1188, B:872:0x118e, B:873:0x11ab, B:893:0x120d, B:897:0x1222, B:899:0x122b, B:901:0x1237, B:903:0x1244, B:904:0x1248, B:884:0x11ea, B:886:0x11f0, B:888:0x11f6, B:913:0x127d, B:915:0x1298, B:917:0x12ab, B:918:0x12b9, B:1063:0x15d3, B:1067:0x15e4, B:1072:0x15f0, B:1074:0x15f6, B:1076:0x15fe, B:1059:0x15ca), top: B:1652:0x1095 }] */
+    /* JADX WARN: Type inference failed for: r10v29, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r10v33 */
+    /* JADX WARN: Type inference failed for: r10v34 */
+    /* JADX WARN: Type inference failed for: r10v35 */
+    /* JADX WARN: Type inference failed for: r10v36, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r10v37 */
+    /* JADX WARN: Type inference failed for: r10v38 */
+    /* JADX WARN: Type inference failed for: r10v39, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r10v40 */
+    /* JADX WARN: Type inference failed for: r10v41, types: [org.telegram.messenger.MessageObject] */
+    /* JADX WARN: Type inference failed for: r10v56 */
+    /* JADX WARN: Type inference failed for: r10v57 */
+    /* JADX WARN: Type inference failed for: r13v16 */
+    /* JADX WARN: Type inference failed for: r13v17 */
+    /* JADX WARN: Type inference failed for: r14v80 */
+    /* JADX WARN: Type inference failed for: r18v1 */
+    /* JADX WARN: Type inference failed for: r18v10 */
+    /* JADX WARN: Type inference failed for: r18v11 */
+    /* JADX WARN: Type inference failed for: r18v17 */
+    /* JADX WARN: Type inference failed for: r18v2 */
+    /* JADX WARN: Type inference failed for: r18v33 */
+    /* JADX WARN: Type inference failed for: r18v34 */
+    /* JADX WARN: Type inference failed for: r18v4 */
+    /* JADX WARN: Type inference failed for: r18v46 */
+    /* JADX WARN: Type inference failed for: r18v47 */
+    /* JADX WARN: Type inference failed for: r18v48 */
+    /* JADX WARN: Type inference failed for: r18v53 */
+    /* JADX WARN: Type inference failed for: r18v54 */
+    /* JADX WARN: Type inference failed for: r18v55 */
+    /* JADX WARN: Type inference failed for: r18v56 */
+    /* JADX WARN: Type inference failed for: r18v57 */
+    /* JADX WARN: Type inference failed for: r18v58 */
+    /* JADX WARN: Type inference failed for: r18v59 */
+    /* JADX WARN: Type inference failed for: r18v60 */
     /* JADX WARN: Type inference failed for: r1v11 */
-    /* JADX WARN: Type inference failed for: r1v12 */
-    /* JADX WARN: Type inference failed for: r1v190 */
-    /* JADX WARN: Type inference failed for: r1v191, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v192 */
-    /* JADX WARN: Type inference failed for: r1v195 */
-    /* JADX WARN: Type inference failed for: r1v2 */
-    /* JADX WARN: Type inference failed for: r1v4, types: [org.telegram.messenger.MessagesStorage] */
-    /* JADX WARN: Type inference failed for: r23v10 */
-    /* JADX WARN: Type inference failed for: r23v11 */
-    /* JADX WARN: Type inference failed for: r23v13 */
-    /* JADX WARN: Type inference failed for: r23v15 */
-    /* JADX WARN: Type inference failed for: r23v16 */
-    /* JADX WARN: Type inference failed for: r23v17 */
-    /* JADX WARN: Type inference failed for: r23v5 */
-    /* JADX WARN: Type inference failed for: r23v51 */
-    /* JADX WARN: Type inference failed for: r23v6 */
-    /* JADX WARN: Type inference failed for: r23v7 */
-    /* JADX WARN: Type inference failed for: r23v9 */
-    /* JADX WARN: Type inference failed for: r2v26 */
-    /* JADX WARN: Type inference failed for: r2v27 */
-    /* JADX WARN: Type inference failed for: r2v29, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v32 */
-    /* JADX WARN: Type inference failed for: r2v33, types: [org.telegram.messenger.MessageObject, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r2v34 */
-    /* JADX WARN: Type inference failed for: r2v35, types: [org.telegram.messenger.MessageObject] */
-    /* JADX WARN: Type inference failed for: r2v49 */
-    /* JADX WARN: Type inference failed for: r2v50 */
-    /* JADX WARN: Type inference failed for: r2v53 */
-    /* JADX WARN: Type inference failed for: r4v56, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r4v72, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r4v81, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r4v86, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r4v94, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r5v10 */
-    /* JADX WARN: Type inference failed for: r5v138 */
-    /* JADX WARN: Type inference failed for: r5v14 */
-    /* JADX WARN: Type inference failed for: r5v140 */
-    /* JADX WARN: Type inference failed for: r5v158, types: [org.telegram.messenger.SecretChatHelper] */
-    /* JADX WARN: Type inference failed for: r5v181 */
-    /* JADX WARN: Type inference failed for: r5v184, types: [org.telegram.tgnet.TLRPC$TL_inputMediaPhoto, org.telegram.tgnet.TLRPC$InputMedia] */
-    /* JADX WARN: Type inference failed for: r5v298 */
-    /* JADX WARN: Type inference failed for: r5v299 */
-    /* JADX WARN: Type inference failed for: r5v307 */
-    /* JADX WARN: Type inference failed for: r5v48 */
-    /* JADX WARN: Type inference failed for: r5v50 */
-    /* JADX WARN: Type inference failed for: r5v66 */
-    /* JADX WARN: Type inference failed for: r5v8, types: [org.telegram.tgnet.TLRPC$Message] */
-    /* JADX WARN: Type inference failed for: r6v158, types: [org.telegram.tgnet.TLRPC$TL_messages_sendMedia, org.telegram.tgnet.TLObject] */
-    /* JADX WARN: Type inference failed for: r6v159 */
-    /* JADX WARN: Type inference failed for: r6v162, types: [org.telegram.tgnet.TLRPC$TL_messages_sendMultiMedia] */
-    /* JADX WARN: Type inference failed for: r6v185 */
-    /* JADX WARN: Type inference failed for: r6v186 */
-    /* JADX WARN: Type inference failed for: r78v0, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r8v309, types: [org.telegram.messenger.MediaDataController] */
-    /* JADX WARN: Type inference failed for: r9v143 */
-    /* JADX WARN: Type inference failed for: r9v22, types: [org.telegram.tgnet.TLRPC$InputPeer] */
-    /* JADX WARN: Type inference failed for: r9v31 */
-    /* JADX WARN: Type inference failed for: r9v32, types: [org.telegram.tgnet.TLRPC$Message] */
-    /* JADX WARN: Type inference failed for: r9v62 */
+    /* JADX WARN: Type inference failed for: r1v18, types: [org.telegram.tgnet.TLRPC$Message] */
+    /* JADX WARN: Type inference failed for: r1v19 */
+    /* JADX WARN: Type inference failed for: r1v21 */
+    /* JADX WARN: Type inference failed for: r1v218, types: [org.telegram.messenger.MediaDataController] */
+    /* JADX WARN: Type inference failed for: r1v230 */
+    /* JADX WARN: Type inference failed for: r1v26 */
+    /* JADX WARN: Type inference failed for: r1v428 */
+    /* JADX WARN: Type inference failed for: r2v126, types: [org.telegram.tgnet.TLRPC$TL_inputMediaDocument, org.telegram.tgnet.TLRPC$InputMedia] */
+    /* JADX WARN: Type inference failed for: r2v127 */
+    /* JADX WARN: Type inference failed for: r2v129 */
+    /* JADX WARN: Type inference failed for: r2v158, types: [org.telegram.tgnet.TLRPC$TL_messages_sendMedia, org.telegram.tgnet.TLObject] */
+    /* JADX WARN: Type inference failed for: r2v159, types: [org.telegram.tgnet.TLObject] */
+    /* JADX WARN: Type inference failed for: r2v164, types: [org.telegram.tgnet.TLRPC$TL_messages_sendMultiMedia] */
+    /* JADX WARN: Type inference failed for: r2v254 */
+    /* JADX WARN: Type inference failed for: r2v255 */
+    /* JADX WARN: Type inference failed for: r3v11 */
+    /* JADX WARN: Type inference failed for: r3v12 */
+    /* JADX WARN: Type inference failed for: r3v13 */
+    /* JADX WARN: Type inference failed for: r3v376 */
+    /* JADX WARN: Type inference failed for: r3v46, types: [org.telegram.tgnet.TLRPC$Message] */
+    /* JADX WARN: Type inference failed for: r4v60, types: [org.telegram.tgnet.TLRPC$TL_inputMediaPhoto, org.telegram.tgnet.TLRPC$InputMedia] */
+    /* JADX WARN: Type inference failed for: r51v3, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r51v4, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r51v5, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r51v6, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r51v7, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r51v8, types: [org.telegram.messenger.SecretChatHelper] */
+    /* JADX WARN: Type inference failed for: r6v92, types: [org.telegram.tgnet.TLRPC$Message] */
+    /* JADX WARN: Type inference failed for: r8v107 */
+    /* JADX WARN: Type inference failed for: r8v108, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v109 */
+    /* JADX WARN: Type inference failed for: r8v110 */
+    /* JADX WARN: Type inference failed for: r8v111, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v112 */
+    /* JADX WARN: Type inference failed for: r8v113 */
+    /* JADX WARN: Type inference failed for: r8v114, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v115 */
+    /* JADX WARN: Type inference failed for: r8v116 */
+    /* JADX WARN: Type inference failed for: r8v117, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v118 */
+    /* JADX WARN: Type inference failed for: r8v119 */
+    /* JADX WARN: Type inference failed for: r8v120, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v121 */
+    /* JADX WARN: Type inference failed for: r8v125, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v84 */
+    /* JADX WARN: Type inference failed for: r8v85 */
+    /* JADX WARN: Type inference failed for: r9v49 */
+    /* JADX WARN: Type inference failed for: r9v50, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r9v51 */
+    /* JADX WARN: Type inference failed for: r9v81 */
+    /* JADX WARN: Type inference failed for: r9v87 */
+    /* JADX WARN: Type inference failed for: r9v91 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private void sendMessage(java.lang.String r54, java.lang.String r55, org.telegram.tgnet.TLRPC$MessageMedia r56, org.telegram.tgnet.TLRPC$TL_photo r57, org.telegram.messenger.VideoEditedInfo r58, org.telegram.tgnet.TLRPC$User r59, org.telegram.tgnet.TLRPC$TL_document r60, org.telegram.tgnet.TLRPC$TL_game r61, org.telegram.tgnet.TLRPC$TL_messageMediaPoll r62, org.telegram.tgnet.TLRPC$TL_messageMediaInvoice r63, long r64, java.lang.String r66, org.telegram.messenger.MessageObject r67, org.telegram.messenger.MessageObject r68, org.telegram.tgnet.TLRPC$WebPage r69, boolean r70, org.telegram.messenger.MessageObject r71, java.util.ArrayList<org.telegram.tgnet.TLRPC$MessageEntity> r72, org.telegram.tgnet.TLRPC$ReplyMarkup r73, java.util.HashMap<java.lang.String, java.lang.String> r74, boolean r75, int r76, int r77, java.lang.Object r78, org.telegram.messenger.MessageObject.SendAnimationData r79, boolean r80, boolean r81, java.lang.String r82) {
+    public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r95) {
         /*
-            Method dump skipped, instructions count: 7598
+            Method dump skipped, instructions count: 8200
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(java.lang.String, java.lang.String, org.telegram.tgnet.TLRPC$MessageMedia, org.telegram.tgnet.TLRPC$TL_photo, org.telegram.messenger.VideoEditedInfo, org.telegram.tgnet.TLRPC$User, org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLRPC$TL_game, org.telegram.tgnet.TLRPC$TL_messageMediaPoll, org.telegram.tgnet.TLRPC$TL_messageMediaInvoice, long, java.lang.String, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$WebPage, boolean, org.telegram.messenger.MessageObject, java.util.ArrayList, org.telegram.tgnet.TLRPC$ReplyMarkup, java.util.HashMap, boolean, int, int, java.lang.Object, org.telegram.messenger.MessageObject$SendAnimationData, boolean, boolean, java.lang.String):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
     }
 
     private void performSendDelayedMessage(DelayedMessage delayedMessage) {
@@ -3352,8 +3357,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     TLRPC$TL_photoSize_layer127 tLRPC$TL_photoSize_layer127 = new TLRPC$TL_photoSize_layer127();
                     tLRPC$TL_photoSize_layer127.type = tLRPC$PhotoSize.type;
-                    tLRPC$TL_photoSize_layer127.f1546w = tLRPC$PhotoSize.f1546w;
-                    tLRPC$TL_photoSize_layer127.f1545h = tLRPC$PhotoSize.f1545h;
+                    tLRPC$TL_photoSize_layer127.f1550w = tLRPC$PhotoSize.f1550w;
+                    tLRPC$TL_photoSize_layer127.f1549h = tLRPC$PhotoSize.f1549h;
                     tLRPC$TL_photoSize_layer127.size = tLRPC$PhotoSize.size;
                     byte[] bArr = tLRPC$PhotoSize.bytes;
                     tLRPC$TL_photoSize_layer127.bytes = bArr;
@@ -3419,10 +3424,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 String str2 = messageObject2.messageOwner.attachPath;
                 TLRPC$Document document = messageObject2.getDocument();
                 if (str2 == null) {
-                    str2 = FileLoader.getDirectory(4) + "/" + document.f1523id + ".mp4";
+                    str2 = FileLoader.getDirectory(4) + "/" + document.f1526id + ".mp4";
                 }
                 putToDelayedMessages(str2, delayedMessage);
-                MediaController.getInstance().scheduleVideoConvert(delayedMessage.obj);
+                if (!delayedMessage.videoEditedInfo.alreadyScheduledConverting) {
+                    MediaController.getInstance().scheduleVideoConvert(delayedMessage.obj);
+                }
                 putToUploadingMessages(delayedMessage.obj);
                 return;
             }
@@ -3443,7 +3450,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     TLRPC$DecryptedMessageMedia tLRPC$DecryptedMessageMedia = tLRPC$TL_decryptedMessage.media;
                     tLRPC$DecryptedMessageMedia.size = videoEditedInfo2.estimatedSize;
                     tLRPC$DecryptedMessageMedia.key = videoEditedInfo2.key;
-                    tLRPC$DecryptedMessageMedia.f1519iv = videoEditedInfo2.f1491iv;
+                    tLRPC$DecryptedMessageMedia.f1522iv = videoEditedInfo2.f1494iv;
                     SecretChatHelper secretChatHelper = getSecretChatHelper();
                     MessageObject messageObject3 = delayedMessage.obj;
                     secretChatHelper.performSendEncryptedRequest(tLRPC$TL_decryptedMessage, messageObject3.messageOwner, delayedMessage.encryptedChat, delayedMessage.videoEditedInfo.encryptedFile, delayedMessage.originalPath, messageObject3);
@@ -3463,7 +3470,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     String str3 = messageObject4.messageOwner.attachPath;
                     TLRPC$Document document2 = messageObject4.getDocument();
                     if (str3 == null) {
-                        str3 = FileLoader.getDirectory(4) + "/" + document2.f1523id + ".mp4";
+                        str3 = FileLoader.getDirectory(4) + "/" + document2.f1526id + ".mp4";
                     }
                     String str4 = str3;
                     putToDelayedMessages(str4, delayedMessage);
@@ -3486,7 +3493,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             String str6 = messageObject5.messageOwner.attachPath;
             TLRPC$Document document3 = messageObject5.getDocument();
             if (str6 == null) {
-                str6 = FileLoader.getDirectory(4) + "/" + document3.f1523id + ".mp4";
+                str6 = FileLoader.getDirectory(4) + "/" + document3.f1526id + ".mp4";
             }
             if (delayedMessage.sendEncryptedRequest != null && document3.dc_id != 0) {
                 File file4 = new File(str6);
@@ -3608,7 +3615,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         String str14 = messageObject7.messageOwner.attachPath;
                         TLRPC$Document document5 = messageObject7.getDocument();
                         if (str14 == null) {
-                            str14 = FileLoader.getDirectory(4) + "/" + document5.f1523id + ".mp4";
+                            str14 = FileLoader.getDirectory(4) + "/" + document5.f1526id + ".mp4";
                         }
                         putToDelayedMessages(str14, delayedMessage);
                         delayedMessage.extraHashMap.put(messageObject7, str14);
@@ -3617,7 +3624,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         if (tLRPC$PhotoSize2 != null && tLRPC$PhotoSize2.location != null) {
                             delayedMessage.extraHashMap.put(str14 + "_t", delayedMessage.photoSize);
                         }
-                        MediaController.getInstance().scheduleVideoConvert(messageObject7);
+                        if (!delayedMessage.videoEditedInfo.alreadyScheduledConverting) {
+                            MediaController.getInstance().scheduleVideoConvert(messageObject7);
+                        }
                         delayedMessage.obj = messageObject7;
                         putToUploadingMessages(messageObject7);
                     } else {
@@ -3628,7 +3637,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             sb.append(FileLoader.getDirectory(4));
                             sb.append("/");
                             messageObject = messageObject7;
-                            sb.append(document6.f1523id);
+                            sb.append(document6.f1526id);
                             sb.append(".mp4");
                             str15 = sb.toString();
                         } else {
@@ -3772,7 +3781,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         break;
                     } else if (tLRPC$TL_messages_sendEncryptedMultiMedia.files.get(i) == tLRPC$InputEncryptedFile) {
                         putToSendingMessages(delayedMessage.messages.get(i), delayedMessage.scheduled);
-                        getNotificationCenter().postNotificationName(NotificationCenter.fileUploadProgressChanged, str, -1L, -1L, Boolean.FALSE);
+                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.fileUploadProgressChanged, str, -1L, -1L, Boolean.FALSE);
                         break;
                     } else {
                         i++;
@@ -3790,7 +3799,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 break;
             } else if (tLRPC$TL_messages_sendMultiMedia.multi_media.get(i2).media == tLRPC$InputMedia) {
                 putToSendingMessages(delayedMessage.messages.get(i2), delayedMessage.scheduled);
-                getNotificationCenter().postNotificationName(NotificationCenter.fileUploadProgressChanged, str, -1L, -1L, Boolean.FALSE);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.fileUploadProgressChanged, str, -1L, -1L, Boolean.FALSE);
                 break;
             } else {
                 i2++;
@@ -3838,10 +3847,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             r0.<init>()
             org.telegram.tgnet.TLRPC$TL_inputPhoto r1 = new org.telegram.tgnet.TLRPC$TL_inputPhoto
             r1.<init>()
-            r0.f1581id = r1
+            r0.f1588id = r1
             org.telegram.tgnet.TLRPC$Photo r6 = r6.photo
-            long r2 = r6.f1544id
-            r1.f1537id = r2
+            long r2 = r6.f1548id
+            r1.f1540id = r2
             long r2 = r6.access_hash
             r1.access_hash = r2
             byte[] r6 = r6.file_reference
@@ -3851,7 +3860,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             boolean r6 = org.telegram.messenger.BuildVars.DEBUG_VERSION
             if (r6 == 0) goto L67
             java.lang.String r6 = "set uploaded photo"
-            org.telegram.messenger.FileLog.m52d(r6)
+            org.telegram.messenger.FileLog.m70d(r6)
             goto L67
         L35:
             boolean r0 = r7 instanceof org.telegram.tgnet.TLRPC$TL_inputMediaUploadedDocument
@@ -3862,10 +3871,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             r0.<init>()
             org.telegram.tgnet.TLRPC$TL_inputDocument r1 = new org.telegram.tgnet.TLRPC$TL_inputDocument
             r1.<init>()
-            r0.f1579id = r1
+            r0.f1586id = r1
             org.telegram.tgnet.TLRPC$Document r6 = r6.document
-            long r2 = r6.f1523id
-            r1.f1531id = r2
+            long r2 = r6.f1526id
+            r1.f1534id = r2
             long r2 = r6.access_hash
             r1.access_hash = r2
             byte[] r6 = r6.file_reference
@@ -3875,7 +3884,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             boolean r6 = org.telegram.messenger.BuildVars.DEBUG_VERSION
             if (r6 == 0) goto L67
             java.lang.String r6 = "set uploaded document"
-            org.telegram.messenger.FileLog.m52d(r6)
+            org.telegram.messenger.FileLog.m70d(r6)
             goto L67
         L66:
             r0 = 0
@@ -3932,12 +3941,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (delayedMessage.finalGroupMessage != delayedMessage.messageObjects.get(arrayList.size() - 1).getId()) {
             if (z) {
                 if (BuildVars.DEBUG_VERSION) {
-                    FileLog.m52d("final message not added, add");
+                    FileLog.m70d("final message not added, add");
                 }
                 putToDelayedMessages(str, delayedMessage);
                 return;
             } else if (BuildVars.DEBUG_VERSION) {
-                FileLog.m52d("final message not added");
+                FileLog.m70d("final message not added");
                 return;
             } else {
                 return;
@@ -3949,10 +3958,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             getMessagesStorage().putMessages(delayedMessage.messages, false, true, false, 0, delayedMessage.scheduled, 0);
             getMessagesController().updateInterfaceWithMessages(delayedMessage.peer, delayedMessage.messageObjects, delayedMessage.scheduled);
             if (!delayedMessage.scheduled) {
-                getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
             }
             if (BuildVars.DEBUG_VERSION) {
-                FileLog.m52d("add message");
+                FileLog.m70d("add message");
             }
         }
         TLObject tLObject = delayedMessage.sendRequest;
@@ -3962,7 +3971,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 TLRPC$InputMedia tLRPC$InputMedia = tLRPC$TL_messages_sendMultiMedia.multi_media.get(i).media;
                 if ((tLRPC$InputMedia instanceof TLRPC$TL_inputMediaUploadedPhoto) || (tLRPC$InputMedia instanceof TLRPC$TL_inputMediaUploadedDocument)) {
                     if (BuildVars.DEBUG_VERSION) {
-                        FileLog.m52d("multi media not ready");
+                        FileLog.m70d("multi media not ready");
                         return;
                     }
                     return;
@@ -3976,7 +3985,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     findMaxDelayedMessageForMessageId.requests.addAll(arrayList2);
                 }
                 if (BuildVars.DEBUG_VERSION) {
-                    FileLog.m52d("has maxDelayedMessage, delay");
+                    FileLog.m70d("has maxDelayedMessage, delay");
                     return;
                 }
                 return;
@@ -4001,7 +4010,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$stopVideoService$36(String str) {
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopEncodingService, str, Integer.valueOf(this.currentAccount));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopEncodingService, str, Integer.valueOf(this.currentAccount));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4046,14 +4055,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLRPC$Message == null) {
             return;
         }
-        int i = tLRPC$Message.f1539id;
+        int i = tLRPC$Message.f1542id;
         if (i > 0) {
             this.editingMessages.put(i, tLRPC$Message);
             return;
         }
         boolean z3 = this.sendingMessages.indexOfKey(i) >= 0;
-        removeFromUploadingMessages(tLRPC$Message.f1539id, z);
-        this.sendingMessages.put(tLRPC$Message.f1539id, tLRPC$Message);
+        removeFromUploadingMessages(tLRPC$Message.f1542id, z);
+        this.sendingMessages.put(tLRPC$Message.f1542id, tLRPC$Message);
         if (z || z3) {
             return;
         }
@@ -4061,7 +4070,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         LongSparseArray<Integer> longSparseArray = this.sendingMessagesIdDialogs;
         longSparseArray.put(dialogId, Integer.valueOf(longSparseArray.get(dialogId, 0).intValue() + 1));
         if (z2) {
-            getNotificationCenter().postNotificationName(NotificationCenter.sendingMessagesChanged, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.sendingMessagesChanged, new Object[0]);
         }
     }
 
@@ -4087,7 +4096,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 } else {
                     this.sendingMessagesIdDialogs.put(dialogId, Integer.valueOf(intValue));
                 }
-                getNotificationCenter().postNotificationName(NotificationCenter.sendingMessagesChanged, new Object[0]);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.sendingMessagesChanged, new Object[0]);
             }
         }
         return tLRPC$Message2;
@@ -4097,13 +4106,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         for (int i = 0; i < this.sendingMessages.size(); i++) {
             TLRPC$Message valueAt = this.sendingMessages.valueAt(i);
             if (valueAt.dialog_id == j) {
-                return valueAt.f1539id;
+                return valueAt.f1542id;
             }
         }
         for (int i2 = 0; i2 < this.uploadMessages.size(); i2++) {
             TLRPC$Message valueAt2 = this.uploadMessages.valueAt(i2);
             if (valueAt2.dialog_id == j) {
-                return valueAt2.f1539id;
+                return valueAt2.f1542id;
             }
         }
         return 0;
@@ -4114,15 +4123,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return;
         }
         TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-        boolean z = this.uploadMessages.indexOfKey(tLRPC$Message.f1539id) >= 0;
-        this.uploadMessages.put(tLRPC$Message.f1539id, tLRPC$Message);
+        boolean z = this.uploadMessages.indexOfKey(tLRPC$Message.f1542id) >= 0;
+        this.uploadMessages.put(tLRPC$Message.f1542id, tLRPC$Message);
         if (z) {
             return;
         }
         long dialogId = MessageObject.getDialogId(tLRPC$Message);
         LongSparseArray<Integer> longSparseArray = this.uploadingMessagesIdDialogs;
         longSparseArray.put(dialogId, Integer.valueOf(longSparseArray.get(dialogId, 0).intValue() + 1));
-        getNotificationCenter().postNotificationName(NotificationCenter.sendingMessagesChanged, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.sendingMessagesChanged, new Object[0]);
     }
 
     protected void removeFromUploadingMessages(int i, boolean z) {
@@ -4140,7 +4149,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             } else {
                 this.uploadingMessagesIdDialogs.put(dialogId, Integer.valueOf(intValue));
             }
-            getNotificationCenter().postNotificationName(NotificationCenter.sendingMessagesChanged, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.sendingMessagesChanged, new Object[0]);
         }
     }
 
@@ -4226,9 +4235,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC$Message tLRPC$Message = ((MessageObject) arrayList.get(i2)).messageOwner;
             getMessagesStorage().markMessageAsSendError(tLRPC$Message, z);
             tLRPC$Message.send_state = 2;
-            getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1539id));
-            processSentMessage(tLRPC$Message.f1539id);
-            removeFromSendingMessages(tLRPC$Message.f1539id, z);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1542id));
+            processSentMessage(tLRPC$Message.f1542id);
+            removeFromSendingMessages(tLRPC$Message.f1542id, z);
         }
     }
 
@@ -4239,7 +4248,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         boolean z3;
         TLRPC$Message tLRPC$Message;
         TLRPC$Updates tLRPC$Updates2;
-        TLRPC$TL_messageReplyHeader tLRPC$TL_messageReplyHeader;
+        TLRPC$MessageReplyHeader tLRPC$MessageReplyHeader;
         if (tLRPC$TL_error == null) {
             SparseArray sparseArray = new SparseArray();
             LongSparseArray longSparseArray = new LongSparseArray();
@@ -4251,12 +4260,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 TLRPC$Update tLRPC$Update = arrayList3.get(i);
                 if (tLRPC$Update instanceof TLRPC$TL_updateMessageID) {
                     TLRPC$TL_updateMessageID tLRPC$TL_updateMessageID = (TLRPC$TL_updateMessageID) tLRPC$Update;
-                    longSparseArray.put(tLRPC$TL_updateMessageID.random_id, Integer.valueOf(tLRPC$TL_updateMessageID.f1651id));
+                    longSparseArray.put(tLRPC$TL_updateMessageID.random_id, Integer.valueOf(tLRPC$TL_updateMessageID.f1667id));
                     arrayList3.remove(i);
                 } else if (tLRPC$Update instanceof TLRPC$TL_updateNewMessage) {
                     final TLRPC$TL_updateNewMessage tLRPC$TL_updateNewMessage = (TLRPC$TL_updateNewMessage) tLRPC$Update;
                     TLRPC$Message tLRPC$Message2 = tLRPC$TL_updateNewMessage.message;
-                    sparseArray.put(tLRPC$Message2.f1539id, tLRPC$Message2);
+                    sparseArray.put(tLRPC$Message2.f1542id, tLRPC$Message2);
                     Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda66
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -4267,7 +4276,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 } else if (tLRPC$Update instanceof TLRPC$TL_updateNewChannelMessage) {
                     final TLRPC$TL_updateNewChannelMessage tLRPC$TL_updateNewChannelMessage = (TLRPC$TL_updateNewChannelMessage) tLRPC$Update;
                     TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(MessagesController.getUpdateChannelId(tLRPC$TL_updateNewChannelMessage)));
-                    if ((chat == null || chat.megagroup) && (tLRPC$TL_messageReplyHeader = tLRPC$TL_updateNewChannelMessage.message.reply_to) != null && (tLRPC$TL_messageReplyHeader.reply_to_top_id != 0 || tLRPC$TL_messageReplyHeader.reply_to_msg_id != 0)) {
+                    if ((chat == null || chat.megagroup) && (tLRPC$MessageReplyHeader = tLRPC$TL_updateNewChannelMessage.message.reply_to) != null && (tLRPC$MessageReplyHeader.reply_to_top_id != 0 || tLRPC$MessageReplyHeader.reply_to_msg_id != 0)) {
                         if (longSparseArray2 == null) {
                             longSparseArray2 = new LongSparseArray<>();
                         }
@@ -4277,10 +4286,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             sparseArray2 = new SparseArray<>();
                             longSparseArray2.put(dialogId, sparseArray2);
                         }
-                        TLRPC$TL_messageReplyHeader tLRPC$TL_messageReplyHeader2 = tLRPC$TL_updateNewChannelMessage.message.reply_to;
-                        int i2 = tLRPC$TL_messageReplyHeader2.reply_to_top_id;
+                        TLRPC$MessageReplyHeader tLRPC$MessageReplyHeader2 = tLRPC$TL_updateNewChannelMessage.message.reply_to;
+                        int i2 = tLRPC$MessageReplyHeader2.reply_to_top_id;
                         if (i2 == 0) {
-                            i2 = tLRPC$TL_messageReplyHeader2.reply_to_msg_id;
+                            i2 = tLRPC$MessageReplyHeader2.reply_to_msg_id;
                         }
                         TLRPC$MessageReplies tLRPC$MessageReplies = sparseArray2.get(i2);
                         if (tLRPC$MessageReplies == null) {
@@ -4294,7 +4303,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         tLRPC$MessageReplies.replies++;
                     }
                     TLRPC$Message tLRPC$Message3 = tLRPC$TL_updateNewChannelMessage.message;
-                    sparseArray.put(tLRPC$Message3.f1539id, tLRPC$Message3);
+                    sparseArray.put(tLRPC$Message3.f1542id, tLRPC$Message3);
                     Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda63
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -4304,7 +4313,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     arrayList3.remove(i);
                 } else if (tLRPC$Update instanceof TLRPC$TL_updateNewScheduledMessage) {
                     TLRPC$Message tLRPC$Message4 = ((TLRPC$TL_updateNewScheduledMessage) tLRPC$Update).message;
-                    sparseArray.put(tLRPC$Message4.f1539id, tLRPC$Message4);
+                    sparseArray.put(tLRPC$Message4.f1542id, tLRPC$Message4);
                     arrayList3.remove(i);
                 } else {
                     i++;
@@ -4314,14 +4323,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (longSparseArray2 != null) {
                 getMessagesStorage().putChannelViews(null, null, longSparseArray2, true);
-                getNotificationCenter().postNotificationName(NotificationCenter.didUpdateMessagesViews, null, null, longSparseArray2, Boolean.TRUE);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateMessagesViews, null, null, longSparseArray2, Boolean.TRUE);
             }
             int i3 = 0;
             while (i3 < arrayList.size()) {
                 MessageObject messageObject = (MessageObject) arrayList.get(i3);
                 String str = (String) arrayList2.get(i3);
                 final TLRPC$Message tLRPC$Message5 = messageObject.messageOwner;
-                final int i4 = tLRPC$Message5.f1539id;
+                final int i4 = tLRPC$Message5.f1542id;
                 final ArrayList arrayList4 = new ArrayList();
                 Integer num = (Integer) longSparseArray.get(tLRPC$Message5.random_id);
                 if (num == null || (tLRPC$Message = (TLRPC$Message) sparseArray.get(num.intValue())) == null) {
@@ -4336,12 +4345,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     tLRPC$Message6.ttl_period = tLRPC$Message.ttl_period;
                     tLRPC$Message6.flags = 33554432 | tLRPC$Message6.flags;
                 }
-                updateMediaPaths(messageObject, tLRPC$Message, tLRPC$Message.f1539id, str, false);
+                updateMediaPaths(messageObject, tLRPC$Message, tLRPC$Message.f1542id, str, false);
                 final int mediaExistanceFlags = messageObject.getMediaExistanceFlags();
-                tLRPC$Message5.f1539id = tLRPC$Message.f1539id;
+                tLRPC$Message5.f1542id = tLRPC$Message.f1542id;
                 if (ChatObject.isTemplatesChat(this.currentAccount, -tLRPC$Message.dialog_id)) {
                     tLRPC$Updates2 = tLRPC$Updates3;
-                    getTemplatesController().markAsSent(tLRPC$Message5.random_id, tLRPC$Message5.f1539id);
+                    getTemplatesController().markAsSent(tLRPC$Message5.random_id, tLRPC$Message5.f1542id);
                 } else {
                     tLRPC$Updates2 = tLRPC$Updates3;
                 }
@@ -4352,11 +4361,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         num2 = Integer.valueOf(getMessagesStorage().getDialogReadMax(tLRPC$Message.out, tLRPC$Message.dialog_id));
                         getMessagesController().dialogs_read_outbox_max.put(Long.valueOf(tLRPC$Message.dialog_id), num2);
                     }
-                    tLRPC$Message.unread = num2.intValue() < tLRPC$Message.f1539id;
+                    tLRPC$Message.unread = num2.intValue() < tLRPC$Message.f1542id;
                 }
                 getStatsController().incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 1, 1);
                 tLRPC$Message5.send_state = 0;
-                getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByServer, Integer.valueOf(i4), Integer.valueOf(tLRPC$Message5.f1539id), tLRPC$Message5, Long.valueOf(tLRPC$Message5.dialog_id), Long.valueOf(j), Integer.valueOf(mediaExistanceFlags), Boolean.valueOf(z));
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByServer, Integer.valueOf(i4), Integer.valueOf(tLRPC$Message5.f1542id), tLRPC$Message5, Long.valueOf(tLRPC$Message5.dialog_id), Long.valueOf(j), Integer.valueOf(mediaExistanceFlags), Boolean.valueOf(z));
                 getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda50
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -4386,9 +4395,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 TLRPC$Message tLRPC$Message7 = ((MessageObject) arrayList.get(i5)).messageOwner;
                 getMessagesStorage().markMessageAsSendError(tLRPC$Message7, z);
                 tLRPC$Message7.send_state = 2;
-                getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message7.f1539id));
-                processSentMessage(tLRPC$Message7.f1539id);
-                removeFromSendingMessages(tLRPC$Message7.f1539id, z);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message7.f1542id));
+                processSentMessage(tLRPC$Message7.f1542id);
+                removeFromSendingMessages(tLRPC$Message7.f1542id, z);
             }
         }
     }
@@ -4405,7 +4414,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequestMulti$43(final TLRPC$Message tLRPC$Message, final int i, final boolean z, ArrayList arrayList, final long j, final int i2) {
-        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Message.peer_id), Integer.valueOf(i), tLRPC$Message.f1539id, 0, false, z ? 1 : 0);
+        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Message.peer_id), Integer.valueOf(i), tLRPC$Message.f1542id, 0, false, z ? 1 : 0);
         getMessagesStorage().putMessages((ArrayList<TLRPC$Message>) arrayList, true, false, false, 0, z, 0);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
@@ -4418,7 +4427,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequestMulti$42(TLRPC$Message tLRPC$Message, int i, long j, int i2, boolean z) {
         getMediaDataController().increasePeerRaiting(tLRPC$Message.dialog_id);
-        getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByServer, Integer.valueOf(i), Integer.valueOf(tLRPC$Message.f1539id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), Long.valueOf(j), Integer.valueOf(i2), Boolean.valueOf(z));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByServer, Integer.valueOf(i), Integer.valueOf(tLRPC$Message.f1542id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), Long.valueOf(j), Integer.valueOf(i2), Boolean.valueOf(z));
         processSentMessage(i);
         removeFromSendingMessages(i, z);
     }
@@ -4475,7 +4484,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         } else if (messageObject.isForwardingEditor) {
             messageObject.messageOwner.send_state = 0;
             messageObject.attachPathExists = true;
-            getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByAck, Integer.valueOf(messageObject.messageOwner.f1539id));
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByAck, Integer.valueOf(messageObject.messageOwner.f1542id));
         } else {
             final TLRPC$Message tLRPC$Message = messageObject.messageOwner;
             putToSendingMessages(tLRPC$Message, z2);
@@ -4531,7 +4540,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$47(TLRPC$Message tLRPC$Message, boolean z, TLObject tLObject, DelayedMessage delayedMessage) {
-        removeFromSendingMessages(tLRPC$Message.f1539id, z);
+        removeFromSendingMessages(tLRPC$Message.f1542id, z);
         if (tLObject instanceof TLRPC$TL_messages_sendMedia) {
             TLRPC$TL_messages_sendMedia tLRPC$TL_messages_sendMedia = (TLRPC$TL_messages_sendMedia) tLObject;
             TLRPC$InputMedia tLRPC$InputMedia = tLRPC$TL_messages_sendMedia.media;
@@ -4582,7 +4591,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC$Message tLRPC$Message3 = tLRPC$Message2;
             if (tLRPC$Message3 != null) {
                 ImageLoader.saveMessageThumbs(tLRPC$Message3);
-                updateMediaPaths(messageObject, tLRPC$Message3, tLRPC$Message3.f1539id, str, false);
+                updateMediaPaths(messageObject, tLRPC$Message3, tLRPC$Message3.f1542id, str, false);
             }
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda70
                 @Override // java.lang.Runnable
@@ -4600,7 +4609,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (MessageObject.isVideoMessage(tLRPC$Message) || MessageObject.isRoundVideoMessage(tLRPC$Message) || MessageObject.isNewGifMessage(tLRPC$Message)) {
             stopVideoService(tLRPC$Message.attachPath);
         }
-        removeFromSendingMessages(tLRPC$Message.f1539id, z);
+        removeFromSendingMessages(tLRPC$Message.f1542id, z);
         revertEditingMessageObject(messageObject);
     }
 
@@ -4617,8 +4626,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$48(TLRPC$Message tLRPC$Message, boolean z) {
-        processSentMessage(tLRPC$Message.f1539id);
-        removeFromSendingMessages(tLRPC$Message.f1539id, z);
+        processSentMessage(tLRPC$Message.f1542id);
+        removeFromSendingMessages(tLRPC$Message.f1542id, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4631,18 +4640,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         TLRPC$Message tLRPC$Message2;
         boolean z4;
         int i2;
-        TLRPC$TL_messageReplyHeader tLRPC$TL_messageReplyHeader;
+        TLRPC$MessageReplyHeader tLRPC$MessageReplyHeader;
         if (tLRPC$TL_error == null) {
-            final int i3 = tLRPC$Message.f1539id;
+            final int i3 = tLRPC$Message.f1542id;
             final ArrayList arrayList = new ArrayList();
             String str3 = tLRPC$Message.attachPath;
             boolean z5 = tLRPC$Message.date == 2147483646;
             if (tLObject instanceof TLRPC$TL_updateShortSentMessage) {
                 final TLRPC$TL_updateShortSentMessage tLRPC$TL_updateShortSentMessage = (TLRPC$TL_updateShortSentMessage) tLObject;
-                updateMediaPaths(messageObject, null, tLRPC$TL_updateShortSentMessage.f1655id, null, false);
+                updateMediaPaths(messageObject, null, tLRPC$TL_updateShortSentMessage.f1674id, null, false);
                 int mediaExistanceFlags = messageObject.getMediaExistanceFlags();
-                int i4 = tLRPC$TL_updateShortSentMessage.f1655id;
-                tLRPC$Message.f1539id = i4;
+                int i4 = tLRPC$TL_updateShortSentMessage.f1674id;
+                tLRPC$Message.f1542id = i4;
                 tLRPC$Message.local_id = i4;
                 tLRPC$Message.date = tLRPC$TL_updateShortSentMessage.date;
                 tLRPC$Message.entities = tLRPC$TL_updateShortSentMessage.entities;
@@ -4669,7 +4678,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     num = Integer.valueOf(getMessagesStorage().getDialogReadMax(tLRPC$Message.out, tLRPC$Message.dialog_id));
                     getMessagesController().dialogs_read_outbox_max.put(Long.valueOf(tLRPC$Message.dialog_id), num);
                 }
-                tLRPC$Message.unread = num.intValue() < tLRPC$Message.f1539id;
+                tLRPC$Message.unread = num.intValue() < tLRPC$Message.f1542id;
                 Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda67
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -4711,7 +4720,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (tLRPC$Update instanceof TLRPC$TL_updateNewChannelMessage) {
                         final TLRPC$TL_updateNewChannelMessage tLRPC$TL_updateNewChannelMessage = (TLRPC$TL_updateNewChannelMessage) tLRPC$Update;
                         TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(MessagesController.getUpdateChannelId(tLRPC$TL_updateNewChannelMessage)));
-                        if (!(chat == null || chat.megagroup) || (tLRPC$TL_messageReplyHeader = tLRPC$TL_updateNewChannelMessage.message.reply_to) == null || (tLRPC$TL_messageReplyHeader.reply_to_top_id == 0 && tLRPC$TL_messageReplyHeader.reply_to_msg_id == 0)) {
+                        if (!(chat == null || chat.megagroup) || (tLRPC$MessageReplyHeader = tLRPC$TL_updateNewChannelMessage.message.reply_to) == null || (tLRPC$MessageReplyHeader.reply_to_top_id == 0 && tLRPC$MessageReplyHeader.reply_to_msg_id == 0)) {
                             longSparseArray = null;
                         } else {
                             longSparseArray = new LongSparseArray<>();
@@ -4721,10 +4730,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 sparseArray = new SparseArray<>();
                                 longSparseArray.put(dialogId, sparseArray);
                             }
-                            TLRPC$TL_messageReplyHeader tLRPC$TL_messageReplyHeader2 = tLRPC$TL_updateNewChannelMessage.message.reply_to;
-                            int i6 = tLRPC$TL_messageReplyHeader2.reply_to_top_id;
+                            TLRPC$MessageReplyHeader tLRPC$MessageReplyHeader2 = tLRPC$TL_updateNewChannelMessage.message.reply_to;
+                            int i6 = tLRPC$MessageReplyHeader2.reply_to_top_id;
                             if (i6 == 0) {
-                                i6 = tLRPC$TL_messageReplyHeader2.reply_to_msg_id;
+                                i6 = tLRPC$MessageReplyHeader2.reply_to_msg_id;
                             }
                             TLRPC$MessageReplies tLRPC$MessageReplies = sparseArray.get(i6);
                             if (tLRPC$MessageReplies == null) {
@@ -4761,7 +4770,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 if (longSparseArray != null) {
                     getMessagesStorage().putChannelViews(null, null, longSparseArray, true);
                     str2 = str3;
-                    getNotificationCenter().postNotificationName(NotificationCenter.didUpdateMessagesViews, null, null, longSparseArray, Boolean.TRUE);
+                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateMessagesViews, null, null, longSparseArray, Boolean.TRUE);
                 } else {
                     str2 = str3;
                 }
@@ -4775,7 +4784,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             num2 = Integer.valueOf(getMessagesStorage().getDialogReadMax(tLRPC$Message2.out, tLRPC$Message2.dialog_id));
                             getMessagesController().dialogs_read_outbox_max.put(Long.valueOf(tLRPC$Message2.dialog_id), num2);
                         }
-                        tLRPC$Message2.unread = num2.intValue() < tLRPC$Message2.f1539id;
+                        tLRPC$Message2.unread = num2.intValue() < tLRPC$Message2.f1542id;
                     }
                     TLRPC$Message tLRPC$Message6 = messageObject.messageOwner;
                     tLRPC$Message6.post_author = tLRPC$Message2.post_author;
@@ -4784,11 +4793,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         tLRPC$Message6.flags |= ConnectionsManager.FileTypeVideo;
                     }
                     tLRPC$Message6.entities = tLRPC$Message2.entities;
-                    updateMediaPaths(messageObject, tLRPC$Message2, tLRPC$Message2.f1539id, str, false);
+                    updateMediaPaths(messageObject, tLRPC$Message2, tLRPC$Message2.f1542id, str, false);
                     int mediaExistanceFlags2 = messageObject.getMediaExistanceFlags();
-                    tLRPC$Message.f1539id = tLRPC$Message2.f1539id;
+                    tLRPC$Message.f1542id = tLRPC$Message2.f1542id;
                     if (ChatObject.isTemplatesChat(this.currentAccount, -tLRPC$Message.dialog_id)) {
-                        getTemplatesController().markAsSent(tLRPC$Message.random_id, tLRPC$Message.f1539id);
+                        getTemplatesController().markAsSent(tLRPC$Message.random_id, tLRPC$Message.f1542id);
                     }
                     i2 = mediaExistanceFlags2;
                     z4 = false;
@@ -4799,7 +4808,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             sb.append(arrayList2.get(i7).getClass().getSimpleName());
                             sb.append(", ");
                         }
-                        FileLog.m52d("can't find message in updates " + ((Object) sb));
+                        FileLog.m70d("can't find message in updates " + ((Object) sb));
                     }
                     z3 = z;
                     z4 = true;
@@ -4837,7 +4846,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                     });
                 } else {
-                    getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByServer, Integer.valueOf(i3), Integer.valueOf(tLRPC$Message.f1539id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), 0L, Integer.valueOf(i), Boolean.valueOf(z));
+                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByServer, Integer.valueOf(i3), Integer.valueOf(tLRPC$Message.f1542id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), 0L, Integer.valueOf(i), Boolean.valueOf(z));
                     final int i8 = i;
                     final String str5 = str2;
                     getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda49
@@ -4855,12 +4864,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (z2) {
             getMessagesStorage().markMessageAsSendError(tLRPC$Message, z);
             tLRPC$Message.send_state = 2;
-            getNotificationCenter().postNotificationName(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1539id));
-            processSentMessage(tLRPC$Message.f1539id);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(tLRPC$Message.f1542id));
+            processSentMessage(tLRPC$Message.f1542id);
             if (MessageObject.isVideoMessage(tLRPC$Message) || MessageObject.isRoundVideoMessage(tLRPC$Message) || MessageObject.isNewGifMessage(tLRPC$Message)) {
                 stopVideoService(tLRPC$Message.attachPath);
             }
-            removeFromSendingMessages(tLRPC$Message.f1539id, z);
+            removeFromSendingMessages(tLRPC$Message.f1542id, z);
         }
     }
 
@@ -4910,7 +4919,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$58(final TLRPC$Message tLRPC$Message, final int i, final boolean z, ArrayList arrayList, final int i2, String str) {
-        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Message.peer_id), Integer.valueOf(i), tLRPC$Message.f1539id, 0, false, z ? 1 : 0);
+        getMessagesStorage().updateMessageStateAndId(tLRPC$Message.random_id, MessageObject.getPeerId(tLRPC$Message.peer_id), Integer.valueOf(i), tLRPC$Message.f1542id, 0, false, z ? 1 : 0);
         getMessagesStorage().putMessages((ArrayList<TLRPC$Message>) arrayList, true, false, false, 0, z, 0);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
@@ -4926,14 +4935,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$57(TLRPC$Message tLRPC$Message, int i, int i2, boolean z) {
         getMediaDataController().increasePeerRaiting(tLRPC$Message.dialog_id);
-        getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByServer, Integer.valueOf(i), Integer.valueOf(tLRPC$Message.f1539id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), 0L, Integer.valueOf(i2), Boolean.valueOf(z));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByServer, Integer.valueOf(i), Integer.valueOf(tLRPC$Message.f1542id), tLRPC$Message, Long.valueOf(tLRPC$Message.dialog_id), 0L, Integer.valueOf(i2), Boolean.valueOf(z));
         processSentMessage(i);
         removeFromSendingMessages(i, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$62(final TLRPC$Message tLRPC$Message) {
-        final int i = tLRPC$Message.f1539id;
+        final int i = tLRPC$Message.f1542id;
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
@@ -4945,20 +4954,19 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$61(TLRPC$Message tLRPC$Message, int i) {
         tLRPC$Message.send_state = 0;
-        getNotificationCenter().postNotificationName(NotificationCenter.messageReceivedByAck, Integer.valueOf(i));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByAck, Integer.valueOf(i));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:141:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x02fd  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0112  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updateMediaPaths(org.telegram.messenger.MessageObject r19, org.telegram.tgnet.TLRPC$Message r20, int r21, java.lang.String r22, boolean r23) {
         /*
-            Method dump skipped, instructions count: 1837
+            Method dump skipped, instructions count: 1845
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.updateMediaPaths(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$Message, int, java.lang.String, boolean):void");
@@ -5148,7 +5156,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$prepareImportHistory$67(MessagesStorage.LongCallback longCallback) {
-        Toast.makeText(ApplicationLoader.applicationContext, LocaleController.getString("ImportFileTooLarge", C3417R.string.ImportFileTooLarge), 0).show();
+        Toast.makeText(ApplicationLoader.applicationContext, LocaleController.getString("ImportFileTooLarge", C3419R.string.ImportFileTooLarge), 0).show();
         longCallback.run(0L);
     }
 
@@ -5157,12 +5165,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         this.importingHistoryFiles.putAll(hashMap);
         this.importingHistoryMap.put(j, importingHistory);
         getFileLoader().uploadFile(importingHistory.historyPath, false, true, 0L, ConnectionsManager.FileTypeFile, true);
-        getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, Long.valueOf(j));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, Long.valueOf(j));
         longCallback.run(j);
         try {
             ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, ImportingService.class));
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
@@ -5225,13 +5233,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             this.importingStickersFiles.putAll(hashMap);
             this.importingStickersMap.put(str, importingStickers);
             importingStickers.initImport();
-            getNotificationCenter().postNotificationName(NotificationCenter.historyImportProgressChanged, str);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.historyImportProgressChanged, str);
             stringCallback.run(str);
         }
         try {
             ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, ImportingService.class));
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
@@ -5270,54 +5278,56 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Can't wrap try/catch for region: R(28:(5:242|243|244|245|(10:247|248|249|250|251|252|253|254|255|256)(1:295))|(3:266|267|(28:269|270|(25:272|260|261|262|(6:53|(1:55)|56|(1:58)|59|(1:61))(1:241)|(2:63|(18:65|66|(1:234)(7:69|(1:71)(1:233)|72|(1:232)(1:76)|(1:231)(4:81|(1:83)(1:230)|84|(2:88|89))|229|89)|90|(11:92|(1:94)|95|(3:97|98|100)(1:227)|(3:110|111|(10:113|114|115|116|(1:118)|119|120|(1:194)(8:123|124|125|126|127|128|129|(2:136|137))|187|137))|201|120|(0)|194|187|137)(1:228)|(1:139)(1:186)|140|(1:142)|143|(1:146)|(1:148)|149|(2:151|(2:171|(2:181|(1:183)(1:184))(1:177))(4:155|(1:170)(2:(1:169)(1:162)|(2:164|(1:166)))|167|168))(1:185)|178|(0)|170|167|168)(2:(1:236)(1:239)|237))(1:240)|238|66|(0)|234|90|(0)(0)|(0)(0)|140|(0)|143|(1:146)|(0)|149|(0)(0)|178|(0)|170|167|168)|259|260|261|262|(0)(0)|(0)(0)|238|66|(0)|234|90|(0)(0)|(0)(0)|140|(0)|143|(0)|(0)|149|(0)(0)|178|(0)|170|167|168))|258|259|260|261|262|(0)(0)|(0)(0)|238|66|(0)|234|90|(0)(0)|(0)(0)|140|(0)|143|(0)|(0)|149|(0)(0)|178|(0)|170|167|168) */
+    /* JADX WARN: Can't wrap try/catch for region: R(28:(5:243|244|245|246|(10:248|249|250|251|252|253|254|255|256|257)(1:296))|(3:267|268|(28:270|271|(25:273|261|262|263|(7:53|(1:55)|56|(1:58)|59|(1:61)|62)(1:242)|(2:64|(18:66|67|(1:235)(7:70|(1:72)(1:234)|73|(1:233)(1:77)|(1:232)(4:82|(1:84)(1:231)|85|(2:89|90))|230|90)|91|(11:93|(1:95)|96|(3:98|99|101)(1:228)|(3:111|112|(10:114|115|116|117|(1:119)|120|121|(1:195)(8:124|125|126|127|128|129|130|(2:137|138))|188|138))|202|121|(0)|195|188|138)(1:229)|(1:140)(1:187)|141|(1:143)|144|(1:147)|(1:149)|150|(2:152|(2:172|(2:182|(1:184)(1:185))(1:178))(4:156|(1:171)(2:(1:170)(1:163)|(2:165|(1:167)))|168|169))(1:186)|179|(0)|171|168|169)(2:(1:237)(1:240)|238))(1:241)|239|67|(0)|235|91|(0)(0)|(0)(0)|141|(0)|144|(1:147)|(0)|150|(0)(0)|179|(0)|171|168|169)|260|261|262|263|(0)(0)|(0)(0)|239|67|(0)|235|91|(0)(0)|(0)(0)|141|(0)|144|(0)|(0)|150|(0)(0)|179|(0)|171|168|169))|259|260|261|262|263|(0)(0)|(0)(0)|239|67|(0)|235|91|(0)(0)|(0)(0)|141|(0)|144|(0)|(0)|150|(0)(0)|179|(0)|171|168|169) */
     /* JADX WARN: Code restructure failed: missing block: B:32:0x0059, code lost:
-        if (r3 == false) goto L327;
+        if (r3 == false) goto L328;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x014a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x014b, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x014b, code lost:
-        org.telegram.messenger.FileLog.m49e(r0);
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x014c, code lost:
+        org.telegram.messenger.FileLog.m67e(r0);
      */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x01a0  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x01ea  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0228  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x022e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x02ee  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x03fd A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0474  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x047e  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0484  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x048e  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x0497 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x04a0  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x0506  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x050b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0176 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0231 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x02e8  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x03f7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x046d  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x0477  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x047d  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0487  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x0491 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:286:0x049a  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x04a7  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0501  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0506 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x0177 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private static int prepareSendingDocumentInternal(final org.telegram.messenger.AccountInstance r33, java.lang.String r34, java.lang.String r35, android.net.Uri r36, java.lang.String r37, final long r38, final org.telegram.messenger.MessageObject r40, final org.telegram.messenger.MessageObject r41, java.lang.CharSequence r42, final java.util.ArrayList<org.telegram.tgnet.TLRPC$MessageEntity> r43, final org.telegram.messenger.MessageObject r44, long[] r45, boolean r46, boolean r47, final boolean r48, final int r49, java.lang.Integer[] r50, final java.lang.String r51) {
+    private static int prepareSendingDocumentInternal(final org.telegram.messenger.AccountInstance r32, java.lang.String r33, java.lang.String r34, android.net.Uri r35, java.lang.String r36, final long r37, final org.telegram.messenger.MessageObject r39, final org.telegram.messenger.MessageObject r40, final org.telegram.tgnet.TLRPC$StoryItem r41, final java.util.ArrayList<org.telegram.tgnet.TLRPC$MessageEntity> r42, final org.telegram.messenger.MessageObject r43, long[] r44, boolean r45, java.lang.CharSequence r46, final boolean r47, final int r48, java.lang.Integer[] r49, boolean r50, final java.lang.String r51) {
         /*
-            Method dump skipped, instructions count: 1438
+            Method dump skipped, instructions count: 1434
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.prepareSendingDocumentInternal(org.telegram.messenger.AccountInstance, java.lang.String, java.lang.String, android.net.Uri, java.lang.String, long, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, java.lang.CharSequence, java.util.ArrayList, org.telegram.messenger.MessageObject, long[], boolean, boolean, boolean, int, java.lang.Integer[], java.lang.String):int");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.prepareSendingDocumentInternal(org.telegram.messenger.AccountInstance, java.lang.String, java.lang.String, android.net.Uri, java.lang.String, long, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$StoryItem, java.util.ArrayList, org.telegram.messenger.MessageObject, long[], boolean, java.lang.CharSequence, boolean, int, java.lang.Integer[], boolean, java.lang.String):int");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingDocumentInternal$73(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, String str, HashMap hashMap, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, String str3, ArrayList arrayList, boolean z, int i, String str4) {
+    public static /* synthetic */ void lambda$prepareSendingDocumentInternal$73(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, String str, HashMap hashMap, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, String str3, ArrayList arrayList, boolean z, int i, String str4, TLRPC$StoryItem tLRPC$StoryItem) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tLRPC$TL_document, str, hashMap, false, false, str2);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_document, null, str, j, messageObject2, messageObject3, str3, arrayList, null, hashMap, z, i, 0, str2, null, false, str4);
+            return;
         }
+        SendMessageParams m55of = SendMessageParams.m55of(tLRPC$TL_document, null, str, j, messageObject2, messageObject3, str3, arrayList, null, hashMap, z, i, 0, str2, null, false, str4);
+        m55of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m55of);
     }
 
     private static boolean checkFileSize(AccountInstance accountInstance, Uri uri) {
@@ -5334,13 +5344,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 j = query.getLong(columnIndex);
                 query.close();
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         }
         return !FileLoader.checkUploadFileSize(accountInstance.getCurrentAccount(), j);
     }
 
-    public static void prepareSendingDocument(AccountInstance accountInstance, String str, String str2, Uri uri, String str3, String str4, long j, MessageObject messageObject, MessageObject messageObject2, InputContentInfoCompat inputContentInfoCompat, MessageObject messageObject3, boolean z, int i, String str5) {
+    public static void prepareSendingDocument(AccountInstance accountInstance, String str, String str2, Uri uri, String str3, String str4, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$StoryItem tLRPC$StoryItem, MessageObject messageObject3, boolean z, int i, InputContentInfoCompat inputContentInfoCompat, String str5) {
         if ((str == null || str2 == null) && uri == null) {
             return;
         }
@@ -5355,14 +5365,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             arrayList.add(str);
             arrayList2.add(str2);
         }
-        prepareSendingDocuments(accountInstance, arrayList, arrayList2, arrayList3, str3, str4, j, messageObject, messageObject2, inputContentInfoCompat, messageObject3, z, i, str5, true);
+        prepareSendingDocuments(accountInstance, arrayList, arrayList2, arrayList3, str3, str4, j, messageObject, messageObject2, tLRPC$StoryItem, messageObject3, z, i, inputContentInfoCompat, str5, true);
     }
 
-    public static void prepareSendingAudioDocuments(final AccountInstance accountInstance, final ArrayList<MessageObject> arrayList, final CharSequence charSequence, final long j, final MessageObject messageObject, final MessageObject messageObject2, final MessageObject messageObject3, final boolean z, final int i, final String str, final boolean z2) {
+    public static void prepareSendingAudioDocuments(final AccountInstance accountInstance, final ArrayList<MessageObject> arrayList, final CharSequence charSequence, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final boolean z, final int i, final MessageObject messageObject3, final String str, final boolean z2) {
         new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingAudioDocuments$75(arrayList, j, accountInstance, charSequence, z2, messageObject3, messageObject, messageObject2, z, i, str);
+                SendMessagesHelper.lambda$prepareSendingAudioDocuments$75(arrayList, j, accountInstance, charSequence, z2, messageObject3, messageObject, messageObject2, z, i, str, tLRPC$StoryItem);
             }
         }).start();
     }
@@ -5374,28 +5384,30 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:34:0x00b3  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00b7  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0100 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0102 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$75(java.util.ArrayList r24, final long r25, final org.telegram.messenger.AccountInstance r27, java.lang.CharSequence r28, boolean r29, final org.telegram.messenger.MessageObject r30, final org.telegram.messenger.MessageObject r31, final org.telegram.messenger.MessageObject r32, final boolean r33, final int r34, final java.lang.String r35) {
+    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$75(java.util.ArrayList r25, final long r26, final org.telegram.messenger.AccountInstance r28, java.lang.CharSequence r29, boolean r30, final org.telegram.messenger.MessageObject r31, final org.telegram.messenger.MessageObject r32, final org.telegram.messenger.MessageObject r33, final boolean r34, final int r35, final java.lang.String r36, final org.telegram.tgnet.TLRPC$StoryItem r37) {
         /*
-            Method dump skipped, instructions count: 286
+            Method dump skipped, instructions count: 290
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingAudioDocuments$75(java.util.ArrayList, long, org.telegram.messenger.AccountInstance, java.lang.CharSequence, boolean, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingAudioDocuments$75(java.util.ArrayList, long, org.telegram.messenger.AccountInstance, java.lang.CharSequence, boolean, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String, org.telegram.tgnet.TLRPC$StoryItem):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$74(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, MessageObject messageObject2, HashMap hashMap, String str, long j, MessageObject messageObject3, MessageObject messageObject4, String str2, ArrayList arrayList, boolean z, int i, String str3) {
+    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$74(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, MessageObject messageObject2, HashMap hashMap, String str, long j, MessageObject messageObject3, MessageObject messageObject4, String str2, ArrayList arrayList, boolean z, int i, String str3, TLRPC$StoryItem tLRPC$StoryItem) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tLRPC$TL_document, messageObject2.messageOwner.attachPath, hashMap, false, false, str);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_document, null, messageObject2.messageOwner.attachPath, j, messageObject3, messageObject4, str2, arrayList, null, hashMap, z, i, 0, str, null, false, false, str3);
+            return;
         }
+        SendMessageParams m54of = SendMessageParams.m54of(tLRPC$TL_document, null, messageObject2.messageOwner.attachPath, j, messageObject3, messageObject4, str2, arrayList, null, hashMap, z, i, 0, str, null, false, false, str3);
+        m54of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m54of);
     }
 
     private static void finishGroup(final AccountInstance accountInstance, final long j, final int i) {
@@ -5426,7 +5438,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendMessagesHelper.sendReadyToSendGroup(delayedMessage, true, true);
     }
 
-    public static void prepareSendingDocuments(final AccountInstance accountInstance, final ArrayList<String> arrayList, final ArrayList<String> arrayList2, final ArrayList<Uri> arrayList3, final String str, final String str2, final long j, final MessageObject messageObject, final MessageObject messageObject2, final InputContentInfoCompat inputContentInfoCompat, final MessageObject messageObject3, final boolean z, final int i, final String str3, final boolean z2) {
+    public static void prepareSendingDocuments(final AccountInstance accountInstance, final ArrayList<String> arrayList, final ArrayList<String> arrayList2, final ArrayList<Uri> arrayList3, final String str, final String str2, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final MessageObject messageObject3, final boolean z, final int i, final InputContentInfoCompat inputContentInfoCompat, final String str3, final boolean z2) {
         if (arrayList == null && arrayList2 == null && arrayList3 == null) {
             return;
         }
@@ -5434,7 +5446,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingDocuments$77(j, arrayList, str, accountInstance, i, arrayList2, str2, messageObject, messageObject2, messageObject3, z2, inputContentInfoCompat, z, str3, arrayList3);
+                    SendMessagesHelper.lambda$prepareSendingDocuments$77(j, arrayList, str, accountInstance, i, arrayList2, str2, messageObject, messageObject2, tLRPC$StoryItem, messageObject3, z2, z, inputContentInfoCompat, str3, arrayList3);
                 }
             });
         }
@@ -5442,7 +5454,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void lambda$prepareSendingDocuments$77(long j, ArrayList arrayList, String str, AccountInstance accountInstance, int i, ArrayList arrayList2, String str2, MessageObject messageObject, MessageObject messageObject2, MessageObject messageObject3, boolean z, InputContentInfoCompat inputContentInfoCompat, boolean z2, String str3, ArrayList arrayList3) {
+    public static /* synthetic */ void lambda$prepareSendingDocuments$77(long j, ArrayList arrayList, String str, AccountInstance accountInstance, int i, ArrayList arrayList2, String str2, MessageObject messageObject, MessageObject messageObject2, TLRPC$StoryItem tLRPC$StoryItem, MessageObject messageObject3, boolean z, boolean z2, InputContentInfoCompat inputContentInfoCompat, String str3, ArrayList arrayList3) {
         Integer[] numArr;
         long[] jArr;
         ArrayList arrayList4;
@@ -5475,7 +5487,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 int i11 = size;
                 Integer[] numArr3 = numArr2;
                 long[] jArr3 = jArr2;
-                i2 = prepareSendingDocumentInternal(accountInstance, (String) arrayList.get(i8), (String) arrayList2.get(i8), null, str2, j, messageObject, messageObject2, str4, null, messageObject3, !z ? null : jArr2, (i9 == i6 || i8 == size + (-1)) ? i5 : 0, inputContentInfoCompat == null ? i5 : 0, z2, i, numArr3, str3);
+                i2 = prepareSendingDocumentInternal(accountInstance, (String) arrayList.get(i8), (String) arrayList2.get(i8), null, str2, j, messageObject, messageObject2, tLRPC$StoryItem, null, messageObject3, !z ? null : jArr2, (i9 == i6 || i8 == size + (-1)) ? i5 : 0, str4, z2, i, numArr3, inputContentInfoCompat == null ? i5 : 0, str3);
                 i7 = (j2 != jArr3[0] || jArr3[0] == -1) ? 1 : i9;
                 i8 = i10 + 1;
                 accountInstance2 = accountInstance;
@@ -5519,7 +5531,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 int i15 = i3;
                 int i16 = i13;
                 int i17 = size2;
-                i2 = prepareSendingDocumentInternal(accountInstance, null, null, (Uri) arrayList4.get(i13), str2, j, messageObject, messageObject2, str5, null, messageObject3, jArr, (i14 == 10 || i13 == size2 + (-1)) ? i3 : 0, inputContentInfoCompat == null ? i3 : 0, z2, i, numArr, str3);
+                i2 = prepareSendingDocumentInternal(accountInstance, null, null, (Uri) arrayList4.get(i13), str2, j, messageObject, messageObject2, tLRPC$StoryItem, null, messageObject3, jArr, (i14 == 10 || i13 == size2 + (-1)) ? i3 : 0, str5, z2, i, numArr, inputContentInfoCompat == null ? i3 : 0, str3);
                 i12 = (j3 != jArr[0] || jArr[0] == -1) ? i15 : i14;
                 i13 = i16 + 1;
                 arrayList4 = arrayList3;
@@ -5547,21 +5559,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     public static /* synthetic */ void lambda$handleError$78(int i, AccountInstance accountInstance) {
         try {
             if (i == 1) {
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("UnsupportedAttachment", C3417R.string.UnsupportedAttachment));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("UnsupportedAttachment", C3419R.string.UnsupportedAttachment));
             } else if (i != 2) {
             } else {
-                NotificationCenter.getInstance(accountInstance.getCurrentAccount()).postNotificationName(NotificationCenter.currentUserShowLimitReachedDialog, 6);
+                NotificationCenter.getInstance(accountInstance.getCurrentAccount()).lambda$postNotificationNameOnUIThread$1(NotificationCenter.currentUserShowLimitReachedDialog, 6);
             }
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
     public static void prepareSendingPhoto(AccountInstance accountInstance, String str, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, CharSequence charSequence, ArrayList<TLRPC$MessageEntity> arrayList, ArrayList<TLRPC$InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, boolean z, int i2, String str2) {
-        prepareSendingPhoto(accountInstance, str, null, uri, j, messageObject, messageObject2, charSequence, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, null, z, i2, false, str2);
+        prepareSendingPhoto(accountInstance, str, null, uri, j, messageObject, messageObject2, null, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, null, z, i2, false, charSequence, str2);
     }
 
-    public static void prepareSendingPhoto(AccountInstance accountInstance, String str, String str2, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, CharSequence charSequence, ArrayList<TLRPC$MessageEntity> arrayList, ArrayList<TLRPC$InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, VideoEditedInfo videoEditedInfo, boolean z, int i2, boolean z2, String str3) {
+    public static void prepareSendingPhoto(AccountInstance accountInstance, String str, String str2, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$StoryItem tLRPC$StoryItem, ArrayList<TLRPC$MessageEntity> arrayList, ArrayList<TLRPC$InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, VideoEditedInfo videoEditedInfo, boolean z, int i2, boolean z2, CharSequence charSequence, String str3) {
         SendingMediaInfo sendingMediaInfo = new SendingMediaInfo();
         sendingMediaInfo.path = str;
         sendingMediaInfo.thumbPath = str2;
@@ -5577,10 +5589,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendingMediaInfo.videoEditedInfo = videoEditedInfo;
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(sendingMediaInfo);
-        prepareSendingMedia(accountInstance, arrayList3, j, messageObject, messageObject2, inputContentInfoCompat, z2, false, messageObject3, z, i2, false, str3);
+        prepareSendingMedia(accountInstance, arrayList3, j, messageObject, messageObject2, null, z2, false, messageObject3, z, i2, false, inputContentInfoCompat, str3);
     }
 
-    public static void prepareSendingBotContextResult(final BaseFragment baseFragment, final AccountInstance accountInstance, final TLRPC$BotInlineResult tLRPC$BotInlineResult, final HashMap<String, String> hashMap, final long j, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final String str) {
+    public static void prepareSendingBotContextResult(final BaseFragment baseFragment, final AccountInstance accountInstance, final TLRPC$BotInlineResult tLRPC$BotInlineResult, final HashMap<String, String> hashMap, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final boolean z, final int i, final String str) {
         if (tLRPC$BotInlineResult == null) {
             return;
         }
@@ -5589,7 +5601,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingBotContextResult$82(j, tLRPC$BotInlineResult, accountInstance, hashMap, baseFragment, messageObject, messageObject2, z, i, str);
+                    SendMessagesHelper.lambda$prepareSendingBotContextResult$82(j, tLRPC$BotInlineResult, accountInstance, hashMap, baseFragment, messageObject, messageObject2, z, i, str, tLRPC$StoryItem);
                 }
             }).run();
         } else if (tLRPC$BotInlineMessage instanceof TLRPC$TL_botInlineMessageText) {
@@ -5614,7 +5626,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC$TL_webPagePending tLRPC$TL_webPagePending2 = tLRPC$TL_webPagePending;
             SendMessagesHelper sendMessagesHelper = accountInstance.getSendMessagesHelper();
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage2 = tLRPC$BotInlineResult.send_message;
-            sendMessagesHelper.sendMessage(tLRPC$BotInlineMessage2.message, j, messageObject, messageObject2, tLRPC$TL_webPagePending2, !tLRPC$BotInlineMessage2.no_webpage, tLRPC$BotInlineMessage2.entities, tLRPC$BotInlineMessage2.reply_markup, hashMap, z, i, null, false, str);
+            sendMessagesHelper.sendMessage(SendMessageParams.m60of(tLRPC$BotInlineMessage2.message, j, messageObject, messageObject2, tLRPC$TL_webPagePending2, !tLRPC$BotInlineMessage2.no_webpage, tLRPC$BotInlineMessage2.entities, tLRPC$BotInlineMessage2.reply_markup, hashMap, z, i, null, false, str));
         } else if (tLRPC$BotInlineMessage instanceof TLRPC$TL_botInlineMessageMediaVenue) {
             TLRPC$TL_messageMediaVenue tLRPC$TL_messageMediaVenue = new TLRPC$TL_messageMediaVenue();
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage3 = tLRPC$BotInlineResult.send_message;
@@ -5629,7 +5641,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (str3 == null) {
                 tLRPC$TL_messageMediaVenue.venue_type = "";
             }
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_messageMediaVenue, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str);
+            accountInstance.getSendMessagesHelper().sendMessage(SendMessageParams.m56of(tLRPC$TL_messageMediaVenue, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str));
         } else if (tLRPC$BotInlineMessage instanceof TLRPC$TL_botInlineMessageMediaGeo) {
             if (tLRPC$BotInlineMessage.period != 0 || tLRPC$BotInlineMessage.proximity_notification_radius != 0) {
                 TLRPC$TL_messageMediaGeoLive tLRPC$TL_messageMediaGeoLive = new TLRPC$TL_messageMediaGeoLive();
@@ -5642,14 +5654,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 tLRPC$TL_messageMediaGeoLive.geo = tLRPC$BotInlineMessage4.geo;
                 tLRPC$TL_messageMediaGeoLive.heading = tLRPC$BotInlineMessage4.heading;
                 tLRPC$TL_messageMediaGeoLive.proximity_notification_radius = tLRPC$BotInlineMessage4.proximity_notification_radius;
-                accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_messageMediaGeoLive, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str);
+                accountInstance.getSendMessagesHelper().sendMessage(SendMessageParams.m56of(tLRPC$TL_messageMediaGeoLive, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str));
                 return;
             }
             TLRPC$TL_messageMediaGeo tLRPC$TL_messageMediaGeo = new TLRPC$TL_messageMediaGeo();
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage5 = tLRPC$BotInlineResult.send_message;
             tLRPC$TL_messageMediaGeo.geo = tLRPC$BotInlineMessage5.geo;
             tLRPC$TL_messageMediaGeo.heading = tLRPC$BotInlineMessage5.heading;
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_messageMediaGeo, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str);
+            accountInstance.getSendMessagesHelper().sendMessage(SendMessageParams.m56of(tLRPC$TL_messageMediaGeo, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str));
         } else if (tLRPC$BotInlineMessage instanceof TLRPC$TL_botInlineMessageMediaContact) {
             TLRPC$TL_user tLRPC$TL_user = new TLRPC$TL_user();
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage6 = tLRPC$BotInlineResult.send_message;
@@ -5661,7 +5673,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_restrictionReason.platform = "";
             tLRPC$TL_restrictionReason.reason = "";
             tLRPC$TL_user.restriction_reason.add(tLRPC$TL_restrictionReason);
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_user, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str);
+            accountInstance.getSendMessagesHelper().sendMessage(SendMessageParams.m48of(tLRPC$TL_user, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str));
         } else if (!(tLRPC$BotInlineMessage instanceof TLRPC$TL_botInlineMessageMediaInvoice) || DialogObject.isEncryptedDialog(j)) {
         } else {
             TLRPC$TL_botInlineMessageMediaInvoice tLRPC$TL_botInlineMessageMediaInvoice = (TLRPC$TL_botInlineMessageMediaInvoice) tLRPC$BotInlineResult.send_message;
@@ -5678,54 +5690,55 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tLRPC$TL_messageMediaInvoice.currency = tLRPC$TL_botInlineMessageMediaInvoice.currency;
             tLRPC$TL_messageMediaInvoice.total_amount = tLRPC$TL_botInlineMessageMediaInvoice.total_amount;
             tLRPC$TL_messageMediaInvoice.start_param = "";
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_messageMediaInvoice, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str);
+            accountInstance.getSendMessagesHelper().sendMessage(SendMessageParams.m52of(tLRPC$TL_messageMediaInvoice, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x01d4, code lost:
-        if (r0.equals("voice") == false) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x01ce, code lost:
+        if (r0.equals("voice") == false) goto L85;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0461  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0467  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0473  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x04be  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x04fd  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x045b  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0461  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x046d  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x04f9  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0501  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x050c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$prepareSendingBotContextResult$82(final long r22, final org.telegram.tgnet.TLRPC$BotInlineResult r24, final org.telegram.messenger.AccountInstance r25, final java.util.HashMap r26, final org.telegram.p043ui.ActionBar.BaseFragment r27, final org.telegram.messenger.MessageObject r28, final org.telegram.messenger.MessageObject r29, final boolean r30, final int r31, final java.lang.String r32) {
+    public static /* synthetic */ void lambda$prepareSendingBotContextResult$82(final long r22, final org.telegram.tgnet.TLRPC$BotInlineResult r24, final org.telegram.messenger.AccountInstance r25, final java.util.HashMap r26, final org.telegram.p043ui.ActionBar.BaseFragment r27, final org.telegram.messenger.MessageObject r28, final org.telegram.messenger.MessageObject r29, final boolean r30, final int r31, final java.lang.String r32, final org.telegram.tgnet.TLRPC$StoryItem r33) {
         /*
             Method dump skipped, instructions count: 1494
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingBotContextResult$82(long, org.telegram.tgnet.TLRPC$BotInlineResult, org.telegram.messenger.AccountInstance, java.util.HashMap, org.telegram.ui.ActionBar.BaseFragment, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingBotContextResult$82(long, org.telegram.tgnet.TLRPC$BotInlineResult, org.telegram.messenger.AccountInstance, java.util.HashMap, org.telegram.ui.ActionBar.BaseFragment, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String, org.telegram.tgnet.TLRPC$StoryItem):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingBotContextResult$81(TLRPC$TL_document tLRPC$TL_document, Bitmap[] bitmapArr, String[] strArr, AccountInstance accountInstance, String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$BotInlineResult tLRPC$BotInlineResult, HashMap hashMap, boolean z, int i, String str2, TLRPC$TL_photo tLRPC$TL_photo, TLRPC$TL_game tLRPC$TL_game) {
+    public static /* synthetic */ void lambda$prepareSendingBotContextResult$81(TLRPC$TL_document tLRPC$TL_document, Bitmap[] bitmapArr, String[] strArr, String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$BotInlineResult tLRPC$BotInlineResult, HashMap hashMap, boolean z, int i, String str2, TLRPC$TL_photo tLRPC$TL_photo, TLRPC$TL_game tLRPC$TL_game, TLRPC$StoryItem tLRPC$StoryItem, AccountInstance accountInstance) {
+        SendMessageParams sendMessageParams = null;
         if (tLRPC$TL_document != null) {
             if (bitmapArr[0] != null && strArr[0] != null) {
                 ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
             }
-            SendMessagesHelper sendMessagesHelper = accountInstance.getSendMessagesHelper();
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage = tLRPC$BotInlineResult.send_message;
-            sendMessagesHelper.sendMessage(tLRPC$TL_document, null, str, j, messageObject, messageObject2, tLRPC$BotInlineMessage.message, tLRPC$BotInlineMessage.entities, tLRPC$BotInlineMessage.reply_markup, hashMap, z, i, 0, tLRPC$BotInlineResult, null, false, str2);
-        } else if (tLRPC$TL_photo == null) {
-            if (tLRPC$TL_game != null) {
-                accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_game, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str2);
-            }
-        } else {
-            SendMessagesHelper sendMessagesHelper2 = accountInstance.getSendMessagesHelper();
+            sendMessageParams = SendMessageParams.m55of(tLRPC$TL_document, null, str, j, messageObject, messageObject2, tLRPC$BotInlineMessage.message, tLRPC$BotInlineMessage.entities, tLRPC$BotInlineMessage.reply_markup, hashMap, z, i, 0, tLRPC$BotInlineResult, null, false, str2);
+        } else if (tLRPC$TL_photo != null) {
             TLRPC$WebDocument tLRPC$WebDocument = tLRPC$BotInlineResult.content;
             String str3 = tLRPC$WebDocument != null ? tLRPC$WebDocument.url : null;
             TLRPC$BotInlineMessage tLRPC$BotInlineMessage2 = tLRPC$BotInlineResult.send_message;
-            sendMessagesHelper2.sendMessage(tLRPC$TL_photo, str3, j, messageObject, messageObject2, tLRPC$BotInlineMessage2.message, tLRPC$BotInlineMessage2.entities, tLRPC$BotInlineMessage2.reply_markup, hashMap, z, i, 0, tLRPC$BotInlineResult, false, str2);
+            sendMessageParams = SendMessageParams.m50of(tLRPC$TL_photo, str3, j, messageObject, messageObject2, tLRPC$BotInlineMessage2.message, tLRPC$BotInlineMessage2.entities, tLRPC$BotInlineMessage2.reply_markup, hashMap, z, i, 0, tLRPC$BotInlineResult, false, str2);
+        } else if (tLRPC$TL_game != null) {
+            sendMessageParams = SendMessageParams.m53of(tLRPC$TL_game, j, messageObject, messageObject2, tLRPC$BotInlineResult.send_message.reply_markup, hashMap, z, i, str2);
+        }
+        if (sendMessageParams != null) {
+            sendMessageParams.replyToStoryItem = tLRPC$StoryItem;
+            accountInstance.getSendMessagesHelper().sendMessage(sendMessageParams);
         }
     }
 
@@ -5779,17 +5792,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:15:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0072 -> B:11:0x0041). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0077 -> B:11:0x0041). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$prepareSendingText$83(java.lang.String r22, int r23, org.telegram.messenger.AccountInstance r24, long r25, boolean r27, int r28, java.lang.String r29) {
+    public static /* synthetic */ void lambda$prepareSendingText$83(java.lang.String r21, int r22, org.telegram.messenger.AccountInstance r23, long r24, boolean r26, int r27, java.lang.String r28) {
         /*
-            r0 = r23
-            java.lang.String r1 = getTrimmedString(r22)
+            r0 = r22
+            java.lang.String r1 = getTrimmedString(r21)
             int r2 = r1.length()
-            if (r2 == 0) goto L75
+            if (r2 == 0) goto L7a
             int r2 = r1.length()
             float r2 = (float) r2
             r3 = 1166016512(0x45800000, float:4096.0)
@@ -5799,50 +5812,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             int r2 = (int) r2
             r3 = 0
             r4 = 0
-            if (r0 == 0) goto L72
-            org.telegram.messenger.MessagesController r5 = r24.getMessagesController()
+            if (r0 == 0) goto L77
+            org.telegram.messenger.MessagesController r5 = r23.getMessagesController()
             org.telegram.messenger.TopicsController r5 = r5.getTopicsController()
-            r14 = r25
+            r14 = r24
             long r6 = -r14
             org.telegram.tgnet.TLRPC$TL_forumTopic r0 = r5.findTopic(r6, r0)
             if (r0 == 0) goto L41
             org.telegram.tgnet.TLRPC$Message r5 = r0.topicStartMessage
             if (r5 == 0) goto L41
             org.telegram.messenger.MessageObject r3 = new org.telegram.messenger.MessageObject
-            int r5 = r24.getCurrentAccount()
+            int r5 = r23.getCurrentAccount()
             org.telegram.tgnet.TLRPC$Message r0 = r0.topicStartMessage
             r3.<init>(r5, r0, r4, r4)
             r0 = 1
             r3.isTopicMainMessage = r0
         L41:
-            if (r4 >= r2) goto L75
+            if (r4 >= r2) goto L7a
             int r0 = r4 * 4096
             int r4 = r4 + 1
             int r5 = r4 * 4096
             int r6 = r1.length()
             int r5 = java.lang.Math.min(r5, r6)
-            java.lang.String r7 = r1.substring(r0, r5)
-            org.telegram.messenger.SendMessagesHelper r6 = r24.getSendMessagesHelper()
-            r12 = 0
-            r13 = 1
-            r0 = 0
+            java.lang.String r6 = r1.substring(r0, r5)
+            org.telegram.messenger.SendMessagesHelper r0 = r23.getSendMessagesHelper()
+            r11 = 0
+            r12 = 1
+            r13 = 0
             r5 = 0
             r16 = 0
+            r18 = 0
             r19 = 0
-            r20 = 0
-            r8 = r25
+            r7 = r24
+            r9 = r3
             r10 = r3
-            r11 = r3
-            r14 = r0
-            r15 = r5
+            r14 = r5
+            r15 = r16
+            r16 = r26
             r17 = r27
-            r18 = r28
-            r21 = r29
-            r6.sendMessage(r7, r8, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21)
-        L72:
-            r14 = r25
+            r20 = r28
+            org.telegram.messenger.SendMessagesHelper$SendMessageParams r5 = org.telegram.messenger.SendMessagesHelper.SendMessageParams.m60of(r6, r7, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20)
+            r0.sendMessage(r5)
+        L77:
+            r14 = r24
             goto L41
-        L75:
+        L7a:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingText$83(java.lang.String, int, org.telegram.messenger.AccountInstance, long, boolean, int, java.lang.String):void");
@@ -5894,7 +5908,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLRPC$PhotoSize == null || tLRPC$PhotoSize.location == null) {
             return null;
         }
-        Point messageSize = ChatMessageCell.getMessageSize(tLRPC$PhotoSize.f1546w, tLRPC$PhotoSize.f1545h);
+        Point messageSize = ChatMessageCell.getMessageSize(tLRPC$PhotoSize.f1550w, tLRPC$PhotoSize.f1549h);
         if (bitmapArr != null) {
             try {
                 BitmapFactory.Options options = new BitmapFactory.Options();
@@ -5903,7 +5917,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 FileInputStream fileInputStream = new FileInputStream(pathToAttach);
                 BitmapFactory.decodeStream(fileInputStream, null, options);
                 fileInputStream.close();
-                float max = Math.max(options.outWidth / messageSize.f1775x, options.outHeight / messageSize.f1776y);
+                float max = Math.max(options.outWidth / messageSize.f1797x, options.outHeight / messageSize.f1798y);
                 if (max < 1.0f) {
                     max = 1.0f;
                 }
@@ -5918,7 +5932,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             } catch (Throwable unused) {
             }
         }
-        return String.format(Locale.US, z ? "%d_%d@%d_%d_b" : "%d_%d@%d_%d", Long.valueOf(tLRPC$PhotoSize.location.volume_id), Integer.valueOf(tLRPC$PhotoSize.location.local_id), Integer.valueOf((int) (messageSize.f1775x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize.f1776y / AndroidUtilities.density)));
+        return String.format(Locale.US, z ? "%d_%d@%d_%d_b" : "%d_%d@%d_%d", Long.valueOf(tLRPC$PhotoSize.location.volume_id), Integer.valueOf(tLRPC$PhotoSize.location.local_id), Integer.valueOf((int) (messageSize.f1797x / AndroidUtilities.density)), Integer.valueOf((int) (messageSize.f1798y / AndroidUtilities.density)));
     }
 
     public static boolean shouldSendWebPAsSticker(String str, Uri uri) {
@@ -5931,7 +5945,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 Utilities.loadWebpImage(null, map, map.limit(), options, true);
                 randomAccessFile.close();
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
             }
         } else {
             try {
@@ -5946,7 +5960,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return options.outWidth < 800 && options.outHeight < 800;
     }
 
-    public static void prepareSendingMedia(final AccountInstance accountInstance, final ArrayList<SendingMediaInfo> arrayList, final long j, final MessageObject messageObject, final MessageObject messageObject2, final InputContentInfoCompat inputContentInfoCompat, final boolean z, boolean z2, final MessageObject messageObject3, final boolean z3, final int i, final boolean z4, final String str) {
+    public static void prepareSendingMedia(final AccountInstance accountInstance, final ArrayList<SendingMediaInfo> arrayList, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final boolean z, boolean z2, final MessageObject messageObject3, final boolean z3, final int i, final boolean z4, final InputContentInfoCompat inputContentInfoCompat, final String str) {
         final boolean z5;
         if (arrayList.isEmpty()) {
             return;
@@ -5967,55 +5981,54 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingMedia$91(arrayList, j, z, z5, accountInstance, messageObject3, messageObject, messageObject2, z3, i, str, inputContentInfoCompat, z4);
+                SendMessagesHelper.lambda$prepareSendingMedia$91(arrayList, j, z, z5, accountInstance, messageObject3, messageObject, messageObject2, z3, i, str, tLRPC$StoryItem, inputContentInfoCompat, z4);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:254:0x0611, code lost:
-        if (r5 != null) goto L243;
+    /* JADX WARN: Code restructure failed: missing block: B:254:0x061a, code lost:
+        if (r5 != null) goto L240;
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x005d, code lost:
         if (r4 != false) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:383:0x08a1, code lost:
-        if (r66.size() == 1) goto L301;
+    /* JADX WARN: Code restructure failed: missing block: B:383:0x08ab, code lost:
+        if (r67.size() == 1) goto L298;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:403:0x08eb, code lost:
-        if (r2 == (r15 - 1)) goto L312;
+    /* JADX WARN: Code restructure failed: missing block: B:403:0x08f5, code lost:
+        if (r2 == (r15 - 1)) goto L309;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x02df A[Catch: Exception -> 0x02d0, TryCatch #1 {Exception -> 0x02d0, blocks: (B:130:0x02c8, B:137:0x02d5, B:139:0x02df, B:140:0x02ea), top: B:631:0x02c8 }] */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x02ea A[Catch: Exception -> 0x02d0, TRY_LEAVE, TryCatch #1 {Exception -> 0x02d0, blocks: (B:130:0x02c8, B:137:0x02d5, B:139:0x02df, B:140:0x02ea), top: B:631:0x02c8 }] */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0324  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x035d  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0368  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0427  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x06a6  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x06ff  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x079a  */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x08cd  */
-    /* JADX WARN: Removed duplicated region for block: B:407:0x08f6  */
-    /* JADX WARN: Removed duplicated region for block: B:477:0x0b56  */
-    /* JADX WARN: Removed duplicated region for block: B:507:0x0bf7  */
-    /* JADX WARN: Removed duplicated region for block: B:510:0x0c0e  */
-    /* JADX WARN: Removed duplicated region for block: B:511:0x0c15  */
-    /* JADX WARN: Removed duplicated region for block: B:538:0x0c7a  */
-    /* JADX WARN: Removed duplicated region for block: B:541:0x0c8e  */
-    /* JADX WARN: Removed duplicated region for block: B:547:0x0ca4  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x02e0 A[Catch: Exception -> 0x02d1, TryCatch #11 {Exception -> 0x02d1, blocks: (B:130:0x02c9, B:137:0x02d6, B:139:0x02e0, B:140:0x02eb), top: B:650:0x02c9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x02eb A[Catch: Exception -> 0x02d1, TRY_LEAVE, TryCatch #11 {Exception -> 0x02d1, blocks: (B:130:0x02c9, B:137:0x02d6, B:139:0x02e0, B:140:0x02eb), top: B:650:0x02c9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0325  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x035e  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0369  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x042e  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x06af  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0708  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x07a3  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x08d7  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x0900  */
+    /* JADX WARN: Removed duplicated region for block: B:477:0x0b5f  */
+    /* JADX WARN: Removed duplicated region for block: B:540:0x0c6c  */
+    /* JADX WARN: Removed duplicated region for block: B:546:0x0c82  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:553:0x0cb7  */
+    /* JADX WARN: Removed duplicated region for block: B:552:0x0c95  */
     /* JADX WARN: Removed duplicated region for block: B:55:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:562:0x0d00  */
-    /* JADX WARN: Removed duplicated region for block: B:564:0x0d05  */
-    /* JADX WARN: Removed duplicated region for block: B:584:0x0d83 A[LOOP:4: B:582:0x0d7b->B:584:0x0d83, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:637:0x02f7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:639:0x060e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:669:0x0cb4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:561:0x0cde  */
+    /* JADX WARN: Removed duplicated region for block: B:563:0x0ce3  */
+    /* JADX WARN: Removed duplicated region for block: B:583:0x0d60 A[LOOP:4: B:581:0x0d58->B:583:0x0d60, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:644:0x02f8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x0617 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:669:0x0c92 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x016d  */
+    /* JADX WARN: Type inference failed for: r4v13 */
+    /* JADX WARN: Type inference failed for: r4v27 */
+    /* JADX WARN: Type inference failed for: r4v29 */
     /* JADX WARN: Type inference failed for: r8v0 */
     /* JADX WARN: Type inference failed for: r8v19, types: [boolean] */
     /* JADX WARN: Type inference failed for: r8v21 */
@@ -6023,12 +6036,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$prepareSendingMedia$91(java.util.ArrayList r66, final long r67, boolean r69, boolean r70, final org.telegram.messenger.AccountInstance r71, final org.telegram.messenger.MessageObject r72, final org.telegram.messenger.MessageObject r73, final org.telegram.messenger.MessageObject r74, final boolean r75, final int r76, final java.lang.String r77, androidx.core.view.inputmethod.InputContentInfoCompat r78, final boolean r79) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$91(java.util.ArrayList r67, final long r68, boolean r70, boolean r71, final org.telegram.messenger.AccountInstance r72, final org.telegram.messenger.MessageObject r73, final org.telegram.messenger.MessageObject r74, final org.telegram.messenger.MessageObject r75, final boolean r76, final int r77, final java.lang.String r78, final org.telegram.tgnet.TLRPC$StoryItem r79, androidx.core.view.inputmethod.InputContentInfoCompat r80, final boolean r81) {
         /*
-            Method dump skipped, instructions count: 3922
+            Method dump skipped, instructions count: 3894
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingMedia$91(java.util.ArrayList, long, boolean, boolean, org.telegram.messenger.AccountInstance, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String, androidx.core.view.inputmethod.InputContentInfoCompat, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingMedia$91(java.util.ArrayList, long, boolean, boolean, org.telegram.messenger.AccountInstance, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, boolean, int, java.lang.String, org.telegram.tgnet.TLRPC$StoryItem, androidx.core.view.inputmethod.InputContentInfoCompat, boolean):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6041,170 +6054,178 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$87(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, String str, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, String str3) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$87(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_document tLRPC$TL_document, String str, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, String str3, TLRPC$StoryItem tLRPC$StoryItem) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tLRPC$TL_document, str, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str2);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_document, null, str, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, 0, str2, null, false, sendingMediaInfo.hasMediaSpoilers, str3);
+            return;
         }
+        SendMessageParams m54of = SendMessageParams.m54of(tLRPC$TL_document, null, str, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, 0, str2, null, false, sendingMediaInfo.hasMediaSpoilers, str3);
+        m54of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m54of);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$88(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_photo tLRPC$TL_photo, boolean z, SendingMediaInfo sendingMediaInfo, HashMap hashMap, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z2, int i, String str2) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$88(MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_photo tLRPC$TL_photo, boolean z, SendingMediaInfo sendingMediaInfo, HashMap hashMap, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z2, int i, String str2, TLRPC$StoryItem tLRPC$StoryItem) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, tLRPC$TL_photo, null, null, z ? sendingMediaInfo.searchImage.imageUrl : null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_photo, z ? sendingMediaInfo.searchImage.imageUrl : null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z2, i, sendingMediaInfo.ttl, str, false, sendingMediaInfo.hasMediaSpoilers, str2);
+            return;
         }
+        SendMessageParams m49of = SendMessageParams.m49of(tLRPC$TL_photo, z ? sendingMediaInfo.searchImage.imageUrl : null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z2, i, sendingMediaInfo.ttl, str, false, sendingMediaInfo.hasMediaSpoilers, str2);
+        m49of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m49of);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$89(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC$TL_document tLRPC$TL_document, String str2, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, String str4) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$89(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC$TL_document tLRPC$TL_document, String str2, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, String str4, TLRPC$StoryItem tLRPC$StoryItem) {
         if (bitmap != null && str != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmap), str, false);
         }
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, videoEditedInfo, tLRPC$TL_document, str2, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str3);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str3, null, false, sendingMediaInfo.hasMediaSpoilers, str4);
+            return;
         }
+        SendMessageParams m54of = SendMessageParams.m54of(tLRPC$TL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str3, null, false, sendingMediaInfo.hasMediaSpoilers, str4);
+        m54of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m54of);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$90(Bitmap[] bitmapArr, String[] strArr, MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_photo tLRPC$TL_photo, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, boolean z2, String str2) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$90(Bitmap[] bitmapArr, String[] strArr, MessageObject messageObject, AccountInstance accountInstance, TLRPC$TL_photo tLRPC$TL_photo, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, boolean z2, String str2, TLRPC$StoryItem tLRPC$StoryItem) {
         if (bitmapArr[0] != null && strArr[0] != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
         }
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, tLRPC$TL_photo, null, null, null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_photo, null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str, z2, sendingMediaInfo.hasMediaSpoilers, str2);
+            return;
         }
+        SendMessageParams m49of = SendMessageParams.m49of(tLRPC$TL_photo, null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str, z2, sendingMediaInfo.hasMediaSpoilers, str2);
+        m49of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m49of);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x008b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x005b, code lost:
+        if (r2 == 270) goto L26;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0088 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:70:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r2v18, types: [java.lang.Throwable, java.lang.Exception] */
+    /* JADX WARN: Type inference failed for: r2v23, types: [int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private static void fillVideoAttribute(java.lang.String r5, org.telegram.tgnet.TLRPC$TL_documentAttributeVideo r6, org.telegram.messenger.VideoEditedInfo r7) {
+    public static void fillVideoAttribute(java.lang.String r6, org.telegram.tgnet.TLRPC$TL_documentAttributeVideo r7, org.telegram.messenger.VideoEditedInfo r8) {
         /*
-            r0 = 1148846080(0x447a0000, float:1000.0)
-            r1 = 0
-            android.media.MediaMetadataRetriever r2 = new android.media.MediaMetadataRetriever     // Catch: java.lang.Throwable -> L78 java.lang.Exception -> L7a
-            r2.<init>()     // Catch: java.lang.Throwable -> L78 java.lang.Exception -> L7a
-            r2.setDataSource(r5)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r1 = 18
-            java.lang.String r1 = r2.extractMetadata(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            if (r1 == 0) goto L19
-            int r1 = java.lang.Integer.parseInt(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r6.f1526w = r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-        L19:
-            r1 = 19
-            java.lang.String r1 = r2.extractMetadata(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            if (r1 == 0) goto L27
-            int r1 = java.lang.Integer.parseInt(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r6.f1525h = r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-        L27:
-            r1 = 9
-            java.lang.String r1 = r2.extractMetadata(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            if (r1 == 0) goto L3d
-            long r3 = java.lang.Long.parseLong(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            float r1 = (float) r3     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            float r1 = r1 / r0
-            double r3 = (double) r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            double r3 = java.lang.Math.ceil(r3)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            int r1 = (int) r3     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r6.duration = r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-        L3d:
-            int r1 = android.os.Build.VERSION.SDK_INT     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r3 = 17
-            if (r1 < r3) goto L68
-            r1 = 24
-            java.lang.String r1 = r2.extractMetadata(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            if (r1 == 0) goto L68
-            java.lang.Integer r1 = org.telegram.messenger.Utilities.parseInt(r1)     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            int r1 = r1.intValue()     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            if (r7 == 0) goto L58
-            r7.rotationValue = r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            goto L68
-        L58:
-            r7 = 90
-            if (r1 == r7) goto L60
-            r7 = 270(0x10e, float:3.78E-43)
-            if (r1 != r7) goto L68
-        L60:
-            int r7 = r6.f1526w     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            int r1 = r6.f1525h     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r6.f1526w = r1     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-            r6.f1525h = r7     // Catch: java.lang.Throwable -> L72 java.lang.Exception -> L75
-        L68:
-            r7 = 1
-            r2.release()     // Catch: java.lang.Exception -> L6d
-            goto L89
-        L6d:
-            r1 = move-exception
-            org.telegram.messenger.FileLog.m49e(r1)
-            goto L89
-        L72:
-            r5 = move-exception
-            r1 = r2
-            goto Lbf
-        L75:
-            r7 = move-exception
-            r1 = r2
-            goto L7b
-        L78:
-            r5 = move-exception
-            goto Lbf
-        L7a:
-            r7 = move-exception
-        L7b:
-            org.telegram.messenger.FileLog.m49e(r7)     // Catch: java.lang.Throwable -> L78
-            if (r1 == 0) goto L88
-            r1.release()     // Catch: java.lang.Exception -> L84
-            goto L88
-        L84:
-            r7 = move-exception
-            org.telegram.messenger.FileLog.m49e(r7)
-        L88:
-            r7 = 0
-        L89:
-            if (r7 != 0) goto Lbe
-            android.content.Context r7 = org.telegram.messenger.ApplicationLoader.applicationContext     // Catch: java.lang.Exception -> Lba
-            java.io.File r1 = new java.io.File     // Catch: java.lang.Exception -> Lba
-            r1.<init>(r5)     // Catch: java.lang.Exception -> Lba
-            android.net.Uri r5 = android.net.Uri.fromFile(r1)     // Catch: java.lang.Exception -> Lba
-            android.media.MediaPlayer r5 = android.media.MediaPlayer.create(r7, r5)     // Catch: java.lang.Exception -> Lba
-            if (r5 == 0) goto Lbe
-            int r7 = r5.getDuration()     // Catch: java.lang.Exception -> Lba
-            float r7 = (float) r7     // Catch: java.lang.Exception -> Lba
-            float r7 = r7 / r0
-            double r0 = (double) r7     // Catch: java.lang.Exception -> Lba
-            double r0 = java.lang.Math.ceil(r0)     // Catch: java.lang.Exception -> Lba
-            int r7 = (int) r0     // Catch: java.lang.Exception -> Lba
-            r6.duration = r7     // Catch: java.lang.Exception -> Lba
-            int r7 = r5.getVideoWidth()     // Catch: java.lang.Exception -> Lba
-            r6.f1526w = r7     // Catch: java.lang.Exception -> Lba
-            int r7 = r5.getVideoHeight()     // Catch: java.lang.Exception -> Lba
-            r6.f1525h = r7     // Catch: java.lang.Exception -> Lba
-            r5.release()     // Catch: java.lang.Exception -> Lba
-            goto Lbe
-        Lba:
-            r5 = move-exception
-            org.telegram.messenger.FileLog.m49e(r5)
-        Lbe:
-            return
-        Lbf:
-            if (r1 == 0) goto Lc9
-            r1.release()     // Catch: java.lang.Exception -> Lc5
-            goto Lc9
-        Lc5:
+            r0 = 4652007308841189376(0x408f400000000000, double:1000.0)
+            r2 = 0
+            android.media.MediaMetadataRetriever r3 = new android.media.MediaMetadataRetriever     // Catch: java.lang.Throwable -> L75 java.lang.Exception -> L77
+            r3.<init>()     // Catch: java.lang.Throwable -> L75 java.lang.Exception -> L77
+            r3.setDataSource(r6)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r2 = 18
+            java.lang.String r2 = r3.extractMetadata(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            if (r2 == 0) goto L1c
+            int r2 = java.lang.Integer.parseInt(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r7.f1529w = r2     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+        L1c:
+            r2 = 19
+            java.lang.String r2 = r3.extractMetadata(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            if (r2 == 0) goto L2a
+            int r2 = java.lang.Integer.parseInt(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r7.f1528h = r2     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+        L2a:
+            r2 = 9
+            java.lang.String r2 = r3.extractMetadata(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            if (r2 == 0) goto L3a
+            long r4 = java.lang.Long.parseLong(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            double r4 = (double) r4     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            double r4 = r4 / r0
+            r7.duration = r4     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+        L3a:
+            int r2 = android.os.Build.VERSION.SDK_INT     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r4 = 17
+            if (r2 < r4) goto L65
+            r2 = 24
+            java.lang.String r2 = r3.extractMetadata(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            if (r2 == 0) goto L65
+            java.lang.Integer r2 = org.telegram.messenger.Utilities.parseInt(r2)     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            int r2 = r2.intValue()     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            if (r8 == 0) goto L55
+            r8.rotationValue = r2     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            goto L65
+        L55:
+            r8 = 90
+            if (r2 == r8) goto L5d
+            r8 = 270(0x10e, float:3.78E-43)
+            if (r2 != r8) goto L65
+        L5d:
+            int r8 = r7.f1529w     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            int r2 = r7.f1528h     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r7.f1529w = r2     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+            r7.f1528h = r8     // Catch: java.lang.Throwable -> L6f java.lang.Exception -> L72
+        L65:
+            r8 = 1
+            r3.release()     // Catch: java.lang.Exception -> L6a
+            goto L86
+        L6a:
+            r2 = move-exception
+            org.telegram.messenger.FileLog.m67e(r2)
+            goto L86
+        L6f:
             r6 = move-exception
-            org.telegram.messenger.FileLog.m49e(r6)
-        Lc9:
-            throw r5
+            r2 = r3
+            goto Lb6
+        L72:
+            r8 = move-exception
+            r2 = r3
+            goto L78
+        L75:
+            r6 = move-exception
+            goto Lb6
+        L77:
+            r8 = move-exception
+        L78:
+            org.telegram.messenger.FileLog.m67e(r8)     // Catch: java.lang.Throwable -> L75
+            if (r2 == 0) goto L85
+            r2.release()     // Catch: java.lang.Exception -> L81
+            goto L85
+        L81:
+            r8 = move-exception
+            org.telegram.messenger.FileLog.m67e(r8)
+        L85:
+            r8 = 0
+        L86:
+            if (r8 != 0) goto Lb5
+            android.content.Context r8 = org.telegram.messenger.ApplicationLoader.applicationContext     // Catch: java.lang.Exception -> Lb1
+            java.io.File r2 = new java.io.File     // Catch: java.lang.Exception -> Lb1
+            r2.<init>(r6)     // Catch: java.lang.Exception -> Lb1
+            android.net.Uri r6 = android.net.Uri.fromFile(r2)     // Catch: java.lang.Exception -> Lb1
+            android.media.MediaPlayer r6 = android.media.MediaPlayer.create(r8, r6)     // Catch: java.lang.Exception -> Lb1
+            if (r6 == 0) goto Lb5
+            int r8 = r6.getDuration()     // Catch: java.lang.Exception -> Lb1
+            double r2 = (double) r8     // Catch: java.lang.Exception -> Lb1
+            double r2 = r2 / r0
+            r7.duration = r2     // Catch: java.lang.Exception -> Lb1
+            int r8 = r6.getVideoWidth()     // Catch: java.lang.Exception -> Lb1
+            r7.f1529w = r8     // Catch: java.lang.Exception -> Lb1
+            int r8 = r6.getVideoHeight()     // Catch: java.lang.Exception -> Lb1
+            r7.f1528h = r8     // Catch: java.lang.Exception -> Lb1
+            r6.release()     // Catch: java.lang.Exception -> Lb1
+            goto Lb5
+        Lb1:
+            r6 = move-exception
+            org.telegram.messenger.FileLog.m67e(r6)
+        Lb5:
+            return
+        Lb6:
+            if (r2 == 0) goto Lc0
+            r2.release()     // Catch: java.lang.Exception -> Lbc
+            goto Lc0
+        Lbc:
+            r7 = move-exception
+            org.telegram.messenger.FileLog.m67e(r7)
+        Lc0:
+            throw r6
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.fillVideoAttribute(java.lang.String, org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.messenger.VideoEditedInfo):void");
     }
@@ -6273,7 +6294,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         AnimatedFileDrawable.getVideoInfo(str, iArr);
         if (iArr[0] == 0) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("video hasn't avc1 atom");
+                FileLog.m70d("video hasn't avc1 atom");
             }
             return null;
         }
@@ -6293,7 +6314,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (selectCodec == null) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m52d("no codec info for video/avc");
+                    FileLog.m70d("no codec info for video/avc");
                 }
                 return null;
             }
@@ -6301,13 +6322,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (!name.equals("OMX.google.h264.encoder") && !name.equals("OMX.ST.VFM.H264Enc") && !name.equals("OMX.Exynos.avc.enc") && !name.equals("OMX.MARVELL.VIDEO.HW.CODA7542ENCODER") && !name.equals("OMX.MARVELL.VIDEO.H264ENCODER") && !name.equals("OMX.k3.video.encoder.avc") && !name.equals("OMX.TI.DUCATI1.VIDEO.H264E")) {
                 if (MediaController.selectColorFormat(selectCodec, "video/avc") == 0) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m52d("no color format for video/avc");
+                        FileLog.m70d("no color format for video/avc");
                     }
                     return null;
                 }
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m52d("unsupported encoder = " + name);
+                FileLog.m70d("unsupported encoder = " + name);
             }
             return null;
         }
@@ -6355,7 +6376,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             videoEditedInfo.estimatedSize = length;
         } else {
             videoEditedInfo.bitrate = videoBitrate;
-            videoEditedInfo.estimatedSize = ((float) j) + (((f / 1000.0f) * MediaController.extractRealEncoderBitrate(videoEditedInfo.resultWidth, videoEditedInfo.resultHeight, videoBitrate)) / 8.0f);
+            videoEditedInfo.estimatedSize = ((float) j) + (((f / 1000.0f) * MediaController.extractRealEncoderBitrate(videoEditedInfo.resultWidth, videoEditedInfo.resultHeight, videoBitrate, false)) / 8.0f);
         }
         if (videoEditedInfo.estimatedSize == 0) {
             videoEditedInfo.estimatedSize = 1L;
@@ -6363,49 +6384,186 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return videoEditedInfo;
     }
 
-    public static void prepareSendingVideo(final AccountInstance accountInstance, final String str, final VideoEditedInfo videoEditedInfo, final long j, final MessageObject messageObject, final MessageObject messageObject2, final CharSequence charSequence, final ArrayList<TLRPC$MessageEntity> arrayList, final int i, final MessageObject messageObject3, final boolean z, final int i2, final boolean z2, final boolean z3, final String str2) {
+    public static void prepareSendingVideo(final AccountInstance accountInstance, final String str, final VideoEditedInfo videoEditedInfo, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TLRPC$StoryItem tLRPC$StoryItem, final ArrayList<TLRPC$MessageEntity> arrayList, final int i, final MessageObject messageObject3, final boolean z, final int i2, final boolean z2, final boolean z3, final CharSequence charSequence, final String str2) {
         if (str == null || str.length() == 0) {
             return;
         }
         new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingVideo$93(VideoEditedInfo.this, str, j, i, accountInstance, charSequence, messageObject3, z3, messageObject, messageObject2, arrayList, z, i2, str2, z2);
+                SendMessagesHelper.lambda$prepareSendingVideo$93(VideoEditedInfo.this, str, j, i, accountInstance, charSequence, messageObject3, z3, messageObject, messageObject2, arrayList, z, i2, str2, tLRPC$StoryItem, z2);
             }
         }).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0281  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x02f6  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0335  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x033e  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0345  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x024b  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02e9  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x02f9  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0338  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0349  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x026a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$prepareSendingVideo$93(org.telegram.messenger.VideoEditedInfo r29, java.lang.String r30, final long r31, final int r33, final org.telegram.messenger.AccountInstance r34, java.lang.CharSequence r35, final org.telegram.messenger.MessageObject r36, final boolean r37, final org.telegram.messenger.MessageObject r38, final org.telegram.messenger.MessageObject r39, final java.util.ArrayList r40, final boolean r41, final int r42, final java.lang.String r43, boolean r44) {
+    public static /* synthetic */ void lambda$prepareSendingVideo$93(org.telegram.messenger.VideoEditedInfo r24, java.lang.String r25, final long r26, final int r28, final org.telegram.messenger.AccountInstance r29, java.lang.CharSequence r30, final org.telegram.messenger.MessageObject r31, final boolean r32, final org.telegram.messenger.MessageObject r33, final org.telegram.messenger.MessageObject r34, final java.util.ArrayList r35, final boolean r36, final int r37, final java.lang.String r38, final org.telegram.tgnet.TLRPC$StoryItem r39, boolean r40) {
         /*
-            Method dump skipped, instructions count: 882
+            Method dump skipped, instructions count: 889
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingVideo$93(org.telegram.messenger.VideoEditedInfo, java.lang.String, long, int, org.telegram.messenger.AccountInstance, java.lang.CharSequence, org.telegram.messenger.MessageObject, boolean, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, java.util.ArrayList, boolean, int, java.lang.String, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.lambda$prepareSendingVideo$93(org.telegram.messenger.VideoEditedInfo, java.lang.String, long, int, org.telegram.messenger.AccountInstance, java.lang.CharSequence, org.telegram.messenger.MessageObject, boolean, org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject, java.util.ArrayList, boolean, int, java.lang.String, org.telegram.tgnet.TLRPC$StoryItem, boolean):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingVideo$92(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC$TL_document tLRPC$TL_document, String str2, HashMap hashMap, boolean z, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, String str4, ArrayList arrayList, boolean z2, int i, int i2, String str5) {
+    public static /* synthetic */ void lambda$prepareSendingVideo$92(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC$TL_document tLRPC$TL_document, String str2, HashMap hashMap, boolean z, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, String str4, ArrayList arrayList, boolean z2, int i, int i2, String str5, TLRPC$StoryItem tLRPC$StoryItem) {
         if (bitmap != null && str != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmap), str, false);
         }
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, videoEditedInfo, tLRPC$TL_document, str2, hashMap, false, z, str3);
-        } else {
-            accountInstance.getSendMessagesHelper().sendMessage(tLRPC$TL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, str4, arrayList, null, hashMap, z2, i, i2, str3, null, false, z, str5);
+            return;
+        }
+        SendMessageParams m54of = SendMessageParams.m54of(tLRPC$TL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, str4, arrayList, null, hashMap, z2, i, i2, str3, null, false, z, str5);
+        m54of.replyToStoryItem = tLRPC$StoryItem;
+        accountInstance.getSendMessagesHelper().sendMessage(m54of);
+    }
+
+    /* loaded from: classes4.dex */
+    public static class SendMessageParams {
+        public String caption;
+        public TLRPC$TL_document document;
+        public ArrayList<TLRPC$MessageEntity> entities;
+        public TLRPC$TL_game game;
+        public boolean hasMediaSpoilers;
+        public TLRPC$TL_messageMediaInvoice invoice;
+        public TLRPC$MessageMedia location;
+        public String message;
+        public boolean notify;
+        public HashMap<String, String> params;
+        public Object parentObject;
+        public String path;
+        public long peer;
+        public TLRPC$TL_photo photo;
+        public TLRPC$TL_messageMediaPoll poll;
+        public TLRPC$ReplyMarkup replyMarkup;
+        public MessageObject replyToMsg;
+        public TLRPC$StoryItem replyToStoryItem;
+        public MessageObject replyToTopMsg;
+        public MessageObject retryMessageObject;
+        public int scheduleDate;
+        public boolean searchLinks = true;
+        public MessageObject.SendAnimationData sendAnimationData;
+        public TLRPC$StoryItem sendingStory;
+        public String templateName;
+        public int ttl;
+        public boolean updateStickersOrder;
+        public TLRPC$User user;
+        public VideoEditedInfo videoEditedInfo;
+        public TLRPC$WebPage webPage;
+
+        /* renamed from: of */
+        public static SendMessageParams m61of(String str, long j, String str2) {
+            return m59of(str, null, null, null, null, null, null, null, null, null, j, null, null, null, null, true, null, null, null, null, false, 0, 0, null, null, false, str2);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m57of(MessageObject messageObject, String str) {
+            long dialogId = messageObject.getDialogId();
+            TLRPC$Message tLRPC$Message = messageObject.messageOwner;
+            return m59of(null, null, null, null, null, null, null, null, null, null, dialogId, tLRPC$Message.attachPath, null, null, null, true, messageObject, null, tLRPC$Message.reply_markup, tLRPC$Message.params, !tLRPC$Message.silent, messageObject.scheduled ? tLRPC$Message.date : 0, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m48of(TLRPC$User tLRPC$User, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
+            return m59of(null, null, null, null, null, tLRPC$User, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m52of(TLRPC$TL_messageMediaInvoice tLRPC$TL_messageMediaInvoice, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
+            return m59of(null, null, null, null, null, null, null, null, null, tLRPC$TL_messageMediaInvoice, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m55of(TLRPC$TL_document tLRPC$TL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, String str3) {
+            return m59of(null, str2, null, null, videoEditedInfo, null, tLRPC$TL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2, str3);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m54of(TLRPC$TL_document tLRPC$TL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, boolean z3, String str3) {
+            return m58of(null, str2, null, null, videoEditedInfo, null, tLRPC$TL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2, z3, str3);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m60of(String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$WebPage tLRPC$WebPage, boolean z, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z2, int i, MessageObject.SendAnimationData sendAnimationData, boolean z3, String str2) {
+            return m59of(str, null, null, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, tLRPC$WebPage, z, null, arrayList, tLRPC$ReplyMarkup, hashMap, z2, i, 0, null, sendAnimationData, z3, str2);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m56of(TLRPC$MessageMedia tLRPC$MessageMedia, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
+            return m59of(null, null, tLRPC$MessageMedia, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m51of(TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
+            return m59of(null, null, null, null, null, null, null, null, tLRPC$TL_messageMediaPoll, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m53of(TLRPC$TL_game tLRPC$TL_game, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, String str) {
+            return m59of(null, null, null, null, null, null, null, tLRPC$TL_game, null, null, j, null, messageObject, messageObject2, null, true, null, null, tLRPC$ReplyMarkup, hashMap, z, i, 0, null, null, false, str);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m49of(TLRPC$TL_photo tLRPC$TL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2, boolean z3, String str3) {
+            return m58of(null, str2, null, tLRPC$TL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, null, z2, z3, str3);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m50of(TLRPC$TL_photo tLRPC$TL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2, String str3) {
+            return m59of(null, str2, null, tLRPC$TL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, tLRPC$ReplyMarkup, hashMap, z, i, i2, obj, null, z2, str3);
+        }
+
+        /* renamed from: of */
+        private static SendMessageParams m59of(String str, String str2, TLRPC$MessageMedia tLRPC$MessageMedia, TLRPC$TL_photo tLRPC$TL_photo, VideoEditedInfo videoEditedInfo, TLRPC$User tLRPC$User, TLRPC$TL_document tLRPC$TL_document, TLRPC$TL_game tLRPC$TL_game, TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, TLRPC$TL_messageMediaInvoice tLRPC$TL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC$WebPage tLRPC$WebPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3, String str4) {
+            return m58of(str, str2, tLRPC$MessageMedia, tLRPC$TL_photo, videoEditedInfo, tLRPC$User, tLRPC$TL_document, tLRPC$TL_game, tLRPC$TL_messageMediaPoll, tLRPC$TL_messageMediaInvoice, j, str3, messageObject, messageObject2, tLRPC$WebPage, z, messageObject3, arrayList, tLRPC$ReplyMarkup, hashMap, z2, i, i2, obj, sendAnimationData, z3, false, str4);
+        }
+
+        /* renamed from: of */
+        public static SendMessageParams m58of(String str, String str2, TLRPC$MessageMedia tLRPC$MessageMedia, TLRPC$TL_photo tLRPC$TL_photo, VideoEditedInfo videoEditedInfo, TLRPC$User tLRPC$User, TLRPC$TL_document tLRPC$TL_document, TLRPC$TL_game tLRPC$TL_game, TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll, TLRPC$TL_messageMediaInvoice tLRPC$TL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC$WebPage tLRPC$WebPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC$MessageEntity> arrayList, TLRPC$ReplyMarkup tLRPC$ReplyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3, boolean z4, String str4) {
+            SendMessageParams sendMessageParams = new SendMessageParams();
+            sendMessageParams.message = str;
+            sendMessageParams.caption = str2;
+            sendMessageParams.location = tLRPC$MessageMedia;
+            sendMessageParams.photo = tLRPC$TL_photo;
+            sendMessageParams.videoEditedInfo = videoEditedInfo;
+            sendMessageParams.user = tLRPC$User;
+            sendMessageParams.document = tLRPC$TL_document;
+            sendMessageParams.game = tLRPC$TL_game;
+            sendMessageParams.poll = tLRPC$TL_messageMediaPoll;
+            sendMessageParams.invoice = tLRPC$TL_messageMediaInvoice;
+            sendMessageParams.peer = j;
+            sendMessageParams.path = str3;
+            sendMessageParams.replyToMsg = messageObject;
+            sendMessageParams.replyToTopMsg = messageObject2;
+            sendMessageParams.webPage = tLRPC$WebPage;
+            sendMessageParams.searchLinks = z;
+            sendMessageParams.retryMessageObject = messageObject3;
+            sendMessageParams.entities = arrayList;
+            sendMessageParams.replyMarkup = tLRPC$ReplyMarkup;
+            sendMessageParams.params = hashMap;
+            sendMessageParams.notify = z2;
+            sendMessageParams.scheduleDate = i;
+            sendMessageParams.ttl = i2;
+            sendMessageParams.parentObject = obj;
+            sendMessageParams.sendAnimationData = sendAnimationData;
+            sendMessageParams.updateStickersOrder = z3;
+            sendMessageParams.hasMediaSpoilers = z4;
+            sendMessageParams.templateName = str4;
+            return sendMessageParams;
         }
     }
 }

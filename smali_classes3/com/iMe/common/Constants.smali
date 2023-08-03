@@ -27,7 +27,7 @@
 
     sput-object v0, Lcom/iMe/common/Constants;->INSTANCE:Lcom/iMe/common/Constants;
 
-    .line 24
+    .line 23
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
@@ -59,34 +59,34 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
 
     const-string v1, "https"
 
-    .line 28
+    .line 27
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     const-string v1, "translate.google.com"
 
-    .line 29
+    .line 28
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     const-string v1, "translate"
 
-    .line 30
+    .line 29
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     const-string v1, "sl"
 
     const-string v2, "auto"
 
-    .line 31
+    .line 30
     invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 32
+    .line 31
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v1
@@ -103,10 +103,10 @@
 
     const-string v1, "u"
 
-    .line 33
+    .line 32
     invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 34
+    .line 33
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object p0
@@ -127,7 +127,7 @@
 .method public final getDateDotsFormat()Ljava/text/SimpleDateFormat;
     .locals 1
 
-    .line 24
+    .line 23
     sget-object v0, Lcom/iMe/common/Constants;->dateDotsFormat:Ljava/text/SimpleDateFormat;
 
     return-object v0

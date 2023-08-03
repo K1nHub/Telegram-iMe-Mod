@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->$r8$lambda$A04w0t0OrVNEgZb34_YE9aRzOVA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->$r8$lambda$2jWgbtguoWWIVdnVRb7FmCGaBEo(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

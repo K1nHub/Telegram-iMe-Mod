@@ -28,16 +28,16 @@
 .method public constructor <init>(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 960
+    .line 984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 961
+    .line 985
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
-    .line 962
+    .line 986
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
 
-    .line 963
+    .line 987
     iput-object p3, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->url:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 968
+    .line 992
     instance-of v0, p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
     if-nez v0, :cond_0
@@ -57,11 +57,11 @@
 
     return p1
 
-    .line 971
+    .line 995
     :cond_0
     check-cast p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;
 
-    .line 972
+    .line 996
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
     iget-object p1, p1, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
@@ -76,27 +76,27 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 977
+    .line 1001
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/SerializedData;-><init>()V
 
-    .line 978
+    .line 1002
     iget v1, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->num:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
 
-    .line 979
+    .line 1003
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 980
+    .line 1004
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->title:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Lorg/telegram/tgnet/SerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 981
+    .line 1005
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
 
     if-eqz v2, :cond_0
@@ -111,12 +111,12 @@
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 982
+    .line 1006
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
 
     if-eqz v2, :cond_1
 
-    .line 983
+    .line 1007
     :goto_1
     iget-object v2, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->path:[Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 984
+    .line 1008
     aget-object v2, v2, v1
 
     invoke-virtual {v0, v2}, Lorg/telegram/tgnet/SerializedData;->writeString(Ljava/lang/String;)V
@@ -133,13 +133,13 @@
 
     goto :goto_1
 
-    .line 987
+    .line 1011
     :cond_1
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$FaqSearchResult;->url:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 988
+    .line 1012
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object v0

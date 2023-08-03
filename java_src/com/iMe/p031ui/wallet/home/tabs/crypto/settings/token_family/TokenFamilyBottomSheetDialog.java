@@ -19,13 +19,15 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import java.util.List;
 import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkContentTokenFamilyBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -56,7 +58,7 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public TokenFamilyBottomSheetDialog(java.util.List<com.iMe.model.wallet.home.FoundTokenItem> r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
+    public TokenFamilyBottomSheetDialog(final java.util.List<com.iMe.model.wallet.home.FoundTokenItem> r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r4 = this;
             java.lang.String r0 = "foundTokens"
@@ -70,7 +72,7 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
             r4.<init>(r0, r1)
             r4.fragment = r6
             com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$presenter$2 r6 = new com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$presenter$2
-            r6.<init>(r4, r5)
+            r6.<init>()
             moxy.ktx.MoxyKtxDelegate r5 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r0 = r4.getMvpDelegate()
             java.lang.String r2 = "mvpDelegate"
@@ -91,16 +93,16 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
             kotlin.LazyThreadSafetyMode r6 = r5.defaultLazyMode()
             com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$special$$inlined$inject$default$1 r0 = new com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$special$$inlined$inject$default$1
             r2 = 0
-            r0.<init>(r4, r2, r2)
+            r0.<init>()
             kotlin.Lazy r6 = kotlin.LazyKt.lazy(r6, r0)
             r4.tokensRecycleAdapter$delegate = r6
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$special$$inlined$inject$default$2 r6 = new com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$special$$inlined$inject$default$2
-            r6.<init>(r4, r2, r2)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r4.resourceManager$delegate = r5
             com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$binding$2 r5 = new com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$binding$2
-            r5.<init>(r4)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r5 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r4, r2, r5, r1, r2)
             r4.binding$delegate = r5
             r5 = 0
@@ -174,8 +176,8 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
 
     private final void setupViews() {
         ForkContentTokenFamilyBinding binding = getBinding();
-        binding.textDescription.setText(getResourceManager().getString(C3417R.string.wallet_token_family_description));
-        binding.buttonDone.setText(getResourceManager().getString(C3417R.string.wallet_backup_done));
+        binding.textDescription.setText(getResourceManager().getString(C3419R.string.wallet_token_family_description));
+        binding.buttonDone.setText(getResourceManager().getString(C3419R.string.wallet_backup_done));
     }
 
     private final void setupRecyclerView() {
@@ -198,7 +200,24 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
         });
         TextView textView = getBinding().buttonDone;
         Intrinsics.checkNotNullExpressionValue(textView, "binding.buttonDone");
-        ViewExtKt.safeThrottledClick$default(textView, 0L, new TokenFamilyBottomSheetDialog$setupListeners$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(textView, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$setupListeners$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                TokenFamilyBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -15,15 +15,19 @@
 
 
 # instance fields
+.field final synthetic val$dialog:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
 .field final synthetic val$open:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;)V
+.method constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;[Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 1582
+    .line 1585
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$dialog:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-direct {p0, p1}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
@@ -33,12 +37,27 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 0
+    .locals 2
 
-    .line 1585
+    .line 1588
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
+    .line 1589
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$dialog:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    const/4 v0, 0x0
+
+    aget-object v1, p1, v0
+
+    if-eqz v1, :cond_0
+
+    .line 1590
+    aget-object p1, p1, v0
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
+
+    :cond_0
     return-void
 .end method

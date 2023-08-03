@@ -283,15 +283,15 @@
         }
     .end annotation
 
-    .line 592
+    .line 639
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
 
     if-nez v0, :cond_0
 
-    .line 593
+    .line 640
     invoke-virtual {p0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 595
+    .line 642
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
@@ -315,7 +315,7 @@
 .method public getPosition()I
     .locals 1
 
-    .line 380
+    .line 395
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
@@ -341,12 +341,12 @@
 .method public length()I
     .locals 1
 
-    .line 362
+    .line 377
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_0
 
-    .line 363
+    .line 378
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
@@ -355,7 +355,7 @@
 
     return v0
 
-    .line 365
+    .line 380
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -424,7 +424,7 @@
 .method public readBool(Z)Z
     .locals 3
 
-    .line 400
+    .line 447
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v0
@@ -451,18 +451,18 @@
 
     if-nez p1, :cond_3
 
-    .line 409
+    .line 456
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 410
+    .line 457
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     :cond_2
     return v2
 
-    .line 407
+    .line 454
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -471,10 +471,57 @@
     throw p1
 .end method
 
+.method public readByte(Z)B
+    .locals 2
+
+    .line 400
+    :try_start_0
+    iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "read byte error"
+
+    if-nez p1, :cond_1
+
+    .line 405
+    sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz p1, :cond_0
+
+    .line 406
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 407
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 403
+    :cond_1
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
 .method public readByteArray(Z)[B
     .locals 5
 
-    .line 502
+    .line 549
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -492,7 +539,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 504
+    .line 551
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
@@ -538,11 +585,11 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 507
+    .line 554
     :goto_0
     new-array v3, v0, [B
 
-    .line 508
+    .line 555
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v4, v3}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
@@ -550,12 +597,12 @@
     :goto_1
     add-int v4, v0, v1
 
-    .line 510
+    .line 557
     rem-int/2addr v4, v2
 
     if-eqz v4, :cond_1
 
-    .line 511
+    .line 558
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->get()B
@@ -576,15 +623,15 @@
 
     if-nez p1, :cond_3
 
-    .line 519
+    .line 566
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 520
+    .line 567
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 521
+    .line 568
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -594,7 +641,7 @@
 
     return-object p1
 
-    .line 517
+    .line 564
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -606,7 +653,7 @@
 .method public readByteBuffer(Z)Lorg/telegram/tgnet/NativeByteBuffer;
     .locals 7
 
-    .line 531
+    .line 578
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -624,7 +671,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 533
+    .line 580
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
@@ -670,20 +717,20 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 536
+    .line 583
     :goto_0
     new-instance v3, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-direct {v3, v0}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 537
+    .line 584
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v4
 
-    .line 538
+    .line 585
     iget-object v5, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->position()I
@@ -694,19 +741,19 @@
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 539
+    .line 586
     iget-object v5, v3, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v6, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 540
+    .line 587
     iget-object v5, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v5, v4}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 541
+    .line 588
     iget-object v4, v3, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v5, 0x0
@@ -716,12 +763,12 @@
     :goto_1
     add-int v4, v0, v1
 
-    .line 543
+    .line 590
     rem-int/2addr v4, v2
 
     if-eqz v4, :cond_1
 
-    .line 544
+    .line 591
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->get()B
@@ -742,15 +789,15 @@
 
     if-nez p1, :cond_3
 
-    .line 552
+    .line 599
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 553
+    .line 600
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 554
+    .line 601
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -758,7 +805,7 @@
 
     return-object p1
 
-    .line 550
+    .line 597
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -770,7 +817,7 @@
 .method public readBytes([BIIZ)V
     .locals 1
 
-    .line 449
+    .line 496
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -787,22 +834,22 @@
 
     if-nez p4, :cond_1
 
-    .line 454
+    .line 501
     sget-boolean p3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p3, :cond_0
 
-    .line 455
+    .line 502
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 456
+    .line 503
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     return-void
 
-    .line 452
+    .line 499
     :cond_1
     new-instance p3, Ljava/lang/RuntimeException;
 
@@ -814,7 +861,7 @@
 .method public readBytes([BZ)V
     .locals 1
 
-    .line 434
+    .line 481
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -831,22 +878,22 @@
 
     if-nez p2, :cond_1
 
-    .line 439
+    .line 486
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_0
 
-    .line 440
+    .line 487
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 441
+    .line 488
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     return-void
 
-    .line 437
+    .line 484
     :cond_1
     new-instance p2, Ljava/lang/RuntimeException;
 
@@ -858,10 +905,10 @@
 .method public readData(IZ)[B
     .locals 0
 
-    .line 463
+    .line 510
     new-array p1, p1, [B
 
-    .line 464
+    .line 511
     invoke-virtual {p0, p1, p2}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BZ)V
 
     return-object p1
@@ -870,7 +917,7 @@
 .method public readDouble(Z)D
     .locals 2
 
-    .line 563
+    .line 610
     :try_start_0
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt64(Z)J
 
@@ -891,15 +938,15 @@
 
     if-nez p1, :cond_1
 
-    .line 568
+    .line 615
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 569
+    .line 616
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 570
+    .line 617
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -907,7 +954,58 @@
 
     return-wide v0
 
-    .line 566
+    .line 613
+    :cond_1
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method public readFloat(Z)F
+    .locals 2
+
+    .line 432
+    :try_start_0
+    iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "read float error"
+
+    if-nez p1, :cond_1
+
+    .line 437
+    sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz p1, :cond_0
+
+    .line 438
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 439
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 435
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -919,7 +1017,7 @@
 .method public readInt32(Z)I
     .locals 2
 
-    .line 385
+    .line 416
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -938,15 +1036,15 @@
 
     if-nez p1, :cond_1
 
-    .line 390
+    .line 421
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 391
+    .line 422
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 392
+    .line 423
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -954,7 +1052,7 @@
 
     return p1
 
-    .line 388
+    .line 419
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -966,7 +1064,7 @@
 .method public readInt64(Z)J
     .locals 2
 
-    .line 418
+    .line 465
     :try_start_0
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -985,15 +1083,15 @@
 
     if-nez p1, :cond_1
 
-    .line 423
+    .line 470
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 424
+    .line 471
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 425
+    .line 472
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -1001,7 +1099,7 @@
 
     return-wide v0
 
-    .line 421
+    .line 468
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -1013,12 +1111,12 @@
 .method public readString(Z)Ljava/lang/String;
     .locals 6
 
-    .line 469
+    .line 516
     invoke-virtual {p0}, Lorg/telegram/tgnet/NativeByteBuffer;->getPosition()I
 
     move-result v0
 
-    .line 472
+    .line 519
     :try_start_0
     iget-object v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -1036,7 +1134,7 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 474
+    .line 521
     iget-object v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->get()B
@@ -1082,11 +1180,11 @@
     :cond_0
     const/4 v2, 0x1
 
-    .line 477
+    .line 524
     :goto_0
     new-array v4, v1, [B
 
-    .line 478
+    .line 525
     iget-object v5, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v5, v4}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
@@ -1094,12 +1192,12 @@
     :goto_1
     add-int v5, v1, v2
 
-    .line 480
+    .line 527
     rem-int/2addr v5, v3
 
     if-eqz v5, :cond_1
 
-    .line 481
+    .line 528
     iget-object v5, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->get()B
@@ -1108,7 +1206,7 @@
 
     goto :goto_1
 
-    .line 484
+    .line 531
     :cond_1
     new-instance v1, Ljava/lang/String;
 
@@ -1127,18 +1225,18 @@
 
     if-nez p1, :cond_3
 
-    .line 489
+    .line 536
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 490
+    .line 537
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 491
+    .line 538
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 494
+    .line 541
     :cond_2
     invoke-virtual {p0, v0}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
@@ -1146,7 +1244,7 @@
 
     return-object p1
 
-    .line 487
+    .line 534
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -1158,7 +1256,7 @@
 .method public remaining()I
     .locals 1
 
-    .line 587
+    .line 634
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -1171,7 +1269,7 @@
 .method public reuse()V
     .locals 4
 
-    .line 578
+    .line 625
     iget-wide v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->address:J
 
     const-wide/16 v2, 0x0
@@ -1180,7 +1278,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 579
+    .line 626
     sget-object v0, Lorg/telegram/tgnet/NativeByteBuffer;->addressWrappers:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -1193,10 +1291,10 @@
 
     const/4 v0, 0x1
 
-    .line 580
+    .line 627
     iput-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->reused:Z
 
-    .line 581
+    .line 628
     iget-wide v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->address:J
 
     invoke-static {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->native_reuse(J)V
@@ -1237,13 +1335,13 @@
 
     return-void
 
-    .line 372
+    .line 387
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_1
 
-    .line 373
+    .line 388
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
@@ -1256,7 +1354,7 @@
 
     goto :goto_0
 
-    .line 375
+    .line 390
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1271,7 +1369,7 @@
 .method public writeBool(Z)V
     .locals 1
 
-    .line 140
+    .line 155
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_1
@@ -1280,7 +1378,7 @@
 
     const p1, -0x668d8a4b
 
-    .line 142
+    .line 157
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->writeInt32(I)V
 
     goto :goto_0
@@ -1288,12 +1386,12 @@
     :cond_0
     const p1, -0x438668c9
 
-    .line 144
+    .line 159
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->writeInt32(I)V
 
     goto :goto_0
 
-    .line 147
+    .line 162
     :cond_1
     iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1308,20 +1406,20 @@
 .method public writeByte(B)V
     .locals 1
 
-    .line 187
+    .line 202
     :try_start_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_0
 
-    .line 188
+    .line 203
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     goto :goto_0
 
-    .line 190
+    .line 205
     :cond_0
     iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1336,17 +1434,17 @@
     :catch_0
     move-exception p1
 
-    .line 193
+    .line 208
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
     const-string/jumbo v0, "write byte error"
 
-    .line 194
+    .line 209
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 195
+    .line 210
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -1359,7 +1457,7 @@
 
     int-to-byte p1, p1
 
-    .line 182
+    .line 197
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->writeByte(B)V
 
     return-void
@@ -1368,7 +1466,7 @@
 .method public writeByteArray([B)V
     .locals 5
 
-    .line 260
+    .line 275
     :try_start_0
     array-length v0, p1
 
@@ -1380,12 +1478,12 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 261
+    .line 276
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_0
 
-    .line 262
+    .line 277
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     array-length v4, p1
@@ -1396,7 +1494,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 279
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1406,20 +1504,20 @@
 
     goto :goto_0
 
-    .line 267
+    .line 282
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_2
 
-    .line 268
+    .line 283
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v4, -0x2
 
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 269
+    .line 284
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     array-length v4, p1
@@ -1428,7 +1526,7 @@
 
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 270
+    .line 285
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     array-length v4, p1
@@ -1439,7 +1537,7 @@
 
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 271
+    .line 286
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     array-length v4, p1
@@ -1452,7 +1550,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 288
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1460,20 +1558,20 @@
 
     iput v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
-    .line 276
+    .line 291
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_3
 
-    .line 277
+    .line 292
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     goto :goto_1
 
-    .line 279
+    .line 294
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1483,7 +1581,7 @@
 
     iput v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
-    .line 281
+    .line 296
     :goto_1
     array-length v0, p1
 
@@ -1496,7 +1594,7 @@
     :cond_4
     move v0, v2
 
-    .line 282
+    .line 297
     :goto_2
     array-length v1, p1
 
@@ -1506,12 +1604,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 283
+    .line 298
     iget-boolean v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v1, :cond_5
 
-    .line 284
+    .line 299
     iget-object v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v4, 0x0
@@ -1520,7 +1618,7 @@
 
     goto :goto_3
 
-    .line 286
+    .line 301
     :cond_5
     iget v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1538,17 +1636,17 @@
     :catch_0
     move-exception p1
 
-    .line 291
+    .line 306
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_6
 
     const-string/jumbo v0, "write byte array error"
 
-    .line 292
+    .line 307
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 293
+    .line 308
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
@@ -1566,13 +1664,13 @@
 
     if-gt p3, v0, :cond_1
 
-    .line 221
+    .line 236
     :try_start_0
     iget-boolean v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v3, :cond_0
 
-    .line 222
+    .line 237
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     int-to-byte v4, p3
@@ -1581,7 +1679,7 @@
 
     goto :goto_0
 
-    .line 224
+    .line 239
     :cond_0
     iget v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1591,27 +1689,27 @@
 
     goto :goto_0
 
-    .line 227
+    .line 242
     :cond_1
     iget-boolean v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v3, :cond_2
 
-    .line 228
+    .line 243
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v4, -0x2
 
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 229
+    .line 244
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     int-to-byte v4, p3
 
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 230
+    .line 245
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     shr-int/lit8 v4, p3, 0x8
@@ -1620,7 +1718,7 @@
 
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 231
+    .line 246
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     shr-int/lit8 v4, p3, 0x10
@@ -1631,7 +1729,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 248
     :cond_2
     iget v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1639,20 +1737,20 @@
 
     iput v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
-    .line 236
+    .line 251
     :goto_0
     iget-boolean v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v3, :cond_3
 
-    .line 237
+    .line 252
     iget-object v3, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v3, p1, p2, p3}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     goto :goto_1
 
-    .line 239
+    .line 254
     :cond_3
     iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1673,17 +1771,17 @@
     :goto_2
     add-int p2, p3, p1
 
-    .line 242
+    .line 257
     rem-int/2addr p2, v1
 
     if-eqz p2, :cond_6
 
-    .line 243
+    .line 258
     iget-boolean p2, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez p2, :cond_5
 
-    .line 244
+    .line 259
     iget-object p2, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v0, 0x0
@@ -1692,7 +1790,7 @@
 
     goto :goto_3
 
-    .line 246
+    .line 261
     :cond_5
     iget p2, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1710,17 +1808,17 @@
     :catch_0
     move-exception p1
 
-    .line 251
+    .line 266
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_6
 
     const-string/jumbo p2, "write byte array error"
 
-    .line 252
+    .line 267
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 253
+    .line 268
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
@@ -1730,7 +1828,7 @@
 .method public writeByteBuffer(Lorg/telegram/tgnet/NativeByteBuffer;)V
     .locals 6
 
-    .line 311
+    .line 326
     :try_start_0
     invoke-virtual {p1}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
@@ -1744,12 +1842,12 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 313
+    .line 328
     iget-boolean v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v4, :cond_0
 
-    .line 314
+    .line 329
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     int-to-byte v5, v0
@@ -1758,7 +1856,7 @@
 
     goto :goto_0
 
-    .line 316
+    .line 331
     :cond_0
     iget v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1768,27 +1866,27 @@
 
     goto :goto_0
 
-    .line 319
+    .line 334
     :cond_1
     iget-boolean v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v4, :cond_2
 
-    .line 320
+    .line 335
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v5, -0x2
 
     invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 321
+    .line 336
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     int-to-byte v5, v0
 
     invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 322
+    .line 337
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     shr-int/lit8 v5, v0, 0x8
@@ -1797,7 +1895,7 @@
 
     invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 323
+    .line 338
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     shr-int/lit8 v5, v0, 0x10
@@ -1808,7 +1906,7 @@
 
     goto :goto_0
 
-    .line 325
+    .line 340
     :cond_2
     iget v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1816,16 +1914,16 @@
 
     iput v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
-    .line 328
+    .line 343
     :goto_0
     iget-boolean v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v4, :cond_3
 
-    .line 329
+    .line 344
     invoke-virtual {p1}, Lorg/telegram/tgnet/NativeByteBuffer;->rewind()V
 
-    .line 330
+    .line 345
     iget-object v4, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object p1, p1, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
@@ -1834,7 +1932,7 @@
 
     goto :goto_1
 
-    .line 332
+    .line 347
     :cond_3
     iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1855,17 +1953,17 @@
     :goto_2
     add-int v1, v0, p1
 
-    .line 335
+    .line 350
     rem-int/2addr v1, v2
 
     if-eqz v1, :cond_6
 
-    .line 336
+    .line 351
     iget-boolean v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v1, :cond_5
 
-    .line 337
+    .line 352
     iget-object v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/4 v4, 0x0
@@ -1874,7 +1972,7 @@
 
     goto :goto_3
 
-    .line 339
+    .line 354
     :cond_5
     iget v1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1892,7 +1990,7 @@
     :catch_0
     move-exception p1
 
-    .line 344
+    .line 359
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
@@ -1902,12 +2000,12 @@
 .method public writeBytes(Lorg/telegram/tgnet/NativeByteBuffer;)V
     .locals 1
 
-    .line 349
+    .line 364
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-eqz v0, :cond_0
 
-    .line 350
+    .line 365
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
     invoke-virtual {p1}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
@@ -1920,11 +2018,11 @@
 
     goto :goto_0
 
-    .line 352
+    .line 367
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/tgnet/NativeByteBuffer;->rewind()V
 
-    .line 353
+    .line 368
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object p1, p1, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
@@ -1938,20 +2036,20 @@
 .method public writeBytes([B)V
     .locals 1
 
-    .line 153
+    .line 168
     :try_start_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_0
 
-    .line 154
+    .line 169
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     goto :goto_0
 
-    .line 156
+    .line 171
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -1968,17 +2066,17 @@
     :catch_0
     move-exception p1
 
-    .line 159
+    .line 174
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
     const-string/jumbo v0, "write raw error"
 
-    .line 160
+    .line 175
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 161
+    .line 176
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -1989,20 +2087,20 @@
 .method public writeBytes([BII)V
     .locals 1
 
-    .line 168
+    .line 183
     :try_start_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
 
     if-nez v0, :cond_0
 
-    .line 169
+    .line 184
     iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     goto :goto_0
 
-    .line 171
+    .line 186
     :cond_0
     iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
 
@@ -2017,17 +2115,17 @@
     :catch_0
     move-exception p1
 
-    .line 174
+    .line 189
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_1
 
     const-string/jumbo p2, "write raw error"
 
-    .line 175
+    .line 190
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 176
+    .line 191
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -2038,7 +2136,7 @@
 .method public writeDouble(D)V
     .locals 0
 
-    .line 300
+    .line 315
     :try_start_0
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
@@ -2053,20 +2151,73 @@
     :catch_0
     move-exception p1
 
-    .line 302
+    .line 317
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_0
 
     const-string/jumbo p2, "write double error"
 
-    .line 303
+    .line 318
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 304
+    .line 319
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
+    :goto_0
+    return-void
+.end method
+
+.method public writeFloat(F)V
+    .locals 1
+
+    .line 141
+    :try_start_0
+    iget-boolean v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->justCalc:Z
+
+    if-nez v0, :cond_0
+
+    .line 142
+    iget-object v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    goto :goto_0
+
+    .line 144
+    :cond_0
+    iget p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
+
+    add-int/lit8 p1, p1, 0x4
+
+    iput p1, p0, Lorg/telegram/tgnet/NativeByteBuffer;->len:I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 147
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "write float error"
+
+    .line 148
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
+
+    .line 149
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :cond_1
     :goto_0
     return-void
 .end method
@@ -2174,17 +2325,17 @@
 
     if-nez p1, :cond_1
 
-    .line 202
+    .line 217
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
     const-string/jumbo p1, "write string null"
 
-    .line 203
+    .line 218
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 204
+    .line 219
     new-instance p1, Ljava/lang/Throwable;
 
     invoke-direct {p1}, Ljava/lang/Throwable;-><init>()V
@@ -2198,7 +2349,7 @@
     :try_start_0
     const-string v0, "UTF-8"
 
-    .line 209
+    .line 224
     invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object p1
@@ -2212,17 +2363,17 @@
     :catch_0
     move-exception p1
 
-    .line 211
+    .line 226
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
     const-string/jumbo v0, "write string error"
 
-    .line 212
+    .line 227
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 213
+    .line 228
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2

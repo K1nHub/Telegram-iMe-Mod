@@ -13,8 +13,10 @@ import com.iMe.storage.domain.model.binancepay.BinanceTransactionStatus;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TimeWithClockView.kt */
 /* renamed from: com.iMe.ui.custom.TimeWithClockView */
@@ -42,11 +44,29 @@ public final class TimeWithClockView extends AppCompatTextView {
         Lazy lazy2;
         Lazy lazy3;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(TimeWithClockView$clockPadding$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.TimeWithClockView$clockPadding$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(AndroidUtilities.m73dp(6.0f));
+            }
+        });
         this.clockPadding$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(TimeWithClockView$clockWidth$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.TimeWithClockView$clockWidth$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(Theme.dialogs_clockDrawable.getIntrinsicWidth());
+            }
+        });
         this.clockWidth$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(TimeWithClockView$clockHeight$2.INSTANCE);
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.TimeWithClockView$clockHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(Theme.dialogs_clockDrawable.getIntrinsicHeight());
+            }
+        });
         this.clockHeight$delegate = lazy3;
         setupView();
     }

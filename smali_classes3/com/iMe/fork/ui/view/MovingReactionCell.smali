@@ -396,7 +396,7 @@
 
     move-result v0
 
-    invoke-virtual {v1, v0}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 116
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I

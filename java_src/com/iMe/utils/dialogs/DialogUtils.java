@@ -188,7 +188,7 @@ public final class DialogUtils {
         builder.setSubtitle(model.getSubtitle());
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        int m54dp = AndroidUtilities.m54dp(2);
+        int m72dp = AndroidUtilities.m72dp(2);
         final int i = 0;
         for (Object obj : model.getItems()) {
             int i2 = i + 1;
@@ -197,13 +197,13 @@ public final class DialogUtils {
             }
             Pair pair = (Pair) obj;
             RadioColorCell radioColorCell = new RadioColorCell(context);
-            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m54dp));
+            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m72dp));
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue((CharSequence) pair.getFirst(), ((Boolean) pair.getSecond()).booleanValue());
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m696x4de0a121(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m714x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -222,7 +222,7 @@ public final class DialogUtils {
     }
 
     /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
-    public static final void m696x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    public static final void m714x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));

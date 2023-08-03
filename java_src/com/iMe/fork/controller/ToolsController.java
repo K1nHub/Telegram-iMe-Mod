@@ -16,7 +16,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Pair;
 import kotlin.TuplesKt;
@@ -263,8 +262,8 @@ public final class ToolsController extends BaseController {
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
                 Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type com.iMe.fork.enums.DialogType");
-                Pair m85to = TuplesKt.m85to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
-                linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+                Pair m103to = TuplesKt.m103to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
+                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.selectedChatAttachAlertButtons = mutableMap;
@@ -339,8 +338,8 @@ public final class ToolsController extends BaseController {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m85to = TuplesKt.m85to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
-            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            Pair m103to = TuplesKt.m103to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
+            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -362,14 +361,26 @@ public final class ToolsController extends BaseController {
             return (ToolsController) tmp0.invoke(obj);
         }
 
-        public final ToolsController getInstance(int i) {
+        public final ToolsController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = ToolsController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final ToolsController$Companion$getInstance$1 toolsController$Companion$getInstance$1 = new ToolsController$Companion$getInstance$1(i);
+            final Function1<Integer, ToolsController> function1 = new Function1<Integer, ToolsController>() { // from class: com.iMe.fork.controller.ToolsController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final ToolsController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new ToolsController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.ToolsController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -381,7 +392,7 @@ public final class ToolsController extends BaseController {
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

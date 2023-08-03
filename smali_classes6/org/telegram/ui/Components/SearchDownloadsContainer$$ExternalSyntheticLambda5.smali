@@ -2,44 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Ljava/util/ArrayList;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/SearchDownloadsContainer;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/SearchDownloadsContainer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$2:Ljava/util/ArrayList;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onItemClick(Landroid/view/View;I)Z
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->$r8$lambda$4RgKGeWQcGfxLPlewORYEaSs5qU(Lorg/telegram/ui/Components/SearchDownloadsContainer;Landroid/view/View;I)Z
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda5;->f$2:Ljava/util/ArrayList;
+    move-result p1
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->$r8$lambda$YFu5z8U00jjZtDp6oK1SYVgkinw(Lorg/telegram/ui/Components/SearchDownloadsContainer;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-
-    return-void
+    return p1
 .end method

@@ -7,7 +7,7 @@ public final class BinancePayGetUserInfoResponse {
     private final String email;
 
     /* renamed from: id */
-    private final String f376id;
+    private final String f379id;
     private final VerificationDetails verificationDetails;
 
     public static /* synthetic */ BinancePayGetUserInfoResponse copy$default(BinancePayGetUserInfoResponse binancePayGetUserInfoResponse, String str, String str2, VerificationDetails verificationDetails, int i, Object obj) {
@@ -15,7 +15,7 @@ public final class BinancePayGetUserInfoResponse {
             str = binancePayGetUserInfoResponse.email;
         }
         if ((i & 2) != 0) {
-            str2 = binancePayGetUserInfoResponse.f376id;
+            str2 = binancePayGetUserInfoResponse.f379id;
         }
         if ((i & 4) != 0) {
             verificationDetails = binancePayGetUserInfoResponse.verificationDetails;
@@ -28,7 +28,7 @@ public final class BinancePayGetUserInfoResponse {
     }
 
     public final String component2() {
-        return this.f376id;
+        return this.f379id;
     }
 
     public final VerificationDetails component3() {
@@ -47,25 +47,25 @@ public final class BinancePayGetUserInfoResponse {
         }
         if (obj instanceof BinancePayGetUserInfoResponse) {
             BinancePayGetUserInfoResponse binancePayGetUserInfoResponse = (BinancePayGetUserInfoResponse) obj;
-            return Intrinsics.areEqual(this.email, binancePayGetUserInfoResponse.email) && Intrinsics.areEqual(this.f376id, binancePayGetUserInfoResponse.f376id) && Intrinsics.areEqual(this.verificationDetails, binancePayGetUserInfoResponse.verificationDetails);
+            return Intrinsics.areEqual(this.email, binancePayGetUserInfoResponse.email) && Intrinsics.areEqual(this.f379id, binancePayGetUserInfoResponse.f379id) && Intrinsics.areEqual(this.verificationDetails, binancePayGetUserInfoResponse.verificationDetails);
         }
         return false;
     }
 
     public int hashCode() {
         String str = this.email;
-        return ((((str == null ? 0 : str.hashCode()) * 31) + this.f376id.hashCode()) * 31) + this.verificationDetails.hashCode();
+        return ((((str == null ? 0 : str.hashCode()) * 31) + this.f379id.hashCode()) * 31) + this.verificationDetails.hashCode();
     }
 
     public String toString() {
-        return "BinancePayGetUserInfoResponse(email=" + this.email + ", id=" + this.f376id + ", verificationDetails=" + this.verificationDetails + ')';
+        return "BinancePayGetUserInfoResponse(email=" + this.email + ", id=" + this.f379id + ", verificationDetails=" + this.verificationDetails + ')';
     }
 
     public BinancePayGetUserInfoResponse(String str, String id, VerificationDetails verificationDetails) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(verificationDetails, "verificationDetails");
         this.email = str;
-        this.f376id = id;
+        this.f379id = id;
         this.verificationDetails = verificationDetails;
     }
 
@@ -74,7 +74,7 @@ public final class BinancePayGetUserInfoResponse {
     }
 
     public final String getId() {
-        return this.f376id;
+        return this.f379id;
     }
 
     public final VerificationDetails getVerificationDetails() {

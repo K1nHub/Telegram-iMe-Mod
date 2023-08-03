@@ -100,7 +100,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "options"
+    const-string/jumbo v1, "options"
 
     move-object/from16 v2, p1
 

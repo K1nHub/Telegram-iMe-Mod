@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin;Lorg/telegram/ui/Components/Bulletin$Layout;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 155
+    .line 160
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$1;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Bulletin$1;->val$containerLayout:Landroid/widget/FrameLayout;
@@ -39,7 +39,7 @@
 .method protected onHide()V
     .locals 1
 
-    .line 166
+    .line 171
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$1;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->hide()V
@@ -50,14 +50,14 @@
 .method protected onPressedStateChanged(Z)V
     .locals 2
 
-    .line 158
+    .line 163
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$1;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     xor-int/lit8 v1, p1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->setCanHide(Z)V
 
-    .line 159
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$1;->val$containerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 160
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$1;->val$containerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;

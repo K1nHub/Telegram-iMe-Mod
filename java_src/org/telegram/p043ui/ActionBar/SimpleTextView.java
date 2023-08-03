@@ -114,7 +114,7 @@ public class SimpleTextView extends View {
         this.gravity = 51;
         this.maxLines = 1;
         this.rightDrawableScale = 1.0f;
-        this.drawablePadding = AndroidUtilities.m54dp(4);
+        this.drawablePadding = AndroidUtilities.m72dp(4);
         this.ellipsizeByGradientWidthDp = 16;
         this.fullTextMaxLines = 3;
         this.spoilers = new ArrayList();
@@ -151,11 +151,11 @@ public class SimpleTextView extends View {
     }
 
     public void setTextSize(int i) {
-        float m54dp = AndroidUtilities.m54dp(i);
-        if (m54dp == this.textPaint.getTextSize()) {
+        float m72dp = AndroidUtilities.m72dp(i);
+        if (m72dp == this.textPaint.getTextSize()) {
             return;
         }
-        this.textPaint.setTextSize(m54dp);
+        this.textPaint.setTextSize(m72dp);
         if (recreateLayoutMaybe()) {
             return;
         }
@@ -215,30 +215,30 @@ public class SimpleTextView extends View {
         if ((this.fadePaint == null || this.fadePaintBack == null) && this.scrollNonFitText) {
             Paint paint = new Paint();
             this.fadePaint = paint;
-            paint.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+            paint.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(6), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
             this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
             Paint paint2 = new Paint();
             this.fadePaintBack = paint2;
-            paint2.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+            paint2.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(6), (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
             this.fadePaintBack.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         }
         Boolean bool = this.forceEllipsizeByGradientLeft;
         boolean booleanValue = bool != null ? bool.booleanValue() : false;
-        if (!(this.fadeEllpsizePaint != null && this.fadeEllpsizePaintWidth == AndroidUtilities.m54dp(this.ellipsizeByGradientWidthDp) && this.ellipsizeByGradientLeft == booleanValue) && this.ellipsizeByGradient) {
+        if (!(this.fadeEllpsizePaint != null && this.fadeEllpsizePaintWidth == AndroidUtilities.m72dp(this.ellipsizeByGradientWidthDp) && this.ellipsizeByGradientLeft == booleanValue) && this.ellipsizeByGradient) {
             if (this.fadeEllpsizePaint == null) {
                 this.fadeEllpsizePaint = new Paint();
             }
             this.ellipsizeByGradientLeft = booleanValue;
             if (booleanValue) {
                 Paint paint3 = this.fadeEllpsizePaint;
-                int m54dp = AndroidUtilities.m54dp(this.ellipsizeByGradientWidthDp);
-                this.fadeEllpsizePaintWidth = m54dp;
-                paint3.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+                int m72dp = AndroidUtilities.m72dp(this.ellipsizeByGradientWidthDp);
+                this.fadeEllpsizePaintWidth = m72dp;
+                paint3.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m72dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
             } else {
                 Paint paint4 = this.fadeEllpsizePaint;
-                int m54dp2 = AndroidUtilities.m54dp(this.ellipsizeByGradientWidthDp);
-                this.fadeEllpsizePaintWidth = m54dp2;
-                paint4.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp2, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+                int m72dp2 = AndroidUtilities.m72dp(this.ellipsizeByGradientWidthDp);
+                this.fadeEllpsizePaintWidth = m72dp2;
+                paint4.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m72dp2, (float) BitmapDescriptorFactory.HUE_RED, new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
             }
             this.fadeEllpsizePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         }
@@ -301,7 +301,7 @@ public class SimpleTextView extends View {
                     this.offsetX = i - this.textWidth;
                 }
             } else {
-                this.offsetX = -AndroidUtilities.m54dp(8);
+                this.offsetX = -AndroidUtilities.m72dp(8);
             }
             this.offsetX += getPaddingLeft();
             this.textDoesNotFit = this.textWidth > i - this.paddingRight;
@@ -322,9 +322,9 @@ public class SimpleTextView extends View {
     public boolean createLayout(int i) {
         Drawable drawable;
         int i2;
-        int m54dp;
+        int m72dp;
         int i3;
-        int m54dp2;
+        int m72dp2;
         CharSequence charSequence = this.text;
         this.replacingDrawableTextIndex = -1;
         this.rightDrawableHidden = false;
@@ -373,29 +373,29 @@ public class SimpleTextView extends View {
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(spannableStringBuilder);
                             valueOf2.setSpan(new EmptyStubSpan(), 0, lineStart, 0);
                             String subSequence2 = lineEnd < ellipsize.length() ? ellipsize.subSequence(lineEnd, ellipsize.length()) : "…";
-                            this.firstLineLayout = new StaticLayout(ellipsize, 0, ellipsize.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m54dp(2000) : AndroidUtilities.m54dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
-                            StaticLayout staticLayout = new StaticLayout(subSequence, 0, subSequence.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m54dp(2000) : AndroidUtilities.m54dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                            this.firstLineLayout = new StaticLayout(ellipsize, 0, ellipsize.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m72dp(2000) : AndroidUtilities.m72dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                            StaticLayout staticLayout = new StaticLayout(subSequence, 0, subSequence.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m72dp(2000) : AndroidUtilities.m72dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                             this.layout = staticLayout;
                             String str = subSequence2;
                             if (staticLayout.getLineLeft(0) != BitmapDescriptorFactory.HUE_RED) {
                                 str = "\u200f" + ((Object) subSequence2);
                             }
                             CharSequence charSequence2 = str;
-                            this.partLayout = new StaticLayout(charSequence2, 0, charSequence2.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m54dp(2000) : AndroidUtilities.m54dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
-                            this.fullLayout = StaticLayoutEx.createStaticLayout(valueOf2, 0, valueOf2.length(), this.textPaint, AndroidUtilities.m54dp(8) + i5 + this.fullLayoutAdditionalWidth, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, i5 + this.fullLayoutAdditionalWidth, this.fullTextMaxLines, false);
+                            this.partLayout = new StaticLayout(charSequence2, 0, charSequence2.length(), this.textPaint, this.scrollNonFitText ? AndroidUtilities.m72dp(2000) : AndroidUtilities.m72dp(8) + i5, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                            this.fullLayout = StaticLayoutEx.createStaticLayout(valueOf2, 0, valueOf2.length(), this.textPaint, AndroidUtilities.m72dp(8) + i5 + this.fullLayoutAdditionalWidth, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, i5 + this.fullLayoutAdditionalWidth, this.fullTextMaxLines, false);
                         }
                     } else {
                         int length = ellipsize.length();
                         TextPaint textPaint = this.textPaint;
                         if (!this.scrollNonFitText && !this.ellipsizeByGradient) {
-                            m54dp2 = AndroidUtilities.m54dp(8) + i5;
-                            this.layout = new StaticLayout(ellipsize, 0, length, textPaint, m54dp2, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                            m72dp2 = AndroidUtilities.m72dp(8) + i5;
+                            this.layout = new StaticLayout(ellipsize, 0, length, textPaint, m72dp2, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                             this.fullLayout = null;
                             this.partLayout = null;
                             this.firstLineLayout = null;
                         }
-                        m54dp2 = AndroidUtilities.m54dp(2000);
-                        this.layout = new StaticLayout(ellipsize, 0, length, textPaint, m54dp2, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                        m72dp2 = AndroidUtilities.m72dp(2000);
+                        this.layout = new StaticLayout(ellipsize, 0, length, textPaint, m72dp2, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                         this.fullLayout = null;
                         this.partLayout = null;
                         this.firstLineLayout = null;
@@ -411,11 +411,11 @@ public class SimpleTextView extends View {
                     int length2 = charSequence4.length();
                     TextPaint textPaint2 = this.textPaint;
                     if (!this.scrollNonFitText && !this.ellipsizeByGradient) {
-                        m54dp = AndroidUtilities.m54dp(8) + i5;
-                        this.layout = new StaticLayout(charSequence4, 0, length2, textPaint2, m54dp, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                        m72dp = AndroidUtilities.m72dp(8) + i5;
+                        this.layout = new StaticLayout(charSequence4, 0, length2, textPaint2, m72dp, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     }
-                    m54dp = AndroidUtilities.m54dp(2000);
-                    this.layout = new StaticLayout(charSequence4, 0, length2, textPaint2, m54dp, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                    m72dp = AndroidUtilities.m72dp(2000);
+                    this.layout = new StaticLayout(charSequence4, 0, length2, textPaint2, m72dp, getAlignment(), 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                 }
                 this.spoilersPool.addAll(this.spoilers);
                 this.spoilers.clear();
@@ -836,11 +836,11 @@ public class SimpleTextView extends View {
             this.rightDrawable.draw(canvas);
             this.totalWidth += this.drawablePadding + intrinsicWidth;
         }
-        int m54dp = this.totalWidth + AndroidUtilities.m54dp(16);
+        int m72dp = this.totalWidth + AndroidUtilities.m72dp(16);
         float f2 = this.scrollingOffset;
         if (f2 != BitmapDescriptorFactory.HUE_RED) {
             if (this.leftDrawable != null) {
-                int i20 = ((int) (-f2)) + m54dp;
+                int i20 = ((int) (-f2)) + m72dp;
                 if ((this.gravity & 112) == 16) {
                     paddingTop3 = (getMeasuredHeight() - this.leftDrawable.getIntrinsicHeight()) / 2;
                     i4 = this.leftDrawableTopPadding;
@@ -856,7 +856,7 @@ public class SimpleTextView extends View {
             if (this.rightDrawable != null && !this.rightDrawableOutside) {
                 int intrinsicWidth2 = (int) (drawable2.getIntrinsicWidth() * this.rightDrawableScale);
                 int intrinsicHeight3 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
-                int i22 = this.textWidth + i16 + this.drawablePadding + ((int) (-this.scrollingOffset)) + m54dp;
+                int i22 = this.textWidth + i16 + this.drawablePadding + ((int) (-this.scrollingOffset)) + m72dp;
                 if ((this.gravity & 112) == 16) {
                     paddingTop2 = (getMeasuredHeight() - intrinsicHeight3) / 2;
                     i3 = this.rightDrawableTopPadding;
@@ -874,7 +874,7 @@ public class SimpleTextView extends View {
                 canvas.save();
                 int maxTextWidth = getMaxTextWidth() - this.paddingRight;
                 Drawable drawable7 = this.rightDrawable;
-                canvas.clipRect(0, 0, maxTextWidth - AndroidUtilities.m54dp((drawable7 == null || (drawable7 instanceof AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable) || !this.rightDrawableOutside) ? 0 : 2), getMeasuredHeight());
+                canvas.clipRect(0, 0, maxTextWidth - AndroidUtilities.m72dp((drawable7 == null || (drawable7 instanceof AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable) || !this.rightDrawableOutside) ? 0 : 2), getMeasuredHeight());
             }
             Emoji.emojiDrawingUseAlpha = this.usaAlphaForEmoji;
             if (this.wrapBackgroundDrawable != null) {
@@ -895,7 +895,7 @@ public class SimpleTextView extends View {
                 this.textPaint.setAlpha((int) ((1.0f - this.fullAlpha) * 255.0f));
                 canvas.save();
                 if (this.partLayout.getText().length() == 1) {
-                    f = this.fullTextMaxLines == 1 ? AndroidUtilities.m55dp(0.5f) : AndroidUtilities.m54dp(4);
+                    f = this.fullTextMaxLines == 1 ? AndroidUtilities.m73dp(0.5f) : AndroidUtilities.m72dp(4);
                 } else {
                     f = 0.0f;
                 }
@@ -920,24 +920,24 @@ public class SimpleTextView extends View {
                 this.textPaint.setAlpha(alpha2);
             }
             if (this.scrollingOffset != BitmapDescriptorFactory.HUE_RED) {
-                canvas.translate(m54dp, BitmapDescriptorFactory.HUE_RED);
+                canvas.translate(m72dp, BitmapDescriptorFactory.HUE_RED);
                 drawLayout(canvas);
             }
             if (this.offsetX + i16 != 0 || this.offsetY != 0 || this.scrollingOffset != BitmapDescriptorFactory.HUE_RED) {
                 canvas.restore();
             }
             if (z) {
-                if (this.scrollingOffset < AndroidUtilities.m54dp(10)) {
-                    this.fadePaint.setAlpha((int) ((this.scrollingOffset / AndroidUtilities.m54dp(10)) * 255.0f));
-                } else if (this.scrollingOffset > (this.totalWidth + AndroidUtilities.m54dp(16)) - AndroidUtilities.m54dp(10)) {
-                    this.fadePaint.setAlpha((int) ((1.0f - ((this.scrollingOffset - ((this.totalWidth + AndroidUtilities.m54dp(16)) - AndroidUtilities.m54dp(10))) / AndroidUtilities.m54dp(10))) * 255.0f));
+                if (this.scrollingOffset < AndroidUtilities.m72dp(10)) {
+                    this.fadePaint.setAlpha((int) ((this.scrollingOffset / AndroidUtilities.m72dp(10)) * 255.0f));
+                } else if (this.scrollingOffset > (this.totalWidth + AndroidUtilities.m72dp(16)) - AndroidUtilities.m72dp(10)) {
+                    this.fadePaint.setAlpha((int) ((1.0f - ((this.scrollingOffset - ((this.totalWidth + AndroidUtilities.m72dp(16)) - AndroidUtilities.m72dp(10))) / AndroidUtilities.m72dp(10))) * 255.0f));
                 } else {
                     this.fadePaint.setAlpha(255);
                 }
-                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), getMeasuredHeight(), this.fadePaint);
+                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(6), getMeasuredHeight(), this.fadePaint);
                 canvas.save();
-                canvas.translate((getMaxTextWidth() - this.paddingRight) - AndroidUtilities.m54dp(6), BitmapDescriptorFactory.HUE_RED);
-                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), getMeasuredHeight(), this.fadePaintBack);
+                canvas.translate((getMaxTextWidth() - this.paddingRight) - AndroidUtilities.m72dp(6), BitmapDescriptorFactory.HUE_RED);
+                canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(6), getMeasuredHeight(), this.fadePaintBack);
                 canvas.restore();
             } else if (this.ellipsizeByGradient && this.textDoesNotFit && this.fadeEllpsizePaint != null) {
                 canvas.save();
@@ -945,7 +945,7 @@ public class SimpleTextView extends View {
                 if (!this.ellipsizeByGradientLeft) {
                     int maxTextWidth2 = (getMaxTextWidth() - this.paddingRight) - this.fadeEllpsizePaintWidth;
                     Drawable drawable8 = this.rightDrawable;
-                    canvas.translate(maxTextWidth2 - AndroidUtilities.m54dp((drawable8 == null || (drawable8 instanceof AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable) || !this.rightDrawableOutside) ? 0 : 2), BitmapDescriptorFactory.HUE_RED);
+                    canvas.translate(maxTextWidth2 - AndroidUtilities.m72dp((drawable8 == null || (drawable8 instanceof AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable) || !this.rightDrawableOutside) ? 0 : 2), BitmapDescriptorFactory.HUE_RED);
                 }
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.fadeEllpsizePaintWidth, getMeasuredHeight(), this.fadeEllpsizePaint);
                 canvas.restore();
@@ -964,7 +964,7 @@ public class SimpleTextView extends View {
         }
         int i27 = i16 + this.textWidth + this.drawablePadding;
         float f6 = this.scrollingOffset;
-        int min = Math.min(i27 + (f6 == BitmapDescriptorFactory.HUE_RED ? -m54dp : (int) (-f6)) + m54dp, (getMaxTextWidth() - this.paddingRight) + this.drawablePadding);
+        int min = Math.min(i27 + (f6 == BitmapDescriptorFactory.HUE_RED ? -m72dp : (int) (-f6)) + m72dp, (getMaxTextWidth() - this.paddingRight) + this.drawablePadding);
         int intrinsicWidth3 = (int) (this.rightDrawable.getIntrinsicWidth() * this.rightDrawableScale);
         int intrinsicHeight4 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
         if ((this.gravity & 112) == 16) {
@@ -1051,17 +1051,17 @@ public class SimpleTextView extends View {
                 if (i > 0) {
                     this.currentScrollDelay = (int) (i - j);
                 } else {
-                    int m54dp = this.totalWidth + AndroidUtilities.m54dp(16);
+                    int m72dp = this.totalWidth + AndroidUtilities.m72dp(16);
                     float f = 50.0f;
-                    if (this.scrollingOffset < AndroidUtilities.m54dp(100)) {
-                        f = ((this.scrollingOffset / AndroidUtilities.m54dp(100)) * 20.0f) + 30.0f;
-                    } else if (this.scrollingOffset >= m54dp - AndroidUtilities.m54dp(100)) {
-                        f = 50.0f - (((this.scrollingOffset - (m54dp - AndroidUtilities.m54dp(100))) / AndroidUtilities.m54dp(100)) * 20.0f);
+                    if (this.scrollingOffset < AndroidUtilities.m72dp(100)) {
+                        f = ((this.scrollingOffset / AndroidUtilities.m72dp(100)) * 20.0f) + 30.0f;
+                    } else if (this.scrollingOffset >= m72dp - AndroidUtilities.m72dp(100)) {
+                        f = 50.0f - (((this.scrollingOffset - (m72dp - AndroidUtilities.m72dp(100))) / AndroidUtilities.m72dp(100)) * 20.0f);
                     }
-                    float m55dp = this.scrollingOffset + ((((float) j) / 1000.0f) * AndroidUtilities.m55dp(f));
-                    this.scrollingOffset = m55dp;
+                    float m73dp = this.scrollingOffset + ((((float) j) / 1000.0f) * AndroidUtilities.m73dp(f));
+                    this.scrollingOffset = m73dp;
                     this.lastUpdateTime = elapsedRealtime;
-                    if (m55dp > m54dp) {
+                    if (m73dp > m72dp) {
                         this.scrollingOffset = BitmapDescriptorFactory.HUE_RED;
                         this.currentScrollDelay = 500;
                     }
@@ -1134,7 +1134,7 @@ public class SimpleTextView extends View {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         if (this.rightDrawableOnClickListener != null && this.rightDrawable != null) {
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(this.rightDrawableX - AndroidUtilities.m54dp(16), this.rightDrawableY - AndroidUtilities.m54dp(16), this.rightDrawableX + AndroidUtilities.m54dp(16), this.rightDrawableY + AndroidUtilities.m54dp(16));
+            rectF.set(this.rightDrawableX - AndroidUtilities.m72dp(16), this.rightDrawableY - AndroidUtilities.m72dp(16), this.rightDrawableX + AndroidUtilities.m72dp(16), this.rightDrawableY + AndroidUtilities.m72dp(16));
             if (motionEvent.getAction() == 0 && rectF.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 this.maybeClick = true;
                 this.touchDownX = motionEvent.getX();

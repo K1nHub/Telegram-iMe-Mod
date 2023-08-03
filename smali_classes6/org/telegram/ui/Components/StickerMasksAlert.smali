@@ -1217,16 +1217,7 @@
     return p0
 .end method
 
-.method static synthetic access$4400(Lorg/telegram/ui/Components/StickerMasksAlert;)I
-    .locals 0
-
-    .line 73
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
-
-    return p0
-.end method
-
-.method static synthetic access$4500(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$4400(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 73
@@ -1235,7 +1226,25 @@
     return-object p0
 .end method
 
-.method static synthetic access$4700(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/util/ArrayList;
+.method static synthetic access$4500(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$4600(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 73
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4800(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/util/ArrayList;
     .locals 0
 
     .line 73
@@ -1244,20 +1253,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$4800(Lorg/telegram/ui/Components/StickerMasksAlert;)Ljava/util/ArrayList;
+.method static synthetic access$4900(Lorg/telegram/ui/Components/StickerMasksAlert;)Ljava/util/ArrayList;
     .locals 0
 
     .line 73
     iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->favouriteStickers:Ljava/util/ArrayList;
-
-    return-object p0
-.end method
-
-.method static synthetic access$4900(Lorg/telegram/ui/Components/StickerMasksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
-    .locals 0
-
-    .line 73
-    iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p0
 .end method
@@ -1271,7 +1271,16 @@
     return p0
 .end method
 
-.method static synthetic access$5000(Lorg/telegram/ui/Components/StickerMasksAlert;I)I
+.method static synthetic access$5000(Lorg/telegram/ui/Components/StickerMasksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
+    .locals 0
+
+    .line 73
+    iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->stickersLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
+
+    return-object p0
+.end method
+
+.method static synthetic access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;I)I
     .locals 0
 
     .line 73
@@ -1282,31 +1291,13 @@
     return p0
 .end method
 
-.method static synthetic access$5100(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+.method static synthetic access$5200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
     .locals 0
 
     .line 73
     iget p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->currentAccount:I
 
     return p0
-.end method
-
-.method static synthetic access$5900(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
-    .locals 0
-
-    .line 73
-    iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->lastSearchKeyboardLanguage:[Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5902(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
-    .locals 0
-
-    .line 73
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->lastSearchKeyboardLanguage:[Ljava/lang/String;
-
-    return-object p1
 .end method
 
 .method static synthetic access$600(Lorg/telegram/ui/Components/StickerMasksAlert;)I
@@ -1318,13 +1309,22 @@
     return p0
 .end method
 
-.method static synthetic access$6200(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+.method static synthetic access$6000(Lorg/telegram/ui/Components/StickerMasksAlert;)[Ljava/lang/String;
     .locals 0
 
     .line 73
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+    iget-object p0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->lastSearchKeyboardLanguage:[Ljava/lang/String;
 
-    return p0
+    return-object p0
+.end method
+
+.method static synthetic access$6002(Lorg/telegram/ui/Components/StickerMasksAlert;[Ljava/lang/String;)[Ljava/lang/String;
+    .locals 0
+
+    .line 73
+    iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->lastSearchKeyboardLanguage:[Ljava/lang/String;
+
+    return-object p1
 .end method
 
 .method static synthetic access$6300(Lorg/telegram/ui/Components/StickerMasksAlert;)I
@@ -1337,6 +1337,24 @@
 .end method
 
 .method static synthetic access$6400(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 73
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6500(Lorg/telegram/ui/Components/StickerMasksAlert;)I
+    .locals 0
+
+    .line 73
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    return p0
+.end method
+
+.method static synthetic access$6600(Lorg/telegram/ui/Components/StickerMasksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 73

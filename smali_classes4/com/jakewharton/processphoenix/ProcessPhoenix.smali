@@ -189,7 +189,7 @@
 
     invoke-direct {v1, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const-string p1, "phoenix_restart_intents"
+    const-string/jumbo p1, "phoenix_restart_intents"
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
 
@@ -198,7 +198,7 @@
 
     move-result p1
 
-    const-string v1, "phoenix_main_process_pid"
+    const-string/jumbo v1, "phoenix_main_process_pid"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -231,7 +231,7 @@
 
     move-result-object p1
 
-    const-string v0, "phoenix_main_process_pid"
+    const-string/jumbo v0, "phoenix_main_process_pid"
 
     const/4 v1, -0x1
 
@@ -246,7 +246,7 @@
 
     move-result-object p1
 
-    const-string v0, "phoenix_restart_intents"
+    const-string/jumbo v0, "phoenix_restart_intents"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
 

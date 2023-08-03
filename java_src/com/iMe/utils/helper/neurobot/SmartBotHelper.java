@@ -12,10 +12,15 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.LaunchActivity;
 /* compiled from: NeuroBotHelper.kt */
 /* loaded from: classes4.dex */
@@ -46,7 +51,7 @@ public final class SmartBotHelper implements KoinComponent {
     }
 
     private final void showEnableSmartBotDialog(final Context context) {
-        DialogUtils.createDialog$default(context, new DialogModel(getResourceManager().getString(C3417R.string.neurobots_enable_dialog_title), getResourceManager().getString(C3417R.string.neurobots_enable_dialog_description), getResourceManager().getString(C3417R.string.common_cancel), getResourceManager().getString(C3417R.string.neurobots_enable_dialog_positive_btn_text)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.neurobot.SmartBotHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(context, new DialogModel(getResourceManager().getString(C3419R.string.neurobots_enable_dialog_title), getResourceManager().getString(C3419R.string.neurobots_enable_dialog_description), getResourceManager().getString(C3419R.string.common_cancel), getResourceManager().getString(C3419R.string.neurobots_enable_dialog_positive_btn_text)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.neurobot.SmartBotHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 SmartBotHelper.showEnableSmartBotDialog$lambda$0(context);
@@ -59,15 +64,35 @@ public final class SmartBotHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(context, "$context");
         LaunchActivity launchActivity = context instanceof LaunchActivity ? (LaunchActivity) context : null;
         if (launchActivity != null) {
-            launchActivity.lambda$runLinkRequest$84(new BotSettingsActivity());
+            launchActivity.lambda$runLinkRequest$87(new BotSettingsActivity());
         }
     }
 
     static {
         Lazy lazy;
-        SmartBotHelper smartBotHelper = new SmartBotHelper();
+        final SmartBotHelper smartBotHelper = new SmartBotHelper();
         INSTANCE = smartBotHelper;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new SmartBotHelper$special$$inlined$inject$default$1(smartBotHelper, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.utils.helper.neurobot.SmartBotHelper$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         resourceManager$delegate = lazy;
     }
 }

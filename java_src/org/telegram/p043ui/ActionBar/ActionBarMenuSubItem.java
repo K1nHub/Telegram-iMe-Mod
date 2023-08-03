@@ -23,6 +23,7 @@ import org.telegram.p043ui.Components.RLottieImageView;
 public class ActionBarMenuSubItem extends FrameLayout {
     boolean bottom;
     private CheckBox2 checkView;
+    boolean expandIfMultiline;
     private int iconColor;
     private RLottieImageView imageView;
     private int itemHeight;
@@ -56,15 +57,15 @@ public class ActionBarMenuSubItem extends FrameLayout {
             }
         }, false);
         this.imageView.clearColorFilter();
-        this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m54dp(43) : 0, 0);
+        this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m72dp(43) : 0, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setIcon$0(Drawable drawable) {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.imageView.getLayoutParams();
-        int m54dp = AndroidUtilities.m54dp(24);
-        layoutParams.width = m54dp;
-        layoutParams.height = m54dp;
+        int m72dp = AndroidUtilities.m72dp(24);
+        layoutParams.width = m72dp;
+        layoutParams.height = m72dp;
         this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.imageView.setImageDrawable(drawable);
     }
@@ -95,7 +96,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
         this.iconColor = getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon);
         this.selectorColor = getThemedColor(Theme.key_dialogButtonSelector);
         updateBackground();
-        setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
+        setPadding(AndroidUtilities.m72dp(18), 0, AndroidUtilities.m72dp(18), 0);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -121,14 +122,18 @@ public class ActionBarMenuSubItem extends FrameLayout {
                 return;
             }
             addView(this.checkView, LayoutHelper.createFrame(i2 == 0 ? 26 : i2, -1, (LocaleController.isRTL ? 3 : 5) | 16));
-            this.textView.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(34) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(34), 0);
+            this.textView.setPadding(LocaleController.isRTL ? AndroidUtilities.m72dp(34) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(34), 0);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.itemHeight), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.itemHeight), 1073741824));
+        if (!this.expandIfMultiline || this.textView.getLayout().getLineCount() <= 1) {
+            return;
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(this.itemHeight + 8), 1073741824));
     }
 
     public void setItemHeight(int i) {
@@ -171,12 +176,23 @@ public class ActionBarMenuSubItem extends FrameLayout {
             }
             addView(this.rightIcon, LayoutHelper.createFrame(24, -1, (LocaleController.isRTL ? 3 : 5) | 16));
         }
-        setPadding(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : 18), 0, AndroidUtilities.m54dp(LocaleController.isRTL ? 18 : 8), 0);
+        setPadding(AndroidUtilities.m72dp(LocaleController.isRTL ? 8 : 18), 0, AndroidUtilities.m72dp(LocaleController.isRTL ? 18 : 8), 0);
         this.rightIcon.setImageResource(i);
     }
 
     public void setTextAndIcon(CharSequence charSequence, int i) {
         setTextAndIcon(charSequence, i, null);
+    }
+
+    public void setMultiline(boolean z) {
+        this.textView.setLines(2);
+        if (z) {
+            this.textView.setTextSize(1, 14.0f);
+        } else {
+            this.expandIfMultiline = true;
+        }
+        this.textView.setSingleLine(false);
+        this.textView.setGravity(16);
     }
 
     public void setTextAndIcon(CharSequence charSequence, int i, Drawable drawable) {
@@ -188,7 +204,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
                 this.imageView.setImageResource(i);
             }
             this.imageView.setVisibility(0);
-            this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m54dp(43) : 0, 0);
+            this.textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m72dp(43) : 0, 0);
             return;
         }
         this.imageView.setVisibility(4);
@@ -250,14 +266,14 @@ public class ActionBarMenuSubItem extends FrameLayout {
             this.subtextView.setTextColor(getThemedColor(Theme.key_groupcreate_sectionText));
             this.subtextView.setVisibility(8);
             this.subtextView.setTextSize(1, 13.0f);
-            this.subtextView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m54dp(43) : 0, 0);
+            this.subtextView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.m72dp(43), 0, LocaleController.isRTL ? AndroidUtilities.m72dp(43) : 0, 0);
             addView(this.subtextView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16, 0, 10, 0, 0));
         }
         boolean z = !TextUtils.isEmpty(str);
         if (z != (this.subtextView.getVisibility() == 0)) {
             this.subtextView.setVisibility(z ? 0 : 8);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
-            layoutParams.bottomMargin = z ? AndroidUtilities.m54dp(10) : 0;
+            layoutParams.bottomMargin = z ? AndroidUtilities.m72dp(10) : 0;
             this.textView.setLayoutParams(layoutParams);
         }
         this.subtextView.setText(str);

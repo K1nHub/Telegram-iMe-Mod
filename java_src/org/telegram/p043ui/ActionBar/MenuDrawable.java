@@ -10,7 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* renamed from: org.telegram.ui.ActionBar.MenuDrawable */
 /* loaded from: classes5.dex */
 public class MenuDrawable extends Drawable {
@@ -54,7 +54,7 @@ public class MenuDrawable extends Drawable {
 
     public void setUpdateAppItem(Context context, boolean z) {
         this.isUpdateAppItem = z;
-        this.updateAppDrawable = z ? ContextCompat.getDrawable(context, C3417R.C3419drawable.msg_download) : null;
+        this.updateAppDrawable = z ? ContextCompat.getDrawable(context, C3419R.C3421drawable.msg_download) : null;
     }
 
     public MenuDrawable() {
@@ -68,7 +68,7 @@ public class MenuDrawable extends Drawable {
         this.interpolator = new DecelerateInterpolator();
         this.rect = new RectF();
         this.alpha = 255;
-        this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.paint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.backPaint.setStrokeWidth(AndroidUtilities.density * 1.66f);
         this.backPaint.setStrokeCap(Paint.Cap.ROUND);
         this.backPaint.setStyle(Paint.Style.STROKE);
@@ -179,12 +179,12 @@ public class MenuDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 
     public void setIconColor(int i) {

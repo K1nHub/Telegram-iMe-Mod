@@ -30,10 +30,10 @@
 .method public constructor <init>(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)V
     .locals 1
 
-    .line 2110
+    .line 2962
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 2111
+    .line 2963
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -48,7 +48,7 @@
 .method public exit()V
     .locals 1
 
-    .line 2159
+    .line 3011
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -61,10 +61,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
 
-    .line 2116
+    .line 2968
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 2119
+    .line 2971
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$EncoderHandler;->mWeakEncoder:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -94,17 +94,17 @@
 
     goto :goto_0
 
-    .line 2152
+    .line 3004
     :cond_1
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;
 
-    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2700(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;)V
+    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$4000(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;)V
 
     goto :goto_0
 
-    .line 2146
+    .line 2998
     :cond_2
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -124,17 +124,17 @@
 
     or-long/2addr v2, v4
 
-    .line 2147
+    .line 2999
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 2148
-    invoke-static {v1, v2, v3, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2600(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;JLjava/lang/Integer;)V
+    .line 3000
+    invoke-static {v1, v2, v3, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$3900(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;JLjava/lang/Integer;)V
 
     goto :goto_0
 
-    .line 2139
+    .line 2991
     :cond_3
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -142,18 +142,18 @@
 
     const-string/jumbo v0, "stop encoder"
 
-    .line 2140
+    .line 2992
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 2142
+    .line 2994
     :cond_4
     iget p1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2500(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;I)V
+    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$3800(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;I)V
 
     goto :goto_0
 
-    .line 2127
+    .line 2979
     :cond_5
     :try_start_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -162,12 +162,12 @@
 
     const-string/jumbo p1, "start encoder"
 
-    .line 2128
+    .line 2980
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 2130
+    .line 2982
     :cond_6
-    invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2400(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)V
+    invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$3700(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -176,15 +176,15 @@
     :catch_0
     move-exception p1
 
-    .line 2132
+    .line 2984
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p1, 0x0
 
-    .line 2133
-    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2500(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;I)V
+    .line 2985
+    invoke-static {v1, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$3800(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;I)V
 
-    .line 2134
+    .line 2986
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1

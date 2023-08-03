@@ -154,7 +154,7 @@ public final class ObjectValue implements Cloneable {
     }
 
     /* renamed from: clone */
-    public ObjectValue m1088clone() {
+    public ObjectValue m1105clone() {
         return new ObjectValue(buildProto());
     }
 }

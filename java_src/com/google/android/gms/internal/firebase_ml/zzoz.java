@@ -49,7 +49,7 @@ public final class zzoz {
         DownloadManager downloadManager = (DownloadManager) firebaseApp.getApplicationContext().getSystemService("download");
         this.zzavn = downloadManager;
         if (downloadManager == null) {
-            zzass.m789d("ModelDownloadManager", "Download manager service is not available in the service.");
+            zzass.m807d("ModelDownloadManager", "Download manager service is not available in the service.");
         }
         this.zzavq = zzokVar;
         this.zzavp = zzpaVar;
@@ -62,7 +62,7 @@ public final class zzoz {
         if (zzmh == null) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(this.zzavo.getUniqueModelNameForPersist());
-            gmsLogger.m789d("ModelDownloadManager", valueOf.length() != 0 ? "No model updates for model: ".concat(valueOf) : new String("No model updates for model: "));
+            gmsLogger.m807d("ModelDownloadManager", valueOf.length() != 0 ? "No model updates for model: ".concat(valueOf) : new String("No model updates for model: "));
             return null;
         }
         return zzb(zzmh);
@@ -87,7 +87,7 @@ public final class zzoz {
             StringBuilder sb = new StringBuilder(valueOf.length() + 44);
             sb.append("Cancel or remove existing downloading task: ");
             sb.append(valueOf);
-            gmsLogger.m789d("ModelDownloadManager", sb.toString());
+            gmsLogger.m807d("ModelDownloadManager", sb.toString());
             if (this.zzavn.remove(zzmc.longValue()) > 0 || zzmf() == null) {
                 this.zzavq.zza(this.zzavo.getUniqueModelNameForPersist(), zzmk());
                 this.zzato.zzh(this.zzavo);
@@ -105,7 +105,7 @@ public final class zzoz {
         StringBuilder sb = new StringBuilder(53);
         sb.append("Schedule a new downloading task: ");
         sb.append(enqueue);
-        gmsLogger.m789d("ModelDownloadManager", sb.toString());
+        gmsLogger.m807d("ModelDownloadManager", sb.toString());
         this.zzato.zza(enqueue, zzpeVar);
         this.zzavp.zza(zzmc.NO_ERROR, false, zzpeVar.zzmo(), zzlu.zzw.zza.SCHEDULED);
         return Long.valueOf(enqueue);
@@ -196,7 +196,7 @@ public final class zzoz {
         try {
             parcelFileDescriptor = downloadManager.openDownloadedFile(zzmc.longValue());
         } catch (FileNotFoundException unused) {
-            zzass.m787e("ModelDownloadManager", "Downloaded file is not found");
+            zzass.m805e("ModelDownloadManager", "Downloaded file is not found");
         }
         return parcelFileDescriptor;
     }
@@ -224,7 +224,7 @@ public final class zzoz {
         str = zzb.zzawa;
         zzob zzc = zzob.zzc(firebaseApp);
         if (str.equals(zzc.zze(firebaseRemoteModel)) && zznm.zza(firebaseApp.getApplicationContext()).equals(zzc.zzlt())) {
-            zzass.m787e("ModelDownloadManager", "The model is incompatible with TFLite and the app is not upgraded, do not download");
+            zzass.m805e("ModelDownloadManager", "The model is incompatible with TFLite and the app is not upgraded, do not download");
         } else {
             z = true;
         }
@@ -260,12 +260,12 @@ public final class zzoz {
                 if (!zzb(zzmf())) {
                     this.zzavp.zza(zzmc.NO_ERROR, false, zzmk(), zzlu.zzw.zza.DOWNLOADING);
                 }
-                zzass.m789d("ModelDownloadManager", "New model is already in downloading, do nothing.");
+                zzass.m807d("ModelDownloadManager", "New model is already in downloading, do nothing.");
                 return null;
             }
         }
         GmsLogger gmsLogger = zzass;
-        gmsLogger.m789d("ModelDownloadManager", "Need to download a new model.");
+        gmsLogger.m807d("ModelDownloadManager", "Need to download a new model.");
         zzme();
         uri = zzpeVar.zzavz;
         DownloadManager.Request request = new DownloadManager.Request(uri);
@@ -273,14 +273,14 @@ public final class zzoz {
         FirebaseModelDownloadConditions initialDownloadConditions = this.zzavo.getInitialDownloadConditions();
         if (this.zzavq.zza(zzpeVar)) {
             if (!this.zzavo.isModelUpdatesEnabled()) {
-                gmsLogger.m789d("ModelDownloadManager", "Model update is disabled and have a previous downloaded model, skip downloading");
+                gmsLogger.m807d("ModelDownloadManager", "Model update is disabled and have a previous downloaded model, skip downloading");
                 return null;
             }
-            gmsLogger.m789d("ModelDownloadManager", "Model update is enabled and have a previous downloaded model, use download condition");
+            gmsLogger.m807d("ModelDownloadManager", "Model update is enabled and have a previous downloaded model, use download condition");
             this.zzavp.zza(zzmc.NO_ERROR, false, zzpeVar.zzmo(), zzlu.zzw.zza.UPDATE_AVAILABLE);
             initialDownloadConditions = this.zzavo.getUpdatesDownloadConditions();
         }
-        gmsLogger.m789d("ModelDownloadManager", "Use initial download conditions.");
+        gmsLogger.m807d("ModelDownloadManager", "Use initial download conditions.");
         if (Build.VERSION.SDK_INT >= 24) {
             request.setRequiresCharging(initialDownloadConditions.isChargingRequired());
             request.setRequiresDeviceIdle(initialDownloadConditions.isDeviceIdleRequired());
@@ -313,7 +313,7 @@ public final class zzoz {
         return zzp(r1.longValue());
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x0095, code lost:
-        com.google.android.gms.internal.firebase_ml.zzoz.zzass.m785i("ModelDownloadManager", "Didn't schedule download for the updated model");
+        com.google.android.gms.internal.firebase_ml.zzoz.zzass.m803i("ModelDownloadManager", "Didn't schedule download for the updated model");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -399,7 +399,7 @@ public final class zzoz {
             com.google.android.gms.common.internal.GmsLogger r1 = com.google.android.gms.internal.firebase_ml.zzoz.zzass     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
             java.lang.String r2 = "ModelDownloadManager"
             java.lang.String r4 = "Didn't schedule download for the updated model"
-            r1.m785i(r2, r4)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
+            r1.m803i(r2, r4)     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9
         L9e:
             if (r5 == 0) goto Lb4
             int r1 = r5.intValue()     // Catch: com.google.firebase.p020ml.common.FirebaseMLException -> Lb9

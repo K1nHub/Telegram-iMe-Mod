@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$OpFHSXf1p2x4qygJ8KDupaInhjs(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$17gErnFE52qZVoPXNdZlq-rWF-I(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;I)V
 
     return-void
 .end method

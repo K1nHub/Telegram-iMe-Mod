@@ -190,7 +190,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         Disposable upstream;
 
         /* renamed from: w */
-        final Scheduler.Worker f532w;
+        final Scheduler.Worker f535w;
 
         /* JADX WARN: Multi-variable type inference failed */
         @Override // io.reactivex.internal.observers.QueueDrainObserver, io.reactivex.internal.util.ObservableQueueDrain
@@ -204,7 +204,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             this.timespan = j;
             this.timeskip = j2;
             this.unit = timeUnit;
-            this.f532w = worker;
+            this.f535w = worker;
             this.buffers = new LinkedList();
         }
 
@@ -217,15 +217,15 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                     Collection collection = (Collection) ObjectHelper.requireNonNull(this.bufferSupplier.call(), "The buffer supplied is null");
                     this.buffers.add(collection);
                     this.downstream.onSubscribe(this);
-                    Scheduler.Worker worker = this.f532w;
+                    Scheduler.Worker worker = this.f535w;
                     long j = this.timeskip;
                     worker.schedulePeriodically(this, j, j, this.unit);
-                    this.f532w.schedule(new RemoveFromBufferEmit(collection), this.timespan, this.unit);
+                    this.f535w.schedule(new RemoveFromBufferEmit(collection), this.timespan, this.unit);
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     disposable.dispose();
                     EmptyDisposable.error(th, this.downstream);
-                    this.f532w.dispose();
+                    this.f535w.dispose();
                 }
             }
         }
@@ -244,7 +244,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             this.done = true;
             clear();
             this.downstream.onError(th);
-            this.f532w.dispose();
+            this.f535w.dispose();
         }
 
         @Override // io.reactivex.Observer
@@ -259,7 +259,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             }
             this.done = true;
             if (enter()) {
-                QueueDrainHelper.drainLoop(this.queue, this.downstream, false, this.f532w, this);
+                QueueDrainHelper.drainLoop(this.queue, this.downstream, false, this.f535w, this);
             }
         }
 
@@ -271,7 +271,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             this.cancelled = true;
             clear();
             this.upstream.dispose();
-            this.f532w.dispose();
+            this.f535w.dispose();
         }
 
         @Override // io.reactivex.disposables.Disposable
@@ -298,7 +298,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                         return;
                     }
                     this.buffers.add(collection);
-                    this.f532w.schedule(new RemoveFromBuffer(collection), this.timespan, this.unit);
+                    this.f535w.schedule(new RemoveFromBuffer(collection), this.timespan, this.unit);
                 }
             } catch (Throwable th) {
                 Exceptions.throwIfFatal(th);
@@ -315,19 +315,19 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         final class RemoveFromBuffer implements Runnable {
 
             /* renamed from: b */
-            private final U f533b;
+            private final U f536b;
 
             RemoveFromBuffer(U u) {
-                this.f533b = u;
+                this.f536b = u;
             }
 
             @Override // java.lang.Runnable
             public void run() {
                 synchronized (BufferSkipBoundedObserver.this) {
-                    BufferSkipBoundedObserver.this.buffers.remove(this.f533b);
+                    BufferSkipBoundedObserver.this.buffers.remove(this.f536b);
                 }
                 BufferSkipBoundedObserver bufferSkipBoundedObserver = BufferSkipBoundedObserver.this;
-                bufferSkipBoundedObserver.fastPathOrderedEmit(this.f533b, false, bufferSkipBoundedObserver.f532w);
+                bufferSkipBoundedObserver.fastPathOrderedEmit(this.f536b, false, bufferSkipBoundedObserver.f535w);
             }
         }
 
@@ -345,7 +345,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                     BufferSkipBoundedObserver.this.buffers.remove(this.buffer);
                 }
                 BufferSkipBoundedObserver bufferSkipBoundedObserver = BufferSkipBoundedObserver.this;
-                bufferSkipBoundedObserver.fastPathOrderedEmit(this.buffer, false, bufferSkipBoundedObserver.f532w);
+                bufferSkipBoundedObserver.fastPathOrderedEmit(this.buffer, false, bufferSkipBoundedObserver.f535w);
             }
         }
     }
@@ -364,7 +364,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         Disposable upstream;
 
         /* renamed from: w */
-        final Scheduler.Worker f531w;
+        final Scheduler.Worker f534w;
 
         /* JADX WARN: Multi-variable type inference failed */
         @Override // io.reactivex.internal.observers.QueueDrainObserver, io.reactivex.internal.util.ObservableQueueDrain
@@ -379,7 +379,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             this.unit = timeUnit;
             this.maxSize = i;
             this.restartTimerOnMaxSize = z;
-            this.f531w = worker;
+            this.f534w = worker;
         }
 
         @Override // io.reactivex.Observer
@@ -389,14 +389,14 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                 try {
                     this.buffer = (U) ObjectHelper.requireNonNull(this.bufferSupplier.call(), "The buffer supplied is null");
                     this.downstream.onSubscribe(this);
-                    Scheduler.Worker worker = this.f531w;
+                    Scheduler.Worker worker = this.f534w;
                     long j = this.timespan;
                     this.timer = worker.schedulePeriodically(this, j, j, this.unit);
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     disposable.dispose();
                     EmptyDisposable.error(th, this.downstream);
-                    this.f531w.dispose();
+                    this.f534w.dispose();
                 }
             }
         }
@@ -425,7 +425,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                         this.consumerIndex++;
                     }
                     if (this.restartTimerOnMaxSize) {
-                        Scheduler.Worker worker = this.f531w;
+                        Scheduler.Worker worker = this.f534w;
                         long j = this.timespan;
                         this.timer = worker.schedulePeriodically(this, j, j, this.unit);
                     }
@@ -443,13 +443,13 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
                 this.buffer = null;
             }
             this.downstream.onError(th);
-            this.f531w.dispose();
+            this.f534w.dispose();
         }
 
         @Override // io.reactivex.Observer
         public void onComplete() {
             U u;
-            this.f531w.dispose();
+            this.f534w.dispose();
             synchronized (this) {
                 u = this.buffer;
                 this.buffer = null;
@@ -472,7 +472,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             }
             this.cancelled = true;
             this.upstream.dispose();
-            this.f531w.dispose();
+            this.f534w.dispose();
             synchronized (this) {
                 this.buffer = null;
             }

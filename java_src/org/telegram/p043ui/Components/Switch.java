@@ -17,8 +17,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.StateSet;
 import android.view.View;
@@ -60,7 +58,6 @@ public class Switch extends View {
     private Theme.ResourcesProvider resourcesProvider;
     private RippleDrawable rippleDrawable;
     private Paint ripplePaint;
-    private boolean semHaptics;
     private int thumbCheckedColorKey;
     private int thumbColorKey;
     private int trackCheckedColorKey;
@@ -93,7 +90,6 @@ public class Switch extends View {
         this.thumbColorKey = i;
         this.thumbCheckedColorKey = i;
         this.pressedState = new int[]{16842910, 16842919};
-        this.semHaptics = false;
         this.resourcesProvider = resourcesProvider;
         this.rectF = new RectF();
         this.paint = new Paint(1);
@@ -101,7 +97,7 @@ public class Switch extends View {
         this.paint2 = paint;
         paint.setStyle(Paint.Style.STROKE);
         this.paint2.setStrokeCap(Paint.Cap.ROUND);
-        this.paint2.setStrokeWidth(AndroidUtilities.m54dp(2));
+        this.paint2.setStrokeWidth(AndroidUtilities.m72dp(2));
         setHapticFeedbackEnabled(true);
     }
 
@@ -180,12 +176,12 @@ public class Switch extends View {
                 @Override // android.graphics.drawable.Drawable
                 public void draw(Canvas canvas) {
                     Rect bounds = getBounds();
-                    canvas.drawCircle(bounds.centerX(), bounds.centerY(), AndroidUtilities.m54dp(18), Switch.this.ripplePaint);
+                    canvas.drawCircle(bounds.centerX(), bounds.centerY(), AndroidUtilities.m72dp(18), Switch.this.ripplePaint);
                 }
             });
             this.rippleDrawable = rippleDrawable;
             if (i >= 23) {
-                rippleDrawable.setRadius(AndroidUtilities.m54dp(18));
+                rippleDrawable.setRadius(AndroidUtilities.m72dp(18));
             }
             this.rippleDrawable.setCallback(this);
         }
@@ -195,7 +191,7 @@ public class Switch extends View {
             this.colorSet = this.isChecked ? 2 : 1;
         }
         if (i >= 28 && z) {
-            this.rippleDrawable.setHotspot(this.isChecked ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(100), AndroidUtilities.m54dp(18));
+            this.rippleDrawable.setHotspot(this.isChecked ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m72dp(100), AndroidUtilities.m72dp(18));
         }
         this.rippleDrawable.setState(z ? this.pressedState : StateSet.NOTHING);
         invalidate();
@@ -219,7 +215,7 @@ public class Switch extends View {
         fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", fArr);
         this.checkAnimator = ofFloat;
-        ofFloat.setDuration(this.semHaptics ? 150L : 250L);
+        ofFloat.setDuration(200L);
         this.checkAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Switch.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
@@ -234,7 +230,7 @@ public class Switch extends View {
         fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "iconProgress", fArr);
         this.iconAnimator = ofFloat;
-        ofFloat.setDuration(this.semHaptics ? 150L : 250L);
+        ofFloat.setDuration(200L);
         this.iconAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Switch.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
@@ -268,7 +264,6 @@ public class Switch extends View {
         if (z != this.isChecked) {
             this.isChecked = z;
             if (this.attachedToWindow && z2) {
-                vibrateChecked(z);
                 animateToCheckedState(z);
             } else {
                 cancelCheckAnimator();
@@ -403,19 +398,5 @@ public class Switch extends View {
         accessibilityNodeInfo.setClassName("android.widget.Switch");
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setChecked(this.isChecked);
-    }
-
-    private void vibrateChecked(boolean z) {
-        try {
-            if (!isHapticFeedbackEnabled() || Build.VERSION.SDK_INT < 28) {
-                return;
-            }
-            Vibrator vibrator = AndroidUtilities.getVibrator();
-            VibrationEffect createWaveform = VibrationEffect.createWaveform(new long[]{75, 10, 5, 10}, new int[]{5, 20, 110, 20}, -1);
-            vibrator.cancel();
-            vibrator.vibrate(createWaveform);
-            this.semHaptics = true;
-        } catch (Exception unused) {
-        }
     }
 }

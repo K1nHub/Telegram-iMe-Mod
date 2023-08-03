@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -38,7 +39,20 @@ public final class DonationSeeMoreButton extends FrameLayout {
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new DonationSeeMoreButton$textView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<AppCompatTextView>() { // from class: com.iMe.ui.custom.donation.DonationSeeMoreButton$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final AppCompatTextView invoke() {
+                AppCompatTextView initTextView;
+                initTextView = DonationSeeMoreButton.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy;
         setupColors();
         addView(getTextView(), LayoutHelper.createFrame(-1, 40, 16, 0, 0, 0, 0));
@@ -57,7 +71,7 @@ public final class DonationSeeMoreButton extends FrameLayout {
         setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatTextView textView = getTextView();
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
     }
 
     @Override // android.view.View
@@ -72,8 +86,8 @@ public final class DonationSeeMoreButton extends FrameLayout {
         ViewExtKt.withMediumTypeface(appCompatTextView);
         appCompatTextView.setSingleLine();
         appCompatTextView.setGravity(17);
-        int m54dp = AndroidUtilities.m54dp(10);
-        appCompatTextView.setPadding(m54dp, m54dp, m54dp, m54dp);
+        int m72dp = AndroidUtilities.m72dp(10);
+        appCompatTextView.setPadding(m72dp, m72dp, m72dp, m72dp);
         return appCompatTextView;
     }
 

@@ -72,9 +72,9 @@ public class SlideChooseView extends View {
         this.textPaint = new TextPaint(1);
         Paint paint = new Paint(1);
         this.linePaint = paint;
-        paint.setStrokeWidth(AndroidUtilities.m54dp(2));
+        paint.setStrokeWidth(AndroidUtilities.m72dp(2));
         this.linePaint.setStrokeCap(Paint.Cap.ROUND);
-        this.textPaint.setTextSize(AndroidUtilities.m54dp(13));
+        this.textPaint.setTextSize(AndroidUtilities.m72dp(13));
         this.accessibilityDelegate = new IntSeekBarAccessibilityDelegate() { // from class: org.telegram.ui.Components.SlideChooseView.1
             @Override // org.telegram.p043ui.Components.IntSeekBarAccessibilityDelegate
             protected int getProgress() {
@@ -201,10 +201,10 @@ public class SlideChooseView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(74), 1073741824));
-        this.circleSize = AndroidUtilities.m54dp(6);
-        this.gapSize = AndroidUtilities.m54dp(2);
-        this.sideSide = AndroidUtilities.m54dp(22);
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(74), 1073741824));
+        this.circleSize = AndroidUtilities.m72dp(6);
+        this.gapSize = AndroidUtilities.m72dp(2);
+        this.sideSide = AndroidUtilities.m72dp(22);
         int measuredWidth = getMeasuredWidth();
         int i3 = this.circleSize;
         String[] strArr = this.optionsStr;
@@ -217,8 +217,8 @@ public class SlideChooseView extends View {
         int i;
         float f2;
         float f3;
-        int m54dp;
-        int m54dp2;
+        int m72dp;
+        int m72dp2;
         float f4;
         int i2;
         int i3;
@@ -228,7 +228,7 @@ public class SlideChooseView extends View {
         float f6 = BitmapDescriptorFactory.HUE_RED;
         float f7 = 1.0f;
         float f8 = animatedFloat.set(z ? 1.0f : 0.0f);
-        int measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(11);
+        int measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m72dp(11);
         int i4 = 0;
         while (i4 < this.optionsStr.length) {
             int i5 = this.sideSide;
@@ -242,21 +242,21 @@ public class SlideChooseView extends View {
             this.paint.setColor(blendARGB);
             this.linePaint.setColor(blendARGB);
             float f11 = measuredHeight;
-            canvas.drawCircle(i8, f11, AndroidUtilities.lerp(this.circleSize / 2, AndroidUtilities.m54dp(6), max), this.paint);
+            canvas.drawCircle(i8, f11, AndroidUtilities.lerp(this.circleSize / 2, AndroidUtilities.m72dp(6), max), this.paint);
             if (i4 != 0) {
                 int i9 = (i8 - (this.circleSize / 2)) - this.gapSize;
                 int i10 = this.lineSize;
                 int i11 = i9 - i10;
                 int i12 = this.dashedFrom;
                 if (i12 != -1 && i4 - 1 >= i12) {
-                    int m54dp3 = i11 + AndroidUtilities.m54dp(3);
-                    int m54dp4 = (i10 - AndroidUtilities.m54dp(3)) / AndroidUtilities.m54dp(13);
-                    if (this.lastDash != m54dp4) {
+                    int m72dp3 = i11 + AndroidUtilities.m72dp(3);
+                    int m72dp4 = (i10 - AndroidUtilities.m72dp(3)) / AndroidUtilities.m72dp(13);
+                    if (this.lastDash != m72dp4) {
                         f4 = max;
                         i2 = i8;
                         i3 = 1;
-                        this.linePaint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.m54dp(6), (m54dp2 - (AndroidUtilities.m54dp(8) * m54dp4)) / (m54dp4 - 1)}, BitmapDescriptorFactory.HUE_RED));
-                        this.lastDash = m54dp4;
+                        this.linePaint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.m72dp(6), (m72dp2 - (AndroidUtilities.m72dp(8) * m72dp4)) / (m72dp4 - 1)}, BitmapDescriptorFactory.HUE_RED));
+                        this.lastDash = m72dp4;
                     } else {
                         f4 = max;
                         i2 = i8;
@@ -264,7 +264,7 @@ public class SlideChooseView extends View {
                     }
                     f = f4;
                     i = i2;
-                    canvas.drawLine(AndroidUtilities.m54dp(i3) + m54dp3, f11, (m54dp3 + m54dp2) - AndroidUtilities.m54dp(i3), f11, this.linePaint);
+                    canvas.drawLine(AndroidUtilities.m72dp(i3) + m72dp3, f11, (m72dp3 + m72dp2) - AndroidUtilities.m72dp(i3), f11, this.linePaint);
                     f2 = 1.0f;
                     f3 = BitmapDescriptorFactory.HUE_RED;
                 } else {
@@ -273,9 +273,9 @@ public class SlideChooseView extends View {
                     f2 = 1.0f;
                     float f12 = f10 - 1.0f;
                     float clamp = MathUtils.clamp(1.0f - Math.abs(f12), (float) BitmapDescriptorFactory.HUE_RED, 1.0f);
-                    int m54dp5 = (int) (i10 - (AndroidUtilities.m54dp(3) * MathUtils.clamp(1.0f - Math.min(Math.abs(f10), Math.abs(f12)), (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
+                    int m72dp5 = (int) (i10 - (AndroidUtilities.m72dp(3) * MathUtils.clamp(1.0f - Math.min(Math.abs(f10), Math.abs(f12)), (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
                     f3 = 0.0f;
-                    canvas.drawRect((int) (i11 + (AndroidUtilities.m54dp(3) * clamp)), measuredHeight - AndroidUtilities.m54dp(1), m54dp + m54dp5, AndroidUtilities.m54dp(1) + measuredHeight, this.paint);
+                    canvas.drawRect((int) (i11 + (AndroidUtilities.m72dp(3) * clamp)), measuredHeight - AndroidUtilities.m72dp(1), m72dp + m72dp5, AndroidUtilities.m72dp(1) + measuredHeight, this.paint);
                 }
             } else {
                 f = max;
@@ -287,11 +287,11 @@ public class SlideChooseView extends View {
             String str = this.optionsStr[i4];
             this.textPaint.setColor(ColorUtils.blendARGB(getThemedColor(Theme.key_windowBackgroundWhiteGrayText), getThemedColor(Theme.key_windowBackgroundWhiteBlueText), f));
             if (i4 == 0) {
-                canvas.drawText(str, AndroidUtilities.m54dp(22), AndroidUtilities.m54dp(28), this.textPaint);
+                canvas.drawText(str, AndroidUtilities.m72dp(22), AndroidUtilities.m72dp(28), this.textPaint);
             } else if (i4 == this.optionsStr.length - 1) {
-                canvas.drawText(str, (getMeasuredWidth() - i13) - AndroidUtilities.m54dp(22), AndroidUtilities.m54dp(28), this.textPaint);
+                canvas.drawText(str, (getMeasuredWidth() - i13) - AndroidUtilities.m72dp(22), AndroidUtilities.m72dp(28), this.textPaint);
             } else {
-                canvas.drawText(str, i - (i13 / 2), AndroidUtilities.m54dp(28), this.textPaint);
+                canvas.drawText(str, i - (i13 / 2), AndroidUtilities.m72dp(28), this.textPaint);
             }
             i4++;
             f7 = f2;
@@ -304,9 +304,9 @@ public class SlideChooseView extends View {
         int i16 = Theme.key_switchTrackChecked;
         paint.setColor(ColorUtils.setAlphaComponent(getThemedColor(i16), 80));
         float f14 = measuredHeight;
-        canvas.drawCircle(f13, f14, AndroidUtilities.m55dp(f8 * 12.0f), this.paint);
+        canvas.drawCircle(f13, f14, AndroidUtilities.m73dp(f8 * 12.0f), this.paint);
         this.paint.setColor(getThemedColor(i16));
-        canvas.drawCircle(f13, f14, AndroidUtilities.m54dp(6), this.paint);
+        canvas.drawCircle(f13, f14, AndroidUtilities.m72dp(6), this.paint);
     }
 
     @Override // android.view.View

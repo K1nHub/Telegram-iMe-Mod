@@ -64,7 +64,7 @@ public final class NotificationPushText {
     }
 
     public int hashCode() {
-        return (((((this.text.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId)) * 31) + this.action.hashCode()) * 31) + this.linkedObject.hashCode();
+        return (((((this.text.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId)) * 31) + this.action.hashCode()) * 31) + this.linkedObject.hashCode();
     }
 
     public String toString() {

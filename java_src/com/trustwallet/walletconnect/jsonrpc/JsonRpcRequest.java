@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class JsonRpcRequest<T> {
 
     /* renamed from: id */
-    private final long f470id;
+    private final long f473id;
     private final String jsonrpc;
     private final WCMethod method;
     private final T params;
@@ -20,26 +20,26 @@ public final class JsonRpcRequest<T> {
         }
         if (obj instanceof JsonRpcRequest) {
             JsonRpcRequest jsonRpcRequest = (JsonRpcRequest) obj;
-            return this.f470id == jsonRpcRequest.f470id && Intrinsics.areEqual(this.jsonrpc, jsonRpcRequest.jsonrpc) && this.method == jsonRpcRequest.method && Intrinsics.areEqual(this.params, jsonRpcRequest.params);
+            return this.f473id == jsonRpcRequest.f473id && Intrinsics.areEqual(this.jsonrpc, jsonRpcRequest.jsonrpc) && this.method == jsonRpcRequest.method && Intrinsics.areEqual(this.params, jsonRpcRequest.params);
         }
         return false;
     }
 
     public int hashCode() {
-        int m706m = ((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f470id) * 31) + this.jsonrpc.hashCode()) * 31;
+        int m724m = ((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f473id) * 31) + this.jsonrpc.hashCode()) * 31;
         WCMethod wCMethod = this.method;
-        int hashCode = (m706m + (wCMethod == null ? 0 : wCMethod.hashCode())) * 31;
+        int hashCode = (m724m + (wCMethod == null ? 0 : wCMethod.hashCode())) * 31;
         T t = this.params;
         return hashCode + (t != null ? t.hashCode() : 0);
     }
 
     public String toString() {
-        return "JsonRpcRequest(id=" + this.f470id + ", jsonrpc=" + this.jsonrpc + ", method=" + this.method + ", params=" + this.params + ')';
+        return "JsonRpcRequest(id=" + this.f473id + ", jsonrpc=" + this.jsonrpc + ", method=" + this.method + ", params=" + this.params + ')';
     }
 
     public JsonRpcRequest(long j, String jsonrpc, WCMethod wCMethod, T t) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
-        this.f470id = j;
+        this.f473id = j;
         this.jsonrpc = jsonrpc;
         this.method = wCMethod;
         this.params = t;
@@ -50,7 +50,7 @@ public final class JsonRpcRequest<T> {
     }
 
     public final long getId() {
-        return this.f470id;
+        return this.f473id;
     }
 
     public final WCMethod getMethod() {

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 1874
+    .line 1884
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->this$1:Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .method public onPageSelected(I)V
     .locals 2
 
-    .line 1884
+    .line 1894
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->this$1:Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -65,7 +65,7 @@
 
     move-result p1
 
-    .line 1885
+    .line 1895
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->this$1:Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;
 
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->prevPage:I
@@ -80,15 +80,15 @@
     const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;->access$3800(Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;->access$3900(Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;Z)V
 
-    .line 1886
+    .line 1896
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->prevPage:I
 
-    .line 1887
+    .line 1897
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView$2;->this$1:Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;->access$3900(Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;)V
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;->access$4000(Lorg/telegram/ui/ProfileActivity$PagerIndicatorView;)V
 
     return-void
 .end method

@@ -10,6 +10,7 @@ import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -43,9 +44,35 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
         this.dialog = z;
-        lazy = LazyKt__LazyJVMKt.lazy(new TextNetworkSwitcherCell$textView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.TextNetworkSwitcherCell$textView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initTextView;
+                initTextView = TextNetworkSwitcherCell.this.initTextView();
+                return initTextView;
+            }
+        });
         this.textView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TextNetworkSwitcherCell$networkTypeView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<NetworkTypeView>() { // from class: com.iMe.fork.ui.view.TextNetworkSwitcherCell$networkTypeView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final NetworkTypeView invoke() {
+                NetworkTypeView initNetworkTypeView;
+                initNetworkTypeView = TextNetworkSwitcherCell.this.initNetworkTypeView();
+                return initNetworkTypeView;
+            }
+        });
         this.networkTypeView$delegate = lazy2;
         TextView textView = getTextView();
         boolean z2 = LocaleController.isRTL;
@@ -88,7 +115,7 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(50.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m73dp(50.0f), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

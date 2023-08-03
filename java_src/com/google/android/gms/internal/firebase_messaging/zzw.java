@@ -1,6 +1,8 @@
 package com.google.android.gms.internal.firebase_messaging;
 
+import com.google.firebase.encoders.EncodingException;
 import com.google.firebase.encoders.ObjectEncoder;
+import com.google.firebase.encoders.ObjectEncoderContext;
 import com.google.firebase.encoders.ValueEncoder;
 import com.google.firebase.encoders.config.EncoderConfig;
 import java.util.HashMap;
@@ -9,7 +11,15 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public final class zzw implements EncoderConfig<zzw> {
     public static final /* synthetic */ int zza = 0;
-    private static final ObjectEncoder<Object> zzb = zzv.zza;
+    private static final ObjectEncoder<Object> zzb = new ObjectEncoder() { // from class: com.google.android.gms.internal.firebase_messaging.zzv
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public final void encode(Object obj, Object obj2) {
+            ObjectEncoderContext objectEncoderContext = (ObjectEncoderContext) obj2;
+            int i = zzw.zza;
+            String valueOf = String.valueOf(obj.getClass().getCanonicalName());
+            throw new EncodingException(valueOf.length() != 0 ? "Couldn't find encoder for type ".concat(valueOf) : new String("Couldn't find encoder for type "));
+        }
+    };
     private final Map<Class<?>, ObjectEncoder<?>> zzc = new HashMap();
     private final Map<Class<?>, ValueEncoder<?>> zzd = new HashMap();
     private final ObjectEncoder<Object> zze = zzb;

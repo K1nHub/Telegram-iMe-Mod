@@ -556,7 +556,7 @@
 
     move-result-object p1
 
-    const-string p2, "private fun saveAccountR\u2026bservable()\n            }"
+    const-string/jumbo p2, "private fun saveAccountR\u2026bservable()\n            }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -782,7 +782,7 @@
 
     move-result-object p1
 
-    const-string p2, "private fun saveWalletAd\u2026bservable()\n            }"
+    const-string/jumbo p2, "private fun saveWalletAd\u2026bservable()\n            }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -839,7 +839,7 @@
         }
     .end annotation
 
-    const-string v0, "prevAllowUsers"
+    const-string/jumbo v0, "prevAllowUsers"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

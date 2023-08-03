@@ -111,7 +111,7 @@
 
     move-result-object v1
 
-    const-string v2, "policy"
+    const-string/jumbo v2, "policy"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
 
@@ -122,7 +122,7 @@
 
     move-result v1
 
-    const-string v2, "priority"
+    const-string/jumbo v2, "priority"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;I)Lcom/google/common/base/MoreObjects$ToStringHelper;
 

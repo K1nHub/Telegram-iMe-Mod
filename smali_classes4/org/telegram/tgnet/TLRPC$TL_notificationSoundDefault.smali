@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9441
+    .line 9650
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$NotificationSound;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 9446
+    .line 9655
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

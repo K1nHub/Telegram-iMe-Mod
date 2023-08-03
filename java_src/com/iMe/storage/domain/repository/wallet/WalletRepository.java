@@ -3,7 +3,6 @@ package com.iMe.storage.domain.repository.wallet;
 import com.iMe.storage.data.locale.prefs.model.TokenDisplaySettings;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.common.CursoredData;
-import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
@@ -20,8 +19,6 @@ import kotlin.Pair;
 /* compiled from: WalletRepository.kt */
 /* loaded from: classes3.dex */
 public interface WalletRepository {
-    Observable<Result<Boolean>> activateWallet();
-
     Observable<Result<Boolean>> detachCustomToken(Token token);
 
     Observable<Result<CryptoTransferMetadata>> getCryptoTransferMetadata(Token token, String str, String str2, Network network);
@@ -46,7 +43,7 @@ public interface WalletRepository {
 
     Observable<Result<CursoredData<FoundTokenWithFamily>>> searchTokens(String str, String str2, String str3);
 
-    Observable<Result<Boolean>> sendTokens(TransferArgs transferArgs, BlockchainType blockchainType);
+    Observable<Result<Boolean>> sendTokens(TransferArgs transferArgs, Network network);
 
     Observable<Result<Boolean>> setTokenVisibility(Token token, boolean z);
 }

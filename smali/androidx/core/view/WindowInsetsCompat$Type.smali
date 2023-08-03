@@ -15,6 +15,14 @@
 
 
 # direct methods
+.method public static displayCutout()I
+    .locals 1
+
+    const/16 v0, 0x80
+
+    return v0
+.end method
+
 .method public static ime()I
     .locals 1
 
@@ -119,4 +127,12 @@
     const/4 p0, 0x0
 
     return p0
+.end method
+
+.method public static systemBars()I
+    .locals 1
+
+    const/4 v0, 0x7
+
+    return v0
 .end method

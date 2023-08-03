@@ -25,7 +25,12 @@ public final class ProxyNotificationInitializer {
         if (ProxyNotificationPreferences.isProxyNotificationInitialized(context)) {
             return;
         }
-        setEnableProxyNotification(ProxyNotificationInitializer$$ExternalSyntheticLambda1.INSTANCE, context, shouldEnableProxyNotification(context));
+        setEnableProxyNotification(new Executor() { // from class: com.google.firebase.messaging.ProxyNotificationInitializer$$ExternalSyntheticLambda1
+            @Override // java.util.concurrent.Executor
+            public final void execute(Runnable runnable) {
+                runnable.run();
+            }
+        }, context, shouldEnableProxyNotification(context));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

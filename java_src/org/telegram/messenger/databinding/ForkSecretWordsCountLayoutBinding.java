@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkSecretWordsCountLayoutBinding implements ViewBinding {
     private final LinearLayout rootView;
@@ -29,7 +29,7 @@ public final class ForkSecretWordsCountLayoutBinding implements ViewBinding {
     }
 
     public static ForkSecretWordsCountLayoutBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_secret_words_count_layout, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_secret_words_count_layout, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,20 +37,20 @@ public final class ForkSecretWordsCountLayoutBinding implements ViewBinding {
     }
 
     public static ForkSecretWordsCountLayoutBinding bind(View view) {
-        int i = C3417R.C3420id.constraint_bottom_action;
+        int i = C3419R.C3422id.constraint_bottom_action;
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout != null) {
-            i = C3417R.C3420id.recycle_actions;
+            i = C3419R.C3422id.recycle_actions;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 LinearLayout linearLayout = (LinearLayout) view;
-                i = C3417R.C3420id.text_action_cancel;
+                i = C3419R.C3422id.text_action_cancel;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3417R.C3420id.text_title;
+                    i = C3419R.C3422id.text_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
-                        i = C3417R.C3420id.view_divider;
+                        i = C3419R.C3422id.view_divider;
                         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                         if (dividerView != null) {
                             return new ForkSecretWordsCountLayoutBinding(linearLayout, constraintLayout, recyclerView, linearLayout, appCompatTextView, appCompatTextView2, dividerView);

@@ -505,7 +505,7 @@
     .line 418
     instance-of v2, v0, Lcom/iMe/model/wallet/crypto/TokensScreenType$Binance;
 
-    const-string v5, "parentActivity"
+    const-string/jumbo v5, "parentActivity"
 
     if-eqz v2, :cond_7
 
@@ -653,7 +653,7 @@
 
     move/from16 v1, p2
 
-    const-string v2, "parent"
+    const-string/jumbo v2, "parent"
 
     move-object/from16 v3, p1
 
@@ -854,7 +854,7 @@
 
     move-result-object v2
 
-    const-string v3, "parentActivity"
+    const-string/jumbo v3, "parentActivity"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

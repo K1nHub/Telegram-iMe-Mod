@@ -5,9 +5,10 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class TransformingSequence$iterator$1 implements Iterator<R>, KMappedMarker, p033j$.util.Iterator {
+public final class TransformingSequence$iterator$1<R> implements Iterator<R>, KMappedMarker, p033j$.util.Iterator {
     private final Iterator<T> iterator;
     final /* synthetic */ TransformingSequence<T, R> this$0;
 
@@ -29,12 +30,11 @@ public final class TransformingSequence$iterator$1 implements Iterator<R>, KMapp
         this.iterator = sequence.iterator();
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [R, java.lang.Object] */
     @Override // java.util.Iterator, p033j$.util.Iterator
     public R next() {
         Function1 function1;
         function1 = ((TransformingSequence) this.this$0).transformer;
-        return function1.invoke(this.iterator.next());
+        return (R) function1.invoke(this.iterator.next());
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator

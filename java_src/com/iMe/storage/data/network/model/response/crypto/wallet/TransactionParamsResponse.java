@@ -87,7 +87,7 @@ public abstract class TransactionParamsResponse {
             GasPriceResponse gasPriceResponse = this.fastest;
             int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
             GasPriceResponse gasPriceResponse2 = this.safeLow;
-            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId);
+            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
         }
 
         public String toString() {
@@ -217,7 +217,7 @@ public abstract class TransactionParamsResponse {
         private final int walletSeqno;
 
         /* renamed from: wc */
-        private final int f388wc;
+        private final int f391wc;
 
         public static /* synthetic */ TON copy$default(TON ton, int i, String str, int i2, int i3, int i4, Object obj) {
             if ((i4 & 1) != 0) {
@@ -230,7 +230,7 @@ public abstract class TransactionParamsResponse {
                 i2 = ton.walletSeqno;
             }
             if ((i4 & 8) != 0) {
-                i3 = ton.f388wc;
+                i3 = ton.f391wc;
             }
             return ton.copy(i, str, i2, i3);
         }
@@ -248,7 +248,7 @@ public abstract class TransactionParamsResponse {
         }
 
         public final int component4() {
-            return this.f388wc;
+            return this.f391wc;
         }
 
         public final TON copy(int i, String toWalletAddressFixed, int i2, int i3) {
@@ -262,17 +262,17 @@ public abstract class TransactionParamsResponse {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return this.sendMode == ton.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, ton.toWalletAddressFixed) && this.walletSeqno == ton.walletSeqno && this.f388wc == ton.f388wc;
+                return this.sendMode == ton.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, ton.toWalletAddressFixed) && this.walletSeqno == ton.walletSeqno && this.f391wc == ton.f391wc;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f388wc;
+            return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f391wc;
         }
 
         public String toString() {
-            return "TON(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f388wc + ')';
+            return "TON(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f391wc + ')';
         }
 
         public final int getSendMode() {
@@ -288,7 +288,7 @@ public abstract class TransactionParamsResponse {
         }
 
         public final int getWc() {
-            return this.f388wc;
+            return this.f391wc;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -298,7 +298,7 @@ public abstract class TransactionParamsResponse {
             this.sendMode = i;
             this.toWalletAddressFixed = toWalletAddressFixed;
             this.walletSeqno = i2;
-            this.f388wc = i3;
+            this.f391wc = i3;
         }
     }
 

@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -46,6 +46,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
@@ -53,13 +54,14 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ChatActivity;
 import org.telegram.p043ui.Components.BotWebViewContainer;
 import org.telegram.p043ui.Components.BotWebViewSheet;
 import org.telegram.p043ui.Components.ChatAttachAlertBotWebViewLayout;
+import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 import org.telegram.p043ui.DialogsActivity;
 import org.telegram.p043ui.LaunchActivity;
@@ -88,8 +90,20 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.BotWebViewSheet */
 /* loaded from: classes6.dex */
 public class BotWebViewSheet extends Dialog implements NotificationCenter.NotificationCenterDelegate {
-    private static final SimpleFloatPropertyCompat<BotWebViewSheet> ACTION_BAR_TRANSITION_PROGRESS_VALUE = new SimpleFloatPropertyCompat("actionBarTransitionProgress", BotWebViewSheet$$ExternalSyntheticLambda21.INSTANCE, BotWebViewSheet$$ExternalSyntheticLambda22.INSTANCE).setMultiplier(100.0f);
-    private C3484ActionBar actionBar;
+    private static final SimpleFloatPropertyCompat<BotWebViewSheet> ACTION_BAR_TRANSITION_PROGRESS_VALUE = new SimpleFloatPropertyCompat("actionBarTransitionProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda21
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Getter
+        public final float get(Object obj) {
+            float f;
+            f = ((BotWebViewSheet) obj).actionBarTransitionProgress;
+            return f;
+        }
+    }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda22
+        @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Setter
+        public final void set(Object obj, float f) {
+            BotWebViewSheet.lambda$static$1((BotWebViewSheet) obj, f);
+        }
+    }).setMultiplier(100.0f);
+    private C3485ActionBar actionBar;
     private int actionBarColor;
     private Paint actionBarPaint;
     private Drawable actionBarShadow;
@@ -146,7 +160,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         tLRPC$TL_messages_prolongWebView.silent = this.silent;
         int i = this.replyToMsgId;
         if (i != 0) {
-            tLRPC$TL_messages_prolongWebView.reply_to_msg_id = i;
+            tLRPC$TL_messages_prolongWebView.reply_to = SendMessagesHelper.creteReplyInput(i);
             tLRPC$TL_messages_prolongWebView.flags |= 1;
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda15
@@ -180,7 +194,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     public BotWebViewSheet(Context context, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3417R.style.TransparentDialog);
+        super(context, C3419R.style.TransparentDialog);
         this.actionBarTransitionProgress = BitmapDescriptorFactory.HUE_RED;
         this.linePaint = new Paint(1);
         this.dimPaint = new Paint();
@@ -256,12 +270,12 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     int r5 = android.view.View.MeasureSpec.makeMeasureSpec(r5, r2)
                 L65:
                     int r6 = android.view.View.MeasureSpec.getSize(r6)
-                    int r0 = org.telegram.p043ui.ActionBar.C3484ActionBar.getCurrentActionBarHeight()
+                    int r0 = org.telegram.p043ui.ActionBar.C3485ActionBar.getCurrentActionBarHeight()
                     int r6 = r6 - r0
                     int r0 = org.telegram.messenger.AndroidUtilities.statusBarHeight
                     int r6 = r6 - r0
                     r0 = 24
-                    int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
+                    int r0 = org.telegram.messenger.AndroidUtilities.m72dp(r0)
                     int r6 = r6 + r0
                     org.telegram.ui.Components.BotWebViewSheet r0 = org.telegram.p043ui.Components.BotWebViewSheet.this
                     boolean r0 = org.telegram.p043ui.Components.BotWebViewSheet.access$200(r0)
@@ -276,7 +290,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     super.onMeasure(r5, r6)
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.BotWebViewSheet.C42661.onMeasure(int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.BotWebViewSheet.C42811.onMeasure(int, int):void");
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -290,9 +304,9 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         int i = Theme.key_windowBackgroundWhite;
         BotWebViewContainer botWebViewContainer = new BotWebViewContainer(context, resourcesProvider, getColor(i));
         this.webViewContainer = botWebViewContainer;
-        botWebViewContainer.setDelegate(new C42692(context, resourcesProvider));
+        botWebViewContainer.setDelegate(new C42842(context, resourcesProvider));
         this.linePaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        this.linePaint.setStrokeWidth(AndroidUtilities.m54dp(4));
+        this.linePaint.setStrokeWidth(AndroidUtilities.m72dp(4));
         this.linePaint.setStrokeCap(Paint.Cap.ROUND);
         this.dimPaint.setColor(1073741824);
         this.actionBarColor = getColor(i);
@@ -312,10 +326,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight());
                     canvas.drawRect(rectF, BotWebViewSheet.this.dimPaint);
                     BotWebViewSheet.this.actionBarPaint.setColor(ColorUtils.blendARGB(BotWebViewSheet.this.actionBarColor, BotWebViewSheet.this.getColor(Theme.key_windowBackgroundWhite), BotWebViewSheet.this.actionBarTransitionProgress));
-                    float m54dp = AndroidUtilities.m54dp(16) * (AndroidUtilities.isTablet() ? 1.0f : 1.0f - BotWebViewSheet.this.actionBarTransitionProgress);
-                    rectF.set(BotWebViewSheet.this.swipeContainer.getLeft(), AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY(), (float) BitmapDescriptorFactory.HUE_RED, BotWebViewSheet.this.actionBarTransitionProgress), BotWebViewSheet.this.swipeContainer.getRight(), BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m54dp(24) + m54dp);
-                    canvas.drawRoundRect(rectF, m54dp, m54dp, BotWebViewSheet.this.actionBarPaint);
-                    rectF.set(BotWebViewSheet.this.swipeContainer.getLeft(), BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m54dp(24), BotWebViewSheet.this.swipeContainer.getRight(), getHeight());
+                    float m72dp = AndroidUtilities.m72dp(16) * (AndroidUtilities.isTablet() ? 1.0f : 1.0f - BotWebViewSheet.this.actionBarTransitionProgress);
+                    rectF.set(BotWebViewSheet.this.swipeContainer.getLeft(), AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY(), (float) BitmapDescriptorFactory.HUE_RED, BotWebViewSheet.this.actionBarTransitionProgress), BotWebViewSheet.this.swipeContainer.getRight(), BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m72dp(24) + m72dp);
+                    canvas.drawRoundRect(rectF, m72dp, m72dp, BotWebViewSheet.this.actionBarPaint);
+                    rectF.set(BotWebViewSheet.this.swipeContainer.getLeft(), BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m72dp(24), BotWebViewSheet.this.swipeContainer.getRight(), getHeight());
                     canvas.drawRect(rectF, BotWebViewSheet.this.backgroundPaint);
                 }
             }
@@ -328,9 +342,9 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 BotWebViewSheet.this.linePaint.setAlpha((int) (BotWebViewSheet.this.linePaint.getAlpha() * (1.0f - (Math.min(0.5f, f) / 0.5f))));
                 canvas.save();
                 float f2 = 1.0f - f;
-                float lerp = AndroidUtilities.isTablet() ? AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m54dp(12), AndroidUtilities.statusBarHeight / 2.0f, BotWebViewSheet.this.actionBarTransitionProgress) : AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY(), AndroidUtilities.statusBarHeight + (C3484ActionBar.getCurrentActionBarHeight() / 2.0f), f) + AndroidUtilities.m54dp(12);
+                float lerp = AndroidUtilities.isTablet() ? AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m72dp(12), AndroidUtilities.statusBarHeight / 2.0f, BotWebViewSheet.this.actionBarTransitionProgress) : AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY(), AndroidUtilities.statusBarHeight + (C3485ActionBar.getCurrentActionBarHeight() / 2.0f), f) + AndroidUtilities.m72dp(12);
                 canvas.scale(f2, f2, getWidth() / 2.0f, lerp);
-                canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m54dp(16), lerp, (getWidth() / 2.0f) + AndroidUtilities.m54dp(16), lerp, BotWebViewSheet.this.linePaint);
+                canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m72dp(16), lerp, (getWidth() / 2.0f) + AndroidUtilities.m72dp(16), lerp, BotWebViewSheet.this.linePaint);
                 canvas.restore();
                 BotWebViewSheet.this.actionBarShadow.setAlpha((int) (BotWebViewSheet.this.actionBar.getAlpha() * 255.0f));
                 float y = BotWebViewSheet.this.actionBar.getY() + BotWebViewSheet.this.actionBar.getTranslationY() + BotWebViewSheet.this.actionBar.getHeight();
@@ -340,7 +354,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
             @Override // android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() == 0 && (motionEvent.getY() <= AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m54dp(24), (float) BitmapDescriptorFactory.HUE_RED, BotWebViewSheet.this.actionBarTransitionProgress) || motionEvent.getX() > BotWebViewSheet.this.swipeContainer.getRight() || motionEvent.getX() < BotWebViewSheet.this.swipeContainer.getLeft())) {
+                if (motionEvent.getAction() == 0 && (motionEvent.getY() <= AndroidUtilities.lerp(BotWebViewSheet.this.swipeContainer.getTranslationY() + AndroidUtilities.m72dp(24), (float) BitmapDescriptorFactory.HUE_RED, BotWebViewSheet.this.actionBarTransitionProgress) || motionEvent.getX() > BotWebViewSheet.this.swipeContainer.getRight() || motionEvent.getX() < BotWebViewSheet.this.swipeContainer.getLeft())) {
                     BotWebViewSheet.this.onCheckDismissByUser();
                     return true;
                 }
@@ -371,8 +385,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.mainButton.setSingleLine();
         this.mainButton.setGravity(17);
         this.mainButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        int m54dp = AndroidUtilities.m54dp(16);
-        this.mainButton.setPadding(m54dp, 0, m54dp, 0);
+        int m72dp = AndroidUtilities.m72dp(16);
+        this.mainButton.setPadding(m72dp, 0, m72dp, 0);
         this.mainButton.setTextSize(1, 14.0f);
         this.mainButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -389,24 +403,24 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                     Point point = AndroidUtilities.displaySize;
-                    marginLayoutParams.rightMargin = (int) (AndroidUtilities.m54dp(10) + (Math.min(point.x, point.y) * 0.1f));
+                    marginLayoutParams.rightMargin = (int) (AndroidUtilities.m72dp(10) + (Math.min(point.x, point.y) * 0.1f));
                     return;
                 }
-                marginLayoutParams.rightMargin = AndroidUtilities.m54dp(10);
+                marginLayoutParams.rightMargin = AndroidUtilities.m72dp(10);
             }
         };
         this.radialProgressView = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.m54dp(18));
+        radialProgressView.setSize(AndroidUtilities.m72dp(18));
         this.radialProgressView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.radialProgressView.setScaleX(0.1f);
         this.radialProgressView.setScaleY(0.1f);
         this.radialProgressView.setVisibility(8);
         this.frameLayout.addView(this.radialProgressView, LayoutHelper.createFrame(28, 28, 85, 0, 0, 10, 10));
         this.radialProgressAutoAnimator = VerticalPositionAutoAnimator.attach(this.radialProgressView);
-        this.actionBarShadow = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.header_shadow).mutate();
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(this, context, resourcesProvider) { // from class: org.telegram.ui.Components.BotWebViewSheet.6
+        this.actionBarShadow = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.header_shadow).mutate();
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(this, context, resourcesProvider) { // from class: org.telegram.ui.Components.BotWebViewSheet.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar, android.widget.FrameLayout, android.view.View
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar, android.widget.FrameLayout, android.view.View
             public void onMeasure(int i2, int i3) {
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
                     Point point = AndroidUtilities.displaySize;
@@ -415,12 +429,12 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 super.onMeasure(i2, i3);
             }
         };
-        this.actionBar = c3484ActionBar;
-        c3484ActionBar.setBackgroundColor(0);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_close_white);
+        this.actionBar = c3485ActionBar;
+        c3485ActionBar.setBackgroundColor(0);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_close_white);
         updateActionBarColors();
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BotWebViewSheet.7
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BotWebViewSheet.7
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     BotWebViewSheet.this.onCheckDismissByUser();
@@ -467,7 +481,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 BotWebViewSheet.this.lambda$new$11();
             }
         });
-        this.swipeContainer.setTopActionBarOffsetY((C3484ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.m54dp(24));
+        this.swipeContainer.setTopActionBarOffsetY((C3485ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.m72dp(24));
         this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda14
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
@@ -485,7 +499,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.BotWebViewSheet$2 */
     /* loaded from: classes6.dex */
-    public class C42692 implements BotWebViewContainer.Delegate {
+    public class C42842 implements BotWebViewContainer.Delegate {
         private boolean sentWebViewData;
         final /* synthetic */ Context val$context;
         final /* synthetic */ Theme.ResourcesProvider val$resourcesProvider;
@@ -500,7 +514,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             BotWebViewContainer.Delegate.CC.$default$onWebAppReady(this);
         }
 
-        C42692(Context context, Theme.ResourcesProvider resourcesProvider) {
+        C42842(Context context, Theme.ResourcesProvider resourcesProvider) {
             this.val$context = context;
             this.val$resourcesProvider = resourcesProvider;
         }
@@ -529,7 +543,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             ConnectionsManager.getInstance(BotWebViewSheet.this.currentAccount).sendRequest(tLRPC$TL_messages_sendWebViewData, new RequestDelegate() { // from class: org.telegram.ui.Components.BotWebViewSheet$2$$ExternalSyntheticLambda3
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    BotWebViewSheet.C42692.this.lambda$onSendWebViewData$0(tLObject, tLRPC$TL_error);
+                    BotWebViewSheet.C42842.this.lambda$onSendWebViewData$0(tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -557,7 +571,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$2$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    BotWebViewSheet.C42692.this.lambda$onWebAppSetActionBarColor$1(i2, color, valueAnimator);
+                    BotWebViewSheet.C42842.this.lambda$onWebAppSetActionBarColor$1(i2, color, valueAnimator);
                 }
             });
             duration.start();
@@ -578,7 +592,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$2$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    BotWebViewSheet.C42692.this.lambda$onWebAppSetBackgroundColor$2(color, i, valueAnimator);
+                    BotWebViewSheet.C42842.this.lambda$onWebAppSetBackgroundColor$2(color, i, valueAnimator);
                 }
             });
             duration.start();
@@ -592,7 +606,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
         @Override // org.telegram.p043ui.Components.BotWebViewContainer.Delegate
         public void onSetBackButtonVisible(boolean z) {
-            AndroidUtilities.updateImageViewImageAnimated(BotWebViewSheet.this.actionBar.getBackButton(), z ? C3417R.C3419drawable.ic_ab_back : C3417R.C3419drawable.ic_close_white);
+            AndroidUtilities.updateImageViewImageAnimated(BotWebViewSheet.this.actionBar.getBackButton(), z ? C3419R.C3421drawable.ic_ab_back : C3419R.C3421drawable.ic_close_white);
         }
 
         @Override // org.telegram.p043ui.Components.BotWebViewContainer.Delegate
@@ -614,7 +628,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.Components.BotWebViewSheet$2$$ExternalSyntheticLambda5
                     @Override // org.telegram.p043ui.PaymentFormActivity.PaymentFormCallback
                     public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
-                        BotWebViewSheet.C42692.this.lambda$onWebAppOpenInvoice$3(overlayActionBarLayoutDialog, str, invoiceStatus);
+                        BotWebViewSheet.C42842.this.lambda$onWebAppOpenInvoice$3(overlayActionBarLayoutDialog, str, invoiceStatus);
                     }
                 });
                 paymentFormActivity.setResourcesProvider(this.val$resourcesProvider);
@@ -657,6 +671,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             bundle.putInt("dialogsType", 14);
             bundle.putBoolean("onlySelect", true);
             bundle.putBoolean("allowGroups", list.contains("groups"));
+            bundle.putBoolean("allowMegagroups", list.contains("groups"));
+            bundle.putBoolean("allowLegacyGroups", list.contains("groups"));
             bundle.putBoolean("allowUsers", list.contains("users"));
             bundle.putBoolean("allowChannels", list.contains("channels"));
             bundle.putBoolean("allowBots", list.contains("bots"));
@@ -667,7 +683,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 @Override // org.telegram.p043ui.DialogsActivity.DialogsActivityDelegate
                 public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, TopicsFragment topicsFragment, Callbacks$Callback1 callbacks$Callback1) {
                     boolean lambda$onWebAppSwitchInlineQuery$4;
-                    lambda$onWebAppSwitchInlineQuery$4 = BotWebViewSheet.C42692.this.lambda$onWebAppSwitchInlineQuery$4(tLRPC$User, str, overlayActionBarLayoutDialog, dialogsActivity2, arrayList, charSequence, z, topicsFragment, callbacks$Callback1);
+                    lambda$onWebAppSwitchInlineQuery$4 = BotWebViewSheet.C42842.this.lambda$onWebAppSwitchInlineQuery$4(tLRPC$User, str, overlayActionBarLayoutDialog, dialogsActivity2, arrayList, charSequence, z, topicsFragment, callbacks$Callback1);
                     return lambda$onWebAppSwitchInlineQuery$4;
                 }
             });
@@ -760,7 +776,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$5(int i, boolean z) {
-        if (i > AndroidUtilities.m54dp(20)) {
+        if (i > AndroidUtilities.m72dp(20)) {
             ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer webViewSwipeContainer = this.swipeContainer;
             webViewSwipeContainer.stickTo((-webViewSwipeContainer.getOffsetY()) + this.swipeContainer.getTopActionBarOffsetY());
         }
@@ -835,7 +851,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ Boolean lambda$new$12(Void r2) {
-        return Boolean.valueOf(this.frameLayout.getKeyboardHeight() >= AndroidUtilities.m54dp(20));
+        return Boolean.valueOf(this.frameLayout.getKeyboardHeight() >= AndroidUtilities.m72dp(20));
     }
 
     @Override // android.app.Dialog
@@ -867,9 +883,9 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     private void updateActionBarColors() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3484ActionBar.setTitleColor(getColor(i));
+        c3485ActionBar.setTitleColor(getColor(i));
         this.actionBar.setItemsColor(getColor(i), false);
         this.actionBar.setItemsBackgroundColor(getColor(Theme.key_actionBarWhiteSelector), false);
         this.actionBar.setPopupBackgroundColor(getColor(Theme.key_actionBarDefaultSubmenuBackground), false);
@@ -901,7 +917,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         } else if (i >= 21) {
             window.addFlags(-2147417856);
         }
-        window.setWindowAnimations(C3417R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3419R.style.DialogNoAnimation);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.gravity = 51;
@@ -918,7 +934,14 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         }
         this.frameLayout.setSystemUiVisibility(1280);
         if (i >= 21) {
-            this.frameLayout.setOnApplyWindowInsetsListener(BotWebViewSheet$$ExternalSyntheticLambda2.INSTANCE);
+            this.frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnApplyWindowInsetsListener
+                public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                    WindowInsets lambda$onCreate$13;
+                    lambda$onCreate$13 = BotWebViewSheet.lambda$onCreate$13(view, windowInsets);
+                    return lambda$onCreate$13;
+                }
+            });
         }
         if (i >= 26) {
             AndroidUtilities.setLightNavigationBar(window, ColorUtils.calculateLuminance(Theme.getColor(Theme.key_windowBackgroundWhite, null, true)) >= 0.9d);
@@ -975,25 +998,25 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.actionBar.setTitle(UserObject.getUserName(MessagesController.getInstance(i).getUser(Long.valueOf(j2))));
         ActionBarMenu createMenu = this.actionBar.createMenu();
         createMenu.removeAllViews();
-        ActionBarMenuItem addItem = createMenu.addItem(0, C3417R.C3419drawable.ic_ab_other);
-        addItem.addSubItem(C3417R.C3420id.menu_open_bot, C3417R.C3419drawable.msg_bot, LocaleController.getString(C3417R.string.BotWebViewOpenBot));
-        addItem.addSubItem(C3417R.C3420id.menu_reload_page, C3417R.C3419drawable.msg_retry, LocaleController.getString(C3417R.string.BotWebViewReloadPage));
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BotWebViewSheet.10
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        ActionBarMenuItem addItem = createMenu.addItem(0, C3419R.C3421drawable.ic_ab_other);
+        addItem.addSubItem(C3419R.C3422id.menu_open_bot, C3419R.C3421drawable.msg_bot, LocaleController.getString(C3419R.string.BotWebViewOpenBot));
+        addItem.addSubItem(C3419R.C3422id.menu_reload_page, C3419R.C3421drawable.msg_retry, LocaleController.getString(C3419R.string.BotWebViewReloadPage));
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BotWebViewSheet.10
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
                 if (i5 == -1) {
                     if (BotWebViewSheet.this.webViewContainer.onBackPressed()) {
                         return;
                     }
                     BotWebViewSheet.this.onCheckDismissByUser();
-                } else if (i5 == C3417R.C3420id.menu_open_bot) {
+                } else if (i5 == C3419R.C3422id.menu_open_bot) {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", j2);
                     if (BotWebViewSheet.this.parentActivity instanceof LaunchActivity) {
-                        ((LaunchActivity) BotWebViewSheet.this.parentActivity).lambda$runLinkRequest$84(new ChatActivity(bundle));
+                        ((LaunchActivity) BotWebViewSheet.this.parentActivity).lambda$runLinkRequest$87(new ChatActivity(bundle));
                     }
                     BotWebViewSheet.this.dismiss();
-                } else if (i5 == C3417R.C3420id.menu_reload_page) {
+                } else if (i5 == C3419R.C3422id.menu_reload_page) {
                     if (BotWebViewSheet.this.webViewContainer.getWebView() != null) {
                         BotWebViewSheet.this.webViewContainer.getWebView().animate().cancel();
                         BotWebViewSheet.this.webViewContainer.getWebView().animate().alpha(BitmapDescriptorFactory.HUE_RED).start();
@@ -1004,7 +1027,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     BotWebViewSheet.this.webViewContainer.setBotUser(MessagesController.getInstance(i).getUser(Long.valueOf(j2)));
                     BotWebViewSheet.this.webViewContainer.loadFlickerAndSettingsItem(i, j2, BotWebViewSheet.this.settingsItem);
                     BotWebViewSheet.this.webViewContainer.reload();
-                } else if (i5 == C3417R.C3420id.menu_settings) {
+                } else if (i5 == C3419R.C3422id.menu_settings) {
                     BotWebViewSheet.this.webViewContainer.onSettingsButtonPressed();
                 }
             }
@@ -1021,7 +1044,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             str4 = jSONObject.toString();
             z3 = true;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
             str4 = null;
             z3 = false;
         }
@@ -1037,7 +1060,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 tLRPC$TL_messages_requestWebView.flags |= 2;
             }
             if (i3 != 0) {
-                tLRPC$TL_messages_requestWebView.reply_to_msg_id = i3;
+                tLRPC$TL_messages_requestWebView.reply_to = SendMessagesHelper.creteReplyInput(i3);
                 tLRPC$TL_messages_requestWebView.flags |= 1;
             }
             if (z3) {
@@ -1095,7 +1118,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         } else {
             TLRPC$TL_messages_requestAppWebView tLRPC$TL_messages_requestAppWebView = new TLRPC$TL_messages_requestAppWebView();
             TLRPC$TL_inputBotAppID tLRPC$TL_inputBotAppID = new TLRPC$TL_inputBotAppID();
-            tLRPC$TL_inputBotAppID.f1574id = tLRPC$BotApp.f1512id;
+            tLRPC$TL_inputBotAppID.f1581id = tLRPC$BotApp.f1515id;
             tLRPC$TL_inputBotAppID.access_hash = tLRPC$BotApp.access_hash;
             tLRPC$TL_messages_requestAppWebView.app = tLRPC$TL_inputBotAppID;
             tLRPC$TL_messages_requestAppWebView.write_allowed = z2;
@@ -1209,11 +1232,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getColor(int i) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        if (resourcesProvider != null && resourcesProvider.contains(i)) {
-            return this.resourcesProvider.getColor(i);
-        }
-        return Theme.getColor(i);
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     @Override // android.app.Dialog
@@ -1251,12 +1270,12 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public boolean onCheckDismissByUser() {
         if (this.needCloseConfirmation) {
             TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId));
-            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(C3417R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(C3417R.string.BotWebViewCloseAnyway), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda1
+            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(C3419R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(C3419R.string.BotWebViewCloseAnyway), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.BotWebViewSheet$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     BotWebViewSheet.this.lambda$onCheckDismissByUser$22(dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString(C3417R.string.Cancel), null).create();
+            }).setNegativeButton(LocaleController.getString(C3419R.string.Cancel), null).create();
             create.show();
             ((TextView) create.getButton(-1)).setTextColor(getColor(Theme.key_text_RedBold));
             return false;

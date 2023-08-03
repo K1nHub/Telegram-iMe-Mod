@@ -6,6 +6,7 @@ import com.iMe.model.twitter.SocialAuthResult;
 import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao;
 import com.iMe.storage.data.locale.p027db.model.social.SocialNetworkDb;
 import com.iMe.storage.data.network.api.own.SocialApi;
+import com.iMe.storage.data.network.handlers.ErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.social.SocialBodyRequest;
@@ -19,6 +20,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
+import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
@@ -52,9 +54,27 @@ public final class SocialRepositoryImpl implements SocialRepository {
     }
 
     @Override // com.iMe.feature.socialMedias.SocialRepository
-    public Observable<Result<SocialDomain>> getAllSocial(ProfileData profileData) {
+    public Observable<Result<SocialDomain>> getAllSocial(final ProfileData profileData) {
         Intrinsics.checkNotNullParameter(profileData, "profileData");
-        return CacheManagerStrategy.fetch$default(CacheManagerStrategy.INSTANCE, getSocialFromDb(profileData.getProfileId()), getSocialFromNet(profileData.getProfileId()), new SocialRepositoryImpl$getAllSocial$1(this, profileData), false, 8, null);
+        return CacheManagerStrategy.fetch$default(CacheManagerStrategy.INSTANCE, getSocialFromDb(profileData.getProfileId()), getSocialFromNet(profileData.getProfileId()), new Function1<Result<? extends SocialDomain>, Unit>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getAllSocial$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SocialDomain> result) {
+                invoke2((Result<SocialDomain>) result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Result<SocialDomain> result) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                SocialRepositoryImpl.this.saveInDb(result, profileData.getProfileId());
+            }
+        }, false, 8, null);
     }
 
     @Override // com.iMe.feature.socialMedias.SocialRepository
@@ -68,9 +88,34 @@ public final class SocialRepositoryImpl implements SocialRepository {
             }
         });
         Intrinsics.checkNotNullExpressionValue(doOnComplete, "socialMediasApi\n        …ocialAuthResult.Logout) }");
-        Observable<R> map = doOnComplete.map(new C1463x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = doOnComplete.map(new C1463x2827ffdb(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    return Result.Companion.success(Boolean.TRUE);
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$handleError$1(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -92,8 +137,19 @@ public final class SocialRepositoryImpl implements SocialRepository {
     }
 
     private final Observable<Result<SocialDomain>> getSocialFromDb(long j) {
-        Single<List<SocialNetworkDb>> subscribeOn = this.socialNetworkDao.getAllByProfileId(j).subscribeOn(Schedulers.m679io());
-        final SocialRepositoryImpl$getSocialFromDb$1 socialRepositoryImpl$getSocialFromDb$1 = SocialRepositoryImpl$getSocialFromDb$1.INSTANCE;
+        Single<List<SocialNetworkDb>> subscribeOn = this.socialNetworkDao.getAllByProfileId(j).subscribeOn(Schedulers.m697io());
+        final SocialRepositoryImpl$getSocialFromDb$1 socialRepositoryImpl$getSocialFromDb$1 = new Function1<List<? extends SocialNetworkDb>, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromDb$1
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Result<SocialDomain> invoke2(List<SocialNetworkDb> it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.success(SocialDataMapperKt.toDomain(it));
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Result<? extends SocialDomain> invoke(List<? extends SocialNetworkDb> list) {
+                return invoke2((List<SocialNetworkDb>) list);
+            }
+        };
         Observable<Result<SocialDomain>> observable = subscribeOn.map(new Function() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -113,11 +169,36 @@ public final class SocialRepositoryImpl implements SocialRepository {
     }
 
     private final Observable<Result<SocialDomain>> getSocialFromNet(long j) {
-        Observable<ApiBaseResponse<SocialNetworksRaw>> subscribeOn = this.socialMediasApi.getAllSocial(new SocialBodyRequest(String.valueOf(j), null, null, 6, null)).subscribeOn(Schedulers.m679io());
+        Observable<ApiBaseResponse<SocialNetworksRaw>> subscribeOn = this.socialMediasApi.getAllSocial(new SocialBodyRequest(String.valueOf(j), null, null, 6, null)).subscribeOn(Schedulers.m697io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "socialMediasApi\n        …scribeOn(Schedulers.io())");
-        Observable<R> map = subscribeOn.map(new C1463x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = subscribeOn.map(new C1463x2827ffdb(new Function1<ApiBaseResponse<SocialNetworksRaw>, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<SocialDomain> invoke(ApiBaseResponse<SocialNetworksRaw> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(SocialDataMapperKt.toDomain(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new Function1<Throwable, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<SocialDomain> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

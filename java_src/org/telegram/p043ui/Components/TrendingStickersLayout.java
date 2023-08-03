@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -174,7 +174,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
                 if (!z2 || TrendingStickersLayout.this.listView.getAdapter().getItemCount() <= 0) {
                     return;
                 }
-                TrendingStickersLayout.this.layoutManager.scrollToPositionWithOffset(0, (-TrendingStickersLayout.this.listView.getPaddingTop()) + AndroidUtilities.m54dp(58) + TrendingStickersLayout.this.topOffset, false);
+                TrendingStickersLayout.this.layoutManager.scrollToPositionWithOffset(0, (-TrendingStickersLayout.this.listView.getPaddingTop()) + AndroidUtilities.m72dp(58) + TrendingStickersLayout.this.topOffset, false);
             }
 
             @Override // org.telegram.p043ui.Adapters.StickersSearchAdapter.Delegate
@@ -212,7 +212,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             }
         };
         this.searchView = searchField;
-        searchField.setHint(LocaleController.getString("SearchTrendingStickersHint", C3417R.string.SearchTrendingStickersHint));
+        searchField.setHint(LocaleController.getString("SearchTrendingStickersHint", C3419R.string.SearchTrendingStickersHint));
         frameLayout.addView(searchField, LayoutHelper.createFrame(-1, -1, 48));
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.TrendingStickersLayout.3
             @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
@@ -244,7 +244,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
 
             @Override // org.telegram.p043ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(float f, float f2) {
-                return f2 >= ((float) (TrendingStickersLayout.this.topOffset + AndroidUtilities.m54dp(58)));
+                return f2 >= ((float) (TrendingStickersLayout.this.topOffset + AndroidUtilities.m72dp(58)));
             }
         };
         this.listView = recyclerListView;
@@ -266,7 +266,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         recyclerListView.setClipToPadding(false);
         recyclerListView.setItemAnimator(null);
         recyclerListView.setLayoutAnimation(null);
-        FillLastGridLayoutManager fillLastGridLayoutManager = new FillLastGridLayoutManager(context, 5, AndroidUtilities.m54dp(58), recyclerListView) { // from class: org.telegram.ui.Components.TrendingStickersLayout.4
+        FillLastGridLayoutManager fillLastGridLayoutManager = new FillLastGridLayoutManager(context, 5, AndroidUtilities.m72dp(58), recyclerListView) { // from class: org.telegram.ui.Components.TrendingStickersLayout.4
             @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean supportsPredictiveItemAnimations() {
                 return false;
@@ -308,8 +308,8 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
                         }
                         i4++;
                     }
-                    if (i3 == 0 && (findViewByPosition = TrendingStickersLayout.this.layoutManager.findViewByPosition(i3)) != null && findViewByPosition.getTop() - i2 > AndroidUtilities.m54dp(58)) {
-                        i2 = findViewByPosition.getTop() - AndroidUtilities.m54dp(58);
+                    if (i3 == 0 && (findViewByPosition = TrendingStickersLayout.this.layoutManager.findViewByPosition(i3)) != null && findViewByPosition.getTop() - i2 > AndroidUtilities.m72dp(58)) {
+                        i2 = findViewByPosition.getTop() - AndroidUtilities.m72dp(58);
                     }
                 }
                 return super.scrollVerticallyBy(i2, recycler, state);
@@ -358,7 +358,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         view.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
         view.setAlpha(BitmapDescriptorFactory.HUE_RED);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight());
-        layoutParams.topMargin = AndroidUtilities.m54dp(58);
+        layoutParams.topMargin = AndroidUtilities.m72dp(58);
         addView(view, layoutParams);
         addView(frameLayout, LayoutHelper.createFrame(-1, 58, 51));
         updateColors();
@@ -399,7 +399,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         if (this.scrollToSet == null || (num = (Integer) this.adapter.setsToPosition.get(this.scrollToSet)) == null) {
             return;
         }
-        this.layoutManager.scrollToPositionWithOffset(num.intValue(), (-this.listView.getPaddingTop()) + AndroidUtilities.m54dp(58));
+        this.layoutManager.scrollToPositionWithOffset(num.intValue(), (-this.listView.getPaddingTop()) + AndroidUtilities.m72dp(58));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -469,7 +469,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         if (tLRPC$StickerSet != null) {
             tLRPC$InputStickerSet = new TLRPC$TL_inputStickerSetID();
             tLRPC$InputStickerSet.access_hash = tLRPC$StickerSet.access_hash;
-            tLRPC$InputStickerSet.f1538id = tLRPC$StickerSet.f1548id;
+            tLRPC$InputStickerSet.f1541id = tLRPC$StickerSet.f1552id;
         }
         if (tLRPC$InputStickerSet != null) {
             showStickerSet(tLRPC$InputStickerSet);
@@ -522,7 +522,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
                 }
                 for (int i = 0; i < TrendingStickersLayout.this.adapter.sets.size(); i++) {
                     TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) TrendingStickersLayout.this.adapter.sets.get(i);
-                    if (tLRPC$StickerSetCovered.set.f1548id == tLRPC$InputStickerSet.f1538id) {
+                    if (tLRPC$StickerSetCovered.set.f1552id == tLRPC$InputStickerSet.f1541id) {
                         TrendingStickersLayout.this.adapter.installStickerSet(tLRPC$StickerSetCovered, null);
                         return;
                     }
@@ -569,10 +569,10 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
     }
 
     public void setContentViewPaddingTop(int i) {
-        int m54dp = i + AndroidUtilities.m54dp(58);
-        if (this.listView.getPaddingTop() != m54dp) {
+        int m72dp = i + AndroidUtilities.m72dp(58);
+        if (this.listView.getPaddingTop() != m72dp) {
             this.ignoreLayout = true;
-            this.listView.setPadding(0, m54dp, 0, 0);
+            this.listView.setPadding(0, m72dp, 0, 0);
             this.ignoreLayout = false;
         }
     }
@@ -604,12 +604,12 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             }
         }
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.m54dp(58);
+        int top = childAt.getTop() - AndroidUtilities.m72dp(58);
         int i2 = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
         setShadowVisible(top < 0);
         if (this.topOffset != i2) {
             this.topOffset = i2;
-            this.listView.setTopGlowOffset(i2 + AndroidUtilities.m54dp(58));
+            this.listView.setTopGlowOffset(i2 + AndroidUtilities.m72dp(58));
             this.searchLayout.setTranslationY(this.topOffset);
             this.shadowView.setTranslationY(this.topOffset);
             return true;
@@ -661,15 +661,15 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.TrendingStickersLayout.9
 
                 /* renamed from: dy */
-                int f1840dy = 0;
+                int f1863dy = 0;
 
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
                     int floatValue = (int) (contentTopOffset * ((Float) valueAnimator.getAnimatedValue()).floatValue());
                     TrendingStickersLayout.this.scrollFromAnimator = true;
-                    TrendingStickersLayout.this.listView.scrollBy(0, floatValue - this.f1840dy);
+                    TrendingStickersLayout.this.listView.scrollBy(0, floatValue - this.f1863dy);
                     TrendingStickersLayout.this.scrollFromAnimator = false;
-                    this.f1840dy = floatValue;
+                    this.f1863dy = floatValue;
                 }
             });
             this.glueToTopAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.TrendingStickersLayout.10
@@ -739,11 +739,11 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
             FeaturedStickerSetInfoCell featuredStickerSetInfoCell = (FeaturedStickerSetInfoCell) view.getParent();
             TLRPC$StickerSetCovered stickerSet = featuredStickerSetInfoCell.getStickerSet();
-            if (TrendingStickersLayout.this.installingStickerSets.indexOfKey(stickerSet.set.f1548id) >= 0 || TrendingStickersLayout.this.removingStickerSets.indexOfKey(stickerSet.set.f1548id) >= 0) {
+            if (TrendingStickersLayout.this.installingStickerSets.indexOfKey(stickerSet.set.f1552id) >= 0 || TrendingStickersLayout.this.removingStickerSets.indexOfKey(stickerSet.set.f1552id) >= 0) {
                 return;
             }
             if (featuredStickerSetInfoCell.isInstalled()) {
-                TrendingStickersLayout.this.removingStickerSets.put(stickerSet.set.f1548id, stickerSet);
+                TrendingStickersLayout.this.removingStickerSets.put(stickerSet.set.f1552id, stickerSet);
                 TrendingStickersLayout.this.delegate.onStickerSetRemove(stickerSet);
                 return;
             }
@@ -758,10 +758,10 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             FrameLayout frameLayout;
             FeaturedStickerSetInfoCell featuredStickerSetInfoCell;
             if (i == 0) {
-                StickerEmojiCell stickerEmojiCell = new StickerEmojiCell(this, this.context, false) { // from class: org.telegram.ui.Components.TrendingStickersLayout.TrendingStickersAdapter.1
+                StickerEmojiCell stickerEmojiCell = new StickerEmojiCell(this, this.context, false, TrendingStickersLayout.this.resourcesProvider) { // from class: org.telegram.ui.Components.TrendingStickersLayout.TrendingStickersAdapter.1
                     @Override // android.widget.FrameLayout, android.view.View
                     public void onMeasure(int i2, int i3) {
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(82), 1073741824));
+                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(82), 1073741824));
                     }
                 };
                 stickerEmojiCell.getImageView().setLayerNum(3);
@@ -805,11 +805,11 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         public /* synthetic */ void lambda$onCreateViewHolder$1(View view) {
             FeaturedStickerSetCell2 featuredStickerSetCell2 = (FeaturedStickerSetCell2) view.getParent();
             TLRPC$StickerSetCovered stickerSet = featuredStickerSetCell2.getStickerSet();
-            if (TrendingStickersLayout.this.installingStickerSets.indexOfKey(stickerSet.set.f1548id) >= 0 || TrendingStickersLayout.this.removingStickerSets.indexOfKey(stickerSet.set.f1548id) >= 0) {
+            if (TrendingStickersLayout.this.installingStickerSets.indexOfKey(stickerSet.set.f1552id) >= 0 || TrendingStickersLayout.this.removingStickerSets.indexOfKey(stickerSet.set.f1552id) >= 0) {
                 return;
             }
             if (featuredStickerSetCell2.isInstalled()) {
-                TrendingStickersLayout.this.removingStickerSets.put(stickerSet.set.f1548id, stickerSet);
+                TrendingStickersLayout.this.removingStickerSets.put(stickerSet.set.f1552id, stickerSet);
                 TrendingStickersLayout.this.delegate.onStickerSetRemove(stickerSet);
                 return;
             }
@@ -822,11 +822,11 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             if (itemViewType == 0) {
                 ((StickerEmojiCell) viewHolder.itemView).setSticker((TLRPC$Document) this.cache.get(i), this.positionsToSets.get(i), false);
             } else if (itemViewType == 1) {
-                ((EmptyCell) viewHolder.itemView).setHeight(AndroidUtilities.m54dp(82));
+                ((EmptyCell) viewHolder.itemView).setHeight(AndroidUtilities.m72dp(82));
             } else {
                 if (itemViewType != 2) {
                     if (itemViewType == 4) {
-                        ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("OtherStickers", C3417R.string.OtherStickers));
+                        ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("OtherStickers", C3419R.string.OtherStickers));
                         return;
                     } else if (itemViewType != 5) {
                         return;
@@ -873,9 +873,9 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
                     break;
                 }
                 if (TrendingStickersLayout.this.primaryInstallingStickerSets[i] != null) {
-                    TLRPC$TL_messages_stickerSet stickerSetById = MediaDataController.getInstance(TrendingStickersLayout.this.currentAccount).getStickerSetById(TrendingStickersLayout.this.primaryInstallingStickerSets[i].set.f1548id);
+                    TLRPC$TL_messages_stickerSet stickerSetById = MediaDataController.getInstance(TrendingStickersLayout.this.currentAccount).getStickerSetById(TrendingStickersLayout.this.primaryInstallingStickerSets[i].set.f1552id);
                     if (stickerSetById == null || stickerSetById.set.archived) {
-                        if (TrendingStickersLayout.this.primaryInstallingStickerSets[i].set.f1548id == tLRPC$StickerSetCovered.set.f1548id) {
+                        if (TrendingStickersLayout.this.primaryInstallingStickerSets[i].set.f1552id == tLRPC$StickerSetCovered.set.f1552id) {
                             return;
                         }
                     } else {
@@ -905,7 +905,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
                     ((FeaturedStickerSetInfoCell) view).setAddDrawProgress(true, true);
                 }
             }
-            TrendingStickersLayout.this.installingStickerSets.put(tLRPC$StickerSetCovered.set.f1548id, tLRPC$StickerSetCovered);
+            TrendingStickersLayout.this.installingStickerSets.put(tLRPC$StickerSetCovered.set.f1552id, tLRPC$StickerSetCovered);
             if (view != null) {
                 TrendingStickersLayout.this.delegate.onStickerSetAdd(tLRPC$StickerSetCovered, z);
                 return;
@@ -913,7 +913,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             int size = this.positionsToSets.size();
             for (int i3 = 0; i3 < size; i3++) {
                 TLRPC$StickerSetCovered tLRPC$StickerSetCovered2 = this.positionsToSets.get(i3);
-                if (tLRPC$StickerSetCovered2 != null && tLRPC$StickerSetCovered2.set.f1548id == tLRPC$StickerSetCovered.set.f1548id) {
+                if (tLRPC$StickerSetCovered2 != null && tLRPC$StickerSetCovered2.set.f1552id == tLRPC$StickerSetCovered.set.f1552id) {
                     notifyItemChanged(i3, 0);
                     return;
                 }
@@ -924,7 +924,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
             int i;
             int measuredWidth = TrendingStickersLayout.this.getMeasuredWidth();
             if (measuredWidth != 0) {
-                this.stickersPerRow = Math.max(5, measuredWidth / AndroidUtilities.m54dp(72));
+                this.stickersPerRow = Math.max(5, measuredWidth / AndroidUtilities.m72dp(72));
                 if (TrendingStickersLayout.this.layoutManager.getSpanCount() != this.stickersPerRow) {
                     TrendingStickersLayout.this.layoutManager.setSpanCount(this.stickersPerRow);
                     TrendingStickersLayout.this.loaded = false;

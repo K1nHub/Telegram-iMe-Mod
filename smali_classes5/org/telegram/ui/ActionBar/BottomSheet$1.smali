@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;I)V
     .locals 0
 
-    .line 139
+    .line 141
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$1;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-direct {p0, p2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
@@ -35,10 +35,10 @@
 .method public setAlpha(I)V
     .locals 0
 
-    .line 142
+    .line 144
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 143
+    .line 145
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$1;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;

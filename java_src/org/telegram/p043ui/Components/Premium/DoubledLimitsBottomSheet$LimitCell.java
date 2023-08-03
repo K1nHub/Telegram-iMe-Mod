@@ -17,7 +17,7 @@ class DoubledLimitsBottomSheet$LimitCell extends LinearLayout {
     public DoubledLimitsBottomSheet$LimitCell(Context context) {
         super(context);
         setOrientation(1);
-        setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), 0);
+        setPadding(AndroidUtilities.m72dp(6), 0, AndroidUtilities.m72dp(6), 0);
         TextView textView = new TextView(context);
         this.title = textView;
         textView.setTextSize(1, 15.0f);

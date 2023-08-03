@@ -11,9 +11,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class ModuleInstallResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleInstallResponse> CREATOR = new zad();
-    @SafeParcelable.Field(getter = "getSessionId", m779id = 1)
+    @SafeParcelable.Field(getter = "getSessionId", m797id = 1)
     private final int zaa;
-    @SafeParcelable.Field(defaultValue = "false", getter = "getShouldUnregisterListener", m779id = 2)
+    @SafeParcelable.Field(defaultValue = "false", getter = "getShouldUnregisterListener", m797id = 2)
     private final boolean zab;
 
     @KeepForSdk
@@ -42,7 +42,7 @@ public class ModuleInstallResponse extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public ModuleInstallResponse(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) boolean z) {
+    public ModuleInstallResponse(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) boolean z) {
         this.zaa = i;
         this.zab = z;
     }

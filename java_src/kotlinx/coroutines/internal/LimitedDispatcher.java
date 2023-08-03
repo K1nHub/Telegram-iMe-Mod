@@ -18,8 +18,8 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1632scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        this.$$delegate_0.mo1632scheduleResumeAfterDelay(j, cancellableContinuation);
+    public void mo1651scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo1651scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
@@ -83,7 +83,7 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
             boolean r2 = r2.isDispatchNeeded(r4)
             if (r2 == 0) goto L2
             kotlinx.coroutines.CoroutineDispatcher r0 = r4.dispatcher
-            r0.mo1631dispatch(r4, r4)
+            r0.mo1650dispatch(r4, r4)
             return
         L2a:
             java.lang.Object r1 = r4.workerAllocationLock
@@ -113,11 +113,11 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1631dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1650dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (addAndTryDispatching(runnable) || !tryAllocateWorker()) {
             return;
         }
-        this.dispatcher.mo1631dispatch(this, this);
+        this.dispatcher.mo1650dispatch(this, this);
     }
 
     private final boolean tryAllocateWorker() {

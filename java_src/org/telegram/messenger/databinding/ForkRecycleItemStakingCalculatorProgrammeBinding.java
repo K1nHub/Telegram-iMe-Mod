@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemStakingCalculatorProgrammeBinding implements ViewBinding {
     private final ConstraintLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkRecycleItemStakingCalculatorProgrammeBinding implements V
     }
 
     public static ForkRecycleItemStakingCalculatorProgrammeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_staking_calculator_programme, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_staking_calculator_programme, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,31 +37,31 @@ public final class ForkRecycleItemStakingCalculatorProgrammeBinding implements V
 
     public static ForkRecycleItemStakingCalculatorProgrammeBinding bind(View view) {
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        int i = C3417R.C3420id.image_coin_icon;
+        int i = C3419R.C3422id.image_coin_icon;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3417R.C3420id.image_info;
+            i = C3419R.C3422id.image_info;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3417R.C3420id.image_network_icon;
+                i = C3419R.C3422id.image_network_icon;
                 AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView3 != null) {
-                    i = C3417R.C3420id.linear_percentages;
+                    i = C3419R.C3422id.linear_percentages;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3417R.C3420id.text_apr_title;
+                        i = C3419R.C3422id.text_apr_title;
                         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView != null) {
-                            i = C3417R.C3420id.text_apr_value;
+                            i = C3419R.C3422id.text_apr_value;
                             TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                             if (textView2 != null) {
-                                i = C3417R.C3420id.text_apy_title;
+                                i = C3419R.C3422id.text_apy_title;
                                 TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                 if (textView3 != null) {
-                                    i = C3417R.C3420id.text_apy_value;
+                                    i = C3419R.C3422id.text_apy_value;
                                     TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView4 != null) {
-                                        i = C3417R.C3420id.text_name;
+                                        i = C3419R.C3422id.text_name;
                                         TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView5 != null) {
                                             return new ForkRecycleItemStakingCalculatorProgrammeBinding(constraintLayout, constraintLayout, appCompatImageView, appCompatImageView2, appCompatImageView3, linearLayout, textView, textView2, textView3, textView4, textView5);

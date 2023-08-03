@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/messenger/Utilities$Callback2;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$sYzJ6ihjv_cxLCdKAlQQdEe8efE(Lorg/telegram/ui/Components/EmojiView;Landroid/view/View;I)V
+    check-cast p1, Ljava/lang/Integer;
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$igRUnK1znZOQTs45xBwpHmxawCg(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
     return-void
 .end method

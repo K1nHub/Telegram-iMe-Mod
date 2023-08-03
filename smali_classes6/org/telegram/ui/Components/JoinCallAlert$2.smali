@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/JoinCallAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 376
+    .line 380
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 433
+    .line 437
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1200(Lorg/telegram/ui/Components/JoinCallAlert;)Landroid/graphics/drawable/Drawable;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 434
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1200(Lorg/telegram/ui/Components/JoinCallAlert;)Landroid/graphics/drawable/Drawable;
@@ -83,7 +83,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 380
+    .line 384
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -114,7 +114,7 @@
 
     if-gez v0, :cond_0
 
-    .line 381
+    .line 385
     iget-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -123,7 +123,7 @@
 
     return p1
 
-    .line 384
+    .line 388
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -135,10 +135,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 419
+    .line 423
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 420
+    .line 424
     iget-object p1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1000(Lorg/telegram/ui/Components/JoinCallAlert;)V
@@ -149,24 +149,24 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 394
+    .line 398
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 395
+    .line 399
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
 
     if-lt v1, v2, :cond_0
 
-    .line 396
+    .line 400
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     sub-int/2addr v0, v1
 
-    .line 398
+    .line 402
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -186,7 +186,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 399
+    .line 403
     iget-object p2, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$700(Lorg/telegram/ui/Components/JoinCallAlert;)Landroid/widget/TextView;
@@ -197,7 +197,7 @@
 
     move-result p2
 
-    .line 400
+    .line 404
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$400(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -220,12 +220,12 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 401
+    .line 405
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     const/16 v1, 0x50
 
-    .line 403
+    .line 407
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -268,7 +268,7 @@
 
     add-int/2addr v1, p2
 
-    .line 404
+    .line 408
     div-int/lit8 p2, v0, 0x5
 
     mul-int/lit8 v2, p2, 0x3
@@ -282,7 +282,7 @@
     :cond_1
     mul-int/lit8 p2, p2, 0x2
 
-    .line 409
+    .line 413
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
@@ -296,14 +296,14 @@
 
     if-eq v1, p2, :cond_2
 
-    .line 410
+    .line 414
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     const/4 v2, 0x1
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$902(Lorg/telegram/ui/Components/JoinCallAlert;Z)Z
 
-    .line 411
+    .line 415
     iget-object v1, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/JoinCallAlert;->access$400(Lorg/telegram/ui/Components/JoinCallAlert;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -314,7 +314,7 @@
 
     invoke-virtual {v1, v2, p2, v2, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 412
+    .line 416
     iget-object p2, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {p2, v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$902(Lorg/telegram/ui/Components/JoinCallAlert;Z)Z
@@ -322,7 +322,7 @@
     :cond_2
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 414
+    .line 418
     invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -335,7 +335,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 389
+    .line 393
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -364,7 +364,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 425
+    .line 429
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinCallAlert$2;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/JoinCallAlert;->access$900(Lorg/telegram/ui/Components/JoinCallAlert;)Z
@@ -375,7 +375,7 @@
 
     return-void
 
-    .line 428
+    .line 432
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

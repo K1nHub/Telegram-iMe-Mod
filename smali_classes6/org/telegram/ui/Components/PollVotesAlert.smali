@@ -171,7 +171,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 247
+    .line 249
     new-instance v0, Lorg/telegram/ui/Components/PollVotesAlert$1;
 
     const-string v1, "placeholderAlpha"
@@ -192,7 +192,7 @@
 
     move-object/from16 v0, p2
 
-    .line 455
+    .line 481
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -201,61 +201,61 @@
 
     invoke-direct {v7, v1, v9}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 87
+    .line 89
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->loadingMore:Ljava/util/HashSet;
 
-    .line 88
+    .line 90
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->votesPercents:Ljava/util/HashMap;
 
-    .line 90
+    .line 92
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
-    .line 97
+    .line 99
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
-    .line 99
+    .line 101
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderPaint:Landroid/graphics/Paint;
 
-    .line 104
+    .line 106
     iput-boolean v9, v7, Lorg/telegram/ui/Components/PollVotesAlert;->loadingResults:Z
 
-    .line 105
+    .line 107
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->rect:Landroid/graphics/RectF;
 
-    .line 456
+    .line 482
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
 
-    .line 457
+    .line 483
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 458
+    .line 484
     iput-object v8, v7, Lorg/telegram/ui/Components/PollVotesAlert;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    .line 459
+    .line 485
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
@@ -264,17 +264,17 @@
 
     check-cast v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;
 
-    .line 460
+    .line 486
     iget-object v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
     iput-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
-    .line 461
+    .line 487
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v11
 
-    .line 462
+    .line 488
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -293,12 +293,12 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 464
+    .line 490
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 465
+    .line 491
     iget-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
@@ -307,7 +307,7 @@
 
     move-result v13
 
-    .line 466
+    .line 492
     new-array v14, v13, [Ljava/lang/Integer;
 
     const/4 v6, 0x0
@@ -315,7 +315,7 @@
     :goto_0
     if-ge v6, v13, :cond_5
 
-    .line 469
+    .line 495
     iget-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
@@ -328,7 +328,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;
 
-    .line 470
+    .line 496
     iget v0, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
     if-nez v0, :cond_0
@@ -339,13 +339,13 @@
 
     goto/16 :goto_5
 
-    .line 473
+    .line 499
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;-><init>()V
 
-    .line 474
+    .line 500
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
     const/16 v3, 0xf
@@ -363,12 +363,12 @@
     :goto_2
     if-ge v4, v1, :cond_2
 
-    .line 476
+    .line 502
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->votes:Ljava/util/ArrayList;
 
-    new-instance v15, Lorg/telegram/tgnet/TLRPC$TL_messageUserVoteInputOption;
+    new-instance v15, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteInputOption;
 
-    invoke-direct {v15}, Lorg/telegram/tgnet/TLRPC$TL_messageUserVoteInputOption;-><init>()V
+    invoke-direct {v15}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteInputOption;-><init>()V
 
     invoke-virtual {v2, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -376,7 +376,7 @@
 
     goto :goto_2
 
-    .line 478
+    .line 504
     :cond_2
     iget v2, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
@@ -392,32 +392,32 @@
     :goto_3
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->next_offset:Ljava/lang/String;
 
-    .line 479
+    .line 505
     iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->count:I
 
-    .line 480
+    .line 506
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->option:[B
 
     invoke-direct {v1, v0, v2}, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;-><init>(Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;[B)V
 
-    .line 481
+    .line 507
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 483
+    .line 509
     new-instance v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;
 
     invoke-direct {v15}, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;-><init>()V
 
-    .line 484
+    .line 510
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     iput-object v0, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 485
+    .line 511
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -426,7 +426,7 @@
 
     iput v0, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->id:I
 
-    .line 486
+    .line 512
     iget v0, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
     if-gt v0, v3, :cond_4
@@ -441,19 +441,19 @@
     :goto_4
     iput v2, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->limit:I
 
-    .line 487
+    .line 513
     iget v0, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->flags:I
 
     or-int/2addr v0, v9
 
     iput v0, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->flags:I
 
-    .line 488
+    .line 514
     iget-object v0, v5, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->option:[B
 
     iput-object v0, v15, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->option:[B
 
-    .line 490
+    .line 516
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v4
@@ -496,7 +496,7 @@
 
     aput-object v0, v14, v17
 
-    .line 555
+    .line 581
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
     aget-object v1, v14, v17
@@ -512,11 +512,11 @@
 
     goto/16 :goto_0
 
-    .line 557
+    .line 583
     :cond_5
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/PollVotesAlert;->updateButtons()V
 
-    .line 559
+    .line 585
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$2;
@@ -525,10 +525,10 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 583
+    .line 609
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/PollVotesAlert;->updatePlaceholder()V
 
-    .line 585
+    .line 611
     invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -545,7 +545,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 586
+    .line 612
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -560,7 +560,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 588
+    .line 614
     new-instance v0, Lorg/telegram/ui/Components/PollVotesAlert$3;
 
     invoke-direct {v0, v7, v11}, Lorg/telegram/ui/Components/PollVotesAlert$3;-><init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;)V
@@ -569,52 +569,52 @@
 
     const/4 v1, 0x0
 
-    .line 713
+    .line 739
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    .line 714
+    .line 740
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget v3, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     invoke-virtual {v0, v3, v1, v3, v1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 716
+    .line 742
     new-instance v0, Lorg/telegram/ui/Components/PollVotesAlert$4;
 
     invoke-direct {v0, v7, v11}, Lorg/telegram/ui/Components/PollVotesAlert$4;-><init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 746
+    .line 772
     new-instance v0, Landroidx/recyclerview/widget/DefaultItemAnimator;
 
     invoke-direct {v0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     const-wide/16 v3, 0x96
 
-    .line 747
+    .line 773
     invoke-virtual {v0, v3, v4}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setAddDuration(J)V
 
     const-wide/16 v3, 0x15e
 
-    .line 748
+    .line 774
     invoke-virtual {v0, v3, v4}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setMoveDuration(J)V
 
     const-wide/16 v3, 0x0
 
-    .line 749
+    .line 775
     invoke-virtual {v0, v3, v4}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setChangeDuration(J)V
 
-    .line 750
+    .line 776
     invoke-virtual {v0, v3, v4}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setRemoveDuration(J)V
 
     const/4 v1, 0x0
 
-    .line 751
+    .line 777
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 752
+    .line 778
     new-instance v3, Landroid/view/animation/OvershootInterpolator;
 
     const v4, 0x3f8ccccd    # 1.1f
@@ -623,22 +623,22 @@
 
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setMoveInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 753
+    .line 779
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setTranslationInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 754
+    .line 780
     iget-object v3, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 755
+    .line 781
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 756
+    .line 782
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v3, Lorg/telegram/ui/Components/PollVotesAlert$5;
@@ -653,24 +653,24 @@
 
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 762
+    .line 788
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 763
+    .line 789
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 764
+    .line 790
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setSectionsType(I)V
 
-    .line 765
+    .line 791
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -685,7 +685,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 766
+    .line 792
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
@@ -696,7 +696,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 767
+    .line 793
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
@@ -707,7 +707,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 768
+    .line 794
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda6;
@@ -716,7 +716,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 828
+    .line 863
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$6;
@@ -725,7 +725,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 853
+    .line 888
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -736,10 +736,10 @@
 
     const/4 v3, 0x1
 
-    .line 854
+    .line 889
     invoke-virtual {v0, v3, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 855
+    .line 890
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -750,7 +750,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 856
+    .line 891
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x15
@@ -777,7 +777,7 @@
 
     invoke-virtual {v0, v3, v5, v6, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 857
+    .line 892
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -788,7 +788,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 858
+    .line 893
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     new-instance v3, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -799,7 +799,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 859
+    .line 894
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     iget-object v3, v7, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
@@ -828,28 +828,28 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 861
+    .line 896
     new-instance v0, Lorg/telegram/ui/Components/PollVotesAlert$7;
 
     invoke-direct {v0, v7, v11}, Lorg/telegram/ui/Components/PollVotesAlert$7;-><init>(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 868
+    .line 903
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 869
+    .line 904
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 870
+    .line 905
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -860,7 +860,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 871
+    .line 906
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
@@ -871,7 +871,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 872
+    .line 907
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -880,7 +880,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 873
+    .line 908
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
@@ -891,19 +891,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setSubtitleColor(I)V
 
-    .line 874
+    .line 909
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 875
+    .line 910
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 876
+    .line 911
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$string;->PollResults:I
@@ -916,14 +916,14 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 877
+    .line 912
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$Poll;->quiz:Z
 
     if-eqz v0, :cond_6
 
-    .line 878
+    .line 913
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v2, v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
@@ -947,7 +947,7 @@
     :cond_6
     const/4 v3, 0x0
 
-    .line 880
+    .line 915
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v2, v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
@@ -964,7 +964,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 882
+    .line 917
     :goto_6
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -976,7 +976,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 883
+    .line 918
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v2, Lorg/telegram/ui/Components/PollVotesAlert$8;
@@ -985,17 +985,17 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 892
+    .line 927
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, v11}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarShadow:Landroid/view/View;
 
-    .line 893
+    .line 928
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 894
+    .line 929
     iget-object v0, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarShadow:Landroid/view/View;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
@@ -1006,7 +1006,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 895
+    .line 930
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarShadow:Landroid/view/View;
@@ -1025,7 +1025,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -1034,7 +1034,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -1043,7 +1043,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1052,7 +1052,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     return-object p0
@@ -1061,7 +1061,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1070,7 +1070,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/widget/TextView;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
 
     return-object p0
@@ -1079,7 +1079,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Components/PollVotesAlert;Z)V
     .locals 0
 
-    .line 74
+    .line 76
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PollVotesAlert;->updateLayout(Z)V
 
     return-void
@@ -1088,7 +1088,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->scrollOffsetY:I
 
     return p0
@@ -1097,7 +1097,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -1106,7 +1106,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1115,7 +1115,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
     return p0
@@ -1124,7 +1124,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1133,7 +1133,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -1142,7 +1142,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1151,7 +1151,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1160,7 +1160,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -1169,7 +1169,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1178,7 +1178,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1187,7 +1187,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1196,7 +1196,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1205,7 +1205,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1214,7 +1214,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1223,7 +1223,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/Components/PollVotesAlert;)Z
     .locals 0
 
-    .line 74
+    .line 76
     iget-boolean p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->loadingResults:Z
 
     return p0
@@ -1232,7 +1232,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/tgnet/TLRPC$Poll;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
     return-object p0
@@ -1241,7 +1241,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/Components/PollVotesAlert;)F
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->totalTranslation:F
 
     return p0
@@ -1250,7 +1250,7 @@
 .method static synthetic access$3016(Lorg/telegram/ui/Components/PollVotesAlert;F)F
     .locals 1
 
-    .line 74
+    .line 76
     iget v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->totalTranslation:F
 
     add-float/2addr v0, p1
@@ -1263,7 +1263,7 @@
 .method static synthetic access$3024(Lorg/telegram/ui/Components/PollVotesAlert;F)F
     .locals 1
 
-    .line 74
+    .line 76
     iget v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->totalTranslation:F
 
     sub-float/2addr v0, p1
@@ -1276,7 +1276,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/Components/PollVotesAlert;)F
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->gradientWidth:F
 
     return p0
@@ -1285,7 +1285,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/Matrix;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderMatrix:Landroid/graphics/Matrix;
 
     return-object p0
@@ -1294,7 +1294,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/LinearGradient;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderGradient:Landroid/graphics/LinearGradient;
 
     return-object p0
@@ -1303,7 +1303,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1312,7 +1312,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -1321,7 +1321,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -1330,7 +1330,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -1339,7 +1339,7 @@
 .method static synthetic access$4102(Lorg/telegram/ui/Components/PollVotesAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 74
+    .line 76
     iput-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -1348,7 +1348,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Components/PollVotesAlert;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     return-object p0
@@ -1357,7 +1357,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/Components/PollVotesAlert;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
     return-object p0
@@ -1366,7 +1366,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/Components/PollVotesAlert;)Ljava/util/HashMap;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->votesPercents:Ljava/util/HashMap;
 
     return-object p0
@@ -1375,7 +1375,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/Components/PollVotesAlert;I)I
     .locals 0
 
-    .line 74
+    .line 76
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -1386,7 +1386,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/Components/PollVotesAlert;)Lorg/telegram/ui/ChatActivity;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     return-object p0
@@ -1395,7 +1395,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->rect:Landroid/graphics/RectF;
 
     return-object p0
@@ -1404,7 +1404,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/PollVotesAlert;)Z
     .locals 0
 
-    .line 74
+    .line 76
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->isFullscreen:Z
 
     return p0
@@ -1413,7 +1413,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1422,7 +1422,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/PollVotesAlert;)I
     .locals 0
 
-    .line 74
+    .line 76
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -1431,7 +1431,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/PollVotesAlert;)Landroid/view/View;
     .locals 0
 
-    .line 74
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarShadow:Landroid/view/View;
 
     return-object p0
@@ -1440,7 +1440,7 @@
 .method private synthetic lambda$new$0([Ljava/lang/Integer;ILorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;)V
     .locals 6
 
-    .line 491
+    .line 517
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
     aget-object p1, p1, p2
@@ -1449,10 +1449,10 @@
 
     if-eqz p3, :cond_d
 
-    .line 493
+    .line 519
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;
 
-    .line 494
+    .line 520
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -1463,7 +1463,7 @@
 
     invoke-virtual {p1, p2, p4}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 495
+    .line 521
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->votes:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1472,7 +1472,7 @@
 
     if-nez p1, :cond_0
 
-    .line 496
+    .line 522
     new-instance p1, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
     iget-object p2, p6, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->option:[B
@@ -1481,7 +1481,7 @@
 
     invoke-virtual {p5, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 498
+    .line 524
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
@@ -1491,7 +1491,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 500
+    .line 526
     invoke-virtual {p5}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1505,14 +1505,14 @@
 
     if-ge p2, p1, :cond_5
 
-    .line 501
+    .line 527
     invoke-virtual {p5, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
-    .line 502
+    .line 528
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1524,7 +1524,7 @@
     :goto_1
     if-ge v2, v1, :cond_4
 
-    .line 503
+    .line 529
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1533,7 +1533,7 @@
 
     check-cast v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
-    .line 504
+    .line 530
     iget-object v4, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
 
     iget-object v5, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
@@ -1544,12 +1544,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 505
+    .line 531
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->next_offset:Ljava/lang/String;
 
     iput-object v1, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->next_offset:Ljava/lang/String;
 
-    .line 506
+    .line 532
     iget v1, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
     iget v2, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
@@ -1573,18 +1573,18 @@
     :cond_1
     move p3, p6
 
-    .line 509
+    .line 535
     :cond_2
     iget p6, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
     iput p6, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
-    .line 510
+    .line 536
     iget-object p6, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->users:Ljava/util/ArrayList;
 
     iput-object p6, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->users:Ljava/util/ArrayList;
 
-    .line 511
+    .line 537
     iget-object p6, v0, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
     iput-object p6, v3, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
@@ -1602,16 +1602,16 @@
 
     goto :goto_0
 
-    .line 516
+    .line 542
     :cond_5
     iput-boolean p4, p0, Lorg/telegram/ui/Components/PollVotesAlert;->loadingResults:Z
 
-    .line 517
+    .line 543
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_e
 
-    .line 518
+    .line 544
     iget p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
     if-nez p2, :cond_b
@@ -1624,13 +1624,13 @@
 
     goto :goto_5
 
-    .line 524
+    .line 550
     :cond_6
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
 
-    .line 525
+    .line 551
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
@@ -1640,21 +1640,21 @@
     :goto_3
     if-ge p3, p1, :cond_9
 
-    .line 527
+    .line 553
     iget-object p5, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p5, p3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p5
 
-    .line 528
+    .line 554
     instance-of v0, p5, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;
 
     if-nez v0, :cond_7
 
     goto :goto_4
 
-    .line 531
+    .line 557
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -1666,32 +1666,32 @@
 
     goto :goto_4
 
-    .line 535
+    .line 561
     :cond_8
     check-cast p5, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;
 
-    .line 536
-    invoke-static {p5, p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4802(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    .line 562
+    invoke-static {p5, p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4902(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 537
+    .line 563
     invoke-virtual {p5, p6}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 538
+    .line 564
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/PollVotesAlert$Adapter;->onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
     const/4 v0, 0x0
 
-    .line 539
-    invoke-static {p5, v0}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4802(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    .line 565
+    invoke-static {p5, v0}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4902(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     :goto_4
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_3
 
-    .line 541
+    .line 567
     :cond_9
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1699,23 +1699,23 @@
 
     if-nez p1, :cond_a
 
-    .line 542
+    .line 568
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 543
+    .line 569
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
     const-wide/16 p2, 0xb4
 
-    .line 544
+    .line 570
     invoke-virtual {p1, p2, p3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 545
+    .line 571
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 547
+    .line 573
     :cond_a
     iput-boolean p4, p0, Lorg/telegram/ui/Components/PollVotesAlert;->loadingResults:Z
 
@@ -1725,10 +1725,10 @@
     :goto_5
     if-eqz p3, :cond_c
 
-    .line 520
+    .line 546
     invoke-direct {p0}, Lorg/telegram/ui/Components/PollVotesAlert;->updateButtons()V
 
-    .line 522
+    .line 548
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
@@ -1736,7 +1736,7 @@
 
     goto :goto_6
 
-    .line 552
+    .line 578
     :cond_d
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
@@ -1748,7 +1748,7 @@
 .method private synthetic lambda$new$1([Ljava/lang/Integer;ILorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 490
+    .line 516
     new-instance p7, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda1;
 
     move-object v0, p7
@@ -1777,7 +1777,7 @@
 .method private synthetic lambda$new$2(Lorg/telegram/ui/Components/PollVotesAlert$VotesList;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ChatActivity;)V
     .locals 2
 
-    .line 801
+    .line 827
     invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
@@ -1786,7 +1786,7 @@
 
     return-void
 
-    .line 804
+    .line 830
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->loadingMore:Ljava/util/HashSet;
 
@@ -1794,10 +1794,10 @@
 
     if-eqz p2, :cond_1
 
-    .line 806
+    .line 832
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;
 
-    .line 807
+    .line 833
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
@@ -1808,24 +1808,24 @@
 
     invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 808
+    .line 834
     iget-object p3, p1, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->votes:Ljava/util/ArrayList;
 
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 809
+    .line 835
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_votesList;->next_offset:Ljava/lang/String;
 
     iput-object p2, p1, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->next_offset:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 810
+    .line 836
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/PollVotesAlert;->animateSectionUpdates(Landroid/view/View;)V
 
-    .line 811
+    .line 837
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     const/4 p2, 0x1
@@ -1839,7 +1839,7 @@
 .method private synthetic lambda$new$3(Lorg/telegram/ui/Components/PollVotesAlert$VotesList;Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 800
+    .line 826
     new-instance p4, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda0;
 
     invoke-direct {p4, p0, p1, p3, p2}, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PollVotesAlert;Lorg/telegram/ui/Components/PollVotesAlert$VotesList;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ChatActivity;)V
@@ -1850,16 +1850,16 @@
 .end method
 
 .method private synthetic lambda$new$4(Lorg/telegram/ui/ChatActivity;Landroid/view/View;I)V
-    .locals 6
+    .locals 5
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_c
 
-    .line 769
+    .line 795
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
@@ -1871,9 +1871,9 @@
 
     if-nez v0, :cond_0
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
-    .line 772
+    .line 798
     :cond_0
     instance-of v0, p2, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1883,7 +1883,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 773
+    .line 799
     iget-object p2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
@@ -1892,7 +1892,7 @@
 
     sub-int/2addr p2, v2
 
-    .line 774
+    .line 800
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     invoke-virtual {v0, p3}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getPositionInSectionForPosition(I)I
@@ -1907,7 +1907,7 @@
 
     goto/16 :goto_0
 
-    .line 778
+    .line 804
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
@@ -1917,7 +1917,7 @@
 
     check-cast p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
-    .line 779
+    .line 805
     invoke-virtual {p2}, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->getCount()I
 
     move-result v0
@@ -1934,7 +1934,7 @@
 
     goto :goto_0
 
-    .line 782
+    .line 808
     :cond_2
     iget-boolean p3, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsed:Z
 
@@ -1952,7 +1952,7 @@
 
     if-ge p3, v3, :cond_4
 
-    .line 783
+    .line 809
     iget p1, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsedCount:I
 
     add-int/2addr p1, v0
@@ -1969,7 +1969,7 @@
 
     iput p1, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsedCount:I
 
-    .line 784
+    .line 810
     iget-object p3, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->votes:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
@@ -1978,39 +1978,39 @@
 
     if-ne p1, p3, :cond_3
 
-    .line 785
+    .line 811
     iput-boolean v1, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->collapsed:Z
 
     :cond_3
     const/4 p1, 0x0
 
-    .line 787
+    .line 813
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/PollVotesAlert;->animateSectionUpdates(Landroid/view/View;)V
 
-    .line 788
+    .line 814
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listAdapter:Lorg/telegram/ui/Components/PollVotesAlert$Adapter;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->update(Z)V
 
     return-void
 
-    .line 791
+    .line 817
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->loadingMore:Ljava/util/HashSet;
 
     invoke-virtual {p3, p2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 792
+    .line 818
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;-><init>()V
 
-    .line 793
+    .line 819
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     iput-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 794
+    .line 820
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -2019,32 +2019,32 @@
 
     iput v1, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->id:I
 
-    .line 795
+    .line 821
     iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->limit:I
 
-    .line 796
+    .line 822
     iget v0, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->flags:I
 
     or-int/2addr v0, v2
 
     iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->flags:I
 
-    .line 797
+    .line 823
     iget-object v1, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
 
     iput-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->option:[B
 
     or-int/lit8 v0, v0, 0x2
 
-    .line 798
+    .line 824
     iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->flags:I
 
-    .line 799
+    .line 825
     iget-object v0, p2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->next_offset:Ljava/lang/String;
 
     iput-object v0, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_getPollVotes;->offset:Ljava/lang/String;
 
-    .line 800
+    .line 826
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -2057,23 +2057,29 @@
 
     invoke-virtual {v0, p3, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto :goto_1
+    goto/16 :goto_3
 
     :cond_5
     :goto_0
     return-void
 
-    .line 814
+    .line 840
     :cond_6
     instance-of p3, p2, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_c
 
-    .line 815
+    .line 841
     check-cast p2, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;
 
-    .line 816
+    .line 842
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object p3
+
+    if-nez p3, :cond_7
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4800(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object p3
 
@@ -2081,40 +2087,69 @@
 
     return-void
 
-    .line 819
+    .line 845
     :cond_7
+    new-instance p3, Landroid/os/Bundle;
+
+    invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
+
+    .line 846
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8
+
+    .line 847
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v0
+
+    iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    const-string v0, "user_id"
+
+    invoke-virtual {p3, v0, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    goto :goto_1
+
+    .line 849
+    :cond_8
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4800(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v0
+
+    iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    const-string v0, "chat_id"
+
+    invoke-virtual {p3, v0, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 851
+    :goto_1
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+
+    .line 852
+    new-instance v0, Lorg/telegram/ui/ProfileActivity;
+
+    invoke-direct {v0, p3}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;)V
+
+    .line 853
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_a
+
+    .line 854
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p3
 
-    .line 820
-    new-instance v0, Landroid/os/Bundle;
+    if-eqz p3, :cond_9
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 821
-    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
-
-    move-result-object v3
-
-    iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    const-string v5, "user_id"
-
-    invoke-virtual {v0, v5, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 822
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
-
-    .line 823
-    new-instance v3, Lorg/telegram/ui/ProfileActivity;
-
-    invoke-direct {v3, v0}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;)V
-
-    if-eqz p3, :cond_8
-
-    .line 824
-    iget-wide v4, p3, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    .line 855
+    iget-wide v3, p3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4700(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$User;
 
@@ -2122,27 +2157,56 @@
 
     iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long p2, v4, p2
+    cmp-long p2, v3, p2
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_9
 
     move v1, v2
 
-    :cond_8
-    invoke-virtual {v3, v1}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
-
-    .line 825
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
     :cond_9
-    :goto_1
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
+
+    goto :goto_2
+
+    .line 857
+    :cond_a
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_b
+
+    .line 858
+    iget-wide v3, p3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->access$4800(Lorg/telegram/ui/Components/PollVotesAlert$UserCell;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object p2
+
+    iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    cmp-long p2, v3, p2
+
+    if-nez p2, :cond_b
+
+    move v1, v2
+
+    :cond_b
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
+
+    .line 860
+    :goto_2
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    :cond_c
+    :goto_3
     return-void
 .end method
 
 .method private static synthetic lambda$updateButtons$5(Lorg/telegram/ui/Components/PollVotesAlert$Button;Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
     .locals 2
 
-    .line 947
+    .line 982
     invoke-static {p0}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3900(Lorg/telegram/ui/Components/PollVotesAlert$Button;)F
 
     move-result v0
@@ -2159,7 +2223,7 @@
 
     return p0
 
-    .line 949
+    .line 984
     :cond_0
     invoke-static {p0}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3900(Lorg/telegram/ui/Components/PollVotesAlert$Button;)F
 
@@ -2188,7 +2252,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 441
+    .line 467
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -2197,13 +2261,13 @@
 
     goto :goto_0
 
-    .line 444
+    .line 470
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/PollVotesAlert;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/PollVotesAlert;-><init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)V
 
-    .line 445
+    .line 471
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :cond_1
@@ -2216,12 +2280,12 @@
 
     move-object/from16 v0, p0
 
-    .line 910
+    .line 945
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert;->votesPercents:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 914
+    .line 949
     iget-object v1, v0, Lorg/telegram/ui/Components/PollVotesAlert;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -2230,12 +2294,12 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;
 
-    .line 915
+    .line 950
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 918
+    .line 953
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -2255,7 +2319,7 @@
     :goto_0
     if-ge v6, v3, :cond_4
 
-    .line 919
+    .line 954
     iget-object v11, v0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2264,22 +2328,22 @@
 
     check-cast v11, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;
 
-    .line 920
+    .line 955
     new-instance v12, Lorg/telegram/ui/Components/PollVotesAlert$Button;
 
     const/4 v13, 0x0
 
     invoke-direct {v12, v13}, Lorg/telegram/ui/Components/PollVotesAlert$Button;-><init>(Lorg/telegram/ui/Components/PollVotesAlert$1;)V
 
-    .line 921
+    .line 956
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 922
+    .line 957
     iget-object v13, v0, Lorg/telegram/ui/Components/PollVotesAlert;->votesPercents:Ljava/util/HashMap;
 
     invoke-virtual {v13, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 923
+    .line 958
     iget-object v13, v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
@@ -2290,7 +2354,7 @@
 
     if-nez v13, :cond_3
 
-    .line 924
+    .line 959
     iget-object v13, v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
@@ -2304,7 +2368,7 @@
     :goto_1
     if-ge v14, v13, :cond_3
 
-    .line 925
+    .line 960
     iget-object v15, v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v15, v15, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
@@ -2315,7 +2379,7 @@
 
     check-cast v15, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;
 
-    .line 926
+    .line 961
     iget-object v4, v11, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
 
     iget-object v10, v15, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->option:[B
@@ -2326,14 +2390,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 927
+    .line 962
     iget v4, v15, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
     invoke-static {v12, v4}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3802(Lorg/telegram/ui/Components/PollVotesAlert$Button;I)I
 
     const/high16 v4, 0x42c80000    # 100.0f
 
-    .line 928
+    .line 963
     iget v10, v15, Lorg/telegram/tgnet/TLRPC$TL_pollAnswerVoters;->voters:I
 
     int-to-float v10, v10
@@ -2350,7 +2414,7 @@
 
     invoke-static {v12, v10}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3902(Lorg/telegram/ui/Components/PollVotesAlert$Button;F)F
 
-    .line 929
+    .line 964
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3900(Lorg/telegram/ui/Components/PollVotesAlert$Button;)F
 
     move-result v4
@@ -2359,7 +2423,7 @@
 
     invoke-static {v12, v4}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4002(Lorg/telegram/ui/Components/PollVotesAlert$Button;I)I
 
-    .line 930
+    .line 965
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
 
     move-result v4
@@ -2370,7 +2434,7 @@
 
     if-nez v8, :cond_0
 
-    .line 933
+    .line 968
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
 
     move-result v4
@@ -2379,7 +2443,7 @@
 
     goto :goto_2
 
-    .line 934
+    .line 969
     :cond_0
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
 
@@ -2395,7 +2459,7 @@
 
     const/4 v7, 0x1
 
-    .line 937
+    .line 972
     :cond_1
     :goto_2
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
@@ -2404,7 +2468,7 @@
 
     sub-int/2addr v5, v4
 
-    .line 938
+    .line 973
     invoke-static {v12}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$4000(Lorg/telegram/ui/Components/PollVotesAlert$Button;)I
 
     move-result v4
@@ -2431,12 +2495,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 946
+    .line 981
     sget-object v1, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda2;
 
     invoke-static {v2, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 954
+    .line 989
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -2450,7 +2514,7 @@
     :goto_4
     if-ge v4, v1, :cond_5
 
-    .line 955
+    .line 990
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2472,7 +2536,7 @@
 .method private updateLayout(Z)V
     .locals 11
 
-    .line 975
+    .line 1010
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -2481,7 +2545,7 @@
 
     if-gtz p1, :cond_0
 
-    .line 976
+    .line 1011
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getPaddingTop()I
@@ -2492,14 +2556,14 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 977
+    .line 1012
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
 
-    .line 980
+    .line 1015
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2509,7 +2573,7 @@
 
     move-result-object p1
 
-    .line 981
+    .line 1016
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -2518,19 +2582,19 @@
 
     check-cast v1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 982
+    .line 1017
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result p1
 
     const/4 v2, 0x7
 
-    .line 983
+    .line 1018
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    .line 984
+    .line 1019
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2553,7 +2617,7 @@
     :goto_0
     const/16 v1, 0xc
 
-    .line 987
+    .line 1022
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2572,7 +2636,7 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    .line 988
+    .line 1023
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -2592,7 +2656,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 989
+    .line 1024
     :cond_4
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -2612,18 +2676,18 @@
     :goto_2
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 990
+    .line 1025
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v3, :cond_6
 
-    .line 991
+    .line 1026
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 992
+    .line 1027
     iput-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
-    .line 994
+    .line 1029
     :cond_6
     new-instance v3, Landroid/animation/AnimatorSet;
 
@@ -2633,10 +2697,10 @@
 
     const-wide/16 v4, 0xb4
 
-    .line 995
+    .line 1030
     invoke-virtual {v3, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 996
+    .line 1031
     iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
     const/4 v4, 0x2
@@ -2665,7 +2729,7 @@
     :goto_3
     aput v10, v7, v0
 
-    .line 997
+    .line 1032
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -2688,17 +2752,17 @@
     :goto_4
     aput v8, v7, v0
 
-    .line 998
+    .line 1033
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v4, v2
 
-    .line 996
+    .line 1031
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 999
+    .line 1034
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/Components/PollVotesAlert$9;
@@ -2707,12 +2771,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1010
+    .line 1045
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1012
+    .line 1047
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2722,7 +2786,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1013
+    .line 1048
     iget v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     const/16 v2, 0xb
@@ -2735,12 +2799,12 @@
 
     add-int/2addr p1, v1
 
-    .line 1014
+    .line 1049
     iget v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->scrollOffsetY:I
 
     if-eq v1, p1, :cond_a
 
-    .line 1015
+    .line 1050
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iput p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->scrollOffsetY:I
@@ -2751,7 +2815,7 @@
 
     invoke-virtual {v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 1016
+    .line 1051
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
@@ -2763,14 +2827,14 @@
 .method private updatePlaceholder()V
     .locals 11
 
-    .line 1021
+    .line 1056
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1024
+    .line 1059
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
@@ -2778,24 +2842,24 @@
 
     move-result v0
 
-    .line 1025
+    .line 1060
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 1026
+    .line 1061
     invoke-static {v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v0
 
-    .line 1027
+    .line 1062
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1028
+    .line 1063
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/4 v4, 0x0
@@ -2842,19 +2906,19 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderGradient:Landroid/graphics/LinearGradient;
 
-    .line 1029
+    .line 1064
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1030
+    .line 1065
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderMatrix:Landroid/graphics/Matrix;
 
-    .line 1031
+    .line 1066
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->placeholderGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v1, v0}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
@@ -2880,7 +2944,7 @@
 
     move v1, v0
 
-    .line 1264
+    .line 1294
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2901,7 +2965,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 1265
+    .line 1295
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RecyclerListView;->getPinnedHeader()Landroid/view/View;
@@ -2917,7 +2981,7 @@
 
     move-result-object v2
 
-    .line 1266
+    .line 1296
     :goto_1
     instance-of v3, v2, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;
 
@@ -2933,12 +2997,12 @@
 
     if-eqz v4, :cond_4
 
-    .line 1267
+    .line 1297
     move-object v4, v2
 
     check-cast v4, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;
 
-    .line 1268
+    .line 1298
     invoke-virtual {v2, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2947,7 +3011,7 @@
 
     const/4 v3, 0x0
 
-    .line 1269
+    .line 1299
     iget-object v5, p0, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Poll;->answers:Ljava/util/ArrayList;
@@ -2959,7 +3023,7 @@
     :goto_2
     if-ge v3, v5, :cond_4
 
-    .line 1270
+    .line 1300
     iget-object v6, p0, Lorg/telegram/ui/Components/PollVotesAlert;->poll:Lorg/telegram/tgnet/TLRPC$Poll;
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$Poll;->answers:Ljava/util/ArrayList;
@@ -2970,7 +3034,7 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
 
-    .line 1271
+    .line 1301
     iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->option:[B
 
     iget-object v8, v2, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
@@ -2981,7 +3045,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 1272
+    .line 1302
     iget-object v7, p0, Lorg/telegram/ui/Components/PollVotesAlert;->votesPercents:Ljava/util/HashMap;
 
     invoke-virtual {v7, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2994,7 +3058,7 @@
 
     goto :goto_3
 
-    .line 1276
+    .line 1306
     :cond_2
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->text:Ljava/lang/String;
 
@@ -3016,7 +3080,7 @@
 
     invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/Components/PollVotesAlert$SectionCell;->setText(Ljava/lang/String;IIIZ)V
 
-    .line 1277
+    .line 1307
     sget v3, Lorg/telegram/messenger/R$id;->object_tag:I
 
     invoke-virtual {v4, v3, v2}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
@@ -3035,13 +3099,13 @@
 
     goto :goto_0
 
-    .line 1283
+    .line 1313
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->relayoutPinnedHeader()V
 
-    .line 1284
+    .line 1314
     iget-object p1, p0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
@@ -3065,7 +3129,7 @@
 
     move v3, v2
 
-    .line 1248
+    .line 1278
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
@@ -3075,7 +3139,7 @@
 
     if-ge v1, v4, :cond_2
 
-    .line 1249
+    .line 1279
     iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert;->voters:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3086,12 +3150,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 1251
+    .line 1281
     iget v5, v4, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
     add-int/2addr v2, v5
 
-    .line 1252
+    .line 1282
     iget-object v5, v4, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->option:[B
 
     invoke-static {v5, p1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -3100,7 +3164,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1253
+    .line 1283
     iget v4, v4, Lorg/telegram/ui/Components/PollVotesAlert$VotesList;->count:I
 
     add-int/2addr v3, v4
@@ -3126,7 +3190,7 @@
 
     mul-float/2addr p1, v0
 
-    .line 1260
+    .line 1290
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
     move-result p1
@@ -3145,7 +3209,7 @@
 .method public dismissInternal()V
     .locals 5
 
-    .line 967
+    .line 1002
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert;->queries:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3157,7 +3221,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 968
+    .line 1003
     iget-object v2, p0, Lorg/telegram/ui/Components/PollVotesAlert;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -3184,7 +3248,7 @@
 
     goto :goto_0
 
-    .line 970
+    .line 1005
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
@@ -3204,17 +3268,17 @@
 
     move-object/from16 v0, p0
 
-    .line 1289
+    .line 1319
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1291
+    .line 1321
     new-instance v11, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda5;
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/Components/PollVotesAlert$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/PollVotesAlert;)V
 
-    .line 1293
+    .line 1323
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -3237,7 +3301,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1294
+    .line 1324
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -3272,7 +3336,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1295
+    .line 1325
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3297,7 +3361,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1296
+    .line 1326
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3314,7 +3378,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1297
+    .line 1327
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3333,7 +3397,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1298
+    .line 1328
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3348,7 +3412,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1299
+    .line 1329
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3365,7 +3429,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1300
+    .line 1330
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3378,7 +3442,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1302
+    .line 1332
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/PollVotesAlert;->titleTextView:Landroid/widget/TextView;
@@ -3391,7 +3455,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1304
+    .line 1334
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->actionBarShadow:Landroid/view/View;
@@ -3408,7 +3472,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1306
+    .line 1336
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3433,7 +3497,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1307
+    .line 1337
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3452,7 +3516,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1309
+    .line 1339
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3487,7 +3551,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1310
+    .line 1340
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3524,7 +3588,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1311
+    .line 1341
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3553,7 +3617,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1312
+    .line 1342
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3588,7 +3652,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1314
+    .line 1344
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3623,7 +3687,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1316
+    .line 1346
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3654,7 +3718,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1318
+    .line 1348
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3685,7 +3749,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1319
+    .line 1349
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PollVotesAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;

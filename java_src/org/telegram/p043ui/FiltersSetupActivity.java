@@ -29,7 +29,6 @@ import com.iMe.fork.enums.FilterActivityType;
 import com.iMe.fork.enums.FilterTabNotificationMode;
 import com.iMe.fork.enums.FilterTabWidthMode;
 import com.iMe.fork.p024ui.fragment.AllChatsTabSettingsActivity;
-import com.iMe.fork.p024ui.fragment.ChooseIntervalSettingsActivity;
 import com.iMe.fork.p024ui.fragment.SortingFilterSettingsActivity;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.p031ui.base.mvp.JavaMvpFragment;
@@ -40,7 +39,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -51,7 +50,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -138,13 +137,13 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     private void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3419R.string.OK), null);
         showDialog(builder.create());
     }
 
     private void showWidthModeDialog() {
         int ordinal = SharedConfig.selectedFilterTabWidthMode.ordinal();
-        String internalString = LocaleController.getInternalString(C3417R.string.folder_tabs_width_mode_item_title);
+        String internalString = LocaleController.getInternalString(C3419R.string.folder_tabs_width_mode_item_title);
         int length = FilterTabWidthMode.values().length;
         String[] strArr = new String[length];
         for (int i = 0; i < length; i++) {
@@ -161,12 +160,12 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showWidthModeDialog$0(DialogInterface dialogInterface, int i) {
         SharedConfig.setSelectedFilterTabsWidthMode(FilterTabWidthMode.values()[i]);
-        getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
     }
 
     private void showNotificationModeDialog() {
         int ordinal = SharedConfig.selectedFilterTabsNotificationMode.ordinal();
-        String internalString = LocaleController.getInternalString(C3417R.string.folder_tabs_notification_mode_item_title);
+        String internalString = LocaleController.getInternalString(C3419R.string.folder_tabs_notification_mode_item_title);
         int length = FilterTabNotificationMode.values().length;
         String[] strArr = new String[length];
         for (int i = 0; i < length; i++) {
@@ -183,7 +182,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showNotificationModeDialog$1(DialogInterface dialogInterface, int i) {
         SharedConfig.setSelectedFilterTabsNotificationMode(FilterTabNotificationMode.values()[i]);
-        getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
     }
 
     /* renamed from: org.telegram.ui.FiltersSetupActivity$TextCell */
@@ -222,27 +221,27 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
-            AndroidUtilities.m54dp(48);
-            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(94), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(20), 1073741824));
-            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
-            setMeasuredDimension(size, AndroidUtilities.m54dp(50));
+            AndroidUtilities.m72dp(48);
+            this.textView.measure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m72dp(94), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(20), 1073741824));
+            this.imageView.measure(View.MeasureSpec.makeMeasureSpec(size, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
+            setMeasuredDimension(size, AndroidUtilities.m72dp(50));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-            int m54dp;
+            int m72dp;
             int i5 = i3 - i;
             int textHeight = ((i4 - i2) - this.textView.getTextHeight()) / 2;
             if (LocaleController.isRTL) {
-                m54dp = (getMeasuredWidth() - this.textView.getMeasuredWidth()) - AndroidUtilities.m54dp(this.imageView.getVisibility() != 0 ? 23 : 64);
+                m72dp = (getMeasuredWidth() - this.textView.getMeasuredWidth()) - AndroidUtilities.m72dp(this.imageView.getVisibility() != 0 ? 23 : 64);
             } else {
-                m54dp = AndroidUtilities.m54dp(this.imageView.getVisibility() != 0 ? 23 : 64);
+                m72dp = AndroidUtilities.m72dp(this.imageView.getVisibility() != 0 ? 23 : 64);
             }
             SimpleTextView simpleTextView = this.textView;
-            simpleTextView.layout(m54dp, textHeight, simpleTextView.getMeasuredWidth() + m54dp, this.textView.getMeasuredHeight() + textHeight);
-            int m54dp2 = (!LocaleController.isRTL ? AndroidUtilities.m54dp(20) : (i5 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m54dp(20)) + AndroidUtilities.m54dp(LocaleController.isRTL ? 2 : -2);
+            simpleTextView.layout(m72dp, textHeight, simpleTextView.getMeasuredWidth() + m72dp, this.textView.getMeasuredHeight() + textHeight);
+            int m72dp2 = (!LocaleController.isRTL ? AndroidUtilities.m72dp(20) : (i5 - this.imageView.getMeasuredWidth()) - AndroidUtilities.m72dp(20)) + AndroidUtilities.m72dp(LocaleController.isRTL ? 2 : -2);
             ImageView imageView = this.imageView;
-            imageView.layout(m54dp2, 0, imageView.getMeasuredWidth() + m54dp2, this.imageView.getMeasuredHeight());
+            imageView.layout(m72dp2, 0, imageView.getMeasuredWidth() + m72dp2, this.imageView.getMeasuredHeight());
         }
 
         public void setTextAndIcon(String str, Drawable drawable, boolean z) {
@@ -284,7 +283,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             addView(this.valueTextView, LayoutHelper.createFrame(-2, -2, LocaleController.isRTL ? 5 : 3, 22, 35, 22, 0));
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
-            progressButton.setText(LocaleController.getString("Add", C3417R.string.Add));
+            progressButton.setText(LocaleController.getString("Add", C3419R.string.Add));
             this.addButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             this.addButton.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
             this.addButton.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
@@ -293,7 +292,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(64));
+            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m72dp(64));
             measureChildWithMargins(this.addButton, i, 0, i2, 0);
             measureChildWithMargins(this.textView, i, this.addButton.getMeasuredWidth(), i2, 0);
             measureChildWithMargins(this.valueTextView, i, this.addButton.getMeasuredWidth(), i2, 0);
@@ -343,7 +342,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             FilterActivityType filterActivityType = filtersSetupActivity.type;
             FilterActivityType filterActivityType2 = FilterActivityType.TOPIC;
             if (filterActivityType == filterActivityType2) {
-                this.imageView.setAnimation(C3417R.raw.fork_topics, 110, 110);
+                this.imageView.setAnimation(C3419R.raw.fork_topics, 110, 110);
             } else {
                 this.imageView.setAnimation(i, 90, 90);
             }
@@ -410,7 +409,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 } else {
                     this.iconView.setVisibility(8);
                 }
-                this.textView.setText(Emoji.replaceEmoji(topicModel.getName(), this.textView.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false));
+                this.textView.setText(Emoji.replaceEmoji(topicModel.getName(), this.textView.getPaint().getFontMetricsInt(), AndroidUtilities.m72dp(20), false));
             } else if (topicModel.isAutoTopic()) {
                 TopicInfo info = TopicExtKt.info(topicModel.getIcon());
                 this.iconView.setVisibility(0);
@@ -418,7 +417,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 this.textView.setText(LocaleController.getInternalString(info.getTitleResId()));
             }
             if (this.iconView.getVisibility() == 0) {
-                this.textView.setPadding(AndroidUtilities.m54dp(FilterActivityType.TOPIC.getIconSize()), 0, 0, 0);
+                this.textView.setPadding(AndroidUtilities.m72dp(FilterActivityType.TOPIC.getIconSize()), 0, 0, 0);
             } else {
                 this.textView.setPadding(0, 0, 0, 0);
             }
@@ -437,10 +436,10 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             this.moveImageView = imageView;
             imageView.setFocusable(false);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3417R.C3419drawable.list_reorder);
+            imageView.setImageResource(C3419R.C3421drawable.list_reorder);
             int i = Theme.key_stickers_menu;
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("FilterReorder", C3417R.string.FilterReorder));
+            imageView.setContentDescription(LocaleController.getString("FilterReorder", C3419R.string.FilterReorder));
             imageView.setClickable(true);
             addView(imageView, LayoutHelper.createFrame(48, 48, (LocaleController.isRTL ? 5 : 3) | 16, 6, 0, 6, 0));
             SimpleTextView simpleTextView = new SimpleTextView(context);
@@ -449,7 +448,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             simpleTextView.setTextSize(16);
             simpleTextView.setMaxLines(1);
             simpleTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3417R.C3419drawable.other_lockedfolders2);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3419R.C3421drawable.other_lockedfolders2);
             drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             simpleTextView.setRightDrawable(drawable);
             boolean z = LocaleController.isRTL;
@@ -474,14 +473,14 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             int i2 = Theme.key_listSelector;
             int color = Theme.getColor(i2);
             loadingDrawable.setColors(Theme.multAlpha(color, 0.4f), Theme.multAlpha(color, 1.0f), Theme.multAlpha(color, 0.9f), Theme.multAlpha(color, 1.7f));
-            int m54dp = AndroidUtilities.m54dp(1);
-            loadingDrawable.strokePaint.setStrokeWidth(m54dp);
+            int m72dp = AndroidUtilities.m72dp(1);
+            loadingDrawable.strokePaint.setStrokeWidth(m72dp);
             loadingDrawable.setRadiiDp(40.0f);
-            ImageView imageView2 = new ImageView(context, FiltersSetupActivity.this, m54dp) { // from class: org.telegram.ui.FiltersSetupActivity.FilterCell.1
+            ImageView imageView2 = new ImageView(context, FiltersSetupActivity.this, m72dp) { // from class: org.telegram.ui.FiltersSetupActivity.FilterCell.1
                 final /* synthetic */ int val$stroke;
 
                 {
-                    this.val$stroke = m54dp;
+                    this.val$stroke = m72dp;
                 }
 
                 @Override // android.widget.ImageView, android.view.View
@@ -506,9 +505,9 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             imageView2.setBackground(Theme.createSelectorDrawable(color));
             imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
-            imageView2.setContentDescription(LocaleController.getString("FilterShare", C3417R.string.FilterShare));
+            imageView2.setContentDescription(LocaleController.getString("FilterShare", C3419R.string.FilterShare));
             imageView2.setVisibility(8);
-            imageView2.setImageResource(C3417R.C3419drawable.msg_link_folder);
+            imageView2.setImageResource(C3419R.C3421drawable.msg_link_folder);
             imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             boolean z3 = LocaleController.isRTL;
             addView(imageView2, LayoutHelper.createFrame(40, 40, (z3 ? 3 : 5) | 16, z3 ? 52 : 6, 0, z3 ? 6 : 52, 0));
@@ -524,8 +523,8 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             imageView3.setScaleType(ImageView.ScaleType.CENTER);
             imageView3.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i2)));
             imageView3.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
-            imageView3.setImageResource(C3417R.C3419drawable.msg_actions);
-            imageView3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+            imageView3.setImageResource(C3419R.C3421drawable.msg_actions);
+            imageView3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
             addView(imageView3, LayoutHelper.createFrame(40, 40, (LocaleController.isRTL ? 3 : 5) | 16, 6, 0, 6, 0));
             AppCompatImageView appCompatImageView = new AppCompatImageView(context);
             this.iconView = appCompatImageView;
@@ -559,7 +558,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(50), 1073741824));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:60:0x00e4  */
@@ -592,7 +591,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.needDivider) {
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.m54dp(62), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(62) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.m72dp(62), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m72dp(62) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
             MessagesController.DialogFilter dialogFilter = this.currentFilter;
             if (dialogFilter != null) {
@@ -640,7 +639,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0265  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0259  */
     /* JADX WARN: Removed duplicated region for block: B:80:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -648,7 +647,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     */
     public void updateRows(boolean r8) {
         /*
-            Method dump skipped, instructions count: 627
+            Method dump skipped, instructions count: 615
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.FiltersSetupActivity.updateRows(boolean):void");
@@ -663,7 +662,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 topicsController.setTopicsBarEnabled(this.newTopicsBarEnabled);
                 topicsController.setTopicsBarAtBottomEnabled(this.newTopicsBarAtBottom);
                 topicsController.saveConfig();
-                getNotificationCenter().postNotificationName(NotificationCenter.topicsSettingsChanged, new Object[0]);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsSettingsChanged, new Object[0]);
             }
             super.onFragmentDestroy();
             return;
@@ -673,15 +672,20 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         notificationCenter.removeObserver(this, i);
         getNotificationCenter().removeObserver(this, NotificationCenter.suggestedFiltersLoaded);
         if (this.orderChanged) {
-            getNotificationCenter().postNotificationName(i, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
             getMessagesStorage().saveDialogFiltersOrder();
             TLRPC$TL_messages_updateDialogFiltersOrder tLRPC$TL_messages_updateDialogFiltersOrder = new TLRPC$TL_messages_updateDialogFiltersOrder();
             ArrayList<MessagesController.DialogFilter> dialogFilters = getMessagesController().getDialogFilters();
             int size = dialogFilters.size();
             for (int i2 = 0; i2 < size; i2++) {
-                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(dialogFilters.get(i2).f1455id));
+                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(dialogFilters.get(i2).f1458id));
             }
-            getConnectionsManager().sendRequest(tLRPC$TL_messages_updateDialogFiltersOrder, FiltersSetupActivity$$ExternalSyntheticLambda4.INSTANCE);
+            getConnectionsManager().sendRequest(tLRPC$TL_messages_updateDialogFiltersOrder, new RequestDelegate() { // from class: org.telegram.ui.FiltersSetupActivity$$ExternalSyntheticLambda4
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+                    FiltersSetupActivity.lambda$onFragmentDestroy$2(tLObject, tLRPC$TL_error);
+                }
+            });
         }
         super.onFragmentDestroy();
     }
@@ -689,15 +693,15 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(final Context context) {
         super.createView(context);
-        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (this.type == FilterActivityType.TOPIC) {
-            this.actionBar.setTitle(LocaleController.getInternalString(C3417R.string.topics));
+            this.actionBar.setTitle(LocaleController.getInternalString(C3419R.string.topics));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("Filters", C3417R.string.Filters));
+            this.actionBar.setTitle(LocaleController.getString("Filters", C3419R.string.Filters));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FiltersSetupActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FiltersSetupActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     FiltersSetupActivity.this.finishFragment();
@@ -708,7 +712,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
         frameLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        this.listView = new C57762(context);
+        this.listView = new C58382(context);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDurations(350L);
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -748,8 +752,8 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.FiltersSetupActivity$2 */
     /* loaded from: classes5.dex */
-    public class C57762 extends RecyclerListView {
-        C57762(Context context) {
+    public class C58382 extends RecyclerListView {
+        C58382(Context context) {
             super(context);
         }
 
@@ -759,7 +763,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FiltersSetupActivity.C57762.this.lambda$onTouchEvent$0();
+                        FiltersSetupActivity.C58382.this.lambda$onTouchEvent$0();
                     }
                 }, 250L);
             }
@@ -789,7 +793,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_PANEL_AT_BOTTOM) {
             ((TextCheckCell) view).toggleCheckBox();
             SharedConfig.setFilterTabsAtBottomEnabled(!SharedConfig.isFilterTabsAtBottomEnabled);
-            getNotificationCenter().postNotificationName(NotificationCenter.filterTabsAtBottomUpdated, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.filterTabsAtBottomUpdated, new Object[0]);
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_NOTIFICATION_MODE) {
             showNotificationModeDialog();
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_WIDTH_MODE) {
@@ -801,7 +805,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 SharedConfig.setRememberLastFilterTabEnabled(!SharedConfig.isRememberLastFilterTabEnabled);
                 return;
             }
-            showHintDialog(LocaleController.getInternalString(C3417R.string.folder_tabs_remember_last_filter_tab_hint));
+            showHintDialog(LocaleController.getInternalString(C3419R.string.folder_tabs_remember_last_filter_tab_hint));
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_ALL_CHATS_TAB) {
             presentFragment(new AllChatsTabSettingsActivity());
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_HIDE_FOLDERS) {
@@ -811,12 +815,12 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             if ((!getFiltersController().isFoldersHidden() && !getMessagesController().dialogFilters.isEmpty()) || (getFiltersController().getActiveSortingTabsCount(false) > 0 && SharedConfig.getChatSwipeAction(this.currentAccount) != 5)) {
                 SharedConfig.updateChatListSwipeSetting(5);
             }
-            getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_FOLDERS_FIRST) {
             ((TextCheckCell) view).toggleCheckBox();
             getFiltersController().setFoldersFirstEnabled(!getFiltersController().isFoldersFirstEnabled());
             getFiltersController().saveConfig();
-            getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
         } else if (i2 == IdFabric$ViewTypes.FILTERS_SETTINGS_SORTING) {
             presentFragment(new SortingFilterSettingsActivity());
         } else if (i2 == IdFabric$ViewTypes.TOPICS_SETTINGS_PANEL) {
@@ -825,20 +829,9 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         } else if (i2 == IdFabric$ViewTypes.TOPICS_SETTINGS_PANEL_AT_BOTTOM) {
             ((TextCheckCell) view).toggleCheckBox();
             this.newTopicsBarAtBottom = !this.newTopicsBarAtBottom;
-        } else if (i2 == IdFabric$ViewTypes.TOPICS_SETTINGS_CATALOG_AUTO_UPDATE) {
-            NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-            if (notificationsCheckCell.isInSwitch(f)) {
-                getTopicsController().setAutoUpdateTopicsCatalogEnabled(!getTopicsController().isAutoUpdateTopicsCatalogEnabled());
-                getTopicsController().resetLastAutoUpdateCatalogTime();
-                getTopicsController().saveConfig();
-                notificationsCheckCell.toggleCheckBox();
-                updateRows(true);
-                return;
-            }
-            presentFragment(ChooseIntervalSettingsActivity.newInstanceForAutoUpdateTopicsCatalogSettings());
         } else if (i2 == IdFabric$ViewTypes.TOPICS_SETTINGS_CATALOG_UPDATE) {
             showDialog(new AlertDialog(getParentActivity(), 3));
-            getTopicsController().updateCatalog(false, new Callbacks$Callback1() { // from class: org.telegram.ui.FiltersSetupActivity$$ExternalSyntheticLambda2
+            getTopicsController().updateCatalog(new Callbacks$Callback1() { // from class: org.telegram.ui.FiltersSetupActivity$$ExternalSyntheticLambda2
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     FiltersSetupActivity.this.lambda$createView$3((Boolean) obj);
@@ -879,7 +872,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(Boolean bool) {
         dismissCurrentDialog();
-        BulletinFactory.m29of(this).createSimpleBulletin(C3417R.raw.info, LocaleController.getInternalString(bool.booleanValue() ? C3417R.string.topics_catalog_updated : C3417R.string.topics_catalog_update_not_found)).show();
+        BulletinFactory.m32of(this).createSimpleBulletin(C3419R.raw.info, LocaleController.getInternalString(bool.booleanValue() ? C3419R.string.topics_catalog_updated : C3419R.string.topics_catalog_update_not_found)).show();
     }
 
     public UndoView getUndoView() {
@@ -994,7 +987,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                     if (z != (dialogFilter2 == null)) {
                         return false;
                     }
-                    if (dialogFilter != null && dialogFilter.f1455id != dialogFilter2.f1455id) {
+                    if (dialogFilter != null && dialogFilter.f1458id != dialogFilter2.f1458id) {
                         return false;
                     }
                 }
@@ -1005,7 +998,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                     if (z2 != (tLRPC$TL_dialogFilterSuggested2 == null)) {
                         return false;
                     }
-                    if (tLRPC$TL_dialogFilterSuggested != null && tLRPC$TL_dialogFilterSuggested.filter.f1522id != tLRPC$TL_dialogFilterSuggested2.filter.f1522id) {
+                    if (tLRPC$TL_dialogFilterSuggested != null && tLRPC$TL_dialogFilterSuggested.filter.f1525id != tLRPC$TL_dialogFilterSuggested2.filter.f1525id) {
                         return false;
                     }
                 }
@@ -1052,18 +1045,14 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 View textCell = new org.telegram.p043ui.Cells.TextCell(this.mContext);
                 textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 textSettingsCell = textCell;
-            } else if (i == IdFabric$ViewTypes.TOPICS_SETTINGS_CATALOG_AUTO_UPDATE) {
-                View notificationsCheckCell = new NotificationsCheckCell(this.mContext);
-                notificationsCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                textSettingsCell = notificationsCheckCell;
             } else if (i == 0) {
                 View headerCell = new HeaderCell(this.mContext);
                 headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 textSettingsCell = headerCell;
             } else if (i == 1) {
                 FiltersSetupActivity filtersSetupActivity = FiltersSetupActivity.this;
-                View hintInnerCell = new HintInnerCell(filtersSetupActivity, this.mContext, C3417R.raw.filters, filtersSetupActivity.type == FilterActivityType.TOPIC ? LocaleController.getInternalString(C3417R.string.topic_new_info) : AndroidUtilities.replaceTags(LocaleController.formatString("CreateNewFilterInfo", C3417R.string.CreateNewFilterInfo, new Object[0])));
-                hintInnerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3417R.C3419drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
+                View hintInnerCell = new HintInnerCell(filtersSetupActivity, this.mContext, C3419R.raw.filters, filtersSetupActivity.type == FilterActivityType.TOPIC ? LocaleController.getInternalString(C3419R.string.topic_new_info) : AndroidUtilities.replaceTags(LocaleController.formatString("CreateNewFilterInfo", C3419R.string.CreateNewFilterInfo, new Object[0])));
+                hintInnerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3419R.C3421drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
                 textSettingsCell = hintInnerCell;
             } else if (i == 2) {
                 final FilterCell filterCell = new FilterCell(this.mContext);
@@ -1118,16 +1107,16 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             final MessagesController.DialogFilter currentFilter = filterCell2.getCurrentFilter();
             final TopicModel currentTopic = filterCell.getCurrentTopic();
             ItemOptions makeOptions = ItemOptions.makeOptions(FiltersSetupActivity.this, filterCell2);
-            int i = C3417R.C3419drawable.msg_edit;
+            int i = C3419R.C3421drawable.msg_edit;
             FilterActivityType filterActivityType = FiltersSetupActivity.this.type;
             FilterActivityType filterActivityType2 = FilterActivityType.TOPIC;
-            makeOptions.add(i, filterActivityType == filterActivityType2 ? LocaleController.getInternalString(C3417R.string.topic_edit) : LocaleController.getString("FilterEditItem", C3417R.string.FilterEditItem), new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda4
+            makeOptions.add(i, filterActivityType == filterActivityType2 ? LocaleController.getInternalString(C3419R.string.topic_edit) : LocaleController.getString("FilterEditItem", C3419R.string.FilterEditItem), new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     FiltersSetupActivity.ListAdapter.this.lambda$onCreateViewHolder$1(currentTopic, currentFilter);
                 }
             });
-            makeOptions.add(C3417R.C3419drawable.msg_delete, FiltersSetupActivity.this.type == filterActivityType2 ? LocaleController.getInternalString(C3417R.string.topics_remove) : LocaleController.getString("FilterDeleteItem", C3417R.string.FilterDeleteItem), true, new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda5
+            makeOptions.add(C3419R.C3421drawable.msg_delete, (CharSequence) (FiltersSetupActivity.this.type == filterActivityType2 ? LocaleController.getInternalString(C3419R.string.topics_remove) : LocaleController.getString("FilterDeleteItem", C3419R.string.FilterDeleteItem)), true, new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     FiltersSetupActivity.ListAdapter.this.lambda$onCreateViewHolder$6(currentFilter, currentTopic);
@@ -1157,7 +1146,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onCreateViewHolder$6(final MessagesController.DialogFilter dialogFilter, final TopicModel topicModel) {
             if (dialogFilter != null && dialogFilter.isChatlist()) {
-                FolderBottomSheet.showForDeletion(FiltersSetupActivity.this, dialogFilter.f1455id, new Utilities.Callback() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda8
+                FolderBottomSheet.showForDeletion(FiltersSetupActivity.this, dialogFilter.f1458id, new Utilities.Callback() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         FiltersSetupActivity.ListAdapter.this.lambda$onCreateViewHolder$2((Boolean) obj);
@@ -1168,10 +1157,10 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             AlertDialog.Builder builder = new AlertDialog.Builder(FiltersSetupActivity.this.getParentActivity());
             FilterActivityType filterActivityType = FiltersSetupActivity.this.type;
             FilterActivityType filterActivityType2 = FilterActivityType.TOPIC;
-            builder.setTitle(filterActivityType == filterActivityType2 ? LocaleController.getInternalString(C3417R.string.topics_remove) : LocaleController.getString("FilterDelete", C3417R.string.FilterDelete));
-            builder.setMessage(FiltersSetupActivity.this.type == filterActivityType2 ? LocaleController.getInternalString(C3417R.string.topics_remove_alert) : LocaleController.getString("FilterDeleteAlert", C3417R.string.FilterDeleteAlert));
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
-            builder.setPositiveButton(LocaleController.getString("Delete", C3417R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda0
+            builder.setTitle(filterActivityType == filterActivityType2 ? LocaleController.getInternalString(C3419R.string.topics_remove) : LocaleController.getString("FilterDelete", C3419R.string.FilterDelete));
+            builder.setMessage(FiltersSetupActivity.this.type == filterActivityType2 ? LocaleController.getInternalString(C3419R.string.topics_remove_alert) : LocaleController.getString("FilterDeleteAlert", C3419R.string.FilterDeleteAlert));
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), null);
+            builder.setPositiveButton(LocaleController.getString("Delete", C3419R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FiltersSetupActivity.ListAdapter.this.lambda$onCreateViewHolder$5(topicModel, dialogFilter, dialogInterface, i);
@@ -1203,7 +1192,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 alertDialog.show();
             }
             TLRPC$TL_messages_updateDialogFilter tLRPC$TL_messages_updateDialogFilter = new TLRPC$TL_messages_updateDialogFilter();
-            tLRPC$TL_messages_updateDialogFilter.f1627id = dialogFilter.f1455id;
+            tLRPC$TL_messages_updateDialogFilter.f1635id = dialogFilter.f1458id;
             FiltersSetupActivity.this.getConnectionsManager().sendRequest(tLRPC$TL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda9
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -1228,7 +1217,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 try {
                     alertDialog.dismiss();
                 } catch (Exception e) {
-                    FileLog.m49e(e);
+                    FileLog.m67e(e);
                 }
             }
             FiltersSetupActivity.this.getMessagesController().removeFilter(dialogFilter);
@@ -1240,9 +1229,9 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             final TLRPC$TL_dialogFilterSuggested suggestedFilter = suggestedFilterCell.getSuggestedFilter();
             MessagesController.DialogFilter dialogFilter = new MessagesController.DialogFilter();
             dialogFilter.name = suggestedFilter.filter.title;
-            dialogFilter.f1455id = 2;
-            while (FiltersSetupActivity.this.getMessagesController().dialogFiltersById.get(dialogFilter.f1455id) != null) {
-                dialogFilter.f1455id++;
+            dialogFilter.f1458id = 2;
+            while (FiltersSetupActivity.this.getMessagesController().dialogFiltersById.get(dialogFilter.f1458id) != null) {
+                dialogFilter.f1458id++;
             }
             dialogFilter.order = FiltersSetupActivity.this.getMessagesController().getDialogFilters().size();
             dialogFilter.unreadCount = -1;
@@ -1300,7 +1289,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onCreateViewHolder$8(TLRPC$TL_dialogFilterSuggested tLRPC$TL_dialogFilterSuggested) {
             FiltersSetupActivity.this.getMessagesController().suggestedFilters.remove(tLRPC$TL_dialogFilterSuggested);
-            FiltersSetupActivity.this.getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+            FiltersSetupActivity.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1313,25 +1302,14 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             int i2 = i + 1;
             boolean z = i2 < FiltersSetupActivity.this.items.size() && ((ItemInner) FiltersSetupActivity.this.items.get(i2)).viewType != 3;
             int i3 = itemInner.viewType;
-            if (i3 == IdFabric$ViewTypes.TOPICS_SETTINGS_CATALOG_AUTO_UPDATE) {
-                NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) viewHolder.itemView;
-                String internalString2 = LocaleController.getInternalString(C3417R.string.topics_catalog_update_auto);
-                if (FiltersSetupActivity.this.getTopicsController().isAutoUpdateTopicsCatalogEnabled()) {
-                    notificationsCheckCell.setTextAndValueAndCheck(internalString2, LocaleController.getInternalString(FiltersSetupActivity.this.getTopicsController().getSelectedAutoUpdateTopicsCatalogInterval().getNameResId()), true, z);
-                    return;
-                } else {
-                    notificationsCheckCell.setTextAndValueAndCheck(internalString2, LocaleController.getInternalString(C3417R.string.common_off), false, z);
-                    return;
-                }
-            }
             int i4 = IdFabric$ViewTypes.TOPICS_SETTINGS_CATALOG_UPDATE;
             if (i3 == i4 || i3 == IdFabric$ViewTypes.FILTERS_SETTINGS_SORTING) {
                 org.telegram.p043ui.Cells.TextCell textCell = (org.telegram.p043ui.Cells.TextCell) viewHolder.itemView;
                 if (i3 == i4) {
-                    textCell.setText(LocaleController.getInternalString(C3417R.string.topics_catalog_update_manually), z);
+                    textCell.setText(LocaleController.getInternalString(C3419R.string.topics_catalog_update_manually), z);
                     return;
                 } else {
-                    textCell.setText(LocaleController.getInternalString(C3417R.string.folder_tabs_sorting_settings), z);
+                    textCell.setText(LocaleController.getInternalString(C3419R.string.folder_tabs_sorting_settings), z);
                     return;
                 }
             }
@@ -1342,26 +1320,26 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 textCheckCell.setDrawSwitchDivider(i3 == i6);
                 int i7 = itemInner.viewType;
                 if (i7 == i5) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.topics_settings_enable), FiltersSetupActivity.this.newTopicsBarEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.topics_settings_enable), FiltersSetupActivity.this.newTopicsBarEnabled, z);
                     return;
                 } else if (i7 == IdFabric$ViewTypes.TOPICS_SETTINGS_PANEL_AT_BOTTOM) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.topics_settings_topics_bar_at_bottom), FiltersSetupActivity.this.newTopicsBarAtBottom, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.topics_settings_topics_bar_at_bottom), FiltersSetupActivity.this.newTopicsBarAtBottom, z);
                     return;
                 } else if (i7 == IdFabric$ViewTypes.FILTERS_SETTINGS_PANEL_AT_BOTTOM) {
                     textCheckCell.setEnabled(FiltersSetupActivity.this.getTotalTabsCount() > 0, null);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.folder_tabs_at_bottom_enable_item_title), SharedConfig.isFilterTabsAtBottomEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.folder_tabs_at_bottom_enable_item_title), SharedConfig.isFilterTabsAtBottomEnabled, z);
                     return;
                 } else if (i7 == i6) {
                     textCheckCell.setEnabled(FiltersSetupActivity.this.getTotalTabsCount() > 0, null);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.folder_tabs_remember_last_filter_tab_item_title), SharedConfig.isRememberLastFilterTabEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.folder_tabs_remember_last_filter_tab_item_title), SharedConfig.isRememberLastFilterTabEnabled, z);
                     return;
                 } else if (i7 != IdFabric$ViewTypes.FILTERS_SETTINGS_HIDE_FOLDERS) {
                     textCheckCell.setEnabled(FiltersSetupActivity.this.getSortingTabsCount() > 0, null);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.folder_tabs_settings_folders_first), FiltersSetupActivity.this.getFiltersController().isFoldersFirstEnabled(), z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.folder_tabs_settings_folders_first), FiltersSetupActivity.this.getFiltersController().isFoldersFirstEnabled(), z);
                     return;
                 } else {
                     textCheckCell.setEnabled(true, null);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3417R.string.folder_tabs_settings_hide_folders), FiltersSetupActivity.this.getFiltersController().isFoldersHidden(), z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3419R.string.folder_tabs_settings_hide_folders), FiltersSetupActivity.this.getFiltersController().isFoldersHidden(), z);
                     return;
                 }
             }
@@ -1371,7 +1349,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                 textSettingsCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                 int i9 = itemInner.viewType;
                 if (i9 == i8) {
-                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3417R.string.folder_tabs_notification_mode_item_title), LocaleController.getInternalString(SharedConfig.selectedFilterTabsNotificationMode.getTitleResId()), z);
+                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3419R.string.folder_tabs_notification_mode_item_title), LocaleController.getInternalString(SharedConfig.selectedFilterTabsNotificationMode.getTitleResId()), z);
                     textSettingsCell.setEnabled(FiltersSetupActivity.this.getTotalTabsCount() > 0, null);
                     return;
                 } else if (i9 == IdFabric$ViewTypes.FILTERS_SETTINGS_ALL_CHATS_TAB) {
@@ -1379,15 +1357,15 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                         r1 = false;
                     }
                     if (!r1 || FiltersSetupActivity.this.getFiltersController().isAllChatsTabEnabled()) {
-                        internalString = LocaleController.getInternalString(C3417R.string.common_on);
+                        internalString = LocaleController.getInternalString(C3419R.string.common_on);
                     } else {
-                        internalString = LocaleController.getInternalString(C3417R.string.common_off);
+                        internalString = LocaleController.getInternalString(C3419R.string.common_off);
                     }
-                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3417R.string.folder_tabs_all_chats_tab_settings_item_title), internalString, z);
+                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3419R.string.folder_tabs_all_chats_tab_settings_item_title), internalString, z);
                     textSettingsCell.setEnabled(r1, null);
                     return;
                 } else {
-                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3417R.string.folder_tabs_width_mode_item_title), LocaleController.getInternalString(SharedConfig.selectedFilterTabWidthMode.getTitleResId()), z);
+                    textSettingsCell.setTextAndValue(LocaleController.getInternalString(C3419R.string.folder_tabs_width_mode_item_title), LocaleController.getInternalString(SharedConfig.selectedFilterTabWidthMode.getTitleResId()), z);
                     textSettingsCell.setEnabled(FiltersSetupActivity.this.getTotalTabsCount() > 0, null);
                     return;
                 }
@@ -1403,15 +1381,15 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
                     filterCell.setFilter(itemInner.filter, z);
                 }
             } else if (itemViewType == 3) {
-                viewHolder.itemView.setBackground(Theme.getThemedDrawableByKey(this.mContext, z ? C3417R.C3419drawable.greydivider : C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                viewHolder.itemView.setBackground(Theme.getThemedDrawableByKey(this.mContext, z ? C3419R.C3421drawable.greydivider : C3419R.C3421drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             } else if (itemViewType != 4) {
                 if (itemViewType != 5) {
                     return;
                 }
                 ((SuggestedFilterCell) viewHolder.itemView).setFilter(itemInner.suggested, z);
             } else {
-                Drawable drawable = this.mContext.getResources().getDrawable(C3417R.C3419drawable.poll_add_circle);
-                Drawable drawable2 = this.mContext.getResources().getDrawable(C3417R.C3419drawable.poll_add_plus);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3419R.C3421drawable.poll_add_circle);
+                Drawable drawable2 = this.mContext.getResources().getDrawable(C3419R.C3421drawable.poll_add_plus);
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
                 ((TextCell) viewHolder.itemView).setTextAndIcon(((Object) itemInner.text) + "", new CombinedDrawable(drawable, drawable2), false);
@@ -1561,7 +1539,7 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
             this.fragmentView.performHapticFeedback(3, 1);
         } catch (Exception unused) {
         }
-        BulletinFactory.m29of(this).createSimpleBulletin(C3417R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString("LimitReachedReorderFolder", C3417R.string.LimitReachedReorderFolder, LocaleController.getString(C3417R.string.FilterAllChats))), LocaleController.getString("PremiumMore", C3417R.string.PremiumMore), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$$ExternalSyntheticLambda3
+        BulletinFactory.m32of(this).createSimpleBulletin(C3419R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString("LimitReachedReorderFolder", C3419R.string.LimitReachedReorderFolder, LocaleController.getString(C3419R.string.FilterAllChats))), LocaleController.getString("PremiumMore", C3419R.string.PremiumMore), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, new Runnable() { // from class: org.telegram.ui.FiltersSetupActivity$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 FiltersSetupActivity.this.lambda$onDefaultTabMoved$5();
@@ -1596,10 +1574,10 @@ public class FiltersSetupActivity extends JavaMvpFragment implements Notificatio
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCell.class, FilterCell.class, SuggestedFilterCell.class}, null, null, null, i));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i6 = ThemeDescription.FLAG_BACKGROUND;
         int i7 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3484ActionBar, i6, null, null, null, null, i7));
+        arrayList.add(new ThemeDescription(c3485ActionBar, i6, null, null, null, null, i7));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i7));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

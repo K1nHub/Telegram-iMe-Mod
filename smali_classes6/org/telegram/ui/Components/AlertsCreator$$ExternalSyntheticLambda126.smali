@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda126;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$kh61v7jAQehkDm39eChWJ-IJ3kY(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$E6nOlumd06D316eLEWYAO1efuz4(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     return-void
 .end method

@@ -29,7 +29,7 @@
     .line 506
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
-    const-string v0, "openHistoryScreen"
+    const-string/jumbo v0, "openHistoryScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

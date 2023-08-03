@@ -61,6 +61,7 @@ final class RingBuffer<T> extends AbstractList<T> implements RandomAccess {
                 this.index = i;
             }
 
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // kotlin.collections.AbstractIterator
             protected void computeNext() {
                 Object[] objArr;

@@ -2,6 +2,7 @@ package androidx.navigation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -105,7 +106,16 @@ public class NavController {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
         this.context = context;
-        generateSequence = SequencesKt__SequencesKt.generateSequence(context, NavController$activity$1.INSTANCE);
+        generateSequence = SequencesKt__SequencesKt.generateSequence(context, new Function1<Context, Context>() { // from class: androidx.navigation.NavController$activity$1
+            @Override // kotlin.jvm.functions.Function1
+            public final Context invoke(Context it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                if (it instanceof ContextWrapper) {
+                    return ((ContextWrapper) it).getBaseContext();
+                }
+                return null;
+            }
+        });
         Iterator it = generateSequence.iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -132,7 +142,7 @@ public class NavController {
         this.lifecycleObserver = new LifecycleEventObserver() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                NavController.m866lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
+                NavController.m884lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
             }
         };
         this.onBackPressedCallback = new OnBackPressedCallback() { // from class: androidx.navigation.NavController$onBackPressedCallback$1
@@ -154,7 +164,20 @@ public class NavController {
         navigatorProvider.addNavigator(new NavGraphNavigator(navigatorProvider));
         this._navigatorProvider.addNavigator(new ActivityNavigator(this.context));
         this.backStackEntriesToDispatch = new ArrayList();
-        lazy = LazyKt__LazyJVMKt.lazy(new NavController$navInflater$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<NavInflater>() { // from class: androidx.navigation.NavController$navInflater$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final NavInflater invoke() {
+                NavInflater navInflater;
+                navInflater = NavController.this.inflater;
+                return navInflater == null ? new NavInflater(NavController.this.getContext(), NavController.this._navigatorProvider) : navInflater;
+            }
+        });
         this.navInflater$delegate = lazy;
         MutableSharedFlow<NavBackStackEntry> MutableSharedFlow$default = SharedFlowKt.MutableSharedFlow$default(1, 0, BufferOverflow.DROP_OLDEST, 2, null);
         this._currentBackStackEntryFlow = MutableSharedFlow$default;
@@ -215,7 +238,7 @@ public class NavController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: lifecycleObserver$lambda-2  reason: not valid java name */
-    public static final void m866lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void m884lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -292,7 +315,7 @@ public class NavController {
         }
 
         @Override // androidx.navigation.NavigatorState
-        public void pop(NavBackStackEntry popUpTo, boolean z) {
+        public void pop(final NavBackStackEntry popUpTo, final boolean z) {
             Intrinsics.checkNotNullParameter(popUpTo, "popUpTo");
             Navigator navigator = this.this$0._navigatorProvider.getNavigator(popUpTo.getDestination().getNavigatorName());
             if (Intrinsics.areEqual(navigator, this.navigator)) {
@@ -302,7 +325,24 @@ public class NavController {
                     super.pop(popUpTo, z);
                     return;
                 }
-                this.this$0.popBackStackFromNavigator$navigation_runtime_release(popUpTo, new NavController$NavControllerNavigatorState$pop$1(this, popUpTo, z));
+                this.this$0.popBackStackFromNavigator$navigation_runtime_release(popUpTo, new Function0<Unit>() { // from class: androidx.navigation.NavController$NavControllerNavigatorState$pop$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public /* bridge */ /* synthetic */ Unit invoke() {
+                        invoke2();
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2() {
+                        super/*androidx.navigation.NavigatorState*/.pop(popUpTo, z);
+                    }
+                });
                 return;
             }
             Object obj = this.this$0.navigatorState.get(navigator);
@@ -375,7 +415,7 @@ public class NavController {
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: popBackStackInternal");
     }
 
-    private final boolean popBackStackInternal(int i, boolean z, boolean z2) {
+    private final boolean popBackStackInternal(int i, boolean z, final boolean z2) {
         List reversed;
         NavDestination navDestination;
         Sequence generateSequence;
@@ -408,19 +448,66 @@ public class NavController {
             Log.i("NavController", "Ignoring popBackStack to destination " + displayName + " as it was not found on the current back stack");
             return false;
         }
-        Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
-        ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>();
+        final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
+        final ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>();
         for (Navigator<? extends NavDestination> navigator2 : arrayList) {
-            Ref$BooleanRef ref$BooleanRef2 = new Ref$BooleanRef();
-            popBackStackInternal(navigator2, getBackQueue().last(), z2, new NavController$popBackStackInternal$2(ref$BooleanRef2, ref$BooleanRef, this, z2, arrayDeque));
+            final Ref$BooleanRef ref$BooleanRef2 = new Ref$BooleanRef();
+            popBackStackInternal(navigator2, getBackQueue().last(), z2, new Function1<NavBackStackEntry, Unit>() { // from class: androidx.navigation.NavController$popBackStackInternal$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(NavBackStackEntry navBackStackEntry) {
+                    invoke2(navBackStackEntry);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(NavBackStackEntry entry) {
+                    Intrinsics.checkNotNullParameter(entry, "entry");
+                    Ref$BooleanRef.this.element = true;
+                    ref$BooleanRef.element = true;
+                    this.popEntryFromBackStack(entry, z2, arrayDeque);
+                }
+            });
             if (!ref$BooleanRef2.element) {
                 break;
             }
         }
         if (z2) {
             if (!z) {
-                generateSequence2 = SequencesKt__SequencesKt.generateSequence(navDestination, NavController$popBackStackInternal$3.INSTANCE);
-                takeWhile2 = SequencesKt___SequencesKt.takeWhile(generateSequence2, new NavController$popBackStackInternal$4(this));
+                generateSequence2 = SequencesKt__SequencesKt.generateSequence(navDestination, new Function1<NavDestination, NavDestination>() { // from class: androidx.navigation.NavController$popBackStackInternal$3
+                    @Override // kotlin.jvm.functions.Function1
+                    public final NavDestination invoke(NavDestination destination2) {
+                        Intrinsics.checkNotNullParameter(destination2, "destination");
+                        NavGraph parent = destination2.getParent();
+                        boolean z3 = false;
+                        if (parent != null && parent.getStartDestinationId() == destination2.getId()) {
+                            z3 = true;
+                        }
+                        if (z3) {
+                            return destination2.getParent();
+                        }
+                        return null;
+                    }
+                });
+                takeWhile2 = SequencesKt___SequencesKt.takeWhile(generateSequence2, new Function1<NavDestination, Boolean>() { // from class: androidx.navigation.NavController$popBackStackInternal$4
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(NavDestination destination2) {
+                        Map map;
+                        Intrinsics.checkNotNullParameter(destination2, "destination");
+                        map = NavController.this.backStackMap;
+                        return Boolean.valueOf(!map.containsKey(Integer.valueOf(destination2.getId())));
+                    }
+                });
                 for (NavDestination navDestination2 : takeWhile2) {
                     Map<Integer, String> map = this.backStackMap;
                     Integer valueOf = Integer.valueOf(navDestination2.getId());
@@ -430,8 +517,35 @@ public class NavController {
             }
             if (!arrayDeque.isEmpty()) {
                 NavBackStackEntryState first = arrayDeque.first();
-                generateSequence = SequencesKt__SequencesKt.generateSequence(findDestination(first.getDestinationId()), NavController$popBackStackInternal$6.INSTANCE);
-                takeWhile = SequencesKt___SequencesKt.takeWhile(generateSequence, new NavController$popBackStackInternal$7(this));
+                generateSequence = SequencesKt__SequencesKt.generateSequence(findDestination(first.getDestinationId()), new Function1<NavDestination, NavDestination>() { // from class: androidx.navigation.NavController$popBackStackInternal$6
+                    @Override // kotlin.jvm.functions.Function1
+                    public final NavDestination invoke(NavDestination destination2) {
+                        Intrinsics.checkNotNullParameter(destination2, "destination");
+                        NavGraph parent = destination2.getParent();
+                        boolean z3 = false;
+                        if (parent != null && parent.getStartDestinationId() == destination2.getId()) {
+                            z3 = true;
+                        }
+                        if (z3) {
+                            return destination2.getParent();
+                        }
+                        return null;
+                    }
+                });
+                takeWhile = SequencesKt___SequencesKt.takeWhile(generateSequence, new Function1<NavDestination, Boolean>() { // from class: androidx.navigation.NavController$popBackStackInternal$7
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Boolean invoke(NavDestination destination2) {
+                        Map map2;
+                        Intrinsics.checkNotNullParameter(destination2, "destination");
+                        map2 = NavController.this.backStackMap;
+                        return Boolean.valueOf(!map2.containsKey(Integer.valueOf(destination2.getId())));
+                    }
+                });
                 for (NavDestination navDestination3 : takeWhile) {
                     this.backStackMap.put(Integer.valueOf(navDestination3.getId()), first.getId());
                 }
@@ -939,7 +1053,7 @@ public class NavController {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final void navigate(androidx.navigation.NavDestination r21, android.os.Bundle r22, androidx.navigation.NavOptions r23, androidx.navigation.Navigator.Extras r24) {
+    private final void navigate(final androidx.navigation.NavDestination r21, android.os.Bundle r22, androidx.navigation.NavOptions r23, androidx.navigation.Navigator.Extras r24) {
         /*
             Method dump skipped, instructions count: 308
             To view this dump add '--comments-level debug' option
@@ -947,14 +1061,25 @@ public class NavController {
         throw new UnsupportedOperationException("Method not decompiled: androidx.navigation.NavController.navigate(androidx.navigation.NavDestination, android.os.Bundle, androidx.navigation.NavOptions, androidx.navigation.Navigator$Extras):void");
     }
 
-    private final boolean restoreStateInternal(int i, Bundle bundle, NavOptions navOptions, Navigator.Extras extras) {
+    private final boolean restoreStateInternal(int i, final Bundle bundle, NavOptions navOptions, Navigator.Extras extras) {
         List mutableListOf;
         NavBackStackEntry navBackStackEntry;
         NavDestination destination;
         if (this.backStackMap.containsKey(Integer.valueOf(i))) {
-            String str = this.backStackMap.get(Integer.valueOf(i));
-            CollectionsKt__MutableCollectionsKt.removeAll(this.backStackMap.values(), new NavController$restoreStateInternal$1(str));
-            List<NavBackStackEntry> instantiateBackStack = instantiateBackStack((ArrayDeque) TypeIntrinsics.asMutableMap(this.backStackStates).remove(str));
+            final String str = this.backStackMap.get(Integer.valueOf(i));
+            CollectionsKt__MutableCollectionsKt.removeAll(this.backStackMap.values(), new Function1<String, Boolean>() { // from class: androidx.navigation.NavController$restoreStateInternal$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(String str2) {
+                    return Boolean.valueOf(Intrinsics.areEqual(str2, str));
+                }
+            });
+            final List<NavBackStackEntry> instantiateBackStack = instantiateBackStack((ArrayDeque) TypeIntrinsics.asMutableMap(this.backStackStates).remove(str));
             ArrayList<List<NavBackStackEntry>> arrayList = new ArrayList();
             ArrayList<NavBackStackEntry> arrayList2 = new ArrayList();
             for (Object obj : instantiateBackStack) {
@@ -971,9 +1096,39 @@ public class NavController {
                     arrayList.add(mutableListOf);
                 }
             }
-            Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
+            final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
             for (List<NavBackStackEntry> list2 : arrayList) {
-                navigateInternal(this._navigatorProvider.getNavigator(((NavBackStackEntry) CollectionsKt.first((List<? extends Object>) list2)).getDestination().getNavigatorName()), list2, navOptions, extras, new NavController$restoreStateInternal$4(ref$BooleanRef, instantiateBackStack, new Ref$IntRef(), this, bundle));
+                Navigator<? extends NavDestination> navigator = this._navigatorProvider.getNavigator(((NavBackStackEntry) CollectionsKt.first((List<? extends Object>) list2)).getDestination().getNavigatorName());
+                final Ref$IntRef ref$IntRef = new Ref$IntRef();
+                navigateInternal(navigator, list2, navOptions, extras, new Function1<NavBackStackEntry, Unit>() { // from class: androidx.navigation.NavController$restoreStateInternal$4
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(NavBackStackEntry navBackStackEntry3) {
+                        invoke2(navBackStackEntry3);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(NavBackStackEntry entry) {
+                        List<NavBackStackEntry> emptyList;
+                        Intrinsics.checkNotNullParameter(entry, "entry");
+                        Ref$BooleanRef.this.element = true;
+                        int indexOf = instantiateBackStack.indexOf(entry);
+                        if (indexOf != -1) {
+                            int i2 = indexOf + 1;
+                            emptyList = instantiateBackStack.subList(ref$IntRef.element, i2);
+                            ref$IntRef.element = i2;
+                        } else {
+                            emptyList = CollectionsKt__CollectionsKt.emptyList();
+                        }
+                        this.addEntryToBackStack(entry.getDestination(), bundle, entry, emptyList);
+                    }
+                });
             }
             return ref$BooleanRef.element;
         }

@@ -11,7 +11,7 @@ import p033j$.util.Collection$EL;
 final class C2939N3 extends AbstractC2891F3 {
 
     /* renamed from: d */
-    private ArrayList f890d;
+    private ArrayList f893d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public C2939N3(InterfaceC3080m3 interfaceC3080m3, Comparator comparator) {
@@ -20,39 +20,39 @@ final class C2939N3 extends AbstractC2891F3 {
 
     @Override // p033j$.util.function.Consumer
     public void accept(Object obj) {
-        this.f890d.add(obj);
+        this.f893d.add(obj);
     }
 
     @Override // p033j$.util.stream.AbstractC3056i3, p033j$.util.stream.InterfaceC3080m3
     /* renamed from: m */
-    public void mo321m() {
-        AbstractC2780a.m589v(this.f890d, this.f822b);
-        this.f1051a.mo297n(this.f890d.size());
-        if (this.f823c) {
-            Iterator it = this.f890d.iterator();
+    public void mo339m() {
+        AbstractC2780a.m607v(this.f893d, this.f825b);
+        this.f1054a.mo315n(this.f893d.size());
+        if (this.f826c) {
+            Iterator it = this.f893d.iterator();
             while (it.hasNext()) {
                 Object next = it.next();
-                if (this.f1051a.mo296o()) {
+                if (this.f1054a.mo314o()) {
                     break;
                 }
-                this.f1051a.accept((InterfaceC3080m3) next);
+                this.f1054a.accept((InterfaceC3080m3) next);
             }
         } else {
-            ArrayList arrayList = this.f890d;
-            InterfaceC3080m3 interfaceC3080m3 = this.f1051a;
+            ArrayList arrayList = this.f893d;
+            InterfaceC3080m3 interfaceC3080m3 = this.f1054a;
             Objects.requireNonNull(interfaceC3080m3);
-            Collection$EL.m635a(arrayList, new C3010b(interfaceC3080m3));
+            Collection$EL.m653a(arrayList, new C3010b(interfaceC3080m3));
         }
-        this.f1051a.mo321m();
-        this.f890d = null;
+        this.f1054a.mo339m();
+        this.f893d = null;
     }
 
     @Override // p033j$.util.stream.InterfaceC3080m3
     /* renamed from: n */
-    public void mo297n(long j) {
+    public void mo315n(long j) {
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.f890d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
+        this.f893d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
     }
 }

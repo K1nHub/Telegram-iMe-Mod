@@ -35,7 +35,7 @@
     .line 722
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
-    const-string v0, "openCreateWalletIntroScreen"
+    const-string/jumbo v0, "openCreateWalletIntroScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

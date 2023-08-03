@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/PaymentFormActivity$6;
-.super Landroid/webkit/WebView;
+.super Landroid/webkit/WebViewClient;
 .source "PaymentFormActivity.java"
 
 
@@ -19,46 +19,76 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
     .locals 0
 
-    .line 1142
+    .line 1154
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$6;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-direct {p0, p2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onMeasure(II)V
+.method public onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 0
 
-    .line 1151
-    invoke-super {p0, p1, p2}, Landroid/webkit/WebView;->onMeasure(II)V
+    .line 1157
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1168
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+
+    .line 1169
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$6;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    const/4 p2, 0x0
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/PaymentFormActivity;->access$2402(Lorg/telegram/ui/PaymentFormActivity;Z)Z
+
+    .line 1170
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$6;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0, p2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
+
+    .line 1171
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$6;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$2600(Lorg/telegram/ui/PaymentFormActivity;)V
+
+    return-void
+.end method
+
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 2
 
-    .line 1145
+    .line 1162
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$6;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$2000(Lorg/telegram/ui/PaymentFormActivity;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$2300(Lorg/telegram/ui/PaymentFormActivity;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/view/ViewGroup;
+    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x1
+    move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
+    xor-int/lit8 v1, v1, 0x1
 
-    .line 1146
-    invoke-super {p0, p1}, Landroid/webkit/WebView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->access$2202(Lorg/telegram/ui/PaymentFormActivity;Z)Z
+
+    .line 1163
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
 
     move-result p1
 

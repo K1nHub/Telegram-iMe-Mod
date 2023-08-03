@@ -3,13 +3,55 @@
 .source "BuildCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/os/BuildCompat$Extensions30Impl;
+    }
+.end annotation
+
+
 # direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 256
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1e
+
+    if-lt v0, v1, :cond_0
+
+    sget v2, Landroidx/core/os/BuildCompat$Extensions30Impl;->R:I
+
+    :cond_0
+    if-lt v0, v1, :cond_1
+
+    .line 269
+    sget v2, Landroidx/core/os/BuildCompat$Extensions30Impl;->S:I
+
+    :cond_1
+    if-lt v0, v1, :cond_2
+
+    .line 283
+    sget v2, Landroidx/core/os/BuildCompat$Extensions30Impl;->TIRAMISU:I
+
+    :cond_2
+    if-lt v0, v1, :cond_3
+
+    .line 298
+    sget v0, Landroidx/core/os/BuildCompat$Extensions30Impl;->AD_SERVICES:I
+
+    :cond_3
+    return-void
+.end method
+
 .method public static isAtLeastNMR1()Z
     .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 90
+    .line 94
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
@@ -32,7 +74,7 @@
 
     const-string v0, "REL"
 
-    .line 54
+    .line 58
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -43,7 +85,7 @@
 
     return v1
 
-    .line 60
+    .line 64
     :cond_0
     sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -51,12 +93,12 @@
 
     move-result-object p1
 
-    .line 61
+    .line 65
     invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 62
+    .line 66
     invoke-virtual {p1, p0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result p0
@@ -74,7 +116,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 160
+    .line 164
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
@@ -95,7 +137,7 @@
 .method public static isAtLeastT()Z
     .locals 2
 
-    .line 209
+    .line 213
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
@@ -110,7 +152,7 @@
 
     const-string v1, "Tiramisu"
 
-    .line 211
+    .line 215
     invoke-static {v1, v0}, Landroidx/core/os/BuildCompat;->isAtLeastPreReleaseCodename(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
@@ -135,7 +177,7 @@
 .method public static isAtLeastU()Z
     .locals 2
 
-    .line 226
+    .line 230
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
@@ -146,7 +188,7 @@
 
     const-string v1, "UpsideDownCake"
 
-    .line 227
+    .line 231
     invoke-static {v1, v0}, Landroidx/core/os/BuildCompat;->isAtLeastPreReleaseCodename(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0

@@ -73,6 +73,14 @@
 
 
 # virtual methods
+.method public synthetic drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFF)V
+    .locals 0
+
+    invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$drawRoundRect(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;Landroid/graphics/Canvas;Landroid/graphics/RectF;FFF)V
+
+    return-void
+.end method
+
 .method public hideMenu()V
     .locals 2
 
@@ -86,6 +94,24 @@
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->clearSelectionMode(Z)V
+
+    return-void
+.end method
+
+.method public synthetic needEnterText()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$needEnterText(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic onEmojiWindowDismissed()V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate$-CC;->$default$onEmojiWindowDismissed(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;)V
 
     return-void
 .end method

@@ -73,9 +73,9 @@ public final class TwitterUserInfo {
     }
 
     public int hashCode() {
-        int m706m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.twitterUserId) * 31) + this.twitterUsername.hashCode()) * 31) + this.twitterName.hashCode()) * 31) + this.twitterAvatarUrl.hashCode()) * 31;
+        int m724m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterUserId) * 31) + this.twitterUsername.hashCode()) * 31) + this.twitterName.hashCode()) * 31) + this.twitterAvatarUrl.hashCode()) * 31;
         Long l = this.telegramUserId;
-        return m706m + (l == null ? 0 : l.hashCode());
+        return m724m + (l == null ? 0 : l.hashCode());
     }
 
     public String toString() {

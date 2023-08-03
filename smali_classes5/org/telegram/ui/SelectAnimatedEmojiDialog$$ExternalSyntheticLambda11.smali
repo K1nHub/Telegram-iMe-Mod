@@ -37,7 +37,7 @@
 
     check-cast p1, Landroid/view/View;
 
-    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$lL2GYorfrt17aKTLrXJDYxSE34k(Landroid/view/View;)V
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$wryq9NYlD4Sy8_BjHSCYg1JeXmg(Landroid/view/View;)V
 
     return-void
 .end method

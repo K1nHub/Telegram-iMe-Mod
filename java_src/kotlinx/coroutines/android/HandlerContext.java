@@ -5,6 +5,7 @@ import android.os.Looper;
 import java.util.concurrent.CancellationException;
 import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -22,9 +23,9 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1632scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo1651scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         long coerceAtMost;
-        Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
+        final Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
             @Override // java.lang.Runnable
             public final void run() {
                 CancellableContinuation.this.resumeUndispatched(this, Unit.INSTANCE);
@@ -33,7 +34,26 @@ public final class HandlerContext extends HandlerDispatcher {
         Handler handler = this.handler;
         coerceAtMost = RangesKt___RangesKt.coerceAtMost(j, 4611686018427387903L);
         if (handler.postDelayed(runnable, coerceAtMost)) {
-            cancellableContinuation.invokeOnCancellation(new HandlerContext$scheduleResumeAfterDelay$1(this, runnable));
+            cancellableContinuation.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                    invoke2(th);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(Throwable th) {
+                    Handler handler2;
+                    handler2 = HandlerContext.this.handler;
+                    handler2.removeCallbacks(runnable);
+                }
+            });
         } else {
             cancelOnRejection(cancellableContinuation.getContext(), runnable);
         }
@@ -73,7 +93,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1631dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1650dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (this.handler.post(runnable)) {
             return;
         }
@@ -82,7 +102,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
         JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().mo1631dispatch(coroutineContext, runnable);
+        Dispatchers.getIO().mo1650dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.MainCoroutineDispatcher, kotlinx.coroutines.CoroutineDispatcher

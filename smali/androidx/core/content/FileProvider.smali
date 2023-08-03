@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/FileProvider$Api21Impl;,
+        Landroidx/core/content/FileProvider$PathStrategy;,
         Landroidx/core/content/FileProvider$SimplePathStrategy;,
-        Landroidx/core/content/FileProvider$PathStrategy;
+        Landroidx/core/content/FileProvider$Api21Impl;
     }
 .end annotation
 

@@ -19,7 +19,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import me.grantland.widget.AutofitTextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkShopItemListBinding;
@@ -115,55 +115,55 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
             binding.botNewLabel.setVisibility(8);
         }
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(4.0f));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m73dp(4.0f));
         BotStatus status = shopItem.getStatus();
         int[] iArr = WhenMappings.$EnumSwitchMapping$0;
         switch (iArr[status.ordinal()]) {
             case 1:
                 AutofitTextView shopButton = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton, "shopButton");
-                TextViewExtKt.setTextColor(shopButton, C3417R.C3418color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton, C3419R.C3420color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
                 break;
             case 2:
                 AutofitTextView shopButton2 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton2, "shopButton");
-                TextViewExtKt.setTextColor(shopButton2, C3417R.C3418color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton2, C3419R.C3420color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
                 break;
             case 3:
                 AutofitTextView shopButton3 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton3, "shopButton");
-                TextViewExtKt.setTextColor(shopButton3, C3417R.C3418color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton3, C3419R.C3420color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
                 break;
             case 4:
                 AutofitTextView shopButton4 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton4, "shopButton");
-                TextViewExtKt.setTextColor(shopButton4, C3417R.C3418color.colorShopButtonTextDisable);
+                TextViewExtKt.setTextColor(shopButton4, C3419R.C3420color.colorShopButtonTextDisable);
                 gradientDrawable.setColor(0);
                 break;
             case 5:
                 AutofitTextView shopButton5 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton5, "shopButton");
-                int i2 = C3417R.C3418color.colorShopButtonTextDisable;
+                int i2 = C3419R.C3420color.colorShopButtonTextDisable;
                 TextViewExtKt.setTextColor(shopButton5, i2);
                 gradientDrawable.setColor(0);
-                gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), ContextCompat.getColor(binding.shopButton.getContext(), i2));
+                gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), ContextCompat.getColor(binding.shopButton.getContext(), i2));
                 break;
             case 6:
                 AutofitTextView autofitTextView = binding.shopButton;
                 int i3 = Theme.key_chats_actionBackground;
                 autofitTextView.setTextColor(Theme.getColor(i3));
                 gradientDrawable.setColor(0);
-                gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(i3));
+                gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), Theme.getColor(i3));
                 break;
         }
         binding.shopButton.setBackground(gradientDrawable);
         AutofitTextView autofitTextView2 = binding.shopButton;
         switch (iArr[shopItem.getStatus().ordinal()]) {
             case 1:
-                internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_download);
+                internalString = LocaleController.getInternalString(C3419R.string.neurobots_store_bot_action_download);
                 break;
             case 2:
                 internalString = shopItem.getPrice();
@@ -173,16 +173,16 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
                 }
                 break;
             case 3:
-                internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_update);
+                internalString = LocaleController.getInternalString(C3419R.string.neurobots_store_bot_action_update);
                 break;
             case 4:
-                internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_status_downloading);
+                internalString = LocaleController.getInternalString(C3419R.string.neurobots_store_bot_status_downloading);
                 break;
             case 5:
-                internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_disable);
+                internalString = LocaleController.getInternalString(C3419R.string.neurobots_store_bot_action_disable);
                 break;
             case 6:
-                internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_enable);
+                internalString = LocaleController.getInternalString(C3419R.string.neurobots_store_bot_action_enable);
                 break;
             default:
                 throw new NoWhenBranchMatchedException();
@@ -218,28 +218,28 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
     public static final void onBindViewHolder$lambda$5$lambda$1(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$5$lambda$2(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$5$lambda$3(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$5$lambda$4(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botButtonClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botButtonClicked, item);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

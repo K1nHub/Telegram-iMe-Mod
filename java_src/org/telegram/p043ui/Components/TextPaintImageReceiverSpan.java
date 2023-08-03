@@ -28,7 +28,17 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
         this.imageReceiver = imageReceiver;
         imageReceiver.setInvalidateAll(true);
         if (z2) {
-            this.imageReceiver.setDelegate(TextPaintImageReceiverSpan$$ExternalSyntheticLambda0.INSTANCE);
+            this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.TextPaintImageReceiverSpan$$ExternalSyntheticLambda0
+                @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+                public final void didSetImage(ImageReceiver imageReceiver2, boolean z3, boolean z4, boolean z5) {
+                    TextPaintImageReceiverSpan.lambda$new$0(imageReceiver2, z3, z4, z5);
+                }
+
+                @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+                public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver2) {
+                    ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver2);
+                }
+            });
         }
         this.imageReceiver.setImage(ImageLocation.getForDocument(tLRPC$Document), format, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90), tLRPC$Document), format, -1L, null, obj, 1);
         this.alignTop = z;
@@ -45,21 +55,21 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         if (fontMetricsInt != null) {
             if (this.alignTop) {
-                int m54dp = (fontMetricsInt.descent - fontMetricsInt.ascent) - AndroidUtilities.m54dp(4);
-                int i3 = this.height - m54dp;
+                int m72dp = (fontMetricsInt.descent - fontMetricsInt.ascent) - AndroidUtilities.m72dp(4);
+                int i3 = this.height - m72dp;
                 fontMetricsInt.descent = i3;
                 fontMetricsInt.bottom = i3;
-                int i4 = 0 - m54dp;
+                int i4 = 0 - m72dp;
                 fontMetricsInt.ascent = i4;
                 fontMetricsInt.top = i4;
             } else {
-                int m54dp2 = ((-this.height) / 2) - AndroidUtilities.m54dp(4);
-                fontMetricsInt.ascent = m54dp2;
-                fontMetricsInt.top = m54dp2;
+                int m72dp2 = ((-this.height) / 2) - AndroidUtilities.m72dp(4);
+                fontMetricsInt.ascent = m72dp2;
+                fontMetricsInt.top = m72dp2;
                 int i5 = this.height;
-                int m54dp3 = (i5 - (i5 / 2)) - AndroidUtilities.m54dp(4);
-                fontMetricsInt.descent = m54dp3;
-                fontMetricsInt.bottom = m54dp3;
+                int m72dp3 = (i5 - (i5 / 2)) - AndroidUtilities.m72dp(4);
+                fontMetricsInt.descent = m72dp3;
+                fontMetricsInt.bottom = m72dp3;
             }
         }
         return this.width;
@@ -72,7 +82,7 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
             this.imageReceiver.setImageCoords((int) f, i3 - 1, this.width, this.height);
         } else {
             int i6 = this.height;
-            this.imageReceiver.setImageCoords((int) f, i3 + ((((i5 - AndroidUtilities.m54dp(4)) - i3) - i6) / 2), this.width, i6);
+            this.imageReceiver.setImageCoords((int) f, i3 + ((((i5 - AndroidUtilities.m72dp(4)) - i3) - i6) / 2), this.width, i6);
         }
         this.imageReceiver.draw(canvas);
         canvas.restore();

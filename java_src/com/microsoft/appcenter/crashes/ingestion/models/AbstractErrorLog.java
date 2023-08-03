@@ -18,18 +18,18 @@ public abstract class AbstractErrorLog extends AbstractLog {
     private Boolean fatal;
 
     /* renamed from: id */
-    private UUID f458id;
+    private UUID f461id;
     private Integer parentProcessId;
     private String parentProcessName;
     private Integer processId;
     private String processName;
 
     public UUID getId() {
-        return this.f458id;
+        return this.f461id;
     }
 
     public void setId(UUID id) {
-        this.f458id = id;
+        this.f461id = id;
     }
 
     public Integer getProcessId() {
@@ -141,8 +141,8 @@ public abstract class AbstractErrorLog extends AbstractLog {
         }
         if (o != null && getClass() == o.getClass() && super.equals(o)) {
             AbstractErrorLog abstractErrorLog = (AbstractErrorLog) o;
-            UUID uuid = this.f458id;
-            if (uuid == null ? abstractErrorLog.f458id == null : uuid.equals(abstractErrorLog.f458id)) {
+            UUID uuid = this.f461id;
+            if (uuid == null ? abstractErrorLog.f461id == null : uuid.equals(abstractErrorLog.f461id)) {
                 Integer num = this.processId;
                 if (num == null ? abstractErrorLog.processId == null : num.equals(abstractErrorLog.processId)) {
                     String str = this.processName;
@@ -187,7 +187,7 @@ public abstract class AbstractErrorLog extends AbstractLog {
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
-        UUID uuid = this.f458id;
+        UUID uuid = this.f461id;
         int hashCode2 = (hashCode + (uuid != null ? uuid.hashCode() : 0)) * 31;
         Integer num = this.processId;
         int hashCode3 = (hashCode2 + (num != null ? num.hashCode() : 0)) * 31;

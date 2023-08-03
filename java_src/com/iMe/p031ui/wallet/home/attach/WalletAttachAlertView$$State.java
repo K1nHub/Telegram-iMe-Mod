@@ -343,19 +343,19 @@ public class WalletAttachAlertView$$State extends MvpViewState<WalletAttachAlert
         public final String address;
 
         /* renamed from: id */
-        public final String f456id;
+        public final String f459id;
         public final boolean isContactSelected;
 
         OnRecipientSelectedCommand(WalletAttachAlertView$$State walletAttachAlertView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f456id = str;
+            this.f459id = str;
             this.address = str2;
             this.isContactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletAttachAlertView walletAttachAlertView) {
-            walletAttachAlertView.onRecipientSelected(this.f456id, this.address, this.isContactSelected);
+            walletAttachAlertView.onRecipientSelected(this.f459id, this.address, this.isContactSelected);
         }
     }
 

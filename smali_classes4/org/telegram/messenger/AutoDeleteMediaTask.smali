@@ -45,7 +45,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 13
+    .line 17
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
@@ -62,7 +62,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -84,7 +84,7 @@
 
     return-void
 
-    .line 208
+    .line 221
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 212
+    .line 225
     :cond_1
     array-length v0, p0
 
@@ -105,19 +105,19 @@
 
     aget-object v2, p0, v1
 
-    .line 213
+    .line 226
     invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 214
+    .line 227
     invoke-static {v2, p1}, Lorg/telegram/messenger/AutoDeleteMediaTask;->fillFilesRecursive(Ljava/io/File;Ljava/util/ArrayList;)V
 
     goto :goto_1
 
-    .line 216
+    .line 229
     :cond_2
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -133,7 +133,7 @@
 
     goto :goto_1
 
-    .line 219
+    .line 232
     :cond_3
     sget-object v3, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
 
@@ -149,7 +149,7 @@
 
     goto :goto_1
 
-    .line 222
+    .line 235
     :cond_4
     new-instance v3, Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;
 
@@ -171,7 +171,7 @@
 .method private static synthetic lambda$run$0(Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;)I
     .locals 3
 
-    .line 151
+    .line 164
     iget-wide v0, p1, Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;->lastUsageDate:J
 
     iget-wide p0, p0, Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;->lastUsageDate:J
@@ -200,26 +200,26 @@
 .end method
 
 .method private static synthetic lambda$run$1(ILjava/io/File;)V
-    .locals 26
+    .locals 28
 
     move/from16 v1, p0
 
-    .line 24
+    .line 28
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 25
+    .line 29
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "checkKeepMedia start task"
 
-    .line 26
+    .line 30
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 29
+    .line 33
     :cond_0
     new-instance v4, Ljava/util/ArrayList;
 
@@ -232,9 +232,11 @@
     :goto_0
     const/4 v7, 0x5
 
+    const/4 v8, 0x1
+
     if-ge v0, v7, :cond_2
 
-    .line 31
+    .line 35
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v7
@@ -245,7 +247,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 32
+    .line 36
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v7
@@ -258,10 +260,10 @@
 
     move-result-object v7
 
-    .line 33
+    .line 37
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 34
+    .line 38
     invoke-virtual {v7}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMediaExceptionsByDialogs()Landroid/util/LongSparseArray;
 
     move-result-object v7
@@ -272,7 +274,7 @@
 
     if-lez v7, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v8
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -280,564 +282,621 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x3
+    const/4 v7, 0x4
 
-    new-array v7, v0, [I
+    new-array v9, v7, [I
 
-    const/4 v11, 0x0
+    move v14, v8
 
-    const/4 v12, 0x1
+    const/4 v0, 0x0
 
-    const-wide v13, 0x7fffffffffffffffL
+    const-wide v12, 0x7fffffffffffffffL
 
     :goto_1
-    if-ge v11, v0, :cond_5
+    if-ge v0, v7, :cond_5
 
-    .line 44
+    .line 48
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v15
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "keep_media_type_"
+    const-string v10, "keep_media_type_"
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
 
-    invoke-static {v11}, Lorg/telegram/messenger/CacheByChatsController;->getDefault(I)I
+    invoke-static {v0}, Lorg/telegram/messenger/CacheByChatsController;->getDefault(I)I
+
+    move-result v10
+
+    invoke-interface {v15, v5, v10}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v5
 
-    invoke-interface {v15, v0, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    aput v5, v9, v0
 
-    move-result v0
+    .line 49
+    aget v5, v9, v0
 
-    aput v0, v7, v11
+    sget v10, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
 
-    .line 45
-    aget v0, v7, v11
+    if-eq v5, v10, :cond_3
 
-    sget v5, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
+    const/4 v14, 0x0
 
-    if-eq v0, v5, :cond_3
-
-    const/4 v12, 0x0
-
-    .line 48
+    .line 52
     :cond_3
-    aget v0, v7, v11
+    aget v5, v9, v0
 
-    invoke-static {v0}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
+    invoke-static {v5}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
 
-    move-result-wide v16
+    move-result-wide v10
 
-    cmp-long v0, v16, v13
+    cmp-long v5, v10, v12
 
-    if-gez v0, :cond_4
+    if-gez v5, :cond_4
 
-    move-wide/from16 v13, v16
+    move-wide v12, v10
 
     :cond_4
-    add-int/lit8 v11, v11, 0x1
-
-    const/4 v0, 0x3
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_5
     if-eqz v6, :cond_6
 
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
+    .line 69
     :cond_6
-    if-nez v12, :cond_16
-
-    .line 65
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageLoader;->createMediaPaths()Landroid/util/SparseArray;
 
-    move-result-object v11
+    move-result-object v5
 
-    const/4 v12, 0x0
+    const/4 v6, 0x0
 
     const/4 v15, 0x0
 
-    const-wide/16 v16, 0x0
+    const-wide/16 v18, 0x0
 
-    .line 66
+    .line 70
     :goto_2
-    invoke-virtual {v11}, Landroid/util/SparseArray;->size()I
+    invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    if-ge v12, v0, :cond_17
+    if-ge v6, v0, :cond_1a
 
-    .line 68
-    invoke-virtual {v11, v12}, Landroid/util/SparseArray;->keyAt(I)I
+    const/4 v10, 0x3
+
+    if-eqz v14, :cond_8
+
+    .line 71
+    invoke-virtual {v5, v6}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v0
 
-    const/4 v5, 0x4
+    if-eq v0, v8, :cond_7
 
-    if-ne v0, v5, :cond_7
+    invoke-virtual {v5, v6}, Landroid/util/SparseArray;->keyAt(I)I
 
-    const/4 v5, 0x1
+    move-result v0
+
+    if-ne v0, v10, :cond_8
+
+    :cond_7
+    move-object/from16 v25, v9
+
+    move-wide/from16 v22, v12
+
+    goto/16 :goto_10
+
+    .line 75
+    :cond_8
+    invoke-virtual {v5, v6}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v0
+
+    if-ne v0, v7, :cond_9
+
+    move v11, v8
 
     goto :goto_3
 
-    :cond_7
-    const/4 v5, 0x0
+    :cond_9
+    const/4 v11, 0x0
 
-    .line 71
+    .line 78
     :goto_3
-    invoke-virtual {v11, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v5, v6}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/io/File;
 
-    .line 73
+    .line 80
     :try_start_0
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v0
 
-    .line 74
-    new-instance v6, Ljava/util/ArrayList;
+    .line 81
+    new-instance v7, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_c
 
     const/4 v8, 0x0
 
-    .line 76
+    .line 83
     :goto_4
-    array-length v9, v0
+    :try_start_1
+    array-length v10, v0
 
-    if-ge v8, v9, :cond_a
+    if-ge v8, v10, :cond_c
 
-    .line 77
-    aget-object v9, v0, v8
-
-    invoke-virtual {v9}, Ljava/io/File;->isDirectory()Z
-
-    move-result v9
-
-    if-nez v9, :cond_9
-
-    sget-object v9, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
-
+    .line 84
     aget-object v10, v0, v8
 
-    invoke-virtual {v10}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/io/File;->isDirectory()Z
 
-    move-result-object v10
+    move-result v10
 
-    invoke-interface {v9, v10}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    if-nez v10, :cond_b
 
-    move-result v9
+    sget-object v10, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
 
-    if-eqz v9, :cond_8
+    aget-object v21, v0, v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-wide/from16 v22, v12
+
+    :try_start_2
+    invoke-virtual/range {v21 .. v21}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-interface {v10, v12}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_a
 
     goto :goto_5
 
-    .line 80
-    :cond_8
-    new-instance v9, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;
+    .line 87
+    :cond_a
+    new-instance v10, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;
 
-    aget-object v10, v0, v8
+    aget-object v12, v0, v8
 
-    invoke-direct {v9, v10}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;-><init>(Ljava/io/File;)V
+    invoke-direct {v10, v12}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_9
+    goto :goto_5
+
+    :cond_b
+    move-wide/from16 v22, v12
+
     :goto_5
     add-int/lit8 v8, v8, 0x1
 
+    move-wide/from16 v12, v22
+
     goto :goto_4
 
-    :cond_a
+    :catchall_0
+    move-exception v0
+
+    move-wide/from16 v22, v12
+
+    goto/16 :goto_e
+
+    :cond_c
+    move-wide/from16 v22, v12
+
     const/4 v0, 0x0
 
-    .line 83
+    .line 90
     :goto_6
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
-    if-ge v0, v8, :cond_b
+    if-ge v0, v8, :cond_d
 
-    .line 84
+    .line 91
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lorg/telegram/messenger/CacheByChatsController;
 
-    invoke-virtual {v8, v6}, Lorg/telegram/messenger/CacheByChatsController;->lookupFiles(Ljava/util/ArrayList;)V
+    invoke-virtual {v8, v7}, Lorg/telegram/messenger/CacheByChatsController;->lookupFiles(Ljava/util/ArrayList;)V
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
-    :cond_b
+    :cond_d
     const/4 v8, 0x0
 
-    .line 86
+    .line 93
     :goto_7
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v8, v0, :cond_15
+    if-ge v8, v0, :cond_19
 
-    .line 87
-    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 94
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;
 
-    .line 88
-    iget v9, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->keepMedia:I
+    .line 96
+    iget-boolean v10, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->isStory:Z
 
-    sget v10, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
+    if-eqz v10, :cond_e
 
-    if-ne v9, v10, :cond_c
+    const/4 v10, 0x3
+
+    .line 97
+    aget v12, v9, v10
+
+    invoke-static {v12}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
+
+    move-result-wide v12
+
+    move/from16 v20, v11
+
+    int-to-long v10, v1
+
+    sub-long/2addr v10, v12
+
+    goto :goto_b
+
+    :cond_e
+    move/from16 v20, v11
+
+    .line 100
+    iget v10, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->keepMedia:I
+
+    sget v11, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
+
+    if-ne v10, v11, :cond_f
 
     :goto_8
-    move/from16 v22, v5
+    move-object/from16 v24, v7
 
-    move-object/from16 v23, v6
+    move-object/from16 v25, v9
 
-    move-wide/from16 v24, v13
+    goto/16 :goto_d
 
-    const-wide v20, 0x7fffffffffffffffL
+    :cond_f
+    if-ltz v10, :cond_10
 
-    goto/16 :goto_c
+    .line 105
+    invoke-static {v10}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
 
-    :cond_c
-    if-ltz v9, :cond_d
-
-    .line 93
-    invoke-static {v9}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
-
-    move-result-wide v9
+    move-result-wide v10
 
     :goto_9
-    const-wide v20, 0x7fffffffffffffffL
+    const-wide v12, 0x7fffffffffffffffL
 
     goto :goto_a
 
-    .line 94
-    :cond_d
-    iget v9, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->dialogType:I
+    .line 106
+    :cond_10
+    iget v10, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->dialogType:I
 
-    if-ltz v9, :cond_e
+    if-ltz v10, :cond_11
 
-    .line 95
-    aget v9, v7, v9
+    .line 107
+    aget v10, v9, v10
 
-    invoke-static {v9}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
+    invoke-static {v10}, Lorg/telegram/messenger/CacheByChatsController;->getDaysInSeconds(I)J
 
-    move-result-wide v9
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    move-result-wide v10
 
     goto :goto_9
 
-    :cond_e
-    if-eqz v5, :cond_f
+    :cond_11
+    if-eqz v20, :cond_12
 
     goto :goto_8
 
-    :cond_f
-    move-wide v9, v13
+    :cond_12
+    move-wide/from16 v10, v22
 
     goto :goto_9
 
     :goto_a
-    cmp-long v22, v9, v20
+    cmp-long v16, v10, v12
 
-    if-nez v22, :cond_10
+    if-nez v16, :cond_13
 
-    move/from16 v22, v5
+    goto :goto_8
 
-    move-object/from16 v23, v6
+    :cond_13
+    int-to-long v12, v1
 
-    move-wide/from16 v24, v13
+    sub-long v10, v12, v10
 
-    goto/16 :goto_c
-
-    :cond_10
-    move/from16 v22, v5
-
-    .line 104
-    :try_start_1
-    iget-object v5, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
-
-    invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v23, v6
-
-    invoke-static {v5}, Lorg/telegram/messenger/Utilities;->getLastUsageFileTime(Ljava/lang/String;)J
-
-    move-result-wide v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    move-wide/from16 v24, v13
-
-    int-to-long v13, v1
-
-    sub-long/2addr v13, v9
-
-    const-wide/32 v9, 0x12d5c700
-
-    cmp-long v9, v5, v9
-
-    if-lez v9, :cond_11
-
-    cmp-long v9, v5, v13
-
-    if-gez v9, :cond_11
-
-    .line 106
-    :try_start_2
-    sget-object v9, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
-
-    iget-object v10, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
-
-    invoke-virtual {v10}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v9
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    if-nez v9, :cond_11
-
-    const/4 v9, 0x1
-
-    goto :goto_b
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_d
-
-    :cond_11
-    const/4 v9, 0x0
-
+    .line 119
     :goto_b
-    if-eqz v9, :cond_14
+    iget-object v12, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
 
-    .line 109
+    invoke-virtual {v12}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, Lorg/telegram/messenger/Utilities;->getLastUsageFileTime(Ljava/lang/String;)J
+
+    move-result-wide v12
+
+    const-wide/32 v24, 0x12d5c700
+
+    cmp-long v24, v12, v24
+
+    if-lez v24, :cond_14
+
+    cmp-long v24, v12, v10
+
+    if-gez v24, :cond_14
+
+    move-object/from16 v24, v7
+
+    .line 120
+    sget-object v7, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    move-object/from16 v25, v9
+
     :try_start_3
-    sget-boolean v9, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v9, :cond_12
-
-    add-int/lit8 v15, v15, 0x1
-
-    .line 111
     iget-object v9, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
 
-    invoke-virtual {v9}, Ljava/io/File;->length()J
+    invoke-virtual {v9}, Ljava/io/File;->getPath()Ljava/lang/String;
 
-    move-result-wide v9
+    move-result-object v9
 
-    add-long v16, v16, v9
+    invoke-interface {v7, v9}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    .line 113
-    :cond_12
-    sget-boolean v9, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
-
-    if-eqz v9, :cond_13
-
-    .line 114
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "delete file "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v10, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
-
-    invoke-virtual {v10}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v10, " last_usage_time="
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v5, " time_local="
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 116
-    :cond_13
-    iget-object v0, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+    move-result v7
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    if-nez v7, :cond_15
+
+    const/4 v7, 0x1
 
     goto :goto_c
 
-    :catch_0
-    move-exception v0
-
-    .line 118
-    :try_start_4
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
     :cond_14
+    move-object/from16 v24, v7
+
+    move-object/from16 v25, v9
+
+    :cond_15
+    const/4 v7, 0x0
+
     :goto_c
-    add-int/lit8 v8, v8, 0x1
+    if-eqz v7, :cond_18
 
-    move/from16 v5, v22
+    .line 123
+    :try_start_4
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    move-object/from16 v6, v23
+    if-eqz v7, :cond_16
 
-    move-wide/from16 v13, v24
+    add-int/lit8 v15, v15, 0x1
 
-    goto/16 :goto_7
+    .line 125
+    iget-object v7, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
+
+    invoke-virtual {v7}, Ljava/io/File;->length()J
+
+    move-result-wide v26
+
+    add-long v18, v18, v26
+
+    .line 127
+    :cond_16
+    sget-boolean v7, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
+
+    if-eqz v7, :cond_17
+
+    .line 128
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "delete file "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v9, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
+
+    invoke-virtual {v9}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, " last_usage_time="
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v9, " time_local="
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v9, " story="
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v9, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->isStory:Z
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 130
+    :cond_17
+    iget-object v0, v0, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    goto :goto_d
 
     :catchall_1
     move-exception v0
 
-    move-wide/from16 v24, v13
+    goto :goto_f
 
-    goto :goto_d
+    :catch_0
+    move-exception v0
 
-    :cond_15
-    move-wide/from16 v24, v13
+    .line 132
+    :try_start_5
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    const-wide v20, 0x7fffffffffffffffL
+    :cond_18
+    :goto_d
+    add-int/lit8 v8, v8, 0x1
 
-    goto :goto_e
+    move/from16 v11, v20
+
+    move-object/from16 v7, v24
+
+    move-object/from16 v9, v25
+
+    goto/16 :goto_7
+
+    :cond_19
+    move-object/from16 v25, v9
+
+    goto :goto_10
 
     :catchall_2
     move-exception v0
 
-    move-wide/from16 v24, v13
+    :goto_e
+    move-object/from16 v25, v9
 
-    const-wide v20, 0x7fffffffffffffffL
+    goto :goto_f
 
-    .line 123
-    :goto_d
+    :catchall_3
+    move-exception v0
+
+    move-object/from16 v25, v9
+
+    move-wide/from16 v22, v12
+
+    .line 137
+    :goto_f
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_e
-    add-int/lit8 v12, v12, 0x1
+    :goto_10
+    add-int/lit8 v6, v6, 0x1
 
-    move-wide/from16 v13, v24
+    move-wide/from16 v12, v22
+
+    move-object/from16 v9, v25
+
+    const/4 v7, 0x4
+
+    const/4 v8, 0x1
 
     goto/16 :goto_2
 
-    :cond_16
-    const/4 v15, 0x0
-
-    const-wide/16 v16, 0x0
-
-    .line 128
-    :cond_17
+    .line 142
+    :cond_1a
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string v5, "cache_limit"
+    const-string v6, "cache_limit"
 
-    const v6, 0x7fffffff
+    const v7, 0x7fffffff
 
-    invoke-interface {v0, v5, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v0, v6, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-eq v0, v6, :cond_20
+    if-eq v0, v7, :cond_23
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    if-ne v0, v5, :cond_18
+    if-ne v0, v6, :cond_1b
 
-    const-wide/32 v5, 0x12c00000
+    const-wide/32 v6, 0x12c00000
 
-    goto :goto_f
+    goto :goto_11
 
-    :cond_18
-    int-to-long v5, v0
+    :cond_1b
+    int-to-long v6, v0
 
-    const-wide/16 v7, 0x400
+    const-wide/16 v8, 0x400
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v6, v8
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v6, v8
 
-    const-wide/16 v7, 0x3e8
+    const-wide/16 v8, 0x3e8
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v6, v8
 
-    .line 136
-    :goto_f
-    invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/ImageLoader;->createMediaPaths()Landroid/util/SparseArray;
-
-    move-result-object v0
-
-    const/4 v7, 0x0
+    :goto_11
+    const/4 v0, 0x0
 
     const-wide/16 v8, 0x0
 
-    .line 138
-    :goto_10
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+    .line 151
+    :goto_12
+    invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
 
     move-result v10
 
-    if-ge v7, v10, :cond_19
+    if-ge v0, v10, :cond_1c
 
-    .line 139
-    invoke-virtual {v0, v7}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    .line 152
+    invoke-virtual {v5, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v10
 
@@ -857,92 +916,92 @@
 
     add-long/2addr v8, v13
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_10
+    goto :goto_12
 
-    :cond_19
-    cmp-long v7, v8, v5
+    :cond_1c
+    cmp-long v0, v8, v6
 
-    if-lez v7, :cond_20
+    if-lez v0, :cond_23
 
-    .line 142
-    new-instance v7, Ljava/util/ArrayList;
+    .line 155
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v12, 0x0
 
-    .line 143
-    :goto_11
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+    .line 156
+    :goto_13
+    invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
 
     move-result v10
 
-    if-ge v12, v10, :cond_1a
+    if-ge v12, v10, :cond_1d
 
-    .line 144
-    invoke-virtual {v0, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    .line 157
+    invoke-virtual {v5, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Ljava/io/File;
 
-    .line 145
-    invoke-static {v10, v7}, Lorg/telegram/messenger/AutoDeleteMediaTask;->fillFilesRecursive(Ljava/io/File;Ljava/util/ArrayList;)V
+    .line 158
+    invoke-static {v10, v0}, Lorg/telegram/messenger/AutoDeleteMediaTask;->fillFilesRecursive(Ljava/io/File;Ljava/util/ArrayList;)V
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_11
+    goto :goto_13
 
-    :cond_1a
+    :cond_1d
     const/4 v12, 0x0
 
-    .line 147
-    :goto_12
+    .line 160
+    :goto_14
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v5
 
-    if-ge v12, v0, :cond_1b
+    if-ge v12, v5, :cond_1e
 
-    .line 148
+    .line 161
     invoke-virtual {v4, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v5
 
-    check-cast v0, Lorg/telegram/messenger/CacheByChatsController;
+    check-cast v5, Lorg/telegram/messenger/CacheByChatsController;
 
-    invoke-virtual {v0, v7}, Lorg/telegram/messenger/CacheByChatsController;->lookupFiles(Ljava/util/ArrayList;)V
+    invoke-virtual {v5, v0}, Lorg/telegram/messenger/CacheByChatsController;->lookupFiles(Ljava/util/ArrayList;)V
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_12
+    goto :goto_14
 
-    .line 150
-    :cond_1b
-    sget-object v0, Lorg/telegram/messenger/AutoDeleteMediaTask$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/AutoDeleteMediaTask$$ExternalSyntheticLambda1;
+    .line 163
+    :cond_1e
+    sget-object v4, Lorg/telegram/messenger/AutoDeleteMediaTask$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/AutoDeleteMediaTask$$ExternalSyntheticLambda1;
 
-    invoke-static {v7, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    const/4 v0, 0x0
+    invoke-static {v0, v4}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     const/4 v4, 0x0
+
+    const/4 v5, 0x0
 
     const-wide/16 v10, 0x0
 
     const/4 v12, 0x0
 
-    .line 159
-    :goto_13
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    .line 172
+    :goto_15
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v13
 
-    if-ge v12, v13, :cond_1f
+    if-ge v12, v13, :cond_22
 
-    .line 160
-    invoke-virtual {v7, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 173
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
@@ -952,15 +1011,15 @@
 
     sget v14, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
 
-    if-ne v13, v14, :cond_1c
+    if-ne v13, v14, :cond_1f
 
-    const-wide/16 v18, 0x0
+    const-wide/16 v16, 0x0
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 163
-    :cond_1c
-    invoke-virtual {v7, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 176
+    :cond_1f
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
@@ -968,19 +1027,19 @@
 
     iget-wide v13, v13, Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;->lastUsageDate:J
 
-    const-wide/16 v18, 0x0
+    const-wide/16 v16, 0x0
 
-    cmp-long v13, v13, v18
+    cmp-long v13, v13, v16
 
-    if-gtz v13, :cond_1d
+    if-gtz v13, :cond_20
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 167
-    :cond_1d
-    invoke-virtual {v7, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 180
+    :cond_20
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
@@ -994,13 +1053,13 @@
 
     sub-long/2addr v8, v13
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     add-long/2addr v10, v13
 
-    .line 173
-    :try_start_5
-    invoke-virtual {v7, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 186
+    :try_start_6
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
@@ -1009,85 +1068,83 @@
     iget-object v13, v13, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;->file:Ljava/io/File;
 
     invoke-virtual {v13}, Ljava/io/File;->delete()Z
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
     :catch_1
-    cmp-long v13, v8, v5
+    cmp-long v13, v8, v6
 
-    if-gez v13, :cond_1e
+    if-gez v13, :cond_21
+
+    goto :goto_17
+
+    :cond_21
+    :goto_16
+    add-int/lit8 v12, v12, 0x1
 
     goto :goto_15
 
-    :cond_1e
-    :goto_14
-    add-int/lit8 v12, v12, 0x1
+    :cond_22
+    :goto_17
+    move v12, v4
 
-    goto :goto_13
+    goto :goto_18
 
-    :cond_1f
-    :goto_15
-    move v12, v0
+    :cond_23
+    const-wide/16 v16, 0x0
 
-    move-wide v5, v10
+    move-wide/from16 v10, v16
 
-    goto :goto_16
-
-    :cond_20
-    const-wide/16 v18, 0x0
-
-    move-wide/from16 v5, v18
-
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     const/4 v12, 0x0
 
-    .line 185
-    :goto_16
+    .line 198
+    :goto_18
     new-instance v0, Ljava/io/File;
 
-    const-string v7, "acache"
+    const-string v4, "acache"
 
-    move-object/from16 v8, p1
+    move-object/from16 v6, p1
 
-    invoke-direct {v0, v8, v7}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v6, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 186
+    .line 199
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v7
+    move-result v4
 
-    if-eqz v7, :cond_21
+    if-eqz v4, :cond_24
 
-    const v7, 0x15180
+    const v4, 0x15180
 
-    sub-int/2addr v1, v7
+    sub-int/2addr v1, v4
 
-    int-to-long v7, v1
+    int-to-long v6, v1
 
-    .line 189
-    :try_start_6
+    .line 202
+    :try_start_7
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1, v7, v8, v1}, Lorg/telegram/messenger/Utilities;->clearDir(Ljava/lang/String;IJZ)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+    invoke-static {v0, v1, v6, v7, v1}, Lorg/telegram/messenger/Utilities;->clearDir(Ljava/lang/String;IJZ)V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
-    goto :goto_17
+    goto :goto_19
 
-    :catchall_3
+    :catchall_4
     move-exception v0
 
-    .line 191
+    .line 204
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 194
-    :cond_21
-    :goto_17
+    .line 207
+    :cond_24
+    :goto_19
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1098,22 +1155,22 @@
 
     sget v1, Lorg/telegram/messenger/SharedConfig;->lastKeepMediaCheckTime:I
 
-    const-string v7, "lastKeepMediaCheckTime"
+    const-string v4, "lastKeepMediaCheckTime"
 
-    .line 195
-    invoke-interface {v0, v7, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    .line 208
+    invoke-interface {v0, v4, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 196
+    .line 209
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 198
+    .line 211
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_25
 
-    .line 199
+    .line 212
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1124,11 +1181,11 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    sub-long/2addr v7, v2
+    sub-long/2addr v6, v2
 
-    invoke-virtual {v0, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v1, " auto deleted info: files "
 
@@ -1140,7 +1197,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {v16 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+    invoke-static/range {v18 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1150,11 +1207,11 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
+    invoke-static {v10, v11}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1172,7 +1229,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_22
+    :cond_25
     return-void
 .end method
 
@@ -1183,7 +1240,7 @@
 
     return-void
 
-    .line 240
+    .line 253
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -1201,7 +1258,7 @@
 
     return-void
 
-    .line 254
+    .line 267
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
 
@@ -1213,7 +1270,7 @@
 .method public static run()V
     .locals 4
 
-    .line 16
+    .line 20
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1224,7 +1281,7 @@
 
     long-to-int v0, v0
 
-    .line 17
+    .line 21
     sget v1, Lorg/telegram/messenger/SharedConfig;->lastKeepMediaCheckTime:I
 
     sub-int v1, v0, v1
@@ -1239,18 +1296,18 @@
 
     return-void
 
-    .line 20
+    .line 24
     :cond_0
     sput v0, Lorg/telegram/messenger/SharedConfig;->lastKeepMediaCheckTime:I
 
     const/4 v1, 0x4
 
-    .line 21
+    .line 25
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->checkDirectory(I)Ljava/io/File;
 
     move-result-object v1
 
-    .line 23
+    .line 27
     sget-object v2, Lorg/telegram/messenger/Utilities;->cacheClearQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v3, Lorg/telegram/messenger/AutoDeleteMediaTask$$ExternalSyntheticLambda0;
@@ -1269,7 +1326,7 @@
 
     return-void
 
-    .line 247
+    .line 260
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -1287,7 +1344,7 @@
 
     return-void
 
-    .line 261
+    .line 274
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AutoDeleteMediaTask;->usingFilePaths:Ljava/util/Set;
 

@@ -15,6 +15,7 @@ import com.iMe.model.wallet.crypto.create.CreateWalletScreenType;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeResult;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.common.WalletRootFragment;
 import com.iMe.p031ui.wallet.crypto.create.CreateWalletFragment;
@@ -23,6 +24,7 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -35,8 +37,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import javax.crypto.Cipher;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -45,8 +51,15 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -54,6 +67,7 @@ import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.PasscodeView;
 import org.telegram.p043ui.PasscodeActivity;
+import timber.log.Timber;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment */
 /* loaded from: classes4.dex */
@@ -96,11 +110,67 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         Intrinsics.checkNotNullParameter(resultDelegate, "resultDelegate");
         this.screenType = screenType;
         this.resultDelegate = resultDelegate;
-        EnterWalletPinFragment$presenter$2 enterWalletPinFragment$presenter$2 = new EnterWalletPinFragment$presenter$2(this);
+        Function0<EnterWalletPinPresenter> function0 = new Function0<EnterWalletPinPresenter>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final EnterWalletPinPresenter invoke() {
+                Lazy lazy;
+                final EnterWalletPinFragment enterWalletPinFragment = EnterWalletPinFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        EnterPinCodeScreenType enterPinCodeScreenType;
+                        enterPinCodeScreenType = EnterWalletPinFragment.this.screenType;
+                        return ParametersHolderKt.parametersOf(enterPinCodeScreenType);
+                    }
+                };
+                lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<EnterWalletPinPresenter>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final EnterWalletPinPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(EnterWalletPinPresenter.class), qualifier, function03);
+                    }
+                });
+                return (EnterWalletPinPresenter) lazy.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, EnterWalletPinPresenter.class.getName() + ".presenter", enterWalletPinFragment$presenter$2);
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new EnterWalletPinFragment$binding$2(this), 1, (Object) null);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, EnterWalletPinPresenter.class.getName() + ".presenter", function0);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletEthEnterPinBinding>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletEthEnterPinBinding invoke() {
+                return ForkFragmentWalletEthEnterPinBinding.inflate(BaseFragmentExtKt.getLayoutInflater(EnterWalletPinFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -315,10 +385,27 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupActionBar$lambda$6.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$6.setImageResource(C3417R.C3419drawable.ic_ab_back);
+        setupActionBar$lambda$6.setImageResource(C3419R.C3421drawable.ic_ab_back);
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$6);
         ViewExtKt.setImageColor(setupActionBar$lambda$6, Theme.getColor(Theme.key_actionBarDefaultTitle));
-        ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupActionBar$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                EnterWalletPinFragment.this.handleBackPress();
+            }
+        }, 1, null);
     }
 
     private final void setupPasscodeView() {
@@ -353,9 +440,63 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
     private final void setupListeners() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2164x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2165x64e4ff36(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
+                m1450invoke(cryptoEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1450invoke(DomainRxEvents.CryptoEvent it) {
+                RxEventBus rxEventBus2;
+                EnterPinCodeScreenType enterPinCodeScreenType;
+                Function2 function2;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                DomainRxEvents.CryptoEvent cryptoEvent = it;
+                if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletReset.INSTANCE)) {
+                    EnterWalletPinFragment.this.removeSelfFromStack();
+                    return;
+                }
+                if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRecreateWalletByPassword.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletRestored.INSTANCE)) {
+                    rxEventBus2 = EnterWalletPinFragment.this.getRxEventBus();
+                    enterPinCodeScreenType = EnterWalletPinFragment.this.screenType;
+                    rxEventBus2.publish(new AppRxEvents.SuccessEnterPinCode(enterPinCodeScreenType));
+                    function2 = EnterWalletPinFragment.this.resultDelegate;
+                    function2.invoke(new EnterPinCodeResult.Success(null, null, 3, null), EnterWalletPinFragment.this);
+                    EnterWalletPinFragment.this.removeSelfFromStack();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         autoDispose(subscribe);
     }

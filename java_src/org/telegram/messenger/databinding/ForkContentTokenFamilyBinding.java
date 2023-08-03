@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkContentTokenFamilyBinding implements ViewBinding {
     public final TextView buttonDone;
@@ -38,7 +38,7 @@ public final class ForkContentTokenFamilyBinding implements ViewBinding {
     }
 
     public static ForkContentTokenFamilyBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_token_family, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_content_token_family, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -46,19 +46,19 @@ public final class ForkContentTokenFamilyBinding implements ViewBinding {
     }
 
     public static ForkContentTokenFamilyBinding bind(View view) {
-        int i = C3417R.C3420id.button_done;
+        int i = C3419R.C3422id.button_done;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3417R.C3420id.divider;
+            i = C3419R.C3422id.divider;
             DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
             if (dividerView != null) {
-                i = C3417R.C3420id.recycler_tokens;
+                i = C3419R.C3422id.recycler_tokens;
                 RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                 if (recyclerView != null) {
-                    i = C3417R.C3420id.text_description;
+                    i = C3419R.C3422id.text_description;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
-                        i = C3417R.C3420id.text_title;
+                        i = C3419R.C3422id.text_title;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView3 != null) {
                             return new ForkContentTokenFamilyBinding((NestedScrollView) view, textView, dividerView, recyclerView, textView2, textView3);

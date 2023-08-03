@@ -19,25 +19,25 @@ abstract class AbstractC2904H4 extends AbstractC2916J4 implements InterfaceC3160
 
     @Override // p033j$.util.InterfaceC3160t
     /* renamed from: forEachRemaining */
-    public void m506e(Object obj) {
+    public void m524e(Object obj) {
         Objects.requireNonNull(obj);
         AbstractC3063j4 abstractC3063j4 = null;
         while (true) {
-            int m498r = m498r();
-            if (m498r == 1) {
+            int m516r = m516r();
+            if (m516r == 1) {
                 return;
             }
-            if (m498r != 2) {
-                ((InterfaceC3160t) this.f853a).forEachRemaining(obj);
+            if (m516r != 2) {
+                ((InterfaceC3160t) this.f856a).forEachRemaining(obj);
                 return;
             }
             if (abstractC3063j4 == null) {
-                abstractC3063j4 = mo501t(128);
+                abstractC3063j4 = mo519t(128);
             } else {
-                abstractC3063j4.f1057b = 0;
+                abstractC3063j4.f1060b = 0;
             }
             long j = 0;
-            while (((InterfaceC3160t) this.f853a).tryAdvance(abstractC3063j4)) {
+            while (((InterfaceC3160t) this.f856a).tryAdvance(abstractC3063j4)) {
                 j++;
                 if (j >= 128) {
                     break;
@@ -46,7 +46,7 @@ abstract class AbstractC2904H4 extends AbstractC2916J4 implements InterfaceC3160
             if (j == 0) {
                 return;
             }
-            abstractC3063j4.mo385b(obj, m500p(j));
+            abstractC3063j4.mo403b(obj, m518p(j));
         }
     }
 
@@ -57,27 +57,27 @@ abstract class AbstractC2904H4 extends AbstractC2916J4 implements InterfaceC3160
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ long getExactSizeIfKnown() {
-        return AbstractC2780a.m606e(this);
+        return AbstractC2780a.m624e(this);
     }
 
     @Override // p033j$.util.InterfaceC2853s
     public /* synthetic */ boolean hasCharacteristics(int i) {
-        return AbstractC2780a.m605f(this, i);
+        return AbstractC2780a.m623f(this, i);
     }
 
     /* renamed from: s */
-    protected abstract void mo502s(Object obj);
+    protected abstract void mo520s(Object obj);
 
     /* renamed from: t */
-    protected abstract AbstractC3063j4 mo501t(int i);
+    protected abstract AbstractC3063j4 mo519t(int i);
 
     @Override // p033j$.util.InterfaceC3160t
     /* renamed from: tryAdvance */
-    public boolean m503k(Object obj) {
+    public boolean m521k(Object obj) {
         Objects.requireNonNull(obj);
-        while (m498r() != 1 && ((InterfaceC3160t) this.f853a).tryAdvance(this)) {
-            if (m500p(1L) == 1) {
-                mo502s(obj);
+        while (m516r() != 1 && ((InterfaceC3160t) this.f856a).tryAdvance(this)) {
+            if (m518p(1L) == 1) {
+                mo520s(obj);
                 return true;
             }
         }

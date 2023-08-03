@@ -42,6 +42,6 @@ public final class ActionGatewayImpl implements ActionGateway {
 
     @Override // com.iMe.storage.domain.gateway.ActionGateway
     public void finishApplication() {
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.closeOtherAppActivities, Boolean.TRUE);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, Boolean.TRUE);
     }
 }

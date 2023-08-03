@@ -1,6 +1,5 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.List;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
@@ -184,7 +183,7 @@ public final class zzfy extends zzjz<zzfy, zzfx> implements zzlh {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void zzaH(zzfy zzfyVar, int i) {
-        zzfyVar.zzf |= ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES;
+        zzfyVar.zzf |= 1048576;
         zzfyVar.zzD = i;
     }
 
@@ -518,7 +517,7 @@ public final class zzfy extends zzjz<zzfy, zzfx> implements zzlh {
     }
 
     public final boolean zzaX() {
-        return (this.zzf & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0;
+        return (this.zzf & 1048576) != 0;
     }
 
     public final boolean zzaY() {

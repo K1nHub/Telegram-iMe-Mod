@@ -225,7 +225,7 @@
 
     .line 3052
     :cond_1
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-virtual {p0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     return-void
 .end method
@@ -943,7 +943,7 @@
 
     .line 2989
     :goto_3
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-virtual {p0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     .line 2992
     :cond_5

@@ -9,14 +9,14 @@ public final class TagDbModel {
     private final int hidden;
 
     /* renamed from: id */
-    private final String f329id;
+    private final String f332id;
     private final Map<String, String> locales;
     private final String title;
 
     /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ TagDbModel copy$default(TagDbModel tagDbModel, String str, String str2, int i, Map map, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            str = tagDbModel.f329id;
+            str = tagDbModel.f332id;
         }
         if ((i2 & 2) != 0) {
             str2 = tagDbModel.title;
@@ -31,7 +31,7 @@ public final class TagDbModel {
     }
 
     public final String component1() {
-        return this.f329id;
+        return this.f332id;
     }
 
     public final String component2() {
@@ -59,24 +59,24 @@ public final class TagDbModel {
         }
         if (obj instanceof TagDbModel) {
             TagDbModel tagDbModel = (TagDbModel) obj;
-            return Intrinsics.areEqual(this.f329id, tagDbModel.f329id) && Intrinsics.areEqual(this.title, tagDbModel.title) && this.hidden == tagDbModel.hidden && Intrinsics.areEqual(this.locales, tagDbModel.locales);
+            return Intrinsics.areEqual(this.f332id, tagDbModel.f332id) && Intrinsics.areEqual(this.title, tagDbModel.title) && this.hidden == tagDbModel.hidden && Intrinsics.areEqual(this.locales, tagDbModel.locales);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.f329id.hashCode() * 31) + this.title.hashCode()) * 31) + this.hidden) * 31) + this.locales.hashCode();
+        return (((((this.f332id.hashCode() * 31) + this.title.hashCode()) * 31) + this.hidden) * 31) + this.locales.hashCode();
     }
 
     public String toString() {
-        return "TagDbModel(id=" + this.f329id + ", title=" + this.title + ", hidden=" + this.hidden + ", locales=" + this.locales + ')';
+        return "TagDbModel(id=" + this.f332id + ", title=" + this.title + ", hidden=" + this.hidden + ", locales=" + this.locales + ')';
     }
 
     public TagDbModel(String id, String title, int i, Map<String, String> locales) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(locales, "locales");
-        this.f329id = id;
+        this.f332id = id;
         this.title = title;
         this.hidden = i;
         this.locales = locales;
@@ -87,7 +87,7 @@ public final class TagDbModel {
     }
 
     public final String getId() {
-        return this.f329id;
+        return this.f332id;
     }
 
     public final String getTitle() {

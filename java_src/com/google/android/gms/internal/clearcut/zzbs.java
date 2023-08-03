@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.clearcut;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-final class zzbs {
+public final class zzbs {
     private static final Class<?> zzgl = zzak();
 
     private static Class<?> zzak() {

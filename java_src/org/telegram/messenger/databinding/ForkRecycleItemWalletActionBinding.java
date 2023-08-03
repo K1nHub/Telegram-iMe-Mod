@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletActionBinding implements ViewBinding {
     private final LinearLayout rootView;
@@ -27,7 +27,7 @@ public final class ForkRecycleItemWalletActionBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletActionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_action, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_action, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,11 +35,11 @@ public final class ForkRecycleItemWalletActionBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletActionBinding bind(View view) {
-        int i = C3417R.C3420id.image_action;
+        int i = C3419R.C3422id.image_action;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            int i2 = C3417R.C3420id.text_action;
+            int i2 = C3419R.C3422id.text_action;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i2);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemWalletActionBinding(linearLayout, appCompatImageView, linearLayout, appCompatTextView);

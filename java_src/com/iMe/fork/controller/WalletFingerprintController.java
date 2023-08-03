@@ -3,7 +3,6 @@ package com.iMe.fork.controller;
 import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.WalletFingerprintController;
-import java.util.Objects;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -79,14 +78,26 @@ public final class WalletFingerprintController extends BaseController {
             return (WalletFingerprintController) tmp0.invoke(obj);
         }
 
-        public final WalletFingerprintController getInstance(int i) {
+        public final WalletFingerprintController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = WalletFingerprintController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final WalletFingerprintController$Companion$getInstance$1 walletFingerprintController$Companion$getInstance$1 = new WalletFingerprintController$Companion$getInstance$1(i);
+            final Function1<Integer, WalletFingerprintController> function1 = new Function1<Integer, WalletFingerprintController>() { // from class: com.iMe.fork.controller.WalletFingerprintController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final WalletFingerprintController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new WalletFingerprintController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.WalletFingerprintController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -98,7 +109,7 @@ public final class WalletFingerprintController extends BaseController {
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

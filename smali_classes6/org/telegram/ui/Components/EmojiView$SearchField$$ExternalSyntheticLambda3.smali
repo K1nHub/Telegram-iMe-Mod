@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$63rQ90qnA4cYOsg7NUOllLBpvQY(Lorg/telegram/ui/Components/EmojiView$SearchField;Ljava/lang/Integer;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$SearchField;->$r8$lambda$ADI0jjo4D8hpuNZMbHkSmYVoWc4(Lorg/telegram/ui/Components/EmojiView$SearchField;)V
 
     return-void
 .end method

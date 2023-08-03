@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback;
+.field public final synthetic f$0:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback;)V
+.method public synthetic constructor <init>(Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;->f$0:Ljava/util/List;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/Utilities$Callback;
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda13;->f$0:Ljava/util/List;
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$apRxXw99JpPbKBObrlqvwM5PHg4(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$qNw5wHuhIdr9tkHE5c21-dGE_CA(Ljava/util/List;)V
 
     return-void
 .end method

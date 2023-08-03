@@ -148,53 +148,56 @@
 
     if-eqz v1, :cond_1
 
-    .line 389
+    .line 388
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v0, v1}, Lcom/iMe/ui/topics/TopicsAlert;->access$getThemedColor(Lcom/iMe/ui/topics/TopicsAlert;I)I
 
     move-result v1
 
-    .line 390
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setColor(I)V
+
+    .line 389
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    sget-object v2, Lcom/iMe/storage/data/repository/topics/Topic;->OTHER:Lcom/iMe/storage/data/repository/topics/Topic;
+    sget-object v1, Lcom/iMe/storage/data/repository/topics/Topic;->OTHER:Lcom/iMe/storage/data/repository/topics/Topic;
 
     :goto_0
-    invoke-static {v2}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/iMe/ui/topics/TopicInfo;->getIconResId()I
+    invoke-virtual {v1}, Lcom/iMe/ui/topics/TopicInfo;->getIconResId()I
 
-    move-result v2
+    move-result v1
 
-    .line 391
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setIcon(I)V
+
+    .line 390
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 388
-    invoke-virtual {p1, v1, v2, v3}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setData(IILjava/lang/String;)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setName(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 393
+    .line 391
     :cond_1
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
@@ -202,7 +205,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 394
+    .line 392
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v1
@@ -225,7 +228,7 @@
 
     move-result v1
 
-    .line 396
+    .line 393
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -234,19 +237,23 @@
 
     move-result v2
 
-    .line 398
-    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-virtual {p1, v2}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setColor(I)V
 
-    move-result-object v3
-
-    const-string v4, "getInternalString(titleResId)"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 394
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setIcon(I)V
 
     .line 395
-    invoke-virtual {p1, v2, v1, v3}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setData(IILjava/lang/String;)V
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    .line 401
+    move-result-object v1
+
+    const-string v2, "getInternalString(titleResId)"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->setName(Ljava/lang/String;)V
+
+    .line 397
     :cond_2
     :goto_1
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J

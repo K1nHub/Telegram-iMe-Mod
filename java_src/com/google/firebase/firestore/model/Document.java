@@ -1,10 +1,18 @@
 package com.google.firebase.firestore.model;
 
+import com.google.firebase.firestore.model.Document;
 import com.google.firestore.p021v1.Value;
 import java.util.Comparator;
 /* loaded from: classes3.dex */
 public interface Document {
-    public static final Comparator<Document> KEY_COMPARATOR = Document$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Comparator<Document> KEY_COMPARATOR = new Comparator() { // from class: com.google.firebase.firestore.model.Document$$ExternalSyntheticLambda0
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int lambda$static$0;
+            lambda$static$0 = Document.CC.lambda$static$0((Document) obj, (Document) obj2);
+            return lambda$static$0;
+        }
+    };
 
     ObjectValue getData();
 

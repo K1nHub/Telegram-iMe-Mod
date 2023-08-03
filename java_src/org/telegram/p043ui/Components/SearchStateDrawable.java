@@ -15,15 +15,15 @@ import org.telegram.messenger.AndroidUtilities;
 public class SearchStateDrawable extends Drawable {
 
     /* renamed from: cx */
-    private float f1822cx;
+    private float f1844cx;
 
     /* renamed from: cy */
-    private float f1823cy;
+    private float f1845cy;
     private Runnable delaySetProgress;
     private int fromState;
 
     /* renamed from: mn */
-    private float f1824mn;
+    private float f1846mn;
     private Paint paint;
     private boolean progressStartedWithOverTo;
     private boolean wereNotWaitingForProgressToEnd;
@@ -71,7 +71,7 @@ public class SearchStateDrawable extends Drawable {
         this.paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeJoin(Paint.Join.ROUND);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeWidth(AndroidUtilities.m55dp(1.333f));
+        this.paint.setStrokeWidth(AndroidUtilities.m73dp(1.333f));
     }
 
     public int getIconState() {
@@ -161,9 +161,9 @@ public class SearchStateDrawable extends Drawable {
         int i;
         float f6;
         Rect bounds = getBounds();
-        this.f1824mn = Math.min(bounds.width(), bounds.height());
-        this.f1822cx = bounds.centerX();
-        this.f1823cy = bounds.centerY();
+        this.f1846mn = Math.min(bounds.width(), bounds.height());
+        this.f1844cx = bounds.centerX();
+        this.f1845cy = bounds.centerY();
         int i2 = this.alpha;
         if (i2 < 255) {
             canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i2, 31);
@@ -181,17 +181,17 @@ public class SearchStateDrawable extends Drawable {
         }
         int i6 = (f8 > BitmapDescriptorFactory.HUE_RED ? 1 : (f8 == BitmapDescriptorFactory.HUE_RED ? 0 : -1));
         if (i6 > 0) {
-            drawCircle(canvas, AndroidUtilities.lerp(m26x(0.25f), m26x(0.444f), f8), AndroidUtilities.lerp(m25y(0.5f), m25y(0.444f), f8), AndroidUtilities.lerp((float) BitmapDescriptorFactory.HUE_RED, m27w(0.208f), f8));
+            drawCircle(canvas, AndroidUtilities.lerp(m29x(0.25f), m29x(0.444f), f8), AndroidUtilities.lerp(m28y(0.5f), m28y(0.444f), f8), AndroidUtilities.lerp((float) BitmapDescriptorFactory.HUE_RED, m30w(0.208f), f8));
         }
         if (i6 > 0 || f9 > BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            canvas.rotate(f8 * 45.0f, this.f1822cx, this.f1823cy);
+            canvas.rotate(f8 * 45.0f, this.f1844cx, this.f1845cy);
             f2 = 0.75f;
             f3 = 0.5f;
             f4 = 0.2409f;
             f5 = f;
             i = 2;
-            drawLine(canvas, lerp3(m26x(0.914f), m26x(0.7638f), this.fromState == 2 ? m26x(0.75f) : m26x(0.2409f), f8, f9, f5), m25y(0.5f), lerp3(m26x(0.658f), m26x(0.2409f), this.fromState == 2 ? m26x(0.75f) : m26x(0.2409f), f8, f9, f5), m25y(0.5f));
+            drawLine(canvas, lerp3(m29x(0.914f), m29x(0.7638f), this.fromState == 2 ? m29x(0.75f) : m29x(0.2409f), f8, f9, f5), m28y(0.5f), lerp3(m29x(0.658f), m29x(0.2409f), this.fromState == 2 ? m29x(0.75f) : m29x(0.2409f), f8, f9, f5), m28y(0.5f));
             canvas.restore();
             f6 = BitmapDescriptorFactory.HUE_RED;
         } else {
@@ -203,10 +203,10 @@ public class SearchStateDrawable extends Drawable {
             i = 2;
         }
         if (f9 > f6) {
-            float lerp = this.fromState == i ? AndroidUtilities.lerp(m26x(f2), m26x(f4), f9) : m26x(f4);
+            float lerp = this.fromState == i ? AndroidUtilities.lerp(m29x(f2), m29x(f4), f9) : m29x(f4);
             canvas.save();
-            canvas.rotate(f8 * 45.0f, this.f1822cx, this.f1823cy);
-            drawLines(canvas, lerp + (m26x(0.2452f) * f9), AndroidUtilities.lerp(m25y(f3), m25y(0.25f), f9), lerp, m25y(f3), lerp + (m26x(0.2452f) * f9), AndroidUtilities.lerp(m25y(f3), m25y(f2), f9));
+            canvas.rotate(f8 * 45.0f, this.f1844cx, this.f1845cy);
+            drawLines(canvas, lerp + (m29x(0.2452f) * f9), AndroidUtilities.lerp(m28y(f3), m28y(0.25f), f9), lerp, m28y(f3), lerp + (m29x(0.2452f) * f9), AndroidUtilities.lerp(m28y(f3), m28y(f2), f9));
             canvas.restore();
         }
         float f10 = f5;
@@ -239,7 +239,7 @@ public class SearchStateDrawable extends Drawable {
                 if (z && containsAngle && !this.progressStartedWithOverTo) {
                     this.waitingForProgressToEnd = false;
                 }
-                this.progressRect.set(m26x(0.25f), m25y(0.25f), m26x(f2), m25y(f2));
+                this.progressRect.set(m29x(0.25f), m28y(0.25f), m29x(f2), m28y(f2));
                 canvas.drawArc(this.progressRect, this.progressAngleFrom + f11, f12 - f11, false, this.paint);
                 invalidateSelf();
             }
@@ -253,21 +253,21 @@ public class SearchStateDrawable extends Drawable {
     }
 
     private void drawCircle(Canvas canvas, float f, float f2, float f3) {
-        if (f3 < m27w(0.075f)) {
+        if (f3 < m30w(0.075f)) {
             return;
         }
         canvas.drawCircle(f, f2, f3, this.paint);
     }
 
     private void drawLine(Canvas canvas, float f, float f2, float f3, float f4) {
-        if (MathUtils.distance(f, f2, f3, f4) <= m27w(0.075f)) {
+        if (MathUtils.distance(f, f2, f3, f4) <= m30w(0.075f)) {
             return;
         }
         canvas.drawLine(f, f2, f3, f4, this.paint);
     }
 
     private void drawLines(Canvas canvas, float f, float f2, float f3, float f4, float f5, float f6) {
-        if (Math.max(MathUtils.distance(f, f2, f3, f4), MathUtils.distance(f5, f6, f3, f4)) <= m27w(0.075f)) {
+        if (Math.max(MathUtils.distance(f, f2, f3, f4), MathUtils.distance(f5, f6, f3, f4)) <= m30w(0.075f)) {
             return;
         }
         this.path.rewind();
@@ -278,18 +278,18 @@ public class SearchStateDrawable extends Drawable {
     }
 
     /* renamed from: x */
-    private float m26x(float f) {
-        return this.f1822cx - (this.f1824mn * (0.5f - f));
+    private float m29x(float f) {
+        return this.f1844cx - (this.f1846mn * (0.5f - f));
     }
 
     /* renamed from: y */
-    private float m25y(float f) {
-        return this.f1823cy - (this.f1824mn * (0.5f - f));
+    private float m28y(float f) {
+        return this.f1845cy - (this.f1846mn * (0.5f - f));
     }
 
     /* renamed from: w */
-    private float m27w(float f) {
-        return this.f1824mn * f;
+    private float m30w(float f) {
+        return this.f1846mn * f;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -304,11 +304,11 @@ public class SearchStateDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(24);
+        return AndroidUtilities.m72dp(24);
     }
 }

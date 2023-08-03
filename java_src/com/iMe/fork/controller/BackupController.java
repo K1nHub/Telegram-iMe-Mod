@@ -28,16 +28,21 @@ import java.io.FileReader;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
@@ -95,20 +100,24 @@ public final class BackupController extends BaseController implements KoinCompon
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                iArr[BackupComponent.TEMPLATES.ordinal()] = 8;
+                iArr[BackupComponent.STORIES.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                iArr[BackupComponent.TOPICS.ordinal()] = 9;
+                iArr[BackupComponent.TEMPLATES.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                iArr[BackupComponent.HIDDEN_CHATS.ordinal()] = 10;
+                iArr[BackupComponent.TOPICS.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                iArr[BackupComponent.RECENT_CHATS.ordinal()] = 11;
+                iArr[BackupComponent.HIDDEN_CHATS.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                iArr[BackupComponent.RECENT_CHATS.ordinal()] = 12;
+            } catch (NoSuchFieldError unused12) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -125,7 +134,27 @@ public final class BackupController extends BaseController implements KoinCompon
     public BackupController(int i) {
         super(i);
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new BackupController$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<Gson>() { // from class: com.iMe.fork.controller.BackupController$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.google.gson.Gson, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final Gson invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(Gson.class), qualifier, function0);
+            }
+        });
         this.gson$delegate = lazy;
         this.isAutoBackupEnabled = TelegramPreferenceKeys.User.Default.isAutoBackupEnabled();
         this.selectedAutoBackupInterval = TelegramPreferenceKeys.User.Default.selectedAutoBackupInterval();
@@ -189,16 +218,16 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /*  JADX ERROR: IndexOutOfBoundsException in pass: SSATransform
-        java.lang.IndexOutOfBoundsException: bitIndex < 0: -81
+        java.lang.IndexOutOfBoundsException: bitIndex < 0: -74
         	at java.base/java.util.BitSet.get(BitSet.java:626)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.fillBasicBlockInfo(LiveVarAnalysis.java:65)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.runAnalysis(LiveVarAnalysis.java:36)
         	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
         	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
         */
-    public final void backup(boolean r175) {
+    public final void backup(boolean r182) {
         /*
-            Method dump skipped, instructions count: 1304
+            Method dump skipped, instructions count: 1360
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.backup(boolean):void");
@@ -270,6 +299,9 @@ public final class BackupController extends BaseController implements KoinCompon
                         }
                         if (migrateToCurrentVersion.isMainActionBarMenuEnabled() != null) {
                             SharedConfig.setMainActionBarMenuEnabled(migrateToCurrentVersion.isMainActionBarMenuEnabled().booleanValue());
+                        }
+                        if (migrateToCurrentVersion.isProxyButtonEnabled() != null) {
+                            SharedConfig.setProxyButtonEnabled(migrateToCurrentVersion.isProxyButtonEnabled().booleanValue());
                         }
                         if (migrateToCurrentVersion.isDialogsCompactModeEnabled() != null) {
                             SharedConfig.setDialogsCompactModeEnabled(migrateToCurrentVersion.isDialogsCompactModeEnabled().booleanValue());
@@ -422,6 +454,9 @@ public final class BackupController extends BaseController implements KoinCompon
                         this$0.getDialogTranslationSettingsController().restoreBackup(migrateToCurrentVersion);
                         break;
                     case 8:
+                        this$0.getMessagesController().getStoriesController().restoreBackup(migrateToCurrentVersion);
+                        break;
+                    case 9:
                         this$0.getTemplatesController().restoreBackup(migrateToCurrentVersion);
                         if (migrateToCurrentVersion.getTemplatesMode() != null) {
                             SharedConfig.setSelectedTemplatesMode(TemplatesMode.Companion.mapNameToEnum(migrateToCurrentVersion.getTemplatesMode()));
@@ -432,13 +467,13 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setSelectedTemplatesSortingType(TemplatesSortingType.Companion.mapNameToEnum(migrateToCurrentVersion.getSelectedTemplatesSortingType()));
                             break;
                         }
-                    case 9:
+                    case 10:
                         this$0.getForkTopicsController().restoreBackup(migrateToCurrentVersion);
                         break;
-                    case 10:
+                    case 11:
                         this$0.getHiddenChatsController().restoreBackup(migrateToCurrentVersion);
                         break;
-                    case 11:
+                    case 12:
                         this$0.getRecentChatsController().restoreBackup(migrateToCurrentVersion);
                         break;
                 }
@@ -484,10 +519,10 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0105, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$1());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x02a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x02d0, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$2());
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -498,9 +533,9 @@ public final class BackupController extends BaseController implements KoinCompon
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r235) {
+    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r241) {
         /*
-            Method dump skipped, instructions count: 1766
+            Method dump skipped, instructions count: 1830
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.migrateToCurrentVersion(com.iMe.fork.models.backup.Backup):com.iMe.fork.models.backup.Backup");
@@ -528,14 +563,26 @@ public final class BackupController extends BaseController implements KoinCompon
             return (BackupController) tmp0.invoke(obj);
         }
 
-        public final BackupController getInstance(int i) {
+        public final BackupController getInstance(final int i) {
             ConcurrentHashMap concurrentHashMap = BackupController.accountInstances;
             Integer valueOf = Integer.valueOf(i);
-            final BackupController$Companion$getInstance$1 backupController$Companion$getInstance$1 = new BackupController$Companion$getInstance$1(i);
+            final Function1<Integer, BackupController> function1 = new Function1<Integer, BackupController>() { // from class: com.iMe.fork.controller.BackupController$Companion$getInstance$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final BackupController invoke(Integer it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new BackupController(i);
+                }
+            };
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.BackupController$Companion$$ExternalSyntheticLambda0
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$andThen(this, function);
                 }
 
                 @Override // p033j$.util.function.Function
@@ -547,7 +594,7 @@ public final class BackupController extends BaseController implements KoinCompon
 
                 @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Objects.requireNonNull(function);
+                    return Function.CC.$default$compose(this, function);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");

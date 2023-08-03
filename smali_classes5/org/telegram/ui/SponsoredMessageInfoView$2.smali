@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/SponsoredMessageInfoView;Landroid/app/Activity;)V
     .locals 0
 
-    .line 70
+    .line 72
     iput-object p2, p0, Lorg/telegram/ui/SponsoredMessageInfoView$2;->val$context:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 73
+    .line 75
     iget-object p1, p0, Lorg/telegram/ui/SponsoredMessageInfoView$2;->val$context:Landroid/app/Activity;
 
     sget v0, Lorg/telegram/messenger/R$string;->SponsoredMessageAlertLearnMoreUrl:I

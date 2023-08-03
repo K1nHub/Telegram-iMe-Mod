@@ -156,14 +156,14 @@ public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelect
     public static final void onBindViewHolder$lambda$3$lambda$1(BotsPreviewAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$3$lambda$2(BotsPreviewAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
+        NotificationCenter.getInstance(this$0.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botItemClicked, item);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

@@ -1,8 +1,7 @@
 package kotlinx.coroutines.flow;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Reduce.kt */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class FlowKt__ReduceKt {
+final /* synthetic */ class FlowKt__ReduceKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0068 A[RETURN] */

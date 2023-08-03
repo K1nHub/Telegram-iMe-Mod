@@ -12,10 +12,9 @@ public final class IntMath {
         return (~(~(i - i2))) >>> 31;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.math.IntMath$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C09251 {
+    static /* synthetic */ class C09251 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 
         static {

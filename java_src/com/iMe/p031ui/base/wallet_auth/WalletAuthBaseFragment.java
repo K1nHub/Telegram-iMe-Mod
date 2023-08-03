@@ -3,24 +3,36 @@ package com.iMe.p031ui.base.wallet_auth;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.navigation.wallet.coordinator.PinCodeCoordinator;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.helper.wallet.WalletHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
+import timber.log.Timber;
 /* compiled from: WalletAuthBaseFragment.kt */
 /* renamed from: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class WalletAuthBaseFragment extends MvpFragment {
     private final Lazy cryptoAccessManager$delegate;
     private final Lazy cryptoPreferenceHelper$delegate;
@@ -35,12 +47,132 @@ public abstract class WalletAuthBaseFragment extends MvpFragment {
 
     public WalletAuthBaseFragment() {
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        this.rxEventBus$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$1(this, null, null));
-        this.resourceManager$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$2(this, null, null));
-        this.schedulersProvider$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$3(this, null, null));
-        this.cryptoAccessManager$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$4(this, null, null));
-        this.cryptoPreferenceHelper$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$5(this, null, null));
-        this.pinCodeCoordinator$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletAuthBaseFragment$special$$inlined$inject$default$6(this, null, null));
+        this.rxEventBus$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<RxEventBus>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.RxEventBus, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final RxEventBus invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), qualifier, function0);
+            }
+        });
+        this.resourceManager$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
+        this.schedulersProvider$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<SchedulersProvider>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$3
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.SchedulersProvider, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final SchedulersProvider invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), qualifier, function0);
+            }
+        });
+        this.cryptoAccessManager$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<CryptoAccessManager>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$4
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.crypto.CryptoAccessManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CryptoAccessManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), qualifier, function0);
+            }
+        });
+        this.cryptoPreferenceHelper$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<CryptoPreferenceHelper>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$5
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.storage.domain.storage.CryptoPreferenceHelper] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CryptoPreferenceHelper invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), qualifier, function0);
+            }
+        });
+        this.pinCodeCoordinator$delegate = LazyKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<PinCodeCoordinator>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$special$$inlined$inject$default$6
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.navigation.wallet.coordinator.PinCodeCoordinator, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final PinCodeCoordinator invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), qualifier, function0);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -81,9 +213,68 @@ public abstract class WalletAuthBaseFragment extends MvpFragment {
 
     private final void listenGlobalRxEvents() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1998xc649a4ce(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1999xc649a4cf(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
+                m1345invoke(rxEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1345invoke(RxEvent it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                RxEvent rxEvent = it;
+                if (rxEvent instanceof DomainRxEvents.ForceWalletLogout ? true : rxEvent instanceof DomainRxEvents.AppUpdateRequired) {
+                    final WalletAuthBaseFragment walletAuthBaseFragment = WalletAuthBaseFragment.this;
+                    walletAuthBaseFragment.closeAllWalletFragments(new Function0<Unit>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$listenGlobalRxEvents$1$1
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            super(0);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function0
+                        public /* bridge */ /* synthetic */ Unit invoke() {
+                            invoke2();
+                            return Unit.INSTANCE;
+                        }
+
+                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                        public final void invoke2() {
+                            WalletHelper.safeRunWalletScreen$default(WalletAuthBaseFragment.this, null, 1, null);
+                        }
+                    });
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         autoDispose(subscribe);
     }

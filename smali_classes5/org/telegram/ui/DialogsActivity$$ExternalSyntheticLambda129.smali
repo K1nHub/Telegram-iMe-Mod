@@ -2,34 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;ZZLandroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$1:Z
+
+    iput-boolean p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$2:Z
+
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$3:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$J1Pdr57QXWa7DQ4Qv5q810TLsjo(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    iget-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$1:Z
 
-    move-result p1
+    iget-boolean v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$2:Z
 
-    return p1
+    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda129;->f$3:Landroid/app/Activity;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$CIDIgp7TCNISk5Z7lkiHndXj4P0(Lorg/telegram/ui/DialogsActivity;ZZLandroid/app/Activity;)V
+
+    return-void
 .end method

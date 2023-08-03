@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 58
+    .line 60
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$underlay$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$initUnderlay(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Landroid/widget/FrameLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 58
+    .line 60
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$underlay$2;->invoke()Landroid/widget/FrameLayout;
 
     move-result-object v0

@@ -78,7 +78,7 @@ public final class FlacMetadataReader {
                 ParsableByteArray parsableByteArray = new ParsableByteArray(readBits2);
                 extractorInput.readFully(parsableByteArray.getData(), 0, readBits2);
                 parsableByteArray.skipBytes(4);
-                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithPictureFrames(ImmutableList.m743of(PictureFrame.fromPictureBlock(parsableByteArray)));
+                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithPictureFrames(ImmutableList.m761of(PictureFrame.fromPictureBlock(parsableByteArray)));
             } else {
                 extractorInput.skipFully(readBits2);
             }

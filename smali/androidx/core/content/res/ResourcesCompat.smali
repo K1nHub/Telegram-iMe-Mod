@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat;,
-        Landroidx/core/content/res/ResourcesCompat$Api15Impl;,
+        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;,
         Landroidx/core/content/res/ResourcesCompat$Api21Impl;,
+        Landroidx/core/content/res/ResourcesCompat$Api15Impl;,
         Landroidx/core/content/res/ResourcesCompat$Api23Impl;,
-        Landroidx/core/content/res/ResourcesCompat$FontCallback;,
         Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;,
-        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
+        Landroidx/core/content/res/ResourcesCompat$FontCallback;,
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat;
     }
 .end annotation
 

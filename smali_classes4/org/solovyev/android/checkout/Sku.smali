@@ -42,7 +42,7 @@
     .line 110
     new-instance p1, Lorg/solovyev/android/checkout/Sku$Id;
 
-    const-string v1, "productId"
+    const-string/jumbo v1, "productId"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -52,7 +52,7 @@
 
     iput-object p1, p0, Lorg/solovyev/android/checkout/Sku;->id:Lorg/solovyev/android/checkout/Sku$Id;
 
-    const-string p1, "price"
+    const-string/jumbo p1, "price"
 
     .line 111
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;

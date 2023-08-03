@@ -25,21 +25,21 @@ public final class GoogleServicesInteractor {
     public final Observable<Result<String>> getVoiceText(File file, String langCode) {
         Intrinsics.checkNotNullParameter(file, "file");
         Intrinsics.checkNotNullParameter(langCode, "langCode");
-        Observable<Result<String>> subscribeOn = this.googleServicesRepository.getVoiceText(file, langCode).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<String>> subscribeOn = this.googleServicesRepository.getVoiceText(file, langCode).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "googleServicesRepository…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> getPhotoText(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
-        Observable<Result<String>> subscribeOn = this.googleServicesRepository.getPhotoText(photo).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<String>> subscribeOn = this.googleServicesRepository.getPhotoText(photo).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "googleServicesRepository…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
-        Observable<Result<List<RecognizedImageModel>>> subscribeOn = this.googleServicesRepository.getPhotoObjects(photo).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<List<RecognizedImageModel>>> subscribeOn = this.googleServicesRepository.getPhotoObjects(photo).subscribeOn(this.schedulersProvider.mo717io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "googleServicesRepository…(schedulersProvider.io())");
         return subscribeOn;
     }

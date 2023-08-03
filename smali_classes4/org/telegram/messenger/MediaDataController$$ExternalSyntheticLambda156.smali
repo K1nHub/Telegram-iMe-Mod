@@ -2,38 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;->INSTANCE:Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;->f$0:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda156;->f$0:Ljava/util/ArrayList;
+    invoke-static {}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$HPmNGm3aBw2hPMBFwDIPx_DOqKQ()V
 
-    check-cast p1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
-
-    check-cast p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$nGCEVi6U8cAZ3X83N-Paetl5LSU(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaDataController$KeywordResult;Lorg/telegram/messenger/MediaDataController$KeywordResult;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

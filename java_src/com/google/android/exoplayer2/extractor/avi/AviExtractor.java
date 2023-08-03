@@ -340,10 +340,10 @@ public final class AviExtractor implements Extractor {
         AviStreamHeaderChunk aviStreamHeaderChunk = (AviStreamHeaderChunk) listChunk.getChild(AviStreamHeaderChunk.class);
         StreamFormatChunk streamFormatChunk = (StreamFormatChunk) listChunk.getChild(StreamFormatChunk.class);
         if (aviStreamHeaderChunk == null) {
-            Log.m796w(TAG, "Missing Stream Header");
+            Log.m814w(TAG, "Missing Stream Header");
             return null;
         } else if (streamFormatChunk == null) {
-            Log.m796w(TAG, "Missing Stream Format");
+            Log.m814w(TAG, "Missing Stream Format");
             return null;
         } else {
             long durationUs = aviStreamHeaderChunk.getDurationUs();

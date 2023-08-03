@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -36,17 +36,17 @@ public final class NoPermissionMusicCell$requestButton$2 extends Lambda implemen
         NoPermissionMusicCell noPermissionMusicCell = this.this$0;
         final Activity activity = this.$context;
         textView.setGravity(17);
-        int m55dp = AndroidUtilities.m55dp(4.0f);
+        int m73dp = AndroidUtilities.m73dp(4.0f);
         i = noPermissionMusicCell.buttonDefaultColor;
         int color = Theme.getColor(i);
         i2 = noPermissionMusicCell.buttonPressedColor;
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m55dp, color, Theme.getColor(i2)));
-        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3417R.string.PeopleNearbyAllowAccess));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m73dp, color, Theme.getColor(i2)));
+        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3419R.string.PeopleNearbyAllowAccess));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 14.0f);
         i3 = noPermissionMusicCell.buttonTextColor;
         textView.setTextColor(Theme.getColor(i3));
-        textView.setPadding(AndroidUtilities.m55dp(34.0f), 0, AndroidUtilities.m55dp(34.0f), 0);
+        textView.setPadding(AndroidUtilities.m73dp(34.0f), 0, AndroidUtilities.m73dp(34.0f), 0);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.music.NoPermissionMusicCell$requestButton$2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

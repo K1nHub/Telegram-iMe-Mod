@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilterFab.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilterFab.kt\ncom/iMe/storage/domain/model/filters/FilterFab$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,50:1\n1#2:51\n1549#3:52\n1620#3,3:53\n1549#3:56\n1620#3,3:57\n1549#3:65\n1620#3,3:66\n3792#4:60\n4307#4,2:61\n25#5,2:63\n*S KotlinDebug\n*F\n+ 1 FilterFab.kt\ncom/iMe/storage/domain/model/filters/FilterFab$Companion\n*L\n35#1:52\n35#1:53,3\n38#1:56\n38#1:57,3\n47#1:65\n47#1:66,3\n40#1:60\n40#1:61,2\n46#1:63,2\n*E\n"
+    value = "SMAP\nFilterFab.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilterFab.kt\ncom/iMe/storage/domain/model/filters/FilterFab$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,51:1\n1#2:52\n1549#3:53\n1620#3,3:54\n1549#3:57\n1620#3,3:58\n1549#3:66\n1620#3,3:67\n3792#4:61\n4307#4,2:62\n25#5,2:64\n*S KotlinDebug\n*F\n+ 1 FilterFab.kt\ncom/iMe/storage/domain/model/filters/FilterFab$Companion\n*L\n36#1:53\n36#1:54,3\n39#1:57\n39#1:58,3\n48#1:66\n48#1:67,3\n41#1:61\n41#1:62,2\n47#1:64,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 31
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 43
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterFab;->values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     move-result-object v0
@@ -82,7 +82,7 @@
     :goto_1
     if-nez v3, :cond_2
 
-    .line 43
+    .line 44
     sget-object v3, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     :cond_2
@@ -100,7 +100,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 41
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterFab;->values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     move-result-object v0
@@ -122,7 +122,7 @@
 
     aget-object v5, v0, v4
 
-    .line 40
+    .line 41
     sget-object v6, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_ALBUM:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     if-eq v5, v6, :cond_0
@@ -202,7 +202,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 38
+    .line 39
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v1
@@ -212,7 +212,7 @@
 
     goto :goto_0
 
-    .line 38
+    .line 39
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -228,7 +228,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 33
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterFab;->values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     move-result-object v0
@@ -271,7 +271,7 @@
     return-object v3
 .end method
 
-.method public final mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
+.method public final mapNamesToEnums(Ljava/util/Set;)Ljava/util/SortedSet;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -279,7 +279,7 @@
             "Ljava/util/Set<",
             "Ljava/lang/String;",
             ">;)",
-            "Ljava/util/Set<",
+            "Ljava/util/SortedSet<",
             "Lcom/iMe/storage/domain/model/filters/FilterFab;",
             ">;"
         }
@@ -317,7 +317,7 @@
     .line 1621
     check-cast v1, Ljava/lang/String;
 
-    .line 35
+    .line 36
     sget-object v2, Lcom/iMe/storage/domain/model/filters/FilterFab;->Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
     invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNameToEnum(Ljava/lang/String;)Lcom/iMe/storage/domain/model/filters/FilterFab;
@@ -335,13 +335,13 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 35
+    .line 36
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     :cond_2
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toSortedSet(Ljava/lang/Iterable;)Ljava/util/SortedSet;
 
     move-result-object p1
 
@@ -361,7 +361,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 46
     invoke-static {}, Lcom/iMe/storage/data/utils/extentions/GsonExtKt;->getGlobalGson()Lcom/google/gson/Gson;
 
     move-result-object v0
@@ -417,7 +417,7 @@
     .line 1621
     check-cast v1, Ljava/lang/String;
 
-    .line 47
+    .line 48
     sget-object v2, Lcom/iMe/storage/domain/model/filters/FilterFab;->Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
     invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->findByOldPreferenceId(Ljava/lang/String;)Lcom/iMe/storage/domain/model/filters/FilterFab;
@@ -429,7 +429,7 @@
 
     goto :goto_0
 
-    .line 48
+    .line 49
     :cond_1
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 

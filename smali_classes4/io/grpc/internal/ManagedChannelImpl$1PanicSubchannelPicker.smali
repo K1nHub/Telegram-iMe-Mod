@@ -81,7 +81,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ManagedChannelImpl$1PanicSubchannelPicker;->panicPickResult:Lio/grpc/LoadBalancer$PickResult;
 
-    const-string v2, "panicPickResult"
+    const-string/jumbo v2, "panicPickResult"
 
     .line 819
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

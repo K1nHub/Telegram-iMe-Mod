@@ -215,13 +215,15 @@
     move-result-object v9
 
     .line 228
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v10
+    move-result-wide v10
 
-    mul-int/lit16 v10, v10, 0x3e8
+    const-wide v12, 0x408f400000000000L    # 1000.0
 
-    int-to-long v10, v10
+    mul-double/2addr v10, v12
+
+    double-to-long v10, v10
 
     const/4 v12, 0x0
 
@@ -348,7 +350,7 @@
 
     new-instance v6, Landroid/content/Intent;
 
-    const-string v15, "org.telegram.android.musicplayer.previous"
+    const-string/jumbo v15, "org.telegram.android.musicplayer.previous"
 
     invoke-direct {v6, v15}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -426,12 +428,12 @@
 
     if-eqz v7, :cond_4
 
-    const-string v15, "org.telegram.android.musicplayer.pause"
+    const-string/jumbo v15, "org.telegram.android.musicplayer.pause"
 
     goto :goto_3
 
     :cond_4
-    const-string v15, "org.telegram.android.musicplayer.play"
+    const-string/jumbo v15, "org.telegram.android.musicplayer.play"
 
     :goto_3
     invoke-direct {v13, v15}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
@@ -465,7 +467,7 @@
 
     new-instance v15, Landroid/content/Intent;
 
-    const-string v13, "org.telegram.android.musicplayer.next"
+    const-string/jumbo v13, "org.telegram.android.musicplayer.next"
 
     invoke-direct {v15, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -500,7 +502,7 @@
 
     new-instance v13, Landroid/content/Intent;
 
-    const-string v15, "org.telegram.android.musicplayer.seek"
+    const-string/jumbo v15, "org.telegram.android.musicplayer.seek"
 
     invoke-direct {v13, v15}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -1741,6 +1743,8 @@
     :goto_16
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0x0
@@ -2703,7 +2707,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v2, "org.telegram.android.musicplayer.previous"
+    const-string/jumbo v2, "org.telegram.android.musicplayer.previous"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -2731,7 +2735,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v3, "org.telegram.android.musicplayer.close"
+    const-string/jumbo v3, "org.telegram.android.musicplayer.close"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -2755,7 +2759,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v3, "org.telegram.android.musicplayer.pause"
+    const-string/jumbo v3, "org.telegram.android.musicplayer.pause"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -2779,7 +2783,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v3, "org.telegram.android.musicplayer.next"
+    const-string/jumbo v3, "org.telegram.android.musicplayer.next"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -2803,7 +2807,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v3, "org.telegram.android.musicplayer.play"
+    const-string/jumbo v3, "org.telegram.android.musicplayer.play"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 

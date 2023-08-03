@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback3;
+.field public final synthetic f$0:Lorg/telegram/messenger/Utilities$Callback4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback3;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/Utilities$Callback4;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Utilities$Callback3;
+    iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Utilities$Callback4;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Utilities$Callback3;
+    iget-object v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Utilities$Callback4;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;->$r8$lambda$oOddvgUs44xMmfwIRE2hiRrbPG0(Lorg/telegram/messenger/Utilities$Callback3;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;->$r8$lambda$mLRrFVeaMSVanv_l-uDyXnhFpKY(Lorg/telegram/messenger/Utilities$Callback4;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

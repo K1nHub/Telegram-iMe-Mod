@@ -11,9 +11,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class TimeInterval extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TimeInterval> CREATOR = new zzl();
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     long zza;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     long zzb;
 
     TimeInterval() {
@@ -36,7 +36,7 @@ public final class TimeInterval extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public TimeInterval(@SafeParcelable.Param(m778id = 2) long j, @SafeParcelable.Param(m778id = 3) long j2) {
+    public TimeInterval(@SafeParcelable.Param(m796id = 2) long j, @SafeParcelable.Param(m796id = 3) long j2) {
         this.zza = j;
         this.zzb = j2;
     }

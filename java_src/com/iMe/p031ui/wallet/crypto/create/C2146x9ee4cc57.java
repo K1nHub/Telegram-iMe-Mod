@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ObservableExt.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class C2146x9ee4cc57 implements Function {
     private final /* synthetic */ Function1 function;
 

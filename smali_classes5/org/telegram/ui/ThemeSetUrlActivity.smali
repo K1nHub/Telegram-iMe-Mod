@@ -1930,7 +1930,7 @@
 
     move-result v10
 
-    invoke-virtual {v4, v10}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v4, v10}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 207
     iget-object v4, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->nameField:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2166,7 +2166,7 @@
 
     move-result v14
 
-    invoke-virtual {v5, v14}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v5, v14}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 248
     iget-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2247,7 +2247,7 @@
 
     move-result v7
 
-    invoke-virtual {v5, v7}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 262
     iget-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->linkField:Lorg/telegram/ui/Components/EditTextBoldCursor;

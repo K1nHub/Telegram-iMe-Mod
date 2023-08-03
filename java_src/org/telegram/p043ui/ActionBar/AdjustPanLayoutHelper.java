@@ -53,7 +53,7 @@ public class AdjustPanLayoutHelper {
     long startAfter;
 
     /* renamed from: to */
-    float f1670to;
+    float f1689to;
     private boolean useInsetsAnimator;
     private boolean usingInsetAnimator;
     ArrayList<View> viewsToHeightSet;
@@ -174,7 +174,7 @@ public class AdjustPanLayoutHelper {
             r6 = 1065353216(0x3f800000, float:1.0)
             r5.onPanTranslationUpdate(r1, r6, r8)
             r5.from = r7
-            r5.f1670to = r4
+            r5.f1689to = r4
             r5.inverse = r3
             goto L74
         L5b:
@@ -189,7 +189,7 @@ public class AdjustPanLayoutHelper {
             int r6 = r5.previousStartOffset
             int r6 = -r6
             float r6 = (float) r6
-            r5.f1670to = r6
+            r5.f1689to = r6
             r5.from = r1
             r5.inverse = r2
         L74:
@@ -208,7 +208,7 @@ public class AdjustPanLayoutHelper {
         if (this.inverse) {
             f = 1.0f - f;
         }
-        float f2 = (int) ((this.from * f) + (this.f1670to * (1.0f - f)));
+        float f2 = (int) ((this.from * f) + (this.f1689to * (1.0f - f)));
         this.parent.setTranslationY(f2);
         onPanTranslationUpdate(-f2, f, this.isKeyboardVisible);
     }
@@ -286,7 +286,7 @@ public class AdjustPanLayoutHelper {
                         AdjustPanLayoutHelper.this.usingInsetAnimator = false;
                     }
                     return true;
-                } else if (!adjustPanLayoutHelper.heightAnimationEnabled() || Math.abs(AdjustPanLayoutHelper.this.previousHeight - height) < AndroidUtilities.m54dp(20)) {
+                } else if (!adjustPanLayoutHelper.heightAnimationEnabled() || Math.abs(AdjustPanLayoutHelper.this.previousHeight - height) < AndroidUtilities.m72dp(20)) {
                     AdjustPanLayoutHelper adjustPanLayoutHelper3 = AdjustPanLayoutHelper.this;
                     adjustPanLayoutHelper3.previousHeight = height;
                     adjustPanLayoutHelper3.previousContentHeight = adjustPanLayoutHelper3.contentView.getHeight();

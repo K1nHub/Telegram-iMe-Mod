@@ -10,7 +10,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.NetworkTypeView;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBinding {
     public final AppCompatImageView imageAddToken;
@@ -45,7 +45,7 @@ public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletTokensHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_recycle_item_wallet_tokens_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_recycle_item_wallet_tokens_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -53,28 +53,28 @@ public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletTokensHeaderBinding bind(View view) {
-        int i = C3417R.C3420id.image_add_token;
+        int i = C3419R.C3422id.image_add_token;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3417R.C3420id.image_network;
+            i = C3419R.C3422id.image_network;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3417R.C3420id.linear_add_token;
+                i = C3419R.C3422id.linear_add_token;
                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout != null) {
-                    i = C3417R.C3420id.linear_network;
+                    i = C3419R.C3422id.linear_network;
                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout2 != null) {
-                        i = C3417R.C3420id.network_type_view;
+                        i = C3419R.C3422id.network_type_view;
                         NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
                         if (networkTypeView != null) {
-                            i = C3417R.C3420id.text_add_token;
+                            i = C3419R.C3422id.text_add_token;
                             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView != null) {
-                                i = C3417R.C3420id.text_network;
+                                i = C3419R.C3422id.text_network;
                                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView2 != null) {
-                                    i = C3417R.C3420id.text_title_displayed_tokens;
+                                    i = C3419R.C3422id.text_title_displayed_tokens;
                                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView != null) {
                                         return new ForkRecycleItemWalletTokensHeaderBinding((LinearLayout) view, appCompatImageView, appCompatImageView2, linearLayout, linearLayout2, networkTypeView, appCompatTextView, appCompatTextView2, textView);

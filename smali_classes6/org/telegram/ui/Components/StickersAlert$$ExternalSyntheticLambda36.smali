@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
@@ -22,12 +22,20 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final didSetColor()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$6tkUH8gce8OgMl1b5uYLB5HBmGQ(Lorg/telegram/ui/Components/StickersAlert;Landroid/view/View;I)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/StickersAlert;->updateColors()V
+
+    return-void
+.end method
+
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
     return-void
 .end method

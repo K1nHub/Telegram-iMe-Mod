@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     public final LinearLayout linearLayout;
@@ -31,7 +31,7 @@ public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_dialog_social_networks, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_dialog_social_networks, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,13 +39,13 @@ public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksBinding bind(View view) {
-        int i = C3417R.C3420id.divider;
+        int i = C3419R.C3422id.divider;
         View findChildViewById = ViewBindings.findChildViewById(view, i);
         if (findChildViewById != null) {
-            i = C3417R.C3420id.linearLayout;
+            i = C3419R.C3422id.linearLayout;
             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout != null) {
-                i = C3417R.C3420id.text;
+                i = C3419R.C3422id.text;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
                     return new ForkDialogSocialNetworksBinding((ConstraintLayout) view, findChildViewById, linearLayout, textView);

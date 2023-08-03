@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.LocationPoweredCell */
@@ -35,9 +35,9 @@ public class LocationPoweredCell extends FrameLayout {
         linearLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2));
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
-        imageView.setImageResource(C3417R.C3419drawable.foursquare);
+        imageView.setImageResource(C3419R.C3421drawable.foursquare);
         this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
-        this.imageView.setPadding(0, AndroidUtilities.m54dp(2), 0, 0);
+        this.imageView.setPadding(0, AndroidUtilities.m72dp(2), 0, 0);
         linearLayout.addView(this.imageView, LayoutHelper.createLinear(35, -2));
         TextView textView3 = new TextView(context);
         this.textView2 = textView3;
@@ -49,7 +49,7 @@ public class LocationPoweredCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(56), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(56), 1073741824));
     }
 
     private int getThemedColor(int i) {

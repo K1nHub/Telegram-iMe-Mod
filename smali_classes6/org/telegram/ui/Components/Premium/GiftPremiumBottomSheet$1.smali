@@ -40,7 +40,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)V
     .locals 0
 
-    .line 347
+    .line 372
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -51,7 +51,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;Ljava/lang/Void;)Landroid/graphics/Paint;
     .locals 7
 
-    .line 390
+    .line 415
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
@@ -84,7 +84,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->gradientMatrix(IIIIFF)V
 
-    .line 391
+    .line 416
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
@@ -99,14 +99,14 @@
 .method private static synthetic lambda$onCreateViewHolder$1(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;F)V
     .locals 0
 
-    .line 394
+    .line 419
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p2
 
     invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 395
+    .line 420
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
@@ -117,7 +117,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 455
+    .line 480
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$1300(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)I
@@ -130,7 +130,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 441
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$500(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)I
@@ -143,7 +143,7 @@
 
     return v1
 
-    .line 443
+    .line 468
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
@@ -165,7 +165,7 @@
 
     return p1
 
-    .line 445
+    .line 470
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
@@ -179,7 +179,7 @@
 
     return p1
 
-    .line 447
+    .line 472
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
@@ -200,7 +200,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 355
+    .line 380
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -221,7 +221,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 430
+    .line 455
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$500(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)I
@@ -230,7 +230,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 431
+    .line 456
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/PremiumGiftHeaderCell;
@@ -245,7 +245,7 @@
 
     goto :goto_1
 
-    .line 432
+    .line 457
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
@@ -263,12 +263,12 @@
 
     if-ge p2, v0, :cond_2
 
-    .line 433
+    .line 458
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;
 
-    .line 434
+    .line 459
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$900(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)Ljava/util/List;
@@ -291,7 +291,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->bind(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$GiftTier;)V
 
-    .line 435
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;->access$700(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;)I
@@ -340,7 +340,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 365
+    .line 390
     new-instance p1, Lorg/telegram/ui/Components/Premium/PremiumGiftHeaderCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -353,7 +353,7 @@
 
     goto/16 :goto_2
 
-    .line 417
+    .line 442
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$2;
 
@@ -367,7 +367,7 @@
 
     goto/16 :goto_2
 
-    .line 400
+    .line 425
     :cond_1
     new-instance p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -381,17 +381,17 @@
 
     const/16 v0, 0x1c
 
-    .line 401
+    .line 426
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setTopPadding(I)V
 
-    .line 402
+    .line 427
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 403
+    .line 428
     sget v0, Lorg/telegram/messenger/R$string;->GiftPremiumListFeaturesAndTerms:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -400,7 +400,7 @@
 
     const/16 v1, 0x2a
 
-    .line 404
+    .line 429
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
@@ -417,7 +417,7 @@
 
     if-eq v1, v3, :cond_2
 
-    .line 406
+    .line 431
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -448,12 +448,12 @@
 
     move-result-object v0
 
-    .line 407
+    .line 432
     new-instance v3, Landroid/text/SpannableString;
 
     invoke-direct {v3, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 408
+    .line 433
     new-instance v0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$LinkSpan;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -468,19 +468,19 @@
 
     invoke-virtual {v3, v0, v2, v1, p1}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 409
+    .line 434
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
-    .line 411
+    .line 436
     :cond_2
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     :goto_0
     const/16 p1, 0x15
 
-    .line 413
+    .line 438
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -493,7 +493,7 @@
 
     goto :goto_1
 
-    .line 368
+    .line 393
     :cond_3
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -505,7 +505,7 @@
 
     invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    .line 369
+    .line 394
     new-instance p2, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet;
@@ -516,14 +516,14 @@
 
     invoke-direct {p2, p0, v0, p1}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$1;-><init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
 
-    .line 389
+    .line 414
     new-instance v0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1;Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;)V
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->setCirclePaintProvider(Lorg/telegram/messenger/GenericProvider;)V
 
-    .line 393
+    .line 418
     new-instance v0, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1, p2}, Lorg/telegram/ui/Components/Premium/GiftPremiumBottomSheet$1$$ExternalSyntheticLambda1;-><init>(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;)V
@@ -533,7 +533,7 @@
     :goto_1
     move-object p1, p2
 
-    .line 425
+    .line 450
     :goto_2
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

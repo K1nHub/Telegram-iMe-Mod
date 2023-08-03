@@ -11,10 +11,11 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [STATE] */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$3", m83f = "RealContainer.kt", m82l = {111}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$3", m101f = "RealContainer.kt", m100l = {111}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class RealContainer$pluginContext$3 extends SuspendLambda implements Function2<Function1<? super STATE, ? extends STATE>, Continuation<? super Unit>, Object> {
+public final class RealContainer$pluginContext$3<STATE> extends SuspendLambda implements Function2<Function1<? super STATE, ? extends STATE>, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     Object L$1;
     Object L$2;
@@ -36,6 +37,10 @@ public final class RealContainer$pluginContext$3 extends SuspendLambda implement
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((Function1) ((Function1) obj), continuation);
+    }
+
     public final Object invoke(Function1<? super STATE, ? extends STATE> function1, Continuation<? super Unit> continuation) {
         return ((RealContainer$pluginContext$3) create(function1, continuation)).invokeSuspend(Unit.INSTANCE);
     }

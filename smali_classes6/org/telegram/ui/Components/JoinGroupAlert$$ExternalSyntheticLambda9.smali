@@ -2,50 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/JoinGroupAlert;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
-
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/JoinGroupAlert;Lorg/telegram/tgnet/TLRPC$TL_error;ZLorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/JoinGroupAlert;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Components/JoinGroupAlert;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
-
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$2:Z
-
-    iput-object p4, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Components/JoinGroupAlert;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$1:Z
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$2:Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/JoinGroupAlert;->$r8$lambda$hkN7_LCXluMTV-Y2BZgcR_uLDOc(Lorg/telegram/ui/Components/JoinGroupAlert;ZLorg/telegram/tgnet/TLRPC$TL_error;)Z
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/JoinGroupAlert$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;
+    move-result p1
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/JoinGroupAlert;->$r8$lambda$wzlmIe7ih_FW5HzeBgTWJByyEoc(Lorg/telegram/ui/Components/JoinGroupAlert;Lorg/telegram/tgnet/TLRPC$TL_error;ZLorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;)V
-
-    return-void
+    return p1
 .end method

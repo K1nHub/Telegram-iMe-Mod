@@ -59,7 +59,7 @@ public final class Id3Reader implements ElementaryStreamReader {
                 if (this.sampleBytesRead + min == 10) {
                     this.id3Header.setPosition(0);
                     if (73 != this.id3Header.readUnsignedByte() || 68 != this.id3Header.readUnsignedByte() || 51 != this.id3Header.readUnsignedByte()) {
-                        Log.m796w(TAG, "Discarding invalid ID3 tag");
+                        Log.m814w(TAG, "Discarding invalid ID3 tag");
                         this.writingSample = false;
                         return;
                     }

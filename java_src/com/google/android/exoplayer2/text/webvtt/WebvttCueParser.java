@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.text.span.HorizontalTextInVerticalContextSp
 import com.google.android.exoplayer2.text.span.RubySpan;
 import com.google.android.exoplayer2.text.span.SpanUtil;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
+import com.google.android.exoplayer2.text.webvtt.WebvttCueParser;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
@@ -229,7 +230,7 @@ public final class WebvttCueParser {
             webvttCueInfoBuilder.text = parseCueText(str, sb.toString(), list);
             return webvttCueInfoBuilder.build();
         } catch (NumberFormatException unused) {
-            Log.m796w(TAG, "Skipping cue with bad header: " + matcher.group());
+            Log.m814w(TAG, "Skipping cue with bad header: " + matcher.group());
             return null;
         }
     }
@@ -251,10 +252,10 @@ public final class WebvttCueParser {
                 } else if ("vertical".equals(str2)) {
                     webvttCueInfoBuilder.verticalType = parseVerticalAttribute(str3);
                 } else {
-                    Log.m796w(TAG, "Unknown cue setting " + str2 + ":" + str3);
+                    Log.m814w(TAG, "Unknown cue setting " + str2 + ":" + str3);
                 }
             } catch (NumberFormatException unused) {
-                Log.m796w(TAG, "Skipping bad cue setting: " + matcher.group());
+                Log.m814w(TAG, "Skipping bad cue setting: " + matcher.group());
             }
         }
     }
@@ -312,7 +313,7 @@ public final class WebvttCueParser {
             case 3:
                 return 0;
             default:
-                Log.m796w(TAG, "Invalid anchor value: " + str);
+                Log.m814w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -378,7 +379,7 @@ public final class WebvttCueParser {
             case 4:
                 return 2;
             default:
-                Log.m796w(TAG, "Invalid anchor value: " + str);
+                Log.m814w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -391,7 +392,7 @@ public final class WebvttCueParser {
         if (str.equals("rl")) {
             return 1;
         }
-        Log.m796w(TAG, "Invalid 'vertical' value: " + str);
+        Log.m814w(TAG, "Invalid 'vertical' value: " + str);
         return Integer.MIN_VALUE;
     }
 
@@ -449,7 +450,7 @@ public final class WebvttCueParser {
             case 5:
                 return 1;
             default:
-                Log.m796w(TAG, "Invalid alignment value: " + str);
+                Log.m814w(TAG, "Invalid alignment value: " + str);
                 return 2;
         }
     }
@@ -502,7 +503,7 @@ public final class WebvttCueParser {
                 spannableStringBuilder.append(CHAR_SPACE);
                 return;
             default:
-                Log.m796w(TAG, "ignoring unsupported entity: '&" + str + ";'");
+                Log.m814w(TAG, "ignoring unsupported entity: '&" + str + ";'");
                 return;
         }
     }
@@ -843,7 +844,7 @@ public final class WebvttCueParser {
                 if (i != 3) {
                     if (i != 4) {
                         if (i != 5) {
-                            Log.m796w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
+                            Log.m814w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
                             return null;
                         }
                     }
@@ -928,7 +929,14 @@ public final class WebvttCueParser {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public static class Element {
-        private static final Comparator<Element> BY_START_POSITION_ASC = WebvttCueParser$Element$$ExternalSyntheticLambda0.INSTANCE;
+        private static final Comparator<Element> BY_START_POSITION_ASC = new Comparator() { // from class: com.google.android.exoplayer2.text.webvtt.WebvttCueParser$Element$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$static$0;
+                lambda$static$0 = WebvttCueParser.Element.lambda$static$0((WebvttCueParser.Element) obj, (WebvttCueParser.Element) obj2);
+                return lambda$static$0;
+            }
+        };
         private final int endPosition;
         private final StartTag startTag;
 

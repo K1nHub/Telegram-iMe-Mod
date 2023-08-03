@@ -30,9 +30,8 @@ import com.google.android.datatransport.runtime.time.TimeModule_EventClockFactor
 import com.google.android.datatransport.runtime.time.TimeModule_UptimeClockFactory;
 import java.util.concurrent.Executor;
 import javax.inject.Provider;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class DaggerTransportRuntimeComponent extends TransportRuntimeComponent {
+final class DaggerTransportRuntimeComponent extends TransportRuntimeComponent {
     private Provider<SchedulerConfig> configProvider;
     private Provider creationContextFactoryProvider;
     private Provider<DefaultScheduler> defaultSchedulerProvider;
@@ -93,9 +92,8 @@ public final class DaggerTransportRuntimeComponent extends TransportRuntimeCompo
         return this.sQLiteEventStoreProvider.get();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    public static final class Builder implements TransportRuntimeComponent.Builder {
+    private static final class Builder implements TransportRuntimeComponent.Builder {
         private Context setApplicationContext;
 
         private Builder() {

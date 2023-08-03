@@ -45,7 +45,7 @@
 
     iget-wide v3, p0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda7;->f$3:J
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$doz_knh50b291tZiz6MlJ_xVB0g(Lorg/telegram/messenger/camera/CameraController;Ljava/io/File;Landroid/graphics/Bitmap;J)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/camera/CameraController;->$r8$lambda$slW3dxdoaR-kkcF07_SO3G77e68(Lorg/telegram/messenger/camera/CameraController;Ljava/io/File;Landroid/graphics/Bitmap;J)V
 
     return-void
 .end method

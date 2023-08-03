@@ -226,7 +226,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "onSlience"
+    const-string/jumbo v0, "onSlience"
 
     .line 4613
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

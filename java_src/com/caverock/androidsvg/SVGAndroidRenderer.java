@@ -361,7 +361,7 @@ public class SVGAndroidRenderer {
     }
 
     private void render(SVG.Svg svg) {
-        render(svg, makeViewPort(svg.f121x, svg.f122y, svg.width, svg.height), svg.viewBox, svg.preserveAspectRatio);
+        render(svg, makeViewPort(svg.f123x, svg.f124y, svg.width, svg.height), svg.viewBox, svg.preserveAspectRatio);
     }
 
     private void render(SVG.Svg svg, SVG.Box box) {
@@ -609,10 +609,10 @@ public class SVGAndroidRenderer {
                     if (matrix != null) {
                         this.canvas.concat(matrix);
                     }
-                    SVG.Length length3 = use.f145x;
+                    SVG.Length length3 = use.f147x;
                     float f = BitmapDescriptorFactory.HUE_RED;
                     float floatValueX = length3 != null ? length3.floatValueX(this) : 0.0f;
-                    SVG.Length length4 = use.f146y;
+                    SVG.Length length4 = use.f148y;
                     if (length4 != null) {
                         f = length4.floatValueY(this);
                     }
@@ -653,7 +653,7 @@ public class SVGAndroidRenderer {
 
     private void render(SVG.Path path) {
         debug("Path render", new Object[0]);
-        if (path.f114d == null) {
+        if (path.f116d == null) {
             return;
         }
         updateStyleForElement(this.state, path);
@@ -664,7 +664,7 @@ public class SVGAndroidRenderer {
                 if (matrix != null) {
                     this.canvas.concat(matrix);
                 }
-                Path path2 = new PathConverter(this, path.f114d).getPath();
+                Path path2 = new PathConverter(this, path.f116d).getPath();
                 if (path.boundingBox == null) {
                     path.boundingBox = calculatePathBounds(path2);
                 }
@@ -724,7 +724,7 @@ public class SVGAndroidRenderer {
 
     private void render(SVG.Circle circle) {
         debug("Circle render", new Object[0]);
-        SVG.Length length = circle.f101r;
+        SVG.Length length = circle.f103r;
         if (length == null || length.isZero()) {
             return;
         }
@@ -753,8 +753,8 @@ public class SVGAndroidRenderer {
 
     private void render(SVG.Ellipse ellipse) {
         debug("Ellipse render", new Object[0]);
-        SVG.Length length = ellipse.f104rx;
-        if (length == null || ellipse.f105ry == null || length.isZero() || ellipse.f105ry.isZero()) {
+        SVG.Length length = ellipse.f106rx;
+        if (length == null || ellipse.f107ry == null || length.isZero() || ellipse.f107ry.isZero()) {
             return;
         }
         updateStyleForElement(this.state, ellipse);
@@ -802,14 +802,14 @@ public class SVGAndroidRenderer {
     }
 
     private List<MarkerVector> calculateMarkerPositions(SVG.Line line) {
-        SVG.Length length = line.f108x1;
+        SVG.Length length = line.f110x1;
         float f = BitmapDescriptorFactory.HUE_RED;
         float floatValueX = length != null ? length.floatValueX(this) : 0.0f;
-        SVG.Length length2 = line.f110y1;
+        SVG.Length length2 = line.f112y1;
         float floatValueY = length2 != null ? length2.floatValueY(this) : 0.0f;
-        SVG.Length length3 = line.f109x2;
+        SVG.Length length3 = line.f111x2;
         float floatValueX2 = length3 != null ? length3.floatValueX(this) : 0.0f;
-        SVG.Length length4 = line.f111y2;
+        SVG.Length length4 = line.f113y2;
         if (length4 != null) {
             f = length4.floatValueY(this);
         }
@@ -873,7 +873,7 @@ public class SVGAndroidRenderer {
             markerVector.add(f3, f4);
             arrayList.add(markerVector);
             i += 2;
-            markerVector = new MarkerVector(this, f3, f4, f3 - markerVector.f149x, f4 - markerVector.f150y);
+            markerVector = new MarkerVector(this, f3, f4, f3 - markerVector.f151x, f4 - markerVector.f152y);
             f2 = f4;
             f = f3;
         }
@@ -884,7 +884,7 @@ public class SVGAndroidRenderer {
                 float f6 = fArr3[1];
                 markerVector.add(f5, f6);
                 arrayList.add(markerVector);
-                MarkerVector markerVector2 = new MarkerVector(this, f5, f6, f5 - markerVector.f149x, f6 - markerVector.f150y);
+                MarkerVector markerVector2 = new MarkerVector(this, f5, f6, f5 - markerVector.f151x, f6 - markerVector.f152y);
                 markerVector2.add((MarkerVector) arrayList.get(0));
                 arrayList.add(markerVector2);
                 arrayList.set(0, markerVector2);
@@ -935,16 +935,16 @@ public class SVGAndroidRenderer {
             if (matrix != null) {
                 this.canvas.concat(matrix);
             }
-            List<SVG.Length> list = text.f135x;
+            List<SVG.Length> list = text.f137x;
             float f = BitmapDescriptorFactory.HUE_RED;
-            float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f135x.get(0).floatValueX(this);
-            List<SVG.Length> list2 = text.f136y;
-            float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f136y.get(0).floatValueY(this);
-            List<SVG.Length> list3 = text.f133dx;
-            float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f133dx.get(0).floatValueX(this);
-            List<SVG.Length> list4 = text.f134dy;
+            float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f137x.get(0).floatValueX(this);
+            List<SVG.Length> list2 = text.f138y;
+            float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f138y.get(0).floatValueY(this);
+            List<SVG.Length> list3 = text.f135dx;
+            float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f135dx.get(0).floatValueX(this);
+            List<SVG.Length> list4 = text.f136dy;
             if (list4 != null && list4.size() != 0) {
-                f = text.f134dy.get(0).floatValueY(this);
+                f = text.f136dy.get(0).floatValueY(this);
             }
             SVG.Style.TextAnchor anchorPosition = getAnchorPosition();
             if (anchorPosition != SVG.Style.TextAnchor.Start) {
@@ -986,15 +986,15 @@ public class SVGAndroidRenderer {
     public class PlainTextDrawer extends TextProcessor {
 
         /* renamed from: x */
-        float f151x;
+        float f153x;
 
         /* renamed from: y */
-        float f152y;
+        float f154y;
 
         PlainTextDrawer(float f, float f2) {
             super(SVGAndroidRenderer.this, null);
-            this.f151x = f;
-            this.f152y = f2;
+            this.f153x = f;
+            this.f154y = f2;
         }
 
         @Override // com.caverock.androidsvg.SVGAndroidRenderer.TextProcessor
@@ -1002,13 +1002,13 @@ public class SVGAndroidRenderer {
             SVGAndroidRenderer.debug("TextSequence render", new Object[0]);
             if (SVGAndroidRenderer.this.visible()) {
                 if (SVGAndroidRenderer.this.state.hasFill) {
-                    SVGAndroidRenderer.this.canvas.drawText(str, this.f151x, this.f152y, SVGAndroidRenderer.this.state.fillPaint);
+                    SVGAndroidRenderer.this.canvas.drawText(str, this.f153x, this.f154y, SVGAndroidRenderer.this.state.fillPaint);
                 }
                 if (SVGAndroidRenderer.this.state.hasStroke) {
-                    SVGAndroidRenderer.this.canvas.drawText(str, this.f151x, this.f152y, SVGAndroidRenderer.this.state.strokePaint);
+                    SVGAndroidRenderer.this.canvas.drawText(str, this.f153x, this.f154y, SVGAndroidRenderer.this.state.strokePaint);
                 }
             }
-            this.f151x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
+            this.f153x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
         }
     }
 
@@ -1064,21 +1064,21 @@ public class SVGAndroidRenderer {
                 SVG.TSpan tSpan = (SVG.TSpan) svgObject;
                 updateStyleForElement(this.state, tSpan);
                 if (display()) {
-                    List<SVG.Length> list = tSpan.f135x;
+                    List<SVG.Length> list = tSpan.f137x;
                     if (list == null || list.size() <= 0) {
                         z = false;
                     }
                     boolean z2 = textProcessor instanceof PlainTextDrawer;
                     float f4 = BitmapDescriptorFactory.HUE_RED;
                     if (z2) {
-                        float floatValueX = !z ? ((PlainTextDrawer) textProcessor).f151x : tSpan.f135x.get(0).floatValueX(this);
-                        List<SVG.Length> list2 = tSpan.f136y;
-                        f2 = (list2 == null || list2.size() == 0) ? ((PlainTextDrawer) textProcessor).f152y : tSpan.f136y.get(0).floatValueY(this);
-                        List<SVG.Length> list3 = tSpan.f133dx;
-                        f3 = (list3 == null || list3.size() == 0) ? 0.0f : tSpan.f133dx.get(0).floatValueX(this);
-                        List<SVG.Length> list4 = tSpan.f134dy;
+                        float floatValueX = !z ? ((PlainTextDrawer) textProcessor).f153x : tSpan.f137x.get(0).floatValueX(this);
+                        List<SVG.Length> list2 = tSpan.f138y;
+                        f2 = (list2 == null || list2.size() == 0) ? ((PlainTextDrawer) textProcessor).f154y : tSpan.f138y.get(0).floatValueY(this);
+                        List<SVG.Length> list3 = tSpan.f135dx;
+                        f3 = (list3 == null || list3.size() == 0) ? 0.0f : tSpan.f135dx.get(0).floatValueX(this);
+                        List<SVG.Length> list4 = tSpan.f136dy;
                         if (list4 != null && list4.size() != 0) {
-                            f4 = tSpan.f134dy.get(0).floatValueY(this);
+                            f4 = tSpan.f136dy.get(0).floatValueY(this);
                         }
                         f = f4;
                         f4 = floatValueX;
@@ -1097,8 +1097,8 @@ public class SVGAndroidRenderer {
                     checkForGradientsAndPatterns((SVG.SvgElement) tSpan.getTextRoot());
                     if (z2) {
                         PlainTextDrawer plainTextDrawer = (PlainTextDrawer) textProcessor;
-                        plainTextDrawer.f151x = f4 + f3;
-                        plainTextDrawer.f152y = f2 + f;
+                        plainTextDrawer.f153x = f4 + f3;
+                        plainTextDrawer.f154y = f2 + f;
                     }
                     boolean pushLayer = pushLayer();
                     enumerateTextSpans(tSpan, textProcessor);
@@ -1139,7 +1139,7 @@ public class SVGAndroidRenderer {
                 return;
             }
             SVG.Path path = (SVG.Path) resolveIRI;
-            Path path2 = new PathConverter(this, path.f114d).getPath();
+            Path path2 = new PathConverter(this, path.f116d).getPath();
             Matrix matrix = path.transform;
             if (matrix != null) {
                 path2.transform(matrix);
@@ -1178,20 +1178,20 @@ public class SVGAndroidRenderer {
         public void processText(String str) {
             if (SVGAndroidRenderer.this.visible()) {
                 if (SVGAndroidRenderer.this.state.hasFill) {
-                    SVGAndroidRenderer.this.canvas.drawTextOnPath(str, this.path, this.f151x, this.f152y, SVGAndroidRenderer.this.state.fillPaint);
+                    SVGAndroidRenderer.this.canvas.drawTextOnPath(str, this.path, this.f153x, this.f154y, SVGAndroidRenderer.this.state.fillPaint);
                 }
                 if (SVGAndroidRenderer.this.state.hasStroke) {
-                    SVGAndroidRenderer.this.canvas.drawTextOnPath(str, this.path, this.f151x, this.f152y, SVGAndroidRenderer.this.state.strokePaint);
+                    SVGAndroidRenderer.this.canvas.drawTextOnPath(str, this.path, this.f153x, this.f154y, SVGAndroidRenderer.this.state.strokePaint);
                 }
             }
-            this.f151x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
+            this.f153x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
         }
     }
 
     private float calculateTextWidth(SVG.TextContainer textContainer) {
         TextWidthCalculator textWidthCalculator = new TextWidthCalculator(this, null);
         enumerateTextSpans(textContainer, textWidthCalculator);
-        return textWidthCalculator.f157x;
+        return textWidthCalculator.f159x;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1199,11 +1199,11 @@ public class SVGAndroidRenderer {
     public class TextWidthCalculator extends TextProcessor {
 
         /* renamed from: x */
-        float f157x;
+        float f159x;
 
         private TextWidthCalculator() {
             super(SVGAndroidRenderer.this, null);
-            this.f157x = BitmapDescriptorFactory.HUE_RED;
+            this.f159x = BitmapDescriptorFactory.HUE_RED;
         }
 
         /* synthetic */ TextWidthCalculator(SVGAndroidRenderer sVGAndroidRenderer, C04641 c04641) {
@@ -1212,7 +1212,7 @@ public class SVGAndroidRenderer {
 
         @Override // com.caverock.androidsvg.SVGAndroidRenderer.TextProcessor
         public void processText(String str) {
-            this.f157x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
+            this.f159x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
         }
     }
 
@@ -1222,16 +1222,16 @@ public class SVGAndroidRenderer {
         RectF bbox;
 
         /* renamed from: x */
-        float f155x;
+        float f157x;
 
         /* renamed from: y */
-        float f156y;
+        float f158y;
 
         TextBoundsCalculator(float f, float f2) {
             super(SVGAndroidRenderer.this, null);
             this.bbox = new RectF();
-            this.f155x = f;
-            this.f156y = f2;
+            this.f157x = f;
+            this.f158y = f2;
         }
 
         @Override // com.caverock.androidsvg.SVGAndroidRenderer.TextProcessor
@@ -1244,7 +1244,7 @@ public class SVGAndroidRenderer {
                     return false;
                 }
                 SVG.Path path = (SVG.Path) resolveIRI;
-                Path path2 = new PathConverter(SVGAndroidRenderer.this, path.f114d).getPath();
+                Path path2 = new PathConverter(SVGAndroidRenderer.this, path.f116d).getPath();
                 Matrix matrix = path.transform;
                 if (matrix != null) {
                     path2.transform(matrix);
@@ -1263,10 +1263,10 @@ public class SVGAndroidRenderer {
                 Rect rect = new Rect();
                 SVGAndroidRenderer.this.state.fillPaint.getTextBounds(str, 0, str.length(), rect);
                 RectF rectF = new RectF(rect);
-                rectF.offset(this.f155x, this.f156y);
+                rectF.offset(this.f157x, this.f158y);
                 this.bbox.union(rectF);
             }
-            this.f155x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
+            this.f157x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
         }
     }
 
@@ -1355,9 +1355,9 @@ public class SVGAndroidRenderer {
             if (matrix != null) {
                 this.canvas.concat(matrix);
             }
-            SVG.Length length3 = image.f106x;
+            SVG.Length length3 = image.f108x;
             float floatValueX = length3 != null ? length3.floatValueX(this) : 0.0f;
-            SVG.Length length4 = image.f107y;
+            SVG.Length length4 = image.f109y;
             this.state.viewPort = new SVG.Box(floatValueX, length4 != null ? length4.floatValueY(this) : 0.0f, image.width.floatValueX(this), image.height.floatValueX(this));
             if (!this.state.style.overflow.booleanValue()) {
                 SVG.Box box2 = this.state.viewPort;
@@ -2188,67 +2188,67 @@ public class SVGAndroidRenderer {
     public class MarkerVector {
 
         /* renamed from: dx */
-        float f147dx;
+        float f149dx;
 
         /* renamed from: dy */
-        float f148dy;
+        float f150dy;
         boolean isAmbiguous = false;
 
         /* renamed from: x */
-        float f149x;
+        float f151x;
 
         /* renamed from: y */
-        float f150y;
+        float f152y;
 
         MarkerVector(SVGAndroidRenderer sVGAndroidRenderer, float f, float f2, float f3, float f4) {
-            this.f147dx = BitmapDescriptorFactory.HUE_RED;
-            this.f148dy = BitmapDescriptorFactory.HUE_RED;
-            this.f149x = f;
-            this.f150y = f2;
+            this.f149dx = BitmapDescriptorFactory.HUE_RED;
+            this.f150dy = BitmapDescriptorFactory.HUE_RED;
+            this.f151x = f;
+            this.f152y = f2;
             double sqrt = Math.sqrt((f3 * f3) + (f4 * f4));
             if (sqrt != 0.0d) {
-                this.f147dx = (float) (f3 / sqrt);
-                this.f148dy = (float) (f4 / sqrt);
+                this.f149dx = (float) (f3 / sqrt);
+                this.f150dy = (float) (f4 / sqrt);
             }
         }
 
         void add(float f, float f2) {
-            float f3 = f - this.f149x;
-            float f4 = f2 - this.f150y;
+            float f3 = f - this.f151x;
+            float f4 = f2 - this.f152y;
             double sqrt = Math.sqrt((f3 * f3) + (f4 * f4));
             if (sqrt != 0.0d) {
                 f3 = (float) (f3 / sqrt);
                 f4 = (float) (f4 / sqrt);
             }
-            float f5 = this.f147dx;
-            if (f3 == (-f5) && f4 == (-this.f148dy)) {
+            float f5 = this.f149dx;
+            if (f3 == (-f5) && f4 == (-this.f150dy)) {
                 this.isAmbiguous = true;
-                this.f147dx = -f4;
-                this.f148dy = f3;
+                this.f149dx = -f4;
+                this.f150dy = f3;
                 return;
             }
-            this.f147dx = f5 + f3;
-            this.f148dy += f4;
+            this.f149dx = f5 + f3;
+            this.f150dy += f4;
         }
 
         void add(MarkerVector markerVector) {
-            float f = markerVector.f147dx;
-            float f2 = this.f147dx;
+            float f = markerVector.f149dx;
+            float f2 = this.f149dx;
             if (f == (-f2)) {
-                float f3 = markerVector.f148dy;
-                if (f3 == (-this.f148dy)) {
+                float f3 = markerVector.f150dy;
+                if (f3 == (-this.f150dy)) {
                     this.isAmbiguous = true;
-                    this.f147dx = -f3;
-                    this.f148dy = markerVector.f147dx;
+                    this.f149dx = -f3;
+                    this.f150dy = markerVector.f149dx;
                     return;
                 }
             }
-            this.f147dx = f2 + f;
-            this.f148dy += markerVector.f148dy;
+            this.f149dx = f2 + f;
+            this.f150dy += markerVector.f150dy;
         }
 
         public String toString() {
-            return "(" + this.f149x + "," + this.f150y + " " + this.f147dx + "," + this.f148dy + ")";
+            return "(" + this.f151x + "," + this.f152y + " " + this.f149dx + "," + this.f150dy + ")";
         }
     }
 
@@ -2307,7 +2307,7 @@ public class SVGAndroidRenderer {
             this.markers.add(this.lastPos);
             SVGAndroidRenderer sVGAndroidRenderer = SVGAndroidRenderer.this;
             MarkerVector markerVector = this.lastPos;
-            this.lastPos = new MarkerVector(sVGAndroidRenderer, f, f2, f - markerVector.f149x, f2 - markerVector.f150y);
+            this.lastPos = new MarkerVector(sVGAndroidRenderer, f, f2, f - markerVector.f151x, f2 - markerVector.f152y);
             this.closepathReAdjustPending = false;
         }
 
@@ -2335,7 +2335,7 @@ public class SVGAndroidRenderer {
             this.startArc = true;
             this.normalCubic = false;
             MarkerVector markerVector = this.lastPos;
-            SVGAndroidRenderer.arcTo(markerVector.f149x, markerVector.f150y, f, f2, f3, z, z2, f4, f5, this);
+            SVGAndroidRenderer.arcTo(markerVector.f151x, markerVector.f152y, f, f2, f3, z, z2, f4, f5, this);
             this.normalCubic = true;
             this.closepathReAdjustPending = false;
         }
@@ -2371,17 +2371,17 @@ public class SVGAndroidRenderer {
     }
 
     private MarkerVector realignMarkerMid(MarkerVector markerVector, MarkerVector markerVector2, MarkerVector markerVector3) {
-        float dotProduct = dotProduct(markerVector2.f147dx, markerVector2.f148dy, markerVector2.f149x - markerVector.f149x, markerVector2.f150y - markerVector.f150y);
+        float dotProduct = dotProduct(markerVector2.f149dx, markerVector2.f150dy, markerVector2.f151x - markerVector.f151x, markerVector2.f152y - markerVector.f152y);
         if (dotProduct == BitmapDescriptorFactory.HUE_RED) {
-            dotProduct = dotProduct(markerVector2.f147dx, markerVector2.f148dy, markerVector3.f149x - markerVector2.f149x, markerVector3.f150y - markerVector2.f150y);
+            dotProduct = dotProduct(markerVector2.f149dx, markerVector2.f150dy, markerVector3.f151x - markerVector2.f151x, markerVector3.f152y - markerVector2.f152y);
         }
         int i = (dotProduct > BitmapDescriptorFactory.HUE_RED ? 1 : (dotProduct == BitmapDescriptorFactory.HUE_RED ? 0 : -1));
         if (i > 0) {
             return markerVector2;
         }
-        if (i != 0 || (markerVector2.f147dx <= BitmapDescriptorFactory.HUE_RED && markerVector2.f148dy < BitmapDescriptorFactory.HUE_RED)) {
-            markerVector2.f147dx = -markerVector2.f147dx;
-            markerVector2.f148dy = -markerVector2.f148dy;
+        if (i != 0 || (markerVector2.f149dx <= BitmapDescriptorFactory.HUE_RED && markerVector2.f150dy < BitmapDescriptorFactory.HUE_RED)) {
+            markerVector2.f149dx = -markerVector2.f149dx;
+            markerVector2.f150dy = -markerVector2.f150dy;
             return markerVector2;
         }
         return markerVector2;
@@ -2493,25 +2493,25 @@ public class SVGAndroidRenderer {
         Paint paint = z ? rendererState.fillPaint : rendererState.strokePaint;
         if (z2) {
             SVG.Box currentViewPortInUserUnits = getCurrentViewPortInUserUnits();
-            SVG.Length length = svgLinearGradient.f124x1;
+            SVG.Length length = svgLinearGradient.f126x1;
             float floatValueX = length != null ? length.floatValueX(this) : BitmapDescriptorFactory.HUE_RED;
-            SVG.Length length2 = svgLinearGradient.f126y1;
+            SVG.Length length2 = svgLinearGradient.f128y1;
             float floatValueY = length2 != null ? length2.floatValueY(this) : BitmapDescriptorFactory.HUE_RED;
-            SVG.Length length3 = svgLinearGradient.f125x2;
+            SVG.Length length3 = svgLinearGradient.f127x2;
             float floatValueX2 = length3 != null ? length3.floatValueX(this) : currentViewPortInUserUnits.width;
-            SVG.Length length4 = svgLinearGradient.f127y2;
+            SVG.Length length4 = svgLinearGradient.f129y2;
             f3 = floatValueX2;
             f = floatValueX;
             f2 = floatValueY;
             floatValue = length4 != null ? length4.floatValueY(this) : BitmapDescriptorFactory.HUE_RED;
         } else {
-            SVG.Length length5 = svgLinearGradient.f124x1;
+            SVG.Length length5 = svgLinearGradient.f126x1;
             float floatValue2 = length5 != null ? length5.floatValue(this, 1.0f) : BitmapDescriptorFactory.HUE_RED;
-            SVG.Length length6 = svgLinearGradient.f126y1;
+            SVG.Length length6 = svgLinearGradient.f128y1;
             float floatValue3 = length6 != null ? length6.floatValue(this, 1.0f) : BitmapDescriptorFactory.HUE_RED;
-            SVG.Length length7 = svgLinearGradient.f125x2;
+            SVG.Length length7 = svgLinearGradient.f127x2;
             float floatValue4 = length7 != null ? length7.floatValue(this, 1.0f) : 1.0f;
-            SVG.Length length8 = svgLinearGradient.f127y2;
+            SVG.Length length8 = svgLinearGradient.f129y2;
             f = floatValue2;
             floatValue = length8 != null ? length8.floatValue(this, 1.0f) : BitmapDescriptorFactory.HUE_RED;
             f2 = floatValue3;
@@ -2600,20 +2600,20 @@ public class SVGAndroidRenderer {
         Paint paint = z ? rendererState.fillPaint : rendererState.strokePaint;
         if (z2) {
             SVG.Length length = new SVG.Length(50.0f, SVG.Unit.percent);
-            SVG.Length length2 = svgRadialGradient.f128cx;
+            SVG.Length length2 = svgRadialGradient.f130cx;
             float floatValueX = length2 != null ? length2.floatValueX(this) : length.floatValueX(this);
-            SVG.Length length3 = svgRadialGradient.f129cy;
+            SVG.Length length3 = svgRadialGradient.f131cy;
             float floatValueY = length3 != null ? length3.floatValueY(this) : length.floatValueY(this);
-            SVG.Length length4 = svgRadialGradient.f132r;
+            SVG.Length length4 = svgRadialGradient.f134r;
             floatValue = length4 != null ? length4.floatValue(this) : length.floatValue(this);
             f = floatValueX;
             f2 = floatValueY;
         } else {
-            SVG.Length length5 = svgRadialGradient.f128cx;
+            SVG.Length length5 = svgRadialGradient.f130cx;
             float floatValue2 = length5 != null ? length5.floatValue(this, 1.0f) : 0.5f;
-            SVG.Length length6 = svgRadialGradient.f129cy;
+            SVG.Length length6 = svgRadialGradient.f131cy;
             float floatValue3 = length6 != null ? length6.floatValue(this, 1.0f) : 0.5f;
-            SVG.Length length7 = svgRadialGradient.f132r;
+            SVG.Length length7 = svgRadialGradient.f134r;
             f = floatValue2;
             floatValue = length7 != null ? length7.floatValue(this, 1.0f) : 0.5f;
             f2 = floatValue3;
@@ -2731,35 +2731,35 @@ public class SVGAndroidRenderer {
     }
 
     private void fillInChainedGradientFields(SVG.SvgLinearGradient svgLinearGradient, SVG.SvgLinearGradient svgLinearGradient2) {
-        if (svgLinearGradient.f124x1 == null) {
-            svgLinearGradient.f124x1 = svgLinearGradient2.f124x1;
+        if (svgLinearGradient.f126x1 == null) {
+            svgLinearGradient.f126x1 = svgLinearGradient2.f126x1;
         }
-        if (svgLinearGradient.f126y1 == null) {
-            svgLinearGradient.f126y1 = svgLinearGradient2.f126y1;
+        if (svgLinearGradient.f128y1 == null) {
+            svgLinearGradient.f128y1 = svgLinearGradient2.f128y1;
         }
-        if (svgLinearGradient.f125x2 == null) {
-            svgLinearGradient.f125x2 = svgLinearGradient2.f125x2;
+        if (svgLinearGradient.f127x2 == null) {
+            svgLinearGradient.f127x2 = svgLinearGradient2.f127x2;
         }
-        if (svgLinearGradient.f127y2 == null) {
-            svgLinearGradient.f127y2 = svgLinearGradient2.f127y2;
+        if (svgLinearGradient.f129y2 == null) {
+            svgLinearGradient.f129y2 = svgLinearGradient2.f129y2;
         }
     }
 
     private void fillInChainedGradientFields(SVG.SvgRadialGradient svgRadialGradient, SVG.SvgRadialGradient svgRadialGradient2) {
-        if (svgRadialGradient.f128cx == null) {
-            svgRadialGradient.f128cx = svgRadialGradient2.f128cx;
+        if (svgRadialGradient.f130cx == null) {
+            svgRadialGradient.f130cx = svgRadialGradient2.f130cx;
         }
-        if (svgRadialGradient.f129cy == null) {
-            svgRadialGradient.f129cy = svgRadialGradient2.f129cy;
+        if (svgRadialGradient.f131cy == null) {
+            svgRadialGradient.f131cy = svgRadialGradient2.f131cy;
         }
-        if (svgRadialGradient.f132r == null) {
-            svgRadialGradient.f132r = svgRadialGradient2.f132r;
+        if (svgRadialGradient.f134r == null) {
+            svgRadialGradient.f134r = svgRadialGradient2.f134r;
         }
-        if (svgRadialGradient.f130fx == null) {
-            svgRadialGradient.f130fx = svgRadialGradient2.f130fx;
+        if (svgRadialGradient.f132fx == null) {
+            svgRadialGradient.f132fx = svgRadialGradient2.f132fx;
         }
-        if (svgRadialGradient.f131fy == null) {
-            svgRadialGradient.f131fy = svgRadialGradient2.f131fy;
+        if (svgRadialGradient.f133fy == null) {
+            svgRadialGradient.f133fy = svgRadialGradient2.f133fy;
         }
     }
 
@@ -2899,7 +2899,7 @@ public class SVGAndroidRenderer {
         } else if (svgElement instanceof SVG.GraphicsElement) {
             SVG.GraphicsElement graphicsElement = (SVG.GraphicsElement) svgElement;
             if (svgElement instanceof SVG.Path) {
-                makePathAndBoundingBox = new PathConverter(this, ((SVG.Path) svgElement).f114d).getPath();
+                makePathAndBoundingBox = new PathConverter(this, ((SVG.Path) svgElement).f116d).getPath();
                 if (svgElement.boundingBox == null) {
                     svgElement.boundingBox = calculatePathBounds(makePathAndBoundingBox);
                 }
@@ -3025,7 +3025,7 @@ public class SVGAndroidRenderer {
             if (matrix2 != null) {
                 matrix.preConcat(matrix2);
             }
-            Path path3 = new PathConverter(this, path.f114d).getPath();
+            Path path3 = new PathConverter(this, path.f116d).getPath();
             if (path.boundingBox == null) {
                 path.boundingBox = calculatePathBounds(path3);
             }
@@ -3084,16 +3084,16 @@ public class SVGAndroidRenderer {
             if (matrix2 != null) {
                 matrix.preConcat(matrix2);
             }
-            List<SVG.Length> list = text.f135x;
+            List<SVG.Length> list = text.f137x;
             float f = BitmapDescriptorFactory.HUE_RED;
-            float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f135x.get(0).floatValueX(this);
-            List<SVG.Length> list2 = text.f136y;
-            float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f136y.get(0).floatValueY(this);
-            List<SVG.Length> list3 = text.f133dx;
-            float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f133dx.get(0).floatValueX(this);
-            List<SVG.Length> list4 = text.f134dy;
+            float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f137x.get(0).floatValueX(this);
+            List<SVG.Length> list2 = text.f138y;
+            float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f138y.get(0).floatValueY(this);
+            List<SVG.Length> list3 = text.f135dx;
+            float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f135dx.get(0).floatValueX(this);
+            List<SVG.Length> list4 = text.f136dy;
             if (list4 != null && list4.size() != 0) {
-                f = text.f134dy.get(0).floatValueY(this);
+                f = text.f136dy.get(0).floatValueY(this);
             }
             if (this.state.style.textAnchor != SVG.Style.TextAnchor.Start) {
                 float calculateTextWidth = calculateTextWidth(text);
@@ -3122,15 +3122,15 @@ public class SVGAndroidRenderer {
         Path textAsPath;
 
         /* renamed from: x */
-        float f153x;
+        float f155x;
 
         /* renamed from: y */
-        float f154y;
+        float f156y;
 
         PlainTextToPath(float f, float f2, Path path) {
             super(SVGAndroidRenderer.this, null);
-            this.f153x = f;
-            this.f154y = f2;
+            this.f155x = f;
+            this.f156y = f2;
             this.textAsPath = path;
         }
 
@@ -3147,22 +3147,22 @@ public class SVGAndroidRenderer {
         public void processText(String str) {
             if (SVGAndroidRenderer.this.visible()) {
                 Path path = new Path();
-                SVGAndroidRenderer.this.state.fillPaint.getTextPath(str, 0, str.length(), this.f153x, this.f154y, path);
+                SVGAndroidRenderer.this.state.fillPaint.getTextPath(str, 0, str.length(), this.f155x, this.f156y, path);
                 this.textAsPath.addPath(path);
             }
-            this.f153x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
+            this.f155x += SVGAndroidRenderer.this.state.fillPaint.measureText(str);
         }
     }
 
     private Path makePathAndBoundingBox(SVG.Line line) {
-        SVG.Length length = line.f108x1;
+        SVG.Length length = line.f110x1;
         float f = BitmapDescriptorFactory.HUE_RED;
         float floatValueX = length == null ? 0.0f : length.floatValueX(this);
-        SVG.Length length2 = line.f110y1;
+        SVG.Length length2 = line.f112y1;
         float floatValueY = length2 == null ? 0.0f : length2.floatValueY(this);
-        SVG.Length length3 = line.f109x2;
+        SVG.Length length3 = line.f111x2;
         float floatValueX2 = length3 == null ? 0.0f : length3.floatValueX(this);
-        SVG.Length length4 = line.f111y2;
+        SVG.Length length4 = line.f113y2;
         if (length4 != null) {
             f = length4.floatValueY(this);
         }
@@ -3193,14 +3193,14 @@ public class SVGAndroidRenderer {
     }
 
     private Path makePathAndBoundingBox(SVG.Circle circle) {
-        SVG.Length length = circle.f99cx;
+        SVG.Length length = circle.f101cx;
         float f = BitmapDescriptorFactory.HUE_RED;
         float floatValueX = length != null ? length.floatValueX(this) : 0.0f;
-        SVG.Length length2 = circle.f100cy;
+        SVG.Length length2 = circle.f102cy;
         if (length2 != null) {
             f = length2.floatValueY(this);
         }
-        float floatValue = circle.f101r.floatValue(this);
+        float floatValue = circle.f103r.floatValue(this);
         float f2 = floatValueX - floatValue;
         float f3 = f - floatValue;
         float f4 = floatValueX + floatValue;
@@ -3225,15 +3225,15 @@ public class SVGAndroidRenderer {
     }
 
     private Path makePathAndBoundingBox(SVG.Ellipse ellipse) {
-        SVG.Length length = ellipse.f102cx;
+        SVG.Length length = ellipse.f104cx;
         float f = BitmapDescriptorFactory.HUE_RED;
         float floatValueX = length != null ? length.floatValueX(this) : 0.0f;
-        SVG.Length length2 = ellipse.f103cy;
+        SVG.Length length2 = ellipse.f105cy;
         if (length2 != null) {
             f = length2.floatValueY(this);
         }
-        float floatValueX2 = ellipse.f104rx.floatValueX(this);
-        float floatValueY = ellipse.f105ry.floatValueY(this);
+        float floatValueX2 = ellipse.f106rx.floatValueX(this);
+        float floatValueY = ellipse.f107ry.floatValueY(this);
         float f2 = floatValueX - floatValueX2;
         float f3 = f - floatValueY;
         float f4 = floatValueX + floatValueX2;
@@ -3280,16 +3280,16 @@ public class SVGAndroidRenderer {
     }
 
     private Path makePathAndBoundingBox(SVG.Text text) {
-        List<SVG.Length> list = text.f135x;
+        List<SVG.Length> list = text.f137x;
         float f = BitmapDescriptorFactory.HUE_RED;
-        float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f135x.get(0).floatValueX(this);
-        List<SVG.Length> list2 = text.f136y;
-        float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f136y.get(0).floatValueY(this);
-        List<SVG.Length> list3 = text.f133dx;
-        float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f133dx.get(0).floatValueX(this);
-        List<SVG.Length> list4 = text.f134dy;
+        float floatValueX = (list == null || list.size() == 0) ? 0.0f : text.f137x.get(0).floatValueX(this);
+        List<SVG.Length> list2 = text.f138y;
+        float floatValueY = (list2 == null || list2.size() == 0) ? 0.0f : text.f138y.get(0).floatValueY(this);
+        List<SVG.Length> list3 = text.f135dx;
+        float floatValueX2 = (list3 == null || list3.size() == 0) ? 0.0f : text.f135dx.get(0).floatValueX(this);
+        List<SVG.Length> list4 = text.f136dy;
         if (list4 != null && list4.size() != 0) {
-            f = text.f134dy.get(0).floatValueY(this);
+            f = text.f136dy.get(0).floatValueY(this);
         }
         if (this.state.style.textAnchor != SVG.Style.TextAnchor.Start) {
             float calculateTextWidth = calculateTextWidth(text);
@@ -3322,18 +3322,18 @@ public class SVGAndroidRenderer {
             fillInChainedPatternFields(pattern, str);
         }
         if (z) {
-            SVG.Length length = pattern.f115x;
+            SVG.Length length = pattern.f117x;
             f = length != null ? length.floatValueX(this) : 0.0f;
-            SVG.Length length2 = pattern.f116y;
+            SVG.Length length2 = pattern.f118y;
             f3 = length2 != null ? length2.floatValueY(this) : 0.0f;
             SVG.Length length3 = pattern.width;
             f4 = length3 != null ? length3.floatValueX(this) : 0.0f;
             SVG.Length length4 = pattern.height;
             f2 = length4 != null ? length4.floatValueY(this) : 0.0f;
         } else {
-            SVG.Length length5 = pattern.f115x;
+            SVG.Length length5 = pattern.f117x;
             float floatValue = length5 != null ? length5.floatValue(this, 1.0f) : 0.0f;
-            SVG.Length length6 = pattern.f116y;
+            SVG.Length length6 = pattern.f118y;
             float floatValue2 = length6 != null ? length6.floatValue(this, 1.0f) : 0.0f;
             SVG.Length length7 = pattern.width;
             float floatValue3 = length7 != null ? length7.floatValue(this, 1.0f) : 0.0f;
@@ -3458,11 +3458,11 @@ public class SVGAndroidRenderer {
             if (pattern.patternTransform == null) {
                 pattern.patternTransform = pattern2.patternTransform;
             }
-            if (pattern.f115x == null) {
-                pattern.f115x = pattern2.f115x;
+            if (pattern.f117x == null) {
+                pattern.f117x = pattern2.f117x;
             }
-            if (pattern.f116y == null) {
-                pattern.f116y = pattern2.f116y;
+            if (pattern.f118y == null) {
+                pattern.f118y = pattern2.f118y;
             }
             if (pattern.width == null) {
                 pattern.width = pattern2.width;

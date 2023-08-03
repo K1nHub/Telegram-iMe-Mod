@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.wallet.token;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -54,7 +55,7 @@ public final class FiatValue {
     }
 
     public int hashCode() {
-        return (((Double.doubleToLongBits(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
+        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
     }
 
     public String toString() {

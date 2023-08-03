@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.api.internal.ListenerHolders;
 import com.google.android.gms.common.api.internal.RegistrationMethods;
@@ -15,6 +16,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.wearable.Channel;
+import com.google.android.gms.wearable.ChannelApi;
 import com.google.android.gms.wearable.ChannelClient;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -54,14 +56,24 @@ public final class zzbd extends ChannelClient {
     public final Task<InputStream> getInputStream(ChannelClient.Channel channel) {
         zzbq zzc = zzc(channel);
         GoogleApiClient asGoogleApiClient = asGoogleApiClient();
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzbj(zzc, asGoogleApiClient)), zzaw.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzbj(zzc, asGoogleApiClient)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzaw
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((Channel.GetInputStreamResult) result).getInputStream();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.ChannelClient
     public final Task<OutputStream> getOutputStream(ChannelClient.Channel channel) {
         zzbq zzc = zzc(channel);
         GoogleApiClient asGoogleApiClient = asGoogleApiClient();
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzbk(zzc, asGoogleApiClient)), zzbb.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzbk(zzc, asGoogleApiClient)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzbb
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                return ((Channel.GetOutputStreamResult) result).getOutputStream();
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.ChannelClient
@@ -71,7 +83,14 @@ public final class zzbd extends ChannelClient {
         Preconditions.checkNotNull(asGoogleApiClient, "client is null");
         Preconditions.checkNotNull(str, "nodeId is null");
         Preconditions.checkNotNull(str2, "path is null");
-        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzaq(zzauVar, asGoogleApiClient, str, str2)), zzav.zza);
+        return PendingResultUtil.toTask(asGoogleApiClient.enqueue(new zzaq(zzauVar, asGoogleApiClient, str, str2)), new PendingResultUtil.ResultConverter() { // from class: com.google.android.gms.wearable.internal.zzav
+            @Override // com.google.android.gms.common.internal.PendingResultUtil.ResultConverter
+            public final Object convert(Result result) {
+                ChannelClient.Channel zzd;
+                zzd = zzbd.zzd(((ChannelApi.OpenChannelResult) result).getChannel());
+                return zzd;
+            }
+        });
     }
 
     @Override // com.google.android.gms.wearable.ChannelClient

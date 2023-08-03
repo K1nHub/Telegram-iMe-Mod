@@ -128,3 +128,35 @@
 
     return-void
 .end method
+
+.method public static toSortedSet(Ljava/lang/Iterable;)Ljava/util/SortedSet;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/lang/Comparable<",
+            "-TT;>;>(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/SortedSet<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 50
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+
+    invoke-static {p0, v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toCollection(Ljava/lang/Iterable;Ljava/util/Collection;)Ljava/util/Collection;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/SortedSet;
+
+    return-object p0
+.end method

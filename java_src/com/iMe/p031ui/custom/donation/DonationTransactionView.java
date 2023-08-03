@@ -15,14 +15,20 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.IntRange;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletDonationTransactionBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -58,9 +64,49 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
-        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new DonationTransactionView$special$$inlined$inject$default$1(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<TelegramControllersGateway>() { // from class: com.iMe.ui.custom.donation.DonationTransactionView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.gateway.TelegramControllersGateway, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final TelegramControllersGateway invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), qualifier, function0);
+            }
+        });
         this.telegramControllersGateway$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new DonationTransactionView$special$$inlined$inject$default$2(this, null, null));
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.donation.DonationTransactionView$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
         this.resourceManager$delegate = lazy2;
         ForkRecycleItemWalletDonationTransactionBinding inflate = ForkRecycleItemWalletDonationTransactionBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
@@ -89,7 +135,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
             ForkRecycleItemWalletDonationTransactionBinding forkRecycleItemWalletDonationTransactionBinding = this.binding;
             TLRPC$User user = TelegramControllersGateway.CC.getMessagesController$default(getTelegramControllersGateway(), 0, 1, null).getUser(Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId())));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3417R.dimen.telegram_avatar_size_medium) / 2);
+            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3419R.dimen.telegram_avatar_size_medium) / 2);
             if (user != null) {
                 avatarDrawable.setInfo(user);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setForUserOrChat(user, avatarDrawable);
@@ -99,7 +145,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
                 substring = StringsKt__StringsKt.substring(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId(), new IntRange(0, 1));
                 avatarDrawable.setInfo(parseLong, null, null, substring);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setImageDrawable(avatarDrawable);
-                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3417R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
+                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3419R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
             }
             forkRecycleItemWalletDonationTransactionBinding.textDate.setText(item.getTransactionDate());
             forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setText(item.getTransaction().getToken().getTicker());

@@ -2,38 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$0:Ljava/util/ArrayList;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$0:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    check-cast p1, Lorg/telegram/messenger/MediaController$AlbumEntry;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;->f$1:Z
 
-    check-cast p2, Lorg/telegram/messenger/MediaController$AlbumEntry;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$GOkT0ye4klOKokMFr6dB6ug5Uu4(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Z)V
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$W7UTu96du_wj0fyw5Yj1CEyVCzQ(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

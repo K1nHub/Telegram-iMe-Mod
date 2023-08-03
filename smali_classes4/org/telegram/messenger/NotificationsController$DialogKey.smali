@@ -17,30 +17,35 @@
 # instance fields
 .field final dialogId:J
 
+.field final story:Z
+
 .field final topicId:I
 
 
 # direct methods
-.method private constructor <init>(JI)V
+.method private constructor <init>(JIZ)V
     .locals 0
 
-    .line 5145
+    .line 5693
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5146
+    .line 5694
     iput-wide p1, p0, Lorg/telegram/messenger/NotificationsController$DialogKey;->dialogId:J
 
-    .line 5147
+    .line 5695
     iput p3, p0, Lorg/telegram/messenger/NotificationsController$DialogKey;->topicId:I
+
+    .line 5696
+    iput-boolean p4, p0, Lorg/telegram/messenger/NotificationsController$DialogKey;->story:Z
 
     return-void
 .end method
 
-.method synthetic constructor <init>(JILorg/telegram/messenger/NotificationsController$1;)V
+.method synthetic constructor <init>(JIZLorg/telegram/messenger/NotificationsController$1;)V
     .locals 0
 
-    .line 5141
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/NotificationsController$DialogKey;-><init>(JI)V
+    .line 5688
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/NotificationsController$DialogKey;-><init>(JIZ)V
 
     return-void
 .end method

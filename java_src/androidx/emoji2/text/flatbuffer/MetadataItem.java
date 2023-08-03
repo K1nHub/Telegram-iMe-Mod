@@ -13,23 +13,23 @@ public final class MetadataItem extends Table {
     }
 
     /* renamed from: id */
-    public int m840id() {
+    public int m858id() {
         int __offset = __offset(4);
         if (__offset != 0) {
-            return this.f42bb.getInt(__offset + this.bb_pos);
+            return this.f44bb.getInt(__offset + this.bb_pos);
         }
         return 0;
     }
 
     public boolean emojiStyle() {
         int __offset = __offset(6);
-        return (__offset == 0 || this.f42bb.get(__offset + this.bb_pos) == 0) ? false : true;
+        return (__offset == 0 || this.f44bb.get(__offset + this.bb_pos) == 0) ? false : true;
     }
 
     public short sdkAdded() {
         int __offset = __offset(8);
         if (__offset != 0) {
-            return this.f42bb.getShort(__offset + this.bb_pos);
+            return this.f44bb.getShort(__offset + this.bb_pos);
         }
         return (short) 0;
     }
@@ -37,7 +37,7 @@ public final class MetadataItem extends Table {
     public short width() {
         int __offset = __offset(12);
         if (__offset != 0) {
-            return this.f42bb.getShort(__offset + this.bb_pos);
+            return this.f44bb.getShort(__offset + this.bb_pos);
         }
         return (short) 0;
     }
@@ -45,7 +45,7 @@ public final class MetadataItem extends Table {
     public short height() {
         int __offset = __offset(14);
         if (__offset != 0) {
-            return this.f42bb.getShort(__offset + this.bb_pos);
+            return this.f44bb.getShort(__offset + this.bb_pos);
         }
         return (short) 0;
     }
@@ -53,7 +53,7 @@ public final class MetadataItem extends Table {
     public int codepoints(int i) {
         int __offset = __offset(16);
         if (__offset != 0) {
-            return this.f42bb.getInt(__vector(__offset) + (i * 4));
+            return this.f44bb.getInt(__vector(__offset) + (i * 4));
         }
         return 0;
     }

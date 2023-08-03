@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -93,7 +93,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         setWidth(-2);
         setHeight(-2);
         setBackgroundDrawable(null);
-        Drawable mutate = ContextCompat.getDrawable(context, C3417R.C3419drawable.popup_fixed_alert).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3419R.C3421drawable.popup_fixed_alert).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
         this.scrimPopupContainerLayout.setBackground(mutate);
         Rect rect = new Rect();
@@ -102,17 +102,17 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         View view = new View(context);
         this.dimView = view;
         view.setBackgroundColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
-        final int m54dp = AndroidUtilities.m54dp(450);
+        final int m72dp = AndroidUtilities.m72dp(450);
         final int width = (int) (chatActivity.contentView.getWidth() * 0.75f);
         LinearLayout linearLayout = new LinearLayout(this, context) { // from class: org.telegram.ui.Components.SenderSelectPopup.1
             @Override // android.widget.LinearLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), m54dp), View.MeasureSpec.getMode(i2)));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), width), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), m72dp), View.MeasureSpec.getMode(i2)));
             }
 
             @Override // android.view.View
             protected int getSuggestedMinimumWidth() {
-                return AndroidUtilities.m54dp(260);
+                return AndroidUtilities.m72dp(260);
             }
         };
         this.recyclerContainer = linearLayout;
@@ -121,10 +121,10 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         this.headerText = textView;
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue));
         this.headerText.setTextSize(1, 16.0f);
-        this.headerText.setText(LocaleController.getString("SendMessageAsTitle", C3417R.string.SendMessageAsTitle));
+        this.headerText.setText(LocaleController.getString("SendMessageAsTitle", C3419R.string.SendMessageAsTitle));
         this.headerText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM), 1);
-        int m54dp2 = AndroidUtilities.m54dp(18);
-        this.headerText.setPadding(m54dp2, AndroidUtilities.m54dp(12), m54dp2, AndroidUtilities.m54dp(12));
+        int m72dp2 = AndroidUtilities.m72dp(18);
+        this.headerText.setPadding(m72dp2, AndroidUtilities.m72dp(12), m72dp2, AndroidUtilities.m72dp(12));
         this.recyclerContainer.addView(this.headerText);
         FrameLayout frameLayout = new FrameLayout(context);
         final ArrayList<TLRPC$TL_sendAsPeer> arrayList = tLRPC$TL_channels_sendAsPeers.peers;
@@ -161,10 +161,10 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
                     TLRPC$Chat chat = messagesController.getChat(Long.valueOf(-j2));
                     if (chat != null) {
                         if (tLRPC$TL_sendAsPeer.premium_required) {
-                            SpannableString spannableString = new SpannableString(((Object) TextUtils.ellipsize(chat.title, senderView.title.getPaint(), width - AndroidUtilities.m54dp(100), TextUtils.TruncateAt.END)) + " d");
-                            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3417R.C3419drawable.msg_mini_premiumlock);
+                            SpannableString spannableString = new SpannableString(((Object) TextUtils.ellipsize(chat.title, senderView.title.getPaint(), width - AndroidUtilities.m72dp(100), TextUtils.TruncateAt.END)) + " d");
+                            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3419R.C3421drawable.msg_mini_premiumlock);
                             coloredImageSpan.setTopOffset(1);
-                            coloredImageSpan.setSize(AndroidUtilities.m54dp(14));
+                            coloredImageSpan.setSize(AndroidUtilities.m72dp(14));
                             coloredImageSpan.setColorKey(Theme.key_windowBackgroundWhiteGrayText5);
                             spannableString.setSpan(coloredImageSpan, spannableString.length() - 1, spannableString.length(), 33);
                             senderView.title.setEllipsize(null);
@@ -187,7 +187,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
                 TLRPC$User user = messagesController.getUser(Long.valueOf(j2));
                 if (user != null) {
                     senderView.title.setText(UserObject.getUserName(user));
-                    senderView.subtitle.setText(LocaleController.getString("VoipGroupPersonalAccount", C3417R.string.VoipGroupPersonalAccount));
+                    senderView.subtitle.setText(LocaleController.getString("VoipGroupPersonalAccount", C3419R.string.VoipGroupPersonalAccount));
                     senderView.avatar.setAvatar(user);
                 }
                 SimpleAvatarView simpleAvatarView2 = senderView.avatar;
@@ -223,7 +223,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         this.recyclerView.setOverScrollMode(2);
         frameLayout.addView(this.recyclerView);
         this.headerShadow = new View(context);
-        Drawable drawable = ContextCompat.getDrawable(context, C3417R.C3419drawable.header_shadow);
+        Drawable drawable = ContextCompat.getDrawable(context, C3419R.C3421drawable.header_shadow);
         drawable.setAlpha(153);
         this.headerShadow.setBackground(drawable);
         this.headerShadow.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -396,9 +396,9 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
             springAnimation.cancel();
         }
         this.springAnimations.clear();
-        this.scrimPopupContainerLayout.setPivotX(AndroidUtilities.m54dp(8));
+        this.scrimPopupContainerLayout.setPivotX(AndroidUtilities.m72dp(8));
         FrameLayout frameLayout = this.scrimPopupContainerLayout;
-        frameLayout.setPivotY(frameLayout.getMeasuredHeight() - AndroidUtilities.m54dp(8));
+        frameLayout.setPivotY(frameLayout.getMeasuredHeight() - AndroidUtilities.m72dp(8));
         this.recyclerContainer.setPivotX(BitmapDescriptorFactory.HUE_RED);
         this.recyclerContainer.setPivotY(BitmapDescriptorFactory.HUE_RED);
         ArrayList<TLRPC$TL_sendAsPeer> arrayList = this.sendAsPeers.peers;
@@ -407,8 +407,8 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
             tLRPC$Peer = null;
         }
         if (tLRPC$Peer != null) {
-            int m54dp = AndroidUtilities.m54dp(54);
-            int size = arrayList.size() * m54dp;
+            int m72dp = AndroidUtilities.m72dp(54);
+            int size = arrayList.size() * m72dp;
             int i = 0;
             while (i < arrayList.size()) {
                 TLRPC$Peer tLRPC$Peer2 = arrayList.get(i).peer;
@@ -422,7 +422,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
                         }
                     }
                 }
-                this.layoutManager.scrollToPositionWithOffset(i, ((i == arrayList.size() - 1 || this.recyclerView.getMeasuredHeight() >= size) ? 0 : this.recyclerView.getMeasuredHeight() % m54dp) + AndroidUtilities.m54dp(7) + (size - ((arrayList.size() - 2) * m54dp)));
+                this.layoutManager.scrollToPositionWithOffset(i, ((i == arrayList.size() - 1 || this.recyclerView.getMeasuredHeight() >= size) ? 0 : this.recyclerView.getMeasuredHeight() % m72dp) + AndroidUtilities.m72dp(7) + (size - ((arrayList.size() - 2) * m72dp)));
                 if (this.recyclerView.computeVerticalScrollOffset() > 0) {
                     this.headerShadow.animate().cancel();
                     this.headerShadow.animate().alpha(1.0f).setDuration(150L).start();
@@ -482,9 +482,9 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
             ((SpringAnimation) it.next()).cancel();
         }
         this.springAnimations.clear();
-        this.scrimPopupContainerLayout.setPivotX(AndroidUtilities.m54dp(8));
+        this.scrimPopupContainerLayout.setPivotX(AndroidUtilities.m72dp(8));
         FrameLayout frameLayout = this.scrimPopupContainerLayout;
-        frameLayout.setPivotY(frameLayout.getMeasuredHeight() - AndroidUtilities.m54dp(8));
+        frameLayout.setPivotY(frameLayout.getMeasuredHeight() - AndroidUtilities.m72dp(8));
         this.recyclerContainer.setPivotX(BitmapDescriptorFactory.HUE_RED);
         this.recyclerContainer.setPivotY(BitmapDescriptorFactory.HUE_RED);
         this.scrimPopupContainerLayout.setScaleX(1.0f);
@@ -574,9 +574,9 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
             setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             setOrientation(0);
             setGravity(16);
-            int m54dp = AndroidUtilities.m54dp(14);
-            int i = m54dp / 2;
-            setPadding(m54dp, i, m54dp, i);
+            int m72dp = AndroidUtilities.m72dp(14);
+            int i = m72dp / 2;
+            setPadding(m72dp, i, m72dp, i);
             SimpleAvatarView simpleAvatarView = new SimpleAvatarView(context);
             this.avatar = simpleAvatarView;
             addView(simpleAvatarView, LayoutHelper.createFrame(40, 40));

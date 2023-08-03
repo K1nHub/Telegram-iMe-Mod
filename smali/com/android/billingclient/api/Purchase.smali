@@ -167,6 +167,43 @@
     return v2
 .end method
 
+.method public getAccountIdentifiers()Lcom/android/billingclient/api/AccountIdentifiers;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/android/billingclient/api/Purchase;->zzc:Lorg/json/JSONObject;
+
+    const-string v1, "obfuscatedAccountId"
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/billingclient/api/Purchase;->zzc:Lorg/json/JSONObject;
+
+    const-string v2, "obfuscatedProfileId"
+
+    .line 2
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v0, :cond_0
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
+    new-instance v2, Lcom/android/billingclient/api/AccountIdentifiers;
+
+    invoke-direct {v2, v0, v1}, Lcom/android/billingclient/api/AccountIdentifiers;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v2
+.end method
+
 .method public getOrderId()Ljava/lang/String;
     .locals 2
 

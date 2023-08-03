@@ -100,9 +100,9 @@ public final class Utils {
         task.continueWith(TASK_CONTINUATION_EXECUTOR_SERVICE, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.Utils$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                Object countDown;
-                countDown = countDownLatch.countDown();
-                return countDown;
+                Object lambda$awaitEvenIfOnMainThread$2;
+                lambda$awaitEvenIfOnMainThread$2 = Utils.lambda$awaitEvenIfOnMainThread$2(countDownLatch, task2);
+                return lambda$awaitEvenIfOnMainThread$2;
             }
         });
         if (Looper.getMainLooper() == Looper.myLooper()) {
@@ -120,5 +120,11 @@ public final class Utils {
             throw new IllegalStateException(task.getException());
         }
         throw new TimeoutException();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Object lambda$awaitEvenIfOnMainThread$2(CountDownLatch countDownLatch, Task task) throws Exception {
+        countDownLatch.countDown();
+        return null;
     }
 }

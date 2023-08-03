@@ -9,10 +9,11 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: _Sequences.kt */
-@DebugMetadata(m84c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", m83f = "_Sequences.kt", m82l = {2855}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", m101f = "_Sequences.kt", m100l = {2855}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-public final class SequencesKt___SequencesKt$zipWithNext$2 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
+public final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Sequence<T> $this_zipWithNext;
     final /* synthetic */ Function2<T, T, R> $transform;
     private /* synthetic */ Object L$0;
@@ -37,6 +38,10 @@ public final class SequencesKt___SequencesKt$zipWithNext$2 extends RestrictedSus
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((SequenceScope) ((SequenceScope) obj), continuation);
+    }
+
     public final Object invoke(SequenceScope<? super R> sequenceScope, Continuation<? super Unit> continuation) {
         return ((SequencesKt___SequencesKt$zipWithNext$2) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
@@ -70,7 +75,7 @@ public final class SequencesKt___SequencesKt$zipWithNext$2 extends RestrictedSus
         }
         while (it.hasNext()) {
             Object next2 = it.next();
-            Object invoke = this.$transform.invoke(next, next2);
+            R invoke = this.$transform.invoke(next, next2);
             this.L$0 = sequenceScope;
             this.L$1 = it;
             this.L$2 = next2;

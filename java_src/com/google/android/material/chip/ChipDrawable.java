@@ -38,6 +38,7 @@ import com.google.android.material.ripple.RippleUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes3.dex */
 public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Callback, TextDrawableHelper.TextDrawableDelegate {
     private static final int[] DEFAULT_STATE = {16842910};
@@ -448,7 +449,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Call
     private void drawDebug(Canvas canvas, Rect rect) {
         Paint paint = this.debugPaint;
         if (paint != null) {
-            paint.setColor(ColorUtils.setAlphaComponent(-16777216, 127));
+            paint.setColor(ColorUtils.setAlphaComponent(-16777216, MessagesStorage.LAST_DB_VERSION));
             canvas.drawRect(rect, this.debugPaint);
             if (showsChipIcon() || showsCheckedIcon()) {
                 calculateChipIconBounds(rect, this.rectF);
@@ -461,10 +462,10 @@ public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Call
                 calculateCloseIconBounds(rect, this.rectF);
                 canvas.drawRect(this.rectF, this.debugPaint);
             }
-            this.debugPaint.setColor(ColorUtils.setAlphaComponent(-65536, 127));
+            this.debugPaint.setColor(ColorUtils.setAlphaComponent(-65536, MessagesStorage.LAST_DB_VERSION));
             calculateChipTouchBounds(rect, this.rectF);
             canvas.drawRect(this.rectF, this.debugPaint);
-            this.debugPaint.setColor(ColorUtils.setAlphaComponent(-16711936, 127));
+            this.debugPaint.setColor(ColorUtils.setAlphaComponent(-16711936, MessagesStorage.LAST_DB_VERSION));
             calculateCloseIconTouchBounds(rect, this.rectF);
             canvas.drawRect(this.rectF, this.debugPaint);
         }

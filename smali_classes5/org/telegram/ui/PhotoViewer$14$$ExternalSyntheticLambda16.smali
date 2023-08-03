@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -26,14 +26,16 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final run(Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
     iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;->f$1:Z
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$mSWS7TF3xoBXcKXM0OVQAPWN-q4(Lorg/telegram/ui/PhotoViewer$14;Z)V
+    check-cast p1, Landroid/net/Uri;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$dk4p2--GzAiPtwqnIG6HgyKeTH0(Lorg/telegram/ui/PhotoViewer$14;ZLandroid/net/Uri;)V
 
     return-void
 .end method

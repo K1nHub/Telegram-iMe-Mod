@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AvatarDrawable;
@@ -29,7 +29,7 @@ public class PremiumGiftHeaderCell extends LinearLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m54dp(50));
+        backupImageView.setRoundRadius(AndroidUtilities.m72dp(50));
         addView(this.avatarImageView, LayoutHelper.createLinear(100, 100, 1, 0, 28, 0, 0));
         TextView textView = new TextView(context);
         this.titleView = textView;
@@ -59,9 +59,9 @@ public class PremiumGiftHeaderCell extends LinearLayout {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         float x = this.avatarImageView.getX() + (this.avatarImageView.getWidth() / 2.0f);
-        float paddingTop = ((this.avatarImageView.getPaddingTop() + this.avatarImageView.getY()) + (this.avatarImageView.getHeight() / 2.0f)) - AndroidUtilities.m54dp(3);
-        float m54dp = AndroidUtilities.m54dp(32);
-        this.drawable.rect.set(x - m54dp, paddingTop - m54dp, x + m54dp, paddingTop + m54dp);
+        float paddingTop = ((this.avatarImageView.getPaddingTop() + this.avatarImageView.getY()) + (this.avatarImageView.getHeight() / 2.0f)) - AndroidUtilities.m72dp(3);
+        float m72dp = AndroidUtilities.m72dp(32);
+        this.drawable.rect.set(x - m72dp, paddingTop - m72dp, x + m72dp, paddingTop + m72dp);
         if (z) {
             this.drawable.resetPositions();
         }
@@ -77,7 +77,7 @@ public class PremiumGiftHeaderCell extends LinearLayout {
     public void bind(TLRPC$User tLRPC$User) {
         this.avatarDrawable.setInfo(tLRPC$User);
         this.avatarImageView.setForUserOrChat(tLRPC$User, this.avatarDrawable);
-        this.titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3417R.string.GiftTelegramPremiumTitle)));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3417R.string.GiftTelegramPremiumDescription, tLRPC$User.first_name)));
+        this.titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3419R.string.GiftTelegramPremiumTitle)));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3419R.string.GiftTelegramPremiumDescription, tLRPC$User.first_name)));
     }
 }

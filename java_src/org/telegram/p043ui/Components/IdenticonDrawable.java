@@ -84,11 +84,11 @@ public class IdenticonDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m54dp(32);
+        return AndroidUtilities.m72dp(32);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m54dp(32);
+        return AndroidUtilities.m72dp(32);
     }
 }

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda0;->f$1:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/ui/multifab/MiniFabsContainer;->$r8$lambda$98z2j7JKEe6S1YwuvSCPWO6kix0(Lcom/iMe/ui/multifab/MiniFabsContainer;Lcom/iMe/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/ui/multifab/MiniFabsContainer;->$r8$lambda$z-yVMlx2vava-1TvDsKW6V0MZug(Lcom/iMe/ui/multifab/MiniFabsContainer;Lcom/iMe/storage/domain/model/filters/FilterFab;Landroid/view/View;)V
 
     return-void
 .end method

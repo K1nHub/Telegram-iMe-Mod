@@ -13,15 +13,15 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Lambda;
 import kotlinx.coroutines.channels.ChannelsKt;
 import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.channels.SendChannel;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: RxConvert.kt */
-@DebugMetadata(m84c = "kotlinx.coroutines.rx2.RxConvertKt$asFlow$1", m83f = "RxConvert.kt", m82l = {95}, m81m = "invokeSuspend")
+@DebugMetadata(m102c = "kotlinx.coroutines.rx2.RxConvertKt$asFlow$1", m101f = "RxConvert.kt", m100l = {95}, m99m = "invokeSuspend")
 /* loaded from: classes4.dex */
-final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
+final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ObservableSource<T> $this_asFlow;
     private /* synthetic */ Object L$0;
     int label;
@@ -41,6 +41,10 @@ final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<Prod
     }
 
     @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
+        return invoke((ProducerScope) ((ProducerScope) obj), continuation);
+    }
+
     public final Object invoke(ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
         return ((RxConvertKt$asFlow$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
@@ -81,9 +85,28 @@ final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<Prod
                     producerScope.close(th);
                 }
             });
-            C32711 c32711 = new C32711(atomicReference);
+            Function0<Unit> function0 = new Function0<Unit>() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1.1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    Disposable andSet = atomicReference.getAndSet(Disposables.disposed());
+                    if (andSet != null) {
+                        andSet.dispose();
+                    }
+                }
+            };
             this.label = 1;
-            if (ProduceKt.awaitClose(producerScope, c32711, this) == coroutine_suspended) {
+            if (ProduceKt.awaitClose(producerScope, function0, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -92,33 +115,5 @@ final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<Prod
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: RxConvert.kt */
-    /* renamed from: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$1 */
-    /* loaded from: classes4.dex */
-    public static final class C32711 extends Lambda implements Function0<Unit> {
-        final /* synthetic */ AtomicReference<Disposable> $disposableRef;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C32711(AtomicReference<Disposable> atomicReference) {
-            super(0);
-            this.$disposableRef = atomicReference;
-        }
-
-        @Override // kotlin.jvm.functions.Function0
-        public /* bridge */ /* synthetic */ Unit invoke() {
-            invoke2();
-            return Unit.INSTANCE;
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final void invoke2() {
-            Disposable andSet = this.$disposableRef.getAndSet(Disposables.disposed());
-            if (andSet != null) {
-                andSet.dispose();
-            }
-        }
     }
 }

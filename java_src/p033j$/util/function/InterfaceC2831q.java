@@ -5,5 +5,5 @@ public interface InterfaceC2831q {
     void accept(long j);
 
     /* renamed from: f */
-    InterfaceC2831q mo140f(InterfaceC2831q interfaceC2831q);
+    InterfaceC2831q mo158f(InterfaceC2831q interfaceC2831q);
 }

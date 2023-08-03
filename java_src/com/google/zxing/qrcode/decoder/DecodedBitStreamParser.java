@@ -11,6 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes3.dex */
 final class DecodedBitStreamParser {
     private static final char[] ALPHANUMERIC_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
@@ -299,7 +300,7 @@ final class DecodedBitStreamParser {
     private static int parseECIValue(BitSource bitSource) throws FormatException {
         int readBits = bitSource.readBits(8);
         if ((readBits & 128) == 0) {
-            return readBits & 127;
+            return readBits & MessagesStorage.LAST_DB_VERSION;
         }
         if ((readBits & PsExtractor.AUDIO_STREAM) == 128) {
             return bitSource.readBits(8) | ((readBits & 63) << 8);

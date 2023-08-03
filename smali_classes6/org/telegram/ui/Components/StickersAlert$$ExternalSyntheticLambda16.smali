@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$OF1ToYyoGDi_s6vHDodM2k27PNI(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$CDsFHNwo1EBQshC0un2o70Sje-Q(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

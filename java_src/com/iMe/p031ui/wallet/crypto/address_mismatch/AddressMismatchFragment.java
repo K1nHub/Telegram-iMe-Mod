@@ -15,12 +15,18 @@ import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -28,18 +34,24 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthAddressMismatchBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: AddressMismatchFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AddressMismatchFragment extends WalletAuthBaseFragment implements AddressMismatchView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(AddressMismatchFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(AddressMismatchFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -62,11 +74,55 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
     }
 
     public AddressMismatchFragment() {
-        AddressMismatchFragment$presenter$2 addressMismatchFragment$presenter$2 = new AddressMismatchFragment$presenter$2(this);
+        Function0<AddressMismatchPresenter> function0 = new Function0<AddressMismatchPresenter>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final AddressMismatchPresenter invoke() {
+                Lazy lazy;
+                final AddressMismatchFragment addressMismatchFragment = AddressMismatchFragment.this;
+                lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<AddressMismatchPresenter>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final AddressMismatchPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(AddressMismatchPresenter.class), qualifier, function02);
+                    }
+                });
+                return (AddressMismatchPresenter) lazy.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, AddressMismatchPresenter.class.getName() + ".presenter", addressMismatchFragment$presenter$2);
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new AddressMismatchFragment$binding$2(this), 1, (Object) null);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, AddressMismatchPresenter.class.getName() + ".presenter", function0);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletEthAddressMismatchBinding>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletEthAddressMismatchBinding invoke() {
+                return ForkFragmentWalletEthAddressMismatchBinding.inflate(BaseFragmentExtKt.getLayoutInflater(AddressMismatchFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     private final AddressMismatchPresenter getPresenter() {
@@ -93,10 +149,10 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3484ActionBar c3484ActionBar = this.actionBar;
+        C3485ActionBar c3485ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_messagePanelText), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(c3485ActionBar, i, null, null, null, null, i2), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_messagePanelText), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 AddressMismatchFragment.getThemeDescriptions$lambda$0(AddressMismatchFragment.this);
@@ -133,25 +189,25 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        c3484ActionBar.setCastShadows(false);
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        c3485ActionBar.setCastShadows(false);
     }
 
     private final void setupTexts() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_eth_address_mismatch_title));
-        binding.buttonDelete.setText(getResourceManager().getString(C3417R.string.wallet_eth_address_mismatch_btn_delete));
-        binding.buttonBackup.setText(getResourceManager().getString(C3417R.string.wallet_eth_address_mismatch_btn_backup));
+        binding.textTitle.setText(getResourceManager().getString(C3419R.string.wallet_eth_address_mismatch_title));
+        binding.buttonDelete.setText(getResourceManager().getString(C3419R.string.wallet_eth_address_mismatch_btn_delete));
+        binding.buttonBackup.setText(getResourceManager().getString(C3419R.string.wallet_eth_address_mismatch_btn_backup));
         AppCompatTextView appCompatTextView = binding.textDescription;
-        appCompatTextView.setText(getResourceManager().getString(C3417R.string.wallet_eth_address_mismatch_description));
+        appCompatTextView.setText(getResourceManager().getString(C3419R.string.wallet_eth_address_mismatch_description));
         appCompatTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private final void setupImage() {
         RLottieImageView rLottieImageView = getBinding().imageLogo;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3417R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3419R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
     }
 
@@ -170,10 +226,44 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
         ActionButton buttonBackup = binding.buttonBackup;
         Intrinsics.checkNotNullExpressionValue(buttonBackup, "buttonBackup");
-        ViewExtKt.safeThrottledClick$default(buttonBackup, 0L, new AddressMismatchFragment$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonBackup, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                AddressMismatchFragment.this.openBlockchainsWalletsManagementScreen();
+            }
+        }, 1, null);
         AppCompatButton buttonDelete = binding.buttonDelete;
         Intrinsics.checkNotNullExpressionValue(buttonDelete, "buttonDelete");
-        ViewExtKt.safeThrottledClick$default(buttonDelete, 0L, new AddressMismatchFragment$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonDelete, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                AddressMismatchFragment.this.showDeleteWalletDialog();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -206,7 +296,7 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
 
     /* compiled from: AddressMismatchFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$Companion */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -2,8 +2,9 @@ package com.google.android.gms.internal.firebase_ml;
 
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
+/* JADX INFO: Add missing generic type declarations: [E] */
 /* loaded from: classes.dex */
-public final class zzlj extends zzlh<E> {
+public final class zzlj<E> extends zzlh<E> {
     private final transient int length;
     private final transient int offset;
     private final /* synthetic */ zzlh zzact;

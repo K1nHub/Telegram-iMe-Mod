@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.fork.p024ui.dialog.SelectNetworkBottomSheet;
 import com.iMe.fork.p024ui.view.EmptyView;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.p031ui.custom.ImageTextCheckCell;
@@ -30,14 +31,15 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -88,29 +90,96 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
         this.currentNetwork = network;
         this.networks = list;
         this.selectNetworkDelegate = callbacks$Callback1;
-        lazy = LazyKt__LazyJVMKt.lazy(SelectNetworkBottomSheet$actionBarHeight$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$actionBarHeight$2
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final Integer invoke() {
+                return Integer.valueOf(C3485ActionBar.getCurrentActionBarHeight());
+            }
+        });
         this.actionBarHeight$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new SelectNetworkBottomSheet$topShadow$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$topShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = SelectNetworkBottomSheet.this.initShadow();
+                return initShadow;
+            }
+        });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new SelectNetworkBottomSheet$actionBar$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3485ActionBar>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$actionBar$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final C3485ActionBar invoke() {
+                C3485ActionBar initActionBar;
+                initActionBar = SelectNetworkBottomSheet.this.initActionBar();
+                return initActionBar;
+            }
+        });
         this.actionBar$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new SelectNetworkBottomSheet$underlay$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<FrameLayout>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$underlay$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final FrameLayout invoke() {
+                FrameLayout initUnderlay;
+                initUnderlay = SelectNetworkBottomSheet.this.initUnderlay();
+                return initUnderlay;
+            }
+        });
         this.underlay$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new SelectNetworkBottomSheet$listView$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initListView;
+                initListView = SelectNetworkBottomSheet.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new SelectNetworkBottomSheet$listAdapter$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final SelectNetworkBottomSheet.ListAdapter invoke() {
+                return new SelectNetworkBottomSheet.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy6;
         this.selectedNetwork = network;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.filteredNetworks = emptyList;
-        int m53px = AndroidUtilities.m53px(getActionBarHeight());
+        int m71px = AndroidUtilities.m71px(getActionBarHeight());
         RootView rootView = new RootView();
         rootView.setBackgroundColor(0);
         rootView.setWillNotDraw(false);
-        rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m53px, 0, 0));
-        rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m53px, 0, 0));
-        rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m53px, 48));
-        rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m53px, 0, 0));
+        rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
+        rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
+        rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m71px, 48));
+        rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, m71px, 0, 0));
         this.containerView = rootView;
         setupListeners();
     }
@@ -125,8 +194,8 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
         return (View) this.topShadow$delegate.getValue();
     }
 
-    private final C3484ActionBar getActionBar() {
-        return (C3484ActionBar) this.actionBar$delegate.getValue();
+    private final C3485ActionBar getActionBar() {
+        return (C3485ActionBar) this.actionBar$delegate.getValue();
     }
 
     private final FrameLayout getUnderlay() {
@@ -160,23 +229,23 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3484ActionBar initActionBar() {
-        C3484ActionBar c3484ActionBar = new C3484ActionBar(getContext());
-        c3484ActionBar.setOccupyStatusBar(false);
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.wallet_network_type_dialog_title));
-        ActionBarMenuItem isSearchField = c3484ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true);
+    public final C3485ActionBar initActionBar() {
+        C3485ActionBar c3485ActionBar = new C3485ActionBar(getContext());
+        c3485ActionBar.setOccupyStatusBar(false);
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(LocaleController.getInternalString(C3419R.string.wallet_network_type_dialog_title));
+        ActionBarMenuItem isSearchField = c3485ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3419R.C3421drawable.ic_ab_search).setIsSearchField(true);
         isSearchField.getSearchField().setImeOptions(Integer.MIN_VALUE);
-        isSearchField.setSearchFieldHint(LocaleController.getInternalString(C3417R.string.wallet_network_type_dialog_search_hint));
-        isSearchField.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
-        c3484ActionBar.setBackgroundColor(0);
+        isSearchField.setSearchFieldHint(LocaleController.getInternalString(C3419R.string.wallet_network_type_dialog_search_hint));
+        isSearchField.setContentDescription(LocaleController.getString("Search", C3419R.string.Search));
+        c3485ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3484ActionBar.setTitleColor(getThemedColor(i));
-        c3484ActionBar.setItemsColor(getThemedColor(i), false);
-        c3484ActionBar.setSearchCursorColor(getThemedColor(i));
-        c3484ActionBar.setSearchTextColor(getThemedColor(i), false);
-        c3484ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
-        return c3484ActionBar;
+        c3485ActionBar.setTitleColor(getThemedColor(i));
+        c3485ActionBar.setItemsColor(getThemedColor(i), false);
+        c3485ActionBar.setSearchCursorColor(getThemedColor(i));
+        c3485ActionBar.setSearchTextColor(getThemedColor(i), false);
+        c3485ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
+        return c3485ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -217,9 +286,9 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
     }
 
     private final void setupListeners() {
-        C3484ActionBar actionBar = getActionBar();
-        actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$setupListeners$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar actionBar = getActionBar();
+        actionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$setupListeners$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SelectNetworkBottomSheet.this.dismiss();
@@ -336,18 +405,14 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
             setScrollOffsetY(getListView().getPaddingTop());
             return;
         }
-        int i = 0;
         View childAt = getListView().getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) getListView().findContainingViewHolder(childAt);
-        int top = childAt.getTop();
-        if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
-            runShadowAnimation(false);
-            i = top;
-        } else {
-            runShadowAnimation(true);
-        }
-        if (this.scrollOffsetY != i) {
-            setScrollOffsetY(i);
+        if (childAt != null) {
+            int top = childAt.getTop();
+            int max = Math.max(top, 0);
+            runShadowAnimation(top < 0);
+            if (this.scrollOffsetY != max) {
+                setScrollOffsetY(max);
+            }
         }
     }
 
@@ -455,25 +520,26 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
             SelectNetworkBottomSheet.this.ignoreLayout = true;
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
             SelectNetworkBottomSheet.this.ignoreLayout = false;
-            SelectNetworkBottomSheet.this.itemWidth = AndroidUtilities.m53px(View.MeasureSpec.getSize(i)) - 12;
+            SelectNetworkBottomSheet.this.itemWidth = AndroidUtilities.m71px(View.MeasureSpec.getSize(i)) - 12;
             ViewExtKt.setHorizontalPadding(this, 6);
             if (!SelectNetworkBottomSheet.this.getCurrentItemsList().isEmpty()) {
-                size = SelectNetworkBottomSheet.this.getCurrentItemsList().size() * AndroidUtilities.m54dp(56);
+                size = SelectNetworkBottomSheet.this.getCurrentItemsList().size() * AndroidUtilities.m72dp(56);
             } else {
-                size = AndroidUtilities.m54dp(250);
+                size = AndroidUtilities.m72dp(250);
             }
             int actionBarHeight = SelectNetworkBottomSheet.this.getActionBarHeight() + size + ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size2 = View.MeasureSpec.getSize(i2);
-            int i3 = ((double) actionBarHeight) < ((double) (((float) size2) / 5.0f)) * 3.2d ? 0 : (size2 / 5) * 2;
-            if (i3 != 0 && actionBarHeight < size2) {
-                i3 -= size2 - actionBarHeight;
+            int i3 = size2 / 5;
+            int i4 = actionBarHeight < i3 * 3 ? size2 - actionBarHeight : i3 * 2;
+            if (i4 != 0 && actionBarHeight < size2) {
+                i4 -= size2 - actionBarHeight;
             }
-            if (i3 == 0) {
-                i3 = ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop;
+            if (i4 == 0) {
+                i4 = ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop;
             }
-            if (SelectNetworkBottomSheet.this.getListView().getPaddingTop() != i3) {
+            if (SelectNetworkBottomSheet.this.getListView().getPaddingTop() != i4) {
                 SelectNetworkBottomSheet.this.ignoreLayout = true;
-                SelectNetworkBottomSheet.this.getListView().setPadding(0, i3, 0, 0);
+                SelectNetworkBottomSheet.this.getListView().setPadding(0, i4, 0, 0);
                 SelectNetworkBottomSheet.this.ignoreLayout = false;
             }
             this.fullHeight = actionBarHeight >= size2;
@@ -504,12 +570,12 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m54dp = (SelectNetworkBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
-            int m54dp2 = (SelectNetworkBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop;
+            int m72dp = (SelectNetworkBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m72dp(6);
+            int m72dp2 = (SelectNetworkBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m72dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(15) + ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m54dp2 + i2;
-            int i4 = m54dp + i2;
+            int i3 = m72dp2 + i2;
+            int i4 = m72dp + i2;
             int i5 = measuredHeight - i2;
             if (this.fullHeight) {
                 int i6 = ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + i3;
@@ -533,13 +599,13 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
             ((BottomSheet) SelectNetworkBottomSheet.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(SelectNetworkBottomSheet.this.getThemedColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectNetworkBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m72dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m54dp3 = AndroidUtilities.m54dp(36);
-            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            int m72dp3 = AndroidUtilities.m72dp(36);
+            this.rect.set((getMeasuredWidth() - m72dp3) / 2.0f, i4, (getMeasuredWidth() + m72dp3) / 2.0f, i4 + AndroidUtilities.m72dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(SelectNetworkBottomSheet.this.getThemedColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int themedColor = SelectNetworkBottomSheet.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
@@ -581,7 +647,7 @@ public final class SelectNetworkBottomSheet extends BottomSheet {
             if (i == IdFabric$ViewTypes.EMPTY_VIEW) {
                 Context context = SelectNetworkBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
-                String internalString = LocaleController.getInternalString(C3417R.string.wallet_network_type_dialog_search_empty);
+                String internalString = LocaleController.getInternalString(C3419R.string.wallet_network_type_dialog_search_empty);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…type_dialog_search_empty)");
                 imageTextCheckCell = new EmptyView(context, internalString);
                 imageTextCheckCell.setLayoutParams(LayoutHelper.createRecycler(SelectNetworkBottomSheet.this.itemWidth, 250));

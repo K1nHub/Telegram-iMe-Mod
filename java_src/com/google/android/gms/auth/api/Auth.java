@@ -65,7 +65,7 @@ public final class Auth {
             @ShowFirstParty
             public Builder(AuthCredentialsOptions authCredentialsOptions) {
                 this.zba = Boolean.FALSE;
-                String unused = authCredentialsOptions.zbb;
+                AuthCredentialsOptions.zbb(authCredentialsOptions);
                 this.zba = Boolean.valueOf(authCredentialsOptions.zbc);
                 this.zbb = authCredentialsOptions.zbd;
             }
@@ -74,6 +74,11 @@ public final class Auth {
         public AuthCredentialsOptions(Builder builder) {
             this.zbc = builder.zba.booleanValue();
             this.zbd = builder.zbb;
+        }
+
+        static /* bridge */ /* synthetic */ String zbb(AuthCredentialsOptions authCredentialsOptions) {
+            String str = authCredentialsOptions.zbb;
+            return null;
         }
 
         public boolean equals(Object obj) {

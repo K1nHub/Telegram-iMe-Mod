@@ -1,19 +1,25 @@
 package com.iMe.p031ui.wallet.common;
 
+import com.iMe.common.AppRxEvents;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import java.util.HashMap;
 import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
+import timber.log.Timber;
 /* compiled from: WalletRootPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.common.WalletRootPresenter */
@@ -31,7 +37,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
         this.cryptoAccessManager = cryptoAccessManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.rxEventBus = rxEventBus;
-        this.selectedTabId = C3417R.C3420id.wallet_root_bottom_navigation_home;
+        this.selectedTabId = C3419R.C3422id.wallet_root_bottom_navigation_home;
     }
 
     public final void selectTab(int i) {
@@ -46,18 +52,67 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     public void onFirstViewAttach() {
         listenEvents();
         setupNavigation();
-        selectTab(C3417R.C3420id.wallet_root_bottom_navigation_home);
+        selectTab(C3419R.C3422id.wallet_root_bottom_navigation_home);
     }
 
     private final boolean isDefaultTabSelected() {
-        return this.selectedTabId == C3417R.C3420id.wallet_root_bottom_navigation_home;
+        return this.selectedTabId == C3419R.C3422id.wallet_root_bottom_navigation_home;
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2121xb1f506fa(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2122xb1f506fb(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.common.WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
+                m1426invoke(rxEvent);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1426invoke(RxEvent it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                RxEvent rxEvent = it;
+                if (Intrinsics.areEqual(rxEvent, DomainRxEvents.AllWalletsReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {
+                    WalletRootPresenter.this.setupNavigation();
+                    WalletRootPresenter.this.updateWalletConnectItemVisibility();
+                    return;
+                }
+                if (Intrinsics.areEqual(rxEvent, AppRxEvents.BinanceOpenAuthScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SelectWalletCryptoTab.INSTANCE)) {
+                    WalletRootPresenter.this.selectTab(C3419R.C3422id.wallet_root_bottom_navigation_home);
+                } else if (Intrinsics.areEqual(rxEvent, DomainRxEvents.NetworkUpdated.INSTANCE)) {
+                    WalletRootPresenter.this.updateWalletConnectItemVisibility();
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.common.WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        })), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,9 +123,9 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupNavigation() {
         HashMap<Integer, Boolean> hashMapOf;
-        Integer valueOf = Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_home);
+        Integer valueOf = Integer.valueOf(C3419R.C3422id.wallet_root_bottom_navigation_home);
         Boolean bool = Boolean.TRUE;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m85to(valueOf, bool), TuplesKt.m85to(Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_exchange), Boolean.valueOf(this.cryptoAccessManager.isAnyWalletCreated())), TuplesKt.m85to(Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_settings), bool));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m103to(valueOf, bool), TuplesKt.m103to(Integer.valueOf(C3419R.C3422id.wallet_root_bottom_navigation_exchange), Boolean.valueOf(this.cryptoAccessManager.isAnyWalletCreated())), TuplesKt.m103to(Integer.valueOf(C3419R.C3422id.wallet_root_bottom_navigation_settings), bool));
         ((WalletRootView) getViewState()).setupNavigationTabsEnabled(hashMapOf);
     }
 }

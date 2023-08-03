@@ -29,7 +29,7 @@
 .method public commitTransition(Z)V
     .locals 1
 
-    .line 71
+    .line 79
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->commitTransition(Z)V
@@ -109,7 +109,7 @@
 .method public reset()V
     .locals 1
 
-    .line 63
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->reset()V
@@ -131,7 +131,7 @@
 .method public setCentered(Z)V
     .locals 1
 
-    .line 79
+    .line 87
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->setCentered(Z)V
@@ -142,7 +142,7 @@
 .method public setCount(I)V
     .locals 1
 
-    .line 67
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->setCount(I)V
@@ -172,6 +172,28 @@
     return-void
 .end method
 
+.method public setSize(I)V
+    .locals 1
+
+    .line 63
+    iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->setSize(I)V
+
+    return-void
+.end method
+
+.method public setStepFactor(F)V
+    .locals 1
+
+    .line 67
+    iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarsDrawable;->setStepFactor(F)V
+
+    return-void
+.end method
+
 .method public setStyle(I)V
     .locals 1
 
@@ -186,7 +208,7 @@
 .method public updateAfterTransitionEnd()V
     .locals 1
 
-    .line 75
+    .line 83
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->updateAfterTransitionEnd()V

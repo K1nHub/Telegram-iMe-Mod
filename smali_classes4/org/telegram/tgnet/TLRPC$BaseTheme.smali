@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18658
+    .line 19030
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 18673
+    .line 19045
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeTinted;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 18664
+    .line 19036
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeArctic;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 18676
+    .line 19048
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeDay;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 18670
+    .line 19042
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeClassic;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 18667
+    .line 19039
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_baseThemeNight;
 
@@ -67,7 +67,7 @@
 
     goto :goto_1
 
-    .line 18680
+    .line 19052
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -97,7 +97,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 18683
+    .line 19055
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;Landroid/view/ActionMode$Callback;Landroid/view/ActionMode$Callback;)V
     .locals 0
 
-    .line 331
+    .line 332
     iput-object p2, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$wrap:Landroid/view/ActionMode$Callback;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$callback:Landroid/view/ActionMode$Callback;
@@ -39,7 +39,7 @@
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .locals 1
 
-    .line 344
+    .line 345
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$wrap:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -52,7 +52,7 @@
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
 
-    .line 334
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$wrap:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
@@ -65,7 +65,7 @@
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 1
 
-    .line 349
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$wrap:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
@@ -76,21 +76,21 @@
 .method public onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
     .locals 2
 
-    .line 354
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$callback:Landroid/view/ActionMode$Callback;
 
     instance-of v1, v0, Landroid/view/ActionMode$Callback2;
 
     if-eqz v1, :cond_0
 
-    .line 355
+    .line 356
     check-cast v0, Landroid/view/ActionMode$Callback2;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/view/ActionMode$Callback2;->onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 357
+    .line 358
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/view/ActionMode$Callback2;->onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
 
@@ -101,7 +101,7 @@
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
 
-    .line 339
+    .line 340
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$4;->val$wrap:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z

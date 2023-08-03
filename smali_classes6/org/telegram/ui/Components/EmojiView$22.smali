@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EmojiView$22;
-.super Landroid/widget/FrameLayout;
+.super Landroidx/recyclerview/widget/GridLayoutManager;
 .source "EmojiView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,59 +19,115 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 2657
+    .line 2503
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onAttachedToWindow()V
-    .locals 2
+.method public scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
+    .locals 0
 
-    .line 2660
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
+    .line 2517
+    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
 
-    .line 2661
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    move-result p1
 
-    const/4 v1, 0x1
+    if-eqz p1, :cond_0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11002(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    .line 2518
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 2662
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$200(Lorg/telegram/ui/Components/EmojiView;Z)V
+    move-result-object p2
 
-    return-void
+    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
+
+    move-result p2
+
+    const/4 p3, 0x1
+
+    if-ne p2, p3, :cond_0
+
+    .line 2519
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    const/4 p3, 0x0
+
+    invoke-static {p2, p3}, Lorg/telegram/ui/Components/EmojiView;->access$702(Lorg/telegram/ui/Components/EmojiView;Z)Z
+
+    .line 2520
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$800(Lorg/telegram/ui/Components/EmojiView;)V
+
+    .line 2522
+    :cond_0
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;
+
+    move-result-object p2
+
+    if-nez p2, :cond_1
+
+    .line 2523
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4800(Lorg/telegram/ui/Components/EmojiView;)V
+
+    .line 2525
+    :cond_1
+    iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4700(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;->doSomeAction()V
+
+    return p1
 .end method
 
-.method protected onDetachedFromWindow()V
-    .locals 2
+.method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
+    .locals 1
 
-    .line 2667
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+    .line 2507
+    :try_start_0
+    new-instance p2, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
 
-    .line 2668
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    const/4 v1, 0x0
+    move-result-object p1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$11002(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    const/4 v0, 0x2
 
-    .line 2669
-    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$22;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    invoke-direct {p2, p1, v0}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
 
-    const/4 v1, 0x1
+    .line 2508
+    invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$200(Lorg/telegram/ui/Components/EmojiView;Z)V
+    .line 2509
+    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 2511
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_0
     return-void
 .end method

@@ -6,5 +6,5 @@ import java.util.function.IntToDoubleFunction;
 public abstract /* synthetic */ class AbstractC3204X implements IntToDoubleFunction {
 
     /* renamed from: a */
-    final /* synthetic */ C3203W f1248a;
+    final /* synthetic */ C3203W f1251a;
 }

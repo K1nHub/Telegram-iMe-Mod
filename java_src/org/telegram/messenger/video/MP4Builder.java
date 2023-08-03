@@ -47,7 +47,7 @@ public class MP4Builder {
     private FileOutputStream fos = null;
 
     /* renamed from: fc */
-    private FileChannel f1503fc = null;
+    private FileChannel f1506fc = null;
     private long dataOffset = 0;
     private long wroteSinceLastMdat = 0;
     private boolean writeNewMdat = true;
@@ -57,13 +57,13 @@ public class MP4Builder {
     protected void createSidx(Track track, SampleTableBox sampleTableBox) {
     }
 
-    public MP4Builder createMovie(Mp4Movie mp4Movie, boolean z) throws Exception {
+    public MP4Builder createMovie(Mp4Movie mp4Movie, boolean z, boolean z2) throws Exception {
         this.currentMp4Movie = mp4Movie;
         FileOutputStream fileOutputStream = new FileOutputStream(mp4Movie.getCacheFile());
         this.fos = fileOutputStream;
-        this.f1503fc = fileOutputStream.getChannel();
-        FileTypeBox createFileTypeBox = createFileTypeBox();
-        createFileTypeBox.getBox(this.f1503fc);
+        this.f1506fc = fileOutputStream.getChannel();
+        FileTypeBox createFileTypeBox = createFileTypeBox(z2);
+        createFileTypeBox.getBox(this.f1506fc);
         long size = this.dataOffset + createFileTypeBox.getSize();
         this.dataOffset = size;
         this.wroteSinceLastMdat += size;
@@ -74,10 +74,10 @@ public class MP4Builder {
     }
 
     private void flushCurrentMdat() throws Exception {
-        long position = this.f1503fc.position();
-        this.f1503fc.position(this.mdat.getOffset());
-        this.mdat.getBox(this.f1503fc);
-        this.f1503fc.position(position);
+        long position = this.f1506fc.position();
+        this.f1506fc.position(this.mdat.getOffset());
+        this.mdat.getBox(this.f1506fc);
+        this.f1506fc.position(position);
         this.mdat.setDataOffset(0L);
         this.mdat.setContentSize(0L);
         this.fos.flush();
@@ -87,7 +87,7 @@ public class MP4Builder {
     public long writeSampleData(int i, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z) throws Exception {
         if (this.writeNewMdat) {
             this.mdat.setContentSize(0L);
-            this.mdat.getBox(this.f1503fc);
+            this.mdat.getBox(this.f1506fc);
             this.mdat.setDataOffset(this.dataOffset);
             this.dataOffset += 16;
             this.wroteSinceLastMdat += 16;
@@ -113,18 +113,18 @@ public class MP4Builder {
             this.sizeBuffer.position(0);
             this.sizeBuffer.putInt(bufferInfo.size - 4);
             this.sizeBuffer.position(0);
-            this.f1503fc.write(this.sizeBuffer);
+            this.f1506fc.write(this.sizeBuffer);
             byteBuffer.position(bufferInfo.offset + 4);
         } else {
             byteBuffer.position(bufferInfo.offset);
         }
         byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        this.f1503fc.write(byteBuffer);
+        this.f1506fc.write(byteBuffer);
         this.dataOffset += bufferInfo.size;
         if (z2) {
             this.fos.flush();
             this.fos.getFD().sync();
-            return this.f1503fc.position();
+            return this.f1506fc.position();
         }
         return 0L;
     }
@@ -152,18 +152,18 @@ public class MP4Builder {
             }
             this.track2SampleSizes.put(next, jArr);
         }
-        createMovieBox(this.currentMp4Movie).getBox(this.f1503fc);
+        createMovieBox(this.currentMp4Movie).getBox(this.f1506fc);
         this.fos.flush();
         this.fos.getFD().sync();
-        this.f1503fc.close();
+        this.f1506fc.close();
         this.fos.close();
     }
 
-    protected FileTypeBox createFileTypeBox() {
+    protected FileTypeBox createFileTypeBox(boolean z) {
         LinkedList linkedList = new LinkedList();
         linkedList.add("isom");
         linkedList.add("iso2");
-        linkedList.add("avc1");
+        linkedList.add(z ? "hvc1" : "avc1");
         linkedList.add("mp41");
         return new FileTypeBox("isom", 512L, linkedList);
     }
@@ -179,6 +179,7 @@ public class MP4Builder {
             return j + 8 < 4294967296L;
         }
 
+        @Override // com.coremedia.iso.boxes.Box
         public String getType() {
             return "mdat";
         }
@@ -191,6 +192,7 @@ public class MP4Builder {
             this.dataOffset = 0L;
         }
 
+        @Override // com.coremedia.iso.boxes.Box
         public Container getParent() {
             return this.parent;
         }

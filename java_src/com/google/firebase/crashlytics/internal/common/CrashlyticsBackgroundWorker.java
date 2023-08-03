@@ -50,10 +50,9 @@ public class CrashlyticsBackgroundWorker {
 
     private <T> Continuation<Void, T> newContinuation(final Callable<T> callable) {
         return new Continuation<Void, T>(this) { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker.3
-            /* JADX WARN: Type inference failed for: r1v2, types: [T, java.lang.Object] */
             @Override // com.google.android.gms.tasks.Continuation
             public T then(Task<Void> task) throws Exception {
-                return callable.call();
+                return (T) callable.call();
             }
         };
     }

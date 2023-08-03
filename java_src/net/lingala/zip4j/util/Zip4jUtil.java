@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import net.lingala.zip4j.exception.ZipException;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public class Zip4jUtil {
     public static void setFileArchive(File file) throws ZipException {
@@ -89,7 +90,7 @@ public class Zip4jUtil {
         int i3 = (i >> 5) & 63;
         int i4 = (i >> 11) & 31;
         int i5 = (i >> 16) & 31;
-        int i6 = ((i >> 25) & 127) + 1980;
+        int i6 = ((i >> 25) & MessagesStorage.LAST_DB_VERSION) + 1980;
         Calendar calendar = Calendar.getInstance();
         calendar.set(i6, ((i >> 21) & 15) - 1, i5, i4, i3, i2);
         calendar.set(14, 0);

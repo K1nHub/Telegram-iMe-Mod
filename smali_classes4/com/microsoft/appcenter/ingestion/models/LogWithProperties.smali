@@ -174,7 +174,7 @@
     .line 48
     invoke-super {p0, p1}, Lcom/microsoft/appcenter/ingestion/models/AbstractLog;->read(Lorg/json/JSONObject;)V
 
-    const-string v0, "properties"
+    const-string/jumbo v0, "properties"
 
     .line 49
     invoke-static {p1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->readMap(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/Map;
@@ -238,7 +238,7 @@
 
     move-result-object v0
 
-    const-string v1, "properties"
+    const-string/jumbo v1, "properties"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->writeMap(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/util/Map;)V
 

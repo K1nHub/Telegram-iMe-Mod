@@ -59,7 +59,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 458
+    .line 553
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;-><init>()V
 
     return-void
@@ -70,32 +70,32 @@
 .method public getAttachName()Ljava/lang/String;
     .locals 3
 
-    .line 492
+    .line 587
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->photoSize:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     if-eqz v0, :cond_0
 
-    .line 493
+    .line 588
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 494
+    .line 589
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v0, :cond_1
 
-    .line 495
+    .line 590
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 497
+    .line 592
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -133,14 +133,14 @@
 .method public getPath()Ljava/lang/String;
     .locals 3
 
-    .line 477
+    .line 572
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->photoSize:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 478
+    .line 573
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -159,13 +159,13 @@
 
     return-object v0
 
-    .line 479
+    .line 574
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v0, :cond_1
 
-    .line 480
+    .line 575
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -184,7 +184,7 @@
 
     return-object v0
 
-    .line 482
+    .line 577
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->imageUrl:Ljava/lang/String;
 
@@ -204,14 +204,14 @@
 .method public getPathToAttach()Ljava/lang/String;
     .locals 3
 
-    .line 501
+    .line 596
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->photoSize:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 502
+    .line 597
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -230,13 +230,13 @@
 
     return-object v0
 
-    .line 503
+    .line 598
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v0, :cond_1
 
-    .line 504
+    .line 599
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -255,7 +255,7 @@
 
     return-object v0
 
-    .line 506
+    .line 601
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SearchImage;->imageUrl:Ljava/lang/String;
 
@@ -265,7 +265,7 @@
 .method public reset()V
     .locals 0
 
-    .line 488
+    .line 583
     invoke-super {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;->reset()V
 
     return-void

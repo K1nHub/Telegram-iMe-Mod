@@ -140,7 +140,7 @@
 .method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Lorg/telegram/messenger/databinding/ForkProfileSocialCellBinding;
     .locals 1
 
-    const-string v0, "parent"
+    const-string/jumbo v0, "parent"
 
     .line 53
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

@@ -2,38 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Ljava/util/HashMap;
+
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:J
+
+.field public final synthetic f$5:Ljava/util/ArrayList;
+
+.field public final synthetic f$6:I
+
+.field public final synthetic f$7:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/support/LongSparseIntArray;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;ZLjava/util/HashMap;IJLjava/util/ArrayList;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/messenger/MessagesStorage;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$2:Ljava/util/HashMap;
+
+    iput p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$3:I
+
+    iput-wide p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$4:J
+
+    iput-object p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$5:Ljava/util/ArrayList;
+
+    iput p8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$6:I
+
+    iput-boolean p9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$7:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 9
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    check-cast p1, Ljava/lang/Long;
+    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$1:Z
 
-    check-cast p2, Ljava/lang/Long;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$2:Ljava/util/HashMap;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$WxZL7lXFzq5cZWyLXNxgFFpfS2Y(Lorg/telegram/messenger/support/LongSparseIntArray;Ljava/lang/Long;Ljava/lang/Long;)I
+    iget v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$3:I
 
-    move-result p1
+    iget-wide v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$4:J
 
-    return p1
+    iget-object v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$5:Ljava/util/ArrayList;
+
+    iget v7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$6:I
+
+    iget-boolean v8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda215;->f$7:Z
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$NEDFNWNvxmubirYyhEn4Ba5_trE(Lorg/telegram/messenger/MessagesStorage;ZLjava/util/HashMap;IJLjava/util/ArrayList;IZ)V
+
+    return-void
 .end method

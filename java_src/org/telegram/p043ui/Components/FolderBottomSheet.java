@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -123,7 +123,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         ArrayList<MessagesController.DialogFilter> arrayList = baseFragment.getMessagesController().dialogFilters;
         if (arrayList != null) {
             for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                if (arrayList.get(i2).f1455id == i) {
+                if (arrayList.get(i2).f1458id == i) {
                     dialogFilter = arrayList.get(i2);
                     break;
                 }
@@ -137,12 +137,12 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         };
         if (dialogFilter != null && dialogFilter.isMyChatlist()) {
-            AlertDialog create = new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("FilterDelete", C3417R.string.FilterDelete)).setMessage(LocaleController.getString("FilterDeleteAlertLinks", C3417R.string.FilterDeleteAlertLinks)).setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda1
+            AlertDialog create = new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("FilterDelete", C3419R.string.FilterDelete)).setMessage(LocaleController.getString("FilterDeleteAlertLinks", C3419R.string.FilterDeleteAlertLinks)).setNegativeButton(LocaleController.getString("Cancel", C3419R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     FolderBottomSheet.lambda$showForDeletion$3(Utilities.Callback.this, dialogInterface, i3);
                 }
-            }).setPositiveButton(LocaleController.getString("Delete", C3417R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda0
+            }).setPositiveButton(LocaleController.getString("Delete", C3419R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     runnable.run();
@@ -234,7 +234,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             while (true) {
                 if (i2 >= arrayList.size()) {
                     break;
-                } else if (arrayList.get(i2).f1455id == i) {
+                } else if (arrayList.get(i2).f1458id == i) {
                     dialogFilter = arrayList.get(i2);
                     break;
                 } else {
@@ -284,7 +284,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             while (true) {
                 if (i2 >= arrayList2.size()) {
                     break;
-                } else if (arrayList2.get(i2).f1455id == i) {
+                } else if (arrayList2.get(i2).f1458id == i) {
                     this.title = arrayList2.get(i2).name;
                     break;
                 } else {
@@ -324,7 +324,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 while (true) {
                     if (i >= arrayList2.size()) {
                         break;
-                    } else if (arrayList2.get(i).f1455id == this.filterId) {
+                    } else if (arrayList2.get(i).f1458id == this.filterId) {
                         this.title = arrayList2.get(i).name;
                         break;
                     } else {
@@ -426,7 +426,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         this.buttonShadow = view;
         view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         this.containerView.addView(this.buttonShadow, LayoutHelper.createFrame(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, (float) BitmapDescriptorFactory.HUE_RED, 6.0f, 68.0f));
-        this.recyclerListView.setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(this.button != null ? 68 : 0));
+        this.recyclerListView.setPadding(AndroidUtilities.m72dp(6), 0, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(this.button != null ? 68 : 0));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.bulletinContainer = frameLayout;
         this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, 100, 87, 6, 0, 6, 68));
@@ -540,7 +540,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                             boolean[] zArr = new boolean[1];
                             getBaseFragment().getMessagesController().ensureFolderDialogExists(1, zArr);
                             if (zArr[0]) {
-                                getBaseFragment().getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
+                                getBaseFragment().getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                             }
                         }
                         this.button.setLoading(true);
@@ -609,7 +609,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onJoinButtonClicked$6(BaseFragment baseFragment, ArrayList arrayList) {
         this.reqId = -1;
-        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3417R.raw.ic_delete, LocaleController.formatString("FolderLinkDeletedTitle", C3417R.string.FolderLinkDeletedTitle, this.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
+        BulletinFactory.m32of(baseFragment).createSimpleBulletin(C3419R.raw.ic_delete, LocaleController.formatString("FolderLinkDeletedTitle", C3419R.string.FolderLinkDeletedTitle, this.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
         this.success = true;
         dismiss();
         getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(this.filterId);
@@ -645,18 +645,18 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     public /* synthetic */ void lambda$onJoinButtonClicked$11(ArrayList arrayList, BaseFragment baseFragment) {
         String formatPluralString;
         if (this.updates != null || (this.invite instanceof TLRPC$TL_chatlists_chatlistInviteAlready)) {
-            BulletinFactory m29of = BulletinFactory.m29of(baseFragment);
-            int i = C3417R.raw.folder_in;
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkUpdatedTitle", C3417R.string.FolderLinkUpdatedTitle, this.escapedTitle));
+            BulletinFactory m32of = BulletinFactory.m32of(baseFragment);
+            int i = C3419R.raw.folder_in;
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkUpdatedTitle", C3419R.string.FolderLinkUpdatedTitle, this.escapedTitle));
             if (arrayList.size() <= 0) {
                 formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedSubtitle", this.alreadyJoined.size(), new Object[0]);
             } else {
                 formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedJoinedSubtitle", arrayList.size(), new Object[0]);
             }
-            m29of.createSimpleBulletin(i, replaceTags, formatPluralString).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
+            m32of.createSimpleBulletin(i, replaceTags, formatPluralString).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
             return;
         }
-        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3417R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkAddedTitle", C3417R.string.FolderLinkAddedTitle, this.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
+        BulletinFactory.m32of(baseFragment).createSimpleBulletin(C3419R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkAddedTitle", C3419R.string.FolderLinkAddedTitle, this.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -721,21 +721,21 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         final int i = -1;
         this.reqId = -1;
         int i2 = 0;
-        if (FilterCreateActivity.processErrors(tLRPC$TL_error, getBaseFragment(), BulletinFactory.m29of(getBaseFragment())) && tLObject != null) {
+        if (FilterCreateActivity.processErrors(tLRPC$TL_error, getBaseFragment(), BulletinFactory.m32of(getBaseFragment())) && tLObject != null) {
             if (tLObject instanceof TLRPC$Updates) {
                 TLRPC$Updates tLRPC$Updates = (TLRPC$Updates) tLObject;
                 ArrayList<TLRPC$Update> arrayList = tLRPC$Updates.updates;
                 if (arrayList.isEmpty()) {
                     TLRPC$Update tLRPC$Update = tLRPC$Updates.update;
                     if (tLRPC$Update instanceof TLRPC$TL_updateDialogFilter) {
-                        i = ((TLRPC$TL_updateDialogFilter) tLRPC$Update).f1650id;
+                        i = ((TLRPC$TL_updateDialogFilter) tLRPC$Update).f1666id;
                     }
                 } else {
                     while (true) {
                         if (i2 >= arrayList.size()) {
                             break;
                         } else if (arrayList.get(i2) instanceof TLRPC$TL_updateDialogFilter) {
-                            i = ((TLRPC$TL_updateDialogFilter) arrayList.get(i2)).f1650id;
+                            i = ((TLRPC$TL_updateDialogFilter) arrayList.get(i2)).f1666id;
                             break;
                         } else {
                             i2++;
@@ -791,7 +791,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     public void onViewCreated(FrameLayout frameLayout) {
         super.onViewCreated(frameLayout);
         this.recyclerListView.setOverScrollMode(2);
-        this.recyclerListView.setPadding(AndroidUtilities.m54dp(6), 0, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(this.button != null ? 68 : 0));
+        this.recyclerListView.setPadding(AndroidUtilities.m72dp(6), 0, AndroidUtilities.m72dp(6), AndroidUtilities.m72dp(this.button != null ? 68 : 0));
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda21
             @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
@@ -822,9 +822,9 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 } else {
                     TLRPC$Chat chat = getBaseFragment().getMessagesController().getChat(Long.valueOf(-peerDialogId));
                     if (ChatObject.isChannelAndNotMegaGroup(chat)) {
-                        string = LocaleController.getString("FolderLinkAlreadySubscribed", C3417R.string.FolderLinkAlreadySubscribed);
+                        string = LocaleController.getString("FolderLinkAlreadySubscribed", C3419R.string.FolderLinkAlreadySubscribed);
                     } else {
-                        string = LocaleController.getString("FolderLinkAlreadyJoined", C3417R.string.FolderLinkAlreadyJoined);
+                        string = LocaleController.getString("FolderLinkAlreadyJoined", C3419R.string.FolderLinkAlreadyJoined);
                     }
                     arrayList.add(chat);
                     str = string;
@@ -832,7 +832,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 if (this.lastClickedDialogId != peerDialogId || System.currentTimeMillis() - this.lastClicked > 1500) {
                     this.lastClickedDialogId = peerDialogId;
                     this.lastClicked = System.currentTimeMillis();
-                    BulletinFactory.m30of(this.bulletinContainer, null).createChatsBulletin(arrayList, str, null).setDuration(ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED).show();
+                    BulletinFactory.m33of(this.bulletinContainer, null).createChatsBulletin(arrayList, str, null).setDuration(ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED).show();
                     return;
                 }
                 return;
@@ -856,21 +856,21 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         if (button != null) {
             if (this.deleting) {
                 if (size > 0) {
-                    i = C3417R.string.FolderLinkButtonRemoveChats;
+                    i = C3419R.string.FolderLinkButtonRemoveChats;
                     str = "FolderLinkButtonRemoveChats";
                 } else {
-                    i = C3417R.string.FolderLinkButtonRemove;
+                    i = C3419R.string.FolderLinkButtonRemove;
                     str = "FolderLinkButtonRemove";
                 }
                 button.setText(LocaleController.getString(str, i), z);
             } else {
                 ArrayList<TLRPC$Peer> arrayList = this.peers;
                 if (arrayList == null || arrayList.isEmpty()) {
-                    this.button.setText(LocaleController.getString("OK", C3417R.string.OK), z);
+                    this.button.setText(LocaleController.getString("OK", C3419R.string.OK), z);
                 } else if (this.invite instanceof TLRPC$TL_chatlists_chatlistInvite) {
-                    this.button.setText(LocaleController.formatString("FolderLinkButtonAdd", C3417R.string.FolderLinkButtonAdd, this.title), z);
+                    this.button.setText(LocaleController.formatString("FolderLinkButtonAdd", C3419R.string.FolderLinkButtonAdd, this.title), z);
                 } else {
-                    this.button.setText(size > 0 ? LocaleController.formatPluralString("FolderLinkButtonJoinPlural", size, new Object[0]) : LocaleController.getString("FolderLinkButtonNone", C3417R.string.FolderLinkButtonNone), z);
+                    this.button.setText(size > 0 ? LocaleController.formatPluralString("FolderLinkButtonJoinPlural", size, new Object[0]) : LocaleController.getString("FolderLinkButtonNone", C3419R.string.FolderLinkButtonNone), z);
                 }
             }
             this.button.setCount(size, z);
@@ -923,7 +923,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             int i = Theme.key_featuredStickers_addButton;
             view.setBackground(Theme.AdaptiveRipple.rect(Theme.getColor(i), 8.0f));
             addView(this.rippleView, LayoutHelper.createFrame(-1, -1));
-            setBackground((ShapeDrawable) Theme.createRoundRectDrawable(AndroidUtilities.m54dp(8), Theme.getColor(i)));
+            setBackground((ShapeDrawable) Theme.createRoundRectDrawable(AndroidUtilities.m72dp(8), Theme.getColor(i)));
             Paint paint = new Paint(1);
             this.paint = paint;
             int i2 = Theme.key_featuredStickers_buttonText;
@@ -932,7 +932,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             this.text = animatedTextDrawable;
             animatedTextDrawable.setAnimationProperties(0.3f, 0L, 250L, cubicBezierInterpolator);
             this.text.setCallback(this);
-            this.text.setTextSize(AndroidUtilities.m54dp(14));
+            this.text.setTextSize(AndroidUtilities.m72dp(14));
             this.text.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.text.setTextColor(Theme.getColor(i2));
             this.text.setText(str);
@@ -941,7 +941,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             this.countText = animatedTextDrawable2;
             animatedTextDrawable2.setAnimationProperties(0.3f, 0L, 250L, cubicBezierInterpolator);
             this.countText.setCallback(this);
-            this.countText.setTextSize(AndroidUtilities.m54dp(12));
+            this.countText.setTextSize(AndroidUtilities.m72dp(12));
             this.countText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.countText.setTextColor(Theme.getColor(i));
             this.countText.setText("");
@@ -1094,8 +1094,8 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 if (this.loadingDrawable == null) {
                     this.loadingDrawable = new CircularProgressDrawable(this.text.getTextColor());
                 }
-                int m54dp = (int) ((1.0f - this.loadingT) * AndroidUtilities.m54dp(24));
-                this.loadingDrawable.setBounds(0, m54dp, getWidth(), getHeight() + m54dp);
+                int m72dp = (int) ((1.0f - this.loadingT) * AndroidUtilities.m72dp(24));
+                this.loadingDrawable.setBounds(0, m72dp, getWidth(), getHeight() + m72dp);
                 this.loadingDrawable.setAlpha((int) (this.loadingT * 255.0f));
                 this.loadingDrawable.draw(canvas);
                 invalidate();
@@ -1104,19 +1104,19 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             if (f < 1.0f) {
                 if (f != BitmapDescriptorFactory.HUE_RED) {
                     canvas.save();
-                    canvas.translate(BitmapDescriptorFactory.HUE_RED, (int) (this.loadingT * AndroidUtilities.m54dp(-24)));
+                    canvas.translate(BitmapDescriptorFactory.HUE_RED, (int) (this.loadingT * AndroidUtilities.m72dp(-24)));
                     canvas.scale(1.0f, 1.0f - (this.loadingT * 0.4f));
                     z = true;
                 }
                 float currentWidth = this.text.getCurrentWidth();
                 float f2 = this.countAlphaAnimated.set(this.countAlpha);
-                float m55dp = ((AndroidUtilities.m55dp(15.66f) + this.countText.getCurrentWidth()) * f2) + currentWidth;
+                float m73dp = ((AndroidUtilities.m73dp(15.66f) + this.countText.getCurrentWidth()) * f2) + currentWidth;
                 Rect rect = AndroidUtilities.rectTmp2;
-                rect.set((int) (((getMeasuredWidth() - m55dp) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - this.text.getHeight()) / 2.0f) - AndroidUtilities.m54dp(1)), (int) ((((getMeasuredWidth() - m55dp) + getWidth()) / 2.0f) + currentWidth), (int) (((getMeasuredHeight() + this.text.getHeight()) / 2.0f) - AndroidUtilities.m54dp(1)));
+                rect.set((int) (((getMeasuredWidth() - m73dp) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - this.text.getHeight()) / 2.0f) - AndroidUtilities.m72dp(1)), (int) ((((getMeasuredWidth() - m73dp) + getWidth()) / 2.0f) + currentWidth), (int) (((getMeasuredHeight() + this.text.getHeight()) / 2.0f) - AndroidUtilities.m72dp(1)));
                 this.text.setAlpha((int) ((1.0f - this.loadingT) * 255.0f * AndroidUtilities.lerp(0.5f, 1.0f, this.enabledT)));
                 this.text.setBounds(rect);
                 this.text.draw(canvas);
-                rect.set((int) (((getMeasuredWidth() - m55dp) / 2.0f) + currentWidth + AndroidUtilities.m55dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.m54dp(18)) / 2.0f), (int) (((getMeasuredWidth() - m55dp) / 2.0f) + currentWidth + AndroidUtilities.m55dp(13.0f) + Math.max(AndroidUtilities.m54dp(9), this.countText.getCurrentWidth())), (int) ((getMeasuredHeight() + AndroidUtilities.m54dp(18)) / 2.0f));
+                rect.set((int) (((getMeasuredWidth() - m73dp) / 2.0f) + currentWidth + AndroidUtilities.m73dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.m72dp(18)) / 2.0f), (int) (((getMeasuredWidth() - m73dp) / 2.0f) + currentWidth + AndroidUtilities.m73dp(13.0f) + Math.max(AndroidUtilities.m72dp(9), this.countText.getCurrentWidth())), (int) ((getMeasuredHeight() + AndroidUtilities.m72dp(18)) / 2.0f));
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(rect);
                 if (this.countScale != 1.0f) {
@@ -1125,8 +1125,8 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     canvas.scale(f3, f3, rect.centerX(), rect.centerY());
                 }
                 this.paint.setAlpha((int) ((1.0f - this.loadingT) * 255.0f * f2 * f2));
-                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), this.paint);
-                rect.offset(-AndroidUtilities.m55dp(0.3f), -AndroidUtilities.m55dp(0.4f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(10), AndroidUtilities.m72dp(10), this.paint);
+                rect.offset(-AndroidUtilities.m73dp(0.3f), -AndroidUtilities.m73dp(0.4f));
                 this.countText.setAlpha((int) ((1.0f - this.loadingT) * 255.0f * f2));
                 this.countText.setBounds(rect);
                 this.countText.draw(canvas);
@@ -1159,16 +1159,16 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
         if (this.deleting) {
-            return LocaleController.getString("FolderLinkTitleRemove", C3417R.string.FolderLinkTitleRemove);
+            return LocaleController.getString("FolderLinkTitleRemove", C3419R.string.FolderLinkTitleRemove);
         }
         if (this.invite instanceof TLRPC$TL_chatlists_chatlistInvite) {
-            return LocaleController.getString("FolderLinkTitleAdd", C3417R.string.FolderLinkTitleAdd);
+            return LocaleController.getString("FolderLinkTitleAdd", C3419R.string.FolderLinkTitleAdd);
         }
         ArrayList<TLRPC$Peer> arrayList = this.peers;
         if (arrayList == null || arrayList.isEmpty()) {
-            return LocaleController.getString("FolderLinkTitleAlready", C3417R.string.FolderLinkTitleAlready);
+            return LocaleController.getString("FolderLinkTitleAlready", C3419R.string.FolderLinkTitleAlready);
         }
-        return LocaleController.getString("FolderLinkTitleAddChats", C3417R.string.FolderLinkTitleAddChats);
+        return LocaleController.getString("FolderLinkTitleAddChats", C3419R.string.FolderLinkTitleAddChats);
     }
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
@@ -1222,7 +1222,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     Method dump skipped, instructions count: 512
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.FolderBottomSheet.C47531.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.FolderBottomSheet.C47851.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1253,7 +1253,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             super(context);
             AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, false);
             this.textView = animatedTextView;
-            animatedTextView.setTextSize(AndroidUtilities.m54dp(15));
+            animatedTextView.setTextSize(AndroidUtilities.m72dp(15));
             this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             AnimatedTextView animatedTextView2 = this.textView;
             int i = Theme.key_windowBackgroundWhiteBlueHeader;
@@ -1263,7 +1263,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             AnimatedTextView animatedTextView3 = new AnimatedTextView(context, true, true, true);
             this.actionTextView = animatedTextView3;
             animatedTextView3.setAnimationProperties(0.45f, 0L, 250L, CubicBezierInterpolator.EASE_OUT_QUINT);
-            this.actionTextView.setTextSize(AndroidUtilities.m54dp(15));
+            this.actionTextView.setTextSize(AndroidUtilities.m72dp(15));
             this.actionTextView.setTextColor(Theme.getColor(i));
             this.actionTextView.setGravity(LocaleController.isRTL ? 3 : 5);
             addView(this.actionTextView, LayoutHelper.createFrame(-2, 20, (LocaleController.isRTL ? 3 : 5) | 80, 21, 15, 21, 2));
@@ -1346,24 +1346,24 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         public void setSelectedCount(int i, boolean z) {
             if (FolderBottomSheet.this.deleting) {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleRemove", C3417R.string.FolderLinkSubtitleRemove, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleRemove", C3419R.string.FolderLinkSubtitleRemove, this.title)));
             } else if (this.already) {
                 this.preview.setCount(FolderBottomSheet.this.peers != null ? FolderBottomSheet.this.peers.size() : 0, false);
                 if (FolderBottomSheet.this.peers == null || FolderBottomSheet.this.peers.isEmpty()) {
-                    this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3417R.string.FolderLinkSubtitleAlready, this.title)));
+                    this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3419R.string.FolderLinkSubtitleAlready, this.title)));
                 } else {
                     this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("FolderLinkSubtitleChats", FolderBottomSheet.this.peers != null ? FolderBottomSheet.this.peers.size() : 0, this.title)));
                 }
             } else if (FolderBottomSheet.this.peers == null || FolderBottomSheet.this.peers.isEmpty()) {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3417R.string.FolderLinkSubtitleAlready, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3419R.string.FolderLinkSubtitleAlready, this.title)));
             } else {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitle", C3417R.string.FolderLinkSubtitle, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitle", C3419R.string.FolderLinkSubtitle, this.title)));
             }
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_AC4), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp((int) TsExtractor.TS_STREAM_TYPE_AC4), 1073741824));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1405,17 +1405,17 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 this.leftMatrix = new Matrix();
                 this.rightMatrix = new Matrix();
                 this.paint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_profile_tabText), 0.8f));
-                this.paint.setTextSize(AndroidUtilities.m55dp(15.33f));
+                this.paint.setTextSize(AndroidUtilities.m73dp(15.33f));
                 this.paint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.selectedTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText2));
-                this.selectedTextPaint.setTextSize(AndroidUtilities.m54dp(17));
+                this.selectedTextPaint.setTextSize(AndroidUtilities.m72dp(17));
                 this.selectedTextPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.selectedPaint.setColor(Theme.getColor(Theme.key_featuredStickers_unread));
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = new AnimatedTextView.AnimatedTextDrawable(false, true, true);
                 this.countText = animatedTextDrawable;
                 animatedTextDrawable.setAnimationProperties(0.3f, 0L, 250L, CubicBezierInterpolator.EASE_OUT_QUINT);
                 this.countText.setCallback(this);
-                this.countText.setTextSize(AndroidUtilities.m55dp(11.66f));
+                this.countText.setTextSize(AndroidUtilities.m73dp(11.66f));
                 this.countText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 this.countText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.countText.setGravity(1);
@@ -1443,22 +1443,22 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     this.rightFolder2Width = makeLayout5.getLineWidth(0);
                 }
                 float[] fArr = this.radii;
-                float m54dp = AndroidUtilities.m54dp(3);
-                fArr[3] = m54dp;
-                fArr[2] = m54dp;
-                fArr[1] = m54dp;
-                fArr[0] = m54dp;
+                float m72dp = AndroidUtilities.m72dp(3);
+                fArr[3] = m72dp;
+                fArr[2] = m72dp;
+                fArr[1] = m72dp;
+                fArr[0] = m72dp;
                 float[] fArr2 = this.radii;
-                float m54dp2 = AndroidUtilities.m54dp(1);
-                fArr2[7] = m54dp2;
-                fArr2[6] = m54dp2;
-                fArr2[5] = m54dp2;
-                fArr2[4] = m54dp2;
-                LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(80), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 16777215}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP);
+                float m72dp2 = AndroidUtilities.m72dp(1);
+                fArr2[7] = m72dp2;
+                fArr2[6] = m72dp2;
+                fArr2[5] = m72dp2;
+                fArr2[4] = m72dp2;
+                LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(80), (float) BitmapDescriptorFactory.HUE_RED, new int[]{-1, 16777215}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP);
                 this.leftGradient = linearGradient;
                 this.leftPaint.setShader(linearGradient);
                 this.leftPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                LinearGradient linearGradient2 = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(80), (float) BitmapDescriptorFactory.HUE_RED, new int[]{16777215, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP);
+                LinearGradient linearGradient2 = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(80), (float) BitmapDescriptorFactory.HUE_RED, new int[]{16777215, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP);
                 this.rightGradient = linearGradient2;
                 this.rightPaint.setShader(linearGradient2);
                 this.rightPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
@@ -1466,7 +1466,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
             private StaticLayout makeLayout(CharSequence charSequence, boolean z) {
                 if (charSequence == null || "ALL_CHATS".equals(charSequence.toString())) {
-                    charSequence = LocaleController.getString("FilterAllChats", C3417R.string.FilterAllChats);
+                    charSequence = LocaleController.getString("FilterAllChats", C3419R.string.FilterAllChats);
                 }
                 return new StaticLayout(charSequence, z ? this.selectedTextPaint : this.paint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             }
@@ -1479,72 +1479,72 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 float measuredWidth = getMeasuredWidth() / 2.0f;
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 canvas.save();
-                float m55dp = this.middleFolderWidth + (isCountEmpty() ? 0.0f : AndroidUtilities.m55dp(15.32f) + this.countText.getCurrentWidth());
-                float f2 = m55dp / 2.0f;
+                float m73dp = this.middleFolderWidth + (isCountEmpty() ? 0.0f : AndroidUtilities.m73dp(15.32f) + this.countText.getCurrentWidth());
+                float f2 = m73dp / 2.0f;
                 float f3 = measuredWidth - f2;
                 canvas.translate(f3, measuredHeight - (this.middleFolder.getHeight() / 2.0f));
                 this.middleFolder.draw(canvas);
                 canvas.restore();
                 if (!isCountEmpty()) {
                     Rect rect = AndroidUtilities.rectTmp2;
-                    rect.set((int) (this.middleFolderWidth + f3 + AndroidUtilities.m55dp(4.66f)), (int) (measuredHeight - AndroidUtilities.m54dp(9)), (int) (this.middleFolderWidth + f3 + AndroidUtilities.m55dp(15.32f) + this.countText.getCurrentWidth()), (int) (AndroidUtilities.m54dp(9) + measuredHeight));
+                    rect.set((int) (this.middleFolderWidth + f3 + AndroidUtilities.m73dp(4.66f)), (int) (measuredHeight - AndroidUtilities.m72dp(9)), (int) (this.middleFolderWidth + f3 + AndroidUtilities.m73dp(15.32f) + this.countText.getCurrentWidth()), (int) (AndroidUtilities.m72dp(9) + measuredHeight));
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(rect);
-                    canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(9), AndroidUtilities.m54dp(9), this.selectedPaint);
-                    rect.offset(-AndroidUtilities.m55dp(0.33f), -AndroidUtilities.m55dp(0.66f));
+                    canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(9), AndroidUtilities.m72dp(9), this.selectedPaint);
+                    rect.offset(-AndroidUtilities.m73dp(0.33f), -AndroidUtilities.m73dp(0.66f));
                     this.countText.setBounds(rect);
                     this.countText.draw(canvas);
                 }
-                float m54dp = AndroidUtilities.m54dp(30);
+                float m72dp = AndroidUtilities.m72dp(30);
                 float f4 = this.leftFolderWidth;
-                float f5 = (f3 - m54dp) - f4;
-                if (this.leftFolder2 == null || f4 >= AndroidUtilities.m54dp(64)) {
+                float f5 = (f3 - m72dp) - f4;
+                if (this.leftFolder2 == null || f4 >= AndroidUtilities.m72dp(64)) {
                     f = f5;
                 } else {
-                    float f6 = f5 - (this.leftFolder2Width + m54dp);
+                    float f6 = f5 - (this.leftFolder2Width + m72dp);
                     canvas.save();
-                    canvas.translate(f6, (measuredHeight - (this.leftFolder2.getHeight() / 2.0f)) + AndroidUtilities.m54dp(1));
+                    canvas.translate(f6, (measuredHeight - (this.leftFolder2.getHeight() / 2.0f)) + AndroidUtilities.m72dp(1));
                     this.leftFolder2.draw(canvas);
                     canvas.restore();
                     f = f6;
                 }
                 if (this.leftFolder != null) {
                     canvas.save();
-                    canvas.translate(f5, (measuredHeight - (this.leftFolder.getHeight() / 2.0f)) + AndroidUtilities.m54dp(1));
+                    canvas.translate(f5, (measuredHeight - (this.leftFolder.getHeight() / 2.0f)) + AndroidUtilities.m72dp(1));
                     this.leftFolder.draw(canvas);
                     canvas.restore();
                 }
-                float f7 = m55dp + f3;
+                float f7 = m73dp + f3;
                 if (this.rightFolder != null) {
                     canvas.save();
-                    canvas.translate(f7 + m54dp, (measuredHeight - (this.rightFolder.getHeight() / 2.0f)) + AndroidUtilities.m54dp(1));
+                    canvas.translate(f7 + m72dp, (measuredHeight - (this.rightFolder.getHeight() / 2.0f)) + AndroidUtilities.m72dp(1));
                     this.rightFolder.draw(canvas);
                     canvas.restore();
-                    f7 += this.rightFolderWidth + m54dp;
+                    f7 += this.rightFolderWidth + m72dp;
                 }
-                if (this.rightFolder2 != null && this.rightFolderWidth < AndroidUtilities.m54dp(64)) {
+                if (this.rightFolder2 != null && this.rightFolderWidth < AndroidUtilities.m72dp(64)) {
                     canvas.save();
-                    canvas.translate(f7 + m54dp, (measuredHeight - (this.rightFolder2.getHeight() / 2.0f)) + AndroidUtilities.m54dp(1));
+                    canvas.translate(f7 + m72dp, (measuredHeight - (this.rightFolder2.getHeight() / 2.0f)) + AndroidUtilities.m72dp(1));
                     this.rightFolder2.draw(canvas);
                     canvas.restore();
-                    f7 += m54dp + this.rightFolder2Width;
+                    f7 += m72dp + this.rightFolder2Width;
                 }
-                float height = measuredHeight + (this.middleFolder.getHeight() / 2.0f) + AndroidUtilities.m54dp(12);
+                float height = measuredHeight + (this.middleFolder.getHeight() / 2.0f) + AndroidUtilities.m72dp(12);
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, height, getMeasuredWidth(), height + 1.0f, this.paint);
                 this.path.rewind();
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 float f8 = f2 + measuredWidth;
-                rectF2.set(f3 - AndroidUtilities.m54dp(4), height - AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4) + f8, height);
+                rectF2.set(f3 - AndroidUtilities.m72dp(4), height - AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4) + f8, height);
                 this.path.addRoundRect(rectF2, this.radii, Path.Direction.CW);
                 canvas.drawPath(this.path, this.selectedPaint);
                 canvas.save();
-                float max = Math.max(AndroidUtilities.m54dp(8), f);
+                float max = Math.max(AndroidUtilities.m72dp(8), f);
                 this.leftMatrix.reset();
-                this.leftMatrix.postTranslate(Math.min(f3, max + AndroidUtilities.m54dp(8)), BitmapDescriptorFactory.HUE_RED);
+                this.leftMatrix.postTranslate(Math.min(f3, max + AndroidUtilities.m72dp(8)), BitmapDescriptorFactory.HUE_RED);
                 this.leftGradient.setLocalMatrix(this.leftMatrix);
-                float min = Math.min(getMeasuredWidth() - AndroidUtilities.m54dp(8), f7);
+                float min = Math.min(getMeasuredWidth() - AndroidUtilities.m72dp(8), f7);
                 this.rightMatrix.reset();
-                this.rightMatrix.postTranslate(Math.max(f8, min - AndroidUtilities.m54dp(88)), BitmapDescriptorFactory.HUE_RED);
+                this.rightMatrix.postTranslate(Math.max(f8, min - AndroidUtilities.m72dp(88)), BitmapDescriptorFactory.HUE_RED);
                 this.rightGradient.setLocalMatrix(this.rightMatrix);
                 canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, measuredWidth, getMeasuredHeight(), this.leftPaint);
                 canvas.drawRect(measuredWidth, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight(), this.rightPaint);
@@ -1592,7 +1592,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         ArrayList<TLRPC$Peer> arrayList = this.peers;
         if (arrayList != null && arrayList.size() - this.alreadyJoined.size() > 1) {
             final boolean z2 = this.selectedPeers.size() >= this.peers.size() - this.alreadyJoined.size();
-            this.headerCell.setAction(LocaleController.getString(z2 ? C3417R.string.DeselectAll : C3417R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda11
+            this.headerCell.setAction(LocaleController.getString(z2 ? C3419R.string.DeselectAll : C3419R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
                     FolderBottomSheet.this.lambda$updateHeaderCell$20(z2);
@@ -1633,7 +1633,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }
         updateCount(true);
-        headerCell.setAction(LocaleController.getString(z ? C3417R.string.SelectAll : C3417R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
+        headerCell.setAction(LocaleController.getString(z ? C3419R.string.SelectAll : C3419R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 FolderBottomSheet.this.lambda$deselectAll$21(headerCell, z);

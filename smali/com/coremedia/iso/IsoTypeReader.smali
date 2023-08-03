@@ -372,6 +372,46 @@
     return-wide v0
 .end method
 
+.method public static readUInt48(Ljava/nio/ByteBuffer;)J
+    .locals 4
+
+    .line 173
+    invoke-static {p0}, Lcom/coremedia/iso/IsoTypeReader;->readUInt16(Ljava/nio/ByteBuffer;)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    const/16 v2, 0x20
+
+    shl-long/2addr v0, v2
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-ltz v2, :cond_0
+
+    .line 177
+    invoke-static {p0}, Lcom/coremedia/iso/IsoTypeReader;->readUInt32(Ljava/nio/ByteBuffer;)J
+
+    move-result-wide v2
+
+    add-long/2addr v0, v2
+
+    return-wide v0
+
+    .line 175
+    :cond_0
+    new-instance p0, Ljava/lang/RuntimeException;
+
+    const-string v0, "I don\'t know how to deal with UInt64! long is not sufficient and I don\'t want to use BigInt"
+
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method public static readUInt64(Ljava/nio/ByteBuffer;)J
     .locals 4
 

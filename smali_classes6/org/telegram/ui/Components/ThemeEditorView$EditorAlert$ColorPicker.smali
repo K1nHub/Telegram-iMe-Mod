@@ -236,7 +236,7 @@
 
     const v11, -0xdededf
 
-    invoke-virtual {v9, v11}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v9, v11}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 343
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;

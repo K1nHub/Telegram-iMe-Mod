@@ -2177,7 +2177,7 @@
     if-nez p1, :cond_4
 
     .line 572
-    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Landroid/widget/TextView;
+    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->PhoneCopied:I
 
@@ -2202,7 +2202,7 @@
     if-ne p1, v0, :cond_5
 
     .line 575
-    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Landroid/widget/TextView;
+    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->EmailCopied:I
 
@@ -2225,7 +2225,7 @@
 
     .line 578
     :cond_5
-    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Landroid/widget/TextView;
+    iget-object p1, p4, Lorg/telegram/ui/Components/Bulletin$SimpleLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->TextCopied:I
 

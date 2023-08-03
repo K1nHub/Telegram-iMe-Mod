@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentCustomTokensBinding implements ViewBinding {
     public final RecyclerView recyclerTokens;
@@ -27,7 +27,7 @@ public final class ForkFragmentCustomTokensBinding implements ViewBinding {
     }
 
     public static ForkFragmentCustomTokensBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_custom_tokens, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_fragment_custom_tokens, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

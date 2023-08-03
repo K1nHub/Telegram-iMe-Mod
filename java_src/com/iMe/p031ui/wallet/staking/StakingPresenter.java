@@ -1,7 +1,10 @@
 package com.iMe.p031ui.wallet.staking;
 
 import com.iMe.i_staking.StakingInteractor;
+import com.iMe.model.staking.StakingDashboardItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
+import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.p031ui.wallet.staking.StakingPresenter;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.staking.StakingTabType;
 import com.iMe.storage.domain.model.staking.StakingTotalStats;
@@ -14,8 +17,11 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
+import timber.log.Timber;
 /* compiled from: StakingPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.StakingPresenter */
@@ -110,19 +116,120 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
         stakingPresenter.loadStakingTotalStats(z);
     }
 
-    private final void loadStakingTotalStats(boolean z) {
-        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo698ui());
+    private final void loadStakingTotalStats(final boolean z) {
+        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2380xdeaf3e3c(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2381xdeaf3e3d(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingTotalStats>, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingTotalStats> result) {
+                m1540invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1540invoke(Result<? extends StakingTotalStats> it) {
+                ResourceManager resourceManager;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends StakingTotalStats> result = it;
+                boolean z2 = result instanceof Result.Loading;
+                StakingPresenter.this.isDashboardRefreshing = z2;
+                StakingPresenter.this.updateRefreshState();
+                if (result instanceof Result.Success) {
+                    StakingTotalStats stakingTotalStats = (StakingTotalStats) ((Result.Success) result).getData();
+                    ((StakingView) StakingPresenter.this.getViewState()).updateDashboardItem(new StakingDashboardItem.Data(stakingTotalStats.getTotalStakedUsd(), stakingTotalStats.getTotalProfitUsd()));
+                } else if (z2) {
+                    if (z) {
+                        ((StakingView) StakingPresenter.this.getViewState()).updateDashboardItem(StakingDashboardItem.Loading.INSTANCE);
+                    }
+                } else if (result instanceof Result.Error) {
+                    resourceManager = StakingPresenter.this.resourceManager;
+                    ((StakingView) StakingPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2378xf624d8f6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2379xf624d8f7(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.StakingTabRefreshStateChanged, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged) {
+                m1539invoke(stakingTabRefreshStateChanged);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1539invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged = it;
+                int i = StakingPresenter.WhenMappings.$EnumSwitchMapping$0[stakingTabRefreshStateChanged.getStakingTabType().ordinal()];
+                if (i == 1) {
+                    StakingPresenter.this.isAllTabRefreshing = stakingTabRefreshStateChanged.isShowRefresh();
+                } else if (i == 2) {
+                    StakingPresenter.this.isParticipatedTabRefreshing = stakingTabRefreshStateChanged.isShowRefresh();
+                }
+                StakingPresenter.this.updateRefreshState();
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

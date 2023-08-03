@@ -22,10 +22,10 @@
 .method private constructor <init>(II)V
     .locals 3
 
-    .line 1207
+    .line 1209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1208
+    .line 1210
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -62,7 +62,7 @@
 .method synthetic constructor <init>(IILorg/telegram/ui/Components/PipVideoOverlay$1;)V
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;-><init>(II)V
 
     return-void
@@ -71,7 +71,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;)F
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->getPipX()F
 
     move-result p0
@@ -82,7 +82,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;)F
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->getPipY()F
 
     move-result p0
@@ -93,7 +93,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;F)V
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->setPipX(F)V
 
     return-void
@@ -102,7 +102,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;F)V
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->setPipY(F)V
 
     return-void
@@ -111,7 +111,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;)F
     .locals 0
 
-    .line 1204
+    .line 1206
     invoke-direct {p0}, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->getScaleFactor()F
 
     move-result p0
@@ -122,7 +122,7 @@
 .method private getPipX()F
     .locals 3
 
-    .line 1228
+    .line 1230
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->mPrefs:Landroid/content/SharedPreferences;
 
     const-string v1, "x"
@@ -139,7 +139,7 @@
 .method private getPipY()F
     .locals 3
 
-    .line 1232
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->mPrefs:Landroid/content/SharedPreferences;
 
     const-string v1, "y"
@@ -156,7 +156,7 @@
 .method private getScaleFactor()F
     .locals 3
 
-    .line 1224
+    .line 1226
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->mPrefs:Landroid/content/SharedPreferences;
 
     const-string v1, "scale_factor"
@@ -173,7 +173,7 @@
 .method private setPipX(F)V
     .locals 2
 
-    .line 1212
+    .line 1214
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->mPrefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -194,7 +194,7 @@
 .method private setPipY(F)V
     .locals 2
 
-    .line 1216
+    .line 1218
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$PipConfig;->mPrefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;

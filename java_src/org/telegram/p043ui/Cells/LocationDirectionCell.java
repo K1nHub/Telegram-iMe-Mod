@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -25,20 +25,20 @@ public class LocationDirectionCell extends FrameLayout {
         addView(this.frameLayout, LayoutHelper.createFrame(-1, 48, 51, 16, 10, 16, 0));
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.buttonTextView = simpleTextView;
-        simpleTextView.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+        simpleTextView.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
         this.buttonTextView.setGravity(17);
-        this.buttonTextView.setDrawablePadding(AndroidUtilities.m54dp(8));
+        this.buttonTextView.setDrawablePadding(AndroidUtilities.m72dp(8));
         this.buttonTextView.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
         this.buttonTextView.setTextSize(14);
-        this.buttonTextView.setText(LocaleController.getString("Directions", C3417R.string.Directions));
-        this.buttonTextView.setLeftDrawable(C3417R.C3419drawable.navigate);
+        this.buttonTextView.setText(LocaleController.getString("Directions", C3419R.string.Directions));
+        this.buttonTextView.setLeftDrawable(C3419R.C3421drawable.navigate);
         this.buttonTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.frameLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, -1));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(73), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(73), 1073741824));
     }
 
     public void setOnButtonClick(View.OnClickListener onClickListener) {

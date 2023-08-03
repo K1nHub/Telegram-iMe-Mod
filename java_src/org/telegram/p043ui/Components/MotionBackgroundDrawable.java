@@ -316,7 +316,7 @@ public class MotionBackgroundDrawable extends Drawable {
                     this.legacyCanvas2.drawBitmap(this.legacyBitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
                 }
             } catch (Throwable th) {
-                FileLog.m49e(th);
+                FileLog.m67e(th);
                 Bitmap bitmap3 = this.legacyBitmap2;
                 if (bitmap3 != null) {
                     bitmap3.recycle();
@@ -399,7 +399,7 @@ public class MotionBackgroundDrawable extends Drawable {
             this.parentView.get().invalidate();
         }
         if (this.postInvalidateParent) {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.invalidateMotionBackground, new Object[0]);
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.invalidateMotionBackground, new Object[0]);
             updateAnimation(false);
             AndroidUtilities.cancelRunOnUIThread(this.updateAnimationRunnable);
             AndroidUtilities.runOnUIThread(this.updateAnimationRunnable, 16L);
@@ -533,7 +533,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 bitmap4.recycle();
                 this.legacyBitmap = null;
             }
-            FileLog.m49e(th);
+            FileLog.m67e(th);
             errorWhileGenerateLegacyBitmap = true;
             this.paint2.setXfermode(null);
         }

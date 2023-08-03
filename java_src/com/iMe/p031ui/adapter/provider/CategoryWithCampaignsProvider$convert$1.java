@@ -19,9 +19,16 @@ import java.util.Map;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
+import kotlin.jvm.internal.Reflection;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CategoryWithCampaignsProvider.kt */
@@ -61,12 +68,33 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
         map = categoryWithCampaignsProvider.channelsRecyclersScrollStates;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, (Parcelable) map.get(Integer.valueOf(baseViewHolder.getAdapterPosition())));
         applyForView.setLayoutManager(linearLayoutManager);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1992x81d5b2c4(this.this$0, null, null));
+        final CategoryWithCampaignsProvider categoryWithCampaignsProvider2 = this.this$0;
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CatalogAllChannelsRecycleAdapter>() { // from class: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1$invoke$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.catalog.tabs.all.adapter.CatalogAllChannelsRecycleAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final CatalogAllChannelsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(CatalogAllChannelsRecycleAdapter.class), qualifier, function0);
+            }
+        });
         CatalogAllChannelsRecycleAdapter invoke$lambda$1 = invoke$lambda$1(lazy);
         final CategoryWithCampaignsItem categoryWithCampaignsItem = this.$item;
-        final CategoryWithCampaignsProvider categoryWithCampaignsProvider2 = this.this$0;
+        final CategoryWithCampaignsProvider categoryWithCampaignsProvider3 = this.this$0;
         invoke$lambda$1.setNewInstance(categoryWithCampaignsItem.getCampaigns());
-        channelsDiffCallback = categoryWithCampaignsProvider2.channelsDiffCallback;
+        channelsDiffCallback = categoryWithCampaignsProvider3.channelsDiffCallback;
         invoke$lambda$1.setDiffCallback(channelsDiffCallback);
         invoke$lambda$1.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
@@ -88,7 +116,7 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
         } else {
             loadMoreModule.loadMoreComplete();
         }
-        map2 = categoryWithCampaignsProvider2.channelsAdapters;
+        map2 = categoryWithCampaignsProvider3.channelsAdapters;
         map2.put(Long.valueOf(categoryWithCampaignsItem.getCategory().getId()), invoke$lambda$1);
         applyForView.setAdapter(invoke$lambda$1);
         RecycleViewExtKt.setHorizontalRecyclerInPagerScrollHelper(applyForView);

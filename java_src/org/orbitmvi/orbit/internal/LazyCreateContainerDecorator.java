@@ -2,6 +2,7 @@ package org.orbitmvi.orbit.internal;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.Flow;
@@ -25,7 +26,27 @@ public final class LazyCreateContainerDecorator<STATE, SIDE_EFFECT> implements C
         this.actual = actual;
         this.onCreate = onCreate;
         this.created = 0;
-        this.stateFlow = StateFlowExtensionsKt.onSubscribe(getActual().getStateFlow(), new LazyCreateContainerDecorator$stateFlow$1(this));
+        this.stateFlow = StateFlowExtensionsKt.onSubscribe(getActual().getStateFlow(), new Function0<Unit>(this) { // from class: org.orbitmvi.orbit.internal.LazyCreateContainerDecorator$stateFlow$1
+            final /* synthetic */ LazyCreateContainerDecorator<STATE, SIDE_EFFECT> this$0;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                this.this$0.runOnCreate();
+            }
+        });
         this.sideEffectFlow = FlowKt.flow(new LazyCreateContainerDecorator$sideEffectFlow$1(this, null));
     }
 

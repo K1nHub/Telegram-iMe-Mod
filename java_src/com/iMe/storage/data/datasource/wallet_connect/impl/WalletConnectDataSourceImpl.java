@@ -3,7 +3,11 @@ package com.iMe.storage.data.datasource.wallet_connect.impl;
 import com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource;
 import com.iMe.storage.data.network.api.own.WalletConnectApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.request.crypto.wallet.SendTransactionBodyRequest;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.iMe.storage.data.utils.crypto.EthTransactionSigner;
+import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
@@ -12,7 +16,9 @@ import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectTransacti
 import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import java.math.BigInteger;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: WalletConnectDataSourceImpl.kt */
@@ -34,7 +40,49 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
     @Override // com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource
     public Observable<Result<String>> sendTransaction(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1633x2f0ca7ae(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends String>>>() { // from class: com.iMe.storage.data.datasource.wallet_connect.impl.WalletConnectDataSourceImpl$sendTransaction$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends String>> invoke(Result<? extends String> result) {
+                WalletConnectApi walletConnectApi;
+                final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                walletConnectApi = WalletConnectDataSourceImpl.this.walletConnectApi;
+                String data = result.getData();
+                if (data == null) {
+                    data = "";
+                }
+                Observable<ApiBaseResponse<TransactionResponse>> sendWalletConnectCryptoTransaction = walletConnectApi.sendWalletConnectCryptoTransaction(new SendTransactionBodyRequest(data));
+                firebaseFunctionsErrorHandler = WalletConnectDataSourceImpl.this.firebaseErrorHandler;
+                ObservableSource map = sendWalletConnectCryptoTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<TransactionResponse>, Result<? extends String>>() { // from class: com.iMe.storage.data.datasource.wallet_connect.impl.WalletConnectDataSourceImpl$sendTransaction$lambda$1$$inlined$mapSuccess$1
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Result<String> invoke(ApiBaseResponse<TransactionResponse> response) {
+                        Intrinsics.checkNotNullParameter(response, "response");
+                        if (!response.isSuccess()) {
+                            return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                        }
+                        return Result.Companion.success(response.getPayload().getTransactionHash());
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
+                return map;
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }

@@ -21,7 +21,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)V
     .locals 0
 
-    .line 586
+    .line 587
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$1;)V
     .locals 0
 
-    .line 586
+    .line 587
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$DarkTheme;-><init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)V
 
     return-void
@@ -46,31 +46,20 @@
     return-void
 .end method
 
-.method public contains(I)Z
-    .locals 0
+.method public synthetic getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
 
-    .line 631
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$DarkTheme;->getColor(I)I
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
-    move-result p1
+    move-result-object v0
 
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
+    return-object v0
 .end method
 
 .method public getColor(I)I
     .locals 4
 
-    .line 589
+    .line 590
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     if-ne p1, v0, :cond_0
@@ -79,7 +68,7 @@
 
     return p1
 
-    .line 591
+    .line 592
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
@@ -89,7 +78,7 @@
 
     return p1
 
-    .line 593
+    .line 594
     :cond_1
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -99,7 +88,7 @@
 
     return v1
 
-    .line 595
+    .line 596
     :cond_2
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelEmptyText:I
 
@@ -109,7 +98,7 @@
 
     return p1
 
-    .line 597
+    .line 598
     :cond_3
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_progressCircle:I
 
@@ -119,7 +108,7 @@
 
     return p1
 
-    .line 599
+    .line 600
     :cond_4
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
 
@@ -129,11 +118,11 @@
 
     return p1
 
-    .line 601
+    .line 602
     :cond_5
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerPackSelector:I
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_13
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
 
@@ -141,7 +130,7 @@
 
     goto :goto_0
 
-    .line 603
+    .line 604
     :cond_6
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
@@ -151,7 +140,7 @@
 
     return v2
 
-    .line 605
+    .line 606
     :cond_7
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
@@ -159,7 +148,7 @@
 
     return v2
 
-    .line 607
+    .line 608
     :cond_8
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
@@ -169,7 +158,7 @@
 
     return v3
 
-    .line 609
+    .line 610
     :cond_9
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerPackSelectorLine:I
 
@@ -177,7 +166,7 @@
 
     return v3
 
-    .line 611
+    .line 612
     :cond_a
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
@@ -187,7 +176,7 @@
 
     return p1
 
-    .line 613
+    .line 614
     :cond_b
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
 
@@ -197,7 +186,7 @@
 
     return p1
 
-    .line 615
+    .line 616
     :cond_c
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
@@ -205,7 +194,7 @@
 
     return v2
 
-    .line 617
+    .line 618
     :cond_d
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
@@ -215,7 +204,7 @@
 
     return p1
 
-    .line 619
+    .line 620
     :cond_e
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
@@ -225,7 +214,7 @@
 
     return p1
 
-    .line 621
+    .line 622
     :cond_f
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
@@ -233,7 +222,7 @@
 
     return v3
 
-    .line 623
+    .line 624
     :cond_10
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingIcon:I
 
@@ -241,12 +230,22 @@
 
     return v1
 
+    .line 626
     :cond_11
-    const/4 p1, 0x0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerSetName:I
+
+    if-ne p1, v0, :cond_12
+
+    const p1, 0x73ffffff
 
     return p1
 
     :cond_12
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_13
     :goto_0
     const p1, 0xacdeaff
 

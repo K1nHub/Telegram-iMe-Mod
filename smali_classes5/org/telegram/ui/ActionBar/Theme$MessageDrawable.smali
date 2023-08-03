@@ -118,7 +118,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 332
+    .line 345
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     return-void
@@ -129,7 +129,7 @@
 
     const/4 v0, 0x0
 
-    .line 375
+    .line 388
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;-><init>(IZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -138,10 +138,10 @@
 .method public constructor <init>(IZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 379
+    .line 392
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 303
+    .line 316
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -150,21 +150,21 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 311
+    .line 324
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
-    .line 312
+    .line 325
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
-    .line 321
+    .line 334
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -175,24 +175,24 @@
 
     new-array v2, v0, [I
 
-    .line 334
+    .line 347
     fill-array-data v2, :array_0
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentShadowDrawableRadius:[I
 
     new-array v2, v0, [Landroid/graphics/Bitmap;
 
-    .line 335
+    .line 348
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableBitmap:[Landroid/graphics/Bitmap;
 
     new-array v2, v0, [Landroid/graphics/drawable/Drawable;
 
-    .line 336
+    .line 349
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
     new-array v2, v0, [I
 
-    .line 337
+    .line 350
     fill-array-data v2, :array_1
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableColor:[I
@@ -201,7 +201,7 @@
 
     new-array v3, v0, [I
 
-    .line 339
+    .line 352
     fill-array-data v3, :array_2
 
     const/4 v4, 0x0
@@ -234,7 +234,7 @@
 
     new-array v2, v5, [I
 
-    .line 345
+    .line 358
     fill-array-data v2, :array_6
 
     const-class v3, Landroid/graphics/drawable/Drawable;
@@ -251,7 +251,7 @@
 
     new-array v3, v0, [I
 
-    .line 346
+    .line 359
     fill-array-data v3, :array_7
 
     aput-object v3, v2, v4
@@ -276,26 +276,26 @@
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawableColor:[[I
 
-    .line 380
+    .line 393
     iput-object p4, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 381
+    .line 394
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
-    .line 382
+    .line 395
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
-    .line 383
+    .line 396
     iput-boolean p3, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isSelected:Z
 
-    .line 384
+    .line 397
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->path:Landroid/graphics/Path;
 
-    .line 385
+    .line 398
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -304,7 +304,7 @@
 
     const/16 p1, 0xff
 
-    .line 386
+    .line 399
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->alpha:I
 
     return-void
@@ -399,7 +399,7 @@
 .method private dp(F)I
     .locals 2
 
-    .line 571
+    .line 584
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v1, 0x2
@@ -412,7 +412,7 @@
 
     float-to-double v0, p1
 
-    .line 572
+    .line 585
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -421,7 +421,7 @@
 
     return p1
 
-    .line 574
+    .line 587
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -435,7 +435,7 @@
 
     const/16 v0, 0x54
 
-    .line 788
+    .line 801
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -450,82 +450,82 @@
 
     const/4 v1, 0x1
 
-    .line 789
+    .line 802
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     const/4 v2, 0x2
 
-    .line 790
+    .line 803
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 791
+    .line 804
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     const/16 v2, 0x9
 
-    .line 792
+    .line 805
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     const/4 v2, 0x0
 
-    .line 794
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 795
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 797
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 798
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 799
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 800
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 802
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 804
-    invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 805
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
     .line 807
-    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 808
-    invoke-virtual {v0, p3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 810
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 811
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 812
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 813
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 814
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 815
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 816
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 817
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 818
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 820
+    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 821
+    invoke-virtual {v0, p3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 823
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 824
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 825
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 826
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 827
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 828
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 829
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 830
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    .line 831
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     return-object v0
@@ -536,14 +536,14 @@
 .method public applyMatrixScale()V
     .locals 6
 
-    .line 394
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     instance-of v0, v0, Landroid/graphics/BitmapShader;
 
     if-eqz v0, :cond_4
 
-    .line 395
+    .line 408
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isCrossfadeBackground:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -560,7 +560,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 396
+    .line 409
     iget v5, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-ne v5, v4, :cond_0
@@ -570,7 +570,7 @@
     :cond_0
     move v2, v3
 
-    .line 397
+    .line 410
     :goto_0
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -594,7 +594,7 @@
 
     div-float/2addr v0, v3
 
-    .line 398
+    .line 411
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
@@ -619,21 +619,21 @@
 
     div-float/2addr v3, v2
 
-    .line 399
+    .line 412
     invoke-static {v0, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
     div-float/2addr v1, v0
 
-    .line 400
+    .line 413
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     goto :goto_3
 
-    .line 403
+    .line 416
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->themePreview:Z
 
@@ -641,7 +641,7 @@
 
     goto :goto_2
 
-    .line 406
+    .line 419
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -655,7 +655,7 @@
     :goto_1
     move v4, v2
 
-    .line 408
+    .line 421
     :goto_2
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -665,7 +665,7 @@
 
     move-result-object v0
 
-    .line 409
+    .line 422
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -688,7 +688,7 @@
 
     div-float/2addr v2, v3
 
-    .line 410
+    .line 423
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
@@ -711,14 +711,14 @@
 
     div-float/2addr v0, v3
 
-    .line 411
+    .line 424
     invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
     div-float/2addr v1, v0
 
-    .line 412
+    .line 425
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
@@ -731,19 +731,19 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 841
+    .line 854
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 842
+    .line 855
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;)V
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    .line 843
+    .line 856
     iget v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeProgress:F
 
     mul-float/2addr v2, v0
@@ -752,17 +752,17 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setAlpha(I)V
 
-    .line 844
+    .line 857
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
     const/16 p1, 0xff
 
-    .line 845
+    .line 858
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setAlpha(I)V
 
     goto :goto_0
 
-    .line 847
+    .line 860
     :cond_0
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
@@ -777,7 +777,7 @@
 
     move-object/from16 v1, p1
 
-    .line 852
+    .line 865
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -786,7 +786,7 @@
 
     if-nez p2, :cond_0
 
-    .line 853
+    .line 866
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-nez v4, :cond_0
@@ -801,17 +801,17 @@
 
     if-gtz v4, :cond_0
 
-    .line 854
+    .line 867
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getBackgroundDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     if-eqz v4, :cond_0
 
-    .line 856
+    .line 869
     invoke-virtual {v4, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 857
+    .line 870
     invoke-virtual {v4, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -819,12 +819,12 @@
     :cond_0
     const/high16 v4, 0x40000000    # 2.0f
 
-    .line 861
+    .line 875
     invoke-direct {v0, v4}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
     move-result v5
 
-    .line 864
+    .line 878
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRoundRadius:I
 
     const/high16 v7, 0x40c00000    # 6.0f
@@ -837,7 +837,7 @@
 
     goto :goto_0
 
-    .line 867
+    .line 881
     :cond_1
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRounding:F
 
@@ -847,7 +847,7 @@
 
     if-lez v6, :cond_2
 
-    .line 868
+    .line 882
     sget v6, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     int-to-float v6, v6
@@ -876,7 +876,7 @@
 
     move-result v6
 
-    .line 869
+    .line 883
     sget v10, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     invoke-static {v9, v10}, Ljava/lang/Math;->min(II)I
@@ -911,25 +911,25 @@
 
     goto :goto_0
 
-    .line 870
+    .line 884
     :cond_2
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-ne v6, v8, :cond_3
 
-    .line 871
+    .line 885
     invoke-direct {v0, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
     move-result v6
 
-    .line 872
+    .line 886
     invoke-direct {v0, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
     move-result v9
 
     goto :goto_0
 
-    .line 874
+    .line 888
     :cond_3
     sget v6, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
@@ -939,7 +939,7 @@
 
     move-result v6
 
-    .line 875
+    .line 889
     sget v10, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     invoke-static {v9, v10}, Ljava/lang/Math;->min(II)I
@@ -952,7 +952,7 @@
 
     move-result v9
 
-    .line 877
+    .line 891
     :goto_0
     invoke-direct {v0, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
@@ -960,7 +960,7 @@
 
     if-nez p2, :cond_4
 
-    .line 879
+    .line 893
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     goto :goto_1
@@ -971,20 +971,20 @@
     :goto_1
     if-nez p2, :cond_5
 
-    .line 881
+    .line 895
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-eqz v11, :cond_5
 
-    .line 882
+    .line 896
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v11}, Landroid/graphics/Matrix;->reset()V
 
-    .line 883
+    .line 897
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->applyMatrixScale()V
 
-    .line 884
+    .line 898
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     iget v12, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->topY:I
@@ -995,14 +995,14 @@
 
     invoke-virtual {v11, v3, v12}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 885
+    .line 899
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v11, v12}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 888
+    .line 902
     :cond_5
     iget v11, v2, Landroid/graphics/Rect;->top:I
 
@@ -1012,7 +1012,7 @@
 
     move-result v11
 
-    .line 890
+    .line 904
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
     const/4 v14, 0x1
@@ -1033,7 +1033,7 @@
 
     goto :goto_4
 
-    .line 894
+    .line 908
     :cond_6
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -1076,7 +1076,7 @@
     :cond_8
     move v13, v12
 
-    .line 895
+    .line 909
     :goto_3
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->topY:I
 
@@ -1093,23 +1093,23 @@
     :cond_9
     move v15, v12
 
-    .line 899
+    .line 913
     :goto_4
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
     if-eqz v3, :cond_a
 
-    .line 900
+    .line 914
     iget-object v4, v3, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;->path:Landroid/graphics/Path;
 
-    .line 901
+    .line 915
     invoke-virtual {v3, v2, v13, v15}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;->invalidatePath(Landroid/graphics/Rect;ZZ)Z
 
     move-result v3
 
     goto :goto_5
 
-    .line 903
+    .line 917
     :cond_a
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->path:Landroid/graphics/Path;
 
@@ -1118,16 +1118,16 @@
     :goto_5
     if-nez v3, :cond_b
 
-    .line 906
+    .line 920
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRoundRadius:I
 
     if-eqz v3, :cond_2c
 
-    .line 907
+    .line 921
     :cond_b
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
-    .line 908
+    .line 922
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
     move-result v3
@@ -1140,7 +1140,7 @@
 
     move v6, v3
 
-    .line 912
+    .line 926
     :cond_c
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
@@ -1148,7 +1148,7 @@
 
     if-eqz v3, :cond_1c
 
-    .line 913
+    .line 927
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
     if-nez v3, :cond_e
@@ -1163,7 +1163,7 @@
 
     goto :goto_6
 
-    .line 924
+    .line 938
     :cond_d
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
@@ -1187,7 +1187,7 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 925
+    .line 939
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v3, v5
@@ -1210,7 +1210,7 @@
 
     goto :goto_9
 
-    .line 914
+    .line 928
     :cond_e
     :goto_6
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->botButtonsBottom:Z
@@ -1224,13 +1224,13 @@
     :cond_f
     move v3, v6
 
-    .line 915
+    .line 929
     :goto_7
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-ne v8, v14, :cond_10
 
-    .line 916
+    .line 930
     iget v8, v2, Landroid/graphics/Rect;->right:I
 
     const/high16 v12, 0x41000000    # 8.0f
@@ -1255,7 +1255,7 @@
 
     goto :goto_8
 
-    .line 918
+    .line 932
     :cond_10
     iget v8, v2, Landroid/graphics/Rect;->right:I
 
@@ -1277,7 +1277,7 @@
 
     invoke-virtual {v4, v8, v12}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 920
+    .line 934
     :goto_8
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
@@ -1295,7 +1295,7 @@
 
     invoke-virtual {v4, v8, v12}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 921
+    .line 935
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v12, v2, Landroid/graphics/Rect;->left:I
@@ -1330,7 +1330,7 @@
 
     invoke-virtual {v8, v14, v1, v3, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 922
+    .line 936
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v3, 0x42b40000    # 90.0f
@@ -1339,7 +1339,7 @@
 
     invoke-virtual {v4, v1, v3, v3, v8}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 927
+    .line 941
     :goto_9
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
@@ -1357,7 +1357,7 @@
 
     goto :goto_a
 
-    .line 942
+    .line 956
     :cond_11
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -1381,14 +1381,14 @@
 
     invoke-virtual {v4, v1, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 943
+    .line 957
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v3, 0x1
 
     if-ne v1, v3, :cond_12
 
-    .line 944
+    .line 958
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v1, v5
@@ -1411,7 +1411,7 @@
 
     goto/16 :goto_d
 
-    .line 946
+    .line 960
     :cond_12
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
@@ -1441,7 +1441,7 @@
 
     goto/16 :goto_d
 
-    .line 928
+    .line 942
     :cond_13
     :goto_a
     iget v1, v2, Landroid/graphics/Rect;->left:I
@@ -1460,7 +1460,7 @@
 
     invoke-virtual {v4, v1, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 929
+    .line 943
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v3, v2, Landroid/graphics/Rect;->left:I
@@ -1491,7 +1491,7 @@
 
     invoke-virtual {v1, v8, v12, v3, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 930
+    .line 944
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v3, 0x43340000    # 180.0f
@@ -1502,7 +1502,7 @@
 
     invoke-virtual {v4, v1, v3, v8, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 932
+    .line 946
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isTopNear:Z
 
     if-eqz v1, :cond_14
@@ -1514,7 +1514,7 @@
     :cond_14
     move v1, v6
 
-    .line 933
+    .line 947
     :goto_b
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -1522,7 +1522,7 @@
 
     if-ne v3, v8, :cond_15
 
-    .line 934
+    .line 948
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v3, v5
@@ -1539,7 +1539,7 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 935
+    .line 949
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v8, v2, Landroid/graphics/Rect;->right:I
@@ -1574,7 +1574,7 @@
 
     goto :goto_c
 
-    .line 937
+    .line 951
     :cond_15
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
@@ -1598,7 +1598,7 @@
 
     invoke-virtual {v4, v3, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 938
+    .line 952
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v9, v2, Landroid/graphics/Rect;->right:I
@@ -1643,7 +1643,7 @@
 
     invoke-virtual {v3, v9, v12, v8, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 940
+    .line 954
     :goto_c
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
@@ -1655,7 +1655,7 @@
 
     invoke-virtual {v4, v1, v3, v8, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 949
+    .line 963
     :goto_d
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -1669,7 +1669,7 @@
 
     goto :goto_e
 
-    .line 957
+    .line 971
     :cond_16
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
@@ -1691,7 +1691,7 @@
 
     goto/16 :goto_1c
 
-    .line 951
+    .line 965
     :cond_17
     :goto_e
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
@@ -1705,7 +1705,7 @@
     :cond_18
     move v9, v6
 
-    .line 953
+    .line 967
     :goto_f
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
@@ -1723,7 +1723,7 @@
 
     invoke-virtual {v4, v1, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 954
+    .line 968
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v3, v2, Landroid/graphics/Rect;->right:I
@@ -1756,7 +1756,7 @@
 
     invoke-virtual {v1, v6, v7, v3, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 955
+    .line 969
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v2, 0x42b40000    # 90.0f
@@ -1769,7 +1769,7 @@
 
     goto/16 :goto_1c
 
-    .line 960
+    .line 974
     :cond_19
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
@@ -1785,7 +1785,7 @@
 
     goto :goto_10
 
-    .line 965
+    .line 979
     :cond_1a
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
@@ -1813,7 +1813,7 @@
 
     goto/16 :goto_1c
 
-    .line 961
+    .line 975
     :cond_1b
     :goto_10
     iget v1, v2, Landroid/graphics/Rect;->right:I
@@ -1846,7 +1846,7 @@
 
     invoke-virtual {v4, v1, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 962
+    .line 976
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v3, v2, Landroid/graphics/Rect;->right:I
@@ -1911,7 +1911,7 @@
 
     invoke-virtual {v1, v3, v6, v7, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 963
+    .line 977
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v2, -0x3d5a0000    # -83.0f
@@ -1927,7 +1927,7 @@
     :cond_1c
     move/from16 v20, v9
 
-    .line 969
+    .line 983
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
     const/high16 v3, -0x3d4c0000    # -90.0f
@@ -1946,7 +1946,7 @@
 
     goto :goto_11
 
-    .line 981
+    .line 995
     :cond_1d
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -1972,7 +1972,7 @@
 
     invoke-virtual {v4, v1, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 982
+    .line 996
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v1, v5
@@ -1993,7 +1993,7 @@
 
     goto :goto_14
 
-    .line 970
+    .line 984
     :cond_1e
     :goto_11
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->botButtonsBottom:Z
@@ -2007,7 +2007,7 @@
     :cond_1f
     move v1, v6
 
-    .line 972
+    .line 986
     :goto_12
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -2015,7 +2015,7 @@
 
     if-ne v8, v9, :cond_20
 
-    .line 973
+    .line 987
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
     const/high16 v9, 0x41000000    # 8.0f
@@ -2040,7 +2040,7 @@
 
     goto :goto_13
 
-    .line 975
+    .line 989
     :cond_20
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
@@ -2062,7 +2062,7 @@
 
     invoke-virtual {v4, v8, v9}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 977
+    .line 991
     :goto_13
     iget v8, v2, Landroid/graphics/Rect;->right:I
 
@@ -2080,7 +2080,7 @@
 
     invoke-virtual {v4, v8, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 978
+    .line 992
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v9, v2, Landroid/graphics/Rect;->right:I
@@ -2113,7 +2113,7 @@
 
     invoke-virtual {v8, v12, v1, v9, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 979
+    .line 993
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v8, 0x42b40000    # 90.0f
@@ -2122,7 +2122,7 @@
 
     invoke-virtual {v4, v1, v8, v3, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 984
+    .line 998
     :goto_14
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
@@ -2140,7 +2140,7 @@
 
     goto :goto_15
 
-    .line 999
+    .line 1013
     :cond_21
     iget v1, v2, Landroid/graphics/Rect;->right:I
 
@@ -2164,14 +2164,14 @@
 
     invoke-virtual {v4, v1, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1000
+    .line 1014
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v8, 0x1
 
     if-ne v1, v8, :cond_22
 
-    .line 1001
+    .line 1015
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v1, v5
@@ -2194,7 +2194,7 @@
 
     goto/16 :goto_18
 
-    .line 1003
+    .line 1017
     :cond_22
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -2224,7 +2224,7 @@
 
     goto/16 :goto_18
 
-    .line 985
+    .line 999
     :cond_23
     :goto_15
     iget v1, v2, Landroid/graphics/Rect;->right:I
@@ -2243,7 +2243,7 @@
 
     invoke-virtual {v4, v1, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 986
+    .line 1000
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v8, v2, Landroid/graphics/Rect;->right:I
@@ -2274,7 +2274,7 @@
 
     invoke-virtual {v1, v9, v15, v8, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 987
+    .line 1001
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/4 v8, 0x0
@@ -2283,7 +2283,7 @@
 
     invoke-virtual {v4, v1, v8, v3, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 989
+    .line 1003
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isTopNear:Z
 
     if-eqz v1, :cond_24
@@ -2295,7 +2295,7 @@
     :cond_24
     move v1, v6
 
-    .line 990
+    .line 1004
     :goto_16
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -2303,7 +2303,7 @@
 
     if-ne v8, v9, :cond_25
 
-    .line 991
+    .line 1005
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v8, v5
@@ -2320,7 +2320,7 @@
 
     invoke-virtual {v4, v8, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 992
+    .line 1006
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v9, v2, Landroid/graphics/Rect;->left:I
@@ -2355,7 +2355,7 @@
 
     goto :goto_17
 
-    .line 994
+    .line 1008
     :cond_25
     iget v8, v2, Landroid/graphics/Rect;->left:I
 
@@ -2379,7 +2379,7 @@
 
     invoke-virtual {v4, v8, v12}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 995
+    .line 1009
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v12, v2, Landroid/graphics/Rect;->left:I
@@ -2424,7 +2424,7 @@
 
     invoke-virtual {v8, v12, v14, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 997
+    .line 1011
     :goto_17
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
@@ -2434,7 +2434,7 @@
 
     invoke-virtual {v4, v1, v8, v3, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 1006
+    .line 1020
     :goto_18
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -2448,7 +2448,7 @@
 
     goto :goto_19
 
-    .line 1014
+    .line 1028
     :cond_26
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -2470,7 +2470,7 @@
 
     goto/16 :goto_1c
 
-    .line 1008
+    .line 1022
     :cond_27
     :goto_19
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
@@ -2484,7 +2484,7 @@
     :cond_28
     move v9, v6
 
-    .line 1010
+    .line 1024
     :goto_1a
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -2502,7 +2502,7 @@
 
     invoke-virtual {v4, v1, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1011
+    .line 1025
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v6, v2, Landroid/graphics/Rect;->left:I
@@ -2535,7 +2535,7 @@
 
     invoke-virtual {v1, v7, v8, v6, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1012
+    .line 1026
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v2, 0x43340000    # 180.0f
@@ -2546,7 +2546,7 @@
 
     goto/16 :goto_1c
 
-    .line 1017
+    .line 1031
     :cond_29
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
@@ -2562,7 +2562,7 @@
 
     goto :goto_1b
 
-    .line 1022
+    .line 1036
     :cond_2a
     iget v1, v2, Landroid/graphics/Rect;->left:I
 
@@ -2590,7 +2590,7 @@
 
     goto :goto_1c
 
-    .line 1018
+    .line 1032
     :cond_2b
     :goto_1b
     iget v1, v2, Landroid/graphics/Rect;->left:I
@@ -2623,7 +2623,7 @@
 
     invoke-virtual {v4, v1, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1019
+    .line 1033
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     iget v3, v2, Landroid/graphics/Rect;->left:I
@@ -2688,7 +2688,7 @@
 
     invoke-virtual {v1, v3, v6, v7, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1020
+    .line 1034
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v2, 0x42a60000    # 83.0f
@@ -2699,17 +2699,17 @@
 
     invoke-virtual {v4, v1, v3, v2, v5}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 1026
+    .line 1040
     :goto_1c
     invoke-virtual {v4}, Landroid/graphics/Path;->close()V
 
     move-object/from16 v1, p1
 
-    .line 1029
+    .line 1043
     :cond_2c
     invoke-virtual {v1, v4, v10}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1030
+    .line 1044
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-eqz v2, :cond_2d
@@ -2720,14 +2720,14 @@
 
     if-nez p2, :cond_2d
 
-    .line 1031
+    .line 1045
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientSelectedOverlay:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getColor(I)I
 
     move-result v2
 
-    .line 1032
+    .line 1046
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->selectedPaint:Landroid/graphics/Paint;
 
     invoke-static {v2}, Landroid/graphics/Color;->alpha(I)I
@@ -2752,7 +2752,7 @@
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1033
+    .line 1047
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->selectedPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
@@ -2766,7 +2766,7 @@
 
     const/4 v0, 0x0
 
-    .line 836
+    .line 849
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawCached(Landroid/graphics/Canvas;Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;Landroid/graphics/Paint;)V
 
     return-void
@@ -2775,32 +2775,32 @@
 .method public drawCached(Landroid/graphics/Canvas;Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;Landroid/graphics/Paint;)V
     .locals 1
 
-    .line 824
+    .line 837
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
-    .line 825
+    .line 838
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 826
+    .line 839
     iput-object p2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
-    .line 828
+    .line 841
     :cond_0
     invoke-virtual {p0, p1, p3}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
     const/4 p1, 0x0
 
-    .line 829
+    .line 842
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
-    .line 830
+    .line 843
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     if-eqz p2, :cond_1
 
-    .line 831
+    .line 844
     iput-object p1, p2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
     :cond_1
@@ -2815,10 +2815,10 @@
         }
     .end annotation
 
-    .line 775
+    .line 788
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 777
+    .line 790
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableBitmap:[Landroid/graphics/Bitmap;
 
     array-length v1, v0
@@ -2832,7 +2832,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 779
+    .line 792
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_0
@@ -2840,7 +2840,7 @@
 
     goto :goto_0
 
-    .line 782
+    .line 795
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableBitmap:[Landroid/graphics/Bitmap;
 
@@ -2848,12 +2848,12 @@
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 783
+    .line 796
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 784
+    .line 797
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentShadowDrawableRadius:[I
 
     const/4 v1, -0x1
@@ -2868,7 +2868,7 @@
 
     move-object/from16 v0, p0
 
-    .line 588
+    .line 601
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRoundRadius:I
 
     const/4 v2, 0x0
@@ -2879,7 +2879,7 @@
 
     goto :goto_0
 
-    .line 590
+    .line 603
     :cond_0
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRounding:F
 
@@ -2891,7 +2891,7 @@
 
     goto :goto_0
 
-    .line 593
+    .line 606
     :cond_1
     sget v1, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
@@ -2899,7 +2899,7 @@
 
     move-result v1
 
-    .line 596
+    .line 609
     :goto_0
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isTopNear:Z
 
@@ -2926,7 +2926,7 @@
 
     goto :goto_1
 
-    .line 600
+    .line 613
     :cond_3
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
 
@@ -2939,7 +2939,7 @@
     :cond_4
     move v4, v3
 
-    .line 606
+    .line 619
     :goto_1
     iget-boolean v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isSelected:Z
 
@@ -2958,7 +2958,7 @@
 
     goto :goto_2
 
-    .line 610
+    .line 623
     :cond_6
     iget-boolean v5, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->botButtonsBottom:Z
 
@@ -2971,7 +2971,7 @@
     :cond_7
     move v5, v3
 
-    .line 617
+    .line 630
     :goto_2
     iget-object v9, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
@@ -2990,7 +2990,7 @@
     :cond_8
     move v8, v3
 
-    .line 618
+    .line 631
     :goto_3
     iget-boolean v9, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
@@ -3008,7 +3008,7 @@
 
     move-result v9
 
-    .line 619
+    .line 632
     iget-boolean v10, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->lastDrawWithShadow:Z
 
     if-ne v10, v8, :cond_a
@@ -3029,7 +3029,7 @@
 
     if-eq v10, v9, :cond_d
 
-    .line 620
+    .line 633
     :cond_a
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentBackgroundDrawableRadius:[[I
 
@@ -3039,7 +3039,7 @@
 
     const/high16 v1, 0x42480000    # 50.0f
 
-    .line 622
+    .line 635
     :try_start_0
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
@@ -3057,12 +3057,12 @@
 
     move-result-object v1
 
-    .line 623
+    .line 636
     new-instance v11, Landroid/graphics/Canvas;
 
     invoke-direct {v11, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 625
+    .line 638
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backupRect:Landroid/graphics/Rect;
 
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -3075,17 +3075,17 @@
 
     if-eqz v8, :cond_c
 
-    .line 628
+    .line 641
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableColor:[I
 
     aput v9, v13, v4
 
-    .line 630
+    .line 643
     new-instance v13, Landroid/graphics/Paint;
 
     invoke-direct {v13, v7}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 632
+    .line 645
     new-instance v15, Landroid/graphics/LinearGradient;
 
     const/16 v16, 0x0
@@ -3130,10 +3130,10 @@
 
     invoke-direct/range {v14 .. v21}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 633
+    .line 646
     invoke-virtual {v13, v6}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 634
+    .line 647
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v10, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -3146,17 +3146,17 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    .line 636
+    .line 649
     invoke-virtual {v13, v6, v2, v9, v12}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 637
+    .line 650
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     cmpl-float v6, v6, v9
 
     if-lez v6, :cond_b
 
-    .line 638
+    .line 651
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -3173,7 +3173,7 @@
 
     goto :goto_5
 
-    .line 640
+    .line 653
     :cond_b
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -3185,24 +3185,24 @@
 
     invoke-virtual {v0, v3, v3, v6, v10}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 642
+    .line 655
     :goto_5
     invoke-virtual {v0, v11, v13}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 644
+    .line 657
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     cmpl-float v6, v6, v9
 
     if-lez v6, :cond_c
 
-    .line 645
+    .line 658
     invoke-virtual {v13, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 646
+    .line 659
     invoke-virtual {v13, v2, v2, v2, v3}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 647
+    .line 660
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v6, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -3211,7 +3211,7 @@
 
     invoke-virtual {v13, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 648
+    .line 661
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -3222,19 +3222,19 @@
 
     invoke-virtual {v0, v3, v3, v2, v6}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 649
+    .line 662
     invoke-virtual {v0, v11, v13}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 653
+    .line 666
     :cond_c
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v7}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 654
+    .line 667
     invoke-virtual {v2, v12}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 655
+    .line 668
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -3245,10 +3245,10 @@
 
     invoke-virtual {v0, v3, v3, v6, v9}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 656
+    .line 669
     invoke-virtual {v0, v11, v2}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 658
+    .line 671
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawable:[[Landroid/graphics/drawable/Drawable;
 
     aget-object v2, v2, v5
@@ -3309,7 +3309,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 660
+    .line 673
     :try_start_1
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backupRect:Landroid/graphics/Rect;
 
@@ -3320,17 +3320,17 @@
     :catchall_0
     move v3, v7
 
-    .line 665
+    .line 678
     :catchall_1
     :cond_d
     iput-boolean v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->lastDrawWithShadow:Z
 
-    .line 667
+    .line 680
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isSelected:Z
 
     if-eqz v1, :cond_f
 
-    .line 668
+    .line 681
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
     if-eqz v1, :cond_e
@@ -3349,7 +3349,7 @@
 
     goto :goto_8
 
-    .line 670
+    .line 683
     :cond_f
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
@@ -3367,7 +3367,7 @@
 
     move-result v1
 
-    .line 672
+    .line 685
     :goto_8
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawable:[[Landroid/graphics/drawable/Drawable;
 
@@ -3387,7 +3387,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 673
+    .line 686
     :cond_11
     aget-object v2, v2, v5
 
@@ -3401,14 +3401,14 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 674
+    .line 687
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawableColor:[[I
 
     aget-object v2, v2, v5
 
     aput v1, v2, v4
 
-    .line 676
+    .line 689
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawable:[[Landroid/graphics/drawable/Drawable;
 
@@ -3422,34 +3422,34 @@
 .method protected getColor(I)I
     .locals 2
 
-    .line 426
+    .line 439
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 427
+    .line 440
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 429
+    .line 442
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_1
 
-    .line 430
+    .line 443
     invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 432
+    .line 445
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -3461,21 +3461,21 @@
 .method protected getCurrentColor(I)I
     .locals 2
 
-    .line 436
+    .line 449
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 437
+    .line 450
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 439
+    .line 452
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -3503,7 +3503,7 @@
 .method public getGradientShader()Landroid/graphics/Shader;
     .locals 1
 
-    .line 418
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     return-object v0
@@ -3512,7 +3512,7 @@
 .method public getMatrix()Landroid/graphics/Matrix;
     .locals 1
 
-    .line 422
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     return-object v0
@@ -3521,21 +3521,21 @@
 .method public getMotionBackgroundDrawable()Lorg/telegram/ui/Components/MotionBackgroundDrawable;
     .locals 3
 
-    .line 703
+    .line 716
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->themePreview:Z
 
     const/4 v1, 0x2
 
     if-eqz v0, :cond_0
 
-    .line 704
+    .line 717
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v0, v0, v1
 
     return-object v0
 
-    .line 706
+    .line 719
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -3567,7 +3567,7 @@
 .method public getPaint()Landroid/graphics/Paint;
     .locals 1
 
-    .line 579
+    .line 592
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     return-object v0
@@ -3578,7 +3578,7 @@
 
     move-object/from16 v0, p0
 
-    .line 710
+    .line 723
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isCrossfadeBackground:Z
 
     const/4 v2, 0x0
@@ -3587,7 +3587,7 @@
 
     return-object v2
 
-    .line 713
+    .line 726
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
@@ -3603,7 +3603,7 @@
 
     return-object v2
 
-    .line 716
+    .line 729
     :cond_1
     sget v1, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
@@ -3611,7 +3611,7 @@
 
     move-result v1
 
-    .line 718
+    .line 731
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isTopNear:Z
 
     const/4 v4, 0x2
@@ -3637,7 +3637,7 @@
 
     goto :goto_0
 
-    .line 722
+    .line 735
     :cond_3
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
 
@@ -3650,7 +3650,7 @@
     :cond_4
     move v3, v5
 
-    .line 728
+    .line 741
     :goto_0
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentShadowDrawableRadius:[I
 
@@ -3658,17 +3658,17 @@
 
     if-eq v8, v1, :cond_8
 
-    .line 729
+    .line 742
     aput v1, v7, v3
 
-    .line 730
+    .line 743
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableBitmap:[Landroid/graphics/Bitmap;
 
     aget-object v7, v1, v3
 
     if-eqz v7, :cond_5
 
-    .line 731
+    .line 744
     aget-object v1, v1, v3
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
@@ -3676,7 +3676,7 @@
     :cond_5
     const/high16 v1, 0x42480000    # 50.0f
 
-    .line 734
+    .line 747
     :try_start_0
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
@@ -3694,17 +3694,17 @@
 
     move-result-object v1
 
-    .line 735
+    .line 748
     new-instance v8, Landroid/graphics/Canvas;
 
     invoke-direct {v8, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 737
+    .line 750
     new-instance v9, Landroid/graphics/Paint;
 
     invoke-direct {v9, v6}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 739
+    .line 752
     new-instance v15, Landroid/graphics/LinearGradient;
 
     const/4 v11, 0x0
@@ -3741,7 +3741,7 @@
 
     invoke-direct/range {v10 .. v17}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 740
+    .line 753
     invoke-virtual {v9, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -3752,17 +3752,17 @@
 
     const/4 v11, 0x0
 
-    .line 742
+    .line 755
     invoke-virtual {v9, v2, v11, v10, v7}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 743
+    .line 756
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     cmpl-float v2, v2, v10
 
     if-lez v2, :cond_6
 
-    .line 744
+    .line 757
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -3779,7 +3779,7 @@
 
     goto :goto_1
 
-    .line 746
+    .line 759
     :cond_6
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -3791,24 +3791,24 @@
 
     invoke-virtual {v0, v5, v5, v2, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 748
+    .line 761
     :goto_1
     invoke-virtual {v0, v8, v9}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 750
+    .line 763
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     cmpl-float v2, v2, v10
 
     if-lez v2, :cond_7
 
-    .line 751
+    .line 764
     invoke-virtual {v9, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 752
+    .line 765
     invoke-virtual {v9, v11, v11, v11, v5}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 753
+    .line 766
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -3817,7 +3817,7 @@
 
     invoke-virtual {v9, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 754
+    .line 767
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -3828,16 +3828,16 @@
 
     invoke-virtual {v0, v5, v5, v2, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 755
+    .line 768
     invoke-virtual {v0, v8, v9}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 758
+    .line 771
     :cond_7
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableBitmap:[Landroid/graphics/Bitmap;
 
     aput-object v1, v2, v3
 
-    .line 759
+    .line 772
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
     new-instance v7, Landroid/graphics/drawable/NinePatchDrawable;
@@ -3896,7 +3896,7 @@
 
     move v5, v6
 
-    .line 765
+    .line 778
     :catchall_0
     :cond_8
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
@@ -3915,7 +3915,7 @@
 
     move-result v1
 
-    .line 766
+    .line 779
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
     aget-object v4, v2, v3
@@ -3930,7 +3930,7 @@
 
     if-eqz v5, :cond_b
 
-    .line 767
+    .line 780
     :cond_a
     aget-object v2, v2, v3
 
@@ -3942,12 +3942,12 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 768
+    .line 781
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawableColor:[I
 
     aput v1, v2, v3
 
-    .line 770
+    .line 783
     :cond_b
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
@@ -3959,7 +3959,7 @@
 .method public getShadowDrawables()[Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 583
+    .line 596
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->shadowDrawable:[Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -3968,7 +3968,7 @@
 .method public getTopY()I
     .locals 1
 
-    .line 567
+    .line 580
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->topY:I
 
     return v0
@@ -3977,14 +3977,14 @@
 .method public getTransitionDrawable(I)Landroid/graphics/drawable/Drawable;
     .locals 7
 
-    .line 680
+    .line 693
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v0, :cond_0
 
     const/high16 v0, 0x42480000    # 50.0f
 
-    .line 681
+    .line 694
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->dp(F)I
 
     move-result v0
@@ -4001,12 +4001,12 @@
 
     move-result-object v0
 
-    .line 682
+    .line 695
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 684
+    .line 697
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -4015,7 +4015,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 686
+    .line 699
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v3, 0x1
@@ -4024,10 +4024,10 @@
 
     const/4 v4, -0x1
 
-    .line 687
+    .line 700
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 688
+    .line 701
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -4040,10 +4040,10 @@
 
     invoke-virtual {p0, v6, v6, v4, v5}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
-    .line 689
+    .line 702
     invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 691
+    .line 704
     new-instance v1, Landroid/graphics/drawable/NinePatchDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -4096,21 +4096,21 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 692
+    .line 705
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 694
+    .line 707
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawableColor:I
 
     if-eq v0, p1, :cond_1
 
-    .line 695
+    .line 708
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawableColor:I
 
-    .line 696
+    .line 709
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -4121,7 +4121,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 699
+    .line 712
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->transitionDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4131,7 +4131,7 @@
 .method public hasGradient()Z
     .locals 1
 
-    .line 390
+    .line 403
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-eqz v0, :cond_0
@@ -4156,25 +4156,34 @@
 .method public setAlpha(I)V
     .locals 4
 
-    .line 1043
+    .line 1057
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->alpha:I
 
-    if-eq v0, p1, :cond_0
+    if-ne v0, p1, :cond_0
 
-    .line 1044
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
+
+    move-result v0
+
+    if-eq v0, p1, :cond_1
+
+    .line 1058
+    :cond_0
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->alpha:I
 
-    .line 1045
+    .line 1059
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1046
+    .line 1060
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 1047
+    .line 1061
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->selectedPaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientSelectedOverlay:I
@@ -4201,41 +4210,41 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1050
-    :cond_0
+    .line 1064
+    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
-    .line 1051
+    .line 1065
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getBackgroundDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 1052
+    .line 1066
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x13
 
-    if-lt v1, v2, :cond_1
+    if-lt v1, v2, :cond_2
 
-    .line 1053
+    .line 1067
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
 
     move-result v1
 
-    if-eq v1, p1, :cond_2
+    if-eq v1, p1, :cond_3
 
-    .line 1054
+    .line 1068
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     goto :goto_0
 
-    .line 1057
-    :cond_1
+    .line 1071
+    :cond_2
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 .end method
@@ -4243,7 +4252,7 @@
 .method public setBotButtonsBottom(Z)V
     .locals 0
 
-    .line 443
+    .line 456
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->botButtonsBottom:Z
 
     return-void
@@ -4252,15 +4261,15 @@
 .method public setBounds(IIII)V
     .locals 1
 
-    .line 1079
+    .line 1093
     invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1080
+    .line 1094
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1081
+    .line 1095
     invoke-virtual {v0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setBounds(IIII)V
 
     :cond_0
@@ -4282,7 +4291,7 @@
 .method public setDrawFullBubble(Z)V
     .locals 0
 
-    .line 1038
+    .line 1052
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
     return-void
@@ -4291,7 +4300,7 @@
 .method public setResourceProvider(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1094
+    .line 1108
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -4300,7 +4309,7 @@
 .method public setRoundRadius(I)V
     .locals 0
 
-    .line 1086
+    .line 1100
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRoundRadius:I
 
     return-void
@@ -4309,7 +4318,7 @@
 .method public setRoundingRadius(F)V
     .locals 0
 
-    .line 1090
+    .line 1104
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRounding:F
 
     return-void
@@ -4324,7 +4333,7 @@
 
     move/from16 v11, p5
 
-    .line 451
+    .line 464
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     if-eqz v1, :cond_0
@@ -4345,10 +4354,10 @@
 
     move/from16 v9, p8
 
-    .line 452
+    .line 465
     invoke-virtual/range {v1 .. v9}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setTop(IIIIIIZZ)V
 
-    .line 459
+    .line 472
     :cond_0
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
@@ -4358,7 +4367,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 460
+    .line 473
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isSelected:Z
 
     if-eqz v1, :cond_1
@@ -4375,28 +4384,28 @@
 
     move-result v1
 
-    .line 461
+    .line 474
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient1:I
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getCurrentColor(I)I
 
     move-result v4
 
-    .line 462
+    .line 475
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient2:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getCurrentColor(I)I
 
     move-result v5
 
-    .line 463
+    .line 476
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient3:I
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getCurrentColor(I)I
 
     move-result v6
 
-    .line 464
+    .line 477
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientAnimated:I
 
     invoke-virtual {v0, v7}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getCurrentColor(I)I
@@ -4423,7 +4432,7 @@
 
     goto :goto_3
 
-    .line 466
+    .line 479
     :cond_3
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isSelected:Z
 
@@ -4452,14 +4461,14 @@
     :goto_3
     if-eqz v12, :cond_5
 
-    .line 473
+    .line 486
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getColor(I)I
 
     move-result v1
 
-    .line 476
+    .line 489
     :cond_5
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->themePreview:Z
 
@@ -4471,7 +4480,7 @@
 
     goto :goto_5
 
-    .line 479
+    .line 492
     :cond_6
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
@@ -4487,7 +4496,7 @@
     :goto_4
     move/from16 v16, v4
 
-    .line 481
+    .line 494
     :goto_5
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isCrossfadeBackground:Z
 
@@ -4505,34 +4514,34 @@
 
     if-eqz v7, :cond_8
 
-    .line 482
+    .line 495
     aget-object v4, v4, v16
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getColors()[I
 
     move-result-object v4
 
-    .line 483
+    .line 496
     aget v7, v4, v3
 
     iput v7, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentColor:I
 
-    .line 484
+    .line 497
     aget v7, v4, v2
 
     iput v7, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor1:I
 
-    .line 485
+    .line 498
     aget v7, v4, v5
 
     iput v7, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor2:I
 
-    .line 486
+    .line 499
     aget v4, v4, v6
 
     iput v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor3:I
 
-    .line 488
+    .line 501
     :cond_8
     iget-boolean v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isCrossfadeBackground:Z
 
@@ -4544,7 +4553,7 @@
 
     if-eqz v15, :cond_e
 
-    .line 489
+    .line 502
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentBackgroundHeight:I
 
     if-ne v10, v4, :cond_a
@@ -4580,7 +4589,7 @@
 
     goto :goto_7
 
-    .line 490
+    .line 503
     :cond_a
     :goto_6
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmap:Landroid/graphics/Bitmap;
@@ -4591,7 +4600,7 @@
 
     const/16 v6, 0x50
 
-    .line 491
+    .line 504
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v4, v6, v7}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -4600,7 +4609,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmap:Landroid/graphics/Bitmap;
 
-    .line 492
+    .line 505
     new-instance v4, Landroid/graphics/BitmapShader;
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmap:Landroid/graphics/Bitmap;
@@ -4611,7 +4620,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmapShader:Landroid/graphics/Shader;
 
-    .line 494
+    .line 507
     :cond_b
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -4619,26 +4628,26 @@
 
     if-nez v6, :cond_d
 
-    .line 495
+    .line 508
     new-instance v6, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
     aput-object v6, v4, v16
 
-    .line 496
+    .line 509
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-eq v4, v5, :cond_c
 
-    .line 497
+    .line 510
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v4, v4, v16
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPostInvalidateParent(Z)V
 
-    .line 499
+    .line 512
     :cond_c
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -4650,7 +4659,7 @@
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setRoundRadius(I)V
 
-    .line 501
+    .line 514
     :cond_d
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -4672,42 +4681,42 @@
 
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIIILandroid/graphics/Bitmap;)V
 
-    .line 502
+    .line 515
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmapShader:Landroid/graphics/Shader;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v4}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 504
+    .line 517
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crosfadeFromBitmapShader:Landroid/graphics/Shader;
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
-    .line 505
+    .line 518
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 506
+    .line 519
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 507
+    .line 520
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentColor:I
 
-    .line 508
+    .line 521
     iput-boolean v15, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentAnimateGradient:Z
 
-    .line 509
+    .line 522
     iput v12, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor1:I
 
-    .line 510
+    .line 523
     iput v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor2:I
 
-    .line 511
+    .line 524
     iput v14, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor3:I
 
     goto/16 :goto_9
@@ -4717,7 +4726,7 @@
 
     if-eqz v12, :cond_15
 
-    .line 512
+    .line 525
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-eqz v4, :cond_f
@@ -4751,33 +4760,33 @@
 
     if-eqz v15, :cond_12
 
-    .line 514
+    .line 527
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v6, v4, v16
 
     if-nez v6, :cond_11
 
-    .line 515
+    .line 528
     new-instance v6, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
     aput-object v6, v4, v16
 
-    .line 516
+    .line 529
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-eq v4, v5, :cond_10
 
-    .line 517
+    .line 530
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v4, v4, v16
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPostInvalidateParent(Z)V
 
-    .line 519
+    .line 532
     :cond_10
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -4789,7 +4798,7 @@
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setRoundRadius(I)V
 
-    .line 521
+    .line 534
     :cond_11
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -4797,7 +4806,7 @@
 
     invoke-virtual {v2, v1, v12, v13, v14}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIII)V
 
-    .line 522
+    .line 535
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v2, v2, v16
@@ -4829,7 +4838,7 @@
 
     aput v1, v4, v6
 
-    .line 527
+    .line 540
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/16 v18, 0x0
@@ -4869,7 +4878,7 @@
 
     aput v1, v4, v5
 
-    .line 530
+    .line 543
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/16 v26, 0x0
@@ -4907,7 +4916,7 @@
 
     aput v1, v4, v2
 
-    .line 534
+    .line 547
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/16 v18, 0x0
@@ -4934,7 +4943,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
-    .line 537
+    .line 550
     :goto_8
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
@@ -4942,22 +4951,22 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 538
+    .line 551
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentColor:I
 
-    .line 539
+    .line 552
     iput-boolean v15, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentAnimateGradient:Z
 
-    .line 540
+    .line 553
     iput v12, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor1:I
 
-    .line 541
+    .line 554
     iput v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor2:I
 
-    .line 542
+    .line 555
     iput v14, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentGradientColor3:I
 
-    .line 543
+    .line 556
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
@@ -4967,28 +4976,28 @@
     :cond_15
     if-nez v12, :cond_17
 
-    .line 545
+    .line 558
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     if-eqz v2, :cond_16
 
     const/4 v2, 0x0
 
-    .line 546
+    .line 559
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
-    .line 547
+    .line 560
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 549
+    .line 562
     :cond_16
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 551
+    .line 564
     :cond_17
     :goto_9
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
@@ -4997,7 +5006,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 552
+    .line 565
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->motionBackground:[Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     aget-object v1, v1, v16
@@ -5015,11 +5024,11 @@
     :cond_18
     const/4 v4, 0x0
 
-    .line 554
+    .line 567
     :goto_a
     iput v10, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentBackgroundHeight:I
 
-    .line 556
+    .line 569
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->gradientShader:Landroid/graphics/Shader;
 
     instance-of v1, v1, Landroid/graphics/BitmapShader;
@@ -5035,12 +5044,12 @@
 
     move/from16 v1, p7
 
-    .line 557
+    .line 570
     iput-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isTopNear:Z
 
     move/from16 v1, p8
 
-    .line 558
+    .line 571
     iput-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
 
     return-void
@@ -5067,7 +5076,7 @@
 
     move v8, p5
 
-    .line 447
+    .line 460
     invoke-virtual/range {v0 .. v8}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setTop(IIIIIIZZ)V
 
     return-void

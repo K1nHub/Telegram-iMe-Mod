@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;)V
     .locals 0
 
-    .line 2143
+    .line 2186
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,12 +45,22 @@
     return v0
 .end method
 
+.method public synthetic clipWithGradient(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getBottomOffset(I)I
     .locals 1
 
     const/16 p1, 0x7e
 
-    .line 2146
+    .line 2189
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

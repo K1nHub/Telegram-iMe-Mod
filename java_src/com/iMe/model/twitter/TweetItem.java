@@ -15,7 +15,7 @@ public final class TweetItem extends NoChildNode {
     private final String date;
 
     /* renamed from: id */
-    private final long f357id;
+    private final long f360id;
     private final boolean isLiked;
     private final String likesCountText;
     private final List<MediaInfoDomain> mediaInfo;
@@ -23,7 +23,7 @@ public final class TweetItem extends NoChildNode {
     private final String text;
 
     public final long component1() {
-        return this.f357id;
+        return this.f360id;
     }
 
     public final boolean component10() {
@@ -85,28 +85,28 @@ public final class TweetItem extends NoChildNode {
         }
         if (obj instanceof TweetItem) {
             TweetItem tweetItem = (TweetItem) obj;
-            return this.f357id == tweetItem.f357id && Intrinsics.areEqual(this.authorName, tweetItem.authorName) && Intrinsics.areEqual(this.authorNickname, tweetItem.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetItem.avatarUrl) && Intrinsics.areEqual(this.likesCountText, tweetItem.likesCountText) && Intrinsics.areEqual(this.commentsCountText, tweetItem.commentsCountText) && Intrinsics.areEqual(this.retweetsCountText, tweetItem.retweetsCountText) && Intrinsics.areEqual(this.text, tweetItem.text) && Intrinsics.areEqual(this.date, tweetItem.date) && this.isLiked == tweetItem.isLiked && Intrinsics.areEqual(this.mediaInfo, tweetItem.mediaInfo);
+            return this.f360id == tweetItem.f360id && Intrinsics.areEqual(this.authorName, tweetItem.authorName) && Intrinsics.areEqual(this.authorNickname, tweetItem.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetItem.avatarUrl) && Intrinsics.areEqual(this.likesCountText, tweetItem.likesCountText) && Intrinsics.areEqual(this.commentsCountText, tweetItem.commentsCountText) && Intrinsics.areEqual(this.retweetsCountText, tweetItem.retweetsCountText) && Intrinsics.areEqual(this.text, tweetItem.text) && Intrinsics.areEqual(this.date, tweetItem.date) && this.isLiked == tweetItem.isLiked && Intrinsics.areEqual(this.mediaInfo, tweetItem.mediaInfo);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m706m = ((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f357id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCountText.hashCode()) * 31) + this.commentsCountText.hashCode()) * 31) + this.retweetsCountText.hashCode()) * 31) + this.text.hashCode()) * 31) + this.date.hashCode()) * 31;
+        int m724m = ((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f360id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCountText.hashCode()) * 31) + this.commentsCountText.hashCode()) * 31) + this.retweetsCountText.hashCode()) * 31) + this.text.hashCode()) * 31) + this.date.hashCode()) * 31;
         boolean z = this.isLiked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((m706m + i) * 31) + this.mediaInfo.hashCode();
+        return ((m724m + i) * 31) + this.mediaInfo.hashCode();
     }
 
     public String toString() {
-        return "TweetItem(id=" + this.f357id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCountText=" + this.likesCountText + ", commentsCountText=" + this.commentsCountText + ", retweetsCountText=" + this.retweetsCountText + ", text=" + this.text + ", date=" + this.date + ", isLiked=" + this.isLiked + ", mediaInfo=" + this.mediaInfo + ')';
+        return "TweetItem(id=" + this.f360id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCountText=" + this.likesCountText + ", commentsCountText=" + this.commentsCountText + ", retweetsCountText=" + this.retweetsCountText + ", text=" + this.text + ", date=" + this.date + ", isLiked=" + this.isLiked + ", mediaInfo=" + this.mediaInfo + ')';
     }
 
     public final long getId() {
-        return this.f357id;
+        return this.f360id;
     }
 
     public final String getAuthorName() {
@@ -159,7 +159,7 @@ public final class TweetItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(date, "date");
         Intrinsics.checkNotNullParameter(mediaInfo, "mediaInfo");
-        this.f357id = j;
+        this.f360id = j;
         this.authorName = authorName;
         this.authorNickname = authorNickname;
         this.avatarUrl = avatarUrl;

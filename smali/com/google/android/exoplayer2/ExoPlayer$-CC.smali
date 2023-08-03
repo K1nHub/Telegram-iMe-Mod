@@ -8,7 +8,7 @@
     .locals 1
     .param p0, "_this"    # Lcom/google/android/exoplayer2/ExoPlayer;
 
-    .line 154
+    .line 157
     invoke-interface {p0}, Lcom/google/android/exoplayer2/ExoPlayer;->getPlayerError()Lcom/google/android/exoplayer2/ExoPlaybackException;
 
     move-result-object v0

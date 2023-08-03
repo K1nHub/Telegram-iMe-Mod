@@ -44,12 +44,31 @@ import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.p043ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
 /* loaded from: classes4.dex */
 public final class ViewExtKt {
+    /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
+        */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final java.util.Map loadImage$lambda$0(java.util.Map r1) {
+        /*
+            java.lang.String r0 = "$headers"
+            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r0)
+            return r1
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.utils.extentions.common.ViewExtKt.loadImage$lambda$0(java.util.Map):java.util.Map");
+    }
+
     public static final int getDpToPx(int i) {
         return getDpToPx(i);
     }
@@ -75,13 +94,13 @@ public final class ViewExtKt {
     public static final void setVerticalPadding(View view, Number verticalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(verticalPadding, "verticalPadding");
-        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m55dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m55dp(verticalPadding.floatValue()));
+        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m73dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m73dp(verticalPadding.floatValue()));
     }
 
     public static final void setHorizontalPadding(View view, Number horizontalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(horizontalPadding, "horizontalPadding");
-        view.setPadding(AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingBottom());
+        view.setPadding(AndroidUtilities.m73dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m73dp(horizontalPadding.floatValue()), view.getPaddingBottom());
     }
 
     public static final void loadImage(ImageView imageView, TokenDetailed token) {
@@ -97,9 +116,7 @@ public final class ViewExtKt {
         Glide.with(imageView).load(new GlideUrl(url, new Headers() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda4
             @Override // com.bumptech.glide.load.model.Headers
             public final Map getHeaders() {
-                Map checkNotNullParameter;
-                checkNotNullParameter = Intrinsics.checkNotNullParameter(headers, "$headers");
-                return checkNotNullParameter;
+                return ViewExtKt.loadImage$lambda$0(headers);
             }
         })).dontAnimate().centerCrop().circleCrop().placeholder(imageView.getDrawable()).diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
     }
@@ -139,10 +156,27 @@ public final class ViewExtKt {
         return true;
     }
 
-    public static final void setRightDrawableOnClickListener(TextView textView, Runnable action) {
+    public static final void setRightDrawableOnClickListener(TextView textView, final Runnable action) {
         Intrinsics.checkNotNullParameter(textView, "<this>");
         Intrinsics.checkNotNullParameter(action, "action");
-        setRightDrawableOnClickListener(textView, new ViewExtKt$setRightDrawableOnClickListener$2(action));
+        setRightDrawableOnClickListener(textView, new Function0<Unit>() { // from class: com.iMe.utils.extentions.common.ViewExtKt$setRightDrawableOnClickListener$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                action.run();
+            }
+        });
     }
 
     public static /* synthetic */ void visible$default(View view, boolean z, int i, Object obj) {
@@ -250,10 +284,28 @@ public final class ViewExtKt {
         }
     }
 
-    public static final void setMixedClickListener(final View view, Callbacks$Callback1<View> listener) {
+    public static final void setMixedClickListener(final View view, final Callbacks$Callback1<View> listener) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(listener, "listener");
-        safeThrottledClick$default(view, 0L, new ViewExtKt$setMixedClickListener$1(listener), 1, null);
+        safeThrottledClick$default(view, 0L, new Function1<View, Unit>() { // from class: com.iMe.utils.extentions.common.ViewExtKt$setMixedClickListener$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view2) {
+                invoke2(view2);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View view2) {
+                Intrinsics.checkNotNullParameter(view2, "view");
+                listener.invoke(view2);
+            }
+        }, 1, null);
         final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
         view.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
             @Override // android.view.View.OnTouchListener
@@ -404,8 +456,8 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(viewPager, "<this>");
         viewPager.setOffscreenPageLimit(3);
         viewPager.setClipToPadding(false);
-        int m55dp = AndroidUtilities.m55dp(24.0f);
-        viewPager.setPadding(m55dp, 0, m55dp, 0);
+        int m73dp = AndroidUtilities.m73dp(24.0f);
+        viewPager.setPadding(m73dp, 0, m73dp, 0);
     }
 
     public static final void withMediumTypeface(TextView textView) {
@@ -427,7 +479,7 @@ public final class ViewExtKt {
 
     public static /* synthetic */ void limitInputLength$default(EditText editText, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
-            i2 = 10;
+            i2 = 15;
         }
         limitInputLength(editText, i, i2);
     }
@@ -469,7 +521,7 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3417R.C3419drawable.greydivider_bottom : C3417R.C3419drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3419R.C3421drawable.greydivider_bottom : C3419R.C3421drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
     }
 
     public static final void setScale(View view, float f) {

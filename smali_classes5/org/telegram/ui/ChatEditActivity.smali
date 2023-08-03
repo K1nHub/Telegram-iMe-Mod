@@ -10,7 +10,7 @@
 # instance fields
 .field private adminCell:Lorg/telegram/ui/Cells/TextCell;
 
-.field private albumMode:Z
+.field private final albumMode:Z
 
 .field private availableReactions:Lorg/telegram/tgnet/TLRPC$ChatReactions;
 
@@ -8519,7 +8519,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 835
     iget-object v0, v6, Lorg/telegram/ui/ChatEditActivity;->descriptionTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;

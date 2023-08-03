@@ -17,8 +17,8 @@ public final class SendElementWithUndeliveredHandler<E> extends SendElement<E> {
 
     @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode
     /* renamed from: remove */
-    public boolean mo1630remove() {
-        if (super.mo1630remove()) {
+    public boolean mo1649remove() {
+        if (super.mo1649remove()) {
             undeliveredElement();
             return true;
         }

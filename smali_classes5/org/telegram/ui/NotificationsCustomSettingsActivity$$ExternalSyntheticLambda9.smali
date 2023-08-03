@@ -2,64 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
-.field public final synthetic f$1:Landroid/content/Context;
+.field public final synthetic f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+.field public final synthetic f$2:Landroid/view/View;
+
+.field public final synthetic f$3:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Landroid/content/Context;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$1:Landroid/content/Context;
+    iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
+
+    iput-object p3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$2:Landroid/view/View;
+
+    iput p4, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$3:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
-
-    return-void
-.end method
-
-.method public final onItemClick(Landroid/view/View;IFF)V
-    .locals 6
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$1:Landroid/content/Context;
+    iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
 
-    move-object v2, p1
+    iget-object v2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$2:Landroid/view/View;
 
-    move v3, p2
+    iget v3, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$$ExternalSyntheticLambda9;->f$3:I
 
-    move v4, p3
-
-    move v5, p4
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$1gGofHdFwMWvoiWjY6ukFpRcV1s(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Landroid/content/Context;Landroid/view/View;IFF)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->$r8$lambda$G5aCyAj3zlnEDl2VtHK6xiyMvEU(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Landroid/view/View;I)V
 
     return-void
 .end method

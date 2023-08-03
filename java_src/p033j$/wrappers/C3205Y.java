@@ -7,22 +7,22 @@ import p033j$.util.function.InterfaceC2828n;
 public final /* synthetic */ class C3205Y implements InterfaceC2828n {
 
     /* renamed from: a */
-    final /* synthetic */ IntToLongFunction f1249a;
+    final /* synthetic */ IntToLongFunction f1252a;
 
     private /* synthetic */ C3205Y(IntToLongFunction intToLongFunction) {
-        this.f1249a = intToLongFunction;
+        this.f1252a = intToLongFunction;
     }
 
     /* renamed from: a */
-    public static /* synthetic */ InterfaceC2828n m156a(IntToLongFunction intToLongFunction) {
+    public static /* synthetic */ InterfaceC2828n m174a(IntToLongFunction intToLongFunction) {
         if (intToLongFunction == null) {
             return null;
         }
-        return intToLongFunction instanceof C3206Z ? ((C3206Z) intToLongFunction).f1250a : new C3205Y(intToLongFunction);
+        return intToLongFunction instanceof C3206Z ? ((C3206Z) intToLongFunction).f1253a : new C3205Y(intToLongFunction);
     }
 
     @Override // p033j$.util.function.InterfaceC2828n
     public /* synthetic */ long applyAsLong(int i) {
-        return this.f1249a.applyAsLong(i);
+        return this.f1252a.applyAsLong(i);
     }
 }

@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.PhoneFormat.C3333PhoneFormat;
+import org.telegram.PhoneFormat.C3334PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.CodeFieldContainer */
@@ -38,9 +38,9 @@ public class CodeFieldContainer extends LinearLayout {
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         Paint paint = this.paint;
-        float m55dp = AndroidUtilities.m55dp(1.5f);
-        this.strokeWidth = m55dp;
-        paint.setStrokeWidth(m55dp);
+        float m73dp = AndroidUtilities.m73dp(1.5f);
+        this.strokeWidth = m73dp;
+        paint.setStrokeWidth(m73dp);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -66,7 +66,7 @@ public class CodeFieldContainer extends LinearLayout {
                     float f2 = -Math.max((float) BitmapDescriptorFactory.HUE_RED, this.strokeWidth * (codeNumberField.getSuccessScaleProgress() - 1.0f));
                     rectF.inset(f2, f2);
                 }
-                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.paint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m72dp(4), AndroidUtilities.m72dp(4), this.paint);
             }
         }
         super.dispatchDraw(canvas);
@@ -141,7 +141,7 @@ public class CodeFieldContainer extends LinearLayout {
         while (true) {
             CodeNumberField[] codeNumberFieldArr = this.codeField;
             if (i < codeNumberFieldArr.length) {
-                sb.append(C3333PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
+                sb.append(C3334PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
                 i++;
             } else {
                 return sb.toString();

@@ -7,14 +7,18 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.iMe.storage.domain.model.filters.FilterFab;
+import com.iMe.utils.extentions.model.filter.FilterFabExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBox2;
 import org.telegram.p043ui.Components.CheckBoxBase;
 import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: CircleCheckCell.kt */
 /* renamed from: com.iMe.fork.ui.view.CircleCheckCell */
 /* loaded from: classes3.dex */
@@ -34,10 +38,6 @@ public abstract class CircleCheckCell extends FrameLayout {
         return this.iconSize;
     }
 
-    public final ImageView.ScaleType getIconScaleType() {
-        return this.iconScaleType;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CircleCheckCell(Context context, int i, ImageView.ScaleType iconScaleType) {
         super(context);
@@ -49,13 +49,63 @@ public abstract class CircleCheckCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(iconScaleType, "iconScaleType");
         this.iconSize = i;
         this.iconScaleType = iconScaleType;
-        lazy = LazyKt__LazyJVMKt.lazy(new CircleCheckCell$circleView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.fork.ui.view.CircleCheckCell$circleView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initCircleView;
+                initCircleView = CircleCheckCell.this.initCircleView();
+                return initCircleView;
+            }
+        });
         this.circleView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new CircleCheckCell$iconView$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<RLottieImageView>() { // from class: com.iMe.fork.ui.view.CircleCheckCell$iconView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RLottieImageView invoke() {
+                RLottieImageView initIconView;
+                initIconView = CircleCheckCell.this.initIconView();
+                return initIconView;
+            }
+        });
         this.iconView$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new CircleCheckCell$nameTextView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.fork.ui.view.CircleCheckCell$nameTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initNameTextView;
+                initNameTextView = CircleCheckCell.this.initNameTextView();
+                return initNameTextView;
+            }
+        });
         this.nameTextView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new CircleCheckCell$checkBox$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<CheckBox2>() { // from class: com.iMe.fork.ui.view.CircleCheckCell$checkBox$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final CheckBox2 invoke() {
+                CheckBox2 initCheckBox;
+                initCheckBox = CircleCheckCell.this.initCheckBox();
+                return initCheckBox;
+            }
+        });
         this.checkBox$delegate = lazy4;
         init();
     }
@@ -72,8 +122,8 @@ public abstract class CircleCheckCell extends FrameLayout {
         return (View) this.circleView$delegate.getValue();
     }
 
-    private final ImageView getIconView() {
-        return (ImageView) this.iconView$delegate.getValue();
+    private final RLottieImageView getIconView() {
+        return (RLottieImageView) this.iconView$delegate.getValue();
     }
 
     private final TextView getNameTextView() {
@@ -84,10 +134,7 @@ public abstract class CircleCheckCell extends FrameLayout {
         return (CheckBox2) this.checkBox$delegate.getValue();
     }
 
-    public final void setData(int i, int i2, String name) {
-        Intrinsics.checkNotNullParameter(name, "name");
-        getNameTextView().setText(name);
-        getIconView().setImageResource(i2);
+    public final void setColor(int i) {
         View circleView = getCircleView();
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setShape(1);
@@ -95,9 +142,23 @@ public abstract class CircleCheckCell extends FrameLayout {
         circleView.setBackground(gradientDrawable);
     }
 
+    public final void setIcon(int i) {
+        getIconView().setImageResource(i);
+    }
+
+    public final void setFabIcon(FilterFab fab) {
+        Intrinsics.checkNotNullParameter(fab, "fab");
+        FilterFabExtKt.bindBig(fab, getIconView());
+    }
+
+    public final void setName(String name) {
+        Intrinsics.checkNotNullParameter(name, "name");
+        getNameTextView().setText(name);
+    }
+
     private final void init() {
         addView(getCircleView(), LayoutHelper.createFrame(62, 62, 1, 0, 7, 0, 0));
-        ImageView iconView = getIconView();
+        RLottieImageView iconView = getIconView();
         int i = this.iconSize;
         addView(iconView, LayoutHelper.createFrame(i, i, 1, 0, ((62 - i) / 2) + 7, 0, 0));
         addView(getNameTextView(), LayoutHelper.createFrame(-1, -2, 3, 6, 72, 6, 0));
@@ -110,10 +171,10 @@ public abstract class CircleCheckCell extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final ImageView initIconView() {
-        ImageView imageView = new ImageView(getContext());
-        imageView.setScaleType(this.iconScaleType);
-        return imageView;
+    public final RLottieImageView initIconView() {
+        RLottieImageView rLottieImageView = new RLottieImageView(getContext());
+        rLottieImageView.setScaleType(this.iconScaleType);
+        return rLottieImageView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

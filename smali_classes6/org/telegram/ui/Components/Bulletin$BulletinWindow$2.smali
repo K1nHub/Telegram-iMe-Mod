@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)V
     .locals 0
 
-    .line 1751
+    .line 1794
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,6 +39,16 @@
     return v0
 .end method
 
+.method public synthetic clipWithGradient(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getBottomOffset(I)I
     .locals 0
 
@@ -50,7 +60,7 @@
 .method public getTopOffset(I)I
     .locals 0
 
-    .line 1759
+    .line 1802
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     return p1

@@ -297,33 +297,33 @@
     return p1
 .end method
 
-.method public didLongPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FF)Z
-    .locals 4
+.method public didLongPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FFZ)Z
+    .locals 3
 
     const/4 p3, 0x0
 
     if-eqz p2, :cond_1
 
     .line 2431
-    iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide p4, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    iget-object p4, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
+    iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
-    iget-object p4, p4, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
+    iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4800(Lorg/telegram/ui/ChannelAdminLogActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4800(Lorg/telegram/ui/ChannelAdminLogActivity;)I
 
-    move-result p4
+    move-result v0
 
-    invoke-static {p4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object p4
+    move-result-object v0
 
-    invoke-virtual {p4}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    cmp-long p4, v0, v2
+    cmp-long p4, p4, v0
 
     if-eqz p4, :cond_1
 
@@ -332,35 +332,35 @@
     new-array p4, p4, [Lorg/telegram/ui/AvatarPreviewer$MenuItem;
 
     .line 2432
-    sget-object v0, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_PROFILE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    sget-object p5, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_PROFILE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
 
-    aput-object v0, p4, p3
+    aput-object p5, p4, p3
 
-    sget-object v0, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->SEND_MESSAGE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    sget-object p5, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->SEND_MESSAGE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    aput-object v0, p4, v1
+    aput-object p5, p4, v0
 
     .line 2433
-    iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
+    iget-object p5, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
+    iget-object p5, p5, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v0
+    move-result-object p5
 
-    iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v1, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/MessagesController;->getUserFull(J)Lorg/telegram/tgnet/TLRPC$UserFull;
+    invoke-virtual {p5, v1, v2}, Lorg/telegram/messenger/MessagesController;->getUserFull(J)Lorg/telegram/tgnet/TLRPC$UserFull;
 
-    move-result-object v0
+    move-result-object p5
 
-    if-eqz v0, :cond_0
+    if-eqz p5, :cond_0
 
     .line 2436
-    invoke-static {v0, p4}, Lorg/telegram/ui/AvatarPreviewer$Data;->of(Lorg/telegram/tgnet/TLRPC$UserFull;[Lorg/telegram/ui/AvatarPreviewer$MenuItem;)Lorg/telegram/ui/AvatarPreviewer$Data;
+    invoke-static {p5, p4}, Lorg/telegram/ui/AvatarPreviewer$Data;->of(Lorg/telegram/tgnet/TLRPC$UserFull;[Lorg/telegram/ui/AvatarPreviewer$MenuItem;)Lorg/telegram/ui/AvatarPreviewer$Data;
 
     move-result-object p4
 
@@ -368,15 +368,15 @@
 
     .line 2438
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
+    iget-object p5, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
+    iget-object p5, p5, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4900(Lorg/telegram/ui/ChannelAdminLogActivity;)I
+    invoke-static {p5}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$4900(Lorg/telegram/ui/ChannelAdminLogActivity;)I
 
-    move-result v0
+    move-result p5
 
-    invoke-static {p2, v0, p4}, Lorg/telegram/ui/AvatarPreviewer$Data;->of(Lorg/telegram/tgnet/TLRPC$User;I[Lorg/telegram/ui/AvatarPreviewer$MenuItem;)Lorg/telegram/ui/AvatarPreviewer$Data;
+    invoke-static {p2, p5, p4}, Lorg/telegram/ui/AvatarPreviewer$Data;->of(Lorg/telegram/tgnet/TLRPC$User;I[Lorg/telegram/ui/AvatarPreviewer$MenuItem;)Lorg/telegram/ui/AvatarPreviewer$Data;
 
     move-result-object p4
 
@@ -384,32 +384,32 @@
     :goto_0
     invoke-static {p4}, Lorg/telegram/ui/AvatarPreviewer;->canPreview(Lorg/telegram/ui/AvatarPreviewer$Data;)Z
 
-    move-result v0
+    move-result p5
 
-    if-eqz v0, :cond_1
+    if-eqz p5, :cond_1
 
     .line 2441
     invoke-static {}, Lorg/telegram/ui/AvatarPreviewer;->getInstance()Lorg/telegram/ui/AvatarPreviewer;
 
     move-result-object p3
 
-    iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
+    iget-object p5, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
+    iget-object p5, p5, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$5000(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/view/View;
+    invoke-static {p5}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$5000(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p5
 
-    check-cast v0, Landroid/view/ViewGroup;
+    check-cast p5, Landroid/view/ViewGroup;
 
-    new-instance v2, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, p1, p2}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$1;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    invoke-virtual {p3, v0, p4, v2}, Lorg/telegram/ui/AvatarPreviewer;->show(Landroid/view/ViewGroup;Lorg/telegram/ui/AvatarPreviewer$Data;Lorg/telegram/ui/AvatarPreviewer$Callback;)V
+    invoke-virtual {p3, p5, p4, v1}, Lorg/telegram/ui/AvatarPreviewer;->show(Landroid/view/ViewGroup;Lorg/telegram/ui/AvatarPreviewer$Data;Lorg/telegram/ui/AvatarPreviewer$Callback;)V
 
-    return v1
+    return v0
 
     :cond_1
     return p3

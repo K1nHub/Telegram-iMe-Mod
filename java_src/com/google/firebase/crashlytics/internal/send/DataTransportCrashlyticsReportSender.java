@@ -21,7 +21,14 @@ public class DataTransportCrashlyticsReportSender {
     private static final CrashlyticsReportJsonTransform TRANSFORM = new CrashlyticsReportJsonTransform();
     private static final String CRASHLYTICS_ENDPOINT = mergeStrings("hts/cahyiseot-agolai.o/1frlglgc/aclg", "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho");
     private static final String CRASHLYTICS_API_KEY = mergeStrings("AzSBpY4F0rHiHFdinTvM", "IayrSTFL9eJ69YeSUO2");
-    private static final Transformer<CrashlyticsReport, byte[]> DEFAULT_TRANSFORM = DataTransportCrashlyticsReportSender$$ExternalSyntheticLambda0.INSTANCE;
+    private static final Transformer<CrashlyticsReport, byte[]> DEFAULT_TRANSFORM = new Transformer() { // from class: com.google.firebase.crashlytics.internal.send.DataTransportCrashlyticsReportSender$$ExternalSyntheticLambda0
+        @Override // com.google.android.datatransport.Transformer
+        public final Object apply(Object obj) {
+            byte[] lambda$static$0;
+            lambda$static$0 = DataTransportCrashlyticsReportSender.lambda$static$0((CrashlyticsReport) obj);
+            return lambda$static$0;
+        }
+    };
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ byte[] lambda$static$0(CrashlyticsReport crashlyticsReport) {
@@ -31,9 +38,9 @@ public class DataTransportCrashlyticsReportSender {
     public static DataTransportCrashlyticsReportSender create(Context context) {
         TransportRuntime.initialize(context);
         TransportFactory newFactory = TransportRuntime.getInstance().newFactory(new CCTDestination(CRASHLYTICS_ENDPOINT, CRASHLYTICS_API_KEY));
-        Encoding m811of = Encoding.m811of("json");
+        Encoding m829of = Encoding.m829of("json");
         Transformer<CrashlyticsReport, byte[]> transformer = DEFAULT_TRANSFORM;
-        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m811of, transformer), transformer);
+        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m829of, transformer), transformer);
     }
 
     DataTransportCrashlyticsReportSender(Transport<CrashlyticsReport> transport, Transformer<CrashlyticsReport, byte[]> transformer) {

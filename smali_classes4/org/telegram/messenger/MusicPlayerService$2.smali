@@ -75,7 +75,7 @@
 .end method
 
 .method public onSeekTo(J)V
-    .locals 4
+    .locals 5
 
     .line 135
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -99,11 +99,11 @@
 
     long-to-float v2, v2
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()I
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
-    move-result v3
+    move-result-wide v3
 
-    int-to-float v3, v3
+    double-to-float v3, v3
 
     div-float/2addr v2, v3
 

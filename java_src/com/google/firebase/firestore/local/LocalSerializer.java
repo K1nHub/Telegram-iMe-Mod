@@ -43,7 +43,7 @@ public final class LocalSerializer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MutableDocument decodeMaybeDocument(MaybeDocument maybeDocument) {
-        int i = C10151.f252xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
+        int i = C10151.f254xe45654f0[maybeDocument.getDocumentTypeCase().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -145,7 +145,7 @@ public final class LocalSerializer {
         SnapshotVersion decodeVersion2 = this.rpcSerializer.decodeVersion(target.getLastLimboFreeSnapshotVersion());
         ByteString resumeToken = target.getResumeToken();
         long lastListenSequenceNumber = target.getLastListenSequenceNumber();
-        int i = C10151.f253x5167ea64[target.getTargetTypeCase().ordinal()];
+        int i = C10151.f255x5167ea64[target.getTargetTypeCase().ordinal()];
         if (i == 1) {
             decodeDocumentsTarget = this.rpcSerializer.decodeDocumentsTarget(target.getDocuments());
         } else if (i != 2) {
@@ -156,40 +156,39 @@ public final class LocalSerializer {
         return new TargetData(decodeDocumentsTarget, targetId, lastListenSequenceNumber, QueryPurpose.LISTEN, decodeVersion, decodeVersion2, resumeToken);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.local.LocalSerializer$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10151 {
+    static /* synthetic */ class C10151 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$MaybeDocument$DocumentTypeCase */
-        static final /* synthetic */ int[] f252xe45654f0;
+        static final /* synthetic */ int[] f254xe45654f0;
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$Target$TargetTypeCase */
-        static final /* synthetic */ int[] f253x5167ea64;
+        static final /* synthetic */ int[] f255x5167ea64;
 
         static {
             int[] iArr = new int[Target.TargetTypeCase.values().length];
-            f253x5167ea64 = iArr;
+            f255x5167ea64 = iArr;
             try {
                 iArr[Target.TargetTypeCase.DOCUMENTS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f253x5167ea64[Target.TargetTypeCase.QUERY.ordinal()] = 2;
+                f255x5167ea64[Target.TargetTypeCase.QUERY.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             int[] iArr2 = new int[MaybeDocument.DocumentTypeCase.values().length];
-            f252xe45654f0 = iArr2;
+            f254xe45654f0 = iArr2;
             try {
                 iArr2[MaybeDocument.DocumentTypeCase.DOCUMENT.ordinal()] = 1;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f252xe45654f0[MaybeDocument.DocumentTypeCase.NO_DOCUMENT.ordinal()] = 2;
+                f254xe45654f0[MaybeDocument.DocumentTypeCase.NO_DOCUMENT.ordinal()] = 2;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f252xe45654f0[MaybeDocument.DocumentTypeCase.UNKNOWN_DOCUMENT.ordinal()] = 3;
+                f254xe45654f0[MaybeDocument.DocumentTypeCase.UNKNOWN_DOCUMENT.ordinal()] = 3;
             } catch (NoSuchFieldError unused5) {
             }
         }

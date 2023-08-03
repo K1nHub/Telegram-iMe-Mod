@@ -2,42 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+.field public final synthetic f$0:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
+.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;->f$0:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;->f$0:Ljava/util/ArrayList;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$ICuOMKeaB36GZJIhthaClKzDw7w(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZILjava/lang/String;)V
+    check-cast p1, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    return-void
-.end method
+    check-cast p2, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$W7UTu96du_wj0fyw5Yj1CEyVCzQ(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+    move-result p1
 
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method

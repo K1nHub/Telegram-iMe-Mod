@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
@@ -59,7 +59,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public BlockchainWalletDetailsBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainWalletItem r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
+    public BlockchainWalletDetailsBottomSheetDialog(final org.telegram.p043ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainWalletItem r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
         /*
             r2 = this;
             java.lang.String r0 = "fragment"
@@ -82,7 +82,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
             r2.showBackupAction = r6
             r2.infoDialogModel = r7
             com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$presenter$2 r4 = new com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$presenter$2
-            r4.<init>(r2)
+            r4.<init>()
             moxy.ktx.MoxyKtxDelegate r5 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r6 = r2.getMvpDelegate()
             java.lang.String r7 = "mvpDelegate"
@@ -103,11 +103,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
             kotlin.LazyThreadSafetyMode r4 = r4.defaultLazyMode()
             com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$special$$inlined$inject$default$1 r5 = new com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r6 = 0
-            r5.<init>(r2, r6, r6)
+            r5.<init>()
             kotlin.Lazy r4 = kotlin.LazyKt.lazy(r4, r5)
             r2.resourceManager$delegate = r4
             com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$binding$2 r4 = new com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$binding$2
-            r4.<init>(r3)
+            r4.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r3 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r2, r6, r4, r1, r6)
             r2.binding$delegate = r3
             r3 = 0
@@ -151,8 +151,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         viewHeader.setupViewData((r13 & 1) != 0 ? null : null, (r13 & 2) != 0 ? null : Integer.valueOf(i), (r13 & 4) != 0 ? null : null, title, subtitle);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_details_created), createdDate, C3417R.C3419drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_address), address, C3417R.C3419drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3419R.string.wallet_details_created), createdDate, C3419R.C3421drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3419R.string.wallet_connect_session_details_address), address, C3419R.C3421drawable.fork_ic_nav_wallet_24, true);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView
@@ -174,11 +174,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         final ActionBarMenuItem setupActionItem$lambda$4 = getBinding().itemMoreOptions;
         setupActionItem$lambda$4.setLongClickEnabled(false);
         setupActionItem$lambda$4.setSubMenuOpenSide(2);
-        setupActionItem$lambda$4.setIcon(C3417R.C3419drawable.ic_ab_other);
+        setupActionItem$lambda$4.setIcon(C3419R.C3421drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$4, "setupActionItem$lambda$4");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$4);
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3417R.C3419drawable.msg_info, getResourceManager().getString(C3417R.string.wallet_crypto_buy_information_dialog_title));
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3417R.C3419drawable.msg_copy, getResourceManager().getString(C3417R.string.wallet_transaction_details_action_copy_address));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3419R.C3421drawable.msg_info, getResourceManager().getString(C3419R.string.wallet_crypto_buy_information_dialog_title));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3419R.C3421drawable.msg_copy, getResourceManager().getString(C3419R.string.wallet_transaction_details_action_copy_address));
         setupActionItem$lambda$4.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -191,7 +191,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
                 BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog.this, setupActionItem$lambda$4, i);
             }
         });
-        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -221,25 +221,61 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         binding.buttonBackup.applyColors();
         BigActionButton setupColors$lambda$6$lambda$5 = binding.buttonReset;
         setupColors$lambda$6$lambda$5.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
-        setupColors$lambda$6$lambda$5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), 0, Theme.getColor(Theme.key_listSelector)));
+        setupColors$lambda$6$lambda$5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), 0, Theme.getColor(Theme.key_listSelector)));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$5, "setupColors$lambda$6$lambda$5");
         ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$5);
     }
 
     private final void setupTexts() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
-        binding.buttonBackup.setText(getResourceManager().getString(C3417R.string.wallet_eth_account_settings_backup_title));
-        binding.buttonReset.setText(LocaleController.getString("Reset", C3417R.string.Reset));
+        binding.buttonBackup.setText(getResourceManager().getString(C3419R.string.wallet_eth_account_settings_backup_title));
+        binding.buttonReset.setText(LocaleController.getString("Reset", C3419R.string.Reset));
     }
 
     private final void setupListeners() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
         BigActionButton buttonBackup = binding.buttonBackup;
         Intrinsics.checkNotNullExpressionValue(buttonBackup, "buttonBackup");
-        ViewExtKt.safeThrottledClick$default(buttonBackup, 0L, new BlockchainWalletDetailsBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonBackup, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                BlockchainWalletDetailsBottomSheetDialog.this.showWalletBackup();
+            }
+        }, 1, null);
         BigActionButton buttonReset = binding.buttonReset;
         Intrinsics.checkNotNullExpressionValue(buttonReset, "buttonReset");
-        ViewExtKt.safeThrottledClick$default(buttonReset, 0L, new BlockchainWalletDetailsBottomSheetDialog$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonReset, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                BlockchainWalletDetailsPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = BlockchainWalletDetailsBottomSheetDialog.this.getPresenter();
+                presenter.showResetWalletConfirmationDialog();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/CachedMediaLayout$CacheCell;)V
     .locals 0
 
-    .line 786
+    .line 816
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$2;->this$1:Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;
 
     iput-object p5, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$2;->val$cacheCell:Lorg/telegram/ui/CachedMediaLayout$CacheCell;
@@ -39,7 +39,7 @@
 .method public didPressedButton()V
     .locals 3
 
-    .line 789
+    .line 819
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter$2;->this$1:Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout$MusicAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;

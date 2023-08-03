@@ -42,7 +42,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
+    invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
     .line 2129
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;

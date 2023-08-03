@@ -24,7 +24,7 @@ public class LogUtils {
     }
 
     public static zzfi.zza zza(Context context) {
-        zzfi.zza.C7025zza zza = zzfi.zza.zza().zza(context.getPackageName());
+        zzfi.zza.C7284zza zza = zzfi.zza.zza().zza(context.getPackageName());
         String zzb = zzb(context);
         if (zzb != null) {
             zza.zzb(zzb);
@@ -36,7 +36,7 @@ public class LogUtils {
         try {
             return Wrappers.packageManager(context).getPackageInfo(context.getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            C0719L.m755e(e, "Unable to find calling package info for %s", context.getPackageName());
+            C0719L.m773e(e, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

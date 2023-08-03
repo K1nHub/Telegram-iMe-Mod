@@ -21,12 +21,14 @@ import com.iMe.model.wallet.transaction.TransactionItem;
 import com.iMe.p031ui.adapter.provider.GlobalStateProvider;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.p031ui.wallet.common.WalletTabFragment;
+import com.iMe.p031ui.wallet.transaction.WalletTransactionsFragment;
 import com.iMe.p031ui.wallet.transaction.adapter.WalletTransactionsRecycleAdapter;
 import com.iMe.p031ui.wallet.transaction.adapter.diff.TransactionDiffCallback;
 import com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.staking.StakingOperationType;
 import com.iMe.storage.domain.model.wallet.token.Token;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -39,6 +41,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -47,12 +50,18 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTransactionsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -76,13 +85,91 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         this.screenType = screenType;
         this.token = token;
-        WalletTransactionsFragment$presenter$2 walletTransactionsFragment$presenter$2 = new WalletTransactionsFragment$presenter$2(this);
+        Function0<WalletTransactionsPresenter> function0 = new Function0<WalletTransactionsPresenter>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletTransactionsPresenter invoke() {
+                Lazy lazy2;
+                final WalletTransactionsFragment walletTransactionsFragment = WalletTransactionsFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        WalletTransactionsFragment.ScreenType screenType2;
+                        Token token2;
+                        screenType2 = WalletTransactionsFragment.this.screenType;
+                        token2 = WalletTransactionsFragment.this.token;
+                        return ParametersHolderKt.parametersOf(screenType2, token2);
+                    }
+                };
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletTransactionsPresenter>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.transaction.WalletTransactionsPresenter] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletTransactionsPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletTransactionsPresenter.class), qualifier, function03);
+                    }
+                });
+                return (WalletTransactionsPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletTransactionsPresenter.class.getName() + ".presenter", walletTransactionsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletTransactionsFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletTransactionsPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletTransactionsRecycleAdapter>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.transaction.adapter.WalletTransactionsRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletTransactionsRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletTransactionsRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.transactionAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletTransactionsFragment$binding$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletTransactionsBinding>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletTransactionsBinding invoke() {
+                return ForkFragmentWalletTransactionsBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletTransactionsFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     public final WalletTransactionsPresenter getPresenter() {
@@ -249,12 +336,12 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_transactions_toolbar_title));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(C3419R.string.wallet_transactions_toolbar_title));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletTransactionsPresenter presenter;
                 if (i == -1) {
@@ -268,10 +355,10 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3485ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$4$lambda$3.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$4$lambda$3, "setupActionBar$lambda$4$lambda$3");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m54dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m72dp(14));
         setupActionBar$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
@@ -336,7 +423,25 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         WalletTransactionsRecycleAdapter transactionAdapter = getTransactionAdapter();
         GlobalStateProvider globalStateProvider = transactionAdapter.getGlobalStateProvider();
         globalStateProvider.setMatchParentHeight(this.screenType instanceof ScreenType.Fullscreen);
-        globalStateProvider.setOnRetryButtonClickAction(new WalletTransactionsFragment$setupListeners$2$1$1(this));
+        globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupListeners$2$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletTransactionsPresenter presenter;
+                presenter = WalletTransactionsFragment.this.getPresenter();
+                WalletTransactionsPresenter.load$default(presenter, false, false, null, 7, null);
+            }
+        });
         transactionAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {

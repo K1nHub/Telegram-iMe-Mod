@@ -24,7 +24,7 @@ public final class zzr {
                 return true;
             } catch (UnsatisfiedLinkError e) {
                 if ((intValue & 4) == 0) {
-                    C0719L.m755e(e, "System.loadLibrary failed: %s", str2);
+                    C0719L.m773e(e, "System.loadLibrary failed: %s", str2);
                     zzb.put(concat, Integer.valueOf(intValue | 4));
                 }
                 return false;

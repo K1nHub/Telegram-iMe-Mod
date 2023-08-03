@@ -74,10 +74,10 @@ public final class PublicSuffixDatabase {
         return split$default;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e2, code lost:
         r4 = kotlin.text.StringsKt__StringsKt.split$default((java.lang.CharSequence) r8, new char[]{'.'}, false, 0, 6, (java.lang.Object) null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00f9, code lost:
         r1 = kotlin.text.StringsKt__StringsKt.split$default((java.lang.CharSequence) r5, new char[]{'.'}, false, 0, 6, (java.lang.Object) null);
      */
     /*
@@ -86,7 +86,7 @@ public final class PublicSuffixDatabase {
     */
     private final java.util.List<java.lang.String> findMatchingRule(java.util.List<java.lang.String> r18) {
         /*
-            Method dump skipped, instructions count: 293
+            Method dump skipped, instructions count: 295
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.publicsuffix.PublicSuffixDatabase.findMatchingRule(java.util.List):java.util.List");

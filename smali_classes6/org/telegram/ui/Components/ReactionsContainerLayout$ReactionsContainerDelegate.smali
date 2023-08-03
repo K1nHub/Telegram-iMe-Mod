@@ -15,5 +15,14 @@
 
 
 # virtual methods
+.method public abstract drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFF)V
+.end method
+
+.method public abstract needEnterText()Z
+.end method
+
+.method public abstract onEmojiWindowDismissed()V
+.end method
+
 .method public abstract onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
 .end method

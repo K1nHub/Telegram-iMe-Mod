@@ -20,6 +20,8 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
+import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__IndentKt;
@@ -51,6 +53,7 @@ import okhttp3.internal.http2.Settings;
 import okhttp3.internal.http2.StreamResetException;
 import okhttp3.internal.p037ws.RealWebSocket;
 import okhttp3.internal.platform.Platform;
+import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.OkHostnameVerifier;
 import okio.BufferedSink;
 import okio.BufferedSource;
@@ -250,7 +253,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
 
     private final void connectTls(ConnectionSpecSelector connectionSpecSelector) throws IOException {
         String trimMargin$default;
-        Address address = this.route.address();
+        final Address address = this.route.address();
         SSLSocketFactory sslSocketFactory = address.sslSocketFactory();
         SSLSocket sSLSocket = null;
         try {
@@ -269,7 +272,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                 SSLSession sslSocketSession = sSLSocket2.getSession();
                 Handshake.Companion companion = Handshake.Companion;
                 Intrinsics.checkNotNullExpressionValue(sslSocketSession, "sslSocketSession");
-                Handshake handshake = companion.get(sslSocketSession);
+                final Handshake handshake = companion.get(sslSocketSession);
                 HostnameVerifier hostnameVerifier = address.hostnameVerifier();
                 Intrinsics.checkNotNull(hostnameVerifier);
                 if (!hostnameVerifier.verify(address.url().host(), sslSocketSession)) {
@@ -297,10 +300,44 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                     }
                     throw new SSLPeerUnverifiedException("Hostname " + address.url().host() + " not verified (no certificates)");
                 }
-                CertificatePinner certificatePinner = address.certificatePinner();
+                final CertificatePinner certificatePinner = address.certificatePinner();
                 Intrinsics.checkNotNull(certificatePinner);
-                this.handshake = new Handshake(handshake.tlsVersion(), handshake.cipherSuite(), handshake.localCertificates(), new RealConnection$connectTls$1(certificatePinner, handshake, address));
-                certificatePinner.check$okhttp(address.url().host(), new RealConnection$connectTls$2(this));
+                this.handshake = new Handshake(handshake.tlsVersion(), handshake.cipherSuite(), handshake.localCertificates(), new Function0<List<? extends Certificate>>() { // from class: okhttp3.internal.connection.RealConnection$connectTls$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final List<? extends Certificate> invoke() {
+                        CertificateChainCleaner certificateChainCleaner$okhttp = CertificatePinner.this.getCertificateChainCleaner$okhttp();
+                        Intrinsics.checkNotNull(certificateChainCleaner$okhttp);
+                        return certificateChainCleaner$okhttp.clean(handshake.peerCertificates(), address.url().host());
+                    }
+                });
+                certificatePinner.check$okhttp(address.url().host(), new Function0<List<? extends X509Certificate>>() { // from class: okhttp3.internal.connection.RealConnection$connectTls$2
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final List<? extends X509Certificate> invoke() {
+                        Handshake handshake2;
+                        int collectionSizeOrDefault;
+                        handshake2 = RealConnection.this.handshake;
+                        Intrinsics.checkNotNull(handshake2);
+                        List<Certificate> peerCertificates2 = handshake2.peerCertificates();
+                        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(peerCertificates2, 10);
+                        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                        for (Certificate certificate2 : peerCertificates2) {
+                            Objects.requireNonNull(certificate2, "null cannot be cast to non-null type java.security.cert.X509Certificate");
+                            arrayList.add((X509Certificate) certificate2);
+                        }
+                        return arrayList;
+                    }
+                });
                 String selectedProtocol = configureSecureSocket.supportsTlsExtensions() ? Platform.Companion.get().getSelectedProtocol(sSLSocket2) : null;
                 this.socket = sSLSocket2;
                 this.source = Okio.buffer(Okio.source(sSLSocket2));

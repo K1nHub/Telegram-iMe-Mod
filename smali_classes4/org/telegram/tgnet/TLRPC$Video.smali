@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27318
+    .line 27887
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 27347
+    .line 27916
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_video_old;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 27344
+    .line 27913
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoEncrypted;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 27350
+    .line 27919
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_video_old2;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 27341
+    .line 27910
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_video_layer45;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 27338
+    .line 27907
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_video_old3;
 
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 27353
+    .line 27922
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoEmpty_layer45;
 
@@ -105,7 +105,7 @@
 
     goto :goto_1
 
-    .line 27357
+    .line 27926
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -135,7 +135,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 27360
+    .line 27929
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

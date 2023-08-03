@@ -12,6 +12,14 @@
     return v0
 .end method
 
+.method public static $default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
 .method public static $default$getBottomOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
     .locals 0
 

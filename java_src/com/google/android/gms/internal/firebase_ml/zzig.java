@@ -5,8 +5,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Add missing generic type declarations: [T] */
 /* loaded from: classes.dex */
-final class zzig implements Iterator<T>, p033j$.util.Iterator {
+final class zzig<T> implements Iterator<T>, p033j$.util.Iterator {
     private int index = 0;
     private final int length;
     private final /* synthetic */ zzid zzzz;
@@ -27,7 +28,6 @@ final class zzig implements Iterator<T>, p033j$.util.Iterator {
         return this.index < this.length;
     }
 
-    /* JADX WARN: Type inference failed for: r0v4, types: [T, java.lang.Object] */
     @Override // java.util.Iterator, p033j$.util.Iterator
     public final T next() {
         if (!hasNext()) {
@@ -36,7 +36,7 @@ final class zzig implements Iterator<T>, p033j$.util.Iterator {
         Object obj = this.zzzz.zzzy;
         int i = this.index;
         this.index = i + 1;
-        return Array.get(obj, i);
+        return (T) Array.get(obj, i);
     }
 
     @Override // java.util.Iterator, p033j$.util.Iterator

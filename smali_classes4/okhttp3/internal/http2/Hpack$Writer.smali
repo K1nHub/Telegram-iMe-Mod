@@ -40,7 +40,7 @@
 .method public constructor <init>(IZLokio/Buffer;)V
     .locals 1
 
-    const-string v0, "out"
+    const-string/jumbo v0, "out"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

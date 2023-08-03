@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: StoredKey.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class StoredKeyPhantomReference extends PhantomReference<StoredKey> {
     private long nativeHandle;
     private static Set<StoredKeyPhantomReference> references = new HashSet();

@@ -111,7 +111,7 @@
 
     move-result-object v2
 
-    const-string v3, "packagename"
+    const-string/jumbo v3, "packagename"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 

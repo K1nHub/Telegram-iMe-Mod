@@ -5,21 +5,27 @@
 .implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
-
-.field public final synthetic f$1:Ljava/text/Collator;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/text/Collator;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;->INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;->f$0:Lorg/telegram/messenger/ContactsController;
-
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;->f$1:Ljava/text/Collator;
 
     return-void
 .end method
@@ -27,17 +33,13 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
-
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;->f$0:Lorg/telegram/messenger/ContactsController;
-
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda53;->f$1:Ljava/text/Collator;
+    .locals 0
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$VpAIoadRI9nxs0p5yER8dBEd2i4(Lorg/telegram/messenger/ContactsController;Ljava/text/Collator;Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
+    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$zAeHJ45ObaHyxskRPCq7NiImHcw(Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
 
     move-result p1
 

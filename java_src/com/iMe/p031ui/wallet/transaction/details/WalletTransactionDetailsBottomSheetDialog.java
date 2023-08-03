@@ -26,6 +26,7 @@ import com.iMe.model.wallet.transaction.StakingOperationItem;
 import com.iMe.model.wallet.transaction.TransactionItem;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
 import com.iMe.p031ui.custom.DividerView;
+import com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog;
 import com.iMe.p031ui.wallet.transaction.details.adapter.WalletActionAdapter;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -41,13 +42,14 @@ import kotlin.Lazy;
 import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentWalletTransactionDetailsLayoutBinding;
@@ -102,7 +104,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
             r3.screenType = r5
             r3.parentAdditionalAction = r6
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$presenter$2 r4 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$presenter$2
-            r4.<init>(r3)
+            r4.<init>()
             moxy.ktx.MoxyKtxDelegate r5 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r6 = r3.getMvpDelegate()
             java.lang.String r0 = "mvpDelegate"
@@ -123,25 +125,25 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
             kotlin.LazyThreadSafetyMode r5 = r4.defaultLazyMode()
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$1 r6 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
-            r6.<init>(r3, r0, r0)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r3.actionAdapter$delegate = r5
             kotlin.LazyThreadSafetyMode r5 = r4.defaultLazyMode()
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$2 r6 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$2
-            r6.<init>(r3, r0, r0)
+            r6.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r6)
             r3.walletFlowCoordinator$delegate = r5
             kotlin.LazyThreadSafetyMode r4 = r4.defaultLazyMode()
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$3 r5 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$special$$inlined$inject$default$3
-            r5.<init>(r3, r0, r0)
+            r5.<init>()
             kotlin.Lazy r4 = kotlin.LazyKt.lazy(r4, r5)
             r3.resourceManager$delegate = r4
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$networkIconCornerSize$2 r4 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$networkIconCornerSize$2
-            r4.<init>(r3)
+            r4.<init>()
             kotlin.Lazy r4 = kotlin.LazyKt.lazy(r4)
             r3.networkIconCornerSize$delegate = r4
             com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$binding$2 r4 = new com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$binding$2
-            r4.<init>(r3)
+            r4.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r4 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r3, r0, r4, r1, r0)
             r3.binding$delegate = r4
             r4 = 0
@@ -272,7 +274,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void openProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m85to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m103to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -337,7 +339,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessCancelTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3417R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3417R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3419R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3419R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessCancelTransaction$lambda$9(WalletTransactionDetailsBottomSheetDialog.this);
@@ -354,7 +356,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessBoostTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3417R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3417R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3419R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3419R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessBoostTransaction$lambda$10(WalletTransactionDetailsBottomSheetDialog.this);
@@ -372,10 +374,10 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         final ActionBarMenuItem setupActionItem$lambda$13 = getBinding().itemMoreOptions;
         setupActionItem$lambda$13.setLongClickEnabled(false);
         setupActionItem$lambda$13.setSubMenuOpenSide(2);
-        setupActionItem$lambda$13.setIcon(C3417R.C3419drawable.ic_ab_other);
+        setupActionItem$lambda$13.setIcon(C3419R.C3421drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$13, "setupActionItem$lambda$13");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$13);
-        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3417R.C3419drawable.msg_shareout, getResourceManager().getString(C3417R.string.common_share));
+        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3419R.C3421drawable.msg_shareout, getResourceManager().getString(C3419R.string.common_share));
         setupActionItem$lambda$13.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -388,7 +390,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
                 WalletTransactionDetailsBottomSheetDialog.setupActionItem$lambda$13$lambda$12(WalletTransactionDetailsBottomSheetDialog.this, i);
             }
         });
-        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -485,21 +487,38 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     private final void setupTexts() {
         ForkContentWalletTransactionDetailsLayoutBinding binding = getBinding();
-        binding.textActionCancel.setText(getResourceManager().getString(C3417R.string.common_ok));
-        binding.textSectionName.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_section_info));
-        binding.textSectionActions.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_section_actions));
-        binding.textFeeTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_fee_title));
-        binding.textProcessingTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_processing_title));
-        binding.textDateTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_date_title));
-        binding.textRecipientTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_recipient_title));
-        binding.textStatusTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_status_title));
-        binding.textCommentTitle.setText(getResourceManager().getString(C3417R.string.wallet_transaction_details_comment_title));
+        binding.textActionCancel.setText(getResourceManager().getString(C3419R.string.common_ok));
+        binding.textSectionName.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_section_info));
+        binding.textSectionActions.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_section_actions));
+        binding.textFeeTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_fee_title));
+        binding.textProcessingTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_processing_title));
+        binding.textDateTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_date_title));
+        binding.textRecipientTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_recipient_title));
+        binding.textStatusTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_status_title));
+        binding.textCommentTitle.setText(getResourceManager().getString(C3419R.string.wallet_transaction_details_comment_title));
     }
 
     private final void setupListeners() {
         AppCompatTextView textActionCancel = getBinding().textActionCancel;
         Intrinsics.checkNotNullExpressionValue(textActionCancel, "textActionCancel");
-        ViewExtKt.safeThrottledClick$default(textActionCancel, 0L, new WalletTransactionDetailsBottomSheetDialog$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(textActionCancel, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletTransactionDetailsBottomSheetDialog.this.dismiss();
+            }
+        }, 1, null);
     }
 
     /* compiled from: WalletTransactionDetailsBottomSheetDialog.kt */
@@ -609,7 +628,12 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         /* JADX WARN: Multi-variable type inference failed */
         public static /* synthetic */ WalletTransactionDetailsBottomSheetDialog newInstance$default(Companion companion, BaseFragment baseFragment, ScreenType screenType, Callbacks$Callback1 callbacks$Callback1, int i, Object obj) {
             if ((i & 4) != 0) {
-                callbacks$Callback1 = C2471xc5bfbef6.INSTANCE;
+                callbacks$Callback1 = new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$Companion$$ExternalSyntheticLambda0
+                    @Override // com.iMe.fork.utils.Callbacks$Callback1
+                    public final void invoke(Object obj2) {
+                        WalletTransactionDetailsBottomSheetDialog.Companion.newInstance$lambda$0((ActionItem) obj2);
+                    }
+                };
             }
             return companion.newInstance(baseFragment, screenType, callbacks$Callback1);
         }

@@ -23,12 +23,14 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.NetworkTypeView;
+import com.iMe.p031ui.wallet.crypto.token.TokenManagementFragment;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.model.wallet.token.TokenListInfo;
 import com.iMe.utils.dialogs.DialogExtKt;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -37,9 +39,12 @@ import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
 import java.util.List;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -49,8 +54,15 @@ import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.parameter.ParametersHolderKt;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.browser.Browser;
@@ -58,7 +70,7 @@ import org.telegram.messenger.databinding.ForkFragmentTokenManagementBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.C3485ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.CameraScanActivity;
@@ -82,11 +94,67 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     public TokenManagementFragment(ScreenType screenType) {
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         this.screenType = screenType;
-        TokenManagementFragment$presenter$2 tokenManagementFragment$presenter$2 = new TokenManagementFragment$presenter$2(this);
+        Function0<TokenManagementPresenter> function0 = new Function0<TokenManagementPresenter>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TokenManagementPresenter invoke() {
+                Lazy lazy;
+                final TokenManagementFragment tokenManagementFragment = TokenManagementFragment.this;
+                final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$presenter$2.1
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public final ParametersHolder invoke() {
+                        TokenManagementFragment.ScreenType screenType2;
+                        screenType2 = TokenManagementFragment.this.screenType;
+                        return ParametersHolderKt.parametersOf(screenType2);
+                    }
+                };
+                lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<TokenManagementPresenter>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.crypto.token.TokenManagementPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final TokenManagementPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function03 = function02;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(TokenManagementPresenter.class), qualifier, function03);
+                    }
+                });
+                return (TokenManagementPresenter) lazy.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TokenManagementPresenter.class.getName() + ".presenter", tokenManagementFragment$presenter$2);
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new TokenManagementFragment$binding$2(this), 1, (Object) null);
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, TokenManagementPresenter.class.getName() + ".presenter", function0);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentTokenManagementBinding>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentTokenManagementBinding invoke() {
+                return ForkFragmentTokenManagementBinding.inflate(BaseFragmentExtKt.getLayoutInflater(TokenManagementFragment.this));
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -212,12 +280,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         ScreenType screenType = this.screenType;
         if (screenType instanceof ScreenType.Import) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_import_confirmation_import));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_import_confirmation_import));
             setupActionButtonState$lambda$2.setEnabled(z2);
             setupActionButtonState$lambda$2.setAlpha(z2 ? 1.0f : 0.5f);
         } else if ((screenType instanceof ScreenType.View) && z) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3417R.string.favorite_folder_delete));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3419R.string.favorite_folder_delete));
         }
     }
 
@@ -251,8 +319,8 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             LinearLayout linearSafety = binding.linearSafety;
             Intrinsics.checkNotNullExpressionValue(linearSafety, "linearSafety");
             ViewExtKt.visible$default(linearSafety, false, 1, null);
-            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3417R.string.plural_wallet_tokens_management_verified, num.intValue()));
-            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3417R.C3419drawable.fork_ic_verified : C3417R.C3419drawable.fork_ic_warning_info);
+            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3419R.string.plural_wallet_tokens_management_verified, num.intValue()));
+            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3419R.C3421drawable.fork_ic_verified : C3419R.C3421drawable.fork_ic_warning_info);
         }
     }
 
@@ -305,12 +373,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3484ActionBar c3484ActionBar = this.actionBar;
-        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
-        c3484ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3417R.string.wallet_tokens_management_title_import : C3417R.string.wallet_tokens_management_title_details));
-        c3484ActionBar.setAllowOverlayTitle(true);
-        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
+        C3485ActionBar c3485ActionBar = this.actionBar;
+        c3485ActionBar.setBackButtonImage(C3419R.C3421drawable.ic_ab_back);
+        c3485ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3419R.string.wallet_tokens_management_title_import : C3419R.string.wallet_tokens_management_title_details));
+        c3485ActionBar.setAllowOverlayTitle(true);
+        c3485ActionBar.setActionBarMenuOnItemClick(new C3485ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3485ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TokenManagementPresenter presenter;
                 if (i == -1) {
@@ -325,10 +393,10 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
             this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3485ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
             setupActionBar$lambda$6$lambda$5.disableRipple();
             Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$6$lambda$5, "setupActionBar$lambda$6$lambda$5");
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$6$lambda$5, AndroidUtilities.m54dp(14));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$6$lambda$5, AndroidUtilities.m72dp(14));
             setupActionBar$lambda$6$lambda$5.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
         }
     }
@@ -419,13 +487,68 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         ForkFragmentTokenManagementBinding binding = getBinding();
         AppCompatImageView buttonSafetyInfo = binding.buttonSafetyInfo;
         Intrinsics.checkNotNullExpressionValue(buttonSafetyInfo, "buttonSafetyInfo");
-        ViewExtKt.safeThrottledClick$default(buttonSafetyInfo, 0L, new TokenManagementFragment$setupListeners$1$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonSafetyInfo, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupListeners$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                TokenManagementFragment.this.showTokensListsInfoDialog();
+            }
+        }, 1, null);
         LinearLayout linearVerification = binding.linearVerification;
         Intrinsics.checkNotNullExpressionValue(linearVerification, "linearVerification");
-        ViewExtKt.safeThrottledClick$default(linearVerification, 0L, new TokenManagementFragment$setupListeners$1$2(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(linearVerification, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupListeners$1$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                TokenManagementPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = TokenManagementFragment.this.getPresenter();
+                presenter.onVerificationClicked();
+            }
+        }, 1, null);
         TextView buttonAction = binding.buttonAction;
         Intrinsics.checkNotNullExpressionValue(buttonAction, "buttonAction");
-        ViewExtKt.safeThrottledClick$default(buttonAction, 0L, new TokenManagementFragment$setupListeners$1$3(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(buttonAction, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupListeners$1$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                TokenManagementPresenter presenter;
+                Intrinsics.checkNotNullParameter(it, "it");
+                presenter = TokenManagementFragment.this.getPresenter();
+                presenter.onActionButtonClicked();
+            }
+        }, 1, null);
         if (Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE)) {
             EditText editAddress = binding.editAddress;
             Intrinsics.checkNotNullExpressionValue(editAddress, "editAddress");
@@ -472,19 +595,19 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$18$lambda$17, "setupViews$lambda$18$lambda$17");
         setupViews$lambda$18$lambda$17.setVisibility(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? 0 : 8);
         setupViews$lambda$18$lambda$17.setBackground(null);
-        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3417R.string.channel_donations_address_field_hint));
+        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3419R.string.channel_donations_address_field_hint));
         TextView textAddress = binding.textAddress;
         Intrinsics.checkNotNullExpressionValue(textAddress, "textAddress");
         textAddress.setVisibility(this.screenType instanceof ScreenType.View ? 0 : 8);
-        binding.textAddressTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_token_address));
-        binding.textInformationTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_token_information));
-        binding.textIconTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_icon));
-        binding.textSymbolTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_symbol));
-        binding.textNameTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_name));
-        binding.textDecimalsTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_decimals));
-        binding.textNetworkTitle.setText(getResourceManager().getString(C3417R.string.wallet_connect_session_details_network));
-        binding.textSafetyTitle.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_token_safety));
-        binding.textNotFound.setText(getResourceManager().getString(C3417R.string.wallet_tokens_management_token_not_found));
+        binding.textAddressTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_token_address));
+        binding.textInformationTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_token_information));
+        binding.textIconTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_icon));
+        binding.textSymbolTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_symbol));
+        binding.textNameTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_name));
+        binding.textDecimalsTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_decimals));
+        binding.textNetworkTitle.setText(getResourceManager().getString(C3419R.string.wallet_connect_session_details_network));
+        binding.textSafetyTitle.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_token_safety));
+        binding.textNotFound.setText(getResourceManager().getString(C3419R.string.wallet_tokens_management_token_not_found));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -499,23 +622,57 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
 
     private final void setupAddressOptions(boolean z, Network network) {
         Network.Explorer explorer;
-        ActionBarMenuItem setupAddressOptions$lambda$21 = getBinding().buttonAddressOptions;
+        final ActionBarMenuItem setupAddressOptions$lambda$21 = getBinding().buttonAddressOptions;
         setupAddressOptions$lambda$21.removeAllSubItems();
         if (Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE)) {
-            setupAddressOptions$lambda$21.setIcon(C3417R.C3419drawable.msg_qrcode);
-            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3417R.string.wallet_backup_scan_qr));
+            setupAddressOptions$lambda$21.setIcon(C3419R.C3421drawable.msg_qrcode);
+            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3419R.string.wallet_backup_scan_qr));
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
-            ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new TokenManagementFragment$setupAddressOptions$1$1(this), 1, null);
+            ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                    invoke2(view);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(View it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    TokenManagementFragment.this.openQRScan();
+                }
+            }, 1, null);
         }
         if (z) {
-            setupAddressOptions$lambda$21.setIcon(C3417R.C3419drawable.ic_ab_other);
-            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
-            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3417R.C3419drawable.msg_copy, getResourceManager().getString(C3417R.string.wallet_transaction_details_action_copy_address));
+            setupAddressOptions$lambda$21.setIcon(C3419R.C3421drawable.ic_ab_other);
+            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3419R.string.AccDescrMoreOptions));
+            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3419R.C3421drawable.msg_copy, getResourceManager().getString(C3419R.string.wallet_transaction_details_action_copy_address));
             if (network != null && (explorer = network.getExplorer()) != null) {
-                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3417R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3419R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
             }
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
-            ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new TokenManagementFragment$setupAddressOptions$1$3(setupAddressOptions$lambda$21), 1, null);
+            ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$3
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                    invoke2(view);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(View it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    ActionBarMenuItem.this.toggleSubMenu();
+                }
+            }, 1, null);
         }
     }
 
@@ -554,7 +711,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showTokensListsInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3417R.string.token_lists_description), getResourceManager().getString(C3417R.string.common_ok), null, 9, null));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3419R.string.token_lists_description), getResourceManager().getString(C3419R.string.common_ok), null, 9, null));
     }
 
     /* compiled from: TokenManagementFragment.kt */

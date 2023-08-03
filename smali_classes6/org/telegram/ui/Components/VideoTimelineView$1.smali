@@ -34,14 +34,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/VideoTimelineView;)V
     .locals 0
 
-    .line 295
+    .line 298
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 296
+    .line 299
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->frameNum:I
 
     return-void
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x0
 
-    .line 300
+    .line 303
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -63,7 +63,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->frameNum:I
 
-    .line 302
+    .line 305
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
     move-result p1
@@ -74,7 +74,7 @@
 
     return-object v1
 
-    .line 306
+    .line 309
     :cond_0
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
@@ -107,7 +107,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 307
+    .line 310
     :try_start_1
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
@@ -120,7 +120,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 311
+    .line 314
     iget-object v2, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/VideoTimelineView;->access$200(Lorg/telegram/ui/Components/VideoTimelineView;)I
@@ -141,12 +141,12 @@
 
     move-result-object v2
 
-    .line 312
+    .line 315
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 313
+    .line 316
     iget-object v5, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/VideoTimelineView;->access$200(Lorg/telegram/ui/Components/VideoTimelineView;)I
@@ -163,7 +163,7 @@
 
     div-float/2addr v5, v6
 
-    .line 314
+    .line 317
     iget-object v6, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/VideoTimelineView;->access$300(Lorg/telegram/ui/Components/VideoTimelineView;)I
@@ -180,12 +180,12 @@
 
     div-float/2addr v6, v7
 
-    .line 315
+    .line 318
     invoke-static {v5, v6}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
 
-    .line 316
+    .line 319
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -196,7 +196,7 @@
 
     float-to-int v6, v6
 
-    .line 317
+    .line 320
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v7
@@ -207,7 +207,7 @@
 
     float-to-int v5, v7
 
-    .line 318
+    .line 321
     new-instance v7, Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -220,7 +220,7 @@
 
     invoke-direct {v7, v0, v0, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 319
+    .line 322
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object v8, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
@@ -245,10 +245,10 @@
 
     invoke-direct {v0, v8, v9, v6, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 320
+    .line 323
     invoke-virtual {v3, p1, v7, v0, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 321
+    .line 324
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -267,7 +267,7 @@
     :catch_1
     move-exception v0
 
-    .line 325
+    .line 328
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -281,7 +281,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 295
+    .line 298
     check-cast p1, [Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/VideoTimelineView$1;->doInBackground([Ljava/lang/Integer;)Landroid/graphics/Bitmap;
@@ -294,14 +294,14 @@
 .method protected onPostExecute(Landroid/graphics/Bitmap;)V
     .locals 2
 
-    .line 332
+    .line 335
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 333
+    .line 336
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/VideoTimelineView;->access$400(Lorg/telegram/ui/Components/VideoTimelineView;)Ljava/util/ArrayList;
@@ -310,12 +310,12 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 334
+    .line 337
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 335
+    .line 338
     iget p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->frameNum:I
 
     iget-object v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
@@ -328,7 +328,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 336
+    .line 339
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->frameNum:I
@@ -339,7 +339,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 341
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoTimelineView$1;->this$0:Lorg/telegram/ui/Components/VideoTimelineView;
 
@@ -353,7 +353,7 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 295
+    .line 298
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/VideoTimelineView$1;->onPostExecute(Landroid/graphics/Bitmap;)V

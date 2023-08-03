@@ -2,6 +2,7 @@ package com.google.android.exoplayer2;
 
 import android.os.Bundle;
 import com.google.android.exoplayer2.Bundleable;
+import com.google.android.exoplayer2.Tracks;
 import com.google.android.exoplayer2.source.TrackGroup;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.BundleableUtil;
@@ -16,9 +17,16 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class Tracks implements Bundleable {
     private final ImmutableList<Group> groups;
-    public static final Tracks EMPTY = new Tracks(ImmutableList.m744of());
+    public static final Tracks EMPTY = new Tracks(ImmutableList.m762of());
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);
-    public static final Bundleable.Creator<Tracks> CREATOR = Tracks$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Bundleable.Creator<Tracks> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Tracks$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.Bundleable.Creator
+        public final Bundleable fromBundle(Bundle bundle) {
+            Tracks lambda$static$0;
+            lambda$static$0 = Tracks.lambda$static$0(bundle);
+            return lambda$static$0;
+        }
+    };
 
     /* loaded from: classes.dex */
     public static final class Group implements Bundleable {
@@ -31,7 +39,14 @@ public final class Tracks implements Bundleable {
         private static final String FIELD_TRACK_SUPPORT = Util.intToStringMaxRadix(1);
         private static final String FIELD_TRACK_SELECTED = Util.intToStringMaxRadix(3);
         private static final String FIELD_ADAPTIVE_SUPPORTED = Util.intToStringMaxRadix(4);
-        public static final Bundleable.Creator<Group> CREATOR = Tracks$Group$$ExternalSyntheticLambda0.INSTANCE;
+        public static final Bundleable.Creator<Group> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Tracks$Group$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.Bundleable.Creator
+            public final Bundleable fromBundle(Bundle bundle) {
+                Tracks.Group lambda$static$0;
+                lambda$static$0 = Tracks.Group.lambda$static$0(bundle);
+                return lambda$static$0;
+            }
+        };
 
         public Group(TrackGroup trackGroup, boolean z, int[] iArr, boolean[] zArr) {
             int i = trackGroup.length;
@@ -209,7 +224,7 @@ public final class Tracks implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m744of();
+            fromBundleList = ImmutableList.m762of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Group.CREATOR, parcelableArrayList);
         }

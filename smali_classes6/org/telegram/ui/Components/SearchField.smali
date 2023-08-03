@@ -350,7 +350,7 @@
 
     move-result p3
 
-    invoke-virtual {p1, p3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 104
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -7,7 +7,7 @@ public final class ChannelCountry {
     private final String code;
 
     /* renamed from: id */
-    private final int f401id;
+    private final int f404id;
     private final String title;
 
     public static /* synthetic */ ChannelCountry copy$default(ChannelCountry channelCountry, String str, int i, String str2, int i2, Object obj) {
@@ -15,7 +15,7 @@ public final class ChannelCountry {
             str = channelCountry.code;
         }
         if ((i2 & 2) != 0) {
-            i = channelCountry.f401id;
+            i = channelCountry.f404id;
         }
         if ((i2 & 4) != 0) {
             str2 = channelCountry.title;
@@ -28,7 +28,7 @@ public final class ChannelCountry {
     }
 
     public final int component2() {
-        return this.f401id;
+        return this.f404id;
     }
 
     public final String component3() {
@@ -47,24 +47,24 @@ public final class ChannelCountry {
         }
         if (obj instanceof ChannelCountry) {
             ChannelCountry channelCountry = (ChannelCountry) obj;
-            return Intrinsics.areEqual(this.code, channelCountry.code) && this.f401id == channelCountry.f401id && Intrinsics.areEqual(this.title, channelCountry.title);
+            return Intrinsics.areEqual(this.code, channelCountry.code) && this.f404id == channelCountry.f404id && Intrinsics.areEqual(this.title, channelCountry.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.code.hashCode() * 31) + this.f401id) * 31) + this.title.hashCode();
+        return (((this.code.hashCode() * 31) + this.f404id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "ChannelCountry(code=" + this.code + ", id=" + this.f401id + ", title=" + this.title + ')';
+        return "ChannelCountry(code=" + this.code + ", id=" + this.f404id + ", title=" + this.title + ')';
     }
 
     public ChannelCountry(String code, int i, String title) {
         Intrinsics.checkNotNullParameter(code, "code");
         Intrinsics.checkNotNullParameter(title, "title");
         this.code = code;
-        this.f401id = i;
+        this.f404id = i;
         this.title = title;
     }
 
@@ -73,7 +73,7 @@ public final class ChannelCountry {
     }
 
     public final int getId() {
-        return this.f401id;
+        return this.f404id;
     }
 
     public final String getTitle() {

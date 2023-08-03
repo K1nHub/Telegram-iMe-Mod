@@ -65,7 +65,7 @@
 
     const/4 v9, 0x1
 
-    const-string v10, "purchases"
+    const-string/jumbo v10, "purchases"
 
     const-wide/32 v11, 0x124f80
 
@@ -116,7 +116,7 @@
 
     const/4 v15, 0x4
 
-    const-string v16, "purchase"
+    const-string/jumbo v16, "purchase"
 
     move-object v13, v3
 

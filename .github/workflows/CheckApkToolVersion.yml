@@ -1,17 +1,42 @@
 name: Build app using apktool
-on: workflow_dispatch
+on: push
 jobs:
-  build-apk:
+  prepare-env:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Update repo
         run: sudo apt update
-      - name: Install dependences
-        run: sudo apt install apktool && sudo apt install apksigner
+      - name: Install signer
+        run: sudo apt install signapk
+      - name: Install ApkTool
+        run: |
+          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool
+          wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar
+          chmod +x apktool_2.8.1.jar
+          chmod +x apktool
+          sudo mv apktool_2.8.1.jar /usr/local/bin/apktool.jar
+          sudo mv apktool /usr/local/bin/apktool
       - name: Build apk file
-        run: apktool b -o ./dist/moded-from-action.apk ./
+        run: apktool b -o ./dist/moded-from-action.apk ./ --use-aapt2
       - name: Sign apk file
         run: signapk testkey.x509.pem testkey.pk8 ./dist/moded-from-action.apk signed-moded-from-action.apk
-      
-  
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release iMe Mod
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build/*.apk
+          asset_name: iMe-Mod.apk

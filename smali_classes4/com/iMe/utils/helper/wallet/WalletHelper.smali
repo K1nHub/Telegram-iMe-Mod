@@ -536,7 +536,7 @@
 
     move-result-object v0
 
-    const-string v1, "parentLayout.fragmentStack"
+    const-string/jumbo v1, "parentLayout.fragmentStack"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -573,7 +573,7 @@
 
     move-result-object v2
 
-    const-string p0, "parentLayout"
+    const-string/jumbo p0, "parentLayout"
 
     invoke-static {v2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

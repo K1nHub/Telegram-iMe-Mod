@@ -67,12 +67,24 @@ public class CheckBoxBase {
         invalidate();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Paint lambda$new$0(Void r0) {
+        return paint;
+    }
+
     public CheckBoxBase(View view, int i, Theme.ResourcesProvider resourcesProvider) {
         int i2 = Theme.key_chat_serviceBackground;
         this.backgroundColorKey = i2;
         this.background2ColorKey = i2;
         this.drawUnchecked = true;
-        this.circlePaintProvider = CheckBoxBase$$ExternalSyntheticLambda0.INSTANCE;
+        this.circlePaintProvider = new GenericProvider() { // from class: org.telegram.ui.Components.CheckBoxBase$$ExternalSyntheticLambda0
+            @Override // org.telegram.messenger.GenericProvider
+            public final Object provide(Object obj) {
+                Paint lambda$new$0;
+                lambda$new$0 = CheckBoxBase.lambda$new$0((Void) obj);
+                return lambda$new$0;
+            }
+        };
         this.animationDuration = 200L;
         this.resourcesProvider = resourcesProvider;
         this.parentView = view;
@@ -89,11 +101,11 @@ public class CheckBoxBase {
         paint3.setStrokeCap(Paint.Cap.ROUND);
         this.checkPaint.setStyle(Paint.Style.STROKE);
         this.checkPaint.setStrokeJoin(Paint.Join.ROUND);
-        this.checkPaint.setStrokeWidth(AndroidUtilities.m55dp(1.9f));
+        this.checkPaint.setStrokeWidth(AndroidUtilities.m73dp(1.9f));
         Paint paint4 = new Paint(1);
         this.backgroundPaint = paint4;
         paint4.setStyle(Paint.Style.STROKE);
-        this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.2f));
+        this.backgroundPaint.setStrokeWidth(AndroidUtilities.m73dp(1.2f));
     }
 
     public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
@@ -168,16 +180,16 @@ public class CheckBoxBase {
     public void setBackgroundType(int i) {
         this.backgroundType = i;
         if (i == 12 || i == 13) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m54dp(1));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m72dp(1));
         } else if (i == 4 || i == 5) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.9f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m73dp(1.9f));
             if (i == 5) {
-                this.checkPaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
+                this.checkPaint.setStrokeWidth(AndroidUtilities.m73dp(1.5f));
             }
         } else if (i == 3) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(3.0f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m73dp(3.0f));
         } else if (i != 0) {
-            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
+            this.backgroundPaint.setStrokeWidth(AndroidUtilities.m73dp(1.5f));
         }
     }
 

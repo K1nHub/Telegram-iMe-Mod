@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
-    .line 204
+    .line 207
     iput-object p1, p0, Lorg/telegram/ui/Components/RLottieDrawable$4;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +38,24 @@
 .method public run()V
     .locals 2
 
-    .line 207
+    .line 210
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$4;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RLottieDrawable;->cacheGenerateTask:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 208
+    .line 211
     invoke-static {}, Lorg/telegram/messenger/utils/BitmapsCache;->decrementTaskCounter()V
 
-    .line 209
+    .line 212
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$4;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lorg/telegram/ui/Components/RLottieDrawable;->cacheGenerateTask:Ljava/lang/Runnable;
 
-    .line 211
+    .line 214
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable$4;->this$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -63,7 +63,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/ui/Components/RLottieDrawable;->generatingCache:Z
 
-    .line 212
+    .line 215
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->decodeFrameFinishedInternal()V
 
     return-void

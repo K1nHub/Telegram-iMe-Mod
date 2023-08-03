@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -26,8 +26,8 @@ public class CreateTopicEmptyView extends LinearLayout {
     public CreateTopicEmptyView(Context context, FrameLayout frameLayout, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.resourcesProvider = resourcesProvider;
-        setBackground(Theme.createServiceDrawable(AndroidUtilities.m54dp(18), this, frameLayout, getThemedPaint("paintChatActionBackground")));
-        setPadding(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(12));
+        setBackground(Theme.createServiceDrawable(AndroidUtilities.m72dp(18), this, frameLayout, getThemedPaint("paintChatActionBackground")));
+        setPadding(AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(12));
         setOrientation(1);
         this.backupImageView = new BackupImageView(context);
         TextView textView = new TextView(context);
@@ -36,14 +36,14 @@ public class CreateTopicEmptyView extends LinearLayout {
         int i = Theme.key_chat_serviceText;
         textView.setTextColor(getThemedColor(i));
         textView.setGravity(1);
-        textView.setMaxWidth(AndroidUtilities.m54dp(210));
-        textView.setText(LocaleController.getString(C3417R.string.AlmostDone));
+        textView.setMaxWidth(AndroidUtilities.m72dp(210));
+        textView.setText(LocaleController.getString(C3419R.string.AlmostDone));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 13.0f);
         textView2.setTextColor(getThemedColor(i));
         textView2.setGravity(1);
-        textView2.setMaxWidth(AndroidUtilities.m54dp(160));
-        textView2.setText(LocaleController.getString(C3417R.string.TopicEmptyViewDescription));
+        textView2.setMaxWidth(AndroidUtilities.m72dp(160));
+        textView2.setText(LocaleController.getString(C3419R.string.TopicEmptyViewDescription));
         addView(this.backupImageView, LayoutHelper.createLinear(58, 58, 1, 0, 8, 0, 8));
         addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 2, 0));
         addView(textView2, LayoutHelper.createLinear(-2, -2, 1));

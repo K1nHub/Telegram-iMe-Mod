@@ -11,6 +11,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -46,9 +47,34 @@ public class TabbedViewPager extends FrameLayout {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new TabbedViewPager$tabsView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<ViewPagerFixed.TabsView>() { // from class: com.iMe.fork.ui.view.TabbedViewPager$tabsView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ViewPagerFixed.TabsView invoke() {
+                ViewPagerFixed.TabsView initTabsView;
+                initTabsView = TabbedViewPager.this.initTabsView();
+                return initTabsView;
+            }
+        });
         this.tabsView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TabbedViewPager$pager$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<TabbedViewPager$initPager$1>() { // from class: com.iMe.fork.ui.view.TabbedViewPager$pager$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TabbedViewPager$initPager$1 invoke() {
+                TabbedViewPager$initPager$1 initPager;
+                initPager = TabbedViewPager.this.initPager();
+                return initPager;
+            }
+        });
         this.pager$delegate = lazy2;
         this.tabsType = ViewPagerFixed.TabsView.TabType.TITLE_WITH_ICON;
     }

@@ -1,6 +1,9 @@
 package com.iMe.storage.data.repository.binancepay;
 
+import com.iMe.storage.data.mapper.binancepay.BinanceMappingKt;
+import com.iMe.storage.data.mapper.binancepay.BinancePayMappingKt;
 import com.iMe.storage.data.network.api.own.BinanceInternalApi;
+import com.iMe.storage.data.network.handlers.ErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.request.binance.BinanceConfirmConvertQuoteRequest;
@@ -13,6 +16,17 @@ import com.iMe.storage.data.network.model.request.binance.pay.BinancePayGetAuthT
 import com.iMe.storage.data.network.model.request.binance.pay.BinancePayGetTransactionHistoryRequest;
 import com.iMe.storage.data.network.model.request.binance.pay.BinancePayGetTransactionRequest;
 import com.iMe.storage.data.network.model.request.binance.pay.BinancePayLogoutRequest;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.data.network.model.response.binance.BinanceGetConvertOppositeSupportTokensResponse;
+import com.iMe.storage.data.network.model.response.binance.BinanceGetConvertQuoteResponse;
+import com.iMe.storage.data.network.model.response.binance.BinanceGetConvertSupportTokensResponse;
+import com.iMe.storage.data.network.model.response.binance.BinanceGetTokenReplenishAddressResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinancePayCreateCollectionResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinancePayGetAuthTokensResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinancePayGetAvailablePaymentTokensResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinancePayGetTransactionHistoryResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinancePayGetUserInfoResponse;
+import com.iMe.storage.data.network.model.response.binance.pay.BinanceTokenBalanceResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.model.Result;
@@ -31,6 +45,7 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import io.reactivex.Observable;
 import java.math.BigDecimal;
 import java.util.List;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceInternalRepositoryImpl.kt */
 /* loaded from: classes3.dex */
@@ -55,9 +70,40 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     public Observable<Result<BinanceAuthTokens>> getAuthTokens(BinancePayAuthType type, String value) {
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(value, "value");
-        Observable<R> map = this.binanceInternalApi.getBinancePayAuthTokens(new BinancePayGetAuthTokensRequest(type.name(), value)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1848xd95ca9e(this.firebaseErrorHandler, this)));
+        Observable<ApiBaseResponse<BinancePayGetAuthTokensResponse>> binancePayAuthTokens = this.binanceInternalApi.getBinancePayAuthTokens(new BinancePayGetAuthTokensRequest(type.name(), value));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = binancePayAuthTokens.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinancePayGetAuthTokensResponse>, Result<? extends BinanceAuthTokens>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAuthTokens$$inlined$mapSuccess$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceAuthTokens> invoke(ApiBaseResponse<BinancePayGetAuthTokensResponse> response) {
+                CryptoPreferenceHelper cryptoPreferenceHelper;
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                BinanceAuthTokens mapToDomain = BinancePayMappingKt.mapToDomain(response.getPayload());
+                cryptoPreferenceHelper = this.cryptoPreferenceHelper;
+                cryptoPreferenceHelper.setBinanceAuthSession(BinancePayMappingKt.mapToPrefs(mapToDomain));
+                return Result.Companion.success(mapToDomain);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BinanceAuthTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1847x882b41c3(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<BinanceAuthTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends BinanceAuthTokens>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAuthTokens$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceAuthTokens> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -66,9 +112,40 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     public Observable<Result<BinanceUserInfo>> getUserInfo(boolean z) {
         Result success;
         if (z) {
-            Observable<R> map = this.binanceInternalApi.getUserInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new BinanceInternalRepositoryImpl$getUserInfo$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+            Observable<ApiBaseResponse<BinancePayGetUserInfoResponse>> userInfo = this.binanceInternalApi.getUserInfo();
+            final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+            Observable<R> map = userInfo.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinancePayGetUserInfoResponse>, Result<? extends BinanceUserInfo>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getUserInfo$$inlined$mapSuccess$1
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final Result<BinanceUserInfo> invoke(ApiBaseResponse<BinancePayGetUserInfoResponse> response) {
+                    CryptoPreferenceHelper cryptoPreferenceHelper;
+                    Intrinsics.checkNotNullParameter(response, "response");
+                    if (!response.isSuccess()) {
+                        return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                    }
+                    BinanceUserInfo mapToDomain = BinancePayMappingKt.mapToDomain(response.getPayload());
+                    cryptoPreferenceHelper = this.cryptoPreferenceHelper;
+                    cryptoPreferenceHelper.setBinanceUserInfo(BinancePayMappingKt.mapToPrefs(mapToDomain));
+                    return Result.Companion.success(mapToDomain);
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-            Observable<Result<BinanceUserInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new BinanceInternalRepositoryImpl$getUserInfo$$inlined$handleError$1(this.errorHandler)));
+            final ApiErrorHandler apiErrorHandler = this.errorHandler;
+            Observable<Result<BinanceUserInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends BinanceUserInfo>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getUserInfo$$inlined$handleError$1
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                public final Result<BinanceUserInfo> invoke(Throwable it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+                }
+            }));
             Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
             return onErrorReturn;
         }
@@ -86,18 +163,74 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<Boolean>> logout(String accessToken) {
         Intrinsics.checkNotNullParameter(accessToken, "accessToken");
-        Observable<R> map = this.binanceInternalApi.logout(new BinancePayLogoutRequest(accessToken)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new BinanceInternalRepositoryImpl$logout$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+        Observable<ApiBaseResponse<Object>> logout = this.binanceInternalApi.logout(new BinancePayLogoutRequest(accessToken));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = logout.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$logout$$inlined$mapSuccess$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
+                CryptoPreferenceHelper cryptoPreferenceHelper;
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (response.isSuccess()) {
+                    cryptoPreferenceHelper = this.cryptoPreferenceHelper;
+                    cryptoPreferenceHelper.resetBinanceAccount();
+                    return Result.Companion.success(Boolean.TRUE);
+                }
+                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new BinanceInternalRepositoryImpl$logout$$inlined$handleError$1(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$logout$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<BinanceTransaction>>> getTransactionHistory(int i, String str, String str2) {
-        Observable<R> map = this.binanceInternalApi.getTransactionHistory(new BinancePayGetTransactionHistoryRequest(i, str, str2)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1862x8c7adf12(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<BinancePayGetTransactionHistoryResponse>> transactionHistory = this.binanceInternalApi.getTransactionHistory(new BinancePayGetTransactionHistoryRequest(i, str, str2));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = transactionHistory.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinancePayGetTransactionHistoryResponse>, Result<? extends List<? extends BinanceTransaction>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTransactionHistory$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTransaction>> invoke(ApiBaseResponse<BinancePayGetTransactionHistoryResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomain(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BinanceTransaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1861xe5e8bbcf(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<BinanceTransaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends BinanceTransaction>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTransactionHistory$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTransaction>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -105,27 +238,105 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<BinanceTransaction>> getTransaction(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Observable<R> map = this.binanceInternalApi.getTransaction(new BinancePayGetTransactionRequest(id)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1860xfc623e5c(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<BinancePayGetTransactionHistoryResponse.HistoryItem>> transaction = this.binanceInternalApi.getTransaction(new BinancePayGetTransactionRequest(id));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = transaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinancePayGetTransactionHistoryResponse.HistoryItem>, Result<? extends BinanceTransaction>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTransaction$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceTransaction> invoke(ApiBaseResponse<BinancePayGetTransactionHistoryResponse.HistoryItem> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomain(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BinanceTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1859x72ed45c5(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<BinanceTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends BinanceTransaction>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTransaction$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceTransaction> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<BinanceTokenBalanceInfo>>> getUserBalance() {
-        Observable<R> map = this.binanceInternalApi.getUserBalance().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1864x7a4e23cf(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<List<BinanceTokenBalanceResponse>>> userBalance = this.binanceInternalApi.getUserBalance();
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = userBalance.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends BinanceTokenBalanceResponse>>, Result<? extends List<? extends BinanceTokenBalanceInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getUserBalance$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenBalanceInfo>> invoke(ApiBaseResponse<List<? extends BinanceTokenBalanceResponse>> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomainBinanceTokenBalanceResponse(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BinanceTokenBalanceInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1863xb27e0eb2(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<BinanceTokenBalanceInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends BinanceTokenBalanceInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getUserBalance$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenBalanceInfo>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<BinanceTokenInfo>>> getAvailablePaymentTokens() {
-        Observable<R> map = this.binanceInternalApi.getAvailablePaymentTokens().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1850x472b07f3(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<List<BinancePayGetAvailablePaymentTokensResponse>>> availablePaymentTokens = this.binanceInternalApi.getAvailablePaymentTokens();
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = availablePaymentTokens.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends BinancePayGetAvailablePaymentTokensResponse>>, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAvailablePaymentTokens$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(ApiBaseResponse<List<? extends BinancePayGetAvailablePaymentTokensResponse>> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomain((List<BinancePayGetAvailablePaymentTokensResponse>) response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1849x813daf0e(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAvailablePaymentTokens$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -137,9 +348,35 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
         String valueOf = String.valueOf(j);
         String plainString = new BigDecimal(String.valueOf(d)).stripTrailingZeros().toPlainString();
         Intrinsics.checkNotNullExpressionValue(plainString, "BigDecimal(amount.toStri…ngZeros().toPlainString()");
-        Observable<R> map = binanceInternalApi.createCollection(new BinancePayCreateCollectionRequest(valueOf, plainString, currency, null, null, 24, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1844x1747962e(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<BinancePayCreateCollectionResponse>> createCollection = binanceInternalApi.createCollection(new BinancePayCreateCollectionRequest(valueOf, plainString, currency, null, null, 24, null));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = createCollection.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinancePayCreateCollectionResponse>, Result<? extends BinanceCollectionOrder>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$createCollection$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceCollectionOrder> invoke(ApiBaseResponse<BinancePayCreateCollectionResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomain(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BinanceCollectionOrder>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1843xb4b2e833(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<BinanceCollectionOrder>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends BinanceCollectionOrder>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$createCollection$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceCollectionOrder> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -148,9 +385,35 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     public Observable<Result<String>> getAddressForTokenReplenish(String tokenTicker, String networkId) {
         Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<R> map = this.binanceInternalApi.getReplenishTokenAddress(new BinanceGetTokenReplenishAddressRequest(tokenTicker, networkId)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1846xbc9349be(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<BinanceGetTokenReplenishAddressResponse>> replenishTokenAddress = this.binanceInternalApi.getReplenishTokenAddress(new BinanceGetTokenReplenishAddressRequest(tokenTicker, networkId));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = replenishTokenAddress.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinanceGetTokenReplenishAddressResponse>, Result<? extends String>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAddressForTokenReplenish$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<String> invoke(ApiBaseResponse<BinanceGetTokenReplenishAddressResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(response.getPayload().getAddress());
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1845xb8dda6a3(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getAddressForTokenReplenish$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<String> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -158,18 +421,70 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<BinanceTokenInfo>>> getTokensForReplenish(String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<R> map = this.binanceInternalApi.getTokensForReplenish(new BinanceGetAvailableTokensForReplenishRequest(networkId)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1858x563b2d93(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<List<BinancePayGetAvailablePaymentTokensResponse>>> tokensForReplenish = this.binanceInternalApi.getTokensForReplenish(new BinanceGetAvailableTokensForReplenishRequest(networkId));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = tokensForReplenish.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends BinancePayGetAvailablePaymentTokensResponse>>, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTokensForReplenish$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(ApiBaseResponse<List<? extends BinancePayGetAvailablePaymentTokensResponse>> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinancePayMappingKt.mapToDomain((List<BinancePayGetAvailablePaymentTokensResponse>) response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1857x54323d6e(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTokensForReplenish$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<BinanceTokenInfo>>> getTokensForConvert() {
-        Observable<R> map = this.binanceInternalApi.getConvertSupportTokens().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1856xc5934260(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<List<BinanceGetConvertSupportTokensResponse>>> convertSupportTokens = this.binanceInternalApi.getConvertSupportTokens();
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = convertSupportTokens.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends BinanceGetConvertSupportTokensResponse>>, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTokensForConvert$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(ApiBaseResponse<List<? extends BinanceGetConvertSupportTokensResponse>> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinanceMappingKt.mapToDomain((List<BinanceGetConvertSupportTokensResponse>) response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1855xcfdcc241(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<BinanceTokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends BinanceTokenInfo>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getTokensForConvert$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends BinanceTokenInfo>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -177,9 +492,35 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<List<OutputConvertToken>>> getOppositeTokensForConvertByToken(String token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<R> map = this.binanceInternalApi.getConvertOppositeSupportTokensByAsset(new BinanceGetSwapSupportCoinsByAssetCodeRequest(token)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1854x2513dab5(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<List<BinanceGetConvertOppositeSupportTokensResponse>>> convertOppositeSupportTokensByAsset = this.binanceInternalApi.getConvertOppositeSupportTokensByAsset(new BinanceGetSwapSupportCoinsByAssetCodeRequest(token));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = convertOppositeSupportTokensByAsset.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends BinanceGetConvertOppositeSupportTokensResponse>>, Result<? extends List<? extends OutputConvertToken>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getOppositeTokensForConvertByToken$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends OutputConvertToken>> invoke(ApiBaseResponse<List<? extends BinanceGetConvertOppositeSupportTokensResponse>> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinanceMappingKt.mapToDomainBinanceGetConvertOppositeSupportTokensResponse(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<OutputConvertToken>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1853x606f348c(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<List<OutputConvertToken>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends OutputConvertToken>>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getOppositeTokensForConvertByToken$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<List<? extends OutputConvertToken>> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -189,9 +530,35 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
         Intrinsics.checkNotNullParameter(inputToken, "inputToken");
         Intrinsics.checkNotNullParameter(outputToken, "outputToken");
         Intrinsics.checkNotNullParameter(amount, "amount");
-        Observable<R> map = this.binanceInternalApi.getConvertQuote(new BinanceGetConvertQuoteRequest(inputToken, outputToken, TradeType.EXACT_INPUT.getValue(), amount)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1852x58ad22c5(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<BinanceGetConvertQuoteResponse>> convertQuote = this.binanceInternalApi.getConvertQuote(new BinanceGetConvertQuoteRequest(inputToken, outputToken, TradeType.EXACT_INPUT.getValue(), amount));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = convertQuote.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<BinanceGetConvertQuoteResponse>, Result<? extends BinanceConvertQuote>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getConvertQuote$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceConvertQuote> invoke(ApiBaseResponse<BinanceGetConvertQuoteResponse> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(BinanceMappingKt.mapToDomain(response.getPayload()));
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BinanceConvertQuote>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1851x9ffeee7c(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<BinanceConvertQuote>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends BinanceConvertQuote>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$getConvertQuote$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<BinanceConvertQuote> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -199,9 +566,35 @@ public final class BinanceInternalRepositoryImpl implements BinanceInternalRepos
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository
     public Observable<Result<Boolean>> confirmConvertQuote(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Observable<R> map = this.binanceInternalApi.confirmConvertQuote(new BinanceConfirmConvertQuoteRequest(id)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1842x32bcab2f(this.firebaseErrorHandler)));
+        Observable<ApiBaseResponse<Object>> confirmConvertQuote = this.binanceInternalApi.confirmConvertQuote(new BinanceConfirmConvertQuoteRequest(id));
+        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
+        Observable<R> map = confirmConvertQuote.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$confirmConvertQuote$$inlined$mapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                if (!response.isSuccess()) {
+                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
+                }
+                return Result.Companion.success(Boolean.TRUE);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1841x7e07352(this.errorHandler)));
+        final ApiErrorHandler apiErrorHandler = this.errorHandler;
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.binancepay.BinanceInternalRepositoryImpl$confirmConvertQuote$$inlined$handleError$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

@@ -6,6 +6,7 @@ import com.iMe.model.common.GlobalStateItem;
 import com.iMe.model.state.GlobalState;
 import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.crypto.token.TokenManagementFragment;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.model.Result;
@@ -17,18 +18,24 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.extentions.p032rx.SchedulersExtKt;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.subjects.PublishSubject;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
+import timber.log.Timber;
 /* compiled from: CustomTokensPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter */
@@ -84,7 +91,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
         loadCustomTokens(false);
     }
 
-    public final void loadCustomTokens(boolean z) {
+    public final void loadCustomTokens(final boolean z) {
         if (z) {
             String str = this.cursor;
             if (str == null || str.length() == 0) {
@@ -93,13 +100,55 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
             }
         }
         Observable<Result<CursoredData<TokenDetailed>>> customTokens = this.walletInteractor.getCustomTokens(this.cursor);
-        final CustomTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1 customTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1 = new CustomTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1(this);
-        Observable<R> flatMap = customTokens.flatMap(new Function(customTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1) { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final Function1<Result<? extends CursoredData<TokenDetailed>>, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>> function1 = new Function1<Result<? extends CursoredData<TokenDetailed>>, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends List<? extends BaseNode>>> invoke(Result<? extends CursoredData<TokenDetailed>> result) {
+                List list;
+                List list2;
+                String str2;
+                List<TokenItem> searchRenderItems;
+                List list3;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                list = CustomTokensPresenter.this.items;
+                list.clear();
+                list2 = CustomTokensPresenter.this.tokens;
+                list2.clear();
+                CursoredData<TokenDetailed> data = result.getData();
+                List<TokenDetailed> data2 = data != null ? data.getData() : null;
+                if (data2 == null) {
+                    data2 = CollectionsKt__CollectionsKt.emptyList();
+                }
+                list2.addAll(data2);
+                str2 = CustomTokensPresenter.this.query;
+                if (str2.length() == 0) {
+                    list3 = CustomTokensPresenter.this.tokens;
+                    searchRenderItems = TokenUiMappingKt.mapToUI(list3);
+                } else {
+                    searchRenderItems = CustomTokensPresenter.this.getSearchRenderItems();
+                }
+                Observable just = Observable.just(Result.Companion.success(searchRenderItems));
+                Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                return just;
+            }
+        };
+        Observable<R> flatMap = customTokens.flatMap(new Function(function1) { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(customTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1, "function");
-                this.function = customTokensPresenter$loadCustomTokens$$inlined$flatMapSuccess$1;
+                Intrinsics.checkNotNullParameter(function1, "function");
+                this.function = function1;
             }
 
             @Override // io.reactivex.functions.Function
@@ -110,7 +159,57 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable startWith = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "walletInteractor\n       …artWith(Result.loading())");
-        Disposable subscribe = SchedulersExtKt.scheduleIO(startWith, this.schedulersProvider).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2184x49749c9b(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2185x49749c9c(null)));
+        Disposable subscribe = SchedulersExtKt.scheduleIO(startWith, this.schedulersProvider).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BaseNode>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$loadCustomTokens$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
+                m1458invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1458invoke(Result<? extends List<? extends BaseNode>> it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends BaseNode>> result = it;
+                if (result instanceof Result.Success) {
+                    CustomTokensPresenter.this.onTokensLoadingSuccess((List) ((Result.Success) result).getData(), z);
+                } else if (result instanceof Result.Loading) {
+                    if (z) {
+                        return;
+                    }
+                    CustomTokensPresenter.this.renderState(GlobalState.Progress.INSTANCE);
+                } else if (result instanceof Result.Error) {
+                    CustomTokensPresenter.this.renderState(((Result.Error) result).getError().isNoConnectionStatus() ? GlobalState.NoInternet.INSTANCE : GlobalState.Unexpected.INSTANCE);
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$loadCustomTokens$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -147,8 +246,47 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
-        final CustomTokensPresenter$subscribeToQueryChanges$1 customTokensPresenter$subscribeToQueryChanges$1 = new CustomTokensPresenter$subscribeToQueryChanges$1(this);
+        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui());
+        final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(String rawQuery) {
+                List<BaseNode> list;
+                List list2;
+                Intrinsics.checkNotNullParameter(rawQuery, "rawQuery");
+                boolean z = false;
+                boolean z2 = true;
+                if (rawQuery.length() < 2) {
+                    CustomTokensPresenter.this.query = "";
+                    list = CustomTokensPresenter.this.items;
+                    CustomTokensPresenter customTokensPresenter = CustomTokensPresenter.this;
+                    if (!(list instanceof Collection) || !list.isEmpty()) {
+                        Iterator it = list.iterator();
+                        while (true) {
+                            if (!it.hasNext()) {
+                                break;
+                            } else if (((BaseNode) it.next()) instanceof GlobalStateItem) {
+                                z2 = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (z2) {
+                        list.clear();
+                        list2 = customTokensPresenter.tokens;
+                        list.addAll(TokenUiMappingKt.mapToUI(list2));
+                    }
+                    ((CustomTokensView) customTokensPresenter.getViewState()).renderItems(list);
+                } else {
+                    z = true;
+                }
+                return Boolean.valueOf(z);
+            }
+        };
         Observable<String> observeOn2 = observeOn.filter(new Predicate() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Predicate
             public final boolean test(Object obj) {
@@ -156,8 +294,22 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
                 subscribeToQueryChanges$lambda$3 = CustomTokensPresenter.subscribeToQueryChanges$lambda$3(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo699io());
-        final CustomTokensPresenter$subscribeToQueryChanges$2 customTokensPresenter$subscribeToQueryChanges$2 = new CustomTokensPresenter$subscribeToQueryChanges$2(this);
+        }).observeOn(this.schedulersProvider.mo717io());
+        final Function1<String, List<BaseNode>> function12 = new Function1<String, List<BaseNode>>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final List<BaseNode> invoke(String newQuery) {
+                List<BaseNode> searchRenderItems;
+                Intrinsics.checkNotNullParameter(newQuery, "newQuery");
+                CustomTokensPresenter.this.query = newQuery;
+                searchRenderItems = CustomTokensPresenter.this.getSearchRenderItems();
+                return searchRenderItems;
+            }
+        };
         Observable<R> map = observeOn2.map(new Function() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -167,7 +319,46 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
             }
         });
         Intrinsics.checkNotNullExpressionValue(map, "private fun subscribeToQ…     .autoDispose()\n    }");
-        Disposable subscribe = SchedulersExtKt.scheduleIO(map, this.schedulersProvider).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2188x12ba1cdc(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2189x12ba1cdd(null)));
+        Disposable subscribe = SchedulersExtKt.scheduleIO(map, this.schedulersProvider).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<List<BaseNode>, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(List<BaseNode> list) {
+                m1460invoke(list);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1460invoke(List<BaseNode> it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                ((CustomTokensView) CustomTokensPresenter.this.getViewState()).renderItems(it);
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -269,9 +460,48 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2186xbcd14e9a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2187xbcd14e9b(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.TokensSettingsChanged, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
+                m1459invoke(tokensSettingsChanged);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1459invoke(DomainRxEvents.TokensSettingsChanged it) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                CustomTokensPresenter.this.reload();
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Timber.m6e(th);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = th.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+            }
+        }));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -6,6 +6,7 @@ import com.google.protobuf.WireFormat;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public final class ArrayDecoders {
@@ -38,7 +39,7 @@ public final class ArrayDecoders {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int decodeVarint32(int i, byte[] bArr, int i2, Registers registers) {
-        int i3 = i & 127;
+        int i3 = i & MessagesStorage.LAST_DB_VERSION;
         int i4 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

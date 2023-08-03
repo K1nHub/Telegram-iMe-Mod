@@ -8,13 +8,13 @@ public abstract class TLRPC$Video extends TLObject {
     public int duration;
 
     /* renamed from: h */
-    public int f1658h;
+    public int f1677h;
 
     /* renamed from: id */
-    public long f1659id;
+    public long f1678id;
 
     /* renamed from: iv */
-    public byte[] f1660iv;
+    public byte[] f1679iv;
     public byte[] key;
     public String mime_type;
     public int size;
@@ -22,7 +22,7 @@ public abstract class TLRPC$Video extends TLObject {
     public long user_id;
 
     /* renamed from: w */
-    public int f1661w;
+    public int f1680w;
 
     public static TLRPC$Video TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$Video tLRPC$Video;
@@ -33,13 +33,13 @@ public abstract class TLRPC$Video extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1659id = abstractSerializedData2.readInt64(z2);
+                        this.f1678id = abstractSerializedData2.readInt64(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1659id);
+                        abstractSerializedData2.writeInt64(this.f1678id);
                     }
                 };
                 break;
@@ -49,7 +49,7 @@ public abstract class TLRPC$Video extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1659id = abstractSerializedData2.readInt64(z2);
+                        this.f1678id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -57,14 +57,14 @@ public abstract class TLRPC$Video extends TLObject {
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.dc_id = abstractSerializedData2.readInt32(z2);
-                        this.f1661w = abstractSerializedData2.readInt32(z2);
-                        this.f1658h = abstractSerializedData2.readInt32(z2);
+                        this.f1680w = abstractSerializedData2.readInt32(z2);
+                        this.f1677h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1659id);
+                        abstractSerializedData2.writeInt64(this.f1678id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -72,8 +72,8 @@ public abstract class TLRPC$Video extends TLObject {
                         abstractSerializedData2.writeInt32(this.size);
                         this.thumb.serializeToStream(abstractSerializedData2);
                         abstractSerializedData2.writeInt32(this.dc_id);
-                        abstractSerializedData2.writeInt32(this.f1661w);
-                        abstractSerializedData2.writeInt32(this.f1658h);
+                        abstractSerializedData2.writeInt32(this.f1680w);
+                        abstractSerializedData2.writeInt32(this.f1677h);
                     }
                 };
                 break;
@@ -86,7 +86,7 @@ public abstract class TLRPC$Video extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1659id = abstractSerializedData2.readInt64(z2);
+                        this.f1678id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -96,14 +96,14 @@ public abstract class TLRPC$Video extends TLObject {
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.dc_id = abstractSerializedData2.readInt32(z2);
-                        this.f1661w = abstractSerializedData2.readInt32(z2);
-                        this.f1658h = abstractSerializedData2.readInt32(z2);
+                        this.f1680w = abstractSerializedData2.readInt32(z2);
+                        this.f1677h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1659id);
+                        abstractSerializedData2.writeInt64(this.f1678id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -113,8 +113,8 @@ public abstract class TLRPC$Video extends TLObject {
                         abstractSerializedData2.writeInt32(this.size);
                         this.thumb.serializeToStream(abstractSerializedData2);
                         abstractSerializedData2.writeInt32(this.dc_id);
-                        abstractSerializedData2.writeInt32(this.f1661w);
-                        abstractSerializedData2.writeInt32(this.f1658h);
+                        abstractSerializedData2.writeInt32(this.f1680w);
+                        abstractSerializedData2.writeInt32(this.f1677h);
                     }
                 };
                 break;
@@ -124,7 +124,7 @@ public abstract class TLRPC$Video extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1659id = abstractSerializedData2.readInt64(z2);
+                        this.f1678id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -133,16 +133,16 @@ public abstract class TLRPC$Video extends TLObject {
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.dc_id = abstractSerializedData2.readInt32(z2);
-                        this.f1661w = abstractSerializedData2.readInt32(z2);
-                        this.f1658h = abstractSerializedData2.readInt32(z2);
+                        this.f1680w = abstractSerializedData2.readInt32(z2);
+                        this.f1677h = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1660iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1679iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1659id);
+                        abstractSerializedData2.writeInt64(this.f1678id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -151,10 +151,10 @@ public abstract class TLRPC$Video extends TLObject {
                         abstractSerializedData2.writeInt32(this.size);
                         this.thumb.serializeToStream(abstractSerializedData2);
                         abstractSerializedData2.writeInt32(this.dc_id);
-                        abstractSerializedData2.writeInt32(this.f1661w);
-                        abstractSerializedData2.writeInt32(this.f1658h);
+                        abstractSerializedData2.writeInt32(this.f1680w);
+                        abstractSerializedData2.writeInt32(this.f1677h);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1660iv);
+                        abstractSerializedData2.writeByteArray(this.f1679iv);
                     }
                 };
                 break;
@@ -164,7 +164,7 @@ public abstract class TLRPC$Video extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1659id = abstractSerializedData2.readInt64(z2);
+                        this.f1678id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -173,14 +173,14 @@ public abstract class TLRPC$Video extends TLObject {
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.dc_id = abstractSerializedData2.readInt32(z2);
-                        this.f1661w = abstractSerializedData2.readInt32(z2);
-                        this.f1658h = abstractSerializedData2.readInt32(z2);
+                        this.f1680w = abstractSerializedData2.readInt32(z2);
+                        this.f1677h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_video_layer45, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1659id);
+                        abstractSerializedData2.writeInt64(this.f1678id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -189,8 +189,8 @@ public abstract class TLRPC$Video extends TLObject {
                         abstractSerializedData2.writeInt32(this.size);
                         this.thumb.serializeToStream(abstractSerializedData2);
                         abstractSerializedData2.writeInt32(this.dc_id);
-                        abstractSerializedData2.writeInt32(this.f1661w);
-                        abstractSerializedData2.writeInt32(this.f1658h);
+                        abstractSerializedData2.writeInt32(this.f1680w);
+                        abstractSerializedData2.writeInt32(this.f1677h);
                     }
                 };
                 break;

@@ -66,7 +66,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
     private List<EventStream> eventStreams;
 
     /* renamed from: id */
-    final int f211id;
+    final int f213id;
     private final LoadErrorHandlingPolicy loadErrorHandlingPolicy;
     private DashManifest manifest;
     private final LoaderErrorThrower manifestLoaderErrorThrower;
@@ -87,7 +87,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
     }
 
     public DashMediaPeriod(int i, DashManifest dashManifest, BaseUrlExclusionList baseUrlExclusionList, int i2, DashChunkSource.Factory factory, TransferListener transferListener, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, long j, LoaderErrorThrower loaderErrorThrower, Allocator allocator, CompositeSequenceableLoaderFactory compositeSequenceableLoaderFactory, PlayerEmsgHandler.PlayerEmsgCallback playerEmsgCallback, PlayerId playerId) {
-        this.f211id = i;
+        this.f213id = i;
         this.manifest = dashManifest;
         this.baseUrlExclusionList = baseUrlExclusionList;
         this.periodIndex = i2;
@@ -130,7 +130,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
             while (true) {
                 if (it.hasNext()) {
                     EventStream next = it.next();
-                    if (next.m804id().equals(eventSampleStream.eventStreamId())) {
+                    if (next.m822id().equals(eventSampleStream.eventStreamId())) {
                         boolean z = true;
                         eventSampleStream.updateEventStream(next, (dashManifest.dynamic && i == dashManifest.getPeriodCount() - 1) ? false : false);
                     }
@@ -402,7 +402,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
         ArrayList arrayList = new ArrayList(size);
         SparseArray sparseArray = new SparseArray(size);
         for (int i2 = 0; i2 < size; i2++) {
-            sparseIntArray.put(list.get(i2).f212id, i2);
+            sparseIntArray.put(list.get(i2).f214id, i2);
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(Integer.valueOf(i2));
             arrayList.add(arrayList2);
@@ -475,7 +475,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
                 formatArr2[i7] = format.copyWithCryptoType(drmSessionManager.getCryptoType(format));
             }
             AdaptationSet adaptationSet = list.get(iArr2[0]);
-            int i8 = adaptationSet.f212id;
+            int i8 = adaptationSet.f214id;
             String num = i8 != -1 ? Integer.toString(i8) : "unset:" + i4;
             int i9 = i5 + 1;
             if (zArr[i4]) {
@@ -511,7 +511,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
         EventStream eventStream;
         int i2 = 0;
         while (i2 < list.size()) {
-            trackGroupArr[i] = new TrackGroup(eventStream.m804id() + ":" + i2, new Format.Builder().setId(list.get(i2).m804id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
+            trackGroupArr[i] = new TrackGroup(eventStream.m822id() + ":" + i2, new Format.Builder().setId(list.get(i2).m822id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
             trackGroupInfoArr[i] = TrackGroupInfo.mpdEventTrack(i2);
             i2++;
             i++;
@@ -607,9 +607,9 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
             for (int i2 = 0; i2 < list2.size(); i2++) {
                 Descriptor descriptor = list2.get(i2);
                 if ("urn:scte:dash:cc:cea-608:2015".equals(descriptor.schemeIdUri)) {
-                    return parseClosedCaptionDescriptor(descriptor, CEA608_SERVICE_DESCRIPTOR_REGEX, new Format.Builder().setSampleMimeType(MimeTypes.APPLICATION_CEA608).setId(adaptationSet.f212id + ":cea608").build());
+                    return parseClosedCaptionDescriptor(descriptor, CEA608_SERVICE_DESCRIPTOR_REGEX, new Format.Builder().setSampleMimeType(MimeTypes.APPLICATION_CEA608).setId(adaptationSet.f214id + ":cea608").build());
                 } else if ("urn:scte:dash:cc:cea-708:2015".equals(descriptor.schemeIdUri)) {
-                    return parseClosedCaptionDescriptor(descriptor, CEA708_SERVICE_DESCRIPTOR_REGEX, new Format.Builder().setSampleMimeType(MimeTypes.APPLICATION_CEA708).setId(adaptationSet.f212id + ":cea708").build());
+                    return parseClosedCaptionDescriptor(descriptor, CEA708_SERVICE_DESCRIPTOR_REGEX, new Format.Builder().setSampleMimeType(MimeTypes.APPLICATION_CEA708).setId(adaptationSet.f214id + ":cea708").build());
                 }
             }
         }
@@ -629,7 +629,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
                 return new Format[]{format};
             }
             int parseInt = Integer.parseInt(matcher.group(1));
-            formatArr[i] = format.buildUpon().setId(format.f182id + ":" + parseInt).setAccessibilityChannel(parseInt).setLanguage(matcher.group(2)).build();
+            formatArr[i] = format.buildUpon().setId(format.f184id + ":" + parseInt).setAccessibilityChannel(parseInt).setLanguage(matcher.group(2)).build();
         }
         return formatArr;
     }

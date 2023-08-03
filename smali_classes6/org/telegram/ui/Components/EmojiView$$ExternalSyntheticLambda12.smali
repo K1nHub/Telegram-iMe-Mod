@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/EmojiView$$ExternalSyntheticLambda12;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$_rrVxTNXnZZTkqKTK9foimyMP2A(Lorg/telegram/ui/Components/EmojiView;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->$r8$lambda$ZsZv8ad2Ld70wohDZSIsSh5UPsk(Lorg/telegram/ui/Components/EmojiView;I)V
 
     return-void
 .end method

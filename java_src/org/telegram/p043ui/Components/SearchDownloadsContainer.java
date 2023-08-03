@@ -3,16 +3,11 @@ package org.telegram.p043ui.Components;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.core.graphics.ColorUtils;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -22,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -34,9 +29,6 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.CacheControlActivity;
 import org.telegram.p043ui.Cells.GraySectionCell;
 import org.telegram.p043ui.Cells.SharedAudioCell;
 import org.telegram.p043ui.Cells.SharedDocumentCell;
@@ -115,13 +107,13 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         defaultItemAnimator.setDelayAnimations(false);
         defaultItemAnimator.setSupportsChangeAnimations(false);
         this.recyclerListView.setItemAnimator(defaultItemAnimator);
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda6
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda4
             @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
                 SearchDownloadsContainer.this.lambda$new$0(i, view, i2);
             }
         });
-        this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda7
+        this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda5
             @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
                 boolean lambda$new$1;
@@ -239,7 +231,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             return;
         }
         this.checkingFilesExist = true;
-        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda2
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 SearchDownloadsContainer.this.lambda$checkFilesExist$3();
@@ -265,7 +257,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                 arrayList4.add(arrayList2.get(i2));
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 SearchDownloadsContainer.this.lambda$checkFilesExist$2(arrayList3, arrayList4);
@@ -308,7 +300,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(z, this.currentLoadingFilesTmp, this.recentLoadingFilesTmp);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, false);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3417R.string.SearchEmptyViewDownloads));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3419R.string.SearchEmptyViewDownloads));
                 this.emptyView.subtitle.setVisibility(8);
             }
             this.emptyView.setStickerType(9);
@@ -324,7 +316,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         this.lastQueryString = lowerCase;
         Utilities.searchQueue.cancelRunnable(this.lastSearchRunnable);
         DispatchQueue dispatchQueue = Utilities.searchQueue;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda4
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 SearchDownloadsContainer.this.lambda$update$5(arrayList, lowerCase, arrayList2);
@@ -362,7 +354,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                 arrayList4.add(messageObject2);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 SearchDownloadsContainer.this.lambda$update$4(str, arrayList3, arrayList4);
@@ -379,9 +371,9 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(true, arrayList, arrayList2);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, true);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3417R.string.SearchEmptyViewTitle2));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3419R.string.SearchEmptyViewTitle2));
                 this.emptyView.subtitle.setVisibility(0);
-                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3417R.string.SearchEmptyViewFilteredSubtitle2));
+                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3419R.string.SearchEmptyViewFilteredSubtitle2));
             }
         }
     }
@@ -443,7 +435,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                             messageObject2 = searchDownloadsContainer.recentLoadingFiles.get(i9 - i13);
                         }
                     }
-                    return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().f1523id != messageObject.getDocument().f1523id) ? false : true;
+                    return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().f1526id != messageObject.getDocument().f1526id) ? false : true;
                 }
 
                 @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -576,6 +568,12 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.SearchDownloadsContainer.DownloadsAdapter.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onBindViewHolder$0(View view) {
+            SearchDownloadsContainer searchDownloadsContainer = SearchDownloadsContainer.this;
+            DownloadsInfoBottomSheet.show(searchDownloadsContainer.parentActivity, searchDownloadsContainer.parentFragment);
+        }
+
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             SearchDownloadsContainer searchDownloadsContainer = SearchDownloadsContainer.this;
@@ -609,88 +607,6 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return viewHolder.getItemViewType() == 1 || viewHolder.getItemViewType() == 2;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void showSettingsDialog() {
-        if (this.parentFragment == null || this.parentActivity == null) {
-            return;
-        }
-        final BottomSheet bottomSheet = new BottomSheet(this.parentActivity, false);
-        Activity parentActivity = this.parentFragment.getParentActivity();
-        LinearLayout linearLayout = new LinearLayout(parentActivity);
-        linearLayout.setOrientation(1);
-        StickerImageView stickerImageView = new StickerImageView(parentActivity, this.currentAccount);
-        stickerImageView.setStickerNum(9);
-        stickerImageView.getImageReceiver().setAutoRepeat(1);
-        linearLayout.addView(stickerImageView, LayoutHelper.createLinear(144, 144, 1, 0, 16, 0, 0));
-        TextView textView = new TextView(parentActivity);
-        textView.setGravity(1);
-        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-        textView.setTextSize(1, 24.0f);
-        textView.setText(LocaleController.getString("DownloadedFiles", C3417R.string.DownloadedFiles));
-        linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 30, 21, 0));
-        TextView textView2 = new TextView(parentActivity);
-        textView2.setGravity(1);
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextHint));
-        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", C3417R.string.DownloadedFilesMessage, new Object[0]));
-        linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
-        TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
-        textView3.setGravity(17);
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("ManageDeviceStorage", C3417R.string.ManageDeviceStorage));
-        textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        int m54dp = AndroidUtilities.m54dp(6);
-        int i = Theme.key_featuredStickers_addButton;
-        textView3.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(m54dp, Theme.getColor(i), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
-        linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
-        TextView textView4 = new TextView(parentActivity);
-        textView4.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
-        textView4.setGravity(17);
-        textView4.setTextSize(1, 14.0f);
-        textView4.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView4.setText(LocaleController.getString("ClearDownloadsList", C3417R.string.ClearDownloadsList));
-        textView4.setTextColor(Theme.getColor(i));
-        textView4.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), 0, ColorUtils.setAlphaComponent(Theme.getColor(i), 120)));
-        linearLayout.addView(textView4, LayoutHelper.createFrame(-1, 48, 0, 16, 0, 16, 16));
-        NestedScrollView nestedScrollView = new NestedScrollView(parentActivity);
-        nestedScrollView.addView(linearLayout);
-        bottomSheet.setCustomView(nestedScrollView);
-        bottomSheet.show();
-        if (Build.VERSION.SDK_INT >= 23) {
-            AndroidUtilities.setLightStatusBar(bottomSheet.getWindow(), !Theme.isCurrentThemeDark());
-            AndroidUtilities.setLightNavigationBar(bottomSheet.getWindow(), !Theme.isCurrentThemeDark());
-        }
-        textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SearchDownloadsContainer.this.lambda$showSettingsDialog$6(bottomSheet, view);
-            }
-        });
-        textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SearchDownloadsContainer.this.lambda$showSettingsDialog$7(bottomSheet, view);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSettingsDialog$6(BottomSheet bottomSheet, View view) {
-        bottomSheet.dismiss();
-        BaseFragment baseFragment = this.parentFragment;
-        if (baseFragment != null) {
-            baseFragment.presentFragment(new CacheControlActivity());
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSettingsDialog$7(BottomSheet bottomSheet, View view) {
-        bottomSheet.dismiss();
-        DownloadController.getInstance(this.currentAccount).clearRecentDownloadedFiles();
     }
 
     @Override // android.view.ViewGroup, android.view.View

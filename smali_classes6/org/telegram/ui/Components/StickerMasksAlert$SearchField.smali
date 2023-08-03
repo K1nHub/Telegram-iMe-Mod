@@ -246,7 +246,7 @@
     .line 251
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 252
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -424,7 +424,7 @@
     return-void
 .end method
 
-.method static synthetic access$6000(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
+.method static synthetic access$6100(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;)Lorg/telegram/ui/Components/CloseProgressDrawable2;
     .locals 0
 
     .line 190

@@ -12,15 +12,15 @@ import java.util.Locale;
 /* loaded from: classes3.dex */
 public final class zziv extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zziv> CREATOR = new zzfc();
-    @SafeParcelable.Field(m779id = 1)
+    @SafeParcelable.Field(m797id = 1)
     public final String zza;
-    @SafeParcelable.Field(m779id = 2)
+    @SafeParcelable.Field(m797id = 2)
     public final int zzb;
-    @SafeParcelable.Field(m779id = 3)
+    @SafeParcelable.Field(m797id = 3)
     public final int zzc;
 
     @SafeParcelable.Constructor
-    public zziv(@SafeParcelable.Param(m778id = 1) String str, @SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) int i2) {
+    public zziv(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) int i2) {
         this.zza = str;
         this.zzb = i;
         this.zzc = i2;

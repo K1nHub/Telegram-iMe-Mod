@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1745
+    .line 1843
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1746
+    .line 1844
     iput-object p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -40,10 +40,10 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1751
+    .line 1849
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -57,10 +57,10 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 1756
+    .line 1854
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -96,15 +96,15 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 1771
+    .line 1869
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;
 
-    .line 1772
+    .line 1870
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 1766
+    .line 1864
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance p2, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;

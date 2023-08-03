@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$CustomType;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.fork.controller.MusicController;
+import com.iMe.fork.p024ui.fragment.MusicActivity;
 import com.iMe.fork.p024ui.view.PinnedPlayerView;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.p031ui.music.MusicTab;
@@ -40,6 +41,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -48,7 +50,7 @@ import kotlin.p034io.CloseableKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -95,10 +97,66 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     private final Lazy musicCountComparator$delegate;
     private int parallelCounter;
     private boolean parallelLoading;
-    private final ResettableLazy albumsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MusicActivity$albumsAdapter$2(this), 1, (Object) null);
-    private final ResettableLazy channelsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MusicActivity$channelsAdapter$2(this), 1, (Object) null);
-    private final ResettableLazy botsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MusicActivity$botsAdapter$2(this), 1, (Object) null);
-    private final ResettableLazy deviceAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new MusicActivity$deviceAdapter$2(this), 1, (Object) null);
+    private final ResettableLazy albumsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<DialogsAdapter>() { // from class: com.iMe.fork.ui.fragment.MusicActivity$albumsAdapter$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final MusicActivity.DialogsAdapter invoke() {
+            MusicActivity musicActivity = MusicActivity.this;
+            Activity parentActivity = musicActivity.getParentActivity();
+            Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+            return new MusicActivity.DialogsAdapter(musicActivity, parentActivity, MusicTab.ALBUMS);
+        }
+    }, 1, (Object) null);
+    private final ResettableLazy channelsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<DialogsAdapter>() { // from class: com.iMe.fork.ui.fragment.MusicActivity$channelsAdapter$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final MusicActivity.DialogsAdapter invoke() {
+            MusicActivity musicActivity = MusicActivity.this;
+            Activity parentActivity = musicActivity.getParentActivity();
+            Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+            return new MusicActivity.DialogsAdapter(musicActivity, parentActivity, MusicTab.CHANNELS);
+        }
+    }, 1, (Object) null);
+    private final ResettableLazy botsAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<DialogsAdapter>() { // from class: com.iMe.fork.ui.fragment.MusicActivity$botsAdapter$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final MusicActivity.DialogsAdapter invoke() {
+            MusicActivity musicActivity = MusicActivity.this;
+            Activity parentActivity = musicActivity.getParentActivity();
+            Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+            return new MusicActivity.DialogsAdapter(musicActivity, parentActivity, MusicTab.BOTS);
+        }
+    }, 1, (Object) null);
+    private final ResettableLazy deviceAdapter$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<DeviceAdapter>() { // from class: com.iMe.fork.ui.fragment.MusicActivity$deviceAdapter$2
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final MusicActivity.DeviceAdapter invoke() {
+            MusicActivity musicActivity = MusicActivity.this;
+            Activity parentActivity = musicActivity.getParentActivity();
+            Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+            return new MusicActivity.DeviceAdapter(musicActivity, parentActivity);
+        }
+    }, 1, (Object) null);
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isAllowPinnedPlayer() {
@@ -171,7 +229,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                     while (query.moveToNext()) {
                         try {
                             MediaController.AudioEntry audioEntry = new MediaController.AudioEntry();
-                            audioEntry.f1449id = query.getInt(0);
+                            audioEntry.f1452id = query.getInt(0);
                             audioEntry.author = query.getString(1);
                             audioEntry.title = query.getString(2);
                             audioEntry.path = query.getString(3);
@@ -195,7 +253,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                     }
                 };
             } catch (Exception e) {
-                FileLog.m49e(e);
+                FileLog.m67e(e);
                 runnable = new Runnable() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -230,7 +288,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
 
     @Override // com.iMe.p031ui.pager.TelegramViewPagerFragment
     public String getToolbarTitle() {
-        String string = LocaleController.getString("AttachMusic", C3417R.string.AttachMusic);
+        String string = LocaleController.getString("AttachMusic", C3419R.string.AttachMusic);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
         return string;
     }
@@ -255,7 +313,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(MusicTab.BOTS.titleResId)");
         String internalString4 = LocaleController.getInternalString(MusicTab.DEVICE.getTitleResId());
         Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(MusicTab.DEVICE.titleResId)");
-        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3417R.C3419drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
+        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3419R.C3421drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
     }
 
     @Override // com.iMe.p031ui.pager.TelegramViewPagerFragment
@@ -267,8 +325,8 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Pair[] pairArr = new Pair[2];
             ProfileSearchCell profileSearchCell = (ProfileSearchCell) itemView;
             TLRPC$User user = profileSearchCell.getUser();
-            pairArr[0] = TuplesKt.m85to("dialog_id", Long.valueOf(user != null ? user.f1656id : -profileSearchCell.getChat().f1515id));
-            pairArr[1] = TuplesKt.m85to("custom_screen_type", Integer.valueOf(IdFabric$CustomType.MEDIA_MUSIC));
+            pairArr[0] = TuplesKt.m103to("dialog_id", Long.valueOf(user != null ? user.f1675id : -profileSearchCell.getChat().f1518id));
+            pairArr[1] = TuplesKt.m103to("custom_screen_type", Integer.valueOf(IdFabric$CustomType.MEDIA_MUSIC));
             presentFragment(new MediaActivity(BundleKt.bundleOf(pairArr), null));
         }
     }
@@ -467,14 +525,14 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this.parallelCounter = plus2.size();
             this.parallelLoading = true;
             for (TLRPC$Dialog tLRPC$Dialog : plus2) {
-                getMediaDataController().getMediaCount(tLRPC$Dialog.f1521id, 0, 4, this.classGuid, true);
+                getMediaDataController().getMediaCount(tLRPC$Dialog.f1524id, 0, 4, this.classGuid, true);
             }
         }
     }
 
     private final MessageObject convertDeviceAudioEntryToTelegramMessage(MediaController.AudioEntry audioEntry, int i) {
         TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-        tLRPC$TL_message.f1539id = i;
+        tLRPC$TL_message.f1542id = i;
         tLRPC$TL_message.out = true;
         tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
         tLRPC$TL_message.from_id = new TLRPC$TL_peerUser();
@@ -491,7 +549,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         File file = new File(audioEntry.path);
         String fileExtension = FileLoader.getFileExtension(file);
         tLRPC$TL_message.flags |= 768;
-        tLRPC$TL_document.f1523id = 0L;
+        tLRPC$TL_document.f1526id = 0L;
         tLRPC$TL_document.access_hash = 0L;
         tLRPC$TL_document.file_reference = new byte[0];
         tLRPC$TL_document.date = tLRPC$TL_message.date;
@@ -556,7 +614,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     private final void showDeviceMusicDeleteConfirmDialog(final MessageObject messageObject) {
-        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3417R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3417R.string.Delete), true, null, new Callbacks$Callback1() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
+        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3419R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3419R.string.Delete), true, null, new Callbacks$Callback1() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 MusicActivity.showDeviceMusicDeleteConfirmDialog$lambda$25(MessageObject.this, this, (Boolean) obj);
@@ -587,14 +645,14 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                MusicActivity.m705x679c0b15(delete, message, this$0);
+                MusicActivity.m723x679c0b15(delete, message, this$0);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: showDeviceMusicDeleteConfirmDialog$lambda$25$lambda$24$lambda$23$lambda$22 */
-    public static final void m705x679c0b15(boolean z, MessageObject message, MusicActivity this$0) {
+    public static final void m723x679c0b15(boolean z, MessageObject message, MusicActivity this$0) {
         Intrinsics.checkNotNullParameter(message, "$message");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
@@ -605,7 +663,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this$0.loadDeviceMusic();
             return;
         }
-        String string = LocaleController.getString("UnknownError", C3417R.string.UnknownError);
+        String string = LocaleController.getString("UnknownError", C3419R.string.UnknownError);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"UnknownError\", R.string.UnknownError)");
         ContextExtKt.toast(string);
     }
@@ -674,7 +732,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof DialogsEmptyCell) {
-                ((DialogsEmptyCell) view).setType(MusicTab.DEVICE.getEmptyCellType().m697id(), false);
+                ((DialogsEmptyCell) view).setType(MusicTab.DEVICE.getEmptyCellType().m715id(), false);
             } else if (view instanceof SharedAudioCell) {
                 SharedAudioCell sharedAudioCell = (SharedAudioCell) view;
                 MessageObject messageObject = ((MediaController.AudioEntry) this.this$0.deviceMusic.get(i)).messageObject;
@@ -769,7 +827,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof DialogsEmptyCell) {
-                ((DialogsEmptyCell) view).setType(this.musicTab.getEmptyCellType().m697id(), false);
+                ((DialogsEmptyCell) view).setType(this.musicTab.getEmptyCellType().m715id(), false);
             } else if (view instanceof ProfileSearchCell) {
                 long longValue = getDialogs().get(i).longValue();
                 Object user = longValue > 0 ? this.this$0.getMessagesController().getUser(Long.valueOf(longValue)) : this.this$0.getMessagesController().getChat(Long.valueOf(-longValue));

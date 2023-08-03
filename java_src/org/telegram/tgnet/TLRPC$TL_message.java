@@ -2,7 +2,6 @@ package org.telegram.tgnet;
 
 import android.text.TextUtils;
 import com.google.android.exoplayer2.C0480C;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_message extends TLRPC$Message {
@@ -23,7 +22,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.pinned = (16777216 & readInt32) != 0;
         this.noforwards = (67108864 & readInt32) != 0;
         this.topic_start = (readInt32 & C0480C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1539id = abstractSerializedData.readInt32(z);
+        this.f1542id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -35,7 +34,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
             this.via_bot_id = abstractSerializedData.readInt64(z);
         }
         if ((this.flags & 8) != 0) {
-            this.reply_to = TLRPC$TL_messageReplyHeader.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            this.reply_to = TLRPC$MessageReplyHeader.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         this.date = abstractSerializedData.readInt32(z);
         this.message = abstractSerializedData.readString(z);
@@ -87,7 +86,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         if ((this.flags & 131072) != 0) {
             this.grouped_id = abstractSerializedData.readInt64(z);
         }
-        if ((this.flags & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0) {
+        if ((this.flags & 1048576) != 0) {
             this.reactions = TLRPC$MessageReactions.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & 4194304) != 0) {
@@ -138,7 +137,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         int i11 = this.topic_start ? i10 | C0480C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
         this.flags = i11;
         abstractSerializedData.writeInt32(i11);
-        abstractSerializedData.writeInt32(this.f1539id);
+        abstractSerializedData.writeInt32(this.f1542id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }
@@ -186,7 +185,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         if ((this.flags & 131072) != 0) {
             abstractSerializedData.writeInt64(this.grouped_id);
         }
-        if ((this.flags & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0) {
+        if ((this.flags & 1048576) != 0) {
             this.reactions.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 4194304) != 0) {

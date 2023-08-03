@@ -33,8 +33,22 @@ public class CrashlyticsReportPersistence {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private static final int EVENT_NAME_LENGTH = 15;
     private static final CrashlyticsReportJsonTransform TRANSFORM = new CrashlyticsReportJsonTransform();
-    private static final Comparator<? super File> LATEST_SESSION_ID_FIRST_COMPARATOR = CrashlyticsReportPersistence$$ExternalSyntheticLambda4.INSTANCE;
-    private static final FilenameFilter EVENT_FILE_FILTER = CrashlyticsReportPersistence$$ExternalSyntheticLambda3.INSTANCE;
+    private static final Comparator<? super File> LATEST_SESSION_ID_FIRST_COMPARATOR = new Comparator() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda4
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            int lambda$static$0;
+            lambda$static$0 = CrashlyticsReportPersistence.lambda$static$0((File) obj, (File) obj2);
+            return lambda$static$0;
+        }
+    };
+    private static final FilenameFilter EVENT_FILE_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda3
+        @Override // java.io.FilenameFilter
+        public final boolean accept(File file, String str) {
+            boolean lambda$static$1;
+            lambda$static$1 = CrashlyticsReportPersistence.lambda$static$1(file, str);
+            return lambda$static$1;
+        }
+    };
 
     private static long convertTimestampFromSecondsToMs(long j) {
         return j * 1000;
@@ -43,6 +57,11 @@ public class CrashlyticsReportPersistence {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$static$0(File file, File file2) {
         return file2.getName().compareTo(file.getName());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$static$1(File file, String str) {
+        return str.startsWith("event");
     }
 
     public CrashlyticsReportPersistence(File file, SettingsDataProvider settingsDataProvider) {
@@ -57,7 +76,7 @@ public class CrashlyticsReportPersistence {
     public void persistReport(CrashlyticsReport crashlyticsReport) {
         CrashlyticsReport.Session session = crashlyticsReport.getSession();
         if (session == null) {
-            Logger.getLogger().m728d("Could not get session for report");
+            Logger.getLogger().m746d("Could not get session for report");
             return;
         }
         String identifier = session.getIdentifier();
@@ -67,7 +86,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory, "start-time"), "", session.getStartedAt());
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m727d("Could not persist report for session " + identifier, e);
+            logger.m745d("Could not persist report for session " + identifier, e);
         }
     }
 
@@ -78,7 +97,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(sessionDirectoryById, generateEventFilename(this.eventCounter.getAndIncrement(), z)), TRANSFORM.eventToJson(event));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m719w("Could not persist event for session " + str, e);
+            logger.m737w("Could not persist event for session " + str, e);
         }
         trimEvents(sessionDirectoryById, i);
     }
@@ -107,13 +126,18 @@ public class CrashlyticsReportPersistence {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$deleteFinalizedReport$2(String str, File file, String str2) {
+        return str2.startsWith(str);
+    }
+
     public void deleteFinalizedReport(final String str) {
         FilenameFilter filenameFilter = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda1
             @Override // java.io.FilenameFilter
             public final boolean accept(File file, String str2) {
-                boolean startsWith;
-                startsWith = str2.startsWith(str);
-                return startsWith;
+                boolean lambda$deleteFinalizedReport$2;
+                lambda$deleteFinalizedReport$2 = CrashlyticsReportPersistence.lambda$deleteFinalizedReport$2(str, file, str2);
+                return lambda$deleteFinalizedReport$2;
             }
         };
         for (File file : combineReportFiles(getFilesInDirectory(this.priorityReportsDirectory, filenameFilter), getFilesInDirectory(this.nativeReportsDirectory, filenameFilter), getFilesInDirectory(this.reportsDirectory, filenameFilter))) {
@@ -124,7 +148,7 @@ public class CrashlyticsReportPersistence {
     public void finalizeReports(String str, long j) {
         for (File file : capAndGetOpenSessions(str)) {
             Logger logger = Logger.getLogger();
-            logger.m722v("Finalizing report for session " + file.getName());
+            logger.m740v("Finalizing report for session " + file.getName());
             synthesizeReport(file, j);
             recursiveDelete(file);
         }
@@ -144,7 +168,7 @@ public class CrashlyticsReportPersistence {
                 arrayList.add(CrashlyticsReportWithSessionId.create(TRANSFORM.reportFromJson(readTextFile(file)), file.getName()));
             } catch (IOException e) {
                 Logger logger = Logger.getLogger();
-                logger.m719w("Could not load report file " + file + "; deleting", e);
+                logger.m737w("Could not load report file " + file + "; deleting", e);
                 file.delete();
             }
         }
@@ -199,7 +223,7 @@ public class CrashlyticsReportPersistence {
         boolean z;
         List<File> filesInDirectory = getFilesInDirectory(file, EVENT_FILE_FILTER);
         if (filesInDirectory.isEmpty()) {
-            Logger.getLogger().m722v("Session " + file.getName() + " has no events.");
+            Logger.getLogger().m740v("Session " + file.getName() + " has no events.");
             return;
         }
         Collections.sort(filesInDirectory);
@@ -210,7 +234,7 @@ public class CrashlyticsReportPersistence {
                 try {
                     arrayList.add(TRANSFORM.eventFromJson(readTextFile(file2)));
                 } catch (IOException e) {
-                    Logger.getLogger().m719w("Could not add event to report for " + file2, e);
+                    Logger.getLogger().m737w("Could not add event to report for " + file2, e);
                 }
                 if (z || isHighPriorityEventFile(file2.getName())) {
                     z = true;
@@ -218,7 +242,7 @@ public class CrashlyticsReportPersistence {
             }
         }
         if (arrayList.isEmpty()) {
-            Logger.getLogger().m720w("Could not parse event files for session " + file.getName());
+            Logger.getLogger().m738w("Could not parse event files for session " + file.getName());
             return;
         }
         String str = null;
@@ -227,7 +251,7 @@ public class CrashlyticsReportPersistence {
             try {
                 str = readTextFile(file3);
             } catch (IOException e2) {
-                Logger.getLogger().m719w("Could not read user ID file in " + file.getName(), e2);
+                Logger.getLogger().m737w("Could not read user ID file in " + file.getName(), e2);
             }
         }
         synthesizeReportFile(new File(file, "report"), z ? this.priorityReportsDirectory : this.reportsDirectory, arrayList, j, z, str);
@@ -239,7 +263,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory(file2), str), crashlyticsReportJsonTransform.reportToJson(crashlyticsReportJsonTransform.reportFromJson(readTextFile(file)).withNdkPayload(filesPayload)));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m719w("Could not synthesize final native report file for " + file, e);
+            logger.m737w("Could not synthesize final native report file for " + file, e);
         }
     }
 
@@ -254,7 +278,7 @@ public class CrashlyticsReportPersistence {
             writeTextFile(new File(prepareDirectory(file2), session.getIdentifier()), crashlyticsReportJsonTransform.reportToJson(withEvents));
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m719w("Could not synthesize final report file for " + file, e);
+            logger.m737w("Could not synthesize final report file for " + file, e);
         }
     }
 
@@ -294,8 +318,22 @@ public class CrashlyticsReportPersistence {
     }
 
     private static int trimEvents(File file, int i) {
-        List<File> filesInDirectory = getFilesInDirectory(file, CrashlyticsReportPersistence$$ExternalSyntheticLambda2.INSTANCE);
-        Collections.sort(filesInDirectory, CrashlyticsReportPersistence$$ExternalSyntheticLambda5.INSTANCE);
+        List<File> filesInDirectory = getFilesInDirectory(file, new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda2
+            @Override // java.io.FilenameFilter
+            public final boolean accept(File file2, String str) {
+                boolean isNormalPriorityEventFile;
+                isNormalPriorityEventFile = CrashlyticsReportPersistence.isNormalPriorityEventFile(file2, str);
+                return isNormalPriorityEventFile;
+            }
+        });
+        Collections.sort(filesInDirectory, new Comparator() { // from class: com.google.firebase.crashlytics.internal.persistence.CrashlyticsReportPersistence$$ExternalSyntheticLambda5
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int oldestEventFileFirst;
+                oldestEventFileFirst = CrashlyticsReportPersistence.oldestEventFileFirst((File) obj, (File) obj2);
+                return oldestEventFileFirst;
+            }
+        });
         return capFilesCount(filesInDirectory, i);
     }
 

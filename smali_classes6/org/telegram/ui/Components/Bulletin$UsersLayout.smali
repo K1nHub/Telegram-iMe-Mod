@@ -28,10 +28,10 @@
 .method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
-    .line 1371
+    .line 1412
     invoke-direct {p0, p1, p3}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1373
+    .line 1414
     new-instance p3, Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/4 v0, 0x0
@@ -42,10 +42,10 @@
 
     const/16 v1, 0xb
 
-    .line 1374
+    .line 1415
     invoke-virtual {p3, v1}, Lorg/telegram/ui/Components/AvatarsImageView;->setStyle(I)V
 
-    .line 1375
+    .line 1416
     iget-object p3, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/16 v1, 0x12
@@ -56,7 +56,7 @@
 
     invoke-virtual {p3, v1}, Lorg/telegram/ui/Components/AvatarsImageView;->setAvatarsTextSize(I)V
 
-    .line 1376
+    .line 1417
     iget-object p3, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/high16 v1, 0x42600000    # 56.0f
@@ -83,38 +83,38 @@
 
     if-nez p2, :cond_1
 
-    .line 1379
+    .line 1420
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$UsersLayout$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/Bulletin$UsersLayout$1;-><init>(Lorg/telegram/ui/Components/Bulletin$UsersLayout;Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    .line 1386
+    .line 1427
     invoke-static {p2}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1387
+    .line 1428
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     sget-object p2, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1388
+    .line 1429
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/high16 p2, 0x41700000    # 15.0f
 
     invoke-virtual {p1, p3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1389
+    .line 1430
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     sget-object p2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1390
+    .line 1431
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/16 p2, 0x8
@@ -129,7 +129,7 @@
 
     invoke-virtual {p1, v0, p3, v0, p2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1391
+    .line 1432
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -146,7 +146,7 @@
     :goto_0
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1392
+    .line 1433
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/high16 v0, -0x40000000    # -2.0f
@@ -159,7 +159,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x41000000    # 8.0f
+    const/high16 v5, 0x41400000    # 12.0f
 
     const/4 v6, 0x0
 
@@ -171,7 +171,7 @@
 
     goto/16 :goto_1
 
-    .line 1394
+    .line 1435
     :cond_1
     new-instance p2, Landroid/widget/LinearLayout;
 
@@ -183,10 +183,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
-    .line 1395
+    .line 1436
     invoke-virtual {p2, p3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1396
+    .line 1437
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -199,7 +199,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x41000000    # 8.0f
+    const/high16 v5, 0x41400000    # 12.0f
 
     const/4 v6, 0x0
 
@@ -209,81 +209,81 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1398
+    .line 1439
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$UsersLayout$2;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/Bulletin$UsersLayout$2;-><init>(Lorg/telegram/ui/Components/Bulletin$UsersLayout;Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    .line 1405
+    .line 1446
     invoke-static {p2}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1406
+    .line 1447
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     sget-object v0, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1407
+    .line 1448
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/high16 v0, 0x41600000    # 14.0f
 
     invoke-virtual {p2, p3, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1408
+    .line 1449
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1409
+    .line 1450
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1410
+    .line 1451
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1412
+    .line 1453
     new-instance p2, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
-    .line 1413
+    .line 1454
     sget-object p1, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1414
+    .line 1455
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
     const/high16 p2, 0x41500000    # 13.0f
 
     invoke-virtual {p1, p3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1415
+    .line 1456
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
     sget-object p2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1416
+    .line 1457
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1417
+    .line 1458
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -294,7 +294,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1418
+    .line 1459
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
@@ -319,7 +319,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1420
+    .line 1461
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
@@ -331,7 +331,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1422
+    .line 1463
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -340,7 +340,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->setTextColor(I)V
 
-    .line 1423
+    .line 1464
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_background:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -357,7 +357,7 @@
 .method public getAccessibilityText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 1445
+    .line 1486
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -370,7 +370,7 @@
 .method protected onShow()V
     .locals 0
 
-    .line 1441
+    .line 1482
     invoke-super {p0}, Lorg/telegram/ui/Components/Bulletin$Layout;->onShow()V
 
     return-void
@@ -379,17 +379,17 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 1433
+    .line 1474
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1434
+    .line 1475
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 1435
+    .line 1476
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_0

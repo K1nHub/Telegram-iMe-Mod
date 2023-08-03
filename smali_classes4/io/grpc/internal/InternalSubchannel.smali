@@ -824,7 +824,7 @@
     move v3, v4
 
     :cond_1
-    const-string p1, "previous reconnectTask is not done"
+    const-string/jumbo p1, "previous reconnectTask is not done"
 
     invoke-static {v3, p1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

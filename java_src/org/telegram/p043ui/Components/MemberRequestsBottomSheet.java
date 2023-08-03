@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ChatActivity;
@@ -46,7 +46,7 @@ public class MemberRequestsBottomSheet extends UsersAlertBase {
         this.delegate = memberRequestsDelegate;
         memberRequestsDelegate.setShowLastItemDivider(false);
         setDimBehindAlpha(75);
-        this.searchView.searchEditText.setHint(LocaleController.getString("SearchMemberRequests", C3417R.string.SearchMemberRequests));
+        this.searchView.searchEditText.setHint(LocaleController.getString("SearchMemberRequests", C3419R.string.SearchMemberRequests));
         MemberRequestsDelegate.Adapter adapter = memberRequestsDelegate.getAdapter();
         this.listViewAdapter = adapter;
         this.searchListViewAdapter = adapter;
@@ -68,7 +68,7 @@ public class MemberRequestsBottomSheet extends UsersAlertBase {
     @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog
     public void show() {
         if (this.delegate.isNeedRestoreList && this.scrollOffsetY == 0) {
-            this.scrollOffsetY = AndroidUtilities.m54dp(8);
+            this.scrollOffsetY = AndroidUtilities.m72dp(8);
         }
         super.show();
         this.delegate.isNeedRestoreList = false;
@@ -99,7 +99,7 @@ public class MemberRequestsBottomSheet extends UsersAlertBase {
     @Override // org.telegram.p043ui.Components.UsersAlertBase
     public void updateLayout() {
         if (this.listView.getChildCount() <= 0) {
-            int paddingTop = this.listView.getVisibility() == 0 ? this.listView.getPaddingTop() - AndroidUtilities.m54dp(8) : 0;
+            int paddingTop = this.listView.getVisibility() == 0 ? this.listView.getPaddingTop() - AndroidUtilities.m72dp(8) : 0;
             if (this.scrollOffsetY != paddingTop) {
                 this.scrollOffsetY = paddingTop;
                 setTranslationY(paddingTop);

@@ -10,6 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayoutPhoto */
 /* loaded from: classes6.dex */
 public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
+    private Activity activity;
     private SizeNotifierFrameLayoutPhotoDelegate delegate;
     private int keyboardHeight;
     private Rect rect;
@@ -21,9 +22,14 @@ public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
         void onSizeChanged(int i, boolean z);
     }
 
-    public SizeNotifierFrameLayoutPhoto(Context context, boolean z) {
+    public SizeNotifierFrameLayoutPhoto(Context context, Activity activity, boolean z) {
         super(context);
         this.rect = new Rect();
+        setActivity(activity);
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 
     public void setDelegate(SizeNotifierFrameLayoutPhotoDelegate sizeNotifierFrameLayoutPhotoDelegate) {
@@ -53,8 +59,8 @@ public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
             Rect rect = this.rect;
             return height - (rect.bottom - rect.top);
         }
-        int height2 = (((Activity) rootView.getContext()).getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
-        if (height2 <= Math.max(AndroidUtilities.m54dp(10), AndroidUtilities.statusBarHeight)) {
+        int height2 = (this.activity.getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
+        if (height2 <= Math.max(AndroidUtilities.m72dp(10), AndroidUtilities.statusBarHeight)) {
             return 0;
         }
         return height2;

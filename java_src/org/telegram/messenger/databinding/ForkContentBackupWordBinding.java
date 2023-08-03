@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 /* loaded from: classes4.dex */
 public final class ForkContentBackupWordBinding implements ViewBinding {
     public final CardView cardWord;
@@ -31,7 +31,7 @@ public final class ForkContentBackupWordBinding implements ViewBinding {
     }
 
     public static ForkContentBackupWordBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_backup_word, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3419R.layout.fork_content_backup_word, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkContentBackupWordBinding implements ViewBinding {
     }
 
     public static ForkContentBackupWordBinding bind(View view) {
-        int i = C3417R.C3420id.card_word;
+        int i = C3419R.C3422id.card_word;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
-            i = C3417R.C3420id.text_word;
+            i = C3419R.C3422id.text_word;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
                 return new ForkContentBackupWordBinding((FrameLayout) view, cardView, appCompatTextView);

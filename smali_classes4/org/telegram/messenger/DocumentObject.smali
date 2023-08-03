@@ -276,19 +276,21 @@
 .end method
 
 .method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
-    .locals 1
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
+    const/4 v1, 0x0
+
     .line 92
-    invoke-static {p0, p1, p2, v0}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {p0, p1, p2, v0, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 8
 
     const/4 v0, 0x0
@@ -413,7 +415,7 @@
     if-eqz v0, :cond_5
 
     .line 131
-    invoke-virtual {v0, p1, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
+    invoke-virtual {v0, p1, p4, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;FZ)V
 
     goto :goto_4
 

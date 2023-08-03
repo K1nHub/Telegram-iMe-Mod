@@ -34,7 +34,10 @@ public final class HintFactory {
         HintView createHintView = createHintView(context, model.getType(), model.getTopArrow());
         createHintView.setText(model.getText());
         parentLayout.getView().addView(createHintView, LayoutHelper.createFrame(-2, -2, 51, 0, 0, 10, 0));
-        createHintView.showForView(anchorView, true, model.getAutoHide());
+        if (!model.getAutoHide()) {
+            createHintView.createCloseButton();
+        }
+        createHintView.showForView(anchorView, true);
         this.hintView = createHintView;
     }
 

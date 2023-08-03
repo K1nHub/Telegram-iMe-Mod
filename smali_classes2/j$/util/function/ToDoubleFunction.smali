@@ -15,4 +15,9 @@
 
 # virtual methods
 .method public abstract applyAsDouble(Ljava/lang/Object;)D
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)D"
+        }
+    .end annotation
 .end method

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterGLThread$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$TaFuzPrcp98k0zdYH-rXw1_Ldxs(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FilterGLThread;->$r8$lambda$6m07K8sid7iKTz-eSP9GeNNkgOw(Lorg/telegram/ui/Components/FilterGLThread;Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;)V
 
     return-void
 .end method

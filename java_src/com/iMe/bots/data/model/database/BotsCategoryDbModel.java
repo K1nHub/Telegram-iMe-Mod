@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class BotsCategoryDbModel {
 
     /* renamed from: id */
-    private final String f327id;
+    private final String f330id;
     private final Map<String, String> locales;
     private final int priority;
     private final List<String> tags;
@@ -16,7 +16,7 @@ public final class BotsCategoryDbModel {
 
     public static /* synthetic */ BotsCategoryDbModel copy$default(BotsCategoryDbModel botsCategoryDbModel, String str, String str2, int i, List list, Map map, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            str = botsCategoryDbModel.f327id;
+            str = botsCategoryDbModel.f330id;
         }
         if ((i2 & 2) != 0) {
             str2 = botsCategoryDbModel.title;
@@ -39,7 +39,7 @@ public final class BotsCategoryDbModel {
     }
 
     public final String component1() {
-        return this.f327id;
+        return this.f330id;
     }
 
     public final String component2() {
@@ -72,17 +72,17 @@ public final class BotsCategoryDbModel {
         }
         if (obj instanceof BotsCategoryDbModel) {
             BotsCategoryDbModel botsCategoryDbModel = (BotsCategoryDbModel) obj;
-            return Intrinsics.areEqual(this.f327id, botsCategoryDbModel.f327id) && Intrinsics.areEqual(this.title, botsCategoryDbModel.title) && this.priority == botsCategoryDbModel.priority && Intrinsics.areEqual(this.tags, botsCategoryDbModel.tags) && Intrinsics.areEqual(this.locales, botsCategoryDbModel.locales);
+            return Intrinsics.areEqual(this.f330id, botsCategoryDbModel.f330id) && Intrinsics.areEqual(this.title, botsCategoryDbModel.title) && this.priority == botsCategoryDbModel.priority && Intrinsics.areEqual(this.tags, botsCategoryDbModel.tags) && Intrinsics.areEqual(this.locales, botsCategoryDbModel.locales);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.f327id.hashCode() * 31) + this.title.hashCode()) * 31) + this.priority) * 31) + this.tags.hashCode()) * 31) + this.locales.hashCode();
+        return (((((((this.f330id.hashCode() * 31) + this.title.hashCode()) * 31) + this.priority) * 31) + this.tags.hashCode()) * 31) + this.locales.hashCode();
     }
 
     public String toString() {
-        return "BotsCategoryDbModel(id=" + this.f327id + ", title=" + this.title + ", priority=" + this.priority + ", tags=" + this.tags + ", locales=" + this.locales + ')';
+        return "BotsCategoryDbModel(id=" + this.f330id + ", title=" + this.title + ", priority=" + this.priority + ", tags=" + this.tags + ", locales=" + this.locales + ')';
     }
 
     public BotsCategoryDbModel(String id, String title, int i, List<String> tags, Map<String, String> locales) {
@@ -90,7 +90,7 @@ public final class BotsCategoryDbModel {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(tags, "tags");
         Intrinsics.checkNotNullParameter(locales, "locales");
-        this.f327id = id;
+        this.f330id = id;
         this.title = title;
         this.priority = i;
         this.tags = tags;
@@ -98,7 +98,7 @@ public final class BotsCategoryDbModel {
     }
 
     public final String getId() {
-        return this.f327id;
+        return this.f330id;
     }
 
     public final String getTitle() {

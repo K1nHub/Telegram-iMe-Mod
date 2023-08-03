@@ -73,7 +73,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 205
+    .line 206
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->val$context:Landroid/content/Context;
@@ -88,12 +88,12 @@
 .method private synthetic lambda$onSendWebViewData$0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 231
+    .line 232
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
     if-eqz p2, :cond_0
 
-    .line 232
+    .line 233
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -110,7 +110,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 234
+    .line 235
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -126,15 +126,15 @@
 .method private synthetic lambda$onWebAppOpenInvoice$3(Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;Ljava/lang/String;Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
     .locals 1
 
-    .line 290
+    .line 291
     sget-object v0, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->PENDING:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     if-eq p3, v0, :cond_0
 
-    .line 291
+    .line 292
     invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 294
+    .line 295
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -160,7 +160,7 @@
 .method private synthetic lambda$onWebAppSetActionBarColor$1(IILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 246
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -179,7 +179,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$902(Lorg/telegram/ui/Components/BotWebViewSheet;I)I
 
-    .line 247
+    .line 248
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -194,7 +194,7 @@
 .method private synthetic lambda$onWebAppSetBackgroundColor$2(IILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 260
+    .line 261
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
@@ -217,7 +217,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 261
+    .line 262
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -238,7 +238,7 @@
 
     const/4 p1, 0x0
 
-    .line 335
+    .line 338
     invoke-interface {p9, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return p4
@@ -246,7 +246,7 @@
     :cond_0
     const/4 p6, 0x0
 
-    .line 339
+    .line 342
     invoke-virtual {p5, p6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p5
@@ -255,24 +255,24 @@
 
     iget-wide p5, p5, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    .line 341
+    .line 344
     new-instance p7, Landroid/os/Bundle;
 
     invoke-direct {p7}, Landroid/os/Bundle;-><init>()V
 
     const-string p8, "scrollToTopOnResume"
 
-    .line 342
+    .line 345
     invoke-virtual {p7, p8, p4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 343
+    .line 346
     invoke-static {p5, p6}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result p8
 
     if-eqz p8, :cond_1
 
-    .line 344
+    .line 347
     invoke-static {p5, p6}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
 
     move-result p5
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 348
     :cond_1
     invoke-static {p5, p6}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
@@ -293,7 +293,7 @@
 
     const-string p8, "user_id"
 
-    .line 346
+    .line 349
     invoke-virtual {p7, p8, p5, p6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_0
@@ -303,10 +303,10 @@
 
     const-string p8, "chat_id"
 
-    .line 348
+    .line 351
     invoke-virtual {p7, p8, p5, p6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 350
+    .line 353
     :goto_0
     new-instance p5, Ljava/lang/StringBuilder;
 
@@ -336,7 +336,7 @@
 
     invoke-virtual {p7, p2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 352
+    .line 355
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1400(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/app/Activity;
@@ -347,7 +347,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 353
+    .line 356
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1400(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/app/Activity;
@@ -364,7 +364,7 @@
 
     move-result-object p1
 
-    .line 354
+    .line 357
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -381,15 +381,15 @@
 
     if-eqz p2, :cond_3
 
-    .line 355
+    .line 358
     invoke-virtual {p3}, Landroid/app/Dialog;->dismiss()V
 
-    .line 357
+    .line 360
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2, p4}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$002(Lorg/telegram/ui/Components/BotWebViewSheet;Z)Z
 
-    .line 358
+    .line 361
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1900(Lorg/telegram/ui/Components/BotWebViewSheet;)Ljava/lang/Runnable;
@@ -398,7 +398,7 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 360
+    .line 363
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2000(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -407,7 +407,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->destroyWebView()V
 
-    .line 361
+    .line 364
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -424,7 +424,7 @@
 
     invoke-virtual {p2, p3, p5}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 362
+    .line 365
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p2
@@ -435,12 +435,12 @@
 
     invoke-virtual {p2, p3, p5}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 363
+    .line 366
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2101(Lorg/telegram/ui/Components/BotWebViewSheet;)V
 
-    .line 365
+    .line 368
     new-instance p2, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
 
     new-instance p3, Lorg/telegram/ui/ChatActivity;
@@ -474,7 +474,7 @@
 .method public onCloseRequested(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 210
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->dismiss(Ljava/lang/Runnable;)V
@@ -485,7 +485,7 @@
 .method public onSendWebViewData(Ljava/lang/String;)V
     .locals 4
 
-    .line 220
+    .line 221
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$500(Lorg/telegram/ui/Components/BotWebViewSheet;)J
@@ -507,15 +507,15 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 223
+    .line 224
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->sentWebViewData:Z
 
-    .line 225
+    .line 226
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;-><init>()V
 
-    .line 226
+    .line 227
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -538,7 +538,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 227
+    .line 228
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1}, Ljava/security/SecureRandom;->nextLong()J
@@ -547,7 +547,7 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;->random_id:J
 
-    .line 228
+    .line 229
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$800(Lorg/telegram/ui/Components/BotWebViewSheet;)Ljava/lang/String;
@@ -556,10 +556,10 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;->button_text:Ljava/lang/String;
 
-    .line 229
+    .line 230
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sendWebViewData;->data:Ljava/lang/String;
 
-    .line 230
+    .line 231
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -584,7 +584,7 @@
 .method public onSetBackButtonVisible(Z)V
     .locals 1
 
-    .line 268
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1300(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -613,7 +613,7 @@
 .method public onSetupMainButton(ZZLjava/lang/String;IIZ)V
     .locals 3
 
-    .line 377
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -622,7 +622,7 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setClickable(Z)V
 
-    .line 378
+    .line 381
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -631,7 +631,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 379
+    .line 382
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -640,7 +640,7 @@
 
     invoke-virtual {p2, p5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 380
+    .line 383
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -653,7 +653,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 381
+    .line 384
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$200(Lorg/telegram/ui/Components/BotWebViewSheet;)Z
@@ -668,12 +668,12 @@
 
     if-eq p1, p2, :cond_2
 
-    .line 382
+    .line 385
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$202(Lorg/telegram/ui/Components/BotWebViewSheet;Z)Z
 
-    .line 383
+    .line 386
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -688,7 +688,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 385
+    .line 388
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -697,7 +697,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 386
+    .line 389
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/widget/TextView;
@@ -706,7 +706,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 388
+    .line 391
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -746,10 +746,10 @@
 
     move-result-object p1
 
-    .line 396
+    .line 399
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 398
+    .line 401
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -759,7 +759,7 @@
 
     invoke-virtual {p1, p5}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 399
+    .line 402
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1800(Lorg/telegram/ui/Components/BotWebViewSheet;)Z
@@ -768,12 +768,12 @@
 
     if-eq p6, p1, :cond_7
 
-    .line 400
+    .line 403
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1, p6}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1802(Lorg/telegram/ui/Components/BotWebViewSheet;Z)Z
 
-    .line 401
+    .line 404
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1700(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -788,7 +788,7 @@
 
     if-eqz p6, :cond_3
 
-    .line 403
+    .line 406
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1700(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -797,7 +797,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
 
-    .line 404
+    .line 407
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1700(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -806,7 +806,7 @@
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 406
+    .line 409
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -838,7 +838,7 @@
     :cond_5
     move p3, p2
 
-    .line 407
+    .line 410
     :goto_1
     invoke-virtual {p1, p3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -851,7 +851,7 @@
     :cond_6
     move p4, p2
 
-    .line 408
+    .line 411
     :goto_2
     invoke-virtual {p1, p4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -859,7 +859,7 @@
 
     const-wide/16 p2, 0xfa
 
-    .line 409
+    .line 412
     invoke-virtual {p1, p2, p3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -868,12 +868,12 @@
 
     invoke-direct {p2, p0, p6}, Lorg/telegram/ui/Components/BotWebViewSheet$2$2;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;Z)V
 
-    .line 410
+    .line 413
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 417
+    .line 420
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     :cond_7
@@ -883,7 +883,7 @@
 .method public onWebAppExpand()V
     .locals 3
 
-    .line 303
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -898,7 +898,7 @@
 
     return-void
 
-    .line 306
+    .line 307
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -938,7 +938,7 @@
 .method public onWebAppOpenInvoice(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 4
 
-    .line 273
+    .line 274
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1400(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/app/Activity;
@@ -955,15 +955,15 @@
 
     move-result-object v0
 
-    .line 275
+    .line 276
     instance-of v1, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     if-eqz v1, :cond_0
 
-    .line 276
+    .line 277
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
-    .line 277
+    .line 278
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$700(Lorg/telegram/ui/Components/BotWebViewSheet;)I
@@ -980,20 +980,20 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 278
+    .line 279
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {v1, p2, p1, v0}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     goto :goto_0
 
-    .line 279
+    .line 280
     :cond_0
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentReceipt;
 
     if-eqz v0, :cond_1
 
-    .line 280
+    .line 281
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentReceipt;
@@ -1008,7 +1008,7 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 284
+    .line 285
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -1041,7 +1041,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->stickTo(F)V
 
-    .line 286
+    .line 287
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -1050,7 +1050,7 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 287
+    .line 288
     new-instance p2, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->val$context:Landroid/content/Context;
@@ -1059,22 +1059,22 @@
 
     invoke-direct {p2, v0, v2}, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 288
+    .line 289
     invoke-virtual {p2}, Landroid/app/Dialog;->show()V
 
-    .line 289
+    .line 290
     new-instance v0, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/PaymentFormActivity;->setPaymentFormCallback(Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;)V
 
-    .line 296
+    .line 297
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/PaymentFormActivity;->setResourcesProvider(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 297
+    .line 298
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;->addFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     :cond_2
@@ -1092,14 +1092,14 @@
 .method public onWebAppSetActionBarColor(I)V
     .locals 4
 
-    .line 240
+    .line 241
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$900(Lorg/telegram/ui/Components/BotWebViewSheet;)I
 
     move-result v0
 
-    .line 241
+    .line 242
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1000(Lorg/telegram/ui/Components/BotWebViewSheet;I)I
@@ -1110,7 +1110,7 @@
 
     new-array v1, v1, [F
 
-    .line 243
+    .line 244
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1123,19 +1123,19 @@
 
     move-result-object v1
 
-    .line 244
+    .line 245
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 245
+    .line 246
     new-instance v2, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;II)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 249
+    .line 250
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -1152,14 +1152,14 @@
 .method public onWebAppSetBackgroundColor(I)V
     .locals 4
 
-    .line 254
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1102(Lorg/telegram/ui/Components/BotWebViewSheet;Z)Z
 
-    .line 256
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
@@ -1174,7 +1174,7 @@
 
     new-array v1, v1, [F
 
-    .line 257
+    .line 258
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1187,19 +1187,19 @@
 
     move-result-object v1
 
-    .line 258
+    .line 259
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 259
+    .line 260
     new-instance v2, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;II)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 263
+    .line 264
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -1216,7 +1216,7 @@
 .method public onWebAppSetupClosingBehavior(Z)V
     .locals 1
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$402(Lorg/telegram/ui/Components/BotWebViewSheet;Z)Z
@@ -1225,7 +1225,7 @@
 .end method
 
 .method public onWebAppSwitchInlineQuery(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/util/List;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1237,14 +1237,14 @@
         }
     .end annotation
 
-    .line 311
+    .line 312
     invoke-interface {p3}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 312
+    .line 313
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1400(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/app/Activity;
@@ -1255,7 +1255,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 313
+    .line 314
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1400(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/app/Activity;
@@ -1272,12 +1272,12 @@
 
     move-result-object p3
 
-    .line 314
+    .line 315
     instance-of v0, p3, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_1
 
-    .line 315
+    .line 316
     check-cast p3, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ChatActivity;->getChatActivityEnterView()Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -1310,14 +1310,14 @@
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 316
+    .line 317
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->dismiss()V
 
     goto :goto_0
 
-    .line 320
+    .line 321
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
@@ -1327,30 +1327,48 @@
 
     const-string v2, "dialogsType"
 
-    .line 321
+    .line 322
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     const/4 v1, 0x1
 
     const-string v2, "onlySelect"
 
-    .line 322
+    .line 323
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "groups"
 
-    .line 324
+    .line 325
+    invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    const-string v3, "allowGroups"
+
+    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 326
+    invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    const-string v3, "allowMegagroups"
+
+    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 327
     invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    const-string v2, "allowGroups"
+    const-string v2, "allowLegacyGroups"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "users"
 
-    .line 325
+    .line 328
     invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1361,7 +1379,7 @@
 
     const-string v1, "channels"
 
-    .line 326
+    .line 329
     invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1372,7 +1390,7 @@
 
     const-string v1, "bots"
 
-    .line 327
+    .line 330
     invoke-interface {p3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result p3
@@ -1381,12 +1399,12 @@
 
     invoke-virtual {v0, v1, p3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 329
+    .line 332
     new-instance p3, Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p3, v0}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 330
+    .line 333
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -1395,7 +1413,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 331
+    .line 334
     new-instance v0, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->val$context:Landroid/content/Context;
@@ -1404,17 +1422,17 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 332
+    .line 335
     new-instance v1, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0, p1, p2, v0}, Lorg/telegram/ui/Components/BotWebViewSheet$2$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;)V
 
     invoke-virtual {p3, v1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 370
+    .line 373
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 371
+    .line 374
     invoke-virtual {v0, p3}, Lorg/telegram/ui/Components/OverlayActionBarLayoutDialog;->addFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     :cond_1

@@ -6,9 +6,11 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -40,10 +42,33 @@ public final class CertificatePinner {
         return this.certificateChainCleaner;
     }
 
-    public final void check(String hostname, List<? extends Certificate> peerCertificates) throws SSLPeerUnverifiedException {
+    public final void check(final String hostname, final List<? extends Certificate> peerCertificates) throws SSLPeerUnverifiedException {
         Intrinsics.checkNotNullParameter(hostname, "hostname");
         Intrinsics.checkNotNullParameter(peerCertificates, "peerCertificates");
-        check$okhttp(hostname, new CertificatePinner$check$1(this, peerCertificates, hostname));
+        check$okhttp(hostname, new Function0<List<? extends X509Certificate>>() { // from class: okhttp3.CertificatePinner$check$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends X509Certificate> invoke() {
+                List<Certificate> list;
+                int collectionSizeOrDefault;
+                CertificateChainCleaner certificateChainCleaner$okhttp = CertificatePinner.this.getCertificateChainCleaner$okhttp();
+                if (certificateChainCleaner$okhttp == null || (list = certificateChainCleaner$okhttp.clean(peerCertificates, hostname)) == null) {
+                    list = peerCertificates;
+                }
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
+                ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                for (Certificate certificate : list) {
+                    Objects.requireNonNull(certificate, "null cannot be cast to non-null type java.security.cert.X509Certificate");
+                    arrayList.add((X509Certificate) certificate);
+                }
+                return arrayList;
+            }
+        });
     }
 
     public final void check$okhttp(String hostname, Function0<? extends List<? extends X509Certificate>> cleanedPeerCertificatesFn) {

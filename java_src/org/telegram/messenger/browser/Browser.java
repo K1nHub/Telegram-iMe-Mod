@@ -82,7 +82,7 @@ public class Browser {
                     try {
                         Browser.customTabsClient.warmup(0L);
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
 
@@ -97,7 +97,7 @@ public class Browser {
             }
             customTabsServiceConnection = null;
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -310,7 +310,7 @@ public class Browser {
             r1[r0] = r4
             java.lang.String r4 = r6.toString()
             r1[r3] = r4
-            r2.postNotificationName(r5, r1)
+            r2.lambda$postNotificationNameOnUIThread$1(r5, r1)
             goto L38
         L37:
             r3 = r0

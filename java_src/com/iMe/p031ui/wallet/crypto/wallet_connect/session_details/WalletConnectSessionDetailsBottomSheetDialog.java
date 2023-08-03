@@ -17,6 +17,7 @@ import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -24,7 +25,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -51,7 +52,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSessionDetailsBottomSheetDialog(com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, org.telegram.p043ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
+    public WalletConnectSessionDetailsBottomSheetDialog(final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, final org.telegram.p043ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
         /*
             r4 = this;
             java.lang.String r0 = "item"
@@ -67,7 +68,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
             r4.<init>(r0, r1)
             r4.disconnectAction = r7
             com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$presenter$2 r7 = new com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$presenter$2
-            r7.<init>(r4, r5)
+            r7.<init>()
             moxy.ktx.MoxyKtxDelegate r5 = new moxy.ktx.MoxyKtxDelegate
             moxy.MvpDelegate r0 = r4.getMvpDelegate()
             java.lang.String r2 = "mvpDelegate"
@@ -88,11 +89,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$special$$inlined$inject$default$1 r7 = new com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
-            r7.<init>(r4, r0, r0)
+            r7.<init>()
             kotlin.Lazy r5 = kotlin.LazyKt.lazy(r5, r7)
             r4.resourceManager$delegate = r5
             com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$binding$2 r5 = new com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$binding$2
-            r5.<init>(r6)
+            r5.<init>()
             com.iMe.utils.extentions.delegate.ResettableLazy r5 = com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt.resettableLazy$default(r4, r0, r5, r1, r0)
             r4.binding$delegate = r5
             r5 = 0
@@ -134,11 +135,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_connected), connectedDate, C3417R.C3419drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_address), address, C3417R.C3419drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3419R.string.wallet_connect_session_details_connected), connectedDate, C3419R.C3421drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3419R.string.wallet_connect_session_details_address), address, C3419R.C3421drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3417R.string.wallet_connect_session_details_network), network, C3417R.C3419drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3419R.string.wallet_connect_session_details_network), network, C3419R.C3421drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -147,17 +148,34 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         binding.viewConnectedCell.setupColors();
         binding.viewAddressCell.setupColors();
         binding.viewNetworkCell.setupColors();
-        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_chat_attachAudioBackground), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
+        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), Theme.getColor(Theme.key_chat_attachAudioBackground), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3417R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3419R.string.Disconnect));
     }
 
     private final void setupListeners() {
         BigActionButton bigActionButton = getBinding().buttonDisconnect;
         Intrinsics.checkNotNullExpressionValue(bigActionButton, "binding.buttonDisconnect");
-        ViewExtKt.safeThrottledClick$default(bigActionButton, 0L, new WalletConnectSessionDetailsBottomSheetDialog$setupListeners$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(bigActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$setupListeners$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(View view) {
+                invoke2(view);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(View it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                WalletConnectSessionDetailsBottomSheetDialog.this.showDisconnectConfirmationDialog();
+            }
+        }, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

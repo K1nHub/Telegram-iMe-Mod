@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SchedulersExtKt {
     public static final <T> Observable<T> scheduleIO(Observable<T> observable) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
-        Observable<T> observeOn = observable.subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
+        Observable<T> observeOn = observable.subscribeOn(Schedulers.m697io()).observeOn(AndroidSchedulers.mainThread());
         Intrinsics.checkNotNullExpressionValue(observeOn, "this\n                .su…dSchedulers.mainThread())");
         return observeOn;
     }
@@ -19,7 +19,7 @@ public final class SchedulersExtKt {
     public static final <T> Observable<T> scheduleIO(Observable<T> observable, SchedulersProvider schedulersProvider) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
         Intrinsics.checkNotNullParameter(schedulersProvider, "schedulersProvider");
-        Observable<T> scheduleIO = observable.subscribeOn(schedulersProvider.mo699io()).observeOn(schedulersProvider.mo698ui());
+        Observable<T> scheduleIO = observable.subscribeOn(schedulersProvider.mo717io()).observeOn(schedulersProvider.mo716ui());
         Intrinsics.checkNotNullExpressionValue(scheduleIO, "scheduleIO");
         return scheduleIO;
     }

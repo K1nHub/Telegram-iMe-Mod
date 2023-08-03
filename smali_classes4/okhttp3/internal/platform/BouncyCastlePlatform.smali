@@ -40,7 +40,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    const-string v2, "org.bouncycastle.jsse.provider.BouncyCastleJsseProvider"
+    const-string/jumbo v2, "org.bouncycastle.jsse.provider.BouncyCastleJsseProvider"
 
     .line 87
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -119,7 +119,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "protocols"
+    const-string/jumbo v0, "protocols"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

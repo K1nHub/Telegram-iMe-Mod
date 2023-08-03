@@ -10,11 +10,13 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.fork.p024ui.view.AvatarDrawableCell;
+import com.iMe.p031ui.recent_chats.RecentChatsBar;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -59,9 +61,32 @@ public final class RecentChatsBar extends FrameLayout {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         this.currentAccount = i;
         this.delegate = delegate;
-        lazy = LazyKt__LazyJVMKt.lazy(new RecentChatsBar$listView$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<RecyclerListView>() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final RecyclerListView invoke() {
+                RecyclerListView initHorizontalListView;
+                initHorizontalListView = RecentChatsBar.this.initHorizontalListView();
+                return initHorizontalListView;
+            }
+        });
         this.listView$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new RecentChatsBar$listAdapter$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final RecentChatsBar.ListAdapter invoke() {
+                return new RecentChatsBar.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy2;
         this.data = new ArrayList();
         addView(getListView(), LayoutHelper.createFrame(-1, -1));
@@ -83,7 +108,7 @@ public final class RecentChatsBar extends FrameLayout {
         getListAdapter().notifyDataSetChanged();
     }
 
-    public final void scrollToStart() {
+    public final void scrollToFirstCell() {
         getListView().smoothScrollToPosition(0);
     }
 
@@ -115,8 +140,8 @@ public final class RecentChatsBar extends FrameLayout {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(parent, "parent");
                 Intrinsics.checkNotNullParameter(state, "state");
-                outRect.right = AndroidUtilities.m54dp(4);
-                outRect.left = AndroidUtilities.m54dp(4);
+                outRect.right = AndroidUtilities.m72dp(4);
+                outRect.left = AndroidUtilities.m72dp(4);
             }
         });
         recyclerListView.setAdapter(getListAdapter());
@@ -184,7 +209,7 @@ public final class RecentChatsBar extends FrameLayout {
             Context context = RecentChatsBar.this.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             AvatarDrawableCell avatarDrawableCell = new AvatarDrawableCell(context, RecentChatsBar.this.getCurrentAccount());
-            avatarDrawableCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m54dp(50), -1));
+            avatarDrawableCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m72dp(50), -1));
             return new RecyclerListView.Holder(avatarDrawableCell);
         }
 

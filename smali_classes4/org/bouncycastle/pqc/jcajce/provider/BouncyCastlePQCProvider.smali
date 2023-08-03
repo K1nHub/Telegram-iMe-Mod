@@ -206,7 +206,7 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider;->ALGORITHMS:[Ljava/lang/String;
 
-    const-string v1, "org.bouncycastle.pqc.jcajce.provider."
+    const-string/jumbo v1, "org.bouncycastle.pqc.jcajce.provider."
 
     invoke-direct {p0, v1, v0}, Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider;->loadAlgorithms(Ljava/lang/String;[Ljava/lang/String;)V
 

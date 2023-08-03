@@ -98,7 +98,7 @@ public abstract class TLRPC$ChatPhoto extends TLObject {
                                 try {
                                     this.strippedBitmap = new BitmapDrawable(ImageLoader.getStrippedPhotoBitmap(this.stripped_thumb, "b"));
                                 } catch (Throwable th) {
-                                    FileLog.m49e(th);
+                                    FileLog.m67e(th);
                                 }
                             }
                         }

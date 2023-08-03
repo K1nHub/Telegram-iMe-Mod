@@ -29,7 +29,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
 import androidx.annotation.Keep;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -37,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.p043ui.ActionBar.FloatingActionMode;
@@ -66,7 +65,6 @@ public class EditTextBoldCursor extends EditTextEffects {
     private float cursorWidth;
     boolean drawInMaim;
     private Object editor;
-    private StaticLayout errorLayout;
     private int errorLineColor;
     private TextPaint errorPaint;
     private CharSequence errorText;
@@ -86,13 +84,12 @@ public class EditTextBoldCursor extends EditTextEffects {
     private StaticLayout hintLayout;
     private boolean hintVisible;
     private int ignoreBottomCount;
+    public boolean ignoreClipTop;
     private int ignoreTopCount;
     private Runnable invalidateRunnable;
     private boolean isTextWatchersSuppressed;
     private float lastLineActiveness;
-    int lastOffset;
     private int lastSize;
-    CharSequence lastText;
     private int lastTouchX;
     private boolean lineActive;
     private float lineActiveness;
@@ -103,7 +100,6 @@ public class EditTextBoldCursor extends EditTextEffects {
     private boolean lineVisible;
     private float lineY;
     private ViewTreeObserver.OnPreDrawListener listenerFixer;
-    private Drawable mCursorDrawable;
     private Rect mTempRect;
     private boolean nextSetTextAnimated;
     private Rect padding;
@@ -114,10 +110,12 @@ public class EditTextBoldCursor extends EditTextEffects {
     private boolean transformHintToHeader;
     private View windowView;
 
-    protected void extendActionMode(ActionMode actionMode, Menu menu) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void extendActionMode(ActionMode actionMode, Menu menu) {
     }
 
-    protected int getActionModeStyle() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public int getActionModeStyle() {
         return 1;
     }
 
@@ -206,7 +204,6 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.lineActiveness = BitmapDescriptorFactory.HUE_RED;
         this.lastLineActiveness = BitmapDescriptorFactory.HUE_RED;
         this.activeLineWidth = BitmapDescriptorFactory.HUE_RED;
-        this.lastOffset = -1;
         this.registeredTextWatchers = new ArrayList();
         this.isTextWatchersSuppressed = false;
         this.padding = new Rect();
@@ -264,10 +261,6 @@ public class EditTextBoldCursor extends EditTextEffects {
         }
     }
 
-    public boolean isTextWatchersSuppressed() {
-        return this.isTextWatchersSuppressed;
-    }
-
     @Override // android.widget.TextView
     public Drawable getTextCursorDrawable() {
         if (this.cursorDrawable != null) {
@@ -289,7 +282,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.activeLinePaint = new Paint();
         TextPaint textPaint = new TextPaint(1);
         this.errorPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m54dp(11));
+        textPaint.setTextSize(AndroidUtilities.m72dp(11));
         int i = Build.VERSION.SDK_INT;
         if (i >= 26) {
             setImportantForAutofill(2);
@@ -308,12 +301,12 @@ public class EditTextBoldCursor extends EditTextEffects {
 
                 @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
                 public int getIntrinsicHeight() {
-                    return AndroidUtilities.m54dp(EditTextBoldCursor.this.cursorSize + 20);
+                    return AndroidUtilities.m72dp(EditTextBoldCursor.this.cursorSize + 20);
                 }
 
                 @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
                 public int getIntrinsicWidth() {
-                    return AndroidUtilities.m55dp(EditTextBoldCursor.this.cursorWidth);
+                    return AndroidUtilities.m73dp(EditTextBoldCursor.this.cursorWidth);
                 }
             };
             this.cursorDrawable = shapeDrawable;
@@ -354,7 +347,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 declaredMethod2.setAccessible(true);
             }
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
         if (this.cursorDrawable == null) {
             try {
@@ -374,12 +367,12 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3417R.C3419drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3419R.C3421drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
         }
-        this.cursorSize = AndroidUtilities.m54dp(24);
+        this.cursorSize = AndroidUtilities.m72dp(24);
     }
 
     public void fixHandleView(boolean z) {
@@ -459,7 +452,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3417R.C3419drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3419R.C3421drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
@@ -548,9 +541,9 @@ public class EditTextBoldCursor extends EditTextEffects {
             if (this.lastSize != measuredHeight) {
                 setHintText(this.hint);
             }
-            this.lineY = ((getMeasuredHeight() - this.hintLayout.getHeight()) / 2.0f) + this.hintLayout.getHeight() + AndroidUtilities.m54dp(6);
+            this.lineY = ((getMeasuredHeight() - this.hintLayout.getHeight()) / 2.0f) + this.hintLayout.getHeight() + AndroidUtilities.m72dp(6);
         } else {
-            this.lineY = getMeasuredHeight() - AndroidUtilities.m54dp(2);
+            this.lineY = getMeasuredHeight() - AndroidUtilities.m72dp(2);
         }
         this.lastSize = measuredHeight;
     }
@@ -585,7 +578,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 return;
             }
         }
-        this.hintLayout = new StaticLayout(charSequence, getPaint(), AndroidUtilities.m54dp(1000), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+        this.hintLayout = new StaticLayout(charSequence, getPaint(), AndroidUtilities.m72dp(1000), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
     }
 
     public Layout getHintLayoutEx() {
@@ -598,7 +591,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.onFocusChanged(z, i, rect);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         checkHeaderVisibility(true);
     }
@@ -649,6 +642,9 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     @Override // android.widget.TextView
     public int getExtendedPaddingTop() {
+        if (this.ignoreClipTop) {
+            return 0;
+        }
         int i = this.ignoreTopCount;
         if (i != 0) {
             this.ignoreTopCount = i - 1;
@@ -722,8 +718,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         int selectionStart = getSelectionStart();
         int lineForOffset = layout.getLineForOffset(selectionStart);
         updateCursorPosition(layout.getLineTop(lineForOffset), layout.getLineTop(lineForOffset + 1), layout.getPrimaryHorizontal(selectionStart));
-        this.lastText = layout.getText();
-        this.lastOffset = selectionStart;
+        layout.getText();
         return true;
     }
 
@@ -747,7 +742,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         if (f2 >= f3 - 1.0f) {
             return (width + scrollX) - (i2 - this.mTempRect.right);
         }
-        if (Math.abs(f2) <= 1.0f || (TextUtils.isEmpty(getText()) && ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES - scrollX <= f3 + 1.0f && max <= 1.0f)) {
+        if (Math.abs(f2) <= 1.0f || (TextUtils.isEmpty(getText()) && 1048576 - scrollX <= f3 + 1.0f && max <= 1.0f)) {
             i = this.mTempRect.left;
         } else {
             scrollX = (int) max;
@@ -758,10 +753,10 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     private void updateCursorPosition(int i, int i2, float f) {
         int clampHorizontalPosition = clampHorizontalPosition(this.gradientDrawable, f);
-        int m55dp = AndroidUtilities.m55dp(this.cursorWidth);
+        int m73dp = AndroidUtilities.m73dp(this.cursorWidth);
         GradientDrawable gradientDrawable = this.gradientDrawable;
         Rect rect = this.mTempRect;
-        gradientDrawable.setBounds(clampHorizontalPosition, i - rect.top, m55dp + clampHorizontalPosition, i2 + rect.bottom);
+        gradientDrawable.setBounds(clampHorizontalPosition, i - rect.top, m73dp + clampHorizontalPosition, i2 + rect.bottom);
     }
 
     @Override // android.widget.TextView
@@ -787,7 +782,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.onAttachedToWindow();
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
         this.attachedToWindow = getRootView();
         AndroidUtilities.runOnUIThread(this.invalidateRunnable);
@@ -863,7 +858,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.setSelection(i, i2);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 
@@ -872,7 +867,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         try {
             super.setSelection(i);
         } catch (Exception e) {
-            FileLog.m49e(e);
+            FileLog.m67e(e);
         }
     }
 

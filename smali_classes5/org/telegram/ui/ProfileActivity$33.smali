@@ -29,19 +29,19 @@
     return-void
 .end method
 
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)V
-    .locals 9
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)V
+    .locals 10
 
-    move-object v8, p0
+    move-object v9, p0
 
     move-object v0, p1
 
-    .line 5247
-    iput-object v0, v8, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 5306
+    iput-object v0, v9, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-object/from16 v0, p9
+    move-object/from16 v0, p10
 
-    iput-object v0, v8, Lorg/telegram/ui/ProfileActivity$33;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
+    iput-object v0, v9, Lorg/telegram/ui/ProfileActivity$33;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
     move-object v0, p0
 
@@ -53,13 +53,15 @@
 
     move-object v4, p5
 
-    move v5, p6
+    move/from16 v5, p6
 
-    move-object/from16 v6, p7
+    move/from16 v6, p7
 
-    move/from16 v7, p8
+    move-object/from16 v7, p8
 
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    move/from16 v8, p9
+
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
     return-void
 .end method
@@ -67,7 +69,7 @@
 .method private static synthetic lambda$onEmojiSelected$0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 5283
+    .line 5342
     instance-of p0, p0, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     return-void
@@ -78,14 +80,14 @@
 .method protected onEmojiSelected(Landroid/view/View;Ljava/lang/Long;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Integer;)V
     .locals 5
 
-    .line 5250
+    .line 5309
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;-><init>()V
 
     if-nez p2, :cond_0
 
-    .line 5252
+    .line 5311
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
@@ -97,14 +99,14 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 5254
+    .line 5313
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;-><init>()V
 
     iput-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    .line 5255
+    .line 5314
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -113,7 +115,7 @@
 
     iput-wide v0, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    .line 5256
+    .line 5315
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
@@ -126,7 +128,7 @@
 
     goto :goto_0
 
-    .line 5258
+    .line 5317
     :cond_1
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
@@ -134,7 +136,7 @@
 
     iput-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    .line 5259
+    .line 5318
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -143,11 +145,11 @@
 
     iput-wide v0, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    .line 5261
+    .line 5320
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$18600(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$19200(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result p3
 
@@ -157,7 +159,7 @@
 
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$18500(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$19100(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result p4
 
@@ -183,15 +185,15 @@
 
     if-eqz p3, :cond_2
 
-    .line 5263
+    .line 5322
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_account_updateEmojiStatus;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
     iput-object v1, p3, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    .line 5264
+    .line 5323
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$18700(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$19300(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v1
 
@@ -205,10 +207,10 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->updateEmojiStatusUntilUpdate(JLorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
-    .line 5265
+    .line 5324
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$18800(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$19400(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v1
 
@@ -224,11 +226,11 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 5267
+    .line 5326
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$18900(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$19500(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result p3
 
@@ -247,10 +249,10 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 5269
+    .line 5328
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13300(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13700(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     move-result-object v2
 
@@ -264,11 +266,11 @@
 
     goto :goto_2
 
-    .line 5273
+    .line 5332
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13300(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13700(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     move-result-object v2
 
@@ -282,12 +284,12 @@
 
     goto :goto_3
 
-    .line 5271
+    .line 5330
     :cond_4
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13300(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$13700(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     move-result-object v2
 
@@ -295,7 +297,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$19000(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$19600(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -312,10 +314,10 @@
 
     if-eqz p3, :cond_7
 
-    .line 5278
+    .line 5337
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$19100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
+    invoke-static {p3}, Lorg/telegram/ui/ProfileActivity;->access$19700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
 
     move-result-object p3
 
@@ -325,21 +327,21 @@
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animateChange(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
 
-    .line 5280
+    .line 5339
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$19200(Lorg/telegram/ui/ProfileActivity;)V
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$19800(Lorg/telegram/ui/ProfileActivity;)V
 
-    .line 5281
+    .line 5340
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$19300(Lorg/telegram/ui/ProfileActivity;)V
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$19900(Lorg/telegram/ui/ProfileActivity;)V
 
-    .line 5282
+    .line 5341
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$19400(Lorg/telegram/ui/ProfileActivity;)I
+    invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$20000(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result p2
 
@@ -351,21 +353,21 @@
 
     invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 5287
+    .line 5346
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
     aget-object p1, p1, v0
 
     if-eqz p1, :cond_8
 
-    .line 5288
+    .line 5347
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 p2, 0x0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$13402(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
+    invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$13802(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
-    .line 5289
+    .line 5348
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
     aget-object p1, p1, v0

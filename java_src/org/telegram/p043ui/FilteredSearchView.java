@@ -30,7 +30,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -94,7 +94,7 @@ import org.telegram.tgnet.TLRPC$messages_Messages;
 /* renamed from: org.telegram.ui.FilteredSearchView */
 /* loaded from: classes5.dex */
 public class FilteredSearchView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    private static SpannableStringBuilder arrowSpan;
+    private static SpannableStringBuilder[] arrowSpan = new SpannableStringBuilder[3];
     RecyclerView.Adapter adapter;
     private SearchViewPager.ChatPreviewDelegate chatPreviewDelegate;
     Runnable clearCurrentResultsRunnable;
@@ -287,13 +287,13 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                         placeProviderObject.parentView.getLocationInWindow(iArr);
                         placeProviderObject.clipTopAddition = 0;
                         if (PhotoViewer.isShowingImage(messageObject) && (pinnedHeader = recyclerListView.getPinnedHeader()) != null) {
-                            int m55dp = (childAt instanceof SharedDocumentCell ? AndroidUtilities.m55dp(8.0f) + 0 : 0) - placeProviderObject.viewY;
-                            if (m55dp > childAt.getHeight()) {
-                                recyclerListView.scrollBy(0, -(m55dp + pinnedHeader.getHeight()));
+                            int m73dp = (childAt instanceof SharedDocumentCell ? AndroidUtilities.m73dp(8.0f) + 0 : 0) - placeProviderObject.viewY;
+                            if (m73dp > childAt.getHeight()) {
+                                recyclerListView.scrollBy(0, -(m73dp + pinnedHeader.getHeight()));
                             } else {
                                 int height = placeProviderObject.viewY - recyclerListView.getHeight();
                                 if (childAt instanceof SharedDocumentCell) {
-                                    height -= AndroidUtilities.m55dp(8.0f);
+                                    height -= AndroidUtilities.m73dp(8.0f);
                                 }
                                 if (height >= 0) {
                                     recyclerListView.scrollBy(0, height + childAt.getHeight());
@@ -328,7 +328,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                     for (int i = 0; i < getChildCount(); i++) {
                         if (getChildViewHolder(getChildAt(i)).getItemViewType() == 1) {
                             canvas.save();
-                            canvas.translate(getChildAt(i).getX(), (getChildAt(i).getY() - getChildAt(i).getMeasuredHeight()) + AndroidUtilities.m54dp(2));
+                            canvas.translate(getChildAt(i).getX(), (getChildAt(i).getY() - getChildAt(i).getMeasuredHeight()) + AndroidUtilities.m72dp(2));
                             getChildAt(i).draw(canvas);
                             canvas.restore();
                             invalidate();
@@ -391,7 +391,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 FilteredSearchView.this.chatPreviewDelegate.finish();
             }
         });
-        this.recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m54dp(3));
+        this.recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m72dp(3));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(parentActivity);
         this.layoutManager = linearLayoutManager;
         this.recyclerListView.setLayoutManager(linearLayoutManager);
@@ -409,13 +409,13 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         addView(flickerLoadingView);
         addView(this.recyclerListView);
         this.recyclerListView.setSectionsType(2);
-        this.recyclerListView.setOnScrollListener(new C57596());
+        this.recyclerListView.setOnScrollListener(new C58216());
         ChatActionCell chatActionCell = new ChatActionCell(parentActivity);
         this.floatingDateView = chatActionCell;
         chatActionCell.setCustomDate((int) (System.currentTimeMillis() / 1000), false, false);
         chatActionCell.setAlpha(BitmapDescriptorFactory.HUE_RED);
         chatActionCell.setOverrideColor(Theme.key_chat_mediaTimeBackground, Theme.key_chat_mediaTimeText);
-        chatActionCell.setTranslationY(-AndroidUtilities.m54dp(48));
+        chatActionCell.setTranslationY(-AndroidUtilities.m72dp(48));
         addView(chatActionCell, LayoutHelper.createFrame(-2, -2, 49, 0, 4, 0, 0));
         this.dialogsAdapter = new OnlyUserFiltersAdapter();
         this.sharedPhotoVideoAdapter = new SharedPhotoVideoAdapter(getContext());
@@ -446,8 +446,8 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
 
     /* renamed from: org.telegram.ui.FilteredSearchView$6 */
     /* loaded from: classes5.dex */
-    public class C57596 extends RecyclerView.OnScrollListener {
-        C57596() {
+    public class C58216 extends RecyclerView.OnScrollListener {
+        C58216() {
             FilteredSearchView.this = r1;
         }
 
@@ -474,7 +474,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilteredSearchView$6$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            FilteredSearchView.C57596.this.lambda$onScrolled$0();
+                            FilteredSearchView.C58216.this.lambda$onScrolled$0();
                         }
                     });
                 }
@@ -502,23 +502,39 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         }
     }
 
-    public static CharSequence createFromInfoString(MessageObject messageObject) {
-        return createFromInfoString(messageObject, true);
+    public static CharSequence createFromInfoString(MessageObject messageObject, int i) {
+        return createFromInfoString(messageObject, true, i);
     }
 
-    public static CharSequence createFromInfoString(MessageObject messageObject, boolean z) {
+    public static CharSequence createFromInfoString(MessageObject messageObject, boolean z, int i) {
+        return createFromInfoString(messageObject, z, i, null);
+    }
+
+    public static CharSequence createFromInfoString(MessageObject messageObject, boolean z, int i, TextPaint textPaint) {
         TLRPC$TL_forumTopic findTopic;
         TLRPC$TL_forumTopic findTopic2;
+        int i2;
         if (messageObject == null) {
             return "";
         }
-        if (arrowSpan == null) {
-            arrowSpan = new SpannableStringBuilder(">");
-            Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3417R.C3419drawable.attach_arrow_right).mutate();
-            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(mutate, 2);
-            mutate.setBounds(0, AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(14));
-            SpannableStringBuilder spannableStringBuilder = arrowSpan;
-            spannableStringBuilder.setSpan(coloredImageSpan, 0, spannableStringBuilder.length(), 0);
+        SpannableStringBuilder[] spannableStringBuilderArr = arrowSpan;
+        if (spannableStringBuilderArr[i] == null) {
+            spannableStringBuilderArr[i] = new SpannableStringBuilder(">");
+            if (i == 0) {
+                i2 = C3419R.C3421drawable.attach_arrow_right;
+            } else if (i == 1) {
+                i2 = C3419R.C3421drawable.msg_mini_arrow_mediathin;
+            } else if (i != 2) {
+                return "";
+            } else {
+                i2 = C3419R.C3421drawable.msg_mini_arrow_mediabold;
+            }
+            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(ContextCompat.getDrawable(ApplicationLoader.applicationContext, i2).mutate(), i == 0 ? 2 : 1);
+            if (i == 1 || i == 2) {
+                coloredImageSpan.setScale(0.85f);
+            }
+            SpannableStringBuilder[] spannableStringBuilderArr2 = arrowSpan;
+            spannableStringBuilderArr2[i].setSpan(coloredImageSpan, 0, spannableStringBuilderArr2[i].length(), 0);
         }
         CharSequence charSequence = null;
         TLRPC$User user = messageObject.messageOwner.from_id.user_id != 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(messageObject.messageOwner.from_id.user_id)) : null;
@@ -535,21 +551,21 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         }
         if (user != null && chat2 != null) {
             CharSequence charSequence2 = chat2.title;
-            if (ChatObject.isForum(chat2) && (findTopic2 = MessagesController.getInstance(UserConfig.selectedAccount).getTopicsController().findTopic(chat2.f1515id, MessageObject.getTopicId(messageObject.messageOwner, true))) != null) {
+            if (ChatObject.isForum(chat2) && (findTopic2 = MessagesController.getInstance(UserConfig.selectedAccount).getTopicsController().findTopic(chat2.f1518id, MessageObject.getTopicId(messageObject.messageOwner, true))) != null) {
                 charSequence2 = ForumUtilities.getTopicSpannedName(findTopic2, null);
             }
-            CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence2, null, AndroidUtilities.m54dp(12), false);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            spannableStringBuilder2.append(Emoji.replaceEmoji(UserObject.getFirstName(user), null, AndroidUtilities.m54dp(12), false)).append((char) 8202).append((CharSequence) arrowSpan).append((char) 8202).append(replaceEmoji);
-            charSequence = spannableStringBuilder2;
+            CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence2, textPaint == null ? null : textPaint.getFontMetricsInt(), false);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            spannableStringBuilder.append(Emoji.replaceEmoji(UserObject.getFirstName(user), textPaint != null ? textPaint.getFontMetricsInt() : null, false)).append((char) 8202).append((CharSequence) arrowSpan[i]).append((char) 8202).append(replaceEmoji);
+            charSequence = spannableStringBuilder;
         } else if (user != null) {
-            charSequence = Emoji.replaceEmoji(UserObject.getUserName(user), null, AndroidUtilities.m54dp(12), false);
+            charSequence = Emoji.replaceEmoji(UserObject.getUserName(user), textPaint != null ? textPaint.getFontMetricsInt() : null, false);
         } else if (chat != null) {
             CharSequence charSequence3 = chat.title;
-            if (ChatObject.isForum(chat) && (findTopic = MessagesController.getInstance(UserConfig.selectedAccount).getTopicsController().findTopic(chat.f1515id, MessageObject.getTopicId(messageObject.messageOwner, true))) != null) {
+            if (ChatObject.isForum(chat) && (findTopic = MessagesController.getInstance(UserConfig.selectedAccount).getTopicsController().findTopic(chat.f1518id, MessageObject.getTopicId(messageObject.messageOwner, true))) != null) {
                 charSequence3 = ForumUtilities.getTopicSpannedName(findTopic, null);
             }
-            charSequence = Emoji.replaceEmoji(charSequence3, null, AndroidUtilities.m54dp(12), false);
+            charSequence = Emoji.replaceEmoji(charSequence3, textPaint != null ? textPaint.getFontMetricsInt() : null, false);
         }
         return charSequence == null ? "" : charSequence;
     }
@@ -661,7 +677,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         final ArrayList<Object> arrayList3 = null;
         if (j != 0) {
             TLRPC$TL_messages_search tLRPC$TL_messages_search = new TLRPC$TL_messages_search();
-            tLRPC$TL_messages_search.f1620q = str;
+            tLRPC$TL_messages_search.f1628q = str;
             tLRPC$TL_messages_search.limit = 20;
             tLRPC$TL_messages_search.filter = mediaFilterData == null ? new TLRPC$TL_inputMessagesFilterEmpty() : mediaFilterData.filter;
             tLRPC$TL_messages_search.peer = AccountInstance.getInstance(i).getMessagesController().getInputPeer(j);
@@ -685,7 +701,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             }
             TLRPC$TL_messages_searchGlobal tLRPC$TL_messages_searchGlobal2 = new TLRPC$TL_messages_searchGlobal();
             tLRPC$TL_messages_searchGlobal2.limit = 20;
-            tLRPC$TL_messages_searchGlobal2.f1621q = str;
+            tLRPC$TL_messages_searchGlobal2.f1629q = str;
             tLRPC$TL_messages_searchGlobal2.filter = mediaFilterData == null ? new TLRPC$TL_inputMessagesFilterEmpty() : mediaFilterData.filter;
             if (j2 > 0) {
                 tLRPC$TL_messages_searchGlobal2.min_date = (int) (j2 / 1000);
@@ -747,9 +763,9 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         }
         this.isLoading = false;
         if (tLRPC$TL_error != null) {
-            this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3417R.string.SearchEmptyViewTitle2));
+            this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3419R.string.SearchEmptyViewTitle2));
             this.emptyView.subtitle.setVisibility(0);
-            this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3417R.string.SearchEmptyViewFilteredSubtitle2));
+            this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3419R.string.SearchEmptyViewFilteredSubtitle2));
             this.emptyView.showProgress(false, true);
             return;
         }
@@ -790,28 +806,28 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         if (this.messages.isEmpty()) {
             if (mediaFilterData != null) {
                 if (TextUtils.isEmpty(this.currentDataQuery) && j == 0 && j2 == 0) {
-                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle", C3417R.string.SearchEmptyViewTitle));
+                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle", C3419R.string.SearchEmptyViewTitle));
                     int i4 = mediaFilterData.filterType;
                     if (i4 == 1) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleFiles", C3417R.string.SearchEmptyViewFilteredSubtitleFiles);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleFiles", C3419R.string.SearchEmptyViewFilteredSubtitleFiles);
                     } else if (i4 == 0) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMedia", C3417R.string.SearchEmptyViewFilteredSubtitleMedia);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMedia", C3419R.string.SearchEmptyViewFilteredSubtitleMedia);
                     } else if (i4 == 2) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleLinks", C3417R.string.SearchEmptyViewFilteredSubtitleLinks);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleLinks", C3419R.string.SearchEmptyViewFilteredSubtitleLinks);
                     } else if (i4 == 3) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMusic", C3417R.string.SearchEmptyViewFilteredSubtitleMusic);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMusic", C3419R.string.SearchEmptyViewFilteredSubtitleMusic);
                     } else {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleVoice", C3417R.string.SearchEmptyViewFilteredSubtitleVoice);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleVoice", C3419R.string.SearchEmptyViewFilteredSubtitleVoice);
                     }
                     this.emptyView.subtitle.setVisibility(0);
                     this.emptyView.subtitle.setText(string);
                 } else {
-                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3417R.string.SearchEmptyViewTitle2));
+                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3419R.string.SearchEmptyViewTitle2));
                     this.emptyView.subtitle.setVisibility(0);
-                    this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3417R.string.SearchEmptyViewFilteredSubtitle2));
+                    this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3419R.string.SearchEmptyViewFilteredSubtitle2));
                 }
             } else {
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3417R.string.SearchEmptyViewTitle2));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3419R.string.SearchEmptyViewTitle2));
                 this.emptyView.subtitle.setVisibility(8);
             }
         }
@@ -845,13 +861,13 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             if (arrayList2 != null) {
                 this.localTipChats.addAll(arrayList2);
             }
-            if (str != null && str.length() >= 3 && (LocaleController.getString("SavedMessages", C3417R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+            if (str != null && str.length() >= 3 && (LocaleController.getString("SavedMessages", C3419R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                 int i6 = 0;
                 while (true) {
                     if (i6 >= this.localTipChats.size()) {
                         z2 = false;
                         break;
-                    } else if ((this.localTipChats.get(i6) instanceof TLRPC$User) && UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().f1656id == ((TLRPC$User) this.localTipChats.get(i6)).f1656id) {
+                    } else if ((this.localTipChats.get(i6) instanceof TLRPC$User) && UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().f1675id == ((TLRPC$User) this.localTipChats.get(i6)).f1675id) {
                         z2 = true;
                         break;
                     } else {
@@ -865,7 +881,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             this.localTipDates.clear();
             this.localTipDates.addAll(arrayList3);
             this.localTipArchive = false;
-            if (str != null && str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3417R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str))) {
+            if (str != null && str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3419R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str))) {
                 this.localTipArchive = true;
             }
             Delegate delegate = this.delegate;
@@ -908,7 +924,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                     }
                     animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.FilteredSearchView.7.1
                         {
-                            ViewTreeObserver$OnPreDrawListenerC57607.this = this;
+                            ViewTreeObserver$OnPreDrawListenerC58227.this = this;
                         }
 
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -928,14 +944,14 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view3, View.ALPHA, view3.getAlpha(), BitmapDescriptorFactory.HUE_RED);
                             ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.FilteredSearchView.7.2
                                 {
-                                    ViewTreeObserver$OnPreDrawListenerC57607.this = this;
+                                    ViewTreeObserver$OnPreDrawListenerC58227.this = this;
                                 }
 
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     view.setAlpha(1.0f);
                                     layoutManager.stopIgnoringView(view);
-                                    ViewTreeObserver$OnPreDrawListenerC57607 viewTreeObserver$OnPreDrawListenerC57607 = ViewTreeObserver$OnPreDrawListenerC57607.this;
+                                    ViewTreeObserver$OnPreDrawListenerC58227 viewTreeObserver$OnPreDrawListenerC58227 = ViewTreeObserver$OnPreDrawListenerC58227.this;
                                     FilteredSearchView.this.recyclerListView.removeView(view);
                                 }
                             });
@@ -1217,7 +1233,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                             openUrl(str);
                         }
                     } catch (Exception e) {
-                        FileLog.m49e(e);
+                        FileLog.m67e(e);
                     }
                 }
             } else if (view instanceof SharedDocumentCell) {
@@ -1258,7 +1274,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
     /* loaded from: classes5.dex */
     public class SharedLinksAdapter extends RecyclerListView.SectionsAdapter {
         private Context mContext;
-        private final SharedLinkCell.SharedLinkCellDelegate sharedLinkCellDelegate = new C57701();
+        private final SharedLinkCell.SharedLinkCellDelegate sharedLinkCellDelegate = new C58321();
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.SectionsAdapter
         public Object getItem(int i, int i2) {
@@ -1277,8 +1293,8 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
 
         /* renamed from: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C57701 implements SharedLinkCell.SharedLinkCellDelegate {
-            C57701() {
+        public class C58321 implements SharedLinkCell.SharedLinkCellDelegate {
+            C58321() {
                 SharedLinksAdapter.this = r1;
             }
 
@@ -1300,10 +1316,10 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 }
                 BottomSheet.Builder builder = new BottomSheet.Builder(FilteredSearchView.this.parentActivity);
                 builder.setTitle(str);
-                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3417R.string.Open), LocaleController.getString("Copy", C3417R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1$$ExternalSyntheticLambda0
+                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3419R.string.Open), LocaleController.getString("Copy", C3419R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        FilteredSearchView.SharedLinksAdapter.C57701.this.lambda$onLinkPress$0(str, dialogInterface, i);
+                        FilteredSearchView.SharedLinksAdapter.C58321.this.lambda$onLinkPress$0(str, dialogInterface, i);
                     }
                 });
                 FilteredSearchView.this.parentFragment.showDialog(builder.create());
@@ -1767,7 +1783,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 dialogCell = flickerLoadingView;
             } else {
                 GraySectionCell graySectionCell = new GraySectionCell(viewGroup.getContext());
-                graySectionCell.setText(LocaleController.getString("SearchMessages", C3417R.string.SearchMessages));
+                graySectionCell.setText(LocaleController.getString("SearchMessages", C3419R.string.SearchMessages));
                 dialogCell = graySectionCell;
             }
             dialogCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -1903,7 +1919,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.floatingDateAnimation = animatorSet2;
             animatorSet2.setDuration(180L);
-            this.floatingDateAnimation.playTogether(ObjectAnimator.ofFloat(this.floatingDateView, View.ALPHA, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(this.floatingDateView, View.TRANSLATION_Y, -AndroidUtilities.m54dp(48)));
+            this.floatingDateAnimation.playTogether(ObjectAnimator.ofFloat(this.floatingDateView, View.ALPHA, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(this.floatingDateView, View.TRANSLATION_Y, -AndroidUtilities.m72dp(48)));
             this.floatingDateAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT);
             this.floatingDateAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.FilteredSearchView.9
                 {

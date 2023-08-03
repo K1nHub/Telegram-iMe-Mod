@@ -32,7 +32,14 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     private static final int ID3_TEXT_ENCODING_UTF_16 = 1;
     private static final int ID3_TEXT_ENCODING_UTF_16BE = 2;
     private static final int ID3_TEXT_ENCODING_UTF_8 = 3;
-    public static final FramePredicate NO_FRAMES_PREDICATE = Id3Decoder$$ExternalSyntheticLambda0.INSTANCE;
+    public static final FramePredicate NO_FRAMES_PREDICATE = new FramePredicate() { // from class: com.google.android.exoplayer2.metadata.id3.Id3Decoder$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.metadata.id3.Id3Decoder.FramePredicate
+        public final boolean evaluate(int i, int i2, int i3, int i4, int i5) {
+            boolean lambda$static$0;
+            lambda$static$0 = Id3Decoder.lambda$static$0(i, i2, i3, i4, i5);
+            return lambda$static$0;
+        }
+    };
     private static final String TAG = "Id3Decoder";
     private final FramePredicate framePredicate;
 
@@ -80,7 +87,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
         boolean z = false;
         if (!validateFrames(parsableByteArray, decodeHeader.majorVersion, i2, false)) {
             if (decodeHeader.majorVersion != 4 || !validateFrames(parsableByteArray, 4, i2, true)) {
-                Log.m796w(TAG, "Failed to validate ID3 tag with majorVersion=" + decodeHeader.majorVersion);
+                Log.m814w(TAG, "Failed to validate ID3 tag with majorVersion=" + decodeHeader.majorVersion);
                 return null;
             }
             z = true;
@@ -97,12 +104,12 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     private static Id3Header decodeHeader(ParsableByteArray parsableByteArray) {
         int readUnsignedInt24;
         if (parsableByteArray.bytesLeft() < 10) {
-            Log.m796w(TAG, "Data too short to be an ID3 tag");
+            Log.m814w(TAG, "Data too short to be an ID3 tag");
             return null;
         }
         boolean z = false;
         if (parsableByteArray.readUnsignedInt24() != 4801587) {
-            Log.m796w(TAG, "Unexpected first three bytes of ID3 tag header: 0x" + String.format("%06X", Integer.valueOf(readUnsignedInt24)));
+            Log.m814w(TAG, "Unexpected first three bytes of ID3 tag header: 0x" + String.format("%06X", Integer.valueOf(readUnsignedInt24)));
             return null;
         }
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
@@ -111,7 +118,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
         int readSynchSafeInt = parsableByteArray.readSynchSafeInt();
         if (readUnsignedByte == 2) {
             if ((readUnsignedByte2 & 64) != 0) {
-                Log.m796w(TAG, "Skipped ID3 tag with majorVersion=2 and undefined compression scheme");
+                Log.m814w(TAG, "Skipped ID3 tag with majorVersion=2 and undefined compression scheme");
                 return null;
             }
         } else if (readUnsignedByte == 3) {
@@ -121,7 +128,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
                 readSynchSafeInt -= readInt + 4;
             }
         } else if (readUnsignedByte != 4) {
-            Log.m796w(TAG, "Skipped ID3 tag with unsupported majorVersion=" + readUnsignedByte);
+            Log.m814w(TAG, "Skipped ID3 tag with unsupported majorVersion=" + readUnsignedByte);
             return null;
         } else {
             if ((readUnsignedByte2 & 64) != 0) {
@@ -314,7 +321,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
 
     private static ImmutableList<String> decodeTextInformationFrameValues(byte[] bArr, int i, int i2) {
         if (i2 >= bArr.length) {
-            return ImmutableList.m743of("");
+            return ImmutableList.m761of("");
         }
         ImmutableList.Builder builder = ImmutableList.builder();
         int indexOfTerminator = indexOfTerminator(bArr, i2, i);
@@ -324,7 +331,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
             indexOfTerminator = indexOfTerminator(bArr, i2, i);
         }
         ImmutableList<String> build = builder.build();
-        return build.isEmpty() ? ImmutableList.m743of("") : build;
+        return build.isEmpty() ? ImmutableList.m761of("") : build;
     }
 
     private static UrlLinkFrame decodeWxxxFrame(ParsableByteArray parsableByteArray, int i) {

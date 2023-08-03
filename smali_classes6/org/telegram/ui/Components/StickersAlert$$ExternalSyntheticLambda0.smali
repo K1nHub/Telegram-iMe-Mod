@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$BIsB5b3AagV3thFNtYuLEPgR3ho(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert;->$r8$lambda$0A0lLRVSaaPZb-rccot8Ma1_O5Y(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

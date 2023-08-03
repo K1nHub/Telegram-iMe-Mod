@@ -24,13 +24,13 @@
 .method public constructor <init>(IJ)V
     .locals 0
 
-    .line 1528
+    .line 1546
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1529
+    .line 1547
     iput-wide p2, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->dialogId:J
 
-    .line 1530
+    .line 1548
     iput p1, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->messageId:I
 
     return-void
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1541
+    .line 1559
     const-class v2, Lorg/telegram/ui/FilteredSearchView$MessageHashId;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -63,11 +63,11 @@
 
     goto :goto_1
 
-    .line 1542
+    .line 1560
     :cond_1
     check-cast p1, Lorg/telegram/ui/FilteredSearchView$MessageHashId;
 
-    .line 1543
+    .line 1561
     iget-wide v2, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->dialogId:J
 
     iget-wide v4, p1, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->dialogId:J
@@ -98,7 +98,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1548
+    .line 1566
     iget v0, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->messageId:I
 
     return v0
@@ -107,10 +107,10 @@
 .method public set(IJ)V
     .locals 0
 
-    .line 1534
+    .line 1552
     iput-wide p2, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->dialogId:J
 
-    .line 1535
+    .line 1553
     iput p1, p0, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->messageId:I
 
     return-void

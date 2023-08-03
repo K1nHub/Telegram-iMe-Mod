@@ -46,12 +46,12 @@ public class SmsReceiver extends BroadcastReceiver {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m49e(th);
+            FileLog.m67e(th);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onReceive$0(String str) {
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveSmsCode, str);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveSmsCode, str);
     }
 }

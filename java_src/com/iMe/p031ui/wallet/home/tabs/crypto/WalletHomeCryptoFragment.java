@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.chad.library.adapter.base.BaseNodeAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.chad.library.adapter.base.listener.GridSpanSizeLookup;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.iMe.common.IdFabric$CustomType;
@@ -44,6 +45,7 @@ import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.RecycleViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
@@ -59,6 +61,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -67,11 +70,17 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoBinding;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -93,6 +102,12 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
     private final ResettableLazy mediaEditManager$delegate;
     private final MoxyKtxDelegate presenter$delegate;
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int setupWalletRecycleView$lambda$19$lambda$18$lambda$16(GridLayoutManager gridLayoutManager, int i, int i2) {
+        Intrinsics.checkNotNullParameter(gridLayoutManager, "<anonymous parameter 0>");
+        return 1;
+    }
+
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
     public /* synthetic */ void showSelectOptionsDialog(String str, String[] strArr, DialogInterface.OnClickListener onClickListener) {
         WalletCreateManagerView.CC.$default$showSelectOptionsDialog(this, str, strArr, onClickListener);
@@ -100,14 +115,92 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
 
     public WalletHomeCryptoFragment() {
         Lazy lazy;
-        WalletHomeCryptoFragment$presenter$2 walletHomeCryptoFragment$presenter$2 = new WalletHomeCryptoFragment$presenter$2(this);
+        Function0<WalletHomeCryptoPresenter> function0 = new Function0<WalletHomeCryptoPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$presenter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final WalletHomeCryptoPresenter invoke() {
+                Lazy lazy2;
+                final WalletHomeCryptoFragment walletHomeCryptoFragment = WalletHomeCryptoFragment.this;
+                lazy2 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<WalletHomeCryptoPresenter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$presenter$2$invoke$$inlined$inject$default$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter, java.lang.Object] */
+                    @Override // kotlin.jvm.functions.Function0
+                    public final WalletHomeCryptoPresenter invoke() {
+                        Scope rootScope;
+                        KoinComponent koinComponent = KoinComponent.this;
+                        Qualifier qualifier = r2;
+                        Function0<? extends ParametersHolder> function02 = r3;
+                        if (koinComponent instanceof KoinScopeComponent) {
+                            rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                        } else {
+                            rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                        }
+                        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletHomeCryptoPresenter.class), qualifier, function02);
+                    }
+                });
+                return (WalletHomeCryptoPresenter) lazy2.getValue();
+            }
+        };
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeCryptoPresenter.class.getName() + ".presenter", walletHomeCryptoFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletHomeCryptoFragment$special$$inlined$inject$default$1(this, null, null));
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeCryptoPresenter.class.getName() + ".presenter", function0);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<BalancesRecycleAdapter>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.home.adapter.BalancesRecycleAdapter] */
+            @Override // kotlin.jvm.functions.Function0
+            public final BalancesRecycleAdapter invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function02 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BalancesRecycleAdapter.class), qualifier, function02);
+            }
+        });
         this.balancesRecycleAdapter$delegate = lazy;
-        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeCryptoFragment$binding$2(this), 1, (Object) null);
-        this.mediaEditManager$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeCryptoFragment$mediaEditManager$2(this), 1, (Object) null);
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<ForkFragmentWalletHomeCryptoBinding>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$binding$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ForkFragmentWalletHomeCryptoBinding invoke() {
+                return ForkFragmentWalletHomeCryptoBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoFragment.this));
+            }
+        }, 1, (Object) null);
+        this.mediaEditManager$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<MediaEditManager>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$mediaEditManager$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final MediaEditManager invoke() {
+                int i;
+                WalletHomeCryptoFragment walletHomeCryptoFragment = WalletHomeCryptoFragment.this;
+                i = ((BaseFragment) walletHomeCryptoFragment).currentAccount;
+                return new MediaEditManager(walletHomeCryptoFragment, i, null, 4, null);
+            }
+        }, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -295,7 +388,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
                 return IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE;
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3417R.string.wallet_receive_dialog_title), getResourceManager().getString(C3417R.string.wallet_receive_dialog_btn_text), address);
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3419R.string.wallet_receive_dialog_title), getResourceManager().getString(C3419R.string.wallet_receive_dialog_btn_text), address);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -378,7 +471,25 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
                 WalletHomeCryptoFragment.setupListeners$lambda$15$lambda$12(WalletHomeCryptoFragment.this, (Integer) obj);
             }
         });
-        balancesRecycleAdapter.getGlobalStateProvider().setOnRetryButtonClickAction(new WalletHomeCryptoFragment$setupListeners$1$3(this));
+        balancesRecycleAdapter.getGlobalStateProvider().setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$setupListeners$1$3
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                WalletHomeCryptoPresenter presenter;
+                presenter = WalletHomeCryptoFragment.this.getPresenter();
+                WalletHomeCryptoPresenter.loadScreenInfo$default(presenter, true, false, 0L, 6, null);
+            }
+        });
         balancesRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda5
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -437,15 +548,15 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3417R.C3420id.network_type_view) {
+        if (id == C3419R.C3422id.network_type_view) {
             this$0.getPresenter().startChooseNetworkDialog();
-        } else if (id == C3417R.C3420id.image_wallet_crypto_eye) {
+        } else if (id == C3419R.C3422id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
-        } else if (id == C3417R.C3420id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3419R.C3422id.image_wallet_crypto_tokens_settings) {
             this$0.getPresenter().openTokenSettingsScreen();
-        } else if (id == C3417R.C3420id.image_wallet_order_tokens) {
+        } else if (id == C3419R.C3422id.image_wallet_order_tokens) {
             this$0.getPresenter().onSelectTokensOrderTypeClicked();
-        } else if (id == C3417R.C3420id.image_copy) {
+        } else if (id == C3419R.C3422id.image_copy) {
             BaseNode baseNode = (BaseNode) this$0.getBalancesRecycleAdapter().getItem(i);
             if (baseNode instanceof CryptoAccountItem) {
                 ContextExtKt.copyToClipboard$default(((CryptoAccountItem) baseNode).getAddress(), null, 2, null);
@@ -506,8 +617,13 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
             }
 
             @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-            public /* synthetic */ boolean needCopy() {
-                return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needCopy(this);
+            public /* synthetic */ boolean isStoryReply() {
+                return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$isStoryReply(this);
+            }
+
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            public /* synthetic */ boolean needCopy(TLRPC$Document tLRPC$Document) {
+                return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needCopy(this, tLRPC$Document);
             }
 
             @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -596,7 +712,14 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         BalancesRecycleAdapter balancesRecycleAdapter = getBalancesRecycleAdapter();
         balancesRecycleAdapter.getNftTokenProvider().setSpanCount(4);
         balancesRecycleAdapter.setDiffCallback(new BalanceDiffCallback());
-        balancesRecycleAdapter.setGridSpanSizeLookup(WalletHomeCryptoFragment$$ExternalSyntheticLambda2.INSTANCE);
+        balancesRecycleAdapter.setGridSpanSizeLookup(new GridSpanSizeLookup() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda2
+            @Override // com.chad.library.adapter.base.listener.GridSpanSizeLookup
+            public final int getSpanSize(GridLayoutManager gridLayoutManager, int i, int i2) {
+                int i3;
+                i3 = WalletHomeCryptoFragment.setupWalletRecycleView$lambda$19$lambda$18$lambda$16(gridLayoutManager, i, i2);
+                return i3;
+            }
+        });
         balancesRecycleAdapter.setOnNetworkViewLayoutAction(new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda9
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {

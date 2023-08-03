@@ -48,7 +48,13 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
             str2 = TtmlNode.TEXT_EMPHASIS_AUTO;
         }
         Observable<ArrayList<Object>> translate = googleTranslationApi.translate(str, str2, this.$targetLanguage, blockText.toString());
-        final C19341 c19341 = C19341.INSTANCE;
+        final C19341 c19341 = new Function1<ArrayList<Object>, Translation>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.1
+            @Override // kotlin.jvm.functions.Function1
+            public final Translation invoke(ArrayList<Object> response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                return TranslationMappingKt.mapToDomain(response);
+            }
+        };
         Observable<R> map = translate.map(new Function() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -57,7 +63,20 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
                 return invoke$lambda$0;
             }
         });
-        final C19352 c19352 = new C19352(this.$blocks);
+        final List<CharSequence> list2 = this.$blocks;
+        final Function1<Observable<Translation>, ObservableSource<Translation>> function1 = new Function1<Observable<Translation>, ObservableSource<Translation>>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<Translation> invoke(Observable<Translation> observable) {
+                Intrinsics.checkNotNullParameter(observable, "observable");
+                return list2.size() > 1 ? observable.delay(600L, TimeUnit.MILLISECONDS) : observable;
+            }
+        };
         return map.compose(new ObservableTransformer() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$$ExternalSyntheticLambda0
             @Override // io.reactivex.ObservableTransformer
             public final ObservableSource apply(Observable observable) {
@@ -68,49 +87,10 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: TranslationRepositoryImpl.kt */
-    /* renamed from: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$1 */
-    /* loaded from: classes3.dex */
-    public static final class C19341 extends Lambda implements Function1<ArrayList<Object>, Translation> {
-        public static final C19341 INSTANCE = new C19341();
-
-        C19341() {
-            super(1);
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final Translation invoke(ArrayList<Object> response) {
-            Intrinsics.checkNotNullParameter(response, "response");
-            return TranslationMappingKt.mapToDomain(response);
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static final Translation invoke$lambda$0(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (Translation) tmp0.invoke(obj);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: TranslationRepositoryImpl.kt */
-    /* renamed from: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$2 */
-    /* loaded from: classes3.dex */
-    public static final class C19352 extends Lambda implements Function1<Observable<Translation>, ObservableSource<Translation>> {
-        final /* synthetic */ List<CharSequence> $blocks;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        /* JADX WARN: Multi-variable type inference failed */
-        C19352(List<? extends CharSequence> list) {
-            super(1);
-            this.$blocks = list;
-        }
-
-        @Override // kotlin.jvm.functions.Function1
-        public final ObservableSource<Translation> invoke(Observable<Translation> observable) {
-            Intrinsics.checkNotNullParameter(observable, "observable");
-            return this.$blocks.size() > 1 ? observable.delay(600L, TimeUnit.MILLISECONDS) : observable;
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

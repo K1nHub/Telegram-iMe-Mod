@@ -3,6 +3,7 @@ package com.google.android.exoplayer2.upstream;
 import android.text.TextUtils;
 import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.base.Ascii;
@@ -21,7 +22,14 @@ import java.util.List;
 import java.util.Map;
 /* loaded from: classes.dex */
 public interface HttpDataSource extends DataSource {
-    public static final Predicate<String> REJECT_PAYWALL_TYPES = HttpDataSource$$ExternalSyntheticLambda0.INSTANCE;
+    public static final Predicate<String> REJECT_PAYWALL_TYPES = new Predicate() { // from class: com.google.android.exoplayer2.upstream.HttpDataSource$$ExternalSyntheticLambda0
+        @Override // com.google.common.base.Predicate
+        public final boolean apply(Object obj) {
+            boolean lambda$static$0;
+            lambda$static$0 = HttpDataSource.CC.lambda$static$0((String) obj);
+            return lambda$static$0;
+        }
+    };
 
     void clearAllRequestProperties();
 

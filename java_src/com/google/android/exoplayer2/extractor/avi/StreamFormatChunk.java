@@ -6,9 +6,8 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.collect.ImmutableList;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class StreamFormatChunk implements AviChunk {
+final class StreamFormatChunk implements AviChunk {
     private static final String TAG = "StreamFormatChunk";
     public final Format format;
 
@@ -69,7 +68,7 @@ public final class StreamFormatChunk implements AviChunk {
         if (i == 1) {
             return parseWaveFormatEx(parsableByteArray);
         }
-        Log.m796w(TAG, "Ignoring strf box for unsupported track type: " + Util.getTrackTypeString(i));
+        Log.m814w(TAG, "Ignoring strf box for unsupported track type: " + Util.getTrackTypeString(i));
         return null;
     }
 
@@ -85,7 +84,7 @@ public final class StreamFormatChunk implements AviChunk {
         int readLittleEndianInt3 = parsableByteArray.readLittleEndianInt();
         String mimeTypeFromCompression = getMimeTypeFromCompression(readLittleEndianInt3);
         if (mimeTypeFromCompression == null) {
-            Log.m796w(TAG, "Ignoring track with unsupported compression " + readLittleEndianInt3);
+            Log.m814w(TAG, "Ignoring track with unsupported compression " + readLittleEndianInt3);
             return null;
         }
         Format.Builder builder = new Format.Builder();
@@ -97,7 +96,7 @@ public final class StreamFormatChunk implements AviChunk {
         int readLittleEndianUnsignedShort = parsableByteArray.readLittleEndianUnsignedShort();
         String mimeTypeFromTag = getMimeTypeFromTag(readLittleEndianUnsignedShort);
         if (mimeTypeFromTag == null) {
-            Log.m796w(TAG, "Ignoring track with unsupported format tag " + readLittleEndianUnsignedShort);
+            Log.m814w(TAG, "Ignoring track with unsupported format tag " + readLittleEndianUnsignedShort);
             return null;
         }
         int readLittleEndianUnsignedShort2 = parsableByteArray.readLittleEndianUnsignedShort();
@@ -113,7 +112,7 @@ public final class StreamFormatChunk implements AviChunk {
             builder.setPcmEncoding(pcmEncoding);
         }
         if ("audio/mp4a-latm".equals(mimeTypeFromTag) && readLittleEndianUnsignedShort3 > 0) {
-            builder.setInitializationData(ImmutableList.m743of(bArr));
+            builder.setInitializationData(ImmutableList.m761of(bArr));
         }
         return new StreamFormatChunk(builder.build());
     }

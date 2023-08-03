@@ -2,6 +2,7 @@ package com.iMe.domain.contacts;
 
 import androidx.collection.LongSparseArray;
 import com.iMe.domain.contacts.ContactSelectAction;
+import com.iMe.fork.utils.CollectionsUtilsKt;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.manager.TelegramApi;
 import com.iMe.manager.contacts.SelectedContactsDataStore;
@@ -10,9 +11,11 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableSource;
 import io.reactivex.Single;
 import io.reactivex.functions.Function;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
@@ -63,7 +66,32 @@ public final class ContactsInteractor {
     }
 
     private final Completable deleteUsersById(Single<List<Long>> single) {
-        final ContactsInteractor$deleteUsersById$1 contactsInteractor$deleteUsersById$1 = new ContactsInteractor$deleteUsersById$1(this);
+        final Function1<List<? extends Long>, List<? extends TLRPC$User>> function1 = new Function1<List<? extends Long>, List<? extends TLRPC$User>>() { // from class: com.iMe.domain.contacts.ContactsInteractor$deleteUsersById$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ List<? extends TLRPC$User> invoke(List<? extends Long> list) {
+                return invoke2((List<Long>) list);
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final List<TLRPC$User> invoke2(List<Long> ids) {
+                int collectionSizeOrDefault;
+                TLRPC$User user;
+                Intrinsics.checkNotNullParameter(ids, "ids");
+                ContactsInteractor contactsInteractor = ContactsInteractor.this;
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(ids, 10);
+                ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                for (Number number : ids) {
+                    user = contactsInteractor.toUser(number.longValue());
+                    arrayList.add(user);
+                }
+                return arrayList;
+            }
+        };
         Single subscribeOn = single.map(new Function() { // from class: com.iMe.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -71,8 +99,21 @@ public final class ContactsInteractor {
                 deleteUsersById$lambda$0 = ContactsInteractor.deleteUsersById$lambda$0(Function1.this, obj);
                 return deleteUsersById$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo699io());
-        final ContactsInteractor$deleteUsersById$2 contactsInteractor$deleteUsersById$2 = new ContactsInteractor$deleteUsersById$2(this);
+        }).subscribeOn(this.schedulersProvider.mo717io());
+        final Function1<List<? extends TLRPC$User>, CompletableSource> function12 = new Function1<List<? extends TLRPC$User>, CompletableSource>() { // from class: com.iMe.domain.contacts.ContactsInteractor$deleteUsersById$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final CompletableSource invoke(List<? extends TLRPC$User> it) {
+                TelegramApi telegramApi;
+                Intrinsics.checkNotNullParameter(it, "it");
+                telegramApi = ContactsInteractor.this.telegramApi;
+                return telegramApi.deleteUsers(CollectionsUtilsKt.toArrayList(it));
+            }
+        };
         Completable flatMapCompletable = subscribeOn.flatMapCompletable(new Function() { // from class: com.iMe.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {

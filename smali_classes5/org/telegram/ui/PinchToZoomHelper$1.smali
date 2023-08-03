@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PinchToZoomHelper;)V
     .locals 0
 
-    .line 282
+    .line 295
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper$1;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 285
+    .line 298
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper$1;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
 
     iget-object v0, p1, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
@@ -44,10 +44,10 @@
 
     const/4 v0, 0x0
 
-    .line 286
+    .line 299
     iput-object v0, p1, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
-    .line 287
+    .line 300
     invoke-virtual {p1}, Lorg/telegram/ui/PinchToZoomHelper;->clear()V
 
     :cond_0

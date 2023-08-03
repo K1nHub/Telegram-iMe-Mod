@@ -183,7 +183,7 @@ public class GlideRequest<TranscodeType> extends RequestBuilder<TranscodeType> {
 
     @Override // com.bumptech.glide.RequestBuilder, com.bumptech.glide.request.BaseRequestOptions
     /* renamed from: clone */
-    public GlideRequest<TranscodeType> mo885clone() {
-        return (GlideRequest) super.mo885clone();
+    public GlideRequest<TranscodeType> mo903clone() {
+        return (GlideRequest) super.mo903clone();
     }
 }

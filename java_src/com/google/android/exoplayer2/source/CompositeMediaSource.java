@@ -132,7 +132,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         @UnknownNull
 
         /* renamed from: id */
-        private final T f205id;
+        private final T f207id;
         private MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcher;
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
@@ -143,7 +143,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         public ForwardingEventListener(@UnknownNull T t) {
             this.mediaSourceEventDispatcher = CompositeMediaSource.this.createEventDispatcher(null);
             this.drmEventDispatcher = CompositeMediaSource.this.createDrmEventDispatcher(null);
-            this.f205id = t;
+            this.f207id = t;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -233,14 +233,14 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         private boolean maybeUpdateEventDispatcher(int i, MediaSource.MediaPeriodId mediaPeriodId) {
             MediaSource.MediaPeriodId mediaPeriodId2;
             if (mediaPeriodId != null) {
-                mediaPeriodId2 = CompositeMediaSource.this.getMediaPeriodIdForChildMediaPeriodId(this.f205id, mediaPeriodId);
+                mediaPeriodId2 = CompositeMediaSource.this.getMediaPeriodIdForChildMediaPeriodId(this.f207id, mediaPeriodId);
                 if (mediaPeriodId2 == null) {
                     return false;
                 }
             } else {
                 mediaPeriodId2 = null;
             }
-            int windowIndexForChildWindowIndex = CompositeMediaSource.this.getWindowIndexForChildWindowIndex(this.f205id, i);
+            int windowIndexForChildWindowIndex = CompositeMediaSource.this.getWindowIndexForChildWindowIndex(this.f207id, i);
             MediaSourceEventListener.EventDispatcher eventDispatcher = this.mediaSourceEventDispatcher;
             if (eventDispatcher.windowIndex != windowIndexForChildWindowIndex || !Util.areEqual(eventDispatcher.mediaPeriodId, mediaPeriodId2)) {
                 this.mediaSourceEventDispatcher = CompositeMediaSource.this.createEventDispatcher(windowIndexForChildWindowIndex, mediaPeriodId2, 0L);
@@ -254,8 +254,8 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         }
 
         private MediaLoadData maybeUpdateMediaLoadData(MediaLoadData mediaLoadData) {
-            long mediaTimeForChildMediaTime = CompositeMediaSource.this.getMediaTimeForChildMediaTime(this.f205id, mediaLoadData.mediaStartTimeMs);
-            long mediaTimeForChildMediaTime2 = CompositeMediaSource.this.getMediaTimeForChildMediaTime(this.f205id, mediaLoadData.mediaEndTimeMs);
+            long mediaTimeForChildMediaTime = CompositeMediaSource.this.getMediaTimeForChildMediaTime(this.f207id, mediaLoadData.mediaStartTimeMs);
+            long mediaTimeForChildMediaTime2 = CompositeMediaSource.this.getMediaTimeForChildMediaTime(this.f207id, mediaLoadData.mediaEndTimeMs);
             return (mediaTimeForChildMediaTime == mediaLoadData.mediaStartTimeMs && mediaTimeForChildMediaTime2 == mediaLoadData.mediaEndTimeMs) ? mediaLoadData : new MediaLoadData(mediaLoadData.dataType, mediaLoadData.trackType, mediaLoadData.trackFormat, mediaLoadData.trackSelectionReason, mediaLoadData.trackSelectionData, mediaTimeForChildMediaTime, mediaTimeForChildMediaTime2);
         }
     }

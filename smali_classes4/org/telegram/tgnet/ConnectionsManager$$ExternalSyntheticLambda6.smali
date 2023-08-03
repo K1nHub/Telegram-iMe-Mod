@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/tgnet/ConnectionsManager$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/tgnet/TLRPC$TL_config;
 
-    invoke-static {v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$1BAyGrtsm20rrljn6qSGB_eMK_0(ILorg/telegram/tgnet/TLRPC$TL_config;)V
+    invoke-static {v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->$r8$lambda$nR_3_f1chEmfmXt19ckDRX1RY5I(ILorg/telegram/tgnet/TLRPC$TL_config;)V
 
     return-void
 .end method

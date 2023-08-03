@@ -308,7 +308,7 @@
         }
     .end annotation
 
-    const-string v0, "r"
+    const-string/jumbo v0, "r"
 
     .line 99
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

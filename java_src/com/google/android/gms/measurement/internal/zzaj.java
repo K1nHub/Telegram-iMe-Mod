@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.telegram.messenger.MessagesStorage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
 /* loaded from: classes3.dex */
@@ -1369,7 +1370,7 @@ public final class zzaj extends zzki {
             }
             try {
                 SQLiteDatabase zzh2 = zzh();
-                StringBuilder sb4 = new StringBuilder(String.valueOf(sb2).length() + 127);
+                StringBuilder sb4 = new StringBuilder(String.valueOf(sb2).length() + MessagesStorage.LAST_DB_VERSION);
                 sb4.append("UPDATE queue SET retry_count = IFNULL(retry_count, 0) + 1 WHERE rowid IN ");
                 sb4.append(sb2);
                 sb4.append(" AND (retry_count IS NULL OR retry_count < ");

@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8137
+    .line 8298
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 8149
+    .line 8310
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 8155
+    .line 8316
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 8152
+    .line 8313
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 8164
+    .line 8325
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 8143
+    .line 8304
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowContacts;
 
@@ -62,24 +62,32 @@
 
     goto :goto_0
 
-    .line 8146
+    .line 8328
     :sswitch_5
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;-><init>()V
+
+    goto :goto_0
+
+    .line 8307
+    :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;-><init>()V
 
     goto :goto_0
 
-    .line 8161
-    :sswitch_6
+    .line 8322
+    :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;-><init>()V
 
     goto :goto_0
 
-    .line 8158
-    :sswitch_7
+    .line 8319
+    :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;-><init>()V
@@ -91,7 +99,7 @@
 
     goto :goto_1
 
-    .line 8168
+    .line 8332
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -121,7 +129,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 8171
+    .line 8335
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -131,9 +139,10 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x748c189d -> :sswitch_7
-        -0x476fa04e -> :sswitch_6
-        -0x1b9deebf -> :sswitch_5
+        -0x748c189d -> :sswitch_8
+        -0x476fa04e -> :sswitch_7
+        -0x1b9deebf -> :sswitch_6
+        -0x8172765 -> :sswitch_5
         -0x77705e6 -> :sswitch_4
         -0x1e454 -> :sswitch_3
         0x41c87565 -> :sswitch_2

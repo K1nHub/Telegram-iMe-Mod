@@ -94,7 +94,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "pad bits cannot be greater than 7 or less than 0"
+    const-string/jumbo p2, "pad bits cannot be greater than 7 or less than 0"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

@@ -47,7 +47,7 @@ public class CanvasButton {
             }
         }
     };
-    float roundRadius = AndroidUtilities.m54dp(12);
+    float roundRadius = AndroidUtilities.m72dp(12);
 
     public CanvasButton(View view) {
         this.parent = view;
@@ -59,7 +59,7 @@ public class CanvasButton {
             Paint paint2 = new Paint(1);
             this.maskPaint = paint2;
             paint2.setFilterBitmap(true);
-            this.maskPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m54dp(12)));
+            this.maskPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.m72dp(12)));
             this.maskPaint.setColor(-1);
             final Paint paint3 = new Paint(1);
             paint3.setFilterBitmap(true);
@@ -141,7 +141,7 @@ public class CanvasButton {
                 if (i8 < i7) {
                     float f = this.drawingRects.get(i2).right;
                     float f2 = this.drawingRects.get(i8).right;
-                    if (Math.abs(f - f2) < AndroidUtilities.m54dp(4)) {
+                    if (Math.abs(f - f2) < AndroidUtilities.m72dp(4)) {
                         float max = Math.max(f, f2);
                         this.drawingRects.get(i2).right = max;
                         this.drawingRects.get(i8).right = max;

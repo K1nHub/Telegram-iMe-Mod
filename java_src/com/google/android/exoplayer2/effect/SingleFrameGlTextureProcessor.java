@@ -34,7 +34,12 @@ public abstract class SingleFrameGlTextureProcessor implements GlTextureProcesso
             GlTextureProcessor.OutputListener.CC.$default$onOutputFrameAvailable(this, textureInfo, j);
         }
     };
-    private GlTextureProcessor.ErrorListener errorListener = SingleFrameGlTextureProcessor$$ExternalSyntheticLambda0.INSTANCE;
+    private GlTextureProcessor.ErrorListener errorListener = new GlTextureProcessor.ErrorListener() { // from class: com.google.android.exoplayer2.effect.SingleFrameGlTextureProcessor$$ExternalSyntheticLambda0
+        @Override // com.google.android.exoplayer2.effect.GlTextureProcessor.ErrorListener
+        public final void onFrameProcessingError(FrameProcessingException frameProcessingException) {
+            SingleFrameGlTextureProcessor.lambda$new$0(frameProcessingException);
+        }
+    };
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$0(FrameProcessingException frameProcessingException) {

@@ -4,9 +4,9 @@ package p033j$.util.stream;
 abstract class AbstractC2971T2 {
 
     /* renamed from: a */
-    Object f927a;
+    Object f930a;
 
     public Object get() {
-        return this.f927a;
+        return this.f930a;
     }
 }

@@ -39,7 +39,7 @@ public class TopicsSyncTask implements Runnable {
                 return;
             }
             if (topicsSyncTask.isDeviceConnected()) {
-                if (TopicsSyncTask.isLoggable()) {
+                if (TopicsSyncTask.m1130$$Nest$smisLoggable()) {
                     Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                 }
                 this.task.topicsSubscriber.scheduleSyncTaskWithDelaySeconds(this.task, 0L);
@@ -49,11 +49,16 @@ public class TopicsSyncTask implements Runnable {
         }
 
         public void registerReceiver() {
-            if (TopicsSyncTask.isLoggable()) {
+            if (TopicsSyncTask.m1130$$Nest$smisLoggable()) {
                 Log.d("FirebaseMessaging", "Connectivity change received registered");
             }
             TopicsSyncTask.this.context.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
         }
+    }
+
+    /* renamed from: -$$Nest$smisLoggable  reason: not valid java name */
+    static /* bridge */ /* synthetic */ boolean m1130$$Nest$smisLoggable() {
+        return isLoggable();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -130,8 +135,7 @@ public class TopicsSyncTask implements Runnable {
         return z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static boolean isLoggable() {
+    private static boolean isLoggable() {
         return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 

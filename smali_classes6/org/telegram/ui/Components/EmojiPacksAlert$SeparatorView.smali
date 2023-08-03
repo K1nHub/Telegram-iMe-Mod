@@ -18,19 +18,19 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;Landroid/content/Context;)V
     .locals 1
 
-    .line 1190
+    .line 1218
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1191
+    .line 1219
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1192
+    .line 1220
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
@@ -43,14 +43,14 @@
 
     const/16 p2, 0xe
 
-    .line 1193
+    .line 1221
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 1194
+    .line 1222
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void

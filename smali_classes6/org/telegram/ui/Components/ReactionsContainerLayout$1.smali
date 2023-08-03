@@ -27,7 +27,7 @@
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 79
+    .line 81
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -38,7 +38,7 @@
 .method public get(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/lang/Float;
     .locals 0
 
-    .line 82
+    .line 84
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
 
     move-result p1
@@ -53,7 +53,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 79
+    .line 81
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$1;->get(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/lang/Float;
@@ -66,7 +66,7 @@
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 79
+    .line 81
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     check-cast p2, Ljava/lang/Float;
@@ -79,7 +79,7 @@
 .method public set(Lorg/telegram/ui/Components/ReactionsContainerLayout;Ljava/lang/Float;)V
     .locals 0
 
-    .line 87
+    .line 89
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result p2

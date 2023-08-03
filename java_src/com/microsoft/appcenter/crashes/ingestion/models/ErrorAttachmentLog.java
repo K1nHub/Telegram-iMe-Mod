@@ -18,7 +18,7 @@ public class ErrorAttachmentLog extends AbstractLog {
     private String fileName;
 
     /* renamed from: id */
-    private UUID f459id;
+    private UUID f462id;
 
     @Override // com.microsoft.appcenter.ingestion.models.Log
     public String getType() {
@@ -38,11 +38,11 @@ public class ErrorAttachmentLog extends AbstractLog {
     }
 
     public UUID getId() {
-        return this.f459id;
+        return this.f462id;
     }
 
     public void setId(UUID id) {
-        this.f459id = id;
+        this.f462id = id;
     }
 
     public UUID getErrorId() {
@@ -112,8 +112,8 @@ public class ErrorAttachmentLog extends AbstractLog {
         }
         if (o != null && ErrorAttachmentLog.class == o.getClass() && super.equals(o)) {
             ErrorAttachmentLog errorAttachmentLog = (ErrorAttachmentLog) o;
-            UUID uuid = this.f459id;
-            if (uuid == null ? errorAttachmentLog.f459id == null : uuid.equals(errorAttachmentLog.f459id)) {
+            UUID uuid = this.f462id;
+            if (uuid == null ? errorAttachmentLog.f462id == null : uuid.equals(errorAttachmentLog.f462id)) {
                 UUID uuid2 = this.errorId;
                 if (uuid2 == null ? errorAttachmentLog.errorId == null : uuid2.equals(errorAttachmentLog.errorId)) {
                     String str = this.contentType;
@@ -136,7 +136,7 @@ public class ErrorAttachmentLog extends AbstractLog {
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
-        UUID uuid = this.f459id;
+        UUID uuid = this.f462id;
         int hashCode2 = (hashCode + (uuid != null ? uuid.hashCode() : 0)) * 31;
         UUID uuid2 = this.errorId;
         int hashCode3 = (hashCode2 + (uuid2 != null ? uuid2.hashCode() : 0)) * 31;

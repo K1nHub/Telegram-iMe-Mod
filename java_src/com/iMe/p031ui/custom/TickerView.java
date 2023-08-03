@@ -36,10 +36,10 @@ public final class TickerView extends AppCompatTextView {
 
     private final void setupView() {
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(2.0f));
-        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m73dp(2.0f));
+        gradientDrawable.setStroke(AndroidUtilities.m73dp(1.0f), Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         setBackground(gradientDrawable);
         setTextSize(9.0f);
-        setPadding(AndroidUtilities.m55dp(6.0f), AndroidUtilities.m55dp(2.0f), AndroidUtilities.m55dp(6.0f), AndroidUtilities.m55dp(2.0f));
+        setPadding(AndroidUtilities.m73dp(6.0f), AndroidUtilities.m73dp(2.0f), AndroidUtilities.m73dp(6.0f), AndroidUtilities.m73dp(2.0f));
     }
 }

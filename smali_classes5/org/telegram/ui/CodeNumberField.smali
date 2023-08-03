@@ -325,7 +325,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
     .line 85
     invoke-virtual {p0, p1}, Landroid/widget/EditText;->setMovementMethod(Landroid/text/method/MovementMethod;)V

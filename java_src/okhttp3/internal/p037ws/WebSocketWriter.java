@@ -7,6 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.ByteString;
+import org.telegram.messenger.MessagesStorage;
 /* compiled from: WebSocketWriter.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketWriter */
 /* loaded from: classes4.dex */
@@ -128,7 +129,7 @@ public final class WebSocketWriter implements Closeable {
             this.sinkBuffer.writeByte(i3 | 126);
             this.sinkBuffer.writeShort((int) size);
         } else {
-            this.sinkBuffer.writeByte(i3 | 127);
+            this.sinkBuffer.writeByte(i3 | MessagesStorage.LAST_DB_VERSION);
             this.sinkBuffer.writeLong(size);
         }
         if (this.isClient) {

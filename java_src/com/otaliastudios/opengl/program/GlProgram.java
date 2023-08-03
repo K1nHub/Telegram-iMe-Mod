@@ -7,6 +7,8 @@ import com.otaliastudios.opengl.core.GlBindableKt;
 import com.otaliastudios.opengl.draw.GlDrawable;
 import com.otaliastudios.opengl.internal.GlKt;
 import kotlin.UInt;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlProgram.kt */
@@ -45,7 +47,7 @@ public class GlProgram implements GlBindable {
             return;
         }
         if (this.ownsHandle) {
-            GLES20.glDeleteProgram(UInt.m1605constructorimpl(this.handle));
+            GLES20.glDeleteProgram(UInt.m1624constructorimpl(this.handle));
         }
         for (GlShader glShader : this.shaders) {
             glShader.release();
@@ -55,7 +57,7 @@ public class GlProgram implements GlBindable {
 
     @Override // com.otaliastudios.opengl.core.GlBindable
     public void bind() {
-        GLES20.glUseProgram(UInt.m1605constructorimpl(this.handle));
+        GLES20.glUseProgram(UInt.m1624constructorimpl(this.handle));
         Egloo.checkGlError("glUseProgram");
     }
 
@@ -69,11 +71,30 @@ public class GlProgram implements GlBindable {
         glProgram.draw(glDrawable, fArr);
     }
 
-    public final void draw(GlDrawable drawable, float[] modelViewProjectionMatrix) {
+    public final void draw(final GlDrawable drawable, final float[] modelViewProjectionMatrix) {
         Intrinsics.checkNotNullParameter(drawable, "drawable");
         Intrinsics.checkNotNullParameter(modelViewProjectionMatrix, "modelViewProjectionMatrix");
         Egloo.checkGlError("draw start");
-        GlBindableKt.use(this, new GlProgram$draw$1(this, drawable, modelViewProjectionMatrix));
+        GlBindableKt.use(this, new Function0<Unit>() { // from class: com.otaliastudios.opengl.program.GlProgram$draw$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                GlProgram.this.onPreDraw(drawable, modelViewProjectionMatrix);
+                GlProgram.this.onDraw(drawable);
+                GlProgram.this.onPostDraw(drawable);
+            }
+        });
         Egloo.checkGlError("draw end");
     }
 
@@ -91,23 +112,23 @@ public class GlProgram implements GlBindable {
 
         public final int create(GlShader... shaders) {
             Intrinsics.checkNotNullParameter(shaders, "shaders");
-            int m1605constructorimpl = UInt.m1605constructorimpl(GLES20.glCreateProgram());
+            int m1624constructorimpl = UInt.m1624constructorimpl(GLES20.glCreateProgram());
             Egloo.checkGlError("glCreateProgram");
-            if (m1605constructorimpl == 0) {
+            if (m1624constructorimpl == 0) {
                 throw new RuntimeException("Could not create program");
             }
             for (GlShader glShader : shaders) {
-                GLES20.glAttachShader(m1605constructorimpl, UInt.m1605constructorimpl(glShader.getId()));
+                GLES20.glAttachShader(m1624constructorimpl, UInt.m1624constructorimpl(glShader.getId()));
                 Egloo.checkGlError("glAttachShader");
             }
-            GLES20.glLinkProgram(m1605constructorimpl);
+            GLES20.glLinkProgram(m1624constructorimpl);
             int[] iArr = new int[1];
-            GLES20.glGetProgramiv(m1605constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
+            GLES20.glGetProgramiv(m1624constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
             if (iArr[0] == GlKt.getGL_TRUE()) {
-                return m1605constructorimpl;
+                return m1624constructorimpl;
             }
-            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1605constructorimpl));
-            GLES20.glDeleteProgram(m1605constructorimpl);
+            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1624constructorimpl));
+            GLES20.glDeleteProgram(m1624constructorimpl);
             throw new RuntimeException(stringPlus);
         }
 

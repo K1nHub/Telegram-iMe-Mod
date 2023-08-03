@@ -1,9 +1,15 @@
 package com.iMe.storage.domain.model.wallet.swap;
 
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.collections.CollectionsKt__CollectionsJVMKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapProtocolInfo.kt */
@@ -332,13 +338,46 @@ public abstract class SwapProtocolInfo implements Exchange {
         Lazy<List<SwapProtocolInfo>> lazy2;
         Lazy<List<Oneinch>> lazy3;
         Lazy<List<Symbiosis>> lazy4;
-        lazy = LazyKt__LazyJVMKt.lazy(SwapProtocolInfo$Companion$allExchanges$2.INSTANCE);
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends SwapProtocolInfo>>() { // from class: com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo$Companion$allExchanges$2
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends SwapProtocolInfo> invoke() {
+                List plus;
+                List invisibleExchanges;
+                List<? extends SwapProtocolInfo> plus2;
+                SwapProtocolInfo.Companion companion = SwapProtocolInfo.Companion;
+                plus = CollectionsKt___CollectionsKt.plus((Collection) companion.getSupportedExchanges(), (Iterable) companion.getSupportedCrossChainExchanges());
+                invisibleExchanges = companion.getInvisibleExchanges();
+                plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) invisibleExchanges);
+                return plus2;
+            }
+        });
         allExchanges$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(SwapProtocolInfo$Companion$invisibleExchanges$2.INSTANCE);
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends SwapProtocolInfo>>() { // from class: com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo$Companion$invisibleExchanges$2
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends SwapProtocolInfo> invoke() {
+                List<? extends SwapProtocolInfo> emptyList;
+                emptyList = CollectionsKt__CollectionsKt.emptyList();
+                return emptyList;
+            }
+        });
         invisibleExchanges$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(SwapProtocolInfo$Companion$supportedExchanges$2.INSTANCE);
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends Oneinch>>() { // from class: com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo$Companion$supportedExchanges$2
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends SwapProtocolInfo.Oneinch> invoke() {
+                List<? extends SwapProtocolInfo.Oneinch> listOf;
+                listOf = CollectionsKt__CollectionsJVMKt.listOf(SwapProtocolInfo.Oneinch.INSTANCE);
+                return listOf;
+            }
+        });
         supportedExchanges$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(SwapProtocolInfo$Companion$supportedCrossChainExchanges$2.INSTANCE);
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends Symbiosis>>() { // from class: com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo$Companion$supportedCrossChainExchanges$2
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends SwapProtocolInfo.Symbiosis> invoke() {
+                List<? extends SwapProtocolInfo.Symbiosis> listOf;
+                listOf = CollectionsKt__CollectionsJVMKt.listOf(SwapProtocolInfo.Symbiosis.INSTANCE);
+                return listOf;
+            }
+        });
         supportedCrossChainExchanges$delegate = lazy4;
     }
 }

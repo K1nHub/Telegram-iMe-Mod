@@ -7,7 +7,7 @@ public class TLRPC$TL_payments_validatedRequestedInfo extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public String f1639id;
+    public String f1647id;
     public ArrayList<TLRPC$TL_shippingOption> shipping_options = new ArrayList<>();
 
     public static TLRPC$TL_payments_validatedRequestedInfo TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -27,7 +27,7 @@ public class TLRPC$TL_payments_validatedRequestedInfo extends TLObject {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         if ((readInt32 & 1) != 0) {
-            this.f1639id = abstractSerializedData.readString(z);
+            this.f1647id = abstractSerializedData.readString(z);
         }
         if ((this.flags & 2) != 0) {
             int readInt322 = abstractSerializedData.readInt32(z);
@@ -53,7 +53,7 @@ public class TLRPC$TL_payments_validatedRequestedInfo extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         if ((this.flags & 1) != 0) {
-            abstractSerializedData.writeString(this.f1639id);
+            abstractSerializedData.writeString(this.f1647id);
         }
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeInt32(481674261);

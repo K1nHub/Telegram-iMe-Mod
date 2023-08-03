@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
+import com.bumptech.glide.load.model.Headers;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -29,7 +30,14 @@ public final class GlideHelper {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(callback, "callback");
-        INSTANCE.internalLoad(context, new GlideUrl(url, GlideHelper$$ExternalSyntheticLambda0.INSTANCE), callback, true);
+        INSTANCE.internalLoad(context, new GlideUrl(url, new Headers() { // from class: com.iMe.utils.helper.GlideHelper$$ExternalSyntheticLambda0
+            @Override // com.bumptech.glide.load.model.Headers
+            public final Map getHeaders() {
+                Map loadBinanceImageAsBitmap$lambda$0;
+                loadBinanceImageAsBitmap$lambda$0 = GlideHelper.loadBinanceImageAsBitmap$lambda$0();
+                return loadBinanceImageAsBitmap$lambda$0;
+            }
+        }), callback, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

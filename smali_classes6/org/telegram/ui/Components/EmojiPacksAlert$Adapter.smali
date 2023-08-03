@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;)V
     .locals 0
 
-    .line 1198
+    .line 1226
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/EmojiPacksAlert;Lorg/telegram/ui/Components/EmojiPacksAlert$1;)V
     .locals 0
 
-    .line 1198
+    .line 1226
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;-><init>(Lorg/telegram/ui/Components/EmojiPacksAlert;)V
 
     return-void
@@ -44,10 +44,10 @@
 .method public getItemCount()I
     .locals 4
 
-    .line 1374
+    .line 1402
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4400(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
 
     move-result v1
 
@@ -67,7 +67,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -77,7 +77,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -91,7 +91,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -117,12 +117,12 @@
     move v1, v2
 
     :goto_0
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4302(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4002(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)Z
 
-    .line 1375
+    .line 1403
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -130,7 +130,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -142,7 +142,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -173,10 +173,10 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 1312
+    .line 1340
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v1
 
@@ -198,11 +198,11 @@
     :cond_2
     move v1, v0
 
-    .line 1319
+    .line 1347
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v3
 
@@ -218,11 +218,11 @@
 
     return v3
 
-    .line 1323
+    .line 1351
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v4
 
@@ -234,10 +234,10 @@
 
     move-result v4
 
-    .line 1324
+    .line 1352
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v5
 
@@ -247,7 +247,7 @@
 
     if-le v5, v2, :cond_4
 
-    .line 1325
+    .line 1353
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -289,10 +289,10 @@
 .method public getSetEndPosition(I)I
     .locals 6
 
-    .line 1356
+    .line 1384
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -312,11 +312,11 @@
     :goto_0
     const/4 v3, 0x0
 
-    .line 1359
+    .line 1387
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v4
 
@@ -326,10 +326,10 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 1360
+    .line 1388
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v4
 
@@ -341,10 +341,10 @@
 
     move-result v4
 
-    .line 1361
+    .line 1389
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v5
 
@@ -354,7 +354,7 @@
 
     if-le v5, v2, :cond_1
 
-    .line 1362
+    .line 1390
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -398,10 +398,10 @@
 .method public getSetHeaderPosition(I)I
     .locals 6
 
-    .line 1338
+    .line 1366
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -421,11 +421,11 @@
     :goto_0
     const/4 v3, 0x0
 
-    .line 1341
+    .line 1369
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v4
 
@@ -439,11 +439,11 @@
 
     return v0
 
-    .line 1345
+    .line 1373
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v4
 
@@ -455,10 +455,10 @@
 
     move-result v4
 
-    .line 1346
+    .line 1374
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v5
 
@@ -468,7 +468,7 @@
 
     if-le v5, v2, :cond_2
 
-    .line 1347
+    .line 1375
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -503,7 +503,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1208
+    .line 1236
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -526,7 +526,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 1232
+    .line 1260
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -549,7 +549,7 @@
 
     goto/16 :goto_8
 
-    .line 1234
+    .line 1262
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -557,21 +557,21 @@
 
     const/high16 p2, 0x41500000    # 13.0f
 
-    .line 1235
+    .line 1263
     invoke-virtual {p1, v4, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1236
+    .line 1264
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelTrendingDescription:I
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1237
+    .line 1265
     sget p2, Lorg/telegram/messenger/R$string;->PremiumPreviewEmojiPack:I
 
     const-string v0, "PremiumPreviewEmojiPack"
@@ -588,7 +588,7 @@
 
     const/16 p2, 0xe
 
-    .line 1238
+    .line 1266
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -607,11 +607,11 @@
 
     goto/16 :goto_8
 
-    .line 1275
+    .line 1303
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -626,11 +626,11 @@
 
     move v5, v0
 
-    .line 1279
+    .line 1307
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v6
 
@@ -640,10 +640,10 @@
 
     if-ge v0, v6, :cond_5
 
-    .line 1280
+    .line 1308
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v6
 
@@ -655,10 +655,10 @@
 
     move-result v6
 
-    .line 1281
+    .line 1309
     iget-object v7, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v7}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v7}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v7
 
@@ -668,7 +668,7 @@
 
     if-le v7, v4, :cond_3
 
-    .line 1282
+    .line 1310
     iget-object v7, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v7}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -701,12 +701,12 @@
 
     goto :goto_0
 
-    .line 1289
+    .line 1317
     :cond_5
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object p2
 
@@ -716,7 +716,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object p2
 
@@ -733,7 +733,7 @@
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object p2
 
@@ -751,14 +751,14 @@
     :goto_2
     if-eqz v2, :cond_9
 
-    .line 1291
+    .line 1319
     iget-object p2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     if-eqz p2, :cond_9
 
     move p2, v3
 
-    .line 1292
+    .line 1320
     :goto_3
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -768,7 +768,7 @@
 
     if-ge p2, v1, :cond_9
 
-    .line 1293
+    .line 1321
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -793,11 +793,11 @@
     :cond_9
     move v4, v3
 
-    .line 1299
+    .line 1327
     :goto_4
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object p2
 
@@ -807,7 +807,7 @@
 
     if-ge v0, p2, :cond_16
 
-    .line 1300
+    .line 1328
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
@@ -831,11 +831,11 @@
 
     goto/16 :goto_8
 
-    .line 1241
+    .line 1269
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -843,7 +843,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 1244
+    .line 1272
     :cond_d
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -851,11 +851,11 @@
 
     move v0, v3
 
-    .line 1246
+    .line 1274
     :goto_6
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v5
 
@@ -865,10 +865,10 @@
 
     if-ge v3, v5, :cond_10
 
-    .line 1247
+    .line 1275
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v5}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v5
 
@@ -880,10 +880,10 @@
 
     move-result v5
 
-    .line 1248
+    .line 1276
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v6
 
@@ -893,7 +893,7 @@
 
     if-le v6, v4, :cond_e
 
-    .line 1249
+    .line 1277
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$1300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -917,10 +917,10 @@
 
     if-gt p2, v6, :cond_f
 
-    .line 1252
+    .line 1280
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v1
 
@@ -954,7 +954,7 @@
     :cond_10
     move-object p2, v2
 
-    .line 1257
+    .line 1285
     :goto_7
     iget-object v0, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -981,18 +981,18 @@
     :cond_13
     if-nez p2, :cond_14
 
-    .line 1259
+    .line 1287
     iput-object v2, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     goto :goto_8
 
-    .line 1261
+    .line 1289
     :cond_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;-><init>()V
 
-    .line 1262
+    .line 1290
     iget-object v1, p2, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1001,24 +1001,24 @@
 
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
-    .line 1263
+    .line 1291
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$StickerSet;->short_name:Ljava/lang/String;
 
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->short_name:Ljava/lang/String;
 
-    .line 1264
+    .line 1292
     iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$StickerSet;->access_hash:J
 
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->access_hash:J
 
-    .line 1265
+    .line 1293
     invoke-virtual {p2}, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v0
 
     if-eqz v0, :cond_15
 
-    .line 1267
+    .line 1295
     new-instance p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     invoke-direct {p2, v0, v2}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
@@ -1027,7 +1027,7 @@
 
     goto :goto_8
 
-    .line 1269
+    .line 1297
     :cond_15
     new-instance v0, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -1047,10 +1047,10 @@
 
     if-nez p2, :cond_0
 
-    .line 1216
+    .line 1244
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
 
     move-result-object p1
 
@@ -1061,7 +1061,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 1218
+    .line 1246
     new-instance p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -1079,7 +1079,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 1220
+    .line 1248
     new-instance p2, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -1090,7 +1090,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;
 
     move-result-object v2
 
@@ -1117,7 +1117,7 @@
 
     if-ne p2, p1, :cond_4
 
-    .line 1222
+    .line 1250
     new-instance p1, Landroid/widget/TextView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -1135,7 +1135,7 @@
 
     if-ne p2, p1, :cond_5
 
-    .line 1224
+    .line 1252
     new-instance p1, Lorg/telegram/ui/Components/EmojiPacksAlert$SeparatorView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
@@ -1151,7 +1151,7 @@
     :cond_5
     const/4 p1, 0x0
 
-    .line 1226
+    .line 1254
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

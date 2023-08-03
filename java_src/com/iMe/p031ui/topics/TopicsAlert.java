@@ -24,6 +24,7 @@ import com.iMe.fork.controller.ForkTopicsController;
 import com.iMe.fork.enums.FilterActivityType;
 import com.iMe.fork.p024ui.view.CircleCheckCell;
 import com.iMe.fork.utils.Callbacks$Callback2;
+import com.iMe.p031ui.topics.TopicsAlert;
 import com.iMe.storage.data.utils.extentions.CollectionExtKt;
 import com.iMe.storage.domain.model.topics.TopicModel;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -32,9 +33,10 @@ import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3417R;
+import org.telegram.messenger.C3419R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -90,21 +92,120 @@ public final class TopicsAlert extends BottomSheet {
         this.parentFragment = parentFragment;
         this.dialogIds = dialogIds;
         this.callback = callbacks$Callback2;
-        lazy = LazyKt__LazyJVMKt.lazy(new TopicsAlert$topics$2(this));
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<List<? extends TopicModel>>() { // from class: com.iMe.ui.topics.TopicsAlert$topics$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final List<? extends TopicModel> invoke() {
+                return TopicsAlert.this.getParentFragment().getTopicsController().getAlertTopics();
+            }
+        });
         this.topics$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$topShadow$2(this));
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.ui.topics.TopicsAlert$topShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = TopicsAlert.this.initShadow(true);
+                return initShadow;
+            }
+        });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$listView$2(this));
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<TopicsAlert$initListView$1>() { // from class: com.iMe.ui.topics.TopicsAlert$listView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicsAlert$initListView$1 invoke() {
+                TopicsAlert$initListView$1 initListView;
+                initListView = TopicsAlert.this.initListView();
+                return initListView;
+            }
+        });
         this.listView$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$listAdapter$2(this));
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ListAdapter>() { // from class: com.iMe.ui.topics.TopicsAlert$listAdapter$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TopicsAlert.ListAdapter invoke() {
+                return new TopicsAlert.ListAdapter();
+            }
+        });
         this.listAdapter$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$bottomShadow$2(this));
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<View>() { // from class: com.iMe.ui.topics.TopicsAlert$bottomShadow$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final View invoke() {
+                View initShadow;
+                initShadow = TopicsAlert.this.initShadow(false);
+                return initShadow;
+            }
+        });
         this.bottomShadow$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$selectTopicTitleTextView$2(this));
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.ui.topics.TopicsAlert$selectTopicTitleTextView$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initSelectTopicTitleTextView;
+                initSelectTopicTitleTextView = TopicsAlert.this.initSelectTopicTitleTextView();
+                return initSelectTopicTitleTextView;
+            }
+        });
         this.selectTopicTitleTextView$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$deleteOrCloseButton$2(this));
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.ui.topics.TopicsAlert$deleteOrCloseButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initBottomButton;
+                initBottomButton = TopicsAlert.this.initBottomButton(false);
+                return initBottomButton;
+            }
+        });
         this.deleteOrCloseButton$delegate = lazy7;
-        lazy8 = LazyKt__LazyJVMKt.lazy(new TopicsAlert$createTopicButton$2(this));
+        lazy8 = LazyKt__LazyJVMKt.lazy(new Function0<TextView>() { // from class: com.iMe.ui.topics.TopicsAlert$createTopicButton$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function0
+            public final TextView invoke() {
+                TextView initBottomButton;
+                initBottomButton = TopicsAlert.this.initBottomButton(true);
+                return initBottomButton;
+            }
+        });
         this.createTopicButton$delegate = lazy8;
         if (CollectionExtKt.isSingletonList(dialogIds)) {
             this.selectedTopic = ForkTopicsController.Companion.getInstance(this.currentAccount).getTopicForDialog(dialogIds.get(0).longValue());
@@ -197,8 +298,8 @@ public final class TopicsAlert extends BottomSheet {
                 RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
                 Intrinsics.checkNotNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
                 int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
-                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m54dp(4);
-                outRect.right = adapterPosition != 3 ? AndroidUtilities.m54dp(4) : 0;
+                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m72dp(4);
+                outRect.right = adapterPosition != 3 ? AndroidUtilities.m72dp(4) : 0;
             }
         });
         return r1;
@@ -212,7 +313,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3417R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3419R.string.topics_select));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -228,7 +329,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3417R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3419R.string.Create));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -237,7 +338,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else if (this.selectedTopic == null) {
-            textView.setText(LocaleController.getString("Close", C3417R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3419R.string.Close));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -246,7 +347,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else {
-            textView.setText(LocaleController.getInternalString(C3417R.string.topics_remove));
+            textView.setText(LocaleController.getInternalString(C3419R.string.topics_remove));
             textView.setTextColor(getThemedColor(Theme.key_text_RedRegular));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -462,23 +563,23 @@ public final class TopicsAlert extends BottomSheet {
             TopicsAlert.this.ignoreLayout = true;
             setPadding(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, 0);
             TopicsAlert.this.ignoreLayout = false;
-            TopicsAlert.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(28)) / 4;
-            int m54dp = AndroidUtilities.m54dp(110) + (((int) Math.ceil(TopicsAlert.this.getTopics().size() / 4.0f)) * AndroidUtilities.m54dp(100)) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            TopicsAlert.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m72dp(28)) / 4;
+            int m72dp = AndroidUtilities.m72dp(110) + (((int) Math.ceil(TopicsAlert.this.getTopics().size() / 4.0f)) * AndroidUtilities.m72dp(100)) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
-            int i3 = ((double) m54dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m54dp < size) {
-                i3 -= size - m54dp;
+            int i3 = ((double) m72dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m72dp < size) {
+                i3 -= size - m72dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
             }
             if (TopicsAlert.this.getListView().getPaddingTop() != i3) {
                 TopicsAlert.this.ignoreLayout = true;
-                TopicsAlert.this.getListView().setPadding(AndroidUtilities.m54dp(10), i3, AndroidUtilities.m54dp(10), 14);
+                TopicsAlert.this.getListView().setPadding(AndroidUtilities.m72dp(10), i3, AndroidUtilities.m72dp(10), 14);
                 TopicsAlert.this.ignoreLayout = false;
             }
-            this.fullHeight = m54dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
+            this.fullHeight = m72dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m72dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -505,12 +606,12 @@ public final class TopicsAlert extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m54dp = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
-            int m54dp2 = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(15) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
+            int m72dp = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) + AndroidUtilities.m72dp(6);
+            int m72dp2 = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) - AndroidUtilities.m72dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m72dp(15) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m54dp2 + i2;
-            int i4 = m54dp + i2;
+            int i3 = m72dp2 + i2;
+            int i4 = m72dp + i2;
             if (this.fullHeight) {
                 int i5 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3;
                 int i6 = AndroidUtilities.statusBarHeight;
@@ -533,13 +634,13 @@ public final class TopicsAlert extends BottomSheet {
             ((BottomSheet) TopicsAlert.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3 + AndroidUtilities.m72dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(12) * f, AndroidUtilities.m72dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m54dp3 = AndroidUtilities.m54dp(36);
-            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            int m72dp3 = AndroidUtilities.m72dp(36);
+            this.rect.set((getMeasuredWidth() - m72dp3) / 2.0f, i4, (getMeasuredWidth() + m72dp3) / 2.0f, i4 + AndroidUtilities.m72dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m72dp(2), AndroidUtilities.m72dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int themedColor = TopicsAlert.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
@@ -590,12 +691,12 @@ public final class TopicsAlert extends BottomSheet {
                 protected void onMeasure(int i2, int i3) {
                     int i4;
                     i4 = TopicsAlert.this.itemWidth;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(100), 1073741824));
                 }
             });
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:20:0x009d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:20:0x00a9, code lost:
             if ((r0 != null && r8.getTopicId() == r0.getTopicId()) != false) goto L15;
          */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -618,26 +719,28 @@ public final class TopicsAlert extends BottomSheet {
                 com.iMe.fork.ui.view.CircleCheckCell r7 = (com.iMe.fork.p024ui.view.CircleCheckCell) r7
                 com.iMe.ui.topics.TopicsAlert r0 = com.iMe.p031ui.topics.TopicsAlert.this
                 boolean r1 = r8.isUserTopic()
-                if (r1 == 0) goto L4b
+                if (r1 == 0) goto L51
                 int r1 = org.telegram.p043ui.ActionBar.Theme.key_chats_actionBackground
                 int r1 = com.iMe.p031ui.topics.TopicsAlert.access$getThemedColor(r0, r1)
-                com.iMe.storage.data.repository.topics.Topic r2 = r8.getIcon()
-                if (r2 == 0) goto L36
-                com.iMe.storage.data.repository.topics.Topic r2 = r8.getIcon()
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-                goto L38
-            L36:
-                com.iMe.storage.data.repository.topics.Topic r2 = com.iMe.storage.data.repository.topics.Topic.OTHER
-            L38:
-                com.iMe.ui.topics.TopicInfo r2 = com.iMe.utils.extentions.model.topic.TopicExtKt.info(r2)
-                int r2 = r2.getIconResId()
-                java.lang.String r3 = r8.getName()
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r3)
-                r7.setData(r1, r2, r3)
-                goto L7c
-            L4b:
+                r7.setColor(r1)
+                com.iMe.storage.data.repository.topics.Topic r1 = r8.getIcon()
+                if (r1 == 0) goto L39
+                com.iMe.storage.data.repository.topics.Topic r1 = r8.getIcon()
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
+                goto L3b
+            L39:
+                com.iMe.storage.data.repository.topics.Topic r1 = com.iMe.storage.data.repository.topics.Topic.OTHER
+            L3b:
+                com.iMe.ui.topics.TopicInfo r1 = com.iMe.utils.extentions.model.topic.TopicExtKt.info(r1)
+                int r1 = r1.getIconResId()
+                r7.setIcon(r1)
+                java.lang.String r1 = r8.getName()
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
+                r7.setName(r1)
+                goto L88
+            L51:
                 boolean r1 = r8.isAutoTopic()
-                if (r1 == 0) goto L7c
+                if (r1 == 0) goto L88
                 com.iMe.storage.data.repository.topics.Topic r1 = r8.getIcon()
                 kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
                 com.iMe.ui.topics.TopicInfo r1 = com.iMe.utils.extentions.model.topic.TopicExtKt.info(r1)
@@ -646,33 +749,35 @@ public final class TopicsAlert extends BottomSheet {
                 int r1 = r1.component3()
                 android.content.Context r4 = r7.getContext()
                 int r2 = androidx.core.content.ContextCompat.getColor(r4, r2)
-                java.lang.String r3 = org.telegram.messenger.LocaleController.getInternalString(r3)
-                java.lang.String r4 = "getInternalString(titleResId)"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r4)
-                r7.setData(r2, r1, r3)
-            L7c:
+                r7.setColor(r2)
+                r7.setIcon(r1)
+                java.lang.String r1 = org.telegram.messenger.LocaleController.getInternalString(r3)
+                java.lang.String r2 = "getInternalString(titleResId)"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r2)
+                r7.setName(r1)
+            L88:
                 long r1 = r8.getTopicId()
                 r3 = -1
                 int r1 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
                 r2 = 1
                 r3 = 0
-                if (r1 == 0) goto La0
+                if (r1 == 0) goto Lac
                 com.iMe.storage.domain.model.topics.TopicModel r0 = com.iMe.p031ui.topics.TopicsAlert.access$getSelectedTopic$p(r0)
-                if (r0 == 0) goto L9c
+                if (r0 == 0) goto La8
                 long r4 = r8.getTopicId()
                 long r0 = r0.getTopicId()
                 int r8 = (r4 > r0 ? 1 : (r4 == r0 ? 0 : -1))
-                if (r8 != 0) goto L9c
+                if (r8 != 0) goto La8
                 r8 = r2
-                goto L9d
-            L9c:
+                goto La9
+            La8:
                 r8 = r3
-            L9d:
-                if (r8 == 0) goto La0
-                goto La1
-            La0:
+            La9:
+                if (r8 == 0) goto Lac
+                goto Lad
+            Lac:
                 r2 = r3
-            La1:
+            Lad:
                 r7.setChecked(r2)
                 return
             */

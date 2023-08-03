@@ -128,7 +128,7 @@ public final class Billing {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void error(String str) {
-        sLogger.mo58e("Checkout", str);
+        sLogger.mo76e("Checkout", str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -141,30 +141,30 @@ public final class Billing {
         if (exc instanceof BillingException) {
             int response = ((BillingException) exc).getResponse();
             if (response == 0 || response == 1 || response == 2) {
-                sLogger.mo57e("Checkout", str, exc);
+                sLogger.mo75e("Checkout", str, exc);
                 return;
             } else {
-                sLogger.mo57e("Checkout", str, exc);
+                sLogger.mo75e("Checkout", str, exc);
                 return;
             }
         }
-        sLogger.mo57e("Checkout", str, exc);
+        sLogger.mo75e("Checkout", str, exc);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void debug(String str, String str2) {
         Logger logger = sLogger;
-        logger.mo59d("Checkout/" + str, str2);
+        logger.mo77d("Checkout/" + str, str2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void debug(String str) {
-        sLogger.mo59d("Checkout", str);
+        sLogger.mo77d("Checkout", str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void warning(String str) {
-        sLogger.mo56w("Checkout", str);
+        sLogger.mo74w("Checkout", str);
     }
 
     public static Cache newCache() {

@@ -10,7 +10,7 @@ public final class zzre implements Closeable {
     private static final char[] zzbeb = ")]}'\n".toCharArray();
 
     /* renamed from: in */
-    private final Reader f235in;
+    private final Reader f237in;
     private long zzbeh;
     private int zzbei;
     private String zzbej;
@@ -35,7 +35,7 @@ public final class zzre implements Closeable {
         this.zzbem = new String[32];
         this.zzben = new int[32];
         Objects.requireNonNull(reader, "in == null");
-        this.f235in = reader;
+        this.f237in = reader;
     }
 
     public final void setLenient(boolean z) {
@@ -195,7 +195,7 @@ public final class zzre implements Closeable {
     /* JADX WARN: Removed duplicated region for block: B:193:0x025a A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:194:0x025b  */
     /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v4, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r2v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -520,7 +520,7 @@ public final class zzre implements Closeable {
         this.zzbeg = 0;
         this.zzbek[0] = 8;
         this.zzbel = 1;
-        this.f235in.close();
+        this.f237in.close();
     }
 
     public final void skipValue() throws IOException {
@@ -634,7 +634,7 @@ public final class zzre implements Closeable {
         }
         this.pos = 0;
         do {
-            Reader reader = this.f235in;
+            Reader reader = this.f237in;
             int i8 = this.limit;
             int read = reader.read(cArr, i8, cArr.length - i8);
             if (read == -1) {

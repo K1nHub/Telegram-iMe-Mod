@@ -6,5 +6,5 @@ import java.util.stream.Collector;
 public abstract /* synthetic */ class AbstractC3186J0 implements Collector {
 
     /* renamed from: a */
-    final /* synthetic */ C3184I0 f1230a;
+    final /* synthetic */ C3184I0 f1233a;
 }

@@ -42,7 +42,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
             GlUtil.checkGlError();
             this.textureId = GlUtil.createExternalTexture();
         } catch (GlUtil.GlException e) {
-            Log.m799e(TAG, "Failed to initialize the renderer", e);
+            Log.m817e(TAG, "Failed to initialize the renderer", e);
         }
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.textureId);
         this.surfaceTexture = surfaceTexture;
@@ -65,14 +65,14 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
         try {
             GlUtil.checkGlError();
         } catch (GlUtil.GlException e) {
-            Log.m799e(TAG, "Failed to draw a frame", e);
+            Log.m817e(TAG, "Failed to draw a frame", e);
         }
         if (this.frameAvailable.compareAndSet(true, false)) {
             ((SurfaceTexture) Assertions.checkNotNull(this.surfaceTexture)).updateTexImage();
             try {
                 GlUtil.checkGlError();
             } catch (GlUtil.GlException e2) {
-                Log.m799e(TAG, "Failed to draw a frame", e2);
+                Log.m817e(TAG, "Failed to draw a frame", e2);
             }
             if (this.resetRotationAtNextFrame.compareAndSet(true, false)) {
                 GlUtil.setToIdentity(this.rotationMatrix);

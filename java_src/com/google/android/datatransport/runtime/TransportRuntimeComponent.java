@@ -8,9 +8,8 @@ import java.io.IOException;
 /* loaded from: classes.dex */
 public abstract class TransportRuntimeComponent implements Closeable {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public interface Builder {
+    interface Builder {
         TransportRuntimeComponent build();
 
         Builder setApplicationContext(Context context);

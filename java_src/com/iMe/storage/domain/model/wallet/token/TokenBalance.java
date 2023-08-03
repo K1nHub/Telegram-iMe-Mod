@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.wallet.token;
 
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -52,7 +53,7 @@ public final class TokenBalance {
     }
 
     public int hashCode() {
-        return (((((((Double.doubleToLongBits(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31) + Double.doubleToLongBits(this.ratePercentageChange24h)) * 31) + this.token.hashCode();
+        return (((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.ratePercentageChange24h)) * 31) + this.token.hashCode();
     }
 
     public String toString() {
